@@ -187,7 +187,7 @@ class NavigateSearchResultPagesCachingTokens
      *
      * @param GoogleAdsServiceClient $googleAdsServiceClient the Google Ads API Service client
      * @param int $customerId the customer ID
-     * @param string $searchQuery  the search query
+     * @param string $searchQuery the search query
      * @param array $searchOptions the search options
      * @param int $pageNumber the number of the page to fetch and print results for
      * @param int[] &$pageTokens the cache of page tokens to use and update
@@ -201,20 +201,20 @@ class NavigateSearchResultPagesCachingTokens
         array &$pageTokens
     ) {
         // There is no need to fetch the pages we already know the page tokens for.
-        if (!isset($pageTokens[$pageNumber - 1])) {
+        if (isset($pageTokens[$pageNumber - 1])) {
+            printf(
+                'The token of the requested page was cached, we will use it to get the results.%s',
+                PHP_EOL
+            );
+            $currentPageNumber = $pageNumber;
+            $currentPageNumber = count($pageTokens);
+        } else {
             printf(
                 'The token of the requested page was never cached, we will use the closest page ' .
                 'we know the token for (page #%d) and sequentially get pages from there.%s',
                 count($pageTokens),
                 PHP_EOL
             );
-            $currentPageNumber = count($pageTokens);
-        } else {
-            printf(
-                'The token of the requested page was cached, we will use it to get the results.%s',
-                PHP_EOL
-            );
-            $currentPageNumber = $pageNumber;
         }
 
         // Fetches next pages in sequence and caches their tokens until the requested page results
