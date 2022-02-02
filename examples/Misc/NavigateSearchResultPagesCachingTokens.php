@@ -156,6 +156,8 @@ class NavigateSearchResultPagesCachingTokens
             exit(1);
         }
 
+        // Demonstrates how the logic works when iterating pages forward. We select a page that is
+        // in the middle of the result set so that only a subset of the page tokens will be cached.
         $middlePageNumber = ceil($totalNumberOfPages / 2);
         printf('%s--- 1. Print results of the page #%d:%1$s%1$s', PHP_EOL, $middlePageNumber);
         self::fetchAndPrintPageResults(
@@ -167,6 +169,8 @@ class NavigateSearchResultPagesCachingTokens
             $pageTokens
         );
 
+        // Demonstrates how the logic works when iterating pages backward with some page tokens that
+        // are not already cached.
         printf('%s--- 2. Print results from the last page to the first:%1$s', PHP_EOL);
         foreach (range($totalNumberOfPages, 1) as $pageNumber) {
             printf('%s-- Printing results for page #%d:%1$s', PHP_EOL, $pageNumber);
