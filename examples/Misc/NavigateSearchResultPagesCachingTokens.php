@@ -152,9 +152,8 @@ class NavigateSearchResultPagesCachingTokens
         $totalNumberOfPages = ceil($totalNumberOfResults / self::PAGE_SIZE);
         printf('Total number of pages: %d.%s', $totalNumberOfPages, PHP_EOL);
         if (!$totalNumberOfPages) {
-            throw new Exception(
-                'Could not find any results.'
-            );
+            print 'Could not find any campaigns.' . PHP_EOL;
+            exit(1);
         }
 
         $middlePageNumber = ceil($totalNumberOfPages / 2);
