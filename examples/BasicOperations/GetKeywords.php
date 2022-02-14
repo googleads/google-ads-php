@@ -23,22 +23,29 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V9\Enums\CriterionTypeEnum\CriterionType;
-use Google\Ads\GoogleAds\V9\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V9\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V10\Enums\CriterionTypeEnum\CriterionType;
+use Google\Ads\GoogleAds\V10\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V10\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
-/** This example gets keywords from ad group criteria. */
+/**
+ * This example gets keywords from ad group criteria and demonstrates how to use the
+ * omit_unselected_resource_names option in Google Ads Query Language (GAQL) queries to reduce
+ * payload size.
+ */
 class GetKeywords
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     // Optional: Specify an ad group ID below to restrict search to only a given ad group.
     private const AD_GROUP_ID = null;
+    // Optional: Change the below value to true to omit unselected resource names from the returned
+    // response of GoogleAdsService.
+    private const OMIT_UNSELECTED_RESOURCE_NAMES = false;
 
     private const PAGE_SIZE = 1000;
 
@@ -48,7 +55,8 @@ class GetKeywords
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::AD_GROUP_ID => GetOpt::OPTIONAL_ARGUMENT
+            ArgumentNames::AD_GROUP_ID => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::OMIT_UNSELECTED_RESOURCE_NAMES => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -64,7 +72,12 @@ class GetKeywords
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::AD_GROUP_ID] ?: self::AD_GROUP_ID
+                $options[ArgumentNames::AD_GROUP_ID] ?: self::AD_GROUP_ID,
+                filter_var(
+                    $options[ArgumentNames::OMIT_UNSELECTED_RESOURCE_NAMES]
+                        ?: self::OMIT_UNSELECTED_RESOURCE_NAMES,
+                    FILTER_VALIDATE_BOOLEAN
+                )
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -100,11 +113,14 @@ class GetKeywords
      * @param int $customerId the customer ID
      * @param int|null $adGroupId the ad group ID for which keywords will be retrieved. If `null`,
      *     returns from all ad groups
+     * @param bool $omitUnselectedResourceNames whether to omit the resource names of all resources
+     *     not explicitly requested in the SELECT clause of the GAQL query
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        ?int $adGroupId
+        ?int $adGroupId,
+        bool $omitUnselectedResourceNames
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves keywords.
@@ -119,6 +135,18 @@ class GetKeywords
         if ($adGroupId !== null) {
             $query .= " AND ad_group.id = $adGroupId";
         }
+        // Adds omit_unselected_resource_names=true to the PARAMETERS clause of the
+        // Google Ads Query Language (GAQL) query, which excludes the resource names of
+        // all resources that aren't explicitly requested in the SELECT clause.
+        // Enabling this option reduces payload size, but if you plan to use a returned
+        // object in subsequent mutate operations, make sure you explicitly request its
+        // "resource_name" field in the SELECT clause.
+        //
+        // Read more about PARAMETERS:
+        // https://developers.google.com/google-ads/api/docs/query/structure#parameters
+        if ($omitUnselectedResourceNames) {
+            $query .= ' PARAMETERS omit_unselected_resource_names=true';
+        }
 
         // Issues a search request by specifying page size.
         $response =
@@ -128,9 +156,13 @@ class GetKeywords
         // the keyword in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
+            $resourceNameString = $omitUnselectedResourceNames ? '' : sprintf(
+                " and resource name '%s'",
+                $googleAdsRow->getAdGroup()->getResourceName()
+            );
             printf(
                 "Keyword with text '%s', match type '%s', criterion type '%s', and ID %d "
-                . "was found in ad group with ID %d.%s",
+                . "was found in ad group with ID %d%s.%s",
                 $googleAdsRow->getAdGroupCriterion()->getKeyword()->getText(),
                 KeywordMatchType::name(
                     $googleAdsRow->getAdGroupCriterion()->getKeyword()->getMatchType()
@@ -138,6 +170,7 @@ class GetKeywords
                 CriterionType::name($googleAdsRow->getAdGroupCriterion()->getType()),
                 $googleAdsRow->getAdGroupCriterion()->getCriterionId(),
                 $googleAdsRow->getAdGroup()->getId(),
+                $resourceNameString,
                 PHP_EOL
             );
         }

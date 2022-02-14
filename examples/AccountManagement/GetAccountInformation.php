@@ -23,12 +23,12 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V9\ResourceNames;
-use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsException;
+use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V10\Resources\Customer;
 use Google\ApiCore\ApiException;
 
 /**
@@ -96,9 +96,24 @@ class GetAccountInformation
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
-        // Issues a getCustomer() request and gets the result.
-        $customerServiceClient = $googleAdsClient->getCustomerServiceClient();
-        $customer = $customerServiceClient->getCustomer(ResourceNames::forCustomer($customerId));
+        // Creates a query that retrieves the specified customer.
+        $query = 'SELECT customer.id, '
+            . 'customer.descriptive_name, '
+            . 'customer.currency_code, '
+            . 'customer.time_zone, '
+            . 'customer.tracking_url_template, '
+            . 'customer.auto_tagging_enabled '
+            . 'FROM customer '
+            // Limits to 1 to clarify that selecting from the customer resource will always return
+            // only one row, which will be for the customer ID specified in the request.
+            . 'LIMIT 1';
+        // Issues a search request to get the Customer object from the single row of the response
+        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
+        /** @var Customer $customer */
+        $customer = $googleAdsServiceClient->search($customerId, $query)
+            ->getIterator()
+            ->current()
+            ->getCustomer();
 
         // Print information about the account.
         printf(

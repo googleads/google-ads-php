@@ -25,43 +25,43 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V9\ResourceNames;
-use Google\Ads\GoogleAds\V9\Common\ImageAsset;
-use Google\Ads\GoogleAds\V9\Common\LanguageInfo;
-use Google\Ads\GoogleAds\V9\Common\LocationInfo;
-use Google\Ads\GoogleAds\V9\Common\MaximizeConversionValue;
-use Google\Ads\GoogleAds\V9\Common\TextAsset;
-use Google\Ads\GoogleAds\V9\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V9\Enums\AssetFieldTypeEnum\AssetFieldType;
-use Google\Ads\GoogleAds\V9\Enums\AssetGroupStatusEnum\AssetGroupStatus;
-use Google\Ads\GoogleAds\V9\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V9\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V9\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
-use Google\Ads\GoogleAds\V9\Enums\ConversionOriginEnum\ConversionOrigin;
-use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V9\Resources\Asset;
-use Google\Ads\GoogleAds\V9\Resources\AssetGroup;
-use Google\Ads\GoogleAds\V9\Resources\AssetGroupAsset;
-use Google\Ads\GoogleAds\V9\Resources\Campaign;
-use Google\Ads\GoogleAds\V9\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V9\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V9\Resources\CampaignConversionGoal;
-use Google\Ads\GoogleAds\V9\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V9\Services\AssetGroupAssetOperation;
-use Google\Ads\GoogleAds\V9\Services\AssetGroupOperation;
-use Google\Ads\GoogleAds\V9\Services\AssetOperation;
-use Google\Ads\GoogleAds\V9\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V9\Services\CampaignConversionGoalOperation;
-use Google\Ads\GoogleAds\V9\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V9\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V9\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V9\Services\MutateGoogleAdsResponse;
-use Google\Ads\GoogleAds\V9\Services\MutateOperation;
-use Google\Ads\GoogleAds\V9\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\Util\V10\ResourceNames;
+use Google\Ads\GoogleAds\V10\Common\ImageAsset;
+use Google\Ads\GoogleAds\V10\Common\LanguageInfo;
+use Google\Ads\GoogleAds\V10\Common\LocationInfo;
+use Google\Ads\GoogleAds\V10\Common\MaximizeConversionValue;
+use Google\Ads\GoogleAds\V10\Common\TextAsset;
+use Google\Ads\GoogleAds\V10\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V10\Enums\AssetFieldTypeEnum\AssetFieldType;
+use Google\Ads\GoogleAds\V10\Enums\AssetGroupStatusEnum\AssetGroupStatus;
+use Google\Ads\GoogleAds\V10\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V10\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V10\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
+use Google\Ads\GoogleAds\V10\Enums\ConversionOriginEnum\ConversionOrigin;
+use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V10\Resources\Asset;
+use Google\Ads\GoogleAds\V10\Resources\AssetGroup;
+use Google\Ads\GoogleAds\V10\Resources\AssetGroupAsset;
+use Google\Ads\GoogleAds\V10\Resources\Campaign;
+use Google\Ads\GoogleAds\V10\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V10\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V10\Resources\CampaignConversionGoal;
+use Google\Ads\GoogleAds\V10\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V10\Services\AssetGroupAssetOperation;
+use Google\Ads\GoogleAds\V10\Services\AssetGroupOperation;
+use Google\Ads\GoogleAds\V10\Services\AssetOperation;
+use Google\Ads\GoogleAds\V10\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V10\Services\CampaignConversionGoalOperation;
+use Google\Ads\GoogleAds\V10\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V10\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V10\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V10\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V10\Services\MutateOperation;
+use Google\Ads\GoogleAds\V10\Services\MutateOperationResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Serializer;
 
@@ -587,19 +587,22 @@ class AddPerformanceMaxRetailCampaign
         $operations = array_merge($operations, self::createAndLinkImageAsset(
             $customerId,
             'https://gaagl.page.link/bjYi',
-            AssetFieldType::LOGO
+            AssetFieldType::LOGO,
+            'Marketing Logo'
         ));
         // Creates and links the Marketing Image Asset.
         $operations = array_merge($operations, self::createAndLinkImageAsset(
             $customerId,
             'https://gaagl.page.link/Eit5',
-            AssetFieldType::MARKETING_IMAGE
+            AssetFieldType::MARKETING_IMAGE,
+            'Marketing Image'
         ));
         // Creates and links the Square Marketing Image Asset.
         $operations = array_merge($operations, self::createAndLinkImageAsset(
             $customerId,
             'https://gaagl.page.link/bjYi',
-            AssetFieldType::SQUARE_MARKETING_IMAGE
+            AssetFieldType::SQUARE_MARKETING_IMAGE,
+            'Square Marketing Image'
         ));
 
         return $operations;
@@ -656,13 +659,15 @@ class AddPerformanceMaxRetailCampaign
      * @param int $customerId the customer ID
      * @param string $url the URL of the image to be retrieved and put into an asset
      * @param int $fieldType the field type of the new asset in the AssetGroupAsset
+     * @param string $assetName the asset name
      * @return MutateOperation[] a list of MutateOperations that create a new linked image asset
      */
     // [START add_performance_max_retail_campaign_8]
     private static function createAndLinkImageAsset(
         int $customerId,
         string $url,
-        int $fieldType
+        int $fieldType,
+        string $assetName
     ): array {
         $operations = [];
         // Creates a new mutate operation that creates an image asset.
@@ -670,6 +675,10 @@ class AddPerformanceMaxRetailCampaign
             'asset_operation' => new AssetOperation([
                 'create' => new Asset([
                     'resource_name' => ResourceNames::forAsset($customerId, self::$nextTempId),
+                    // Provide a unique friendly name to identify your asset.
+                    // When there is an existing image asset with the same content but a different
+                    // name, the new name will be dropped silently.
+                    'name' => $assetName,
                     'image_asset' => new ImageAsset(['data' => file_get_contents($url)])
                 ])
             ])

@@ -24,23 +24,23 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V9\ResourceNames;
-use Google\Ads\GoogleAds\V9\Common\AdMediaBundleAsset;
-use Google\Ads\GoogleAds\V9\Common\DisplayUploadAdInfo;
-use Google\Ads\GoogleAds\V9\Common\MediaBundleAsset;
-use Google\Ads\GoogleAds\V9\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V9\Enums\AssetTypeEnum\AssetType;
-use Google\Ads\GoogleAds\V9\Enums\DisplayUploadProductTypeEnum\DisplayUploadProductType;
-use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V9\Resources\Ad;
-use Google\Ads\GoogleAds\V9\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V9\Resources\Asset;
-use Google\Ads\GoogleAds\V9\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V9\Services\AssetOperation;
-use Google\Ads\GoogleAds\V9\Services\MutateAdGroupAdsResponse;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V10\ResourceNames;
+use Google\Ads\GoogleAds\V10\Common\AdMediaBundleAsset;
+use Google\Ads\GoogleAds\V10\Common\DisplayUploadAdInfo;
+use Google\Ads\GoogleAds\V10\Common\MediaBundleAsset;
+use Google\Ads\GoogleAds\V10\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V10\Enums\AssetTypeEnum\AssetType;
+use Google\Ads\GoogleAds\V10\Enums\DisplayUploadProductTypeEnum\DisplayUploadProductType;
+use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V10\Resources\Ad;
+use Google\Ads\GoogleAds\V10\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V10\Resources\Asset;
+use Google\Ads\GoogleAds\V10\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V10\Services\AssetOperation;
+use Google\Ads\GoogleAds\V10\Services\MutateAdGroupAdsResponse;
 use Google\ApiCore\ApiException;
 
 /**
@@ -150,6 +150,7 @@ class AddDisplayUploadAd
 
         // Creates the media bundle asset.
         $asset = new Asset([
+            'name' => 'Ad Media Bundle',
             'type' => AssetType::MEDIA_BUNDLE,
             'media_bundle_asset' => new MediaBundleAsset(['data' => $html5Zip])
         ]);
