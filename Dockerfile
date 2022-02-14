@@ -1,5 +1,5 @@
 # Sets the PHP image to extend from.
-# see https://hub.docker.com/_/php.
+# See https://hub.docker.com/_/php.
 ARG PHP_IMAGE="apache"
 FROM php:${PHP_IMAGE}
 
