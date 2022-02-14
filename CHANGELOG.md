@@ -4,6 +4,7 @@
 *   Added support for case-insensitive HTTP header field names in `GoogleAdsMetadataTrait` of all
     versions.
 *   Updated `composer.json` and `composer.lock` of LaravelSampleApp.
+*   Updated the minimum required version of `google/protobuf` to 3.19.4.
 *   Added code examples:
     * AddCall
     * AddCallAd
