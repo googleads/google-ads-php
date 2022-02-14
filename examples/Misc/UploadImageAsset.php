@@ -24,15 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
-use Google\Ads\GoogleAds\V9\Common\ImageAsset;
-use Google\Ads\GoogleAds\V9\Enums\AssetTypeEnum\AssetType;
-use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V9\Resources\Asset;
-use Google\Ads\GoogleAds\V9\Services\AssetOperation;
-use Google\Ads\GoogleAds\V9\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsException;
+use Google\Ads\GoogleAds\V10\Common\ImageAsset;
+use Google\Ads\GoogleAds\V10\Enums\AssetTypeEnum\AssetType;
+use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V10\Resources\Asset;
+use Google\Ads\GoogleAds\V10\Services\AssetOperation;
+use Google\Ads\GoogleAds\V10\Services\MutateAssetResult;
 use Google\ApiCore\ApiException;
 
 /** This example uploads an image asset. To get image assets, run GetAllImageAssets.php. */
@@ -105,11 +105,10 @@ class UploadImageAsset
 
         // Creates an asset.
         $asset = new Asset([
-            // Optional: Provide a unique friendly name to identify your asset.
-            // If you specify the name field, then both the asset name and the image being
-            // uploaded should be unique, and should not match another ACTIVE asset in this
-            // customer account.
-            // 'name' => 'Jupiter Trip #' . Helper::getPrintableDatetime(),
+            // Provide a unique friendly name to identify your asset.
+            // When there is an existing image asset with the same content but a different
+            // name, the new name will be dropped silently.
+            'name' => 'Marketing Image',
             'type' => AssetType::IMAGE,
             'image_asset' => new ImageAsset(['data' => $imageContent])
         ]);

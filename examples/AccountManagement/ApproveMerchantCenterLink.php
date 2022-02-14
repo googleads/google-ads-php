@@ -24,15 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\V9\Enums\MerchantCenterLinkStatusEnum\MerchantCenterLinkStatus;
-use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V9\Resources\MerchantCenterLink;
-use Google\Ads\GoogleAds\V9\Services\MerchantCenterLinkOperation;
-use Google\Ads\GoogleAds\V9\Services\MerchantCenterLinkServiceClient;
+use Google\Ads\GoogleAds\V10\Enums\MerchantCenterLinkStatusEnum\MerchantCenterLinkStatus;
+use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V10\Resources\MerchantCenterLink;
+use Google\Ads\GoogleAds\V10\Services\MerchantCenterLinkOperation;
+use Google\Ads\GoogleAds\V10\Services\MerchantCenterLinkServiceClient;
 use Google\ApiCore\ApiException;
 
 /**

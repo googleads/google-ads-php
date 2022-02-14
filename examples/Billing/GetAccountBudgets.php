@@ -25,15 +25,15 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\V9\Enums\AccountBudgetStatusEnum\AccountBudgetStatus;
-use Google\Ads\GoogleAds\V9\Enums\SpendingLimitTypeEnum\SpendingLimitType;
-use Google\Ads\GoogleAds\V9\Enums\TimeTypeEnum\TimeType;
-use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V9\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\V10\Enums\AccountBudgetStatusEnum\AccountBudgetStatus;
+use Google\Ads\GoogleAds\V10\Enums\SpendingLimitTypeEnum\SpendingLimitType;
+use Google\Ads\GoogleAds\V10\Enums\TimeTypeEnum\TimeType;
+use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V10\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example retrieves all account budgets for a Google Ads customer. */

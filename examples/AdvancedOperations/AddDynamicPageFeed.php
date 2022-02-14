@@ -25,39 +25,42 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V9\ResourceNames;
-use Google\Ads\GoogleAds\V9\Common\WebpageConditionInfo;
-use Google\Ads\GoogleAds\V9\Common\WebpageInfo;
-use Google\Ads\GoogleAds\V9\Enums\DsaPageFeedCriterionFieldEnum\DsaPageFeedCriterionField;
-use Google\Ads\GoogleAds\V9\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V9\Enums\FeedMappingCriterionTypeEnum\FeedMappingCriterionType;
-use Google\Ads\GoogleAds\V9\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V9\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
-use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V9\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V9\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V9\Resources\Campaign;
-use Google\Ads\GoogleAds\V9\Resources\Campaign\DynamicSearchAdsSetting;
-use Google\Ads\GoogleAds\V9\Resources\Feed;
-use Google\Ads\GoogleAds\V9\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V9\Resources\FeedItem;
-use Google\Ads\GoogleAds\V9\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V9\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V9\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V9\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V9\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V9\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V9\Services\FeedOperation;
+use Google\Ads\GoogleAds\Util\V10\ResourceNames;
+use Google\Ads\GoogleAds\V10\Common\WebpageConditionInfo;
+use Google\Ads\GoogleAds\V10\Common\WebpageInfo;
+use Google\Ads\GoogleAds\V10\Enums\DsaPageFeedCriterionFieldEnum\DsaPageFeedCriterionField;
+use Google\Ads\GoogleAds\V10\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V10\Enums\FeedMappingCriterionTypeEnum\FeedMappingCriterionType;
+use Google\Ads\GoogleAds\V10\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V10\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
+use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V10\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V10\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V10\Resources\Campaign;
+use Google\Ads\GoogleAds\V10\Resources\Campaign\DynamicSearchAdsSetting;
+use Google\Ads\GoogleAds\V10\Resources\Feed;
+use Google\Ads\GoogleAds\V10\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V10\Resources\FeedItem;
+use Google\Ads\GoogleAds\V10\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V10\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V10\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V10\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V10\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V10\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V10\Services\FeedOperation;
 use Google\ApiCore\ApiException;
 
 /**
  * This code example adds a page feed to specify precisely which URLs to use with your Dynamic
  * Search Ads campaign.
  */
+// DEPRECATION WARNING!
+// Feed-services based DSA page feeds are deprecated and being replaced with assets. See
+// AddDynamicPageFeedAsset.php.
 class AddDynamicPageFeed
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';

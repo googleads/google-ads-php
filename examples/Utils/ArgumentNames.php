@@ -98,6 +98,7 @@ final class ArgumentNames
     public const MARKETING_IMAGE_ASSET_ID = 'marketingImageAssetId';
     public const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
     public const OFFLINE_USER_DATA_JOB_TYPE = 'offlineUserDataJobType';
+    public const OMIT_UNSELECTED_RESOURCE_NAMES = 'omitUnselectedResourceNames';
     public const ORDER_ID = 'orderId';
     public const OUTPUT_FILE_PATH = 'outputFilePath';
     public const PAGE_URL = 'pageUrl';
@@ -105,6 +106,8 @@ final class ArgumentNames
     public const PAYMENTS_ACCOUNT_ID = 'paymentsAccountId';
     public const PAYMENTS_PROFILE_ID = 'paymentsProfileId';
     public const PERCENT_CPC_BID_MICRO_AMOUNT = 'percentCpcBidMicroAmount';
+    public const PHONE_COUNTRY = 'phoneCountry';
+    public const PHONE_NUMBER = 'phoneNumber';
     public const RECOMMENDATION_ID = 'recommendationId';
     public const RESTATEMENT_VALUE = 'restatementValue';
     public const CREATE_DEFAULT_LISTING_GROUP = 'createDefaultListingGroup';
@@ -197,6 +200,7 @@ final class ArgumentNames
         self::MARKETING_IMAGE_ASSET_ID => 'The ID of marketing image asset',
         self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',
         self::OFFLINE_USER_DATA_JOB_TYPE => 'The offline user data job type',
+        self::OMIT_UNSELECTED_RESOURCE_NAMES => 'Whether to omit unselected resource names',
         self::ORDER_ID => 'The order ID',
         self::OUTPUT_FILE_PATH => 'The output file path',
         self::PAGE_URL => 'The page URL',
@@ -205,6 +209,8 @@ final class ArgumentNames
         self::PAYMENTS_PROFILE_ID => 'The payments profile ID',
         self::PERCENT_CPC_BID_MICRO_AMOUNT =>
             'The CPC bid micro amount for the Percent CPC bidding strategy',
+        self::PHONE_COUNTRY => 'The phone country',
+        self::PHONE_NUMBER => 'The phone number',
         self::RECOMMENDATION_ID => 'The recommendation ID',
         self::RESTATEMENT_VALUE => 'The restatement value',
         self::CREATE_DEFAULT_LISTING_GROUP =>

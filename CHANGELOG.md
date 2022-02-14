@@ -1,3 +1,24 @@
+## 14.0.0
+*   Added support for v10 of Google Ads API.
+*   Removed support for v7 of Google Ads API.
+*   Added support for case-insensitive HTTP header field names in `GoogleAdsMetadataTrait` of all
+    versions.
+*   Updated `composer.json` and `composer.lock` of LaravelSampleApp.
+*   Added code examples:
+    * AddCall
+    * AddCallAd
+    * AddDynamicPageFeedAsset
+    * AddDynamicRemarketingAsset
+    * NavigateSearchResultPagesCachingTokens
+*   Updated code examples:
+    * AddDisplayUploadAd
+    * AddPerformanceMaxCampaign
+    * AddPerformanceMaxRetailCampaign
+    * GetAccountInformation
+    * GetKeywords
+    * UploadConversionWithIdentifiers
+    * UploadImageAsset
+
 ## 13.0.0
 *   Updated `composer.json` to require the minimum PHP version of 7.4.
 *   Added support for setting gRPC channel, gRPC interceptor and middleware.
