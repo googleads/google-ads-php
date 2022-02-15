@@ -1,4 +1,4 @@
-## 14.0.0
+## 14.0.0 
 *   Added support for v10 of Google Ads API.
 *   Removed support for v7 of Google Ads API.
 *   Added support for case-insensitive HTTP header field names in `GoogleAdsMetadataTrait` of all
