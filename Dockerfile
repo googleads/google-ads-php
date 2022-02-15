@@ -1,4 +1,7 @@
-FROM php:8.0-apache
+# Sets the PHP image to extend from.
+# See https://hub.docker.com/_/php.
+ARG PHP_IMAGE="apache"
+FROM php:${PHP_IMAGE}
 
 ARG USE_C_PROTOBUF=true
 
