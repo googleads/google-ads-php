@@ -32,6 +32,7 @@ final class ArgumentNames
     public const AD_GROUP_IDS = 'adGroupIds';
     public const ARTIFACT_NAME = 'artifactName';
     public const ATTRIBUTE_VALUE = 'attributeValue';
+    public const AUDIENCE_ID = 'audienceId';
     public const BASE_CAMPAIGN_ID = 'baseCampaignId';
     public const BID_MODIFIER_VALUE = 'bidModifierValue';
     public const BILLING_SETUP_ID = 'billingSetupId';
@@ -132,6 +133,7 @@ final class ArgumentNames
         self::AD_GROUP_IDS => 'The ad group IDs',
         self::ARTIFACT_NAME => 'The artifact name',
         self::ATTRIBUTE_VALUE => 'The attribute value',
+        self::AUDIENCE_ID => 'The audience ID',
         self::BASE_CAMPAIGN_ID => 'The base campaign ID',
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
         self::BILLING_SETUP_ID => 'The billing setup ID',

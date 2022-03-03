@@ -29,6 +29,7 @@ use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V10\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\V10\ResourceNames;
+use Google\Ads\GoogleAds\V10\Common\AudienceInfo;
 use Google\Ads\GoogleAds\V10\Common\ImageAsset;
 use Google\Ads\GoogleAds\V10\Common\LanguageInfo;
 use Google\Ads\GoogleAds\V10\Common\LocationInfo;
@@ -43,11 +44,13 @@ use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V10\Resources\Asset;
 use Google\Ads\GoogleAds\V10\Resources\AssetGroup;
 use Google\Ads\GoogleAds\V10\Resources\AssetGroupAsset;
+use Google\Ads\GoogleAds\V10\Resources\AssetGroupSignal;
 use Google\Ads\GoogleAds\V10\Resources\Campaign;
 use Google\Ads\GoogleAds\V10\Resources\CampaignBudget;
 use Google\Ads\GoogleAds\V10\Resources\CampaignCriterion;
 use Google\Ads\GoogleAds\V10\Services\AssetGroupAssetOperation;
 use Google\Ads\GoogleAds\V10\Services\AssetGroupOperation;
+use Google\Ads\GoogleAds\V10\Services\AssetGroupSignalOperation;
 use Google\Ads\GoogleAds\V10\Services\AssetOperation;
 use Google\Ads\GoogleAds\V10\Services\CampaignBudgetOperation;
 use Google\Ads\GoogleAds\V10\Services\CampaignCriterionOperation;
@@ -75,6 +78,8 @@ use Google\ApiCore\Serializer;
 class AddPerformanceMaxCampaign
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    // Optional: An audience ID to use to improve the targeting of the Performance Max campaign.
+    private const AUDIENCE_ID = null;
 
     // We specify temporary IDs that are specific to a single mutate request.
     // Temporary IDs are always negative and unique within one mutate request.
@@ -97,7 +102,8 @@ class AddPerformanceMaxCampaign
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
-            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::AUDIENCE_ID => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -113,7 +119,8 @@ class AddPerformanceMaxCampaign
         try {
             self::runExample(
                 $googleAdsClient,
-                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID
+                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
+                $options[ArgumentNames::AUDIENCE_ID] ?: self::AUDIENCE_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -147,11 +154,13 @@ class AddPerformanceMaxCampaign
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
+     * @param int|null $audienceId the audience ID
      */
     // [START add_performance_max_campaign]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        int $customerId
+        int $customerId,
+        ?int $audienceId
     ) {
         // [START add_performance_max_campaign_1]
         // Performance Max campaigns require that repeated assets such as headlines
@@ -190,6 +199,11 @@ class AddPerformanceMaxCampaign
             $customerId,
             $headlineAssetResourceNames,
             $descriptionAssetResourceNames
+        ));
+        $operations = array_merge($operations, self::createAssetGroupSignalOperations(
+            $customerId,
+            ResourceNames::forAssetGroup($customerId, self::ASSET_GROUP_TEMPORARY_ID),
+            $audienceId
         ));
 
         // Issues a mutate request to create everything and prints its information.
@@ -638,6 +652,42 @@ class AddPerformanceMaxCampaign
         return $operations;
     }
     // [END add_performance_max_campaign_8]
+
+    /**
+     * Creates a list of MutateOperations that may create asset group signals.
+     *
+     * @param int $customerId the customer ID
+     * @param string $assetGroupResourceName the resource name of the asset group
+     * @param int|null $audienceId the audience ID
+     * @return MutateOperation[] a list of MutateOperations that may create asset group signals
+     */
+    // [START add_performance_max_campaign_9]
+    private static function createAssetGroupSignalOperations(
+        int $customerId,
+        string $assetGroupResourceName,
+        ?int $audienceId
+    ): array {
+        $operations = [];
+        if (is_null($audienceId)) {
+            return $operations;
+        }
+
+        $operations[] = new MutateOperation([
+            'asset_group_signal_operation' => new AssetGroupSignalOperation([
+                // To learn more about Audience Signals, see
+                // https://developers.google.com/google-ads/api/docs/performance-max/asset-groups#audience_signals.
+                'create' => new AssetGroupSignal([
+                    'asset_group' => $assetGroupResourceName,
+                    'audience' => new AudienceInfo([
+                        'audience' => ResourceNames::forAudience($customerId, $audienceId)
+                    ])
+                ])
+            ])
+        ]);
+
+        return $operations;
+    }
+    // [END add_performance_max_campaign_9]
 
     /**
      * Prints the details of a MutateGoogleAdsResponse. Parses the "response" oneof field name and
