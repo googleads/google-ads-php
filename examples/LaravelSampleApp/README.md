@@ -22,8 +22,8 @@ the Google Ads API Client Library for PHP.
 1.  You'll get a **google-ads-php** directory that contains this sample
     application. Navigate to it by running `cd
     google-ads-php/examples/LaravelSampleApp/`.
-1.  Run `composer install` or `composer update` at the command prompt. This
-    will install all dependencies needed for running this application.
+1.  Run `composer update` at the command prompt. This
+    will install all the latest dependencies needed for running this application.
     **WARNING**: Make sure you are in the directory of this sample application.
     If you run those commands from the root directory of this library, it
     will install dependencies for the library instead.
