@@ -34,6 +34,8 @@ use Google\Ads\GoogleAds\V10\Enums\ListingGroupFilterVerticalEnum\ListingGroupFi
 use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V10\Resources\AssetGroupListingGroupFilter;
 use Google\Ads\GoogleAds\V10\Resources\ListingGroupFilterDimension;
+use Google\Ads\GoogleAds\V10\Resources\ListingGroupFilterDimension\ProductBrand;
+use Google\Ads\GoogleAds\V10\Resources\ListingGroupFilterDimension\ProductCondition;
 use Google\Ads\GoogleAds\V10\Services\AssetGroupListingGroupFilterOperation;
 use Google\Ads\GoogleAds\V10\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V10\Services\MutateGoogleAdsResponse;
@@ -187,7 +189,7 @@ class AddPerformanceMaxProductListingGroupTree
             $tempId--,
             self::LISTING_GROUP_ROOT_TEMPORARY_ID,
             new ListingGroupFilterDimension([
-                'product_condition' => new ListingGroupFilterDimension\ProductCondition([
+                'product_condition' => new ProductCondition([
                     'condition' => ListingGroupFilterProductCondition::PBNEW
                 ])
             ])
@@ -199,7 +201,7 @@ class AddPerformanceMaxProductListingGroupTree
             $tempId--,
             self::LISTING_GROUP_ROOT_TEMPORARY_ID,
             new ListingGroupFilterDimension([
-                'product_condition' => new ListingGroupFilterDimension\ProductCondition([
+                'product_condition' => new ProductCondition([
                     'condition' => ListingGroupFilterProductCondition::USED
                 ])
             ])
@@ -218,7 +220,7 @@ class AddPerformanceMaxProductListingGroupTree
             new ListingGroupFilterDimension([
                 // All sibling nodes must have the same dimension type. We use an empty
                 // ProductCondition to indicate that this is an "Other" partition.
-                'product_condition' => new ListingGroupFilterDimension\ProductCondition()
+                'product_condition' => new ProductCondition()
             ])
         );
 
@@ -227,11 +229,9 @@ class AddPerformanceMaxProductListingGroupTree
             $assetGroupId,
             $tempId--,
             $conditionOtherSubdivisionId,
-            new ListingGroupFilterDimension([
-                'product_brand' => new ListingGroupFilterDimension\ProductBrand([
-                    'value' => 'CoolBrand'
-                ])
-            ])
+            new ListingGroupFilterDimension(
+                ['product_brand' => new ProductBrand(['value' => 'CoolBrand'])]
+            )
         );
 
         $mutateOperations[] = self::createMutateOperationForUnit(
@@ -240,9 +240,7 @@ class AddPerformanceMaxProductListingGroupTree
             $tempId--,
             $conditionOtherSubdivisionId,
             new ListingGroupFilterDimension([
-                'product_brand' => new ListingGroupFilterDimension\ProductBrand([
-                    'value' => 'CheapBrand'
-                ])
+                'product_brand' => new ProductBrand(['value' => 'CheapBrand'])
             ])
         );
 
@@ -251,9 +249,8 @@ class AddPerformanceMaxProductListingGroupTree
             $assetGroupId,
             $tempId--,
             $conditionOtherSubdivisionId,
-            new ListingGroupFilterDimension([
-                'product_brand' => new ListingGroupFilterDimension\ProductBrand()
-            ])
+            // All other product brands.
+            new ListingGroupFilterDimension(['product_brand' => new ProductBrand()])
         );
 
         // Issues a mutate request to create everything and prints its information.
@@ -267,15 +264,15 @@ class AddPerformanceMaxProductListingGroupTree
         // [END add_performance_max_product_listing_group_tree_1]
     }
 
+    // [START add_performance_max_product_listing_group_tree_7]
     /**
      * Fetches all of the asset group listing group filters in an asset group.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $assetGroupResourceName the resource name of the asset group
+     * @param string $assetGroupResourceName the resource name of the asset group
      * @return AssetGroupListingGroupFilter[] the list of asset group listing group filters
      */
-    // [START add_performance_max_product_listing_group_tree_7]
     private static function getAllExistingListingGroupFilterAssetsInAssetGroup(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -297,9 +294,6 @@ class AddPerformanceMaxProductListingGroupTree
 
         $assetGroupListingGroupFilters = [];
         // Iterates over all rows in all pages to get an asset group listing group filter.
-        // The limit to the number of listing group filters permitted in a Performance
-        // Max campaign can be found here:
-        // https://developers.google.com/google-ads/api/docs/best-practices/system-limits.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
             $assetGroupListingGroupFilters[] = $googleAdsRow->getAssetGroupListingGroupFilter();
@@ -309,14 +303,12 @@ class AddPerformanceMaxProductListingGroupTree
     // [END add_performance_max_product_listing_group_tree_7]
 
     /**
-     * Removes an existing tree of asset group listing group filters.
+     * Creates mutate operations for removing an existing tree of asset group listing group filters.
      *
      * Asset group listing group filters must be removed in a specific order: all of the children
      * of a filter must be removed before the filter itself, otherwise the API will return an
      * error.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
      * @param AssetGroupListingGroupFilter[] $assetGroupListingGroupFilters the existing asset
      *     group listing group filters
      * @return MutateOperation[] the list of MutateOperations to remove all listing groups
@@ -328,11 +320,11 @@ class AddPerformanceMaxProductListingGroupTree
             throw new \UnexpectedValueException('No listing group filters to remove');
         }
 
-        $resourcesToListingGroupFilters = [];
+        $resourceNamesToListingGroupFilters = [];
         $parentsToChildren = [];
         $rootResourceName = null;
         foreach ($assetGroupListingGroupFilters as $assetGroupListingGroupFilter) {
-            $resourcesToListingGroupFilters[$assetGroupListingGroupFilter->getResourceName()] =
+            $resourceNamesToListingGroupFilters[$assetGroupListingGroupFilter->getResourceName()] =
                 $assetGroupListingGroupFilter;
             // When the node has no parent, it means it's the root node, which is treated
             // differently.
@@ -364,6 +356,7 @@ class AddPerformanceMaxProductListingGroupTree
         // [END add_performance_max_product_listing_group_tree_2]
     }
 
+    // [START add_performance_max_product_listing_group_tree_3]
     /**
      * Creates a list of mutate operations that remove all the descendents of the specified
      * asset group listing group filter's resource name. The order of removal is post-order,
@@ -376,7 +369,6 @@ class AddPerformanceMaxProductListingGroupTree
      *     names
      * @return MutateOperation[] the list of MutateOperations to remove all listing groups
      */
-    // [START add_performance_max_product_listing_group_tree_3]
     private static function createMutateOperationsForRemovingDescendents(
         string $assetGroupListingGroupFilterResourceName,
         array $parentsToChildren
@@ -401,6 +393,7 @@ class AddPerformanceMaxProductListingGroupTree
     }
     // [END add_performance_max_product_listing_group_tree_3]
 
+    // [START add_performance_max_product_listing_group_tree_4]
     /**
      * Creates a mutate operation that creates a root asset group listing group filter for the
      * factory's asset group.
@@ -412,20 +405,36 @@ class AddPerformanceMaxProductListingGroupTree
      * @param int $rootListingGroupId the root listing group ID
      * @return MutateOperation the mutate operation for creating the root
      */
-    // [START add_performance_max_product_listing_group_tree_4]
     private static function createMutateOperationForRoot(
         int $customerId,
         int $assetGroupId,
         int $rootListingGroupId
     ): MutateOperation {
-        return self::createMutateOperationForSubdivision(
-            $customerId,
-            $assetGroupId,
-            $rootListingGroupId
-        );
+        $assetGroupListingGroupFilter = new AssetGroupListingGroupFilter([
+            'resource_name' => ResourceNames::forAssetGroupListingGroupFilter(
+                $customerId,
+                $assetGroupId,
+                $rootListingGroupId
+            ),
+            'asset_group' => ResourceNames::forAssetGroup($customerId, $assetGroupId),
+            // Sets the type as a SUBDIVISION, which will allow the node to be the parent of
+            // another sub-tree.
+            'type' => ListingGroupFilterType::SUBDIVISION,
+            // Because this is a Performance Max campaign for retail, we need to specify
+            // that this is in the shopping vertical.
+            'vertical' => ListingGroupFilterVertical::SHOPPING
+        ]);
+
+        return new MutateOperation([
+            'asset_group_listing_group_filter_operation'
+            => new AssetGroupListingGroupFilterOperation([
+                'create' => $assetGroupListingGroupFilter
+            ])
+        ]);
     }
     // [END add_performance_max_product_listing_group_tree_4]
 
+    // [START add_performance_max_product_listing_group_tree_5]
     /**
      * Creates a mutate operation that creates a intermediate asset group listing group filter.
      *
@@ -433,19 +442,17 @@ class AddPerformanceMaxProductListingGroupTree
      * @param int $assetGroupId the asset group ID
      * @param int $assetGroupListingGroupFilterId the ID of the asset group listing group filter to
      *     be created
-     * @param int|null $parentId the ID of the parent of asset group listing group filter to be
-     *      created
-     * @param ListingGroupFilterDimension|null $listingGroupFilterDimension the listing group
+     * @param int $parentId the ID of the parent of asset group listing group filter to be created
+     * @param ListingGroupFilterDimension $listingGroupFilterDimension the listing group
      *     filter dimension to associate with the asset group listing group filter
      * @return MutateOperation the mutate operation for creating a subdivision
      */
-    // [START add_performance_max_product_listing_group_tree_5]
     private static function createMutateOperationForSubdivision(
         int $customerId,
         int $assetGroupId,
         int $assetGroupListingGroupFilterId,
-        ?int $parentId = null,
-        ?ListingGroupFilterDimension $listingGroupFilterDimension = null
+        int $parentId,
+        ListingGroupFilterDimension $listingGroupFilterDimension
     ): MutateOperation {
         $assetGroupListingGroupFilter = new AssetGroupListingGroupFilter([
             'resource_name' => ResourceNames::forAssetGroupListingGroupFilter(
@@ -459,21 +466,15 @@ class AddPerformanceMaxProductListingGroupTree
             'type' => ListingGroupFilterType::SUBDIVISION,
             // Because this is a Performance Max campaign for retail, we need to specify
             // that this is in the shopping vertical.
-            'vertical' => ListingGroupFilterVertical::SHOPPING
-        ]);
-        // If $parentId and $listingGroupFilterDimension are not null, creates
-        // a non-root division by setting its parent and case value.
-        if (!is_null($parentId) && !is_null($listingGroupFilterDimension)) {
-            $assetGroupListingGroupFilter->setParentListingGroupFilter(
-                ResourceNames::forAssetGroupListingGroupFilter(
-                    $customerId,
-                    $assetGroupId,
-                    $parentId
-                )
-            );
+            'vertical' => ListingGroupFilterVertical::SHOPPING,
+            'parent_listing_group_filter' => ResourceNames::forAssetGroupListingGroupFilter(
+                $customerId,
+                $assetGroupId,
+                $parentId
+            ),
             // Case values contain the listing dimension used for the node.
-            $assetGroupListingGroupFilter->setCaseValue($listingGroupFilterDimension);
-        }
+            'case_value' => $listingGroupFilterDimension
+        ]);
 
         return new MutateOperation([
             'asset_group_listing_group_filter_operation'
@@ -484,6 +485,7 @@ class AddPerformanceMaxProductListingGroupTree
     }
     // [END add_performance_max_product_listing_group_tree_5]
 
+    // [START add_performance_max_product_listing_group_tree_6]
     /**
      * Creates a mutate operation that creates a child asset group listing group filter (unit
      * node).
@@ -501,7 +503,6 @@ class AddPerformanceMaxProductListingGroupTree
      *     filter dimension to associate with the asset group listing group filter
      * @return MutateOperation the mutate operation for creating a unit
      */
-    // [START add_performance_max_product_listing_group_tree_6]
     private static function createMutateOperationForUnit(
         int $customerId,
         int $assetGroupId,
@@ -550,32 +551,31 @@ class AddPerformanceMaxProductListingGroupTree
         array $mutateOperations,
         MutateGoogleAdsResponse $mutateGoogleAdsResponse
     ): void {
-        $i = 0;
         foreach (
-            $mutateGoogleAdsResponse->getMutateOperationResponses() as $mutateOperationResponse
+            $mutateGoogleAdsResponse->getMutateOperationResponses() as $i => $operationResponse
         ) {
-            /** @var MutateOperationResponse $mutateOperationResponse */
+            /** @var MutateOperationResponse $operationResponse */
             if (
-                $mutateOperationResponse->getResponse()
+                $operationResponse->getResponse()
                     !== 'asset_group_listing_group_filter_result'
             ) {
                 // Trims the substring "_result" from the end of the entity name.
                 printf(
                     "Unsupported entity type: %s.%s",
-                    substr($mutateOperationResponse->getResponse(), 0, -strlen('_result')),
+                    substr($operationResponse->getResponse(), 0, -strlen('_result')),
                     PHP_EOL
                 );
                 continue;
             }
 
             $operation = $mutateOperations[$i]->getAssetGroupListingGroupFilterOperation();
-            $getter = Serializer::getGetter($mutateOperationResponse->getResponse());
+            $getter = Serializer::getGetter($operationResponse->getResponse());
             switch ($operation->getOperation()) {
                 case 'create':
                     printf(
                         "Created an asset group listing group filter with resource name: "
                          . " '%s'.%s",
-                        $mutateOperationResponse->$getter()->getResourceName(),
+                        $operationResponse->$getter()->getResourceName(),
                         PHP_EOL
                     );
                     break;
@@ -583,7 +583,7 @@ class AddPerformanceMaxProductListingGroupTree
                     printf(
                         "Removed an asset group listing group filter with resource name: "
                         . " '%s'.%s",
-                        $mutateOperationResponse->$getter()->getResourceName(),
+                        $operationResponse->$getter()->getResourceName(),
                         PHP_EOL
                     );
                     break;
@@ -594,7 +594,6 @@ class AddPerformanceMaxProductListingGroupTree
                         PHP_EOL
                     );
             }
-            $i++;
         }
     }
 }
