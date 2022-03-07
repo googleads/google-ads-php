@@ -75,6 +75,7 @@ final class ArgumentNames
     public const FINAL_URL = 'finalUrl';
     public const FLIGHT_PLACEHOLDER_FIELD_NAME = 'flightPlaceholderFieldName';
     public const FREEFORM_KEYWORD_TEXT = 'freeformKeywordText';
+    public const GBRAID = 'gbraid';
     public const GCLID = 'gclid';
     public const GEO_TARGET_CONSTANT_ID = 'geoTargetConstantId';
     public const BUSINESS_PROFILE_ACCESS_TOKEN = 'businessProfileAccessToken';
@@ -121,6 +122,7 @@ final class ArgumentNames
     public const USER_AGENT = 'userAgent';
     public const USER_LIST_ID = 'userListId';
     public const USER_LIST_IDS = 'userListIds';
+    public const WBRAID = 'wbraid';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
         self::ACCESS_ROLE => 'The user access role',
@@ -176,6 +178,7 @@ final class ArgumentNames
         self::FINAL_URL => 'The final URL',
         self::FLIGHT_PLACEHOLDER_FIELD_NAME => 'The flight placeholder field name',
         self::FREEFORM_KEYWORD_TEXT => 'The freeform keyword text',
+        self::GBRAID => 'The GBRAID identifier for an iOS app conversion',
         self::GCLID => 'The Google Click ID',
         self::GEO_TARGET_CONSTANT_ID => 'The geo target constant ID',
         self::BUSINESS_PROFILE_ACCESS_TOKEN => 'The access token used for uploading Business Profile '
@@ -226,6 +229,7 @@ final class ArgumentNames
         self::START_DATE_TIME => 'The start date time',
         self::USER_AGENT => 'The user agent',
         self::USER_LIST_ID => 'The user list ID',
-        self::USER_LIST_IDS => 'The user list IDs'
+        self::USER_LIST_IDS => 'The user list IDs',
+        self::WBRAID => 'The WBRAID identifer for an iOS web conversion'
     ];
 }

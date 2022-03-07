@@ -45,8 +45,14 @@ class UploadOfflineConversion
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
+
+    // Set exactly one of GCLID, GBRAID, or WBRAID.
     // The Google Click ID for which conversions are uploaded.
-    private const GCLID = 'INSERT_GCLID_HERE';
+    private const GCLID = null;
+    // The GBRAID identifier for an iOS app conversion.
+    private const GBRAID = null;
+    // The WBRAID identifier for an iOS app conversion.
+    private const WBRAID = null;
     // The conversion date time in "yyyy-mm-dd hh:mm:ss+|-hh:mm" format.
     private const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
     private const CONVERSION_VALUE = 'INSERT_CONVERSION_VALUE_HERE';
@@ -62,7 +68,9 @@ class UploadOfflineConversion
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::GCLID => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::GCLID => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::GBRAID => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::WBRAID => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::CONVERSION_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_VALUE => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_CUSTOM_VARIABLE_ID => GetOpt::OPTIONAL_ARGUMENT,
@@ -85,6 +93,8 @@ class UploadOfflineConversion
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::CONVERSION_ACTION_ID] ?: self::CONVERSION_ACTION_ID,
                 $options[ArgumentNames::GCLID] ?: self::GCLID,
+                $options[ArgumentNames::GBRAID] ?: self::GBRAID,
+                $options[ArgumentNames::WBRAID] ?: self::WBRAID,
                 $options[ArgumentNames::CONVERSION_DATE_TIME] ?: self::CONVERSION_DATE_TIME,
                 $options[ArgumentNames::CONVERSION_VALUE] ?: self::CONVERSION_VALUE,
                 $options[ArgumentNames::CONVERSION_CUSTOM_VARIABLE_ID]
@@ -125,11 +135,16 @@ class UploadOfflineConversion
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param int $conversionActionId the ID of the conversion action to upload to
-     * @param string $gclid the GCLID for the conversion (should be newer than the number of days
-     *      set on the conversion window of the conversion action)
+     * @param string|null $gclid the GCLID for the conversion (should be newer than the number of
+     *     days set on the conversion window of the conversion action). If set, set GBRAID and
+     *     WBRAID must be null
+     * @param string|null $gbraid The GBRAID identifier for an iOS app conversion. If set, GCLID and
+     *     WBRAID must be null
+     * @param string|null $wbraid The WBRAID identifier for an iOS app conversion. If set, GCLID and
+     *     GBRAID must be null
      * @param string $conversionDateTime the date and time of the conversion (should be after the
-     *      click time). The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
-     *      “2019-01-01 12:32:45-08:00”
+     *     click time). The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
+     *     “2019-01-01 12:32:45-08:00”
      * @param float $conversionValue the value of the conversion
      * @param string|null $conversionCustomVariableId the ID of the conversion custom variable to
      *     associate with the upload
@@ -141,21 +156,49 @@ class UploadOfflineConversion
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $conversionActionId,
-        string $gclid,
+        ?string $gclid,
+        ?string $gbraid,
+        ?string $wbraid,
         string $conversionDateTime,
         float $conversionValue,
         ?string $conversionCustomVariableId,
         ?string $conversionCustomVariableValue
     ) {
+        // Verifies that exactly one of gclid, gbraid, and wbraid is specified, as required.
+        // See https://developers.google.com/google-ads/api/docs/conversions/upload-clicks for details.
+        $nonNullFields = array_filter(
+            [$gclid, $gbraid, $wbraid],
+            function ($field) {
+                return !is_null($field);
+            }
+        );
+        if (count($nonNullFields) !== 1) {
+            throw new \UnexpectedValueException(
+                sprintf(
+                    "Exactly 1 of gclid, gbraid or wbraid is required, but %d ID values were "
+                    . "provided",
+                    count($nonNullFields)
+                )
+            );
+        }
+
         // Creates a click conversion by specifying currency as USD.
         $clickConversion = new ClickConversion([
             'conversion_action' =>
                 ResourceNames::forConversionAction($customerId, $conversionActionId),
-            'gclid' => $gclid,
             'conversion_value' => $conversionValue,
             'conversion_date_time' => $conversionDateTime,
             'currency_code' => 'USD'
         ]);
+        // Sets the single specified ID field.
+        if (!is_null($gclid)) {
+            $clickConversion->setGclid($gclid);
+        } elseif (!is_null($gbraid)) {
+            $clickConversion->setGbraid($gbraid);
+        } else {
+            $clickConversion->setWbraid($wbraid);
+        }
+
 
         if (!is_null($conversionCustomVariableId) && !is_null($conversionCustomVariableValue)) {
             $clickConversion->setCustomVariables([new CustomVariable([
