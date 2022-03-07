@@ -51,7 +51,7 @@ class UploadOfflineConversion
     private const GCLID = null;
     // The GBRAID identifier for an iOS app conversion.
     private const GBRAID = null;
-    // The WBRAID identifier for an iOS app conversion.
+    // The WBRAID identifier for an iOS web conversion.
     private const WBRAID = null;
     // The conversion date time in "yyyy-mm-dd hh:mm:ss+|-hh:mm" format.
     private const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
@@ -136,11 +136,11 @@ class UploadOfflineConversion
      * @param int $customerId the customer ID
      * @param int $conversionActionId the ID of the conversion action to upload to
      * @param string|null $gclid the GCLID for the conversion (should be newer than the number of
-     *     days set on the conversion window of the conversion action). If set, set GBRAID and
-     *     WBRAID must be null
+     *     days set on the conversion window of the conversion action). If set, GBRAID and WBRAID
+     *     must be null
      * @param string|null $gbraid The GBRAID identifier for an iOS app conversion. If set, GCLID and
      *     WBRAID must be null
-     * @param string|null $wbraid The WBRAID identifier for an iOS app conversion. If set, GCLID and
+     * @param string|null $wbraid The WBRAID identifier for an iOS web conversion. If set, GCLID and
      *     GBRAID must be null
      * @param string $conversionDateTime the date and time of the conversion (should be after the
      *     click time). The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
