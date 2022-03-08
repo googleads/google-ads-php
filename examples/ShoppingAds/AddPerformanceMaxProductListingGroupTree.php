@@ -130,6 +130,7 @@ class AddPerformanceMaxProductListingGroupTree
         }
     }
 
+    // [START add_performance_max_product_listing_group_tree]
     /**
      * Runs the example.
      *
@@ -263,6 +264,7 @@ class AddPerformanceMaxProductListingGroupTree
         self::printResponseDetails($mutateOperations, $response);
         // [END add_performance_max_product_listing_group_tree_1]
     }
+    // [END add_performance_max_product_listing_group_tree]
 
     // [START add_performance_max_product_listing_group_tree_7]
     /**
@@ -280,6 +282,9 @@ class AddPerformanceMaxProductListingGroupTree
     ): array {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves asset group listing group filters.
+        // The limit to the number of listing group filters permitted in a Performance
+        // Max campaign can be found here:
+        // https://developers.google.com/google-ads/api/docs/best-practices/system-limits.
         $query = sprintf(
             'SELECT asset_group_listing_group_filter.resource_name, '
             . 'asset_group_listing_group_filter.parent_listing_group_filter '
@@ -339,8 +344,7 @@ class AddPerformanceMaxProductListingGroupTree
             $parentResourceName = $assetGroupListingGroupFilter->getParentListingGroupFilter();
             $siblings = [];
 
-            // Checks to see if we've already visited a sibling in this group, and fetches or
-            // creates a new set as required.
+            // Checks to see if we've already visited a sibling in this group and fetches it.
             if (array_key_exists($parentResourceName, $parentsToChildren)) {
                 $siblings = $parentsToChildren[$parentResourceName];
             }
@@ -427,9 +431,9 @@ class AddPerformanceMaxProductListingGroupTree
 
         return new MutateOperation([
             'asset_group_listing_group_filter_operation'
-            => new AssetGroupListingGroupFilterOperation([
-                'create' => $assetGroupListingGroupFilter
-            ])
+                => new AssetGroupListingGroupFilterOperation([
+                    'create' => $assetGroupListingGroupFilter
+                ])
         ]);
     }
     // [END add_performance_max_product_listing_group_tree_4]
