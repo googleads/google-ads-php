@@ -1,6 +1,6 @@
 {
     "require": {
-      "googleads/google-ads-php": "^14.0.0",
+      "googleads/google-ads-php": ">=14.0",
       "googleads/googleads-php-lib": "^41.0.0"
     },
     "autoload": {
