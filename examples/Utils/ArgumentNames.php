@@ -31,6 +31,7 @@ final class ArgumentNames
     public const AD_GROUP_ID = 'adGroupId';
     public const AD_GROUP_IDS = 'adGroupIds';
     public const ARTIFACT_NAME = 'artifactName';
+    public const ASSET_GROUP_ID = 'assetGroupId';
     public const ATTRIBUTE_VALUE = 'attributeValue';
     public const BASE_CAMPAIGN_ID = 'baseCampaignId';
     public const BID_MODIFIER_VALUE = 'bidModifierValue';
@@ -133,6 +134,7 @@ final class ArgumentNames
         self::AD_GROUP_ID => 'The ad group ID',
         self::AD_GROUP_IDS => 'The ad group IDs',
         self::ARTIFACT_NAME => 'The artifact name',
+        self::ASSET_GROUP_ID => 'The asset group ID',
         self::ATTRIBUTE_VALUE => 'The attribute value',
         self::BASE_CAMPAIGN_ID => 'The base campaign ID',
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
@@ -221,7 +223,7 @@ final class ArgumentNames
         self::DELETE_EXISTING_FEEDS =>
             'Whether it should delete the existing feeds',
         self::REPLACE_EXISTING_TREE =>
-            'Whether it should replace the existing listing group tree on an ad group',
+            'Whether it should replace the existing listing group tree on an ad group/asset group',
         self::QUANTITY => 'The quantity',
         self::SALES_COUNTRY => 'The sales country',
         self::SITELINK_TEXT => 'The sitelink text',
