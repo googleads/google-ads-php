@@ -111,7 +111,7 @@ class AddCampaigns
         $networkSettings = new NetworkSettings([
             'target_google_search' => true,
             'target_search_network' => true,
-            // Enable Display Expansion on Search campaigns. See
+            // Enables Display Expansion on Search campaigns. See
             // https://support.google.com/google-ads/answer/7193800 to learn more.
             'target_content_network' => true,
             'target_partner_search_network' => false
