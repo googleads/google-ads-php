@@ -146,8 +146,6 @@ class AddPerformanceMaxProductListingGroupTree
         int $assetGroupId,
         bool $replaceExistingTree
     ) {
-        // [START add_performance_max_product_listing_group_tree_1]
-
         // We create all the mutate operations that manipulate a specific asset group for a specific
         // customer. The operations are used to optionally remove all asset group listing group
         // filters from the tree, and then to construct a new tree of filters. These filters can
@@ -262,7 +260,6 @@ class AddPerformanceMaxProductListingGroupTree
         );
 
         self::printResponseDetails($mutateOperations, $response);
-        // [END add_performance_max_product_listing_group_tree_1]
     }
     // [END add_performance_max_product_listing_group_tree]
 
@@ -421,8 +418,12 @@ class AddPerformanceMaxProductListingGroupTree
                 $rootListingGroupId
             ),
             'asset_group' => ResourceNames::forAssetGroup($customerId, $assetGroupId),
-            // Sets the type as a SUBDIVISION, which will allow the node to be the parent of
-            // another sub-tree.
+            // Since this is the root node, do not set the 'parent_listing_group_filter' field. For
+            // all other nodes, this would refer to the parent listing group filter resource
+            // name.
+
+            // Unlike AddPerformanceMaxRetailCampaign, the type for the root node here must
+            // be SUBDIVISION because we add child partitions under it.
             'type' => ListingGroupFilterType::SUBDIVISION,
             // Because this is a Performance Max campaign for retail, we need to specify
             // that this is in the shopping vertical.
