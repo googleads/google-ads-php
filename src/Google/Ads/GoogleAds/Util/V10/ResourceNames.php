@@ -105,7 +105,6 @@ use Google\ApiCore\PathTemplate;
  */
 final class ResourceNames
 {
-
     /**
      * Generates a resource name of audience.
      *
