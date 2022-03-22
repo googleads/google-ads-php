@@ -42,16 +42,20 @@ use Google\Ads\GoogleAds\V10\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod
 use Google\Ads\GoogleAds\V10\Enums\CampaignStatusEnum\CampaignStatus;
 use Google\Ads\GoogleAds\V10\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
 use Google\Ads\GoogleAds\V10\Enums\ConversionOriginEnum\ConversionOrigin;
+use Google\Ads\GoogleAds\V10\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
+use Google\Ads\GoogleAds\V10\Enums\ListingGroupFilterVerticalEnum\ListingGroupFilterVertical;
 use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V10\Resources\Asset;
 use Google\Ads\GoogleAds\V10\Resources\AssetGroup;
 use Google\Ads\GoogleAds\V10\Resources\AssetGroupAsset;
+use Google\Ads\GoogleAds\V10\Resources\AssetGroupListingGroupFilter;
 use Google\Ads\GoogleAds\V10\Resources\Campaign;
 use Google\Ads\GoogleAds\V10\Resources\Campaign\ShoppingSetting;
 use Google\Ads\GoogleAds\V10\Resources\CampaignBudget;
 use Google\Ads\GoogleAds\V10\Resources\CampaignConversionGoal;
 use Google\Ads\GoogleAds\V10\Resources\CampaignCriterion;
 use Google\Ads\GoogleAds\V10\Services\AssetGroupAssetOperation;
+use Google\Ads\GoogleAds\V10\Services\AssetGroupListingGroupFilterOperation;
 use Google\Ads\GoogleAds\V10\Services\AssetGroupOperation;
 use Google\Ads\GoogleAds\V10\Services\AssetOperation;
 use Google\Ads\GoogleAds\V10\Services\CampaignBudgetOperation;
@@ -240,6 +244,9 @@ class AddPerformanceMaxRetailCampaign
             $customerId,
             $customerConversionGoals
         ));
+        $operations = array_merge($operations, self::createAssetGroupListingGroupFilterOperations(
+            ResourceNames::forAssetGroup($customerId, self::ASSET_GROUP_TEMPORARY_ID)
+        ));
 
         // Issues a mutate request to create everything and prints its information.
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -346,10 +353,14 @@ class AddPerformanceMaxRetailCampaign
                     // Performance Max campaigns. If opted out (true), only the final URLs in
                     // the asset group or URLs specified in the advertiser's Google Merchant
                     // Center or business data feeds are targeted.
+                    //
                     // If opted in (false), the entire domain will be targeted. For best
                     // results, set this value to false to opt in and allow URL expansions. You
                     // can optionally add exclusions to limit traffic to parts of your website.
-                    'url_expansion_opt_out' => false,
+                    //
+                    // For a Retail campaign, we want the final URL's to be limited to those
+                    // explicitly surfaced via GMC.
+                    'url_expansion_opt_out' => true,
 
                     // Sets the shopping settings.
                     'shopping_setting' => new ShoppingSetting([
@@ -760,7 +771,7 @@ class AddPerformanceMaxRetailCampaign
                     $customerId,
                     self::PERFORMANCE_MAX_CAMPAIGN_TEMPORARY_ID,
                     ConversionActionCategory::name($customerConversionGoal['category']),
-                    ConversionOrigin::name($customerConversionGoal['origin']),
+                    ConversionOrigin::name($customerConversionGoal['origin'])
                 )
             ]);
             // Changes the biddability for the campaign conversion goal.
@@ -793,6 +804,42 @@ class AddPerformanceMaxRetailCampaign
         return $operations;
     }
     // [END add_performance_max_retail_campaign_9]
+
+    /**
+     * Creates a list of MutateOperations that create a new asset group listing group filter.
+     *
+     * @param string $assetGroupResourceName the resource name of asset group
+     * @return MutateOperation[] a list of MutateOperations that create a new asset group listing
+     *     group filter
+     */
+    // [START add_performance_max_retail_campaign_10]
+    private static function createAssetGroupListingGroupFilterOperations(
+        string $assetGroupResourceName
+    ): array {
+        $operations = [];
+        $operations[] = new MutateOperation([
+            'asset_group_listing_group_filter_operation'
+                => new AssetGroupListingGroupFilterOperation([
+                    // Creates a new asset group listing group filter containing the "default"
+                    // listing group (All products).
+                    'create' => new AssetGroupListingGroupFilter([
+                        'asset_group' => $assetGroupResourceName,
+                        // Since this is the root node, do not set the 'parent_listing_group_filter'
+                        // field. For all other nodes, this would refer to the parent listing group
+                        // filter resource name.
+                        //
+                        // UNIT_INCLUDED means this node has no children.
+                        'type' => ListingGroupFilterType::UNIT_INCLUDED,
+                        // Because this is a Performance Max campaign for retail, we need to specify
+                        // that this is in the shopping vertical.
+                        'vertical' => ListingGroupFilterVertical::SHOPPING
+                    ])
+                ])
+        ]);
+
+        return $operations;
+    }
+    // [END add_performance_max_retail_campaign_10]
 
     /**
      * Prints the details of a MutateGoogleAdsResponse. Parses the "response" oneof field name and

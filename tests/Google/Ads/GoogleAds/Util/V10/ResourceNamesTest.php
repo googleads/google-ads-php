@@ -109,6 +109,20 @@ use PHPUnit\Framework\TestCase;
 class ResourceNamesTest extends TestCase
 {
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V10\ResourceNames::forAudience()
+     */
+    public function testGetNameForAudience()
+    {
+        $customerId = '111111';
+        $audienceId = '222222';
+        $expectedResourceName = sprintf('customers/%s/audiences/%s', $customerId, $audienceId);
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forAudience($customerId, $audienceId)
+        );
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V10\ResourceNames::forCampaignConversionGoal()
      */
     public function testGetNameForCampaignConversionGoal()
