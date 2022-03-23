@@ -96,7 +96,7 @@ class AddPerformanceMaxRetailCampaign
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const MERCHANT_CENTER_ACCOUNT_ID = 'INSERT_MERCHANT_CENTER_ACCOUNT_ID_HERE';
     private const SALES_COUNTRY = 'US';
-    private const FINAL_URL = 'http://www.example.com';
+    private const FINAL_URL = 'INSERT_FINAL_URL_HERE';
 
     // We specify temporary IDs that are specific to a single mutate request.
     // Temporary IDs are always negative and unique within one mutate request.
@@ -123,8 +123,8 @@ class AddPerformanceMaxRetailCampaign
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::SALES_COUNTRY => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::FINAL_URL => GetOpt::OPTIONAL_ARGUMENT
+            ArgumentNames::FINAL_URL => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::SALES_COUNTRY => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
