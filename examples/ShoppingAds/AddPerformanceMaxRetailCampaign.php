@@ -96,6 +96,8 @@ class AddPerformanceMaxRetailCampaign
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const MERCHANT_CENTER_ACCOUNT_ID = 'INSERT_MERCHANT_CENTER_ACCOUNT_ID_HERE';
     private const SALES_COUNTRY = 'US';
+    // The final url for the generated ads. Must have the same domain as the Merchant Center
+    // account.
     private const FINAL_URL = 'INSERT_FINAL_URL_HERE';
 
     // We specify temporary IDs that are specific to a single mutate request.
