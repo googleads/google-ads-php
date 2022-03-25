@@ -20,17 +20,16 @@ namespace Google\Ads\GoogleAds\Examples\Misc;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use Exception;
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
-use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V9\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V9\Services\GoogleAdsServiceClient;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V10\GoogleAdsException;
+use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V10\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V10\Services\GoogleAdsServiceClient;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Page;
 
@@ -115,9 +114,9 @@ class NavigateSearchResultPagesCachingTokens
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
-        // The cache of page tokens. It is stored in-memory and in ascendant order of page number.
+        // The cache of page tokens which is stored in-memory with the page numbers as keys.
         // The first page's token is always an empty string.
-        $pageTokens = [''];
+        $pageTokens = [1 => ''];
 
         printf('%s--- 0. Fetch page #1 to get metadata:%1$s%1$s', PHP_EOL);
 
@@ -194,7 +193,7 @@ class NavigateSearchResultPagesCachingTokens
      * @param string $searchQuery the search query
      * @param array $searchOptions the search options
      * @param int $pageNumber the number of the page to fetch and print results for
-     * @param int[] &$pageTokens the cache of page tokens to use and update
+     * @param array &$pageTokens the cache of page tokens to use and update
      */
     private static function fetchAndPrintPageResults(
         GoogleAdsServiceClient $googleAdsServiceClient,
@@ -205,7 +204,7 @@ class NavigateSearchResultPagesCachingTokens
         array &$pageTokens
     ) {
         // There is no need to fetch the pages we already know the page tokens for.
-        if (isset($pageTokens[$pageNumber - 1])) {
+        if (isset($pageTokens[$pageNumber])) {
             printf(
                 'The token of the requested page was cached, we will use it to get the results.%s',
                 PHP_EOL
@@ -231,7 +230,7 @@ class NavigateSearchResultPagesCachingTokens
                 $searchQuery,
                 $searchOptions + [
                     // Uses the page token cached for the current page number.
-                    'pageToken' => $pageTokens[$currentPageNumber - 1]
+                    'pageToken' => $pageTokens[$currentPageNumber]
                 ]
             );
             self::cacheNextPageToken($pageTokens, $response->getPage(), $currentPageNumber);
@@ -261,9 +260,9 @@ class NavigateSearchResultPagesCachingTokens
      */
     private static function cacheNextPageToken(array &$pageTokens, Page $page, int $pageNumber)
     {
-        if ($page->getNextPageToken() && !isset($pageTokens[$pageNumber])) {
+        if ($page->getNextPageToken() && !isset($pageTokens[$pageNumber + 1])) {
             // Updates the cache with the next page token if it is not set yet.
-            $pageTokens[$pageNumber] = $page->getNextPageToken();
+            $pageTokens[$pageNumber + 1] = $page->getNextPageToken();
             // Prints in green color for better console readability.
             printf("\e[0;32mCached token for page #%d.\e[0m%s", $pageNumber + 1, PHP_EOL);
         }
