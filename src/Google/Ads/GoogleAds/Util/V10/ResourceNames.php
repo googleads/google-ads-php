@@ -124,24 +124,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of audience.
-     *
-     * @param string $customerId
-     * @param string $audienceId
-     * @return string the audience resource name
-     */
-    public static function forAudience(
-        $customerId,
-        $audienceId
-    ): string {
-        $pathTemplate = new PathTemplate('customers/{customer_id}/audiences/{audience_id}');
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'audience_id' => $audienceId,
-        ]);
-    }
-
-    /**
      * Generates a resource name of campaign conversion goal type.
      *
      * @param string $customerId

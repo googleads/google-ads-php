@@ -277,8 +277,11 @@ class GetChangeDetails
         }
         if (gettype($value) === 'boolean') {
             return $value ? 'true' : 'false';
-        } elseif (gettype($value) === 'object' && get_class($value) === RepeatedField::class) {
-            return json_encode(iterator_to_array($value->getIterator()));
+        } elseif (gettype($value) === 'object') {
+            if (get_class($value) === RepeatedField::class) {
+                return json_encode(iterator_to_array($value->getIterator()));
+            }
+            return json_encode($value);
         } else {
             return strval($value);
         }
