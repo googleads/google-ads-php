@@ -22,6 +22,7 @@ API](https://developers.google.com/google-ads/api/docs/start).
 
 ## Requirements
 
+*   Both 32-bit and 64-bit PHP systems are supported but we highly recommend to use 64-bit if you can. This is because many fields of the Google Ads API are typed as 64-bit integers and casting their values to `int` instead of `float` from 32-bit systems can lead to issues. The largest integer value supported in 32-bit PHP systems is usually 2147483647, see the predefined constant [PHP_INT_MAX](https://www.php.net/manual/en/reserved.constants.php) for more details.
 *   This library depends on [Composer](https://getcomposer.org/). If you don't
     have it installed on your computer yet, follow the [installation guide for
     Linux/Unix/OS
