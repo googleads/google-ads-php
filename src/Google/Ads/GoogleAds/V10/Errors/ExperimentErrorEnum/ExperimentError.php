@@ -169,6 +169,12 @@ class ExperimentError
      * Generated from protobuf enum <code>CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_CUSTOM_BUDGET = 24;</code>
      */
     const CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_CUSTOM_BUDGET = 24;
+    /**
+     * Invalid status transition.
+     *
+     * Generated from protobuf enum <code>STATUS_TRANSITION_INVALID = 25;</code>
+     */
+    const STATUS_TRANSITION_INVALID = 25;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -196,6 +202,7 @@ class ExperimentError
         self::CANNOT_SET_STATUS_TO_GRADUATED => 'CANNOT_SET_STATUS_TO_GRADUATED',
         self::CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_SHARED_BUDGET => 'CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_SHARED_BUDGET',
         self::CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_CUSTOM_BUDGET => 'CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_CUSTOM_BUDGET',
+        self::STATUS_TRANSITION_INVALID => 'STATUS_TRANSITION_INVALID',
     ];
 
     public static function name($value)

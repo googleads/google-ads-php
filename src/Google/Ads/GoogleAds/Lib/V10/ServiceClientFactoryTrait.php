@@ -22,6 +22,7 @@ namespace Google\Ads\GoogleAds\Lib\V10;
 
 use Google\Ads\GoogleAds\Constants;
 use Google\Ads\GoogleAds\Lib\ConfigurationTrait;
+use Google\Ads\GoogleAds\Lib\InsecureCredentialsWrapper;
 use Google\Ads\GoogleAds\V10\Services\AccountBudgetProposalServiceClient;
 use Google\Ads\GoogleAds\V10\Services\AccountLinkServiceClient;
 use Google\Ads\GoogleAds\V10\Services\AdGroupAdLabelServiceClient;
@@ -62,6 +63,7 @@ use Google\Ads\GoogleAds\V10\Services\CampaignDraftServiceClient;
 use Google\Ads\GoogleAds\V10\Services\CampaignExperimentServiceClient;
 use Google\Ads\GoogleAds\V10\Services\CampaignExtensionSettingServiceClient;
 use Google\Ads\GoogleAds\V10\Services\CampaignFeedServiceClient;
+use Google\Ads\GoogleAds\V10\Services\CampaignGroupServiceClient;
 use Google\Ads\GoogleAds\V10\Services\CampaignLabelServiceClient;
 use Google\Ads\GoogleAds\V10\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V10\Services\CampaignSharedSetServiceClient;
@@ -152,7 +154,9 @@ trait ServiceClientFactoryTrait
     public function getGoogleAdsClientOptions(): array
     {
         $clientOptions = [
-            self::$CREDENTIALS_LOADER_KEY => $this->getOAuth2Credential(),
+            self::$CREDENTIALS_LOADER_KEY => $this->getGrpcChannelIsSecure()
+                ? $this->getOAuth2Credential()
+                : new InsecureCredentialsWrapper($this->getOAuth2Credential()),
             self::$DEVELOPER_TOKEN_KEY => $this->getDeveloperToken()
         ];
         if (!empty($this->getLoginCustomerId())) {
@@ -541,6 +545,14 @@ trait ServiceClientFactoryTrait
     public function getCampaignFeedServiceClient(): CampaignFeedServiceClient
     {
         return new CampaignFeedServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return CampaignGroupServiceClient
+     */
+    public function getCampaignGroupServiceClient(): CampaignGroupServiceClient
+    {
+        return new CampaignGroupServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

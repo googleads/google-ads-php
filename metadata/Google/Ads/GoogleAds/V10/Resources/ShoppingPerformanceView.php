@@ -13,14 +13,12 @@ class ShoppingPerformanceView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-’
-Bgoogle/ads/googleads/v10/resources/shopping_performance_view.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"Ò
+ñ
+Bgoogle/ads/googleads/v10/resources/shopping_performance_view.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"Ò
 ShoppingPerformanceViewO
 resource_name (	B8àAúA2
 0googleads.googleapis.com/ShoppingPerformanceView:fêAc

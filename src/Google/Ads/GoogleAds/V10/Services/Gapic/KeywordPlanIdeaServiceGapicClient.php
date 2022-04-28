@@ -27,17 +27,19 @@ namespace Google\Ads\GoogleAds\V10\Services\Gapic;
 use Google\Ads\GoogleAds\V10\Common\HistoricalMetricsOptions;
 use Google\Ads\GoogleAds\V10\Common\KeywordPlanAggregateMetrics;
 
-use Google\Ads\GoogleAds\V10\Services\GenerateKeywordIdeaResponse;
+use Google\Ads\GoogleAds\V10\Services\GenerateKeywordHistoricalMetricsRequest;
+use Google\Ads\GoogleAds\V10\Services\GenerateKeywordHistoricalMetricsResponse;
 
+use Google\Ads\GoogleAds\V10\Services\GenerateKeywordIdeaResponse;
 use Google\Ads\GoogleAds\V10\Services\GenerateKeywordIdeasRequest;
 use Google\Ads\GoogleAds\V10\Services\KeywordAndUrlSeed;
 use Google\Ads\GoogleAds\V10\Services\KeywordSeed;
 use Google\Ads\GoogleAds\V10\Services\SiteSeed;
 use Google\Ads\GoogleAds\V10\Services\UrlSeed;
 use Google\ApiCore\ApiException;
-
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -53,19 +55,7 @@ use Google\Auth\FetchAuthTokenInterface;
  * ```
  * $keywordPlanIdeaServiceClient = new KeywordPlanIdeaServiceClient();
  * try {
- *     // Iterate over pages of elements
- *     $pagedResponse = $keywordPlanIdeaServiceClient->generateKeywordIdeas();
- *     foreach ($pagedResponse->iteratePages() as $page) {
- *         foreach ($page as $element) {
- *             // doSomethingWith($element);
- *         }
- *     }
- *     // Alternatively:
- *     // Iterate through all elements
- *     $pagedResponse = $keywordPlanIdeaServiceClient->generateKeywordIdeas();
- *     foreach ($pagedResponse->iterateAllElements() as $element) {
- *         // doSomethingWith($element);
- *     }
+ *     $response = $keywordPlanIdeaServiceClient->generateKeywordHistoricalMetrics();
  * } finally {
  *     $keywordPlanIdeaServiceClient->close();
  * }
@@ -179,6 +169,74 @@ class KeywordPlanIdeaServiceGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+    }
+
+    /**
+     * Returns a list of keyword historical metrics.
+     *
+     * List of thrown errors:
+     * [AuthenticationError]()
+     * [AuthorizationError]()
+     * [CollectionSizeError]()
+     * [HeaderError]()
+     * [InternalError]()
+     * [QuotaError]()
+     * [RequestError]()
+     *
+     * Sample code:
+     * ```
+     * $keywordPlanIdeaServiceClient = new KeywordPlanIdeaServiceClient();
+     * try {
+     *     $response = $keywordPlanIdeaServiceClient->generateKeywordHistoricalMetrics();
+     * } finally {
+     *     $keywordPlanIdeaServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $customerId
+     *           The ID of the customer with the recommendation.
+     *     @type string[] $keywords
+     *           A list of keywords to get historical metrics.
+     *           Not all inputs will be returned as a result of near-exact deduplication.
+     *           For example, if stats for "car" and "cars" are requested, only "car" will
+     *           be returned.
+     *           A maximum of 10,000 keywords can be used.
+     *     @type HistoricalMetricsOptions $historicalMetricsOptions
+     *           The options for historical metrics data.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V10\Services\GenerateKeywordHistoricalMetricsResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function generateKeywordHistoricalMetrics(array $optionalArgs = [])
+    {
+        $request = new GenerateKeywordHistoricalMetricsRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['customerId'])) {
+            $request->setCustomerId($optionalArgs['customerId']);
+            $requestParamHeaders['customer_id'] = $optionalArgs['customerId'];
+        }
+
+        if (isset($optionalArgs['keywords'])) {
+            $request->setKeywords($optionalArgs['keywords']);
+        }
+
+        if (isset($optionalArgs['historicalMetricsOptions'])) {
+            $request->setHistoricalMetricsOptions($optionalArgs['historicalMetricsOptions']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GenerateKeywordHistoricalMetrics', GenerateKeywordHistoricalMetricsResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**

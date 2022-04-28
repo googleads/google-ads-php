@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class RemarketingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Output only. The Google global site tag.
+     * Output only. The Google tag.
      *
      * Generated from protobuf field <code>optional string google_global_site_tag = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -29,7 +29,7 @@ class RemarketingSetting extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $google_global_site_tag
-     *           Output only. The Google global site tag.
+     *           Output only. The Google tag.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ class RemarketingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The Google global site tag.
+     * Output only. The Google tag.
      *
      * Generated from protobuf field <code>optional string google_global_site_tag = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -59,7 +59,7 @@ class RemarketingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The Google global site tag.
+     * Output only. The Google tag.
      *
      * Generated from protobuf field <code>optional string google_global_site_tag = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

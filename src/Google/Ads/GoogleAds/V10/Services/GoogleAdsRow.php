@@ -340,6 +340,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $campaign_feed = null;
     /**
+     * Campaign Group referenced in AWQL query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.resources.CampaignGroup campaign_group = 25;</code>
+     */
+    protected $campaign_group = null;
+    /**
      * The campaign label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v10.resources.CampaignLabel campaign_label = 108;</code>
@@ -910,6 +916,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $webpage_view = null;
     /**
+     * The lead form user submission referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.resources.LeadFormSubmissionData lead_form_submission_data = 192;</code>
+     */
+    protected $lead_form_submission_data = null;
+    /**
      * The metrics.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v10.common.Metrics metrics = 4;</code>
@@ -1036,6 +1048,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The campaign extension setting referenced in the query.
      *     @type \Google\Ads\GoogleAds\V10\Resources\CampaignFeed $campaign_feed
      *           The campaign feed referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V10\Resources\CampaignGroup $campaign_group
+     *           Campaign Group referenced in AWQL query.
      *     @type \Google\Ads\GoogleAds\V10\Resources\CampaignLabel $campaign_label
      *           The campaign label referenced in the query.
      *     @type \Google\Ads\GoogleAds\V10\Resources\CampaignSharedSet $campaign_shared_set
@@ -1226,6 +1240,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The video referenced in the query.
      *     @type \Google\Ads\GoogleAds\V10\Resources\WebpageView $webpage_view
      *           The webpage view referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V10\Resources\LeadFormSubmissionData $lead_form_submission_data
+     *           The lead form user submission referenced in the query.
      *     @type \Google\Ads\GoogleAds\V10\Common\Metrics $metrics
      *           The metrics.
      *     @type \Google\Ads\GoogleAds\V10\Common\Segments $segments
@@ -3177,6 +3193,42 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Resources\CampaignFeed::class);
         $this->campaign_feed = $var;
+
+        return $this;
+    }
+
+    /**
+     * Campaign Group referenced in AWQL query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.resources.CampaignGroup campaign_group = 25;</code>
+     * @return \Google\Ads\GoogleAds\V10\Resources\CampaignGroup|null
+     */
+    public function getCampaignGroup()
+    {
+        return $this->campaign_group;
+    }
+
+    public function hasCampaignGroup()
+    {
+        return isset($this->campaign_group);
+    }
+
+    public function clearCampaignGroup()
+    {
+        unset($this->campaign_group);
+    }
+
+    /**
+     * Campaign Group referenced in AWQL query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.resources.CampaignGroup campaign_group = 25;</code>
+     * @param \Google\Ads\GoogleAds\V10\Resources\CampaignGroup $var
+     * @return $this
+     */
+    public function setCampaignGroup($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Resources\CampaignGroup::class);
+        $this->campaign_group = $var;
 
         return $this;
     }
@@ -6597,6 +6649,42 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Resources\WebpageView::class);
         $this->webpage_view = $var;
+
+        return $this;
+    }
+
+    /**
+     * The lead form user submission referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.resources.LeadFormSubmissionData lead_form_submission_data = 192;</code>
+     * @return \Google\Ads\GoogleAds\V10\Resources\LeadFormSubmissionData|null
+     */
+    public function getLeadFormSubmissionData()
+    {
+        return $this->lead_form_submission_data;
+    }
+
+    public function hasLeadFormSubmissionData()
+    {
+        return isset($this->lead_form_submission_data);
+    }
+
+    public function clearLeadFormSubmissionData()
+    {
+        unset($this->lead_form_submission_data);
+    }
+
+    /**
+     * The lead form user submission referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.resources.LeadFormSubmissionData lead_form_submission_data = 192;</code>
+     * @param \Google\Ads\GoogleAds\V10\Resources\LeadFormSubmissionData $var
+     * @return $this
+     */
+    public function setLeadFormSubmissionData($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Resources\LeadFormSubmissionData::class);
+        $this->lead_form_submission_data = $var;
 
         return $this;
     }

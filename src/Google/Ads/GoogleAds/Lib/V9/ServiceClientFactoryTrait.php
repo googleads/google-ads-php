@@ -22,6 +22,7 @@ namespace Google\Ads\GoogleAds\Lib\V9;
 
 use Google\Ads\GoogleAds\Constants;
 use Google\Ads\GoogleAds\Lib\ConfigurationTrait;
+use Google\Ads\GoogleAds\Lib\InsecureCredentialsWrapper;
 use Google\Ads\GoogleAds\V9\Services\AccessibleBiddingStrategyServiceClient;
 use Google\Ads\GoogleAds\V9\Services\AccountBudgetProposalServiceClient;
 use Google\Ads\GoogleAds\V9\Services\AccountBudgetServiceClient;
@@ -203,7 +204,9 @@ trait ServiceClientFactoryTrait
     public function getGoogleAdsClientOptions(): array
     {
         $clientOptions = [
-            self::$CREDENTIALS_LOADER_KEY => $this->getOAuth2Credential(),
+            self::$CREDENTIALS_LOADER_KEY => $this->getGrpcChannelIsSecure()
+                ? $this->getOAuth2Credential()
+                : new InsecureCredentialsWrapper($this->getOAuth2Credential()),
             self::$DEVELOPER_TOKEN_KEY => $this->getDeveloperToken()
         ];
         if (!empty($this->getLoginCustomerId())) {

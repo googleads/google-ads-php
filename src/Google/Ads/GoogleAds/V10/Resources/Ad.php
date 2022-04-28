@@ -231,6 +231,10 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           Details pertaining to a Smart campaign ad.
      *     @type \Google\Ads\GoogleAds\V10\Common\AppPreRegistrationAdInfo $app_pre_registration_ad
      *           Details pertaining to an app pre-registration ad.
+     *     @type \Google\Ads\GoogleAds\V10\Common\DiscoveryMultiAssetAdInfo $discovery_multi_asset_ad
+     *           Details pertaining to a discovery multi asset ad.
+     *     @type \Google\Ads\GoogleAds\V10\Common\DiscoveryCarouselAdInfo $discovery_carousel_ad
+     *           Details pertaining to a discovery carousel ad.
      * }
      */
     public function __construct($data = NULL) {
@@ -1414,6 +1418,68 @@ class Ad extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\AppPreRegistrationAdInfo::class);
         $this->writeOneof(50, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to a discovery multi asset ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DiscoveryMultiAssetAdInfo discovery_multi_asset_ad = 51;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\DiscoveryMultiAssetAdInfo|null
+     */
+    public function getDiscoveryMultiAssetAd()
+    {
+        return $this->readOneof(51);
+    }
+
+    public function hasDiscoveryMultiAssetAd()
+    {
+        return $this->hasOneof(51);
+    }
+
+    /**
+     * Details pertaining to a discovery multi asset ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DiscoveryMultiAssetAdInfo discovery_multi_asset_ad = 51;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\DiscoveryMultiAssetAdInfo $var
+     * @return $this
+     */
+    public function setDiscoveryMultiAssetAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\DiscoveryMultiAssetAdInfo::class);
+        $this->writeOneof(51, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to a discovery carousel ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DiscoveryCarouselAdInfo discovery_carousel_ad = 52;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\DiscoveryCarouselAdInfo|null
+     */
+    public function getDiscoveryCarouselAd()
+    {
+        return $this->readOneof(52);
+    }
+
+    public function hasDiscoveryCarouselAd()
+    {
+        return $this->hasOneof(52);
+    }
+
+    /**
+     * Details pertaining to a discovery carousel ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DiscoveryCarouselAdInfo discovery_carousel_ad = 52;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\DiscoveryCarouselAdInfo $var
+     * @return $this
+     */
+    public function setDiscoveryCarouselAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\DiscoveryCarouselAdInfo::class);
+        $this->writeOneof(52, $var);
 
         return $this;
     }

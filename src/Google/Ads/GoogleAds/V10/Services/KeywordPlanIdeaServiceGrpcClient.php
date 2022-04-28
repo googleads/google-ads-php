@@ -59,4 +59,28 @@ class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Returns a list of keyword historical metrics.
+     *
+     * List of thrown errors:
+     *   [AuthenticationError]()
+     *   [AuthorizationError]()
+     *   [CollectionSizeError]()
+     *   [HeaderError]()
+     *   [InternalError]()
+     *   [QuotaError]()
+     *   [RequestError]()
+     * @param \Google\Ads\GoogleAds\V10\Services\GenerateKeywordHistoricalMetricsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GenerateKeywordHistoricalMetrics(\Google\Ads\GoogleAds\V10\Services\GenerateKeywordHistoricalMetricsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v10.services.KeywordPlanIdeaService/GenerateKeywordHistoricalMetrics',
+        $argument,
+        ['\Google\Ads\GoogleAds\V10\Services\GenerateKeywordHistoricalMetricsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

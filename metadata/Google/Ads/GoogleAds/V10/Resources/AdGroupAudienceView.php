@@ -13,14 +13,12 @@ class AdGroupAudienceView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-™
-?google/ads/googleads/v10/resources/ad_group_audience_view.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"à
+ø
+?google/ads/googleads/v10/resources/ad_group_audience_view.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"à
 AdGroupAudienceViewK
 resource_name (	B4àAúA.
 ,googleads.googleapis.com/AdGroupAudienceView:|êAy

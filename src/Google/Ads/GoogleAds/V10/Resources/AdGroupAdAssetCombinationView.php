@@ -34,6 +34,15 @@ class AdGroupAdAssetCombinationView extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v10.common.AssetUsage served_assets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $served_assets;
+    /**
+     * Output only. The status between the asset combination and the latest version of the ad.
+     * If true, the asset combination is linked to the latest version of the ad.
+     * If false, it means the link once existed but has been removed and is no
+     * longer present in the latest version of the ad.
+     *
+     * Generated from protobuf field <code>optional bool enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $enabled = null;
 
     /**
      * Constructor.
@@ -50,6 +59,11 @@ class AdGroupAdAssetCombinationView extends \Google\Protobuf\Internal\Message
      *           `customers/{customer_id}/adGroupAdAssetCombinationViews/{AdGroupAd.ad_group_id}~{AdGroupAd.ad.ad_id}~{AssetCombination.asset_combination_id_low}~{AssetCombination.asset_combination_id_high}`
      *     @type \Google\Ads\GoogleAds\V10\Common\AssetUsage[]|\Google\Protobuf\Internal\RepeatedField $served_assets
      *           Output only. Served assets.
+     *     @type bool $enabled
+     *           Output only. The status between the asset combination and the latest version of the ad.
+     *           If true, the asset combination is linked to the latest version of the ad.
+     *           If false, it means the link once existed but has been removed and is no
+     *           longer present in the latest version of the ad.
      * }
      */
     public function __construct($data = NULL) {
@@ -115,6 +129,48 @@ class AdGroupAdAssetCombinationView extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V10\Common\AssetUsage::class);
         $this->served_assets = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The status between the asset combination and the latest version of the ad.
+     * If true, the asset combination is linked to the latest version of the ad.
+     * If false, it means the link once existed but has been removed and is no
+     * longer present in the latest version of the ad.
+     *
+     * Generated from protobuf field <code>optional bool enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return bool
+     */
+    public function getEnabled()
+    {
+        return isset($this->enabled) ? $this->enabled : false;
+    }
+
+    public function hasEnabled()
+    {
+        return isset($this->enabled);
+    }
+
+    public function clearEnabled()
+    {
+        unset($this->enabled);
+    }
+
+    /**
+     * Output only. The status between the asset combination and the latest version of the ad.
+     * If true, the asset combination is linked to the latest version of the ad.
+     * If false, it means the link once existed but has been removed and is no
+     * longer present in the latest version of the ad.
+     *
+     * Generated from protobuf field <code>optional bool enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enabled = $var;
 
         return $this;
     }

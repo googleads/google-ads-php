@@ -212,8 +212,8 @@ class ConversionUploadError
      */
     const CUSTOM_VARIABLE_NOT_ENABLED = 28;
     /**
-     * The value of the custom variable contains private customer data, such
-     * as email addresses or phone numbers.
+     * The value of the custom variable contains personally identifiable
+     * information (PII), such as an email address or phone number.
      *
      * Generated from protobuf enum <code>CUSTOM_VARIABLE_VALUE_CONTAINS_PII = 29;</code>
      */
@@ -300,6 +300,21 @@ class ConversionUploadError
      * Generated from protobuf enum <code>ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID = 46;</code>
      */
     const ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID = 46;
+    /**
+     * Per our customer data policies, enhanced conversions have been prohibited
+     * in your account. If you have any questions, please contact your Google
+     * representative.
+     *
+     * Generated from protobuf enum <code>CUSTOMER_DATA_POLICY_PROHIBITS_ENHANCED_CONVERSIONS = 47;</code>
+     */
+    const CUSTOMER_DATA_POLICY_PROHIBITS_ENHANCED_CONVERSIONS = 47;
+    /**
+     * The customer has not accepted the customer data terms in the conversion
+     * settings page.
+     *
+     * Generated from protobuf enum <code>CUSTOMER_NOT_ACCEPTED_CUSTOMER_DATA_TERMS = 48;</code>
+     */
+    const CUSTOMER_NOT_ACCEPTED_CUSTOMER_DATA_TERMS = 48;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -343,6 +358,8 @@ class ConversionUploadError
         self::UNPARSEABLE_GBRAID => 'UNPARSEABLE_GBRAID',
         self::EXTERNALLY_ATTRIBUTED_CONVERSION_TYPE_NOT_PERMITTED_WITH_BRAID => 'EXTERNALLY_ATTRIBUTED_CONVERSION_TYPE_NOT_PERMITTED_WITH_BRAID',
         self::ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID => 'ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID',
+        self::CUSTOMER_DATA_POLICY_PROHIBITS_ENHANCED_CONVERSIONS => 'CUSTOMER_DATA_POLICY_PROHIBITS_ENHANCED_CONVERSIONS',
+        self::CUSTOMER_NOT_ACCEPTED_CUSTOMER_DATA_TERMS => 'CUSTOMER_NOT_ACCEPTED_CUSTOMER_DATA_TERMS',
     ];
 
     public static function name($value)

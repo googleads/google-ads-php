@@ -13,14 +13,12 @@ class LocationView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-í
-6google/ads/googleads/v10/resources/location_view.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"Ä
+Ì
+6google/ads/googleads/v10/resources/location_view.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"Ä
 LocationViewD
 resource_name (	B-àAúA\'
 %googleads.googleapis.com/LocationView:nêAk

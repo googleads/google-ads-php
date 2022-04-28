@@ -87,6 +87,12 @@ class AdvertisingChannelType
      * Generated from protobuf enum <code>LOCAL_SERVICES = 11;</code>
      */
     const LOCAL_SERVICES = 11;
+    /**
+     * Discovery campaigns.
+     *
+     * Generated from protobuf enum <code>DISCOVERY = 12;</code>
+     */
+    const DISCOVERY = 12;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -101,6 +107,7 @@ class AdvertisingChannelType
         self::SMART => 'SMART',
         self::PERFORMANCE_MAX => 'PERFORMANCE_MAX',
         self::LOCAL_SERVICES => 'LOCAL_SERVICES',
+        self::DISCOVERY => 'DISCOVERY',
     ];
 
     public static function name($value)

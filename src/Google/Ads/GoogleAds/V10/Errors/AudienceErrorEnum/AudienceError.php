@@ -37,12 +37,56 @@ class AudienceError
      * Generated from protobuf enum <code>DIMENSION_INVALID = 3;</code>
      */
     const DIMENSION_INVALID = 3;
+    /**
+     * One of the audience segment added is not found.
+     *
+     * Generated from protobuf enum <code>AUDIENCE_SEGMENT_NOT_FOUND = 4;</code>
+     */
+    const AUDIENCE_SEGMENT_NOT_FOUND = 4;
+    /**
+     * One of the audience segment type is not supported.
+     *
+     * Generated from protobuf enum <code>AUDIENCE_SEGMENT_TYPE_NOT_SUPPORTED = 5;</code>
+     */
+    const AUDIENCE_SEGMENT_TYPE_NOT_SUPPORTED = 5;
+    /**
+     * The same segment already exists in this audience.
+     *
+     * Generated from protobuf enum <code>DUPLICATE_AUDIENCE_SEGMENT = 6;</code>
+     */
+    const DUPLICATE_AUDIENCE_SEGMENT = 6;
+    /**
+     * Audience can't have more than allowed number segments.
+     *
+     * Generated from protobuf enum <code>TOO_MANY_SEGMENTS = 7;</code>
+     */
+    const TOO_MANY_SEGMENTS = 7;
+    /**
+     * Audience can't have multiple dimensions of same type.
+     *
+     * Generated from protobuf enum <code>TOO_MANY_DIMENSIONS_OF_SAME_TYPE = 8;</code>
+     */
+    const TOO_MANY_DIMENSIONS_OF_SAME_TYPE = 8;
+    /**
+     * The audience cannot be removed, because it is currently used in an
+     * ad group criterion or asset group signal in an (enabled or paused)
+     * ad group or campaign.
+     *
+     * Generated from protobuf enum <code>IN_USE = 9;</code>
+     */
+    const IN_USE = 9;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::NAME_ALREADY_IN_USE => 'NAME_ALREADY_IN_USE',
         self::DIMENSION_INVALID => 'DIMENSION_INVALID',
+        self::AUDIENCE_SEGMENT_NOT_FOUND => 'AUDIENCE_SEGMENT_NOT_FOUND',
+        self::AUDIENCE_SEGMENT_TYPE_NOT_SUPPORTED => 'AUDIENCE_SEGMENT_TYPE_NOT_SUPPORTED',
+        self::DUPLICATE_AUDIENCE_SEGMENT => 'DUPLICATE_AUDIENCE_SEGMENT',
+        self::TOO_MANY_SEGMENTS => 'TOO_MANY_SEGMENTS',
+        self::TOO_MANY_DIMENSIONS_OF_SAME_TYPE => 'TOO_MANY_DIMENSIONS_OF_SAME_TYPE',
+        self::IN_USE => 'IN_USE',
     ];
 
     public static function name($value)

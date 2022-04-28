@@ -100,6 +100,12 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v10.common.UserIdentifier user_identifiers = 17;</code>
      */
     private $user_identifiers;
+    /**
+     * The environment this conversion was recorded on. e.g. App or Web.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.enums.ConversionEnvironmentEnum.ConversionEnvironment conversion_environment = 20;</code>
+     */
+    protected $conversion_environment = 0;
 
     /**
      * Constructor.
@@ -144,6 +150,8 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      *           The user identifiers associated with this conversion. Only hashed_email and
      *           hashed_phone_number are supported for conversion uploads. The maximum
      *           number of user identifiers for each conversion is 5.
+     *     @type int $conversion_environment
+     *           The environment this conversion was recorded on. e.g. App or Web.
      * }
      */
     public function __construct($data = NULL) {
@@ -565,6 +573,32 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V10\Common\UserIdentifier::class);
         $this->user_identifiers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The environment this conversion was recorded on. e.g. App or Web.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.enums.ConversionEnvironmentEnum.ConversionEnvironment conversion_environment = 20;</code>
+     * @return int
+     */
+    public function getConversionEnvironment()
+    {
+        return $this->conversion_environment;
+    }
+
+    /**
+     * The environment this conversion was recorded on. e.g. App or Web.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.enums.ConversionEnvironmentEnum.ConversionEnvironment conversion_environment = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setConversionEnvironment($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V10\Enums\ConversionEnvironmentEnum\ConversionEnvironment::class);
+        $this->conversion_environment = $var;
 
         return $this;
     }

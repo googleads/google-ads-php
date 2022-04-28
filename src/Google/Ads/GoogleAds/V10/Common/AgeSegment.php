@@ -16,14 +16,16 @@ use Google\Protobuf\Internal\GPBUtil;
 class AgeSegment extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Minimum age to include. A minimum age must be specified and must be
-     * at least 18.
+     * Minimum age to include. A minimum age must be specified and must be at
+     * least 18. Allowed values are 18, 25, 35, 45, 55, and 65.
      *
      * Generated from protobuf field <code>optional int32 min_age = 1;</code>
      */
     protected $min_age = null;
     /**
-     * Maximum age to include.
+     * Maximum age to include. A maximum age need not be specified. If specified,
+     * max_age must be greater than min_age, and allowed values are 24, 34, 44,
+     * 54, and 64.
      *
      * Generated from protobuf field <code>optional int32 max_age = 2;</code>
      */
@@ -36,10 +38,12 @@ class AgeSegment extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $min_age
-     *           Minimum age to include. A minimum age must be specified and must be
-     *           at least 18.
+     *           Minimum age to include. A minimum age must be specified and must be at
+     *           least 18. Allowed values are 18, 25, 35, 45, 55, and 65.
      *     @type int $max_age
-     *           Maximum age to include.
+     *           Maximum age to include. A maximum age need not be specified. If specified,
+     *           max_age must be greater than min_age, and allowed values are 24, 34, 44,
+     *           54, and 64.
      * }
      */
     public function __construct($data = NULL) {
@@ -48,8 +52,8 @@ class AgeSegment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Minimum age to include. A minimum age must be specified and must be
-     * at least 18.
+     * Minimum age to include. A minimum age must be specified and must be at
+     * least 18. Allowed values are 18, 25, 35, 45, 55, and 65.
      *
      * Generated from protobuf field <code>optional int32 min_age = 1;</code>
      * @return int
@@ -70,8 +74,8 @@ class AgeSegment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Minimum age to include. A minimum age must be specified and must be
-     * at least 18.
+     * Minimum age to include. A minimum age must be specified and must be at
+     * least 18. Allowed values are 18, 25, 35, 45, 55, and 65.
      *
      * Generated from protobuf field <code>optional int32 min_age = 1;</code>
      * @param int $var
@@ -86,7 +90,9 @@ class AgeSegment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Maximum age to include.
+     * Maximum age to include. A maximum age need not be specified. If specified,
+     * max_age must be greater than min_age, and allowed values are 24, 34, 44,
+     * 54, and 64.
      *
      * Generated from protobuf field <code>optional int32 max_age = 2;</code>
      * @return int
@@ -107,7 +113,9 @@ class AgeSegment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Maximum age to include.
+     * Maximum age to include. A maximum age need not be specified. If specified,
+     * max_age must be greater than min_age, and allowed values are 24, 34, 44,
+     * 54, and 64.
      *
      * Generated from protobuf field <code>optional int32 max_age = 2;</code>
      * @param int $var

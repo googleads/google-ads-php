@@ -122,6 +122,24 @@ class ChangeEventResourceType
      * Generated from protobuf enum <code>AD_GROUP_ASSET = 17;</code>
      */
     const AD_GROUP_ASSET = 17;
+    /**
+     * An AssetSet resource change.
+     *
+     * Generated from protobuf enum <code>ASSET_SET = 18;</code>
+     */
+    const ASSET_SET = 18;
+    /**
+     * An AssetSetAsset resource change.
+     *
+     * Generated from protobuf enum <code>ASSET_SET_ASSET = 19;</code>
+     */
+    const ASSET_SET_ASSET = 19;
+    /**
+     * A CampaignAssetSet resource change.
+     *
+     * Generated from protobuf enum <code>CAMPAIGN_ASSET_SET = 20;</code>
+     */
+    const CAMPAIGN_ASSET_SET = 20;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -142,6 +160,9 @@ class ChangeEventResourceType
         self::CUSTOMER_ASSET => 'CUSTOMER_ASSET',
         self::CAMPAIGN_ASSET => 'CAMPAIGN_ASSET',
         self::AD_GROUP_ASSET => 'AD_GROUP_ASSET',
+        self::ASSET_SET => 'ASSET_SET',
+        self::ASSET_SET_ASSET => 'ASSET_SET_ASSET',
+        self::CAMPAIGN_ASSET_SET => 'CAMPAIGN_ASSET_SET',
     ];
 
     public static function name($value)

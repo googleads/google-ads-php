@@ -49,6 +49,14 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      *           Item id of a product offer.
      *     @type \Google\Ads\GoogleAds\V10\Common\ProductTypeInfo $product_type
      *           Type of a product offer.
+     *     @type \Google\Ads\GoogleAds\V10\Common\ProductGroupingInfo $product_grouping
+     *           Grouping of a product offer.
+     *     @type \Google\Ads\GoogleAds\V10\Common\ProductLabelsInfo $product_labels
+     *           Labels of a product offer.
+     *     @type \Google\Ads\GoogleAds\V10\Common\ProductLegacyConditionInfo $product_legacy_condition
+     *           Legacy condition of a product offer.
+     *     @type \Google\Ads\GoogleAds\V10\Common\ProductTypeFullInfo $product_type_full
+     *           Full type of a product offer.
      *     @type \Google\Ads\GoogleAds\V10\Common\UnknownListingDimensionInfo $unknown_listing_dimension
      *           Unknown dimension. Set when no other listing dimension is set.
      * }
@@ -457,6 +465,130 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\ProductTypeInfo::class);
         $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * Grouping of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.ProductGroupingInfo product_grouping = 17;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\ProductGroupingInfo|null
+     */
+    public function getProductGrouping()
+    {
+        return $this->readOneof(17);
+    }
+
+    public function hasProductGrouping()
+    {
+        return $this->hasOneof(17);
+    }
+
+    /**
+     * Grouping of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.ProductGroupingInfo product_grouping = 17;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\ProductGroupingInfo $var
+     * @return $this
+     */
+    public function setProductGrouping($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\ProductGroupingInfo::class);
+        $this->writeOneof(17, $var);
+
+        return $this;
+    }
+
+    /**
+     * Labels of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.ProductLabelsInfo product_labels = 18;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\ProductLabelsInfo|null
+     */
+    public function getProductLabels()
+    {
+        return $this->readOneof(18);
+    }
+
+    public function hasProductLabels()
+    {
+        return $this->hasOneof(18);
+    }
+
+    /**
+     * Labels of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.ProductLabelsInfo product_labels = 18;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\ProductLabelsInfo $var
+     * @return $this
+     */
+    public function setProductLabels($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\ProductLabelsInfo::class);
+        $this->writeOneof(18, $var);
+
+        return $this;
+    }
+
+    /**
+     * Legacy condition of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.ProductLegacyConditionInfo product_legacy_condition = 19;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\ProductLegacyConditionInfo|null
+     */
+    public function getProductLegacyCondition()
+    {
+        return $this->readOneof(19);
+    }
+
+    public function hasProductLegacyCondition()
+    {
+        return $this->hasOneof(19);
+    }
+
+    /**
+     * Legacy condition of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.ProductLegacyConditionInfo product_legacy_condition = 19;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\ProductLegacyConditionInfo $var
+     * @return $this
+     */
+    public function setProductLegacyCondition($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\ProductLegacyConditionInfo::class);
+        $this->writeOneof(19, $var);
+
+        return $this;
+    }
+
+    /**
+     * Full type of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.ProductTypeFullInfo product_type_full = 20;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\ProductTypeFullInfo|null
+     */
+    public function getProductTypeFull()
+    {
+        return $this->readOneof(20);
+    }
+
+    public function hasProductTypeFull()
+    {
+        return $this->hasOneof(20);
+    }
+
+    /**
+     * Full type of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.ProductTypeFullInfo product_type_full = 20;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\ProductTypeFullInfo $var
+     * @return $this
+     */
+    public function setProductTypeFull($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\ProductTypeFullInfo::class);
+        $this->writeOneof(20, $var);
 
         return $this;
     }

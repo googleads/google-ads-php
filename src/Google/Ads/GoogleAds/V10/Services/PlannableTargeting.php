@@ -33,7 +33,7 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      * Targetable devices for the ad product.
      * TABLET device targeting is automatically applied to reported metrics
      * when MOBILE targeting is selected for CPM_MASTHEAD,
-     * GOOGLE_PREFERRED_BUMPER and GOOGLE_PREFERRED_SHORT products.
+     * GOOGLE_PREFERRED_BUMPER, and GOOGLE_PREFERRED_SHORT products.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v10.common.DeviceInfo devices = 3;</code>
      */
@@ -61,7 +61,7 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      *           Targetable devices for the ad product.
      *           TABLET device targeting is automatically applied to reported metrics
      *           when MOBILE targeting is selected for CPM_MASTHEAD,
-     *           GOOGLE_PREFERRED_BUMPER and GOOGLE_PREFERRED_SHORT products.
+     *           GOOGLE_PREFERRED_BUMPER, and GOOGLE_PREFERRED_SHORT products.
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $networks
      *           Targetable networks for the ad product.
      * }
@@ -131,7 +131,7 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      * Targetable devices for the ad product.
      * TABLET device targeting is automatically applied to reported metrics
      * when MOBILE targeting is selected for CPM_MASTHEAD,
-     * GOOGLE_PREFERRED_BUMPER and GOOGLE_PREFERRED_SHORT products.
+     * GOOGLE_PREFERRED_BUMPER, and GOOGLE_PREFERRED_SHORT products.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v10.common.DeviceInfo devices = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -145,7 +145,7 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      * Targetable devices for the ad product.
      * TABLET device targeting is automatically applied to reported metrics
      * when MOBILE targeting is selected for CPM_MASTHEAD,
-     * GOOGLE_PREFERRED_BUMPER and GOOGLE_PREFERRED_SHORT products.
+     * GOOGLE_PREFERRED_BUMPER, and GOOGLE_PREFERRED_SHORT products.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v10.common.DeviceInfo devices = 3;</code>
      * @param \Google\Ads\GoogleAds\V10\Common\DeviceInfo[]|\Google\Protobuf\Internal\RepeatedField $var

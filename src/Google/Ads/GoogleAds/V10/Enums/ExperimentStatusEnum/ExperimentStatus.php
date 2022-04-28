@@ -32,13 +32,14 @@ class ExperimentStatus
      */
     const ENABLED = 2;
     /**
-     * The experiment has beem removed.
+     * The experiment has been removed.
      *
      * Generated from protobuf enum <code>REMOVED = 3;</code>
      */
     const REMOVED = 3;
     /**
      * The experiment has been halted.
+     * This status can be set from ENABLED status through API.
      *
      * Generated from protobuf enum <code>HALTED = 4;</code>
      */
@@ -57,6 +58,7 @@ class ExperimentStatus
     const SETUP = 6;
     /**
      * The experiment's campaigns are pending materialization.
+     * This status can be set from SETUP status through API.
      *
      * Generated from protobuf enum <code>INITIATED = 7;</code>
      */

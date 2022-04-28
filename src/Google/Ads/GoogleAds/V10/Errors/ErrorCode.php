@@ -85,10 +85,14 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the bidding errors
      *     @type int $campaign_criterion_error
      *           The reasons for the campaign criterion error
+     *     @type int $campaign_conversion_goal_error
+     *           The reasons for the campaign conversion goal error
      *     @type int $campaign_customizer_error
      *           The reasons for the campaign customizer error.
      *     @type int $collection_size_error
      *           The reasons for the collection size error
+     *     @type int $conversion_goal_campaign_config_error
+     *           The reasons for the conversion goal campaign config error
      *     @type int $country_code_error
      *           The reasons for the country code error
      *     @type int $criterion_error
@@ -1266,6 +1270,37 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The reasons for the campaign conversion goal error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.errors.CampaignConversionGoalErrorEnum.CampaignConversionGoalError campaign_conversion_goal_error = 166;</code>
+     * @return int
+     */
+    public function getCampaignConversionGoalError()
+    {
+        return $this->readOneof(166);
+    }
+
+    public function hasCampaignConversionGoalError()
+    {
+        return $this->hasOneof(166);
+    }
+
+    /**
+     * The reasons for the campaign conversion goal error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.errors.CampaignConversionGoalErrorEnum.CampaignConversionGoalError campaign_conversion_goal_error = 166;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCampaignConversionGoalError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V10\Errors\CampaignConversionGoalErrorEnum\CampaignConversionGoalError::class);
+        $this->writeOneof(166, $var);
+
+        return $this;
+    }
+
+    /**
      * The reasons for the campaign customizer error.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v10.errors.CampaignCustomizerErrorEnum.CampaignCustomizerError campaign_customizer_error = 160;</code>
@@ -1323,6 +1358,37 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V10\Errors\CollectionSizeErrorEnum\CollectionSizeError::class);
         $this->writeOneof(31, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the conversion goal campaign config error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.errors.ConversionGoalCampaignConfigErrorEnum.ConversionGoalCampaignConfigError conversion_goal_campaign_config_error = 165;</code>
+     * @return int
+     */
+    public function getConversionGoalCampaignConfigError()
+    {
+        return $this->readOneof(165);
+    }
+
+    public function hasConversionGoalCampaignConfigError()
+    {
+        return $this->hasOneof(165);
+    }
+
+    /**
+     * The reasons for the conversion goal campaign config error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.errors.ConversionGoalCampaignConfigErrorEnum.ConversionGoalCampaignConfigError conversion_goal_campaign_config_error = 165;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setConversionGoalCampaignConfigError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V10\Errors\ConversionGoalCampaignConfigErrorEnum\ConversionGoalCampaignConfigError::class);
+        $this->writeOneof(165, $var);
 
         return $this;
     }

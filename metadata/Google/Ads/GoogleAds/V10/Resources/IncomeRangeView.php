@@ -13,14 +13,12 @@ class IncomeRangeView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-€
-:google/ads/googleads/v10/resources/income_range_view.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"Ð
+ß
+:google/ads/googleads/v10/resources/income_range_view.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"Ð
 IncomeRangeViewG
 resource_name (	B0àAúA*
 (googleads.googleapis.com/IncomeRangeView:têAq

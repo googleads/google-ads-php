@@ -25,6 +25,16 @@ class HistoricalMetricsOptions extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional .google.ads.googleads.v10.common.YearMonthRange year_month_range = 1;</code>
      */
     protected $year_month_range = null;
+    /**
+     * Indicates whether to include average cost per click value.
+     * Average CPC is a legacy value that will be removed and replaced in the
+     * future, and as such we are including it as an optioanl value so clients
+     * only use it when strictly necessary and to better track clients that use
+     * this value.
+     *
+     * Generated from protobuf field <code>bool include_average_cpc = 2;</code>
+     */
+    protected $include_average_cpc = false;
 
     /**
      * Constructor.
@@ -38,6 +48,12 @@ class HistoricalMetricsOptions extends \Google\Protobuf\Internal\Message
      *           Searches data is available for the past 4 years. If the search volume is
      *           not available for the entire year_month_range provided, the subset of the
      *           year month range for which search volume is available will be returned.
+     *     @type bool $include_average_cpc
+     *           Indicates whether to include average cost per click value.
+     *           Average CPC is a legacy value that will be removed and replaced in the
+     *           future, and as such we are including it as an optioanl value so clients
+     *           only use it when strictly necessary and to better track clients that use
+     *           this value.
      * }
      */
     public function __construct($data = NULL) {
@@ -85,6 +101,40 @@ class HistoricalMetricsOptions extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\YearMonthRange::class);
         $this->year_month_range = $var;
+
+        return $this;
+    }
+
+    /**
+     * Indicates whether to include average cost per click value.
+     * Average CPC is a legacy value that will be removed and replaced in the
+     * future, and as such we are including it as an optioanl value so clients
+     * only use it when strictly necessary and to better track clients that use
+     * this value.
+     *
+     * Generated from protobuf field <code>bool include_average_cpc = 2;</code>
+     * @return bool
+     */
+    public function getIncludeAverageCpc()
+    {
+        return $this->include_average_cpc;
+    }
+
+    /**
+     * Indicates whether to include average cost per click value.
+     * Average CPC is a legacy value that will be removed and replaced in the
+     * future, and as such we are including it as an optioanl value so clients
+     * only use it when strictly necessary and to better track clients that use
+     * this value.
+     *
+     * Generated from protobuf field <code>bool include_average_cpc = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIncludeAverageCpc($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->include_average_cpc = $var;
 
         return $this;
     }

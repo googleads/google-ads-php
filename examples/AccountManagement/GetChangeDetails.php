@@ -178,6 +178,14 @@ class GetChangeDetails
                     $oldResourceEntity = $oldResource->getAsset();
                     $newResourceEntity = $newResource->getAsset();
                     break;
+                case ChangeEventResourceType::ASSET_SET:
+                    $oldResourceEntity = $oldResource->getAssetSet();
+                    $newResourceEntity = $newResource->getAssetSet();
+                    break;
+                case ChangeEventResourceType::ASSET_SET_ASSET:
+                    $oldResourceEntity = $oldResource->getAssetSetAsset();
+                    $newResourceEntity = $newResource->getAssetSetAsset();
+                    break;
                 case ChangeEventResourceType::CAMPAIGN:
                     $oldResourceEntity = $oldResource->getCampaign();
                     $newResourceEntity = $newResource->getCampaign();
@@ -185,6 +193,10 @@ class GetChangeDetails
                 case ChangeEventResourceType::CAMPAIGN_ASSET:
                     $oldResourceEntity = $oldResource->getCampaignAsset();
                     $newResourceEntity = $newResource->getCampaignAsset();
+                    break;
+                case ChangeEventResourceType::CAMPAIGN_ASSET_SET:
+                    $oldResourceEntity = $oldResource->getCampaignAssetSet();
+                    $newResourceEntity = $newResource->getCampaignAssetSet();
                     break;
                 case ChangeEventResourceType::CAMPAIGN_BUDGET:
                     $oldResourceEntity = $oldResource->getCampaignBudget();

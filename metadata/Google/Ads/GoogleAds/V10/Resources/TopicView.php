@@ -13,14 +13,12 @@ class TopicView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Û
-3google/ads/googleads/v10/resources/topic_view.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"¸
+º
+3google/ads/googleads/v10/resources/topic_view.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"¸
 	TopicViewA
 resource_name (	B*àAúA$
 "googleads.googleapis.com/TopicView:hêAe

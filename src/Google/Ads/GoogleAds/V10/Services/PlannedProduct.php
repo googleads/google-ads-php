@@ -17,7 +17,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Selected product for planning.
-     * The code associated with the ad product. E.g. Trueview, Bumper
+     * The code associated with the ad product (for example: Trueview, Bumper).
      * To list the available plannable product codes use
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v10.services.ReachPlanService.ListPlannableProducts].
      *
@@ -27,7 +27,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
     /**
      * Required. Maximum budget allocation in micros for the selected product.
      * The value is specified in the selected planning currency_code.
-     * E.g. 1 000 000$ = 1 000 000 000 000 micros.
+     * For example: 1 000 000$ = 1 000 000 000 000 micros.
      *
      * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
      */
@@ -41,13 +41,13 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      *
      *     @type string $plannable_product_code
      *           Required. Selected product for planning.
-     *           The code associated with the ad product. E.g. Trueview, Bumper
+     *           The code associated with the ad product (for example: Trueview, Bumper).
      *           To list the available plannable product codes use
      *           [ReachPlanService.ListPlannableProducts][google.ads.googleads.v10.services.ReachPlanService.ListPlannableProducts].
      *     @type int|string $budget_micros
      *           Required. Maximum budget allocation in micros for the selected product.
      *           The value is specified in the selected planning currency_code.
-     *           E.g. 1 000 000$ = 1 000 000 000 000 micros.
+     *           For example: 1 000 000$ = 1 000 000 000 000 micros.
      * }
      */
     public function __construct($data = NULL) {
@@ -57,7 +57,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Selected product for planning.
-     * The code associated with the ad product. E.g. Trueview, Bumper
+     * The code associated with the ad product (for example: Trueview, Bumper).
      * To list the available plannable product codes use
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v10.services.ReachPlanService.ListPlannableProducts].
      *
@@ -81,7 +81,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Selected product for planning.
-     * The code associated with the ad product. E.g. Trueview, Bumper
+     * The code associated with the ad product (for example: Trueview, Bumper).
      * To list the available plannable product codes use
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v10.services.ReachPlanService.ListPlannableProducts].
      *
@@ -100,7 +100,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
     /**
      * Required. Maximum budget allocation in micros for the selected product.
      * The value is specified in the selected planning currency_code.
-     * E.g. 1 000 000$ = 1 000 000 000 000 micros.
+     * For example: 1 000 000$ = 1 000 000 000 000 micros.
      *
      * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
      * @return int|string
@@ -123,7 +123,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
     /**
      * Required. Maximum budget allocation in micros for the selected product.
      * The value is specified in the selected planning currency_code.
-     * E.g. 1 000 000$ = 1 000 000 000 000 micros.
+     * For example: 1 000 000$ = 1 000 000 000 000 micros.
      *
      * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
      * @param int|string $var

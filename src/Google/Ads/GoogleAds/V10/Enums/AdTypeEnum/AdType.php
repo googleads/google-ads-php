@@ -195,6 +195,18 @@ class AdType
      * Generated from protobuf enum <code>IN_FEED_VIDEO_AD = 34;</code>
      */
     const IN_FEED_VIDEO_AD = 34;
+    /**
+     * Discovery multi asset ad.
+     *
+     * Generated from protobuf enum <code>DISCOVERY_MULTI_ASSET_AD = 35;</code>
+     */
+    const DISCOVERY_MULTI_ASSET_AD = 35;
+    /**
+     * Discovery carousel ad.
+     *
+     * Generated from protobuf enum <code>DISCOVERY_CAROUSEL_AD = 36;</code>
+     */
+    const DISCOVERY_CAROUSEL_AD = 36;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -227,6 +239,8 @@ class AdType
         self::CALL_AD => 'CALL_AD',
         self::APP_PRE_REGISTRATION_AD => 'APP_PRE_REGISTRATION_AD',
         self::IN_FEED_VIDEO_AD => 'IN_FEED_VIDEO_AD',
+        self::DISCOVERY_MULTI_ASSET_AD => 'DISCOVERY_MULTI_ASSET_AD',
+        self::DISCOVERY_CAROUSEL_AD => 'DISCOVERY_CAROUSEL_AD',
     ];
 
     public static function name($value)

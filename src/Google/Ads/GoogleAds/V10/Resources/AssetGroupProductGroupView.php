@@ -23,6 +23,18 @@ class AssetGroupProductGroupView extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
+    /**
+     * Output only. The asset group associated with the listing group filter.
+     *
+     * Generated from protobuf field <code>string asset_group = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $asset_group = '';
+    /**
+     * Output only. The resource name of the asset group listing group filter.
+     *
+     * Generated from protobuf field <code>string asset_group_listing_group_filter = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $asset_group_listing_group_filter = '';
 
     /**
      * Constructor.
@@ -34,6 +46,10 @@ class AssetGroupProductGroupView extends \Google\Protobuf\Internal\Message
      *           Output only. The resource name of the asset group product group view.
      *           Asset group product group view resource names have the form:
      *           `customers/{customer_id}/assetGroupProductGroupViews/{asset_group_id}~{listing_group_filter_id}`
+     *     @type string $asset_group
+     *           Output only. The asset group associated with the listing group filter.
+     *     @type string $asset_group_listing_group_filter
+     *           Output only. The resource name of the asset group listing group filter.
      * }
      */
     public function __construct($data = NULL) {
@@ -67,6 +83,58 @@ class AssetGroupProductGroupView extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->resource_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The asset group associated with the listing group filter.
+     *
+     * Generated from protobuf field <code>string asset_group = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getAssetGroup()
+    {
+        return $this->asset_group;
+    }
+
+    /**
+     * Output only. The asset group associated with the listing group filter.
+     *
+     * Generated from protobuf field <code>string asset_group = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAssetGroup($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->asset_group = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The resource name of the asset group listing group filter.
+     *
+     * Generated from protobuf field <code>string asset_group_listing_group_filter = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getAssetGroupListingGroupFilter()
+    {
+        return $this->asset_group_listing_group_filter;
+    }
+
+    /**
+     * Output only. The resource name of the asset group listing group filter.
+     *
+     * Generated from protobuf field <code>string asset_group_listing_group_filter = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAssetGroupListingGroupFilter($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->asset_group_listing_group_filter = $var;
 
         return $this;
     }

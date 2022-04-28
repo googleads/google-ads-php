@@ -127,6 +127,54 @@ class AssetType
      * Generated from protobuf enum <code>CALL_TO_ACTION = 18;</code>
      */
     const CALL_TO_ACTION = 18;
+    /**
+     * Dynamic real estate asset.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_REAL_ESTATE = 19;</code>
+     */
+    const DYNAMIC_REAL_ESTATE = 19;
+    /**
+     * Dynamic custom asset.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_CUSTOM = 20;</code>
+     */
+    const DYNAMIC_CUSTOM = 20;
+    /**
+     * Dynamic hotels and rentals asset.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_HOTELS_AND_RENTALS = 21;</code>
+     */
+    const DYNAMIC_HOTELS_AND_RENTALS = 21;
+    /**
+     * Dynamic flights asset.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_FLIGHTS = 22;</code>
+     */
+    const DYNAMIC_FLIGHTS = 22;
+    /**
+     * Discovery Carousel Card asset.
+     *
+     * Generated from protobuf enum <code>DISCOVERY_CAROUSEL_CARD = 23;</code>
+     */
+    const DISCOVERY_CAROUSEL_CARD = 23;
+    /**
+     * Dynamic travel asset.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_TRAVEL = 24;</code>
+     */
+    const DYNAMIC_TRAVEL = 24;
+    /**
+     * Dynamic local asset.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_LOCAL = 25;</code>
+     */
+    const DYNAMIC_LOCAL = 25;
+    /**
+     * Dynamic jobs asset.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_JOBS = 26;</code>
+     */
+    const DYNAMIC_JOBS = 26;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -148,6 +196,14 @@ class AssetType
         self::CALL => 'CALL',
         self::PRICE => 'PRICE',
         self::CALL_TO_ACTION => 'CALL_TO_ACTION',
+        self::DYNAMIC_REAL_ESTATE => 'DYNAMIC_REAL_ESTATE',
+        self::DYNAMIC_CUSTOM => 'DYNAMIC_CUSTOM',
+        self::DYNAMIC_HOTELS_AND_RENTALS => 'DYNAMIC_HOTELS_AND_RENTALS',
+        self::DYNAMIC_FLIGHTS => 'DYNAMIC_FLIGHTS',
+        self::DISCOVERY_CAROUSEL_CARD => 'DISCOVERY_CAROUSEL_CARD',
+        self::DYNAMIC_TRAVEL => 'DYNAMIC_TRAVEL',
+        self::DYNAMIC_LOCAL => 'DYNAMIC_LOCAL',
+        self::DYNAMIC_JOBS => 'DYNAMIC_JOBS',
     ];
 
     public static function name($value)

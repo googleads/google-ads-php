@@ -309,6 +309,12 @@ class ResourceLimitType
      */
     const LOGICAL_USER_LISTS_PER_CUSTOMER = 48;
     /**
+     * Number of open rule based user lists per customer.
+     *
+     * Generated from protobuf enum <code>RULE_BASED_USER_LISTS_PER_CUSTOMER = 153;</code>
+     */
+    const RULE_BASED_USER_LISTS_PER_CUSTOMER = 153;
+    /**
      * Number of ENABLED and PAUSED ad group ads across all base campaigns for a
      * customer.
      *
@@ -552,6 +558,91 @@ class ResourceLimitType
      */
     const ASSETS_PER_DYNAMIC_EDUCATION_FEED_ASSET_SET = 160;
     /**
+     * Number of ENABLED dynamic real estate asset sets per customer.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_REAL_ESTATE_ASSET_SETS_PER_CUSTOMER = 161;</code>
+     */
+    const DYNAMIC_REAL_ESTATE_ASSET_SETS_PER_CUSTOMER = 161;
+    /**
+     * Number of ENABLED assets per dynamic real estate asset set.
+     *
+     * Generated from protobuf enum <code>ASSETS_PER_DYNAMIC_REAL_ESTATE_ASSET_SET = 162;</code>
+     */
+    const ASSETS_PER_DYNAMIC_REAL_ESTATE_ASSET_SET = 162;
+    /**
+     * Number of ENABLED dynamic custom asset sets per customer.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_CUSTOM_ASSET_SETS_PER_CUSTOMER = 163;</code>
+     */
+    const DYNAMIC_CUSTOM_ASSET_SETS_PER_CUSTOMER = 163;
+    /**
+     * Number of ENABLED assets per dynamic custom asset set.
+     *
+     * Generated from protobuf enum <code>ASSETS_PER_DYNAMIC_CUSTOM_ASSET_SET = 164;</code>
+     */
+    const ASSETS_PER_DYNAMIC_CUSTOM_ASSET_SET = 164;
+    /**
+     * Number of ENABLED dynamic hotels and rentals asset sets per
+     * customer.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_HOTELS_AND_RENTALS_ASSET_SETS_PER_CUSTOMER = 165;</code>
+     */
+    const DYNAMIC_HOTELS_AND_RENTALS_ASSET_SETS_PER_CUSTOMER = 165;
+    /**
+     * Number of ENABLED assets per dynamic hotels and rentals asset set.
+     *
+     * Generated from protobuf enum <code>ASSETS_PER_DYNAMIC_HOTELS_AND_RENTALS_ASSET_SET = 166;</code>
+     */
+    const ASSETS_PER_DYNAMIC_HOTELS_AND_RENTALS_ASSET_SET = 166;
+    /**
+     * Number of ENABLED dynamic local asset sets per customer.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_LOCAL_ASSET_SETS_PER_CUSTOMER = 167;</code>
+     */
+    const DYNAMIC_LOCAL_ASSET_SETS_PER_CUSTOMER = 167;
+    /**
+     * Number of ENABLED assets per dynamic local asset set.
+     *
+     * Generated from protobuf enum <code>ASSETS_PER_DYNAMIC_LOCAL_ASSET_SET = 168;</code>
+     */
+    const ASSETS_PER_DYNAMIC_LOCAL_ASSET_SET = 168;
+    /**
+     * Number of ENABLED dynamic flights asset sets per customer.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_FLIGHTS_ASSET_SETS_PER_CUSTOMER = 169;</code>
+     */
+    const DYNAMIC_FLIGHTS_ASSET_SETS_PER_CUSTOMER = 169;
+    /**
+     * Number of ENABLED assets per dynamic flights asset set.
+     *
+     * Generated from protobuf enum <code>ASSETS_PER_DYNAMIC_FLIGHTS_ASSET_SET = 170;</code>
+     */
+    const ASSETS_PER_DYNAMIC_FLIGHTS_ASSET_SET = 170;
+    /**
+     * Number of ENABLED dynamic travel asset sets per customer.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_TRAVEL_ASSET_SETS_PER_CUSTOMER = 171;</code>
+     */
+    const DYNAMIC_TRAVEL_ASSET_SETS_PER_CUSTOMER = 171;
+    /**
+     * Number of ENABLED assets per dynamic travel asset set.
+     *
+     * Generated from protobuf enum <code>ASSETS_PER_DYNAMIC_TRAVEL_ASSET_SET = 172;</code>
+     */
+    const ASSETS_PER_DYNAMIC_TRAVEL_ASSET_SET = 172;
+    /**
+     * Number of ENABLED dynamic jobs asset sets per customer.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_JOBS_ASSET_SETS_PER_CUSTOMER = 173;</code>
+     */
+    const DYNAMIC_JOBS_ASSET_SETS_PER_CUSTOMER = 173;
+    /**
+     * Number of ENABLED assets per dynamic jobs asset set.
+     *
+     * Generated from protobuf enum <code>ASSETS_PER_DYNAMIC_JOBS_ASSET_SET = 174;</code>
+     */
+    const ASSETS_PER_DYNAMIC_JOBS_ASSET_SET = 174;
+    /**
      * Number of versions per ad.
      *
      * Generated from protobuf enum <code>VERSIONS_PER_AD = 82;</code>
@@ -793,6 +884,7 @@ class ResourceLimitType
         self::BIDDING_STRATEGIES_PER_CUSTOMER => 'BIDDING_STRATEGIES_PER_CUSTOMER',
         self::BASIC_USER_LISTS_PER_CUSTOMER => 'BASIC_USER_LISTS_PER_CUSTOMER',
         self::LOGICAL_USER_LISTS_PER_CUSTOMER => 'LOGICAL_USER_LISTS_PER_CUSTOMER',
+        self::RULE_BASED_USER_LISTS_PER_CUSTOMER => 'RULE_BASED_USER_LISTS_PER_CUSTOMER',
         self::BASE_AD_GROUP_ADS_PER_CUSTOMER => 'BASE_AD_GROUP_ADS_PER_CUSTOMER',
         self::EXPERIMENT_AD_GROUP_ADS_PER_CUSTOMER => 'EXPERIMENT_AD_GROUP_ADS_PER_CUSTOMER',
         self::AD_GROUP_ADS_PER_CAMPAIGN => 'AD_GROUP_ADS_PER_CAMPAIGN',
@@ -833,6 +925,20 @@ class ResourceLimitType
         self::DYNAMIC_EDUCATION_FEED_ASSET_SETS_PER_CUSTOMER => 'DYNAMIC_EDUCATION_FEED_ASSET_SETS_PER_CUSTOMER',
         self::ASSETS_PER_PAGE_FEED_ASSET_SET => 'ASSETS_PER_PAGE_FEED_ASSET_SET',
         self::ASSETS_PER_DYNAMIC_EDUCATION_FEED_ASSET_SET => 'ASSETS_PER_DYNAMIC_EDUCATION_FEED_ASSET_SET',
+        self::DYNAMIC_REAL_ESTATE_ASSET_SETS_PER_CUSTOMER => 'DYNAMIC_REAL_ESTATE_ASSET_SETS_PER_CUSTOMER',
+        self::ASSETS_PER_DYNAMIC_REAL_ESTATE_ASSET_SET => 'ASSETS_PER_DYNAMIC_REAL_ESTATE_ASSET_SET',
+        self::DYNAMIC_CUSTOM_ASSET_SETS_PER_CUSTOMER => 'DYNAMIC_CUSTOM_ASSET_SETS_PER_CUSTOMER',
+        self::ASSETS_PER_DYNAMIC_CUSTOM_ASSET_SET => 'ASSETS_PER_DYNAMIC_CUSTOM_ASSET_SET',
+        self::DYNAMIC_HOTELS_AND_RENTALS_ASSET_SETS_PER_CUSTOMER => 'DYNAMIC_HOTELS_AND_RENTALS_ASSET_SETS_PER_CUSTOMER',
+        self::ASSETS_PER_DYNAMIC_HOTELS_AND_RENTALS_ASSET_SET => 'ASSETS_PER_DYNAMIC_HOTELS_AND_RENTALS_ASSET_SET',
+        self::DYNAMIC_LOCAL_ASSET_SETS_PER_CUSTOMER => 'DYNAMIC_LOCAL_ASSET_SETS_PER_CUSTOMER',
+        self::ASSETS_PER_DYNAMIC_LOCAL_ASSET_SET => 'ASSETS_PER_DYNAMIC_LOCAL_ASSET_SET',
+        self::DYNAMIC_FLIGHTS_ASSET_SETS_PER_CUSTOMER => 'DYNAMIC_FLIGHTS_ASSET_SETS_PER_CUSTOMER',
+        self::ASSETS_PER_DYNAMIC_FLIGHTS_ASSET_SET => 'ASSETS_PER_DYNAMIC_FLIGHTS_ASSET_SET',
+        self::DYNAMIC_TRAVEL_ASSET_SETS_PER_CUSTOMER => 'DYNAMIC_TRAVEL_ASSET_SETS_PER_CUSTOMER',
+        self::ASSETS_PER_DYNAMIC_TRAVEL_ASSET_SET => 'ASSETS_PER_DYNAMIC_TRAVEL_ASSET_SET',
+        self::DYNAMIC_JOBS_ASSET_SETS_PER_CUSTOMER => 'DYNAMIC_JOBS_ASSET_SETS_PER_CUSTOMER',
+        self::ASSETS_PER_DYNAMIC_JOBS_ASSET_SET => 'ASSETS_PER_DYNAMIC_JOBS_ASSET_SET',
         self::VERSIONS_PER_AD => 'VERSIONS_PER_AD',
         self::USER_FEEDS_PER_CUSTOMER => 'USER_FEEDS_PER_CUSTOMER',
         self::SYSTEM_FEEDS_PER_CUSTOMER => 'SYSTEM_FEEDS_PER_CUSTOMER',

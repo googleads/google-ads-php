@@ -57,6 +57,18 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v10.common.AdImageAsset companion_banners = 6;</code>
      */
     private $companion_banners;
+    /**
+     * First part of text that appears in the ad with the displayed URL.
+     *
+     * Generated from protobuf field <code>string breadcrumb1 = 7;</code>
+     */
+    protected $breadcrumb1 = '';
+    /**
+     * Second part of text that appears in the ad with the displayed URL.
+     *
+     * Generated from protobuf field <code>string breadcrumb2 = 8;</code>
+     */
+    protected $breadcrumb2 = '';
 
     /**
      * Constructor.
@@ -82,6 +94,10 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V10\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $companion_banners
      *           List of image assets used for the companion banner.
      *           Currently, only a single value for the companion banner asset is supported.
+     *     @type string $breadcrumb1
+     *           First part of text that appears in the ad with the displayed URL.
+     *     @type string $breadcrumb2
+     *           Second part of text that appears in the ad with the displayed URL.
      * }
      */
     public function __construct($data = NULL) {
@@ -253,6 +269,58 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V10\Common\AdImageAsset::class);
         $this->companion_banners = $arr;
+
+        return $this;
+    }
+
+    /**
+     * First part of text that appears in the ad with the displayed URL.
+     *
+     * Generated from protobuf field <code>string breadcrumb1 = 7;</code>
+     * @return string
+     */
+    public function getBreadcrumb1()
+    {
+        return $this->breadcrumb1;
+    }
+
+    /**
+     * First part of text that appears in the ad with the displayed URL.
+     *
+     * Generated from protobuf field <code>string breadcrumb1 = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBreadcrumb1($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->breadcrumb1 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Second part of text that appears in the ad with the displayed URL.
+     *
+     * Generated from protobuf field <code>string breadcrumb2 = 8;</code>
+     * @return string
+     */
+    public function getBreadcrumb2()
+    {
+        return $this->breadcrumb2;
+    }
+
+    /**
+     * Second part of text that appears in the ad with the displayed URL.
+     *
+     * Generated from protobuf field <code>string breadcrumb2 = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBreadcrumb2($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->breadcrumb2 = $var;
 
         return $this;
     }

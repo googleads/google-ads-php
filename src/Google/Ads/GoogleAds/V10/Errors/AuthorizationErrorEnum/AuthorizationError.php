@@ -112,6 +112,12 @@ class AuthorizationError
      * Generated from protobuf enum <code>ACCESS_DENIED_FOR_ACCOUNT_TYPE = 25;</code>
      */
     const ACCESS_DENIED_FOR_ACCOUNT_TYPE = 25;
+    /**
+     * The developer does not have access to the metrics queried.
+     *
+     * Generated from protobuf enum <code>METRIC_ACCESS_DENIED = 26;</code>
+     */
+    const METRIC_ACCESS_DENIED = 26;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -129,6 +135,7 @@ class AuthorizationError
         self::INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION => 'INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION',
         self::SERVICE_ACCESS_DENIED => 'SERVICE_ACCESS_DENIED',
         self::ACCESS_DENIED_FOR_ACCOUNT_TYPE => 'ACCESS_DENIED_FOR_ACCOUNT_TYPE',
+        self::METRIC_ACCESS_DENIED => 'METRIC_ACCESS_DENIED',
     ];
 
     public static function name($value)

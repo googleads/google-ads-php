@@ -556,6 +556,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $sk_ad_network_source_app = null;
     /**
+     * iOS Store Kit Ad Network attribution credit
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.enums.SkAdNetworkAttributionCreditEnum.SkAdNetworkAttributionCredit sk_ad_network_attribution_credit = 144;</code>
+     */
+    protected $sk_ad_network_attribution_credit = 0;
+    /**
      * Only used with CustomerAsset, CampaignAsset and AdGroupAsset metrics.
      * Indicates whether the interaction metrics occurred on the asset itself
      * or a different asset or ad unit.
@@ -772,6 +778,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           App where the ad that drove the iOS Store Kit Ad Network install was
      *           shown. Null value means this segment is not applicable, e.g. non-iOS
      *           campaign, or was not present in any postbacks sent by Apple.
+     *     @type int $sk_ad_network_attribution_credit
+     *           iOS Store Kit Ad Network attribution credit
      *     @type \Google\Ads\GoogleAds\V10\Common\AssetInteractionTarget $asset_interaction_target
      *           Only used with CustomerAsset, CampaignAsset and AdGroupAsset metrics.
      *           Indicates whether the interaction metrics occurred on the asset itself
@@ -3669,6 +3677,32 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\SkAdNetworkSourceApp::class);
         $this->sk_ad_network_source_app = $var;
+
+        return $this;
+    }
+
+    /**
+     * iOS Store Kit Ad Network attribution credit
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.enums.SkAdNetworkAttributionCreditEnum.SkAdNetworkAttributionCredit sk_ad_network_attribution_credit = 144;</code>
+     * @return int
+     */
+    public function getSkAdNetworkAttributionCredit()
+    {
+        return $this->sk_ad_network_attribution_credit;
+    }
+
+    /**
+     * iOS Store Kit Ad Network attribution credit
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.enums.SkAdNetworkAttributionCreditEnum.SkAdNetworkAttributionCredit sk_ad_network_attribution_credit = 144;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSkAdNetworkAttributionCredit($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V10\Enums\SkAdNetworkAttributionCreditEnum\SkAdNetworkAttributionCredit::class);
+        $this->sk_ad_network_attribution_credit = $var;
 
         return $this;
     }

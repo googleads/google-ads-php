@@ -171,6 +171,14 @@ class ConversionAdjustmentUploadError
      * Generated from protobuf enum <code>CUSTOMER_DATA_POLICY_PROHIBITS_ENHANCEMENT = 23;</code>
      */
     const CUSTOMER_DATA_POLICY_PROHIBITS_ENHANCEMENT = 23;
+    /**
+     * The conversion adjustment is for a conversion action of type WEBPAGE, but
+     * does not have an order_id. The order_id is required for an adjustment for
+     * a WEBPAGE conversion action.
+     *
+     * Generated from protobuf enum <code>MISSING_ORDER_ID_FOR_WEBPAGE = 24;</code>
+     */
+    const MISSING_ORDER_ID_FOR_WEBPAGE = 24;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -196,6 +204,7 @@ class ConversionAdjustmentUploadError
         self::CONVERSION_ALREADY_ENHANCED => 'CONVERSION_ALREADY_ENHANCED',
         self::DUPLICATE_ENHANCEMENT_IN_REQUEST => 'DUPLICATE_ENHANCEMENT_IN_REQUEST',
         self::CUSTOMER_DATA_POLICY_PROHIBITS_ENHANCEMENT => 'CUSTOMER_DATA_POLICY_PROHIBITS_ENHANCEMENT',
+        self::MISSING_ORDER_ID_FOR_WEBPAGE => 'MISSING_ORDER_ID_FOR_WEBPAGE',
     ];
 
     public static function name($value)

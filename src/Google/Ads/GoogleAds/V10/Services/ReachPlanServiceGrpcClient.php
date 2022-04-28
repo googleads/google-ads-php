@@ -39,7 +39,7 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Returns the list of plannable locations (for example, countries & DMAs).
+     * Returns the list of plannable locations (for example, countries).
      *
      * List of thrown errors:
      *   [AuthenticationError]()

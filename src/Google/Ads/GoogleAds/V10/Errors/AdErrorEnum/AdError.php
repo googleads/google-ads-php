@@ -955,6 +955,18 @@ class AdError
      * Generated from protobuf enum <code>MISSING_REQUIRED_IMAGE_ASPECT_RATIO = 153;</code>
      */
     const MISSING_REQUIRED_IMAGE_ASPECT_RATIO = 153;
+    /**
+     * Aspect ratios mismatch between different assets.
+     *
+     * Generated from protobuf enum <code>MISMATCHED_ASPECT_RATIOS = 155;</code>
+     */
+    const MISMATCHED_ASPECT_RATIOS = 155;
+    /**
+     * Images must be unique between different carousel card assets.
+     *
+     * Generated from protobuf enum <code>DUPLICATE_IMAGE_ACROSS_CAROUSEL_CARDS = 156;</code>
+     */
+    const DUPLICATE_IMAGE_ACROSS_CAROUSEL_CARDS = 156;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -1109,6 +1121,8 @@ class AdError
         self::INVALID_CUSTOMIZER_ATTRIBUTE_NAME => 'INVALID_CUSTOMIZER_ATTRIBUTE_NAME',
         self::STORE_MISMATCH => 'STORE_MISMATCH',
         self::MISSING_REQUIRED_IMAGE_ASPECT_RATIO => 'MISSING_REQUIRED_IMAGE_ASPECT_RATIO',
+        self::MISMATCHED_ASPECT_RATIOS => 'MISMATCHED_ASPECT_RATIOS',
+        self::DUPLICATE_IMAGE_ACROSS_CAROUSEL_CARDS => 'DUPLICATE_IMAGE_ACROSS_CAROUSEL_CARDS',
     ];
 
     public static function name($value)

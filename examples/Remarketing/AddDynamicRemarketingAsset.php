@@ -167,7 +167,10 @@ class AddDynamicRemarketingAsset
         ]);
 
         // Wraps the dynamic education asset in an asset.
-        $asset = new Asset(['dynamic_education_asset' => $dynamicEducationAsset]);
+        $asset = new Asset([
+            'dynamic_education_asset' => $dynamicEducationAsset,
+            'final_urls' => ['https://www.example.com']
+        ]);
 
         // Creates an asset operation.
         $assetOperation = new AssetOperation();

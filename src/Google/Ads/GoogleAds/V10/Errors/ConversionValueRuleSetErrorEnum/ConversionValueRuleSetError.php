@@ -114,6 +114,14 @@ class ConversionValueRuleSetError
      * Generated from protobuf enum <code>DIMENSION_NO_CONDITION_NOT_ALLOWED = 13;</code>
      */
     const DIMENSION_NO_CONDITION_NOT_ALLOWED = 13;
+    /**
+     * Value rule sets defined on the specified conversion action categories are
+     * not supported. The list of conversion action categories must be an empty
+     * list, only STORE_VISIT, or only STORE_SALE.
+     *
+     * Generated from protobuf enum <code>UNSUPPORTED_CONVERSION_ACTION_CATEGORIES = 14;</code>
+     */
+    const UNSUPPORTED_CONVERSION_ACTION_CATEGORIES = 14;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -130,6 +138,7 @@ class ConversionValueRuleSetError
         self::INELIGIBLE_CONVERSION_ACTION_CATEGORIES => 'INELIGIBLE_CONVERSION_ACTION_CATEGORIES',
         self::DIMENSION_NO_CONDITION_USED_WITH_OTHER_DIMENSIONS => 'DIMENSION_NO_CONDITION_USED_WITH_OTHER_DIMENSIONS',
         self::DIMENSION_NO_CONDITION_NOT_ALLOWED => 'DIMENSION_NO_CONDITION_NOT_ALLOWED',
+        self::UNSUPPORTED_CONVERSION_ACTION_CATEGORIES => 'UNSUPPORTED_CONVERSION_ACTION_CATEGORIES',
     ];
 
     public static function name($value)
