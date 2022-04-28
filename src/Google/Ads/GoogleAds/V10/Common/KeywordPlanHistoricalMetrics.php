@@ -59,6 +59,12 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional int64 high_top_of_page_bid_micros = 10;</code>
      */
     protected $high_top_of_page_bid_micros = null;
+    /**
+     * Average Cost Per Click in micros for the keyword.
+     *
+     * Generated from protobuf field <code>optional int64 average_cpc_micros = 11;</code>
+     */
+    protected $average_cpc_micros = null;
 
     /**
      * Constructor.
@@ -83,6 +89,8 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      *           Top of page bid low range (20th percentile) in micros for the keyword.
      *     @type int|string $high_top_of_page_bid_micros
      *           Top of page bid high range (80th percentile) in micros for the keyword.
+     *     @type int|string $average_cpc_micros
+     *           Average Cost Per Click in micros for the keyword.
      * }
      */
     public function __construct($data = NULL) {
@@ -292,6 +300,42 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->high_top_of_page_bid_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Average Cost Per Click in micros for the keyword.
+     *
+     * Generated from protobuf field <code>optional int64 average_cpc_micros = 11;</code>
+     * @return int|string
+     */
+    public function getAverageCpcMicros()
+    {
+        return isset($this->average_cpc_micros) ? $this->average_cpc_micros : 0;
+    }
+
+    public function hasAverageCpcMicros()
+    {
+        return isset($this->average_cpc_micros);
+    }
+
+    public function clearAverageCpcMicros()
+    {
+        unset($this->average_cpc_micros);
+    }
+
+    /**
+     * Average Cost Per Click in micros for the keyword.
+     *
+     * Generated from protobuf field <code>optional int64 average_cpc_micros = 11;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setAverageCpcMicros($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->average_cpc_micros = $var;
 
         return $this;
     }

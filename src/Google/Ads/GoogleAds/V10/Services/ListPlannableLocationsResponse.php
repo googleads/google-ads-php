@@ -16,11 +16,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListPlannableLocationsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The list of locations available for planning (Countries, DMAs,
-     * sub-countries).
-     * For locations like Countries and DMAs see
-     * https://developers.google.com/google-ads/api/reference/data/geotargets for
-     * more information.
+     * The list of locations available for planning.
+     * See
+     * https://developers.google.com/google-ads/api/reference/data/geotargets
+     * for sample locations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v10.services.PlannableLocation plannable_locations = 1;</code>
      */
@@ -33,11 +32,10 @@ class ListPlannableLocationsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V10\Services\PlannableLocation[]|\Google\Protobuf\Internal\RepeatedField $plannable_locations
-     *           The list of locations available for planning (Countries, DMAs,
-     *           sub-countries).
-     *           For locations like Countries and DMAs see
-     *           https://developers.google.com/google-ads/api/reference/data/geotargets for
-     *           more information.
+     *           The list of locations available for planning.
+     *           See
+     *           https://developers.google.com/google-ads/api/reference/data/geotargets
+     *           for sample locations.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,11 +44,10 @@ class ListPlannableLocationsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of locations available for planning (Countries, DMAs,
-     * sub-countries).
-     * For locations like Countries and DMAs see
-     * https://developers.google.com/google-ads/api/reference/data/geotargets for
-     * more information.
+     * The list of locations available for planning.
+     * See
+     * https://developers.google.com/google-ads/api/reference/data/geotargets
+     * for sample locations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v10.services.PlannableLocation plannable_locations = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -61,11 +58,10 @@ class ListPlannableLocationsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of locations available for planning (Countries, DMAs,
-     * sub-countries).
-     * For locations like Countries and DMAs see
-     * https://developers.google.com/google-ads/api/reference/data/geotargets for
-     * more information.
+     * The list of locations available for planning.
+     * See
+     * https://developers.google.com/google-ads/api/reference/data/geotargets
+     * for sample locations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v10.services.PlannableLocation plannable_locations = 1;</code>
      * @param \Google\Ads\GoogleAds\V10\Services\PlannableLocation[]|\Google\Protobuf\Internal\RepeatedField $var

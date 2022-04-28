@@ -13,14 +13,12 @@ class KeywordView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ç
-5google/ads/googleads/v10/resources/keyword_view.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"À
+Æ
+5google/ads/googleads/v10/resources/keyword_view.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"À
 KeywordViewC
 resource_name (	B,àAúA&
 $googleads.googleapis.com/KeywordView:lêAi

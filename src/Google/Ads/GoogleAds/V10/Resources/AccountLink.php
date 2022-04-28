@@ -68,6 +68,8 @@ class AccountLink extends \Google\Protobuf\Internal\Message
      *           Output only. Data partner link.
      *     @type \Google\Ads\GoogleAds\V10\Resources\GoogleAdsLinkIdentifier $google_ads
      *           Output only. Google Ads link.
+     *     @type \Google\Ads\GoogleAds\V10\Resources\HotelCenterLinkIdentifier $hotel_center
+     *           Output only. Hotel link
      * }
      */
     public function __construct($data = NULL) {
@@ -284,6 +286,37 @@ class AccountLink extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Resources\GoogleAdsLinkIdentifier::class);
         $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. Hotel link
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.resources.HotelCenterLinkIdentifier hotel_center = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V10\Resources\HotelCenterLinkIdentifier|null
+     */
+    public function getHotelCenter()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasHotelCenter()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * Output only. Hotel link
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.resources.HotelCenterLinkIdentifier hotel_center = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V10\Resources\HotelCenterLinkIdentifier $var
+     * @return $this
+     */
+    public function setHotelCenter($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Resources\HotelCenterLinkIdentifier::class);
+        $this->writeOneof(9, $var);
 
         return $this;
     }

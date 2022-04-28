@@ -45,6 +45,18 @@ class CustomConversionGoalError
      * Generated from protobuf enum <code>CANNOT_REMOVE_LINKED_CUSTOM_CONVERSION_GOAL = 4;</code>
      */
     const CANNOT_REMOVE_LINKED_CUSTOM_CONVERSION_GOAL = 4;
+    /**
+     * Custom goal with the same name already exists.
+     *
+     * Generated from protobuf enum <code>CUSTOM_GOAL_DUPLICATE_NAME = 5;</code>
+     */
+    const CUSTOM_GOAL_DUPLICATE_NAME = 5;
+    /**
+     * Custom goal with the same conversion action list already exists.
+     *
+     * Generated from protobuf enum <code>DUPLICATE_CONVERSION_ACTION_LIST = 6;</code>
+     */
+    const DUPLICATE_CONVERSION_ACTION_LIST = 6;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -52,6 +64,8 @@ class CustomConversionGoalError
         self::INVALID_CONVERSION_ACTION => 'INVALID_CONVERSION_ACTION',
         self::CONVERSION_ACTION_NOT_ENABLED => 'CONVERSION_ACTION_NOT_ENABLED',
         self::CANNOT_REMOVE_LINKED_CUSTOM_CONVERSION_GOAL => 'CANNOT_REMOVE_LINKED_CUSTOM_CONVERSION_GOAL',
+        self::CUSTOM_GOAL_DUPLICATE_NAME => 'CUSTOM_GOAL_DUPLICATE_NAME',
+        self::DUPLICATE_CONVERSION_ACTION_LIST => 'DUPLICATE_CONVERSION_ACTION_LIST',
     ];
 
     public static function name($value)

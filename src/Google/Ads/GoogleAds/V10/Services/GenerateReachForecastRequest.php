@@ -35,11 +35,11 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      */
     protected $campaign_duration = null;
     /**
-     * Desired cookie frequency cap that will be applied to each planned product.
+     * Desired cookie frequency cap to be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
-     * If not specified no cap is applied.
+     * If not specified, no cap is applied.
      * This field is deprecated in v4 and will eventually be removed.
      * Please use cookie_frequency_cap_setting instead.
      *
@@ -47,7 +47,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      */
     protected $cookie_frequency_cap = null;
     /**
-     * Desired cookie frequency cap that will be applied to each planned product.
+     * Desired cookie frequency cap to be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
@@ -111,15 +111,15 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V10\Services\CampaignDuration $campaign_duration
      *           Required. Campaign duration.
      *     @type int $cookie_frequency_cap
-     *           Desired cookie frequency cap that will be applied to each planned product.
+     *           Desired cookie frequency cap to be applied to each planned product.
      *           This is equivalent to the frequency cap exposed in Google Ads when creating
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user.
-     *           If not specified no cap is applied.
+     *           If not specified, no cap is applied.
      *           This field is deprecated in v4 and will eventually be removed.
      *           Please use cookie_frequency_cap_setting instead.
      *     @type \Google\Ads\GoogleAds\V10\Services\FrequencyCap $cookie_frequency_cap_setting
-     *           Desired cookie frequency cap that will be applied to each planned product.
+     *           Desired cookie frequency cap to be applied to each planned product.
      *           This is equivalent to the frequency cap exposed in Google Ads when creating
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user during a specified time interval.
@@ -256,11 +256,11 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired cookie frequency cap that will be applied to each planned product.
+     * Desired cookie frequency cap to be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
-     * If not specified no cap is applied.
+     * If not specified, no cap is applied.
      * This field is deprecated in v4 and will eventually be removed.
      * Please use cookie_frequency_cap_setting instead.
      *
@@ -283,11 +283,11 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired cookie frequency cap that will be applied to each planned product.
+     * Desired cookie frequency cap to be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
-     * If not specified no cap is applied.
+     * If not specified, no cap is applied.
      * This field is deprecated in v4 and will eventually be removed.
      * Please use cookie_frequency_cap_setting instead.
      *
@@ -304,7 +304,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired cookie frequency cap that will be applied to each planned product.
+     * Desired cookie frequency cap to be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
@@ -330,7 +330,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired cookie frequency cap that will be applied to each planned product.
+     * Desired cookie frequency cap to be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.

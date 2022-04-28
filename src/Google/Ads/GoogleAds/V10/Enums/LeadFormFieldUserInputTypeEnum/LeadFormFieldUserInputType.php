@@ -94,6 +94,48 @@ class LeadFormFieldUserInputType
      */
     const JOB_TITLE = 15;
     /**
+     * The user will be asked to fill in their CPF for Brazil users.
+     *
+     * Generated from protobuf enum <code>GOVERNMENT_ISSUED_ID_CPF_BR = 16;</code>
+     */
+    const GOVERNMENT_ISSUED_ID_CPF_BR = 16;
+    /**
+     * The user will be asked to fill in their DNI for Argentina users.
+     *
+     * Generated from protobuf enum <code>GOVERNMENT_ISSUED_ID_DNI_AR = 17;</code>
+     */
+    const GOVERNMENT_ISSUED_ID_DNI_AR = 17;
+    /**
+     * The user will be asked to fill in their DNI for Peru users.
+     *
+     * Generated from protobuf enum <code>GOVERNMENT_ISSUED_ID_DNI_PE = 18;</code>
+     */
+    const GOVERNMENT_ISSUED_ID_DNI_PE = 18;
+    /**
+     * The user will be asked to fill in their RUT for Chile users.
+     *
+     * Generated from protobuf enum <code>GOVERNMENT_ISSUED_ID_RUT_CL = 19;</code>
+     */
+    const GOVERNMENT_ISSUED_ID_RUT_CL = 19;
+    /**
+     * The user will be asked to fill in their CC for Colombia users.
+     *
+     * Generated from protobuf enum <code>GOVERNMENT_ISSUED_ID_CC_CO = 20;</code>
+     */
+    const GOVERNMENT_ISSUED_ID_CC_CO = 20;
+    /**
+     * The user will be asked to fill in their CI for Ecuador users.
+     *
+     * Generated from protobuf enum <code>GOVERNMENT_ISSUED_ID_CI_EC = 21;</code>
+     */
+    const GOVERNMENT_ISSUED_ID_CI_EC = 21;
+    /**
+     * The user will be asked to fill in their RFC for Mexico users.
+     *
+     * Generated from protobuf enum <code>GOVERNMENT_ISSUED_ID_RFC_MX = 22;</code>
+     */
+    const GOVERNMENT_ISSUED_ID_RFC_MX = 22;
+    /**
      * The user will be asked to fill in their first name. This
      * field can not be set at the same time as FULL_NAME.
      *
@@ -451,6 +493,13 @@ class LeadFormFieldUserInputType
         self::COMPANY_NAME => 'COMPANY_NAME',
         self::WORK_PHONE => 'WORK_PHONE',
         self::JOB_TITLE => 'JOB_TITLE',
+        self::GOVERNMENT_ISSUED_ID_CPF_BR => 'GOVERNMENT_ISSUED_ID_CPF_BR',
+        self::GOVERNMENT_ISSUED_ID_DNI_AR => 'GOVERNMENT_ISSUED_ID_DNI_AR',
+        self::GOVERNMENT_ISSUED_ID_DNI_PE => 'GOVERNMENT_ISSUED_ID_DNI_PE',
+        self::GOVERNMENT_ISSUED_ID_RUT_CL => 'GOVERNMENT_ISSUED_ID_RUT_CL',
+        self::GOVERNMENT_ISSUED_ID_CC_CO => 'GOVERNMENT_ISSUED_ID_CC_CO',
+        self::GOVERNMENT_ISSUED_ID_CI_EC => 'GOVERNMENT_ISSUED_ID_CI_EC',
+        self::GOVERNMENT_ISSUED_ID_RFC_MX => 'GOVERNMENT_ISSUED_ID_RFC_MX',
         self::FIRST_NAME => 'FIRST_NAME',
         self::LAST_NAME => 'LAST_NAME',
         self::VEHICLE_MODEL => 'VEHICLE_MODEL',

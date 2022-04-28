@@ -13,14 +13,12 @@ class AgeRangeView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-î
-7google/ads/googleads/v10/resources/age_range_view.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"Ä
+Í
+7google/ads/googleads/v10/resources/age_range_view.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"Ä
 AgeRangeViewD
 resource_name (	B-àAúA\'
 %googleads.googleapis.com/AgeRangeView:nêAk

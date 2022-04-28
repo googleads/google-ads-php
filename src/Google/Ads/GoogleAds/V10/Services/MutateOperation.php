@@ -95,6 +95,8 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      *           A campaign extension setting mutate operation.
      *     @type \Google\Ads\GoogleAds\V10\Services\CampaignFeedOperation $campaign_feed_operation
      *           A campaign feed mutate operation.
+     *     @type \Google\Ads\GoogleAds\V10\Services\CampaignGroupOperation $campaign_group_operation
+     *           A campaign group mutate operation.
      *     @type \Google\Ads\GoogleAds\V10\Services\CampaignLabelOperation $campaign_label_operation
      *           A campaign label mutate operation.
      *     @type \Google\Ads\GoogleAds\V10\Services\CampaignOperation $campaign_operation
@@ -1292,6 +1294,37 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Services\CampaignFeedOperation::class);
         $this->writeOneof(27, $var);
+
+        return $this;
+    }
+
+    /**
+     * A campaign group mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.services.CampaignGroupOperation campaign_group_operation = 9;</code>
+     * @return \Google\Ads\GoogleAds\V10\Services\CampaignGroupOperation|null
+     */
+    public function getCampaignGroupOperation()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasCampaignGroupOperation()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * A campaign group mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.services.CampaignGroupOperation campaign_group_operation = 9;</code>
+     * @param \Google\Ads\GoogleAds\V10\Services\CampaignGroupOperation $var
+     * @return $this
+     */
+    public function setCampaignGroupOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Services\CampaignGroupOperation::class);
+        $this->writeOneof(9, $var);
 
         return $this;
     }

@@ -13,14 +13,12 @@ class DisplayKeywordView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-’
-=google/ads/googleads/v10/resources/display_keyword_view.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"Ü
+ñ
+=google/ads/googleads/v10/resources/display_keyword_view.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"Ü
 DisplayKeywordViewJ
 resource_name (	B3àAúA-
 +googleads.googleapis.com/DisplayKeywordView:zêAw

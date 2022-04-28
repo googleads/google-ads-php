@@ -1,3 +1,24 @@
+## 15.0.0
+*   Added support for v10_1 of Google Ads API.
+*   Removed support for v8 of Google Ads API.
+*   Combined two examples in `Authentication/` into `GenerateUserCredentials`,
+    since [OAuth OOB](https://developers.googleblog.com/2022/02/making-oauth-flows-safer.html?m=1#disallowed-oob) is being deprecated.
+*   Updated `Dockerfile` to use the latest stable version of Apache PHP by default.
+*   Updated `examples/Migration/composer.json` and fixed
+    [#761](https://github.com/googleads/google-ads-php/issues/761).
+*   Fixed dependabot alert in `examples/LaravelSampleApp/composer.lock`.
+*   Added code examples:
+    * AddPerformanceMaxProductListingGroupTree
+*   Updated code examples:
+    * AddCampaigns
+    * AddCustomerMatchUserList
+    * AddDynamicRemarketingAsset
+    * AddPerformanceMaxCampaign
+    * AddPerformanceMaxRetailCampaign
+    * GetChangeDetails
+    * NavigateSearchResultPagesCachingTokens
+    * UploadOfflineConversion
+
 ## 14.0.0
 *   Added support for v10 of Google Ads API.
 *   Removed support for v7 of Google Ads API.

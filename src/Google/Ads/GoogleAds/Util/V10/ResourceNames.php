@@ -106,6 +106,46 @@ use Google\ApiCore\PathTemplate;
 final class ResourceNames
 {
     /**
+     * Generates a resource name of campaign group.
+     *
+     * @param string $customerId
+     * @param string $campaignGroupId
+     * @return string the campaign group resource name
+     */
+    public static function forCampaignGroup(
+        $customerId,
+        $campaignGroupId
+    ): string {
+        $pathTemplate = new PathTemplate(
+            'customers/{customer_id}/campaignGroups/{campaign_group_id}'
+        );
+        return $pathTemplate->render([
+            'customer_id' => $customerId,
+            'campaign_group_id' => $campaignGroupId,
+        ]);
+    }
+
+    /**
+     * Generates a resource name of lead form submission data.
+     *
+     * @param string $customerId
+     * @param string $leadFormSubmissionDataId
+     * @return string the lead form submission data resource name
+     */
+    public static function forLeadFormSubmissionData(
+        $customerId,
+        $leadFormSubmissionDataId
+    ): string {
+        $pathTemplate = new PathTemplate(
+            'customers/{customer_id}/leadFormSubmissionData/{lead_form_submission_data_id}'
+        );
+        return $pathTemplate->render([
+            'customer_id' => $customerId,
+            'lead_form_submission_data_id' => $leadFormSubmissionDataId,
+        ]);
+    }
+
+    /**
      * Generates a resource name of audience.
      *
      * @param string $customerId

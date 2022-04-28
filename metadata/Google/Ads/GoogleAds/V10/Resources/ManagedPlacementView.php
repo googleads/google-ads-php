@@ -13,14 +13,12 @@ class ManagedPlacementView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ž
-?google/ads/googleads/v10/resources/managed_placement_view.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"ä
+ý
+?google/ads/googleads/v10/resources/managed_placement_view.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"ä
 ManagedPlacementViewL
 resource_name (	B5àAúA/
 -googleads.googleapis.com/ManagedPlacementView:~êA{

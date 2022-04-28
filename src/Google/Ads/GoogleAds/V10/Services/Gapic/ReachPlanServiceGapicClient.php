@@ -210,7 +210,7 @@ class ReachPlanServiceGapicClient
      * ```
      *
      * @param string $customerId          Required. The ID of the customer.
-     * @param string $plannableLocationId Required. The ID of the location, this is one of the ids returned by
+     * @param string $plannableLocationId Required. The ID of the location, this is one of the IDs returned by
      *                                    [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
      * @param string $currencyCode        Required. Currency code.
      *                                    Three-character ISO 4217 currency code.
@@ -290,16 +290,16 @@ class ReachPlanServiceGapicClient
      *           The currency code.
      *           Three-character ISO 4217 currency code.
      *     @type int $cookieFrequencyCap
-     *           Desired cookie frequency cap that will be applied to each planned product.
+     *           Desired cookie frequency cap to be applied to each planned product.
      *           This is equivalent to the frequency cap exposed in Google Ads when creating
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user.
-     *           If not specified no cap is applied.
+     *           If not specified, no cap is applied.
      *
      *           This field is deprecated in v4 and will eventually be removed.
      *           Please use cookie_frequency_cap_setting instead.
      *     @type FrequencyCap $cookieFrequencyCapSetting
-     *           Desired cookie frequency cap that will be applied to each planned product.
+     *           Desired cookie frequency cap to be applied to each planned product.
      *           This is equivalent to the frequency cap exposed in Google Ads when creating
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user during a specified time interval.
@@ -380,7 +380,7 @@ class ReachPlanServiceGapicClient
     }
 
     /**
-     * Returns the list of plannable locations (for example, countries & DMAs).
+     * Returns the list of plannable locations (for example, countries).
      *
      * List of thrown errors:
      * [AuthenticationError]()
@@ -444,7 +444,7 @@ class ReachPlanServiceGapicClient
      * ```
      *
      * @param string $plannableLocationId Required. The ID of the selected location for planning. To list the available
-     *                                    plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
+     *                                    plannable location IDs use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
      * @param array  $optionalArgs        {
      *     Optional.
      *

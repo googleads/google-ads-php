@@ -13,14 +13,12 @@ class ExperimentArm
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ê
-7google/ads/googleads/v10/resources/experiment_arm.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"¿
+É
+7google/ads/googleads/v10/resources/experiment_arm.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"¿
 ExperimentArmE
 resource_name (	B.àAúA(
 &googleads.googleapis.com/ExperimentArm:

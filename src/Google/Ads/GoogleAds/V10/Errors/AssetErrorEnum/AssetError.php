@@ -214,6 +214,19 @@ class AssetError
      * Generated from protobuf enum <code>NAME_REQUIRED_FOR_ASSET_TYPE = 32;</code>
      */
     const NAME_REQUIRED_FOR_ASSET_TYPE = 32;
+    /**
+     * Legacy qualifying questions cannot be in the same Lead Form as
+     * custom questions.
+     *
+     * Generated from protobuf enum <code>LEAD_FORM_LEGACY_QUALIFYING_QUESTIONS_DISALLOWED = 33;</code>
+     */
+    const LEAD_FORM_LEGACY_QUALIFYING_QUESTIONS_DISALLOWED = 33;
+    /**
+     * Unique name is required for this asset type.
+     *
+     * Generated from protobuf enum <code>NAME_CONFLICT_FOR_ASSET_TYPE = 34;</code>
+     */
+    const NAME_CONFLICT_FOR_ASSET_TYPE = 34;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -248,6 +261,8 @@ class AssetError
         self::MOBILE_APP_INVALID_APP_ID => 'MOBILE_APP_INVALID_APP_ID',
         self::MOBILE_APP_INVALID_FINAL_URL_FOR_APP_DOWNLOAD_URL => 'MOBILE_APP_INVALID_FINAL_URL_FOR_APP_DOWNLOAD_URL',
         self::NAME_REQUIRED_FOR_ASSET_TYPE => 'NAME_REQUIRED_FOR_ASSET_TYPE',
+        self::LEAD_FORM_LEGACY_QUALIFYING_QUESTIONS_DISALLOWED => 'LEAD_FORM_LEGACY_QUALIFYING_QUESTIONS_DISALLOWED',
+        self::NAME_CONFLICT_FOR_ASSET_TYPE => 'NAME_CONFLICT_FOR_ASSET_TYPE',
     ];
 
     public static function name($value)

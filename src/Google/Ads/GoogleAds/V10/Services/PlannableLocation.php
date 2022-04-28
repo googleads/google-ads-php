@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A plannable location: a country, a DMA, a metro region, a tv region,
- * a province.
+ * A plannable location: country, metro region, province, etc.
  *
  * Generated from protobuf message <code>google.ads.googleads.v10.services.PlannableLocation</code>
  */
@@ -23,14 +22,14 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
      */
     protected $id = null;
     /**
-     * The unique location name in english.
+     * The unique location name in English.
      *
      * Generated from protobuf field <code>optional string name = 5;</code>
      */
     protected $name = null;
     /**
-     * The parent country, not present if location is a country.
-     * If present will always be a GeoTargetConstant ID. Additional information,
+     * The parent country (not present if location is a country).
+     * If present, will always be a GeoTargetConstant ID. Additional information
      * such as country name is provided by
      * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations] or
      * [GoogleAdsService.Search/SearchStream][].
@@ -61,10 +60,10 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           The location identifier.
      *     @type string $name
-     *           The unique location name in english.
+     *           The unique location name in English.
      *     @type int|string $parent_country_id
-     *           The parent country, not present if location is a country.
-     *           If present will always be a GeoTargetConstant ID. Additional information,
+     *           The parent country (not present if location is a country).
+     *           If present, will always be a GeoTargetConstant ID. Additional information
      *           such as country name is provided by
      *           [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations] or
      *           [GoogleAdsService.Search/SearchStream][].
@@ -117,7 +116,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The unique location name in english.
+     * The unique location name in English.
      *
      * Generated from protobuf field <code>optional string name = 5;</code>
      * @return string
@@ -138,7 +137,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The unique location name in english.
+     * The unique location name in English.
      *
      * Generated from protobuf field <code>optional string name = 5;</code>
      * @param string $var
@@ -153,8 +152,8 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The parent country, not present if location is a country.
-     * If present will always be a GeoTargetConstant ID. Additional information,
+     * The parent country (not present if location is a country).
+     * If present, will always be a GeoTargetConstant ID. Additional information
      * such as country name is provided by
      * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations] or
      * [GoogleAdsService.Search/SearchStream][].
@@ -178,8 +177,8 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The parent country, not present if location is a country.
-     * If present will always be a GeoTargetConstant ID. Additional information,
+     * The parent country (not present if location is a country).
+     * If present, will always be a GeoTargetConstant ID. Additional information
      * such as country name is provided by
      * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations] or
      * [GoogleAdsService.Search/SearchStream][].

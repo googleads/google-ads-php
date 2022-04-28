@@ -18,6 +18,7 @@
 
 namespace Google\Ads\GoogleAds\Lib\V9;
 
+use Google\Ads\GoogleAds\Lib\InsecureCredentialsWrapper;
 use Google\Auth\FetchAuthTokenInterface;
 use Grpc\ChannelCredentials;
 use Grpc\Interceptor;
@@ -148,6 +149,11 @@ class GoogleAdsClientTest extends TestCase
                 count(self::$DEFAULT_INTERCEPTOR_TYPES)
             )
         );
+
+        $this->assertSame(
+            $this->fetchAuthTokenInterfaceMock,
+            $clientOptions[self::$CREDENTIALS_LOADER_KEY]
+        );
     }
 
     public function testNullLoginCustomerIdNotAppearInClientOptions()
@@ -178,7 +184,7 @@ class GoogleAdsClientTest extends TestCase
         );
     }
 
-    public function testGrpcChannelCredentialWhenGrpcChannelIsNotSecureInClientOptions()
+    public function testCredentialsWhenGrpcChannelIsNotSecureInClientOptions()
     {
         $googleAdsClient =
             $this->googleAdsClientBuilder->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
@@ -186,6 +192,11 @@ class GoogleAdsClientTest extends TestCase
                 ->withGrpcChannelIsSecure(false)
                 ->build();
         $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
+
+        $this->assertInstanceOf(
+            InsecureCredentialsWrapper::class,
+            $clientOptions[self::$CREDENTIALS_LOADER_KEY]
+        );
 
         $this->assertSame(
             ChannelCredentials::createInsecure(),

@@ -343,6 +343,12 @@ class ClickType
      * Generated from protobuf enum <code>SHOPPING_COMPARISON_LISTING = 56;</code>
      */
     const SHOPPING_COMPARISON_LISTING = 56;
+    /**
+     * Cross-network. From Performance Max and Discovery Campaigns.
+     *
+     * Generated from protobuf enum <code>CROSS_NETWORK = 57;</code>
+     */
+    const CROSS_NETWORK = 57;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -400,6 +406,7 @@ class ClickType
         self::PRICE_EXTENSION => 'PRICE_EXTENSION',
         self::HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION => 'HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION',
         self::SHOPPING_COMPARISON_LISTING => 'SHOPPING_COMPARISON_LISTING',
+        self::CROSS_NETWORK => 'CROSS_NETWORK',
     ];
 
     public static function name($value)

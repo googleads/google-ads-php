@@ -13,14 +13,12 @@ class FeedItemSetLink
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-•
-;google/ads/googleads/v10/resources/feed_item_set_link.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"ä
+ô
+;google/ads/googleads/v10/resources/feed_item_set_link.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"ä
 FeedItemSetLinkG
 resource_name (	B0àAúA*
 (googleads.googleapis.com/FeedItemSetLink<

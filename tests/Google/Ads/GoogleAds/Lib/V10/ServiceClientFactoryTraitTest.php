@@ -60,6 +60,7 @@ use Google\Ads\GoogleAds\V10\Services\CampaignDraftServiceClient;
 use Google\Ads\GoogleAds\V10\Services\CampaignExperimentServiceClient;
 use Google\Ads\GoogleAds\V10\Services\CampaignExtensionSettingServiceClient;
 use Google\Ads\GoogleAds\V10\Services\CampaignFeedServiceClient;
+use Google\Ads\GoogleAds\V10\Services\CampaignGroupServiceClient;
 use Google\Ads\GoogleAds\V10\Services\CampaignLabelServiceClient;
 use Google\Ads\GoogleAds\V10\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V10\Services\CampaignSharedSetServiceClient;
@@ -479,6 +480,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         $this->assertInstanceOf(
             CampaignFeedServiceClient::class,
             $this->googleAdsClient->getCampaignFeedServiceClient()
+        );
+    }
+
+    public function testGetCampaignGroupServiceClient()
+    {
+        $this->assertInstanceOf(
+            CampaignGroupServiceClient::class,
+            $this->googleAdsClient->getCampaignGroupServiceClient()
         );
     }
 

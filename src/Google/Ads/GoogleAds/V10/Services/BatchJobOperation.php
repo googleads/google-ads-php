@@ -25,6 +25,10 @@ class BatchJobOperation extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Ads\GoogleAds\V10\Resources\BatchJob $create
      *           Create operation: No resource name is expected for the new batch job.
+     *     @type string $remove
+     *           Remove operation: The batch job must not have been run. A resource name
+     *           for the removed batch job is expected, in this format:
+     *           `customers/{customer_id}/batchJobs/{batch_job_id}`
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +63,41 @@ class BatchJobOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Resources\BatchJob::class);
         $this->writeOneof(1, $var);
+
+        return $this;
+    }
+
+    /**
+     * Remove operation: The batch job must not have been run. A resource name
+     * for the removed batch job is expected, in this format:
+     * `customers/{customer_id}/batchJobs/{batch_job_id}`
+     *
+     * Generated from protobuf field <code>string remove = 4 [(.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getRemove()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasRemove()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * Remove operation: The batch job must not have been run. A resource name
+     * for the removed batch job is expected, in this format:
+     * `customers/{customer_id}/batchJobs/{batch_job_id}`
+     *
+     * Generated from protobuf field <code>string remove = 4 [(.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRemove($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(4, $var);
 
         return $this;
     }

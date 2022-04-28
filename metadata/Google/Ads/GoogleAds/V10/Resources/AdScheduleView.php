@@ -13,14 +13,12 @@ class AdScheduleView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ú
-9google/ads/googleads/v10/resources/ad_schedule_view.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"Ì
+Ù
+9google/ads/googleads/v10/resources/ad_schedule_view.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"Ì
 AdScheduleViewF
 resource_name (	B/àAúA)
 \'googleads.googleapis.com/AdScheduleView:rêAo

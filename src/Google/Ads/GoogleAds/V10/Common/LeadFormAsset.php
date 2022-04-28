@@ -76,6 +76,12 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      */
     private $fields;
     /**
+     * Ordered list of custom question fields.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v10.common.LeadFormCustomQuestionField custom_question_fields = 23;</code>
+     */
+    private $custom_question_fields;
+    /**
      * Configured methods for collected lead data to be delivered to advertiser.
      * Only one method typed as WebhookDelivery can be configured.
      *
@@ -140,6 +146,8 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      *           advertiser will follow up with the user.
      *     @type \Google\Ads\GoogleAds\V10\Common\LeadFormField[]|\Google\Protobuf\Internal\RepeatedField $fields
      *           Ordered list of input fields.
+     *     @type \Google\Ads\GoogleAds\V10\Common\LeadFormCustomQuestionField[]|\Google\Protobuf\Internal\RepeatedField $custom_question_fields
+     *           Ordered list of custom question fields.
      *     @type \Google\Ads\GoogleAds\V10\Common\LeadFormDeliveryMethod[]|\Google\Protobuf\Internal\RepeatedField $delivery_methods
      *           Configured methods for collected lead data to be delivered to advertiser.
      *           Only one method typed as WebhookDelivery can be configured.
@@ -423,6 +431,32 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V10\Common\LeadFormField::class);
         $this->fields = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Ordered list of custom question fields.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v10.common.LeadFormCustomQuestionField custom_question_fields = 23;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCustomQuestionFields()
+    {
+        return $this->custom_question_fields;
+    }
+
+    /**
+     * Ordered list of custom question fields.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v10.common.LeadFormCustomQuestionField custom_question_fields = 23;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\LeadFormCustomQuestionField[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCustomQuestionFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V10\Common\LeadFormCustomQuestionField::class);
+        $this->custom_question_fields = $arr;
 
         return $this;
     }

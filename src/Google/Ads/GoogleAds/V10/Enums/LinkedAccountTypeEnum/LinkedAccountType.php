@@ -44,6 +44,12 @@ class LinkedAccountType
      * Generated from protobuf enum <code>GOOGLE_ADS = 4;</code>
      */
     const GOOGLE_ADS = 4;
+    /**
+     * A link to Hotel Center.
+     *
+     * Generated from protobuf enum <code>HOTEL_CENTER = 5;</code>
+     */
+    const HOTEL_CENTER = 5;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -51,6 +57,7 @@ class LinkedAccountType
         self::THIRD_PARTY_APP_ANALYTICS => 'THIRD_PARTY_APP_ANALYTICS',
         self::DATA_PARTNER => 'DATA_PARTNER',
         self::GOOGLE_ADS => 'GOOGLE_ADS',
+        self::HOTEL_CENTER => 'HOTEL_CENTER',
     ];
 
     public static function name($value)

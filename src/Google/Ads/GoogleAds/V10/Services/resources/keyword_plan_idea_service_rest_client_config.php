@@ -3,6 +3,18 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v10.services.KeywordPlanIdeaService' => [
+            'GenerateKeywordHistoricalMetrics' => [
+                'method' => 'post',
+                'uriTemplate' => '/v10/customers/{customer_id=*}:generateKeywordHistoricalMetrics',
+                'body' => '*',
+                'placeholders' => [
+                    'customer_id' => [
+                        'getters' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
             'GenerateKeywordIdeas' => [
                 'method' => 'post',
                 'uriTemplate' => '/v10/customers/{customer_id=*}:generateKeywordIdeas',

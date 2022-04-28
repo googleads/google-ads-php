@@ -827,6 +827,21 @@ class CriterionError
      * Generated from protobuf enum <code>AUDIENCE_NOT_ELIGIBLE_FOR_CAMPAIGN_TYPE = 137;</code>
      */
     const AUDIENCE_NOT_ELIGIBLE_FOR_CAMPAIGN_TYPE = 137;
+    /**
+     * Audience is not allowed to attach when use_audience_grouped bit is set to
+     * false.
+     *
+     * Generated from protobuf enum <code>AUDIENCE_NOT_ALLOWED_TO_ATTACH_WHEN_AUDIENCE_GROUPED_SET_TO_FALSE = 138;</code>
+     */
+    const AUDIENCE_NOT_ALLOWED_TO_ATTACH_WHEN_AUDIENCE_GROUPED_SET_TO_FALSE = 138;
+    /**
+     * Targeting is not allowed for Customer Match lists as per Customer Match
+     * policy. Please see
+     * https://support.google.com/google-ads/answer/6299717.
+     *
+     * Generated from protobuf enum <code>CANNOT_TARGET_CUSTOMER_MATCH_USER_LIST = 139;</code>
+     */
+    const CANNOT_TARGET_CUSTOMER_MATCH_USER_LIST = 139;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -959,6 +974,8 @@ class CriterionError
         self::BROAD_MATCH_MODIFIER_KEYWORD_NOT_ALLOWED => 'BROAD_MATCH_MODIFIER_KEYWORD_NOT_ALLOWED',
         self::ONE_AUDIENCE_ALLOWED_PER_ASSET_GROUP => 'ONE_AUDIENCE_ALLOWED_PER_ASSET_GROUP',
         self::AUDIENCE_NOT_ELIGIBLE_FOR_CAMPAIGN_TYPE => 'AUDIENCE_NOT_ELIGIBLE_FOR_CAMPAIGN_TYPE',
+        self::AUDIENCE_NOT_ALLOWED_TO_ATTACH_WHEN_AUDIENCE_GROUPED_SET_TO_FALSE => 'AUDIENCE_NOT_ALLOWED_TO_ATTACH_WHEN_AUDIENCE_GROUPED_SET_TO_FALSE',
+        self::CANNOT_TARGET_CUSTOMER_MATCH_USER_LIST => 'CANNOT_TARGET_CUSTOMER_MATCH_USER_LIST',
     ];
 
     public static function name($value)

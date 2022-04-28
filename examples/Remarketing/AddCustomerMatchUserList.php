@@ -36,6 +36,7 @@ use Google\Ads\GoogleAds\V10\Common\OfflineUserAddressInfo;
 use Google\Ads\GoogleAds\V10\Common\UserData;
 use Google\Ads\GoogleAds\V10\Common\UserIdentifier;
 use Google\Ads\GoogleAds\V10\Enums\CustomerMatchUploadKeyTypeEnum\CustomerMatchUploadKeyType;
+use Google\Ads\GoogleAds\V10\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
 use Google\Ads\GoogleAds\V10\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
 use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V10\Resources\OfflineUserDataJob;
@@ -46,7 +47,6 @@ use Google\Ads\GoogleAds\V10\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V10\Services\OfflineUserDataJobOperation;
 use Google\Ads\GoogleAds\V10\Services\UserListOperation;
 use Google\ApiCore\ApiException;
-use Google\ApiCore\OperationResponse;
 
 /**
  * This example uses Customer Match to create a new user list (a.k.a. audience) and adds users to
@@ -61,9 +61,6 @@ use Google\ApiCore\OperationResponse;
 class AddCustomerMatchUserList
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-
-    private const POLL_FREQUENCY_SECONDS = 1;
-    private const MAX_TOTAL_POLL_INTERVAL_SECONDS = 60;
 
     public static function main()
     {
@@ -230,37 +227,20 @@ class AddCustomerMatchUserList
         print 'The operations are added to the offline user data job.' . PHP_EOL;
 
         // Issues an asynchronous request to run the offline user data job for executing all added
-        // operations.
-        /** @var OperationResponse $operationResponse */
-        $operationResponse = $offlineUserDataJobServiceClient->runOfflineUserDataJob(
-            $offlineUserDataJobResourceName
-        );
-        print 'Asynchronous request to execute the added operations started.' . PHP_EOL;
-        print 'Waiting until operation completes.' . PHP_EOL;
+        // operations. The result is OperationResponse. Visit the OperationResponse.php file for
+        // more details.
+        $offlineUserDataJobServiceClient->runOfflineUserDataJob($offlineUserDataJobResourceName);
 
-        // pollUntilComplete() implements a default back-off policy for retrying. You can tweak the
-        // retrying parameters like the maximum polling interval to use by passing them as an array
-        // to the pollUntilComplete() function. Visit the OperationResponse.php file for more
-        // details.
-        $operationCompleted = $operationResponse->pollUntilComplete([
-            'initialPollDelayMillis' => self::POLL_FREQUENCY_SECONDS * 1000,
-            'totalPollTimeoutMillis' => self::MAX_TOTAL_POLL_INTERVAL_SECONDS * 1000
-        ]);
-        if ($operationCompleted) {
-            printf(
-                "Offline user data job with resource name '%s' has finished.%s",
-                $offlineUserDataJobResourceName,
-                PHP_EOL
-            );
-        } else {
-            printf(
-                "Offline user data job with resource name '%s' still pending after %d " .
-                "seconds, continuing the execution of the code example anyway.%s",
-                $offlineUserDataJobResourceName,
-                self::MAX_TOTAL_POLL_INTERVAL_SECONDS,
-                PHP_EOL
-            );
-        }
+        // Offline user data jobs may take 6 hours or more to complete, so instead of waiting
+        // for the job to complete, retrieves and displays the job status once. If the job is
+        // completed successfully, prints information about the user list. Otherwise, prints the
+        // query to use to check the job again later.
+        self::checkJobStatus(
+            $googleAdsClient,
+            $customerId,
+            $offlineUserDataJobResourceName,
+            $userListResourceName
+        );
     }
     // [END add_customer_match_user_list]
 
@@ -307,6 +287,70 @@ class AddCustomerMatchUserList
         ];
 
         return $operations;
+    }
+
+    /**
+     * Retrieves, checks, and prints the status of the offline user data job.
+     *
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the customer ID
+     * @param string $offlineUserDataJobResourceName the resource name of the offline user data job
+     *     to get the status for
+     * @param string $userListResourceName the resource name of the Customer Match user list
+     */
+    private static function checkJobStatus(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        string $offlineUserDataJobResourceName,
+        string $userListResourceName
+    ) {
+        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
+
+        // Creates a query that retrieves the offline user data job.
+        $query = "SELECT offline_user_data_job.resource_name, "
+              . "offline_user_data_job.id, "
+              . "offline_user_data_job.status, "
+              . "offline_user_data_job.type, "
+              . "offline_user_data_job.failure_reason "
+              . "FROM offline_user_data_job "
+              . "WHERE offline_user_data_job.resource_name = '$offlineUserDataJobResourceName'";
+
+        // Issues a search request to get the GoogleAdsRow containing the job from the response.
+        /** @var GoogleAdsRow $googleAdsRow */
+        $googleAdsRow =
+            $googleAdsServiceClient->search($customerId, $query)->getIterator()->current();
+        $offlineUserDataJob = $googleAdsRow->getOfflineUserDataJob();
+
+        // Prints out some information about the offline user data job.
+        $offlineUserDataJobStatus = $offlineUserDataJob->getStatus();
+        printf(
+            "Offline user data job ID %d with type '%s' has status: %s.%s",
+            $offlineUserDataJob->getId(),
+            OfflineUserDataJobType::name($offlineUserDataJob->getType()),
+            OfflineUserDataJobStatus::name($offlineUserDataJobStatus),
+            PHP_EOL
+        );
+
+        if ($offlineUserDataJobStatus === OfflineUserDataJobStatus::SUCCESS) {
+            // Prints information about the user list.
+            self::printCustomerMatchUserListInfo(
+                $googleAdsClient,
+                $customerId,
+                $userListResourceName
+            );
+        } elseif ($offlineUserDataJobStatus === OfflineUserDataJobStatus::FAILED) {
+            printf("  Failure reason: %s.%s", $offlineUserDataJob->getFailureReason(), PHP_EOL);
+        } elseif (
+            $offlineUserDataJobStatus === OfflineUserDataJobStatus::PENDING
+            || $offlineUserDataJobStatus === OfflineUserDataJobStatus::RUNNING
+        ) {
+            printf(
+                '%1$sTo check the status of the job periodically, use the following GAQL query with'
+                . ' GoogleAdsService.search:%1$s%2$s%1$s',
+                PHP_EOL,
+                $query
+            );
+        }
     }
 
     /**

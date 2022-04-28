@@ -60,6 +60,13 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool enhanced_conversions_for_leads_enabled = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $enhanced_conversions_for_leads_enabled = false;
+    /**
+     * Output only. The resource name of the customer where conversions are created and
+     * managed. This field is read-only.
+     *
+     * Generated from protobuf field <code>string google_ads_conversion_customer = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $google_ads_conversion_customer = '';
 
     /**
      * Constructor.
@@ -91,6 +98,9 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      *           Output only. Whether the customer is opted-in for enhanced conversions
      *           for leads. If using cross-account conversion tracking, this value is
      *           inherited from the manager. This field is read-only.
+     *     @type string $google_ads_conversion_customer
+     *           Output only. The resource name of the customer where conversions are created and
+     *           managed. This field is read-only.
      * }
      */
     public function __construct($data = NULL) {
@@ -272,6 +282,34 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->enhanced_conversions_for_leads_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The resource name of the customer where conversions are created and
+     * managed. This field is read-only.
+     *
+     * Generated from protobuf field <code>string google_ads_conversion_customer = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getGoogleAdsConversionCustomer()
+    {
+        return $this->google_ads_conversion_customer;
+    }
+
+    /**
+     * Output only. The resource name of the customer where conversions are created and
+     * managed. This field is read-only.
+     *
+     * Generated from protobuf field <code>string google_ads_conversion_customer = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGoogleAdsConversionCustomer($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->google_ads_conversion_customer = $var;
 
         return $this;
     }

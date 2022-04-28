@@ -148,6 +148,22 @@ class Asset extends \Google\Protobuf\Internal\Message
      *           A price asset.
      *     @type \Google\Ads\GoogleAds\V10\Common\CallToActionAsset $call_to_action_asset
      *           Immutable. A call to action asset.
+     *     @type \Google\Ads\GoogleAds\V10\Common\DynamicRealEstateAsset $dynamic_real_estate_asset
+     *           A dynamic real estate asset.
+     *     @type \Google\Ads\GoogleAds\V10\Common\DynamicCustomAsset $dynamic_custom_asset
+     *           A dynamic custom asset.
+     *     @type \Google\Ads\GoogleAds\V10\Common\DynamicHotelsAndRentalsAsset $dynamic_hotels_and_rentals_asset
+     *           A dynamic hotels and rentals asset.
+     *     @type \Google\Ads\GoogleAds\V10\Common\DynamicFlightsAsset $dynamic_flights_asset
+     *           A dynamic flights asset.
+     *     @type \Google\Ads\GoogleAds\V10\Common\DiscoveryCarouselCardAsset $discovery_carousel_card_asset
+     *           Immutable. A discovery carousel card asset.
+     *     @type \Google\Ads\GoogleAds\V10\Common\DynamicTravelAsset $dynamic_travel_asset
+     *           A dynamic travel asset.
+     *     @type \Google\Ads\GoogleAds\V10\Common\DynamicLocalAsset $dynamic_local_asset
+     *           A dynamic local asset.
+     *     @type \Google\Ads\GoogleAds\V10\Common\DynamicJobsAsset $dynamic_jobs_asset
+     *           A dynamic jobs asset.
      * }
      */
     public function __construct($data = NULL) {
@@ -996,6 +1012,254 @@ class Asset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\CallToActionAsset::class);
         $this->writeOneof(29, $var);
+
+        return $this;
+    }
+
+    /**
+     * A dynamic real estate asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicRealEstateAsset dynamic_real_estate_asset = 30;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\DynamicRealEstateAsset|null
+     */
+    public function getDynamicRealEstateAsset()
+    {
+        return $this->readOneof(30);
+    }
+
+    public function hasDynamicRealEstateAsset()
+    {
+        return $this->hasOneof(30);
+    }
+
+    /**
+     * A dynamic real estate asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicRealEstateAsset dynamic_real_estate_asset = 30;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\DynamicRealEstateAsset $var
+     * @return $this
+     */
+    public function setDynamicRealEstateAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\DynamicRealEstateAsset::class);
+        $this->writeOneof(30, $var);
+
+        return $this;
+    }
+
+    /**
+     * A dynamic custom asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicCustomAsset dynamic_custom_asset = 31;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\DynamicCustomAsset|null
+     */
+    public function getDynamicCustomAsset()
+    {
+        return $this->readOneof(31);
+    }
+
+    public function hasDynamicCustomAsset()
+    {
+        return $this->hasOneof(31);
+    }
+
+    /**
+     * A dynamic custom asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicCustomAsset dynamic_custom_asset = 31;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\DynamicCustomAsset $var
+     * @return $this
+     */
+    public function setDynamicCustomAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\DynamicCustomAsset::class);
+        $this->writeOneof(31, $var);
+
+        return $this;
+    }
+
+    /**
+     * A dynamic hotels and rentals asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicHotelsAndRentalsAsset dynamic_hotels_and_rentals_asset = 32;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\DynamicHotelsAndRentalsAsset|null
+     */
+    public function getDynamicHotelsAndRentalsAsset()
+    {
+        return $this->readOneof(32);
+    }
+
+    public function hasDynamicHotelsAndRentalsAsset()
+    {
+        return $this->hasOneof(32);
+    }
+
+    /**
+     * A dynamic hotels and rentals asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicHotelsAndRentalsAsset dynamic_hotels_and_rentals_asset = 32;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\DynamicHotelsAndRentalsAsset $var
+     * @return $this
+     */
+    public function setDynamicHotelsAndRentalsAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\DynamicHotelsAndRentalsAsset::class);
+        $this->writeOneof(32, $var);
+
+        return $this;
+    }
+
+    /**
+     * A dynamic flights asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicFlightsAsset dynamic_flights_asset = 33;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\DynamicFlightsAsset|null
+     */
+    public function getDynamicFlightsAsset()
+    {
+        return $this->readOneof(33);
+    }
+
+    public function hasDynamicFlightsAsset()
+    {
+        return $this->hasOneof(33);
+    }
+
+    /**
+     * A dynamic flights asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicFlightsAsset dynamic_flights_asset = 33;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\DynamicFlightsAsset $var
+     * @return $this
+     */
+    public function setDynamicFlightsAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\DynamicFlightsAsset::class);
+        $this->writeOneof(33, $var);
+
+        return $this;
+    }
+
+    /**
+     * Immutable. A discovery carousel card asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DiscoveryCarouselCardAsset discovery_carousel_card_asset = 34 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\DiscoveryCarouselCardAsset|null
+     */
+    public function getDiscoveryCarouselCardAsset()
+    {
+        return $this->readOneof(34);
+    }
+
+    public function hasDiscoveryCarouselCardAsset()
+    {
+        return $this->hasOneof(34);
+    }
+
+    /**
+     * Immutable. A discovery carousel card asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DiscoveryCarouselCardAsset discovery_carousel_card_asset = 34 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\DiscoveryCarouselCardAsset $var
+     * @return $this
+     */
+    public function setDiscoveryCarouselCardAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\DiscoveryCarouselCardAsset::class);
+        $this->writeOneof(34, $var);
+
+        return $this;
+    }
+
+    /**
+     * A dynamic travel asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicTravelAsset dynamic_travel_asset = 35;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\DynamicTravelAsset|null
+     */
+    public function getDynamicTravelAsset()
+    {
+        return $this->readOneof(35);
+    }
+
+    public function hasDynamicTravelAsset()
+    {
+        return $this->hasOneof(35);
+    }
+
+    /**
+     * A dynamic travel asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicTravelAsset dynamic_travel_asset = 35;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\DynamicTravelAsset $var
+     * @return $this
+     */
+    public function setDynamicTravelAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\DynamicTravelAsset::class);
+        $this->writeOneof(35, $var);
+
+        return $this;
+    }
+
+    /**
+     * A dynamic local asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicLocalAsset dynamic_local_asset = 36;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\DynamicLocalAsset|null
+     */
+    public function getDynamicLocalAsset()
+    {
+        return $this->readOneof(36);
+    }
+
+    public function hasDynamicLocalAsset()
+    {
+        return $this->hasOneof(36);
+    }
+
+    /**
+     * A dynamic local asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicLocalAsset dynamic_local_asset = 36;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\DynamicLocalAsset $var
+     * @return $this
+     */
+    public function setDynamicLocalAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\DynamicLocalAsset::class);
+        $this->writeOneof(36, $var);
+
+        return $this;
+    }
+
+    /**
+     * A dynamic jobs asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicJobsAsset dynamic_jobs_asset = 37;</code>
+     * @return \Google\Ads\GoogleAds\V10\Common\DynamicJobsAsset|null
+     */
+    public function getDynamicJobsAsset()
+    {
+        return $this->readOneof(37);
+    }
+
+    public function hasDynamicJobsAsset()
+    {
+        return $this->hasOneof(37);
+    }
+
+    /**
+     * A dynamic jobs asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.common.DynamicJobsAsset dynamic_jobs_asset = 37;</code>
+     * @param \Google\Ads\GoogleAds\V10\Common\DynamicJobsAsset $var
+     * @return $this
+     */
+    public function setDynamicJobsAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Common\DynamicJobsAsset::class);
+        $this->writeOneof(37, $var);
 
         return $this;
     }

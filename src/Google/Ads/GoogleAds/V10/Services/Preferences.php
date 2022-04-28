@@ -44,8 +44,8 @@ class Preferences extends \Google\Protobuf\Internal\Message
      */
     protected $top_content_only = null;
     /**
-     * True if the price guaranteed. The cost of serving the ad is agreed upfront
-     * and not subject to an auction.
+     * True if the price is guaranteed. The cost of serving the ad is agreed
+     * upfront and not subject to an auction.
      * If not set, default is any value.
      *
      * Generated from protobuf field <code>optional bool has_guaranteed_price = 9;</code>
@@ -71,8 +71,8 @@ class Preferences extends \Google\Protobuf\Internal\Message
      *           True if ad will only show on the top content.
      *           If not set, default is false.
      *     @type bool $has_guaranteed_price
-     *           True if the price guaranteed. The cost of serving the ad is agreed upfront
-     *           and not subject to an auction.
+     *           True if the price is guaranteed. The cost of serving the ad is agreed
+     *           upfront and not subject to an auction.
      *           If not set, default is any value.
      * }
      */
@@ -224,8 +224,8 @@ class Preferences extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * True if the price guaranteed. The cost of serving the ad is agreed upfront
-     * and not subject to an auction.
+     * True if the price is guaranteed. The cost of serving the ad is agreed
+     * upfront and not subject to an auction.
      * If not set, default is any value.
      *
      * Generated from protobuf field <code>optional bool has_guaranteed_price = 9;</code>
@@ -247,8 +247,8 @@ class Preferences extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * True if the price guaranteed. The cost of serving the ad is agreed upfront
-     * and not subject to an auction.
+     * True if the price is guaranteed. The cost of serving the ad is agreed
+     * upfront and not subject to an auction.
      * If not set, default is any value.
      *
      * Generated from protobuf field <code>optional bool has_guaranteed_price = 9;</code>

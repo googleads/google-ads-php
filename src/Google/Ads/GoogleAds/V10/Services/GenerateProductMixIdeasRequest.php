@@ -22,7 +22,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      */
     protected $customer_id = '';
     /**
-     * Required. The ID of the location, this is one of the ids returned by
+     * Required. The ID of the location, this is one of the IDs returned by
      * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
      *
      * Generated from protobuf field <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -60,7 +60,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      *     @type string $customer_id
      *           Required. The ID of the customer.
      *     @type string $plannable_location_id
-     *           Required. The ID of the location, this is one of the ids returned by
+     *           Required. The ID of the location, this is one of the IDs returned by
      *           [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
      *     @type string $currency_code
      *           Required. Currency code.
@@ -106,7 +106,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The ID of the location, this is one of the ids returned by
+     * Required. The ID of the location, this is one of the IDs returned by
      * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
      *
      * Generated from protobuf field <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -118,7 +118,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The ID of the location, this is one of the ids returned by
+     * Required. The ID of the location, this is one of the IDs returned by
      * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
      *
      * Generated from protobuf field <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>

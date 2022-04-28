@@ -26,13 +26,13 @@ class AssetSetType
      */
     const UNKNOWN = 1;
     /**
-     * Page feed.
+     * Page asset set.
      *
      * Generated from protobuf enum <code>PAGE_FEED = 2;</code>
      */
     const PAGE_FEED = 2;
     /**
-     * Dynamic education feed.
+     * Dynamic education asset set.
      *
      * Generated from protobuf enum <code>DYNAMIC_EDUCATION = 3;</code>
      */
@@ -43,6 +43,48 @@ class AssetSetType
      * Generated from protobuf enum <code>MERCHANT_CENTER_FEED = 4;</code>
      */
     const MERCHANT_CENTER_FEED = 4;
+    /**
+     * Dynamic real estate asset set.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_REAL_ESTATE = 5;</code>
+     */
+    const DYNAMIC_REAL_ESTATE = 5;
+    /**
+     * Dynamic custom asset set.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_CUSTOM = 6;</code>
+     */
+    const DYNAMIC_CUSTOM = 6;
+    /**
+     * Dynamic hotels and rentals asset set.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_HOTELS_AND_RENTALS = 7;</code>
+     */
+    const DYNAMIC_HOTELS_AND_RENTALS = 7;
+    /**
+     * Dynamic flights asset set.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_FLIGHTS = 8;</code>
+     */
+    const DYNAMIC_FLIGHTS = 8;
+    /**
+     * Dynamic travel asset set.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_TRAVEL = 9;</code>
+     */
+    const DYNAMIC_TRAVEL = 9;
+    /**
+     * Dynamic local asset set.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_LOCAL = 10;</code>
+     */
+    const DYNAMIC_LOCAL = 10;
+    /**
+     * Dynamic jobs asset set.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_JOBS = 11;</code>
+     */
+    const DYNAMIC_JOBS = 11;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -50,6 +92,13 @@ class AssetSetType
         self::PAGE_FEED => 'PAGE_FEED',
         self::DYNAMIC_EDUCATION => 'DYNAMIC_EDUCATION',
         self::MERCHANT_CENTER_FEED => 'MERCHANT_CENTER_FEED',
+        self::DYNAMIC_REAL_ESTATE => 'DYNAMIC_REAL_ESTATE',
+        self::DYNAMIC_CUSTOM => 'DYNAMIC_CUSTOM',
+        self::DYNAMIC_HOTELS_AND_RENTALS => 'DYNAMIC_HOTELS_AND_RENTALS',
+        self::DYNAMIC_FLIGHTS => 'DYNAMIC_FLIGHTS',
+        self::DYNAMIC_TRAVEL => 'DYNAMIC_TRAVEL',
+        self::DYNAMIC_LOCAL => 'DYNAMIC_LOCAL',
+        self::DYNAMIC_JOBS => 'DYNAMIC_JOBS',
     ];
 
     public static function name($value)

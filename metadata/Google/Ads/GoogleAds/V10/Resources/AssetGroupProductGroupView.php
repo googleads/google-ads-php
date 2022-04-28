@@ -13,17 +13,19 @@ class AssetGroupProductGroupView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ô
-Ggoogle/ads/googleads/v10/resources/asset_group_product_group_view.proto"google.ads.googleads.v10.resourcesgoogle/api/field_behavior.protogoogle/api/resource.proto"Œ
+Þ
+Ggoogle/ads/googleads/v10/resources/asset_group_product_group_view.proto"google.ads.googleads.v10.resourcesgoogle/api/resource.proto"·
 AssetGroupProductGroupViewR
 resource_name (	B;àAúA5
-3googleads.googleapis.com/AssetGroupProductGroupView:™êA•
+3googleads.googleapis.com/AssetGroupProductGroupView@
+asset_group (	B+àAúA%
+#googleads.googleapis.com/AssetGroupg
+ asset_group_listing_group_filter (	B=àAúA7
+5googleads.googleapis.com/AssetGroupListingGroupFilter:™êA•
 3googleads.googleapis.com/AssetGroupProductGroupView^customers/{customer_id}/assetGroupProductGroupViews/{asset_group_id}~{listing_group_filter_id}B‘
 &com.google.ads.googleads.v10.resourcesBAssetGroupProductGroupViewProtoPZKgoogle.golang.org/genproto/googleapis/ads/googleads/v10/resources;resources¢GAAª"Google.Ads.GoogleAds.V10.ResourcesÊ"Google\\Ads\\GoogleAds\\V10\\Resourcesê&Google::Ads::GoogleAds::V10::Resourcesbproto3'
         , true);

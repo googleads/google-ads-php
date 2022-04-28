@@ -17,7 +17,7 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The ID of the selected location for planning. To list the available
-     * plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
+     * plannable location IDs use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
      *
      * Generated from protobuf field <code>string plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -31,7 +31,7 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $plannable_location_id
      *           Required. The ID of the selected location for planning. To list the available
-     *           plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
+     *           plannable location IDs use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
      * }
      */
     public function __construct($data = NULL) {
@@ -41,7 +41,7 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The ID of the selected location for planning. To list the available
-     * plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
+     * plannable location IDs use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
      *
      * Generated from protobuf field <code>string plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -53,7 +53,7 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The ID of the selected location for planning. To list the available
-     * plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
+     * plannable location IDs use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
      *
      * Generated from protobuf field <code>string plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

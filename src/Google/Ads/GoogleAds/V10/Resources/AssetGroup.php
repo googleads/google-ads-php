@@ -10,8 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * An asset group.
- * AssetGroupAsset will be used to link an asset to the asset group.
- * AssetGroupHint will be used to associate a hint to an asset group.
+ * AssetGroupAsset is used to link an asset to the asset group.
+ * AssetGroupSignal is used to associate a signal to an asset group.
  *
  * Generated from protobuf message <code>google.ads.googleads.v10.resources.AssetGroup</code>
  */
@@ -47,14 +47,14 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
     protected $name = '';
     /**
      * A list of final URLs after all cross domain redirects. In performance max,
-     * by default, the urls will be eligible for expansion unless opted out.
+     * by default, the urls are eligible for expansion unless opted out.
      *
      * Generated from protobuf field <code>repeated string final_urls = 4;</code>
      */
     private $final_urls;
     /**
      * A list of final mobile URLs after all cross domain redirects. In
-     * performance max, by default, the urls will be eligible for expansion
+     * performance max, by default, the urls are eligible for expansion
      * unless opted out.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 5;</code>
@@ -101,10 +101,10 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      *           maximum length of 128. It must be unique under a campaign.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_urls
      *           A list of final URLs after all cross domain redirects. In performance max,
-     *           by default, the urls will be eligible for expansion unless opted out.
+     *           by default, the urls are eligible for expansion unless opted out.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
      *           A list of final mobile URLs after all cross domain redirects. In
-     *           performance max, by default, the urls will be eligible for expansion
+     *           performance max, by default, the urls are eligible for expansion
      *           unless opted out.
      *     @type int $status
      *           The status of the asset group.
@@ -235,7 +235,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
 
     /**
      * A list of final URLs after all cross domain redirects. In performance max,
-     * by default, the urls will be eligible for expansion unless opted out.
+     * by default, the urls are eligible for expansion unless opted out.
      *
      * Generated from protobuf field <code>repeated string final_urls = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -247,7 +247,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
 
     /**
      * A list of final URLs after all cross domain redirects. In performance max,
-     * by default, the urls will be eligible for expansion unless opted out.
+     * by default, the urls are eligible for expansion unless opted out.
      *
      * Generated from protobuf field <code>repeated string final_urls = 4;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -263,7 +263,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
 
     /**
      * A list of final mobile URLs after all cross domain redirects. In
-     * performance max, by default, the urls will be eligible for expansion
+     * performance max, by default, the urls are eligible for expansion
      * unless opted out.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 5;</code>
@@ -276,7 +276,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
 
     /**
      * A list of final mobile URLs after all cross domain redirects. In
-     * performance max, by default, the urls will be eligible for expansion
+     * performance max, by default, the urls are eligible for expansion
      * unless opted out.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 5;</code>

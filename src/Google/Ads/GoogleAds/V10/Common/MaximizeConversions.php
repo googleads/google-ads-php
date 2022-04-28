@@ -18,10 +18,11 @@ class MaximizeConversions extends \Google\Protobuf\Internal\Message
 {
     /**
      * The target cost-per-action (CPA) option. This is the average amount that
-     * you would like to spend per conversion action. If set, the bid strategy
-     * will get as many conversions as possible at or below the target
-     * cost-per-action. If the target CPA is not set, the bid strategy will
-     * aim to achieve the lowest possible CPA given the budget.
+     * you would like to spend per conversion action specified in micro units of
+     * the bidding strategy's currency. If set, the bid strategy will get as many
+     * conversions as possible at or below the target cost-per-action. If the
+     * target CPA is not set, the bid strategy will aim to achieve the lowest
+     * possible CPA given the budget.
      *
      * Generated from protobuf field <code>int64 target_cpa = 1;</code>
      */
@@ -51,10 +52,11 @@ class MaximizeConversions extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $target_cpa
      *           The target cost-per-action (CPA) option. This is the average amount that
-     *           you would like to spend per conversion action. If set, the bid strategy
-     *           will get as many conversions as possible at or below the target
-     *           cost-per-action. If the target CPA is not set, the bid strategy will
-     *           aim to achieve the lowest possible CPA given the budget.
+     *           you would like to spend per conversion action specified in micro units of
+     *           the bidding strategy's currency. If set, the bid strategy will get as many
+     *           conversions as possible at or below the target cost-per-action. If the
+     *           target CPA is not set, the bid strategy will aim to achieve the lowest
+     *           possible CPA given the budget.
      *     @type int|string $cpc_bid_ceiling_micros
      *           Maximum bid limit that can be set by the bid strategy.
      *           The limit applies to all keywords managed by the strategy.
@@ -72,10 +74,11 @@ class MaximizeConversions extends \Google\Protobuf\Internal\Message
 
     /**
      * The target cost-per-action (CPA) option. This is the average amount that
-     * you would like to spend per conversion action. If set, the bid strategy
-     * will get as many conversions as possible at or below the target
-     * cost-per-action. If the target CPA is not set, the bid strategy will
-     * aim to achieve the lowest possible CPA given the budget.
+     * you would like to spend per conversion action specified in micro units of
+     * the bidding strategy's currency. If set, the bid strategy will get as many
+     * conversions as possible at or below the target cost-per-action. If the
+     * target CPA is not set, the bid strategy will aim to achieve the lowest
+     * possible CPA given the budget.
      *
      * Generated from protobuf field <code>int64 target_cpa = 1;</code>
      * @return int|string
@@ -87,10 +90,11 @@ class MaximizeConversions extends \Google\Protobuf\Internal\Message
 
     /**
      * The target cost-per-action (CPA) option. This is the average amount that
-     * you would like to spend per conversion action. If set, the bid strategy
-     * will get as many conversions as possible at or below the target
-     * cost-per-action. If the target CPA is not set, the bid strategy will
-     * aim to achieve the lowest possible CPA given the budget.
+     * you would like to spend per conversion action specified in micro units of
+     * the bidding strategy's currency. If set, the bid strategy will get as many
+     * conversions as possible at or below the target cost-per-action. If the
+     * target CPA is not set, the bid strategy will aim to achieve the lowest
+     * possible CPA given the budget.
      *
      * Generated from protobuf field <code>int64 target_cpa = 1;</code>
      * @param int|string $var

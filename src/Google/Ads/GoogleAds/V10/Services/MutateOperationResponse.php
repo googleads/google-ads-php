@@ -95,6 +95,8 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      *           The result for the campaign extension setting mutate.
      *     @type \Google\Ads\GoogleAds\V10\Services\MutateCampaignFeedResult $campaign_feed_result
      *           The result for the campaign feed mutate.
+     *     @type \Google\Ads\GoogleAds\V10\Services\MutateCampaignGroupResult $campaign_group_result
+     *           The result for the campaign group mutate.
      *     @type \Google\Ads\GoogleAds\V10\Services\MutateCampaignLabelResult $campaign_label_result
      *           The result for the campaign label mutate.
      *     @type \Google\Ads\GoogleAds\V10\Services\MutateCampaignResult $campaign_result
@@ -1288,6 +1290,37 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Services\MutateCampaignFeedResult::class);
         $this->writeOneof(27, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the campaign group mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.services.MutateCampaignGroupResult campaign_group_result = 9;</code>
+     * @return \Google\Ads\GoogleAds\V10\Services\MutateCampaignGroupResult|null
+     */
+    public function getCampaignGroupResult()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasCampaignGroupResult()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * The result for the campaign group mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v10.services.MutateCampaignGroupResult campaign_group_result = 9;</code>
+     * @param \Google\Ads\GoogleAds\V10\Services\MutateCampaignGroupResult $var
+     * @return $this
+     */
+    public function setCampaignGroupResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V10\Services\MutateCampaignGroupResult::class);
+        $this->writeOneof(9, $var);
 
         return $this;
     }

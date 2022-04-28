@@ -210,6 +210,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $start_date = null;
     /**
+     * The campaign group this campaign belongs to.
+     *
+     * Generated from protobuf field <code>optional string campaign_group = 76 [(.google.api.resource_reference) = {</code>
+     */
+    protected $campaign_group = null;
+    /**
      * The last day of the campaign in serving customer's timezone in YYYY-MM-DD
      * format.
      *
@@ -393,6 +399,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type string $start_date
      *           The date when campaign started in serving customer's timezone in YYYY-MM-DD
      *           format.
+     *     @type string $campaign_group
+     *           The campaign group this campaign belongs to.
      *     @type string $end_date
      *           The last day of the campaign in serving customer's timezone in YYYY-MM-DD
      *           format.
@@ -1403,6 +1411,42 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->start_date = $var;
+
+        return $this;
+    }
+
+    /**
+     * The campaign group this campaign belongs to.
+     *
+     * Generated from protobuf field <code>optional string campaign_group = 76 [(.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getCampaignGroup()
+    {
+        return isset($this->campaign_group) ? $this->campaign_group : '';
+    }
+
+    public function hasCampaignGroup()
+    {
+        return isset($this->campaign_group);
+    }
+
+    public function clearCampaignGroup()
+    {
+        unset($this->campaign_group);
+    }
+
+    /**
+     * The campaign group this campaign belongs to.
+     *
+     * Generated from protobuf field <code>optional string campaign_group = 76 [(.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCampaignGroup($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->campaign_group = $var;
 
         return $this;
     }

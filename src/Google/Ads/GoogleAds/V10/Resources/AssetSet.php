@@ -17,6 +17,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class AssetSet extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Output only. The ID of the asset set.
+     *
+     * Generated from protobuf field <code>int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $id = 0;
+    /**
      * Immutable. The resource name of the asset set.
      * Asset set resource names have the form:
      * `customers/{customer_id}/assetSets/{asset_set_id}`
@@ -56,6 +62,8 @@ class AssetSet extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int|string $id
+     *           Output only. The ID of the asset set.
      *     @type string $resource_name
      *           Immutable. The resource name of the asset set.
      *           Asset set resource names have the form:
@@ -74,6 +82,32 @@ class AssetSet extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V10\Resources\AssetSet::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Output only. The ID of the asset set.
+     *
+     * Generated from protobuf field <code>int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int|string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Output only. The ID of the asset set.
+     *
+     * Generated from protobuf field <code>int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->id = $var;
+
+        return $this;
     }
 
     /**
