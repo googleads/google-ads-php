@@ -20,11 +20,11 @@ namespace Google\Ads\GoogleAds\Examples\Migration\CampaignManagement;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
-use Google\Ads\GoogleAds\V10\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V10\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V10\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V10\Services\MutateCampaignBudgetsResponse;
+use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
+use Google\Ads\GoogleAds\V11\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V11\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V11\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V11\Services\MutateCampaignBudgetsResponse;
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\AdWords\v201809\cm\AdGroup;

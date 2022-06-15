@@ -23,17 +23,17 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V10\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V10\ResourceNames;
-use Google\Ads\GoogleAds\V10\Common\InteractionTypeInfo;
-use Google\Ads\GoogleAds\V10\Enums\InteractionTypeEnum;
-use Google\Ads\GoogleAds\V10\Enums\ResponseContentTypeEnum\ResponseContentType;
-use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V10\Resources\CampaignBidModifier;
-use Google\Ads\GoogleAds\V10\Services\CampaignBidModifierOperation;
+use Google\Ads\GoogleAds\Util\V11\ResourceNames;
+use Google\Ads\GoogleAds\V11\Common\InteractionTypeInfo;
+use Google\Ads\GoogleAds\V11\Enums\InteractionTypeEnum;
+use Google\Ads\GoogleAds\V11\Enums\ResponseContentTypeEnum\ResponseContentType;
+use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V11\Resources\CampaignBidModifier;
+use Google\Ads\GoogleAds\V11\Services\CampaignBidModifierOperation;
 use Google\ApiCore\ApiException;
 
 /**

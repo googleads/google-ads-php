@@ -39,7 +39,7 @@ final class ArgumentNames
     public const BILLING_SETUP_ID = 'billingSetupId';
     public const BRIDGE_MAP_VERSION_ID = 'bridgeMapVersionId';
     public const BUSINESS_ACCOUNT_IDENTIFIER = 'businessAccountIdentifier';
-    public const BUSINESS_LOCATION_ID = 'businessLocationId';
+    public const BUSINESS_PROFILE_LOCATION = 'businessProfileLocation';
     public const BUSINESS_NAME = 'businessName';
     public const CALL_START_DATE_TIME = 'callStartDateTime';
     public const CALLER_ID = 'callerId';
@@ -144,7 +144,7 @@ final class ArgumentNames
         self::BRIDGE_MAP_VERSION_ID
             => 'The version of partner IDs to be used for store-sale uploads',
         self::BUSINESS_ACCOUNT_IDENTIFIER => 'The account number of the Business Profile account',
-        self::BUSINESS_LOCATION_ID => 'The Business Profile location ID',
+        self::BUSINESS_PROFILE_LOCATION => 'The Business Profile location resource name',
         self::BUSINESS_NAME => 'The Business Profile business name',
         self::CALL_START_DATE_TIME => 'The call start date time',
         self::CALLER_ID => 'The caller ID',
