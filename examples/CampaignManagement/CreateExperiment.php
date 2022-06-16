@@ -52,7 +52,7 @@ use Google\ApiCore\ApiException;
 class CreateExperiment
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
+    private const BASE_CAMPAIGN_ID = 'INSERT_BASE_CAMPAIGN_ID_HERE';
 
     public static function main()
     {
@@ -60,7 +60,7 @@ class CreateExperiment
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::BASE_CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -77,7 +77,7 @@ class CreateExperiment
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::CAMPAIGN_ID] ?: self::CAMPAIGN_ID
+                $options[ArgumentNames::BASE_CAMPAIGN_ID] ?: self::BASE_CAMPAIGN_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
