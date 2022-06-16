@@ -35,6 +35,10 @@ final class GoogleAdsCallLogger
     private $endpoint;
     private $logMessageFormatter;
     private $context;
+    // An associative array of all the log levels (based on the PSR-3 standard) to sequence numbers.
+    // Sequence numbers are used to determine if a given log level is higher or lower than another,
+    // which can help determine, e.g., if this library should log the requests/responses, depending
+    // on the set filter level.
     private const LOG_LEVELS  = [
         'DEBUG' => 0,
         'INFO' => 1,
