@@ -25,47 +25,47 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V10\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V10\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V10\ResourceNames;
-use Google\Ads\GoogleAds\V10\Common\AdScheduleInfo;
-use Google\Ads\GoogleAds\V10\Common\AdTextAsset;
-use Google\Ads\GoogleAds\V10\Common\KeywordThemeInfo;
-use Google\Ads\GoogleAds\V10\Common\LocationInfo;
-use Google\Ads\GoogleAds\V10\Common\SmartCampaignAdInfo;
-use Google\Ads\GoogleAds\V10\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V10\Enums\AdTypeEnum\AdType;
-use Google\Ads\GoogleAds\V10\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType;
-use Google\Ads\GoogleAds\V10\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V10\Enums\BudgetTypeEnum\BudgetType;
-use Google\Ads\GoogleAds\V10\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V10\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V10\Enums\MinuteOfHourEnum\MinuteOfHour;
-use Google\Ads\GoogleAds\V10\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V10\Resources\Ad;
-use Google\Ads\GoogleAds\V10\Resources\AdGroup;
-use Google\Ads\GoogleAds\V10\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V10\Resources\Campaign;
-use Google\Ads\GoogleAds\V10\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V10\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V10\Resources\KeywordThemeConstant;
-use Google\Ads\GoogleAds\V10\Resources\SmartCampaignSetting;
-use Google\Ads\GoogleAds\V10\Resources\SmartCampaignSetting\PhoneNumber;
-use Google\Ads\GoogleAds\V10\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V10\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V10\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V10\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V10\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V10\Services\MutateGoogleAdsResponse;
-use Google\Ads\GoogleAds\V10\Services\MutateOperation;
-use Google\Ads\GoogleAds\V10\Services\MutateOperationResponse;
-use Google\Ads\GoogleAds\V10\Services\SmartCampaignSettingOperation;
-use Google\Ads\GoogleAds\V10\Services\SmartCampaignSuggestionInfo;
-use Google\Ads\GoogleAds\V10\Services\SmartCampaignSuggestionInfo\BusinessContext;
-use Google\Ads\GoogleAds\V10\Services\SmartCampaignSuggestionInfo\LocationList;
-use Google\Ads\GoogleAds\V10\Services\SuggestSmartCampaignBudgetOptionsRequest\SuggestionDataOneof;
+use Google\Ads\GoogleAds\Util\V11\ResourceNames;
+use Google\Ads\GoogleAds\V11\Common\AdScheduleInfo;
+use Google\Ads\GoogleAds\V11\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V11\Common\KeywordThemeInfo;
+use Google\Ads\GoogleAds\V11\Common\LocationInfo;
+use Google\Ads\GoogleAds\V11\Common\SmartCampaignAdInfo;
+use Google\Ads\GoogleAds\V11\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V11\Enums\AdTypeEnum\AdType;
+use Google\Ads\GoogleAds\V11\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType;
+use Google\Ads\GoogleAds\V11\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V11\Enums\BudgetTypeEnum\BudgetType;
+use Google\Ads\GoogleAds\V11\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V11\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V11\Enums\MinuteOfHourEnum\MinuteOfHour;
+use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V11\Resources\Ad;
+use Google\Ads\GoogleAds\V11\Resources\AdGroup;
+use Google\Ads\GoogleAds\V11\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V11\Resources\Campaign;
+use Google\Ads\GoogleAds\V11\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V11\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V11\Resources\KeywordThemeConstant;
+use Google\Ads\GoogleAds\V11\Resources\SmartCampaignSetting;
+use Google\Ads\GoogleAds\V11\Resources\SmartCampaignSetting\PhoneNumber;
+use Google\Ads\GoogleAds\V11\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V11\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V11\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V11\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V11\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V11\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V11\Services\MutateOperation;
+use Google\Ads\GoogleAds\V11\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\V11\Services\SmartCampaignSettingOperation;
+use Google\Ads\GoogleAds\V11\Services\SmartCampaignSuggestionInfo;
+use Google\Ads\GoogleAds\V11\Services\SmartCampaignSuggestionInfo\BusinessContext;
+use Google\Ads\GoogleAds\V11\Services\SmartCampaignSuggestionInfo\LocationList;
+use Google\Ads\GoogleAds\V11\Services\SuggestSmartCampaignBudgetOptionsRequest\SuggestionDataOneof;
 use Google\ApiCore\ApiException;
 use InvalidArgumentException;
 
@@ -88,12 +88,13 @@ class AddSmartCampaign
     // typically not recommended because they are less effective than suggested keyword themes,
     // however they are useful in situations where a very specific term needs to be targeted.
     private const FREEFORM_KEYWORD_TEXT = null;
-    // Optional: Specify the ID of a Business Profile location. This is required if a
+    // Optional: Specify the resource name of a Business Profile location. This is required if a
     // business name is not provided. It can be retrieved using the Business Profile API, see:
-    // https://developers.google.com/my-business/reference/rest/v4/accounts.locations.
-    private const BUSINESS_LOCATION_ID = null;
+    // https://developers.google.com/my-business/reference/businessinformation/rest/v1/accounts.locations
+    // or from the Business Profile UI (https://support.google.com/business/answer/10737668).
+    private const BUSINESS_PROFILE_LOCATION = null;
     // Optional: Specify the name of a Business Profile business. This is required if a
-    // business location ID is not provided.
+    // business profile location is not provided.
     private const BUSINESS_NAME = null;
 
     // Geo target constant for New York City.
@@ -114,8 +115,6 @@ class AddSmartCampaign
     private const NUM_REQUIRED_HEADLINES = 3;
     private const NUM_REQUIRED_DESCRIPTIONS = 2;
 
-    private const UNSIGNED_64_BIT_RANGE_CEILING = 2 ** 64;
-
     public static function main()
     {
         // Either pass the required parameters for this example on the command line, or insert them
@@ -124,22 +123,22 @@ class AddSmartCampaign
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::KEYWORD_TEXT => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::FREEFORM_KEYWORD_TEXT => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::BUSINESS_LOCATION_ID => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::BUSINESS_PROFILE_LOCATION => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::BUSINESS_NAME => GetOpt::OPTIONAL_ARGUMENT
         ]);
-        $businessLocationId =
-            $options[ArgumentNames::BUSINESS_LOCATION_ID] ?: self::BUSINESS_LOCATION_ID;
+        $businessProfileLocation =
+            $options[ArgumentNames::BUSINESS_PROFILE_LOCATION] ?: self::BUSINESS_PROFILE_LOCATION;
         $businessName = $options[ArgumentNames::BUSINESS_NAME] ?: self::BUSINESS_NAME;
-        if ($businessLocationId && $businessName) {
+        if ($businessProfileLocation && $businessName) {
             throw new InvalidArgumentException(
-                'Both the business location ID and business name are provided but they are '
-                . 'mutually exclusive. Please only set a value for one of them.'
+                'Both the business location resource name and business name are provided but they '
+                . 'are mutually exclusive. Please only set a value for one of them.'
             );
         }
-        if (!$businessLocationId && !$businessName) {
+        if (!$businessProfileLocation && !$businessName) {
             throw new InvalidArgumentException(
-                'Neither the business location ID nor the business name are provided. Please set '
-                . 'a value for one of them.'
+                'Neither the business location resource name nor the business name are provided. '
+                . 'Please set a value for one of them.'
             );
         }
 
@@ -159,7 +158,7 @@ class AddSmartCampaign
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::KEYWORD_TEXT] ?: self::KEYWORD_TEXT,
                 $options[ArgumentNames::FREEFORM_KEYWORD_TEXT] ?: self::FREEFORM_KEYWORD_TEXT,
-                $businessLocationId,
+                $businessProfileLocation,
                 $businessName
             );
         } catch (GoogleAdsException $googleAdsException) {
@@ -196,7 +195,8 @@ class AddSmartCampaign
      * @param int $customerId the customer ID
      * @param string|null $keywordText a keyword text used for generating keyword themes
      * @param string|null $freeformKeywordText a keyword used to create a free-form keyword theme
-     * @param string|null $businessLocationId the ID of a Business Profile location
+     * @param string|null $businessProfileLocationResourceName the resource name of a Business
+     *     Profile location
      * @param string|null $businessName the name of a Business Profile
      */
     public static function runExample(
@@ -204,14 +204,17 @@ class AddSmartCampaign
         int $customerId,
         ?string $keywordText,
         ?string $freeformKeywordText,
-        ?string $businessLocationId,
+        ?string $businessProfileLocationResourceName,
         ?string $businessName
     ) {
         // [START add_smart_campaign_12]
         // Gets the SmartCampaignSuggestionInfo object which acts as the basis for many of the
         // entities necessary to create a Smart campaign. It will be reused a number of times to
         // retrieve suggestions for keyword themes, budget amount, ads, and campaign criteria.
-        $suggestionInfo = self::getSmartCampaignSuggestionInfo($businessLocationId, $businessName);
+        $suggestionInfo = self::getSmartCampaignSuggestionInfo(
+            $businessProfileLocationResourceName,
+            $businessName
+        );
 
         // Generates a list of keyword themes using the SuggestKeywordThemes method on the
         // SmartCampaignSuggestService. It is strongly recommended that you use this strategy for
@@ -267,7 +270,7 @@ class AddSmartCampaign
         $smartCampaignOperation = self::createSmartCampaignOperation($customerId);
         $smartCampaignSettingOperation = self::createSmartCampaignSettingOperation(
             $customerId,
-            $businessLocationId,
+            $businessProfileLocationResourceName,
             $businessName
         );
         $campaignCriterionOperations = self::createCampaignCriterionOperations(
@@ -382,13 +385,14 @@ class AddSmartCampaign
      * "language_code" and "keyword_themes" fields are set on the SmartCampaignSuggestionInfo
      * instance.
      *
-     * @param string|null $businessLocationId the ID of a Business Profile location
+     * @param string|null $businessProfileLocationResourceName the resource name of a Business
+     *     Profile location
      * @param string|null $businessName the name of a Business Profile
      * @return SmartCampaignSuggestionInfo a SmartCampaignSuggestionInfo instance
      */
     // [START add_smart_campaign_9]
     private static function getSmartCampaignSuggestionInfo(
-        ?string $businessLocationId,
+        ?string $businessProfileLocationResourceName,
         ?string $businessName
     ): SmartCampaignSuggestionInfo {
         $suggestionInfo = new SmartCampaignSuggestionInfo([
@@ -446,12 +450,10 @@ class AddSmartCampaign
             ])]
         ]);
 
-        // Sets either of the business_location_id or business_name, depending on whichever is
+        // Sets either of the business_profile_location or business_name, depending on whichever is
         // provided.
-        if ($businessLocationId) {
-            $suggestionInfo->setBusinessLocationId(
-                self::convertBusinessLocationId($businessLocationId)
-            );
+        if ($businessProfileLocationResourceName) {
+            $suggestionInfo->setBusinessProfileLocation($businessProfileLocationResourceName);
         } else {
             $suggestionInfo->setBusinessContext(new BusinessContext([
                 'business_name' => $businessName
@@ -646,14 +648,15 @@ class AddSmartCampaign
      * associate it with the campaign created in the previous step.
      *
      * @param int $customerId the customer ID
-     * @param string|null $businessLocationId the ID of a Business Profile location
+     * @param string|null $businessProfileLocationResourceName the resource name of a Business
+     *     Profile location
      * @param string|null $businessName the name of a Business Profile
      * @return MutateOperation a MutateOperation that creates a SmartCampaignSetting
      */
     // [START add_smart_campaign_4]
     private static function createSmartCampaignSettingOperation(
         int $customerId,
-        ?string $businessLocationId,
+        ?string $businessProfileLocationResourceName,
         ?string $businessName
     ): MutateOperation {
         // Creates the smart campaign setting object.
@@ -674,12 +677,10 @@ class AddSmartCampaign
             'advertising_language_code' => self::LANGUAGE_CODE,
         ]);
 
-        // It's required that either a business location ID or a business name is added to the
-        // SmartCampaignSetting.
-        if ($businessLocationId) {
-            $smartCampaignSetting->setBusinessLocationId(
-                self::convertBusinessLocationId($businessLocationId)
-            );
+        // It's required that either a business profile location resource name or a business name is
+        // added to the SmartCampaignSetting.
+        if ($businessProfileLocationResourceName) {
+            $smartCampaignSetting->setBusinessProfileLocation($businessProfileLocationResourceName);
         } else {
             $smartCampaignSetting->setBusinessName($businessName);
         }
@@ -921,34 +922,6 @@ class AddSmartCampaign
             );
         }
     }
-
-    /**
-     * Converts a business location ID to a signed 64 bit integer.
-     *
-     * A Business Profile location ID may be outside of the range for a signed 64 bit integer
-     * (>= 2^63), which will cause an error to be thrown when it's set to the 'business_location_id'
-     * field on a SmartCampaignSuggestionInfo or SmartCampaignSetting instance.
-     * As PHP supports only signed integers, this method passes the specified parameter to intval(),
-     * which will automatically convert the value into a signed integer.
-     *
-     * If the specified value is greater than 64 bits, an error will be thrown.
-     *
-     * @param float $businessLocationId the ID of a Business Profile location
-     * @return int the converted business location ID in signed 64 bit
-     */
-    // [START add_smart_campaign_14]
-    private static function convertBusinessLocationId(float $businessLocationId)
-    {
-        if ($businessLocationId >= self::UNSIGNED_64_BIT_RANGE_CEILING) {
-            // If the business location ID is outside of 64 bit range it can't be converted to a
-            // signed 64 bit integer and is invalid.
-            throw new InvalidArgumentException(
-                'The given business_location_id is outside of the range for a 64 bit integer'
-            );
-        }
-        return intval($businessLocationId);
-    }
-    // [END add_smart_campaign_14]
 }
 
 AddSmartCampaign::main();

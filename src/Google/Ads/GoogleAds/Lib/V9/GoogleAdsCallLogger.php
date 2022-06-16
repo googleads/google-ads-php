@@ -20,7 +20,6 @@ namespace Google\Ads\GoogleAds\Lib\V9;
 
 use Google\ApiCore\ArrayTrait;
 use Google\ApiCore\Transport\Grpc\ForwardingCall;
-use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 
@@ -36,8 +35,20 @@ final class GoogleAdsCallLogger
     private $endpoint;
     private $logMessageFormatter;
     private $context;
-    private static $logLevelList;
-    private static $logLevelNamesToNormalizedValues;
+    // An associative array of all the log levels (based on the PSR-3 standard) to sequence numbers.
+    // Sequence numbers are used to determine if a given log level is higher or lower than another,
+    // which can help determine, e.g., if this library should log the requests/responses, depending
+    // on the set filter level.
+    private const LOG_LEVELS  = [
+        'DEBUG' => 0,
+        'INFO' => 1,
+        'NOTICE' => 2,
+        'WARNING' => 3,
+        'ERROR' => 4,
+        'CRITICAL' => 5,
+        'ALERT' => 6,
+        'EMERGENCY' => 7
+    ];
 
     /**
      * Constructs the Google Ads call logger with the specified PSR-3 logger interface.
@@ -60,10 +71,6 @@ final class GoogleAdsCallLogger
         $this->endpoint = $endpoint;
         $this->logMessageFormatter = $logMessageFormatter ?: new LogMessageFormatter();
         $this->context = $context;
-        if (!isset(self::$logLevelList) || !isset(self::$logLevelNamesToNormalizedValues)) {
-            self::$logLevelList = array_keys(Logger::getLevels());
-            self::$logLevelNamesToNormalizedValues = array_flip(self::$logLevelList);
-        }
     }
 
     /**
@@ -172,8 +179,8 @@ final class GoogleAdsCallLogger
      */
     private function isEnabled(string $level): bool
     {
-        return self::$logLevelNamesToNormalizedValues[strtoupper($this->filterLevel)] <=
-                self::$logLevelNamesToNormalizedValues[strtoupper($level)];
+        return self::LOG_LEVELS[strtoupper($this->filterLevel)] <=
+            self::LOG_LEVELS[strtoupper($level)];
     }
 
     /**
@@ -184,7 +191,7 @@ final class GoogleAdsCallLogger
      */
     private static function getNextFinerLogLevel($level)
     {
-        $currentLevel = self::$logLevelNamesToNormalizedValues[strtoupper($level)];
+        $currentLevel = self::LOG_LEVELS[strtoupper($level)];
         if (!isset($currentLevel)) {
             throw new \InvalidArgumentException("The specified log level '$level' is invalid.");
         }
@@ -193,6 +200,6 @@ final class GoogleAdsCallLogger
             return $level;
         }
 
-        return self::$logLevelList[$currentLevel - 1];
+        return array_flip(self::LOG_LEVELS)[$currentLevel - 1];
     }
 }

@@ -1,3 +1,17 @@
+## 15.1.0
+*   Added support for v11 of Google Ads API.
+*   Added support for version 3 of [`monolog/monolog`](https://github.com/Seldaek/monolog).
+*   Fixed dependabot alert in `examples/LaravelSampleApp/composer.lock`.
+*   Added code examples:
+    * CreateExperiment
+    * DetectAndApplyRecommendations
+*   Removed code examples:
+    * CreateCampaignExperiment
+    * GraduateCampaignExperiment
+*   Updated code examples:
+    * AddSmartCampaign
+    * GenerateUserCredentials
+
 ## 15.0.0
 *   Added support for v10_1 of Google Ads API.
 *   Removed support for v8 of Google Ads API.
