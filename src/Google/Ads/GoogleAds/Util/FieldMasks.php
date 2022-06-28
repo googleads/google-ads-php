@@ -79,7 +79,7 @@ class FieldMasks
         if (get_class($original) !== get_class($modified)) {
             throw new InvalidArgumentException(sprintf(
                 'Both input messages must be of the same type, got '
-                    . 'original: %s, modified: %s',
+                . 'original: %s, modified: %s',
                 get_class($original),
                 get_class($modified)
             ));
@@ -147,8 +147,8 @@ class FieldMasks
                 // the same as the ones that are null. If both are empty because of any cases, we
                 // will not add their field name to the path, because nothing has changed.
                 if (
-                    !((self::isEmpty($originalValue) && self::isEmpty($modifiedValue))
-                        || $originalValue == $modifiedValue)
+                !((self::isEmpty($originalValue) && self::isEmpty($modifiedValue))
+                    || $originalValue == $modifiedValue)
                 ) {
                     $paths[] = $fieldName;
                 }
@@ -177,35 +177,22 @@ class FieldMasks
                 switch ($fieldDescriptor->getType()) {
                     case GPBType::MESSAGE:
                         if ($hasValueChanged) {
-                            if (self::isWrapperType($fieldDescriptor->getMessageType())) {
-                                // For wrapper types, just emit the field name.
+                            if (
+                            self::shouldAddTopLevelMessageToPath(
+                                $originalValue,
+                                $modifiedValue,
+                                $fieldDescriptor
+                            )
+                            ) {
                                 $paths[] = $fieldName;
                             } else {
                                 // Recursively compare to find different values.
-                                $originalPaths = $paths;
                                 self::buildPaths(
                                     $paths,
                                     $fieldName,
                                     $originalValue,
                                     $modifiedValue
                                 );
-                                // If one of the resource is an empty "non-optional" message (which
-                                // has no $hasser) and its fields are not added to $paths yet
-                                // ($originalPaths == $paths), adds its field name here as a special
-                                // case.
-                                if (
-                                    $originalPaths == $paths
-                                    && (
-                                        is_null($originalValue)
-                                            && !is_null($modifiedValue)
-                                            && !method_exists($modified, $hasser)
-                                        || !is_null($originalValue)
-                                            && is_null($modifiedValue)
-                                            && !method_exists($original, $hasser)
-                                    )
-                                ) {
-                                    $paths[] = $fieldName;
-                                }
                             }
                         }
                         break;
@@ -244,6 +231,58 @@ class FieldMasks
                 $paths[] = $currentField;
             }
         }
+    }
+
+    /**
+     * Returns true if the field should be added to the paths.
+     */
+    private static function shouldAddTopLevelMessageToPath(
+        ?Message $originalValue,
+        ?Message $modifiedValue,
+        FieldDescriptor $fieldDescriptor
+    ) {
+        return self::isWrapperType($fieldDescriptor->getMessageType())
+            || self::isClearingMessage($originalValue, $modifiedValue)
+            || self::isSettingEmptyOneof($originalValue, $modifiedValue, $fieldDescriptor);
+    }
+
+    /**
+     * Returns true if the original message contains an empty message field that is not present on
+     * the modified message, or vice-versa, in which case the user is attempting to clear the top
+     * level message field.
+     */
+    private static function isClearingMessage(
+        ?Message $originalValue,
+        ?Message $modifiedValue
+    ) {
+        // Uses byteSize() to check if there are any fields set. A message whose fields have values
+        // will always have a size larger than 0.
+        return (is_null($modifiedValue)
+                && !is_null($originalValue)
+                && $originalValue->jsonByteSize() === 2)
+            || (is_null($originalValue)
+                && !is_null($modifiedValue)
+                && $modifiedValue->jsonByteSize() === 2);
+    }
+
+    /**
+     * Returns true if the modified message contains an empty oneof message that is not present in
+     * the original message. In this case, we must add the field to the paths to clear the oneof
+     * field.
+     */
+    private static function isSettingEmptyOneof(
+        ?Message $originalValue,
+        ?Message $modifiedValue,
+        FieldDescriptor $fieldDescriptor
+    ) {
+        return is_null($originalValue)
+            && !is_null($modifiedValue)
+            // The PHP protobuf assigns 0 as an index for oneof fields.
+            // Optional fields are assigned a positive number as the index.
+            // Non-optional fields are assigned -1 as the index.
+            && !is_null($fieldDescriptor->getRealContainingOneof())
+            // Checks if the message has fields, regardless of whether or not they are set.
+            && self::getDescriptorForMessage($modifiedValue)->getFieldCount() === 0;
     }
 
     /**

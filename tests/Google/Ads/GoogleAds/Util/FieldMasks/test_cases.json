@@ -209,8 +209,8 @@
           "conversionAction": "ca"
         }
       },
-      "expectedMask": "dynamicSetting.domainName,selectiveOptimization.conversionAction",
-      "allSetFieldsMask": "dynamicSetting.domainName,selectiveOptimization.conversionAction"
+      "expectedMask": "dynamicSetting.domainName,dynamicSetting.trackingSetting,selectiveOptimization.conversionAction",
+      "allSetFieldsMask": "dynamicSetting.domainName,dynamicSetting.trackingSetting,selectiveOptimization.conversionAction"
     },
     {
       "epic": "Epic 2: Singular Message Fields",
@@ -230,8 +230,8 @@
 
         }
       },
-      "expectedMask": "dynamicSetting.useSuppliedUrlsOnly,dynamicSetting.trackingSetting.trackingUrl",
-      "allSetFieldsMask": "dynamicSetting.useSuppliedUrlsOnly,dynamicSetting.trackingSetting.trackingUrl"
+      "expectedMask": "dynamicSetting.useSuppliedUrlsOnly,dynamicSetting.trackingSetting.trackingUrl,selectiveOptimization",
+      "allSetFieldsMask": "dynamicSetting.useSuppliedUrlsOnly,dynamicSetting.trackingSetting.trackingUrl,selectiveOptimization"
     },
     {
       "epic": "Epic 2: Singular Message Fields",
@@ -353,7 +353,7 @@
         }
       },
       "expectedMask": "dynamicSetting.domainName,dynamicSetting.trackingSetting.trackingUrl,selectiveOptimization.conversionAction",
-      "allSetFieldsMask": "",
+      "allSetFieldsMask": "dynamicSetting,selectiveOptimization",
       "expectedFieldValues": {
         "selective_optimization": {
           "selectiveOptimizationValue": {
@@ -675,7 +675,7 @@
         }
       },
       "expectedMask": "optimizationSetting.optimizationTypes",
-      "allSetFieldsMask": ""
+      "allSetFieldsMask": "optimizationSetting"
     },
     {
       "epic": "Epic 4: Oneof Fields",
