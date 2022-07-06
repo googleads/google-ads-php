@@ -33,6 +33,9 @@ use UnexpectedValueException;
  * This example will create an OAuth2 refresh token for the Google Ads API. This example works with
  * both web and desktop app OAuth client ID types.
  *
+ * We highly recommend running this example locally, since you won't need to generate refresh tokens
+ * very often and you can avoid issue of port settings that may occur when using a Docker container.
+ *
  * IMPORTANT: For web app clients types, you must add "http://127.0.0.1" to the "Authorized
  * redirect URIs" list in your Google Cloud Console project before running this example. Desktop app
  * client types do not require the local redirect to be explicitly configured in the console.
