@@ -193,6 +193,9 @@ class SetCustomClientTimeouts
                         'totalTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS,
                         // Sets the timeout that is used for the first try to one tenth of the
                         // maximum accumulative timeout of the call.
+                        // Note: This overrides the default value and can lead to
+                        // RequestError.RPC_DEADLINE_TOO_SHORT errors when too small. We recommend
+                        // to do it only if necessary.
                         'initialRpcTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS / 10,
                         // Sets the maximum timeout that can be used for any given try to one fifth
                         // of the maximum accumulative timeout of the call (two times greater than
