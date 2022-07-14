@@ -104,7 +104,7 @@ class SearchForGoogleAdsFields
         // Searches for all fields whose name begins with the specified namePrefix.
         // A single "%" is the wildcard token in the Google Ads Query language.
         $query = "SELECT name, category, selectable, filterable, sortable, selectable_with, "
-            . "data_type, is_repeated WHERE name LIKE '%$namePrefix%'";
+            . "data_type, is_repeated WHERE name LIKE '$namePrefix%'";
         $response = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
 
         if (iterator_count($response->getIterator()) === 0) {
