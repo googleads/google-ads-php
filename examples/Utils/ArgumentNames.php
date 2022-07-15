@@ -30,7 +30,6 @@ final class ArgumentNames
     public const AD_ID = 'adId';
     public const AD_GROUP_ID = 'adGroupId';
     public const AD_GROUP_IDS = 'adGroupIds';
-    public const ARTIFACT_NAME = 'artifactName';
     public const ASSET_GROUP_ID = 'assetGroupId';
     public const ATTRIBUTE_VALUE = 'attributeValue';
     public const AUDIENCE_ID = 'audienceId';
@@ -100,6 +99,7 @@ final class ArgumentNames
     public const MANAGER_CUSTOMER_ID = 'managerCustomerId';
     public const MARKETING_IMAGE_ASSET_ID = 'marketingImageAssetId';
     public const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
+    public const NAME_PREFIX = 'namePrefix';
     public const OFFLINE_USER_DATA_JOB_TYPE = 'offlineUserDataJobType';
     public const OMIT_UNSELECTED_RESOURCE_NAMES = 'omitUnselectedResourceNames';
     public const ORDER_ID = 'orderId';
@@ -134,7 +134,6 @@ final class ArgumentNames
         self::AD_ID => 'The ad ID',
         self::AD_GROUP_ID => 'The ad group ID',
         self::AD_GROUP_IDS => 'The ad group IDs',
-        self::ARTIFACT_NAME => 'The artifact name',
         self::ASSET_GROUP_ID => 'The asset group ID',
         self::ATTRIBUTE_VALUE => 'The attribute value',
         self::AUDIENCE_ID => 'The audience ID',
@@ -206,6 +205,7 @@ final class ArgumentNames
         self::MANAGER_CUSTOMER_ID => 'The manager customer ID',
         self::MARKETING_IMAGE_ASSET_ID => 'The ID of marketing image asset',
         self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',
+        self::NAME_PREFIX => 'The name prefix',
         self::OFFLINE_USER_DATA_JOB_TYPE => 'The offline user data job type',
         self::OMIT_UNSELECTED_RESOURCE_NAMES => 'Whether to omit unselected resource names',
         self::ORDER_ID => 'The order ID',

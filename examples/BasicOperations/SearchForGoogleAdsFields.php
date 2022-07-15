@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2018 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,21 +34,21 @@ use Google\Ads\GoogleAds\V11\Resources\GoogleAdsField;
 use Google\ApiCore\ApiException;
 
 /**
- * This example gets the metadata, such as whether the artifact is selectable, filterable and
- * sortable, of an artifact. The artifact can be either a resource (such as customer, campaign) or a
- * field (such as metrics.impressions, campaign.id). It'll also show the data type and artifacts
- * that are selectable with the artifact.
+ * Searches for GoogleAdsFields that match a given prefix, retrieving metadata such as
+ * whether the field is selectable, filterable, or sortable, along with the data type and the fields
+ * that are selectable with the field. Each GoogleAdsField represents either a resource (such as
+ * customer, campaign) or a field (such as metrics.impressions, campaign.id).
  */
-class GetArtifactMetadata
+class SearchForGoogleAdsFields
 {
-    private const ARTIFACT_NAME = 'INSERT_ARTIFACT_NAME_HERE';
+    private const NAME_PREFIX = 'INSERT_NAME_PREFIX_HERE';
 
     public static function main()
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
-            ArgumentNames::ARTIFACT_NAME => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::NAME_PREFIX => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -63,7 +63,7 @@ class GetArtifactMetadata
         try {
             self::runExample(
                 $googleAdsClient,
-                $options[ArgumentNames::ARTIFACT_NAME] ?: self::ARTIFACT_NAME
+                $options[ArgumentNames::NAME_PREFIX] ?: self::NAME_PREFIX
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -96,54 +96,80 @@ class GetArtifactMetadata
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $artifactName the name of artifact to get its metadata
+     * @param string $namePrefix the name prefix to use in the query
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, string $artifactName)
+    public static function runExample(GoogleAdsClient $googleAdsClient, string $namePrefix)
     {
         $googleAdsFieldServiceClient = $googleAdsClient->getGoogleAdsFieldServiceClient();
-        // Searches for an artifact whose name is the same as the specified artifactName.
+        // Searches for all fields whose name begins with the specified namePrefix.
+        // A single "%" is the wildcard token in the Google Ads Query language.
         $query = "SELECT name, category, selectable, filterable, sortable, selectable_with, "
-            . "data_type, is_repeated WHERE name = '$artifactName'";
+            . "data_type, is_repeated WHERE name LIKE '$namePrefix%'";
         $response = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
 
-        // Iterates over all rows and prints our the metadata of the returned artifacts
-        foreach ($response->iterateAllElements() as $googleAdsField) {
-            /** @var GoogleAdsField $googleAdsField */
+        if (iterator_count($response->getIterator()) === 0) {
             printf(
-                "An artifact named '%s' with category '%s' and data type '%s' %s selectable, %s "
-                . "filterable, %s sortable and %s repeated.%s",
-                $googleAdsField->getName(),
-                GoogleAdsFieldCategory::name($googleAdsField->getCategory()),
-                GoogleAdsFieldDataType::name($googleAdsField->getDataType()),
-                self::getIsOrIsNot($googleAdsField->getSelectable()),
-                self::getIsOrIsNot($googleAdsField->getFilterable()),
-                self::getIsOrIsNot($googleAdsField->getSortable()),
-                self::getIsOrIsNot($googleAdsField->getIsRepeated()),
+                "No GoogleAdsFields found with a name that begins with %s.%s",
+                $namePrefix,
                 PHP_EOL
             );
+            return;
+        }
+        // Iterates over all rows and prints our the metadata of each matching GoogleAdsField.
+        foreach ($response->iterateAllElements() as $googleAdsField) {
+            /** @var GoogleAdsField $googleAdsField */
+            printf("%s:%s", $googleAdsField->getName(), PHP_EOL);
+            printf(
+                "  %-16s: %s%s",
+                "category:",
+                GoogleAdsFieldCategory::name($googleAdsField->getCategory()),
+                PHP_EOL
+            );
+            printf(
+                "  %-16s: %s%s",
+                "data type:",
+                GoogleAdsFieldDataType::name($googleAdsField->getDataType()),
+                PHP_EOL
+            );
+            printf(
+                "  %-16s: %s%s",
+                "selectable:",
+                $googleAdsField->getSelectable() ? 'true' : 'false',
+                PHP_EOL
+            );
+            printf(
+                "  %-16s: %s%s",
+                "filterable:",
+                $googleAdsField->getFilterable() ? 'true' : 'false',
+                PHP_EOL
+            );
+            printf(
+                "  %-16s: %s%s",
+                "sortable:",
+                $googleAdsField->getSortable() ? 'true' : 'false',
+                PHP_EOL
+            );
+            printf(
+                "  %-16s: %s%s",
+                "repeated:",
+                $googleAdsField->getIsRepeated() ? 'true' : 'false',
+                PHP_EOL
+            );
+
             if ($googleAdsField->getSelectableWith()->count() > 0) {
-                printf(
-                    '%1$sThe artifact can be selected with the following artifacts:%1$s',
-                    PHP_EOL
-                );
-                foreach ($googleAdsField->getSelectableWith() as $selectableArtifact) {
-                    /** @var string $selectableArtifact */
-                    print $selectableArtifact . PHP_EOL;
+                // Prints the list of fields that are selectable with the field.
+                $selectableWithFields =
+                    iterator_to_array($googleAdsField->getSelectableWith()->getIterator());
+                // Sorts and then prints the list.
+                sort($selectableWithFields);
+                print '  selectable with:' . PHP_EOL;
+                foreach ($selectableWithFields as $selectableWithField) {
+                    /** @var string $selectableWithField */
+                    printf("    $selectableWithField%s", PHP_EOL);
                 }
             }
         }
     }
-
-    /**
-     * Returns 'is' when the provided boolean value is true or 'is not' when it's false.
-     *
-     * @param bool $bool the boolean value
-     * @return string the string 'is' or 'is not' depending on the passed value
-     */
-    private static function getIsOrIsNot(bool $bool)
-    {
-        return $bool ? 'is' : 'is not';
-    }
 }
 
-GetArtifactMetadata::main();
+SearchForGoogleAdsFields::main();
