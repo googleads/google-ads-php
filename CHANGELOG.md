@@ -1,3 +1,14 @@
+## 16.0.0
+*   Removed support for v9 of Google Ads API.
+*   Cleaned up the FieldMasks util to remove reference to protocol buffer's wrapper types.
+*   Added support for Monolog 1 back.
+*   Updated the minimum required version of `google/gax` to 1.13.0.
+*   Renamed a code example GetArtifactMetadata to SearchForGoogleAdsFields.
+*   Updated code examples:
+    * GenerateUserCredentials
+    * SetCustomClientTimeouts
+*   Fixed dependabot alert in `examples/LaravelSampleApp/composer.lock`.
+
 ## 15.1.0
 *   Added support for v11 of Google Ads API.
 *   Added support for version 3 of [`monolog/monolog`](https://github.com/Seldaek/monolog).
