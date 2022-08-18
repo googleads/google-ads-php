@@ -28,6 +28,12 @@ class RuleBasedUserListInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.UserListPrepopulationStatusEnum.UserListPrepopulationStatus prepopulation_status = 1;</code>
      */
     protected $prepopulation_status = 0;
+    /**
+     * Flexible rule representation of visitors with one or multiple actions.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.common.FlexibleRuleUserListInfo flexible_rule_user_list = 5;</code>
+     */
+    protected $flexible_rule_user_list = null;
     protected $rule_based_user_list;
 
     /**
@@ -45,6 +51,8 @@ class RuleBasedUserListInfo extends \Google\Protobuf\Internal\Message
      *           list's membership duration and the date when the remarketing tag is added.
      *           The status will be updated to FINISHED once request is processed, or FAILED
      *           if the request fails.
+     *     @type \Google\Ads\GoogleAds\V11\Common\FlexibleRuleUserListInfo $flexible_rule_user_list
+     *           Flexible rule representation of visitors with one or multiple actions.
      *     @type \Google\Ads\GoogleAds\V11\Common\CombinedRuleUserListInfo $combined_rule_user_list
      *           User lists defined by combining two rules.
      *           There are two operators: AND, where the left and right operands have to
@@ -95,6 +103,42 @@ class RuleBasedUserListInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V11\Enums\UserListPrepopulationStatusEnum\UserListPrepopulationStatus::class);
         $this->prepopulation_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Flexible rule representation of visitors with one or multiple actions.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.common.FlexibleRuleUserListInfo flexible_rule_user_list = 5;</code>
+     * @return \Google\Ads\GoogleAds\V11\Common\FlexibleRuleUserListInfo|null
+     */
+    public function getFlexibleRuleUserList()
+    {
+        return $this->flexible_rule_user_list;
+    }
+
+    public function hasFlexibleRuleUserList()
+    {
+        return isset($this->flexible_rule_user_list);
+    }
+
+    public function clearFlexibleRuleUserList()
+    {
+        unset($this->flexible_rule_user_list);
+    }
+
+    /**
+     * Flexible rule representation of visitors with one or multiple actions.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.common.FlexibleRuleUserListInfo flexible_rule_user_list = 5;</code>
+     * @param \Google\Ads\GoogleAds\V11\Common\FlexibleRuleUserListInfo $var
+     * @return $this
+     */
+    public function setFlexibleRuleUserList($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Common\FlexibleRuleUserListInfo::class);
+        $this->flexible_rule_user_list = $var;
 
         return $this;
     }

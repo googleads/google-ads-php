@@ -28,7 +28,7 @@ class CallExtensionParameters extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\CallFeedItem[]|\Google\Protobuf\Internal\RepeatedField $call_extensions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\CallFeedItem>|\Google\Protobuf\Internal\RepeatedField $call_extensions
      *           Call extensions to be added. This is a required field.
      * }
      */
@@ -52,7 +52,7 @@ class CallExtensionParameters extends \Google\Protobuf\Internal\Message
      * Call extensions to be added. This is a required field.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.CallFeedItem call_extensions = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\CallFeedItem[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\CallFeedItem>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCallExtensions($var)

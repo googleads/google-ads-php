@@ -24,8 +24,8 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      */
     protected $text = null;
     /**
-     * Text color for the display-call-to-action in hexadecimal, e.g. #ffffff for
-     * white.
+     * Text color for the display-call-to-action in hexadecimal, for example,
+     * # ffffff for white.
      *
      * Generated from protobuf field <code>optional string text_color = 6;</code>
      */
@@ -47,8 +47,8 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      *     @type string $text
      *           Text for the display-call-to-action.
      *     @type string $text_color
-     *           Text color for the display-call-to-action in hexadecimal, e.g. #ffffff for
-     *           white.
+     *           Text color for the display-call-to-action in hexadecimal, for example,
+     *           # ffffff for white.
      *     @type string $url_collection_id
      *           Identifies the URL collection in the `ad.url_collections` field. If not
      *           set, the URL defaults to `final_url`.
@@ -96,8 +96,8 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Text color for the display-call-to-action in hexadecimal, e.g. #ffffff for
-     * white.
+     * Text color for the display-call-to-action in hexadecimal, for example,
+     * # ffffff for white.
      *
      * Generated from protobuf field <code>optional string text_color = 6;</code>
      * @return string
@@ -118,8 +118,8 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Text color for the display-call-to-action in hexadecimal, e.g. #ffffff for
-     * white.
+     * Text color for the display-call-to-action in hexadecimal, for example,
+     * # ffffff for white.
      *
      * Generated from protobuf field <code>optional string text_color = 6;</code>
      * @param string $var

@@ -83,10 +83,10 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Output only. List of info about a feed item's validation and approval state for active
      * feed mappings. There will be an entry in the list for each type of feed
-     * mapping associated with the feed, e.g. a feed with a sitelink and a call
-     * feed mapping would cause every feed item associated with that feed to have
-     * an entry in this list for both sitelink and call.
-     * This field is read-only.
+     * mapping associated with the feed, for example, a feed with a sitelink and a
+     * call feed mapping would cause every feed item associated with that feed to
+     * have an entry in this list for both sitelink and call. This field is
+     * read-only.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.FeedItemPlaceholderPolicyInfo policy_infos = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -116,24 +116,24 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      *           serving. The time is in the customer's time zone.
      *           The format is "YYYY-MM-DD HH:MM:SS".
      *           Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
-     *     @type \Google\Ads\GoogleAds\V11\Resources\FeedItemAttributeValue[]|\Google\Protobuf\Internal\RepeatedField $attribute_values
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\FeedItemAttributeValue>|\Google\Protobuf\Internal\RepeatedField $attribute_values
      *           The feed item's attribute values.
      *     @type int $geo_targeting_restriction
      *           Geo targeting restriction specifies the type of location that can be used
      *           for targeting.
-     *     @type \Google\Ads\GoogleAds\V11\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
      *           The list of mappings used to substitute custom parameter tags in a
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type int $status
      *           Output only. Status of the feed item.
      *           This field is read-only.
-     *     @type \Google\Ads\GoogleAds\V11\Resources\FeedItemPlaceholderPolicyInfo[]|\Google\Protobuf\Internal\RepeatedField $policy_infos
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\FeedItemPlaceholderPolicyInfo>|\Google\Protobuf\Internal\RepeatedField $policy_infos
      *           Output only. List of info about a feed item's validation and approval state for active
      *           feed mappings. There will be an entry in the list for each type of feed
-     *           mapping associated with the feed, e.g. a feed with a sitelink and a call
-     *           feed mapping would cause every feed item associated with that feed to have
-     *           an entry in this list for both sitelink and call.
-     *           This field is read-only.
+     *           mapping associated with the feed, for example, a feed with a sitelink and a
+     *           call feed mapping would cause every feed item associated with that feed to
+     *           have an entry in this list for both sitelink and call. This field is
+     *           read-only.
      * }
      */
     public function __construct($data = NULL) {
@@ -342,7 +342,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * The feed item's attribute values.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.FeedItemAttributeValue attribute_values = 6;</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\FeedItemAttributeValue[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\FeedItemAttributeValue>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAttributeValues($var)
@@ -398,7 +398,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.CustomParameter url_custom_parameters = 8;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUrlCustomParameters($var)
@@ -440,10 +440,10 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Output only. List of info about a feed item's validation and approval state for active
      * feed mappings. There will be an entry in the list for each type of feed
-     * mapping associated with the feed, e.g. a feed with a sitelink and a call
-     * feed mapping would cause every feed item associated with that feed to have
-     * an entry in this list for both sitelink and call.
-     * This field is read-only.
+     * mapping associated with the feed, for example, a feed with a sitelink and a
+     * call feed mapping would cause every feed item associated with that feed to
+     * have an entry in this list for both sitelink and call. This field is
+     * read-only.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.FeedItemPlaceholderPolicyInfo policy_infos = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -456,13 +456,13 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Output only. List of info about a feed item's validation and approval state for active
      * feed mappings. There will be an entry in the list for each type of feed
-     * mapping associated with the feed, e.g. a feed with a sitelink and a call
-     * feed mapping would cause every feed item associated with that feed to have
-     * an entry in this list for both sitelink and call.
-     * This field is read-only.
+     * mapping associated with the feed, for example, a feed with a sitelink and a
+     * call feed mapping would cause every feed item associated with that feed to
+     * have an entry in this list for both sitelink and call. This field is
+     * read-only.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.FeedItemPlaceholderPolicyInfo policy_infos = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\FeedItemPlaceholderPolicyInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\FeedItemPlaceholderPolicyInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPolicyInfos($var)

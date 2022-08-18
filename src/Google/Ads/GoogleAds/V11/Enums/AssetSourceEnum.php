@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Source of the asset or asset link for who generated the entity.
- * e.g. advertiser or automatically created.
+ * For example, advertiser or automatically created.
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.enums.AssetSourceEnum</code>
  */

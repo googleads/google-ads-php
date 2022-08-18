@@ -88,13 +88,13 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      *           Second line of the description for the sitelink.
      *           If this value is set, line1 must also be set.
      *           The length of this string should be between 0 and 35, inclusive.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_urls
      *           A list of possible final URLs after all cross domain redirects.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
      *           A list of possible final mobile URLs after all cross domain redirects.
      *     @type string $tracking_url_template
      *           URL template for constructing a tracking URL.
-     *     @type \Google\Ads\GoogleAds\V11\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
      *           A list of mappings to be used for substituting URL custom parameter tags in
      *           the tracking_url_template, final_urls, and/or final_mobile_urls.
      *     @type string $final_url_suffix
@@ -240,7 +240,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * A list of possible final URLs after all cross domain redirects.
      *
      * Generated from protobuf field <code>repeated string final_urls = 12;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFinalUrls($var)
@@ -266,7 +266,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * A list of possible final mobile URLs after all cross domain redirects.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 13;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFinalMobileUrls($var)
@@ -330,7 +330,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * the tracking_url_template, final_urls, and/or final_mobile_urls.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.CustomParameter url_custom_parameters = 7;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUrlCustomParameters($var)

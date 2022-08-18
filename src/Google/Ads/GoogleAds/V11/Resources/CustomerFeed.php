@@ -64,7 +64,7 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
      *           `customers/{customer_id}/customerFeeds/{feed_id}`
      *     @type string $feed
      *           Immutable. The feed being linked to the customer.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $placeholder_types
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $placeholder_types
      *           Indicates which placeholder types the feed may populate under the connected
      *           customer. Required.
      *     @type \Google\Ads\GoogleAds\V11\Common\MatchingFunction $matching_function
@@ -164,7 +164,7 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
      * customer. Required.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.PlaceholderTypeEnum.PlaceholderType placeholder_types = 3;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPlaceholderTypes($var)

@@ -28,7 +28,7 @@ class KeywordPlanMaxCpcBidForecastCurve extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\KeywordPlanMaxCpcBidForecast[]|\Google\Protobuf\Internal\RepeatedField $max_cpc_bid_forecasts
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanMaxCpcBidForecast>|\Google\Protobuf\Internal\RepeatedField $max_cpc_bid_forecasts
      *           The forecasts for the Keyword Plan campaign at different max CPC bids.
      * }
      */
@@ -52,7 +52,7 @@ class KeywordPlanMaxCpcBidForecastCurve extends \Google\Protobuf\Internal\Messag
      * The forecasts for the Keyword Plan campaign at different max CPC bids.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.KeywordPlanMaxCpcBidForecast max_cpc_bid_forecasts = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\KeywordPlanMaxCpcBidForecast[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanMaxCpcBidForecast>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMaxCpcBidForecasts($var)

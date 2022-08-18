@@ -108,7 +108,7 @@ class GoogleAdsServiceGrpcClient extends \Grpc\BaseStub {
      *
      * Atomicity makes error handling much easier. If you're making a series of
      * changes and one fails, it can leave your account in an inconsistent state.
-     * With atomicity, you either reach the desired state directly, or the request
+     * With atomicity, you either reach the chosen state directly, or the request
      * fails and you can retry.
      *
      * ## Temp Resource Names

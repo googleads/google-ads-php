@@ -85,4 +85,32 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Returns a collection of attributes that are represented in an audience of
+     * interest, with metrics that compare each attribute's share of the audience
+     * with its share of a baseline audience.
+     *
+     * List of thrown errors:
+     *   [AudienceInsightsError]()
+     *   [AuthenticationError]()
+     *   [AuthorizationError]()
+     *   [FieldError]()
+     *   [HeaderError]()
+     *   [InternalError]()
+     *   [QuotaError]()
+     *   [RangeError]()
+     *   [RequestError]()
+     * @param \Google\Ads\GoogleAds\V11\Services\GenerateAudienceCompositionInsightsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GenerateAudienceCompositionInsights(\Google\Ads\GoogleAds\V11\Services\GenerateAudienceCompositionInsightsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v11.services.AudienceInsightsService/GenerateAudienceCompositionInsights',
+        $argument,
+        ['\Google\Ads\GoogleAds\V11\Services\GenerateAudienceCompositionInsightsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

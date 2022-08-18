@@ -28,7 +28,7 @@ class DestinationMismatch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $url_types
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $url_types
      *           The set of URLs that did not match each other.
      * }
      */
@@ -52,7 +52,7 @@ class DestinationMismatch extends \Google\Protobuf\Internal\Message
      * The set of URLs that did not match each other.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum.PolicyTopicEvidenceDestinationMismatchUrlType url_types = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUrlTypes($var)

@@ -39,10 +39,10 @@ class TargetingSetting extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\TargetRestriction[]|\Google\Protobuf\Internal\RepeatedField $target_restrictions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\TargetRestriction>|\Google\Protobuf\Internal\RepeatedField $target_restrictions
      *           The per-targeting-dimension setting to restrict the reach of your campaign
      *           or ad group.
-     *     @type \Google\Ads\GoogleAds\V11\Common\TargetRestrictionOperation[]|\Google\Protobuf\Internal\RepeatedField $target_restriction_operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\TargetRestrictionOperation>|\Google\Protobuf\Internal\RepeatedField $target_restriction_operations
      *           The list of operations changing the target restrictions.
      *           Adding a target restriction with a targeting dimension that already exists
      *           causes the existing target restriction to be replaced with the new value.
@@ -70,7 +70,7 @@ class TargetingSetting extends \Google\Protobuf\Internal\Message
      * or ad group.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.TargetRestriction target_restrictions = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\TargetRestriction[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\TargetRestriction>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTargetRestrictions($var)
@@ -100,7 +100,7 @@ class TargetingSetting extends \Google\Protobuf\Internal\Message
      * causes the existing target restriction to be replaced with the new value.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.TargetRestrictionOperation target_restriction_operations = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\TargetRestrictionOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\TargetRestrictionOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTargetRestrictionOperations($var)

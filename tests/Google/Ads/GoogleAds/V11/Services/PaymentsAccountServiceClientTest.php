@@ -72,7 +72,7 @@ class PaymentsAccountServiceClientTest extends GeneratedTest
     public function listPaymentsAccountsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -81,7 +81,7 @@ class PaymentsAccountServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $customerId = 'customerId-1772061412';
-        $response = $client->listPaymentsAccounts($customerId);
+        $response = $gapicClient->listPaymentsAccounts($customerId);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -99,7 +99,7 @@ class PaymentsAccountServiceClientTest extends GeneratedTest
     public function listPaymentsAccountsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -116,8 +116,8 @@ class PaymentsAccountServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         try {
-            $client->listPaymentsAccounts($customerId);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->listPaymentsAccounts($customerId);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

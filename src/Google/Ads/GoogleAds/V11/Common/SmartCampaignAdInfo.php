@@ -16,15 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class SmartCampaignAdInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * List of text assets for headlines. When the ad serves the headlines will
-     * be selected from this list. 3 headlines must be specified.
+     * List of text assets, each of which corresponds to a headline when the ad
+     * serves. This list consists of a minimum of 3 and up to 15 text assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset headlines = 1;</code>
      */
     private $headlines;
     /**
-     * List of text assets for descriptions. When the ad serves the descriptions
-     * will be selected from this list. 2 descriptions must be specified.
+     * List of text assets, each of which corresponds to a description when the ad
+     * serves. This list consists of a minimum of 2 and up to 4 text assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset descriptions = 2;</code>
      */
@@ -36,12 +36,12 @@ class SmartCampaignAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $headlines
-     *           List of text assets for headlines. When the ad serves the headlines will
-     *           be selected from this list. 3 headlines must be specified.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $descriptions
-     *           List of text assets for descriptions. When the ad serves the descriptions
-     *           will be selected from this list. 2 descriptions must be specified.
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
+     *           List of text assets, each of which corresponds to a headline when the ad
+     *           serves. This list consists of a minimum of 3 and up to 15 text assets.
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *           List of text assets, each of which corresponds to a description when the ad
+     *           serves. This list consists of a minimum of 2 and up to 4 text assets.
      * }
      */
     public function __construct($data = NULL) {
@@ -50,8 +50,8 @@ class SmartCampaignAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of text assets for headlines. When the ad serves the headlines will
-     * be selected from this list. 3 headlines must be specified.
+     * List of text assets, each of which corresponds to a headline when the ad
+     * serves. This list consists of a minimum of 3 and up to 15 text assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset headlines = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -62,11 +62,11 @@ class SmartCampaignAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of text assets for headlines. When the ad serves the headlines will
-     * be selected from this list. 3 headlines must be specified.
+     * List of text assets, each of which corresponds to a headline when the ad
+     * serves. This list consists of a minimum of 3 and up to 15 text assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset headlines = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -78,8 +78,8 @@ class SmartCampaignAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of text assets for descriptions. When the ad serves the descriptions
-     * will be selected from this list. 2 descriptions must be specified.
+     * List of text assets, each of which corresponds to a description when the ad
+     * serves. This list consists of a minimum of 2 and up to 4 text assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset descriptions = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -90,11 +90,11 @@ class SmartCampaignAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of text assets for descriptions. When the ad serves the descriptions
-     * will be selected from this list. 2 descriptions must be specified.
+     * List of text assets, each of which corresponds to a description when the ad
+     * serves. This list consists of a minimum of 2 and up to 4 text assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset descriptions = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDescriptions($var)

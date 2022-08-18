@@ -48,7 +48,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the conversion action.
      *
-     * Generated from protobuf field <code>optional string conversion_action = 113;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 113 [(.google.api.resource_reference) = {</code>
      */
     protected $conversion_action = null;
     /**
@@ -65,10 +65,10 @@ class Segments extends \Google\Protobuf\Internal\Message
     protected $conversion_action_name = null;
     /**
      * This segments your conversion columns by the original conversion and
-     * conversion value vs. the delta if conversions were adjusted. False row has
-     * the data as originally stated; While true row has the delta between data
-     * now and the data as originally stated. Summing the two together results
-     * post-adjustment data.
+     * conversion value versus the delta if conversions were adjusted. False row
+     * has the data as originally stated; While true row has the delta between
+     * data now and the data as originally stated. Summing the two together
+     * results post-adjustment data.
      *
      * Generated from protobuf field <code>optional bool conversion_adjustment = 115;</code>
      */
@@ -95,13 +95,13 @@ class Segments extends \Google\Protobuf\Internal\Message
     protected $conversion_or_adjustment_lag_bucket = 0;
     /**
      * Date to which metrics apply.
-     * yyyy-MM-dd format, e.g., 2018-04-17.
+     * yyyy-MM-dd format, for example, 2018-04-17.
      *
      * Generated from protobuf field <code>optional string date = 79;</code>
      */
     protected $date = null;
     /**
-     * Day of the week, e.g., MONDAY.
+     * Day of the week, for example, MONDAY.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.DayOfWeekEnum.DayOfWeek day_of_week = 5;</code>
      */
@@ -297,7 +297,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $month = null;
     /**
-     * Month of the year, e.g., January.
+     * Month of the year, for example, January.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.MonthOfYearEnum.MonthOfYear month_of_year = 18;</code>
      */
@@ -473,8 +473,8 @@ class Segments extends \Google\Protobuf\Internal\Message
     protected $product_type_l5 = null;
     /**
      * Quarter as represented by the date of the first day of a quarter.
-     * Uses the calendar year for quarters, e.g., the second quarter of 2018
-     * starts on 2018-04-01. Formatted as yyyy-MM-dd.
+     * Uses the calendar year for quarters, for example, the second quarter of
+     * 2018 starts on 2018-04-01. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>optional string quarter = 128;</code>
      */
@@ -536,7 +536,8 @@ class Segments extends \Google\Protobuf\Internal\Message
     protected $year = null;
     /**
      * iOS Store Kit Ad Network conversion value.
-     * Null value means this segment is not applicable, e.g. non-iOS campaign.
+     * Null value means this segment is not applicable, for example, non-iOS
+     * campaign.
      *
      * Generated from protobuf field <code>optional int64 sk_ad_network_conversion_value = 137;</code>
      */
@@ -555,8 +556,8 @@ class Segments extends \Google\Protobuf\Internal\Message
     protected $sk_ad_network_ad_event_type = 0;
     /**
      * App where the ad that drove the iOS Store Kit Ad Network install was
-     * shown. Null value means this segment is not applicable, e.g. non-iOS
-     * campaign, or was not present in any postbacks sent by Apple.
+     * shown. Null value means this segment is not applicable, for example,
+     * non-iOS campaign, or was not present in any postbacks sent by Apple.
      *
      * Generated from protobuf field <code>optional .google.ads.googleads.v11.common.SkAdNetworkSourceApp sk_ad_network_source_app = 143;</code>
      */
@@ -571,12 +572,13 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Only used with CustomerAsset, CampaignAsset and AdGroupAsset metrics.
      * Indicates whether the interaction metrics occurred on the asset itself
      * or a different asset or ad unit.
-     * Interactions (e.g. clicks) are counted across all the parts of the served
-     * ad (e.g. Ad itself and other components like Sitelinks) when they are
-     * served together. When interaction_on_this_asset is true, it means the
-     * interactions are on this specific asset and when interaction_on_this_asset
-     * is false, it means the interactions is not on this specific asset but on
-     * other parts of the served ad this asset is served with.
+     * Interactions (for example, clicks) are counted across all the parts of the
+     * served ad (for example, Ad itself and other components like Sitelinks) when
+     * they are served together. When interaction_on_this_asset is true, it means
+     * the interactions are on this specific asset and when
+     * interaction_on_this_asset is false, it means the interactions is not on
+     * this specific asset but on other parts of the served ad this asset is
+     * served with.
      *
      * Generated from protobuf field <code>optional .google.ads.googleads.v11.common.AssetInteractionTarget asset_interaction_target = 139;</code>
      */
@@ -606,10 +608,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Conversion action name.
      *     @type bool $conversion_adjustment
      *           This segments your conversion columns by the original conversion and
-     *           conversion value vs. the delta if conversions were adjusted. False row has
-     *           the data as originally stated; While true row has the delta between data
-     *           now and the data as originally stated. Summing the two together results
-     *           post-adjustment data.
+     *           conversion value versus the delta if conversions were adjusted. False row
+     *           has the data as originally stated; While true row has the delta between
+     *           data now and the data as originally stated. Summing the two together
+     *           results post-adjustment data.
      *     @type int $conversion_attribution_event_type
      *           Conversion attribution event type.
      *     @type int $conversion_lag_bucket
@@ -620,9 +622,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           the conversion or between the impression and adjustments to the conversion.
      *     @type string $date
      *           Date to which metrics apply.
-     *           yyyy-MM-dd format, e.g., 2018-04-17.
+     *           yyyy-MM-dd format, for example, 2018-04-17.
      *     @type int $day_of_week
-     *           Day of the week, e.g., MONDAY.
+     *           Day of the week, for example, MONDAY.
      *     @type int $device
      *           Device to which metrics apply.
      *     @type int $external_conversion_source
@@ -690,7 +692,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Month as represented by the date of the first day of a month. Formatted as
      *           yyyy-MM-dd.
      *     @type int $month_of_year
-     *           Month of the year, e.g., January.
+     *           Month of the year, for example, January.
      *     @type string $partner_hotel_id
      *           Partner hotel ID.
      *     @type int $placeholder_type
@@ -750,8 +752,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Type (level 5) of the product.
      *     @type string $quarter
      *           Quarter as represented by the date of the first day of a quarter.
-     *           Uses the calendar year for quarters, e.g., the second quarter of 2018
-     *           starts on 2018-04-01. Formatted as yyyy-MM-dd.
+     *           Uses the calendar year for quarters, for example, the second quarter of
+     *           2018 starts on 2018-04-01. Formatted as yyyy-MM-dd.
      *     @type int $recommendation_type
      *           Recommendation type.
      *     @type int $search_engine_results_page_type
@@ -777,27 +779,29 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Year, formatted as yyyy.
      *     @type int|string $sk_ad_network_conversion_value
      *           iOS Store Kit Ad Network conversion value.
-     *           Null value means this segment is not applicable, e.g. non-iOS campaign.
+     *           Null value means this segment is not applicable, for example, non-iOS
+     *           campaign.
      *     @type int $sk_ad_network_user_type
      *           iOS Store Kit Ad Network user type.
      *     @type int $sk_ad_network_ad_event_type
      *           iOS Store Kit Ad Network ad event type.
      *     @type \Google\Ads\GoogleAds\V11\Common\SkAdNetworkSourceApp $sk_ad_network_source_app
      *           App where the ad that drove the iOS Store Kit Ad Network install was
-     *           shown. Null value means this segment is not applicable, e.g. non-iOS
-     *           campaign, or was not present in any postbacks sent by Apple.
+     *           shown. Null value means this segment is not applicable, for example,
+     *           non-iOS campaign, or was not present in any postbacks sent by Apple.
      *     @type int $sk_ad_network_attribution_credit
      *           iOS Store Kit Ad Network attribution credit
      *     @type \Google\Ads\GoogleAds\V11\Common\AssetInteractionTarget $asset_interaction_target
      *           Only used with CustomerAsset, CampaignAsset and AdGroupAsset metrics.
      *           Indicates whether the interaction metrics occurred on the asset itself
      *           or a different asset or ad unit.
-     *           Interactions (e.g. clicks) are counted across all the parts of the served
-     *           ad (e.g. Ad itself and other components like Sitelinks) when they are
-     *           served together. When interaction_on_this_asset is true, it means the
-     *           interactions are on this specific asset and when interaction_on_this_asset
-     *           is false, it means the interactions is not on this specific asset but on
-     *           other parts of the served ad this asset is served with.
+     *           Interactions (for example, clicks) are counted across all the parts of the
+     *           served ad (for example, Ad itself and other components like Sitelinks) when
+     *           they are served together. When interaction_on_this_asset is true, it means
+     *           the interactions are on this specific asset and when
+     *           interaction_on_this_asset is false, it means the interactions is not on
+     *           this specific asset but on other parts of the served ad this asset is
+     *           served with.
      * }
      */
     public function __construct($data = NULL) {
@@ -958,7 +962,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the conversion action.
      *
-     * Generated from protobuf field <code>optional string conversion_action = 113;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 113 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getConversionAction()
@@ -979,7 +983,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the conversion action.
      *
-     * Generated from protobuf field <code>optional string conversion_action = 113;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 113 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -1055,10 +1059,10 @@ class Segments extends \Google\Protobuf\Internal\Message
 
     /**
      * This segments your conversion columns by the original conversion and
-     * conversion value vs. the delta if conversions were adjusted. False row has
-     * the data as originally stated; While true row has the delta between data
-     * now and the data as originally stated. Summing the two together results
-     * post-adjustment data.
+     * conversion value versus the delta if conversions were adjusted. False row
+     * has the data as originally stated; While true row has the delta between
+     * data now and the data as originally stated. Summing the two together
+     * results post-adjustment data.
      *
      * Generated from protobuf field <code>optional bool conversion_adjustment = 115;</code>
      * @return bool
@@ -1080,10 +1084,10 @@ class Segments extends \Google\Protobuf\Internal\Message
 
     /**
      * This segments your conversion columns by the original conversion and
-     * conversion value vs. the delta if conversions were adjusted. False row has
-     * the data as originally stated; While true row has the delta between data
-     * now and the data as originally stated. Summing the two together results
-     * post-adjustment data.
+     * conversion value versus the delta if conversions were adjusted. False row
+     * has the data as originally stated; While true row has the delta between
+     * data now and the data as originally stated. Summing the two together
+     * results post-adjustment data.
      *
      * Generated from protobuf field <code>optional bool conversion_adjustment = 115;</code>
      * @param bool $var
@@ -1181,7 +1185,7 @@ class Segments extends \Google\Protobuf\Internal\Message
 
     /**
      * Date to which metrics apply.
-     * yyyy-MM-dd format, e.g., 2018-04-17.
+     * yyyy-MM-dd format, for example, 2018-04-17.
      *
      * Generated from protobuf field <code>optional string date = 79;</code>
      * @return string
@@ -1203,7 +1207,7 @@ class Segments extends \Google\Protobuf\Internal\Message
 
     /**
      * Date to which metrics apply.
-     * yyyy-MM-dd format, e.g., 2018-04-17.
+     * yyyy-MM-dd format, for example, 2018-04-17.
      *
      * Generated from protobuf field <code>optional string date = 79;</code>
      * @param string $var
@@ -1218,7 +1222,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Day of the week, e.g., MONDAY.
+     * Day of the week, for example, MONDAY.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.DayOfWeekEnum.DayOfWeek day_of_week = 5;</code>
      * @return int
@@ -1229,7 +1233,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Day of the week, e.g., MONDAY.
+     * Day of the week, for example, MONDAY.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.DayOfWeekEnum.DayOfWeek day_of_week = 5;</code>
      * @param int $var
@@ -2308,7 +2312,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Month of the year, e.g., January.
+     * Month of the year, for example, January.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.MonthOfYearEnum.MonthOfYear month_of_year = 18;</code>
      * @return int
@@ -2319,7 +2323,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Month of the year, e.g., January.
+     * Month of the year, for example, January.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.MonthOfYearEnum.MonthOfYear month_of_year = 18;</code>
      * @param int $var
@@ -3305,8 +3309,8 @@ class Segments extends \Google\Protobuf\Internal\Message
 
     /**
      * Quarter as represented by the date of the first day of a quarter.
-     * Uses the calendar year for quarters, e.g., the second quarter of 2018
-     * starts on 2018-04-01. Formatted as yyyy-MM-dd.
+     * Uses the calendar year for quarters, for example, the second quarter of
+     * 2018 starts on 2018-04-01. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>optional string quarter = 128;</code>
      * @return string
@@ -3328,8 +3332,8 @@ class Segments extends \Google\Protobuf\Internal\Message
 
     /**
      * Quarter as represented by the date of the first day of a quarter.
-     * Uses the calendar year for quarters, e.g., the second quarter of 2018
-     * starts on 2018-04-01. Formatted as yyyy-MM-dd.
+     * Uses the calendar year for quarters, for example, the second quarter of
+     * 2018 starts on 2018-04-01. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>optional string quarter = 128;</code>
      * @param string $var
@@ -3597,7 +3601,8 @@ class Segments extends \Google\Protobuf\Internal\Message
 
     /**
      * iOS Store Kit Ad Network conversion value.
-     * Null value means this segment is not applicable, e.g. non-iOS campaign.
+     * Null value means this segment is not applicable, for example, non-iOS
+     * campaign.
      *
      * Generated from protobuf field <code>optional int64 sk_ad_network_conversion_value = 137;</code>
      * @return int|string
@@ -3619,7 +3624,8 @@ class Segments extends \Google\Protobuf\Internal\Message
 
     /**
      * iOS Store Kit Ad Network conversion value.
-     * Null value means this segment is not applicable, e.g. non-iOS campaign.
+     * Null value means this segment is not applicable, for example, non-iOS
+     * campaign.
      *
      * Generated from protobuf field <code>optional int64 sk_ad_network_conversion_value = 137;</code>
      * @param int|string $var
@@ -3687,8 +3693,8 @@ class Segments extends \Google\Protobuf\Internal\Message
 
     /**
      * App where the ad that drove the iOS Store Kit Ad Network install was
-     * shown. Null value means this segment is not applicable, e.g. non-iOS
-     * campaign, or was not present in any postbacks sent by Apple.
+     * shown. Null value means this segment is not applicable, for example,
+     * non-iOS campaign, or was not present in any postbacks sent by Apple.
      *
      * Generated from protobuf field <code>optional .google.ads.googleads.v11.common.SkAdNetworkSourceApp sk_ad_network_source_app = 143;</code>
      * @return \Google\Ads\GoogleAds\V11\Common\SkAdNetworkSourceApp|null
@@ -3710,8 +3716,8 @@ class Segments extends \Google\Protobuf\Internal\Message
 
     /**
      * App where the ad that drove the iOS Store Kit Ad Network install was
-     * shown. Null value means this segment is not applicable, e.g. non-iOS
-     * campaign, or was not present in any postbacks sent by Apple.
+     * shown. Null value means this segment is not applicable, for example,
+     * non-iOS campaign, or was not present in any postbacks sent by Apple.
      *
      * Generated from protobuf field <code>optional .google.ads.googleads.v11.common.SkAdNetworkSourceApp sk_ad_network_source_app = 143;</code>
      * @param \Google\Ads\GoogleAds\V11\Common\SkAdNetworkSourceApp $var
@@ -3755,12 +3761,13 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Only used with CustomerAsset, CampaignAsset and AdGroupAsset metrics.
      * Indicates whether the interaction metrics occurred on the asset itself
      * or a different asset or ad unit.
-     * Interactions (e.g. clicks) are counted across all the parts of the served
-     * ad (e.g. Ad itself and other components like Sitelinks) when they are
-     * served together. When interaction_on_this_asset is true, it means the
-     * interactions are on this specific asset and when interaction_on_this_asset
-     * is false, it means the interactions is not on this specific asset but on
-     * other parts of the served ad this asset is served with.
+     * Interactions (for example, clicks) are counted across all the parts of the
+     * served ad (for example, Ad itself and other components like Sitelinks) when
+     * they are served together. When interaction_on_this_asset is true, it means
+     * the interactions are on this specific asset and when
+     * interaction_on_this_asset is false, it means the interactions is not on
+     * this specific asset but on other parts of the served ad this asset is
+     * served with.
      *
      * Generated from protobuf field <code>optional .google.ads.googleads.v11.common.AssetInteractionTarget asset_interaction_target = 139;</code>
      * @return \Google\Ads\GoogleAds\V11\Common\AssetInteractionTarget|null
@@ -3784,12 +3791,13 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Only used with CustomerAsset, CampaignAsset and AdGroupAsset metrics.
      * Indicates whether the interaction metrics occurred on the asset itself
      * or a different asset or ad unit.
-     * Interactions (e.g. clicks) are counted across all the parts of the served
-     * ad (e.g. Ad itself and other components like Sitelinks) when they are
-     * served together. When interaction_on_this_asset is true, it means the
-     * interactions are on this specific asset and when interaction_on_this_asset
-     * is false, it means the interactions is not on this specific asset but on
-     * other parts of the served ad this asset is served with.
+     * Interactions (for example, clicks) are counted across all the parts of the
+     * served ad (for example, Ad itself and other components like Sitelinks) when
+     * they are served together. When interaction_on_this_asset is true, it means
+     * the interactions are on this specific asset and when
+     * interaction_on_this_asset is false, it means the interactions is not on
+     * this specific asset but on other parts of the served ad this asset is
+     * served with.
      *
      * Generated from protobuf field <code>optional .google.ads.googleads.v11.common.AssetInteractionTarget asset_interaction_target = 139;</code>
      * @param \Google\Ads\GoogleAds\V11\Common\AssetInteractionTarget $var

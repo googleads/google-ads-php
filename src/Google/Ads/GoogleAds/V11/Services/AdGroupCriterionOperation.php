@@ -24,7 +24,7 @@ class AdGroupCriterionOperation extends \Google\Protobuf\Internal\Message
     /**
      * The list of policy violation keys that should not cause a
      * PolicyViolationError to be reported. Not all policy violations are
-     * exemptable, please refer to the is_exemptible field in the returned
+     * exemptable, refer to the is_exemptible field in the returned
      * PolicyViolationError.
      * Resources violating these polices will be saved, but will not be eligible
      * to serve. They may begin serving at a later time due to a change in
@@ -44,10 +44,10 @@ class AdGroupCriterionOperation extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           FieldMask that determines which resource fields are modified in an update.
-     *     @type \Google\Ads\GoogleAds\V11\Common\PolicyViolationKey[]|\Google\Protobuf\Internal\RepeatedField $exempt_policy_violation_keys
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\PolicyViolationKey>|\Google\Protobuf\Internal\RepeatedField $exempt_policy_violation_keys
      *           The list of policy violation keys that should not cause a
      *           PolicyViolationError to be reported. Not all policy violations are
-     *           exemptable, please refer to the is_exemptible field in the returned
+     *           exemptable, refer to the is_exemptible field in the returned
      *           PolicyViolationError.
      *           Resources violating these polices will be saved, but will not be eligible
      *           to serve. They may begin serving at a later time due to a change in
@@ -108,7 +108,7 @@ class AdGroupCriterionOperation extends \Google\Protobuf\Internal\Message
     /**
      * The list of policy violation keys that should not cause a
      * PolicyViolationError to be reported. Not all policy violations are
-     * exemptable, please refer to the is_exemptible field in the returned
+     * exemptable, refer to the is_exemptible field in the returned
      * PolicyViolationError.
      * Resources violating these polices will be saved, but will not be eligible
      * to serve. They may begin serving at a later time due to a change in
@@ -126,7 +126,7 @@ class AdGroupCriterionOperation extends \Google\Protobuf\Internal\Message
     /**
      * The list of policy violation keys that should not cause a
      * PolicyViolationError to be reported. Not all policy violations are
-     * exemptable, please refer to the is_exemptible field in the returned
+     * exemptable, refer to the is_exemptible field in the returned
      * PolicyViolationError.
      * Resources violating these polices will be saved, but will not be eligible
      * to serve. They may begin serving at a later time due to a change in
@@ -134,7 +134,7 @@ class AdGroupCriterionOperation extends \Google\Protobuf\Internal\Message
      * certificates.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PolicyViolationKey exempt_policy_violation_keys = 5;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\PolicyViolationKey[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\PolicyViolationKey>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExemptPolicyViolationKeys($var)

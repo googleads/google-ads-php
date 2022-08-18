@@ -44,6 +44,12 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.ReachPlanNetworkEnum.ReachPlanNetwork networks = 4;</code>
      */
     private $networks;
+    /**
+     * Targetable YouTube Select Lineups for the ad product.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.YouTubeSelectLineUp youtube_select_lineups = 5;</code>
+     */
+    private $youtube_select_lineups;
 
     /**
      * Constructor.
@@ -51,19 +57,21 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $age_ranges
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $age_ranges
      *           Allowed plannable age ranges for the product for which metrics will be
      *           reported. Actual targeting is computed by mapping this age range onto
      *           standard Google common.AgeRangeInfo values.
-     *     @type \Google\Ads\GoogleAds\V11\Common\GenderInfo[]|\Google\Protobuf\Internal\RepeatedField $genders
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\GenderInfo>|\Google\Protobuf\Internal\RepeatedField $genders
      *           Targetable genders for the ad product.
-     *     @type \Google\Ads\GoogleAds\V11\Common\DeviceInfo[]|\Google\Protobuf\Internal\RepeatedField $devices
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\DeviceInfo>|\Google\Protobuf\Internal\RepeatedField $devices
      *           Targetable devices for the ad product.
      *           TABLET device targeting is automatically applied to reported metrics
      *           when MOBILE targeting is selected for CPM_MASTHEAD,
      *           GOOGLE_PREFERRED_BUMPER, and GOOGLE_PREFERRED_SHORT products.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $networks
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $networks
      *           Targetable networks for the ad product.
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\YouTubeSelectLineUp>|\Google\Protobuf\Internal\RepeatedField $youtube_select_lineups
+     *           Targetable YouTube Select Lineups for the ad product.
      * }
      */
     public function __construct($data = NULL) {
@@ -90,7 +98,7 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      * standard Google common.AgeRangeInfo values.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_ranges = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAgeRanges($var)
@@ -116,7 +124,7 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      * Targetable genders for the ad product.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.GenderInfo genders = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\GenderInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\GenderInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGenders($var)
@@ -148,7 +156,7 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      * GOOGLE_PREFERRED_BUMPER, and GOOGLE_PREFERRED_SHORT products.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.DeviceInfo devices = 3;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\DeviceInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\DeviceInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDevices($var)
@@ -174,13 +182,39 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      * Targetable networks for the ad product.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.ReachPlanNetworkEnum.ReachPlanNetwork networks = 4;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setNetworks($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V11\Enums\ReachPlanNetworkEnum\ReachPlanNetwork::class);
         $this->networks = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Targetable YouTube Select Lineups for the ad product.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.YouTubeSelectLineUp youtube_select_lineups = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getYoutubeSelectLineups()
+    {
+        return $this->youtube_select_lineups;
+    }
+
+    /**
+     * Targetable YouTube Select Lineups for the ad product.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.YouTubeSelectLineUp youtube_select_lineups = 5;</code>
+     * @param array<\Google\Ads\GoogleAds\V11\Services\YouTubeSelectLineUp>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setYoutubeSelectLineups($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V11\Services\YouTubeSelectLineUp::class);
+        $this->youtube_select_lineups = $arr;
 
         return $this;
     }

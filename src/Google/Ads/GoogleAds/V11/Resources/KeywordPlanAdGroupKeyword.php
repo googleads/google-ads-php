@@ -49,11 +49,10 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
      */
     protected $match_type = 0;
     /**
-     * A keyword level max cpc bid in micros (e.g. $1 = 1mm). The currency is the
-     * same as the account currency code. This will override any CPC bid set at
-     * the keyword plan ad group level.
-     * Not applicable for negative keywords. (negative = true)
-     * This field is Optional.
+     * A keyword level max cpc bid in micros (for example, $1 = 1mm). The currency
+     * is the same as the account currency code. This will override any CPC bid
+     * set at the keyword plan ad group level. Not applicable for negative
+     * keywords. (negative = true) This field is Optional.
      *
      * Generated from protobuf field <code>optional int64 cpc_bid_micros = 11;</code>
      */
@@ -84,11 +83,10 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
      *     @type int $match_type
      *           The keyword match type.
      *     @type int|string $cpc_bid_micros
-     *           A keyword level max cpc bid in micros (e.g. $1 = 1mm). The currency is the
-     *           same as the account currency code. This will override any CPC bid set at
-     *           the keyword plan ad group level.
-     *           Not applicable for negative keywords. (negative = true)
-     *           This field is Optional.
+     *           A keyword level max cpc bid in micros (for example, $1 = 1mm). The currency
+     *           is the same as the account currency code. This will override any CPC bid
+     *           set at the keyword plan ad group level. Not applicable for negative
+     *           keywords. (negative = true) This field is Optional.
      *     @type bool $negative
      *           Immutable. If true, the keyword is negative.
      * }
@@ -263,11 +261,10 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A keyword level max cpc bid in micros (e.g. $1 = 1mm). The currency is the
-     * same as the account currency code. This will override any CPC bid set at
-     * the keyword plan ad group level.
-     * Not applicable for negative keywords. (negative = true)
-     * This field is Optional.
+     * A keyword level max cpc bid in micros (for example, $1 = 1mm). The currency
+     * is the same as the account currency code. This will override any CPC bid
+     * set at the keyword plan ad group level. Not applicable for negative
+     * keywords. (negative = true) This field is Optional.
      *
      * Generated from protobuf field <code>optional int64 cpc_bid_micros = 11;</code>
      * @return int|string
@@ -288,11 +285,10 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A keyword level max cpc bid in micros (e.g. $1 = 1mm). The currency is the
-     * same as the account currency code. This will override any CPC bid set at
-     * the keyword plan ad group level.
-     * Not applicable for negative keywords. (negative = true)
-     * This field is Optional.
+     * A keyword level max cpc bid in micros (for example, $1 = 1mm). The currency
+     * is the same as the account currency code. This will override any CPC bid
+     * set at the keyword plan ad group level. Not applicable for negative
+     * keywords. (negative = true) This field is Optional.
      *
      * Generated from protobuf field <code>optional int64 cpc_bid_micros = 11;</code>
      * @param int|string $var

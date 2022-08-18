@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Criterion for hotel date selection (default dates vs. user selected).
+ * Criterion for hotel date selection (default dates versus user selected).
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.common.HotelDateSelectionTypeInfo</code>
  */

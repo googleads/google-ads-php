@@ -28,7 +28,7 @@ class ListingScopeInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\ListingDimensionInfo[]|\Google\Protobuf\Internal\RepeatedField $dimensions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\ListingDimensionInfo>|\Google\Protobuf\Internal\RepeatedField $dimensions
      *           Scope of the campaign criterion.
      * }
      */
@@ -52,7 +52,7 @@ class ListingScopeInfo extends \Google\Protobuf\Internal\Message
      * Scope of the campaign criterion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.ListingDimensionInfo dimensions = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\ListingDimensionInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\ListingDimensionInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDimensions($var)

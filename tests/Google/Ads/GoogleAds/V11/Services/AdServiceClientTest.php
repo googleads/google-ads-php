@@ -73,7 +73,7 @@ class AdServiceClientTest extends GeneratedTest
     public function getAdTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -95,8 +95,8 @@ class AdServiceClientTest extends GeneratedTest
         $expectedResponse->setName($name);
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedResourceName = $client->adName('[CUSTOMER_ID]', '[AD_ID]');
-        $response = $client->getAd($formattedResourceName);
+        $formattedResourceName = $gapicClient->adName('[CUSTOMER_ID]', '[AD_ID]');
+        $response = $gapicClient->getAd($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -114,7 +114,7 @@ class AdServiceClientTest extends GeneratedTest
     public function getAdExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -129,10 +129,10 @@ class AdServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedResourceName = $client->adName('[CUSTOMER_ID]', '[AD_ID]');
+        $formattedResourceName = $gapicClient->adName('[CUSTOMER_ID]', '[AD_ID]');
         try {
-            $client->getAd($formattedResourceName);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->getAd($formattedResourceName);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -149,7 +149,7 @@ class AdServiceClientTest extends GeneratedTest
     public function mutateAdsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -159,7 +159,7 @@ class AdServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-        $response = $client->mutateAds($customerId, $operations);
+        $response = $gapicClient->mutateAds($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -179,7 +179,7 @@ class AdServiceClientTest extends GeneratedTest
     public function mutateAdsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -197,8 +197,8 @@ class AdServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operations = [];
         try {
-            $client->mutateAds($customerId, $operations);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateAds($customerId, $operations);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

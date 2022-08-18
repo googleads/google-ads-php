@@ -73,7 +73,7 @@ class CustomerUserAccessServiceClientTest extends GeneratedTest
     public function mutateCustomerUserAccessTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -83,7 +83,7 @@ class CustomerUserAccessServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operation = new CustomerUserAccessOperation();
-        $response = $client->mutateCustomerUserAccess($customerId, $operation);
+        $response = $gapicClient->mutateCustomerUserAccess($customerId, $operation);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -103,7 +103,7 @@ class CustomerUserAccessServiceClientTest extends GeneratedTest
     public function mutateCustomerUserAccessExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -121,8 +121,8 @@ class CustomerUserAccessServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operation = new CustomerUserAccessOperation();
         try {
-            $client->mutateCustomerUserAccess($customerId, $operation);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateCustomerUserAccess($customerId, $operation);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

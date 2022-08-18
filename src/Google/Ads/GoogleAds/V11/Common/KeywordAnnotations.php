@@ -28,7 +28,7 @@ class KeywordAnnotations extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\KeywordConcept[]|\Google\Protobuf\Internal\RepeatedField $concepts
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\KeywordConcept>|\Google\Protobuf\Internal\RepeatedField $concepts
      *           The list of concepts for the keyword.
      * }
      */
@@ -52,7 +52,7 @@ class KeywordAnnotations extends \Google\Protobuf\Internal\Message
      * The list of concepts for the keyword.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.KeywordConcept concepts = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\KeywordConcept[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\KeywordConcept>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConcepts($var)

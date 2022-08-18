@@ -21,8 +21,8 @@ use Google\Protobuf\Internal\GPBUtil;
  * SEARCH - BUDGET - UNIFORM
  * SHOPPING - BUDGET - UNIFORM
  * SHOPPING - TARGET_ROAS - UNIFORM
- * MULTIPLE - TARGET_CPA - UNIFORM
- * OWNED_AND_OPERATED - TARGET_CPA - DEFAULT
+ * MULTI_CHANNEL - TARGET_CPA - UNIFORM
+ * DISCOVERY - TARGET_CPA - DEFAULT
  * DISPLAY - TARGET_CPA - UNIFORM
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.resources.CampaignSimulation</code>

@@ -47,7 +47,7 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      * The response content type setting. Determines whether the mutable resource
      * or just the resource name should be returned post mutation. The mutable
      * resource will only be returned if the resource has the appropriate response
-     * field. E.g. MutateCampaignResult.campaign.
+     * field. For example, MutateCampaignResult.campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.ResponseContentTypeEnum.ResponseContentType response_content_type = 5;</code>
      */
@@ -61,7 +61,7 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer whose resources are being modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\MutateOperation[]|\Google\Protobuf\Internal\RepeatedField $mutate_operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\MutateOperation>|\Google\Protobuf\Internal\RepeatedField $mutate_operations
      *           Required. The list of operations to perform on individual resources.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -75,7 +75,7 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      *           The response content type setting. Determines whether the mutable resource
      *           or just the resource name should be returned post mutation. The mutable
      *           resource will only be returned if the resource has the appropriate response
-     *           field. E.g. MutateCampaignResult.campaign.
+     *           field. For example, MutateCampaignResult.campaign.
      * }
      */
     public function __construct($data = NULL) {
@@ -124,7 +124,7 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      * Required. The list of operations to perform on individual resources.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.MutateOperation mutate_operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\MutateOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\MutateOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMutateOperations($var)
@@ -199,7 +199,7 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      * The response content type setting. Determines whether the mutable resource
      * or just the resource name should be returned post mutation. The mutable
      * resource will only be returned if the resource has the appropriate response
-     * field. E.g. MutateCampaignResult.campaign.
+     * field. For example, MutateCampaignResult.campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.ResponseContentTypeEnum.ResponseContentType response_content_type = 5;</code>
      * @return int
@@ -213,7 +213,7 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      * The response content type setting. Determines whether the mutable resource
      * or just the resource name should be returned post mutation. The mutable
      * resource will only be returned if the resource has the appropriate response
-     * field. E.g. MutateCampaignResult.campaign.
+     * field. For example, MutateCampaignResult.campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.ResponseContentTypeEnum.ResponseContentType response_content_type = 5;</code>
      * @param int $var

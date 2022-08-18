@@ -19,9 +19,8 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
     /**
      * Errors that pertain to conversion adjustment failures in the partial
      * failure mode. Returned when all errors occur inside the adjustments. If any
-     * errors occur outside the adjustments (e.g. auth errors), we return an RPC
-     * level error.
-     * See
+     * errors occur outside the adjustments (for example, auth errors), we return
+     * an RPC level error. See
      * https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
      * for more information about partial failure.
      *
@@ -46,12 +45,11 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
      *     @type \Google\Rpc\Status $partial_failure_error
      *           Errors that pertain to conversion adjustment failures in the partial
      *           failure mode. Returned when all errors occur inside the adjustments. If any
-     *           errors occur outside the adjustments (e.g. auth errors), we return an RPC
-     *           level error.
-     *           See
+     *           errors occur outside the adjustments (for example, auth errors), we return
+     *           an RPC level error. See
      *           https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
      *           for more information about partial failure.
-     *     @type \Google\Ads\GoogleAds\V11\Services\ConversionAdjustmentResult[]|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\ConversionAdjustmentResult>|\Google\Protobuf\Internal\RepeatedField $results
      *           Returned for successfully processed conversion adjustments. Proto will be
      *           empty for rows that received an error. Results are not returned when
      *           validate_only is true.
@@ -65,9 +63,8 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
     /**
      * Errors that pertain to conversion adjustment failures in the partial
      * failure mode. Returned when all errors occur inside the adjustments. If any
-     * errors occur outside the adjustments (e.g. auth errors), we return an RPC
-     * level error.
-     * See
+     * errors occur outside the adjustments (for example, auth errors), we return
+     * an RPC level error. See
      * https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
      * for more information about partial failure.
      *
@@ -92,9 +89,8 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
     /**
      * Errors that pertain to conversion adjustment failures in the partial
      * failure mode. Returned when all errors occur inside the adjustments. If any
-     * errors occur outside the adjustments (e.g. auth errors), we return an RPC
-     * level error.
-     * See
+     * errors occur outside the adjustments (for example, auth errors), we return
+     * an RPC level error. See
      * https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
      * for more information about partial failure.
      *
@@ -129,7 +125,7 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
      * validate_only is true.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.ConversionAdjustmentResult results = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\ConversionAdjustmentResult[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\ConversionAdjustmentResult>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setResults($var)

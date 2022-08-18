@@ -72,14 +72,14 @@ class ThirdPartyAppAnalyticsLinkServiceClientTest extends GeneratedTest
     public function regenerateShareableLinkIdTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new RegenerateShareableLinkIdResponse();
         $transport->addResponse($expectedResponse);
-        $response = $client->regenerateShareableLinkId();
+        $response = $gapicClient->regenerateShareableLinkId();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -95,7 +95,7 @@ class ThirdPartyAppAnalyticsLinkServiceClientTest extends GeneratedTest
     public function regenerateShareableLinkIdExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -110,8 +110,8 @@ class ThirdPartyAppAnalyticsLinkServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         try {
-            $client->regenerateShareableLinkId();
-            // If the $client method call did not throw, fail the test
+            $gapicClient->regenerateShareableLinkId();
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

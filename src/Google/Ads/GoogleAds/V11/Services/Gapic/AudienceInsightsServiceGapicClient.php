@@ -25,11 +25,14 @@
 namespace Google\Ads\GoogleAds\V11\Services\Gapic;
 
 use Google\Ads\GoogleAds\V11\Services\BasicInsightsAudience;
+use Google\Ads\GoogleAds\V11\Services\GenerateAudienceCompositionInsightsRequest;
+
+use Google\Ads\GoogleAds\V11\Services\GenerateAudienceCompositionInsightsResponse;
+
 use Google\Ads\GoogleAds\V11\Services\GenerateInsightsFinderReportRequest;
-
 use Google\Ads\GoogleAds\V11\Services\GenerateInsightsFinderReportResponse;
+use Google\Ads\GoogleAds\V11\Services\InsightsAudience;
 use Google\Ads\GoogleAds\V11\Services\ListAudienceInsightsAttributesRequest;
-
 use Google\Ads\GoogleAds\V11\Services\ListAudienceInsightsAttributesResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -51,9 +54,9 @@ use Google\Auth\FetchAuthTokenInterface;
  * $audienceInsightsServiceClient = new AudienceInsightsServiceClient();
  * try {
  *     $customerId = 'customer_id';
- *     $baselineAudience = new BasicInsightsAudience();
- *     $specificAudience = new BasicInsightsAudience();
- *     $response = $audienceInsightsServiceClient->generateInsightsFinderReport($customerId, $baselineAudience, $specificAudience);
+ *     $audience = new InsightsAudience();
+ *     $dimensions = [];
+ *     $response = $audienceInsightsServiceClient->generateAudienceCompositionInsights($customerId, $audience, $dimensions);
  * } finally {
  *     $audienceInsightsServiceClient->close();
  * }
@@ -170,6 +173,79 @@ class AudienceInsightsServiceGapicClient
     }
 
     /**
+     * Returns a collection of attributes that are represented in an audience of
+     * interest, with metrics that compare each attribute's share of the audience
+     * with its share of a baseline audience.
+     *
+     * List of thrown errors:
+     * [AudienceInsightsError]()
+     * [AuthenticationError]()
+     * [AuthorizationError]()
+     * [FieldError]()
+     * [HeaderError]()
+     * [InternalError]()
+     * [QuotaError]()
+     * [RangeError]()
+     * [RequestError]()
+     *
+     * Sample code:
+     * ```
+     * $audienceInsightsServiceClient = new AudienceInsightsServiceClient();
+     * try {
+     *     $customerId = 'customer_id';
+     *     $audience = new InsightsAudience();
+     *     $dimensions = [];
+     *     $response = $audienceInsightsServiceClient->generateAudienceCompositionInsights($customerId, $audience, $dimensions);
+     * } finally {
+     *     $audienceInsightsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string           $customerId   Required. The ID of the customer.
+     * @param InsightsAudience $audience     Required. The audience of interest for which insights are being requested.
+     * @param int[]            $dimensions   Required. The audience dimensions for which composition insights should be returned.
+     *                                       For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V11\Enums\AudienceInsightsDimensionEnum\AudienceInsightsDimension}
+     * @param array            $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $dataMonth
+     *           The one-month range of historical data to use for insights, in the format
+     *           "yyyy-mm". If unset, insights will be returned for the last thirty days of
+     *           data.
+     *     @type string $customerInsightsGroup
+     *           The name of the customer being planned for.  This is a user-defined value.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V11\Services\GenerateAudienceCompositionInsightsResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function generateAudienceCompositionInsights($customerId, $audience, $dimensions, array $optionalArgs = [])
+    {
+        $request = new GenerateAudienceCompositionInsightsRequest();
+        $requestParamHeaders = [];
+        $request->setCustomerId($customerId);
+        $request->setAudience($audience);
+        $request->setDimensions($dimensions);
+        $requestParamHeaders['customer_id'] = $customerId;
+        if (isset($optionalArgs['dataMonth'])) {
+            $request->setDataMonth($optionalArgs['dataMonth']);
+        }
+
+        if (isset($optionalArgs['customerInsightsGroup'])) {
+            $request->setCustomerInsightsGroup($optionalArgs['customerInsightsGroup']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GenerateAudienceCompositionInsights', GenerateAudienceCompositionInsightsResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Creates a saved report that can be viewed in the Insights Finder tool.
      *
      * List of thrown errors:
@@ -206,10 +282,9 @@ class AudienceInsightsServiceGapicClient
      *     @type string $customerInsightsGroup
      *           The name of the customer being planned for.  This is a user-defined value.
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\GenerateInsightsFinderReportResponse
@@ -270,10 +345,9 @@ class AudienceInsightsServiceGapicClient
      *     @type string $customerInsightsGroup
      *           The name of the customer being planned for.  This is a user-defined value.
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\ListAudienceInsightsAttributesResponse

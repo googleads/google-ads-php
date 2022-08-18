@@ -82,27 +82,27 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
      *           List of text assets for headlines. When the ad serves the headlines will
      *           be selected from this list. At least 1 and at most 5 headlines must be
      *           specified.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
      *           List of text assets for descriptions. When the ad serves the descriptions
      *           will be selected from this list. At least 1 and at most 5 descriptions must
      *           be specified.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $call_to_actions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $call_to_actions
      *           List of text assets for call-to-actions. When the ad serves the
      *           call-to-actions will be selected from this list. Call-to-actions are
      *           optional and at most 5 can be specified.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $marketing_images
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $marketing_images
      *           List of marketing image assets that may be displayed with the ad. The
      *           images must be 314x600 pixels or 320x320 pixels. At least 1 and at most
      *           20 image assets must be specified.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $logo_images
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $logo_images
      *           List of logo image assets that may be displayed with the ad. The images
      *           must be 128x128 pixels and not larger than 120KB. At least 1 and at most 5
      *           image assets must be specified.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdVideoAsset[]|\Google\Protobuf\Internal\RepeatedField $videos
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $videos
      *           List of YouTube video assets that may be displayed with the ad. Videos
      *           are optional and at most 20 can be specified.
      *     @type string $path1
@@ -136,7 +136,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset headlines = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -166,7 +166,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset descriptions = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDescriptions($var)
@@ -196,7 +196,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * optional and at most 5 can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset call_to_actions = 3;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCallToActions($var)
@@ -226,7 +226,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * 20 image assets must be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdImageAsset marketing_images = 4;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMarketingImages($var)
@@ -256,7 +256,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * image assets must be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdImageAsset logo_images = 5;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLogoImages($var)
@@ -284,7 +284,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * are optional and at most 20 can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdVideoAsset videos = 6;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdVideoAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setVideos($var)

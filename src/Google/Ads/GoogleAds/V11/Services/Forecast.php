@@ -134,7 +134,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      *           See https://support.google.com/google-ads/answer/7029393 for
      *           more information about what makes an ad viewable and how
      *           viewability is measured.
-     *     @type \Google\Ads\GoogleAds\V11\Services\EffectiveFrequencyBreakdown[]|\Google\Protobuf\Internal\RepeatedField $effective_frequency_breakdowns
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\EffectiveFrequencyBreakdown>|\Google\Protobuf\Internal\RepeatedField $effective_frequency_breakdowns
      *           A list of effective frequency forecasts. The list is ordered starting with
      *           1+ and ending with the value set in
      *           GenerateReachForecastRequest.effective_frequency_limit. If no
@@ -394,7 +394,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * effective_frequency_limit was set, this list will be empty.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.EffectiveFrequencyBreakdown effective_frequency_breakdowns = 10;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\EffectiveFrequencyBreakdown[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\EffectiveFrequencyBreakdown>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEffectiveFrequencyBreakdowns($var)

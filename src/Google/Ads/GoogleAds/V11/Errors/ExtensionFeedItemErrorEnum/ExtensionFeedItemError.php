@@ -97,8 +97,8 @@ class ExtensionFeedItemError
      */
     const INVALID_DOMESTIC_PHONE_NUMBER_FORMAT = 12;
     /**
-     * Vanity phone numbers (i.e. those including letters) are not allowed for
-     * call extensions.
+     * Vanity phone numbers (for example, those including letters) are not
+     * allowed for call extensions.
      *
      * Generated from protobuf enum <code>VANITY_PHONE_NUMBER_NOT_ALLOWED = 13;</code>
      */
@@ -125,7 +125,7 @@ class ExtensionFeedItemError
     const CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY = 16;
     /**
      * Customer hasn't consented for call recording, which is required for
-     * creating/updating call feed items. Please see
+     * creating/updating call feed items. See
      * https://support.google.com/google-ads/answer/7412639.
      *
      * Generated from protobuf enum <code>CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED = 17;</code>
@@ -212,8 +212,8 @@ class ExtensionFeedItemError
      */
     const INVALID_DEVICE_PREFERENCE = 30;
     /**
-     * Invalid feed item schedule end time (i.e., endHour = 24 and endMinute !=
-     * 0).
+     * Invalid feed item schedule end time (for example, endHour = 24 and
+     * endMinute != 0).
      *
      * Generated from protobuf enum <code>INVALID_SCHEDULE_END = 31;</code>
      */
@@ -257,7 +257,7 @@ class ExtensionFeedItemError
      */
     const EXTENSION_TYPE_MISMATCH = 37;
     /**
-     * The oneof field extension i.e. subtype of extension feed item is
+     * The oneof field extension for example, subtype of extension feed item is
      * required.
      *
      * Generated from protobuf enum <code>EXTENSION_SUBTYPE_REQUIRED = 38;</code>

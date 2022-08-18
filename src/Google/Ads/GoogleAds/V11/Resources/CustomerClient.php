@@ -49,7 +49,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     protected $level = null;
     /**
      * Output only. Common Locale Data Repository (CLDR) string representation of the
-     * time zone of the client, e.g. America/Los_Angeles. Read only.
+     * time zone of the client, for example, America/Los_Angeles. Read only.
      *
      * Generated from protobuf field <code>optional string time_zone = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -73,7 +73,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     protected $descriptive_name = null;
     /**
-     * Output only. Currency code (e.g. 'USD', 'EUR') for the client. Read only.
+     * Output only. Currency code (for example, 'USD', 'EUR') for the client. Read only.
      *
      * Generated from protobuf field <code>optional string currency_code = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -122,7 +122,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      *           will be 0. Read only.
      *     @type string $time_zone
      *           Output only. Common Locale Data Repository (CLDR) string representation of the
-     *           time zone of the client, e.g. America/Los_Angeles. Read only.
+     *           time zone of the client, for example, America/Los_Angeles. Read only.
      *     @type bool $test_account
      *           Output only. Identifies if the client is a test account. Read only.
      *     @type bool $manager
@@ -130,10 +130,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      *     @type string $descriptive_name
      *           Output only. Descriptive name for the client. Read only.
      *     @type string $currency_code
-     *           Output only. Currency code (e.g. 'USD', 'EUR') for the client. Read only.
+     *           Output only. Currency code (for example, 'USD', 'EUR') for the client. Read only.
      *     @type int|string $id
      *           Output only. The ID of the client customer. Read only.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $applied_labels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $applied_labels
      *           Output only. The resource names of the labels owned by the requesting customer that are
      *           applied to the client customer.
      *           Label resource names have the form:
@@ -295,7 +295,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Common Locale Data Repository (CLDR) string representation of the
-     * time zone of the client, e.g. America/Los_Angeles. Read only.
+     * time zone of the client, for example, America/Los_Angeles. Read only.
      *
      * Generated from protobuf field <code>optional string time_zone = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -317,7 +317,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Common Locale Data Repository (CLDR) string representation of the
-     * time zone of the client, e.g. America/Los_Angeles. Read only.
+     * time zone of the client, for example, America/Los_Angeles. Read only.
      *
      * Generated from protobuf field <code>optional string time_zone = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -440,7 +440,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Currency code (e.g. 'USD', 'EUR') for the client. Read only.
+     * Output only. Currency code (for example, 'USD', 'EUR') for the client. Read only.
      *
      * Generated from protobuf field <code>optional string currency_code = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -461,7 +461,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Currency code (e.g. 'USD', 'EUR') for the client. Read only.
+     * Output only. Currency code (for example, 'USD', 'EUR') for the client. Read only.
      *
      * Generated from protobuf field <code>optional string currency_code = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -532,7 +532,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/labels/{label_id}`
      *
      * Generated from protobuf field <code>repeated string applied_labels = 21 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAppliedLabels($var)

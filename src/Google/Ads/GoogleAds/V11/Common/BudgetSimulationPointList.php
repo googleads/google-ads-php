@@ -28,7 +28,7 @@ class BudgetSimulationPointList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\BudgetSimulationPoint[]|\Google\Protobuf\Internal\RepeatedField $points
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\BudgetSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $points
      *           Projected metrics for a series of budget amounts.
      * }
      */
@@ -52,7 +52,7 @@ class BudgetSimulationPointList extends \Google\Protobuf\Internal\Message
      * Projected metrics for a series of budget amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.BudgetSimulationPoint points = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\BudgetSimulationPoint[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\BudgetSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPoints($var)

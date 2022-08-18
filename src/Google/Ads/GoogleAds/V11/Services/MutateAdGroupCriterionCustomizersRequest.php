@@ -63,7 +63,7 @@ class MutateAdGroupCriterionCustomizersRequest extends \Google\Protobuf\Internal
      *     @type string $customer_id
      *           Required. The ID of the customer whose ad group criterion customizers are being
      *           modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\AdGroupCriterionCustomizerOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\AdGroupCriterionCustomizerOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to perform on individual ad group criterion
      *           customizers.
      *     @type bool $partial_failure
@@ -129,7 +129,7 @@ class MutateAdGroupCriterionCustomizersRequest extends \Google\Protobuf\Internal
      * customizers.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.AdGroupCriterionCustomizerOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\AdGroupCriterionCustomizerOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\AdGroupCriterionCustomizerOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

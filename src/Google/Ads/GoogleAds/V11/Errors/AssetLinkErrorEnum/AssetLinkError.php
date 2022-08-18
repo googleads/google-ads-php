@@ -32,7 +32,7 @@ class AssetLinkError
      */
     const PINNING_UNSUPPORTED = 2;
     /**
-     * The given field type is not supported to be added directly via asset
+     * The given field type is not supported to be added directly through asset
      * links.
      *
      * Generated from protobuf enum <code>UNSUPPORTED_FIELD_TYPE = 3;</code>
@@ -86,9 +86,9 @@ class AssetLinkError
     const NOT_ENOUGH_AVAILABLE_ASSET_LINKS_FOR_VALID_COMBINATION = 10;
     /**
      * Not enough assets with fallback are available. When validating the
-     * minimum number of assets, assets without fallback (e.g. assets that
-     * contain location tag without default value "{LOCATION(City)}") will not
-     * be counted.
+     * minimum number of assets, assets without fallback (for example, assets
+     * that contain location tag without default value "{LOCATION(City)}") will
+     * not be counted.
      *
      * Generated from protobuf enum <code>NOT_ENOUGH_AVAILABLE_ASSET_LINKS_WITH_FALLBACK = 11;</code>
      */
@@ -123,6 +123,12 @@ class AssetLinkError
      */
     const YOUTUBE_VIDEO_TOO_SHORT = 15;
     /**
+     * The specified field type is excluded for given campaign or ad group.
+     *
+     * Generated from protobuf enum <code>EXCLUDED_PARENT_FIELD_TYPE = 16;</code>
+     */
+    const EXCLUDED_PARENT_FIELD_TYPE = 16;
+    /**
      * The status is invalid for the operation specified.
      *
      * Generated from protobuf enum <code>INVALID_STATUS = 17;</code>
@@ -151,7 +157,7 @@ class AssetLinkError
     const CANNOT_LINK_TO_AUTOMATICALLY_CREATED_ASSET = 20;
     /**
      * Automatically created links cannot be changed into adveritser links or
-     * vice versa.
+     * the reverse.
      *
      * Generated from protobuf enum <code>CANNOT_MODIFY_ASSET_LINK_SOURCE = 21;</code>
      */
@@ -174,6 +180,7 @@ class AssetLinkError
         self::YOUTUBE_VIDEO_REMOVED => 'YOUTUBE_VIDEO_REMOVED',
         self::YOUTUBE_VIDEO_TOO_LONG => 'YOUTUBE_VIDEO_TOO_LONG',
         self::YOUTUBE_VIDEO_TOO_SHORT => 'YOUTUBE_VIDEO_TOO_SHORT',
+        self::EXCLUDED_PARENT_FIELD_TYPE => 'EXCLUDED_PARENT_FIELD_TYPE',
         self::INVALID_STATUS => 'INVALID_STATUS',
         self::YOUTUBE_VIDEO_DURATION_NOT_DEFINED => 'YOUTUBE_VIDEO_DURATION_NOT_DEFINED',
         self::CANNOT_CREATE_AUTOMATICALLY_CREATED_LINKS => 'CANNOT_CREATE_AUTOMATICALLY_CREATED_LINKS',

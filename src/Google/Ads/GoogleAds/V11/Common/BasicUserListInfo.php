@@ -28,7 +28,7 @@ class BasicUserListInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\UserListActionInfo[]|\Google\Protobuf\Internal\RepeatedField $actions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\UserListActionInfo>|\Google\Protobuf\Internal\RepeatedField $actions
      *           Actions associated with this user list.
      * }
      */
@@ -52,7 +52,7 @@ class BasicUserListInfo extends \Google\Protobuf\Internal\Message
      * Actions associated with this user list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.UserListActionInfo actions = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\UserListActionInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\UserListActionInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setActions($var)

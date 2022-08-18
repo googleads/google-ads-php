@@ -28,7 +28,7 @@ class SitelinkExtensionRecommendation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\SitelinkFeedItem[]|\Google\Protobuf\Internal\RepeatedField $recommended_extensions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\SitelinkFeedItem>|\Google\Protobuf\Internal\RepeatedField $recommended_extensions
      *           Output only. Sitelink extensions recommended to be added.
      * }
      */
@@ -52,7 +52,7 @@ class SitelinkExtensionRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. Sitelink extensions recommended to be added.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\SitelinkFeedItem[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\SitelinkFeedItem>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRecommendedExtensions($var)

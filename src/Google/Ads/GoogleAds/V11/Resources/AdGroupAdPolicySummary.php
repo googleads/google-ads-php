@@ -41,7 +41,7 @@ class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry[]|\Google\Protobuf\Internal\RepeatedField $policy_topic_entries
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry>|\Google\Protobuf\Internal\RepeatedField $policy_topic_entries
      *           Output only. The list of policy findings for this ad.
      *     @type int $review_status
      *           Output only. Where in the review process this ad is.
@@ -70,7 +70,7 @@ class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
      * Output only. The list of policy findings for this ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PolicyTopicEntry policy_topic_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPolicyTopicEntries($var)

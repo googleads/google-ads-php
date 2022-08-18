@@ -73,7 +73,7 @@ class InvoiceServiceClientTest extends GeneratedTest
     public function listInvoicesTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -85,7 +85,7 @@ class InvoiceServiceClientTest extends GeneratedTest
         $billingSetup = 'billingSetup-1181632583';
         $issueYear = 'issueYear1443510243';
         $issueMonth = MonthOfYear::UNSPECIFIED;
-        $response = $client->listInvoices($customerId, $billingSetup, $issueYear, $issueMonth);
+        $response = $gapicClient->listInvoices($customerId, $billingSetup, $issueYear, $issueMonth);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -109,7 +109,7 @@ class InvoiceServiceClientTest extends GeneratedTest
     public function listInvoicesExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -129,8 +129,8 @@ class InvoiceServiceClientTest extends GeneratedTest
         $issueYear = 'issueYear1443510243';
         $issueMonth = MonthOfYear::UNSPECIFIED;
         try {
-            $client->listInvoices($customerId, $billingSetup, $issueYear, $issueMonth);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->listInvoices($customerId, $billingSetup, $issueYear, $issueMonth);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

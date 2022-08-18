@@ -82,7 +82,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      */
     protected $business_name = null;
     /**
-     * The main color of the ad in hexadecimal, e.g. #ffffff for white.
+     * The main color of the ad in hexadecimal, for example, #ffffff for white.
      * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
@@ -90,7 +90,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      */
     protected $main_color = null;
     /**
-     * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
+     * The accent color of the ad in hexadecimal, for example, #ffffff for white.
      * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
@@ -114,7 +114,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      */
     protected $call_to_action_text = null;
     /**
-     * Prefix before price. E.g. 'as low as'.
+     * Prefix before price. For example, 'as low as'.
      *
      * Generated from protobuf field <code>optional string price_prefix = 22;</code>
      */
@@ -145,42 +145,42 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $marketing_images
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $marketing_images
      *           Marketing images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 600x314 and the aspect ratio must
      *           be 1.91:1 (+-1%). At least one `marketing_image` is required. Combined
      *           with `square_marketing_images`, the maximum is 15.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $square_marketing_images
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $square_marketing_images
      *           Square marketing images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 300x300 and the aspect ratio must
      *           be 1:1 (+-1%). At least one square `marketing_image` is required. Combined
      *           with `marketing_images`, the maximum is 15.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $logo_images
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $logo_images
      *           Logo images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 512x128 and the aspect ratio must
      *           be 4:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $square_logo_images
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $square_logo_images
      *           Square logo images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must
      *           be 1:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
      *           Short format headlines for the ad. The maximum length is 30 characters.
      *           At least 1 and max 5 headlines can be specified.
      *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset $long_headline
      *           A required long format headline. The maximum length is 90 characters.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
      *           Descriptive texts for the ad. The maximum length is 90 characters. At
      *           least 1 and max 5 headlines can be specified.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdVideoAsset[]|\Google\Protobuf\Internal\RepeatedField $youtube_videos
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $youtube_videos
      *           Optional YouTube videos for the ad. A maximum of 5 videos can be specified.
      *     @type string $business_name
      *           The advertiser/brand name. Maximum display width is 25.
      *     @type string $main_color
-     *           The main color of the ad in hexadecimal, e.g. #ffffff for white.
+     *           The main color of the ad in hexadecimal, for example, #ffffff for white.
      *           If one of `main_color` and `accent_color` is set, the other is required as
      *           well.
      *     @type string $accent_color
-     *           The accent color of the ad in hexadecimal, e.g. #ffffff for white.
+     *           The accent color of the ad in hexadecimal, for example, #ffffff for white.
      *           If one of `main_color` and `accent_color` is set, the other is required as
      *           well.
      *     @type bool $allow_flexible_color
@@ -192,7 +192,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *     @type string $call_to_action_text
      *           The call-to-action text for the ad. Maximum display width is 30.
      *     @type string $price_prefix
-     *           Prefix before price. E.g. 'as low as'.
+     *           Prefix before price. For example, 'as low as'.
      *     @type string $promo_text
      *           Promotion text used for dynamic formats of responsive ads. For example
      *           'Free two-day shipping'.
@@ -228,7 +228,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * with `square_marketing_images`, the maximum is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdImageAsset marketing_images = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMarketingImages($var)
@@ -260,7 +260,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * with `marketing_images`, the maximum is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdImageAsset square_marketing_images = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSquareMarketingImages($var)
@@ -290,7 +290,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * be 4:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdImageAsset logo_images = 3;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLogoImages($var)
@@ -320,7 +320,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * be 1:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdImageAsset square_logo_images = 4;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSquareLogoImages($var)
@@ -348,7 +348,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * At least 1 and max 5 headlines can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset headlines = 5;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -412,7 +412,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * least 1 and max 5 headlines can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset descriptions = 7;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDescriptions($var)
@@ -438,7 +438,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Optional YouTube videos for the ad. A maximum of 5 videos can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdVideoAsset youtube_videos = 8;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdVideoAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setYoutubeVideos($var)
@@ -486,7 +486,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The main color of the ad in hexadecimal, e.g. #ffffff for white.
+     * The main color of the ad in hexadecimal, for example, #ffffff for white.
      * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
@@ -509,7 +509,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The main color of the ad in hexadecimal, e.g. #ffffff for white.
+     * The main color of the ad in hexadecimal, for example, #ffffff for white.
      * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
@@ -526,7 +526,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
+     * The accent color of the ad in hexadecimal, for example, #ffffff for white.
      * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
@@ -549,7 +549,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
+     * The accent color of the ad in hexadecimal, for example, #ffffff for white.
      * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
@@ -646,7 +646,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Prefix before price. E.g. 'as low as'.
+     * Prefix before price. For example, 'as low as'.
      *
      * Generated from protobuf field <code>optional string price_prefix = 22;</code>
      * @return string
@@ -667,7 +667,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Prefix before price. E.g. 'as low as'.
+     * Prefix before price. For example, 'as low as'.
      *
      * Generated from protobuf field <code>optional string price_prefix = 22;</code>
      * @param string $var

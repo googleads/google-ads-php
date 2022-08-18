@@ -36,7 +36,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
     protected $conversion_action = null;
     /**
      * The date time at which the adjustment occurred. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string adjustment_date_time = 8;</code>
      */
@@ -63,7 +63,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
      *           adjustment.
      *     @type string $adjustment_date_time
      *           The date time at which the adjustment occurred. The format is
-     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *     @type int $adjustment_type
      *           The adjustment type.
      * }
@@ -175,7 +175,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
 
     /**
      * The date time at which the adjustment occurred. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string adjustment_date_time = 8;</code>
      * @return string
@@ -197,7 +197,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
 
     /**
      * The date time at which the adjustment occurred. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string adjustment_date_time = 8;</code>
      * @param string $var

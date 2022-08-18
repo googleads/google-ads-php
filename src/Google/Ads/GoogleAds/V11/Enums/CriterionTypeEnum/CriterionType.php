@@ -26,13 +26,13 @@ class CriterionType
      */
     const UNKNOWN = 1;
     /**
-     * Keyword. e.g. 'mars cruise'.
+     * Keyword, for example, 'mars cruise'.
      *
      * Generated from protobuf enum <code>KEYWORD = 2;</code>
      */
     const KEYWORD = 2;
     /**
-     * Placement, aka Website. e.g. 'www.flowers4sale.com'
+     * Placement, also known as Website, for example, 'www.flowers4sale.com'
      *
      * Generated from protobuf enum <code>PLACEMENT = 3;</code>
      */
@@ -122,7 +122,7 @@ class CriterionType
      */
     const PROXIMITY = 17;
     /**
-     * A topic target on the display network (e.g. "Pets & Animals").
+     * A topic target on the display network (for example, "Pets & Animals").
      *
      * Generated from protobuf enum <code>TOPIC = 18;</code>
      */

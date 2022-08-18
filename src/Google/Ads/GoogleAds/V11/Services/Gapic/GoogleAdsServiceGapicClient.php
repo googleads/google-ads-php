@@ -191,7 +191,7 @@ class GoogleAdsServiceGapicClient
      *
      * Atomicity makes error handling much easier. If you're making a series of
      * changes and one fails, it can leave your account in an inconsistent state.
-     * With atomicity, you either reach the desired state directly, or the request
+     * With atomicity, you either reach the chosen state directly, or the request
      * fails and you can retry.
      *
      * ## Temp Resource Names
@@ -314,13 +314,12 @@ class GoogleAdsServiceGapicClient
      *           The response content type setting. Determines whether the mutable resource
      *           or just the resource name should be returned post mutation. The mutable
      *           resource will only be returned if the resource has the appropriate response
-     *           field. E.g. MutateCampaignResult.campaign.
+     *           field. For example, MutateCampaignResult.campaign.
      *           For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V11\Enums\ResponseContentTypeEnum\ResponseContentType}
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\MutateGoogleAdsResponse
@@ -416,10 +415,9 @@ class GoogleAdsServiceGapicClient
      *           by itself after all other query results are returned.
      *           For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V11\Enums\SummaryRowSettingEnum\SummaryRowSetting}
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\PagedListResponse

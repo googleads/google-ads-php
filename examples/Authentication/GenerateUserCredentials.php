@@ -71,7 +71,6 @@ class GenerateUserCredentials
 
         // Creates a socket for localhost with random port. Port 0 is used to tell the SocketServer
         // to create a server with a random port.
-        //$socket = new SocketServer(self::OAUTH2_CALLBACK_IP_ADDRESS . ':0', [], $loop);
         $socket = new SocketServer(self::OAUTH2_CALLBACK_IP_ADDRESS . ':0');
 
         // To fill in the values below, generate a client ID and client secret from the Google Cloud

@@ -26,7 +26,7 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the original conversion for this adjustment
      * occurred. The timezone must be specified. The format is "yyyy-mm-dd
-     * hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 4;</code>
      */
@@ -44,7 +44,7 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      *     @type string $conversion_date_time
      *           The date time at which the original conversion for this adjustment
      *           occurred. The timezone must be specified. The format is "yyyy-mm-dd
-     *           hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *           hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      * }
      */
     public function __construct($data = NULL) {
@@ -93,7 +93,7 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the original conversion for this adjustment
      * occurred. The timezone must be specified. The format is "yyyy-mm-dd
-     * hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 4;</code>
      * @return string
@@ -116,7 +116,7 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the original conversion for this adjustment
      * occurred. The timezone must be specified. The format is "yyyy-mm-dd
-     * hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 4;</code>
      * @param string $var

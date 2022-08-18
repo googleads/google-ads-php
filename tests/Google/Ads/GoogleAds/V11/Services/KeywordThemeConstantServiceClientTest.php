@@ -72,14 +72,14 @@ class KeywordThemeConstantServiceClientTest extends GeneratedTest
     public function suggestKeywordThemeConstantsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new SuggestKeywordThemeConstantsResponse();
         $transport->addResponse($expectedResponse);
-        $response = $client->suggestKeywordThemeConstants();
+        $response = $gapicClient->suggestKeywordThemeConstants();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -95,7 +95,7 @@ class KeywordThemeConstantServiceClientTest extends GeneratedTest
     public function suggestKeywordThemeConstantsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -110,8 +110,8 @@ class KeywordThemeConstantServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         try {
-            $client->suggestKeywordThemeConstants();
-            // If the $client method call did not throw, fail the test
+            $gapicClient->suggestKeywordThemeConstants();
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

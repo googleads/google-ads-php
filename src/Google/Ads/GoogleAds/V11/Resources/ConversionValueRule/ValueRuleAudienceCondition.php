@@ -34,9 +34,9 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $user_lists
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_lists
      *           User Lists.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $user_interests
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_interests
      *           User Interests.
      * }
      */
@@ -60,7 +60,7 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
      * User Lists.
      *
      * Generated from protobuf field <code>repeated string user_lists = 1 [(.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUserLists($var)
@@ -86,7 +86,7 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
      * User Interests.
      *
      * Generated from protobuf field <code>repeated string user_interests = 2 [(.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUserInterests($var)

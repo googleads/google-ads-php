@@ -77,10 +77,10 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
      *           mutate request.
      *     @type int $operator
      *           Operator for a function.
-     *     @type \Google\Ads\GoogleAds\V11\Common\Operand[]|\Google\Protobuf\Internal\RepeatedField $left_operands
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\Operand>|\Google\Protobuf\Internal\RepeatedField $left_operands
      *           The operands on the left hand side of the equation. This is also the
      *           operand to be used for single operand expressions such as NOT.
-     *     @type \Google\Ads\GoogleAds\V11\Common\Operand[]|\Google\Protobuf\Internal\RepeatedField $right_operands
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\Operand>|\Google\Protobuf\Internal\RepeatedField $right_operands
      *           The operands on the right hand side of the equation.
      * }
      */
@@ -192,7 +192,7 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
      * operand to be used for single operand expressions such as NOT.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.Operand left_operands = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\Operand[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\Operand>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLeftOperands($var)
@@ -218,7 +218,7 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
      * The operands on the right hand side of the equation.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.Operand right_operands = 3;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\Operand[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\Operand>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRightOperands($var)

@@ -34,7 +34,7 @@ class GenderDimension extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $genders
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $genders
      *           Included gender demographic segments.
      *     @type bool $include_undetermined
      *           Include users whose gender is not determined.
@@ -60,7 +60,7 @@ class GenderDimension extends \Google\Protobuf\Internal\Message
      * Included gender demographic segments.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.GenderTypeEnum.GenderType genders = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGenders($var)

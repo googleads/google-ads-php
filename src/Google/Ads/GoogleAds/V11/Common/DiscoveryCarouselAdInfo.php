@@ -70,7 +70,7 @@ class DiscoveryCarouselAdInfo extends \Google\Protobuf\Internal\Message
      *           Required. The descriptive text of the ad.
      *     @type string $call_to_action_text
      *           Call to action text.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdDiscoveryCarouselCardAsset[]|\Google\Protobuf\Internal\RepeatedField $carousel_cards
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdDiscoveryCarouselCardAsset>|\Google\Protobuf\Internal\RepeatedField $carousel_cards
      *           Required. Carousel cards that will display with the ad. Min 2 max 10.
      * }
      */
@@ -256,7 +256,7 @@ class DiscoveryCarouselAdInfo extends \Google\Protobuf\Internal\Message
      * Required. Carousel cards that will display with the ad. Min 2 max 10.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdDiscoveryCarouselCardAsset carousel_cards = 6 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdDiscoveryCarouselCardAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdDiscoveryCarouselCardAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCarouselCards($var)

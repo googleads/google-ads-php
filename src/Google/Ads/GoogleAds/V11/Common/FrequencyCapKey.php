@@ -17,20 +17,20 @@ use Google\Protobuf\Internal\GPBUtil;
 class FrequencyCapKey extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The level on which the cap is to be applied (e.g. ad group ad, ad group).
-     * The cap is applied to all the entities of this level.
+     * The level on which the cap is to be applied (for example, ad group ad, ad
+     * group). The cap is applied to all the entities of this level.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.FrequencyCapLevelEnum.FrequencyCapLevel level = 1;</code>
      */
     protected $level = 0;
     /**
-     * The type of event that the cap applies to (e.g. impression).
+     * The type of event that the cap applies to (for example, impression).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.FrequencyCapEventTypeEnum.FrequencyCapEventType event_type = 3;</code>
      */
     protected $event_type = 0;
     /**
-     * Unit of time the cap is defined at (e.g. day, week).
+     * Unit of time the cap is defined at (for example, day, week).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.FrequencyCapTimeUnitEnum.FrequencyCapTimeUnit time_unit = 2;</code>
      */
@@ -49,12 +49,12 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $level
-     *           The level on which the cap is to be applied (e.g. ad group ad, ad group).
-     *           The cap is applied to all the entities of this level.
+     *           The level on which the cap is to be applied (for example, ad group ad, ad
+     *           group). The cap is applied to all the entities of this level.
      *     @type int $event_type
-     *           The type of event that the cap applies to (e.g. impression).
+     *           The type of event that the cap applies to (for example, impression).
      *     @type int $time_unit
-     *           Unit of time the cap is defined at (e.g. day, week).
+     *           Unit of time the cap is defined at (for example, day, week).
      *     @type int $time_length
      *           Number of time units the cap lasts.
      * }
@@ -65,8 +65,8 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The level on which the cap is to be applied (e.g. ad group ad, ad group).
-     * The cap is applied to all the entities of this level.
+     * The level on which the cap is to be applied (for example, ad group ad, ad
+     * group). The cap is applied to all the entities of this level.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.FrequencyCapLevelEnum.FrequencyCapLevel level = 1;</code>
      * @return int
@@ -77,8 +77,8 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The level on which the cap is to be applied (e.g. ad group ad, ad group).
-     * The cap is applied to all the entities of this level.
+     * The level on which the cap is to be applied (for example, ad group ad, ad
+     * group). The cap is applied to all the entities of this level.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.FrequencyCapLevelEnum.FrequencyCapLevel level = 1;</code>
      * @param int $var
@@ -93,7 +93,7 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of event that the cap applies to (e.g. impression).
+     * The type of event that the cap applies to (for example, impression).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.FrequencyCapEventTypeEnum.FrequencyCapEventType event_type = 3;</code>
      * @return int
@@ -104,7 +104,7 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of event that the cap applies to (e.g. impression).
+     * The type of event that the cap applies to (for example, impression).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.FrequencyCapEventTypeEnum.FrequencyCapEventType event_type = 3;</code>
      * @param int $var
@@ -119,7 +119,7 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unit of time the cap is defined at (e.g. day, week).
+     * Unit of time the cap is defined at (for example, day, week).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.FrequencyCapTimeUnitEnum.FrequencyCapTimeUnit time_unit = 2;</code>
      * @return int
@@ -130,7 +130,7 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unit of time the cap is defined at (e.g. day, week).
+     * Unit of time the cap is defined at (for example, day, week).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.FrequencyCapTimeUnitEnum.FrequencyCapTimeUnit time_unit = 2;</code>
      * @param int $var

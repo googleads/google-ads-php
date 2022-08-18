@@ -186,7 +186,7 @@ class KeywordThemeConstantServiceGapicClient
      *
      *     @type string $queryText
      *           The query text of a keyword theme that will be used to map to similar
-     *           keyword themes. E.g. "plumber" or "roofer".
+     *           keyword themes. For example, "plumber" or "roofer".
      *     @type string $countryCode
      *           Upper-case, two-letter country code as defined by ISO-3166. This for
      *           refining the scope of the query, default to 'US' if not set.
@@ -194,10 +194,9 @@ class KeywordThemeConstantServiceGapicClient
      *           The two letter language code for get corresponding keyword theme for
      *           refining the scope of the query, default to 'en' if not set.
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\SuggestKeywordThemeConstantsResponse

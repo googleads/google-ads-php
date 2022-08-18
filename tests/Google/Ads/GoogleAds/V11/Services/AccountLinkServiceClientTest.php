@@ -75,7 +75,7 @@ class AccountLinkServiceClientTest extends GeneratedTest
     public function createAccountLinkTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -87,7 +87,7 @@ class AccountLinkServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $accountLink = new AccountLink();
-        $response = $client->createAccountLink($customerId, $accountLink);
+        $response = $gapicClient->createAccountLink($customerId, $accountLink);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -107,7 +107,7 @@ class AccountLinkServiceClientTest extends GeneratedTest
     public function createAccountLinkExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -125,8 +125,8 @@ class AccountLinkServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $accountLink = new AccountLink();
         try {
-            $client->createAccountLink($customerId, $accountLink);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->createAccountLink($customerId, $accountLink);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -143,7 +143,7 @@ class AccountLinkServiceClientTest extends GeneratedTest
     public function mutateAccountLinkTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -153,7 +153,7 @@ class AccountLinkServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operation = new AccountLinkOperation();
-        $response = $client->mutateAccountLink($customerId, $operation);
+        $response = $gapicClient->mutateAccountLink($customerId, $operation);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -173,7 +173,7 @@ class AccountLinkServiceClientTest extends GeneratedTest
     public function mutateAccountLinkExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -191,8 +191,8 @@ class AccountLinkServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operation = new AccountLinkOperation();
         try {
-            $client->mutateAccountLink($customerId, $operation);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateAccountLink($customerId, $operation);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

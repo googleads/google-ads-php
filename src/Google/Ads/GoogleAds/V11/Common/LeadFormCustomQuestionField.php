@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class LeadFormCustomQuestionField extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The exact custom question field text (e.g. "Do you own a car?").
+     * The exact custom question field text (for example, "Do you own a car?").
      *
      * Generated from protobuf field <code>string custom_question_text = 1;</code>
      */
@@ -30,7 +30,7 @@ class LeadFormCustomQuestionField extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $custom_question_text
-     *           The exact custom question field text (e.g. "Do you own a car?").
+     *           The exact custom question field text (for example, "Do you own a car?").
      *     @type \Google\Ads\GoogleAds\V11\Common\LeadFormSingleChoiceAnswers $single_choice_answers
      *           Answer configuration for a single choice question.
      *           Minimum of 2 answers and maximum of 12 allowed.
@@ -42,7 +42,7 @@ class LeadFormCustomQuestionField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The exact custom question field text (e.g. "Do you own a car?").
+     * The exact custom question field text (for example, "Do you own a car?").
      *
      * Generated from protobuf field <code>string custom_question_text = 1;</code>
      * @return string
@@ -53,7 +53,7 @@ class LeadFormCustomQuestionField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The exact custom question field text (e.g. "Do you own a car?").
+     * The exact custom question field text (for example, "Do you own a car?").
      *
      * Generated from protobuf field <code>string custom_question_text = 1;</code>
      * @param string $var

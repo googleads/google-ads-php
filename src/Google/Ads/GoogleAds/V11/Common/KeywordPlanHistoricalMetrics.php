@@ -75,7 +75,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      *     @type int|string $avg_monthly_searches
      *           Approximate number of monthly searches on this query averaged
      *           for the past 12 months.
-     *     @type \Google\Ads\GoogleAds\V11\Common\MonthlySearchVolume[]|\Google\Protobuf\Internal\RepeatedField $monthly_search_volumes
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\MonthlySearchVolume>|\Google\Protobuf\Internal\RepeatedField $monthly_search_volumes
      *           Approximate number of searches on this query for the past twelve months.
      *     @type int $competition
      *           The competition level for the query.
@@ -151,7 +151,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      * Approximate number of searches on this query for the past twelve months.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.MonthlySearchVolume monthly_search_volumes = 6;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\MonthlySearchVolume[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\MonthlySearchVolume>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMonthlySearchVolumes($var)

@@ -77,7 +77,7 @@ class GoogleAdsServiceClientTest extends GeneratedTest
     public function mutateTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -87,7 +87,7 @@ class GoogleAdsServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $mutateOperations = [];
-        $response = $client->mutate($customerId, $mutateOperations);
+        $response = $gapicClient->mutate($customerId, $mutateOperations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -107,7 +107,7 @@ class GoogleAdsServiceClientTest extends GeneratedTest
     public function mutateExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -125,8 +125,8 @@ class GoogleAdsServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $mutateOperations = [];
         try {
-            $client->mutate($customerId, $mutateOperations);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutate($customerId, $mutateOperations);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -143,7 +143,7 @@ class GoogleAdsServiceClientTest extends GeneratedTest
     public function searchTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -162,7 +162,7 @@ class GoogleAdsServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $query = 'query107944136';
-        $response = $client->search($customerId, $query);
+        $response = $gapicClient->search($customerId, $query);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -185,7 +185,7 @@ class GoogleAdsServiceClientTest extends GeneratedTest
     public function searchExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -203,8 +203,8 @@ class GoogleAdsServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $query = 'query107944136';
         try {
-            $client->search($customerId, $query);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->search($customerId, $query);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -221,7 +221,7 @@ class GoogleAdsServiceClientTest extends GeneratedTest
     public function searchStreamTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -241,7 +241,7 @@ class GoogleAdsServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $query = 'query107944136';
-        $serverStream = $client->searchStream($customerId, $query);
+        $serverStream = $gapicClient->searchStream($customerId, $query);
         $this->assertInstanceOf(ServerStream::class, $serverStream);
         $responses = iterator_to_array($serverStream->readAll());
         $expectedResponses = [];
@@ -267,7 +267,7 @@ class GoogleAdsServiceClientTest extends GeneratedTest
     public function searchStreamExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $status = new stdClass();
@@ -284,7 +284,7 @@ class GoogleAdsServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $query = 'query107944136';
-        $serverStream = $client->searchStream($customerId, $query);
+        $serverStream = $gapicClient->searchStream($customerId, $query);
         $results = $serverStream->readAll();
         try {
             iterator_to_array($results);

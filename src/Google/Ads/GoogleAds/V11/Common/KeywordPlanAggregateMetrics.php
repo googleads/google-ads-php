@@ -28,7 +28,7 @@ class KeywordPlanAggregateMetrics extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $aggregate_metric_types
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $aggregate_metric_types
      *           The list of aggregate metrics to fetch data.
      * }
      */
@@ -52,7 +52,7 @@ class KeywordPlanAggregateMetrics extends \Google\Protobuf\Internal\Message
      * The list of aggregate metrics to fetch data.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.KeywordPlanAggregateMetricTypeEnum.KeywordPlanAggregateMetricType aggregate_metric_types = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAggregateMetricTypes($var)

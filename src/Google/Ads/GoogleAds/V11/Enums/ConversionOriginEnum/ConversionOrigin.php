@@ -34,14 +34,14 @@ class ConversionOrigin
     const WEBSITE = 2;
     /**
      * Conversions reported by an offline pipeline which collects local actions
-     * from Google-hosted pages (e.g. Google Maps, Google Place Page, etc) and
-     * attributes them to relevant ad events.
+     * from Google-hosted pages (for example, Google Maps, Google Place Page,
+     * etc) and attributes them to relevant ad events.
      *
      * Generated from protobuf enum <code>GOOGLE_HOSTED = 3;</code>
      */
     const GOOGLE_HOSTED = 3;
     /**
-     * Conversion that occurs when a user performs an action via any app
+     * Conversion that occurs when a user performs an action through any app
      * platforms.
      *
      * Generated from protobuf enum <code>APP = 4;</code>

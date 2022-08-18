@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V11\Enums\LocationGroupRadiusUnitsEnum;
 use UnexpectedValueException;
 
 /**
- * The unit of radius distance in location group (e.g. MILES)
+ * The unit of radius distance in location group (for example, MILES)
  *
  * Protobuf type <code>google.ads.googleads.v11.enums.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits</code>
  */

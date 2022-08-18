@@ -65,7 +65,7 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      *           of parameters.
      *           This field is required for CREATE operations and is prohibited on UPDATE
      *           operations.
-     *     @type \Google\Ads\GoogleAds\V11\Common\WebpageConditionInfo[]|\Google\Protobuf\Internal\RepeatedField $conditions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\WebpageConditionInfo>|\Google\Protobuf\Internal\RepeatedField $conditions
      *           Conditions, or logical expressions, for webpage targeting. The list of
      *           webpage targeting conditions are and-ed together when evaluated
      *           for targeting. An empty list of conditions indicates all pages of the
@@ -156,7 +156,7 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      * operations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.WebpageConditionInfo conditions = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\WebpageConditionInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\WebpageConditionInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConditions($var)

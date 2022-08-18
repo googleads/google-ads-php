@@ -73,7 +73,7 @@ class ConversionUploadServiceClientTest extends GeneratedTest
     public function uploadCallConversionsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -84,7 +84,7 @@ class ConversionUploadServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $conversions = [];
         $partialFailure = true;
-        $response = $client->uploadCallConversions($customerId, $conversions, $partialFailure);
+        $response = $gapicClient->uploadCallConversions($customerId, $conversions, $partialFailure);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -106,7 +106,7 @@ class ConversionUploadServiceClientTest extends GeneratedTest
     public function uploadCallConversionsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -125,8 +125,8 @@ class ConversionUploadServiceClientTest extends GeneratedTest
         $conversions = [];
         $partialFailure = true;
         try {
-            $client->uploadCallConversions($customerId, $conversions, $partialFailure);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->uploadCallConversions($customerId, $conversions, $partialFailure);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -143,7 +143,7 @@ class ConversionUploadServiceClientTest extends GeneratedTest
     public function uploadClickConversionsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -154,7 +154,7 @@ class ConversionUploadServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $conversions = [];
         $partialFailure = true;
-        $response = $client->uploadClickConversions($customerId, $conversions, $partialFailure);
+        $response = $gapicClient->uploadClickConversions($customerId, $conversions, $partialFailure);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -176,7 +176,7 @@ class ConversionUploadServiceClientTest extends GeneratedTest
     public function uploadClickConversionsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -195,8 +195,8 @@ class ConversionUploadServiceClientTest extends GeneratedTest
         $conversions = [];
         $partialFailure = true;
         try {
-            $client->uploadClickConversions($customerId, $conversions, $partialFailure);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->uploadClickConversions($customerId, $conversions, $partialFailure);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

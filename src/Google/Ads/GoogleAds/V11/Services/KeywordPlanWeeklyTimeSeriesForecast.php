@@ -38,7 +38,7 @@ class KeywordPlanWeeklyTimeSeriesForecast extends \Google\Protobuf\Internal\Mess
      *     @type string $keyword_plan_campaign
      *           The resource name of the Keyword Plan campaign related to the forecast.
      *           `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
-     *     @type \Google\Ads\GoogleAds\V11\Services\KeywordPlanWeeklyForecast[]|\Google\Protobuf\Internal\RepeatedField $weekly_forecasts
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanWeeklyForecast>|\Google\Protobuf\Internal\RepeatedField $weekly_forecasts
      *           The forecasts for the Keyword Plan campaign at different max CPC bids.
      * }
      */
@@ -100,7 +100,7 @@ class KeywordPlanWeeklyTimeSeriesForecast extends \Google\Protobuf\Internal\Mess
      * The forecasts for the Keyword Plan campaign at different max CPC bids.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.KeywordPlanWeeklyForecast weekly_forecasts = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\KeywordPlanWeeklyForecast[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanWeeklyForecast>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setWeeklyForecasts($var)

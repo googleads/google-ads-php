@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V11\Enums\MonthOfYearEnum;
 use UnexpectedValueException;
 
 /**
- * Enumerates months of the year, e.g., "January".
+ * Enumerates months of the year, for example, "January".
  *
  * Protobuf type <code>google.ads.googleads.v11.enums.MonthOfYearEnum.MonthOfYear</code>
  */

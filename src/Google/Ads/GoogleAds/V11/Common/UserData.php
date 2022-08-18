@@ -42,7 +42,7 @@ class UserData extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\UserIdentifier[]|\Google\Protobuf\Internal\RepeatedField $user_identifiers
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $user_identifiers
      *           User identification info. Required.
      *     @type \Google\Ads\GoogleAds\V11\Common\TransactionAttribute $transaction_attribute
      *           Additional transactions/attributes associated with the user.
@@ -72,7 +72,7 @@ class UserData extends \Google\Protobuf\Internal\Message
      * User identification info. Required.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.UserIdentifier user_identifiers = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\UserIdentifier[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUserIdentifiers($var)

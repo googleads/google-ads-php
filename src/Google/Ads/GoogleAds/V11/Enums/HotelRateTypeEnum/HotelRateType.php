@@ -48,9 +48,9 @@ class HotelRateType
      */
     const QUALIFIED_RATE = 4;
     /**
-     * Rates available to users that satisfy some eligibility criteria. e.g.
-     * all signed-in users, 20% of mobile users, all mobile users in Canada,
-     * etc.
+     * Rates available to users that satisfy some eligibility criteria, for
+     * example, all signed-in users, 20% of mobile users, all mobile users in
+     * Canada, etc.
      *
      * Generated from protobuf enum <code>PRIVATE_RATE = 5;</code>
      */

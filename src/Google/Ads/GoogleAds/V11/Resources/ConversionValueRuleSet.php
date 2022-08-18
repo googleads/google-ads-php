@@ -96,9 +96,9 @@ class ConversionValueRuleSet extends \Google\Protobuf\Internal\Message
      *           `customers/{customer_id}/conversionValueRuleSets/{conversion_value_rule_set_id}`
      *     @type int|string $id
      *           Output only. The ID of the conversion value rule set.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $conversion_value_rules
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $conversion_value_rules
      *           Resource names of rules within the rule set.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $dimensions
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $dimensions
      *           Defines dimensions for Value Rule conditions. The condition types of value
      *           rules within this value rule set must be of these dimensions. The first
      *           entry in this list is the primary dimension of the included value rules.
@@ -120,7 +120,7 @@ class ConversionValueRuleSet extends \Google\Protobuf\Internal\Message
      *     @type int $status
      *           Output only. The status of the conversion value rule set.
      *           ** Read-only **
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $conversion_action_categories
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $conversion_action_categories
      *           Immutable. The conversion action categories of the conversion value rule set.
      * }
      */
@@ -200,7 +200,7 @@ class ConversionValueRuleSet extends \Google\Protobuf\Internal\Message
      * Resource names of rules within the rule set.
      *
      * Generated from protobuf field <code>repeated string conversion_value_rules = 3 [(.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConversionValueRules($var)
@@ -236,7 +236,7 @@ class ConversionValueRuleSet extends \Google\Protobuf\Internal\Message
      * values, if some value rules apply.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.ValueRuleSetDimensionEnum.ValueRuleSetDimension dimensions = 4;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDimensions($var)
@@ -380,7 +380,7 @@ class ConversionValueRuleSet extends \Google\Protobuf\Internal\Message
      * Immutable. The conversion action categories of the conversion value rule set.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.ConversionActionCategoryEnum.ConversionActionCategory conversion_action_categories = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConversionActionCategories($var)

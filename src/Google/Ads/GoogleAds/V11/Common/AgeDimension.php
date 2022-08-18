@@ -34,7 +34,7 @@ class AgeDimension extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\AgeSegment[]|\Google\Protobuf\Internal\RepeatedField $age_ranges
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AgeSegment>|\Google\Protobuf\Internal\RepeatedField $age_ranges
      *           Contiguous age range to be included in the dimension.
      *     @type bool $include_undetermined
      *           Include users whose age is not determined.
@@ -60,7 +60,7 @@ class AgeDimension extends \Google\Protobuf\Internal\Message
      * Contiguous age range to be included in the dimension.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AgeSegment age_ranges = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AgeSegment[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AgeSegment>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAgeRanges($var)

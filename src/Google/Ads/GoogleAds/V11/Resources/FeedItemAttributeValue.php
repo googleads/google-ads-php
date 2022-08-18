@@ -120,13 +120,13 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V11\Common\Money $price_value
      *           Price value. Should be set if feed_attribute_id refers to a feed attribute
      *           of type PRICE.
-     *     @type int[]|string[]|\Google\Protobuf\Internal\RepeatedField $integer_values
+     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $integer_values
      *           Repeated int64 value. Should be set if feed_attribute_id refers to a feed
      *           attribute of type INT64_LIST.
-     *     @type bool[]|\Google\Protobuf\Internal\RepeatedField $boolean_values
+     *     @type array<bool>|\Google\Protobuf\Internal\RepeatedField $boolean_values
      *           Repeated bool value. Should be set if feed_attribute_id refers to a feed
      *           attribute of type BOOLEAN_LIST.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $string_values
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $string_values
      *           Repeated string value. Should be set if feed_attribute_id refers to a feed
      *           attribute of type STRING_LIST, URL_LIST or DATE_TIME_LIST.
      *           For STRING_LIST and URL_LIST the total size of the list in bytes may not
@@ -135,7 +135,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      *           characters. For URL_LIST the maximum length is 2076 characters. For
      *           DATE_TIME the format of the string must be the same as start and end time
      *           for the feed item.
-     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $double_values
+     *     @type array<float>|\Google\Protobuf\Internal\RepeatedField $double_values
      *           Repeated double value. Should be set if feed_attribute_id refers to a feed
      *           attribute of type DOUBLE_LIST.
      * }
@@ -394,7 +394,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * attribute of type INT64_LIST.
      *
      * Generated from protobuf field <code>repeated int64 integer_values = 16;</code>
-     * @param int[]|string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setIntegerValues($var)
@@ -422,7 +422,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * attribute of type BOOLEAN_LIST.
      *
      * Generated from protobuf field <code>repeated bool boolean_values = 17;</code>
-     * @param bool[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<bool>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setBooleanValues($var)
@@ -462,7 +462,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * for the feed item.
      *
      * Generated from protobuf field <code>repeated string string_values = 18;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStringValues($var)
@@ -490,7 +490,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * attribute of type DOUBLE_LIST.
      *
      * Generated from protobuf field <code>repeated double double_values = 19;</code>
-     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<float>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDoubleValues($var)

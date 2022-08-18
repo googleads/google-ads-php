@@ -70,7 +70,7 @@ class CallAsset extends \Google\Protobuf\Internal\Message
      *           default conversion action is used. This field only has effect if
      *           call_conversion_reporting_state is set to
      *           USE_RESOURCE_LEVEL_CALL_CONVERSION_ACTION.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdScheduleInfo[]|\Google\Protobuf\Internal\RepeatedField $ad_schedule_targets
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $ad_schedule_targets
      *           List of non-overlapping schedules specifying all time intervals for which
      *           the asset may serve. There can be a maximum of 6 schedules per day, 42 in
      *           total.
@@ -212,7 +212,7 @@ class CallAsset extends \Google\Protobuf\Internal\Message
      * total.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdScheduleInfo ad_schedule_targets = 5;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdScheduleInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdScheduleTargets($var)

@@ -33,7 +33,7 @@ class PromotionPlaceholderField
      */
     const PROMOTION_TARGET = 2;
     /**
-     * Data Type: STRING. Allows you to add "up to" phrase to the promotion,
+     * Data Type: STRING. Lets you add "up to" phrase to the promotion,
      * in case you have variable promotion rates.
      *
      * Generated from protobuf enum <code>DISCOUNT_MODIFIER = 3;</code>

@@ -63,21 +63,21 @@ class BasicInsightsAudience extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\LocationInfo[]|\Google\Protobuf\Internal\RepeatedField $country_location
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $country_location
      *           Required. The countries for this audience.
-     *     @type \Google\Ads\GoogleAds\V11\Common\LocationInfo[]|\Google\Protobuf\Internal\RepeatedField $sub_country_locations
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $sub_country_locations
      *           Sub-country geographic location attributes.  If present, each of these
      *           must be contained in one of the countries in this audience.
      *     @type \Google\Ads\GoogleAds\V11\Common\GenderInfo $gender
      *           Gender for the audience.  If absent, the audience does not restrict by
      *           gender.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AgeRangeInfo[]|\Google\Protobuf\Internal\RepeatedField $age_ranges
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AgeRangeInfo>|\Google\Protobuf\Internal\RepeatedField $age_ranges
      *           Age ranges for the audience.  If absent, the audience represents all people
      *           over 18 that match the other attributes.
-     *     @type \Google\Ads\GoogleAds\V11\Common\UserInterestInfo[]|\Google\Protobuf\Internal\RepeatedField $user_interests
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\UserInterestInfo>|\Google\Protobuf\Internal\RepeatedField $user_interests
      *           User interests defining this audience.  Affinity and In-Market audiences
      *           are supported.
-     *     @type \Google\Ads\GoogleAds\V11\Services\AudienceInsightsTopic[]|\Google\Protobuf\Internal\RepeatedField $topics
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\AudienceInsightsTopic>|\Google\Protobuf\Internal\RepeatedField $topics
      *           Topics, represented by Knowledge Graph entities and/or Product & Service
      *           categories, that this audience is interested in.
      * }
@@ -102,7 +102,7 @@ class BasicInsightsAudience extends \Google\Protobuf\Internal\Message
      * Required. The countries for this audience.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.LocationInfo country_location = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\LocationInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCountryLocation($var)
@@ -130,7 +130,7 @@ class BasicInsightsAudience extends \Google\Protobuf\Internal\Message
      * must be contained in one of the countries in this audience.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.LocationInfo sub_country_locations = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\LocationInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSubCountryLocations($var)
@@ -196,7 +196,7 @@ class BasicInsightsAudience extends \Google\Protobuf\Internal\Message
      * over 18 that match the other attributes.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AgeRangeInfo age_ranges = 4;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AgeRangeInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AgeRangeInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAgeRanges($var)
@@ -224,7 +224,7 @@ class BasicInsightsAudience extends \Google\Protobuf\Internal\Message
      * are supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.UserInterestInfo user_interests = 5;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\UserInterestInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\UserInterestInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUserInterests($var)
@@ -252,7 +252,7 @@ class BasicInsightsAudience extends \Google\Protobuf\Internal\Message
      * categories, that this audience is interested in.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.AudienceInsightsTopic topics = 6;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\AudienceInsightsTopic[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\AudienceInsightsTopic>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTopics($var)

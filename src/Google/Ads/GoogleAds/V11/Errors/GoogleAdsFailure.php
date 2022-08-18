@@ -35,7 +35,7 @@ class GoogleAdsFailure extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Errors\GoogleAdsError[]|\Google\Protobuf\Internal\RepeatedField $errors
+     *     @type array<\Google\Ads\GoogleAds\V11\Errors\GoogleAdsError>|\Google\Protobuf\Internal\RepeatedField $errors
      *           The list of errors that occurred.
      *     @type string $request_id
      *           The unique ID of the request that is used for debugging purposes.
@@ -61,7 +61,7 @@ class GoogleAdsFailure extends \Google\Protobuf\Internal\Message
      * The list of errors that occurred.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.errors.GoogleAdsError errors = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Errors\GoogleAdsError[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Errors\GoogleAdsError>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setErrors($var)

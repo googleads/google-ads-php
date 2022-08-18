@@ -33,15 +33,16 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      */
     protected $campaign = null;
     /**
-     * Output only. Recommended category for the website domain. e.g. if you have a website
-     * about electronics, the categories could be "cameras", "televisions", etc.
+     * Output only. Recommended category for the website domain, for example, if you have a
+     * website about electronics, the categories could be "cameras",
+     * "televisions", etc.
      *
      * Generated from protobuf field <code>optional string category = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $category = null;
     /**
-     * Output only. The language code specifying the language of the website. e.g. "en" for
-     * English. The language can be specified in the DynamicSearchAdsSetting
+     * Output only. The language code specifying the language of the website, for example, "en"
+     * for English. The language can be specified in the DynamicSearchAdsSetting
      * required for dynamic search ads. This is the language of the pages from
      * your website that you want Google Ads to find, create ads for,
      * and match searches with.
@@ -95,11 +96,12 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      *     @type string $campaign
      *           Output only. The campaign this category is recommended for.
      *     @type string $category
-     *           Output only. Recommended category for the website domain. e.g. if you have a website
-     *           about electronics, the categories could be "cameras", "televisions", etc.
+     *           Output only. Recommended category for the website domain, for example, if you have a
+     *           website about electronics, the categories could be "cameras",
+     *           "televisions", etc.
      *     @type string $language_code
-     *           Output only. The language code specifying the language of the website. e.g. "en" for
-     *           English. The language can be specified in the DynamicSearchAdsSetting
+     *           Output only. The language code specifying the language of the website, for example, "en"
+     *           for English. The language can be specified in the DynamicSearchAdsSetting
      *           required for dynamic search ads. This is the language of the pages from
      *           your website that you want Google Ads to find, create ads for,
      *           and match searches with.
@@ -189,8 +191,9 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Recommended category for the website domain. e.g. if you have a website
-     * about electronics, the categories could be "cameras", "televisions", etc.
+     * Output only. Recommended category for the website domain, for example, if you have a
+     * website about electronics, the categories could be "cameras",
+     * "televisions", etc.
      *
      * Generated from protobuf field <code>optional string category = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -211,8 +214,9 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Recommended category for the website domain. e.g. if you have a website
-     * about electronics, the categories could be "cameras", "televisions", etc.
+     * Output only. Recommended category for the website domain, for example, if you have a
+     * website about electronics, the categories could be "cameras",
+     * "televisions", etc.
      *
      * Generated from protobuf field <code>optional string category = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -227,8 +231,8 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The language code specifying the language of the website. e.g. "en" for
-     * English. The language can be specified in the DynamicSearchAdsSetting
+     * Output only. The language code specifying the language of the website, for example, "en"
+     * for English. The language can be specified in the DynamicSearchAdsSetting
      * required for dynamic search ads. This is the language of the pages from
      * your website that you want Google Ads to find, create ads for,
      * and match searches with.
@@ -252,8 +256,8 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The language code specifying the language of the website. e.g. "en" for
-     * English. The language can be specified in the DynamicSearchAdsSetting
+     * Output only. The language code specifying the language of the website, for example, "en"
+     * for English. The language can be specified in the DynamicSearchAdsSetting
      * required for dynamic search ads. This is the language of the pages from
      * your website that you want Google Ads to find, create ads for,
      * and match searches with.

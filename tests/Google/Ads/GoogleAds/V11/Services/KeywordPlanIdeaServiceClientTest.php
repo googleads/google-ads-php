@@ -75,7 +75,7 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
     public function generateAdGroupThemesTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -86,7 +86,7 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $keywords = [];
         $adGroups = [];
-        $response = $client->generateAdGroupThemes($customerId, $keywords, $adGroups);
+        $response = $gapicClient->generateAdGroupThemes($customerId, $keywords, $adGroups);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -108,7 +108,7 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
     public function generateAdGroupThemesExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -127,8 +127,8 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $keywords = [];
         $adGroups = [];
         try {
-            $client->generateAdGroupThemes($customerId, $keywords, $adGroups);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->generateAdGroupThemes($customerId, $keywords, $adGroups);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -145,14 +145,14 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
     public function generateKeywordHistoricalMetricsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateKeywordHistoricalMetricsResponse();
         $transport->addResponse($expectedResponse);
-        $response = $client->generateKeywordHistoricalMetrics();
+        $response = $gapicClient->generateKeywordHistoricalMetrics();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -168,7 +168,7 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
     public function generateKeywordHistoricalMetricsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -183,8 +183,8 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         try {
-            $client->generateKeywordHistoricalMetrics();
-            // If the $client method call did not throw, fail the test
+            $gapicClient->generateKeywordHistoricalMetrics();
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -201,7 +201,7 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
     public function generateKeywordIdeasTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -217,7 +217,7 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $expectedResponse->setTotalSize($totalSize);
         $expectedResponse->setResults($results);
         $transport->addResponse($expectedResponse);
-        $response = $client->generateKeywordIdeas();
+        $response = $gapicClient->generateKeywordIdeas();
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -236,7 +236,7 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
     public function generateKeywordIdeasExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -251,8 +251,8 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         try {
-            $client->generateKeywordIdeas();
-            // If the $client method call did not throw, fail the test
+            $gapicClient->generateKeywordIdeas();
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

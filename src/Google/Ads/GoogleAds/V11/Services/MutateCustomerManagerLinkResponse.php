@@ -28,7 +28,7 @@ class MutateCustomerManagerLinkResponse extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\MutateCustomerManagerLinkResult[]|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\MutateCustomerManagerLinkResult>|\Google\Protobuf\Internal\RepeatedField $results
      *           A result that identifies the resource affected by the mutate request.
      * }
      */
@@ -52,7 +52,7 @@ class MutateCustomerManagerLinkResponse extends \Google\Protobuf\Internal\Messag
      * A result that identifies the resource affected by the mutate request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.MutateCustomerManagerLinkResult results = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\MutateCustomerManagerLinkResult[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\MutateCustomerManagerLinkResult>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setResults($var)

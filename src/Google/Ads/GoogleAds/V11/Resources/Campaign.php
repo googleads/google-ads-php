@@ -53,6 +53,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $serving_status = 0;
     /**
+     * Output only. The system status of the campaign's bidding strategy.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.enums.BiddingStrategySystemStatusEnum.BiddingStrategySystemStatus bidding_strategy_system_status = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $bidding_strategy_system_status = 0;
+    /**
      * The ad serving optimization status of the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AdServingOptimizationStatusEnum.AdServingOptimizationStatus ad_serving_optimization_status = 8;</code>
@@ -223,7 +229,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     protected $campaign_group = null;
     /**
      * The last day of the campaign in serving customer's timezone in YYYY-MM-DD
-     * format.
+     * format. On create, defaults to 2037-12-30, which means the campaign will
+     * run indefinitely. To set an existing campaign to run indefinitely, set this
+     * field to 2037-12-30.
      *
      * Generated from protobuf field <code>optional string end_date = 64;</code>
      */
@@ -342,6 +350,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           When a new campaign is added, the status defaults to ENABLED.
      *     @type int $serving_status
      *           Output only. The ad serving status of the campaign.
+     *     @type int $bidding_strategy_system_status
+     *           Output only. The system status of the campaign's bidding strategy.
      *     @type int $ad_serving_optimization_status
      *           The ad serving optimization status of the campaign.
      *     @type int $advertising_channel_type
@@ -358,7 +368,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           After campaign is created, the field can not be changed.
      *     @type string $tracking_url_template
      *           The URL template for constructing a tracking URL.
-     *     @type \Google\Ads\GoogleAds\V11\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
      *           The list of mappings used to substitute custom parameter tags in a
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type \Google\Ads\GoogleAds\V11\Resources\Campaign\LocalServicesCampaignSettings $local_services_campaign_settings
@@ -384,7 +394,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           The setting for local campaign.
      *     @type \Google\Ads\GoogleAds\V11\Resources\Campaign\AppCampaignSetting $app_campaign_setting
      *           The setting related to App Campaign.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Output only. The resource names of labels attached to this campaign.
      *     @type int $experiment_type
      *           Output only. The type of campaign: normal, draft, or experiment.
@@ -417,11 +427,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           The campaign group this campaign belongs to.
      *     @type string $end_date
      *           The last day of the campaign in serving customer's timezone in YYYY-MM-DD
-     *           format.
+     *           format. On create, defaults to 2037-12-30, which means the campaign will
+     *           run indefinitely. To set an existing campaign to run indefinitely, set this
+     *           field to 2037-12-30.
      *     @type string $final_url_suffix
      *           Suffix used to append query parameters to landing pages that are served
      *           with parallel tracking.
-     *     @type \Google\Ads\GoogleAds\V11\Common\FrequencyCapEntry[]|\Google\Protobuf\Internal\RepeatedField $frequency_caps
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\FrequencyCapEntry>|\Google\Protobuf\Internal\RepeatedField $frequency_caps
      *           A list that limits how often each user will see this campaign's ads.
      *     @type int $video_brand_safety_suitability
      *           Output only. 3-Tier Brand Safety setting for the campaign.
@@ -446,7 +458,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           See "About optimization score" at
      *           https://support.google.com/google-ads/answer/9061546.
      *           This field is read-only.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $excluded_parent_asset_field_types
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $excluded_parent_asset_field_types
      *           The asset field types that should be excluded from this campaign. Asset
      *           links with these field types will not be inherited by this campaign from
      *           the upper level.
@@ -489,7 +501,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           cost-per-acquisition (CPA) you set.
      *     @type \Google\Ads\GoogleAds\V11\Common\TargetImpressionShare $target_impression_share
      *           Target Impression Share bidding strategy. An automated bidding strategy
-     *           that sets bids to achieve a desired percentage of impressions.
+     *           that sets bids to achieve a chosen percentage of impressions.
      *     @type \Google\Ads\GoogleAds\V11\Common\TargetRoas $target_roas
      *           Standard Target ROAS bidding strategy that automatically maximizes
      *           revenue while averaging a specific target return on ad spend (ROAS).
@@ -674,6 +686,32 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Output only. The system status of the campaign's bidding strategy.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.enums.BiddingStrategySystemStatusEnum.BiddingStrategySystemStatus bidding_strategy_system_status = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int
+     */
+    public function getBiddingStrategySystemStatus()
+    {
+        return $this->bidding_strategy_system_status;
+    }
+
+    /**
+     * Output only. The system status of the campaign's bidding strategy.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.enums.BiddingStrategySystemStatusEnum.BiddingStrategySystemStatus bidding_strategy_system_status = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setBiddingStrategySystemStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V11\Enums\BiddingStrategySystemStatusEnum\BiddingStrategySystemStatus::class);
+        $this->bidding_strategy_system_status = $var;
+
+        return $this;
+    }
+
+    /**
      * The ad serving optimization status of the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AdServingOptimizationStatusEnum.AdServingOptimizationStatus ad_serving_optimization_status = 8;</code>
@@ -820,7 +858,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.CustomParameter url_custom_parameters = 12;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUrlCustomParameters($var)
@@ -1244,7 +1282,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Output only. The resource names of labels attached to this campaign.
      *
      * Generated from protobuf field <code>repeated string labels = 61 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabels($var)
@@ -1509,7 +1547,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
 
     /**
      * The last day of the campaign in serving customer's timezone in YYYY-MM-DD
-     * format.
+     * format. On create, defaults to 2037-12-30, which means the campaign will
+     * run indefinitely. To set an existing campaign to run indefinitely, set this
+     * field to 2037-12-30.
      *
      * Generated from protobuf field <code>optional string end_date = 64;</code>
      * @return string
@@ -1531,7 +1571,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
 
     /**
      * The last day of the campaign in serving customer's timezone in YYYY-MM-DD
-     * format.
+     * format. On create, defaults to 2037-12-30, which means the campaign will
+     * run indefinitely. To set an existing campaign to run indefinitely, set this
+     * field to 2037-12-30.
      *
      * Generated from protobuf field <code>optional string end_date = 64;</code>
      * @param string $var
@@ -1598,7 +1640,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * A list that limits how often each user will see this campaign's ads.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.FrequencyCapEntry frequency_caps = 40;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\FrequencyCapEntry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\FrequencyCapEntry>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFrequencyCaps($var)
@@ -1878,7 +1920,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * the upper level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.AssetFieldTypeEnum.AssetFieldType excluded_parent_asset_field_types = 69;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExcludedParentAssetFieldTypes($var)
@@ -2272,7 +2314,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
 
     /**
      * Target Impression Share bidding strategy. An automated bidding strategy
-     * that sets bids to achieve a desired percentage of impressions.
+     * that sets bids to achieve a chosen percentage of impressions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.common.TargetImpressionShare target_impression_share = 48;</code>
      * @return \Google\Ads\GoogleAds\V11\Common\TargetImpressionShare|null
@@ -2289,7 +2331,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
 
     /**
      * Target Impression Share bidding strategy. An automated bidding strategy
-     * that sets bids to achieve a desired percentage of impressions.
+     * that sets bids to achieve a chosen percentage of impressions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.common.TargetImpressionShare target_impression_share = 48;</code>
      * @param \Google\Ads\GoogleAds\V11\Common\TargetImpressionShare $var

@@ -371,9 +371,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The last date/time a conversion tag for this conversion action successfully
      * fired and was seen by Google Ads. This firing event may not have been the
-     * result of an attributable conversion (e.g. because the tag was fired from a
-     * browser that did not previously click an ad from an appropriate
-     * advertiser). The date/time is in the customer's time zone.
+     * result of an attributable conversion (for example, because the tag was
+     * fired from a browser that did not previously click an ad from an
+     * appropriate advertiser). The date/time is in the customer's time zone.
      *
      * Generated from protobuf field <code>optional string conversion_last_received_request_date_time = 161;</code>
      */
@@ -1036,7 +1036,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The total number of view-through conversions.
      * These happen when a customer sees an image or rich media ad, then later
-     * completes a conversion on your site without interacting with (e.g.,
+     * completes a conversion on your site without interacting with (for example,
      * clicking on) another ad.
      *
      * Generated from protobuf field <code>optional int64 view_through_conversions = 155;</code>
@@ -1227,9 +1227,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type string $conversion_last_received_request_date_time
      *           The last date/time a conversion tag for this conversion action successfully
      *           fired and was seen by Google Ads. This firing event may not have been the
-     *           result of an attributable conversion (e.g. because the tag was fired from a
-     *           browser that did not previously click an ad from an appropriate
-     *           advertiser). The date/time is in the customer's time zone.
+     *           result of an attributable conversion (for example, because the tag was
+     *           fired from a browser that did not previously click an ad from an
+     *           appropriate advertiser). The date/time is in the customer's time zone.
      *     @type string $conversion_last_conversion_date
      *           The date of the most recent conversion for this conversion action. The date
      *           is in the customer's time zone.
@@ -1385,7 +1385,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The number of interactions.
      *           An interaction is the main user action associated with an ad format-clicks
      *           for text and shopping ads, views for video ads, and so on.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $interaction_event_types
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $interaction_event_types
      *           The types of payable and free interactions.
      *     @type float $invalid_click_rate
      *           The percentage of clicks filtered out of your total number of clicks
@@ -1560,7 +1560,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type int|string $view_through_conversions
      *           The total number of view-through conversions.
      *           These happen when a customer sees an image or rich media ad, then later
-     *           completes a conversion on your site without interacting with (e.g.,
+     *           completes a conversion on your site without interacting with (for example,
      *           clicking on) another ad.
      *     @type int|string $sk_ad_network_conversions
      *           The number of iOS Store Kit Ad Network conversions.
@@ -3364,9 +3364,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The last date/time a conversion tag for this conversion action successfully
      * fired and was seen by Google Ads. This firing event may not have been the
-     * result of an attributable conversion (e.g. because the tag was fired from a
-     * browser that did not previously click an ad from an appropriate
-     * advertiser). The date/time is in the customer's time zone.
+     * result of an attributable conversion (for example, because the tag was
+     * fired from a browser that did not previously click an ad from an
+     * appropriate advertiser). The date/time is in the customer's time zone.
      *
      * Generated from protobuf field <code>optional string conversion_last_received_request_date_time = 161;</code>
      * @return string
@@ -3389,9 +3389,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The last date/time a conversion tag for this conversion action successfully
      * fired and was seen by Google Ads. This firing event may not have been the
-     * result of an attributable conversion (e.g. because the tag was fired from a
-     * browser that did not previously click an ad from an appropriate
-     * advertiser). The date/time is in the customer's time zone.
+     * result of an attributable conversion (for example, because the tag was
+     * fired from a browser that did not previously click an ad from an
+     * appropriate advertiser). The date/time is in the customer's time zone.
      *
      * Generated from protobuf field <code>optional string conversion_last_received_request_date_time = 161;</code>
      * @param string $var
@@ -4896,7 +4896,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The types of payable and free interactions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.InteractionEventTypeEnum.InteractionEventType interaction_event_types = 100;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInteractionEventTypes($var)
@@ -6626,7 +6626,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The total number of view-through conversions.
      * These happen when a customer sees an image or rich media ad, then later
-     * completes a conversion on your site without interacting with (e.g.,
+     * completes a conversion on your site without interacting with (for example,
      * clicking on) another ad.
      *
      * Generated from protobuf field <code>optional int64 view_through_conversions = 155;</code>
@@ -6650,7 +6650,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The total number of view-through conversions.
      * These happen when a customer sees an image or rich media ad, then later
-     * completes a conversion on your site without interacting with (e.g.,
+     * completes a conversion on your site without interacting with (for example,
      * clicking on) another ad.
      *
      * Generated from protobuf field <code>optional int64 view_through_conversions = 155;</code>

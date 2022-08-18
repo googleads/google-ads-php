@@ -60,7 +60,7 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
      *           `customers/{customer_id}/feedMappings/{feed_id}~{feed_mapping_id}`
      *     @type string $feed
      *           Immutable. The feed of this feed mapping.
-     *     @type \Google\Ads\GoogleAds\V11\Resources\AttributeFieldMapping[]|\Google\Protobuf\Internal\RepeatedField $attribute_field_mappings
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\AttributeFieldMapping>|\Google\Protobuf\Internal\RepeatedField $attribute_field_mappings
      *           Immutable. Feed attributes to field mappings. These mappings are a one-to-many
      *           relationship meaning that 1 feed attribute can be used to populate
      *           multiple placeholder fields, but 1 placeholder field can only draw
@@ -70,10 +70,10 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
      *           Output only. Status of the feed mapping.
      *           This field is read-only.
      *     @type int $placeholder_type
-     *           Immutable. The placeholder type of this mapping (i.e., if the mapping maps feed
-     *           attributes to placeholder fields).
+     *           Immutable. The placeholder type of this mapping (for example, if the mapping maps
+     *           feed attributes to placeholder fields).
      *     @type int $criterion_type
-     *           Immutable. The criterion type of this mapping (i.e., if the mapping maps feed
+     *           Immutable. The criterion type of this mapping (for example, if the mapping maps feed
      *           attributes to criterion fields).
      * }
      */
@@ -171,7 +171,7 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
      * field can be mapped to multiple feed attributes. Required.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.AttributeFieldMapping attribute_field_mappings = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\AttributeFieldMapping[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\AttributeFieldMapping>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAttributeFieldMappings($var)
@@ -211,8 +211,8 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The placeholder type of this mapping (i.e., if the mapping maps feed
-     * attributes to placeholder fields).
+     * Immutable. The placeholder type of this mapping (for example, if the mapping maps
+     * feed attributes to placeholder fields).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
@@ -228,8 +228,8 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The placeholder type of this mapping (i.e., if the mapping maps feed
-     * attributes to placeholder fields).
+     * Immutable. The placeholder type of this mapping (for example, if the mapping maps
+     * feed attributes to placeholder fields).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
@@ -244,7 +244,7 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The criterion type of this mapping (i.e., if the mapping maps feed
+     * Immutable. The criterion type of this mapping (for example, if the mapping maps feed
      * attributes to criterion fields).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.FeedMappingCriterionTypeEnum.FeedMappingCriterionType criterion_type = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -261,7 +261,7 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The criterion type of this mapping (i.e., if the mapping maps feed
+     * Immutable. The criterion type of this mapping (for example, if the mapping maps feed
      * attributes to criterion fields).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.FeedMappingCriterionTypeEnum.FeedMappingCriterionType criterion_type = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>

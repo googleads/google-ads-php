@@ -265,12 +265,12 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           Output only. Serving status of the criterion.
      *     @type int $approval_status
      *           Output only. Approval status of the criterion.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $disapproval_reasons
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $disapproval_reasons
      *           Output only. List of disapproval reasons of the criterion.
      *           The different reasons for disapproving a criterion can be found here:
      *           https://support.google.com/adspolicy/answer/6008942
      *           This field is read-only.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Output only. The resource names of labels attached to this ad group criterion.
      *     @type float $bid_modifier
      *           The modifier for the bid when the criterion matches. The modifier must be
@@ -303,16 +303,16 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           Output only. Source of the effective Percent CPC bid.
      *     @type \Google\Ads\GoogleAds\V11\Resources\AdGroupCriterion\PositionEstimates $position_estimates
      *           Output only. Estimates for criterion bids at various positions.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_urls
      *           The list of possible final URLs after all cross-domain redirects for the
      *           ad.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
      *           The list of possible final mobile URLs after all cross-domain redirects.
      *     @type string $final_url_suffix
      *           URL template for appending params to final URL.
      *     @type string $tracking_url_template
      *           The URL template for constructing a tracking URL.
-     *     @type \Google\Ads\GoogleAds\V11\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
      *           The list of mappings used to substitute custom parameter tags in a
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type \Google\Ads\GoogleAds\V11\Common\KeywordInfo $keyword
@@ -713,7 +713,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>repeated string disapproval_reasons = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDisapprovalReasons($var)
@@ -739,7 +739,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Output only. The resource names of labels attached to this ad group criterion.
      *
      * Generated from protobuf field <code>repeated string labels = 60 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabels($var)
@@ -1237,7 +1237,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * ad.
      *
      * Generated from protobuf field <code>repeated string final_urls = 70;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFinalUrls($var)
@@ -1263,7 +1263,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * The list of possible final mobile URLs after all cross-domain redirects.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 71;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFinalMobileUrls($var)
@@ -1363,7 +1363,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.CustomParameter url_custom_parameters = 14;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUrlCustomParameters($var)

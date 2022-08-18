@@ -16,13 +16,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class YearMonth extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The year (e.g. 2020).
+     * The year (for example, 2020).
      *
      * Generated from protobuf field <code>int64 year = 1;</code>
      */
     protected $year = 0;
     /**
-     * The month of the year. (e.g. FEBRUARY).
+     * The month of the year. (for example, FEBRUARY).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.MonthOfYearEnum.MonthOfYear month = 2;</code>
      */
@@ -35,9 +35,9 @@ class YearMonth extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $year
-     *           The year (e.g. 2020).
+     *           The year (for example, 2020).
      *     @type int $month
-     *           The month of the year. (e.g. FEBRUARY).
+     *           The month of the year. (for example, FEBRUARY).
      * }
      */
     public function __construct($data = NULL) {
@@ -46,7 +46,7 @@ class YearMonth extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The year (e.g. 2020).
+     * The year (for example, 2020).
      *
      * Generated from protobuf field <code>int64 year = 1;</code>
      * @return int|string
@@ -57,7 +57,7 @@ class YearMonth extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The year (e.g. 2020).
+     * The year (for example, 2020).
      *
      * Generated from protobuf field <code>int64 year = 1;</code>
      * @param int|string $var
@@ -72,7 +72,7 @@ class YearMonth extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The month of the year. (e.g. FEBRUARY).
+     * The month of the year. (for example, FEBRUARY).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.MonthOfYearEnum.MonthOfYear month = 2;</code>
      * @return int
@@ -83,7 +83,7 @@ class YearMonth extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The month of the year. (e.g. FEBRUARY).
+     * The month of the year. (for example, FEBRUARY).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.MonthOfYearEnum.MonthOfYear month = 2;</code>
      * @param int $var

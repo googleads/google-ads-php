@@ -65,14 +65,14 @@ class SmartCampaignSetting extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V11\Resources\SmartCampaignSetting\AdOptimizedBusinessProfileSetting $ad_optimized_business_profile_setting
      *           Settings for configuring a business profile optimized for ads as this
      *           campaign's landing page.  This campaign must be linked to a business
-     *           profile to use this option.  For more information on this feature, please
+     *           profile to use this option.  For more information on this feature,
      *           consult https://support.google.com/google-ads/answer/9827068.
      *     @type string $business_name
      *           The name of the business.
      *     @type string $business_profile_location
      *           The resource name of a Business Profile location.
-     *           Business Profile location resource names can be fetched via the Business
-     *           Profile API and adhere to the following format:
+     *           Business Profile location resource names can be fetched through the
+     *           Business Profile API and adhere to the following format:
      *           `locations/{locationId}`.
      *           See the [Business Profile API]
      *           (https://developers.google.com/my-business/reference/businessinformation/rest/v1/accounts.locations)
@@ -236,7 +236,7 @@ class SmartCampaignSetting extends \Google\Protobuf\Internal\Message
     /**
      * Settings for configuring a business profile optimized for ads as this
      * campaign's landing page.  This campaign must be linked to a business
-     * profile to use this option.  For more information on this feature, please
+     * profile to use this option.  For more information on this feature,
      * consult https://support.google.com/google-ads/answer/9827068.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.resources.SmartCampaignSetting.AdOptimizedBusinessProfileSetting ad_optimized_business_profile_setting = 9;</code>
@@ -255,7 +255,7 @@ class SmartCampaignSetting extends \Google\Protobuf\Internal\Message
     /**
      * Settings for configuring a business profile optimized for ads as this
      * campaign's landing page.  This campaign must be linked to a business
-     * profile to use this option.  For more information on this feature, please
+     * profile to use this option.  For more information on this feature,
      * consult https://support.google.com/google-ads/answer/9827068.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.resources.SmartCampaignSetting.AdOptimizedBusinessProfileSetting ad_optimized_business_profile_setting = 9;</code>
@@ -303,8 +303,8 @@ class SmartCampaignSetting extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of a Business Profile location.
-     * Business Profile location resource names can be fetched via the Business
-     * Profile API and adhere to the following format:
+     * Business Profile location resource names can be fetched through the
+     * Business Profile API and adhere to the following format:
      * `locations/{locationId}`.
      * See the [Business Profile API]
      * (https://developers.google.com/my-business/reference/businessinformation/rest/v1/accounts.locations)
@@ -325,8 +325,8 @@ class SmartCampaignSetting extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of a Business Profile location.
-     * Business Profile location resource names can be fetched via the Business
-     * Profile API and adhere to the following format:
+     * Business Profile location resource names can be fetched through the
+     * Business Profile API and adhere to the following format:
      * `locations/{locationId}`.
      * See the [Business Profile API]
      * (https://developers.google.com/my-business/reference/businessinformation/rest/v1/accounts.locations)

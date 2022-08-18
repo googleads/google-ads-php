@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V11\Enums\FrequencyCapTimeUnitEnum;
 use UnexpectedValueException;
 
 /**
- * Unit of time the cap is defined at (e.g. day, week).
+ * Unit of time the cap is defined at (for example, day, week).
  *
  * Protobuf type <code>google.ads.googleads.v11.enums.FrequencyCapTimeUnitEnum.FrequencyCapTimeUnit</code>
  */

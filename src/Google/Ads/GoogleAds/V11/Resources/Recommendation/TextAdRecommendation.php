@@ -23,7 +23,7 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     protected $ad = null;
     /**
      * Output only. Creation date of the recommended ad.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
+     * YYYY-MM-DD format, for example, 2018-04-17.
      *
      * Generated from protobuf field <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -31,7 +31,7 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Date, if present, is the earliest when the recommendation will be auto
      * applied.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
+     * YYYY-MM-DD format, for example, 2018-04-17.
      *
      * Generated from protobuf field <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -47,11 +47,11 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
      *           Output only. Recommended ad.
      *     @type string $creation_date
      *           Output only. Creation date of the recommended ad.
-     *           YYYY-MM-DD format, e.g., 2018-04-17.
+     *           YYYY-MM-DD format, for example, 2018-04-17.
      *     @type string $auto_apply_date
      *           Output only. Date, if present, is the earliest when the recommendation will be auto
      *           applied.
-     *           YYYY-MM-DD format, e.g., 2018-04-17.
+     *           YYYY-MM-DD format, for example, 2018-04-17.
      * }
      */
     public function __construct($data = NULL) {
@@ -97,7 +97,7 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Creation date of the recommended ad.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
+     * YYYY-MM-DD format, for example, 2018-04-17.
      *
      * Generated from protobuf field <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -119,7 +119,7 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Creation date of the recommended ad.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
+     * YYYY-MM-DD format, for example, 2018-04-17.
      *
      * Generated from protobuf field <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -136,7 +136,7 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Date, if present, is the earliest when the recommendation will be auto
      * applied.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
+     * YYYY-MM-DD format, for example, 2018-04-17.
      *
      * Generated from protobuf field <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -159,7 +159,7 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Date, if present, is the earliest when the recommendation will be auto
      * applied.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
+     * YYYY-MM-DD format, for example, 2018-04-17.
      *
      * Generated from protobuf field <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

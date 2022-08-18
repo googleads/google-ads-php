@@ -23,7 +23,7 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
     protected $data = null;
     /**
      * Output only. The url to access the uploaded zipped data.
-     * E.g. https://tpc.googlesyndication.com/simgad/123
+     * For example, https://tpc.googlesyndication.com/simgad/123
      * This field is read-only.
      *
      * Generated from protobuf field <code>optional string url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -40,7 +40,7 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
      *           Immutable. Raw zipped data.
      *     @type string $url
      *           Output only. The url to access the uploaded zipped data.
-     *           E.g. https://tpc.googlesyndication.com/simgad/123
+     *           For example, https://tpc.googlesyndication.com/simgad/123
      *           This field is read-only.
      * }
      */
@@ -87,7 +87,7 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The url to access the uploaded zipped data.
-     * E.g. https://tpc.googlesyndication.com/simgad/123
+     * For example, https://tpc.googlesyndication.com/simgad/123
      * This field is read-only.
      *
      * Generated from protobuf field <code>optional string url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -110,7 +110,7 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The url to access the uploaded zipped data.
-     * E.g. https://tpc.googlesyndication.com/simgad/123
+     * For example, https://tpc.googlesyndication.com/simgad/123
      * This field is read-only.
      *
      * Generated from protobuf field <code>optional string url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

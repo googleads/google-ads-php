@@ -61,7 +61,7 @@ class AuthorizationError
     const AUTHORIZATION_ERROR = 6;
     /**
      * The user does not have permission to perform this action
-     * (e.g., ADD, UPDATE, REMOVE) on the resource or call a method.
+     * (for example, ADD, UPDATE, REMOVE) on the resource or call a method.
      *
      * Generated from protobuf enum <code>ACTION_NOT_PERMITTED = 7;</code>
      */

@@ -16,14 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The Internet domain name that this setting represents, e.g., "google.com"
-     * or "www.google.com".
+     * Required. The Internet domain name that this setting represents, for example,
+     * "google.com" or "www.google.com".
      *
      * Generated from protobuf field <code>string domain_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $domain_name = '';
     /**
-     * Required. The language code specifying the language of the domain, e.g., "en".
+     * Required. The language code specifying the language of the domain, for example,
+     * "en".
      *
      * Generated from protobuf field <code>string language_code = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -48,13 +49,14 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $domain_name
-     *           Required. The Internet domain name that this setting represents, e.g., "google.com"
-     *           or "www.google.com".
+     *           Required. The Internet domain name that this setting represents, for example,
+     *           "google.com" or "www.google.com".
      *     @type string $language_code
-     *           Required. The language code specifying the language of the domain, e.g., "en".
+     *           Required. The language code specifying the language of the domain, for example,
+     *           "en".
      *     @type bool $use_supplied_urls_only
      *           Whether the campaign uses advertiser supplied URLs exclusively.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $feeds
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $feeds
      *           The list of page feeds associated with the campaign.
      * }
      */
@@ -64,8 +66,8 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The Internet domain name that this setting represents, e.g., "google.com"
-     * or "www.google.com".
+     * Required. The Internet domain name that this setting represents, for example,
+     * "google.com" or "www.google.com".
      *
      * Generated from protobuf field <code>string domain_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -76,8 +78,8 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The Internet domain name that this setting represents, e.g., "google.com"
-     * or "www.google.com".
+     * Required. The Internet domain name that this setting represents, for example,
+     * "google.com" or "www.google.com".
      *
      * Generated from protobuf field <code>string domain_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -92,7 +94,8 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The language code specifying the language of the domain, e.g., "en".
+     * Required. The language code specifying the language of the domain, for example,
+     * "en".
      *
      * Generated from protobuf field <code>string language_code = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -103,7 +106,8 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The language code specifying the language of the domain, e.g., "en".
+     * Required. The language code specifying the language of the domain, for example,
+     * "en".
      *
      * Generated from protobuf field <code>string language_code = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -168,7 +172,7 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      * The list of page feeds associated with the campaign.
      *
      * Generated from protobuf field <code>repeated string feeds = 9 [(.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFeeds($var)

@@ -19,8 +19,8 @@ class AddOfflineUserDataJobOperationsResponse extends \Google\Protobuf\Internal\
     /**
      * Errors that pertain to operation failures in the partial failure mode.
      * Returned only when partial_failure = true and all errors occur inside the
-     * operations. If any errors occur outside the operations (e.g. auth errors),
-     * we return an RPC level error.
+     * operations. If any errors occur outside the operations (for example, auth
+     * errors), we return an RPC level error.
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
      */
@@ -42,8 +42,8 @@ class AddOfflineUserDataJobOperationsResponse extends \Google\Protobuf\Internal\
      *     @type \Google\Rpc\Status $partial_failure_error
      *           Errors that pertain to operation failures in the partial failure mode.
      *           Returned only when partial_failure = true and all errors occur inside the
-     *           operations. If any errors occur outside the operations (e.g. auth errors),
-     *           we return an RPC level error.
+     *           operations. If any errors occur outside the operations (for example, auth
+     *           errors), we return an RPC level error.
      *     @type \Google\Rpc\Status $warning
      *           Non blocking errors that pertain to operation failures in the warnings
      *           mode. Returned only when enable_warnings = true.
@@ -57,8 +57,8 @@ class AddOfflineUserDataJobOperationsResponse extends \Google\Protobuf\Internal\
     /**
      * Errors that pertain to operation failures in the partial failure mode.
      * Returned only when partial_failure = true and all errors occur inside the
-     * operations. If any errors occur outside the operations (e.g. auth errors),
-     * we return an RPC level error.
+     * operations. If any errors occur outside the operations (for example, auth
+     * errors), we return an RPC level error.
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
      * @return \Google\Rpc\Status|null
@@ -81,8 +81,8 @@ class AddOfflineUserDataJobOperationsResponse extends \Google\Protobuf\Internal\
     /**
      * Errors that pertain to operation failures in the partial failure mode.
      * Returned only when partial_failure = true and all errors occur inside the
-     * operations. If any errors occur outside the operations (e.g. auth errors),
-     * we return an RPC level error.
+     * operations. If any errors occur outside the operations (for example, auth
+     * errors), we return an RPC level error.
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
      * @param \Google\Rpc\Status $var

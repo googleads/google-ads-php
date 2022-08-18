@@ -31,8 +31,8 @@ class DetailedDemographic extends \Google\Protobuf\Internal\Message
      */
     protected $id = 0;
     /**
-     * Output only. The name of the detailed demographic. E.g."Highest Level of Educational
-     * Attainment"
+     * Output only. The name of the detailed demographic. For example,"Highest Level of
+     * Educational Attainment"
      *
      * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -69,13 +69,13 @@ class DetailedDemographic extends \Google\Protobuf\Internal\Message
      *     @type int|string $id
      *           Output only. The ID of the detailed demographic.
      *     @type string $name
-     *           Output only. The name of the detailed demographic. E.g."Highest Level of Educational
-     *           Attainment"
+     *           Output only. The name of the detailed demographic. For example,"Highest Level of
+     *           Educational Attainment"
      *     @type string $parent
      *           Output only. The parent of the detailed_demographic.
      *     @type bool $launched_to_all
      *           Output only. True if the detailed demographic is launched to all channels and locales.
-     *     @type \Google\Ads\GoogleAds\V11\Common\CriterionCategoryAvailability[]|\Google\Protobuf\Internal\RepeatedField $availabilities
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\CriterionCategoryAvailability>|\Google\Protobuf\Internal\RepeatedField $availabilities
      *           Output only. Availability information of the detailed demographic.
      * }
      */
@@ -141,8 +141,8 @@ class DetailedDemographic extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The name of the detailed demographic. E.g."Highest Level of Educational
-     * Attainment"
+     * Output only. The name of the detailed demographic. For example,"Highest Level of
+     * Educational Attainment"
      *
      * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -153,8 +153,8 @@ class DetailedDemographic extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The name of the detailed demographic. E.g."Highest Level of Educational
-     * Attainment"
+     * Output only. The name of the detailed demographic. For example,"Highest Level of
+     * Educational Attainment"
      *
      * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -235,7 +235,7 @@ class DetailedDemographic extends \Google\Protobuf\Internal\Message
      * Output only. Availability information of the detailed demographic.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.CriterionCategoryAvailability availabilities = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\CriterionCategoryAvailability[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\CriterionCategoryAvailability>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAvailabilities($var)

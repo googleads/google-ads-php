@@ -19,7 +19,7 @@ class AdOptimizedBusinessProfileSetting extends \Google\Protobuf\Internal\Messag
     /**
      * Enabling a lead form on your business profile enables prospective
      * customers to contact your business by filling out a simple form,
-     * and you'll receive their information via email.
+     * and you'll receive their information through email.
      *
      * Generated from protobuf field <code>bool include_lead_form = 1;</code>
      */
@@ -34,7 +34,7 @@ class AdOptimizedBusinessProfileSetting extends \Google\Protobuf\Internal\Messag
      *     @type bool $include_lead_form
      *           Enabling a lead form on your business profile enables prospective
      *           customers to contact your business by filling out a simple form,
-     *           and you'll receive their information via email.
+     *           and you'll receive their information through email.
      * }
      */
     public function __construct($data = NULL) {
@@ -45,7 +45,7 @@ class AdOptimizedBusinessProfileSetting extends \Google\Protobuf\Internal\Messag
     /**
      * Enabling a lead form on your business profile enables prospective
      * customers to contact your business by filling out a simple form,
-     * and you'll receive their information via email.
+     * and you'll receive their information through email.
      *
      * Generated from protobuf field <code>bool include_lead_form = 1;</code>
      * @return bool
@@ -58,7 +58,7 @@ class AdOptimizedBusinessProfileSetting extends \Google\Protobuf\Internal\Messag
     /**
      * Enabling a lead form on your business profile enables prospective
      * customers to contact your business by filling out a simple form,
-     * and you'll receive their information via email.
+     * and you'll receive their information through email.
      *
      * Generated from protobuf field <code>bool include_lead_form = 1;</code>
      * @param bool $var

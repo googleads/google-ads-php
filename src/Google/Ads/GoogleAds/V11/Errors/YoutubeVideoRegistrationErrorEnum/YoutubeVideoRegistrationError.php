@@ -32,13 +32,13 @@ class YoutubeVideoRegistrationError
      */
     const VIDEO_NOT_FOUND = 2;
     /**
-     * Video to be registered is not accessible (e.g. private).
+     * Video to be registered is not accessible (for example, private).
      *
      * Generated from protobuf enum <code>VIDEO_NOT_ACCESSIBLE = 3;</code>
      */
     const VIDEO_NOT_ACCESSIBLE = 3;
     /**
-     * Video to be registered is not eligible (e.g. mature content).
+     * Video to be registered is not eligible (for example, mature content).
      *
      * Generated from protobuf enum <code>VIDEO_NOT_ELIGIBLE = 4;</code>
      */

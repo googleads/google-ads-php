@@ -78,7 +78,7 @@ class DiscoveryMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      */
     protected $call_to_action_text = null;
     /**
-     * Boolean flag that indicates if this ad must be served with lead form.
+     * Boolean option that indicates if this ad must be served with lead form.
      *
      * Generated from protobuf field <code>optional bool lead_form_only = 9;</code>
      */
@@ -90,30 +90,30 @@ class DiscoveryMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $marketing_images
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $marketing_images
      *           Marketing image assets to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 600x314 and the aspect ratio must
      *           be 1.91:1 (+-1%). Required if square_marketing_images is
      *           not present. Combined with `square_marketing_images` and
      *           `portrait_marketing_images` the maximum is 20.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $square_marketing_images
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $square_marketing_images
      *           Square marketing image assets to be used in the ad. Valid image types are
      *           GIF, JPEG, and PNG. The minimum size is 300x300 and the aspect ratio must
      *           be 1:1 (+-1%). Required if marketing_images is not present.  Combined with
      *           `marketing_images` and `portrait_marketing_images` the maximum is 20.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $portrait_marketing_images
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $portrait_marketing_images
      *           Portrait marketing image assets to be used in the ad. Valid image types are
      *           GIF, JPEG, and PNG. The minimum size is 480x600 and the aspect ratio must
      *           be 4:5 (+-1%).  Combined with `marketing_images` and
      *           `square_marketing_images` the maximum is 20.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $logo_images
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $logo_images
      *           Logo image assets to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must be
      *           1:1(+-1%). At least 1 and max 5 logo images can be specified.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
      *           Headline text asset of the ad. Maximum display width is 30. At least 1 and
      *           max 5 headlines can be specified.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
      *           The descriptive text of the ad. Maximum display width is 90. At least 1 and
      *           max 5 descriptions can be specified.
      *     @type string $business_name
@@ -121,7 +121,7 @@ class DiscoveryMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      *     @type string $call_to_action_text
      *           Call to action text.
      *     @type bool $lead_form_only
-     *           Boolean flag that indicates if this ad must be served with lead form.
+     *           Boolean option that indicates if this ad must be served with lead form.
      * }
      */
     public function __construct($data = NULL) {
@@ -152,7 +152,7 @@ class DiscoveryMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * `portrait_marketing_images` the maximum is 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdImageAsset marketing_images = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMarketingImages($var)
@@ -184,7 +184,7 @@ class DiscoveryMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * `marketing_images` and `portrait_marketing_images` the maximum is 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdImageAsset square_marketing_images = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSquareMarketingImages($var)
@@ -216,7 +216,7 @@ class DiscoveryMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * `square_marketing_images` the maximum is 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdImageAsset portrait_marketing_images = 3;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPortraitMarketingImages($var)
@@ -246,7 +246,7 @@ class DiscoveryMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * 1:1(+-1%). At least 1 and max 5 logo images can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdImageAsset logo_images = 4;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLogoImages($var)
@@ -274,7 +274,7 @@ class DiscoveryMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * max 5 headlines can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset headlines = 5;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -302,7 +302,7 @@ class DiscoveryMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * max 5 descriptions can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset descriptions = 6;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDescriptions($var)
@@ -386,7 +386,7 @@ class DiscoveryMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Boolean flag that indicates if this ad must be served with lead form.
+     * Boolean option that indicates if this ad must be served with lead form.
      *
      * Generated from protobuf field <code>optional bool lead_form_only = 9;</code>
      * @return bool
@@ -407,7 +407,7 @@ class DiscoveryMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Boolean flag that indicates if this ad must be served with lead form.
+     * Boolean option that indicates if this ad must be served with lead form.
      *
      * Generated from protobuf field <code>optional bool lead_form_only = 9;</code>
      * @param bool $var

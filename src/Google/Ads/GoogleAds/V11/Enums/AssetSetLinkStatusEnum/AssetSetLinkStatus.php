@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V11\Enums\AssetSetLinkStatusEnum;
 use UnexpectedValueException;
 
 /**
- * The possible statuses of he linkage between asset set and its container.
+ * The possible statuses of the linkage between asset set and its container.
  *
  * Protobuf type <code>google.ads.googleads.v11.enums.AssetSetLinkStatusEnum.AssetSetLinkStatus</code>
  */

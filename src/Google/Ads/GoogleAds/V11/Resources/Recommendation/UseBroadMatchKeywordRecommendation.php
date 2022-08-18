@@ -53,7 +53,7 @@ class UseBroadMatchKeywordRecommendation extends \Google\Protobuf\Internal\Messa
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\KeywordInfo[]|\Google\Protobuf\Internal\RepeatedField $keyword
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\KeywordInfo>|\Google\Protobuf\Internal\RepeatedField $keyword
      *           Output only. Sample of keywords to be expanded to Broad Match.
      *     @type int|string $suggested_keywords_count
      *           Output only. Total number of keywords to be expanded to Broad Match in the campaign.
@@ -86,7 +86,7 @@ class UseBroadMatchKeywordRecommendation extends \Google\Protobuf\Internal\Messa
      * Output only. Sample of keywords to be expanded to Broad Match.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\KeywordInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\KeywordInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setKeyword($var)

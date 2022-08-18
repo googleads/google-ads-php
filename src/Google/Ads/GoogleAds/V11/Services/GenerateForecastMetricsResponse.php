@@ -41,12 +41,12 @@ class GenerateForecastMetricsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\KeywordPlanCampaignForecast[]|\Google\Protobuf\Internal\RepeatedField $campaign_forecasts
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanCampaignForecast>|\Google\Protobuf\Internal\RepeatedField $campaign_forecasts
      *           List of campaign forecasts.
      *           One maximum.
-     *     @type \Google\Ads\GoogleAds\V11\Services\KeywordPlanAdGroupForecast[]|\Google\Protobuf\Internal\RepeatedField $ad_group_forecasts
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanAdGroupForecast>|\Google\Protobuf\Internal\RepeatedField $ad_group_forecasts
      *           List of ad group forecasts.
-     *     @type \Google\Ads\GoogleAds\V11\Services\KeywordPlanKeywordForecast[]|\Google\Protobuf\Internal\RepeatedField $keyword_forecasts
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanKeywordForecast>|\Google\Protobuf\Internal\RepeatedField $keyword_forecasts
      *           List of keyword forecasts.
      * }
      */
@@ -72,7 +72,7 @@ class GenerateForecastMetricsResponse extends \Google\Protobuf\Internal\Message
      * One maximum.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.KeywordPlanCampaignForecast campaign_forecasts = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\KeywordPlanCampaignForecast[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanCampaignForecast>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCampaignForecasts($var)
@@ -98,7 +98,7 @@ class GenerateForecastMetricsResponse extends \Google\Protobuf\Internal\Message
      * List of ad group forecasts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.KeywordPlanAdGroupForecast ad_group_forecasts = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\KeywordPlanAdGroupForecast[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanAdGroupForecast>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdGroupForecasts($var)
@@ -124,7 +124,7 @@ class GenerateForecastMetricsResponse extends \Google\Protobuf\Internal\Message
      * List of keyword forecasts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.KeywordPlanKeywordForecast keyword_forecasts = 3;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\KeywordPlanKeywordForecast[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanKeywordForecast>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setKeywordForecasts($var)

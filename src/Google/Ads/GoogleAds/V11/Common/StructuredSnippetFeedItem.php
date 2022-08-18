@@ -39,7 +39,7 @@ class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
      *     @type string $header
      *           The header of the snippet.
      *           This string must not be empty.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $values
      *           The values in the snippet.
      *           The maximum size of this collection is 10.
      * }
@@ -104,7 +104,7 @@ class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
      * The maximum size of this collection is 10.
      *
      * Generated from protobuf field <code>repeated string values = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setValues($var)

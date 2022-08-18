@@ -26,31 +26,31 @@ class PlacementType
      */
     const UNKNOWN = 1;
     /**
-     * Websites(e.g. 'www.flowers4sale.com').
+     * Websites(for example, 'www.flowers4sale.com').
      *
      * Generated from protobuf enum <code>WEBSITE = 2;</code>
      */
     const WEBSITE = 2;
     /**
-     * Mobile application categories(e.g. 'Games').
+     * Mobile application categories(for example, 'Games').
      *
      * Generated from protobuf enum <code>MOBILE_APP_CATEGORY = 3;</code>
      */
     const MOBILE_APP_CATEGORY = 3;
     /**
-     * mobile applications(e.g. 'mobileapp::2-com.whatsthewordanswers').
+     * mobile applications(for example, 'mobileapp::2-com.whatsthewordanswers').
      *
      * Generated from protobuf enum <code>MOBILE_APPLICATION = 4;</code>
      */
     const MOBILE_APPLICATION = 4;
     /**
-     * YouTube videos(e.g. 'youtube.com/video/wtLJPvx7-ys').
+     * YouTube videos(for example, 'youtube.com/video/wtLJPvx7-ys').
      *
      * Generated from protobuf enum <code>YOUTUBE_VIDEO = 5;</code>
      */
     const YOUTUBE_VIDEO = 5;
     /**
-     * YouTube channels(e.g. 'youtube.com::L8ZULXASCc1I_oaOT0NaOQ').
+     * YouTube channels(for example, 'youtube.com::L8ZULXASCc1I_oaOT0NaOQ').
      *
      * Generated from protobuf enum <code>YOUTUBE_CHANNEL = 6;</code>
      */

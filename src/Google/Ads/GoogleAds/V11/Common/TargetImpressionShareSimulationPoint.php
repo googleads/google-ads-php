@@ -18,8 +18,8 @@ class TargetImpressionShareSimulationPoint extends \Google\Protobuf\Internal\Mes
     /**
      * The simulated target impression share value (in micros) upon which
      * projected metrics are based.
-     * E.g. 10% impression share, which is equal to 0.1, is stored as 100_000.
-     * This value is validated and will not exceed 1M (100%).
+     * For example, 10% impression share, which is equal to 0.1, is stored as
+     * 100_000. This value is validated and will not exceed 1M (100%).
      *
      * Generated from protobuf field <code>int64 target_impression_share_micros = 1;</code>
      */
@@ -92,8 +92,8 @@ class TargetImpressionShareSimulationPoint extends \Google\Protobuf\Internal\Mes
      *     @type int|string $target_impression_share_micros
      *           The simulated target impression share value (in micros) upon which
      *           projected metrics are based.
-     *           E.g. 10% impression share, which is equal to 0.1, is stored as 100_000.
-     *           This value is validated and will not exceed 1M (100%).
+     *           For example, 10% impression share, which is equal to 0.1, is stored as
+     *           100_000. This value is validated and will not exceed 1M (100%).
      *     @type int|string $required_cpc_bid_ceiling_micros
      *           Projected required daily cpc bid ceiling that the advertiser must set to
      *           realize this simulation, in micros of the advertiser currency.
@@ -126,8 +126,8 @@ class TargetImpressionShareSimulationPoint extends \Google\Protobuf\Internal\Mes
     /**
      * The simulated target impression share value (in micros) upon which
      * projected metrics are based.
-     * E.g. 10% impression share, which is equal to 0.1, is stored as 100_000.
-     * This value is validated and will not exceed 1M (100%).
+     * For example, 10% impression share, which is equal to 0.1, is stored as
+     * 100_000. This value is validated and will not exceed 1M (100%).
      *
      * Generated from protobuf field <code>int64 target_impression_share_micros = 1;</code>
      * @return int|string
@@ -140,8 +140,8 @@ class TargetImpressionShareSimulationPoint extends \Google\Protobuf\Internal\Mes
     /**
      * The simulated target impression share value (in micros) upon which
      * projected metrics are based.
-     * E.g. 10% impression share, which is equal to 0.1, is stored as 100_000.
-     * This value is validated and will not exceed 1M (100%).
+     * For example, 10% impression share, which is equal to 0.1, is stored as
+     * 100_000. This value is validated and will not exceed 1M (100%).
      *
      * Generated from protobuf field <code>int64 target_impression_share_micros = 1;</code>
      * @param int|string $var

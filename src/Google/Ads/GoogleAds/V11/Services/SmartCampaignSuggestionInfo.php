@@ -56,17 +56,17 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      *     @type string $language_code
      *           Optional. The two letter advertising language for the Smart campaign to be
      *           constructed, default to 'en' if not set.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdScheduleInfo[]|\Google\Protobuf\Internal\RepeatedField $ad_schedules
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $ad_schedules
      *           Optional. The business ad schedule.
-     *     @type \Google\Ads\GoogleAds\V11\Common\KeywordThemeInfo[]|\Google\Protobuf\Internal\RepeatedField $keyword_themes
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\KeywordThemeInfo>|\Google\Protobuf\Internal\RepeatedField $keyword_themes
      *           Optional. Smart campaign keyword themes. This field may greatly improve suggestion
      *           accuracy and we recommend always setting it if possible.
      *     @type \Google\Ads\GoogleAds\V11\Services\SmartCampaignSuggestionInfo\BusinessContext $business_context
      *           Optional. Context describing the business to advertise.
      *     @type string $business_profile_location
      *           Optional. The resource name of a Business Profile location.
-     *           Business Profile location resource names can be fetched via the Business
-     *           Profile API and adhere to the following format:
+     *           Business Profile location resource names can be fetched through the
+     *           Business Profile API and adhere to the following format:
      *           `locations/{locationId}`.
      *           See the [Business Profile API]
      *           (https://developers.google.com/my-business/reference/businessinformation/rest/v1/accounts.locations)
@@ -151,7 +151,7 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      * Optional. The business ad schedule.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdScheduleInfo ad_schedules = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdScheduleInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdSchedules($var)
@@ -179,7 +179,7 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      * accuracy and we recommend always setting it if possible.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.KeywordThemeInfo keyword_themes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\KeywordThemeInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\KeywordThemeInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setKeywordThemes($var)
@@ -223,8 +223,8 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. The resource name of a Business Profile location.
-     * Business Profile location resource names can be fetched via the Business
-     * Profile API and adhere to the following format:
+     * Business Profile location resource names can be fetched through the
+     * Business Profile API and adhere to the following format:
      * `locations/{locationId}`.
      * See the [Business Profile API]
      * (https://developers.google.com/my-business/reference/businessinformation/rest/v1/accounts.locations)
@@ -245,8 +245,8 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. The resource name of a Business Profile location.
-     * Business Profile location resource names can be fetched via the Business
-     * Profile API and adhere to the following format:
+     * Business Profile location resource names can be fetched through the
+     * Business Profile API and adhere to the following format:
      * `locations/{locationId}`.
      * See the [Business Profile API]
      * (https://developers.google.com/my-business/reference/businessinformation/rest/v1/accounts.locations)

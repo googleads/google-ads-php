@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V11\Enums\LeadFormDesiredIntentEnum;
 use UnexpectedValueException;
 
 /**
- * Enum describing the desired level of intent of generated leads.
+ * Enum describing the chosen level of intent of generated leads.
  *
  * Protobuf type <code>google.ads.googleads.v11.enums.LeadFormDesiredIntentEnum.LeadFormDesiredIntent</code>
  */

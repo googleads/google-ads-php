@@ -23,39 +23,39 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
      */
     protected $property_id = '';
     /**
-     * Required. Property name, e.g. Mountain View Hotel. Required.
+     * Required. Property name, for example, Mountain View Hotel. Required.
      *
      * Generated from protobuf field <code>string property_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $property_name = '';
     /**
-     * Image URL, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image URL, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 3;</code>
      */
     protected $image_url = '';
     /**
-     * Destination name, e.g. Downtown Mountain View.
+     * Destination name, for example, Downtown Mountain View.
      *
      * Generated from protobuf field <code>string destination_name = 4;</code>
      */
     protected $destination_name = '';
     /**
-     * Description, e.g. Close to SJC Airport.
+     * Description, for example, Close to SJC Airport.
      *
      * Generated from protobuf field <code>string description = 5;</code>
      */
     protected $description = '';
     /**
      * Price which can be number followed by the alphabetic currency code,
-     * ISO 4217 standard. Use '.' as the decimal mark, e.g. 100.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 100.00 USD.
      *
      * Generated from protobuf field <code>string price = 6;</code>
      */
     protected $price = '';
     /**
-     * ISO 4217 standard. Use '.' as the decimal mark, e.g. 80.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 80.00 USD.
      * Must be less than the 'price' field.
      *
      * Generated from protobuf field <code>string sale_price = 7;</code>
@@ -68,35 +68,35 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
      */
     protected $star_rating = 0;
     /**
-     * Category, e.g. Hotel suite.
+     * Category, for example, Hotel suite.
      *
      * Generated from protobuf field <code>string category = 9;</code>
      */
     protected $category = '';
     /**
-     * Contextual keywords, e.g. Mountain View "Hotels", South Bay hotels.
+     * Contextual keywords, for example, Mountain View "Hotels", South Bay hotels.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 10;</code>
      */
     private $contextual_keywords;
     /**
      * Address which can be specified in one of the following formats.
-     * (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     * (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     * (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403
+     * (1) City, state, code, country, for example, Mountain View, CA, USA.
+     * (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     * (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403
      *
      * Generated from protobuf field <code>string address = 11;</code>
      */
     protected $address = '';
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 12;</code>
      */
     protected $android_app_link = '';
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 13;</code>
      */
@@ -111,14 +111,14 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     protected $ios_app_store_id = 0;
     /**
      * Formatted price which can be any characters. If set, this attribute will be
-     * used instead of 'price', e.g. Starting at $100.00.
+     * used instead of 'price', for example, Starting at $100.00.
      *
      * Generated from protobuf field <code>string formatted_price = 15;</code>
      */
     protected $formatted_price = '';
     /**
      * Formatted sale price which can be any characters. If set, this attribute
-     * will be used instead of 'sale price', e.g. On sale for $80.00.
+     * will be used instead of 'sale price', for example, On sale for $80.00.
      *
      * Generated from protobuf field <code>string formatted_sale_price = 16;</code>
      */
@@ -140,47 +140,47 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
      *           Required. Property ID which can be any sequence of letters and digits, and must be
      *           unique and match the values of remarketing tag. Required.
      *     @type string $property_name
-     *           Required. Property name, e.g. Mountain View Hotel. Required.
+     *           Required. Property name, for example, Mountain View Hotel. Required.
      *     @type string $image_url
-     *           Image URL, e.g. http://www.example.com/image.png. The image will not be
-     *           uploaded as image asset.
+     *           Image URL, for example, http://www.example.com/image.png. The image will
+     *           not be uploaded as image asset.
      *     @type string $destination_name
-     *           Destination name, e.g. Downtown Mountain View.
+     *           Destination name, for example, Downtown Mountain View.
      *     @type string $description
-     *           Description, e.g. Close to SJC Airport.
+     *           Description, for example, Close to SJC Airport.
      *     @type string $price
      *           Price which can be number followed by the alphabetic currency code,
-     *           ISO 4217 standard. Use '.' as the decimal mark, e.g. 100.00 USD.
+     *           ISO 4217 standard. Use '.' as the decimal mark, for example, 100.00 USD.
      *     @type string $sale_price
-     *           ISO 4217 standard. Use '.' as the decimal mark, e.g. 80.00 USD.
+     *           ISO 4217 standard. Use '.' as the decimal mark, for example, 80.00 USD.
      *           Must be less than the 'price' field.
      *     @type int|string $star_rating
      *           Star rating. Must be a number between 1 to 5, inclusive.
      *     @type string $category
-     *           Category, e.g. Hotel suite.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
-     *           Contextual keywords, e.g. Mountain View "Hotels", South Bay hotels.
+     *           Category, for example, Hotel suite.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
+     *           Contextual keywords, for example, Mountain View "Hotels", South Bay hotels.
      *     @type string $address
      *           Address which can be specified in one of the following formats.
-     *           (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     *           (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     *           (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403
+     *           (1) City, state, code, country, for example, Mountain View, CA, USA.
+     *           (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     *           (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403
      *     @type string $android_app_link
-     *           Android deep link, e.g.
+     *           Android deep link, for example,
      *           android-app://com.example.android/http/example.com/gizmos?1234.
      *     @type string $ios_app_link
-     *           iOS deep link, e.g. exampleApp://content/page.
+     *           iOS deep link, for example, exampleApp://content/page.
      *     @type int|string $ios_app_store_id
      *           iOS app store ID. This is used to check if the user has the app installed
      *           on their device before deep linking. If this field is set, then the
      *           ios_app_link field must also be present.
      *     @type string $formatted_price
      *           Formatted price which can be any characters. If set, this attribute will be
-     *           used instead of 'price', e.g. Starting at $100.00.
+     *           used instead of 'price', for example, Starting at $100.00.
      *     @type string $formatted_sale_price
      *           Formatted sale price which can be any characters. If set, this attribute
-     *           will be used instead of 'sale price', e.g. On sale for $80.00.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $similar_property_ids
+     *           will be used instead of 'sale price', for example, On sale for $80.00.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_property_ids
      *           Similar property IDs.
      * }
      */
@@ -218,7 +218,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Property name, e.g. Mountain View Hotel. Required.
+     * Required. Property name, for example, Mountain View Hotel. Required.
      *
      * Generated from protobuf field <code>string property_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -229,7 +229,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Property name, e.g. Mountain View Hotel. Required.
+     * Required. Property name, for example, Mountain View Hotel. Required.
      *
      * Generated from protobuf field <code>string property_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -244,8 +244,8 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Image URL, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image URL, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 3;</code>
      * @return string
@@ -256,8 +256,8 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Image URL, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image URL, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 3;</code>
      * @param string $var
@@ -272,7 +272,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Destination name, e.g. Downtown Mountain View.
+     * Destination name, for example, Downtown Mountain View.
      *
      * Generated from protobuf field <code>string destination_name = 4;</code>
      * @return string
@@ -283,7 +283,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Destination name, e.g. Downtown Mountain View.
+     * Destination name, for example, Downtown Mountain View.
      *
      * Generated from protobuf field <code>string destination_name = 4;</code>
      * @param string $var
@@ -298,7 +298,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Description, e.g. Close to SJC Airport.
+     * Description, for example, Close to SJC Airport.
      *
      * Generated from protobuf field <code>string description = 5;</code>
      * @return string
@@ -309,7 +309,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Description, e.g. Close to SJC Airport.
+     * Description, for example, Close to SJC Airport.
      *
      * Generated from protobuf field <code>string description = 5;</code>
      * @param string $var
@@ -325,7 +325,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Price which can be number followed by the alphabetic currency code,
-     * ISO 4217 standard. Use '.' as the decimal mark, e.g. 100.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 100.00 USD.
      *
      * Generated from protobuf field <code>string price = 6;</code>
      * @return string
@@ -337,7 +337,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Price which can be number followed by the alphabetic currency code,
-     * ISO 4217 standard. Use '.' as the decimal mark, e.g. 100.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 100.00 USD.
      *
      * Generated from protobuf field <code>string price = 6;</code>
      * @param string $var
@@ -352,7 +352,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ISO 4217 standard. Use '.' as the decimal mark, e.g. 80.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 80.00 USD.
      * Must be less than the 'price' field.
      *
      * Generated from protobuf field <code>string sale_price = 7;</code>
@@ -364,7 +364,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ISO 4217 standard. Use '.' as the decimal mark, e.g. 80.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 80.00 USD.
      * Must be less than the 'price' field.
      *
      * Generated from protobuf field <code>string sale_price = 7;</code>
@@ -406,7 +406,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Category, e.g. Hotel suite.
+     * Category, for example, Hotel suite.
      *
      * Generated from protobuf field <code>string category = 9;</code>
      * @return string
@@ -417,7 +417,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Category, e.g. Hotel suite.
+     * Category, for example, Hotel suite.
      *
      * Generated from protobuf field <code>string category = 9;</code>
      * @param string $var
@@ -432,7 +432,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Contextual keywords, e.g. Mountain View "Hotels", South Bay hotels.
+     * Contextual keywords, for example, Mountain View "Hotels", South Bay hotels.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -443,10 +443,10 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Contextual keywords, e.g. Mountain View "Hotels", South Bay hotels.
+     * Contextual keywords, for example, Mountain View "Hotels", South Bay hotels.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 10;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setContextualKeywords($var)
@@ -459,9 +459,9 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Address which can be specified in one of the following formats.
-     * (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     * (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     * (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403
+     * (1) City, state, code, country, for example, Mountain View, CA, USA.
+     * (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     * (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403
      *
      * Generated from protobuf field <code>string address = 11;</code>
      * @return string
@@ -473,9 +473,9 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Address which can be specified in one of the following formats.
-     * (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     * (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     * (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403
+     * (1) City, state, code, country, for example, Mountain View, CA, USA.
+     * (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     * (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403
      *
      * Generated from protobuf field <code>string address = 11;</code>
      * @param string $var
@@ -490,7 +490,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 12;</code>
@@ -502,7 +502,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 12;</code>
@@ -518,7 +518,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 13;</code>
      * @return string
@@ -529,7 +529,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 13;</code>
      * @param string $var
@@ -575,7 +575,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Formatted price which can be any characters. If set, this attribute will be
-     * used instead of 'price', e.g. Starting at $100.00.
+     * used instead of 'price', for example, Starting at $100.00.
      *
      * Generated from protobuf field <code>string formatted_price = 15;</code>
      * @return string
@@ -587,7 +587,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Formatted price which can be any characters. If set, this attribute will be
-     * used instead of 'price', e.g. Starting at $100.00.
+     * used instead of 'price', for example, Starting at $100.00.
      *
      * Generated from protobuf field <code>string formatted_price = 15;</code>
      * @param string $var
@@ -603,7 +603,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Formatted sale price which can be any characters. If set, this attribute
-     * will be used instead of 'sale price', e.g. On sale for $80.00.
+     * will be used instead of 'sale price', for example, On sale for $80.00.
      *
      * Generated from protobuf field <code>string formatted_sale_price = 16;</code>
      * @return string
@@ -615,7 +615,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Formatted sale price which can be any characters. If set, this attribute
-     * will be used instead of 'sale price', e.g. On sale for $80.00.
+     * will be used instead of 'sale price', for example, On sale for $80.00.
      *
      * Generated from protobuf field <code>string formatted_sale_price = 16;</code>
      * @param string $var
@@ -644,7 +644,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
      * Similar property IDs.
      *
      * Generated from protobuf field <code>repeated string similar_property_ids = 17;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSimilarPropertyIds($var)

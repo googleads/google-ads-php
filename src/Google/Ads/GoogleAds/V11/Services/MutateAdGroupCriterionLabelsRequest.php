@@ -53,7 +53,7 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
      *
      *     @type string $customer_id
      *           Required. ID of the customer whose ad group criterion labels are being modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\AdGroupCriterionLabelOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\AdGroupCriterionLabelOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to perform on ad group criterion labels.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -111,7 +111,7 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
      * Required. The list of operations to perform on ad group criterion labels.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.AdGroupCriterionLabelOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\AdGroupCriterionLabelOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\AdGroupCriterionLabelOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

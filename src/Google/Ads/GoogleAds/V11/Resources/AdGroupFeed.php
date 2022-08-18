@@ -72,7 +72,7 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
      *           Immutable. The feed being linked to the ad group.
      *     @type string $ad_group
      *           Immutable. The ad group being linked to the feed.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $placeholder_types
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $placeholder_types
      *           Indicates which placeholder types the feed may populate under the connected
      *           ad group. Required.
      *     @type \Google\Ads\GoogleAds\V11\Common\MatchingFunction $matching_function
@@ -208,7 +208,7 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
      * ad group. Required.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.PlaceholderTypeEnum.PlaceholderType placeholder_types = 4;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPlaceholderTypes($var)

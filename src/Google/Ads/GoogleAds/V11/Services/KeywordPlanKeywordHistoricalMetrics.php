@@ -58,7 +58,7 @@ class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Mess
      *           only contain 'cars'.
      *           Starting V5, the list of de-duped queries will be included in
      *           close_variants field.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $close_variants
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $close_variants
      *           The list of close variant queries for search_query whose search results
      *           are combined into the search_query.
      *     @type \Google\Ads\GoogleAds\V11\Common\KeywordPlanHistoricalMetrics $keyword_metrics
@@ -138,7 +138,7 @@ class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Mess
      * are combined into the search_query.
      *
      * Generated from protobuf field <code>repeated string close_variants = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCloseVariants($var)

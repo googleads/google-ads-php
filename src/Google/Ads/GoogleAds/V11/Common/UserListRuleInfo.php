@@ -48,7 +48,7 @@ class UserListRuleInfo extends \Google\Protobuf\Internal\Message
      *           groups themselves will be ORed together.
      *           Currently AND of ORs (conjunctive normal form) is only supported for
      *           ExpressionRuleUserList.
-     *     @type \Google\Ads\GoogleAds\V11\Common\UserListRuleItemGroupInfo[]|\Google\Protobuf\Internal\RepeatedField $rule_item_groups
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\UserListRuleItemGroupInfo>|\Google\Protobuf\Internal\RepeatedField $rule_item_groups
      *           List of rule item groups that defines this rule.
      *           Rule item groups are grouped together based on rule_type.
      * }
@@ -111,7 +111,7 @@ class UserListRuleInfo extends \Google\Protobuf\Internal\Message
      * Rule item groups are grouped together based on rule_type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.UserListRuleItemGroupInfo rule_item_groups = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\UserListRuleItemGroupInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\UserListRuleItemGroupInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRuleItemGroups($var)

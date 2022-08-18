@@ -177,15 +177,15 @@ class AdError
      */
     const DISPLAY_URL_CANNOT_BE_SPECIFIED = 27;
     /**
-     * Telephone number contains invalid characters or invalid format. Please
-     * re-enter your number using digits (0-9), dashes (-), and parentheses
+     * Telephone number contains invalid characters or invalid format.
+     * Re-enter your number using digits (0-9), dashes (-), and parentheses
      * only.
      *
      * Generated from protobuf enum <code>DOMESTIC_PHONE_NUMBER_FORMAT = 28;</code>
      */
     const DOMESTIC_PHONE_NUMBER_FORMAT = 28;
     /**
-     * Emergency telephone numbers are not allowed. Please enter a valid
+     * Emergency telephone numbers are not allowed. Enter a valid
      * domestic phone number to connect customers to your business.
      *
      * Generated from protobuf enum <code>EMERGENCY_PHONE_NUMBER = 29;</code>
@@ -331,7 +331,7 @@ class AdError
      */
     const INVALID_NUMBER_OF_ELEMENTS = 52;
     /**
-     * The format of the telephone number is incorrect. Please re-enter the
+     * The format of the telephone number is incorrect. Re-enter the
      * number using the correct format.
      *
      * Generated from protobuf enum <code>INVALID_PHONE_NUMBER_FORMAT = 53;</code>
@@ -405,14 +405,14 @@ class AdError
      */
     const MISSING_DESCRIPTION2 = 64;
     /**
-     * The destination url must contain at least one tag (e.g. {lpurl})
+     * The destination url must contain at least one tag (for example, {lpurl})
      *
      * Generated from protobuf enum <code>MISSING_DESTINATION_URL_TAG = 65;</code>
      */
     const MISSING_DESTINATION_URL_TAG = 65;
     /**
      * The tracking url template of ExpandedDynamicSearchAd must contain at
-     * least one tag. (e.g. {lpurl})
+     * least one tag. (for example, {lpurl})
      *
      * Generated from protobuf enum <code>MISSING_LANDING_PAGE_URL_TAG = 66;</code>
      */
@@ -625,7 +625,7 @@ class AdError
     const URL_QUERY_NOT_ALLOWED = 100;
     /**
      * A url scheme is not allowed in front of tag in tracking url template
-     * (e.g. http://{lpurl})
+     * (for example, http://{lpurl})
      *
      * Generated from protobuf enum <code>URL_SCHEME_BEFORE_EXPANDED_DYNAMIC_SEARCH_AD_TAG = 102;</code>
      */
@@ -805,7 +805,7 @@ class AdError
     const INCOMPATIBLE_WITH_RESTRICTION_TYPE = 130;
     /**
      * Consent for call recording is required for creating/updating call only
-     * ads. Please see https://support.google.com/google-ads/answer/7412639.
+     * ads. See https://support.google.com/google-ads/answer/7412639.
      *
      * Generated from protobuf enum <code>CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED = 131;</code>
      */

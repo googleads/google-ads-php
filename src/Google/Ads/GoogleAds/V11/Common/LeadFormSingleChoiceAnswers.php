@@ -30,7 +30,7 @@ class LeadFormSingleChoiceAnswers extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $answers
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $answers
      *           List of choices for a single question field. The order of entries defines
      *           UI order. Minimum of 2 answers required and maximum of 12 allowed.
      * }
@@ -57,7 +57,7 @@ class LeadFormSingleChoiceAnswers extends \Google\Protobuf\Internal\Message
      * UI order. Minimum of 2 answers required and maximum of 12 allowed.
      *
      * Generated from protobuf field <code>repeated string answers = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAnswers($var)

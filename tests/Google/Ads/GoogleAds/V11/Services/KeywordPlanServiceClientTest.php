@@ -76,7 +76,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
     public function generateForecastCurveTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -84,8 +84,8 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         $expectedResponse = new GenerateForecastCurveResponse();
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-        $response = $client->generateForecastCurve($formattedKeywordPlan);
+        $formattedKeywordPlan = $gapicClient->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        $response = $gapicClient->generateForecastCurve($formattedKeywordPlan);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -103,7 +103,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
     public function generateForecastCurveExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -118,10 +118,10 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        $formattedKeywordPlan = $gapicClient->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
         try {
-            $client->generateForecastCurve($formattedKeywordPlan);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->generateForecastCurve($formattedKeywordPlan);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -138,7 +138,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
     public function generateForecastMetricsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -146,8 +146,8 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         $expectedResponse = new GenerateForecastMetricsResponse();
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-        $response = $client->generateForecastMetrics($formattedKeywordPlan);
+        $formattedKeywordPlan = $gapicClient->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        $response = $gapicClient->generateForecastMetrics($formattedKeywordPlan);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -165,7 +165,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
     public function generateForecastMetricsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -180,10 +180,10 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        $formattedKeywordPlan = $gapicClient->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
         try {
-            $client->generateForecastMetrics($formattedKeywordPlan);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->generateForecastMetrics($formattedKeywordPlan);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -200,7 +200,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
     public function generateForecastTimeSeriesTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -208,8 +208,8 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         $expectedResponse = new GenerateForecastTimeSeriesResponse();
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-        $response = $client->generateForecastTimeSeries($formattedKeywordPlan);
+        $formattedKeywordPlan = $gapicClient->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        $response = $gapicClient->generateForecastTimeSeries($formattedKeywordPlan);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -227,7 +227,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
     public function generateForecastTimeSeriesExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -242,10 +242,10 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        $formattedKeywordPlan = $gapicClient->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
         try {
-            $client->generateForecastTimeSeries($formattedKeywordPlan);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->generateForecastTimeSeries($formattedKeywordPlan);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -262,7 +262,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
     public function generateHistoricalMetricsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -270,8 +270,8 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         $expectedResponse = new GenerateHistoricalMetricsResponse();
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-        $response = $client->generateHistoricalMetrics($formattedKeywordPlan);
+        $formattedKeywordPlan = $gapicClient->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        $response = $gapicClient->generateHistoricalMetrics($formattedKeywordPlan);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -289,7 +289,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
     public function generateHistoricalMetricsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -304,10 +304,10 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        $formattedKeywordPlan = $gapicClient->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
         try {
-            $client->generateHistoricalMetrics($formattedKeywordPlan);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->generateHistoricalMetrics($formattedKeywordPlan);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -324,7 +324,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
     public function mutateKeywordPlansTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -334,7 +334,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-        $response = $client->mutateKeywordPlans($customerId, $operations);
+        $response = $gapicClient->mutateKeywordPlans($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -354,7 +354,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
     public function mutateKeywordPlansExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -372,8 +372,8 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operations = [];
         try {
-            $client->mutateKeywordPlans($customerId, $operations);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateKeywordPlans($customerId, $operations);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

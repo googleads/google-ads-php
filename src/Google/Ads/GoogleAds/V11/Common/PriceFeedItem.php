@@ -66,7 +66,7 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
      *           Tracking URL template for all offers of this price extension.
      *     @type string $language_code
      *           The code of the language used for this price extension.
-     *     @type \Google\Ads\GoogleAds\V11\Common\PriceOffer[]|\Google\Protobuf\Internal\RepeatedField $price_offerings
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\PriceOffer>|\Google\Protobuf\Internal\RepeatedField $price_offerings
      *           The price offerings in this price extension.
      *     @type string $final_url_suffix
      *           Tracking URL template for all offers of this price extension.
@@ -216,7 +216,7 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
      * The price offerings in this price extension.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PriceOffer price_offerings = 5;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\PriceOffer[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\PriceOffer>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPriceOfferings($var)

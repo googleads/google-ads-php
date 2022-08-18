@@ -9,8 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Policy finding attached to a resource (e.g. alcohol policy associated with
- * a site that sells alcohol).
+ * Policy finding attached to a resource (for example, alcohol policy associated
+ * with a site that sells alcohol).
  * Each PolicyTopicEntry has a topic that indicates the specific ads policy
  * the entry is about and a type to indicate the effect that the entry will have
  * on serving. It may optionally have one or more evidences that indicate the
@@ -38,14 +38,14 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
     protected $type = 0;
     /**
      * Additional information that explains policy finding
-     * (e.g. the brand name for a trademark finding).
+     * (for example, the brand name for a trademark finding).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PolicyTopicEvidence evidences = 3;</code>
      */
     private $evidences;
     /**
-     * Indicates how serving of this resource may be affected (e.g. not serving
-     * in a country).
+     * Indicates how serving of this resource may be affected (for example, not
+     * serving in a country).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PolicyTopicConstraint constraints = 4;</code>
      */
@@ -64,12 +64,12 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
      *           at any time.
      *     @type int $type
      *           Describes the negative or positive effect this policy will have on serving.
-     *     @type \Google\Ads\GoogleAds\V11\Common\PolicyTopicEvidence[]|\Google\Protobuf\Internal\RepeatedField $evidences
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\PolicyTopicEvidence>|\Google\Protobuf\Internal\RepeatedField $evidences
      *           Additional information that explains policy finding
-     *           (e.g. the brand name for a trademark finding).
-     *     @type \Google\Ads\GoogleAds\V11\Common\PolicyTopicConstraint[]|\Google\Protobuf\Internal\RepeatedField $constraints
-     *           Indicates how serving of this resource may be affected (e.g. not serving
-     *           in a country).
+     *           (for example, the brand name for a trademark finding).
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\PolicyTopicConstraint>|\Google\Protobuf\Internal\RepeatedField $constraints
+     *           Indicates how serving of this resource may be affected (for example, not
+     *           serving in a country).
      * }
      */
     public function __construct($data = NULL) {
@@ -147,7 +147,7 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
 
     /**
      * Additional information that explains policy finding
-     * (e.g. the brand name for a trademark finding).
+     * (for example, the brand name for a trademark finding).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PolicyTopicEvidence evidences = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -159,10 +159,10 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
 
     /**
      * Additional information that explains policy finding
-     * (e.g. the brand name for a trademark finding).
+     * (for example, the brand name for a trademark finding).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PolicyTopicEvidence evidences = 3;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\PolicyTopicEvidence[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\PolicyTopicEvidence>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEvidences($var)
@@ -174,8 +174,8 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates how serving of this resource may be affected (e.g. not serving
-     * in a country).
+     * Indicates how serving of this resource may be affected (for example, not
+     * serving in a country).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PolicyTopicConstraint constraints = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -186,11 +186,11 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates how serving of this resource may be affected (e.g. not serving
-     * in a country).
+     * Indicates how serving of this resource may be affected (for example, not
+     * serving in a country).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PolicyTopicConstraint constraints = 4;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\PolicyTopicConstraint[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\PolicyTopicConstraint>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConstraints($var)

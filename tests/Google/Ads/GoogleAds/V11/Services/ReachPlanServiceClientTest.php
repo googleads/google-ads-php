@@ -76,7 +76,7 @@ class ReachPlanServiceClientTest extends GeneratedTest
     public function generateProductMixIdeasTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -88,7 +88,7 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $plannableLocationId = 'plannableLocationId-2050234651';
         $currencyCode = 'currencyCode1108728155';
         $budgetMicros = 933896297;
-        $response = $client->generateProductMixIdeas($customerId, $plannableLocationId, $currencyCode, $budgetMicros);
+        $response = $gapicClient->generateProductMixIdeas($customerId, $plannableLocationId, $currencyCode, $budgetMicros);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -112,7 +112,7 @@ class ReachPlanServiceClientTest extends GeneratedTest
     public function generateProductMixIdeasExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -132,8 +132,8 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $currencyCode = 'currencyCode1108728155';
         $budgetMicros = 933896297;
         try {
-            $client->generateProductMixIdeas($customerId, $plannableLocationId, $currencyCode, $budgetMicros);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->generateProductMixIdeas($customerId, $plannableLocationId, $currencyCode, $budgetMicros);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -150,7 +150,7 @@ class ReachPlanServiceClientTest extends GeneratedTest
     public function generateReachForecastTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -161,7 +161,7 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $campaignDuration = new CampaignDuration();
         $plannedProducts = [];
-        $response = $client->generateReachForecast($customerId, $campaignDuration, $plannedProducts);
+        $response = $gapicClient->generateReachForecast($customerId, $campaignDuration, $plannedProducts);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -183,7 +183,7 @@ class ReachPlanServiceClientTest extends GeneratedTest
     public function generateReachForecastExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -202,8 +202,8 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $campaignDuration = new CampaignDuration();
         $plannedProducts = [];
         try {
-            $client->generateReachForecast($customerId, $campaignDuration, $plannedProducts);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->generateReachForecast($customerId, $campaignDuration, $plannedProducts);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -220,14 +220,14 @@ class ReachPlanServiceClientTest extends GeneratedTest
     public function listPlannableLocationsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new ListPlannableLocationsResponse();
         $transport->addResponse($expectedResponse);
-        $response = $client->listPlannableLocations();
+        $response = $gapicClient->listPlannableLocations();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -243,7 +243,7 @@ class ReachPlanServiceClientTest extends GeneratedTest
     public function listPlannableLocationsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -258,8 +258,8 @@ class ReachPlanServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         try {
-            $client->listPlannableLocations();
-            // If the $client method call did not throw, fail the test
+            $gapicClient->listPlannableLocations();
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -276,7 +276,7 @@ class ReachPlanServiceClientTest extends GeneratedTest
     public function listPlannableProductsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -285,7 +285,7 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $plannableLocationId = 'plannableLocationId-2050234651';
-        $response = $client->listPlannableProducts($plannableLocationId);
+        $response = $gapicClient->listPlannableProducts($plannableLocationId);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -303,7 +303,7 @@ class ReachPlanServiceClientTest extends GeneratedTest
     public function listPlannableProductsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -320,8 +320,8 @@ class ReachPlanServiceClientTest extends GeneratedTest
         // Mock request
         $plannableLocationId = 'plannableLocationId-2050234651';
         try {
-            $client->listPlannableProducts($plannableLocationId);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->listPlannableProducts($plannableLocationId);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

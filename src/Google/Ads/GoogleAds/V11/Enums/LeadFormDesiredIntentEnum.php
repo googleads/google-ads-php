@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Describes the desired level of intent of generated leads.
+ * Describes the chosen level of intent of generated leads.
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.enums.LeadFormDesiredIntentEnum</code>
  */

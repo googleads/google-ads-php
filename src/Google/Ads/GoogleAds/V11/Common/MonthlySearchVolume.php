@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class MonthlySearchVolume extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The year of the search volume (e.g. 2020).
+     * The year of the search volume (for example, 2020).
      *
      * Generated from protobuf field <code>optional int64 year = 4;</code>
      */
@@ -43,7 +43,7 @@ class MonthlySearchVolume extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $year
-     *           The year of the search volume (e.g. 2020).
+     *           The year of the search volume (for example, 2020).
      *     @type int $month
      *           The month of the search volume.
      *     @type int|string $monthly_searches
@@ -58,7 +58,7 @@ class MonthlySearchVolume extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The year of the search volume (e.g. 2020).
+     * The year of the search volume (for example, 2020).
      *
      * Generated from protobuf field <code>optional int64 year = 4;</code>
      * @return int|string
@@ -79,7 +79,7 @@ class MonthlySearchVolume extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The year of the search volume (e.g. 2020).
+     * The year of the search volume (for example, 2020).
      *
      * Generated from protobuf field <code>optional int64 year = 4;</code>
      * @param int|string $var

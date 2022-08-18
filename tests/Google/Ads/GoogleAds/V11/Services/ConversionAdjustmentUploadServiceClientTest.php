@@ -72,7 +72,7 @@ class ConversionAdjustmentUploadServiceClientTest extends GeneratedTest
     public function uploadConversionAdjustmentsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -83,7 +83,7 @@ class ConversionAdjustmentUploadServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $conversionAdjustments = [];
         $partialFailure = true;
-        $response = $client->uploadConversionAdjustments($customerId, $conversionAdjustments, $partialFailure);
+        $response = $gapicClient->uploadConversionAdjustments($customerId, $conversionAdjustments, $partialFailure);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -105,7 +105,7 @@ class ConversionAdjustmentUploadServiceClientTest extends GeneratedTest
     public function uploadConversionAdjustmentsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -124,8 +124,8 @@ class ConversionAdjustmentUploadServiceClientTest extends GeneratedTest
         $conversionAdjustments = [];
         $partialFailure = true;
         try {
-            $client->uploadConversionAdjustments($customerId, $conversionAdjustments, $partialFailure);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->uploadConversionAdjustments($customerId, $conversionAdjustments, $partialFailure);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

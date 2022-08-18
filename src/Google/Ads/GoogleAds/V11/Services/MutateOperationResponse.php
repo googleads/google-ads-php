@@ -133,6 +133,10 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      *           The result for the customer mutate.
      *     @type \Google\Ads\GoogleAds\V11\Services\MutateCustomizerAttributeResult $customizer_attribute_result
      *           The result for the customizer attribute mutate.
+     *     @type \Google\Ads\GoogleAds\V11\Services\MutateExperimentResult $experiment_result
+     *           The result for the experiment mutate.
+     *     @type \Google\Ads\GoogleAds\V11\Services\MutateExperimentArmResult $experiment_arm_result
+     *           The result for the experiment arm mutate.
      *     @type \Google\Ads\GoogleAds\V11\Services\MutateExtensionFeedItemResult $extension_feed_item_result
      *           The result for the extension feed item mutate.
      *     @type \Google\Ads\GoogleAds\V11\Services\MutateFeedItemResult $feed_item_result
@@ -1879,6 +1883,68 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Services\MutateCustomizerAttributeResult::class);
         $this->writeOneof(70, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the experiment mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.MutateExperimentResult experiment_result = 81;</code>
+     * @return \Google\Ads\GoogleAds\V11\Services\MutateExperimentResult|null
+     */
+    public function getExperimentResult()
+    {
+        return $this->readOneof(81);
+    }
+
+    public function hasExperimentResult()
+    {
+        return $this->hasOneof(81);
+    }
+
+    /**
+     * The result for the experiment mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.MutateExperimentResult experiment_result = 81;</code>
+     * @param \Google\Ads\GoogleAds\V11\Services\MutateExperimentResult $var
+     * @return $this
+     */
+    public function setExperimentResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Services\MutateExperimentResult::class);
+        $this->writeOneof(81, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the experiment arm mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.MutateExperimentArmResult experiment_arm_result = 82;</code>
+     * @return \Google\Ads\GoogleAds\V11\Services\MutateExperimentArmResult|null
+     */
+    public function getExperimentArmResult()
+    {
+        return $this->readOneof(82);
+    }
+
+    public function hasExperimentArmResult()
+    {
+        return $this->hasOneof(82);
+    }
+
+    /**
+     * The result for the experiment arm mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.MutateExperimentArmResult experiment_arm_result = 82;</code>
+     * @param \Google\Ads\GoogleAds\V11\Services\MutateExperimentArmResult $var
+     * @return $this
+     */
+    public function setExperimentArmResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Services\MutateExperimentArmResult::class);
+        $this->writeOneof(82, $var);
 
         return $this;
     }

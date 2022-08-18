@@ -45,7 +45,7 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
      *           Output only. The current budget amount in micros.
      *     @type int|string $recommended_budget_amount_micros
      *           Output only. The recommended budget amount in micros.
-     *     @type \Google\Ads\GoogleAds\V11\Resources\Recommendation\CampaignBudgetRecommendation\CampaignBudgetRecommendationOption[]|\Google\Protobuf\Internal\RepeatedField $budget_options
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\Recommendation\CampaignBudgetRecommendation\CampaignBudgetRecommendationOption>|\Google\Protobuf\Internal\RepeatedField $budget_options
      *           Output only. The budget amounts and associated impact estimates for some values of
      *           possible budget amounts.
      * }
@@ -144,7 +144,7 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
      * possible budget amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.Recommendation.CampaignBudgetRecommendation.CampaignBudgetRecommendationOption budget_options = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\Recommendation\CampaignBudgetRecommendation\CampaignBudgetRecommendationOption[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\Recommendation\CampaignBudgetRecommendation\CampaignBudgetRecommendationOption>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setBudgetOptions($var)

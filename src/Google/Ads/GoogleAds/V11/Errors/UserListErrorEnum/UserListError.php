@@ -164,7 +164,7 @@ class UserListError
     const USERLIST_NAME_IS_RESERVED_FOR_SYSTEM_LIST = 32;
     /**
      * Advertiser needs to be on the allow-list to use remarketing lists created
-     * from advertiser uploaded data (e.g., Customer Match lists).
+     * from advertiser uploaded data (for example, Customer Match lists).
      *
      * Generated from protobuf enum <code>ADVERTISER_NOT_ON_ALLOWLIST_FOR_USING_UPLOADED_DATA = 37;</code>
      */

@@ -60,7 +60,7 @@ class MutateCampaignBidModifiersRequest extends \Google\Protobuf\Internal\Messag
      *
      *     @type string $customer_id
      *           Required. ID of the customer whose campaign bid modifiers are being modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\CampaignBidModifierOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\CampaignBidModifierOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to perform on individual campaign bid modifiers.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -121,7 +121,7 @@ class MutateCampaignBidModifiersRequest extends \Google\Protobuf\Internal\Messag
      * Required. The list of operations to perform on individual campaign bid modifiers.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.CampaignBidModifierOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\CampaignBidModifierOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\CampaignBidModifierOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

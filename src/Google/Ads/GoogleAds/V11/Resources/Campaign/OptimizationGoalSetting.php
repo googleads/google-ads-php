@@ -29,7 +29,7 @@ class OptimizationGoalSetting extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $optimization_goal_types
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $optimization_goal_types
      *           The list of optimization goal types.
      * }
      */
@@ -53,7 +53,7 @@ class OptimizationGoalSetting extends \Google\Protobuf\Internal\Message
      * The list of optimization goal types.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.OptimizationGoalTypeEnum.OptimizationGoalType optimization_goal_types = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOptimizationGoalTypes($var)

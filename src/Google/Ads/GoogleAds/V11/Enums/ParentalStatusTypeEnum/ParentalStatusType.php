@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V11\Enums\ParentalStatusTypeEnum;
 use UnexpectedValueException;
 
 /**
- * The type of parental statuses (e.g. not a parent).
+ * The type of parental statuses (for example, not a parent).
  *
  * Protobuf type <code>google.ads.googleads.v11.enums.ParentalStatusTypeEnum.ParentalStatusType</code>
  */

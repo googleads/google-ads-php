@@ -101,7 +101,7 @@ class SettingError
     const SETTING_VALUE_NOT_COMPATIBLE_WITH_CAMPAIGN = 20;
     /**
      * Switching from observation setting to targeting setting is not allowed
-     * for Customer Match lists. Please see
+     * for Customer Match lists. See
      * https://support.google.com/google-ads/answer/6299717.
      *
      * Generated from protobuf enum <code>BID_ONLY_IS_NOT_ALLOWED_TO_BE_MODIFIED_WITH_CUSTOMER_MATCH_TARGETING = 21;</code>

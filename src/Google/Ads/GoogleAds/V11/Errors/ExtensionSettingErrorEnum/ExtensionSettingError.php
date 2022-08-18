@@ -177,8 +177,8 @@ class ExtensionSettingError
      */
     const INVALID_DOMESTIC_PHONE_NUMBER_FORMAT = 25;
     /**
-     * Vanity phone numbers (i.e. those including letters) are not allowed for
-     * call extensions.
+     * Vanity phone numbers (for example, those including letters) are not
+     * allowed for call extensions.
      *
      * Generated from protobuf enum <code>VANITY_PHONE_NUMBER_NOT_ALLOWED = 26;</code>
      */
@@ -289,7 +289,7 @@ class ExtensionSettingError
      */
     const INVALID_DEVICE_PREFERENCE = 43;
     /**
-     * Invalid feed item schedule end time (i.e., endHour = 24 and
+     * Invalid feed item schedule end time (for example, endHour = 24 and
      * endMinute != 0).
      *
      * Generated from protobuf enum <code>INVALID_SCHEDULE_END = 45;</code>
@@ -302,8 +302,8 @@ class ExtensionSettingError
      */
     const DATE_TIME_MUST_BE_IN_ACCOUNT_TIME_ZONE = 47;
     /**
-     * Overlapping feed item schedule times (e.g., 7-10AM and 8-11AM) are not
-     * allowed.
+     * Overlapping feed item schedule times (for example, 7-10AM and 8-11AM) are
+     * not allowed.
      *
      * Generated from protobuf enum <code>OVERLAPPING_SCHEDULES_NOT_ALLOWED = 48;</code>
      */
@@ -418,7 +418,7 @@ class ExtensionSettingError
     const UNSUPPORTED_LANGUAGE = 65;
     /**
      * Customer hasn't consented for call recording, which is required for
-     * adding/updating call extensions. Please see
+     * adding/updating call extensions. See
      * https://support.google.com/google-ads/answer/7412639.
      *
      * Generated from protobuf enum <code>CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED = 66;</code>

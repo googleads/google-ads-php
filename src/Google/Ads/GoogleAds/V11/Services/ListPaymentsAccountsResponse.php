@@ -28,7 +28,7 @@ class ListPaymentsAccountsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Resources\PaymentsAccount[]|\Google\Protobuf\Internal\RepeatedField $payments_accounts
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\PaymentsAccount>|\Google\Protobuf\Internal\RepeatedField $payments_accounts
      *           The list of accessible payments accounts.
      * }
      */
@@ -52,7 +52,7 @@ class ListPaymentsAccountsResponse extends \Google\Protobuf\Internal\Message
      * The list of accessible payments accounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.PaymentsAccount payments_accounts = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\PaymentsAccount[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\PaymentsAccount>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPaymentsAccounts($var)

@@ -73,7 +73,7 @@ class CustomerManagerLinkServiceClientTest extends GeneratedTest
     public function moveManagerLinkTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -86,7 +86,7 @@ class CustomerManagerLinkServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $previousCustomerManagerLink = 'previousCustomerManagerLink-1454597947';
         $newManager = 'newManager90619918';
-        $response = $client->moveManagerLink($customerId, $previousCustomerManagerLink, $newManager);
+        $response = $gapicClient->moveManagerLink($customerId, $previousCustomerManagerLink, $newManager);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -108,7 +108,7 @@ class CustomerManagerLinkServiceClientTest extends GeneratedTest
     public function moveManagerLinkExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -127,8 +127,8 @@ class CustomerManagerLinkServiceClientTest extends GeneratedTest
         $previousCustomerManagerLink = 'previousCustomerManagerLink-1454597947';
         $newManager = 'newManager90619918';
         try {
-            $client->moveManagerLink($customerId, $previousCustomerManagerLink, $newManager);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->moveManagerLink($customerId, $previousCustomerManagerLink, $newManager);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -145,7 +145,7 @@ class CustomerManagerLinkServiceClientTest extends GeneratedTest
     public function mutateCustomerManagerLinkTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -155,7 +155,7 @@ class CustomerManagerLinkServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-        $response = $client->mutateCustomerManagerLink($customerId, $operations);
+        $response = $gapicClient->mutateCustomerManagerLink($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -175,7 +175,7 @@ class CustomerManagerLinkServiceClientTest extends GeneratedTest
     public function mutateCustomerManagerLinkExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -193,8 +193,8 @@ class CustomerManagerLinkServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operations = [];
         try {
-            $client->mutateCustomerManagerLink($customerId, $operations);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateCustomerManagerLink($customerId, $operations);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

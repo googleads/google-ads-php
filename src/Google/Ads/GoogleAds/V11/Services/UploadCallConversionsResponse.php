@@ -18,8 +18,8 @@ class UploadCallConversionsResponse extends \Google\Protobuf\Internal\Message
     /**
      * Errors that pertain to conversion failures in the partial failure mode.
      * Returned when all errors occur inside the conversions. If any errors occur
-     * outside the conversions (e.g. auth errors), we return an RPC level error.
-     * See
+     * outside the conversions (for example, auth errors), we return an RPC level
+     * error. See
      * https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
      * for more information about partial failure.
      *
@@ -44,11 +44,11 @@ class UploadCallConversionsResponse extends \Google\Protobuf\Internal\Message
      *     @type \Google\Rpc\Status $partial_failure_error
      *           Errors that pertain to conversion failures in the partial failure mode.
      *           Returned when all errors occur inside the conversions. If any errors occur
-     *           outside the conversions (e.g. auth errors), we return an RPC level error.
-     *           See
+     *           outside the conversions (for example, auth errors), we return an RPC level
+     *           error. See
      *           https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
      *           for more information about partial failure.
-     *     @type \Google\Ads\GoogleAds\V11\Services\CallConversionResult[]|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\CallConversionResult>|\Google\Protobuf\Internal\RepeatedField $results
      *           Returned for successfully processed conversions. Proto will be empty for
      *           rows that received an error. Results are not returned when validate_only is
      *           true.
@@ -62,8 +62,8 @@ class UploadCallConversionsResponse extends \Google\Protobuf\Internal\Message
     /**
      * Errors that pertain to conversion failures in the partial failure mode.
      * Returned when all errors occur inside the conversions. If any errors occur
-     * outside the conversions (e.g. auth errors), we return an RPC level error.
-     * See
+     * outside the conversions (for example, auth errors), we return an RPC level
+     * error. See
      * https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
      * for more information about partial failure.
      *
@@ -88,8 +88,8 @@ class UploadCallConversionsResponse extends \Google\Protobuf\Internal\Message
     /**
      * Errors that pertain to conversion failures in the partial failure mode.
      * Returned when all errors occur inside the conversions. If any errors occur
-     * outside the conversions (e.g. auth errors), we return an RPC level error.
-     * See
+     * outside the conversions (for example, auth errors), we return an RPC level
+     * error. See
      * https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
      * for more information about partial failure.
      *
@@ -124,7 +124,7 @@ class UploadCallConversionsResponse extends \Google\Protobuf\Internal\Message
      * true.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.CallConversionResult results = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\CallConversionResult[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\CallConversionResult>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setResults($var)

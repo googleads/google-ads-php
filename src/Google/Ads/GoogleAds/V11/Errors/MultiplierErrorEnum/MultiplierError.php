@@ -50,8 +50,8 @@ class MultiplierError
      */
     const MULTIPLIER_NOT_ALLOWED_FOR_BIDDING_STRATEGY = 5;
     /**
-     * A multiplier cannot be set when there is no base bid (e.g., content max
-     * cpc)
+     * A multiplier cannot be set when there is no base bid (for example,
+     * content max cpc)
      *
      * Generated from protobuf enum <code>MULTIPLIER_NOT_ALLOWED_WHEN_BASE_BID_IS_MISSING = 6;</code>
      */
@@ -93,7 +93,8 @@ class MultiplierError
      */
     const BID_LESS_THAN_MIN_ALLOWED_BID_WITH_MULTIPLIER = 12;
     /**
-     * Multiplier type (cpc vs. cpm) needs to match campaign's bidding strategy
+     * Multiplier type (cpc versus cpm) needs to match campaign's bidding
+     * strategy
      *
      * Generated from protobuf enum <code>MULTIPLIER_AND_BIDDING_STRATEGY_TYPE_MISMATCH = 13;</code>
      */

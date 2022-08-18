@@ -75,7 +75,7 @@ class MerchantCenterLinkServiceClientTest extends GeneratedTest
     public function getMerchantCenterLinkTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -89,8 +89,8 @@ class MerchantCenterLinkServiceClientTest extends GeneratedTest
         $expectedResponse->setMerchantCenterAccountName($merchantCenterAccountName);
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedResourceName = $client->merchantCenterLinkName('[CUSTOMER_ID]', '[MERCHANT_CENTER_ID]');
-        $response = $client->getMerchantCenterLink($formattedResourceName);
+        $formattedResourceName = $gapicClient->merchantCenterLinkName('[CUSTOMER_ID]', '[MERCHANT_CENTER_ID]');
+        $response = $gapicClient->getMerchantCenterLink($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -108,7 +108,7 @@ class MerchantCenterLinkServiceClientTest extends GeneratedTest
     public function getMerchantCenterLinkExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -123,10 +123,10 @@ class MerchantCenterLinkServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedResourceName = $client->merchantCenterLinkName('[CUSTOMER_ID]', '[MERCHANT_CENTER_ID]');
+        $formattedResourceName = $gapicClient->merchantCenterLinkName('[CUSTOMER_ID]', '[MERCHANT_CENTER_ID]');
         try {
-            $client->getMerchantCenterLink($formattedResourceName);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->getMerchantCenterLink($formattedResourceName);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -143,7 +143,7 @@ class MerchantCenterLinkServiceClientTest extends GeneratedTest
     public function listMerchantCenterLinksTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -152,7 +152,7 @@ class MerchantCenterLinkServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $customerId = 'customerId-1772061412';
-        $response = $client->listMerchantCenterLinks($customerId);
+        $response = $gapicClient->listMerchantCenterLinks($customerId);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -170,7 +170,7 @@ class MerchantCenterLinkServiceClientTest extends GeneratedTest
     public function listMerchantCenterLinksExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -187,8 +187,8 @@ class MerchantCenterLinkServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         try {
-            $client->listMerchantCenterLinks($customerId);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->listMerchantCenterLinks($customerId);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -205,7 +205,7 @@ class MerchantCenterLinkServiceClientTest extends GeneratedTest
     public function mutateMerchantCenterLinkTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -215,7 +215,7 @@ class MerchantCenterLinkServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operation = new MerchantCenterLinkOperation();
-        $response = $client->mutateMerchantCenterLink($customerId, $operation);
+        $response = $gapicClient->mutateMerchantCenterLink($customerId, $operation);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -235,7 +235,7 @@ class MerchantCenterLinkServiceClientTest extends GeneratedTest
     public function mutateMerchantCenterLinkExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -253,8 +253,8 @@ class MerchantCenterLinkServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operation = new MerchantCenterLinkOperation();
         try {
-            $client->mutateMerchantCenterLink($customerId, $operation);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateMerchantCenterLink($customerId, $operation);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

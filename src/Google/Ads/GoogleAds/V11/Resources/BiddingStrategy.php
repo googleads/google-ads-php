@@ -149,7 +149,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      *           A bidding strategy that sets bids to help get as many conversions as
      *           possible at the target cost-per-acquisition (CPA) you set.
      *     @type \Google\Ads\GoogleAds\V11\Common\TargetImpressionShare $target_impression_share
-     *           A bidding strategy that automatically optimizes towards a desired
+     *           A bidding strategy that automatically optimizes towards a chosen
      *           percentage of impressions.
      *     @type \Google\Ads\GoogleAds\V11\Common\TargetRoas $target_roas
      *           A bidding strategy that helps you maximize revenue while averaging a
@@ -623,7 +623,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A bidding strategy that automatically optimizes towards a desired
+     * A bidding strategy that automatically optimizes towards a chosen
      * percentage of impressions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.common.TargetImpressionShare target_impression_share = 48;</code>
@@ -640,7 +640,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A bidding strategy that automatically optimizes towards a desired
+     * A bidding strategy that automatically optimizes towards a chosen
      * percentage of impressions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.common.TargetImpressionShare target_impression_share = 48;</code>

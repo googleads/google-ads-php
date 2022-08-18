@@ -105,7 +105,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      *           Each keyword belongs to some set of languages; a keyword is included if
      *           language is one of its languages.
      *           If not set, all keywords will be included.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
      *           The resource names of the location to target. Maximum is 10.
      *           An empty list MAY be used to specify all targeting geos.
      *     @type bool $include_adult_keywords
@@ -127,7 +127,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      *     @type int $keyword_plan_network
      *           Targeting network.
      *           If not set, Google Search And Partners Network will be used.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $keyword_annotation
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $keyword_annotation
      *           The keyword annotations to include in response.
      *     @type \Google\Ads\GoogleAds\V11\Common\KeywordPlanAggregateMetrics $aggregate_metrics
      *           The aggregate fields to include in response.
@@ -135,13 +135,13 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      *           The options for historical metrics data.
      *     @type \Google\Ads\GoogleAds\V11\Services\KeywordAndUrlSeed $keyword_and_url_seed
      *           A Keyword and a specific Url to generate ideas from
-     *           e.g. cars, www.example.com/cars.
+     *           for example, cars, www.example.com/cars.
      *     @type \Google\Ads\GoogleAds\V11\Services\KeywordSeed $keyword_seed
-     *           A Keyword or phrase to generate ideas from, e.g. cars.
+     *           A Keyword or phrase to generate ideas from, for example, cars.
      *     @type \Google\Ads\GoogleAds\V11\Services\UrlSeed $url_seed
-     *           A specific url to generate ideas from, e.g. www.example.com/cars.
+     *           A specific url to generate ideas from, for example, www.example.com/cars.
      *     @type \Google\Ads\GoogleAds\V11\Services\SiteSeed $site_seed
-     *           The site to generate ideas from, e.g. www.example.com.
+     *           The site to generate ideas from, for example, www.example.com.
      * }
      */
     public function __construct($data = NULL) {
@@ -234,7 +234,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * An empty list MAY be used to specify all targeting geos.
      *
      * Generated from protobuf field <code>repeated string geo_target_constants = 15;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGeoTargetConstants($var)
@@ -386,7 +386,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * The keyword annotations to include in response.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.KeywordPlanKeywordAnnotationEnum.KeywordPlanKeywordAnnotation keyword_annotation = 17;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setKeywordAnnotation($var)
@@ -471,7 +471,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * A Keyword and a specific Url to generate ideas from
-     * e.g. cars, www.example.com/cars.
+     * for example, cars, www.example.com/cars.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.services.KeywordAndUrlSeed keyword_and_url_seed = 2;</code>
      * @return \Google\Ads\GoogleAds\V11\Services\KeywordAndUrlSeed|null
@@ -488,7 +488,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * A Keyword and a specific Url to generate ideas from
-     * e.g. cars, www.example.com/cars.
+     * for example, cars, www.example.com/cars.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.services.KeywordAndUrlSeed keyword_and_url_seed = 2;</code>
      * @param \Google\Ads\GoogleAds\V11\Services\KeywordAndUrlSeed $var
@@ -503,7 +503,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A Keyword or phrase to generate ideas from, e.g. cars.
+     * A Keyword or phrase to generate ideas from, for example, cars.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.services.KeywordSeed keyword_seed = 3;</code>
      * @return \Google\Ads\GoogleAds\V11\Services\KeywordSeed|null
@@ -519,7 +519,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A Keyword or phrase to generate ideas from, e.g. cars.
+     * A Keyword or phrase to generate ideas from, for example, cars.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.services.KeywordSeed keyword_seed = 3;</code>
      * @param \Google\Ads\GoogleAds\V11\Services\KeywordSeed $var
@@ -534,7 +534,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A specific url to generate ideas from, e.g. www.example.com/cars.
+     * A specific url to generate ideas from, for example, www.example.com/cars.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.services.UrlSeed url_seed = 5;</code>
      * @return \Google\Ads\GoogleAds\V11\Services\UrlSeed|null
@@ -550,7 +550,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A specific url to generate ideas from, e.g. www.example.com/cars.
+     * A specific url to generate ideas from, for example, www.example.com/cars.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.services.UrlSeed url_seed = 5;</code>
      * @param \Google\Ads\GoogleAds\V11\Services\UrlSeed $var
@@ -565,7 +565,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The site to generate ideas from, e.g. www.example.com.
+     * The site to generate ideas from, for example, www.example.com.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.services.SiteSeed site_seed = 11;</code>
      * @return \Google\Ads\GoogleAds\V11\Services\SiteSeed|null
@@ -581,7 +581,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The site to generate ideas from, e.g. www.example.com.
+     * The site to generate ideas from, for example, www.example.com.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.services.SiteSeed site_seed = 11;</code>
      * @param \Google\Ads\GoogleAds\V11\Services\SiteSeed $var

@@ -48,7 +48,7 @@ class StringLengthError
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
-        self::PBEMPTY => 'PBEMPTY',
+        self::PBEMPTY => 'EMPTY',
         self::TOO_SHORT => 'TOO_SHORT',
         self::TOO_LONG => 'TOO_LONG',
     ];
@@ -67,8 +67,12 @@ class StringLengthError
     {
         $const = __CLASS__ . '::' . strtoupper($name);
         if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+            $pbconst =  __CLASS__. '::PB' . strtoupper($name);
+            if (!defined($pbconst)) {
+                throw new UnexpectedValueException(sprintf(
+                        'Enum %s has no value defined for name %s', __CLASS__, $name));
+            }
+            return constant($pbconst);
         }
         return constant($const);
     }

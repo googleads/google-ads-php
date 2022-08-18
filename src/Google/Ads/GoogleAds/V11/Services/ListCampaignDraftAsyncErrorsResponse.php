@@ -37,7 +37,7 @@ class ListCampaignDraftAsyncErrorsResponse extends \Google\Protobuf\Internal\Mes
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Rpc\Status[]|\Google\Protobuf\Internal\RepeatedField $errors
+     *     @type array<\Google\Rpc\Status>|\Google\Protobuf\Internal\RepeatedField $errors
      *           Details of the errors when performing the asynchronous operation.
      *     @type string $next_page_token
      *           Pagination token used to retrieve the next page of results.
@@ -66,7 +66,7 @@ class ListCampaignDraftAsyncErrorsResponse extends \Google\Protobuf\Internal\Mes
      * Details of the errors when performing the asynchronous operation.
      *
      * Generated from protobuf field <code>repeated .google.rpc.Status errors = 1;</code>
-     * @param \Google\Rpc\Status[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Rpc\Status>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setErrors($var)

@@ -53,7 +53,7 @@ class AccountBudgetProposalStatus
      */
     const CANCELLED = 5;
     /**
-     * The proposal has been rejected by the user, e.g. by rejecting an
+     * The proposal has been rejected by the user, for example, by rejecting an
      * acceptance email.
      *
      * Generated from protobuf enum <code>REJECTED = 6;</code>

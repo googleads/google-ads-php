@@ -97,75 +97,76 @@ class ConversionActionType
      */
     const STORE_SALES = 11;
     /**
-     * Android app first open conversions tracked via Firebase.
+     * Android app first open conversions tracked through Firebase.
      *
      * Generated from protobuf enum <code>FIREBASE_ANDROID_FIRST_OPEN = 12;</code>
      */
     const FIREBASE_ANDROID_FIRST_OPEN = 12;
     /**
-     * Android app in app purchase conversions tracked via Firebase.
+     * Android app in app purchase conversions tracked through Firebase.
      *
      * Generated from protobuf enum <code>FIREBASE_ANDROID_IN_APP_PURCHASE = 13;</code>
      */
     const FIREBASE_ANDROID_IN_APP_PURCHASE = 13;
     /**
-     * Android app custom conversions tracked via Firebase.
+     * Android app custom conversions tracked through Firebase.
      *
      * Generated from protobuf enum <code>FIREBASE_ANDROID_CUSTOM = 14;</code>
      */
     const FIREBASE_ANDROID_CUSTOM = 14;
     /**
-     * iOS app first open conversions tracked via Firebase.
+     * iOS app first open conversions tracked through Firebase.
      *
      * Generated from protobuf enum <code>FIREBASE_IOS_FIRST_OPEN = 15;</code>
      */
     const FIREBASE_IOS_FIRST_OPEN = 15;
     /**
-     * iOS app in app purchase conversions tracked via Firebase.
+     * iOS app in app purchase conversions tracked through Firebase.
      *
      * Generated from protobuf enum <code>FIREBASE_IOS_IN_APP_PURCHASE = 16;</code>
      */
     const FIREBASE_IOS_IN_APP_PURCHASE = 16;
     /**
-     * iOS app custom conversions tracked via Firebase.
+     * iOS app custom conversions tracked through Firebase.
      *
      * Generated from protobuf enum <code>FIREBASE_IOS_CUSTOM = 17;</code>
      */
     const FIREBASE_IOS_CUSTOM = 17;
     /**
-     * Android app first open conversions tracked via Third Party App Analytics.
+     * Android app first open conversions tracked through Third Party App
+     * Analytics.
      *
      * Generated from protobuf enum <code>THIRD_PARTY_APP_ANALYTICS_ANDROID_FIRST_OPEN = 18;</code>
      */
     const THIRD_PARTY_APP_ANALYTICS_ANDROID_FIRST_OPEN = 18;
     /**
-     * Android app in app purchase conversions tracked via Third Party App
+     * Android app in app purchase conversions tracked through Third Party App
      * Analytics.
      *
      * Generated from protobuf enum <code>THIRD_PARTY_APP_ANALYTICS_ANDROID_IN_APP_PURCHASE = 19;</code>
      */
     const THIRD_PARTY_APP_ANALYTICS_ANDROID_IN_APP_PURCHASE = 19;
     /**
-     * Android app custom conversions tracked via Third Party App Analytics.
+     * Android app custom conversions tracked through Third Party App Analytics.
      *
      * Generated from protobuf enum <code>THIRD_PARTY_APP_ANALYTICS_ANDROID_CUSTOM = 20;</code>
      */
     const THIRD_PARTY_APP_ANALYTICS_ANDROID_CUSTOM = 20;
     /**
-     * iOS app first open conversions tracked via Third Party App Analytics.
+     * iOS app first open conversions tracked through Third Party App Analytics.
      *
      * Generated from protobuf enum <code>THIRD_PARTY_APP_ANALYTICS_IOS_FIRST_OPEN = 21;</code>
      */
     const THIRD_PARTY_APP_ANALYTICS_IOS_FIRST_OPEN = 21;
     /**
-     * iOS app in app purchase conversions tracked via Third Party App
+     * iOS app in app purchase conversions tracked through Third Party App
      * Analytics.
      *
      * Generated from protobuf enum <code>THIRD_PARTY_APP_ANALYTICS_IOS_IN_APP_PURCHASE = 22;</code>
      */
     const THIRD_PARTY_APP_ANALYTICS_IOS_IN_APP_PURCHASE = 22;
     /**
-     * iOS app custom conversions tracked via Third Party App Analytics.
+     * iOS app custom conversions tracked through Third Party App Analytics.
      *
      * Generated from protobuf enum <code>THIRD_PARTY_APP_ANALYTICS_IOS_CUSTOM = 23;</code>
      */

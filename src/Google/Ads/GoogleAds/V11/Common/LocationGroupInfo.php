@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A radius around a list of locations specified via a feed.
+ * A radius around a list of locations specified through a feed.
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.common.LocationGroupInfo</code>
  */
@@ -63,7 +63,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      *     @type string $feed
      *           Feed specifying locations for targeting.
      *           This is required and must be set in CREATE operations.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
      *           Geo target constant(s) restricting the scope of the geographic area within
      *           the feed. Currently only one geo target constant is allowed.
      *     @type int|string $radius
@@ -73,7 +73,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      *           Unit of the radius. Miles and meters are supported for geo target
      *           constants. Milli miles and meters are supported for feed item sets.
      *           This is required and must be set in CREATE operations.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $feed_item_sets
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $feed_item_sets
      *           FeedItemSets whose FeedItems are targeted. If multiple IDs are specified,
      *           then all items that appear in at least one set are targeted. This field
      *           cannot be used with geo_target_constants. This is optional and can only be
@@ -140,7 +140,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * the feed. Currently only one geo target constant is allowed.
      *
      * Generated from protobuf field <code>repeated string geo_target_constants = 6;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGeoTargetConstants($var)
@@ -240,7 +240,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * set in CREATE operations.
      *
      * Generated from protobuf field <code>repeated string feed_item_sets = 8;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFeedItemSets($var)

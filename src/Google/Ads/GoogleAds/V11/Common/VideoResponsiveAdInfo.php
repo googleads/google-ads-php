@@ -16,8 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * List of text assets used for the short headline, e.g. the "Call To Action"
-     * banner. Currently, only a single value for the short headline is supported.
+     * List of text assets used for the short headline, for example, the "Call To
+     * Action" banner. Currently, only a single value for the short headline is
+     * supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset headlines = 1;</code>
      */
@@ -37,8 +38,8 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      */
     private $descriptions;
     /**
-     * List of text assets used for the button, e.g. the "Call To Action" button.
-     * Currently, only a single value for the button is supported.
+     * List of text assets used for the button, for example, the "Call To Action"
+     * button. Currently, only a single value for the button is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset call_to_actions = 4;</code>
      */
@@ -76,22 +77,23 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $headlines
-     *           List of text assets used for the short headline, e.g. the "Call To Action"
-     *           banner. Currently, only a single value for the short headline is supported.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $long_headlines
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
+     *           List of text assets used for the short headline, for example, the "Call To
+     *           Action" banner. Currently, only a single value for the short headline is
+     *           supported.
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $long_headlines
      *           List of text assets used for the long headline.
      *           Currently, only a single value for the long headline is supported.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
      *           List of text assets used for the description.
      *           Currently, only a single value for the description is supported.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $call_to_actions
-     *           List of text assets used for the button, e.g. the "Call To Action" button.
-     *           Currently, only a single value for the button is supported.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdVideoAsset[]|\Google\Protobuf\Internal\RepeatedField $videos
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $call_to_actions
+     *           List of text assets used for the button, for example, the "Call To Action"
+     *           button. Currently, only a single value for the button is supported.
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $videos
      *           List of YouTube video assets used for the ad.
      *           Currently, only a single value for the YouTube video asset is supported.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $companion_banners
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $companion_banners
      *           List of image assets used for the companion banner.
      *           Currently, only a single value for the companion banner asset is supported.
      *     @type string $breadcrumb1
@@ -106,8 +108,9 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of text assets used for the short headline, e.g. the "Call To Action"
-     * banner. Currently, only a single value for the short headline is supported.
+     * List of text assets used for the short headline, for example, the "Call To
+     * Action" banner. Currently, only a single value for the short headline is
+     * supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset headlines = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -118,11 +121,12 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of text assets used for the short headline, e.g. the "Call To Action"
-     * banner. Currently, only a single value for the short headline is supported.
+     * List of text assets used for the short headline, for example, the "Call To
+     * Action" banner. Currently, only a single value for the short headline is
+     * supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset headlines = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -150,7 +154,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Currently, only a single value for the long headline is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset long_headlines = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLongHeadlines($var)
@@ -178,7 +182,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Currently, only a single value for the description is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset descriptions = 3;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDescriptions($var)
@@ -190,8 +194,8 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of text assets used for the button, e.g. the "Call To Action" button.
-     * Currently, only a single value for the button is supported.
+     * List of text assets used for the button, for example, the "Call To Action"
+     * button. Currently, only a single value for the button is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset call_to_actions = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -202,11 +206,11 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of text assets used for the button, e.g. the "Call To Action" button.
-     * Currently, only a single value for the button is supported.
+     * List of text assets used for the button, for example, the "Call To Action"
+     * button. Currently, only a single value for the button is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset call_to_actions = 4;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCallToActions($var)
@@ -234,7 +238,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Currently, only a single value for the YouTube video asset is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdVideoAsset videos = 5;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdVideoAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setVideos($var)
@@ -262,7 +266,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Currently, only a single value for the companion banner asset is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdImageAsset companion_banners = 6;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCompanionBanners($var)

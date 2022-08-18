@@ -10,7 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A link between an AdGroupAd and an Asset.
- * Currently we only support AdGroupAdAssetView for AppAds.
+ * Currently we only support AdGroupAdAssetView for AppAds and Responsive Search
+ * Ads.
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.resources.AdGroupAdAssetView</code>
  */

@@ -17,7 +17,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
 {
     /**
      * The caller id from which this call was placed. Caller id is expected to be
-     * in E.164 format with preceding '+' sign. e.g. "+16502531234".
+     * in E.164 format with preceding '+' sign, for example, "+16502531234".
      *
      * Generated from protobuf field <code>optional string caller_id = 7;</code>
      */
@@ -25,7 +25,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the call occurred. The timezone must be specified.
      * The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm",
-     * e.g. "2019-01-01 12:32:45-08:00".
+     * for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string call_start_date_time = 8;</code>
      */
@@ -42,7 +42,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the conversion occurred. Must be after the call
      * time. The timezone must be specified. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 10;</code>
      */
@@ -75,11 +75,11 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      *
      *     @type string $caller_id
      *           The caller id from which this call was placed. Caller id is expected to be
-     *           in E.164 format with preceding '+' sign. e.g. "+16502531234".
+     *           in E.164 format with preceding '+' sign, for example, "+16502531234".
      *     @type string $call_start_date_time
      *           The date time at which the call occurred. The timezone must be specified.
      *           The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm",
-     *           e.g. "2019-01-01 12:32:45-08:00".
+     *           for example, "2019-01-01 12:32:45-08:00".
      *     @type string $conversion_action
      *           Resource name of the conversion action associated with this conversion.
      *           Note: Although this resource name consists of a customer id and a
@@ -88,13 +88,13 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      *     @type string $conversion_date_time
      *           The date time at which the conversion occurred. Must be after the call
      *           time. The timezone must be specified. The format is
-     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *     @type float $conversion_value
      *           The value of the conversion for the advertiser.
      *     @type string $currency_code
      *           Currency associated with the conversion value. This is the ISO 4217
      *           3-character currency code. For example: USD, EUR.
-     *     @type \Google\Ads\GoogleAds\V11\Services\CustomVariable[]|\Google\Protobuf\Internal\RepeatedField $custom_variables
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\CustomVariable>|\Google\Protobuf\Internal\RepeatedField $custom_variables
      *           The custom variables associated with this conversion.
      * }
      */
@@ -105,7 +105,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
 
     /**
      * The caller id from which this call was placed. Caller id is expected to be
-     * in E.164 format with preceding '+' sign. e.g. "+16502531234".
+     * in E.164 format with preceding '+' sign, for example, "+16502531234".
      *
      * Generated from protobuf field <code>optional string caller_id = 7;</code>
      * @return string
@@ -127,7 +127,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
 
     /**
      * The caller id from which this call was placed. Caller id is expected to be
-     * in E.164 format with preceding '+' sign. e.g. "+16502531234".
+     * in E.164 format with preceding '+' sign, for example, "+16502531234".
      *
      * Generated from protobuf field <code>optional string caller_id = 7;</code>
      * @param string $var
@@ -144,7 +144,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the call occurred. The timezone must be specified.
      * The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm",
-     * e.g. "2019-01-01 12:32:45-08:00".
+     * for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string call_start_date_time = 8;</code>
      * @return string
@@ -167,7 +167,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the call occurred. The timezone must be specified.
      * The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm",
-     * e.g. "2019-01-01 12:32:45-08:00".
+     * for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string call_start_date_time = 8;</code>
      * @param string $var
@@ -226,7 +226,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the conversion occurred. Must be after the call
      * time. The timezone must be specified. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 10;</code>
      * @return string
@@ -249,7 +249,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the conversion occurred. Must be after the call
      * time. The timezone must be specified. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 10;</code>
      * @param string $var
@@ -352,7 +352,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * The custom variables associated with this conversion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.CustomVariable custom_variables = 13;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\CustomVariable[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\CustomVariable>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCustomVariables($var)

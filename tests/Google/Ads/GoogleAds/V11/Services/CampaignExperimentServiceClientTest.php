@@ -89,7 +89,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
             'credentials' => $this->createCredentials(),
         ]);
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
@@ -111,7 +111,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $campaignExperiment = new CampaignExperiment();
-        $response = $client->createCampaignExperiment($customerId, $campaignExperiment);
+        $response = $gapicClient->createCampaignExperiment($customerId, $campaignExperiment);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $apiRequests = $transport->popReceivedCalls();
@@ -156,7 +156,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
             'credentials' => $this->createCredentials(),
         ]);
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
@@ -180,7 +180,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $campaignExperiment = new CampaignExperiment();
-        $response = $client->createCampaignExperiment($customerId, $campaignExperiment);
+        $response = $gapicClient->createCampaignExperiment($customerId, $campaignExperiment);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $expectedOperationsRequestObject = new GetOperationRequest();
@@ -208,7 +208,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
     public function endCampaignExperimentTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -216,8 +216,8 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         $expectedResponse = new GPBEmpty();
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedCampaignExperiment = $client->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
-        $client->endCampaignExperiment($formattedCampaignExperiment);
+        $formattedCampaignExperiment = $gapicClient->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
+        $gapicClient->endCampaignExperiment($formattedCampaignExperiment);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -234,7 +234,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
     public function endCampaignExperimentExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -249,10 +249,10 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedCampaignExperiment = $client->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
+        $formattedCampaignExperiment = $gapicClient->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
         try {
-            $client->endCampaignExperiment($formattedCampaignExperiment);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->endCampaignExperiment($formattedCampaignExperiment);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -269,7 +269,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
     public function graduateCampaignExperimentTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -279,9 +279,9 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         $expectedResponse->setGraduatedCampaign($graduatedCampaign);
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedCampaignExperiment = $client->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
+        $formattedCampaignExperiment = $gapicClient->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
         $campaignBudget = 'campaignBudget1992382804';
-        $response = $client->graduateCampaignExperiment($formattedCampaignExperiment, $campaignBudget);
+        $response = $gapicClient->graduateCampaignExperiment($formattedCampaignExperiment, $campaignBudget);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -301,7 +301,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
     public function graduateCampaignExperimentExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -316,11 +316,11 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedCampaignExperiment = $client->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
+        $formattedCampaignExperiment = $gapicClient->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
         $campaignBudget = 'campaignBudget1992382804';
         try {
-            $client->graduateCampaignExperiment($formattedCampaignExperiment, $campaignBudget);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->graduateCampaignExperiment($formattedCampaignExperiment, $campaignBudget);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -337,7 +337,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
     public function listCampaignExperimentAsyncErrorsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -352,8 +352,8 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         $expectedResponse->setErrors($errors);
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedResourceName = $client->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
-        $response = $client->listCampaignExperimentAsyncErrors($formattedResourceName);
+        $formattedResourceName = $gapicClient->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
+        $response = $gapicClient->listCampaignExperimentAsyncErrors($formattedResourceName);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -374,7 +374,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
     public function listCampaignExperimentAsyncErrorsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -389,10 +389,10 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedResourceName = $client->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
+        $formattedResourceName = $gapicClient->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
         try {
-            $client->listCampaignExperimentAsyncErrors($formattedResourceName);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->listCampaignExperimentAsyncErrors($formattedResourceName);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -409,7 +409,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
     public function mutateCampaignExperimentsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -419,7 +419,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-        $response = $client->mutateCampaignExperiments($customerId, $operations);
+        $response = $gapicClient->mutateCampaignExperiments($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -439,7 +439,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
     public function mutateCampaignExperimentsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -457,8 +457,8 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operations = [];
         try {
-            $client->mutateCampaignExperiments($customerId, $operations);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateCampaignExperiments($customerId, $operations);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -481,7 +481,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
             'credentials' => $this->createCredentials(),
         ]);
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
@@ -501,8 +501,8 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
         // Mock request
-        $formattedCampaignExperiment = $client->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
-        $response = $client->promoteCampaignExperiment($formattedCampaignExperiment);
+        $formattedCampaignExperiment = $gapicClient->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
+        $response = $gapicClient->promoteCampaignExperiment($formattedCampaignExperiment);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $apiRequests = $transport->popReceivedCalls();
@@ -545,7 +545,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
             'credentials' => $this->createCredentials(),
         ]);
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
@@ -567,8 +567,8 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
         // Mock request
-        $formattedCampaignExperiment = $client->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
-        $response = $client->promoteCampaignExperiment($formattedCampaignExperiment);
+        $formattedCampaignExperiment = $gapicClient->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
+        $response = $gapicClient->promoteCampaignExperiment($formattedCampaignExperiment);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $expectedOperationsRequestObject = new GetOperationRequest();

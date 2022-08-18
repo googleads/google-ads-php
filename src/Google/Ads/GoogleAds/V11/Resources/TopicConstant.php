@@ -62,7 +62,7 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      *           Output only. The ID of the topic.
      *     @type string $topic_constant_parent
      *           Output only. Resource name of parent of the topic constant.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $path
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $path
      *           Output only. The category to target or exclude. Each subsequent element in the array
      *           describes a more specific sub-category. For example,
      *           {"Pets & Animals", "Pets", "Dogs"} represents the
@@ -200,7 +200,7 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      * https://developers.google.com/adwords/api/docs/appendix/verticals
      *
      * Generated from protobuf field <code>repeated string path = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPath($var)

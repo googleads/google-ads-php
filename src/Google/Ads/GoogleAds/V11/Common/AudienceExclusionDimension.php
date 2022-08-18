@@ -28,7 +28,7 @@ class AudienceExclusionDimension extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\ExclusionSegment[]|\Google\Protobuf\Internal\RepeatedField $exclusions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\ExclusionSegment>|\Google\Protobuf\Internal\RepeatedField $exclusions
      *           Audience segment to be excluded.
      * }
      */
@@ -52,7 +52,7 @@ class AudienceExclusionDimension extends \Google\Protobuf\Internal\Message
      * Audience segment to be excluded.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.ExclusionSegment exclusions = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\ExclusionSegment[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\ExclusionSegment>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExclusions($var)

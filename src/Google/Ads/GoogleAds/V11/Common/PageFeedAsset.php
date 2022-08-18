@@ -36,7 +36,7 @@ class PageFeedAsset extends \Google\Protobuf\Internal\Message
      *
      *     @type string $page_url
      *           Required. The webpage that advertisers want to target.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Labels used to group the page urls.
      * }
      */
@@ -86,7 +86,7 @@ class PageFeedAsset extends \Google\Protobuf\Internal\Message
      * Labels used to group the page urls.
      *
      * Generated from protobuf field <code>repeated string labels = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabels($var)

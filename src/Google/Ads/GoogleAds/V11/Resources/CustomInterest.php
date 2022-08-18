@@ -90,7 +90,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
      *           By default the type is set to CUSTOM_AFFINITY.
      *     @type string $description
      *           Description of this custom interest audience.
-     *     @type \Google\Ads\GoogleAds\V11\Resources\CustomInterestMember[]|\Google\Protobuf\Internal\RepeatedField $members
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\CustomInterestMember>|\Google\Protobuf\Internal\RepeatedField $members
      *           List of custom interest members that this custom interest is composed of.
      *           Members can be added during CustomInterest creation. If members are
      *           presented in UPDATE operation, existing members will be overridden.
@@ -318,7 +318,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
      * presented in UPDATE operation, existing members will be overridden.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.CustomInterestMember members = 7;</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\CustomInterestMember[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\CustomInterestMember>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMembers($var)

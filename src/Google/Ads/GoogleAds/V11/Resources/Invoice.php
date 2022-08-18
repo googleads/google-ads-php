@@ -47,16 +47,16 @@ class Invoice extends \Google\Protobuf\Internal\Message
     protected $billing_setup = null;
     /**
      * Output only. A 16 digit ID used to identify the payments account associated with the
-     * billing setup, e.g. "1234-5678-9012-3456". It appears on the invoice PDF as
-     * "Billing Account Number".
+     * billing setup, for example, "1234-5678-9012-3456". It appears on the
+     * invoice PDF as "Billing Account Number".
      *
      * Generated from protobuf field <code>optional string payments_account_id = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $payments_account_id = null;
     /**
      * Output only. A 12 digit ID used to identify the payments profile associated with the
-     * billing setup, e.g. "1234-5678-9012". It appears on the invoice PDF as
-     * "Billing ID".
+     * billing setup, for example, "1234-5678-9012". It appears on the invoice PDF
+     * as "Billing ID".
      *
      * Generated from protobuf field <code>optional string payments_profile_id = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -209,12 +209,12 @@ class Invoice extends \Google\Protobuf\Internal\Message
      *           `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *     @type string $payments_account_id
      *           Output only. A 16 digit ID used to identify the payments account associated with the
-     *           billing setup, e.g. "1234-5678-9012-3456". It appears on the invoice PDF as
-     *           "Billing Account Number".
+     *           billing setup, for example, "1234-5678-9012-3456". It appears on the
+     *           invoice PDF as "Billing Account Number".
      *     @type string $payments_profile_id
      *           Output only. A 12 digit ID used to identify the payments profile associated with the
-     *           billing setup, e.g. "1234-5678-9012". It appears on the invoice PDF as
-     *           "Billing ID".
+     *           billing setup, for example, "1234-5678-9012". It appears on the invoice PDF
+     *           as "Billing ID".
      *     @type string $issue_date
      *           Output only. The issue date in yyyy-mm-dd format. It appears on the invoice PDF as
      *           either "Issue date" or "Invoice date".
@@ -260,7 +260,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      *           `replaced_invoices` will not be set.
      *           Invoice resource names have the form:
      *           `customers/{customer_id}/invoices/{invoice_id}`
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $replaced_invoices
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $replaced_invoices
      *           Output only. The resource name of the original invoice(s) being rebilled or replaced by
      *           this invoice, if applicable. There might be multiple replaced invoices due
      *           to invoice consolidation. The replaced invoices may not belong to the same
@@ -271,7 +271,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      *     @type string $pdf_url
      *           Output only. The URL to a PDF copy of the invoice. Users need to pass in their OAuth
      *           token to request the PDF with this URL.
-     *     @type \Google\Ads\GoogleAds\V11\Resources\Invoice\AccountBudgetSummary[]|\Google\Protobuf\Internal\RepeatedField $account_budget_summaries
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\Invoice\AccountBudgetSummary>|\Google\Protobuf\Internal\RepeatedField $account_budget_summaries
      *           Output only. The list of summarized account budget information associated with this
      *           invoice.
      * }
@@ -415,8 +415,8 @@ class Invoice extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. A 16 digit ID used to identify the payments account associated with the
-     * billing setup, e.g. "1234-5678-9012-3456". It appears on the invoice PDF as
-     * "Billing Account Number".
+     * billing setup, for example, "1234-5678-9012-3456". It appears on the
+     * invoice PDF as "Billing Account Number".
      *
      * Generated from protobuf field <code>optional string payments_account_id = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -438,8 +438,8 @@ class Invoice extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. A 16 digit ID used to identify the payments account associated with the
-     * billing setup, e.g. "1234-5678-9012-3456". It appears on the invoice PDF as
-     * "Billing Account Number".
+     * billing setup, for example, "1234-5678-9012-3456". It appears on the
+     * invoice PDF as "Billing Account Number".
      *
      * Generated from protobuf field <code>optional string payments_account_id = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -455,8 +455,8 @@ class Invoice extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. A 12 digit ID used to identify the payments profile associated with the
-     * billing setup, e.g. "1234-5678-9012". It appears on the invoice PDF as
-     * "Billing ID".
+     * billing setup, for example, "1234-5678-9012". It appears on the invoice PDF
+     * as "Billing ID".
      *
      * Generated from protobuf field <code>optional string payments_profile_id = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -478,8 +478,8 @@ class Invoice extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. A 12 digit ID used to identify the payments profile associated with the
-     * billing setup, e.g. "1234-5678-9012". It appears on the invoice PDF as
-     * "Billing ID".
+     * billing setup, for example, "1234-5678-9012". It appears on the invoice PDF
+     * as "Billing ID".
      *
      * Generated from protobuf field <code>optional string payments_profile_id = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -998,7 +998,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/invoices/{invoice_id}`
      *
      * Generated from protobuf field <code>repeated string replaced_invoices = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setReplacedInvoices($var)
@@ -1064,7 +1064,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * invoice.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.Invoice.AccountBudgetSummary account_budget_summaries = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\Invoice\AccountBudgetSummary[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\Invoice\AccountBudgetSummary>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAccountBudgetSummaries($var)

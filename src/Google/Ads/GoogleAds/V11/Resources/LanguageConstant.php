@@ -30,14 +30,14 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      */
     protected $id = null;
     /**
-     * Output only. The language code, e.g. "en_US", "en_AU", "es", "fr", etc.
+     * Output only. The language code, for example, "en_US", "en_AU", "es", "fr", etc.
      *
      * Generated from protobuf field <code>optional string code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $code = null;
     /**
-     * Output only. The full name of the language in English, e.g., "English (US)", "Spanish",
-     * etc.
+     * Output only. The full name of the language in English, for example, "English (US)",
+     * "Spanish", etc.
      *
      * Generated from protobuf field <code>optional string name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -62,10 +62,10 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      *     @type int|string $id
      *           Output only. The ID of the language constant.
      *     @type string $code
-     *           Output only. The language code, e.g. "en_US", "en_AU", "es", "fr", etc.
+     *           Output only. The language code, for example, "en_US", "en_AU", "es", "fr", etc.
      *     @type string $name
-     *           Output only. The full name of the language in English, e.g., "English (US)", "Spanish",
-     *           etc.
+     *           Output only. The full name of the language in English, for example, "English (US)",
+     *           "Spanish", etc.
      *     @type bool $targetable
      *           Output only. Whether the language is targetable.
      * }
@@ -142,7 +142,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The language code, e.g. "en_US", "en_AU", "es", "fr", etc.
+     * Output only. The language code, for example, "en_US", "en_AU", "es", "fr", etc.
      *
      * Generated from protobuf field <code>optional string code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -163,7 +163,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The language code, e.g. "en_US", "en_AU", "es", "fr", etc.
+     * Output only. The language code, for example, "en_US", "en_AU", "es", "fr", etc.
      *
      * Generated from protobuf field <code>optional string code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -178,8 +178,8 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The full name of the language in English, e.g., "English (US)", "Spanish",
-     * etc.
+     * Output only. The full name of the language in English, for example, "English (US)",
+     * "Spanish", etc.
      *
      * Generated from protobuf field <code>optional string name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -200,8 +200,8 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The full name of the language in English, e.g., "English (US)", "Spanish",
-     * etc.
+     * Output only. The full name of the language in English, for example, "English (US)",
+     * "Spanish", etc.
      *
      * Generated from protobuf field <code>optional string name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

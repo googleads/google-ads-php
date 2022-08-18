@@ -80,6 +80,12 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string path2 = 8;</code>
      */
     protected $path2 = '';
+    /**
+     * Output only. Overall ad strength of this asset group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AdStrengthEnum.AdStrength ad_strength = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $ad_strength = 0;
 
     /**
      * Constructor.
@@ -99,10 +105,10 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Required. Name of the asset group. Required. It must have a minimum length of 1 and
      *           maximum length of 128. It must be unique under a campaign.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_urls
      *           A list of final URLs after all cross domain redirects. In performance max,
      *           by default, the urls are eligible for expansion unless opted out.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
      *           A list of final mobile URLs after all cross domain redirects. In
      *           performance max, by default, the urls are eligible for expansion
      *           unless opted out.
@@ -114,6 +120,8 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      *     @type string $path2
      *           Second part of text that may appear appended to the url displayed in
      *           the ad. This field can only be set when path1 is set.
+     *     @type int $ad_strength
+     *           Output only. Overall ad strength of this asset group.
      * }
      */
     public function __construct($data = NULL) {
@@ -250,7 +258,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      * by default, the urls are eligible for expansion unless opted out.
      *
      * Generated from protobuf field <code>repeated string final_urls = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFinalUrls($var)
@@ -280,7 +288,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      * unless opted out.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 5;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFinalMobileUrls($var)
@@ -369,6 +377,32 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->path2 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Overall ad strength of this asset group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AdStrengthEnum.AdStrength ad_strength = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int
+     */
+    public function getAdStrength()
+    {
+        return $this->ad_strength;
+    }
+
+    /**
+     * Output only. Overall ad strength of this asset group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AdStrengthEnum.AdStrength ad_strength = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAdStrength($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V11\Enums\AdStrengthEnum\AdStrength::class);
+        $this->ad_strength = $var;
 
         return $this;
     }

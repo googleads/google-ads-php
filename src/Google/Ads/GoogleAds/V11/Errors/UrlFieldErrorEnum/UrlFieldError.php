@@ -38,9 +38,9 @@ class UrlFieldError
      */
     const INVALID_TAG_IN_TRACKING_URL_TEMPLATE = 3;
     /**
-     * The tracking url template must contain at least one tag (e.g. {lpurl}),
-     * This applies only to tracking url template associated with website ads or
-     * product ads.
+     * The tracking url template must contain at least one tag (for example,
+     * {lpurl}), This applies only to tracking url template associated with
+     * website ads or product ads.
      *
      * Generated from protobuf enum <code>MISSING_TRACKING_URL_TEMPLATE_TAG = 4;</code>
      */
@@ -79,7 +79,7 @@ class UrlFieldError
     const INVALID_TLD_IN_TRACKING_URL_TEMPLATE = 9;
     /**
      * The tracking url template contains nested occurrences of the same
-     * conditional tag (i.e. {ifmobile:{ifmobile:x}}).
+     * conditional tag (for example, {ifmobile:{ifmobile:x}}).
      *
      * Generated from protobuf enum <code>REDUNDANT_NESTED_TRACKING_URL_TEMPLATE_TAG = 10;</code>
      */
@@ -98,7 +98,7 @@ class UrlFieldError
     const INVALID_TAG_IN_FINAL_URL = 12;
     /**
      * The final url contains nested occurrences of the same conditional tag
-     * (i.e. {ifmobile:{ifmobile:x}}).
+     * (for example, {ifmobile:{ifmobile:x}}).
      *
      * Generated from protobuf enum <code>REDUNDANT_NESTED_FINAL_URL_TAG = 13;</code>
      */
@@ -148,7 +148,7 @@ class UrlFieldError
     const INVALID_TAG_IN_FINAL_MOBILE_URL = 20;
     /**
      * The final mobile url contains nested occurrences of the same conditional
-     * tag (i.e. {ifmobile:{ifmobile:x}}).
+     * tag (for example, {ifmobile:{ifmobile:x}}).
      *
      * Generated from protobuf enum <code>REDUNDANT_NESTED_FINAL_MOBILE_URL_TAG = 21;</code>
      */
@@ -198,7 +198,7 @@ class UrlFieldError
     const INVALID_TAG_IN_FINAL_APP_URL = 28;
     /**
      * The final app url contains nested occurrences of the same conditional tag
-     * (i.e. {ifmobile:{ifmobile:x}}).
+     * (for example, {ifmobile:{ifmobile:x}}).
      *
      * Generated from protobuf enum <code>REDUNDANT_NESTED_FINAL_APP_URL_TAG = 29;</code>
      */
@@ -216,7 +216,8 @@ class UrlFieldError
      */
     const INVALID_OSTYPE = 31;
     /**
-     * The protocol given for an app url is not valid. (E.g. "android-app://")
+     * The protocol given for an app url is not valid. (For example,
+     * "android-app://")
      *
      * Generated from protobuf enum <code>INVALID_PROTOCOL_FOR_APP_URL = 32;</code>
      */
@@ -254,7 +255,7 @@ class UrlFieldError
     const INVALID_TAG_IN_URL_CUSTOM_PARAMETER_VALUE = 41;
     /**
      * The custom parameter contains nested occurrences of the same conditional
-     * tag (i.e. {ifmobile:{ifmobile:x}}).
+     * tag (for example, {ifmobile:{ifmobile:x}}).
      *
      * Generated from protobuf enum <code>REDUNDANT_NESTED_URL_CUSTOM_PARAMETER_TAG = 42;</code>
      */
@@ -290,7 +291,7 @@ class UrlFieldError
      */
     const INVALID_TAG_IN_URL = 46;
     /**
-     * The url must contain at least one tag (e.g. {lpurl}).
+     * The url must contain at least one tag (for example, {lpurl}).
      *
      * Generated from protobuf enum <code>MISSING_URL_TAG = 47;</code>
      */
@@ -321,8 +322,8 @@ class UrlFieldError
      */
     const INVALID_TAG_IN_FINAL_URL_SUFFIX = 51;
     /**
-     * The top level domain is invalid, e.g. not a public top level domain
-     * listed in publicsuffix.org.
+     * The top level domain is invalid, for example, not a public top level
+     * domain listed in publicsuffix.org.
      *
      * Generated from protobuf enum <code>INVALID_TOP_LEVEL_DOMAIN = 53;</code>
      */

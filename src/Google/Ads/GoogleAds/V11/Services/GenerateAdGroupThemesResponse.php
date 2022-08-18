@@ -35,9 +35,9 @@ class GenerateAdGroupThemesResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\AdGroupKeywordSuggestion[]|\Google\Protobuf\Internal\RepeatedField $ad_group_keyword_suggestions
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\AdGroupKeywordSuggestion>|\Google\Protobuf\Internal\RepeatedField $ad_group_keyword_suggestions
      *           A list of suggested AdGroup/keyword pairings.
-     *     @type \Google\Ads\GoogleAds\V11\Services\UnusableAdGroup[]|\Google\Protobuf\Internal\RepeatedField $unusable_ad_groups
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\UnusableAdGroup>|\Google\Protobuf\Internal\RepeatedField $unusable_ad_groups
      *           A list of provided AdGroups that could not be used as suggestions.
      * }
      */
@@ -61,7 +61,7 @@ class GenerateAdGroupThemesResponse extends \Google\Protobuf\Internal\Message
      * A list of suggested AdGroup/keyword pairings.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.AdGroupKeywordSuggestion ad_group_keyword_suggestions = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\AdGroupKeywordSuggestion[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\AdGroupKeywordSuggestion>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdGroupKeywordSuggestions($var)
@@ -87,7 +87,7 @@ class GenerateAdGroupThemesResponse extends \Google\Protobuf\Internal\Message
      * A list of provided AdGroups that could not be used as suggestions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.UnusableAdGroup unusable_ad_groups = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\UnusableAdGroup[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\UnusableAdGroup>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUnusableAdGroups($var)

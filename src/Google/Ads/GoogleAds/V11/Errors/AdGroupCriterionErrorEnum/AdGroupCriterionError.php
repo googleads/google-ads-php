@@ -93,7 +93,7 @@ class AdGroupCriterionError
      */
     const INVALID_DESTINATION_URL = 12;
     /**
-     * The destination url must contain at least one tag (e.g. {lpurl})
+     * The destination url must contain at least one tag (for example, {lpurl})
      *
      * Generated from protobuf enum <code>MISSING_DESTINATION_URL_TAG = 13;</code>
      */
@@ -135,7 +135,7 @@ class AdGroupCriterionError
     const CAMPAIGN_TYPE_NOT_COMPATIBLE_WITH_PARTIAL_FAILURE = 27;
     /**
      * Operations in the mutate request changes too many shopping ad groups.
-     * Please split requests for multiple shopping ad groups across multiple
+     * Split requests for multiple shopping ad groups across multiple
      * requests.
      *
      * Generated from protobuf enum <code>OPERATIONS_FOR_TOO_MANY_SHOPPING_ADGROUPS = 28;</code>

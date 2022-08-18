@@ -37,8 +37,8 @@ class AssetGroupAsset extends \Google\Protobuf\Internal\Message
      */
     protected $asset = '';
     /**
-     * The description of the placement of the asset within the asset group. E.g.:
-     * HEADLINE, YOUTUBE_VIDEO etc
+     * The description of the placement of the asset within the asset group. For
+     * example: HEADLINE, YOUTUBE_VIDEO etc
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AssetFieldTypeEnum.AssetFieldType field_type = 4;</code>
      */
@@ -77,8 +77,8 @@ class AssetGroupAsset extends \Google\Protobuf\Internal\Message
      *     @type string $asset
      *           Immutable. The asset which this asset group asset is linking.
      *     @type int $field_type
-     *           The description of the placement of the asset within the asset group. E.g.:
-     *           HEADLINE, YOUTUBE_VIDEO etc
+     *           The description of the placement of the asset within the asset group. For
+     *           example: HEADLINE, YOUTUBE_VIDEO etc
      *     @type int $status
      *           The status of the link between an asset and asset group.
      *     @type int $performance_label
@@ -175,8 +175,8 @@ class AssetGroupAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The description of the placement of the asset within the asset group. E.g.:
-     * HEADLINE, YOUTUBE_VIDEO etc
+     * The description of the placement of the asset within the asset group. For
+     * example: HEADLINE, YOUTUBE_VIDEO etc
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AssetFieldTypeEnum.AssetFieldType field_type = 4;</code>
      * @return int
@@ -187,8 +187,8 @@ class AssetGroupAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The description of the placement of the asset within the asset group. E.g.:
-     * HEADLINE, YOUTUBE_VIDEO etc
+     * The description of the placement of the asset within the asset group. For
+     * example: HEADLINE, YOUTUBE_VIDEO etc
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AssetFieldTypeEnum.AssetFieldType field_type = 4;</code>
      * @param int $var

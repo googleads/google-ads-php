@@ -35,19 +35,19 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      */
     protected $campaign_duration = null;
     /**
-     * Desired cookie frequency cap to be applied to each planned product.
+     * Chosen cookie frequency cap to be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
      * If not specified, no cap is applied.
      * This field is deprecated in v4 and will eventually be removed.
-     * Please use cookie_frequency_cap_setting instead.
+     * Use cookie_frequency_cap_setting instead.
      *
      * Generated from protobuf field <code>optional int32 cookie_frequency_cap = 10;</code>
      */
     protected $cookie_frequency_cap = null;
     /**
-     * Desired cookie frequency cap to be applied to each planned product.
+     * Chosen cookie frequency cap to be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
@@ -58,7 +58,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      */
     protected $cookie_frequency_cap_setting = null;
     /**
-     * Desired minimum effective frequency (the number of times a person was
+     * Chosen minimum effective frequency (the number of times a person was
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
@@ -83,7 +83,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     /**
      * The targeting to be applied to all products selected in the product mix.
      * This is planned targeting: execution details might vary based on the
-     * advertising product, please consult an implementation specialist.
+     * advertising product, consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.services.Targeting targeting = 6;</code>
@@ -102,6 +102,13 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v11.services.ForecastMetricOptions forecast_metric_options = 13;</code>
      */
     protected $forecast_metric_options = null;
+    /**
+     * The name of the customer being planned for. This is a user-defined value.
+     * Required if targeting.audience_targeting is set.
+     *
+     * Generated from protobuf field <code>optional string customer_reach_group = 14;</code>
+     */
+    protected $customer_reach_group = null;
 
     /**
      * Constructor.
@@ -117,22 +124,22 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V11\Services\CampaignDuration $campaign_duration
      *           Required. Campaign duration.
      *     @type int $cookie_frequency_cap
-     *           Desired cookie frequency cap to be applied to each planned product.
+     *           Chosen cookie frequency cap to be applied to each planned product.
      *           This is equivalent to the frequency cap exposed in Google Ads when creating
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user.
      *           If not specified, no cap is applied.
      *           This field is deprecated in v4 and will eventually be removed.
-     *           Please use cookie_frequency_cap_setting instead.
+     *           Use cookie_frequency_cap_setting instead.
      *     @type \Google\Ads\GoogleAds\V11\Services\FrequencyCap $cookie_frequency_cap_setting
-     *           Desired cookie frequency cap to be applied to each planned product.
+     *           Chosen cookie frequency cap to be applied to each planned product.
      *           This is equivalent to the frequency cap exposed in Google Ads when creating
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user during a specified time interval.
      *           If not specified, a default of 0 (no cap) is applied.
      *           This field replaces the deprecated cookie_frequency_cap field.
      *     @type int $min_effective_frequency
-     *           Desired minimum effective frequency (the number of times a person was
+     *           Chosen minimum effective frequency (the number of times a person was
      *           exposed to the ad) for the reported reach metrics [1-10].
      *           This won't affect the targeting, but just the reporting.
      *           If not specified, a default of 1 is applied.
@@ -149,13 +156,16 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V11\Services\Targeting $targeting
      *           The targeting to be applied to all products selected in the product mix.
      *           This is planned targeting: execution details might vary based on the
-     *           advertising product, please consult an implementation specialist.
+     *           advertising product, consult an implementation specialist.
      *           See specific metrics for details on how targeting affects them.
-     *     @type \Google\Ads\GoogleAds\V11\Services\PlannedProduct[]|\Google\Protobuf\Internal\RepeatedField $planned_products
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\PlannedProduct>|\Google\Protobuf\Internal\RepeatedField $planned_products
      *           Required. The products to be forecast.
      *           The max number of allowed planned products is 15.
      *     @type \Google\Ads\GoogleAds\V11\Services\ForecastMetricOptions $forecast_metric_options
      *           Controls the forecast metrics returned in the response.
+     *     @type string $customer_reach_group
+     *           The name of the customer being planned for. This is a user-defined value.
+     *           Required if targeting.audience_targeting is set.
      * }
      */
     public function __construct($data = NULL) {
@@ -264,13 +274,13 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired cookie frequency cap to be applied to each planned product.
+     * Chosen cookie frequency cap to be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
      * If not specified, no cap is applied.
      * This field is deprecated in v4 and will eventually be removed.
-     * Please use cookie_frequency_cap_setting instead.
+     * Use cookie_frequency_cap_setting instead.
      *
      * Generated from protobuf field <code>optional int32 cookie_frequency_cap = 10;</code>
      * @return int
@@ -291,13 +301,13 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired cookie frequency cap to be applied to each planned product.
+     * Chosen cookie frequency cap to be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
      * If not specified, no cap is applied.
      * This field is deprecated in v4 and will eventually be removed.
-     * Please use cookie_frequency_cap_setting instead.
+     * Use cookie_frequency_cap_setting instead.
      *
      * Generated from protobuf field <code>optional int32 cookie_frequency_cap = 10;</code>
      * @param int $var
@@ -312,7 +322,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired cookie frequency cap to be applied to each planned product.
+     * Chosen cookie frequency cap to be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
@@ -338,7 +348,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired cookie frequency cap to be applied to each planned product.
+     * Chosen cookie frequency cap to be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
@@ -358,7 +368,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired minimum effective frequency (the number of times a person was
+     * Chosen minimum effective frequency (the number of times a person was
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
@@ -383,7 +393,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired minimum effective frequency (the number of times a person was
+     * Chosen minimum effective frequency (the number of times a person was
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
@@ -454,7 +464,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     /**
      * The targeting to be applied to all products selected in the product mix.
      * This is planned targeting: execution details might vary based on the
-     * advertising product, please consult an implementation specialist.
+     * advertising product, consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.services.Targeting targeting = 6;</code>
@@ -478,7 +488,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     /**
      * The targeting to be applied to all products selected in the product mix.
      * This is planned targeting: execution details might vary based on the
-     * advertising product, please consult an implementation specialist.
+     * advertising product, consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.services.Targeting targeting = 6;</code>
@@ -510,7 +520,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * The max number of allowed planned products is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.PlannedProduct planned_products = 7 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\PlannedProduct[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\PlannedProduct>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPlannedProducts($var)
@@ -553,6 +563,44 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Services\ForecastMetricOptions::class);
         $this->forecast_metric_options = $var;
+
+        return $this;
+    }
+
+    /**
+     * The name of the customer being planned for. This is a user-defined value.
+     * Required if targeting.audience_targeting is set.
+     *
+     * Generated from protobuf field <code>optional string customer_reach_group = 14;</code>
+     * @return string
+     */
+    public function getCustomerReachGroup()
+    {
+        return isset($this->customer_reach_group) ? $this->customer_reach_group : '';
+    }
+
+    public function hasCustomerReachGroup()
+    {
+        return isset($this->customer_reach_group);
+    }
+
+    public function clearCustomerReachGroup()
+    {
+        unset($this->customer_reach_group);
+    }
+
+    /**
+     * The name of the customer being planned for. This is a user-defined value.
+     * Required if targeting.audience_targeting is set.
+     *
+     * Generated from protobuf field <code>optional string customer_reach_group = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCustomerReachGroup($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->customer_reach_group = $var;
 
         return $this;
     }

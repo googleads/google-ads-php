@@ -70,7 +70,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      *           matched the geo target.
      *     @type \Google\Ads\GoogleAds\V11\Resources\GeoTargetConstant $geo_target_constant
      *           The GeoTargetConstant result.
-     *     @type \Google\Ads\GoogleAds\V11\Resources\GeoTargetConstant[]|\Google\Protobuf\Internal\RepeatedField $geo_target_constant_parents
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\GeoTargetConstant>|\Google\Protobuf\Internal\RepeatedField $geo_target_constant_parents
      *           The list of parents of the geo target constant.
      * }
      */
@@ -248,7 +248,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * The list of parents of the geo target constant.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.GeoTargetConstant geo_target_constant_parents = 5;</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\GeoTargetConstant[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\GeoTargetConstant>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGeoTargetConstantParents($var)

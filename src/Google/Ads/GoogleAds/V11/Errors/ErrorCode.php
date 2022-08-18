@@ -301,6 +301,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the audience error
      *     @type int $experiment_arm_error
      *           The reasons for the experiment arm error
+     *     @type int $audience_insights_error
+     *           The reasons for the Audience Insights error
      * }
      */
     public function __construct($data = NULL) {
@@ -4613,6 +4615,37 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V11\Errors\ExperimentArmErrorEnum\ExperimentArmError::class);
         $this->writeOneof(156, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the Audience Insights error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.errors.AudienceInsightsErrorEnum.AudienceInsightsError audience_insights_error = 167;</code>
+     * @return int
+     */
+    public function getAudienceInsightsError()
+    {
+        return $this->readOneof(167);
+    }
+
+    public function hasAudienceInsightsError()
+    {
+        return $this->hasOneof(167);
+    }
+
+    /**
+     * The reasons for the Audience Insights error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.errors.AudienceInsightsErrorEnum.AudienceInsightsError audience_insights_error = 167;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAudienceInsightsError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V11\Errors\AudienceInsightsErrorEnum\AudienceInsightsError::class);
+        $this->writeOneof(167, $var);
 
         return $this;
     }

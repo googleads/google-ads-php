@@ -48,7 +48,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\GoogleAdsRow[]|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\GoogleAdsRow>|\Google\Protobuf\Internal\RepeatedField $results
      *           The list of rows that matched the query.
      *     @type \Google\Protobuf\FieldMask $field_mask
      *           FieldMask that represents what fields were requested by the user.
@@ -80,7 +80,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      * The list of rows that matched the query.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.GoogleAdsRow results = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\GoogleAdsRow[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\GoogleAdsRow>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setResults($var)

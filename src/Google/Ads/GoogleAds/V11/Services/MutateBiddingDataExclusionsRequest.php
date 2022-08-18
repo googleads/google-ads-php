@@ -60,7 +60,7 @@ class MutateBiddingDataExclusionsRequest extends \Google\Protobuf\Internal\Messa
      *
      *     @type string $customer_id
      *           Required. ID of the customer whose data exclusions are being modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\BiddingDataExclusionOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\BiddingDataExclusionOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to perform on individual data exclusions.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -121,7 +121,7 @@ class MutateBiddingDataExclusionsRequest extends \Google\Protobuf\Internal\Messa
      * Required. The list of operations to perform on individual data exclusions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.BiddingDataExclusionOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\BiddingDataExclusionOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\BiddingDataExclusionOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

@@ -30,46 +30,47 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
      */
     protected $location_id = '';
     /**
-     * Required. Program name, e.g. Nursing. Required.
+     * Required. Program name, for example, Nursing. Required.
      *
      * Generated from protobuf field <code>string program_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $program_name = '';
     /**
-     * Subject of study, e.g. Health.
+     * Subject of study, for example, Health.
      *
      * Generated from protobuf field <code>string subject = 4;</code>
      */
     protected $subject = '';
     /**
-     * Program description, e.g. Nursing Certification.
+     * Program description, for example, Nursing Certification.
      *
      * Generated from protobuf field <code>string program_description = 5;</code>
      */
     protected $program_description = '';
     /**
-     * School name, e.g. Mountain View School of Nursing.
+     * School name, for example, Mountain View School of Nursing.
      *
      * Generated from protobuf field <code>string school_name = 6;</code>
      */
     protected $school_name = '';
     /**
      * School address which can be specified in one of the following formats.
-     * (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     * (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     * (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403
+     * (1) City, state, code, country, for example, Mountain View, CA, USA.
+     * (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     * (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403
      *
      * Generated from protobuf field <code>string address = 7;</code>
      */
     protected $address = '';
     /**
-     * Contextual keywords, e.g. Nursing certification, Health, Mountain View.
+     * Contextual keywords, for example, Nursing certification, Health, Mountain
+     * View.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 8;</code>
      */
     private $contextual_keywords;
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 9;</code>
@@ -82,7 +83,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
      */
     private $similar_program_ids;
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 11;</code>
      */
@@ -96,15 +97,15 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
      */
     protected $ios_app_store_id = 0;
     /**
-     * Thumbnail image url, e.g. http://www.example.com/thumbnail.png. The
+     * Thumbnail image url, for example, http://www.example.com/thumbnail.png. The
      * thumbnail image will not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string thumbnail_image_url = 13;</code>
      */
     protected $thumbnail_image_url = '';
     /**
-     * Image url, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image url, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 14;</code>
      */
@@ -123,37 +124,38 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
      *           Location ID which can be any sequence of letters and digits and must be
      *           unique.
      *     @type string $program_name
-     *           Required. Program name, e.g. Nursing. Required.
+     *           Required. Program name, for example, Nursing. Required.
      *     @type string $subject
-     *           Subject of study, e.g. Health.
+     *           Subject of study, for example, Health.
      *     @type string $program_description
-     *           Program description, e.g. Nursing Certification.
+     *           Program description, for example, Nursing Certification.
      *     @type string $school_name
-     *           School name, e.g. Mountain View School of Nursing.
+     *           School name, for example, Mountain View School of Nursing.
      *     @type string $address
      *           School address which can be specified in one of the following formats.
-     *           (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     *           (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     *           (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
-     *           Contextual keywords, e.g. Nursing certification, Health, Mountain View.
+     *           (1) City, state, code, country, for example, Mountain View, CA, USA.
+     *           (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     *           (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
+     *           Contextual keywords, for example, Nursing certification, Health, Mountain
+     *           View.
      *     @type string $android_app_link
-     *           Android deep link, e.g.
+     *           Android deep link, for example,
      *           android-app://com.example.android/http/example.com/gizmos?1234.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $similar_program_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_program_ids
      *           Similar program IDs.
      *     @type string $ios_app_link
-     *           iOS deep link, e.g. exampleApp://content/page.
+     *           iOS deep link, for example, exampleApp://content/page.
      *     @type int|string $ios_app_store_id
      *           iOS app store ID. This is used to check if the user has the app installed
      *           on their device before deep linking. If this field is set, then the
      *           ios_app_link field must also be present.
      *     @type string $thumbnail_image_url
-     *           Thumbnail image url, e.g. http://www.example.com/thumbnail.png. The
+     *           Thumbnail image url, for example, http://www.example.com/thumbnail.png. The
      *           thumbnail image will not be uploaded as image asset.
      *     @type string $image_url
-     *           Image url, e.g. http://www.example.com/image.png. The image will not be
-     *           uploaded as image asset.
+     *           Image url, for example, http://www.example.com/image.png. The image will
+     *           not be uploaded as image asset.
      * }
      */
     public function __construct($data = NULL) {
@@ -218,7 +220,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Program name, e.g. Nursing. Required.
+     * Required. Program name, for example, Nursing. Required.
      *
      * Generated from protobuf field <code>string program_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -229,7 +231,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Program name, e.g. Nursing. Required.
+     * Required. Program name, for example, Nursing. Required.
      *
      * Generated from protobuf field <code>string program_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -244,7 +246,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Subject of study, e.g. Health.
+     * Subject of study, for example, Health.
      *
      * Generated from protobuf field <code>string subject = 4;</code>
      * @return string
@@ -255,7 +257,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Subject of study, e.g. Health.
+     * Subject of study, for example, Health.
      *
      * Generated from protobuf field <code>string subject = 4;</code>
      * @param string $var
@@ -270,7 +272,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Program description, e.g. Nursing Certification.
+     * Program description, for example, Nursing Certification.
      *
      * Generated from protobuf field <code>string program_description = 5;</code>
      * @return string
@@ -281,7 +283,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Program description, e.g. Nursing Certification.
+     * Program description, for example, Nursing Certification.
      *
      * Generated from protobuf field <code>string program_description = 5;</code>
      * @param string $var
@@ -296,7 +298,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * School name, e.g. Mountain View School of Nursing.
+     * School name, for example, Mountain View School of Nursing.
      *
      * Generated from protobuf field <code>string school_name = 6;</code>
      * @return string
@@ -307,7 +309,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * School name, e.g. Mountain View School of Nursing.
+     * School name, for example, Mountain View School of Nursing.
      *
      * Generated from protobuf field <code>string school_name = 6;</code>
      * @param string $var
@@ -323,9 +325,9 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * School address which can be specified in one of the following formats.
-     * (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     * (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     * (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403
+     * (1) City, state, code, country, for example, Mountain View, CA, USA.
+     * (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     * (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403
      *
      * Generated from protobuf field <code>string address = 7;</code>
      * @return string
@@ -337,9 +339,9 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * School address which can be specified in one of the following formats.
-     * (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     * (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     * (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403
+     * (1) City, state, code, country, for example, Mountain View, CA, USA.
+     * (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     * (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403
      *
      * Generated from protobuf field <code>string address = 7;</code>
      * @param string $var
@@ -354,7 +356,8 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Contextual keywords, e.g. Nursing certification, Health, Mountain View.
+     * Contextual keywords, for example, Nursing certification, Health, Mountain
+     * View.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 8;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -365,10 +368,11 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Contextual keywords, e.g. Nursing certification, Health, Mountain View.
+     * Contextual keywords, for example, Nursing certification, Health, Mountain
+     * View.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 8;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setContextualKeywords($var)
@@ -380,7 +384,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 9;</code>
@@ -392,7 +396,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 9;</code>
@@ -422,7 +426,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
      * Similar program IDs.
      *
      * Generated from protobuf field <code>repeated string similar_program_ids = 10;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSimilarProgramIds($var)
@@ -434,7 +438,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 11;</code>
      * @return string
@@ -445,7 +449,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 11;</code>
      * @param string $var
@@ -490,7 +494,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Thumbnail image url, e.g. http://www.example.com/thumbnail.png. The
+     * Thumbnail image url, for example, http://www.example.com/thumbnail.png. The
      * thumbnail image will not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string thumbnail_image_url = 13;</code>
@@ -502,7 +506,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Thumbnail image url, e.g. http://www.example.com/thumbnail.png. The
+     * Thumbnail image url, for example, http://www.example.com/thumbnail.png. The
      * thumbnail image will not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string thumbnail_image_url = 13;</code>
@@ -518,8 +522,8 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Image url, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image url, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 14;</code>
      * @return string
@@ -530,8 +534,8 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Image url, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image url, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 14;</code>
      * @param string $var

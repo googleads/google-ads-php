@@ -37,7 +37,7 @@ class UserListLogicalRuleInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type int $operator
      *           The logical operator of the rule.
-     *     @type \Google\Ads\GoogleAds\V11\Common\LogicalUserListOperandInfo[]|\Google\Protobuf\Internal\RepeatedField $rule_operands
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\LogicalUserListOperandInfo>|\Google\Protobuf\Internal\RepeatedField $rule_operands
      *           The list of operands of the rule.
      * }
      */
@@ -87,7 +87,7 @@ class UserListLogicalRuleInfo extends \Google\Protobuf\Internal\Message
      * The list of operands of the rule.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.LogicalUserListOperandInfo rule_operands = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\LogicalUserListOperandInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\LogicalUserListOperandInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRuleOperands($var)

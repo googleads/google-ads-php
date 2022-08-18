@@ -49,9 +49,9 @@ class AppCampaignBiddingStrategyGoalType
      */
     const OPTIMIZE_IN_APP_CONVERSIONS_TARGET_CONVERSION_COST = 4;
     /**
-     * Aim to maximize all conversions' value, i.e. install + selected in-app
-     * conversions while achieving or exceeding target return on advertising
-     * spend.
+     * Aim to maximize all conversions' value, for example, install + selected
+     * in-app conversions while achieving or exceeding target return on
+     * advertising spend.
      *
      * Generated from protobuf enum <code>OPTIMIZE_RETURN_ON_ADVERTISING_SPEND = 5;</code>
      */

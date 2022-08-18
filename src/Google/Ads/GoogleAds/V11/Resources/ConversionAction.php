@@ -64,8 +64,8 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * primary_for_goal = false conversion action, that conversion action is
      * still biddable.
      * By default, primary_for_goal will be true if not set. In V9,
-     * primary_for_goal can only be set to false after creation via an 'update'
-     * operation because it's not declared as optional.
+     * primary_for_goal can only be set to false after creation through an
+     * 'update' operation because it's not declared as optional.
      *
      * Generated from protobuf field <code>optional bool primary_for_goal = 31;</code>
      */
@@ -92,7 +92,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     protected $include_in_conversions_metric = null;
     /**
      * The maximum number of days that may elapse between an interaction
-     * (e.g., a click) and a conversion event.
+     * (for example, a click) and a conversion event.
      *
      * Generated from protobuf field <code>optional int64 click_through_lookback_window_days = 25;</code>
      */
@@ -193,8 +193,8 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      *           primary_for_goal = false conversion action, that conversion action is
      *           still biddable.
      *           By default, primary_for_goal will be true if not set. In V9,
-     *           primary_for_goal can only be set to false after creation via an 'update'
-     *           operation because it's not declared as optional.
+     *           primary_for_goal can only be set to false after creation through an
+     *           'update' operation because it's not declared as optional.
      *     @type int $category
      *           The category of conversions reported for this conversion action.
      *     @type string $owner_customer
@@ -205,7 +205,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      *           metric.
      *     @type int|string $click_through_lookback_window_days
      *           The maximum number of days that may elapse between an interaction
-     *           (e.g., a click) and a conversion event.
+     *           (for example, a click) and a conversion event.
      *     @type int|string $view_through_lookback_window_days
      *           The maximum number of days which may elapse between an impression and a
      *           conversion without an interaction.
@@ -216,7 +216,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      *           How to count conversion events for the conversion action.
      *     @type \Google\Ads\GoogleAds\V11\Resources\ConversionAction\AttributionModelSettings $attribution_model_settings
      *           Settings related to this conversion action's attribution model.
-     *     @type \Google\Ads\GoogleAds\V11\Common\TagSnippet[]|\Google\Protobuf\Internal\RepeatedField $tag_snippets
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\TagSnippet>|\Google\Protobuf\Internal\RepeatedField $tag_snippets
      *           Output only. The snippets used for tracking conversions.
      *     @type int|string $phone_call_duration_seconds
      *           The phone call duration in seconds after which a conversion should be
@@ -430,8 +430,8 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * primary_for_goal = false conversion action, that conversion action is
      * still biddable.
      * By default, primary_for_goal will be true if not set. In V9,
-     * primary_for_goal can only be set to false after creation via an 'update'
-     * operation because it's not declared as optional.
+     * primary_for_goal can only be set to false after creation through an
+     * 'update' operation because it's not declared as optional.
      *
      * Generated from protobuf field <code>optional bool primary_for_goal = 31;</code>
      * @return bool
@@ -460,8 +460,8 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * primary_for_goal = false conversion action, that conversion action is
      * still biddable.
      * By default, primary_for_goal will be true if not set. In V9,
-     * primary_for_goal can only be set to false after creation via an 'update'
-     * operation because it's not declared as optional.
+     * primary_for_goal can only be set to false after creation through an
+     * 'update' operation because it's not declared as optional.
      *
      * Generated from protobuf field <code>optional bool primary_for_goal = 31;</code>
      * @param bool $var
@@ -579,7 +579,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
 
     /**
      * The maximum number of days that may elapse between an interaction
-     * (e.g., a click) and a conversion event.
+     * (for example, a click) and a conversion event.
      *
      * Generated from protobuf field <code>optional int64 click_through_lookback_window_days = 25;</code>
      * @return int|string
@@ -601,7 +601,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
 
     /**
      * The maximum number of days that may elapse between an interaction
-     * (e.g., a click) and a conversion event.
+     * (for example, a click) and a conversion event.
      *
      * Generated from protobuf field <code>optional int64 click_through_lookback_window_days = 25;</code>
      * @param int|string $var
@@ -768,7 +768,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. The snippets used for tracking conversions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.TagSnippet tag_snippets = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\TagSnippet[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\TagSnippet>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTagSnippets($var)

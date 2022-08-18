@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Container for enumeration of days of the week, e.g., "Monday".
+ * Container for enumeration of days of the week, for example, "Monday".
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.enums.DayOfWeekEnum</code>
  */

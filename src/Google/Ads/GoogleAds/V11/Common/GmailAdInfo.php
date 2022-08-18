@@ -93,9 +93,9 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      *           Description of the marketing image.
      *     @type \Google\Ads\GoogleAds\V11\Common\DisplayCallToAction $marketing_image_display_call_to_action
      *           Display-call-to-action of the marketing image.
-     *     @type \Google\Ads\GoogleAds\V11\Common\ProductImage[]|\Google\Protobuf\Internal\RepeatedField $product_images
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\ProductImage>|\Google\Protobuf\Internal\RepeatedField $product_images
      *           Product images. Up to 15 images are supported.
-     *     @type \Google\Ads\GoogleAds\V11\Common\ProductVideo[]|\Google\Protobuf\Internal\RepeatedField $product_videos
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\ProductVideo>|\Google\Protobuf\Internal\RepeatedField $product_videos
      *           Product videos. Up to 7 videos are supported. At least one product video
      *           or a marketing image must be specified.
      * }
@@ -346,7 +346,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * Product images. Up to 15 images are supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.ProductImage product_images = 7;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\ProductImage[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\ProductImage>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProductImages($var)
@@ -374,7 +374,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * or a marketing image must be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.ProductVideo product_videos = 8;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\ProductVideo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\ProductVideo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProductVideos($var)

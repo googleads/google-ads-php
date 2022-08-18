@@ -36,7 +36,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
      *
      *     @type string $url
      *           The URL to crawl in order to generate keyword ideas.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $keywords
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keywords
      *           Requires at least one keyword.
      * }
      */
@@ -96,7 +96,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
      * Requires at least one keyword.
      *
      * Generated from protobuf field <code>repeated string keywords = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setKeywords($var)

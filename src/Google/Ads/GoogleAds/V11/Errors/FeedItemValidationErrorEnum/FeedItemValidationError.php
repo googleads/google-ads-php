@@ -292,8 +292,8 @@ class FeedItemValidationError
      * Advertisers can link a conversion action with a phone number to indicate
      * that sufficiently long calls forwarded to that phone number should be
      * counted as conversions of the specified type.  This is an error message
-     * indicating that the conversion action specified is invalid (e.g., the
-     * conversion action does not exist within the appropriate Google Ads
+     * indicating that the conversion action specified is invalid (for example,
+     * the conversion action does not exist within the appropriate Google Ads
      * account, or it is a type of conversion not appropriate to phone call
      * conversions).
      *
@@ -533,7 +533,7 @@ class FeedItemValidationError
     const INVALID_FINAL_URL_SUFFIX_FORMAT = 83;
     /**
      * Consent for call recording, which is required for the use of call
-     * extensions, was not provided by the advertiser. Please see
+     * extensions, was not provided by the advertiser. See
      * https://support.google.com/google-ads/answer/7412639.
      *
      * Generated from protobuf enum <code>CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED = 84;</code>

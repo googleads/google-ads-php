@@ -87,15 +87,15 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
      *     @type int $approval_status
      *           Output only. The overall approval status of the placeholder type, calculated based on
      *           the status of its individual policy topic entries.
-     *     @type \Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry[]|\Google\Protobuf\Internal\RepeatedField $policy_topic_entries
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry>|\Google\Protobuf\Internal\RepeatedField $policy_topic_entries
      *           Output only. The list of policy findings for the placeholder type.
      *     @type int $validation_status
      *           Output only. The validation status of the palceholder type.
-     *     @type \Google\Ads\GoogleAds\V11\Resources\FeedItemValidationError[]|\Google\Protobuf\Internal\RepeatedField $validation_errors
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\FeedItemValidationError>|\Google\Protobuf\Internal\RepeatedField $validation_errors
      *           Output only. List of placeholder type validation errors.
      *     @type int $quality_approval_status
      *           Output only. Placeholder type quality evaluation approval status.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $quality_disapproval_reasons
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $quality_disapproval_reasons
      *           Output only. List of placeholder type quality evaluation disapproval reasons.
      * }
      */
@@ -235,7 +235,7 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
      * Output only. The list of policy findings for the placeholder type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PolicyTopicEntry policy_topic_entries = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPolicyTopicEntries($var)
@@ -287,7 +287,7 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
      * Output only. List of placeholder type validation errors.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.FeedItemValidationError validation_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\FeedItemValidationError[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\FeedItemValidationError>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setValidationErrors($var)
@@ -339,7 +339,7 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
      * Output only. List of placeholder type quality evaluation disapproval reasons.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.FeedItemQualityDisapprovalReasonEnum.FeedItemQualityDisapprovalReason quality_disapproval_reasons = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setQualityDisapprovalReasons($var)

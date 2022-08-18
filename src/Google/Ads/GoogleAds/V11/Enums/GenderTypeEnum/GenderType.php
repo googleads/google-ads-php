@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V11\Enums\GenderTypeEnum;
 use UnexpectedValueException;
 
 /**
- * The type of demographic genders (e.g. female).
+ * The type of demographic genders (for example, female).
  *
  * Protobuf type <code>google.ads.googleads.v11.enums.GenderTypeEnum.GenderType</code>
  */

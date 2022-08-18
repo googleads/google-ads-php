@@ -47,7 +47,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the conversion occurred. Must be after
      * the click time. The timezone must be specified. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 11;</code>
      */
@@ -101,7 +101,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      */
     private $user_identifiers;
     /**
-     * The environment this conversion was recorded on. e.g. App or Web.
+     * The environment this conversion was recorded on, for example, App or Web.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.ConversionEnvironmentEnum.ConversionEnvironment conversion_environment = 20;</code>
      */
@@ -129,7 +129,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      *     @type string $conversion_date_time
      *           The date time at which the conversion occurred. Must be after
      *           the click time. The timezone must be specified. The format is
-     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *     @type float $conversion_value
      *           The value of the conversion for the advertiser.
      *     @type string $currency_code
@@ -142,16 +142,16 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      *           Additional data about externally attributed conversions. This field
      *           is required for conversions with an externally attributed conversion
      *           action, but should not be set otherwise.
-     *     @type \Google\Ads\GoogleAds\V11\Services\CustomVariable[]|\Google\Protobuf\Internal\RepeatedField $custom_variables
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\CustomVariable>|\Google\Protobuf\Internal\RepeatedField $custom_variables
      *           The custom variables associated with this conversion.
      *     @type \Google\Ads\GoogleAds\V11\Services\CartData $cart_data
      *           The cart data associated with this conversion.
-     *     @type \Google\Ads\GoogleAds\V11\Common\UserIdentifier[]|\Google\Protobuf\Internal\RepeatedField $user_identifiers
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $user_identifiers
      *           The user identifiers associated with this conversion. Only hashed_email and
      *           hashed_phone_number are supported for conversion uploads. The maximum
      *           number of user identifiers for each conversion is 5.
      *     @type int $conversion_environment
-     *           The environment this conversion was recorded on. e.g. App or Web.
+     *           The environment this conversion was recorded on, for example, App or Web.
      * }
      */
     public function __construct($data = NULL) {
@@ -296,7 +296,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the conversion occurred. Must be after
      * the click time. The timezone must be specified. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 11;</code>
      * @return string
@@ -319,7 +319,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the conversion occurred. Must be after
      * the click time. The timezone must be specified. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 11;</code>
      * @param string $var
@@ -500,7 +500,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * The custom variables associated with this conversion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.CustomVariable custom_variables = 15;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\CustomVariable[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\CustomVariable>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCustomVariables($var)
@@ -566,7 +566,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * number of user identifiers for each conversion is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.UserIdentifier user_identifiers = 17;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\UserIdentifier[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUserIdentifiers($var)
@@ -578,7 +578,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The environment this conversion was recorded on. e.g. App or Web.
+     * The environment this conversion was recorded on, for example, App or Web.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.ConversionEnvironmentEnum.ConversionEnvironment conversion_environment = 20;</code>
      * @return int
@@ -589,7 +589,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The environment this conversion was recorded on. e.g. App or Web.
+     * The environment this conversion was recorded on, for example, App or Web.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.ConversionEnvironmentEnum.ConversionEnvironment conversion_environment = 20;</code>
      * @param int $var

@@ -110,14 +110,14 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      *           The occasion the promotion was intended for.
      *           If an occasion is set, the redemption window will need to fall within
      *           the date range associated with the occasion.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_urls
      *           A list of possible final URLs after all cross domain redirects.
      *           This field is required.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
      *           A list of possible final mobile URLs after all cross domain redirects.
      *     @type string $tracking_url_template
      *           URL template for constructing a tracking URL.
-     *     @type \Google\Ads\GoogleAds\V11\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
      *           A list of mappings to be used for substituting URL custom parameter tags in
      *           the tracking_url_template, final_urls, and/or final_mobile_urls.
      *     @type string $final_url_suffix
@@ -328,7 +328,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * This field is required.
      *
      * Generated from protobuf field <code>repeated string final_urls = 21;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFinalUrls($var)
@@ -354,7 +354,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * A list of possible final mobile URLs after all cross domain redirects.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 22;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFinalMobileUrls($var)
@@ -418,7 +418,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * the tracking_url_template, final_urls, and/or final_mobile_urls.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.CustomParameter url_custom_parameters = 13;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUrlCustomParameters($var)

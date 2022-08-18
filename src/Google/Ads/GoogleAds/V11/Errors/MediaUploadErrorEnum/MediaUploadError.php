@@ -169,7 +169,7 @@ class MediaUploadError
     const MEDIA_BUNDLE_NOT_ALLOWED = 24;
     /**
      * The media bundle is not compatible with the asset spec product type.
-     * (E.g. Gmail, dynamic remarketing, etc.)
+     * (For example, Gmail, dynamic remarketing, etc.)
      *
      * Generated from protobuf enum <code>MEDIA_BUNDLE_NOT_COMPATIBLE_TO_PRODUCT_TYPE = 25;</code>
      */

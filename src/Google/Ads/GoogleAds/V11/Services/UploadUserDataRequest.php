@@ -37,7 +37,7 @@ class UploadUserDataRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer for which to update the user data.
-     *     @type \Google\Ads\GoogleAds\V11\Services\UserDataOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\UserDataOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to be done.
      *     @type \Google\Ads\GoogleAds\V11\Common\CustomerMatchUserListMetadata $customer_match_user_list_metadata
      *           Metadata for data updates to a Customer Match user list.
@@ -89,7 +89,7 @@ class UploadUserDataRequest extends \Google\Protobuf\Internal\Message
      * Required. The list of operations to be done.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.UserDataOperation operations = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\UserDataOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\UserDataOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

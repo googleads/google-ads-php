@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Metadata for a third party Store Sales.
- * This product is only for customers on the allow-list. Please contact your
+ * This product is only for customers on the allow-list. Contact your
  * Google business development representative for details on the upload
  * configuration.
  *

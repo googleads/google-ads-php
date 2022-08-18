@@ -66,9 +66,9 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      *           Price value of this offer.
      *     @type int $unit
      *           Price unit for this offer.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_urls
      *           A list of possible final URLs after all cross domain redirects.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
      *           A list of possible final mobile URLs after all cross domain redirects.
      * }
      */
@@ -226,7 +226,7 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      * A list of possible final URLs after all cross domain redirects.
      *
      * Generated from protobuf field <code>repeated string final_urls = 9;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFinalUrls($var)
@@ -252,7 +252,7 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      * A list of possible final mobile URLs after all cross domain redirects.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 10;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFinalMobileUrls($var)

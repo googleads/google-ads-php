@@ -51,6 +51,7 @@ class AudienceInsightsAttributeMetadata extends \Google\Protobuf\Internal\Messag
      * Generated from protobuf field <code>string display_info = 5;</code>
      */
     protected $display_info = '';
+    protected $dimension_metadata;
 
     /**
      * Constructor.
@@ -73,6 +74,10 @@ class AudienceInsightsAttributeMetadata extends \Google\Protobuf\Internal\Messag
      *           If the dimension is CATEGORY, this is the complete path to the category in
      *           The Product & Service taxonomy, for example
      *           "/Apparel/Clothing/Outerwear".
+     *     @type \Google\Ads\GoogleAds\V11\Services\YouTubeChannelAttributeMetadata $youtube_channel_metadata
+     *           Special metadata for a YouTube channel.
+     *     @type \Google\Ads\GoogleAds\V11\Services\DynamicLineupAttributeMetadata $dynamic_attribute_metadata
+     *           Special metadata for a YouTube Dynamic Lineup.
      * }
      */
     public function __construct($data = NULL) {
@@ -228,6 +233,76 @@ class AudienceInsightsAttributeMetadata extends \Google\Protobuf\Internal\Messag
         $this->display_info = $var;
 
         return $this;
+    }
+
+    /**
+     * Special metadata for a YouTube channel.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.YouTubeChannelAttributeMetadata youtube_channel_metadata = 6;</code>
+     * @return \Google\Ads\GoogleAds\V11\Services\YouTubeChannelAttributeMetadata|null
+     */
+    public function getYoutubeChannelMetadata()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasYoutubeChannelMetadata()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * Special metadata for a YouTube channel.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.YouTubeChannelAttributeMetadata youtube_channel_metadata = 6;</code>
+     * @param \Google\Ads\GoogleAds\V11\Services\YouTubeChannelAttributeMetadata $var
+     * @return $this
+     */
+    public function setYoutubeChannelMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Services\YouTubeChannelAttributeMetadata::class);
+        $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Special metadata for a YouTube Dynamic Lineup.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.DynamicLineupAttributeMetadata dynamic_attribute_metadata = 7;</code>
+     * @return \Google\Ads\GoogleAds\V11\Services\DynamicLineupAttributeMetadata|null
+     */
+    public function getDynamicAttributeMetadata()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasDynamicAttributeMetadata()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Special metadata for a YouTube Dynamic Lineup.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.DynamicLineupAttributeMetadata dynamic_attribute_metadata = 7;</code>
+     * @param \Google\Ads\GoogleAds\V11\Services\DynamicLineupAttributeMetadata $var
+     * @return $this
+     */
+    public function setDynamicAttributeMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Services\DynamicLineupAttributeMetadata::class);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDimensionMetadata()
+    {
+        return $this->whichOneof("dimension_metadata");
     }
 
 }

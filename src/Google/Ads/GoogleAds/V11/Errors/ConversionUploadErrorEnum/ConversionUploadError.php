@@ -54,7 +54,7 @@ class ConversionUploadError
     const EXPIRED_EVENT = 43;
     /**
      * The click associated with the given identifier or iOS URL parameter
-     * occurred too recently. Please try uploading again after 6 hours have
+     * occurred too recently. Try uploading again after 6 hours have
      * passed since the click occurred.
      *
      * Generated from protobuf enum <code>TOO_RECENT_EVENT = 44;</code>
@@ -84,7 +84,7 @@ class ConversionUploadError
     const INVALID_CONVERSION_ACTION = 9;
     /**
      * The specified conversion action was created too recently.
-     * Please try the upload again after 4-6 hours have passed since the
+     * Try the upload again after 4-6 hours have passed since the
      * conversion action was created.
      *
      * Generated from protobuf enum <code>TOO_RECENT_CONVERSION_ACTION = 10;</code>
@@ -135,7 +135,7 @@ class ConversionUploadError
      */
     const DUPLICATE_ORDER_ID = 16;
     /**
-     * The call occurred too recently. Please try uploading again after 12 hours
+     * The call occurred too recently. Try uploading again after 12 hours
      * have passed since the call occurred.
      *
      * Generated from protobuf enum <code>TOO_RECENT_CALL = 17;</code>
@@ -177,21 +177,21 @@ class ConversionUploadError
     const UNPARSEABLE_CALLERS_PHONE_NUMBER = 22;
     /**
      * A conversion with this timestamp already exists for this click. To upload
-     * another conversion, please use a different timestamp.
+     * another conversion, use a different timestamp.
      *
      * Generated from protobuf enum <code>CLICK_CONVERSION_ALREADY_EXISTS = 23;</code>
      */
     const CLICK_CONVERSION_ALREADY_EXISTS = 23;
     /**
      * A conversion with this timestamp already exists for this call. To upload
-     * another conversion, please use a different timestamp.
+     * another conversion, use a different timestamp.
      *
      * Generated from protobuf enum <code>CALL_CONVERSION_ALREADY_EXISTS = 24;</code>
      */
     const CALL_CONVERSION_ALREADY_EXISTS = 24;
     /**
      * This conversion has the same click and timestamp as another conversion in
-     * the request. To upload another conversion for this click, please use a
+     * the request. To upload another conversion for this click, use a
      * different timestamp.
      *
      * Generated from protobuf enum <code>DUPLICATE_CLICK_CONVERSION_IN_REQUEST = 25;</code>
@@ -199,7 +199,7 @@ class ConversionUploadError
     const DUPLICATE_CLICK_CONVERSION_IN_REQUEST = 25;
     /**
      * This conversion has the same call and timestamp as another conversion in
-     * the request. To upload another conversion for this call, please use a
+     * the request. To upload another conversion for this call, use a
      * different timestamp.
      *
      * Generated from protobuf enum <code>DUPLICATE_CALL_CONVERSION_IN_REQUEST = 26;</code>
@@ -295,7 +295,7 @@ class ConversionUploadError
     const ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID = 46;
     /**
      * Per our customer data policies, enhanced conversions have been prohibited
-     * in your account. If you have any questions, please contact your Google
+     * in your account. If you have any questions, contact your Google
      * representative.
      *
      * Generated from protobuf enum <code>CUSTOMER_DATA_POLICY_PROHIBITS_ENHANCED_CONVERSIONS = 47;</code>

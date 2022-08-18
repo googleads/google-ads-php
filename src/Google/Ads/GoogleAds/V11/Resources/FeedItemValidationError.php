@@ -32,15 +32,16 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Set of feed attributes in the feed item flagged during validation. If
      * empty, no specific feed attributes can be associated with the error
-     * (e.g. error across the entire feed item).
+     * (for example, error across the entire feed item).
      *
      * Generated from protobuf field <code>repeated int64 feed_attribute_ids = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $feed_attribute_ids;
     /**
      * Output only. Any extra information related to this error which is not captured by
-     * validation_error and feed_attribute_id (e.g. placeholder field IDs when
-     * feed_attribute_id is not mapped). Note that extra_info is not localized.
+     * validation_error and feed_attribute_id (for example, placeholder field IDs
+     * when feed_attribute_id is not mapped). Note that extra_info is not
+     * localized.
      *
      * Generated from protobuf field <code>optional string extra_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -57,14 +58,15 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      *           of the error can be found in the 'description' field.
      *     @type string $description
      *           Output only. The description of the validation error.
-     *     @type int[]|string[]|\Google\Protobuf\Internal\RepeatedField $feed_attribute_ids
+     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $feed_attribute_ids
      *           Output only. Set of feed attributes in the feed item flagged during validation. If
      *           empty, no specific feed attributes can be associated with the error
-     *           (e.g. error across the entire feed item).
+     *           (for example, error across the entire feed item).
      *     @type string $extra_info
      *           Output only. Any extra information related to this error which is not captured by
-     *           validation_error and feed_attribute_id (e.g. placeholder field IDs when
-     *           feed_attribute_id is not mapped). Note that extra_info is not localized.
+     *           validation_error and feed_attribute_id (for example, placeholder field IDs
+     *           when feed_attribute_id is not mapped). Note that extra_info is not
+     *           localized.
      * }
      */
     public function __construct($data = NULL) {
@@ -139,7 +141,7 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Set of feed attributes in the feed item flagged during validation. If
      * empty, no specific feed attributes can be associated with the error
-     * (e.g. error across the entire feed item).
+     * (for example, error across the entire feed item).
      *
      * Generated from protobuf field <code>repeated int64 feed_attribute_ids = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -152,10 +154,10 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Set of feed attributes in the feed item flagged during validation. If
      * empty, no specific feed attributes can be associated with the error
-     * (e.g. error across the entire feed item).
+     * (for example, error across the entire feed item).
      *
      * Generated from protobuf field <code>repeated int64 feed_attribute_ids = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param int[]|string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFeedAttributeIds($var)
@@ -168,8 +170,9 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Any extra information related to this error which is not captured by
-     * validation_error and feed_attribute_id (e.g. placeholder field IDs when
-     * feed_attribute_id is not mapped). Note that extra_info is not localized.
+     * validation_error and feed_attribute_id (for example, placeholder field IDs
+     * when feed_attribute_id is not mapped). Note that extra_info is not
+     * localized.
      *
      * Generated from protobuf field <code>optional string extra_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -191,8 +194,9 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Any extra information related to this error which is not captured by
-     * validation_error and feed_attribute_id (e.g. placeholder field IDs when
-     * feed_attribute_id is not mapped). Note that extra_info is not localized.
+     * validation_error and feed_attribute_id (for example, placeholder field IDs
+     * when feed_attribute_id is not mapped). Note that extra_info is not
+     * localized.
      *
      * Generated from protobuf field <code>optional string extra_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
