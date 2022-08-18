@@ -28,7 +28,7 @@ class UserListRuleItemGroupInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\UserListRuleItemInfo[]|\Google\Protobuf\Internal\RepeatedField $rule_items
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\UserListRuleItemInfo>|\Google\Protobuf\Internal\RepeatedField $rule_items
      *           Rule items that will be grouped together based on rule_type.
      * }
      */
@@ -52,7 +52,7 @@ class UserListRuleItemGroupInfo extends \Google\Protobuf\Internal\Message
      * Rule items that will be grouped together based on rule_type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.UserListRuleItemInfo rule_items = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\UserListRuleItemInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\UserListRuleItemInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRuleItems($var)

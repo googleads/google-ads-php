@@ -38,21 +38,22 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      */
     protected $display_name = null;
     /**
-     * Output only. URL of the group placement, e.g. domain, link to the mobile application in
-     * app store, or a YouTube channel URL.
+     * Output only. URL of the group placement, for example, domain, link to the mobile
+     * application in app store, or a YouTube channel URL.
      *
      * Generated from protobuf field <code>optional string group_placement_target_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $group_placement_target_url = null;
     /**
-     * Output only. URL of the placement, e.g. website, link to the mobile application in app
-     * store, or a YouTube video URL.
+     * Output only. URL of the placement, for example, website, link to the mobile application
+     * in app store, or a YouTube video URL.
      *
      * Generated from protobuf field <code>optional string target_url = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $target_url = null;
     /**
-     * Output only. Type of the placement, e.g. Website, YouTube Video, and Mobile Application.
+     * Output only. Type of the placement, for example, Website, YouTube Video, and Mobile
+     * Application.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.PlacementTypeEnum.PlacementType placement_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -75,13 +76,14 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      *           Output only. The display name is URL name for websites, YouTube video name for YouTube
      *           videos, and translated mobile app name for mobile apps.
      *     @type string $group_placement_target_url
-     *           Output only. URL of the group placement, e.g. domain, link to the mobile application in
-     *           app store, or a YouTube channel URL.
+     *           Output only. URL of the group placement, for example, domain, link to the mobile
+     *           application in app store, or a YouTube channel URL.
      *     @type string $target_url
-     *           Output only. URL of the placement, e.g. website, link to the mobile application in app
-     *           store, or a YouTube video URL.
+     *           Output only. URL of the placement, for example, website, link to the mobile application
+     *           in app store, or a YouTube video URL.
      *     @type int $placement_type
-     *           Output only. Type of the placement, e.g. Website, YouTube Video, and Mobile Application.
+     *           Output only. Type of the placement, for example, Website, YouTube Video, and Mobile
+     *           Application.
      * }
      */
     public function __construct($data = NULL) {
@@ -196,8 +198,8 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. URL of the group placement, e.g. domain, link to the mobile application in
-     * app store, or a YouTube channel URL.
+     * Output only. URL of the group placement, for example, domain, link to the mobile
+     * application in app store, or a YouTube channel URL.
      *
      * Generated from protobuf field <code>optional string group_placement_target_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -218,8 +220,8 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. URL of the group placement, e.g. domain, link to the mobile application in
-     * app store, or a YouTube channel URL.
+     * Output only. URL of the group placement, for example, domain, link to the mobile
+     * application in app store, or a YouTube channel URL.
      *
      * Generated from protobuf field <code>optional string group_placement_target_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -234,8 +236,8 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. URL of the placement, e.g. website, link to the mobile application in app
-     * store, or a YouTube video URL.
+     * Output only. URL of the placement, for example, website, link to the mobile application
+     * in app store, or a YouTube video URL.
      *
      * Generated from protobuf field <code>optional string target_url = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -256,8 +258,8 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. URL of the placement, e.g. website, link to the mobile application in app
-     * store, or a YouTube video URL.
+     * Output only. URL of the placement, for example, website, link to the mobile application
+     * in app store, or a YouTube video URL.
      *
      * Generated from protobuf field <code>optional string target_url = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -272,7 +274,8 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Type of the placement, e.g. Website, YouTube Video, and Mobile Application.
+     * Output only. Type of the placement, for example, Website, YouTube Video, and Mobile
+     * Application.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.PlacementTypeEnum.PlacementType placement_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
@@ -283,7 +286,8 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Type of the placement, e.g. Website, YouTube Video, and Mobile Application.
+     * Output only. Type of the placement, for example, Website, YouTube Video, and Mobile
+     * Application.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.PlacementTypeEnum.PlacementType placement_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var

@@ -48,7 +48,7 @@ class InteractionEventType
     /**
      * The default InteractionEventType for ad conversion events.
      * This is used when an ad conversion row does NOT indicate
-     * that the free interactions (i.e., the ad conversions)
+     * that the free interactions (for example, the ad conversions)
      * should be 'promoted' and reported as part of the core metrics.
      * These are simply other (ad) conversions.
      *

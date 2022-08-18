@@ -30,7 +30,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * Only one of feed_label or sales_country can be set.
      * Field is immutable except for clearing.
      * Once this field is cleared, you must use feed_label if you
-     * wish to set the sales country.
+     * want to set the sales country.
      *
      * Generated from protobuf field <code>optional string sales_country = 6;</code>
      */
@@ -39,7 +39,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * Feed label of products to include in the campaign.
      * Only one of feed_label or sales_country can be set.
      * If used instead of sales_country, the feed_label field accepts country
-     * codes in the same format i.e. 'XX'.
+     * codes in the same format for example: 'XX'.
      * Otherwise can be any string used for feed label in Google Merchant
      * Center.
      *
@@ -85,12 +85,12 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *           Only one of feed_label or sales_country can be set.
      *           Field is immutable except for clearing.
      *           Once this field is cleared, you must use feed_label if you
-     *           wish to set the sales country.
+     *           want to set the sales country.
      *     @type string $feed_label
      *           Feed label of products to include in the campaign.
      *           Only one of feed_label or sales_country can be set.
      *           If used instead of sales_country, the feed_label field accepts country
-     *           codes in the same format i.e. 'XX'.
+     *           codes in the same format for example: 'XX'.
      *           Otherwise can be any string used for feed label in Google Merchant
      *           Center.
      *     @type int $campaign_priority
@@ -156,7 +156,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * Only one of feed_label or sales_country can be set.
      * Field is immutable except for clearing.
      * Once this field is cleared, you must use feed_label if you
-     * wish to set the sales country.
+     * want to set the sales country.
      *
      * Generated from protobuf field <code>optional string sales_country = 6;</code>
      * @return string
@@ -181,7 +181,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * Only one of feed_label or sales_country can be set.
      * Field is immutable except for clearing.
      * Once this field is cleared, you must use feed_label if you
-     * wish to set the sales country.
+     * want to set the sales country.
      *
      * Generated from protobuf field <code>optional string sales_country = 6;</code>
      * @param string $var
@@ -199,7 +199,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * Feed label of products to include in the campaign.
      * Only one of feed_label or sales_country can be set.
      * If used instead of sales_country, the feed_label field accepts country
-     * codes in the same format i.e. 'XX'.
+     * codes in the same format for example: 'XX'.
      * Otherwise can be any string used for feed label in Google Merchant
      * Center.
      *
@@ -215,7 +215,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * Feed label of products to include in the campaign.
      * Only one of feed_label or sales_country can be set.
      * If used instead of sales_country, the feed_label field accepts country
-     * codes in the same format i.e. 'XX'.
+     * codes in the same format for example: 'XX'.
      * Otherwise can be any string used for feed label in Google Merchant
      * Center.
      *

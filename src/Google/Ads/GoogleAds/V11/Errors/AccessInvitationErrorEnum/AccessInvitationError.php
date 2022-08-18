@@ -68,7 +68,7 @@ class AccessInvitationError
      */
     const PENDING_INVITATIONS_LIMIT_EXCEEDED = 8;
     /**
-     * Email address doesn't conform to the email domain policy. Please see
+     * Email address doesn't conform to the email domain policy. See
      * https://support.google.com/google-ads/answer/2375456
      *
      * Generated from protobuf enum <code>EMAIL_DOMAIN_POLICY_VIOLATED = 9;</code>

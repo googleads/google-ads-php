@@ -44,7 +44,7 @@ class MutateCampaignConversionGoalsRequest extends \Google\Protobuf\Internal\Mes
      *
      *     @type string $customer_id
      *           Required. The ID of the customer whose campaign conversion goals are being modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\CampaignConversionGoalOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\CampaignConversionGoalOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to perform on individual campaign conversion goal.
      *     @type bool $validate_only
      *           If true, the request is validated but not executed. Only errors are
@@ -97,7 +97,7 @@ class MutateCampaignConversionGoalsRequest extends \Google\Protobuf\Internal\Mes
      * Required. The list of operations to perform on individual campaign conversion goal.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.CampaignConversionGoalOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\CampaignConversionGoalOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\CampaignConversionGoalOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

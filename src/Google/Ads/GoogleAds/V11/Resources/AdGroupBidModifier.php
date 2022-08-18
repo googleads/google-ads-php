@@ -90,7 +90,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      *     @type int $bid_modifier_source
      *           Output only. Bid modifier source.
      *     @type \Google\Ads\GoogleAds\V11\Common\HotelDateSelectionTypeInfo $hotel_date_selection_type
-     *           Immutable. Criterion for hotel date selection (default dates vs. user selected).
+     *           Immutable. Criterion for hotel date selection (default dates versus user selected).
      *     @type \Google\Ads\GoogleAds\V11\Common\HotelAdvanceBookingWindowInfo $hotel_advance_booking_window
      *           Immutable. Criterion for number of days prior to the stay the booking is being made.
      *     @type \Google\Ads\GoogleAds\V11\Common\HotelLengthOfStayInfo $hotel_length_of_stay
@@ -325,7 +325,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. Criterion for hotel date selection (default dates vs. user selected).
+     * Immutable. Criterion for hotel date selection (default dates versus user selected).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.common.HotelDateSelectionTypeInfo hotel_date_selection_type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V11\Common\HotelDateSelectionTypeInfo|null
@@ -341,7 +341,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. Criterion for hotel date selection (default dates vs. user selected).
+     * Immutable. Criterion for hotel date selection (default dates versus user selected).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.common.HotelDateSelectionTypeInfo hotel_date_selection_type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V11\Common\HotelDateSelectionTypeInfo $var

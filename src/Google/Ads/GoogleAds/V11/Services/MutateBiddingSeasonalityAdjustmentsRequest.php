@@ -60,7 +60,7 @@ class MutateBiddingSeasonalityAdjustmentsRequest extends \Google\Protobuf\Intern
      *
      *     @type string $customer_id
      *           Required. ID of the customer whose seasonality adjustments are being modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\BiddingSeasonalityAdjustmentOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\BiddingSeasonalityAdjustmentOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to perform on individual seasonality adjustments.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -121,7 +121,7 @@ class MutateBiddingSeasonalityAdjustmentsRequest extends \Google\Protobuf\Intern
      * Required. The list of operations to perform on individual seasonality adjustments.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.BiddingSeasonalityAdjustmentOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\BiddingSeasonalityAdjustmentOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\BiddingSeasonalityAdjustmentOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

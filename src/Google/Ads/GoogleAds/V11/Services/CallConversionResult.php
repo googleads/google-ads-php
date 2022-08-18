@@ -24,7 +24,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
     protected $caller_id = null;
     /**
      * The date time at which the call occurred. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string call_start_date_time = 6;</code>
      */
@@ -37,7 +37,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
     protected $conversion_action = null;
     /**
      * The date time at which the conversion occurred. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 8;</code>
      */
@@ -54,12 +54,12 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
      *           in E.164 format with preceding '+' sign.
      *     @type string $call_start_date_time
      *           The date time at which the call occurred. The format is
-     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *     @type string $conversion_action
      *           Resource name of the conversion action associated with this conversion.
      *     @type string $conversion_date_time
      *           The date time at which the conversion occurred. The format is
-     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      * }
      */
     public function __construct($data = NULL) {
@@ -107,7 +107,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
 
     /**
      * The date time at which the call occurred. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string call_start_date_time = 6;</code>
      * @return string
@@ -129,7 +129,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
 
     /**
      * The date time at which the call occurred. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string call_start_date_time = 6;</code>
      * @param string $var
@@ -181,7 +181,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
 
     /**
      * The date time at which the conversion occurred. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 8;</code>
      * @return string
@@ -203,7 +203,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
 
     /**
      * The date time at which the conversion occurred. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 8;</code>
      * @param string $var

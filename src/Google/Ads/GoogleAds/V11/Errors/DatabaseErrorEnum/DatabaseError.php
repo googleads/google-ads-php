@@ -27,7 +27,7 @@ class DatabaseError
     const UNKNOWN = 1;
     /**
      * Multiple requests were attempting to modify the same resource at once.
-     * Please retry the request.
+     * Retry the request.
      *
      * Generated from protobuf enum <code>CONCURRENT_MODIFICATION = 2;</code>
      */
@@ -40,7 +40,7 @@ class DatabaseError
      */
     const DATA_CONSTRAINT_VIOLATION = 3;
     /**
-     * The data written is too large. Please split the request into smaller
+     * The data written is too large. Split the request into smaller
      * requests.
      *
      * Generated from protobuf enum <code>REQUEST_TOO_LARGE = 4;</code>

@@ -38,8 +38,8 @@ class DisplayAdFormatSetting
      */
     const NON_NATIVE = 3;
     /**
-     * Native format, i.e. the format rendering is controlled by the publisher
-     * and not by Google.
+     * Native format, for example, the format rendering is controlled by the
+     * publisher and not by Google.
      *
      * Generated from protobuf enum <code>NATIVE = 4;</code>
      */

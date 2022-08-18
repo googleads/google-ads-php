@@ -72,7 +72,7 @@ class AssetGroupSignalServiceClientTest extends GeneratedTest
     public function mutateAssetGroupSignalsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -82,7 +82,7 @@ class AssetGroupSignalServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-        $response = $client->mutateAssetGroupSignals($customerId, $operations);
+        $response = $gapicClient->mutateAssetGroupSignals($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -102,7 +102,7 @@ class AssetGroupSignalServiceClientTest extends GeneratedTest
     public function mutateAssetGroupSignalsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -120,8 +120,8 @@ class AssetGroupSignalServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operations = [];
         try {
-            $client->mutateAssetGroupSignals($customerId, $operations);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateAssetGroupSignals($customerId, $operations);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

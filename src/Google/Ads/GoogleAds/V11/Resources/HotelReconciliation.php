@@ -11,7 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * A hotel reconciliation. It contains conversion information from Hotel
  * bookings to reconcile with advertiser records. These rows may be updated
- * or canceled before billing via Bulk Uploads.
+ * or canceled before billing through Bulk Uploads.
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.resources.HotelReconciliation</code>
  */

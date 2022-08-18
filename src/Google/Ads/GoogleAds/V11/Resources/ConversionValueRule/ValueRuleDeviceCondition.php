@@ -28,7 +28,7 @@ class ValueRuleDeviceCondition extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $device_types
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $device_types
      *           Value for device type condition.
      * }
      */
@@ -52,7 +52,7 @@ class ValueRuleDeviceCondition extends \Google\Protobuf\Internal\Message
      * Value for device type condition.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.ValueRuleDeviceTypeEnum.ValueRuleDeviceType device_types = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDeviceTypes($var)

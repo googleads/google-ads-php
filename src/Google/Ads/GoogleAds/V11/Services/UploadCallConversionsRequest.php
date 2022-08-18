@@ -55,7 +55,7 @@ class UploadCallConversionsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer performing the upload.
-     *     @type \Google\Ads\GoogleAds\V11\Services\CallConversion[]|\Google\Protobuf\Internal\RepeatedField $conversions
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\CallConversion>|\Google\Protobuf\Internal\RepeatedField $conversions
      *           Required. The conversions that are being uploaded.
      *     @type bool $partial_failure
      *           Required. If true, successful operations will be carried out and invalid
@@ -116,7 +116,7 @@ class UploadCallConversionsRequest extends \Google\Protobuf\Internal\Message
      * Required. The conversions that are being uploaded.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.CallConversion conversions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\CallConversion[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\CallConversion>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConversions($var)

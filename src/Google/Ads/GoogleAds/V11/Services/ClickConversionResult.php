@@ -43,7 +43,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
     protected $conversion_action = null;
     /**
      * The date time at which the conversion occurred. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 6;</code>
      */
@@ -75,8 +75,8 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      *           Resource name of the conversion action associated with this conversion.
      *     @type string $conversion_date_time
      *           The date time at which the conversion occurred. The format is
-     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
-     *     @type \Google\Ads\GoogleAds\V11\Common\UserIdentifier[]|\Google\Protobuf\Internal\RepeatedField $user_identifiers
+     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $user_identifiers
      *           The user identifiers associated with this conversion. Only hashed_email and
      *           hashed_phone_number are supported for conversion uploads. The maximum
      *           number of user identifiers for each conversion is 5.
@@ -217,7 +217,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
 
     /**
      * The date time at which the conversion occurred. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 6;</code>
      * @return string
@@ -239,7 +239,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
 
     /**
      * The date time at which the conversion occurred. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string conversion_date_time = 6;</code>
      * @param string $var
@@ -272,7 +272,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * number of user identifiers for each conversion is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.UserIdentifier user_identifiers = 7;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\UserIdentifier[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUserIdentifiers($var)

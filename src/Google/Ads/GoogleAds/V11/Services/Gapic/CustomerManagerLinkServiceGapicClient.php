@@ -170,7 +170,7 @@ class CustomerManagerLinkServiceGapicClient
     /**
      * Moves a client customer to a new manager customer.
      * This simplifies the complex request that requires two operations to move
-     * a client customer to a new manager. i.e.:
+     * a client customer to a new manager, for example:
      * 1. Update operation with Status INACTIVE (previous manager) and,
      * 2. Update operation with Status ACTIVE (new manager).
      *
@@ -211,10 +211,9 @@ class CustomerManagerLinkServiceGapicClient
      *           If true, the request is validated but not executed. Only errors are
      *           returned, not results.
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\MoveManagerLinkResponse
@@ -275,10 +274,9 @@ class CustomerManagerLinkServiceGapicClient
      *           If true, the request is validated but not executed. Only errors are
      *           returned, not results.
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\MutateCustomerManagerLinkResponse

@@ -88,11 +88,11 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      *           Output only. Policy information for the ad.
      *     @type int $ad_strength
      *           Output only. Overall ad strength for this ad group ad.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $action_items
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $action_items
      *           Output only. A list of recommendations to improve the ad strength. For example, a
      *           recommendation could be "Your headlines are a little too similar.
      *           Try adding more distinct headlines.".
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Output only. The resource names of labels attached to this ad group ad.
      * }
      */
@@ -310,7 +310,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * Try adding more distinct headlines.".
      *
      * Generated from protobuf field <code>repeated string action_items = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setActionItems($var)
@@ -336,7 +336,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * Output only. The resource names of labels attached to this ad group ad.
      *
      * Generated from protobuf field <code>repeated string labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabels($var)

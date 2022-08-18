@@ -32,6 +32,14 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
      */
     protected $budget_micros = null;
+    /**
+     * Targeting settings for the selected product.
+     * To list the available targeting for each product use
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v11.services.ReachPlanService.ListPlannableProducts].
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.AdvancedProductTargeting advanced_product_targeting = 5;</code>
+     */
+    protected $advanced_product_targeting = null;
 
     /**
      * Constructor.
@@ -48,6 +56,10 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      *           Required. Maximum budget allocation in micros for the selected product.
      *           The value is specified in the selected planning currency_code.
      *           For example: 1 000 000$ = 1 000 000 000 000 micros.
+     *     @type \Google\Ads\GoogleAds\V11\Services\AdvancedProductTargeting $advanced_product_targeting
+     *           Targeting settings for the selected product.
+     *           To list the available targeting for each product use
+     *           [ReachPlanService.ListPlannableProducts][google.ads.googleads.v11.services.ReachPlanService.ListPlannableProducts].
      * }
      */
     public function __construct($data = NULL) {
@@ -133,6 +145,46 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->budget_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Targeting settings for the selected product.
+     * To list the available targeting for each product use
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v11.services.ReachPlanService.ListPlannableProducts].
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.AdvancedProductTargeting advanced_product_targeting = 5;</code>
+     * @return \Google\Ads\GoogleAds\V11\Services\AdvancedProductTargeting|null
+     */
+    public function getAdvancedProductTargeting()
+    {
+        return $this->advanced_product_targeting;
+    }
+
+    public function hasAdvancedProductTargeting()
+    {
+        return isset($this->advanced_product_targeting);
+    }
+
+    public function clearAdvancedProductTargeting()
+    {
+        unset($this->advanced_product_targeting);
+    }
+
+    /**
+     * Targeting settings for the selected product.
+     * To list the available targeting for each product use
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v11.services.ReachPlanService.ListPlannableProducts].
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.AdvancedProductTargeting advanced_product_targeting = 5;</code>
+     * @param \Google\Ads\GoogleAds\V11\Services\AdvancedProductTargeting $var
+     * @return $this
+     */
+    public function setAdvancedProductTargeting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Services\AdvancedProductTargeting::class);
+        $this->advanced_product_targeting = $var;
 
         return $this;
     }

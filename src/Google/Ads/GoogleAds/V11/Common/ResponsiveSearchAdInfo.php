@@ -57,10 +57,10 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
      *           List of text assets for headlines. When the ad serves the headlines will
      *           be selected from this list.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
      *           List of text assets for descriptions. When the ad serves the descriptions
      *           will be selected from this list.
      *     @type string $path1
@@ -92,7 +92,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset headlines = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -120,7 +120,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * will be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset descriptions = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDescriptions($var)

@@ -74,7 +74,8 @@ class PricePlaceholderField
     const ITEM_1_DESCRIPTION = 101;
     /**
      * Data Type: MONEY. The price (money with currency) of item 1 of the table,
-     * e.g., 30 USD. The currency must match one of the available currencies.
+     * for example, 30 USD. The currency must match one of the available
+     * currencies.
      *
      * Generated from protobuf enum <code>ITEM_1_PRICE = 102;</code>
      */
@@ -114,7 +115,8 @@ class PricePlaceholderField
     const ITEM_2_DESCRIPTION = 201;
     /**
      * Data Type: MONEY. The price (money with currency) of item 2 of the table,
-     * e.g., 30 USD. The currency must match one of the available currencies.
+     * for example, 30 USD. The currency must match one of the available
+     * currencies.
      *
      * Generated from protobuf enum <code>ITEM_2_PRICE = 202;</code>
      */
@@ -154,7 +156,8 @@ class PricePlaceholderField
     const ITEM_3_DESCRIPTION = 301;
     /**
      * Data Type: MONEY. The price (money with currency) of item 3 of the table,
-     * e.g., 30 USD. The currency must match one of the available currencies.
+     * for example, 30 USD. The currency must match one of the available
+     * currencies.
      *
      * Generated from protobuf enum <code>ITEM_3_PRICE = 302;</code>
      */
@@ -194,7 +197,8 @@ class PricePlaceholderField
     const ITEM_4_DESCRIPTION = 401;
     /**
      * Data Type: MONEY. The price (money with currency) of item 4 of the table,
-     * e.g., 30 USD. The currency must match one of the available currencies.
+     * for example, 30 USD. The currency must match one of the available
+     * currencies.
      *
      * Generated from protobuf enum <code>ITEM_4_PRICE = 402;</code>
      */
@@ -234,7 +238,8 @@ class PricePlaceholderField
     const ITEM_5_DESCRIPTION = 501;
     /**
      * Data Type: MONEY. The price (money with currency) of item 5 of the table,
-     * e.g., 30 USD. The currency must match one of the available currencies.
+     * for example, 30 USD. The currency must match one of the available
+     * currencies.
      *
      * Generated from protobuf enum <code>ITEM_5_PRICE = 502;</code>
      */
@@ -274,7 +279,8 @@ class PricePlaceholderField
     const ITEM_6_DESCRIPTION = 601;
     /**
      * Data Type: MONEY. The price (money with currency) of item 6 of the table,
-     * e.g., 30 USD. The currency must match one of the available currencies.
+     * for example, 30 USD. The currency must match one of the available
+     * currencies.
      *
      * Generated from protobuf enum <code>ITEM_6_PRICE = 602;</code>
      */
@@ -314,7 +320,8 @@ class PricePlaceholderField
     const ITEM_7_DESCRIPTION = 701;
     /**
      * Data Type: MONEY. The price (money with currency) of item 7 of the table,
-     * e.g., 30 USD. The currency must match one of the available currencies.
+     * for example, 30 USD. The currency must match one of the available
+     * currencies.
      *
      * Generated from protobuf enum <code>ITEM_7_PRICE = 702;</code>
      */
@@ -354,7 +361,8 @@ class PricePlaceholderField
     const ITEM_8_DESCRIPTION = 801;
     /**
      * Data Type: MONEY. The price (money with currency) of item 8 of the table,
-     * e.g., 30 USD. The currency must match one of the available currencies.
+     * for example, 30 USD. The currency must match one of the available
+     * currencies.
      *
      * Generated from protobuf enum <code>ITEM_8_PRICE = 802;</code>
      */

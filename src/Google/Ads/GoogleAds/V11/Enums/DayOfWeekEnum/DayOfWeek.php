@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V11\Enums\DayOfWeekEnum;
 use UnexpectedValueException;
 
 /**
- * Enumerates days of the week, e.g., "Monday".
+ * Enumerates days of the week, for example, "Monday".
  *
  * Protobuf type <code>google.ads.googleads.v11.enums.DayOfWeekEnum.DayOfWeek</code>
  */

@@ -35,7 +35,7 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Resources\Recommendation\TargetCpaOptInRecommendation\TargetCpaOptInRecommendationOption[]|\Google\Protobuf\Internal\RepeatedField $options
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\Recommendation\TargetCpaOptInRecommendation\TargetCpaOptInRecommendationOption>|\Google\Protobuf\Internal\RepeatedField $options
      *           Output only. The available goals and corresponding options for Target CPA strategy.
      *     @type int|string $recommended_target_cpa_micros
      *           Output only. The recommended average CPA target. See required budget amount and impact
@@ -62,7 +62,7 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. The available goals and corresponding options for Target CPA strategy.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption options = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\Recommendation\TargetCpaOptInRecommendation\TargetCpaOptInRecommendationOption[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\Recommendation\TargetCpaOptInRecommendation\TargetCpaOptInRecommendationOption>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOptions($var)

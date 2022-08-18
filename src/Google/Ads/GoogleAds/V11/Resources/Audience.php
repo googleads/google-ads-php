@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Audience is an effective targeting option that allows you to
+ * Audience is an effective targeting option that lets you
  * intersect different segment attributes, such as detailed demographics and
  * affinities, to create audiences that represent sections of your target
  * segments.
@@ -87,7 +87,7 @@ class Audience extends \Google\Protobuf\Internal\Message
      *           maximum length of 255.
      *     @type string $description
      *           Description of this audience.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AudienceDimension[]|\Google\Protobuf\Internal\RepeatedField $dimensions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AudienceDimension>|\Google\Protobuf\Internal\RepeatedField $dimensions
      *           Positive dimensions specifying the audience composition.
      *     @type \Google\Ads\GoogleAds\V11\Common\AudienceExclusionDimension $exclusion_dimension
      *           Negative dimension specifying the audience composition.
@@ -253,7 +253,7 @@ class Audience extends \Google\Protobuf\Internal\Message
      * Positive dimensions specifying the audience composition.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AudienceDimension dimensions = 6;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AudienceDimension[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AudienceDimension>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDimensions($var)

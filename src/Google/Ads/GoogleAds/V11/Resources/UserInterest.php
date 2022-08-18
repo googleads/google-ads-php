@@ -80,7 +80,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
      *           Output only. The parent of the user interest.
      *     @type bool $launched_to_all
      *           Output only. True if the user interest is launched to all channels and locales.
-     *     @type \Google\Ads\GoogleAds\V11\Common\CriterionCategoryAvailability[]|\Google\Protobuf\Internal\RepeatedField $availabilities
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\CriterionCategoryAvailability>|\Google\Protobuf\Internal\RepeatedField $availabilities
      *           Output only. Availability information of the user interest.
      * }
      */
@@ -304,7 +304,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
      * Output only. Availability information of the user interest.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.CriterionCategoryAvailability availabilities = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\CriterionCategoryAvailability[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\CriterionCategoryAvailability>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAvailabilities($var)

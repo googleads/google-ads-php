@@ -36,7 +36,7 @@ class CriterionCategoryAvailability extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Ads\GoogleAds\V11\Common\CriterionCategoryChannelAvailability $channel
      *           Channel types and subtypes that are available to the category.
-     *     @type \Google\Ads\GoogleAds\V11\Common\CriterionCategoryLocaleAvailability[]|\Google\Protobuf\Internal\RepeatedField $locale
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\CriterionCategoryLocaleAvailability>|\Google\Protobuf\Internal\RepeatedField $locale
      *           Locales that are available to the category for the channel.
      * }
      */
@@ -96,7 +96,7 @@ class CriterionCategoryAvailability extends \Google\Protobuf\Internal\Message
      * Locales that are available to the category for the channel.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.CriterionCategoryLocaleAvailability locale = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\CriterionCategoryLocaleAvailability[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\CriterionCategoryLocaleAvailability>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLocale($var)

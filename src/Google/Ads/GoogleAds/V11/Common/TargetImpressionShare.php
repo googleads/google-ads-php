@@ -24,8 +24,8 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      */
     protected $location = 0;
     /**
-     * The desired fraction of ads to be shown in the targeted location in micros.
-     * E.g. 1% equals 10,000.
+     * The chosen fraction of ads to be shown in the targeted location in micros.
+     * For example, 1% equals 10,000.
      *
      * Generated from protobuf field <code>optional int64 location_fraction_micros = 4;</code>
      */
@@ -48,8 +48,8 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      *     @type int $location
      *           The targeted location on the search results page.
      *     @type int|string $location_fraction_micros
-     *           The desired fraction of ads to be shown in the targeted location in micros.
-     *           E.g. 1% equals 10,000.
+     *           The chosen fraction of ads to be shown in the targeted location in micros.
+     *           For example, 1% equals 10,000.
      *     @type int|string $cpc_bid_ceiling_micros
      *           The highest CPC bid the automated bidding system is permitted to specify.
      *           This is a required field entered by the advertiser that sets the ceiling
@@ -88,8 +88,8 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The desired fraction of ads to be shown in the targeted location in micros.
-     * E.g. 1% equals 10,000.
+     * The chosen fraction of ads to be shown in the targeted location in micros.
+     * For example, 1% equals 10,000.
      *
      * Generated from protobuf field <code>optional int64 location_fraction_micros = 4;</code>
      * @return int|string
@@ -110,8 +110,8 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The desired fraction of ads to be shown in the targeted location in micros.
-     * E.g. 1% equals 10,000.
+     * The chosen fraction of ads to be shown in the targeted location in micros.
+     * For example, 1% equals 10,000.
      *
      * Generated from protobuf field <code>optional int64 location_fraction_micros = 4;</code>
      * @param int|string $var

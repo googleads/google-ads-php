@@ -88,12 +88,12 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      *           Used to filter Business Profile listings by business name. If
      *           business_name_filter is set, only listings with a matching business name
      *           are candidates to be sync'd into FeedItems.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $category_filters
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $category_filters
      *           Used to filter Business Profile listings by categories. If entries
      *           exist in category_filters, only listings that belong to any of the
      *           categories are candidates to be sync'd into FeedItems. If no entries
      *           exist in category_filters, then all listings are candidates for syncing.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $label_filters
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $label_filters
      *           Used to filter Business Profile listings by labels. If entries exist in
      *           label_filters, only listings that has any of the labels set are
      *           candidates to be synchronized into FeedItems. If no entries exist in
@@ -276,7 +276,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * exist in category_filters, then all listings are candidates for syncing.
      *
      * Generated from protobuf field <code>repeated string category_filters = 11;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCategoryFilters($var)
@@ -308,7 +308,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * label_filters, then all listings are candidates for syncing.
      *
      * Generated from protobuf field <code>repeated string label_filters = 12;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabelFilters($var)

@@ -28,7 +28,7 @@ class MutateCustomAudiencesResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\MutateCustomAudienceResult[]|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\MutateCustomAudienceResult>|\Google\Protobuf\Internal\RepeatedField $results
      *           All results for the mutate.
      * }
      */
@@ -52,7 +52,7 @@ class MutateCustomAudiencesResponse extends \Google\Protobuf\Internal\Message
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.MutateCustomAudienceResult results = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\MutateCustomAudienceResult[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\MutateCustomAudienceResult>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setResults($var)

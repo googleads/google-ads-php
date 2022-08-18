@@ -110,7 +110,7 @@ class PromotionAsset extends \Google\Protobuf\Internal\Message
      *     @type string $end_date
      *           Last date of when this asset is effective and still serving, in yyyy-MM-dd
      *           format.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdScheduleInfo[]|\Google\Protobuf\Internal\RepeatedField $ad_schedule_targets
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $ad_schedule_targets
      *           List of non-overlapping schedules specifying all time intervals for which
      *           the asset may serve. There can be a maximum of 6 schedules per day, 42 in
      *           total.
@@ -373,7 +373,7 @@ class PromotionAsset extends \Google\Protobuf\Internal\Message
      * total.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdScheduleInfo ad_schedule_targets = 13;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdScheduleInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdScheduleTargets($var)

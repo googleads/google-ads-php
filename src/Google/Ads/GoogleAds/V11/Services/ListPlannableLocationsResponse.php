@@ -31,7 +31,7 @@ class ListPlannableLocationsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\PlannableLocation[]|\Google\Protobuf\Internal\RepeatedField $plannable_locations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\PlannableLocation>|\Google\Protobuf\Internal\RepeatedField $plannable_locations
      *           The list of locations available for planning.
      *           See
      *           https://developers.google.com/google-ads/api/reference/data/geotargets
@@ -64,7 +64,7 @@ class ListPlannableLocationsResponse extends \Google\Protobuf\Internal\Message
      * for sample locations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.PlannableLocation plannable_locations = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\PlannableLocation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\PlannableLocation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPlannableLocations($var)

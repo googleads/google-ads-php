@@ -96,7 +96,7 @@ class PlaceholderType
      */
     const PRICE = 10;
     /**
-     * Allows you to highlight sales and other promotions that let users see how
+     * Lets you highlight sales and other promotions that let users see how
      * they can save by buying now.
      *
      * Generated from protobuf enum <code>PROMOTION = 11;</code>

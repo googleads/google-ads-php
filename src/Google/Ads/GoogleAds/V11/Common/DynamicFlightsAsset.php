@@ -30,68 +30,68 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
      */
     protected $origin_id = '';
     /**
-     * Required. Flight description, e.g. Book your ticket. Required.
+     * Required. Flight description, for example, Book your ticket. Required.
      *
      * Generated from protobuf field <code>string flight_description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $flight_description = '';
     /**
-     * Image URL, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image URL, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 4;</code>
      */
     protected $image_url = '';
     /**
-     * Destination name, e.g. Paris.
+     * Destination name, for example, Paris.
      *
      * Generated from protobuf field <code>string destination_name = 5;</code>
      */
     protected $destination_name = '';
     /**
-     * Origin name, e.g. London.
+     * Origin name, for example, London.
      *
      * Generated from protobuf field <code>string origin_name = 6;</code>
      */
     protected $origin_name = '';
     /**
      * Flight price which can be number followed by the alphabetic currency code,
-     * ISO 4217 standard. Use '.' as the decimal mark. e.g. 100.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 100.00 USD.
      *
      * Generated from protobuf field <code>string flight_price = 7;</code>
      */
     protected $flight_price = '';
     /**
      * Flight sale price which can be number followed by the alphabetic currency
-     * code, ISO 4217 standard. Use '.' as the decimal mark, e.g. 80.00 USD.
-     * Must be less than the 'flight_price' field.
+     * code, ISO 4217 standard. Use '.' as the decimal mark, for example, 80.00
+     * USD. Must be less than the 'flight_price' field.
      *
      * Generated from protobuf field <code>string flight_sale_price = 8;</code>
      */
     protected $flight_sale_price = '';
     /**
      * Formatted price which can be any characters. If set, this attribute will be
-     * used instead of 'price', e.g. Starting at $100.00.
+     * used instead of 'price', for example, Starting at $100.00.
      *
      * Generated from protobuf field <code>string formatted_price = 9;</code>
      */
     protected $formatted_price = '';
     /**
      * Formatted sale price which can be any characters. If set, this attribute
-     * will be used instead of 'sale price', e.g. On sale for $80.00.
+     * will be used instead of 'sale price', for example, On sale for $80.00.
      *
      * Generated from protobuf field <code>string formatted_sale_price = 10;</code>
      */
     protected $formatted_sale_price = '';
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 11;</code>
      */
     protected $android_app_link = '';
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 12;</code>
      */
@@ -105,7 +105,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
      */
     protected $ios_app_store_id = 0;
     /**
-     * Similar destination IDs, e.g. PAR,LON.
+     * Similar destination IDs, for example, PAR,LON.
      *
      * Generated from protobuf field <code>repeated string similar_destination_ids = 14;</code>
      */
@@ -114,8 +114,8 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
      * A custom field which can be multiple key to values mapping separated by
      * delimiters (",", "|" and ":"), in the forms of
      * "<KEY_1>: <VALUE_1>, <VALUE_2>, ... ,<VALUE_N> | <KEY_2>: <VALUE_1>, ...
-     * ,<VALUE_N> | ... | <KEY_N>: <VALUE_1>, ... ,<VALUE_N>" e.g. wifi: most |
-     * aircraft: 320, 77W | flights: 42 | legroom: 32".
+     * ,<VALUE_N> | ... | <KEY_N>: <VALUE_1>, ... ,<VALUE_N>" for example, wifi:
+     * most | aircraft: 320, 77W | flights: 42 | legroom: 32".
      *
      * Generated from protobuf field <code>string custom_mapping = 15;</code>
      */
@@ -134,44 +134,44 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
      *           Origin ID which can be any sequence of letters and digits. The ID sequence
      *           (destination ID + origin ID) must be unique.
      *     @type string $flight_description
-     *           Required. Flight description, e.g. Book your ticket. Required.
+     *           Required. Flight description, for example, Book your ticket. Required.
      *     @type string $image_url
-     *           Image URL, e.g. http://www.example.com/image.png. The image will not be
-     *           uploaded as image asset.
+     *           Image URL, for example, http://www.example.com/image.png. The image will
+     *           not be uploaded as image asset.
      *     @type string $destination_name
-     *           Destination name, e.g. Paris.
+     *           Destination name, for example, Paris.
      *     @type string $origin_name
-     *           Origin name, e.g. London.
+     *           Origin name, for example, London.
      *     @type string $flight_price
      *           Flight price which can be number followed by the alphabetic currency code,
-     *           ISO 4217 standard. Use '.' as the decimal mark. e.g. 100.00 USD.
+     *           ISO 4217 standard. Use '.' as the decimal mark, for example, 100.00 USD.
      *     @type string $flight_sale_price
      *           Flight sale price which can be number followed by the alphabetic currency
-     *           code, ISO 4217 standard. Use '.' as the decimal mark, e.g. 80.00 USD.
-     *           Must be less than the 'flight_price' field.
+     *           code, ISO 4217 standard. Use '.' as the decimal mark, for example, 80.00
+     *           USD. Must be less than the 'flight_price' field.
      *     @type string $formatted_price
      *           Formatted price which can be any characters. If set, this attribute will be
-     *           used instead of 'price', e.g. Starting at $100.00.
+     *           used instead of 'price', for example, Starting at $100.00.
      *     @type string $formatted_sale_price
      *           Formatted sale price which can be any characters. If set, this attribute
-     *           will be used instead of 'sale price', e.g. On sale for $80.00.
+     *           will be used instead of 'sale price', for example, On sale for $80.00.
      *     @type string $android_app_link
-     *           Android deep link, e.g.
+     *           Android deep link, for example,
      *           android-app://com.example.android/http/example.com/gizmos?1234.
      *     @type string $ios_app_link
-     *           iOS deep link, e.g. exampleApp://content/page.
+     *           iOS deep link, for example, exampleApp://content/page.
      *     @type int|string $ios_app_store_id
      *           iOS app store ID. This is used to check if the user has the app installed
      *           on their device before deep linking. If this field is set, then the
      *           ios_app_link field must also be present.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $similar_destination_ids
-     *           Similar destination IDs, e.g. PAR,LON.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_destination_ids
+     *           Similar destination IDs, for example, PAR,LON.
      *     @type string $custom_mapping
      *           A custom field which can be multiple key to values mapping separated by
      *           delimiters (",", "|" and ":"), in the forms of
      *           "<KEY_1>: <VALUE_1>, <VALUE_2>, ... ,<VALUE_N> | <KEY_2>: <VALUE_1>, ...
-     *           ,<VALUE_N> | ... | <KEY_N>: <VALUE_1>, ... ,<VALUE_N>" e.g. wifi: most |
-     *           aircraft: 320, 77W | flights: 42 | legroom: 32".
+     *           ,<VALUE_N> | ... | <KEY_N>: <VALUE_1>, ... ,<VALUE_N>" for example, wifi:
+     *           most | aircraft: 320, 77W | flights: 42 | legroom: 32".
      * }
      */
     public function __construct($data = NULL) {
@@ -236,7 +236,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Flight description, e.g. Book your ticket. Required.
+     * Required. Flight description, for example, Book your ticket. Required.
      *
      * Generated from protobuf field <code>string flight_description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -247,7 +247,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Flight description, e.g. Book your ticket. Required.
+     * Required. Flight description, for example, Book your ticket. Required.
      *
      * Generated from protobuf field <code>string flight_description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -262,8 +262,8 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Image URL, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image URL, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 4;</code>
      * @return string
@@ -274,8 +274,8 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Image URL, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image URL, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 4;</code>
      * @param string $var
@@ -290,7 +290,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Destination name, e.g. Paris.
+     * Destination name, for example, Paris.
      *
      * Generated from protobuf field <code>string destination_name = 5;</code>
      * @return string
@@ -301,7 +301,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Destination name, e.g. Paris.
+     * Destination name, for example, Paris.
      *
      * Generated from protobuf field <code>string destination_name = 5;</code>
      * @param string $var
@@ -316,7 +316,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Origin name, e.g. London.
+     * Origin name, for example, London.
      *
      * Generated from protobuf field <code>string origin_name = 6;</code>
      * @return string
@@ -327,7 +327,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Origin name, e.g. London.
+     * Origin name, for example, London.
      *
      * Generated from protobuf field <code>string origin_name = 6;</code>
      * @param string $var
@@ -343,7 +343,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Flight price which can be number followed by the alphabetic currency code,
-     * ISO 4217 standard. Use '.' as the decimal mark. e.g. 100.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 100.00 USD.
      *
      * Generated from protobuf field <code>string flight_price = 7;</code>
      * @return string
@@ -355,7 +355,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Flight price which can be number followed by the alphabetic currency code,
-     * ISO 4217 standard. Use '.' as the decimal mark. e.g. 100.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 100.00 USD.
      *
      * Generated from protobuf field <code>string flight_price = 7;</code>
      * @param string $var
@@ -371,8 +371,8 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Flight sale price which can be number followed by the alphabetic currency
-     * code, ISO 4217 standard. Use '.' as the decimal mark, e.g. 80.00 USD.
-     * Must be less than the 'flight_price' field.
+     * code, ISO 4217 standard. Use '.' as the decimal mark, for example, 80.00
+     * USD. Must be less than the 'flight_price' field.
      *
      * Generated from protobuf field <code>string flight_sale_price = 8;</code>
      * @return string
@@ -384,8 +384,8 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Flight sale price which can be number followed by the alphabetic currency
-     * code, ISO 4217 standard. Use '.' as the decimal mark, e.g. 80.00 USD.
-     * Must be less than the 'flight_price' field.
+     * code, ISO 4217 standard. Use '.' as the decimal mark, for example, 80.00
+     * USD. Must be less than the 'flight_price' field.
      *
      * Generated from protobuf field <code>string flight_sale_price = 8;</code>
      * @param string $var
@@ -401,7 +401,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Formatted price which can be any characters. If set, this attribute will be
-     * used instead of 'price', e.g. Starting at $100.00.
+     * used instead of 'price', for example, Starting at $100.00.
      *
      * Generated from protobuf field <code>string formatted_price = 9;</code>
      * @return string
@@ -413,7 +413,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Formatted price which can be any characters. If set, this attribute will be
-     * used instead of 'price', e.g. Starting at $100.00.
+     * used instead of 'price', for example, Starting at $100.00.
      *
      * Generated from protobuf field <code>string formatted_price = 9;</code>
      * @param string $var
@@ -429,7 +429,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Formatted sale price which can be any characters. If set, this attribute
-     * will be used instead of 'sale price', e.g. On sale for $80.00.
+     * will be used instead of 'sale price', for example, On sale for $80.00.
      *
      * Generated from protobuf field <code>string formatted_sale_price = 10;</code>
      * @return string
@@ -441,7 +441,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Formatted sale price which can be any characters. If set, this attribute
-     * will be used instead of 'sale price', e.g. On sale for $80.00.
+     * will be used instead of 'sale price', for example, On sale for $80.00.
      *
      * Generated from protobuf field <code>string formatted_sale_price = 10;</code>
      * @param string $var
@@ -456,7 +456,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 11;</code>
@@ -468,7 +468,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 11;</code>
@@ -484,7 +484,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 12;</code>
      * @return string
@@ -495,7 +495,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 12;</code>
      * @param string $var
@@ -540,7 +540,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Similar destination IDs, e.g. PAR,LON.
+     * Similar destination IDs, for example, PAR,LON.
      *
      * Generated from protobuf field <code>repeated string similar_destination_ids = 14;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -551,10 +551,10 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Similar destination IDs, e.g. PAR,LON.
+     * Similar destination IDs, for example, PAR,LON.
      *
      * Generated from protobuf field <code>repeated string similar_destination_ids = 14;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSimilarDestinationIds($var)
@@ -569,8 +569,8 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
      * A custom field which can be multiple key to values mapping separated by
      * delimiters (",", "|" and ":"), in the forms of
      * "<KEY_1>: <VALUE_1>, <VALUE_2>, ... ,<VALUE_N> | <KEY_2>: <VALUE_1>, ...
-     * ,<VALUE_N> | ... | <KEY_N>: <VALUE_1>, ... ,<VALUE_N>" e.g. wifi: most |
-     * aircraft: 320, 77W | flights: 42 | legroom: 32".
+     * ,<VALUE_N> | ... | <KEY_N>: <VALUE_1>, ... ,<VALUE_N>" for example, wifi:
+     * most | aircraft: 320, 77W | flights: 42 | legroom: 32".
      *
      * Generated from protobuf field <code>string custom_mapping = 15;</code>
      * @return string
@@ -584,8 +584,8 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
      * A custom field which can be multiple key to values mapping separated by
      * delimiters (",", "|" and ":"), in the forms of
      * "<KEY_1>: <VALUE_1>, <VALUE_2>, ... ,<VALUE_N> | <KEY_2>: <VALUE_1>, ...
-     * ,<VALUE_N> | ... | <KEY_N>: <VALUE_1>, ... ,<VALUE_N>" e.g. wifi: most |
-     * aircraft: 320, 77W | flights: 42 | legroom: 32".
+     * ,<VALUE_N> | ... | <KEY_N>: <VALUE_1>, ... ,<VALUE_N>" for example, wifi:
+     * most | aircraft: 320, 77W | flights: 42 | legroom: 32".
      *
      * Generated from protobuf field <code>string custom_mapping = 15;</code>
      * @param string $var

@@ -32,7 +32,7 @@ class KeywordPlanAggregateMetricResults extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\KeywordPlanDeviceSearches[]|\Google\Protobuf\Internal\RepeatedField $device_searches
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\KeywordPlanDeviceSearches>|\Google\Protobuf\Internal\RepeatedField $device_searches
      *           The aggregate searches for all the keywords segmented by device
      *           for the specified time.
      *           Supports the following device types: MOBILE, TABLET, DESKTOP.
@@ -68,7 +68,7 @@ class KeywordPlanAggregateMetricResults extends \Google\Protobuf\Internal\Messag
      * in the KeywordPlanAggregateMetrics field in the request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.KeywordPlanDeviceSearches device_searches = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\KeywordPlanDeviceSearches[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\KeywordPlanDeviceSearches>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDeviceSearches($var)

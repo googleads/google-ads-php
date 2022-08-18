@@ -17,9 +17,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Output only. The conversion tracking id used for this account. This id is automatically
-     * assigned after any conversion tracking feature is used. If the customer
-     * doesn't use conversion tracking, this is 0. This field is read-only.
+     * Output only. The conversion tracking id used for this account. This id doesn't indicate
+     * whether the customer uses conversion tracking (conversion_tracking_status
+     * does). This field is read-only.
      *
      * Generated from protobuf field <code>optional int64 conversion_tracking_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -75,9 +75,9 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $conversion_tracking_id
-     *           Output only. The conversion tracking id used for this account. This id is automatically
-     *           assigned after any conversion tracking feature is used. If the customer
-     *           doesn't use conversion tracking, this is 0. This field is read-only.
+     *           Output only. The conversion tracking id used for this account. This id doesn't indicate
+     *           whether the customer uses conversion tracking (conversion_tracking_status
+     *           does). This field is read-only.
      *     @type int|string $cross_account_conversion_tracking_id
      *           Output only. The conversion tracking id of the customer's manager. This is set when the
      *           customer is opted into cross account conversion tracking, and it overrides
@@ -109,9 +109,9 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The conversion tracking id used for this account. This id is automatically
-     * assigned after any conversion tracking feature is used. If the customer
-     * doesn't use conversion tracking, this is 0. This field is read-only.
+     * Output only. The conversion tracking id used for this account. This id doesn't indicate
+     * whether the customer uses conversion tracking (conversion_tracking_status
+     * does). This field is read-only.
      *
      * Generated from protobuf field <code>optional int64 conversion_tracking_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
@@ -132,9 +132,9 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The conversion tracking id used for this account. This id is automatically
-     * assigned after any conversion tracking feature is used. If the customer
-     * doesn't use conversion tracking, this is 0. This field is read-only.
+     * Output only. The conversion tracking id used for this account. This id doesn't indicate
+     * whether the customer uses conversion tracking (conversion_tracking_status
+     * does). This field is read-only.
      *
      * Generated from protobuf field <code>optional int64 conversion_tracking_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var

@@ -30,72 +30,72 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
      */
     protected $location_id = '';
     /**
-     * Required. Job title, e.g. Software engineer. Required.
+     * Required. Job title, for example, Software engineer. Required.
      *
      * Generated from protobuf field <code>string job_title = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $job_title = '';
     /**
-     * Job subtitle, e.g. Level II.
+     * Job subtitle, for example, Level II.
      *
      * Generated from protobuf field <code>string job_subtitle = 4;</code>
      */
     protected $job_subtitle = '';
     /**
-     * Description, e.g. Apply your technical skills.
+     * Description, for example, Apply your technical skills.
      *
      * Generated from protobuf field <code>string description = 5;</code>
      */
     protected $description = '';
     /**
-     * Image URL, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image URL, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 6;</code>
      */
     protected $image_url = '';
     /**
-     * Job category, e.g. Technical.
+     * Job category, for example, Technical.
      *
      * Generated from protobuf field <code>string job_category = 7;</code>
      */
     protected $job_category = '';
     /**
-     * Contextual keywords, e.g. Software engineering job.
+     * Contextual keywords, for example, Software engineering job.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 8;</code>
      */
     private $contextual_keywords;
     /**
      * Address which can be specified in one of the following formats.
-     * (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     * (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     * (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403.
+     * (1) City, state, code, country, for example, Mountain View, CA, USA.
+     * (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     * (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403.
      *
      * Generated from protobuf field <code>string address = 9;</code>
      */
     protected $address = '';
     /**
-     * Salary, e.g. $100,000.
+     * Salary, for example, $100,000.
      *
      * Generated from protobuf field <code>string salary = 10;</code>
      */
     protected $salary = '';
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 11;</code>
      */
     protected $android_app_link = '';
     /**
-     * Similar job IDs, e.g. 1275.
+     * Similar job IDs, for example, 1275.
      *
      * Generated from protobuf field <code>repeated string similar_job_ids = 12;</code>
      */
     private $similar_job_ids;
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 13;</code>
      */
@@ -122,32 +122,32 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
      *           Location ID which can be any sequence of letters and digits. The ID
      *           sequence (job ID + location ID) must be unique.
      *     @type string $job_title
-     *           Required. Job title, e.g. Software engineer. Required.
+     *           Required. Job title, for example, Software engineer. Required.
      *     @type string $job_subtitle
-     *           Job subtitle, e.g. Level II.
+     *           Job subtitle, for example, Level II.
      *     @type string $description
-     *           Description, e.g. Apply your technical skills.
+     *           Description, for example, Apply your technical skills.
      *     @type string $image_url
-     *           Image URL, e.g. http://www.example.com/image.png. The image will not be
-     *           uploaded as image asset.
+     *           Image URL, for example, http://www.example.com/image.png. The image will
+     *           not be uploaded as image asset.
      *     @type string $job_category
-     *           Job category, e.g. Technical.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
-     *           Contextual keywords, e.g. Software engineering job.
+     *           Job category, for example, Technical.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
+     *           Contextual keywords, for example, Software engineering job.
      *     @type string $address
      *           Address which can be specified in one of the following formats.
-     *           (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     *           (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     *           (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403.
+     *           (1) City, state, code, country, for example, Mountain View, CA, USA.
+     *           (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     *           (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403.
      *     @type string $salary
-     *           Salary, e.g. $100,000.
+     *           Salary, for example, $100,000.
      *     @type string $android_app_link
-     *           Android deep link, e.g.
+     *           Android deep link, for example,
      *           android-app://com.example.android/http/example.com/gizmos?1234.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $similar_job_ids
-     *           Similar job IDs, e.g. 1275.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_job_ids
+     *           Similar job IDs, for example, 1275.
      *     @type string $ios_app_link
-     *           iOS deep link, e.g. exampleApp://content/page.
+     *           iOS deep link, for example, exampleApp://content/page.
      *     @type int|string $ios_app_store_id
      *           iOS app store ID. This is used to check if the user has the app installed
      *           on their device before deep linking. If this field is set, then the
@@ -216,7 +216,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Job title, e.g. Software engineer. Required.
+     * Required. Job title, for example, Software engineer. Required.
      *
      * Generated from protobuf field <code>string job_title = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -227,7 +227,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Job title, e.g. Software engineer. Required.
+     * Required. Job title, for example, Software engineer. Required.
      *
      * Generated from protobuf field <code>string job_title = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -242,7 +242,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Job subtitle, e.g. Level II.
+     * Job subtitle, for example, Level II.
      *
      * Generated from protobuf field <code>string job_subtitle = 4;</code>
      * @return string
@@ -253,7 +253,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Job subtitle, e.g. Level II.
+     * Job subtitle, for example, Level II.
      *
      * Generated from protobuf field <code>string job_subtitle = 4;</code>
      * @param string $var
@@ -268,7 +268,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Description, e.g. Apply your technical skills.
+     * Description, for example, Apply your technical skills.
      *
      * Generated from protobuf field <code>string description = 5;</code>
      * @return string
@@ -279,7 +279,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Description, e.g. Apply your technical skills.
+     * Description, for example, Apply your technical skills.
      *
      * Generated from protobuf field <code>string description = 5;</code>
      * @param string $var
@@ -294,8 +294,8 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Image URL, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image URL, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 6;</code>
      * @return string
@@ -306,8 +306,8 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Image URL, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image URL, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 6;</code>
      * @param string $var
@@ -322,7 +322,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Job category, e.g. Technical.
+     * Job category, for example, Technical.
      *
      * Generated from protobuf field <code>string job_category = 7;</code>
      * @return string
@@ -333,7 +333,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Job category, e.g. Technical.
+     * Job category, for example, Technical.
      *
      * Generated from protobuf field <code>string job_category = 7;</code>
      * @param string $var
@@ -348,7 +348,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Contextual keywords, e.g. Software engineering job.
+     * Contextual keywords, for example, Software engineering job.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 8;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -359,10 +359,10 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Contextual keywords, e.g. Software engineering job.
+     * Contextual keywords, for example, Software engineering job.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 8;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setContextualKeywords($var)
@@ -375,9 +375,9 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Address which can be specified in one of the following formats.
-     * (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     * (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     * (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403.
+     * (1) City, state, code, country, for example, Mountain View, CA, USA.
+     * (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     * (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403.
      *
      * Generated from protobuf field <code>string address = 9;</code>
      * @return string
@@ -389,9 +389,9 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Address which can be specified in one of the following formats.
-     * (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     * (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     * (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403.
+     * (1) City, state, code, country, for example, Mountain View, CA, USA.
+     * (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     * (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403.
      *
      * Generated from protobuf field <code>string address = 9;</code>
      * @param string $var
@@ -406,7 +406,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Salary, e.g. $100,000.
+     * Salary, for example, $100,000.
      *
      * Generated from protobuf field <code>string salary = 10;</code>
      * @return string
@@ -417,7 +417,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Salary, e.g. $100,000.
+     * Salary, for example, $100,000.
      *
      * Generated from protobuf field <code>string salary = 10;</code>
      * @param string $var
@@ -432,7 +432,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 11;</code>
@@ -444,7 +444,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 11;</code>
@@ -460,7 +460,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Similar job IDs, e.g. 1275.
+     * Similar job IDs, for example, 1275.
      *
      * Generated from protobuf field <code>repeated string similar_job_ids = 12;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -471,10 +471,10 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Similar job IDs, e.g. 1275.
+     * Similar job IDs, for example, 1275.
      *
      * Generated from protobuf field <code>repeated string similar_job_ids = 12;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSimilarJobIds($var)
@@ -486,7 +486,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 13;</code>
      * @return string
@@ -497,7 +497,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 13;</code>
      * @param string $var

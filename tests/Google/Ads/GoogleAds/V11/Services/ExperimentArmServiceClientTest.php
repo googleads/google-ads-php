@@ -72,7 +72,7 @@ class ExperimentArmServiceClientTest extends GeneratedTest
     public function mutateExperimentArmsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -82,7 +82,7 @@ class ExperimentArmServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-        $response = $client->mutateExperimentArms($customerId, $operations);
+        $response = $gapicClient->mutateExperimentArms($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -102,7 +102,7 @@ class ExperimentArmServiceClientTest extends GeneratedTest
     public function mutateExperimentArmsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -120,8 +120,8 @@ class ExperimentArmServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operations = [];
         try {
-            $client->mutateExperimentArms($customerId, $operations);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateExperimentArms($customerId, $operations);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

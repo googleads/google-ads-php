@@ -25,7 +25,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     protected $account_budget_proposal = null;
     /**
-     * Output only. The type of this proposal, e.g. END to end the budget associated
+     * Output only. The type of this proposal, for example, END to end the budget associated
      * with this proposal.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AccountBudgetProposalTypeEnum.AccountBudgetProposalType proposal_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -77,7 +77,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
      *           AccountBudgetProposal resource names have the form:
      *           `customers/{customer_id}/accountBudgetProposals/{account_budget_proposal_id}`
      *     @type int $proposal_type
-     *           Output only. The type of this proposal, e.g. END to end the budget associated
+     *           Output only. The type of this proposal, for example, END to end the budget associated
      *           with this proposal.
      *     @type string $name
      *           Output only. The name to assign to the account-level budget.
@@ -94,12 +94,12 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
      *     @type string $end_date_time
      *           Output only. The end time in yyyy-MM-dd HH:mm:ss format.
      *     @type int $end_time_type
-     *           Output only. The end time as a well-defined type, e.g. FOREVER.
+     *           Output only. The end time as a well-defined type, for example, FOREVER.
      *     @type int|string $spending_limit_micros
      *           Output only. The spending limit in micros.  One million is equivalent to
      *           one unit.
      *     @type int $spending_limit_type
-     *           Output only. The spending limit as a well-defined type, e.g. INFINITE.
+     *           Output only. The spending limit as a well-defined type, for example, INFINITE.
      * }
      */
     public function __construct($data = NULL) {
@@ -148,7 +148,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The type of this proposal, e.g. END to end the budget associated
+     * Output only. The type of this proposal, for example, END to end the budget associated
      * with this proposal.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AccountBudgetProposalTypeEnum.AccountBudgetProposalType proposal_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -160,7 +160,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The type of this proposal, e.g. END to end the budget associated
+     * Output only. The type of this proposal, for example, END to end the budget associated
      * with this proposal.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AccountBudgetProposalTypeEnum.AccountBudgetProposalType proposal_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -391,7 +391,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The end time as a well-defined type, e.g. FOREVER.
+     * Output only. The end time as a well-defined type, for example, FOREVER.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
@@ -407,7 +407,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The end time as a well-defined type, e.g. FOREVER.
+     * Output only. The end time as a well-defined type, for example, FOREVER.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
@@ -455,7 +455,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The spending limit as a well-defined type, e.g. INFINITE.
+     * Output only. The spending limit as a well-defined type, for example, INFINITE.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.SpendingLimitTypeEnum.SpendingLimitType spending_limit_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
@@ -471,7 +471,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The spending limit as a well-defined type, e.g. INFINITE.
+     * Output only. The spending limit as a well-defined type, for example, INFINITE.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.SpendingLimitTypeEnum.SpendingLimitType spending_limit_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var

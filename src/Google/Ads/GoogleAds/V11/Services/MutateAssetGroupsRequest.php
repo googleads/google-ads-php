@@ -43,7 +43,7 @@ class MutateAssetGroupsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer whose asset groups are being modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\AssetGroupOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\AssetGroupOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to perform on individual asset groups.
      *     @type bool $validate_only
      *           If true, the request is validated but not executed. Only errors are
@@ -96,7 +96,7 @@ class MutateAssetGroupsRequest extends \Google\Protobuf\Internal\Message
      * Required. The list of operations to perform on individual asset groups.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.AssetGroupOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\AssetGroupOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\AssetGroupOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

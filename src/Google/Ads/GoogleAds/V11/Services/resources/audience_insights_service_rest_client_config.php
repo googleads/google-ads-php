@@ -3,6 +3,18 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v11.services.AudienceInsightsService' => [
+            'GenerateAudienceCompositionInsights' => [
+                'method' => 'post',
+                'uriTemplate' => '/v11/customers/{customer_id=*}:generateAudienceCompositionInsights',
+                'body' => '*',
+                'placeholders' => [
+                    'customer_id' => [
+                        'getters' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
             'GenerateInsightsFinderReport' => [
                 'method' => 'post',
                 'uriTemplate' => '/v11/customers/{customer_id=*}:generateInsightsFinderReport',

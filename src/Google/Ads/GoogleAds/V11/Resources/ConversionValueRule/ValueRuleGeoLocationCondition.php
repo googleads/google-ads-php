@@ -46,11 +46,11 @@ class ValueRuleGeoLocationCondition extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $excluded_geo_target_constants
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $excluded_geo_target_constants
      *           Geo locations that advertisers want to exclude.
      *     @type int $excluded_geo_match_type
      *           Excluded Geo location match type.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
      *           Geo locations that advertisers want to include.
      *     @type int $geo_match_type
      *           Included Geo location match type.
@@ -76,7 +76,7 @@ class ValueRuleGeoLocationCondition extends \Google\Protobuf\Internal\Message
      * Geo locations that advertisers want to exclude.
      *
      * Generated from protobuf field <code>repeated string excluded_geo_target_constants = 1 [(.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExcludedGeoTargetConstants($var)
@@ -128,7 +128,7 @@ class ValueRuleGeoLocationCondition extends \Google\Protobuf\Internal\Message
      * Geo locations that advertisers want to include.
      *
      * Generated from protobuf field <code>repeated string geo_target_constants = 3 [(.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGeoTargetConstants($var)

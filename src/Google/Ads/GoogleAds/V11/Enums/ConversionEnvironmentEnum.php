@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Container for enum representing the conversion environment an uploaded
- * conversion was recorded on. e.g. App or Web.
+ * conversion was recorded on, for example, App or Web.
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.enums.ConversionEnvironmentEnum</code>
  */

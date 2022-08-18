@@ -28,7 +28,7 @@ class WebpageSampleInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $sample_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $sample_urls
      *           Webpage sample urls
      * }
      */
@@ -52,7 +52,7 @@ class WebpageSampleInfo extends \Google\Protobuf\Internal\Message
      * Webpage sample urls
      *
      * Generated from protobuf field <code>repeated string sample_urls = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSampleUrls($var)

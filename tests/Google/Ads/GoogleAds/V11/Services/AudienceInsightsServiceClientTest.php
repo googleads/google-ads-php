@@ -24,8 +24,10 @@ namespace Google\Ads\GoogleAds\V11\Services;
 
 use Google\Ads\GoogleAds\V11\Services\AudienceInsightsServiceClient;
 use Google\Ads\GoogleAds\V11\Services\BasicInsightsAudience;
-use Google\Ads\GoogleAds\V11\Services\GenerateInsightsFinderReportResponse;
+use Google\Ads\GoogleAds\V11\Services\GenerateAudienceCompositionInsightsResponse;
 
+use Google\Ads\GoogleAds\V11\Services\GenerateInsightsFinderReportResponse;
+use Google\Ads\GoogleAds\V11\Services\InsightsAudience;
 use Google\Ads\GoogleAds\V11\Services\ListAudienceInsightsAttributesResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -71,10 +73,84 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
     /**
      * @test
      */
+    public function generateAudienceCompositionInsightsTest()
+    {
+        $transport = $this->createTransport();
+        $gapicClient = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new GenerateAudienceCompositionInsightsResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $audience = new InsightsAudience();
+        $audienceCountryLocations = [];
+        $audience->setCountryLocations($audienceCountryLocations);
+        $dimensions = [];
+        $response = $gapicClient->generateAudienceCompositionInsights($customerId, $audience, $dimensions);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v11.services.AudienceInsightsService/GenerateAudienceCompositionInsights', $actualFuncCall);
+        $actualValue = $actualRequestObject->getCustomerId();
+        $this->assertProtobufEquals($customerId, $actualValue);
+        $actualValue = $actualRequestObject->getAudience();
+        $this->assertProtobufEquals($audience, $actualValue);
+        $actualValue = $actualRequestObject->getDimensions();
+        $this->assertProtobufEquals($dimensions, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function generateAudienceCompositionInsightsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $gapicClient = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $audience = new InsightsAudience();
+        $audienceCountryLocations = [];
+        $audience->setCountryLocations($audienceCountryLocations);
+        $dimensions = [];
+        try {
+            $gapicClient->generateAudienceCompositionInsights($customerId, $audience, $dimensions);
+            // If the $gapicClient method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
     public function generateInsightsFinderReportTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -91,7 +167,7 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $specificAudience = new BasicInsightsAudience();
         $specificAudienceCountryLocation = [];
         $specificAudience->setCountryLocation($specificAudienceCountryLocation);
-        $response = $client->generateInsightsFinderReport($customerId, $baselineAudience, $specificAudience);
+        $response = $gapicClient->generateInsightsFinderReport($customerId, $baselineAudience, $specificAudience);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -113,7 +189,7 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
     public function generateInsightsFinderReportExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -136,8 +212,8 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $specificAudienceCountryLocation = [];
         $specificAudience->setCountryLocation($specificAudienceCountryLocation);
         try {
-            $client->generateInsightsFinderReport($customerId, $baselineAudience, $specificAudience);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->generateInsightsFinderReport($customerId, $baselineAudience, $specificAudience);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -154,7 +230,7 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
     public function listAudienceInsightsAttributesTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -165,7 +241,7 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $dimensions = [];
         $queryText = 'queryText-168156604';
-        $response = $client->listAudienceInsightsAttributes($customerId, $dimensions, $queryText);
+        $response = $gapicClient->listAudienceInsightsAttributes($customerId, $dimensions, $queryText);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -187,7 +263,7 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
     public function listAudienceInsightsAttributesExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -206,8 +282,8 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $dimensions = [];
         $queryText = 'queryText-168156604';
         try {
-            $client->listAudienceInsightsAttributes($customerId, $dimensions, $queryText);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->listAudienceInsightsAttributes($customerId, $dimensions, $queryText);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

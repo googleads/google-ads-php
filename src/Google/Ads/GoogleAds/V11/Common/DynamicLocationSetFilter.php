@@ -36,7 +36,7 @@ class DynamicLocationSetFilter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           If multiple labels are set, then only feeditems marked with all the labels
      *           will be added to the FeedItemSet.
      *     @type \Google\Ads\GoogleAds\V11\Common\BusinessNameFilter $business_name_filter
@@ -65,7 +65,7 @@ class DynamicLocationSetFilter extends \Google\Protobuf\Internal\Message
      * will be added to the FeedItemSet.
      *
      * Generated from protobuf field <code>repeated string labels = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabels($var)

@@ -28,7 +28,7 @@ class KeywordSeed extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $keywords
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keywords
      *           Requires at least one keyword.
      * }
      */
@@ -52,7 +52,7 @@ class KeywordSeed extends \Google\Protobuf\Internal\Message
      * Requires at least one keyword.
      *
      * Generated from protobuf field <code>repeated string keywords = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setKeywords($var)

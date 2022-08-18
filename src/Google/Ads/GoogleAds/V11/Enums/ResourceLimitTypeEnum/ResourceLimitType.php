@@ -221,7 +221,7 @@ class ResourceLimitType
      */
     const NEGATIVE_KEYWORDS_PER_CAMPAIGN = 28;
     /**
-     * Number of excluded campaign criteria in placement dimension, e.g.
+     * Number of excluded campaign criteria in placement dimension, for example,
      * placement, mobile application, YouTube channel, etc. The API criterion
      * type is NOT limited to placement only, and this does not include
      * exclusions at the ad group or other levels.
@@ -781,8 +781,8 @@ class ResourceLimitType
     /**
      * Number of ENABLED keyword plans per user per customer.
      * The limit is applied per <user, customer> pair because by default a plan
-     * is private to a user of a customer. Each user of a customer has his or
-     * her own independent limit.
+     * is private to a user of a customer. Each user of a customer has their own
+     * independent limit.
      *
      * Generated from protobuf enum <code>KEYWORD_PLANS_PER_USER_PER_CUSTOMER = 122;</code>
      */

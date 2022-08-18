@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V11\Enums\IncomeRangeTypeEnum;
 use UnexpectedValueException;
 
 /**
- * The type of demographic income ranges (e.g. between 0% to 50%).
+ * The type of demographic income ranges (for example, between 0% to 50%).
  *
  * Protobuf type <code>google.ads.googleads.v11.enums.IncomeRangeTypeEnum.IncomeRangeType</code>
  */

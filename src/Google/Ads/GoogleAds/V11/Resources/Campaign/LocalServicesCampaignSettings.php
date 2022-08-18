@@ -28,7 +28,7 @@ class LocalServicesCampaignSettings extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Resources\Campaign\CategoryBid[]|\Google\Protobuf\Internal\RepeatedField $category_bids
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\Campaign\CategoryBid>|\Google\Protobuf\Internal\RepeatedField $category_bids
      *           Categorical level bids associated with MANUAL_CPA bidding strategy.
      * }
      */
@@ -52,7 +52,7 @@ class LocalServicesCampaignSettings extends \Google\Protobuf\Internal\Message
      * Categorical level bids associated with MANUAL_CPA bidding strategy.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.Campaign.CategoryBid category_bids = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\Campaign\CategoryBid[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\Campaign\CategoryBid>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCategoryBids($var)

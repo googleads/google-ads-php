@@ -56,7 +56,7 @@ class MutateKeywordPlanAdGroupKeywordsRequest extends \Google\Protobuf\Internal\
      *     @type string $customer_id
      *           Required. The ID of the customer whose Keyword Plan ad group keywords are being
      *           modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\KeywordPlanAdGroupKeywordOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanAdGroupKeywordOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to perform on individual Keyword Plan ad group
      *           keywords.
      *     @type bool $partial_failure
@@ -119,7 +119,7 @@ class MutateKeywordPlanAdGroupKeywordsRequest extends \Google\Protobuf\Internal\
      * keywords.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.KeywordPlanAdGroupKeywordOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\KeywordPlanAdGroupKeywordOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanAdGroupKeywordOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

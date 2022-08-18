@@ -50,7 +50,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      *
      *     @type string $customer_id
      *           Required. The ID of the customer.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $dimensions
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $dimensions
      *           Required. The types of attributes to be returned.
      *     @type string $query_text
      *           Required. A free text query.  Attributes matching or related to this string will be
@@ -105,7 +105,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * Required. The types of attributes to be returned.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDimensions($var)

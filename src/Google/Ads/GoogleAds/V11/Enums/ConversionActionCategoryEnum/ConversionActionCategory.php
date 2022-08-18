@@ -155,7 +155,7 @@ class ConversionActionCategory
     const QUALIFIED_LEAD = 22;
     /**
      * A lead conversion imported from an external source into Google Ads, that
-     * has further completed a desired stage as defined by the lead gen
+     * has further completed a chosen stage as defined by the lead gen
      * advertiser.
      *
      * Generated from protobuf enum <code>CONVERTED_LEAD = 23;</code>
@@ -165,7 +165,7 @@ class ConversionActionCategory
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
-        self::PBDEFAULT => 'PBDEFAULT',
+        self::PBDEFAULT => 'DEFAULT',
         self::PAGE_VIEW => 'PAGE_VIEW',
         self::PURCHASE => 'PURCHASE',
         self::SIGNUP => 'SIGNUP',
@@ -202,8 +202,12 @@ class ConversionActionCategory
     {
         $const = __CLASS__ . '::' . strtoupper($name);
         if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+            $pbconst =  __CLASS__. '::PB' . strtoupper($name);
+            if (!defined($pbconst)) {
+                throw new UnexpectedValueException(sprintf(
+                        'Enum %s has no value defined for name %s', __CLASS__, $name));
+            }
+            return constant($pbconst);
         }
         return constant($const);
     }

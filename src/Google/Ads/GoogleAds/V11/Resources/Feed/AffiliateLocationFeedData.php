@@ -36,7 +36,7 @@ class AffiliateLocationFeedData extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|string[]|\Google\Protobuf\Internal\RepeatedField $chain_ids
+     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $chain_ids
      *           The list of chains that the affiliate location feed will sync the
      *           locations from.
      *     @type int $relationship_type
@@ -65,7 +65,7 @@ class AffiliateLocationFeedData extends \Google\Protobuf\Internal\Message
      * locations from.
      *
      * Generated from protobuf field <code>repeated int64 chain_ids = 3;</code>
-     * @param int[]|string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setChainIds($var)

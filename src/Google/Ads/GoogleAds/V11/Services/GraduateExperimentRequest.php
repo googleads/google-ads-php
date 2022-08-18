@@ -45,7 +45,7 @@ class GraduateExperimentRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $experiment
      *           Required. The experiment to be graduated.
-     *     @type \Google\Ads\GoogleAds\V11\Services\CampaignBudgetMapping[]|\Google\Protobuf\Internal\RepeatedField $campaign_budget_mappings
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\CampaignBudgetMapping>|\Google\Protobuf\Internal\RepeatedField $campaign_budget_mappings
      *           Required. List of campaign budget mappings for graduation. Each campaign that
      *           appears here will graduate, and will be assigned a new budget that is
      *           paired with it in the mapping. The maximum size is one.
@@ -104,7 +104,7 @@ class GraduateExperimentRequest extends \Google\Protobuf\Internal\Message
      * paired with it in the mapping. The maximum size is one.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.CampaignBudgetMapping campaign_budget_mappings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\CampaignBudgetMapping[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\CampaignBudgetMapping>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCampaignBudgetMappings($var)

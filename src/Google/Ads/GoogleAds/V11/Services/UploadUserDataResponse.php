@@ -10,8 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Response message for [UserDataService.UploadUserData][google.ads.googleads.v11.services.UserDataService.UploadUserData]
- * Uploads made via this service will not be visible under the 'Segment members'
- * section for the Customer Match List in the Google Ads UI.
+ * Uploads made through this service will not be visible under the 'Segment
+ * members' section for the Customer Match List in the Google Ads UI.
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.services.UploadUserDataResponse</code>
  */
@@ -19,7 +19,7 @@ class UploadUserDataResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The date time at which the request was received by API, formatted as
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string upload_date_time = 3;</code>
      */
@@ -39,7 +39,7 @@ class UploadUserDataResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $upload_date_time
      *           The date time at which the request was received by API, formatted as
-     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *     @type int $received_operations_count
      *           Number of upload data operations received by API.
      * }
@@ -51,7 +51,7 @@ class UploadUserDataResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * The date time at which the request was received by API, formatted as
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string upload_date_time = 3;</code>
      * @return string
@@ -73,7 +73,7 @@ class UploadUserDataResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * The date time at which the request was received by API, formatted as
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string upload_date_time = 3;</code>
      * @param string $var

@@ -43,7 +43,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the adjustment occurred. Must be after the
      * conversion_date_time. The timezone must be specified. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string adjustment_date_time = 9;</code>
      */
@@ -110,7 +110,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      *     @type string $adjustment_date_time
      *           The date time at which the adjustment occurred. Must be after the
      *           conversion_date_time. The timezone must be specified. The format is
-     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *     @type int $adjustment_type
      *           The adjustment type.
      *     @type \Google\Ads\GoogleAds\V11\Services\RestatementValue $restatement_value
@@ -121,7 +121,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      *           value, it must have a new, more recent, adjustment occurrence time.
      *           Otherwise, it will be treated as a duplicate of the previous restatement
      *           and ignored.
-     *     @type \Google\Ads\GoogleAds\V11\Common\UserIdentifier[]|\Google\Protobuf\Internal\RepeatedField $user_identifiers
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $user_identifiers
      *           The user identifiers to enhance the original conversion.
      *           ConversionAdjustmentUploadService only accepts user identifiers in
      *           enhancements. The maximum number of user identifiers for each
@@ -266,7 +266,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the adjustment occurred. Must be after the
      * conversion_date_time. The timezone must be specified. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string adjustment_date_time = 9;</code>
      * @return string
@@ -289,7 +289,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
     /**
      * The date time at which the adjustment occurred. Must be after the
      * conversion_date_time. The timezone must be specified. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>optional string adjustment_date_time = 9;</code>
      * @param string $var
@@ -398,7 +398,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * enhancement is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.UserIdentifier user_identifiers = 10;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\UserIdentifier[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUserIdentifiers($var)

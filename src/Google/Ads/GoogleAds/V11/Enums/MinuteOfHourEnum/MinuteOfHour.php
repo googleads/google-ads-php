@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V11\Enums\MinuteOfHourEnum;
 use UnexpectedValueException;
 
 /**
- * Enumerates of quarter-hours. E.g. "FIFTEEN"
+ * Enumerates of quarter-hours. For example, "FIFTEEN"
  *
  * Protobuf type <code>google.ads.googleads.v11.enums.MinuteOfHourEnum.MinuteOfHour</code>
  */

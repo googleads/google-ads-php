@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class TargetRoas extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The desired revenue (based on conversion data) per unit of spend.
+     * Required. The chosen revenue (based on conversion data) per unit of spend.
      * Value must be between 0.01 and 1000.0, inclusive.
      *
      * Generated from protobuf field <code>optional double target_roas = 4;</code>
@@ -47,7 +47,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type float $target_roas
-     *           Required. The desired revenue (based on conversion data) per unit of spend.
+     *           Required. The chosen revenue (based on conversion data) per unit of spend.
      *           Value must be between 0.01 and 1000.0, inclusive.
      *     @type int|string $cpc_bid_ceiling_micros
      *           Maximum bid limit that can be set by the bid strategy.
@@ -65,7 +65,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The desired revenue (based on conversion data) per unit of spend.
+     * Required. The chosen revenue (based on conversion data) per unit of spend.
      * Value must be between 0.01 and 1000.0, inclusive.
      *
      * Generated from protobuf field <code>optional double target_roas = 4;</code>
@@ -87,7 +87,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The desired revenue (based on conversion data) per unit of spend.
+     * Required. The chosen revenue (based on conversion data) per unit of spend.
      * Value must be between 0.01 and 1000.0, inclusive.
      *
      * Generated from protobuf field <code>optional double target_roas = 4;</code>

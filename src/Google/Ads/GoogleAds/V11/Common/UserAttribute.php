@@ -69,6 +69,29 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional .google.ads.googleads.v11.common.ShoppingLoyalty shopping_loyalty = 7;</code>
      */
     protected $shopping_loyalty = null;
+    /**
+     * Optional. Advertiser defined lifecycle stage for the user. The accepted values are
+     * “Lead”, “Active” and “Churned”.
+     *
+     * Generated from protobuf field <code>string lifecycle_stage = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $lifecycle_stage = '';
+    /**
+     * Optional. Timestamp of the first purchase made by the user.
+     * The format is YYYY-MM-DD HH:MM:SS[+/-HH:MM], where [+/-HH:MM] is an
+     * optional timezone offset from UTC. If the offset is absent, the API will
+     * use the account's timezone as default.
+     *
+     * Generated from protobuf field <code>string first_purchase_date_time = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $first_purchase_date_time = '';
+    /**
+     * Optional. Advertiser defined events and their attributes. All the values in the
+     * nested fields are required. Currently this field is in beta.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.EventAttribute event_attribute = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $event_attribute;
 
     /**
      * Constructor.
@@ -101,6 +124,17 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
      *           The shopping loyalty related data. Shopping utilizes this data to provide
      *           users with a better experience. Accessible only to merchants on the
      *           allow-list with the user's consent.
+     *     @type string $lifecycle_stage
+     *           Optional. Advertiser defined lifecycle stage for the user. The accepted values are
+     *           “Lead”, “Active” and “Churned”.
+     *     @type string $first_purchase_date_time
+     *           Optional. Timestamp of the first purchase made by the user.
+     *           The format is YYYY-MM-DD HH:MM:SS[+/-HH:MM], where [+/-HH:MM] is an
+     *           optional timezone offset from UTC. If the offset is absent, the API will
+     *           use the account's timezone as default.
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\EventAttribute>|\Google\Protobuf\Internal\RepeatedField $event_attribute
+     *           Optional. Advertiser defined events and their attributes. All the values in the
+     *           nested fields are required. Currently this field is in beta.
      * }
      */
     public function __construct($data = NULL) {
@@ -338,6 +372,94 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Common\ShoppingLoyalty::class);
         $this->shopping_loyalty = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Advertiser defined lifecycle stage for the user. The accepted values are
+     * “Lead”, “Active” and “Churned”.
+     *
+     * Generated from protobuf field <code>string lifecycle_stage = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return string
+     */
+    public function getLifecycleStage()
+    {
+        return $this->lifecycle_stage;
+    }
+
+    /**
+     * Optional. Advertiser defined lifecycle stage for the user. The accepted values are
+     * “Lead”, “Active” and “Churned”.
+     *
+     * Generated from protobuf field <code>string lifecycle_stage = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLifecycleStage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->lifecycle_stage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Timestamp of the first purchase made by the user.
+     * The format is YYYY-MM-DD HH:MM:SS[+/-HH:MM], where [+/-HH:MM] is an
+     * optional timezone offset from UTC. If the offset is absent, the API will
+     * use the account's timezone as default.
+     *
+     * Generated from protobuf field <code>string first_purchase_date_time = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return string
+     */
+    public function getFirstPurchaseDateTime()
+    {
+        return $this->first_purchase_date_time;
+    }
+
+    /**
+     * Optional. Timestamp of the first purchase made by the user.
+     * The format is YYYY-MM-DD HH:MM:SS[+/-HH:MM], where [+/-HH:MM] is an
+     * optional timezone offset from UTC. If the offset is absent, the API will
+     * use the account's timezone as default.
+     *
+     * Generated from protobuf field <code>string first_purchase_date_time = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFirstPurchaseDateTime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->first_purchase_date_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Advertiser defined events and their attributes. All the values in the
+     * nested fields are required. Currently this field is in beta.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.EventAttribute event_attribute = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getEventAttribute()
+    {
+        return $this->event_attribute;
+    }
+
+    /**
+     * Optional. Advertiser defined events and their attributes. All the values in the
+     * nested fields are required. Currently this field is in beta.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.EventAttribute event_attribute = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param array<\Google\Ads\GoogleAds\V11\Common\EventAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setEventAttribute($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V11\Common\EventAttribute::class);
+        $this->event_attribute = $arr;
 
         return $this;
     }

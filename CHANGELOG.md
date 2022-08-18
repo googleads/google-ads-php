@@ -1,3 +1,17 @@
+## 17.0.0
+*   Added support for v11_1 of Google Ads API.
+*   Updated the FieldMasks utility to better handle empty message fields. For
+    more details on how field masks work, visit
+    https://developers.google.com/google-ads/api/docs/client-libs/php/fieldmasks.
+*   Updated the minimum required version of `google/protobuf` to 3.21.5.
+*   Added a code example: GenerateHistoricalMetrics
+*   Reworked code examples to address the deprecation of Expanded Text Ads (ETA):
+    * Edited AddAdCustomizer
+    * Renamed UpdateExpandedTextAd to UpdateResponsiveSearchAd
+    * Renamed ValidateTextAd to ValidateAd
+    * Removed AddExpandedTextAds
+    * Removed AddExpandedTextAdWithUpgradedUrls
+
 ## 16.0.0
 *   Removed support for v9 of Google Ads API.
 *   Cleaned up the FieldMasks util to remove reference to protocol buffer's wrapper types.

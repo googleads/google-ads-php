@@ -40,11 +40,11 @@ use Google\Auth\FetchAuthTokenInterface;
 
 /**
  * Service Description: Service to manage user data uploads.
- * Any uploads made to a Customer Match list via this service will be eligible
- * for matching as per the customer matching process. Please see
+ * Any uploads made to a Customer Match list through this service will be
+ * eligible for matching as per the customer matching process. See
  * https://support.google.com/google-ads/answer/7474263. However, the uploads
- * made via this service will not be visible under the 'Segment members' section
- * for the Customer Match List in the Google Ads UI.
+ * made through this service will not be visible under the 'Segment members'
+ * section for the Customer Match List in the Google Ads UI.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -206,10 +206,9 @@ class UserDataServiceGapicClient
      *     @type CustomerMatchUserListMetadata $customerMatchUserListMetadata
      *           Metadata for data updates to a Customer Match user list.
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\UploadUserDataResponse

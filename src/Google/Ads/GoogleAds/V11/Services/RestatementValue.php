@@ -31,7 +31,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * The currency of the restated value. If not provided, then the default
      * currency from the conversion action is used, and if that is not set then
      * the account currency is used. This is the ISO 4217 3-character currency
-     * code e.g. USD or EUR.
+     * code for example, USD or EUR.
      *
      * Generated from protobuf field <code>optional string currency_code = 4;</code>
      */
@@ -55,7 +55,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      *           The currency of the restated value. If not provided, then the default
      *           currency from the conversion action is used, and if that is not set then
      *           the account currency is used. This is the ISO 4217 3-character currency
-     *           code e.g. USD or EUR.
+     *           code for example, USD or EUR.
      * }
      */
     public function __construct($data = NULL) {
@@ -115,7 +115,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * The currency of the restated value. If not provided, then the default
      * currency from the conversion action is used, and if that is not set then
      * the account currency is used. This is the ISO 4217 3-character currency
-     * code e.g. USD or EUR.
+     * code for example, USD or EUR.
      *
      * Generated from protobuf field <code>optional string currency_code = 4;</code>
      * @return string
@@ -139,7 +139,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * The currency of the restated value. If not provided, then the default
      * currency from the conversion action is used, and if that is not set then
      * the account currency is used. This is the ISO 4217 3-character currency
-     * code e.g. USD or EUR.
+     * code for example, USD or EUR.
      *
      * Generated from protobuf field <code>optional string currency_code = 4;</code>
      * @param string $var

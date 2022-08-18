@@ -52,7 +52,7 @@ class MutateRemarketingActionsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer whose remarketing actions are being modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\RemarketingActionOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\RemarketingActionOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to perform on individual remarketing actions.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -110,7 +110,7 @@ class MutateRemarketingActionsRequest extends \Google\Protobuf\Internal\Message
      * Required. The list of operations to perform on individual remarketing actions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.RemarketingActionOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\RemarketingActionOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\RemarketingActionOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

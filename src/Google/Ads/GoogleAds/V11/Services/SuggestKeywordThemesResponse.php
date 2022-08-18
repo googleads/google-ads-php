@@ -29,7 +29,7 @@ class SuggestKeywordThemesResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Resources\KeywordThemeConstant[]|\Google\Protobuf\Internal\RepeatedField $keyword_themes
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\KeywordThemeConstant>|\Google\Protobuf\Internal\RepeatedField $keyword_themes
      *           Smart campaign keyword theme suggestions.
      * }
      */
@@ -53,7 +53,7 @@ class SuggestKeywordThemesResponse extends \Google\Protobuf\Internal\Message
      * Smart campaign keyword theme suggestions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.KeywordThemeConstant keyword_themes = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\KeywordThemeConstant[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\KeywordThemeConstant>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setKeywordThemes($var)

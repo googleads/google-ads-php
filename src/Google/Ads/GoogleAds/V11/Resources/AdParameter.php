@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  * be a maximum of two AdParameters per ad group criterion. (One with
  * parameter_index = 1 and one with parameter_index = 2.)
  * In the ad the parameters are referenced by a placeholder of the form
- * "{param#:value}". E.g. "{param1:$17}"
+ * "{param#:value}". For example, "{param1:$17}"
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.resources.AdParameter</code>
  */

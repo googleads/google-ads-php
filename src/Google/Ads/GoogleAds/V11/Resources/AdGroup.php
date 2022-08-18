@@ -256,7 +256,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *           This field is read-only.
      *     @type string $tracking_url_template
      *           The URL template for constructing a tracking URL.
-     *     @type \Google\Ads\GoogleAds\V11\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
      *           The list of mappings used to substitute custom parameter tags in a
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type string $campaign
@@ -314,9 +314,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *     @type int $effective_target_roas_source
      *           Output only. Source of the effective target ROAS.
      *           This field is read-only.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Output only. The resource names of labels attached to this ad group.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $excluded_parent_asset_field_types
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $excluded_parent_asset_field_types
      *           The asset field types that should be excluded from this ad group. Asset
      *           links with these field types will not be inherited by this ad group from
      *           the upper levels.
@@ -614,7 +614,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.CustomParameter url_custom_parameters = 6;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUrlCustomParameters($var)
@@ -1296,7 +1296,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Output only. The resource names of labels attached to this ad group.
      *
      * Generated from protobuf field <code>repeated string labels = 49 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabels($var)
@@ -1326,7 +1326,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * the upper levels.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.AssetFieldTypeEnum.AssetFieldType excluded_parent_asset_field_types = 54;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExcludedParentAssetFieldTypes($var)

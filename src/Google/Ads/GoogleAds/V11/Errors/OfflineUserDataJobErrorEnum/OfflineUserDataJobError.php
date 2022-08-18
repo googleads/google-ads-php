@@ -204,8 +204,8 @@ class OfflineUserDataJobError
      */
     const ATTRIBUTES_NOT_APPLICABLE_FOR_CUSTOMER_MATCH_USER_LIST = 34;
     /**
-     * Lifetime value bucket must be a number from 1-10, except for remove
-     * operation where 0 will be accepted.
+     * Lifetime bucket value must be a number from 0 to 10; 0 is only accepted
+     * for remove operations
      *
      * Generated from protobuf enum <code>LIFETIME_VALUE_BUCKET_NOT_IN_RANGE = 35;</code>
      */
@@ -244,6 +244,32 @@ class OfflineUserDataJobError
      * Generated from protobuf enum <code>INVALID_ITEM_ID = 40;</code>
      */
     const INVALID_ITEM_ID = 40;
+    /**
+     * First purchase date time cannot be greater than the last purchase date
+     * time.
+     *
+     * Generated from protobuf enum <code>FIRST_PURCHASE_TIME_GREATER_THAN_LAST_PURCHASE_TIME = 42;</code>
+     */
+    const FIRST_PURCHASE_TIME_GREATER_THAN_LAST_PURCHASE_TIME = 42;
+    /**
+     * Provided lifecycle stage is invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_LIFECYCLE_STAGE = 43;</code>
+     */
+    const INVALID_LIFECYCLE_STAGE = 43;
+    /**
+     * The event value of the Customer Match user attribute is invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_EVENT_VALUE = 44;</code>
+     */
+    const INVALID_EVENT_VALUE = 44;
+    /**
+     * All the fields are not present in the EventAttribute of the Customer
+     * Match.
+     *
+     * Generated from protobuf enum <code>EVENT_ATTRIBUTE_ALL_FIELDS_ARE_REQUIRED = 45;</code>
+     */
+    const EVENT_ATTRIBUTE_ALL_FIELDS_ARE_REQUIRED = 45;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -282,6 +308,10 @@ class OfflineUserDataJobError
         self::LAST_PURCHASE_TIME_LESS_THAN_ACQUISITION_TIME => 'LAST_PURCHASE_TIME_LESS_THAN_ACQUISITION_TIME',
         self::CUSTOMER_IDENTIFIER_NOT_ALLOWED => 'CUSTOMER_IDENTIFIER_NOT_ALLOWED',
         self::INVALID_ITEM_ID => 'INVALID_ITEM_ID',
+        self::FIRST_PURCHASE_TIME_GREATER_THAN_LAST_PURCHASE_TIME => 'FIRST_PURCHASE_TIME_GREATER_THAN_LAST_PURCHASE_TIME',
+        self::INVALID_LIFECYCLE_STAGE => 'INVALID_LIFECYCLE_STAGE',
+        self::INVALID_EVENT_VALUE => 'INVALID_EVENT_VALUE',
+        self::EVENT_ATTRIBUTE_ALL_FIELDS_ARE_REQUIRED => 'EVENT_ATTRIBUTE_ALL_FIELDS_ARE_REQUIRED',
     ];
 
     public static function name($value)

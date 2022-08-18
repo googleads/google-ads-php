@@ -37,12 +37,82 @@ class AudienceInsightsDimension
      * Generated from protobuf enum <code>KNOWLEDGE_GRAPH = 3;</code>
      */
     const KNOWLEDGE_GRAPH = 3;
+    /**
+     * A country, represented by a geo target.
+     *
+     * Generated from protobuf enum <code>GEO_TARGET_COUNTRY = 4;</code>
+     */
+    const GEO_TARGET_COUNTRY = 4;
+    /**
+     * A geographic location within a country.
+     *
+     * Generated from protobuf enum <code>SUB_COUNTRY_LOCATION = 5;</code>
+     */
+    const SUB_COUNTRY_LOCATION = 5;
+    /**
+     * A YouTube channel.
+     *
+     * Generated from protobuf enum <code>YOUTUBE_CHANNEL = 6;</code>
+     */
+    const YOUTUBE_CHANNEL = 6;
+    /**
+     * A YouTube Dynamic Lineup.
+     *
+     * Generated from protobuf enum <code>YOUTUBE_DYNAMIC_LINEUP = 7;</code>
+     */
+    const YOUTUBE_DYNAMIC_LINEUP = 7;
+    /**
+     * An Affinity UserInterest.
+     *
+     * Generated from protobuf enum <code>AFFINITY_USER_INTEREST = 8;</code>
+     */
+    const AFFINITY_USER_INTEREST = 8;
+    /**
+     * An In-Market UserInterest.
+     *
+     * Generated from protobuf enum <code>IN_MARKET_USER_INTEREST = 9;</code>
+     */
+    const IN_MARKET_USER_INTEREST = 9;
+    /**
+     * A Parental Status value (parent, or not a parent).
+     *
+     * Generated from protobuf enum <code>PARENTAL_STATUS = 10;</code>
+     */
+    const PARENTAL_STATUS = 10;
+    /**
+     * A household income percentile range.
+     *
+     * Generated from protobuf enum <code>INCOME_RANGE = 11;</code>
+     */
+    const INCOME_RANGE = 11;
+    /**
+     * An age range.
+     *
+     * Generated from protobuf enum <code>AGE_RANGE = 12;</code>
+     */
+    const AGE_RANGE = 12;
+    /**
+     * A gender.
+     *
+     * Generated from protobuf enum <code>GENDER = 13;</code>
+     */
+    const GENDER = 13;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::CATEGORY => 'CATEGORY',
         self::KNOWLEDGE_GRAPH => 'KNOWLEDGE_GRAPH',
+        self::GEO_TARGET_COUNTRY => 'GEO_TARGET_COUNTRY',
+        self::SUB_COUNTRY_LOCATION => 'SUB_COUNTRY_LOCATION',
+        self::YOUTUBE_CHANNEL => 'YOUTUBE_CHANNEL',
+        self::YOUTUBE_DYNAMIC_LINEUP => 'YOUTUBE_DYNAMIC_LINEUP',
+        self::AFFINITY_USER_INTEREST => 'AFFINITY_USER_INTEREST',
+        self::IN_MARKET_USER_INTEREST => 'IN_MARKET_USER_INTEREST',
+        self::PARENTAL_STATUS => 'PARENTAL_STATUS',
+        self::INCOME_RANGE => 'INCOME_RANGE',
+        self::AGE_RANGE => 'AGE_RANGE',
+        self::GENDER => 'GENDER',
     ];
 
     public static function name($value)

@@ -72,7 +72,7 @@ class FeedItemTargetServiceClientTest extends GeneratedTest
     public function mutateFeedItemTargetsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -82,7 +82,7 @@ class FeedItemTargetServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-        $response = $client->mutateFeedItemTargets($customerId, $operations);
+        $response = $gapicClient->mutateFeedItemTargets($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -102,7 +102,7 @@ class FeedItemTargetServiceClientTest extends GeneratedTest
     public function mutateFeedItemTargetsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -120,8 +120,8 @@ class FeedItemTargetServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operations = [];
         try {
-            $client->mutateFeedItemTargets($customerId, $operations);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateFeedItemTargets($customerId, $operations);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

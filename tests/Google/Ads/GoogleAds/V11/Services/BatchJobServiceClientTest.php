@@ -83,7 +83,7 @@ class BatchJobServiceClientTest extends GeneratedTest
     public function addBatchJobOperationsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -95,9 +95,9 @@ class BatchJobServiceClientTest extends GeneratedTest
         $expectedResponse->setNextSequenceToken($nextSequenceToken);
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
+        $formattedResourceName = $gapicClient->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
         $mutateOperations = [];
-        $response = $client->addBatchJobOperations($formattedResourceName, $mutateOperations);
+        $response = $gapicClient->addBatchJobOperations($formattedResourceName, $mutateOperations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -117,7 +117,7 @@ class BatchJobServiceClientTest extends GeneratedTest
     public function addBatchJobOperationsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -132,11 +132,11 @@ class BatchJobServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
+        $formattedResourceName = $gapicClient->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
         $mutateOperations = [];
         try {
-            $client->addBatchJobOperations($formattedResourceName, $mutateOperations);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->addBatchJobOperations($formattedResourceName, $mutateOperations);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -153,7 +153,7 @@ class BatchJobServiceClientTest extends GeneratedTest
     public function listBatchJobResultsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -168,8 +168,8 @@ class BatchJobServiceClientTest extends GeneratedTest
         $expectedResponse->setResults($results);
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
-        $response = $client->listBatchJobResults($formattedResourceName);
+        $formattedResourceName = $gapicClient->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
+        $response = $gapicClient->listBatchJobResults($formattedResourceName);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -190,7 +190,7 @@ class BatchJobServiceClientTest extends GeneratedTest
     public function listBatchJobResultsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -205,10 +205,10 @@ class BatchJobServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
+        $formattedResourceName = $gapicClient->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
         try {
-            $client->listBatchJobResults($formattedResourceName);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->listBatchJobResults($formattedResourceName);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -225,7 +225,7 @@ class BatchJobServiceClientTest extends GeneratedTest
     public function mutateBatchJobTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -235,7 +235,7 @@ class BatchJobServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operation = new BatchJobOperation();
-        $response = $client->mutateBatchJob($customerId, $operation);
+        $response = $gapicClient->mutateBatchJob($customerId, $operation);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -255,7 +255,7 @@ class BatchJobServiceClientTest extends GeneratedTest
     public function mutateBatchJobExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -273,8 +273,8 @@ class BatchJobServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operation = new BatchJobOperation();
         try {
-            $client->mutateBatchJob($customerId, $operation);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateBatchJob($customerId, $operation);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -297,7 +297,7 @@ class BatchJobServiceClientTest extends GeneratedTest
             'credentials' => $this->createCredentials(),
         ]);
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
@@ -317,8 +317,8 @@ class BatchJobServiceClientTest extends GeneratedTest
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
         // Mock request
-        $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
-        $response = $client->runBatchJob($formattedResourceName);
+        $formattedResourceName = $gapicClient->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
+        $response = $gapicClient->runBatchJob($formattedResourceName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $apiRequests = $transport->popReceivedCalls();
@@ -361,7 +361,7 @@ class BatchJobServiceClientTest extends GeneratedTest
             'credentials' => $this->createCredentials(),
         ]);
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
@@ -383,8 +383,8 @@ class BatchJobServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
         // Mock request
-        $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
-        $response = $client->runBatchJob($formattedResourceName);
+        $formattedResourceName = $gapicClient->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
+        $response = $gapicClient->runBatchJob($formattedResourceName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $expectedOperationsRequestObject = new GetOperationRequest();

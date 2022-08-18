@@ -59,7 +59,7 @@ class AddBatchJobOperationsRequest extends \Google\Protobuf\Internal\Message
      *           sequence_token. Subsequent requests must set sequence_token to the value of
      *           next_sequence_token received in the previous AddBatchJobOperations
      *           response.
-     *     @type \Google\Ads\GoogleAds\V11\Services\MutateOperation[]|\Google\Protobuf\Internal\RepeatedField $mutate_operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\MutateOperation>|\Google\Protobuf\Internal\RepeatedField $mutate_operations
      *           Required. The list of mutates being added.
      *           Operations can use negative integers as temp ids to signify dependencies
      *           between entities created in this batch job. For example, a customer with
@@ -164,7 +164,7 @@ class AddBatchJobOperationsRequest extends \Google\Protobuf\Internal\Message
      * "customers/1234/campaigns/-1".
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.MutateOperation mutate_operations = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\MutateOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\MutateOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMutateOperations($var)

@@ -23,7 +23,7 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
     protected $type = 0;
     /**
      * The format of the web page where the tracking tag and snippet will be
-     * installed, e.g. HTML.
+     * installed, for example, HTML.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.TrackingCodePageFormatEnum.TrackingCodePageFormat page_format = 2;</code>
      */
@@ -53,7 +53,7 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
      *           The type of the generated tag snippets for tracking conversions.
      *     @type int $page_format
      *           The format of the web page where the tracking tag and snippet will be
-     *           installed, e.g. HTML.
+     *           installed, for example, HTML.
      *     @type string $global_site_tag
      *           The site tag that adds visitors to your basic remarketing lists and sets
      *           new cookies on your domain.
@@ -95,7 +95,7 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
 
     /**
      * The format of the web page where the tracking tag and snippet will be
-     * installed, e.g. HTML.
+     * installed, for example, HTML.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.TrackingCodePageFormatEnum.TrackingCodePageFormat page_format = 2;</code>
      * @return int
@@ -107,7 +107,7 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
 
     /**
      * The format of the web page where the tracking tag and snippet will be
-     * installed, e.g. HTML.
+     * installed, for example, HTML.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.TrackingCodePageFormatEnum.TrackingCodePageFormat page_format = 2;</code>
      * @param int $var

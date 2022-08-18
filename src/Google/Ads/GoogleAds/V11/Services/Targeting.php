@@ -54,6 +54,13 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.ReachPlanNetworkEnum.ReachPlanNetwork network = 5;</code>
      */
     protected $network = 0;
+    /**
+     * Targeted audiences.
+     * If not specified, does not target any specific audience.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.AudienceTargeting audience_targeting = 7;</code>
+     */
+    protected $audience_targeting = null;
 
     /**
      * Constructor.
@@ -67,10 +74,10 @@ class Targeting extends \Google\Protobuf\Internal\Message
      *     @type int $age_range
      *           Targeted age range.
      *           An unset value is equivalent to targeting all ages.
-     *     @type \Google\Ads\GoogleAds\V11\Common\GenderInfo[]|\Google\Protobuf\Internal\RepeatedField $genders
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\GenderInfo>|\Google\Protobuf\Internal\RepeatedField $genders
      *           Targeted genders.
      *           An unset value is equivalent to targeting MALE and FEMALE.
-     *     @type \Google\Ads\GoogleAds\V11\Common\DeviceInfo[]|\Google\Protobuf\Internal\RepeatedField $devices
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\DeviceInfo>|\Google\Protobuf\Internal\RepeatedField $devices
      *           Targeted devices.
      *           If not specified, targets all applicable devices. Applicable devices vary
      *           by product and region and can be obtained from
@@ -80,6 +87,9 @@ class Targeting extends \Google\Protobuf\Internal\Message
      *           If not specified, targets all applicable networks. Applicable networks vary
      *           by product and region and can be obtained from
      *           [ReachPlanService.ListPlannableProducts][google.ads.googleads.v11.services.ReachPlanService.ListPlannableProducts].
+     *     @type \Google\Ads\GoogleAds\V11\Services\AudienceTargeting $audience_targeting
+     *           Targeted audiences.
+     *           If not specified, does not target any specific audience.
      * }
      */
     public function __construct($data = NULL) {
@@ -170,7 +180,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * An unset value is equivalent to targeting MALE and FEMALE.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.GenderInfo genders = 3;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\GenderInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\GenderInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGenders($var)
@@ -202,7 +212,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v11.services.ReachPlanService.ListPlannableProducts].
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.DeviceInfo devices = 4;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\DeviceInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\DeviceInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDevices($var)
@@ -241,6 +251,44 @@ class Targeting extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V11\Enums\ReachPlanNetworkEnum\ReachPlanNetwork::class);
         $this->network = $var;
+
+        return $this;
+    }
+
+    /**
+     * Targeted audiences.
+     * If not specified, does not target any specific audience.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.AudienceTargeting audience_targeting = 7;</code>
+     * @return \Google\Ads\GoogleAds\V11\Services\AudienceTargeting|null
+     */
+    public function getAudienceTargeting()
+    {
+        return $this->audience_targeting;
+    }
+
+    public function hasAudienceTargeting()
+    {
+        return isset($this->audience_targeting);
+    }
+
+    public function clearAudienceTargeting()
+    {
+        unset($this->audience_targeting);
+    }
+
+    /**
+     * Targeted audiences.
+     * If not specified, does not target any specific audience.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.services.AudienceTargeting audience_targeting = 7;</code>
+     * @param \Google\Ads\GoogleAds\V11\Services\AudienceTargeting $var
+     * @return $this
+     */
+    public function setAudienceTargeting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Services\AudienceTargeting::class);
+        $this->audience_targeting = $var;
 
         return $this;
     }

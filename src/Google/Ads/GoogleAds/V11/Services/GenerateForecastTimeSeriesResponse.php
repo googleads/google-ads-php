@@ -29,7 +29,7 @@ class GenerateForecastTimeSeriesResponse extends \Google\Protobuf\Internal\Messa
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\KeywordPlanWeeklyTimeSeriesForecast[]|\Google\Protobuf\Internal\RepeatedField $weekly_time_series_forecasts
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanWeeklyTimeSeriesForecast>|\Google\Protobuf\Internal\RepeatedField $weekly_time_series_forecasts
      *           List of weekly time series forecasts for the keyword plan campaign.
      *           One maximum.
      * }
@@ -56,7 +56,7 @@ class GenerateForecastTimeSeriesResponse extends \Google\Protobuf\Internal\Messa
      * One maximum.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.KeywordPlanWeeklyTimeSeriesForecast weekly_time_series_forecasts = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\KeywordPlanWeeklyTimeSeriesForecast[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanWeeklyTimeSeriesForecast>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setWeeklyTimeSeriesForecasts($var)

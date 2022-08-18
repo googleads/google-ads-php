@@ -62,7 +62,7 @@ class CustomConversionGoal extends \Google\Protobuf\Internal\Message
      *           Immutable. The ID for this custom conversion goal.
      *     @type string $name
      *           The name for this custom conversion goal.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $conversion_actions
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $conversion_actions
      *           Conversion actions that the custom conversion goal makes biddable.
      *     @type int $status
      *           The status of the custom conversion goal.
@@ -170,7 +170,7 @@ class CustomConversionGoal extends \Google\Protobuf\Internal\Message
      * Conversion actions that the custom conversion goal makes biddable.
      *
      * Generated from protobuf field <code>repeated string conversion_actions = 4 [(.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConversionActions($var)

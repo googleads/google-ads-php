@@ -57,7 +57,7 @@ class AdGroupAdAssetCombinationView extends \Google\Protobuf\Internal\Message
      *           asset_combination_id_low.
      *           AdGroupAd Asset Combination view resource names have the form:
      *           `customers/{customer_id}/adGroupAdAssetCombinationViews/{AdGroupAd.ad_group_id}~{AdGroupAd.ad.ad_id}~{AssetCombination.asset_combination_id_low}~{AssetCombination.asset_combination_id_high}`
-     *     @type \Google\Ads\GoogleAds\V11\Common\AssetUsage[]|\Google\Protobuf\Internal\RepeatedField $served_assets
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AssetUsage>|\Google\Protobuf\Internal\RepeatedField $served_assets
      *           Output only. Served assets.
      *     @type bool $enabled
      *           Output only. The status between the asset combination and the latest version of the ad.
@@ -122,7 +122,7 @@ class AdGroupAdAssetCombinationView extends \Google\Protobuf\Internal\Message
      * Output only. Served assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AssetUsage served_assets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AssetUsage[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AssetUsage>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setServedAssets($var)

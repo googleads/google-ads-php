@@ -342,6 +342,11 @@
                 "grpc": {
                     "libraryClient": "AudienceInsightsServiceGapicClient",
                     "rpcs": {
+                        "GenerateAudienceCompositionInsights": {
+                            "methods": [
+                                "generateAudienceCompositionInsights"
+                            ]
+                        },
                         "GenerateInsightsFinderReport": {
                             "methods": [
                                 "generateInsightsFinderReport"

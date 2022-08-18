@@ -64,7 +64,7 @@ class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Mes
      *           be set).
      *     @type int $advertising_channel_type
      *           Channel type the category is available to.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $advertising_channel_sub_type
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $advertising_channel_sub_type
      *           Channel subtypes under the channel type the category is available to.
      *     @type bool $include_default_channel_sub_type
      *           Whether default channel sub type is included. For example,
@@ -155,7 +155,7 @@ class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Mes
      * Channel subtypes under the channel type the category is available to.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.enums.AdvertisingChannelSubTypeEnum.AdvertisingChannelSubType advertising_channel_sub_type = 3;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdvertisingChannelSubType($var)

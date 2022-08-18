@@ -82,12 +82,12 @@ class Feed extends \Google\Protobuf\Internal\Message
      *           This field is read-only.
      *     @type string $name
      *           Immutable. Name of the feed. Required.
-     *     @type \Google\Ads\GoogleAds\V11\Resources\FeedAttribute[]|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\FeedAttribute>|\Google\Protobuf\Internal\RepeatedField $attributes
      *           The Feed's attributes. Required on CREATE, unless
      *           system_feed_generation_data is provided, in which case Google Ads will
      *           update the feed with the correct attributes.
      *           Disallowed on UPDATE. Use attribute_operations to add new attributes.
-     *     @type \Google\Ads\GoogleAds\V11\Resources\FeedAttributeOperation[]|\Google\Protobuf\Internal\RepeatedField $attribute_operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\FeedAttributeOperation>|\Google\Protobuf\Internal\RepeatedField $attribute_operations
      *           The list of operations changing the feed attributes. Attributes can only
      *           be added, not removed.
      *     @type int $origin
@@ -232,7 +232,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * Disallowed on UPDATE. Use attribute_operations to add new attributes.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.FeedAttribute attributes = 4;</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\FeedAttribute[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\FeedAttribute>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAttributes($var)
@@ -260,7 +260,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * be added, not removed.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.FeedAttributeOperation attribute_operations = 9;</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\FeedAttributeOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\FeedAttributeOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAttributeOperations($var)

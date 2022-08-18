@@ -7,7 +7,8 @@ namespace Google\Ads\GoogleAds\V11\Enums\AgeRangeTypeEnum;
 use UnexpectedValueException;
 
 /**
- * The type of demographic age ranges (e.g. between 18 and 24 years old).
+ * The type of demographic age ranges (for example, between 18 and 24 years
+ * old).
  *
  * Protobuf type <code>google.ads.googleads.v11.enums.AgeRangeTypeEnum.AgeRangeType</code>
  */

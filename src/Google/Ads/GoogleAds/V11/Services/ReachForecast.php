@@ -45,7 +45,7 @@ class ReachForecast extends \Google\Protobuf\Internal\Message
      *           The cost in micros.
      *     @type \Google\Ads\GoogleAds\V11\Services\Forecast $forecast
      *           Forecasted traffic metrics for this point.
-     *     @type \Google\Ads\GoogleAds\V11\Services\PlannedProductReachForecast[]|\Google\Protobuf\Internal\RepeatedField $planned_product_reach_forecasts
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\PlannedProductReachForecast>|\Google\Protobuf\Internal\RepeatedField $planned_product_reach_forecasts
      *           The forecasted allocation and traffic metrics for each planned product
      *           at this point on the reach curve.
      * }
@@ -134,7 +134,7 @@ class ReachForecast extends \Google\Protobuf\Internal\Message
      * at this point on the reach curve.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.PlannedProductReachForecast planned_product_reach_forecasts = 4;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\PlannedProductReachForecast[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\PlannedProductReachForecast>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPlannedProductReachForecasts($var)

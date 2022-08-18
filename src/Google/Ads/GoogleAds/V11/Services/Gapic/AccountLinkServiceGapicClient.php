@@ -289,10 +289,9 @@ class AccountLinkServiceGapicClient
      *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\CreateAccountLinkResponse
@@ -314,7 +313,7 @@ class AccountLinkServiceGapicClient
     /**
      * Creates or removes an account link.
      * From V5, create is not supported through
-     * AccountLinkService.MutateAccountLink. Please use
+     * AccountLinkService.MutateAccountLink. Use
      * AccountLinkService.CreateAccountLink instead.
      *
      * List of thrown errors:
@@ -354,10 +353,9 @@ class AccountLinkServiceGapicClient
      *           If true, the request is validated but not executed. Only errors are
      *           returned, not results.
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\MutateAccountLinkResponse

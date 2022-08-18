@@ -72,7 +72,7 @@ class SmartCampaignSettingServiceClientTest extends GeneratedTest
     public function mutateSmartCampaignSettingsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -82,7 +82,7 @@ class SmartCampaignSettingServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-        $response = $client->mutateSmartCampaignSettings($customerId, $operations);
+        $response = $gapicClient->mutateSmartCampaignSettings($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -102,7 +102,7 @@ class SmartCampaignSettingServiceClientTest extends GeneratedTest
     public function mutateSmartCampaignSettingsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -120,8 +120,8 @@ class SmartCampaignSettingServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operations = [];
         try {
-            $client->mutateSmartCampaignSettings($customerId, $operations);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateSmartCampaignSettings($customerId, $operations);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

@@ -536,7 +536,8 @@ class CriterionError
     const HOTEL_ADVANCE_BOOKING_WINDOW_OVERLAPS_WITH_EXISTING_CRITERION = 83;
     /**
      * The field is not allowed to be set when the negative field is set to
-     * true, e.g. we don't allow bids in negative ad group or campaign criteria.
+     * true, for example, we don't allow bids in negative ad group or campaign
+     * criteria.
      *
      * Generated from protobuf enum <code>FIELD_INCOMPATIBLE_WITH_NEGATIVE_TARGETING = 84;</code>
      */
@@ -739,9 +740,9 @@ class CriterionError
      */
     const LISTING_GROUP_TREE_TOO_DEEP = 118;
     /**
-     * Listing dimension is invalid (e.g. dimension contains illegal value,
-     * dimension type is represented with wrong class, etc). Listing dimension
-     * value can not contain "==" or "&+".
+     * Listing dimension is invalid (for example, dimension contains illegal
+     * value, dimension type is represented with wrong class, etc). Listing
+     * dimension value can not contain "==" or "&+".
      *
      * Generated from protobuf enum <code>INVALID_LISTING_DIMENSION = 119;</code>
      */
@@ -809,7 +810,7 @@ class CriterionError
      */
     const HOTEL_CHECK_IN_DATE_RANGE_REVERSED = 134;
     /**
-     * Broad match modifier (BMM) keywords can no longer be created. Please see
+     * Broad match modifier (BMM) keywords can no longer be created. See
      * https://ads-developers.googleblog.com/2021/06/broad-match-modifier-upcoming-changes.html.
      *
      * Generated from protobuf enum <code>BROAD_MATCH_MODIFIER_KEYWORD_NOT_ALLOWED = 135;</code>
@@ -836,7 +837,7 @@ class CriterionError
     const AUDIENCE_NOT_ALLOWED_TO_ATTACH_WHEN_AUDIENCE_GROUPED_SET_TO_FALSE = 138;
     /**
      * Targeting is not allowed for Customer Match lists as per Customer Match
-     * policy. Please see
+     * policy. See
      * https://support.google.com/google-ads/answer/6299717.
      *
      * Generated from protobuf enum <code>CANNOT_TARGET_CUSTOMER_MATCH_USER_LIST = 139;</code>

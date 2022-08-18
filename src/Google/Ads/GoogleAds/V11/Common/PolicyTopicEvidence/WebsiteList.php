@@ -31,7 +31,7 @@ class WebsiteList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $websites
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $websites
      *           Websites that caused the policy finding.
      * }
      */
@@ -55,7 +55,7 @@ class WebsiteList extends \Google\Protobuf\Internal\Message
      * Websites that caused the policy finding.
      *
      * Generated from protobuf field <code>repeated string websites = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setWebsites($var)

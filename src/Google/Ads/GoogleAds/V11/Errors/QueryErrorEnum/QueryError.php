@@ -50,7 +50,7 @@ class QueryError
      */
     const BAD_FIELD_NAME = 12;
     /**
-     * Limit value is invalid (i.e. not a number)
+     * Limit value is invalid (for example, not a number)
      *
      * Generated from protobuf enum <code>BAD_LIMIT_VALUE = 15;</code>
      */
@@ -188,8 +188,8 @@ class QueryError
      */
     const MISALIGNED_DATE_FOR_FILTER = 64;
     /**
-     * Value passed was not a string when it should have been. I.e., it was a
-     * number or unquoted literal.
+     * Value passed was not a string when it should have been. For example, it
+     * was a number or unquoted literal.
      *
      * Generated from protobuf enum <code>INVALID_STRING_VALUE = 57;</code>
      */

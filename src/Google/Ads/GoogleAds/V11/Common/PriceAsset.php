@@ -55,7 +55,7 @@ class PriceAsset extends \Google\Protobuf\Internal\Message
      *     @type string $language_code
      *           Required. The language of the price asset.
      *           Represented as BCP 47 language tag.
-     *     @type \Google\Ads\GoogleAds\V11\Common\PriceOffering[]|\Google\Protobuf\Internal\RepeatedField $price_offerings
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\PriceOffering>|\Google\Protobuf\Internal\RepeatedField $price_offerings
      *           The price offerings of the price asset.
      *           The size of this collection should be between 3 and 8, inclusive.
      * }
@@ -162,7 +162,7 @@ class PriceAsset extends \Google\Protobuf\Internal\Message
      * The size of this collection should be between 3 and 8, inclusive.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PriceOffering price_offerings = 4;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\PriceOffering[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\PriceOffering>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPriceOfferings($var)

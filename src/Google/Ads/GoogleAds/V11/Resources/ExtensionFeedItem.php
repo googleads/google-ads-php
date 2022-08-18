@@ -115,7 +115,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *           serving. The time is in the customer's time zone.
      *           The format is "YYYY-MM-DD HH:MM:SS".
      *           Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdScheduleInfo[]|\Google\Protobuf\Internal\RepeatedField $ad_schedules
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $ad_schedules
      *           List of non-overlapping schedules specifying all time intervals
      *           for which the feed item may serve. There can be a maximum of 6 schedules
      *           per day.
@@ -363,7 +363,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * per day.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdScheduleInfo ad_schedules = 16;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdScheduleInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdSchedules($var)

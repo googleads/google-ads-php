@@ -16,10 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * This is the fraction of all transactions that are identifiable (i.e.,
-     * associated with any form of customer information).
-     * Required.
-     * The fraction needs to be between 0 and 1 (excluding 0).
+     * This is the fraction of all transactions that are identifiable (for
+     * example, associated with any form of customer information). Required. The
+     * fraction needs to be between 0 and 1 (excluding 0).
      *
      * Generated from protobuf field <code>optional double loyalty_fraction = 5;</code>
      */
@@ -57,10 +56,9 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type float $loyalty_fraction
-     *           This is the fraction of all transactions that are identifiable (i.e.,
-     *           associated with any form of customer information).
-     *           Required.
-     *           The fraction needs to be between 0 and 1 (excluding 0).
+     *           This is the fraction of all transactions that are identifiable (for
+     *           example, associated with any form of customer information). Required. The
+     *           fraction needs to be between 0 and 1 (excluding 0).
      *     @type float $transaction_upload_fraction
      *           This is the ratio of sales being uploaded compared to the overall sales
      *           that can be associated with a customer. Required.
@@ -82,10 +80,9 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This is the fraction of all transactions that are identifiable (i.e.,
-     * associated with any form of customer information).
-     * Required.
-     * The fraction needs to be between 0 and 1 (excluding 0).
+     * This is the fraction of all transactions that are identifiable (for
+     * example, associated with any form of customer information). Required. The
+     * fraction needs to be between 0 and 1 (excluding 0).
      *
      * Generated from protobuf field <code>optional double loyalty_fraction = 5;</code>
      * @return float
@@ -106,10 +103,9 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This is the fraction of all transactions that are identifiable (i.e.,
-     * associated with any form of customer information).
-     * Required.
-     * The fraction needs to be between 0 and 1 (excluding 0).
+     * This is the fraction of all transactions that are identifiable (for
+     * example, associated with any form of customer information). Required. The
+     * fraction needs to be between 0 and 1 (excluding 0).
      *
      * Generated from protobuf field <code>optional double loyalty_fraction = 5;</code>
      * @param float $var

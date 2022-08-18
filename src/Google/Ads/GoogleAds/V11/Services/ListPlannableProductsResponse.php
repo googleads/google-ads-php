@@ -28,7 +28,7 @@ class ListPlannableProductsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\ProductMetadata[]|\Google\Protobuf\Internal\RepeatedField $product_metadata
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\ProductMetadata>|\Google\Protobuf\Internal\RepeatedField $product_metadata
      *           The list of products available for planning and related targeting metadata.
      * }
      */
@@ -52,7 +52,7 @@ class ListPlannableProductsResponse extends \Google\Protobuf\Internal\Message
      * The list of products available for planning and related targeting metadata.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.ProductMetadata product_metadata = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\ProductMetadata[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\ProductMetadata>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProductMetadata($var)

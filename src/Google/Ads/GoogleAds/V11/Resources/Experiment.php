@@ -60,7 +60,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      */
     protected $type = 0;
     /**
-     * The Advertiser-desired status of this experiment.
+     * The Advertiser-chosen status of this experiment.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.ExperimentStatusEnum.ExperimentStatus status = 14;</code>
      */
@@ -133,7 +133,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      *     @type int $type
      *           The product/feature that uses this experiment.
      *     @type int $status
-     *           The Advertiser-desired status of this experiment.
+     *           The Advertiser-chosen status of this experiment.
      *     @type string $start_date
      *           Date when the experiment starts. By default, the experiment starts
      *           now or on the campaign's start date, whichever is later. If this field is
@@ -147,7 +147,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      *           the end of the specified date in the customer's time zone.
      *           Format: YYYY-MM-DD
      *           Example: 2019-04-18
-     *     @type \Google\Ads\GoogleAds\V11\Common\MetricGoal[]|\Google\Protobuf\Internal\RepeatedField $goals
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\MetricGoal>|\Google\Protobuf\Internal\RepeatedField $goals
      *           The goals of this experiment.
      *     @type string $long_running_operation
      *           Output only. The resource name of the long-running operation that can be used to poll
@@ -343,7 +343,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Advertiser-desired status of this experiment.
+     * The Advertiser-chosen status of this experiment.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.ExperimentStatusEnum.ExperimentStatus status = 14;</code>
      * @return int
@@ -354,7 +354,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Advertiser-desired status of this experiment.
+     * The Advertiser-chosen status of this experiment.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.ExperimentStatusEnum.ExperimentStatus status = 14;</code>
      * @param int $var
@@ -473,7 +473,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * The goals of this experiment.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.MetricGoal goals = 17;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\MetricGoal[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\MetricGoal>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGoals($var)

@@ -31,7 +31,7 @@ class DynamicAffiliateLocationSetFilter extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|string[]|\Google\Protobuf\Internal\RepeatedField $chain_ids
+     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $chain_ids
      *           Used to filter affiliate locations by chain ids. Only affiliate locations
      *           that belong to the specified chain(s) will be added to the FeedItemSet.
      * }
@@ -58,7 +58,7 @@ class DynamicAffiliateLocationSetFilter extends \Google\Protobuf\Internal\Messag
      * that belong to the specified chain(s) will be added to the FeedItemSet.
      *
      * Generated from protobuf field <code>repeated int64 chain_ids = 1;</code>
-     * @param int[]|string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setChainIds($var)

@@ -67,7 +67,7 @@ class LeadFormSubmissionData extends \Google\Protobuf\Internal\Message
     protected $gclid = '';
     /**
      * Output only. The date and time at which the lead form was submitted. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>string submission_date_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -89,7 +89,7 @@ class LeadFormSubmissionData extends \Google\Protobuf\Internal\Message
      *           Output only. Asset associated with the submitted lead form.
      *     @type string $campaign
      *           Output only. Campaign associated with the submitted lead form.
-     *     @type \Google\Ads\GoogleAds\V11\Resources\LeadFormSubmissionField[]|\Google\Protobuf\Internal\RepeatedField $lead_form_submission_fields
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\LeadFormSubmissionField>|\Google\Protobuf\Internal\RepeatedField $lead_form_submission_fields
      *           Output only. Submission data associated with a lead form.
      *     @type string $ad_group
      *           Output only. AdGroup associated with the submitted lead form.
@@ -99,7 +99,7 @@ class LeadFormSubmissionData extends \Google\Protobuf\Internal\Message
      *           Output only. Google Click Id associated with the submissed lead form.
      *     @type string $submission_date_time
      *           Output only. The date and time at which the lead form was submitted. The format is
-     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      * }
      */
     public function __construct($data = NULL) {
@@ -230,7 +230,7 @@ class LeadFormSubmissionData extends \Google\Protobuf\Internal\Message
      * Output only. Submission data associated with a lead form.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.LeadFormSubmissionField lead_form_submission_fields = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\LeadFormSubmissionField[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\LeadFormSubmissionField>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLeadFormSubmissionFields($var)
@@ -321,7 +321,7 @@ class LeadFormSubmissionData extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The date and time at which the lead form was submitted. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>string submission_date_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -333,7 +333,7 @@ class LeadFormSubmissionData extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The date and time at which the lead form was submitted. The format is
-     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>string submission_date_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

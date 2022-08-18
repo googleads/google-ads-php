@@ -103,7 +103,8 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      */
     protected $background_image_asset = null;
     /**
-     * Desired intent for the lead form, e.g. more volume or more qualified.
+     * Chosen intent for the lead form, for example, more volume or more
+     * qualified.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.LeadFormDesiredIntentEnum.LeadFormDesiredIntent desired_intent = 21;</code>
      */
@@ -144,11 +145,11 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      *     @type string $post_submit_description
      *           Detailed description shown after form submission that describes how the
      *           advertiser will follow up with the user.
-     *     @type \Google\Ads\GoogleAds\V11\Common\LeadFormField[]|\Google\Protobuf\Internal\RepeatedField $fields
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\LeadFormField>|\Google\Protobuf\Internal\RepeatedField $fields
      *           Ordered list of input fields.
-     *     @type \Google\Ads\GoogleAds\V11\Common\LeadFormCustomQuestionField[]|\Google\Protobuf\Internal\RepeatedField $custom_question_fields
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\LeadFormCustomQuestionField>|\Google\Protobuf\Internal\RepeatedField $custom_question_fields
      *           Ordered list of custom question fields.
-     *     @type \Google\Ads\GoogleAds\V11\Common\LeadFormDeliveryMethod[]|\Google\Protobuf\Internal\RepeatedField $delivery_methods
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\LeadFormDeliveryMethod>|\Google\Protobuf\Internal\RepeatedField $delivery_methods
      *           Configured methods for collected lead data to be delivered to advertiser.
      *           Only one method typed as WebhookDelivery can be configured.
      *     @type int $post_submit_call_to_action_type
@@ -158,7 +159,8 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      *           Asset resource name of the background image. The minimum size is 600x314
      *           and the aspect ratio must be 1.91:1 (+-1%).
      *     @type int $desired_intent
-     *           Desired intent for the lead form, e.g. more volume or more qualified.
+     *           Chosen intent for the lead form, for example, more volume or more
+     *           qualified.
      *     @type string $custom_disclosure
      *           Custom disclosure shown along with Google disclaimer on the lead form.
      *           Accessible to allowed customers only.
@@ -424,7 +426,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Ordered list of input fields.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.LeadFormField fields = 8;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\LeadFormField[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\LeadFormField>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFields($var)
@@ -450,7 +452,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Ordered list of custom question fields.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.LeadFormCustomQuestionField custom_question_fields = 23;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\LeadFormCustomQuestionField[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\LeadFormCustomQuestionField>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCustomQuestionFields($var)
@@ -478,7 +480,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Only one method typed as WebhookDelivery can be configured.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.LeadFormDeliveryMethod delivery_methods = 9;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\LeadFormDeliveryMethod[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\LeadFormDeliveryMethod>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDeliveryMethods($var)
@@ -556,7 +558,8 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired intent for the lead form, e.g. more volume or more qualified.
+     * Chosen intent for the lead form, for example, more volume or more
+     * qualified.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.LeadFormDesiredIntentEnum.LeadFormDesiredIntent desired_intent = 21;</code>
      * @return int
@@ -567,7 +570,8 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired intent for the lead form, e.g. more volume or more qualified.
+     * Chosen intent for the lead form, for example, more volume or more
+     * qualified.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.LeadFormDesiredIntentEnum.LeadFormDesiredIntent desired_intent = 21;</code>
      * @param int $var

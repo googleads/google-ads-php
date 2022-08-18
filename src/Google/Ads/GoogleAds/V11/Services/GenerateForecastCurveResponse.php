@@ -29,7 +29,7 @@ class GenerateForecastCurveResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\KeywordPlanCampaignForecastCurve[]|\Google\Protobuf\Internal\RepeatedField $campaign_forecast_curves
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanCampaignForecastCurve>|\Google\Protobuf\Internal\RepeatedField $campaign_forecast_curves
      *           List of forecast curves for the keyword plan campaign.
      *           One maximum.
      * }
@@ -56,7 +56,7 @@ class GenerateForecastCurveResponse extends \Google\Protobuf\Internal\Message
      * One maximum.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.KeywordPlanCampaignForecastCurve campaign_forecast_curves = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\KeywordPlanCampaignForecastCurve[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\KeywordPlanCampaignForecastCurve>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCampaignForecastCurves($var)

@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class TargetRoas extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Output only. The desired revenue (based on conversion data) per unit of spend.
+     * Output only. The chosen revenue (based on conversion data) per unit of spend.
      *
      * Generated from protobuf field <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -30,7 +30,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type float $target_roas
-     *           Output only. The desired revenue (based on conversion data) per unit of spend.
+     *           Output only. The chosen revenue (based on conversion data) per unit of spend.
      * }
      */
     public function __construct($data = NULL) {
@@ -39,7 +39,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The desired revenue (based on conversion data) per unit of spend.
+     * Output only. The chosen revenue (based on conversion data) per unit of spend.
      *
      * Generated from protobuf field <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float
@@ -60,7 +60,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The desired revenue (based on conversion data) per unit of spend.
+     * Output only. The chosen revenue (based on conversion data) per unit of spend.
      *
      * Generated from protobuf field <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float $var

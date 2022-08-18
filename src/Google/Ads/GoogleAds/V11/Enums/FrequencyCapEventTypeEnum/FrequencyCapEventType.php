@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V11\Enums\FrequencyCapEventTypeEnum;
 use UnexpectedValueException;
 
 /**
- * The type of event that the cap applies to (e.g. impression).
+ * The type of event that the cap applies to (for example, impression).
  *
  * Protobuf type <code>google.ads.googleads.v11.enums.FrequencyCapEventTypeEnum.FrequencyCapEventType</code>
  */

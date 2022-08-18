@@ -117,8 +117,8 @@ class TravelPlaceholderField
     const DESTINATION_ADDRESS = 14;
     /**
      * Data Type: URL_LIST. Required. Final URLs to be used in ad, when using
-     * Upgraded URLs; the more specific the better (e.g. the individual URL of a
-     * specific travel offer and its location).
+     * Upgraded URLs; the more specific the better (for example, the individual
+     * URL of a specific travel offer and its location).
      *
      * Generated from protobuf enum <code>FINAL_URL = 15;</code>
      */

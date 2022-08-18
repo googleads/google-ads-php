@@ -36,8 +36,8 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
      */
     protected $name = null;
     /**
-     * Output only. The country code of the country where the carrier is located, e.g., "AR",
-     * "FR", etc.
+     * Output only. The country code of the country where the carrier is located, for example,
+     * "AR", "FR", etc.
      *
      * Generated from protobuf field <code>optional string country_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -58,8 +58,8 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Output only. The full name of the carrier in English.
      *     @type string $country_code
-     *           Output only. The country code of the country where the carrier is located, e.g., "AR",
-     *           "FR", etc.
+     *           Output only. The country code of the country where the carrier is located, for example,
+     *           "AR", "FR", etc.
      * }
      */
     public function __construct($data = NULL) {
@@ -170,8 +170,8 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The country code of the country where the carrier is located, e.g., "AR",
-     * "FR", etc.
+     * Output only. The country code of the country where the carrier is located, for example,
+     * "AR", "FR", etc.
      *
      * Generated from protobuf field <code>optional string country_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -192,8 +192,8 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The country code of the country where the carrier is located, e.g., "AR",
-     * "FR", etc.
+     * Output only. The country code of the country where the carrier is located, for example,
+     * "AR", "FR", etc.
      *
      * Generated from protobuf field <code>optional string country_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

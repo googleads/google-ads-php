@@ -51,15 +51,15 @@ class AppEngagementAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
      *           List of text assets for headlines. When the ad serves the headlines will
      *           be selected from this list.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
      *           List of text assets for descriptions. When the ad serves the descriptions
      *           will be selected from this list.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $images
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $images
      *           List of image assets that may be displayed with the ad.
-     *     @type \Google\Ads\GoogleAds\V11\Common\AdVideoAsset[]|\Google\Protobuf\Internal\RepeatedField $videos
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $videos
      *           List of video assets that may be displayed with the ad.
      * }
      */
@@ -85,7 +85,7 @@ class AppEngagementAdInfo extends \Google\Protobuf\Internal\Message
      * be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset headlines = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -113,7 +113,7 @@ class AppEngagementAdInfo extends \Google\Protobuf\Internal\Message
      * will be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdTextAsset descriptions = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDescriptions($var)
@@ -139,7 +139,7 @@ class AppEngagementAdInfo extends \Google\Protobuf\Internal\Message
      * List of image assets that may be displayed with the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdImageAsset images = 3;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setImages($var)
@@ -165,7 +165,7 @@ class AppEngagementAdInfo extends \Google\Protobuf\Internal\Message
      * List of video assets that may be displayed with the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.AdVideoAsset videos = 4;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\AdVideoAsset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setVideos($var)

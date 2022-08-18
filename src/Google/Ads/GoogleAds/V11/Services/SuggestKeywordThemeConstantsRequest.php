@@ -18,7 +18,7 @@ class SuggestKeywordThemeConstantsRequest extends \Google\Protobuf\Internal\Mess
 {
     /**
      * The query text of a keyword theme that will be used to map to similar
-     * keyword themes. E.g. "plumber" or "roofer".
+     * keyword themes. For example, "plumber" or "roofer".
      *
      * Generated from protobuf field <code>string query_text = 1;</code>
      */
@@ -46,7 +46,7 @@ class SuggestKeywordThemeConstantsRequest extends \Google\Protobuf\Internal\Mess
      *
      *     @type string $query_text
      *           The query text of a keyword theme that will be used to map to similar
-     *           keyword themes. E.g. "plumber" or "roofer".
+     *           keyword themes. For example, "plumber" or "roofer".
      *     @type string $country_code
      *           Upper-case, two-letter country code as defined by ISO-3166. This for
      *           refining the scope of the query, default to 'US' if not set.
@@ -62,7 +62,7 @@ class SuggestKeywordThemeConstantsRequest extends \Google\Protobuf\Internal\Mess
 
     /**
      * The query text of a keyword theme that will be used to map to similar
-     * keyword themes. E.g. "plumber" or "roofer".
+     * keyword themes. For example, "plumber" or "roofer".
      *
      * Generated from protobuf field <code>string query_text = 1;</code>
      * @return string
@@ -74,7 +74,7 @@ class SuggestKeywordThemeConstantsRequest extends \Google\Protobuf\Internal\Mess
 
     /**
      * The query text of a keyword theme that will be used to map to similar
-     * keyword themes. E.g. "plumber" or "roofer".
+     * keyword themes. For example, "plumber" or "roofer".
      *
      * Generated from protobuf field <code>string query_text = 1;</code>
      * @param string $var

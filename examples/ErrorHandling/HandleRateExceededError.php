@@ -186,9 +186,9 @@ class HandleRateExceededError
             } catch (Exception $exception) {
                 // Prints any unhandled exception and bubbles up.
                 printf(
-                    'Failed to validate keywords.%n%s',
-                    $exception->getMessage(),
-                    PHP_EOL
+                    'Failed to validate keywords.%1$s%2$s%1$s',
+                    PHP_EOL,
+                    $exception->getMessage()
                 );
                 throw $exception;
             }

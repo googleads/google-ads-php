@@ -95,8 +95,8 @@ class JobPlaceholderField
     const SALARY = 11;
     /**
      * Data Type: URL_LIST. Required. Final URLs to be used in ad when using
-     * Upgraded URLs; the more specific the better (e.g. the individual URL of a
-     * specific job and its location).
+     * Upgraded URLs; the more specific the better (for example, the individual
+     * URL of a specific job and its location).
      *
      * Generated from protobuf enum <code>FINAL_URLS = 12;</code>
      */

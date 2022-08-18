@@ -63,7 +63,7 @@ class MutateCampaignExtensionSettingsRequest extends \Google\Protobuf\Internal\M
      *     @type string $customer_id
      *           Required. The ID of the customer whose campaign extension settings are being
      *           modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\CampaignExtensionSettingOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\CampaignExtensionSettingOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to perform on individual campaign extension
      *           settings.
      *     @type bool $partial_failure
@@ -129,7 +129,7 @@ class MutateCampaignExtensionSettingsRequest extends \Google\Protobuf\Internal\M
      * settings.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.CampaignExtensionSettingOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\CampaignExtensionSettingOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\CampaignExtensionSettingOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

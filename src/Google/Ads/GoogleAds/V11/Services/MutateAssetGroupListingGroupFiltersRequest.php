@@ -56,7 +56,7 @@ class MutateAssetGroupListingGroupFiltersRequest extends \Google\Protobuf\Intern
      *     @type string $customer_id
      *           Required. The ID of the customer whose asset group listing group filters are being
      *           modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\AssetGroupListingGroupFilterOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\AssetGroupListingGroupFilterOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to perform on individual asset group listing group
      *           filters.
      *     @type bool $validate_only
@@ -117,7 +117,7 @@ class MutateAssetGroupListingGroupFiltersRequest extends \Google\Protobuf\Intern
      * filters.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.AssetGroupListingGroupFilterOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\AssetGroupListingGroupFilterOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\AssetGroupListingGroupFilterOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

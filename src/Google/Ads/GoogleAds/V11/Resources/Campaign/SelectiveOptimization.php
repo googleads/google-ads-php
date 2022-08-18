@@ -29,7 +29,7 @@ class SelectiveOptimization extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $conversion_actions
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $conversion_actions
      *           The selected set of conversion actions for optimizing this campaign.
      * }
      */
@@ -53,7 +53,7 @@ class SelectiveOptimization extends \Google\Protobuf\Internal\Message
      * The selected set of conversion actions for optimizing this campaign.
      *
      * Generated from protobuf field <code>repeated string conversion_actions = 2 [(.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConversionActions($var)

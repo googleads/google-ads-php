@@ -28,7 +28,7 @@ class GenerateProductMixIdeasResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\ProductAllocation[]|\Google\Protobuf\Internal\RepeatedField $product_allocation
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\ProductAllocation>|\Google\Protobuf\Internal\RepeatedField $product_allocation
      *           A list of products (ad formats) and the associated budget allocation idea.
      * }
      */
@@ -52,7 +52,7 @@ class GenerateProductMixIdeasResponse extends \Google\Protobuf\Internal\Message
      * A list of products (ad formats) and the associated budget allocation idea.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.ProductAllocation product_allocation = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\ProductAllocation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\ProductAllocation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProductAllocation($var)

@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Container for enum describing a promotion extension occasion.
- * For more information about the occasions please check:
+ * For more information about the occasions  check:
  * https://support.google.com/google-ads/answer/7367521
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.enums.PromotionExtensionOccasionEnum</code>

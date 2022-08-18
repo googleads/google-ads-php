@@ -32,7 +32,7 @@ class PolicyFindingDetails extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry[]|\Google\Protobuf\Internal\RepeatedField $policy_topic_entries
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry>|\Google\Protobuf\Internal\RepeatedField $policy_topic_entries
      *           The list of policy topics for the resource. Contains the PROHIBITED or
      *           FULLY_LIMITED policy topic entries that prevented the resource from being
      *           saved (among any other entries the resource may also have).
@@ -62,7 +62,7 @@ class PolicyFindingDetails extends \Google\Protobuf\Internal\Message
      * saved (among any other entries the resource may also have).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PolicyTopicEntry policy_topic_entries = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPolicyTopicEntries($var)

@@ -225,10 +225,9 @@ class ReachPlanServiceGapicClient
      *           An unset preference is interpreted as all possible values are allowed,
      *           unless explicitly specified.
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\GenerateProductMixIdeasResponse
@@ -291,16 +290,16 @@ class ReachPlanServiceGapicClient
      *           The currency code.
      *           Three-character ISO 4217 currency code.
      *     @type int $cookieFrequencyCap
-     *           Desired cookie frequency cap to be applied to each planned product.
+     *           Chosen cookie frequency cap to be applied to each planned product.
      *           This is equivalent to the frequency cap exposed in Google Ads when creating
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user.
      *           If not specified, no cap is applied.
      *
      *           This field is deprecated in v4 and will eventually be removed.
-     *           Please use cookie_frequency_cap_setting instead.
+     *           Use cookie_frequency_cap_setting instead.
      *     @type FrequencyCap $cookieFrequencyCapSetting
-     *           Desired cookie frequency cap to be applied to each planned product.
+     *           Chosen cookie frequency cap to be applied to each planned product.
      *           This is equivalent to the frequency cap exposed in Google Ads when creating
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user during a specified time interval.
@@ -308,7 +307,7 @@ class ReachPlanServiceGapicClient
      *
      *           This field replaces the deprecated cookie_frequency_cap field.
      *     @type int $minEffectiveFrequency
-     *           Desired minimum effective frequency (the number of times a person was
+     *           Chosen minimum effective frequency (the number of times a person was
      *           exposed to the ad) for the reported reach metrics [1-10].
      *           This won't affect the targeting, but just the reporting.
      *           If not specified, a default of 1 is applied.
@@ -329,16 +328,18 @@ class ReachPlanServiceGapicClient
      *           The targeting to be applied to all products selected in the product mix.
      *
      *           This is planned targeting: execution details might vary based on the
-     *           advertising product, please consult an implementation specialist.
+     *           advertising product, consult an implementation specialist.
      *
      *           See specific metrics for details on how targeting affects them.
      *     @type ForecastMetricOptions $forecastMetricOptions
      *           Controls the forecast metrics returned in the response.
+     *     @type string $customerReachGroup
+     *           The name of the customer being planned for. This is a user-defined value.
+     *           Required if targeting.audience_targeting is set.
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\GenerateReachForecastResponse
@@ -381,6 +382,10 @@ class ReachPlanServiceGapicClient
             $request->setForecastMetricOptions($optionalArgs['forecastMetricOptions']);
         }
 
+        if (isset($optionalArgs['customerReachGroup'])) {
+            $request->setCustomerReachGroup($optionalArgs['customerReachGroup']);
+        }
+
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('GenerateReachForecast', GenerateReachForecastResponse::class, $optionalArgs, $request)->wait();
@@ -411,10 +416,9 @@ class ReachPlanServiceGapicClient
      *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\ListPlannableLocationsResponse
@@ -456,10 +460,9 @@ class ReachPlanServiceGapicClient
      *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\ListPlannableProductsResponse

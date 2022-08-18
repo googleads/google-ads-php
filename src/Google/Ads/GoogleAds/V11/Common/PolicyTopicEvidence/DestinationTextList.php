@@ -29,7 +29,7 @@ class DestinationTextList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $destination_texts
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $destination_texts
      *           List of text found in the resource's destination page.
      * }
      */
@@ -53,7 +53,7 @@ class DestinationTextList extends \Google\Protobuf\Internal\Message
      * List of text found in the resource's destination page.
      *
      * Generated from protobuf field <code>repeated string destination_texts = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDestinationTexts($var)

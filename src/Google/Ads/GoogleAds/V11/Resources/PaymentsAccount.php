@@ -51,8 +51,8 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
      */
     protected $payments_profile_id = null;
     /**
-     * Output only. A secondary payments profile ID present in uncommon situations, e.g.
-     * when a sequential liability agreement has been arranged.
+     * Output only. A secondary payments profile ID present in uncommon situations, for
+     * example, when a sequential liability agreement has been arranged.
      *
      * Generated from protobuf field <code>optional string secondary_payments_profile_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -86,8 +86,8 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
      *           Output only. A 12 digit ID used to identify the payments profile associated with the
      *           payments account.
      *     @type string $secondary_payments_profile_id
-     *           Output only. A secondary payments profile ID present in uncommon situations, e.g.
-     *           when a sequential liability agreement has been arranged.
+     *           Output only. A secondary payments profile ID present in uncommon situations, for
+     *           example, when a sequential liability agreement has been arranged.
      *     @type string $paying_manager_customer
      *           Output only. Paying manager of this payment account.
      * }
@@ -278,8 +278,8 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. A secondary payments profile ID present in uncommon situations, e.g.
-     * when a sequential liability agreement has been arranged.
+     * Output only. A secondary payments profile ID present in uncommon situations, for
+     * example, when a sequential liability agreement has been arranged.
      *
      * Generated from protobuf field <code>optional string secondary_payments_profile_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -300,8 +300,8 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. A secondary payments profile ID present in uncommon situations, e.g.
-     * when a sequential liability agreement has been arranged.
+     * Output only. A secondary payments profile ID present in uncommon situations, for
+     * example, when a sequential liability agreement has been arranged.
      *
      * Generated from protobuf field <code>optional string secondary_payments_profile_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

@@ -51,7 +51,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      */
     protected $allow_flexible_color = null;
     /**
-     * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
+     * The accent color of the ad in hexadecimal, for example, #ffffff for white.
      * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
@@ -59,7 +59,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      */
     protected $accent_color = null;
     /**
-     * The main color of the ad in hexadecimal, e.g. #ffffff for white.
+     * The main color of the ad in hexadecimal, for example, #ffffff for white.
      * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
@@ -103,7 +103,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      */
     protected $format_setting = 0;
     /**
-     * Prefix before price. E.g. 'as low as'.
+     * Prefix before price. For example, 'as low as'.
      *
      * Generated from protobuf field <code>optional string price_prefix = 28;</code>
      */
@@ -137,11 +137,11 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *           The default value is `true`.
      *           Must be true if `main_color` and `accent_color` are not set.
      *     @type string $accent_color
-     *           The accent color of the ad in hexadecimal, e.g. #ffffff for white.
+     *           The accent color of the ad in hexadecimal, for example, #ffffff for white.
      *           If one of `main_color` and `accent_color` is set, the other is required as
      *           well.
      *     @type string $main_color
-     *           The main color of the ad in hexadecimal, e.g. #ffffff for white.
+     *           The main color of the ad in hexadecimal, for example, #ffffff for white.
      *           If one of `main_color` and `accent_color` is set, the other is required as
      *           well.
      *     @type string $call_to_action_text
@@ -157,7 +157,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *     @type int $format_setting
      *           Specifies which format the ad will be served in. Default is ALL_FORMATS.
      *     @type string $price_prefix
-     *           Prefix before price. E.g. 'as low as'.
+     *           Prefix before price. For example, 'as low as'.
      *     @type string $promo_text
      *           Promotion text used for dynamic formats of responsive ads. For example
      *           'Free two-day shipping'.
@@ -357,7 +357,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
+     * The accent color of the ad in hexadecimal, for example, #ffffff for white.
      * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
@@ -380,7 +380,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
+     * The accent color of the ad in hexadecimal, for example, #ffffff for white.
      * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
@@ -397,7 +397,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The main color of the ad in hexadecimal, e.g. #ffffff for white.
+     * The main color of the ad in hexadecimal, for example, #ffffff for white.
      * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
@@ -420,7 +420,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The main color of the ad in hexadecimal, e.g. #ffffff for white.
+     * The main color of the ad in hexadecimal, for example, #ffffff for white.
      * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
@@ -643,7 +643,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Prefix before price. E.g. 'as low as'.
+     * Prefix before price. For example, 'as low as'.
      *
      * Generated from protobuf field <code>optional string price_prefix = 28;</code>
      * @return string
@@ -664,7 +664,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Prefix before price. E.g. 'as low as'.
+     * Prefix before price. For example, 'as low as'.
      *
      * Generated from protobuf field <code>optional string price_prefix = 28;</code>
      * @param string $var

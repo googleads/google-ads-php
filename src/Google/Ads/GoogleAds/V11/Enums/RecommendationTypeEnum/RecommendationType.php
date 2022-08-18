@@ -173,6 +173,19 @@ class RecommendationType
      * Generated from protobuf enum <code>RESPONSIVE_SEARCH_AD_IMPROVE_AD_STRENGTH = 23;</code>
      */
     const RESPONSIVE_SEARCH_AD_IMPROVE_AD_STRENGTH = 23;
+    /**
+     * Recommendation to update a campaign to use Display Expansion.
+     *
+     * Generated from protobuf enum <code>DISPLAY_EXPANSION_OPT_IN = 24;</code>
+     */
+    const DISPLAY_EXPANSION_OPT_IN = 24;
+    /**
+     * Recommendation to upgrade a Local campaign to a Performance Max
+     * campaign.
+     *
+     * Generated from protobuf enum <code>UPGRADE_LOCAL_CAMPAIGN_TO_PERFORMANCE_MAX = 25;</code>
+     */
+    const UPGRADE_LOCAL_CAMPAIGN_TO_PERFORMANCE_MAX = 25;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -199,6 +212,8 @@ class RecommendationType
         self::RESPONSIVE_SEARCH_AD_ASSET => 'RESPONSIVE_SEARCH_AD_ASSET',
         self::UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX => 'UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX',
         self::RESPONSIVE_SEARCH_AD_IMPROVE_AD_STRENGTH => 'RESPONSIVE_SEARCH_AD_IMPROVE_AD_STRENGTH',
+        self::DISPLAY_EXPANSION_OPT_IN => 'DISPLAY_EXPANSION_OPT_IN',
+        self::UPGRADE_LOCAL_CAMPAIGN_TO_PERFORMANCE_MAX => 'UPGRADE_LOCAL_CAMPAIGN_TO_PERFORMANCE_MAX',
     ];
 
     public static function name($value)

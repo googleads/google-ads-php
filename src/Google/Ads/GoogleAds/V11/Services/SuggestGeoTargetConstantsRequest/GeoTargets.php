@@ -28,7 +28,7 @@ class GeoTargets extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
      *           A list of geo target constant resource names.
      * }
      */
@@ -52,7 +52,7 @@ class GeoTargets extends \Google\Protobuf\Internal\Message
      * A list of geo target constant resource names.
      *
      * Generated from protobuf field <code>repeated string geo_target_constants = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGeoTargetConstants($var)

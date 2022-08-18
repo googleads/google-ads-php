@@ -73,7 +73,7 @@ class CustomerClientLinkServiceClientTest extends GeneratedTest
     public function mutateCustomerClientLinkTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -83,7 +83,7 @@ class CustomerClientLinkServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operation = new CustomerClientLinkOperation();
-        $response = $client->mutateCustomerClientLink($customerId, $operation);
+        $response = $gapicClient->mutateCustomerClientLink($customerId, $operation);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -103,7 +103,7 @@ class CustomerClientLinkServiceClientTest extends GeneratedTest
     public function mutateCustomerClientLinkExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -121,8 +121,8 @@ class CustomerClientLinkServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operation = new CustomerClientLinkOperation();
         try {
-            $client->mutateCustomerClientLink($customerId, $operation);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateCustomerClientLink($customerId, $operation);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

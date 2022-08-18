@@ -86,7 +86,7 @@ class AdvertisingChannelSubType
      */
     const VIDEO_NON_SKIPPABLE = 11;
     /**
-     * App Campaign that allows you to easily promote your Android or iOS app
+     * App Campaign that lets you easily promote your Android or iOS app
      * across Google's top properties including Search, Play, YouTube, and the
      * Google Display Network.
      *

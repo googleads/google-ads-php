@@ -48,9 +48,9 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
      *
      *     @type string $url_collection_id
      *           Unique identifier for this UrlCollection instance.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_urls
      *           A list of possible final URLs.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
      *           A list of possible final mobile URLs.
      *     @type string $tracking_url_template
      *           URL template for constructing a tracking URL.
@@ -112,7 +112,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
      * A list of possible final URLs.
      *
      * Generated from protobuf field <code>repeated string final_urls = 6;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFinalUrls($var)
@@ -138,7 +138,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
      * A list of possible final mobile URLs.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 7;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFinalMobileUrls($var)

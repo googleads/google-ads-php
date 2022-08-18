@@ -28,7 +28,7 @@ class TextList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $texts
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $texts
      *           The fragments of text from the resource that caused the policy finding.
      * }
      */
@@ -52,7 +52,7 @@ class TextList extends \Google\Protobuf\Internal\Message
      * The fragments of text from the resource that caused the policy finding.
      *
      * Generated from protobuf field <code>repeated string texts = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTexts($var)

@@ -62,7 +62,7 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
      *           The name of the remarketing action.
      *           This field is required and should not be empty when creating new
      *           remarketing actions.
-     *     @type \Google\Ads\GoogleAds\V11\Common\TagSnippet[]|\Google\Protobuf\Internal\RepeatedField $tag_snippets
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\TagSnippet>|\Google\Protobuf\Internal\RepeatedField $tag_snippets
      *           Output only. The snippets used for tracking remarketing actions.
      * }
      */
@@ -192,7 +192,7 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
      * Output only. The snippets used for tracking remarketing actions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.TagSnippet tag_snippets = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\TagSnippet[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\TagSnippet>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTagSnippets($var)

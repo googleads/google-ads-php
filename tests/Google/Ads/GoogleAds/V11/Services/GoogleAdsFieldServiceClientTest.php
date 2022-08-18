@@ -73,7 +73,7 @@ class GoogleAdsFieldServiceClientTest extends GeneratedTest
     public function getGoogleAdsFieldTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -95,8 +95,8 @@ class GoogleAdsFieldServiceClientTest extends GeneratedTest
         $expectedResponse->setIsRepeated($isRepeated);
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedResourceName = $client->googleAdsFieldName('[GOOGLE_ADS_FIELD]');
-        $response = $client->getGoogleAdsField($formattedResourceName);
+        $formattedResourceName = $gapicClient->googleAdsFieldName('[GOOGLE_ADS_FIELD]');
+        $response = $gapicClient->getGoogleAdsField($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -114,7 +114,7 @@ class GoogleAdsFieldServiceClientTest extends GeneratedTest
     public function getGoogleAdsFieldExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -129,10 +129,10 @@ class GoogleAdsFieldServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedResourceName = $client->googleAdsFieldName('[GOOGLE_ADS_FIELD]');
+        $formattedResourceName = $gapicClient->googleAdsFieldName('[GOOGLE_ADS_FIELD]');
         try {
-            $client->getGoogleAdsField($formattedResourceName);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->getGoogleAdsField($formattedResourceName);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -149,7 +149,7 @@ class GoogleAdsFieldServiceClientTest extends GeneratedTest
     public function searchGoogleAdsFieldsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -167,7 +167,7 @@ class GoogleAdsFieldServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $query = 'query107944136';
-        $response = $client->searchGoogleAdsFields($query);
+        $response = $gapicClient->searchGoogleAdsFields($query);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -188,7 +188,7 @@ class GoogleAdsFieldServiceClientTest extends GeneratedTest
     public function searchGoogleAdsFieldsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -205,8 +205,8 @@ class GoogleAdsFieldServiceClientTest extends GeneratedTest
         // Mock request
         $query = 'query107944136';
         try {
-            $client->searchGoogleAdsFields($query);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->searchGoogleAdsFields($query);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

@@ -76,7 +76,7 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
     public function suggestKeywordThemesTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -86,7 +86,7 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $suggestionInfo = new SmartCampaignSuggestionInfo();
-        $response = $client->suggestKeywordThemes($customerId, $suggestionInfo);
+        $response = $gapicClient->suggestKeywordThemes($customerId, $suggestionInfo);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -106,7 +106,7 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
     public function suggestKeywordThemesExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -124,8 +124,8 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $suggestionInfo = new SmartCampaignSuggestionInfo();
         try {
-            $client->suggestKeywordThemes($customerId, $suggestionInfo);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->suggestKeywordThemes($customerId, $suggestionInfo);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -142,7 +142,7 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
     public function suggestSmartCampaignAdTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -152,7 +152,7 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $suggestionInfo = new SmartCampaignSuggestionInfo();
-        $response = $client->suggestSmartCampaignAd($customerId, $suggestionInfo);
+        $response = $gapicClient->suggestSmartCampaignAd($customerId, $suggestionInfo);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -172,7 +172,7 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
     public function suggestSmartCampaignAdExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -190,8 +190,8 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $suggestionInfo = new SmartCampaignSuggestionInfo();
         try {
-            $client->suggestSmartCampaignAd($customerId, $suggestionInfo);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->suggestSmartCampaignAd($customerId, $suggestionInfo);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
@@ -208,7 +208,7 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
     public function suggestSmartCampaignBudgetOptionsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -219,7 +219,7 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $suggestionData = new SuggestionDataOneof();
         $suggestionData->setCampaign('formattedCampaign1309185331');
-        $response = $client->suggestSmartCampaignBudgetOptions($customerId, $suggestionData);
+        $response = $gapicClient->suggestSmartCampaignBudgetOptions($customerId, $suggestionData);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -239,7 +239,7 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
     public function suggestSmartCampaignBudgetOptionsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -258,8 +258,8 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
         $suggestionData = new SuggestionDataOneof();
         $suggestionData->setCampaign('formattedCampaign1309185331');
         try {
-            $client->suggestSmartCampaignBudgetOptions($customerId, $suggestionData);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->suggestSmartCampaignBudgetOptions($customerId, $suggestionData);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

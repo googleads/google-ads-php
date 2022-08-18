@@ -83,7 +83,7 @@ class GenerateKeywordHistoricalMetricsRequest extends \Google\Protobuf\Internal\
      *
      *     @type string $customer_id
      *           The ID of the customer with the recommendation.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $keywords
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keywords
      *           A list of keywords to get historical metrics.
      *           Not all inputs will be returned as a result of near-exact deduplication.
      *           For example, if stats for "car" and "cars" are requested, only "car" will
@@ -97,7 +97,7 @@ class GenerateKeywordHistoricalMetricsRequest extends \Google\Protobuf\Internal\
      *     @type bool $include_adult_keywords
      *           If true, adult keywords will be included in response.
      *           The default value is false.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
      *           The resource names of the location to target. Maximum is 10.
      *           An empty list MAY be used to specify all targeting geos.
      *     @type int $keyword_plan_network
@@ -163,7 +163,7 @@ class GenerateKeywordHistoricalMetricsRequest extends \Google\Protobuf\Internal\
      * A maximum of 10,000 keywords can be used.
      *
      * Generated from protobuf field <code>repeated string keywords = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setKeywords($var)
@@ -261,7 +261,7 @@ class GenerateKeywordHistoricalMetricsRequest extends \Google\Protobuf\Internal\
      * An empty list MAY be used to specify all targeting geos.
      *
      * Generated from protobuf field <code>repeated string geo_target_constants = 6;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGeoTargetConstants($var)

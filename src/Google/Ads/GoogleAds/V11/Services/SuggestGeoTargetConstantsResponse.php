@@ -28,7 +28,7 @@ class SuggestGeoTargetConstantsResponse extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\GeoTargetConstantSuggestion[]|\Google\Protobuf\Internal\RepeatedField $geo_target_constant_suggestions
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\GeoTargetConstantSuggestion>|\Google\Protobuf\Internal\RepeatedField $geo_target_constant_suggestions
      *           Geo target constant suggestions.
      * }
      */
@@ -52,7 +52,7 @@ class SuggestGeoTargetConstantsResponse extends \Google\Protobuf\Internal\Messag
      * Geo target constant suggestions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.GeoTargetConstantSuggestion geo_target_constant_suggestions = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\GeoTargetConstantSuggestion[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\GeoTargetConstantSuggestion>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGeoTargetConstantSuggestions($var)

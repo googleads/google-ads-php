@@ -26,9 +26,9 @@ class TargetingDimension
      */
     const UNKNOWN = 1;
     /**
-     * Keyword criteria, e.g. 'mars cruise'. KEYWORD may be used as a custom bid
-     * dimension. Keywords are always a targeting dimension, so may not be set
-     * as a target "ALL" dimension with TargetRestriction.
+     * Keyword criteria, for example, 'mars cruise'. KEYWORD may be used as a
+     * custom bid dimension. Keywords are always a targeting dimension, so may
+     * not be set as a target "ALL" dimension with TargetRestriction.
      *
      * Generated from protobuf enum <code>KEYWORD = 2;</code>
      */
@@ -41,7 +41,7 @@ class TargetingDimension
      */
     const AUDIENCE = 3;
     /**
-     * Topic criteria for targeting categories of content, e.g.
+     * Topic criteria for targeting categories of content, for example,
      * 'category::Animals>Pets' Used for Display and Video targeting.
      *
      * Generated from protobuf enum <code>TOPIC = 4;</code>

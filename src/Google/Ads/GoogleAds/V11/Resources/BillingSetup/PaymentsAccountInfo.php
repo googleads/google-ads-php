@@ -18,7 +18,8 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. A 16 digit id used to identify the payments account associated with the
      * billing setup.
-     * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
+     * This must be passed as a string with dashes, for example,
+     * "1234-5678-9012-3456".
      *
      * Generated from protobuf field <code>optional string payments_account_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -35,7 +36,8 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. A 12 digit id used to identify the payments profile associated with the
      * billing setup.
-     * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
+     * This must be passed in as a string with dashes, for example,
+     * "1234-5678-9012".
      *
      * Generated from protobuf field <code>optional string payments_profile_id = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -47,8 +49,8 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     protected $payments_profile_name = null;
     /**
-     * Output only. A secondary payments profile id present in uncommon situations, e.g.
-     * when a sequential liability agreement has been arranged.
+     * Output only. A secondary payments profile id present in uncommon situations, for
+     * example, when a sequential liability agreement has been arranged.
      *
      * Generated from protobuf field <code>optional string secondary_payments_profile_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -63,7 +65,8 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      *     @type string $payments_account_id
      *           Output only. A 16 digit id used to identify the payments account associated with the
      *           billing setup.
-     *           This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
+     *           This must be passed as a string with dashes, for example,
+     *           "1234-5678-9012-3456".
      *     @type string $payments_account_name
      *           Immutable. The name of the payments account associated with the billing setup.
      *           This enables the user to specify a meaningful name for a payments account
@@ -72,12 +75,13 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      *     @type string $payments_profile_id
      *           Immutable. A 12 digit id used to identify the payments profile associated with the
      *           billing setup.
-     *           This must be passed in as a string with dashes, e.g. "1234-5678-9012".
+     *           This must be passed in as a string with dashes, for example,
+     *           "1234-5678-9012".
      *     @type string $payments_profile_name
      *           Output only. The name of the payments profile associated with the billing setup.
      *     @type string $secondary_payments_profile_id
-     *           Output only. A secondary payments profile id present in uncommon situations, e.g.
-     *           when a sequential liability agreement has been arranged.
+     *           Output only. A secondary payments profile id present in uncommon situations, for
+     *           example, when a sequential liability agreement has been arranged.
      * }
      */
     public function __construct($data = NULL) {
@@ -88,7 +92,8 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. A 16 digit id used to identify the payments account associated with the
      * billing setup.
-     * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
+     * This must be passed as a string with dashes, for example,
+     * "1234-5678-9012-3456".
      *
      * Generated from protobuf field <code>optional string payments_account_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -111,7 +116,8 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. A 16 digit id used to identify the payments account associated with the
      * billing setup.
-     * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
+     * This must be passed as a string with dashes, for example,
+     * "1234-5678-9012-3456".
      *
      * Generated from protobuf field <code>optional string payments_account_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -170,7 +176,8 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. A 12 digit id used to identify the payments profile associated with the
      * billing setup.
-     * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
+     * This must be passed in as a string with dashes, for example,
+     * "1234-5678-9012".
      *
      * Generated from protobuf field <code>optional string payments_profile_id = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
@@ -193,7 +200,8 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. A 12 digit id used to identify the payments profile associated with the
      * billing setup.
-     * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
+     * This must be passed in as a string with dashes, for example,
+     * "1234-5678-9012".
      *
      * Generated from protobuf field <code>optional string payments_profile_id = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
@@ -244,8 +252,8 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. A secondary payments profile id present in uncommon situations, e.g.
-     * when a sequential liability agreement has been arranged.
+     * Output only. A secondary payments profile id present in uncommon situations, for
+     * example, when a sequential liability agreement has been arranged.
      *
      * Generated from protobuf field <code>optional string secondary_payments_profile_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -266,8 +274,8 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. A secondary payments profile id present in uncommon situations, e.g.
-     * when a sequential liability agreement has been arranged.
+     * Output only. A secondary payments profile id present in uncommon situations, for
+     * example, when a sequential liability agreement has been arranged.
      *
      * Generated from protobuf field <code>optional string secondary_payments_profile_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

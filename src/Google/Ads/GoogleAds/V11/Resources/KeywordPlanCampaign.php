@@ -94,7 +94,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      *           The name of the Keyword Plan campaign.
      *           This field is required and should not be empty when creating Keyword Plan
      *           campaigns.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $language_constants
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $language_constants
      *           The languages targeted for the Keyword Plan campaign.
      *           Max allowed: 1.
      *     @type int $keyword_plan_network
@@ -106,7 +106,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      *           groups under the campaign.
      *           This field is required and should not be empty when creating Keyword Plan
      *           campaigns.
-     *     @type \Google\Ads\GoogleAds\V11\Resources\KeywordPlanGeoTarget[]|\Google\Protobuf\Internal\RepeatedField $geo_targets
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\KeywordPlanGeoTarget>|\Google\Protobuf\Internal\RepeatedField $geo_targets
      *           The geo targets.
      *           Max number allowed: 20.
      * }
@@ -275,7 +275,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * Max allowed: 1.
      *
      * Generated from protobuf field <code>repeated string language_constants = 12 [(.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLanguageConstants($var)
@@ -375,7 +375,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * Max number allowed: 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.KeywordPlanGeoTarget geo_targets = 8;</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\KeywordPlanGeoTarget[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\KeywordPlanGeoTarget>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGeoTargets($var)

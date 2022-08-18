@@ -210,10 +210,9 @@ class KeywordPlanIdeaServiceGapicClient
      *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\GenerateAdGroupThemesResponse
@@ -286,10 +285,9 @@ class KeywordPlanIdeaServiceGapicClient
      *     @type HistoricalMetricsOptions $historicalMetricsOptions
      *           The options for historical metrics data.
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V11\Services\GenerateKeywordHistoricalMetricsResponse
@@ -411,18 +409,17 @@ class KeywordPlanIdeaServiceGapicClient
      *           The options for historical metrics data.
      *     @type KeywordAndUrlSeed $keywordAndUrlSeed
      *           A Keyword and a specific Url to generate ideas from
-     *           e.g. cars, www.example.com/cars.
+     *           for example, cars, www.example.com/cars.
      *     @type KeywordSeed $keywordSeed
-     *           A Keyword or phrase to generate ideas from, e.g. cars.
+     *           A Keyword or phrase to generate ideas from, for example, cars.
      *     @type UrlSeed $urlSeed
-     *           A specific url to generate ideas from, e.g. www.example.com/cars.
+     *           A specific url to generate ideas from, for example, www.example.com/cars.
      *     @type SiteSeed $siteSeed
-     *           The site to generate ideas from, e.g. www.example.com.
+     *           The site to generate ideas from, for example, www.example.com.
      *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\PagedListResponse

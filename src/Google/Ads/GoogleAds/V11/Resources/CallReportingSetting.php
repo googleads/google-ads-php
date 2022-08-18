@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class CallReportingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Enable reporting of phone call events by redirecting them via Google
+     * Enable reporting of phone call events by redirecting them through Google
      * System.
      *
      * Generated from protobuf field <code>optional bool call_reporting_enabled = 10;</code>
@@ -44,7 +44,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $call_reporting_enabled
-     *           Enable reporting of phone call events by redirecting them via Google
+     *           Enable reporting of phone call events by redirecting them through Google
      *           System.
      *     @type bool $call_conversion_reporting_enabled
      *           Whether to enable call conversion reporting.
@@ -60,7 +60,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Enable reporting of phone call events by redirecting them via Google
+     * Enable reporting of phone call events by redirecting them through Google
      * System.
      *
      * Generated from protobuf field <code>optional bool call_reporting_enabled = 10;</code>
@@ -82,7 +82,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Enable reporting of phone call events by redirecting them via Google
+     * Enable reporting of phone call events by redirecting them through Google
      * System.
      *
      * Generated from protobuf field <code>optional bool call_reporting_enabled = 10;</code>

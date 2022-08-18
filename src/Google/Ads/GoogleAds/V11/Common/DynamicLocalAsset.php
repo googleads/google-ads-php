@@ -23,95 +23,95 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
      */
     protected $deal_id = '';
     /**
-     * Required. Deal name, e.g. 50% off at Mountain View Grocers. Required.
+     * Required. Deal name, for example, 50% off at Mountain View Grocers. Required.
      *
      * Generated from protobuf field <code>string deal_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $deal_name = '';
     /**
-     * Subtitle, e.g. Groceries.
+     * Subtitle, for example, Groceries.
      *
      * Generated from protobuf field <code>string subtitle = 3;</code>
      */
     protected $subtitle = '';
     /**
-     * Description, e.g. Save on your weekly bill.
+     * Description, for example, Save on your weekly bill.
      *
      * Generated from protobuf field <code>string description = 4;</code>
      */
     protected $description = '';
     /**
      * Price which can be a number followed by the alphabetic currency code,
-     * ISO 4217 standard. Use '.' as the decimal mark, e.g. 100.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 100.00 USD.
      *
      * Generated from protobuf field <code>string price = 5;</code>
      */
     protected $price = '';
     /**
      * Sale price which can be number followed by the alphabetic currency code,
-     * ISO 4217 standard. Use '.' as the decimal mark, e.g. 80.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 80.00 USD.
      * Must be less than the 'price' field.
      *
      * Generated from protobuf field <code>string sale_price = 6;</code>
      */
     protected $sale_price = '';
     /**
-     * Image URL, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image URL, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 7;</code>
      */
     protected $image_url = '';
     /**
      * Address which can be specified in one of the following formats.
-     * (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     * (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     * (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403.
+     * (1) City, state, code, country, for example, Mountain View, CA, USA.
+     * (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     * (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403.
      *
      * Generated from protobuf field <code>string address = 8;</code>
      */
     protected $address = '';
     /**
-     * Category, e.g. Food.
+     * Category, for example, Food.
      *
      * Generated from protobuf field <code>string category = 9;</code>
      */
     protected $category = '';
     /**
-     * Contextual keywords, e.g. Save groceries coupons.
+     * Contextual keywords, for example, Save groceries coupons.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 10;</code>
      */
     private $contextual_keywords;
     /**
      * Formatted price which can be any characters. If set, this attribute will be
-     * used instead of 'price', e.g. Starting at $100.00.
+     * used instead of 'price', for example, Starting at $100.00.
      *
      * Generated from protobuf field <code>string formatted_price = 11;</code>
      */
     protected $formatted_price = '';
     /**
      * Formatted sale price which can be any characters. If set, this attribute
-     * will be used instead of 'sale price', e.g. On sale for $80.00.
+     * will be used instead of 'sale price', for example, On sale for $80.00.
      *
      * Generated from protobuf field <code>string formatted_sale_price = 12;</code>
      */
     protected $formatted_sale_price = '';
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 13;</code>
      */
     protected $android_app_link = '';
     /**
-     * Similar deal IDs, e.g. 1275.
+     * Similar deal IDs, for example, 1275.
      *
      * Generated from protobuf field <code>repeated string similar_deal_ids = 14;</code>
      */
     private $similar_deal_ids;
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 15;</code>
      */
@@ -135,43 +135,43 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
      *           Required. Deal ID which can be any sequence of letters and digits, and must be
      *           unique and match the values of remarketing tag. Required.
      *     @type string $deal_name
-     *           Required. Deal name, e.g. 50% off at Mountain View Grocers. Required.
+     *           Required. Deal name, for example, 50% off at Mountain View Grocers. Required.
      *     @type string $subtitle
-     *           Subtitle, e.g. Groceries.
+     *           Subtitle, for example, Groceries.
      *     @type string $description
-     *           Description, e.g. Save on your weekly bill.
+     *           Description, for example, Save on your weekly bill.
      *     @type string $price
      *           Price which can be a number followed by the alphabetic currency code,
-     *           ISO 4217 standard. Use '.' as the decimal mark, e.g. 100.00 USD.
+     *           ISO 4217 standard. Use '.' as the decimal mark, for example, 100.00 USD.
      *     @type string $sale_price
      *           Sale price which can be number followed by the alphabetic currency code,
-     *           ISO 4217 standard. Use '.' as the decimal mark, e.g. 80.00 USD.
+     *           ISO 4217 standard. Use '.' as the decimal mark, for example, 80.00 USD.
      *           Must be less than the 'price' field.
      *     @type string $image_url
-     *           Image URL, e.g. http://www.example.com/image.png. The image will not be
-     *           uploaded as image asset.
+     *           Image URL, for example, http://www.example.com/image.png. The image will
+     *           not be uploaded as image asset.
      *     @type string $address
      *           Address which can be specified in one of the following formats.
-     *           (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     *           (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     *           (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403.
+     *           (1) City, state, code, country, for example, Mountain View, CA, USA.
+     *           (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     *           (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403.
      *     @type string $category
-     *           Category, e.g. Food.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
-     *           Contextual keywords, e.g. Save groceries coupons.
+     *           Category, for example, Food.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
+     *           Contextual keywords, for example, Save groceries coupons.
      *     @type string $formatted_price
      *           Formatted price which can be any characters. If set, this attribute will be
-     *           used instead of 'price', e.g. Starting at $100.00.
+     *           used instead of 'price', for example, Starting at $100.00.
      *     @type string $formatted_sale_price
      *           Formatted sale price which can be any characters. If set, this attribute
-     *           will be used instead of 'sale price', e.g. On sale for $80.00.
+     *           will be used instead of 'sale price', for example, On sale for $80.00.
      *     @type string $android_app_link
-     *           Android deep link, e.g.
+     *           Android deep link, for example,
      *           android-app://com.example.android/http/example.com/gizmos?1234.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $similar_deal_ids
-     *           Similar deal IDs, e.g. 1275.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_deal_ids
+     *           Similar deal IDs, for example, 1275.
      *     @type string $ios_app_link
-     *           iOS deep link, e.g. exampleApp://content/page.
+     *           iOS deep link, for example, exampleApp://content/page.
      *     @type int|string $ios_app_store_id
      *           iOS app store ID. This is used to check if the user has the app installed
      *           on their device before deep linking. If this field is set, then the
@@ -212,7 +212,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Deal name, e.g. 50% off at Mountain View Grocers. Required.
+     * Required. Deal name, for example, 50% off at Mountain View Grocers. Required.
      *
      * Generated from protobuf field <code>string deal_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -223,7 +223,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Deal name, e.g. 50% off at Mountain View Grocers. Required.
+     * Required. Deal name, for example, 50% off at Mountain View Grocers. Required.
      *
      * Generated from protobuf field <code>string deal_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -238,7 +238,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Subtitle, e.g. Groceries.
+     * Subtitle, for example, Groceries.
      *
      * Generated from protobuf field <code>string subtitle = 3;</code>
      * @return string
@@ -249,7 +249,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Subtitle, e.g. Groceries.
+     * Subtitle, for example, Groceries.
      *
      * Generated from protobuf field <code>string subtitle = 3;</code>
      * @param string $var
@@ -264,7 +264,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Description, e.g. Save on your weekly bill.
+     * Description, for example, Save on your weekly bill.
      *
      * Generated from protobuf field <code>string description = 4;</code>
      * @return string
@@ -275,7 +275,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Description, e.g. Save on your weekly bill.
+     * Description, for example, Save on your weekly bill.
      *
      * Generated from protobuf field <code>string description = 4;</code>
      * @param string $var
@@ -291,7 +291,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Price which can be a number followed by the alphabetic currency code,
-     * ISO 4217 standard. Use '.' as the decimal mark, e.g. 100.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 100.00 USD.
      *
      * Generated from protobuf field <code>string price = 5;</code>
      * @return string
@@ -303,7 +303,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Price which can be a number followed by the alphabetic currency code,
-     * ISO 4217 standard. Use '.' as the decimal mark, e.g. 100.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 100.00 USD.
      *
      * Generated from protobuf field <code>string price = 5;</code>
      * @param string $var
@@ -319,7 +319,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Sale price which can be number followed by the alphabetic currency code,
-     * ISO 4217 standard. Use '.' as the decimal mark, e.g. 80.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 80.00 USD.
      * Must be less than the 'price' field.
      *
      * Generated from protobuf field <code>string sale_price = 6;</code>
@@ -332,7 +332,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Sale price which can be number followed by the alphabetic currency code,
-     * ISO 4217 standard. Use '.' as the decimal mark, e.g. 80.00 USD.
+     * ISO 4217 standard. Use '.' as the decimal mark, for example, 80.00 USD.
      * Must be less than the 'price' field.
      *
      * Generated from protobuf field <code>string sale_price = 6;</code>
@@ -348,8 +348,8 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Image URL, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image URL, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 7;</code>
      * @return string
@@ -360,8 +360,8 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Image URL, e.g. http://www.example.com/image.png. The image will not be
-     * uploaded as image asset.
+     * Image URL, for example, http://www.example.com/image.png. The image will
+     * not be uploaded as image asset.
      *
      * Generated from protobuf field <code>string image_url = 7;</code>
      * @param string $var
@@ -377,9 +377,9 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Address which can be specified in one of the following formats.
-     * (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     * (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     * (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403.
+     * (1) City, state, code, country, for example, Mountain View, CA, USA.
+     * (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     * (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403.
      *
      * Generated from protobuf field <code>string address = 8;</code>
      * @return string
@@ -391,9 +391,9 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Address which can be specified in one of the following formats.
-     * (1) City, state, code, country, e.g. Mountain View, CA, USA.
-     * (2) Full address, e.g. 123 Boulevard St, Mountain View, CA 94043.
-     * (3) Latitude-longitude in the DDD format, e.g. 41.40338, 2.17403.
+     * (1) City, state, code, country, for example, Mountain View, CA, USA.
+     * (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
+     * (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403.
      *
      * Generated from protobuf field <code>string address = 8;</code>
      * @param string $var
@@ -408,7 +408,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Category, e.g. Food.
+     * Category, for example, Food.
      *
      * Generated from protobuf field <code>string category = 9;</code>
      * @return string
@@ -419,7 +419,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Category, e.g. Food.
+     * Category, for example, Food.
      *
      * Generated from protobuf field <code>string category = 9;</code>
      * @param string $var
@@ -434,7 +434,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Contextual keywords, e.g. Save groceries coupons.
+     * Contextual keywords, for example, Save groceries coupons.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -445,10 +445,10 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Contextual keywords, e.g. Save groceries coupons.
+     * Contextual keywords, for example, Save groceries coupons.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 10;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setContextualKeywords($var)
@@ -461,7 +461,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Formatted price which can be any characters. If set, this attribute will be
-     * used instead of 'price', e.g. Starting at $100.00.
+     * used instead of 'price', for example, Starting at $100.00.
      *
      * Generated from protobuf field <code>string formatted_price = 11;</code>
      * @return string
@@ -473,7 +473,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Formatted price which can be any characters. If set, this attribute will be
-     * used instead of 'price', e.g. Starting at $100.00.
+     * used instead of 'price', for example, Starting at $100.00.
      *
      * Generated from protobuf field <code>string formatted_price = 11;</code>
      * @param string $var
@@ -489,7 +489,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Formatted sale price which can be any characters. If set, this attribute
-     * will be used instead of 'sale price', e.g. On sale for $80.00.
+     * will be used instead of 'sale price', for example, On sale for $80.00.
      *
      * Generated from protobuf field <code>string formatted_sale_price = 12;</code>
      * @return string
@@ -501,7 +501,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
 
     /**
      * Formatted sale price which can be any characters. If set, this attribute
-     * will be used instead of 'sale price', e.g. On sale for $80.00.
+     * will be used instead of 'sale price', for example, On sale for $80.00.
      *
      * Generated from protobuf field <code>string formatted_sale_price = 12;</code>
      * @param string $var
@@ -516,7 +516,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 13;</code>
@@ -528,7 +528,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Android deep link, e.g.
+     * Android deep link, for example,
      * android-app://com.example.android/http/example.com/gizmos?1234.
      *
      * Generated from protobuf field <code>string android_app_link = 13;</code>
@@ -544,7 +544,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Similar deal IDs, e.g. 1275.
+     * Similar deal IDs, for example, 1275.
      *
      * Generated from protobuf field <code>repeated string similar_deal_ids = 14;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -555,10 +555,10 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Similar deal IDs, e.g. 1275.
+     * Similar deal IDs, for example, 1275.
      *
      * Generated from protobuf field <code>repeated string similar_deal_ids = 14;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSimilarDealIds($var)
@@ -570,7 +570,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 15;</code>
      * @return string
@@ -581,7 +581,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * iOS deep link, e.g. exampleApp://content/page.
+     * iOS deep link, for example, exampleApp://content/page.
      *
      * Generated from protobuf field <code>string ios_app_link = 15;</code>
      * @param string $var

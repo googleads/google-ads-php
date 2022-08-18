@@ -72,7 +72,7 @@ class KeywordPlanCampaignKeywordServiceClientTest extends GeneratedTest
     public function mutateKeywordPlanCampaignKeywordsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -82,7 +82,7 @@ class KeywordPlanCampaignKeywordServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-        $response = $client->mutateKeywordPlanCampaignKeywords($customerId, $operations);
+        $response = $gapicClient->mutateKeywordPlanCampaignKeywords($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -102,7 +102,7 @@ class KeywordPlanCampaignKeywordServiceClientTest extends GeneratedTest
     public function mutateKeywordPlanCampaignKeywordsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -120,8 +120,8 @@ class KeywordPlanCampaignKeywordServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operations = [];
         try {
-            $client->mutateKeywordPlanCampaignKeywords($customerId, $operations);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateKeywordPlanCampaignKeywords($customerId, $operations);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

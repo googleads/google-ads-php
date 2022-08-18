@@ -31,7 +31,7 @@ class LifeEvent extends \Google\Protobuf\Internal\Message
      */
     protected $id = 0;
     /**
-     * Output only. The name of the life event. E.g.,"Recently Moved"
+     * Output only. The name of the life event, for example,"Recently Moved"
      *
      * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -68,12 +68,12 @@ class LifeEvent extends \Google\Protobuf\Internal\Message
      *     @type int|string $id
      *           Output only. The ID of the life event.
      *     @type string $name
-     *           Output only. The name of the life event. E.g.,"Recently Moved"
+     *           Output only. The name of the life event, for example,"Recently Moved"
      *     @type string $parent
      *           Output only. The parent of the life_event.
      *     @type bool $launched_to_all
      *           Output only. True if the life event is launched to all channels and locales.
-     *     @type \Google\Ads\GoogleAds\V11\Common\CriterionCategoryAvailability[]|\Google\Protobuf\Internal\RepeatedField $availabilities
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\CriterionCategoryAvailability>|\Google\Protobuf\Internal\RepeatedField $availabilities
      *           Output only. Availability information of the life event.
      * }
      */
@@ -139,7 +139,7 @@ class LifeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The name of the life event. E.g.,"Recently Moved"
+     * Output only. The name of the life event, for example,"Recently Moved"
      *
      * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -150,7 +150,7 @@ class LifeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The name of the life event. E.g.,"Recently Moved"
+     * Output only. The name of the life event, for example,"Recently Moved"
      *
      * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -231,7 +231,7 @@ class LifeEvent extends \Google\Protobuf\Internal\Message
      * Output only. Availability information of the life event.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.CriterionCategoryAvailability availabilities = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\CriterionCategoryAvailability[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\CriterionCategoryAvailability>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAvailabilities($var)

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2018 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,26 +24,28 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
+use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\Util\FieldMasks;
 use Google\Ads\GoogleAds\Util\V11\ResourceNames;
-use Google\Ads\GoogleAds\V11\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V11\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V11\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V11\Common\ResponsiveSearchAdInfo;
+use Google\Ads\GoogleAds\V11\Enums\ServedAssetFieldTypeEnum\ServedAssetFieldType;
 use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V11\Resources\Ad;
-use Google\Ads\GoogleAds\V11\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V11\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V11\Services\AdOperation;
 use Google\ApiCore\ApiException;
 
-/** This example demonstrates how to add expanded text ads to a given ad group. */
-class AddExpandedTextAds
+/**
+ * This example updates a responsive search ad. To get responsive search ads, run
+ * GetResponsiveSearchAds.php.
+ */
+class UpdateResponsiveSearchAd
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
-    // Specify the number of ads to be added in this example.
-    private const NUMBER_OF_ADS_TO_ADD = 2;
+    private const AD_ID = 'INSERT_AD_ID_HERE';
 
     public static function main()
     {
@@ -51,7 +53,7 @@ class AddExpandedTextAds
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::AD_ID => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -67,7 +69,7 @@ class AddExpandedTextAds
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::AD_GROUP_ID] ?: self::AD_GROUP_ID
+                $options[ArgumentNames::AD_ID] ?: self::AD_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -101,56 +103,58 @@ class AddExpandedTextAds
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID to add expanded text ads to
+     * @param int $adId the ad ID to update
      */
-    // [START add_expanded_text_ads]
+    // [START update_responsive_search_ad]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        int $adGroupId
+        int $adId
     ) {
-        $operations = [];
-        for ($i = 0; $i < self::NUMBER_OF_ADS_TO_ADD; $i++) {
-            // Creates the expanded text ad info.
-            $expandedTextAdInfo = new ExpandedTextAdInfo([
-                'headline_part1' => 'Cruise to Mars #' . Helper::getShortPrintableDatetime(),
-                'headline_part2' => 'Best Space Cruise Line',
-                'description' => 'Buy your tickets now!'
-            ]);
+        // Creates an ad with the specified resource name and other changes.
+        $ad = new Ad([
+            'resource_name' => ResourceNames::forAd($customerId, $adId),
+            'responsive_search_ad' => new ResponsiveSearchAdInfo([
+                // Update some properties of the responsive search ad.
+                'headlines' => [
+                    new AdTextAsset([
+                        'text' => 'Cruise to Pluto #' . Helper::getShortPrintableDatetime(),
+                        'pinned_field' => ServedAssetFieldType::HEADLINE_1
+                    ]),
+                    new AdTextAsset(['text' => 'Tickets on sale now']),
+                    new AdTextAsset(['text' => 'Buy your ticket now'])
+                ],
+                'descriptions' => [
+                    new AdTextAsset(['text' => 'Best space cruise ever.']),
+                    new AdTextAsset([
+                        'text' => 'The most wonderful space experience you will ever have.'])
+                ]
+            ]),
+            'final_urls' => ['http://www.example.com'],
+            'final_mobile_urls' => ['http://www.example.com/mobile']
+        ]);
 
-            // Sets the expanded text ad info on an Ad.
-            $ad = new Ad([
-                'expanded_text_ad' => $expandedTextAdInfo,
-                'final_urls' => ['http://www.example.com']
-            ]);
+        // Constructs an operation that will update the ad, using the FieldMasks to derive the
+        // update mask. This mask tells the Google Ads API which attributes of the ad you want to
+        // change.
+        $adOperation = new AdOperation();
+        $adOperation->setUpdate($ad);
+        $adOperation->setUpdateMask(FieldMasks::allSetFieldsOf($ad));
 
-            // Creates an ad group ad to hold the above ad.
-            $adGroupAd = new AdGroupAd([
-                'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
-                'status' => AdGroupAdStatus::PAUSED,
-                'ad' => $ad
-            ]);
+        // Issues a mutate request to update the ad.
+        $adServiceClient = $googleAdsClient->getAdServiceClient();
+        $response = $adServiceClient->mutateAds($customerId, [$adOperation]);
 
-            // Creates an ad group ad operation and add it to the operations array.
-            $adGroupAdOperation = new AdGroupAdOperation();
-            $adGroupAdOperation->setCreate($adGroupAd);
-            $operations[] = $adGroupAdOperation;
-        }
-
-        // Issues a mutate request to add the ad group ads.
-        $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
-        $response = $adGroupAdServiceClient->mutateAdGroupAds($customerId, $operations);
-
-        foreach ($response->getResults() as $addedAdGroupAd) {
-            /** @var AdGroupAd $addedAdGroupAd */
-            printf(
-                "Expanded text ad was created with resource name: '%s'%s",
-                $addedAdGroupAd->getResourceName(),
-                PHP_EOL
-            );
-        }
+        // Prints the resource name of the updated ad.
+        /** @var Ad $updatedAd */
+        $updatedAd = $response->getResults()[0];
+        printf(
+            "Updated ad with resource name: '%s'.%s",
+            $updatedAd->getResourceName(),
+            PHP_EOL
+        );
     }
-    // [END add_expanded_text_ads]
+    // [END update_responsive_search_ad]
 }
 
-AddExpandedTextAds::main();
+UpdateResponsiveSearchAd::main();

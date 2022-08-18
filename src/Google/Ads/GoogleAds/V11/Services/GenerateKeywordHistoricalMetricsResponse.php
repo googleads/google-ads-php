@@ -35,7 +35,7 @@ class GenerateKeywordHistoricalMetricsResponse extends \Google\Protobuf\Internal
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Services\GenerateKeywordHistoricalMetricsResult[]|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\GenerateKeywordHistoricalMetricsResult>|\Google\Protobuf\Internal\RepeatedField $results
      *           List of keywords and their historical metrics.
      *     @type \Google\Ads\GoogleAds\V11\Common\KeywordPlanAggregateMetricResults $aggregate_metric_results
      *           The aggregate metrics for all keywords.
@@ -61,7 +61,7 @@ class GenerateKeywordHistoricalMetricsResponse extends \Google\Protobuf\Internal
      * List of keywords and their historical metrics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.GenerateKeywordHistoricalMetricsResult results = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\GenerateKeywordHistoricalMetricsResult[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\GenerateKeywordHistoricalMetricsResult>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setResults($var)

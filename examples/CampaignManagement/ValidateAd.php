@@ -28,10 +28,12 @@ use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\V11\ResourceNames;
-use Google\Ads\GoogleAds\V11\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V11\Common\AdTextAsset;
 use Google\Ads\GoogleAds\V11\Common\PolicyTopicEntry;
+use Google\Ads\GoogleAds\V11\Common\ResponsiveSearchAdInfo;
 use Google\Ads\GoogleAds\V11\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
 use Google\Ads\GoogleAds\V11\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
+use Google\Ads\GoogleAds\V11\Enums\ServedAssetFieldTypeEnum\ServedAssetFieldType;
 use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V11\Errors\PolicyFindingErrorEnum\PolicyFindingError;
 use Google\Ads\GoogleAds\V11\Resources\Ad;
@@ -41,10 +43,10 @@ use Google\ApiCore\ApiException;
 
 /**
  * This code example shows how to use the validateOnly header to validate
- * an expanded text ad. No objects will be created, but exceptions will
+ * a responsive search ad. No objects will be created, but exceptions will
  * still be thrown.
  */
-class ValidateTextAd
+class ValidateAd
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
@@ -112,18 +114,28 @@ class ValidateTextAd
         int $customerId,
         int $adGroupId
     ) {
-        // Creates the expanded text ad info.
-        $expandedTextAdInfo = new ExpandedTextAdInfo([
-            'description' => 'Luxury Cruise to Mars',
-            'headline_part1' => 'Visit the Red Planet in style.',
-            // Adds a headline that will trigger a policy violation to demonstrate error handling.
-            'headline_part2' => 'Low-gravity fun for everyone!!'
+        // Creates the responsive search ad info.
+        $responsiveSearchAdInfo = new ResponsiveSearchAdInfo([
+            'headlines' => [
+                new AdTextAsset([
+                    'text' => 'Visit the Red Planet in style.',
+                    'pinned_field' => ServedAssetFieldType::HEADLINE_1
+                ]),
+                // Adds a headline that will trigger a policy violation to demonstrate error
+                // handling.
+                new AdTextAsset(['text' => 'Low-gravity fun for everyone!!']),
+                new AdTextAsset(['text' => 'Book your Cruise to Mars now'])
+            ],
+            'descriptions' => [
+                new AdTextAsset(['text' => 'Luxury Cruise to Mars']),
+                new AdTextAsset(['text' => 'Book your ticket now'])
+            ]
         ]);
 
-        // Sets the expanded text ad info on an ad.
+        // Sets the responsive search ad info on an ad.
         $ad = new Ad([
-            'expanded_text_ad' => $expandedTextAdInfo,
-            'final_urls' => ['http://www.example.com']
+            'responsive_search_ad' => $responsiveSearchAdInfo,
+            'final_urls' => ['https://www.example.com']
         ]);
 
         // Creates an ad group ad to hold the above ad.
@@ -147,41 +159,54 @@ class ValidateTextAd
                 ['validateOnly' => true]
             );
 
-            // Since validation is ON, result will be null.
-            printf("Expanded text ad validated successfully.%s", PHP_EOL);
+            // This line will not be executed since the ad will fail validation.
+            printf("Responsive search ad validated successfully.%s", PHP_EOL);
         } catch (GoogleAdsException $googleAdsException) {
             // This block will be hit if there is a validation error from the server.
-            printf("There were validation error(s) while adding expanded text ad.%s", PHP_EOL);
+            printf("There were validation error(s) while adding responsive search ad.%s", PHP_EOL);
 
-            $count = 1;
-            foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $googleAdsError) {
-                // Note: Policy violation errors are returned as PolicyFindingErrors. See
-                // https://developers.google.com/google-ads/api/docs/policy-exemption/overview
-                // for additional details.
-                /** @var GoogleAdsError $googleAdsError */
-                if (
-                    $googleAdsError->getErrorCode()->getPolicyFindingError() ==
-                    PolicyFindingError::POLICY_FINDING
-                ) {
-                    if ($googleAdsError->getDetails()->getPolicyFindingDetails()) {
+            // Note: Policy violation errors are returned as PolicyFindingErrors. See
+            // https://developers.google.com/google-ads/api/docs/policy-exemption/overview
+            // for additional details.
+            /** @var GoogleAdsError $googleAdsError */
+            $filteredGoogleAdsErrors = array_filter(
+                iterator_to_array($googleAdsException->getGoogleAdsFailure()->getErrors()),
+                function ($googleAdsError) {
+                    /** @var GoogleAdsError $googleAdsError */
+                    return $googleAdsError->getErrorCode()->getPolicyFindingError()
+                        == PolicyFindingError::POLICY_FINDING;
+                }
+            );
+            if (!empty($filteredGoogleAdsErrors)) {
+                $count = 1;
+                foreach ($filteredGoogleAdsErrors as $googleAdsError) {
+                    if (
+                        $googleAdsError->getErrorCode()->getPolicyFindingError()
+                        == PolicyFindingError::POLICY_FINDING
+                    ) {
                         $details = $googleAdsError->getDetails()->getPolicyFindingDetails();
-                        foreach ($details->getPolicyTopicEntries() as $entry) {
-                            /** @var PolicyTopicEntry $entry */
-                            printf(
-                                "%d) Policy topic entry with topic '%s' and type '%s'" .
-                                " was found.%s",
-                                $count,
-                                $entry->getTopic(),
-                                PolicyTopicEntryType::name($entry->getType()),
-                                PHP_EOL
-                            );
+                        if ($details) {
+                            foreach ($details->getPolicyTopicEntries() as $entry) {
+                                /** @var PolicyTopicEntry $entry */
+                                printf(
+                                    "%d) Policy topic entry with topic '%s' and type '%s'"
+                                    . " was found.%s",
+                                    $count,
+                                    $entry->getTopic(),
+                                    PolicyTopicEntryType::name($entry->getType()),
+                                    PHP_EOL
+                                );
+                                $count++;
+                            }
                         }
                     }
-                    $count++;
                 }
+            } else {
+                // There were unexpected validation errors, rethrowing the exception.
+                throw $googleAdsException;
             }
         }
     }
 }
 
-ValidateTextAd::main();
+ValidateAd::main();

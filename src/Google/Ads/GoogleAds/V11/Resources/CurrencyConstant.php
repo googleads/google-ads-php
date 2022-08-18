@@ -24,7 +24,7 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
      */
     protected $resource_name = '';
     /**
-     * Output only. ISO 4217 three-letter currency code, e.g. "USD"
+     * Output only. ISO 4217 three-letter currency code, for example, "USD"
      *
      * Generated from protobuf field <code>optional string code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -36,7 +36,8 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
      */
     protected $name = null;
     /**
-     * Output only. Standard symbol for describing this currency, e.g. '$' for US Dollars.
+     * Output only. Standard symbol for describing this currency, for example, '$' for US
+     * Dollars.
      *
      * Generated from protobuf field <code>optional string symbol = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -60,11 +61,12 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
      *           Currency constant resource names have the form:
      *           `currencyConstants/{code}`
      *     @type string $code
-     *           Output only. ISO 4217 three-letter currency code, e.g. "USD"
+     *           Output only. ISO 4217 three-letter currency code, for example, "USD"
      *     @type string $name
      *           Output only. Full English name of the currency.
      *     @type string $symbol
-     *           Output only. Standard symbol for describing this currency, e.g. '$' for US Dollars.
+     *           Output only. Standard symbol for describing this currency, for example, '$' for US
+     *           Dollars.
      *     @type int|string $billable_unit_micros
      *           Output only. The billable unit for this currency. Billed amounts should be multiples of
      *           this value.
@@ -106,7 +108,7 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. ISO 4217 three-letter currency code, e.g. "USD"
+     * Output only. ISO 4217 three-letter currency code, for example, "USD"
      *
      * Generated from protobuf field <code>optional string code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -127,7 +129,7 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. ISO 4217 three-letter currency code, e.g. "USD"
+     * Output only. ISO 4217 three-letter currency code, for example, "USD"
      *
      * Generated from protobuf field <code>optional string code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -178,7 +180,8 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Standard symbol for describing this currency, e.g. '$' for US Dollars.
+     * Output only. Standard symbol for describing this currency, for example, '$' for US
+     * Dollars.
      *
      * Generated from protobuf field <code>optional string symbol = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -199,7 +202,8 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Standard symbol for describing this currency, e.g. '$' for US Dollars.
+     * Output only. Standard symbol for describing this currency, for example, '$' for US
+     * Dollars.
      *
      * Generated from protobuf field <code>optional string symbol = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

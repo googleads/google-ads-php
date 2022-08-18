@@ -59,7 +59,7 @@ class MutateAssetSetAssetsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer whose asset set assets are being modified.
-     *     @type \Google\Ads\GoogleAds\V11\Services\AssetSetAssetOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type array<\Google\Ads\GoogleAds\V11\Services\AssetSetAssetOperation>|\Google\Protobuf\Internal\RepeatedField $operations
      *           Required. The list of operations to perform on individual asset set assets.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -120,7 +120,7 @@ class MutateAssetSetAssetsRequest extends \Google\Protobuf\Internal\Message
      * Required. The list of operations to perform on individual asset set assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.services.AssetSetAssetOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param \Google\Ads\GoogleAds\V11\Services\AssetSetAssetOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Services\AssetSetAssetOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOperations($var)

@@ -92,7 +92,7 @@ class CustomAudience extends \Google\Protobuf\Internal\Message
      *           audience but kept for existing audiences)
      *     @type string $description
      *           Description of this custom audience.
-     *     @type \Google\Ads\GoogleAds\V11\Resources\CustomAudienceMember[]|\Google\Protobuf\Internal\RepeatedField $members
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\CustomAudienceMember>|\Google\Protobuf\Internal\RepeatedField $members
      *           List of custom audience members that this custom audience is composed of.
      *           Members can be added during CustomAudience creation. If members are
      *           presented in UPDATE operation, existing members will be overridden.
@@ -292,7 +292,7 @@ class CustomAudience extends \Google\Protobuf\Internal\Message
      * presented in UPDATE operation, existing members will be overridden.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.CustomAudienceMember members = 7;</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\CustomAudienceMember[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\CustomAudienceMember>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMembers($var)

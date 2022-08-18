@@ -42,7 +42,7 @@ class SearchGoogleAdsFieldsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Ads\GoogleAds\V11\Resources\GoogleAdsField[]|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type array<\Google\Ads\GoogleAds\V11\Resources\GoogleAdsField>|\Google\Protobuf\Internal\RepeatedField $results
      *           The list of fields that matched the query.
      *     @type string $next_page_token
      *           Pagination token used to retrieve the next page of results. Pass the
@@ -72,7 +72,7 @@ class SearchGoogleAdsFieldsResponse extends \Google\Protobuf\Internal\Message
      * The list of fields that matched the query.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.resources.GoogleAdsField results = 1;</code>
-     * @param \Google\Ads\GoogleAds\V11\Resources\GoogleAdsField[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Resources\GoogleAdsField>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setResults($var)

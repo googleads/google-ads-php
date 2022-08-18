@@ -13,8 +13,8 @@ use Google\Protobuf\Internal\GPBUtil;
  * All fields prefixed with 'proposed' may not necessarily be applied directly.
  * For example, proposed spending limits may be adjusted before their
  * application.  This is true if the 'proposed' field has an 'approved'
- * counterpart, e.g. spending limits.
- * Please note that the proposal type (proposal_type) changes which fields are
+ * counterpart, for example, spending limits.
+ * Note that the proposal type (proposal_type) changes which fields are
  * required and which must remain empty.
  *
  * Generated from protobuf message <code>google.ads.googleads.v11.resources.AccountBudgetProposal</code>
@@ -49,8 +49,8 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     protected $account_budget = null;
     /**
-     * Immutable. The type of this proposal, e.g. END to end the budget associated with this
-     * proposal.
+     * Immutable. The type of this proposal, for example, END to end the budget associated
+     * with this proposal.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AccountBudgetProposalTypeEnum.AccountBudgetProposalType proposal_type = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -124,8 +124,8 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      *           Immutable. The resource name of the account-level budget associated with this
      *           proposal.
      *     @type int $proposal_type
-     *           Immutable. The type of this proposal, e.g. END to end the budget associated with this
-     *           proposal.
+     *           Immutable. The type of this proposal, for example, END to end the budget associated
+     *           with this proposal.
      *     @type int $status
      *           Output only. The status of this proposal.
      *           When a new proposal is created, the status defaults to PENDING.
@@ -146,25 +146,27 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      *     @type string $proposed_start_date_time
      *           Immutable. The proposed start date time in yyyy-mm-dd hh:mm:ss format.
      *     @type int $proposed_start_time_type
-     *           Immutable. The proposed start date time as a well-defined type, e.g. NOW.
+     *           Immutable. The proposed start date time as a well-defined type, for example, NOW.
      *     @type string $proposed_end_date_time
      *           Immutable. The proposed end date time in yyyy-mm-dd hh:mm:ss format.
      *     @type int $proposed_end_time_type
-     *           Immutable. The proposed end date time as a well-defined type, e.g. FOREVER.
+     *           Immutable. The proposed end date time as a well-defined type, for example, FOREVER.
      *     @type string $approved_end_date_time
      *           Output only. The approved end date time in yyyy-mm-dd hh:mm:ss format.
      *     @type int $approved_end_time_type
-     *           Output only. The approved end date time as a well-defined type, e.g. FOREVER.
+     *           Output only. The approved end date time as a well-defined type, for example, FOREVER.
      *     @type int|string $proposed_spending_limit_micros
      *           Immutable. The proposed spending limit in micros.  One million is equivalent to
      *           one unit.
      *     @type int $proposed_spending_limit_type
-     *           Immutable. The proposed spending limit as a well-defined type, e.g. INFINITE.
+     *           Immutable. The proposed spending limit as a well-defined type, for example,
+     *           INFINITE.
      *     @type int|string $approved_spending_limit_micros
      *           Output only. The approved spending limit in micros.  One million is equivalent to
      *           one unit.
      *     @type int $approved_spending_limit_type
-     *           Output only. The approved spending limit as a well-defined type, e.g. INFINITE.
+     *           Output only. The approved spending limit as a well-defined type, for example,
+     *           INFINITE.
      * }
      */
     public function __construct($data = NULL) {
@@ -313,8 +315,8 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The type of this proposal, e.g. END to end the budget associated with this
-     * proposal.
+     * Immutable. The type of this proposal, for example, END to end the budget associated
+     * with this proposal.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AccountBudgetProposalTypeEnum.AccountBudgetProposalType proposal_type = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
@@ -325,8 +327,8 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The type of this proposal, e.g. END to end the budget associated with this
-     * proposal.
+     * Immutable. The type of this proposal, for example, END to end the budget associated
+     * with this proposal.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.AccountBudgetProposalTypeEnum.AccountBudgetProposalType proposal_type = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
@@ -620,7 +622,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The proposed start date time as a well-defined type, e.g. NOW.
+     * Immutable. The proposed start date time as a well-defined type, for example, NOW.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.TimeTypeEnum.TimeType proposed_start_time_type = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
@@ -636,7 +638,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The proposed start date time as a well-defined type, e.g. NOW.
+     * Immutable. The proposed start date time as a well-defined type, for example, NOW.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.TimeTypeEnum.TimeType proposed_start_time_type = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
@@ -682,7 +684,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The proposed end date time as a well-defined type, e.g. FOREVER.
+     * Immutable. The proposed end date time as a well-defined type, for example, FOREVER.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
@@ -698,7 +700,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The proposed end date time as a well-defined type, e.g. FOREVER.
+     * Immutable. The proposed end date time as a well-defined type, for example, FOREVER.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
@@ -744,7 +746,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The approved end date time as a well-defined type, e.g. FOREVER.
+     * Output only. The approved end date time as a well-defined type, for example, FOREVER.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.TimeTypeEnum.TimeType approved_end_time_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
@@ -760,7 +762,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The approved end date time as a well-defined type, e.g. FOREVER.
+     * Output only. The approved end date time as a well-defined type, for example, FOREVER.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.TimeTypeEnum.TimeType approved_end_time_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
@@ -808,7 +810,8 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The proposed spending limit as a well-defined type, e.g. INFINITE.
+     * Immutable. The proposed spending limit as a well-defined type, for example,
+     * INFINITE.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
@@ -824,7 +827,8 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The proposed spending limit as a well-defined type, e.g. INFINITE.
+     * Immutable. The proposed spending limit as a well-defined type, for example,
+     * INFINITE.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
@@ -872,7 +876,8 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.
+     * Output only. The approved spending limit as a well-defined type, for example,
+     * INFINITE.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
@@ -888,7 +893,8 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.
+     * Output only. The approved spending limit as a well-defined type, for example,
+     * INFINITE.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v11.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var

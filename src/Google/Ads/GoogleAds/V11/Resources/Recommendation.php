@@ -51,10 +51,14 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * This field will be set for the following recommendation types:
      * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN,
      * USE_BROAD_MATCH_KEYWORD, KEYWORD, KEYWORD_MATCH_TYPE,
-     * MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION,
-     * RESPONSIVE_SEARCH_AD, RESPONSIVE_SEARCH_AD_ASSET, SEARCH_PARTNERS_OPT_IN,
-     * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN,
-     * TEXT_AD, UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX
+     * UPGRADE_LOCAL_CAMPAIGN_TO_PERFORMANCE_MAX, MAXIMIZE_CLICKS_OPT_IN,
+     * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION,
+     * RESPONSIVE_SEARCH_AD,
+     * RESPONSIVE_SEARCH_AD_ASSET,
+     * SEARCH_PARTNERS_OPT_IN,
+     * DISPLAY_EXPANSION_OPT_IN, SITELINK_EXTENSION, TARGET_CPA_OPT_IN,
+     * TARGET_ROAS_OPT_IN, TEXT_AD,
+     * UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX
      *
      * Generated from protobuf field <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
@@ -103,10 +107,14 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           This field will be set for the following recommendation types:
      *           CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN,
      *           USE_BROAD_MATCH_KEYWORD, KEYWORD, KEYWORD_MATCH_TYPE,
-     *           MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION,
-     *           RESPONSIVE_SEARCH_AD, RESPONSIVE_SEARCH_AD_ASSET, SEARCH_PARTNERS_OPT_IN,
-     *           SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN,
-     *           TEXT_AD, UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX
+     *           UPGRADE_LOCAL_CAMPAIGN_TO_PERFORMANCE_MAX, MAXIMIZE_CLICKS_OPT_IN,
+     *           MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION,
+     *           RESPONSIVE_SEARCH_AD,
+     *           RESPONSIVE_SEARCH_AD_ASSET,
+     *           SEARCH_PARTNERS_OPT_IN,
+     *           DISPLAY_EXPANSION_OPT_IN, SITELINK_EXTENSION, TARGET_CPA_OPT_IN,
+     *           TARGET_ROAS_OPT_IN, TEXT_AD,
+     *           UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX
      *     @type string $ad_group
      *           Output only. The ad group targeted by this recommendation. This will be set only when
      *           the recommendation affects a single ad group.
@@ -160,6 +168,11 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           recommendation.
      *     @type \Google\Ads\GoogleAds\V11\Resources\Recommendation\ResponsiveSearchAdImproveAdStrengthRecommendation $responsive_search_ad_improve_ad_strength_recommendation
      *           Output only. The responsive search ad improve ad strength recommendation.
+     *     @type \Google\Ads\GoogleAds\V11\Resources\Recommendation\DisplayExpansionOptInRecommendation $display_expansion_opt_in_recommendation
+     *           Output only. The Display Expansion opt-in recommendation.
+     *     @type \Google\Ads\GoogleAds\V11\Resources\Recommendation\UpgradeLocalCampaignToPerformanceMaxRecommendation $upgrade_local_campaign_to_performance_max_recommendation
+     *           Output only. The upgrade a Local campaign to a Performance Max campaign
+     *           recommendation.
      * }
      */
     public function __construct($data = NULL) {
@@ -309,10 +322,14 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * This field will be set for the following recommendation types:
      * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN,
      * USE_BROAD_MATCH_KEYWORD, KEYWORD, KEYWORD_MATCH_TYPE,
-     * MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION,
-     * RESPONSIVE_SEARCH_AD, RESPONSIVE_SEARCH_AD_ASSET, SEARCH_PARTNERS_OPT_IN,
-     * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN,
-     * TEXT_AD, UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX
+     * UPGRADE_LOCAL_CAMPAIGN_TO_PERFORMANCE_MAX, MAXIMIZE_CLICKS_OPT_IN,
+     * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION,
+     * RESPONSIVE_SEARCH_AD,
+     * RESPONSIVE_SEARCH_AD_ASSET,
+     * SEARCH_PARTNERS_OPT_IN,
+     * DISPLAY_EXPANSION_OPT_IN, SITELINK_EXTENSION, TARGET_CPA_OPT_IN,
+     * TARGET_ROAS_OPT_IN, TEXT_AD,
+     * UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX
      *
      * Generated from protobuf field <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
@@ -338,10 +355,14 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * This field will be set for the following recommendation types:
      * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN,
      * USE_BROAD_MATCH_KEYWORD, KEYWORD, KEYWORD_MATCH_TYPE,
-     * MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION,
-     * RESPONSIVE_SEARCH_AD, RESPONSIVE_SEARCH_AD_ASSET, SEARCH_PARTNERS_OPT_IN,
-     * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN,
-     * TEXT_AD, UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX
+     * UPGRADE_LOCAL_CAMPAIGN_TO_PERFORMANCE_MAX, MAXIMIZE_CLICKS_OPT_IN,
+     * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION,
+     * RESPONSIVE_SEARCH_AD,
+     * RESPONSIVE_SEARCH_AD_ASSET,
+     * SEARCH_PARTNERS_OPT_IN,
+     * DISPLAY_EXPANSION_OPT_IN, SITELINK_EXTENSION, TARGET_CPA_OPT_IN,
+     * TARGET_ROAS_OPT_IN, TEXT_AD,
+     * UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX
      *
      * Generated from protobuf field <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -1115,6 +1136,70 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Resources\Recommendation\ResponsiveSearchAdImproveAdStrengthRecommendation::class);
         $this->writeOneof(33, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The Display Expansion opt-in recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.resources.Recommendation.DisplayExpansionOptInRecommendation display_expansion_opt_in_recommendation = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V11\Resources\Recommendation\DisplayExpansionOptInRecommendation|null
+     */
+    public function getDisplayExpansionOptInRecommendation()
+    {
+        return $this->readOneof(34);
+    }
+
+    public function hasDisplayExpansionOptInRecommendation()
+    {
+        return $this->hasOneof(34);
+    }
+
+    /**
+     * Output only. The Display Expansion opt-in recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.resources.Recommendation.DisplayExpansionOptInRecommendation display_expansion_opt_in_recommendation = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V11\Resources\Recommendation\DisplayExpansionOptInRecommendation $var
+     * @return $this
+     */
+    public function setDisplayExpansionOptInRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Resources\Recommendation\DisplayExpansionOptInRecommendation::class);
+        $this->writeOneof(34, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The upgrade a Local campaign to a Performance Max campaign
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.resources.Recommendation.UpgradeLocalCampaignToPerformanceMaxRecommendation upgrade_local_campaign_to_performance_max_recommendation = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V11\Resources\Recommendation\UpgradeLocalCampaignToPerformanceMaxRecommendation|null
+     */
+    public function getUpgradeLocalCampaignToPerformanceMaxRecommendation()
+    {
+        return $this->readOneof(35);
+    }
+
+    public function hasUpgradeLocalCampaignToPerformanceMaxRecommendation()
+    {
+        return $this->hasOneof(35);
+    }
+
+    /**
+     * Output only. The upgrade a Local campaign to a Performance Max campaign
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v11.resources.Recommendation.UpgradeLocalCampaignToPerformanceMaxRecommendation upgrade_local_campaign_to_performance_max_recommendation = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V11\Resources\Recommendation\UpgradeLocalCampaignToPerformanceMaxRecommendation $var
+     * @return $this
+     */
+    public function setUpgradeLocalCampaignToPerformanceMaxRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V11\Resources\Recommendation\UpgradeLocalCampaignToPerformanceMaxRecommendation::class);
+        $this->writeOneof(35, $var);
 
         return $this;
     }

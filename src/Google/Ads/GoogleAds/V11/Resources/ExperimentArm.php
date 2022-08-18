@@ -85,9 +85,9 @@ class ExperimentArm extends \Google\Protobuf\Internal\Message
      *     @type int|string $traffic_split
      *           Traffic split of the trial arm. The value should be between 1 and 100
      *           and must total 100 between the two trial arms.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $campaigns
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $campaigns
      *           List of campaigns in the trial arm. The max length is one.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $in_design_campaigns
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $in_design_campaigns
      *           Output only. The in design campaigns in the treatment experiment arm.
      * }
      */
@@ -251,7 +251,7 @@ class ExperimentArm extends \Google\Protobuf\Internal\Message
      * List of campaigns in the trial arm. The max length is one.
      *
      * Generated from protobuf field <code>repeated string campaigns = 6 [(.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCampaigns($var)
@@ -277,7 +277,7 @@ class ExperimentArm extends \Google\Protobuf\Internal\Message
      * Output only. The in design campaigns in the treatment experiment arm.
      *
      * Generated from protobuf field <code>repeated string in_design_campaigns = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInDesignCampaigns($var)

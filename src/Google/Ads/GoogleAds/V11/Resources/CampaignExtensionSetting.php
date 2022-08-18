@@ -70,7 +70,7 @@ class CampaignExtensionSetting extends \Google\Protobuf\Internal\Message
      *           serve under this campaign.
      *           Campaign resource names have the form:
      *           `customers/{customer_id}/campaigns/{campaign_id}`
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $extension_feed_items
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $extension_feed_items
      *           The resource names of the extension feed items to serve under the campaign.
      *           ExtensionFeedItem resource names have the form:
      *           `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
@@ -200,7 +200,7 @@ class CampaignExtensionSetting extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
      *
      * Generated from protobuf field <code>repeated string extension_feed_items = 7 [(.google.api.resource_reference) = {</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtensionFeedItems($var)

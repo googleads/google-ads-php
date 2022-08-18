@@ -73,7 +73,7 @@ class AccountBudgetProposalServiceClientTest extends GeneratedTest
     public function mutateAccountBudgetProposalTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -83,7 +83,7 @@ class AccountBudgetProposalServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $operation = new AccountBudgetProposalOperation();
-        $response = $client->mutateAccountBudgetProposal($customerId, $operation);
+        $response = $gapicClient->mutateAccountBudgetProposal($customerId, $operation);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -103,7 +103,7 @@ class AccountBudgetProposalServiceClientTest extends GeneratedTest
     public function mutateAccountBudgetProposalExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient([
+        $gapicClient = $this->createClient([
             'transport' => $transport,
         ]);
         $this->assertTrue($transport->isExhausted());
@@ -121,8 +121,8 @@ class AccountBudgetProposalServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $operation = new AccountBudgetProposalOperation();
         try {
-            $client->mutateAccountBudgetProposal($customerId, $operation);
-            // If the $client method call did not throw, fail the test
+            $gapicClient->mutateAccountBudgetProposal($customerId, $operation);
+            // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());

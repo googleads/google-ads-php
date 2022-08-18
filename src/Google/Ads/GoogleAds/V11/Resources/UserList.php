@@ -30,7 +30,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      */
     protected $id = null;
     /**
-     * Output only. A flag that indicates if a user may edit a list. Depends on the list
+     * Output only. An option that indicates if a user may edit a list. Depends on the list
      * ownership and list type. For example, external remarketing user lists are
      * not editable.
      * This field is read-only.
@@ -40,7 +40,7 @@ class UserList extends \Google\Protobuf\Internal\Message
     protected $read_only = null;
     /**
      * Name of this user list. Depending on its access_reason, the user list name
-     * may not be unique (e.g. if access_reason=SHARED)
+     * may not be unique (for example, if access_reason=SHARED)
      *
      * Generated from protobuf field <code>optional string name = 27;</code>
      */
@@ -177,13 +177,13 @@ class UserList extends \Google\Protobuf\Internal\Message
      *     @type int|string $id
      *           Output only. Id of the user list.
      *     @type bool $read_only
-     *           Output only. A flag that indicates if a user may edit a list. Depends on the list
+     *           Output only. An option that indicates if a user may edit a list. Depends on the list
      *           ownership and list type. For example, external remarketing user lists are
      *           not editable.
      *           This field is read-only.
      *     @type string $name
      *           Name of this user list. Depending on its access_reason, the user list name
-     *           may not be unique (e.g. if access_reason=SHARED)
+     *           may not be unique (for example, if access_reason=SHARED)
      *     @type string $description
      *           Description of this user list.
      *     @type int $membership_status
@@ -326,7 +326,7 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. A flag that indicates if a user may edit a list. Depends on the list
+     * Output only. An option that indicates if a user may edit a list. Depends on the list
      * ownership and list type. For example, external remarketing user lists are
      * not editable.
      * This field is read-only.
@@ -350,7 +350,7 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. A flag that indicates if a user may edit a list. Depends on the list
+     * Output only. An option that indicates if a user may edit a list. Depends on the list
      * ownership and list type. For example, external remarketing user lists are
      * not editable.
      * This field is read-only.
@@ -369,7 +369,7 @@ class UserList extends \Google\Protobuf\Internal\Message
 
     /**
      * Name of this user list. Depending on its access_reason, the user list name
-     * may not be unique (e.g. if access_reason=SHARED)
+     * may not be unique (for example, if access_reason=SHARED)
      *
      * Generated from protobuf field <code>optional string name = 27;</code>
      * @return string
@@ -391,7 +391,7 @@ class UserList extends \Google\Protobuf\Internal\Message
 
     /**
      * Name of this user list. Depending on its access_reason, the user list name
-     * may not be unique (e.g. if access_reason=SHARED)
+     * may not be unique (for example, if access_reason=SHARED)
      *
      * Generated from protobuf field <code>optional string name = 27;</code>
      * @param string $var

@@ -36,7 +36,7 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
      *
      *     @type int $total_targeted_countries
      *           Total number of countries targeted by the resource.
-     *     @type \Google\Ads\GoogleAds\V11\Common\PolicyTopicConstraint\CountryConstraint[]|\Google\Protobuf\Internal\RepeatedField $countries
+     *     @type array<\Google\Ads\GoogleAds\V11\Common\PolicyTopicConstraint\CountryConstraint>|\Google\Protobuf\Internal\RepeatedField $countries
      *           Countries in which serving is restricted.
      * }
      */
@@ -96,7 +96,7 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
      * Countries in which serving is restricted.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v11.common.PolicyTopicConstraint.CountryConstraint countries = 2;</code>
-     * @param \Google\Ads\GoogleAds\V11\Common\PolicyTopicConstraint\CountryConstraint[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Ads\GoogleAds\V11\Common\PolicyTopicConstraint\CountryConstraint>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCountries($var)
