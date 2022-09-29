@@ -42,7 +42,8 @@ class GetCampaigns
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
-            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::LOGIN_CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -58,7 +59,8 @@ class GetCampaigns
         try {
             self::runExample(
                 $googleAdsClient,
-                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID
+                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
+                $options[ArgumentNames::LOGIN_CUSTOMER_ID] ?: self::LOGIN_CUSTOMER_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
