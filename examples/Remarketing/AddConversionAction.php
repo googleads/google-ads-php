@@ -24,17 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V11\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
-use Google\Ads\GoogleAds\V11\Enums\ConversionActionStatusEnum\ConversionActionStatus;
-use Google\Ads\GoogleAds\V11\Enums\ConversionActionTypeEnum\ConversionActionType;
-use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V11\Resources\ConversionAction;
-use Google\Ads\GoogleAds\V11\Resources\ConversionAction\ValueSettings;
-use Google\Ads\GoogleAds\V11\Services\ConversionActionOperation;
+use Google\Ads\GoogleAds\V12\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
+use Google\Ads\GoogleAds\V12\Enums\ConversionActionStatusEnum\ConversionActionStatus;
+use Google\Ads\GoogleAds\V12\Enums\ConversionActionTypeEnum\ConversionActionType;
+use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V12\Resources\ConversionAction;
+use Google\Ads\GoogleAds\V12\Resources\ConversionAction\ValueSettings;
+use Google\Ads\GoogleAds\V12\Services\ConversionActionOperation;
 use Google\ApiCore\ApiException;
 
 /** This example illustrates adding a conversion action. */

@@ -24,15 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
-use Google\Ads\GoogleAds\V11\Common\PlacementInfo;
-use Google\Ads\GoogleAds\V11\Enums\ContentLabelTypeEnum\ContentLabelType;
-use Google\Ads\GoogleAds\V11\Common\ContentLabelInfo;
-use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V11\Resources\CustomerNegativeCriterion;
-use Google\Ads\GoogleAds\V11\Services\CustomerNegativeCriterionOperation;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
+use Google\Ads\GoogleAds\V12\Common\PlacementInfo;
+use Google\Ads\GoogleAds\V12\Enums\ContentLabelTypeEnum\ContentLabelType;
+use Google\Ads\GoogleAds\V12\Common\ContentLabelInfo;
+use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V12\Resources\CustomerNegativeCriterion;
+use Google\Ads\GoogleAds\V12\Services\CustomerNegativeCriterionOperation;
 use Google\ApiCore\ApiException;
 
 /**

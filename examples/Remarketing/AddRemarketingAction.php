@@ -24,17 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V11\Common\TagSnippet;
-use Google\Ads\GoogleAds\V11\Enums\TrackingCodePageFormatEnum\TrackingCodePageFormat;
-use Google\Ads\GoogleAds\V11\Enums\TrackingCodeTypeEnum\TrackingCodeType;
-use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V11\Resources\RemarketingAction;
-use Google\Ads\GoogleAds\V11\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V11\Services\RemarketingActionOperation;
+use Google\Ads\GoogleAds\V12\Common\TagSnippet;
+use Google\Ads\GoogleAds\V12\Enums\TrackingCodePageFormatEnum\TrackingCodePageFormat;
+use Google\Ads\GoogleAds\V12\Enums\TrackingCodeTypeEnum\TrackingCodeType;
+use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V12\Resources\RemarketingAction;
+use Google\Ads\GoogleAds\V12\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V12\Services\RemarketingActionOperation;
 use Google\ApiCore\ApiException;
 
 /**
