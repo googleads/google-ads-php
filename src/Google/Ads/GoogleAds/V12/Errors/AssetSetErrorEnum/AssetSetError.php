@@ -31,11 +31,64 @@ class AssetSetError
      * Generated from protobuf enum <code>DUPLICATE_ASSET_SET_NAME = 2;</code>
      */
     const DUPLICATE_ASSET_SET_NAME = 2;
+    /**
+     * The type of AssetSet.asset_set_source does not match the type of
+     * AssetSet.location_set.source in its parent AssetSet.
+     *
+     * Generated from protobuf enum <code>INVALID_PARENT_ASSET_SET_TYPE = 3;</code>
+     */
+    const INVALID_PARENT_ASSET_SET_TYPE = 3;
+    /**
+     * The asset set source doesn't match its parent AssetSet's data.
+     *
+     * Generated from protobuf enum <code>ASSET_SET_SOURCE_INCOMPATIBLE_WITH_PARENT_ASSET_SET = 4;</code>
+     */
+    const ASSET_SET_SOURCE_INCOMPATIBLE_WITH_PARENT_ASSET_SET = 4;
+    /**
+     * This AssetSet type cannot be linked to CustomerAssetSet.
+     *
+     * Generated from protobuf enum <code>ASSET_SET_TYPE_CANNOT_BE_LINKED_TO_CUSTOMER = 5;</code>
+     */
+    const ASSET_SET_TYPE_CANNOT_BE_LINKED_TO_CUSTOMER = 5;
+    /**
+     * The chain id(s) in ChainSet of a LOCATION_SYNC typed AssetSet is invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_CHAIN_IDS = 6;</code>
+     */
+    const INVALID_CHAIN_IDS = 6;
+    /**
+     * The relationship type in ChainSet of a LOCATION_SYNC typed AssetSet is
+     * not supported.
+     *
+     * Generated from protobuf enum <code>LOCATION_SYNC_ASSET_SET_DOES_NOT_SUPPORT_RELATIONSHIP_TYPE = 7;</code>
+     */
+    const LOCATION_SYNC_ASSET_SET_DOES_NOT_SUPPORT_RELATIONSHIP_TYPE = 7;
+    /**
+     * There is more than one enabled LocationSync typed AssetSet under one
+     * customer.
+     *
+     * Generated from protobuf enum <code>NOT_UNIQUE_ENABLED_LOCATION_SYNC_TYPED_ASSET_SET = 8;</code>
+     */
+    const NOT_UNIQUE_ENABLED_LOCATION_SYNC_TYPED_ASSET_SET = 8;
+    /**
+     * The place id(s) in a LocationSync typed AssetSet is invalid and can't be
+     * decoded.
+     *
+     * Generated from protobuf enum <code>INVALID_PLACE_IDS = 9;</code>
+     */
+    const INVALID_PLACE_IDS = 9;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::DUPLICATE_ASSET_SET_NAME => 'DUPLICATE_ASSET_SET_NAME',
+        self::INVALID_PARENT_ASSET_SET_TYPE => 'INVALID_PARENT_ASSET_SET_TYPE',
+        self::ASSET_SET_SOURCE_INCOMPATIBLE_WITH_PARENT_ASSET_SET => 'ASSET_SET_SOURCE_INCOMPATIBLE_WITH_PARENT_ASSET_SET',
+        self::ASSET_SET_TYPE_CANNOT_BE_LINKED_TO_CUSTOMER => 'ASSET_SET_TYPE_CANNOT_BE_LINKED_TO_CUSTOMER',
+        self::INVALID_CHAIN_IDS => 'INVALID_CHAIN_IDS',
+        self::LOCATION_SYNC_ASSET_SET_DOES_NOT_SUPPORT_RELATIONSHIP_TYPE => 'LOCATION_SYNC_ASSET_SET_DOES_NOT_SUPPORT_RELATIONSHIP_TYPE',
+        self::NOT_UNIQUE_ENABLED_LOCATION_SYNC_TYPED_ASSET_SET => 'NOT_UNIQUE_ENABLED_LOCATION_SYNC_TYPED_ASSET_SET',
+        self::INVALID_PLACE_IDS => 'INVALID_PLACE_IDS',
     ];
 
     public static function name($value)

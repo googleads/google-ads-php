@@ -18,7 +18,7 @@ class EventAttribute extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Advertiser defined event to be used for remarketing. The accepted values
-     * are “Viewed”, “Cart”, “Purchased” and “Recommended”.
+     * are "Viewed", "Cart", "Purchased" and "Recommended".
      *
      * Generated from protobuf field <code>string event = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -47,7 +47,7 @@ class EventAttribute extends \Google\Protobuf\Internal\Message
      *
      *     @type string $event
      *           Required. Advertiser defined event to be used for remarketing. The accepted values
-     *           are “Viewed”, “Cart”, “Purchased” and “Recommended”.
+     *           are "Viewed", "Cart", "Purchased" and "Recommended".
      *     @type string $event_date_time
      *           Required. Timestamp at which the event happened.
      *           The format is YYYY-MM-DD HH:MM:SS[+/-HH:MM], where [+/-HH:MM] is an
@@ -64,7 +64,7 @@ class EventAttribute extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Advertiser defined event to be used for remarketing. The accepted values
-     * are “Viewed”, “Cart”, “Purchased” and “Recommended”.
+     * are "Viewed", "Cart", "Purchased" and "Recommended".
      *
      * Generated from protobuf field <code>string event = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -76,7 +76,7 @@ class EventAttribute extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Advertiser defined event to be used for remarketing. The accepted values
-     * are “Viewed”, “Cart”, “Purchased” and “Recommended”.
+     * are "Viewed", "Cart", "Purchased" and "Recommended".
      *
      * Generated from protobuf field <code>string event = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

@@ -71,7 +71,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
     protected $shopping_loyalty = null;
     /**
      * Optional. Advertiser defined lifecycle stage for the user. The accepted values are
-     * “Lead”, “Active” and “Churned”.
+     * "Lead", "Active" and "Churned".
      *
      * Generated from protobuf field <code>string lifecycle_stage = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -126,7 +126,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
      *           allow-list with the user's consent.
      *     @type string $lifecycle_stage
      *           Optional. Advertiser defined lifecycle stage for the user. The accepted values are
-     *           “Lead”, “Active” and “Churned”.
+     *           "Lead", "Active" and "Churned".
      *     @type string $first_purchase_date_time
      *           Optional. Timestamp of the first purchase made by the user.
      *           The format is YYYY-MM-DD HH:MM:SS[+/-HH:MM], where [+/-HH:MM] is an
@@ -378,7 +378,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. Advertiser defined lifecycle stage for the user. The accepted values are
-     * “Lead”, “Active” and “Churned”.
+     * "Lead", "Active" and "Churned".
      *
      * Generated from protobuf field <code>string lifecycle_stage = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
@@ -390,7 +390,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. Advertiser defined lifecycle stage for the user. The accepted values are
-     * “Lead”, “Active” and “Churned”.
+     * "Lead", "Active" and "Churned".
      *
      * Generated from protobuf field <code>string lifecycle_stage = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var

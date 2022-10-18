@@ -33,9 +33,9 @@ class AssetGroupAssetOperation extends \Google\Protobuf\Internal\Message
      *           FieldMask that determines which resource fields are modified in an update.
      *     @type \Google\Ads\GoogleAds\V12\Resources\AssetGroupAsset $create
      *           Create operation: No resource name is expected for the new asset group
-     *           asset
+     *           asset.
      *     @type \Google\Ads\GoogleAds\V12\Resources\AssetGroupAsset $update
-     *           Update operation: The asset group asset sis expected to have a valid
+     *           Update operation: The asset group asset is expected to have a valid
      *           resource name.
      *     @type string $remove
      *           Remove operation: A resource name for the removed asset group asset is
@@ -86,7 +86,7 @@ class AssetGroupAssetOperation extends \Google\Protobuf\Internal\Message
 
     /**
      * Create operation: No resource name is expected for the new asset group
-     * asset
+     * asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v12.resources.AssetGroupAsset create = 1;</code>
      * @return \Google\Ads\GoogleAds\V12\Resources\AssetGroupAsset|null
@@ -103,7 +103,7 @@ class AssetGroupAssetOperation extends \Google\Protobuf\Internal\Message
 
     /**
      * Create operation: No resource name is expected for the new asset group
-     * asset
+     * asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v12.resources.AssetGroupAsset create = 1;</code>
      * @param \Google\Ads\GoogleAds\V12\Resources\AssetGroupAsset $var
@@ -118,7 +118,7 @@ class AssetGroupAssetOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Update operation: The asset group asset sis expected to have a valid
+     * Update operation: The asset group asset is expected to have a valid
      * resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v12.resources.AssetGroupAsset update = 2;</code>
@@ -135,7 +135,7 @@ class AssetGroupAssetOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Update operation: The asset group asset sis expected to have a valid
+     * Update operation: The asset group asset is expected to have a valid
      * resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v12.resources.AssetGroupAsset update = 2;</code>

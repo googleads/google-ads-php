@@ -80,6 +80,20 @@
                 }
             }
         },
+        "AdGroupAssetSetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupAssetSetServiceGapicClient",
+                    "rpcs": {
+                        "MutateAdGroupAssetSets": {
+                            "methods": [
+                                "mutateAdGroupAssetSets"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
         "AdGroupBidModifierService": {
             "clients": {
                 "grpc": {
@@ -1309,6 +1323,20 @@
                         "MutateCustomInterests": {
                             "methods": [
                                 "mutateCustomInterests"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomerAssetSetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerAssetSetServiceGapicClient",
+                    "rpcs": {
+                        "MutateCustomerAssetSets": {
+                            "methods": [
+                                "mutateCustomerAssetSets"
                             ]
                         }
                     }

@@ -25,6 +25,7 @@ use Google\Ads\GoogleAds\V12\Services\AccountLinkServiceClient;
 use Google\Ads\GoogleAds\V12\Services\AdGroupAdLabelServiceClient;
 use Google\Ads\GoogleAds\V12\Services\AdGroupAdServiceClient;
 use Google\Ads\GoogleAds\V12\Services\AdGroupAssetServiceClient;
+use Google\Ads\GoogleAds\V12\Services\AdGroupAssetSetServiceClient;
 use Google\Ads\GoogleAds\V12\Services\AdGroupBidModifierServiceClient;
 use Google\Ads\GoogleAds\V12\Services\AdGroupCriterionCustomizerServiceClient;
 use Google\Ads\GoogleAds\V12\Services\AdGroupCriterionLabelServiceClient;
@@ -74,6 +75,7 @@ use Google\Ads\GoogleAds\V12\Services\ConversionValueRuleSetServiceClient;
 use Google\Ads\GoogleAds\V12\Services\CustomAudienceServiceClient;
 use Google\Ads\GoogleAds\V12\Services\CustomConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V12\Services\CustomerAssetServiceClient;
+use Google\Ads\GoogleAds\V12\Services\CustomerAssetSetServiceClient;
 use Google\Ads\GoogleAds\V12\Services\CustomerClientLinkServiceClient;
 use Google\Ads\GoogleAds\V12\Services\CustomerConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V12\Services\CustomerCustomizerServiceClient;
@@ -200,6 +202,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         $this->assertInstanceOf(
             AdGroupAssetServiceClient::class,
             $this->googleAdsClient->getAdGroupAssetServiceClient()
+        );
+    }
+
+    public function testGetAdGroupAssetSetServiceClient()
+    {
+        $this->assertInstanceOf(
+            AdGroupAssetSetServiceClient::class,
+            $this->googleAdsClient->getAdGroupAssetSetServiceClient()
         );
     }
 
@@ -592,6 +602,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         $this->assertInstanceOf(
             CustomerAssetServiceClient::class,
             $this->googleAdsClient->getCustomerAssetServiceClient()
+        );
+    }
+
+    public function testGetCustomerAssetSetServiceClient()
+    {
+        $this->assertInstanceOf(
+            CustomerAssetSetServiceClient::class,
+            $this->googleAdsClient->getCustomerAssetSetServiceClient()
         );
     }
 

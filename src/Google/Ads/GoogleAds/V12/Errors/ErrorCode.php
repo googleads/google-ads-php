@@ -299,6 +299,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the custom audience error
      *     @type int $audience_error
      *           The reasons for the audience error
+     *     @type int $smart_campaign_error
+     *           The reasons for the Smart campaign error
      *     @type int $experiment_arm_error
      *           The reasons for the experiment arm error
      *     @type int $audience_insights_error
@@ -4584,6 +4586,37 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V12\Errors\AudienceErrorEnum\AudienceError::class);
         $this->writeOneof(164, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the Smart campaign error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v12.errors.SmartCampaignErrorEnum.SmartCampaignError smart_campaign_error = 147;</code>
+     * @return int
+     */
+    public function getSmartCampaignError()
+    {
+        return $this->readOneof(147);
+    }
+
+    public function hasSmartCampaignError()
+    {
+        return $this->hasOneof(147);
+    }
+
+    /**
+     * The reasons for the Smart campaign error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v12.errors.SmartCampaignErrorEnum.SmartCampaignError smart_campaign_error = 147;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSmartCampaignError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V12\Errors\SmartCampaignErrorEnum\SmartCampaignError::class);
+        $this->writeOneof(147, $var);
 
         return $this;
     }

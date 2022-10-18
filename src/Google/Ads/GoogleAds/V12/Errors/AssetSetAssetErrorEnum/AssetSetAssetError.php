@@ -46,6 +46,14 @@ class AssetSetAssetError
      * Generated from protobuf enum <code>DUPLICATE_EXTERNAL_KEY = 4;</code>
      */
     const DUPLICATE_EXTERNAL_KEY = 4;
+    /**
+     * When attaching a Location typed Asset to a LocationGroup typed AssetSet,
+     * the AssetSetAsset linkage between the parent LocationSync AssetSet and
+     * the Asset doesn't exist.
+     *
+     * Generated from protobuf enum <code>PARENT_LINKAGE_DOES_NOT_EXIST = 5;</code>
+     */
+    const PARENT_LINKAGE_DOES_NOT_EXIST = 5;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -53,6 +61,7 @@ class AssetSetAssetError
         self::INVALID_ASSET_TYPE => 'INVALID_ASSET_TYPE',
         self::INVALID_ASSET_SET_TYPE => 'INVALID_ASSET_SET_TYPE',
         self::DUPLICATE_EXTERNAL_KEY => 'DUPLICATE_EXTERNAL_KEY',
+        self::PARENT_LINKAGE_DOES_NOT_EXIST => 'PARENT_LINKAGE_DOES_NOT_EXIST',
     ];
 
     public static function name($value)

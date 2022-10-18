@@ -1063,8 +1063,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $publisher_organic_clicks = 0;
     /**
-     * Clicks from traffic which is not identified as “Publisher Purchased” or
-     * “Publisher Organic”
+     * Clicks from traffic which is not identified as "Publisher Purchased" or
+     * "Publisher Organic"
      *
      * Generated from protobuf field <code>int64 publisher_unknown_clicks = 266;</code>
      */
@@ -1705,8 +1705,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           Clicks from properties for which the traffic the publisher has not paid
      *           for or acquired through incentivized activity
      *     @type int|string $publisher_unknown_clicks
-     *           Clicks from traffic which is not identified as “Publisher Purchased” or
-     *           “Publisher Organic”
+     *           Clicks from traffic which is not identified as "Publisher Purchased" or
+     *           "Publisher Organic"
      *     @type float $all_conversions_from_location_asset_click_to_call
      *           Number of call button clicks on any location surface after a chargeable ad
      *           event (click or impression). This measure is coming from Asset based
@@ -6944,8 +6944,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Clicks from traffic which is not identified as “Publisher Purchased” or
-     * “Publisher Organic”
+     * Clicks from traffic which is not identified as "Publisher Purchased" or
+     * "Publisher Organic"
      *
      * Generated from protobuf field <code>int64 publisher_unknown_clicks = 266;</code>
      * @return int|string
@@ -6956,8 +6956,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Clicks from traffic which is not identified as “Publisher Purchased” or
-     * “Publisher Organic”
+     * Clicks from traffic which is not identified as "Publisher Purchased" or
+     * "Publisher Organic"
      *
      * Generated from protobuf field <code>int64 publisher_unknown_clicks = 266;</code>
      * @param int|string $var
