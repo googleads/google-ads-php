@@ -193,7 +193,7 @@ class CreateExperiment
             // The "control" arm references an already-existing campaign.
             'control' => true,
             'campaigns' => [ResourceNames::forCampaign($customerId, $campaignId)],
-            'trial' => $experimentResourceName,
+            'experiment' => $experimentResourceName,
             'name' => 'control arm',
             'traffic_split' => 40
         ]);
@@ -203,7 +203,7 @@ class CreateExperiment
             // generate draft campaigns that you can modify before starting the
             // experiment.
             'control' => false,
-            'trial' => $experimentResourceName,
+            'experiment' => $experimentResourceName,
             'name' => 'experiment arm',
             'traffic_split' => 60
         ]);
