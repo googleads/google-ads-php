@@ -29,9 +29,10 @@ use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\V12\ResourceNames;
-use Google\Ads\GoogleAds\V12\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V12\Common\AdTextAsset;
 use Google\Ads\GoogleAds\V12\Common\PolicyTopicEntry;
 use Google\Ads\GoogleAds\V12\Common\PolicyValidationParameter;
+use Google\Ads\GoogleAds\V12\Common\ResponsiveSearchAdInfo;
 use Google\Ads\GoogleAds\V12\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
 use Google\Ads\GoogleAds\V12\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
 use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
@@ -42,11 +43,11 @@ use Google\Ads\GoogleAds\V12\Services\AdGroupAdServiceClient;
 use Google\ApiCore\ApiException;
 
 /**
- * This example demonstrates how to request an exemption for policy violations of an expanded text
- * ad. If the request somehow fails with exceptions that are not policy finding errors, the example
- * will stop instead of trying sending an exemption request.
+ * This example demonstrates how to request an exemption for policy violations of a responsive
+ * search ad. If the request somehow fails with exceptions that are not policy finding errors, the
+ * example will stop instead of trying sending an exemption request.
  */
-class HandleExpandedTextAdPolicyViolations
+class HandleResponsiveSearchAdPolicyViolations
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
@@ -107,20 +108,28 @@ class HandleExpandedTextAdPolicyViolations
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID to add an expanded text ad to
+     * @param int $adGroupId the ad group ID to add a responsive search ad to
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $adGroupId
     ) {
-        // Creates an expanded text ad info object.
-        $expandedTextAdInfo = new ExpandedTextAdInfo([
-            'headline_part1' => 'Cruise to Mars #' . Helper::getShortPrintableDatetime(),
-            'headline_part2' => 'Best Space Cruise Line',
+        // Creates a responsive search ad info object.
+        $responsiveSearchAdInfo = new ResponsiveSearchAdInfo([
+            'headlines' => [
+                new AdTextAsset([
+                    'text' => 'Cruise to Mars #' . Helper::getShortPrintableDatetime()
+                ]),
+                new AdTextAsset(['text' => 'Best Space Cruise Line']),
+                new AdTextAsset(['text' => 'Experience the Stars'])
+            ],
             // Intentionally use an ad text that violates policy -- having too many exclamation
             // marks.
-            'description' => 'Buy your tickets now!!!!!!!'
+            'descriptions' => [
+                new AdTextAsset(['text' => 'Buy your tickets now!!!!!!!']),
+                new AdTextAsset(['text' => 'Visit the Red Planet'])
+            ]
         ]);
 
         // Creates an ad group ad to hold the above ad.
@@ -129,10 +138,10 @@ class HandleExpandedTextAdPolicyViolations
             // Set the ad group ad to PAUSED to prevent it from immediately serving.
             // Set to ENABLED once you've added targeting and the ad are ready to serve.
             'status' => AdGroupAdStatus::PAUSED,
-            // Sets the expanded text ad info on an Ad.
+            // Sets the responsive search ad info on an Ad.
             'ad' => new Ad([
-                'expanded_text_ad' => $expandedTextAdInfo,
-                'final_urls' => ['http://www.example.com']
+                'responsive_search_ad' => $responsiveSearchAdInfo,
+                'final_urls' => ['https://www.example.com']
             ])
         ]);
 
@@ -151,7 +160,7 @@ class HandleExpandedTextAdPolicyViolations
             $ignorablePolicyTopics = self::fetchIgnorablePolicyTopics($googleAdsException);
         }
 
-        // Try sending exemption requests for creating an expanded text ad.
+        // Try sending exemption requests for creating a responsive search ad.
         self::requestExemption(
             $customerId,
             $adGroupAdServiceClient,
@@ -166,7 +175,7 @@ class HandleExpandedTextAdPolicyViolations
      * @param GoogleAdsException $googleAdsException the Google Ads exception
      * @return string[] the ignorable policy topics
      */
-    // [START handle_expanded_text_ad_policy_violations]
+    // [START handle_responsive_search_ad_policy_violations]
     private static function fetchIgnorablePolicyTopics(GoogleAdsException $googleAdsException)
     {
         $ignorablePolicyTopics = [];
@@ -215,24 +224,24 @@ class HandleExpandedTextAdPolicyViolations
         }
         return $ignorablePolicyTopics;
     }
-    // [END handle_expanded_text_ad_policy_violations]
+    // [END handle_responsive_search_ad_policy_violations]
 
     /**
-     * Sends exemption requests for creating an expanded text ad.
+     * Sends exemption requests for creating a responsive search ad.
      *
      * @param int $customerId
      * @param AdGroupAdServiceClient $adGroupAdServiceClient
      * @param AdGroupAdOperation $adGroupAdOperation
      * @param string[] $ignorablePolicyTopics
      */
-    // [START handle_expanded_text_ad_policy_violations_1]
+    // [START handle_responsive_search_ad_policy_violations_1]
     private static function requestExemption(
         int $customerId,
         AdGroupAdServiceClient $adGroupAdServiceClient,
         AdGroupAdOperation $adGroupAdOperation,
         array $ignorablePolicyTopics
     ) {
-        print "Try adding an expanded text ad again by requesting exemption for its policy"
+        print "Try adding a responsive search ad again by requesting exemption for its policy"
             . " violations." . PHP_EOL;
         $adGroupAdOperation->setPolicyValidationParameter(
             new PolicyValidationParameter(['ignorable_policy_topics' => $ignorablePolicyTopics])
@@ -242,13 +251,13 @@ class HandleExpandedTextAdPolicyViolations
             [$adGroupAdOperation]
         );
         printf(
-            "Successfully added an expanded text ad with resource name '%s' by requesting"
+            "Successfully added a responsive search ad with resource name '%s' by requesting"
             . " for policy violation exemption.%s",
             $response->getResults()[0]->getResourceName(),
             PHP_EOL
         );
     }
-    // [END handle_expanded_text_ad_policy_violations_1]
+    // [END handle_responsive_search_ad_policy_violations_1]
 }
 
-HandleExpandedTextAdPolicyViolations::main();
+HandleResponsiveSearchAdPolicyViolations::main();
