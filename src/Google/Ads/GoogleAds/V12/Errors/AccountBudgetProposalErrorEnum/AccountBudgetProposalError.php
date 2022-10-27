@@ -162,7 +162,7 @@ class AccountBudgetProposalError
      */
     const INVALID_BILLING_SETUP = 23;
     /**
-     * Budget creation failed as it overlaps with an pending budget proposal
+     * Budget creation failed as it overlaps with a pending budget proposal
      * or an approved budget.
      *
      * Generated from protobuf enum <code>OVERLAPS_EXISTING_BUDGET = 24;</code>

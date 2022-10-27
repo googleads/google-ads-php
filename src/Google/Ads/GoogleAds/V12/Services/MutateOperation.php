@@ -86,7 +86,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V12\Services\CampaignCriterionOperation $campaign_criterion_operation
      *           A campaign criterion mutate operation.
      *     @type \Google\Ads\GoogleAds\V12\Services\CampaignCustomizerOperation $campaign_customizer_operation
-     *           An campaign customizer mutate operation.
+     *           A campaign customizer mutate operation.
      *     @type \Google\Ads\GoogleAds\V12\Services\CampaignDraftOperation $campaign_draft_operation
      *           A campaign draft mutate operation.
      *     @type \Google\Ads\GoogleAds\V12\Services\CampaignExtensionSettingOperation $campaign_extension_setting_operation
@@ -118,7 +118,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V12\Services\CustomerConversionGoalOperation $customer_conversion_goal_operation
      *           A customer conversion goal mutate operation.
      *     @type \Google\Ads\GoogleAds\V12\Services\CustomerCustomizerOperation $customer_customizer_operation
-     *           An customer customizer mutate operation.
+     *           A customer customizer mutate operation.
      *     @type \Google\Ads\GoogleAds\V12\Services\CustomerExtensionSettingOperation $customer_extension_setting_operation
      *           A customer extension setting mutate operation.
      *     @type \Google\Ads\GoogleAds\V12\Services\CustomerFeedOperation $customer_feed_operation
@@ -130,7 +130,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V12\Services\CustomerOperation $customer_operation
      *           A customer mutate operation.
      *     @type \Google\Ads\GoogleAds\V12\Services\CustomizerAttributeOperation $customizer_attribute_operation
-     *           An customizer attribute mutate operation.
+     *           A customizer attribute mutate operation.
      *     @type \Google\Ads\GoogleAds\V12\Services\ExperimentOperation $experiment_operation
      *           An experiment mutate operation.
      *     @type \Google\Ads\GoogleAds\V12\Services\ExperimentArmOperation $experiment_arm_operation
@@ -1142,7 +1142,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An campaign customizer mutate operation.
+     * A campaign customizer mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v12.services.CampaignCustomizerOperation campaign_customizer_operation = 76;</code>
      * @return \Google\Ads\GoogleAds\V12\Services\CampaignCustomizerOperation|null
@@ -1158,7 +1158,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An campaign customizer mutate operation.
+     * A campaign customizer mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v12.services.CampaignCustomizerOperation campaign_customizer_operation = 76;</code>
      * @param \Google\Ads\GoogleAds\V12\Services\CampaignCustomizerOperation $var
@@ -1638,7 +1638,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An customer customizer mutate operation.
+     * A customer customizer mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v12.services.CustomerCustomizerOperation customer_customizer_operation = 79;</code>
      * @return \Google\Ads\GoogleAds\V12\Services\CustomerCustomizerOperation|null
@@ -1654,7 +1654,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An customer customizer mutate operation.
+     * A customer customizer mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v12.services.CustomerCustomizerOperation customer_customizer_operation = 79;</code>
      * @param \Google\Ads\GoogleAds\V12\Services\CustomerCustomizerOperation $var
@@ -1824,7 +1824,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An customizer attribute mutate operation.
+     * A customizer attribute mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v12.services.CustomizerAttributeOperation customizer_attribute_operation = 70;</code>
      * @return \Google\Ads\GoogleAds\V12\Services\CustomizerAttributeOperation|null
@@ -1840,7 +1840,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An customizer attribute mutate operation.
+     * A customizer attribute mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v12.services.CustomizerAttributeOperation customizer_attribute_operation = 70;</code>
      * @param \Google\Ads\GoogleAds\V12\Services\CustomizerAttributeOperation $var

@@ -58,7 +58,8 @@ class ChangeClientType
      */
     const GOOGLE_ADS_API = 6;
     /**
-     * Changes made by Google Ads Editor.
+     * Changes made by Google Ads Editor. This value is a placeholder.
+     * The API does not return these changes.
      *
      * Generated from protobuf enum <code>GOOGLE_ADS_EDITOR = 7;</code>
      */

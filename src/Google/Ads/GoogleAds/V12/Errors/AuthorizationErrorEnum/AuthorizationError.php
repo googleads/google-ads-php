@@ -86,8 +86,8 @@ class AuthorizationError
      */
     const MISSING_TOS = 9;
     /**
-     * The developer token is not approved. Non-approved developer tokens can
-     * only be used with test accounts.
+     * The developer token is only approved for use with test accounts. To
+     * access non-test accounts, apply for Basic or Standard access.
      *
      * Generated from protobuf enum <code>DEVELOPER_TOKEN_NOT_APPROVED = 10;</code>
      */
