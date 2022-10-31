@@ -105,6 +105,49 @@ use Google\ApiCore\PathTemplate;
 final class ResourceNames
 {
     /**
+     * Generates a resource name of customer asset set.
+     *
+     * @param string $customerId
+     * @param string $assetSetId
+     * @return string the customer asset set resource name
+     */
+    public static function forCustomerAssetSet(
+        $customerId,
+        $assetSetId
+    ): string {
+        $pathTemplate = new PathTemplate(
+            'customers/{customer_id}/customerAssetSets/{asset_set_id}'
+        );
+        return $pathTemplate->render([
+            'customer_id' => $customerId,
+            'asset_set_id' => $assetSetId
+        ]);
+    }
+
+    /**
+     * Generates a resource name of ad group asset set.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     * @param string $assetSetId
+     * @return string the ad group asset set resource name
+     */
+    public static function forAdGroupAssetSet(
+        $customerId,
+        $adGroupId,
+        $assetSetId
+    ): string {
+        $pathTemplate = new PathTemplate(
+            'customers/{customer_id}/adGroupAssetSets/{ad_group_id}~{asset_set_id}'
+        );
+        return $pathTemplate->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+            'asset_set_id' => $assetSetId
+        ]);
+    }
+
+    /**
      * Generates a resource name of campaign group.
      *
      * @param string $customerId

@@ -108,6 +108,44 @@ use PHPUnit\Framework\TestCase;
 class ResourceNamesTest extends TestCase
 {
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V12\ResourceNames::forCustomerAssetSet()
+     */
+    public function testGetNameForCustomerAssetSet()
+    {
+        $customerId = '111111';
+        $assetSetId = '222222';
+        $expectedResourceName = sprintf(
+            'customers/%s/customerAssetSets/%s',
+            $customerId,
+            $assetSetId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forCustomerAssetSet($customerId, $assetSetId)
+        );
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V12\ResourceNames::forAdGroupAssetSet()
+     */
+    public function testGetNameForAdGroupAssetSet()
+    {
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $assetSetId = '333333';
+        $expectedResourceName = sprintf(
+            'customers/%s/adGroupAssetSets/%s~%s',
+            $customerId,
+            $adGroupId,
+            $assetSetId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forAdGroupAssetSet($customerId, $adGroupId, $assetSetId)
+        );
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V12\ResourceNames::forCampaignGroup()
      */
     public function testGetNameForCampaignGroup()
