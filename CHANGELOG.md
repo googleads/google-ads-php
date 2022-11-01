@@ -1,3 +1,20 @@
+## 17.1.0
+*   Added support for v12 of Google Ads API.
+*   Renamed HandleExpandedTextAdPolicyViolations to HandleResponsiveSearchAdPolicyViolations
+    and made it work with responsive search ads instead.
+*   Removed code examples:
+    * All examples in the Migration/ directory
+        * Moved CampaignReportToCsv to the Misc/ directory
+    * AddDynamicPageFeed
+    * AddLocalCampaign
+    * AddSmartDisplayAd
+    * AddShoppingSmartAd
+*   Updated code examples:
+    * AddPerformanceMaxRetailCampaign
+    * AddSmartCampaign
+    * CreateExperiment
+    * ForecastReach
+
 ## 17.0.0
 *   Added support for v11_1 of Google Ads API.
 *   Updated the FieldMasks utility to better handle empty message fields. For
