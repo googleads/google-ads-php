@@ -25,47 +25,47 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V11\ResourceNames;
-use Google\Ads\GoogleAds\V11\Common\ImageAsset;
-use Google\Ads\GoogleAds\V11\Common\LanguageInfo;
-use Google\Ads\GoogleAds\V11\Common\LocationInfo;
-use Google\Ads\GoogleAds\V11\Common\MaximizeConversionValue;
-use Google\Ads\GoogleAds\V11\Common\TextAsset;
-use Google\Ads\GoogleAds\V11\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V11\Enums\AssetFieldTypeEnum\AssetFieldType;
-use Google\Ads\GoogleAds\V11\Enums\AssetGroupStatusEnum\AssetGroupStatus;
-use Google\Ads\GoogleAds\V11\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V11\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V11\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
-use Google\Ads\GoogleAds\V11\Enums\ConversionOriginEnum\ConversionOrigin;
-use Google\Ads\GoogleAds\V11\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
-use Google\Ads\GoogleAds\V11\Enums\ListingGroupFilterVerticalEnum\ListingGroupFilterVertical;
-use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V11\Resources\Asset;
-use Google\Ads\GoogleAds\V11\Resources\AssetGroup;
-use Google\Ads\GoogleAds\V11\Resources\AssetGroupAsset;
-use Google\Ads\GoogleAds\V11\Resources\AssetGroupListingGroupFilter;
-use Google\Ads\GoogleAds\V11\Resources\Campaign;
-use Google\Ads\GoogleAds\V11\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V11\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V11\Resources\CampaignConversionGoal;
-use Google\Ads\GoogleAds\V11\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V11\Services\AssetGroupAssetOperation;
-use Google\Ads\GoogleAds\V11\Services\AssetGroupListingGroupFilterOperation;
-use Google\Ads\GoogleAds\V11\Services\AssetGroupOperation;
-use Google\Ads\GoogleAds\V11\Services\AssetOperation;
-use Google\Ads\GoogleAds\V11\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V11\Services\CampaignConversionGoalOperation;
-use Google\Ads\GoogleAds\V11\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V11\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V11\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V11\Services\MutateGoogleAdsResponse;
-use Google\Ads\GoogleAds\V11\Services\MutateOperation;
-use Google\Ads\GoogleAds\V11\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\Util\V12\ResourceNames;
+use Google\Ads\GoogleAds\V12\Common\ImageAsset;
+use Google\Ads\GoogleAds\V12\Common\LanguageInfo;
+use Google\Ads\GoogleAds\V12\Common\LocationInfo;
+use Google\Ads\GoogleAds\V12\Common\MaximizeConversionValue;
+use Google\Ads\GoogleAds\V12\Common\TextAsset;
+use Google\Ads\GoogleAds\V12\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V12\Enums\AssetFieldTypeEnum\AssetFieldType;
+use Google\Ads\GoogleAds\V12\Enums\AssetGroupStatusEnum\AssetGroupStatus;
+use Google\Ads\GoogleAds\V12\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V12\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V12\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
+use Google\Ads\GoogleAds\V12\Enums\ConversionOriginEnum\ConversionOrigin;
+use Google\Ads\GoogleAds\V12\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
+use Google\Ads\GoogleAds\V12\Enums\ListingGroupFilterVerticalEnum\ListingGroupFilterVertical;
+use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V12\Resources\Asset;
+use Google\Ads\GoogleAds\V12\Resources\AssetGroup;
+use Google\Ads\GoogleAds\V12\Resources\AssetGroupAsset;
+use Google\Ads\GoogleAds\V12\Resources\AssetGroupListingGroupFilter;
+use Google\Ads\GoogleAds\V12\Resources\Campaign;
+use Google\Ads\GoogleAds\V12\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V12\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V12\Resources\CampaignConversionGoal;
+use Google\Ads\GoogleAds\V12\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V12\Services\AssetGroupAssetOperation;
+use Google\Ads\GoogleAds\V12\Services\AssetGroupListingGroupFilterOperation;
+use Google\Ads\GoogleAds\V12\Services\AssetGroupOperation;
+use Google\Ads\GoogleAds\V12\Services\AssetOperation;
+use Google\Ads\GoogleAds\V12\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V12\Services\CampaignConversionGoalOperation;
+use Google\Ads\GoogleAds\V12\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V12\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V12\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V12\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V12\Services\MutateOperation;
+use Google\Ads\GoogleAds\V12\Services\MutateOperationResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Serializer;
 
@@ -236,18 +236,16 @@ class AddPerformanceMaxRetailCampaign
         );
         $operations =
             array_merge($operations, self::createCampaignCriterionOperations($customerId));
-        $operations = array_merge($operations, self::createAssetGroupOperations(
+        $operations[] = self::createAssetGroupOperation($customerId, $finalUrl);
+        $operations[] = self::createAssetGroupListingGroupFilterOperation($customerId);
+        $operations = array_merge($operations, self::createAssetandAssetGroupAssetOperations(
             $customerId,
-            $finalUrl,
             $headlineAssetResourceNames,
             $descriptionAssetResourceNames
         ));
         $operations = array_merge($operations, self::createConversionGoalOperations(
             $customerId,
             $customerConversionGoals
-        ));
-        $operations = array_merge($operations, self::createAssetGroupListingGroupFilterOperations(
-            ResourceNames::forAssetGroup($customerId, self::ASSET_GROUP_TEMPORARY_ID)
         ));
 
         // Issues a mutate request to create everything and prints its information.
@@ -395,10 +393,6 @@ class AddPerformanceMaxRetailCampaign
         // https://developers.google.com/google-ads/api/reference/data/geotargets
         // and they can also be retrieved using the GeoTargetConstantService as shown
         // here: https://developers.google.com/google-ads/api/docs/targeting/location-targeting
-        //
-        // We will add one positive location target for New York City (ID=1023191)
-        // and one negative location target for Brooklyn (ID=1022762).
-        // First, adds the positive (negative = false) for New York City.
         $operations[] = new MutateOperation([
             'campaign_criterion_operation' => new CampaignCriterionOperation([
                 'create' => new CampaignCriterion([
@@ -407,6 +401,8 @@ class AddPerformanceMaxRetailCampaign
                         self::PERFORMANCE_MAX_CAMPAIGN_TEMPORARY_ID
                     ),
                     'location' => new LocationInfo([
+                        // Adds one positive location target for New York City (ID=1023191),
+                        // specifically adding the positive criteria before the negative one.
                         'geo_target_constant' => ResourceNames::forGeoTargetConstant(1023191)
                     ]),
                     'negative' => false
@@ -423,6 +419,7 @@ class AddPerformanceMaxRetailCampaign
                         self::PERFORMANCE_MAX_CAMPAIGN_TEMPORARY_ID
                     ),
                     'location' => new LocationInfo([
+                        // Next add the negative target for Brooklyn (ID=1022762).
                         'geo_target_constant' => ResourceNames::forGeoTargetConstant(1022762)
                     ]),
                     'negative' => true
@@ -454,6 +451,8 @@ class AddPerformanceMaxRetailCampaign
 
     /**
      * Creates multiple text assets and returns the list of resource names.
+     *
+     * These repeated assets must be created in a separate request prior to creating the campaign.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
@@ -495,28 +494,21 @@ class AddPerformanceMaxRetailCampaign
     // [END add_performance_max_retail_campaign_5]
 
     /**
-     * Creates a list of MutateOperations that create a new asset group.
+     * Creates a MutateOperation that creates a new asset group.
      *
      * A temporary ID will be assigned to this asset group so that it can
      * be referenced by other objects being created in the same Mutate request.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param string $finalUrl the final URL for the asset group of the campaign
-     * @param string[] $headlineAssetResourceNames a list of headline resource names
-     * @param string[] $descriptionAssetResourceNames a list of description resource names
-     * @return MutateOperation[] a list of MutateOperations that create new asset group
+     * @return MutateOperation a mutate operation creates a new asset group.
      */
-    // [START add_performance_max_retail_campaign_6]
-    private static function createAssetGroupOperations(
+    // [START add_performance_max_retail_campaign_10]
+    private static function createAssetGroupOperation(
         int $customerId,
-        string $finalUrl,
-        array $headlineAssetResourceNames,
-        array $descriptionAssetResourceNames
-    ): array {
-        $operations = [];
+        string $finalUrl
+    ): MutateOperation {
         // Creates a new mutate operation that creates an asset group operation.
-        $operations[] = new MutateOperation([
+        return new MutateOperation([
             'asset_group_operation' => new AssetGroupOperation([
                 'create' => new AssetGroup([
                     'resource_name' => ResourceNames::forAssetGroup(
@@ -535,7 +527,66 @@ class AddPerformanceMaxRetailCampaign
                 ])
             ])
         ]);
+    }
+    // [END add_performance_max_retail_campaign_10]
 
+    /**
+     * Creates a MutateOperation that creates a new asset group listing group filter.
+     *
+     * A temporary ID will be assigned to this listing group filter so that it can be referenced by
+     * other objects being created in the same Mutate request.
+     *
+     * @param int $customerId the customer ID
+     * @return MutateOperation a MutateOperation that creates a new asset group listing group filter
+     */
+    // [START add_performance_max_retail_campaign_11]
+    private static function createAssetGroupListingGroupFilterOperation(
+        int $customerId
+    ): MutateOperation {
+        return new MutateOperation([
+            'asset_group_listing_group_filter_operation'
+            => new AssetGroupListingGroupFilterOperation([
+                // Creates a new asset group listing group filter containing the "default"
+                // listing group (All products).
+                'create' => new AssetGroupListingGroupFilter([
+                    'asset_group' => ResourceNames::forAssetGroup(
+                        $customerId,
+                        self::ASSET_GROUP_TEMPORARY_ID
+                    ),
+                    // Since this is the root node, do not set the 'parent_listing_group_filter'
+                    // field. For all other nodes, this would refer to the parent listing group
+                    // filter resource name.
+                    //
+                    // UNIT_INCLUDED means this node has no children.
+                    'type' => ListingGroupFilterType::UNIT_INCLUDED,
+                    // Because this is a Performance Max campaign for retail, we need to specify
+                    // that this is in the shopping vertical.
+                    'vertical' => ListingGroupFilterVertical::SHOPPING
+                ])
+            ])
+        ]);
+    }
+    // [END add_performance_max_retail_campaign_11]
+
+    /**
+     * Creates a list of MutateOperations that create new asset group asset and assets.
+     *
+     * A temporary ID will be assigned to this asset group so that it can
+     * be referenced by other objects being created in the same mutate request.
+     *
+     * @param int $customerId the customer ID
+     * @param string[] $headlineAssetResourceNames a list of headline resource names
+     * @param string[] $descriptionAssetResourceNames a list of description resource names
+     * @return MutateOperation[] a list of MutateOperations that create new asset group assets and
+     *     assets
+     */
+    // [START add_performance_max_retail_campaign_6]
+    private static function createAssetandAssetGroupAssetOperations(
+        int $customerId,
+        array $headlineAssetResourceNames,
+        array $descriptionAssetResourceNames
+    ): array {
+        $operations = [];
         // For the list of required assets for a Performance Max campaign, see
         // https://developers.google.com/google-ads/api/docs/performance-max/assets
 
@@ -599,7 +650,7 @@ class AddPerformanceMaxRetailCampaign
         // Creates and links the Logo Asset.
         $operations = array_merge($operations, self::createAndLinkImageAsset(
             $customerId,
-            'https://gaagl.page.link/bjYi',
+            'https://gaagl.page.link/1Crm',
             AssetFieldType::LOGO,
             'Marketing Logo'
         ));
@@ -618,7 +669,9 @@ class AddPerformanceMaxRetailCampaign
             'Square Marketing Image'
         ));
 
-        return $operations;
+        // After being created the list must be sorted so that all asset operations come before all
+        // the asset group asset operations, otherwise the API will reject the request.
+        return self::sortAssetAndAssetGroupAssetOperations($operations);
     }
     // [END add_performance_max_retail_campaign_6]
 
@@ -717,6 +770,34 @@ class AddPerformanceMaxRetailCampaign
     // [END add_performance_max_retail_campaign_8]
 
     /**
+     * Sorts a list of asset and asset group asset operations. This sorts the list such that all
+     * asset operations precede all asset group asset operations. If asset group assets are created
+     * before assets then an error will be returned by the API.
+     *
+     * @param MutateOperation[] $operations a list of asset and asset group asset mutate operations
+     * @return MutateOperation[] a sorted list of asset and asset group asset mutate operations
+     */
+    // [START add_performance_max_retail_campaign_12]
+    private static function sortAssetAndAssetGroupAssetOperations(array $operations): array
+    {
+        usort(
+            $operations,
+            function (MutateOperation $operation1, MutateOperation $operation2) {
+                if (!is_null($operation1->getAssetOperation())) {
+                    return -1;
+                } elseif (!is_null($operation1->getAssetOperation())) {
+                    return 0;
+                } else {
+                    return 1;
+                }
+            }
+        );
+        return $operations;
+    }
+    // [END add_performance_max_retail_campaign_12]
+
+
+    /**
      * Retrieves the list of customer conversion goals.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
@@ -806,42 +887,6 @@ class AddPerformanceMaxRetailCampaign
         return $operations;
     }
     // [END add_performance_max_retail_campaign_9]
-
-    /**
-     * Creates a list of MutateOperations that create a new asset group listing group filter.
-     *
-     * @param string $assetGroupResourceName the resource name of asset group
-     * @return MutateOperation[] a list of MutateOperations that create a new asset group listing
-     *     group filter
-     */
-    // [START add_performance_max_retail_campaign_10]
-    private static function createAssetGroupListingGroupFilterOperations(
-        string $assetGroupResourceName
-    ): array {
-        $operations = [];
-        $operations[] = new MutateOperation([
-            'asset_group_listing_group_filter_operation'
-                => new AssetGroupListingGroupFilterOperation([
-                    // Creates a new asset group listing group filter containing the "default"
-                    // listing group (All products).
-                    'create' => new AssetGroupListingGroupFilter([
-                        'asset_group' => $assetGroupResourceName,
-                        // Since this is the root node, do not set the 'parent_listing_group_filter'
-                        // field. For all other nodes, this would refer to the parent listing group
-                        // filter resource name.
-                        //
-                        // UNIT_INCLUDED means this node has no children.
-                        'type' => ListingGroupFilterType::UNIT_INCLUDED,
-                        // Because this is a Performance Max campaign for retail, we need to specify
-                        // that this is in the shopping vertical.
-                        'vertical' => ListingGroupFilterVertical::SHOPPING
-                    ])
-                ])
-        ]);
-
-        return $operations;
-    }
-    // [END add_performance_max_retail_campaign_10]
 
     /**
      * Prints the details of a MutateGoogleAdsResponse. Parses the "response" oneof field name and

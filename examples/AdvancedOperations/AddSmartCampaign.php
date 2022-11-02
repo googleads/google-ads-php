@@ -25,47 +25,48 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V11\ResourceNames;
-use Google\Ads\GoogleAds\V11\Common\AdScheduleInfo;
-use Google\Ads\GoogleAds\V11\Common\AdTextAsset;
-use Google\Ads\GoogleAds\V11\Common\KeywordThemeInfo;
-use Google\Ads\GoogleAds\V11\Common\LocationInfo;
-use Google\Ads\GoogleAds\V11\Common\SmartCampaignAdInfo;
-use Google\Ads\GoogleAds\V11\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V11\Enums\AdTypeEnum\AdType;
-use Google\Ads\GoogleAds\V11\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType;
-use Google\Ads\GoogleAds\V11\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V11\Enums\BudgetTypeEnum\BudgetType;
-use Google\Ads\GoogleAds\V11\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V11\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V11\Enums\MinuteOfHourEnum\MinuteOfHour;
-use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V11\Resources\Ad;
-use Google\Ads\GoogleAds\V11\Resources\AdGroup;
-use Google\Ads\GoogleAds\V11\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V11\Resources\Campaign;
-use Google\Ads\GoogleAds\V11\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V11\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V11\Resources\KeywordThemeConstant;
-use Google\Ads\GoogleAds\V11\Resources\SmartCampaignSetting;
-use Google\Ads\GoogleAds\V11\Resources\SmartCampaignSetting\PhoneNumber;
-use Google\Ads\GoogleAds\V11\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V11\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V11\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V11\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V11\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V11\Services\MutateGoogleAdsResponse;
-use Google\Ads\GoogleAds\V11\Services\MutateOperation;
-use Google\Ads\GoogleAds\V11\Services\MutateOperationResponse;
-use Google\Ads\GoogleAds\V11\Services\SmartCampaignSettingOperation;
-use Google\Ads\GoogleAds\V11\Services\SmartCampaignSuggestionInfo;
-use Google\Ads\GoogleAds\V11\Services\SmartCampaignSuggestionInfo\BusinessContext;
-use Google\Ads\GoogleAds\V11\Services\SmartCampaignSuggestionInfo\LocationList;
-use Google\Ads\GoogleAds\V11\Services\SuggestSmartCampaignBudgetOptionsRequest\SuggestionDataOneof;
+use Google\Ads\GoogleAds\Util\V12\ResourceNames;
+use Google\Ads\GoogleAds\V12\Common\AdScheduleInfo;
+use Google\Ads\GoogleAds\V12\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V12\Common\KeywordThemeInfo;
+use Google\Ads\GoogleAds\V12\Common\LocationInfo;
+use Google\Ads\GoogleAds\V12\Common\SmartCampaignAdInfo;
+use Google\Ads\GoogleAds\V12\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V12\Enums\AdTypeEnum\AdType;
+use Google\Ads\GoogleAds\V12\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType;
+use Google\Ads\GoogleAds\V12\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V12\Enums\BudgetTypeEnum\BudgetType;
+use Google\Ads\GoogleAds\V12\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V12\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V12\Enums\MinuteOfHourEnum\MinuteOfHour;
+use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V12\Resources\Ad;
+use Google\Ads\GoogleAds\V12\Resources\AdGroup;
+use Google\Ads\GoogleAds\V12\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V12\Resources\Campaign;
+use Google\Ads\GoogleAds\V12\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V12\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V12\Resources\KeywordThemeConstant;
+use Google\Ads\GoogleAds\V12\Resources\SmartCampaignSetting;
+use Google\Ads\GoogleAds\V12\Resources\SmartCampaignSetting\PhoneNumber;
+use Google\Ads\GoogleAds\V12\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V12\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V12\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V12\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V12\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V12\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V12\Services\MutateOperation;
+use Google\Ads\GoogleAds\V12\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\V12\Services\SmartCampaignSettingOperation;
+use Google\Ads\GoogleAds\V12\Services\SmartCampaignSuggestionInfo;
+use Google\Ads\GoogleAds\V12\Services\SmartCampaignSuggestionInfo\BusinessContext;
+use Google\Ads\GoogleAds\V12\Services\SmartCampaignSuggestionInfo\LocationList;
+use Google\Ads\GoogleAds\V12\Services\SuggestKeywordThemesResponse\KeywordTheme;
+use Google\Ads\GoogleAds\V12\Services\SuggestSmartCampaignBudgetOptionsRequest\SuggestionDataOneof;
 use Google\ApiCore\ApiException;
 use InvalidArgumentException;
 
@@ -83,11 +84,11 @@ class AddSmartCampaign
     // auto-completion data for the given text and may help improve the performance of the Smart
     // campaign.
     private const KEYWORD_TEXT = null;
-    // Optional: A keyword text used to create a freeform keyword theme, which is entirely
+    // Optional: A keyword text used to create a free-form keyword theme, which is entirely
     // user-specified and not derived from any suggestion service. Using free-form keyword themes is
     // typically not recommended because they are less effective than suggested keyword themes,
     // however they are useful in situations where a very specific term needs to be targeted.
-    private const FREEFORM_KEYWORD_TEXT = null;
+    private const FREE_FORM_KEYWORD_TEXT = null;
     // Optional: Specify the resource name of a Business Profile location. This is required if a
     // business name is not provided. It can be retrieved using the Business Profile API, see:
     // https://developers.google.com/my-business/reference/businessinformation/rest/v1/accounts.locations
@@ -122,7 +123,7 @@ class AddSmartCampaign
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::KEYWORD_TEXT => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::FREEFORM_KEYWORD_TEXT => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::FREE_FORM_KEYWORD_TEXT => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::BUSINESS_PROFILE_LOCATION => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::BUSINESS_NAME => GetOpt::OPTIONAL_ARGUMENT
         ]);
@@ -157,7 +158,7 @@ class AddSmartCampaign
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::KEYWORD_TEXT] ?: self::KEYWORD_TEXT,
-                $options[ArgumentNames::FREEFORM_KEYWORD_TEXT] ?: self::FREEFORM_KEYWORD_TEXT,
+                $options[ArgumentNames::FREE_FORM_KEYWORD_TEXT] ?: self::FREE_FORM_KEYWORD_TEXT,
                 $businessProfileLocation,
                 $businessName
             );
@@ -194,7 +195,7 @@ class AddSmartCampaign
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param string|null $keywordText a keyword text used for generating keyword themes
-     * @param string|null $freeformKeywordText a keyword used to create a free-form keyword theme
+     * @param string|null $freeFormKeywordText a keyword used to create a free-form keyword theme
      * @param string|null $businessProfileLocationResourceName the resource name of a Business
      *     Profile location
      * @param string|null $businessName the name of a Business Profile
@@ -203,7 +204,7 @@ class AddSmartCampaign
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         ?string $keywordText,
-        ?string $freeformKeywordText,
+        ?string $freeFormKeywordText,
         ?string $businessProfileLocationResourceName,
         ?string $businessName
     ) {
@@ -219,30 +220,41 @@ class AddSmartCampaign
         // Generates a list of keyword themes using the SuggestKeywordThemes method on the
         // SmartCampaignSuggestService. It is strongly recommended that you use this strategy for
         // generating keyword themes.
-        $keywordThemeConstants =
+        $keywordThemes =
             self::getKeywordThemeSuggestions($googleAdsClient, $customerId, $suggestionInfo);
 
         // Optionally retrieves auto-complete suggestions for the given keyword text and adds them
         // to the list of keyword themes.
         if (!empty($keywordText)) {
-            $keywordThemeConstants = array_merge(
-                $keywordThemeConstants,
+            $keywordThemes = array_merge(
+                $keywordThemes,
                 self::getKeywordTextAutoCompletions($googleAdsClient, $keywordText)
             );
         }
 
-        // Maps the list of KeywordThemeConstants to KeywordThemeInfos.
-        $keywordThemeInfos = array_map(function (KeywordThemeConstant $constant) {
-            return new KeywordThemeInfo([
-                'keyword_theme_constant' => $constant->getResourceName()
-            ]);
-        }, $keywordThemeConstants);
+        // Maps the list of KeywordThemes to KeywordThemeInfos.
+        $keywordThemeInfos = array_map(function (KeywordTheme $keywordTheme) {
+            if ($keywordTheme->getKeywordThemeConstant()) {
+                return new KeywordThemeInfo([
+                    'keyword_theme_constant' => $keywordTheme->getKeywordThemeConstant()
+                        ->getResourceName()
+                ]);
+            } elseif ($keywordTheme->getFreeFormKeywordTheme()) {
+                return new KeywordThemeInfo([
+                    'free_form_keyword_theme' => $keywordTheme->getFreeFormKeywordTheme()
+                ]);
+            } else {
+                throw new \UnexpectedValueException(
+                    'A malformed KeywordTheme was encountered: ' . $keywordTheme->getKeywordTheme()
+                );
+            }
+        }, $keywordThemes);
 
         // [START add_smart_campaign_13]
-        // Optionally includes any freeform keywords in verbatim.
-        if (!empty($freeformKeywordText)) {
+        // Optionally includes any free-form keywords in verbatim.
+        if (!empty($freeFormKeywordText)) {
             $keywordThemeInfos[] =
-                new KeywordThemeInfo(['free_form_keyword_theme' => $freeformKeywordText]);
+                new KeywordThemeInfo(['free_form_keyword_theme' => $freeFormKeywordText]);
         }
         // [END add_smart_campaign_13]
         // Includes the keyword suggestions in the overall SuggestionInfo object.
@@ -307,7 +319,7 @@ class AddSmartCampaign
     // [END add_smart_campaign_7]
 
     /**
-     * Retrieves KeywordThemeConstants using the given suggestion info.
+     * Retrieves KeywordThemes using the given suggestion info.
      *
      * Here we use the SuggestKeywordThemes method, which uses all of the business details included
      * in the given SmartCampaignSuggestionInfo instance to generate keyword theme suggestions. This
@@ -318,7 +330,7 @@ class AddSmartCampaign
      * @param int $customerId the customer ID
      * @param SmartCampaignSuggestionInfo $suggestionInfo instance with details
      *     about the business being advertised
-     * @return KeywordThemeConstant[] a list of KeywordThemeConstants
+     * @return KeywordTheme[] a list of KeywordThemes
      */
     // [START add_smart_campaign_11]
     private static function getKeywordThemeSuggestions(
@@ -329,12 +341,12 @@ class AddSmartCampaign
         $smartCampaignSuggestServiceClient =
             $googleAdsClient->getSmartCampaignSuggestServiceClient();
 
-        // Issues a request to retrieve the keyword theme constants.
+        // Issues a request to retrieve the keyword themes.
         $response =
             $smartCampaignSuggestServiceClient->suggestKeywordThemes($customerId, $suggestionInfo);
 
         printf(
-            "Retrieved %d keyword theme constant suggestions from the SuggestKeywordThemes "
+            "Retrieved %d keyword theme suggestions from the SuggestKeywordThemes "
             . "method.%s",
             $response->getKeywordThemes()->count(),
             PHP_EOL
@@ -347,9 +359,12 @@ class AddSmartCampaign
      * Retrieves KeywordThemeConstants that are derived from autocomplete data for the given keyword
      * text.
      *
+     * These KeywordThemeConstants are derived from autocomplete data for the
+     * given keyword text. They are mapped to KeywordThemes before being returned.
+     *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param string $keywordText a keyword text used for generating keyword themes
-     * @return KeywordThemeConstant[] a list of KeywordThemeConstants
+     * @return KeywordTheme[] a list of KeywordThemes
      */
     // [START add_smart_campaign]
     private static function getKeywordTextAutoCompletions(
@@ -371,7 +386,14 @@ class AddSmartCampaign
             $keywordText,
             PHP_EOL
         );
-        return iterator_to_array($response->getKeywordThemeConstants()->getIterator());
+
+        // Maps the keyword theme constants to KeywordTheme instances for consistency with the
+        // response from SmartCampaignSuggestService.SuggestKeywordThemes.
+        return array_map(function (KeywordThemeConstant $keywordThemeConstant) {
+            return new KeywordTheme([
+                'keyword_theme_constant' => $keywordThemeConstant
+            ]);
+        }, iterator_to_array($response->getKeywordThemeConstants()->getIterator()));
     }
     // [END add_smart_campaign]
 

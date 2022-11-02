@@ -23,15 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V11\Enums\MediaTypeEnum\MediaType;
-use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V11\Resources\MediaBundle;
-use Google\Ads\GoogleAds\V11\Resources\MediaFile;
-use Google\Ads\GoogleAds\V11\Services\MediaFileOperation;
+use Google\Ads\GoogleAds\V12\Enums\MediaTypeEnum\MediaType;
+use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V12\Resources\MediaBundle;
+use Google\Ads\GoogleAds\V12\Resources\MediaFile;
+use Google\Ads\GoogleAds\V12\Services\MediaFileOperation;
 use Google\ApiCore\ApiException;
 
 /** This example uploads an HTML5 zip file as a media bundle. */
