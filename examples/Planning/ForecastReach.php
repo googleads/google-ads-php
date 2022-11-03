@@ -24,25 +24,22 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
-use Google\Ads\GoogleAds\V11\Common\DeviceInfo;
-use Google\Ads\GoogleAds\V11\Common\GenderInfo;
-use Google\Ads\GoogleAds\V11\Enums\DeviceEnum\Device;
-use Google\Ads\GoogleAds\V11\Enums\GenderTypeEnum\GenderType;
-use Google\Ads\GoogleAds\V11\Enums\ReachPlanAdLengthEnum\ReachPlanAdLength;
-use Google\Ads\GoogleAds\V11\Enums\ReachPlanAgeRangeEnum\ReachPlanAgeRange;
-use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V11\Services\CampaignDuration;
-use Google\Ads\GoogleAds\V11\Services\PlannableLocation;
-use Google\Ads\GoogleAds\V11\Services\PlannedProduct;
-use Google\Ads\GoogleAds\V11\Services\PlannedProductReachForecast;
-use Google\Ads\GoogleAds\V11\Services\Preferences;
-use Google\Ads\GoogleAds\V11\Services\ProductAllocation;
-use Google\Ads\GoogleAds\V11\Services\ProductMetadata;
-use Google\Ads\GoogleAds\V11\Services\ReachForecast;
-use Google\Ads\GoogleAds\V11\Services\Targeting;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
+use Google\Ads\GoogleAds\V12\Common\DeviceInfo;
+use Google\Ads\GoogleAds\V12\Common\GenderInfo;
+use Google\Ads\GoogleAds\V12\Enums\DeviceEnum\Device;
+use Google\Ads\GoogleAds\V12\Enums\GenderTypeEnum\GenderType;
+use Google\Ads\GoogleAds\V12\Enums\ReachPlanAgeRangeEnum\ReachPlanAgeRange;
+use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V12\Services\CampaignDuration;
+use Google\Ads\GoogleAds\V12\Services\PlannableLocation;
+use Google\Ads\GoogleAds\V12\Services\PlannedProduct;
+use Google\Ads\GoogleAds\V12\Services\PlannedProductReachForecast;
+use Google\Ads\GoogleAds\V12\Services\ProductMetadata;
+use Google\Ads\GoogleAds\V12\Services\ReachForecast;
+use Google\Ads\GoogleAds\V12\Services\Targeting;
 use Google\ApiCore\ApiException;
 
 /**
@@ -120,7 +117,6 @@ class ForecastReach
         self::showPlannableLocations($googleAdsClient);
         self::showPlannableProducts($googleAdsClient);
         self::forecastManualMix($googleAdsClient, $customerId);
-        self::forecastSuggestedMix($googleAdsClient, $customerId);
     }
 
     /**
@@ -292,50 +288,6 @@ class ForecastReach
         );
     }
     // [END forecast_reach_3]
-
-    /**
-     * Gets a forecast for a product mix based on your set of preferences.
-     *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     */
-    // [START forecast_reach_1]
-    private static function forecastSuggestedMix(GoogleAdsClient $googleAdsClient, int $customerId)
-    {
-        $preferences = new Preferences([
-            'has_guaranteed_price' => true,
-            'starts_with_sound' => true,
-            'is_skippable' => false,
-            'top_content_only' => true,
-            'ad_length' => ReachPlanAdLength::FIFTEEN_OR_TWENTY_SECONDS
-        ]);
-
-        $mixResponse = $googleAdsClient->getReachPlanServiceClient()->generateProductMixIdeas(
-            $customerId,
-            self::LOCATION_ID,
-            self::CURRENCY_CODE,
-            self::BUDGET_MICROS,
-            ['preferences' => $preferences]
-        );
-
-        $productMix = [];
-        foreach ($mixResponse->getProductAllocation() as $product) {
-            /** @var ProductAllocation $product */
-            $productMix[] = new PlannedProduct([
-                'plannable_product_code' => $product->getPlannableProductCode(),
-                'budget_micros' => $product->getBudgetMicros()
-            ]);
-        }
-
-        self::getReachCurve(
-            $googleAdsClient,
-            $customerId,
-            $productMix,
-            self::LOCATION_ID,
-            self::CURRENCY_CODE
-        );
-    }
-    // [END forecast_reach_1]
 }
 
 ForecastReach::main();

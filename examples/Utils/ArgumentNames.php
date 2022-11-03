@@ -75,7 +75,7 @@ final class ArgumentNames
     public const FEED_ITEM_SET_ID = 'feedItemSetId';
     public const FINAL_URL = 'finalUrl';
     public const FLIGHT_PLACEHOLDER_FIELD_NAME = 'flightPlaceholderFieldName';
-    public const FREEFORM_KEYWORD_TEXT = 'freeformKeywordText';
+    public const FREE_FORM_KEYWORD_TEXT = 'freeFormKeywordText';
     public const GBRAID = 'gbraid';
     public const GCLID = 'gclid';
     public const GEO_TARGET_CONSTANT_ID = 'geoTargetConstantId';
@@ -180,7 +180,7 @@ final class ArgumentNames
         self::FEED_ITEM_SET_ID => 'The feed item set ID',
         self::FINAL_URL => 'The final URL',
         self::FLIGHT_PLACEHOLDER_FIELD_NAME => 'The flight placeholder field name',
-        self::FREEFORM_KEYWORD_TEXT => 'The freeform keyword text',
+        self::FREE_FORM_KEYWORD_TEXT => 'The free-form keyword text',
         self::GBRAID => 'The GBRAID identifier for an iOS app conversion',
         self::GCLID => 'The Google Click ID',
         self::GEO_TARGET_CONSTANT_ID => 'The geo target constant ID',

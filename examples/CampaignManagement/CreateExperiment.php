@@ -25,24 +25,24 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V11\ResourceNames;
-use Google\Ads\GoogleAds\V11\Enums\CampaignExperimentTrafficSplitTypeEnum\CampaignExperimentTrafficSplitType;
-use Google\Ads\GoogleAds\V11\Enums\ExperimentStatusEnum\ExperimentStatus;
-use Google\Ads\GoogleAds\V11\Enums\ExperimentTypeEnum\ExperimentType;
-use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V11\Resources\Campaign;
-use Google\Ads\GoogleAds\V11\Resources\CampaignExperiment;
-use Google\Ads\GoogleAds\V11\Resources\Experiment;
-use Google\Ads\GoogleAds\V11\Resources\ExperimentArm;
-use Google\Ads\GoogleAds\V11\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V11\Services\ExperimentArmOperation;
-use Google\Ads\GoogleAds\V11\Services\ExperimentOperation;
-use Google\Ads\GoogleAds\V11\Services\ExperimentServiceClient;
-use Google\Ads\GoogleAds\V11\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Util\V12\ResourceNames;
+use Google\Ads\GoogleAds\V12\Enums\CampaignExperimentTrafficSplitTypeEnum\CampaignExperimentTrafficSplitType;
+use Google\Ads\GoogleAds\V12\Enums\ExperimentStatusEnum\ExperimentStatus;
+use Google\Ads\GoogleAds\V12\Enums\ExperimentTypeEnum\ExperimentType;
+use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V12\Resources\Campaign;
+use Google\Ads\GoogleAds\V12\Resources\CampaignExperiment;
+use Google\Ads\GoogleAds\V12\Resources\Experiment;
+use Google\Ads\GoogleAds\V12\Resources\ExperimentArm;
+use Google\Ads\GoogleAds\V12\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V12\Services\ExperimentArmOperation;
+use Google\Ads\GoogleAds\V12\Services\ExperimentOperation;
+use Google\Ads\GoogleAds\V12\Services\ExperimentServiceClient;
+use Google\Ads\GoogleAds\V12\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
@@ -193,7 +193,7 @@ class CreateExperiment
             // The "control" arm references an already-existing campaign.
             'control' => true,
             'campaigns' => [ResourceNames::forCampaign($customerId, $campaignId)],
-            'trial' => $experimentResourceName,
+            'experiment' => $experimentResourceName,
             'name' => 'control arm',
             'traffic_split' => 40
         ]);
@@ -203,7 +203,7 @@ class CreateExperiment
             // generate draft campaigns that you can modify before starting the
             // experiment.
             'control' => false,
-            'trial' => $experimentResourceName,
+            'experiment' => $experimentResourceName,
             'name' => 'experiment arm',
             'traffic_split' => 60
         ]);

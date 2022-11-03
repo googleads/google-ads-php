@@ -24,15 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V11\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V11\ResourceNames;
-use Google\Ads\GoogleAds\V11\Common\MonthlySearchVolume;
-use Google\Ads\GoogleAds\V11\Enums\KeywordPlanCompetitionLevelEnum\KeywordPlanCompetitionLevel;
-use Google\Ads\GoogleAds\V11\Enums\MonthOfYearEnum\MonthOfYear;
-use Google\Ads\GoogleAds\V11\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V11\Services\KeywordPlanKeywordHistoricalMetrics;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V12\ResourceNames;
+use Google\Ads\GoogleAds\V12\Common\MonthlySearchVolume;
+use Google\Ads\GoogleAds\V12\Enums\KeywordPlanCompetitionLevelEnum\KeywordPlanCompetitionLevel;
+use Google\Ads\GoogleAds\V12\Enums\MonthOfYearEnum\MonthOfYear;
+use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V12\Services\KeywordPlanKeywordHistoricalMetrics;
 use Google\ApiCore\ApiException;
 
 /**
