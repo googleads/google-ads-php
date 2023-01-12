@@ -35,6 +35,7 @@ use Google\Ads\GoogleAds\V12\Enums\ResourceChangeOperationEnum\ResourceChangeOpe
 use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V12\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
+use Google\Protobuf\Internal\Message;
 use Google\Protobuf\Internal\RepeatedField;
 
 /**
@@ -261,10 +262,10 @@ class GetChangeDetails
                     FieldMasks::getFieldValue($path, $newResourceEntity, true)
                 );
                 if ($resourceChangeOperation === ResourceChangeOperation::CREATE) {
-                    printf("'$path' set to '%s'.%s", $newValueStr, PHP_EOL);
+                    printf("\t'$path' set to '%s'.%s", $newValueStr, PHP_EOL);
                 } elseif ($resourceChangeOperation === ResourceChangeOperation::UPDATE) {
                     printf(
-                        "'$path' changed from '%s' to '%s'.%s",
+                        "\t'$path' changed from '%s' to '%s'.%s",
                         self::convertToString(
                             FieldMasks::getFieldValue($path, $oldResourceEntity, true)
                         ),
@@ -291,7 +292,12 @@ class GetChangeDetails
             return $value ? 'true' : 'false';
         } elseif (gettype($value) === 'object') {
             if (get_class($value) === RepeatedField::class) {
-                return json_encode(iterator_to_array($value->getIterator()));
+                $strValues = [];
+                foreach (iterator_to_array($value->getIterator()) as $element) {
+                    /** @type Message $element */
+                    $strValues[] = $element->serializeToJsonString();
+                }
+                return '[' . implode(',', $strValues) . ']';
             }
             return json_encode($value);
         } else {
