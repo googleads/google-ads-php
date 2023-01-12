@@ -280,6 +280,7 @@ class FieldMasks
     ) {
         $fieldMaskParts = explode('.', $fieldMaskPath);
         $descriptor = self::getDescriptorForMessage($object);
+        $repeatedFieldsValueFound = false;
         foreach ($fieldMaskParts as $part) {
             $fieldValue = null;
             for ($i = 0; $i < $descriptor->getFieldCount(); $i++) {
@@ -290,7 +291,10 @@ class FieldMasks
 
                 $getter = Serializer::getGetter($fieldDescriptor->getName());
                 $fieldValue = $object->$getter();
-                if ($fieldDescriptor->getType() === GPBType::MESSAGE) {
+                // Stops and just returns the whole repeated value when it's found.
+                if (self::isFieldRepeated($fieldDescriptor)) {
+                    $repeatedFieldsValueFound = true;
+                } elseif ($fieldDescriptor->getType() === GPBType::MESSAGE) {
                     $object = $fieldValue;
                     if (is_null($object)) {
                         return null;
@@ -304,6 +308,9 @@ class FieldMasks
                 }
                 // There is only one field that matches the field mask part, so no need to loop
                 // when the field is found.
+                break;
+            }
+            if ($repeatedFieldsValueFound) {
                 break;
             }
         }
