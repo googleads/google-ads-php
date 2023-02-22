@@ -25,47 +25,47 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V12\ResourceNames;
-use Google\Ads\GoogleAds\V12\Common\ImageAsset;
-use Google\Ads\GoogleAds\V12\Common\LanguageInfo;
-use Google\Ads\GoogleAds\V12\Common\LocationInfo;
-use Google\Ads\GoogleAds\V12\Common\MaximizeConversionValue;
-use Google\Ads\GoogleAds\V12\Common\TextAsset;
-use Google\Ads\GoogleAds\V12\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V12\Enums\AssetFieldTypeEnum\AssetFieldType;
-use Google\Ads\GoogleAds\V12\Enums\AssetGroupStatusEnum\AssetGroupStatus;
-use Google\Ads\GoogleAds\V12\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V12\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V12\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
-use Google\Ads\GoogleAds\V12\Enums\ConversionOriginEnum\ConversionOrigin;
-use Google\Ads\GoogleAds\V12\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
-use Google\Ads\GoogleAds\V12\Enums\ListingGroupFilterVerticalEnum\ListingGroupFilterVertical;
-use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V12\Resources\Asset;
-use Google\Ads\GoogleAds\V12\Resources\AssetGroup;
-use Google\Ads\GoogleAds\V12\Resources\AssetGroupAsset;
-use Google\Ads\GoogleAds\V12\Resources\AssetGroupListingGroupFilter;
-use Google\Ads\GoogleAds\V12\Resources\Campaign;
-use Google\Ads\GoogleAds\V12\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V12\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V12\Resources\CampaignConversionGoal;
-use Google\Ads\GoogleAds\V12\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V12\Services\AssetGroupAssetOperation;
-use Google\Ads\GoogleAds\V12\Services\AssetGroupListingGroupFilterOperation;
-use Google\Ads\GoogleAds\V12\Services\AssetGroupOperation;
-use Google\Ads\GoogleAds\V12\Services\AssetOperation;
-use Google\Ads\GoogleAds\V12\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V12\Services\CampaignConversionGoalOperation;
-use Google\Ads\GoogleAds\V12\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V12\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V12\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V12\Services\MutateGoogleAdsResponse;
-use Google\Ads\GoogleAds\V12\Services\MutateOperation;
-use Google\Ads\GoogleAds\V12\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\Util\V13\ResourceNames;
+use Google\Ads\GoogleAds\V13\Common\ImageAsset;
+use Google\Ads\GoogleAds\V13\Common\LanguageInfo;
+use Google\Ads\GoogleAds\V13\Common\LocationInfo;
+use Google\Ads\GoogleAds\V13\Common\MaximizeConversionValue;
+use Google\Ads\GoogleAds\V13\Common\TextAsset;
+use Google\Ads\GoogleAds\V13\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V13\Enums\AssetFieldTypeEnum\AssetFieldType;
+use Google\Ads\GoogleAds\V13\Enums\AssetGroupStatusEnum\AssetGroupStatus;
+use Google\Ads\GoogleAds\V13\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V13\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V13\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
+use Google\Ads\GoogleAds\V13\Enums\ConversionOriginEnum\ConversionOrigin;
+use Google\Ads\GoogleAds\V13\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
+use Google\Ads\GoogleAds\V13\Enums\ListingGroupFilterVerticalEnum\ListingGroupFilterVertical;
+use Google\Ads\GoogleAds\V13\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V13\Resources\Asset;
+use Google\Ads\GoogleAds\V13\Resources\AssetGroup;
+use Google\Ads\GoogleAds\V13\Resources\AssetGroupAsset;
+use Google\Ads\GoogleAds\V13\Resources\AssetGroupListingGroupFilter;
+use Google\Ads\GoogleAds\V13\Resources\Campaign;
+use Google\Ads\GoogleAds\V13\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V13\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V13\Resources\CampaignConversionGoal;
+use Google\Ads\GoogleAds\V13\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V13\Services\AssetGroupAssetOperation;
+use Google\Ads\GoogleAds\V13\Services\AssetGroupListingGroupFilterOperation;
+use Google\Ads\GoogleAds\V13\Services\AssetGroupOperation;
+use Google\Ads\GoogleAds\V13\Services\AssetOperation;
+use Google\Ads\GoogleAds\V13\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V13\Services\CampaignConversionGoalOperation;
+use Google\Ads\GoogleAds\V13\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V13\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V13\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V13\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V13\Services\MutateOperation;
+use Google\Ads\GoogleAds\V13\Services\MutateOperationResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Serializer;
 
@@ -348,6 +348,11 @@ class AddPerformanceMaxRetailCampaign
                     'maximize_conversion_value' => new MaximizeConversionValue([
                         'target_roas' => 3.5
                     ]),
+                    // Below is what you would use if you want to maximize conversions
+                    // You can optionally set the 'target_cpa_micros' field on MaximizeConversions.
+                    // This is the average amount that you would like to spend per conversion
+                    // action.
+                    // 'maximize_conversions' => new MaximizeConversions(),
 
                     // Sets the Final URL expansion opt out. This flag is specific to
                     // Performance Max campaigns. If opted out (true), only the final URLs in

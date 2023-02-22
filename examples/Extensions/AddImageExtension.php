@@ -24,17 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V12\ResourceNames;
-use Google\Ads\GoogleAds\V12\Common\ImageFeedItem;
-use Google\Ads\GoogleAds\V12\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V12\Resources\CampaignExtensionSetting;
-use Google\Ads\GoogleAds\V12\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V12\Services\CampaignExtensionSettingOperation;
-use Google\Ads\GoogleAds\V12\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V13\ResourceNames;
+use Google\Ads\GoogleAds\V13\Common\ImageFeedItem;
+use Google\Ads\GoogleAds\V13\Enums\ExtensionTypeEnum\ExtensionType;
+use Google\Ads\GoogleAds\V13\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V13\Resources\CampaignExtensionSetting;
+use Google\Ads\GoogleAds\V13\Resources\ExtensionFeedItem;
+use Google\Ads\GoogleAds\V13\Services\CampaignExtensionSettingOperation;
+use Google\Ads\GoogleAds\V13\Services\ExtensionFeedItemOperation;
 use Google\ApiCore\ApiException;
 
 /**

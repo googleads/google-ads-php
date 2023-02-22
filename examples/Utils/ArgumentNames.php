@@ -100,6 +100,7 @@ final class ArgumentNames
     public const MARKETING_IMAGE_ASSET_ID = 'marketingImageAssetId';
     public const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
     public const NAME_PREFIX = 'namePrefix';
+    public const OFFLINE_USER_DATA_JOB_ID = 'offlineUserDataJobId';
     public const OFFLINE_USER_DATA_JOB_TYPE = 'offlineUserDataJobType';
     public const OMIT_UNSELECTED_RESOURCE_NAMES = 'omitUnselectedResourceNames';
     public const ORDER_ID = 'orderId';
@@ -111,12 +112,14 @@ final class ArgumentNames
     public const PERCENT_CPC_BID_MICRO_AMOUNT = 'percentCpcBidMicroAmount';
     public const PHONE_COUNTRY = 'phoneCountry';
     public const PHONE_NUMBER = 'phoneNumber';
+    public const PLACE_ID = 'placeId';
     public const RECOMMENDATION_ID = 'recommendationId';
     public const RESTATEMENT_VALUE = 'restatementValue';
     public const CREATE_DEFAULT_LISTING_GROUP = 'createDefaultListingGroup';
     public const DELETE_EXISTING_FEEDS = 'deleteExistingFeeds';
     public const REPLACE_EXISTING_TREE = 'replaceExistingTree';
     public const QUANTITY = 'quantity';
+    public const RUN_JOB = 'runJob';
     public const SALES_COUNTRY = 'salesCountry';
     public const SITELINK_TEXT = 'sitelinkText';
     public const SQUARE_MARKETING_IMAGE_ASSET_ID = 'squareMarketingImageAssetId';
@@ -206,6 +209,7 @@ final class ArgumentNames
         self::MARKETING_IMAGE_ASSET_ID => 'The ID of marketing image asset',
         self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',
         self::NAME_PREFIX => 'The name prefix',
+        self::OFFLINE_USER_DATA_JOB_ID => 'The offline user data job ID',
         self::OFFLINE_USER_DATA_JOB_TYPE => 'The offline user data job type',
         self::OMIT_UNSELECTED_RESOURCE_NAMES => 'Whether to omit unselected resource names',
         self::ORDER_ID => 'The order ID',
@@ -218,6 +222,7 @@ final class ArgumentNames
             'The CPC bid micro amount for the Percent CPC bidding strategy',
         self::PHONE_COUNTRY => 'The phone country',
         self::PHONE_NUMBER => 'The phone number',
+        self::PLACE_ID => 'The place ID',
         self::RECOMMENDATION_ID => 'The recommendation ID',
         self::RESTATEMENT_VALUE => 'The restatement value',
         self::CREATE_DEFAULT_LISTING_GROUP =>
@@ -227,6 +232,7 @@ final class ArgumentNames
         self::REPLACE_EXISTING_TREE =>
             'Whether it should replace the existing listing group tree on an ad group/asset group',
         self::QUANTITY => 'The quantity',
+        self::RUN_JOB => 'Whether it should run the offline user data job',
         self::SALES_COUNTRY => 'The sales country',
         self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_ID => 'The ID of square marketing image asset',
