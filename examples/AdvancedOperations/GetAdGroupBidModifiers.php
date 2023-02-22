@@ -24,15 +24,14 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
-use Google\Ads\GoogleAds\V12\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V12\Enums\DeviceEnum\Device;
-use Google\Ads\GoogleAds\V12\Enums\HotelDateSelectionTypeEnum\HotelDateSelectionType;
-use Google\Ads\GoogleAds\V12\Enums\PreferredContentTypeEnum\PreferredContentType;
-use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V12\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsException;
+use Google\Ads\GoogleAds\V13\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V13\Enums\DeviceEnum\Device;
+use Google\Ads\GoogleAds\V13\Enums\HotelDateSelectionTypeEnum\HotelDateSelectionType;
+use Google\Ads\GoogleAds\V13\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V13\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example gets ad group bid modifiers. */
@@ -121,8 +120,7 @@ class GetAdGroupBidModifiers
               . 'ad_group_bid_modifier.hotel_length_of_stay.max_nights, '
               . 'ad_group_bid_modifier.hotel_check_in_day.day_of_week, '
               . 'ad_group_bid_modifier.hotel_check_in_date_range.start_date, '
-              . 'ad_group_bid_modifier.hotel_check_in_date_range.end_date, '
-              . 'ad_group_bid_modifier.preferred_content.type '
+              . 'ad_group_bid_modifier.hotel_check_in_date_range.end_date '
           . 'FROM ad_group_bid_modifier';
         if ($adGroupId !== null) {
             $query .= " WHERE ad_group.id = $adGroupId";
@@ -175,12 +173,6 @@ class GetAdGroupBidModifiers
                         $adGroupBidModifier->getHotelLengthOfStay()->getMinNights() . ', ';
                     $criterionDetails .= 'Max Nights: ' .
                         $adGroupBidModifier->getHotelLengthOfStay()->getMaxNights();
-                    break;
-                case 'preferred_content':
-                    $criterionDetails .= 'Type: ' .
-                        PreferredContentType::name(
-                            $adGroupBidModifier->getPreferredContent()->getType()
-                        );
                     break;
                 case 'hotel_check_in_date_range':
                     $criterionDetails .= 'Start Date: ' .

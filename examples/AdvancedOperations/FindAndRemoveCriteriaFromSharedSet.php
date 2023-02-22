@@ -23,16 +23,16 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V12\Enums\CriterionTypeEnum\CriterionType;
-use Google\Ads\GoogleAds\V12\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V12\Resources\SharedCriterion;
-use Google\Ads\GoogleAds\V12\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V12\Services\SharedCriterionOperation;
+use Google\Ads\GoogleAds\V13\Enums\CriterionTypeEnum\CriterionType;
+use Google\Ads\GoogleAds\V13\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V13\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V13\Resources\SharedCriterion;
+use Google\Ads\GoogleAds\V13\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V13\Services\SharedCriterionOperation;
 use Google\ApiCore\ApiException;
 
 /**

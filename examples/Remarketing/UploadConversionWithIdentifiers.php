@@ -24,16 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V12\ResourceNames;
-use Google\Ads\GoogleAds\V12\Common\UserIdentifier;
-use Google\Ads\GoogleAds\V12\Enums\UserIdentifierSourceEnum\UserIdentifierSource;
-use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V12\Services\ClickConversion;
-use Google\Ads\GoogleAds\V12\Services\ClickConversionResult;
-use Google\Ads\GoogleAds\V12\Services\UploadClickConversionsResponse;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V13\ResourceNames;
+use Google\Ads\GoogleAds\V13\Common\UserIdentifier;
+use Google\Ads\GoogleAds\V13\Enums\UserIdentifierSourceEnum\UserIdentifierSource;
+use Google\Ads\GoogleAds\V13\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V13\Services\ClickConversion;
+use Google\Ads\GoogleAds\V13\Services\ClickConversionResult;
+use Google\Ads\GoogleAds\V13\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
 
 /**

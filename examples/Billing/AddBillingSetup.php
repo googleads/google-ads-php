@@ -26,16 +26,16 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V12\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V12\ResourceNames;
-use Google\Ads\GoogleAds\V12\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V12\Resources\BillingSetup;
-use Google\Ads\GoogleAds\V12\Resources\BillingSetup\PaymentsAccountInfo;
-use Google\Ads\GoogleAds\V12\Services\BillingSetupOperation;
-use Google\Ads\GoogleAds\V12\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V13\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V13\ResourceNames;
+use Google\Ads\GoogleAds\V13\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V13\Resources\BillingSetup;
+use Google\Ads\GoogleAds\V13\Resources\BillingSetup\PaymentsAccountInfo;
+use Google\Ads\GoogleAds\V13\Services\BillingSetupOperation;
+use Google\Ads\GoogleAds\V13\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
