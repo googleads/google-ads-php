@@ -119,7 +119,7 @@ class AddPerformanceMaxForTravelGoalsCampaign
     ];
     private const DEFAULT_IMAGE_ASSETS_INFO = [
         AssetFieldType::MARKETING_IMAGE => ['https://gaagl.page.link/Eit5'],
-        AssetFieldType::SQUARE_MARKETING_IMAGE => ['https://gaagl.page.link/bjYiS'],
+        AssetFieldType::SQUARE_MARKETING_IMAGE => ['https://gaagl.page.link/bjYi'],
         AssetFieldType::LOGO => ['https://gaagl.page.link/bjYi']
     ];
 
