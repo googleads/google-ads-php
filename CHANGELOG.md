@@ -1,3 +1,7 @@
+## 19.0.0
+*   Removed support for v11 of Google Ads API.
+*   Updated CreateExperiment example.
+
 ## 18.0.0
 *   Added support for v13 of Google Ads API.
 *   Removed support for v10 of Google Ads API.
