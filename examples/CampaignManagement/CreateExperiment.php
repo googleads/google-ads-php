@@ -33,6 +33,7 @@ use Google\Ads\GoogleAds\Util\V13\ResourceNames;
 use Google\Ads\GoogleAds\V13\Enums\CampaignExperimentTrafficSplitTypeEnum\CampaignExperimentTrafficSplitType;
 use Google\Ads\GoogleAds\V13\Enums\ExperimentStatusEnum\ExperimentStatus;
 use Google\Ads\GoogleAds\V13\Enums\ExperimentTypeEnum\ExperimentType;
+use Google\Ads\GoogleAds\V13\Enums\ResponseContentTypeEnum\ResponseContentType;
 use Google\Ads\GoogleAds\V13\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V13\Resources\Campaign;
 use Google\Ads\GoogleAds\V13\Resources\CampaignExperiment;
@@ -122,14 +123,12 @@ class CreateExperiment
 
         $experimentResourceName =
             self::createExperimentResource($experimentServiceClient, $customerId);
-        $treatmentArmResourceName = self::createExperimentArms(
+        $draftCampaignResourceName = self::createExperimentArms(
             $googleAdsClient,
             $customerId,
             $campaignId,
             $experimentResourceName
         );
-        $draftCampaignResourceName =
-            self::fetchDraftCampaign($googleAdsClient, $customerId, $treatmentArmResourceName);
         self::modifyDraftCampaign($googleAdsClient, $customerId, $draftCampaignResourceName);
 
         // When you're done setting up the experiment and arms and modifying the draft campaign,
@@ -211,53 +210,25 @@ class CreateExperiment
 
         // Issues a request to create the experiment arms.
         $experimentArmServiceClient = $googleAdsClient->getExperimentArmServiceClient();
-        $response = $experimentArmServiceClient->mutateExperimentArms($customerId, $operations);
+        $response = $experimentArmServiceClient->mutateExperimentArms(
+            $customerId,
+            $operations,
+            // We want to fetch the draft campaign IDs from the treatment arm, so the easiest way
+            // to do that is to have the response return the newly created entities.
+            ['responseContentType' => ResponseContentType::MUTABLE_RESOURCE]
+        );
         // Results always return in the order that you specify them in the request.
-        // Since we created the treatment arm last, it will be the last result.  If
-        // you don't remember which arm is the treatment arm, you can always filter
-        // the query in the next section with `experiment_arm.control = false`.
+        // Since we created the treatment arm last, it will be the last result.
         $controlArmResourceName = $response->getResults()[0]->getResourceName();
-        $treatmentArmResourceName =
-            $response->getResults()[count($operations) - 1]->getResourceName();
+        $treatmentArm = $response->getResults()[count($operations) - 1];
         print "Created control arm with resource name '$controlArmResourceName'" . PHP_EOL;
-        print "Created treatment arm with resource name '$treatmentArmResourceName'" . PHP_EOL;
+        print "Created treatment arm with resource name '{$treatmentArm->getResourceName()}'"
+            . PHP_EOL;
 
-        return $treatmentArmResourceName;
+        return $treatmentArm->getExperimentArm()->getInDesignCampaigns()[0];
     }
     // [END create_experiment_2]
 
-    /**
-     * Fetches the draft campaign of the experiment treatment arm.
-     *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $treatmentArmResourceName the treatment arm's resource name
-     * @return string the draft campaign's resource name
-     */
-    // [START create_experiment_3]
-    private static function fetchDraftCampaign(
-        GoogleAdsClient $googleAdsClient,
-        int $customerId,
-        string $treatmentArmResourceName
-    ): string {
-        // Fetches information about the in design campaigns and prints out its resource
-        // name. The `in_design_campaigns` represent campaign drafts, which you can modify
-        // before starting the experiment.
-        $query = "SELECT experiment_arm.in_design_campaigns FROM experiment_arm"
-            . " WHERE experiment_arm.resource_name = '$treatmentArmResourceName'";
-        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        $response = $googleAdsServiceClient->search($customerId, $query);
-
-        // In design campaigns returns as an array, but for now it can only ever contain a single
-        // ID, so we just grab the first one.
-        /** @var GoogleAdsRow $googleAdsRow */
-        $googleAdsRow = $response->getIterator()->current();
-        $draftCampaignResourceName = $googleAdsRow->getExperimentArm()->getInDesignCampaigns()[0];
-        print "Found draft campaign with resource name '$draftCampaignResourceName'" . PHP_EOL;
-
-        return $draftCampaignResourceName;
-    }
-    // [END create_experiment_3]
 
     /**
      * Modifies the draft campaign to simulate the experiment where you're testing changing
