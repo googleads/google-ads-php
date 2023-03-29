@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\Examples\HotelAds;
+namespace Google\Ads\GoogleAds\Examples\HotelAndTravel;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
