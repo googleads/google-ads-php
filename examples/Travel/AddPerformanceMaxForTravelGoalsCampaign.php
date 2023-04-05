@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\Examples\HotelAds;
+namespace Google\Ads\GoogleAds\Examples\Travel;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
@@ -774,24 +774,22 @@ class AddPerformanceMaxForTravelGoalsCampaign
                 // code example.
                 continue;
             }
-            if ($requiredTextAssetCounts[$assetFieldType] < $minCount) {
-                for ($i = 0; $i < $minCount - $requiredTextAssetCounts[$assetFieldType]; $i++) {
-                    printf(
-                        "A default text '%s' is used to create a text asset for the asset"
-                            . " field type '%s'.%s",
+            for ($i = 0; $i < $minCount - $requiredTextAssetCounts[$assetFieldType]; $i++) {
+                printf(
+                    "A default text '%s' is used to create a text asset for the asset"
+                        . " field type '%s'.%s",
+                    self::DEFAULT_TEXT_ASSETS_INFO[$assetFieldType][$i],
+                    AssetFieldType::name($assetFieldType),
+                    PHP_EOL
+                );
+                $operations = array_merge(
+                    $operations,
+                    self::createTextAssetAndAssetGroupAssetOperations(
+                        $customerId,
                         self::DEFAULT_TEXT_ASSETS_INFO[$assetFieldType][$i],
-                        AssetFieldType::name($assetFieldType),
-                        PHP_EOL
-                    );
-                    $operations = array_merge(
-                        $operations,
-                        self::createTextAssetAndAssetGroupAssetOperations(
-                            $customerId,
-                            self::DEFAULT_TEXT_ASSETS_INFO[$assetFieldType][$i],
-                            $assetFieldType
-                        )
-                    );
-                }
+                        $assetFieldType
+                    )
+                );
             }
         }
 
@@ -840,26 +838,24 @@ class AddPerformanceMaxForTravelGoalsCampaign
         }
         // Adds more image assets to fulfill the requirements.
         foreach (self::MIN_REQUIRED_IMAGE_ASSET_COUNTS as $assetFieldType => $minCount) {
-            if ($requiredImageAssetCounts[$assetFieldType] < $minCount) {
-                for ($i = 0; $i < $minCount - $requiredImageAssetCounts[$assetFieldType]; $i++) {
-                    printf(
-                        "A default image URL '%s' is used to create an image asset for the"
-                        . " asset field type '%s'.%s",
+            for ($i = 0; $i < $minCount - $requiredImageAssetCounts[$assetFieldType]; $i++) {
+                printf(
+                    "A default image URL '%s' is used to create an image asset for the"
+                    . " asset field type '%s'.%s",
+                    self::DEFAULT_IMAGE_ASSETS_INFO[$assetFieldType][$i],
+                    AssetFieldType::name($assetFieldType),
+                    PHP_EOL
+                );
+                $operations = array_merge(
+                    $operations,
+                    self::createImageAssetAndAssetGroupAssetOperations(
+                        $customerId,
                         self::DEFAULT_IMAGE_ASSETS_INFO[$assetFieldType][$i],
-                        AssetFieldType::name($assetFieldType),
-                        PHP_EOL
-                    );
-                    $operations = array_merge(
-                        $operations,
-                        self::createImageAssetAndAssetGroupAssetOperations(
-                            $customerId,
-                            self::DEFAULT_IMAGE_ASSETS_INFO[$assetFieldType][$i],
-                            $assetFieldType,
-                            strtolower(AssetFieldType::name($assetFieldType))
-                            . Helper::getShortPrintableDatetime()
-                        )
-                    );
-                }
+                        $assetFieldType,
+                        strtolower(AssetFieldType::name($assetFieldType))
+                        . Helper::getShortPrintableDatetime()
+                    )
+                );
             }
         }
 
