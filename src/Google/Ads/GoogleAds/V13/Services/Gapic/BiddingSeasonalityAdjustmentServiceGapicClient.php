@@ -82,6 +82,8 @@ class BiddingSeasonalityAdjustmentServiceGapicClient
 
     private static $biddingSeasonalityAdjustmentNameTemplate;
 
+    private static $campaignNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -112,11 +114,21 @@ class BiddingSeasonalityAdjustmentServiceGapicClient
         return self::$biddingSeasonalityAdjustmentNameTemplate;
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'biddingSeasonalityAdjustment' => self::getBiddingSeasonalityAdjustmentNameTemplate(),
+                'campaign' => self::getCampaignNameTemplate(),
             ];
         }
 
@@ -141,10 +153,28 @@ class BiddingSeasonalityAdjustmentServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - biddingSeasonalityAdjustment: customers/{customer_id}/biddingSeasonalityAdjustments/{seasonality_event_id}
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

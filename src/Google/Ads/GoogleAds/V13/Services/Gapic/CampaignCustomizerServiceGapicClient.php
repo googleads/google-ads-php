@@ -80,7 +80,11 @@ class CampaignCustomizerServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $campaignNameTemplate;
+
     private static $campaignCustomizerNameTemplate;
+
+    private static $customizerAttributeNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +107,15 @@ class CampaignCustomizerServiceGapicClient
         ];
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getCampaignCustomizerNameTemplate()
     {
         if (self::$campaignCustomizerNameTemplate == null) {
@@ -112,15 +125,43 @@ class CampaignCustomizerServiceGapicClient
         return self::$campaignCustomizerNameTemplate;
     }
 
+    private static function getCustomizerAttributeNameTemplate()
+    {
+        if (self::$customizerAttributeNameTemplate == null) {
+            self::$customizerAttributeNameTemplate = new PathTemplate('customers/{customer_id}/customizerAttributes/{customizer_attribute_id}');
+        }
+
+        return self::$customizerAttributeNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
                 'campaignCustomizer' => self::getCampaignCustomizerNameTemplate(),
+                'customizerAttribute' => self::getCustomizerAttributeNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
     }
 
     /**
@@ -143,10 +184,29 @@ class CampaignCustomizerServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * customizer_attribute resource.
+     *
+     * @param string $customerId
+     * @param string $customizerAttributeId
+     *
+     * @return string The formatted customizer_attribute resource.
+     */
+    public static function customizerAttributeName($customerId, $customizerAttributeId)
+    {
+        return self::getCustomizerAttributeNameTemplate()->render([
+            'customer_id' => $customerId,
+            'customizer_attribute_id' => $customizerAttributeId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - campaignCustomizer: customers/{customer_id}/campaignCustomizers/{campaign_id}~{customizer_attribute_id}
+     * - customizerAttribute: customers/{customer_id}/customizerAttributes/{customizer_attribute_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

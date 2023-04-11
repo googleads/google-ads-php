@@ -82,6 +82,8 @@ class SharedCriterionServiceGapicClient
 
     private static $sharedCriterionNameTemplate;
 
+    private static $sharedSetNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -112,11 +114,21 @@ class SharedCriterionServiceGapicClient
         return self::$sharedCriterionNameTemplate;
     }
 
+    private static function getSharedSetNameTemplate()
+    {
+        if (self::$sharedSetNameTemplate == null) {
+            self::$sharedSetNameTemplate = new PathTemplate('customers/{customer_id}/sharedSets/{shared_set_id}');
+        }
+
+        return self::$sharedSetNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'sharedCriterion' => self::getSharedCriterionNameTemplate(),
+                'sharedSet' => self::getSharedSetNameTemplate(),
             ];
         }
 
@@ -143,10 +155,28 @@ class SharedCriterionServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a shared_set
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $sharedSetId
+     *
+     * @return string The formatted shared_set resource.
+     */
+    public static function sharedSetName($customerId, $sharedSetId)
+    {
+        return self::getSharedSetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'shared_set_id' => $sharedSetId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - sharedCriterion: customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}
+     * - sharedSet: customers/{customer_id}/sharedSets/{shared_set_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

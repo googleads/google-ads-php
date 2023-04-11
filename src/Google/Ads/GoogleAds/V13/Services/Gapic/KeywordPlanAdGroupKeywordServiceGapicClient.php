@@ -84,6 +84,8 @@ class KeywordPlanAdGroupKeywordServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $keywordPlanAdGroupNameTemplate;
+
     private static $keywordPlanAdGroupKeywordNameTemplate;
 
     private static $pathTemplateMap;
@@ -107,6 +109,15 @@ class KeywordPlanAdGroupKeywordServiceGapicClient
         ];
     }
 
+    private static function getKeywordPlanAdGroupNameTemplate()
+    {
+        if (self::$keywordPlanAdGroupNameTemplate == null) {
+            self::$keywordPlanAdGroupNameTemplate = new PathTemplate('customers/{customer_id}/keywordPlanAdGroups/{keyword_plan_ad_group_id}');
+        }
+
+        return self::$keywordPlanAdGroupNameTemplate;
+    }
+
     private static function getKeywordPlanAdGroupKeywordNameTemplate()
     {
         if (self::$keywordPlanAdGroupKeywordNameTemplate == null) {
@@ -120,11 +131,29 @@ class KeywordPlanAdGroupKeywordServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'keywordPlanAdGroup' => self::getKeywordPlanAdGroupNameTemplate(),
                 'keywordPlanAdGroupKeyword' => self::getKeywordPlanAdGroupKeywordNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * keyword_plan_ad_group resource.
+     *
+     * @param string $customerId
+     * @param string $keywordPlanAdGroupId
+     *
+     * @return string The formatted keyword_plan_ad_group resource.
+     */
+    public static function keywordPlanAdGroupName($customerId, $keywordPlanAdGroupId)
+    {
+        return self::getKeywordPlanAdGroupNameTemplate()->render([
+            'customer_id' => $customerId,
+            'keyword_plan_ad_group_id' => $keywordPlanAdGroupId,
+        ]);
     }
 
     /**
@@ -148,6 +177,7 @@ class KeywordPlanAdGroupKeywordServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - keywordPlanAdGroup: customers/{customer_id}/keywordPlanAdGroups/{keyword_plan_ad_group_id}
      * - keywordPlanAdGroupKeyword: customers/{customer_id}/keywordPlanAdGroupKeywords/{keyword_plan_ad_group_keyword_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

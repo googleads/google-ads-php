@@ -80,6 +80,8 @@ class CampaignBidModifierServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $campaignNameTemplate;
+
     private static $campaignBidModifierNameTemplate;
 
     private static $pathTemplateMap;
@@ -103,6 +105,15 @@ class CampaignBidModifierServiceGapicClient
         ];
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getCampaignBidModifierNameTemplate()
     {
         if (self::$campaignBidModifierNameTemplate == null) {
@@ -116,11 +127,29 @@ class CampaignBidModifierServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
                 'campaignBidModifier' => self::getCampaignBidModifierNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
     }
 
     /**
@@ -146,6 +175,7 @@ class CampaignBidModifierServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - campaignBidModifier: customers/{customer_id}/campaignBidModifiers/{campaign_id}~{criterion_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

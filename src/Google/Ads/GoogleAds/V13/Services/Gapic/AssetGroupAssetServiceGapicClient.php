@@ -80,6 +80,10 @@ class AssetGroupAssetServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $assetNameTemplate;
+
+    private static $assetGroupNameTemplate;
+
     private static $assetGroupAssetNameTemplate;
 
     private static $pathTemplateMap;
@@ -103,6 +107,24 @@ class AssetGroupAssetServiceGapicClient
         ];
     }
 
+    private static function getAssetNameTemplate()
+    {
+        if (self::$assetNameTemplate == null) {
+            self::$assetNameTemplate = new PathTemplate('customers/{customer_id}/assets/{asset_id}');
+        }
+
+        return self::$assetNameTemplate;
+    }
+
+    private static function getAssetGroupNameTemplate()
+    {
+        if (self::$assetGroupNameTemplate == null) {
+            self::$assetGroupNameTemplate = new PathTemplate('customers/{customer_id}/assetGroups/{asset_group_id}');
+        }
+
+        return self::$assetGroupNameTemplate;
+    }
+
     private static function getAssetGroupAssetNameTemplate()
     {
         if (self::$assetGroupAssetNameTemplate == null) {
@@ -116,11 +138,47 @@ class AssetGroupAssetServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'asset' => self::getAssetNameTemplate(),
+                'assetGroup' => self::getAssetGroupNameTemplate(),
                 'assetGroupAsset' => self::getAssetGroupAssetNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetId
+     *
+     * @return string The formatted asset resource.
+     */
+    public static function assetName($customerId, $assetId)
+    {
+        return self::getAssetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'asset_id' => $assetId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset_group
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetGroupId
+     *
+     * @return string The formatted asset_group resource.
+     */
+    public static function assetGroupName($customerId, $assetGroupId)
+    {
+        return self::getAssetGroupNameTemplate()->render([
+            'customer_id' => $customerId,
+            'asset_group_id' => $assetGroupId,
+        ]);
     }
 
     /**
@@ -148,6 +206,8 @@ class AssetGroupAssetServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - asset: customers/{customer_id}/assets/{asset_id}
+     * - assetGroup: customers/{customer_id}/assetGroups/{asset_group_id}
      * - assetGroupAsset: customers/{customer_id}/assetGroupAssets/{asset_group_id}~{asset_id}~{field_type}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

@@ -83,6 +83,8 @@ class ProductLinkServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $customerNameTemplate;
+
     private static $productLinkNameTemplate;
 
     private static $pathTemplateMap;
@@ -106,6 +108,15 @@ class ProductLinkServiceGapicClient
         ];
     }
 
+    private static function getCustomerNameTemplate()
+    {
+        if (self::$customerNameTemplate == null) {
+            self::$customerNameTemplate = new PathTemplate('customers/{customer_id}');
+        }
+
+        return self::$customerNameTemplate;
+    }
+
     private static function getProductLinkNameTemplate()
     {
         if (self::$productLinkNameTemplate == null) {
@@ -119,11 +130,27 @@ class ProductLinkServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'customer' => self::getCustomerNameTemplate(),
                 'productLink' => self::getProductLinkNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a customer
+     * resource.
+     *
+     * @param string $customerId
+     *
+     * @return string The formatted customer resource.
+     */
+    public static function customerName($customerId)
+    {
+        return self::getCustomerNameTemplate()->render([
+            'customer_id' => $customerId,
+        ]);
     }
 
     /**
@@ -147,6 +174,7 @@ class ProductLinkServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - customer: customers/{customer_id}
      * - productLink: customers/{customer_id}/productLinks/{product_link_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

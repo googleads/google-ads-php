@@ -80,6 +80,8 @@ class AssetGroupListingGroupFilterServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $assetGroupNameTemplate;
+
     private static $assetGroupListingGroupFilterNameTemplate;
 
     private static $pathTemplateMap;
@@ -103,6 +105,15 @@ class AssetGroupListingGroupFilterServiceGapicClient
         ];
     }
 
+    private static function getAssetGroupNameTemplate()
+    {
+        if (self::$assetGroupNameTemplate == null) {
+            self::$assetGroupNameTemplate = new PathTemplate('customers/{customer_id}/assetGroups/{asset_group_id}');
+        }
+
+        return self::$assetGroupNameTemplate;
+    }
+
     private static function getAssetGroupListingGroupFilterNameTemplate()
     {
         if (self::$assetGroupListingGroupFilterNameTemplate == null) {
@@ -116,11 +127,29 @@ class AssetGroupListingGroupFilterServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'assetGroup' => self::getAssetGroupNameTemplate(),
                 'assetGroupListingGroupFilter' => self::getAssetGroupListingGroupFilterNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset_group
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetGroupId
+     *
+     * @return string The formatted asset_group resource.
+     */
+    public static function assetGroupName($customerId, $assetGroupId)
+    {
+        return self::getAssetGroupNameTemplate()->render([
+            'customer_id' => $customerId,
+            'asset_group_id' => $assetGroupId,
+        ]);
     }
 
     /**
@@ -146,6 +175,7 @@ class AssetGroupListingGroupFilterServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - assetGroup: customers/{customer_id}/assetGroups/{asset_group_id}
      * - assetGroupListingGroupFilter: customers/{customer_id}/assetGroupListingGroupFilters/{asset_group_id}~{listing_group_filter_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

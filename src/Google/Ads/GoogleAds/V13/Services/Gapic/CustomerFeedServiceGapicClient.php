@@ -82,6 +82,8 @@ class CustomerFeedServiceGapicClient
 
     private static $customerFeedNameTemplate;
 
+    private static $feedNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -112,11 +114,21 @@ class CustomerFeedServiceGapicClient
         return self::$customerFeedNameTemplate;
     }
 
+    private static function getFeedNameTemplate()
+    {
+        if (self::$feedNameTemplate == null) {
+            self::$feedNameTemplate = new PathTemplate('customers/{customer_id}/feeds/{feed_id}');
+        }
+
+        return self::$feedNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'customerFeed' => self::getCustomerFeedNameTemplate(),
+                'feed' => self::getFeedNameTemplate(),
             ];
         }
 
@@ -141,10 +153,28 @@ class CustomerFeedServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a feed
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $feedId
+     *
+     * @return string The formatted feed resource.
+     */
+    public static function feedName($customerId, $feedId)
+    {
+        return self::getFeedNameTemplate()->render([
+            'customer_id' => $customerId,
+            'feed_id' => $feedId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - customerFeed: customers/{customer_id}/customerFeeds/{feed_id}
+     * - feed: customers/{customer_id}/feeds/{feed_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

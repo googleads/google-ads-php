@@ -30,6 +30,7 @@ use Google\Ads\GoogleAds\V13\Services\MutateCampaignConversionGoalsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -52,6 +53,11 @@ use Google\Auth\FetchAuthTokenInterface;
  *     $campaignConversionGoalServiceClient->close();
  * }
  * ```
+ *
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assist with these names, this class includes a format method for each type of
+ * name, and additionally a parseName method to extract the individual identifiers
+ * contained within formatted names that are returned by the API.
  */
 class CampaignConversionGoalServiceGapicClient
 {
@@ -74,6 +80,12 @@ class CampaignConversionGoalServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $campaignNameTemplate;
+
+    private static $campaignConversionGoalNameTemplate;
+
+    private static $pathTemplateMap;
+
     private static function getClientDefaults()
     {
         return [
@@ -91,6 +103,116 @@ class CampaignConversionGoalServiceGapicClient
                 ],
             ],
         ];
+    }
+
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
+    private static function getCampaignConversionGoalNameTemplate()
+    {
+        if (self::$campaignConversionGoalNameTemplate == null) {
+            self::$campaignConversionGoalNameTemplate = new PathTemplate('customers/{customer_id}/campaignConversionGoals/{campaign_id}~{category}~{source}');
+        }
+
+        return self::$campaignConversionGoalNameTemplate;
+    }
+
+    private static function getPathTemplateMap()
+    {
+        if (self::$pathTemplateMap == null) {
+            self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
+                'campaignConversionGoal' => self::getCampaignConversionGoalNameTemplate(),
+            ];
+        }
+
+        return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * campaign_conversion_goal resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     * @param string $category
+     * @param string $source
+     *
+     * @return string The formatted campaign_conversion_goal resource.
+     */
+    public static function campaignConversionGoalName($customerId, $campaignId, $category, $source)
+    {
+        return self::getCampaignConversionGoalNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+            'category' => $category,
+            'source' => $source,
+        ]);
+    }
+
+    /**
+     * Parses a formatted name string and returns an associative array of the components in the name.
+     * The following name formats are supported:
+     * Template: Pattern
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
+     * - campaignConversionGoal: customers/{customer_id}/campaignConversionGoals/{campaign_id}~{category}~{source}
+     *
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
+     *
+     * @param string $formattedName The formatted name string
+     * @param string $template      Optional name of template to match
+     *
+     * @return array An associative array from name component IDs to component values.
+     *
+     * @throws ValidationException If $formattedName could not be matched.
+     */
+    public static function parseName($formattedName, $template = null)
+    {
+        $templateMap = self::getPathTemplateMap();
+        if ($template) {
+            if (!isset($templateMap[$template])) {
+                throw new ValidationException("Template name $template does not exist");
+            }
+
+            return $templateMap[$template]->match($formattedName);
+        }
+
+        foreach ($templateMap as $templateName => $pathTemplate) {
+            try {
+                return $pathTemplate->match($formattedName);
+            } catch (ValidationException $ex) {
+                // Swallow the exception to continue trying other path templates
+            }
+        }
+
+        throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
     /**

@@ -32,6 +32,7 @@ use Google\Ads\GoogleAds\V13\Services\MutateCustomerManagerLinkResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -55,6 +56,11 @@ use Google\Auth\FetchAuthTokenInterface;
  *     $customerManagerLinkServiceClient->close();
  * }
  * ```
+ *
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assist with these names, this class includes a format method for each type of
+ * name, and additionally a parseName method to extract the individual identifiers
+ * contained within formatted names that are returned by the API.
  */
 class CustomerManagerLinkServiceGapicClient
 {
@@ -77,6 +83,12 @@ class CustomerManagerLinkServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $customerNameTemplate;
+
+    private static $customerManagerLinkNameTemplate;
+
+    private static $pathTemplateMap;
+
     private static function getClientDefaults()
     {
         return [
@@ -94,6 +106,112 @@ class CustomerManagerLinkServiceGapicClient
                 ],
             ],
         ];
+    }
+
+    private static function getCustomerNameTemplate()
+    {
+        if (self::$customerNameTemplate == null) {
+            self::$customerNameTemplate = new PathTemplate('customers/{customer_id}');
+        }
+
+        return self::$customerNameTemplate;
+    }
+
+    private static function getCustomerManagerLinkNameTemplate()
+    {
+        if (self::$customerManagerLinkNameTemplate == null) {
+            self::$customerManagerLinkNameTemplate = new PathTemplate('customers/{customer_id}/customerManagerLinks/{manager_customer_id}~{manager_link_id}');
+        }
+
+        return self::$customerManagerLinkNameTemplate;
+    }
+
+    private static function getPathTemplateMap()
+    {
+        if (self::$pathTemplateMap == null) {
+            self::$pathTemplateMap = [
+                'customer' => self::getCustomerNameTemplate(),
+                'customerManagerLink' => self::getCustomerManagerLinkNameTemplate(),
+            ];
+        }
+
+        return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a customer
+     * resource.
+     *
+     * @param string $customerId
+     *
+     * @return string The formatted customer resource.
+     */
+    public static function customerName($customerId)
+    {
+        return self::getCustomerNameTemplate()->render([
+            'customer_id' => $customerId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * customer_manager_link resource.
+     *
+     * @param string $customerId
+     * @param string $managerCustomerId
+     * @param string $managerLinkId
+     *
+     * @return string The formatted customer_manager_link resource.
+     */
+    public static function customerManagerLinkName($customerId, $managerCustomerId, $managerLinkId)
+    {
+        return self::getCustomerManagerLinkNameTemplate()->render([
+            'customer_id' => $customerId,
+            'manager_customer_id' => $managerCustomerId,
+            'manager_link_id' => $managerLinkId,
+        ]);
+    }
+
+    /**
+     * Parses a formatted name string and returns an associative array of the components in the name.
+     * The following name formats are supported:
+     * Template: Pattern
+     * - customer: customers/{customer_id}
+     * - customerManagerLink: customers/{customer_id}/customerManagerLinks/{manager_customer_id}~{manager_link_id}
+     *
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
+     *
+     * @param string $formattedName The formatted name string
+     * @param string $template      Optional name of template to match
+     *
+     * @return array An associative array from name component IDs to component values.
+     *
+     * @throws ValidationException If $formattedName could not be matched.
+     */
+    public static function parseName($formattedName, $template = null)
+    {
+        $templateMap = self::getPathTemplateMap();
+        if ($template) {
+            if (!isset($templateMap[$template])) {
+                throw new ValidationException("Template name $template does not exist");
+            }
+
+            return $templateMap[$template]->match($formattedName);
+        }
+
+        foreach ($templateMap as $templateName => $pathTemplate) {
+            try {
+                return $pathTemplate->match($formattedName);
+            } catch (ValidationException $ex) {
+                // Swallow the exception to continue trying other path templates
+            }
+        }
+
+        throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
     /**

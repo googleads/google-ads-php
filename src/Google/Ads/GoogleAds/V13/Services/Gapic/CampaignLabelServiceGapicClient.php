@@ -80,7 +80,11 @@ class CampaignLabelServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $campaignNameTemplate;
+
     private static $campaignLabelNameTemplate;
+
+    private static $labelNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +107,15 @@ class CampaignLabelServiceGapicClient
         ];
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getCampaignLabelNameTemplate()
     {
         if (self::$campaignLabelNameTemplate == null) {
@@ -112,15 +125,43 @@ class CampaignLabelServiceGapicClient
         return self::$campaignLabelNameTemplate;
     }
 
+    private static function getLabelNameTemplate()
+    {
+        if (self::$labelNameTemplate == null) {
+            self::$labelNameTemplate = new PathTemplate('customers/{customer_id}/labels/{label_id}');
+        }
+
+        return self::$labelNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
                 'campaignLabel' => self::getCampaignLabelNameTemplate(),
+                'label' => self::getLabelNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
     }
 
     /**
@@ -143,10 +184,29 @@ class CampaignLabelServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a label
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $labelId
+     *
+     * @return string The formatted label resource.
+     */
+    public static function labelName($customerId, $labelId)
+    {
+        return self::getLabelNameTemplate()->render([
+            'customer_id' => $customerId,
+            'label_id' => $labelId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - campaignLabel: customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}
+     * - label: customers/{customer_id}/labels/{label_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

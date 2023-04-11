@@ -30,6 +30,7 @@ use Google\Ads\GoogleAds\V13\Services\MutateConversionGoalCampaignConfigsRespons
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -52,6 +53,11 @@ use Google\Auth\FetchAuthTokenInterface;
  *     $conversionGoalCampaignConfigServiceClient->close();
  * }
  * ```
+ *
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assist with these names, this class includes a format method for each type of
+ * name, and additionally a parseName method to extract the individual identifiers
+ * contained within formatted names that are returned by the API.
  */
 class ConversionGoalCampaignConfigServiceGapicClient
 {
@@ -74,6 +80,14 @@ class ConversionGoalCampaignConfigServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $campaignNameTemplate;
+
+    private static $conversionGoalCampaignConfigNameTemplate;
+
+    private static $customConversionGoalNameTemplate;
+
+    private static $pathTemplateMap;
+
     private static function getClientDefaults()
     {
         return [
@@ -91,6 +105,140 @@ class ConversionGoalCampaignConfigServiceGapicClient
                 ],
             ],
         ];
+    }
+
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
+    private static function getConversionGoalCampaignConfigNameTemplate()
+    {
+        if (self::$conversionGoalCampaignConfigNameTemplate == null) {
+            self::$conversionGoalCampaignConfigNameTemplate = new PathTemplate('customers/{customer_id}/conversionGoalCampaignConfigs/{campaign_id}');
+        }
+
+        return self::$conversionGoalCampaignConfigNameTemplate;
+    }
+
+    private static function getCustomConversionGoalNameTemplate()
+    {
+        if (self::$customConversionGoalNameTemplate == null) {
+            self::$customConversionGoalNameTemplate = new PathTemplate('customers/{customer_id}/customConversionGoals/{goal_id}');
+        }
+
+        return self::$customConversionGoalNameTemplate;
+    }
+
+    private static function getPathTemplateMap()
+    {
+        if (self::$pathTemplateMap == null) {
+            self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
+                'conversionGoalCampaignConfig' => self::getConversionGoalCampaignConfigNameTemplate(),
+                'customConversionGoal' => self::getCustomConversionGoalNameTemplate(),
+            ];
+        }
+
+        return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * conversion_goal_campaign_config resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted conversion_goal_campaign_config resource.
+     */
+    public static function conversionGoalCampaignConfigName($customerId, $campaignId)
+    {
+        return self::getConversionGoalCampaignConfigNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * custom_conversion_goal resource.
+     *
+     * @param string $customerId
+     * @param string $goalId
+     *
+     * @return string The formatted custom_conversion_goal resource.
+     */
+    public static function customConversionGoalName($customerId, $goalId)
+    {
+        return self::getCustomConversionGoalNameTemplate()->render([
+            'customer_id' => $customerId,
+            'goal_id' => $goalId,
+        ]);
+    }
+
+    /**
+     * Parses a formatted name string and returns an associative array of the components in the name.
+     * The following name formats are supported:
+     * Template: Pattern
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
+     * - conversionGoalCampaignConfig: customers/{customer_id}/conversionGoalCampaignConfigs/{campaign_id}
+     * - customConversionGoal: customers/{customer_id}/customConversionGoals/{goal_id}
+     *
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
+     *
+     * @param string $formattedName The formatted name string
+     * @param string $template      Optional name of template to match
+     *
+     * @return array An associative array from name component IDs to component values.
+     *
+     * @throws ValidationException If $formattedName could not be matched.
+     */
+    public static function parseName($formattedName, $template = null)
+    {
+        $templateMap = self::getPathTemplateMap();
+        if ($template) {
+            if (!isset($templateMap[$template])) {
+                throw new ValidationException("Template name $template does not exist");
+            }
+
+            return $templateMap[$template]->match($formattedName);
+        }
+
+        foreach ($templateMap as $templateName => $pathTemplate) {
+            try {
+                return $pathTemplate->match($formattedName);
+            } catch (ValidationException $ex) {
+                // Swallow the exception to continue trying other path templates
+            }
+        }
+
+        throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
     /**

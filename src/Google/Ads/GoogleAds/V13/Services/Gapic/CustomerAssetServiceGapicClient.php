@@ -80,6 +80,8 @@ class CustomerAssetServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $assetNameTemplate;
+
     private static $customerAssetNameTemplate;
 
     private static $pathTemplateMap;
@@ -103,6 +105,15 @@ class CustomerAssetServiceGapicClient
         ];
     }
 
+    private static function getAssetNameTemplate()
+    {
+        if (self::$assetNameTemplate == null) {
+            self::$assetNameTemplate = new PathTemplate('customers/{customer_id}/assets/{asset_id}');
+        }
+
+        return self::$assetNameTemplate;
+    }
+
     private static function getCustomerAssetNameTemplate()
     {
         if (self::$customerAssetNameTemplate == null) {
@@ -116,11 +127,29 @@ class CustomerAssetServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'asset' => self::getAssetNameTemplate(),
                 'customerAsset' => self::getCustomerAssetNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetId
+     *
+     * @return string The formatted asset resource.
+     */
+    public static function assetName($customerId, $assetId)
+    {
+        return self::getAssetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'asset_id' => $assetId,
+        ]);
     }
 
     /**
@@ -146,6 +175,7 @@ class CustomerAssetServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - asset: customers/{customer_id}/assets/{asset_id}
      * - customerAsset: customers/{customer_id}/customerAssets/{asset_id}~{field_type}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

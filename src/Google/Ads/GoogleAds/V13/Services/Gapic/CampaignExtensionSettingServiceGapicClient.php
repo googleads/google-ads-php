@@ -80,7 +80,11 @@ class CampaignExtensionSettingServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $campaignNameTemplate;
+
     private static $campaignExtensionSettingNameTemplate;
+
+    private static $extensionFeedItemNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +107,15 @@ class CampaignExtensionSettingServiceGapicClient
         ];
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getCampaignExtensionSettingNameTemplate()
     {
         if (self::$campaignExtensionSettingNameTemplate == null) {
@@ -112,15 +125,43 @@ class CampaignExtensionSettingServiceGapicClient
         return self::$campaignExtensionSettingNameTemplate;
     }
 
+    private static function getExtensionFeedItemNameTemplate()
+    {
+        if (self::$extensionFeedItemNameTemplate == null) {
+            self::$extensionFeedItemNameTemplate = new PathTemplate('customers/{customer_id}/extensionFeedItems/{feed_item_id}');
+        }
+
+        return self::$extensionFeedItemNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
                 'campaignExtensionSetting' => self::getCampaignExtensionSettingNameTemplate(),
+                'extensionFeedItem' => self::getExtensionFeedItemNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
     }
 
     /**
@@ -143,10 +184,29 @@ class CampaignExtensionSettingServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * extension_feed_item resource.
+     *
+     * @param string $customerId
+     * @param string $feedItemId
+     *
+     * @return string The formatted extension_feed_item resource.
+     */
+    public static function extensionFeedItemName($customerId, $feedItemId)
+    {
+        return self::getExtensionFeedItemNameTemplate()->render([
+            'customer_id' => $customerId,
+            'feed_item_id' => $feedItemId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - campaignExtensionSetting: customers/{customer_id}/campaignExtensionSettings/{campaign_id}~{extension_type}
+     * - extensionFeedItem: customers/{customer_id}/extensionFeedItems/{feed_item_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is
