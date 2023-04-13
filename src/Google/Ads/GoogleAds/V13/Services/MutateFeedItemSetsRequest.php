@@ -46,6 +46,21 @@ class MutateFeedItemSetsRequest extends \Google\Protobuf\Internal\Message
     protected $validate_only = false;
 
     /**
+     * @param string                                                    $customerId Required. The ID of the customer whose feed item sets are being modified.
+     * @param \Google\Ads\GoogleAds\V13\Services\FeedItemSetOperation[] $operations Required. The list of operations to perform on individual feed item sets.
+     *
+     * @return \Google\Ads\GoogleAds\V13\Services\MutateFeedItemSetsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

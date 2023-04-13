@@ -40,6 +40,23 @@ class SuggestTravelAssetsRequest extends \Google\Protobuf\Internal\Message
     private $place_id;
 
     /**
+     * @param string $customerId     Required. The ID of the customer.
+     * @param string $languageOption Required. The language specifications in BCP 47 format (for example, en-US,
+     *                               zh-CN, etc.) for the asset suggestions. Text will be in this language.
+     *                               Usually matches one of the campaign target languages.
+     *
+     * @return \Google\Ads\GoogleAds\V13\Services\SuggestTravelAssetsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, string $languageOption): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setLanguageOption($languageOption);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

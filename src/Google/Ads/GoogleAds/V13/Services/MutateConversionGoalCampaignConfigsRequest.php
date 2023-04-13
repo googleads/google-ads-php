@@ -46,6 +46,23 @@ class MutateConversionGoalCampaignConfigsRequest extends \Google\Protobuf\Intern
     protected $response_content_type = 0;
 
     /**
+     * @param string                                                                     $customerId Required. The ID of the customer whose custom conversion goals are being
+     *                                                                                               modified.
+     * @param \Google\Ads\GoogleAds\V13\Services\ConversionGoalCampaignConfigOperation[] $operations Required. The list of operations to perform on individual conversion goal
+     *                                                                                               campaign config.
+     *
+     * @return \Google\Ads\GoogleAds\V13\Services\MutateConversionGoalCampaignConfigsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {
