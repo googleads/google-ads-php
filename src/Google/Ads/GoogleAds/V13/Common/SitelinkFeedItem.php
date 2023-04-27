@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Represents a sitelink extension.
+ * Represents a sitelink.
  *
  * Generated from protobuf message <code>google.ads.googleads.v13.common.SitelinkFeedItem</code>
  */

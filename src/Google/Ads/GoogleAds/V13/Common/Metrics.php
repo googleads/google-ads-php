@@ -936,6 +936,20 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $speed_score = null;
     /**
+     * The average Target CPA, or unset if not available (for example, for
+     * campaigns that had traffic from portfolio bidding strategies or non-tCPA).
+     *
+     * Generated from protobuf field <code>optional int64 average_target_cpa_micros = 290;</code>
+     */
+    protected $average_target_cpa_micros = null;
+    /**
+     * The average Target ROAS, or unset if not available (for example, for
+     * campaigns that had traffic from portfolio bidding strategies or non-tROAS).
+     *
+     * Generated from protobuf field <code>optional double average_target_roas = 250;</code>
+     */
+    protected $average_target_roas = null;
+    /**
      * The percent of your ad impressions that are shown anywhere above the
      * organic search results.
      *
@@ -1645,6 +1659,12 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type int|string $speed_score
      *           A measure of how quickly your page loads after clicks on your mobile ads.
      *           The score is a range from 1 to 10, 10 being the fastest.
+     *     @type int|string $average_target_cpa_micros
+     *           The average Target CPA, or unset if not available (for example, for
+     *           campaigns that had traffic from portfolio bidding strategies or non-tCPA).
+     *     @type float $average_target_roas
+     *           The average Target ROAS, or unset if not available (for example, for
+     *           campaigns that had traffic from portfolio bidding strategies or non-tROAS).
      *     @type float $top_impression_percentage
      *           The percent of your ad impressions that are shown anywhere above the
      *           organic search results.
@@ -6307,6 +6327,82 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->speed_score = $var;
+
+        return $this;
+    }
+
+    /**
+     * The average Target CPA, or unset if not available (for example, for
+     * campaigns that had traffic from portfolio bidding strategies or non-tCPA).
+     *
+     * Generated from protobuf field <code>optional int64 average_target_cpa_micros = 290;</code>
+     * @return int|string
+     */
+    public function getAverageTargetCpaMicros()
+    {
+        return isset($this->average_target_cpa_micros) ? $this->average_target_cpa_micros : 0;
+    }
+
+    public function hasAverageTargetCpaMicros()
+    {
+        return isset($this->average_target_cpa_micros);
+    }
+
+    public function clearAverageTargetCpaMicros()
+    {
+        unset($this->average_target_cpa_micros);
+    }
+
+    /**
+     * The average Target CPA, or unset if not available (for example, for
+     * campaigns that had traffic from portfolio bidding strategies or non-tCPA).
+     *
+     * Generated from protobuf field <code>optional int64 average_target_cpa_micros = 290;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setAverageTargetCpaMicros($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->average_target_cpa_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * The average Target ROAS, or unset if not available (for example, for
+     * campaigns that had traffic from portfolio bidding strategies or non-tROAS).
+     *
+     * Generated from protobuf field <code>optional double average_target_roas = 250;</code>
+     * @return float
+     */
+    public function getAverageTargetRoas()
+    {
+        return isset($this->average_target_roas) ? $this->average_target_roas : 0.0;
+    }
+
+    public function hasAverageTargetRoas()
+    {
+        return isset($this->average_target_roas);
+    }
+
+    public function clearAverageTargetRoas()
+    {
+        unset($this->average_target_roas);
+    }
+
+    /**
+     * The average Target ROAS, or unset if not available (for example, for
+     * campaigns that had traffic from portfolio bidding strategies or non-tROAS).
+     *
+     * Generated from protobuf field <code>optional double average_target_roas = 250;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setAverageTargetRoas($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->average_target_roas = $var;
 
         return $this;
     }

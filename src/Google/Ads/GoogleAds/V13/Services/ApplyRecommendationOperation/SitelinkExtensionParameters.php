@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Parameters to use when applying sitelink extension recommendation.
+ * Parameters to use when applying sitelink recommendation.
  *
  * Generated from protobuf message <code>google.ads.googleads.v13.services.ApplyRecommendationOperation.SitelinkExtensionParameters</code>
  */
 class SitelinkExtensionParameters extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Sitelink extensions to be added. This is a required field.
+     * Sitelinks to be added. This is a required field.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v13.common.SitelinkFeedItem sitelink_extensions = 1;</code>
      */
@@ -29,7 +29,7 @@ class SitelinkExtensionParameters extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<\Google\Ads\GoogleAds\V13\Common\SitelinkFeedItem>|\Google\Protobuf\Internal\RepeatedField $sitelink_extensions
-     *           Sitelink extensions to be added. This is a required field.
+     *           Sitelinks to be added. This is a required field.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ class SitelinkExtensionParameters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sitelink extensions to be added. This is a required field.
+     * Sitelinks to be added. This is a required field.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v13.common.SitelinkFeedItem sitelink_extensions = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -49,7 +49,7 @@ class SitelinkExtensionParameters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sitelink extensions to be added. This is a required field.
+     * Sitelinks to be added. This is a required field.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v13.common.SitelinkFeedItem sitelink_extensions = 1;</code>
      * @param array<\Google\Ads\GoogleAds\V13\Common\SitelinkFeedItem>|\Google\Protobuf\Internal\RepeatedField $var

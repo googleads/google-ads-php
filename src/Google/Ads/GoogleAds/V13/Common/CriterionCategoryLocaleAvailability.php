@@ -25,13 +25,13 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
      */
     protected $availability_mode = 0;
     /**
-     * Code of the country.
+     * The ISO-3166-1 alpha-2 country code associated with the category.
      *
      * Generated from protobuf field <code>optional string country_code = 4;</code>
      */
     protected $country_code = null;
     /**
-     * Code of the language.
+     * ISO 639-1 code of the language associated with the category.
      *
      * Generated from protobuf field <code>optional string language_code = 5;</code>
      */
@@ -49,9 +49,9 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
      *           language wil be set), COUNTRY_AND_LANGUAGE (both country and language will
      *           be set).
      *     @type string $country_code
-     *           Code of the country.
+     *           The ISO-3166-1 alpha-2 country code associated with the category.
      *     @type string $language_code
-     *           Code of the language.
+     *           ISO 639-1 code of the language associated with the category.
      * }
      */
     public function __construct($data = NULL) {
@@ -92,7 +92,7 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Code of the country.
+     * The ISO-3166-1 alpha-2 country code associated with the category.
      *
      * Generated from protobuf field <code>optional string country_code = 4;</code>
      * @return string
@@ -113,7 +113,7 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Code of the country.
+     * The ISO-3166-1 alpha-2 country code associated with the category.
      *
      * Generated from protobuf field <code>optional string country_code = 4;</code>
      * @param string $var
@@ -128,7 +128,7 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Code of the language.
+     * ISO 639-1 code of the language associated with the category.
      *
      * Generated from protobuf field <code>optional string language_code = 5;</code>
      * @return string
@@ -149,7 +149,7 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Code of the language.
+     * ISO 639-1 code of the language associated with the category.
      *
      * Generated from protobuf field <code>optional string language_code = 5;</code>
      * @param string $var

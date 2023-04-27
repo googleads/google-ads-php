@@ -88,6 +88,7 @@ use Google\Ads\GoogleAds\V13\Services\CustomerLabelServiceClient;
 use Google\Ads\GoogleAds\V13\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V13\Services\CustomerNegativeCriterionServiceClient;
 use Google\Ads\GoogleAds\V13\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V13\Services\CustomerSkAdNetworkConversionValueSchemaServiceClient;
 use Google\Ads\GoogleAds\V13\Services\CustomerUserAccessInvitationServiceClient;
 use Google\Ads\GoogleAds\V13\Services\CustomerUserAccessServiceClient;
 use Google\Ads\GoogleAds\V13\Services\CustomInterestServiceClient;
@@ -749,6 +750,14 @@ trait ServiceClientFactoryTrait
     public function getCustomerServiceClient(): CustomerServiceClient
     {
         return new CustomerServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return CustomerSkAdNetworkConversionValueSchemaServiceClient
+     */
+    public function getCustomerSkAdNetworkConversionValueSchemaServiceClient(): CustomerSkAdNetworkConversionValueSchemaServiceClient
+    {
+        return new CustomerSkAdNetworkConversionValueSchemaServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

@@ -522,7 +522,7 @@ class UploadStoreSalesTransactions
             'user_identifiers' => [
                 new UserIdentifier([
                     // Email addresses must be normalized and hashed.
-                    'hashed_email' => self::normalizeAndHash('customer@example.com')
+                    'hashed_email' => self::normalizeAndHash('dana@example.com')
                 ]),
                 new UserIdentifier([
                     'address_info' => new OfflineUserAddressInfo(['state' => 'NY'])
@@ -552,8 +552,8 @@ class UploadStoreSalesTransactions
                 new UserIdentifier([
                     'address_info' => new OfflineUserAddressInfo([
                         // First and last name must be normalized and hashed.
-                        'hashed_first_name' => self::normalizeAndHash('John'),
-                        'hashed_last_name' => self::normalizeAndHash('Doe'),
+                        'hashed_first_name' => self::normalizeAndHash('Dana'),
+                        'hashed_last_name' => self::normalizeAndHash('Quinn'),
                         // Country code and zip code are sent in plain text.
                         'country_code' => 'US',
                         'postal_code' => '10011'

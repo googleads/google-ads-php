@@ -24,6 +24,9 @@ use Google\Protobuf\Internal\GPBUtil;
  * * MULTI_CHANNEL - TARGET_CPA - UNIFORM
  * * DISCOVERY - TARGET_CPA - DEFAULT
  * * DISPLAY - TARGET_CPA - UNIFORM
+ * * PERFORMANCE_MAX - TARGET_CPA - UNIFORM
+ * * PERFORMANCE_MAX - TARGET_ROAS - UNIFORM
+ * * PERFORMANCE_MAX - BUDGET - UNIFORM
  *
  * Generated from protobuf message <code>google.ads.googleads.v13.resources.CampaignSimulation</code>
  */

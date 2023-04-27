@@ -462,6 +462,19 @@ class CampaignError
      * Generated from protobuf enum <code>NOT_COMPATIBLE_WITH_BIDDING_STRATEGY_TYPE = 80;</code>
      */
     const NOT_COMPATIBLE_WITH_BIDDING_STRATEGY_TYPE = 80;
+    /**
+     * Campaign is not compatible with a conversion tracker that has Google
+     * attribution enabled.
+     *
+     * Generated from protobuf enum <code>NOT_COMPATIBLE_WITH_GOOGLE_ATTRIBUTION_CONVERSIONS = 81;</code>
+     */
+    const NOT_COMPATIBLE_WITH_GOOGLE_ATTRIBUTION_CONVERSIONS = 81;
+    /**
+     * Customer level conversion lag is too high.
+     *
+     * Generated from protobuf enum <code>CONVERSION_LAG_TOO_HIGH = 82;</code>
+     */
+    const CONVERSION_LAG_TOO_HIGH = 82;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -534,6 +547,8 @@ class CampaignError
         self::CONVERSION_ACTION_WITH_DOWNLOAD_CATEGORY_REQUIRED => 'CONVERSION_ACTION_WITH_DOWNLOAD_CATEGORY_REQUIRED',
         self::CONVERSION_TRACKING_NOT_ENABLED => 'CONVERSION_TRACKING_NOT_ENABLED',
         self::NOT_COMPATIBLE_WITH_BIDDING_STRATEGY_TYPE => 'NOT_COMPATIBLE_WITH_BIDDING_STRATEGY_TYPE',
+        self::NOT_COMPATIBLE_WITH_GOOGLE_ATTRIBUTION_CONVERSIONS => 'NOT_COMPATIBLE_WITH_GOOGLE_ATTRIBUTION_CONVERSIONS',
+        self::CONVERSION_LAG_TOO_HIGH => 'CONVERSION_LAG_TOO_HIGH',
     ];
 
     public static function name($value)

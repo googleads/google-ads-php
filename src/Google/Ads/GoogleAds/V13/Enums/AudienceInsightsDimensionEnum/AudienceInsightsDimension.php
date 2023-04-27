@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V13\Enums\AudienceInsightsDimensionEnum;
 use UnexpectedValueException;
 
 /**
- * Possible audience dimensions for use in generating insights.
+ * Possible dimensions for use in generating insights.
  *
  * Protobuf type <code>google.ads.googleads.v13.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension</code>
  */

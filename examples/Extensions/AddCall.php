@@ -117,7 +117,7 @@ class AddCall
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
      * @param string $phoneCountry the phone country (2-letter code)
-     * @param string $phoneNumber the raw phone number, e.g. '(123) 456-7890'
+     * @param string $phoneNumber the raw phone number, e.g. '(800) 555-0100'
      * @param int|null $conversionActionId the conversion action ID to attribute conversions to
      */
     public static function runExample(
@@ -146,7 +146,7 @@ class AddCall
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
      * @param string $phoneCountry the phone country (2-letter code)
-     * @param string $phoneNumber the raw phone number, e.g. '(123) 456-7890'
+     * @param string $phoneNumber the raw phone number, e.g. '(800) 555-0100'
      * @param int|null $conversionActionId the conversion action ID to attribute conversions to
      * @return string the resource name of the created call asset
      */

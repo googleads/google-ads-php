@@ -201,6 +201,9 @@ class AudienceInsightsServiceGapicClient
      * @param array            $optionalArgs {
      *     Optional.
      *
+     *     @type InsightsAudience $baselineAudience
+     *           The baseline audience to which the audience of interest is being
+     *           compared.
      *     @type string $dataMonth
      *           The one-month range of historical data to use for insights, in the format
      *           "yyyy-mm". If unset, insights will be returned for the last thirty days of
@@ -225,6 +228,10 @@ class AudienceInsightsServiceGapicClient
         $request->setAudience($audience);
         $request->setDimensions($dimensions);
         $requestParamHeaders['customer_id'] = $customerId;
+        if (isset($optionalArgs['baselineAudience'])) {
+            $request->setBaselineAudience($optionalArgs['baselineAudience']);
+        }
+
         if (isset($optionalArgs['dataMonth'])) {
             $request->setDataMonth($optionalArgs['dataMonth']);
         }

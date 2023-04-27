@@ -129,7 +129,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *           Output only. Status of the feed item.
      *           This field is read-only.
      *     @type \Google\Ads\GoogleAds\V13\Common\SitelinkFeedItem $sitelink_feed_item
-     *           Sitelink extension.
+     *           Sitelink.
      *     @type \Google\Ads\GoogleAds\V13\Common\StructuredSnippetFeedItem $structured_snippet_feed_item
      *           Structured snippet extension.
      *     @type \Google\Ads\GoogleAds\V13\Common\AppFeedItem $app_feed_item
@@ -500,7 +500,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sitelink extension.
+     * Sitelink.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v13.common.SitelinkFeedItem sitelink_feed_item = 2;</code>
      * @return \Google\Ads\GoogleAds\V13\Common\SitelinkFeedItem|null
@@ -516,7 +516,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sitelink extension.
+     * Sitelink.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v13.common.SitelinkFeedItem sitelink_feed_item = 2;</code>
      * @param \Google\Ads\GoogleAds\V13\Common\SitelinkFeedItem $var

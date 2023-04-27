@@ -59,6 +59,10 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * TARGET_ROAS_OPT_IN, TEXT_AD,
      * UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX ,
      * RAISE_TARGET_CPA_BID_TOO_LOW, FORECASTING_SET_TARGET_ROAS
+     * SHOPPING_ADD_AGE_GROUP, SHOPPING_ADD_COLOR, SHOPPING_ADD_GENDER,
+     * SHOPPING_ADD_SIZE, SHOPPING_ADD_GTIN, SHOPPING_ADD_MORE_IDENTIFIERS,
+     * SHOPPING_ADD_PRODUCTS_TO_CAMPAIGN, SHOPPING_FIX_DISAPPROVED_PRODUCTS,
+     * SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX
      *
      * Generated from protobuf field <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
@@ -124,6 +128,10 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           TARGET_ROAS_OPT_IN, TEXT_AD,
      *           UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX ,
      *           RAISE_TARGET_CPA_BID_TOO_LOW, FORECASTING_SET_TARGET_ROAS
+     *           SHOPPING_ADD_AGE_GROUP, SHOPPING_ADD_COLOR, SHOPPING_ADD_GENDER,
+     *           SHOPPING_ADD_SIZE, SHOPPING_ADD_GTIN, SHOPPING_ADD_MORE_IDENTIFIERS,
+     *           SHOPPING_ADD_PRODUCTS_TO_CAMPAIGN, SHOPPING_FIX_DISAPPROVED_PRODUCTS,
+     *           SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX
      *     @type string $ad_group
      *           Output only. The ad group targeted by this recommendation. This will be set
      *           only when the recommendation affects a single ad group.
@@ -191,6 +199,33 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           Output only. The sitelink asset recommendation.
      *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\CallAssetRecommendation $call_asset_recommendation
      *           Output only. The call asset recommendation.
+     *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation $shopping_add_age_group_recommendation
+     *           Output only. The shopping add age group recommendation.
+     *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation $shopping_add_color_recommendation
+     *           Output only. The shopping add color recommendation.
+     *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation $shopping_add_gender_recommendation
+     *           Output only. The shopping add gender recommendation.
+     *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation $shopping_add_gtin_recommendation
+     *           Output only. The shopping add GTIN recommendation.
+     *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation $shopping_add_more_identifiers_recommendation
+     *           Output only. The shopping add more identifiers recommendation.
+     *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation $shopping_add_size_recommendation
+     *           Output only. The shopping add size recommendation.
+     *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingAddProductsToCampaignRecommendation $shopping_add_products_to_campaign_recommendation
+     *           Output only. The shopping add products to campaign recommendation.
+     *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingFixDisapprovedProductsRecommendation $shopping_fix_disapproved_products_recommendation
+     *           Output only. The shopping fix disapproved products recommendation.
+     *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingTargetAllOffersRecommendation $shopping_target_all_offers_recommendation
+     *           Output only. The shopping target all offers recommendation.
+     *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingMerchantCenterAccountSuspensionRecommendation $shopping_fix_suspended_merchant_center_account_recommendation
+     *           Output only. The shopping fix suspended Merchant Center account
+     *           recommendation.
+     *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingMerchantCenterAccountSuspensionRecommendation $shopping_fix_merchant_center_account_suspension_warning_recommendation
+     *           Output only. The shopping fix Merchant Center account suspension warning
+     *           recommendation.
+     *     @type \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingMigrateRegularShoppingCampaignOffersToPerformanceMaxRecommendation $shopping_migrate_regular_shopping_campaign_offers_to_performance_max_recommendation
+     *           Output only. The shopping migrate Regular Shopping Campaign offers to
+     *           Performance Max recommendation.
      * }
      */
     public function __construct($data = NULL) {
@@ -348,6 +383,10 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * TARGET_ROAS_OPT_IN, TEXT_AD,
      * UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX ,
      * RAISE_TARGET_CPA_BID_TOO_LOW, FORECASTING_SET_TARGET_ROAS
+     * SHOPPING_ADD_AGE_GROUP, SHOPPING_ADD_COLOR, SHOPPING_ADD_GENDER,
+     * SHOPPING_ADD_SIZE, SHOPPING_ADD_GTIN, SHOPPING_ADD_MORE_IDENTIFIERS,
+     * SHOPPING_ADD_PRODUCTS_TO_CAMPAIGN, SHOPPING_FIX_DISAPPROVED_PRODUCTS,
+     * SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX
      *
      * Generated from protobuf field <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
@@ -381,6 +420,10 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * TARGET_ROAS_OPT_IN, TEXT_AD,
      * UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX ,
      * RAISE_TARGET_CPA_BID_TOO_LOW, FORECASTING_SET_TARGET_ROAS
+     * SHOPPING_ADD_AGE_GROUP, SHOPPING_ADD_COLOR, SHOPPING_ADD_GENDER,
+     * SHOPPING_ADD_SIZE, SHOPPING_ADD_GTIN, SHOPPING_ADD_MORE_IDENTIFIERS,
+     * SHOPPING_ADD_PRODUCTS_TO_CAMPAIGN, SHOPPING_FIX_DISAPPROVED_PRODUCTS,
+     * SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX
      *
      * Generated from protobuf field <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -1312,6 +1355,384 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\CallAssetRecommendation::class);
         $this->writeOneof(41, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The shopping add age group recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingOfferAttributeRecommendation shopping_add_age_group_recommendation = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation|null
+     */
+    public function getShoppingAddAgeGroupRecommendation()
+    {
+        return $this->readOneof(42);
+    }
+
+    public function hasShoppingAddAgeGroupRecommendation()
+    {
+        return $this->hasOneof(42);
+    }
+
+    /**
+     * Output only. The shopping add age group recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingOfferAttributeRecommendation shopping_add_age_group_recommendation = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation $var
+     * @return $this
+     */
+    public function setShoppingAddAgeGroupRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation::class);
+        $this->writeOneof(42, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The shopping add color recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingOfferAttributeRecommendation shopping_add_color_recommendation = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation|null
+     */
+    public function getShoppingAddColorRecommendation()
+    {
+        return $this->readOneof(43);
+    }
+
+    public function hasShoppingAddColorRecommendation()
+    {
+        return $this->hasOneof(43);
+    }
+
+    /**
+     * Output only. The shopping add color recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingOfferAttributeRecommendation shopping_add_color_recommendation = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation $var
+     * @return $this
+     */
+    public function setShoppingAddColorRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation::class);
+        $this->writeOneof(43, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The shopping add gender recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingOfferAttributeRecommendation shopping_add_gender_recommendation = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation|null
+     */
+    public function getShoppingAddGenderRecommendation()
+    {
+        return $this->readOneof(44);
+    }
+
+    public function hasShoppingAddGenderRecommendation()
+    {
+        return $this->hasOneof(44);
+    }
+
+    /**
+     * Output only. The shopping add gender recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingOfferAttributeRecommendation shopping_add_gender_recommendation = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation $var
+     * @return $this
+     */
+    public function setShoppingAddGenderRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation::class);
+        $this->writeOneof(44, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The shopping add GTIN recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingOfferAttributeRecommendation shopping_add_gtin_recommendation = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation|null
+     */
+    public function getShoppingAddGtinRecommendation()
+    {
+        return $this->readOneof(45);
+    }
+
+    public function hasShoppingAddGtinRecommendation()
+    {
+        return $this->hasOneof(45);
+    }
+
+    /**
+     * Output only. The shopping add GTIN recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingOfferAttributeRecommendation shopping_add_gtin_recommendation = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation $var
+     * @return $this
+     */
+    public function setShoppingAddGtinRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation::class);
+        $this->writeOneof(45, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The shopping add more identifiers recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingOfferAttributeRecommendation shopping_add_more_identifiers_recommendation = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation|null
+     */
+    public function getShoppingAddMoreIdentifiersRecommendation()
+    {
+        return $this->readOneof(46);
+    }
+
+    public function hasShoppingAddMoreIdentifiersRecommendation()
+    {
+        return $this->hasOneof(46);
+    }
+
+    /**
+     * Output only. The shopping add more identifiers recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingOfferAttributeRecommendation shopping_add_more_identifiers_recommendation = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation $var
+     * @return $this
+     */
+    public function setShoppingAddMoreIdentifiersRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation::class);
+        $this->writeOneof(46, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The shopping add size recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingOfferAttributeRecommendation shopping_add_size_recommendation = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation|null
+     */
+    public function getShoppingAddSizeRecommendation()
+    {
+        return $this->readOneof(47);
+    }
+
+    public function hasShoppingAddSizeRecommendation()
+    {
+        return $this->hasOneof(47);
+    }
+
+    /**
+     * Output only. The shopping add size recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingOfferAttributeRecommendation shopping_add_size_recommendation = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation $var
+     * @return $this
+     */
+    public function setShoppingAddSizeRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingOfferAttributeRecommendation::class);
+        $this->writeOneof(47, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The shopping add products to campaign recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingAddProductsToCampaignRecommendation shopping_add_products_to_campaign_recommendation = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingAddProductsToCampaignRecommendation|null
+     */
+    public function getShoppingAddProductsToCampaignRecommendation()
+    {
+        return $this->readOneof(48);
+    }
+
+    public function hasShoppingAddProductsToCampaignRecommendation()
+    {
+        return $this->hasOneof(48);
+    }
+
+    /**
+     * Output only. The shopping add products to campaign recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingAddProductsToCampaignRecommendation shopping_add_products_to_campaign_recommendation = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingAddProductsToCampaignRecommendation $var
+     * @return $this
+     */
+    public function setShoppingAddProductsToCampaignRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingAddProductsToCampaignRecommendation::class);
+        $this->writeOneof(48, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The shopping fix disapproved products recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingFixDisapprovedProductsRecommendation shopping_fix_disapproved_products_recommendation = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingFixDisapprovedProductsRecommendation|null
+     */
+    public function getShoppingFixDisapprovedProductsRecommendation()
+    {
+        return $this->readOneof(49);
+    }
+
+    public function hasShoppingFixDisapprovedProductsRecommendation()
+    {
+        return $this->hasOneof(49);
+    }
+
+    /**
+     * Output only. The shopping fix disapproved products recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingFixDisapprovedProductsRecommendation shopping_fix_disapproved_products_recommendation = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingFixDisapprovedProductsRecommendation $var
+     * @return $this
+     */
+    public function setShoppingFixDisapprovedProductsRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingFixDisapprovedProductsRecommendation::class);
+        $this->writeOneof(49, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The shopping target all offers recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingTargetAllOffersRecommendation shopping_target_all_offers_recommendation = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingTargetAllOffersRecommendation|null
+     */
+    public function getShoppingTargetAllOffersRecommendation()
+    {
+        return $this->readOneof(50);
+    }
+
+    public function hasShoppingTargetAllOffersRecommendation()
+    {
+        return $this->hasOneof(50);
+    }
+
+    /**
+     * Output only. The shopping target all offers recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingTargetAllOffersRecommendation shopping_target_all_offers_recommendation = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingTargetAllOffersRecommendation $var
+     * @return $this
+     */
+    public function setShoppingTargetAllOffersRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingTargetAllOffersRecommendation::class);
+        $this->writeOneof(50, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The shopping fix suspended Merchant Center account
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingMerchantCenterAccountSuspensionRecommendation shopping_fix_suspended_merchant_center_account_recommendation = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingMerchantCenterAccountSuspensionRecommendation|null
+     */
+    public function getShoppingFixSuspendedMerchantCenterAccountRecommendation()
+    {
+        return $this->readOneof(51);
+    }
+
+    public function hasShoppingFixSuspendedMerchantCenterAccountRecommendation()
+    {
+        return $this->hasOneof(51);
+    }
+
+    /**
+     * Output only. The shopping fix suspended Merchant Center account
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingMerchantCenterAccountSuspensionRecommendation shopping_fix_suspended_merchant_center_account_recommendation = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingMerchantCenterAccountSuspensionRecommendation $var
+     * @return $this
+     */
+    public function setShoppingFixSuspendedMerchantCenterAccountRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingMerchantCenterAccountSuspensionRecommendation::class);
+        $this->writeOneof(51, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The shopping fix Merchant Center account suspension warning
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingMerchantCenterAccountSuspensionRecommendation shopping_fix_merchant_center_account_suspension_warning_recommendation = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingMerchantCenterAccountSuspensionRecommendation|null
+     */
+    public function getShoppingFixMerchantCenterAccountSuspensionWarningRecommendation()
+    {
+        return $this->readOneof(52);
+    }
+
+    public function hasShoppingFixMerchantCenterAccountSuspensionWarningRecommendation()
+    {
+        return $this->hasOneof(52);
+    }
+
+    /**
+     * Output only. The shopping fix Merchant Center account suspension warning
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingMerchantCenterAccountSuspensionRecommendation shopping_fix_merchant_center_account_suspension_warning_recommendation = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingMerchantCenterAccountSuspensionRecommendation $var
+     * @return $this
+     */
+    public function setShoppingFixMerchantCenterAccountSuspensionWarningRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingMerchantCenterAccountSuspensionRecommendation::class);
+        $this->writeOneof(52, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The shopping migrate Regular Shopping Campaign offers to
+     * Performance Max recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingMigrateRegularShoppingCampaignOffersToPerformanceMaxRecommendation shopping_migrate_regular_shopping_campaign_offers_to_performance_max_recommendation = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingMigrateRegularShoppingCampaignOffersToPerformanceMaxRecommendation|null
+     */
+    public function getShoppingMigrateRegularShoppingCampaignOffersToPerformanceMaxRecommendation()
+    {
+        return $this->readOneof(53);
+    }
+
+    public function hasShoppingMigrateRegularShoppingCampaignOffersToPerformanceMaxRecommendation()
+    {
+        return $this->hasOneof(53);
+    }
+
+    /**
+     * Output only. The shopping migrate Regular Shopping Campaign offers to
+     * Performance Max recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.resources.Recommendation.ShoppingMigrateRegularShoppingCampaignOffersToPerformanceMaxRecommendation shopping_migrate_regular_shopping_campaign_offers_to_performance_max_recommendation = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingMigrateRegularShoppingCampaignOffersToPerformanceMaxRecommendation $var
+     * @return $this
+     */
+    public function setShoppingMigrateRegularShoppingCampaignOffersToPerformanceMaxRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Resources\Recommendation\ShoppingMigrateRegularShoppingCampaignOffersToPerformanceMaxRecommendation::class);
+        $this->writeOneof(53, $var);
 
         return $this;
     }

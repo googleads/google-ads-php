@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Container for enum describing audience insights dimensions.
+ * Container for enum describing insights dimensions.
  *
  * Generated from protobuf message <code>google.ads.googleads.v13.enums.AudienceInsightsDimensionEnum</code>
  */

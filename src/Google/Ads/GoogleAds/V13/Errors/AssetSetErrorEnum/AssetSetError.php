@@ -90,9 +90,9 @@ class AssetSetError
      */
     const OAUTH_INFO_MISSING = 12;
     /**
-     * Can't delete an AssetSet if it has any enabled linkages (e.g.,
-     * AdGroupAssetSet, CampaignAssetSet, CustomerAssetSet), or AssetSet is a
-     * parent AssetSet and has enabled child AssetSet associated.
+     * Can't delete an AssetSet if it has any enabled linkages (e.g.
+     * CustomerAssetSet), or AssetSet is a parent AssetSet and has enabled child
+     * AssetSet associated.
      *
      * Generated from protobuf enum <code>CANNOT_DELETE_AS_ENABLED_LINKAGES_EXIST = 10;</code>
      */

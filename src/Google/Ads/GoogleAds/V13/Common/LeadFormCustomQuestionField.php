@@ -36,6 +36,13 @@ class LeadFormCustomQuestionField extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V13\Common\LeadFormSingleChoiceAnswers $single_choice_answers
      *           Answer configuration for a single choice question.
      *           Minimum of 2 answers and maximum of 12 allowed.
+     *     @type bool $has_location_answer
+     *           Answer configuration for location question. If true, campaign/account
+     *           level location data (state, city, business name etc) will be rendered on
+     *           the Lead Form.
+     *           Starting V13.1, has_location_answer can only be set for "What is your
+     *           preferred dealership?" question, for advertisers with Location Assets
+     *           setup at campaign/account level.
      * }
      */
     public function __construct($data = NULL) {
@@ -100,6 +107,47 @@ class LeadFormCustomQuestionField extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Common\LeadFormSingleChoiceAnswers::class);
         $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * Answer configuration for location question. If true, campaign/account
+     * level location data (state, city, business name etc) will be rendered on
+     * the Lead Form.
+     * Starting V13.1, has_location_answer can only be set for "What is your
+     * preferred dealership?" question, for advertisers with Location Assets
+     * setup at campaign/account level.
+     *
+     * Generated from protobuf field <code>bool has_location_answer = 3;</code>
+     * @return bool
+     */
+    public function getHasLocationAnswer()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasHasLocationAnswer()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * Answer configuration for location question. If true, campaign/account
+     * level location data (state, city, business name etc) will be rendered on
+     * the Lead Form.
+     * Starting V13.1, has_location_answer can only be set for "What is your
+     * preferred dealership?" question, for advertisers with Location Assets
+     * setup at campaign/account level.
+     *
+     * Generated from protobuf field <code>bool has_location_answer = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHasLocationAnswer($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(3, $var);
 
         return $this;
     }
