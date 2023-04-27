@@ -85,6 +85,42 @@ class AssetGroupError
      * Generated from protobuf enum <code>FINAL_URL_SHOPPING_MERCHANT_HOME_PAGE_URL_DOMAINS_DIFFER = 11;</code>
      */
     const FINAL_URL_SHOPPING_MERCHANT_HOME_PAGE_URL_DOMAINS_DIFFER = 11;
+    /**
+     * Path1 required when path2 is set.
+     *
+     * Generated from protobuf enum <code>PATH1_REQUIRED_WHEN_PATH2_IS_SET = 12;</code>
+     */
+    const PATH1_REQUIRED_WHEN_PATH2_IS_SET = 12;
+    /**
+     * At least one short description asset is required for a valid asset group.
+     *
+     * Generated from protobuf enum <code>SHORT_DESCRIPTION_REQUIRED = 13;</code>
+     */
+    const SHORT_DESCRIPTION_REQUIRED = 13;
+    /**
+     * Final url field is required for asset group.
+     *
+     * Generated from protobuf enum <code>FINAL_URL_REQUIRED = 14;</code>
+     */
+    const FINAL_URL_REQUIRED = 14;
+    /**
+     * Final url contains invalid domain name.
+     *
+     * Generated from protobuf enum <code>FINAL_URL_CONTAINS_INVALID_DOMAIN_NAME = 15;</code>
+     */
+    const FINAL_URL_CONTAINS_INVALID_DOMAIN_NAME = 15;
+    /**
+     * Ad customizers are not supported in asset group's text field.
+     *
+     * Generated from protobuf enum <code>AD_CUSTOMIZER_NOT_SUPPORTED = 16;</code>
+     */
+    const AD_CUSTOMIZER_NOT_SUPPORTED = 16;
+    /**
+     * Cannot mutate asset group for campaign with removed status.
+     *
+     * Generated from protobuf enum <code>CANNOT_MUTATE_ASSET_GROUP_FOR_REMOVED_CAMPAIGN = 17;</code>
+     */
+    const CANNOT_MUTATE_ASSET_GROUP_FOR_REMOVED_CAMPAIGN = 17;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -99,6 +135,12 @@ class AssetGroupError
         self::NOT_ENOUGH_SQUARE_MARKETING_IMAGE_ASSET => 'NOT_ENOUGH_SQUARE_MARKETING_IMAGE_ASSET',
         self::NOT_ENOUGH_LOGO_ASSET => 'NOT_ENOUGH_LOGO_ASSET',
         self::FINAL_URL_SHOPPING_MERCHANT_HOME_PAGE_URL_DOMAINS_DIFFER => 'FINAL_URL_SHOPPING_MERCHANT_HOME_PAGE_URL_DOMAINS_DIFFER',
+        self::PATH1_REQUIRED_WHEN_PATH2_IS_SET => 'PATH1_REQUIRED_WHEN_PATH2_IS_SET',
+        self::SHORT_DESCRIPTION_REQUIRED => 'SHORT_DESCRIPTION_REQUIRED',
+        self::FINAL_URL_REQUIRED => 'FINAL_URL_REQUIRED',
+        self::FINAL_URL_CONTAINS_INVALID_DOMAIN_NAME => 'FINAL_URL_CONTAINS_INVALID_DOMAIN_NAME',
+        self::AD_CUSTOMIZER_NOT_SUPPORTED => 'AD_CUSTOMIZER_NOT_SUPPORTED',
+        self::CANNOT_MUTATE_ASSET_GROUP_FOR_REMOVED_CAMPAIGN => 'CANNOT_MUTATE_ASSET_GROUP_FOR_REMOVED_CAMPAIGN',
     ];
 
     public static function name($value)

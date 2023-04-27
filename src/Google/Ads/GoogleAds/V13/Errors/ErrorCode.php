@@ -305,6 +305,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the experiment arm error
      *     @type int $audience_insights_error
      *           The reasons for the Audience Insights error
+     *     @type int $customer_sk_ad_network_conversion_value_schema_error
+     *           The reasons for the customer SK Ad network conversion value schema error
      *     @type int $currency_error
      *           The reasons for the currency errors.
      * }
@@ -4681,6 +4683,37 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V13\Errors\AudienceInsightsErrorEnum\AudienceInsightsError::class);
         $this->writeOneof(167, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the customer SK Ad network conversion value schema error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.errors.CustomerSkAdNetworkConversionValueSchemaErrorEnum.CustomerSkAdNetworkConversionValueSchemaError customer_sk_ad_network_conversion_value_schema_error = 170;</code>
+     * @return int
+     */
+    public function getCustomerSkAdNetworkConversionValueSchemaError()
+    {
+        return $this->readOneof(170);
+    }
+
+    public function hasCustomerSkAdNetworkConversionValueSchemaError()
+    {
+        return $this->hasOneof(170);
+    }
+
+    /**
+     * The reasons for the customer SK Ad network conversion value schema error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.errors.CustomerSkAdNetworkConversionValueSchemaErrorEnum.CustomerSkAdNetworkConversionValueSchemaError customer_sk_ad_network_conversion_value_schema_error = 170;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCustomerSkAdNetworkConversionValueSchemaError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V13\Errors\CustomerSkAdNetworkConversionValueSchemaErrorEnum\CustomerSkAdNetworkConversionValueSchemaError::class);
+        $this->writeOneof(170, $var);
 
         return $this;
     }

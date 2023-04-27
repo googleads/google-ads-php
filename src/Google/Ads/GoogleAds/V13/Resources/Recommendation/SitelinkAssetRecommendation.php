@@ -16,15 +16,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class SitelinkAssetRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Output only. New sitelink extension assets recommended at the campaign
-     * level.
+     * Output only. New sitelink assets recommended at the campaign level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v13.resources.Asset recommended_campaign_sitelink_assets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $recommended_campaign_sitelink_assets;
     /**
-     * Output only. New sitelink extension assets recommended at the customer
-     * level.
+     * Output only. New sitelink assets recommended at the customer level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v13.resources.Asset recommended_customer_sitelink_assets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -37,11 +35,9 @@ class SitelinkAssetRecommendation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<\Google\Ads\GoogleAds\V13\Resources\Asset>|\Google\Protobuf\Internal\RepeatedField $recommended_campaign_sitelink_assets
-     *           Output only. New sitelink extension assets recommended at the campaign
-     *           level.
+     *           Output only. New sitelink assets recommended at the campaign level.
      *     @type array<\Google\Ads\GoogleAds\V13\Resources\Asset>|\Google\Protobuf\Internal\RepeatedField $recommended_customer_sitelink_assets
-     *           Output only. New sitelink extension assets recommended at the customer
-     *           level.
+     *           Output only. New sitelink assets recommended at the customer level.
      * }
      */
     public function __construct($data = NULL) {
@@ -50,8 +46,7 @@ class SitelinkAssetRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. New sitelink extension assets recommended at the campaign
-     * level.
+     * Output only. New sitelink assets recommended at the campaign level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v13.resources.Asset recommended_campaign_sitelink_assets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -62,8 +57,7 @@ class SitelinkAssetRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. New sitelink extension assets recommended at the campaign
-     * level.
+     * Output only. New sitelink assets recommended at the campaign level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v13.resources.Asset recommended_campaign_sitelink_assets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param array<\Google\Ads\GoogleAds\V13\Resources\Asset>|\Google\Protobuf\Internal\RepeatedField $var
@@ -78,8 +72,7 @@ class SitelinkAssetRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. New sitelink extension assets recommended at the customer
-     * level.
+     * Output only. New sitelink assets recommended at the customer level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v13.resources.Asset recommended_customer_sitelink_assets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -90,8 +83,7 @@ class SitelinkAssetRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. New sitelink extension assets recommended at the customer
-     * level.
+     * Output only. New sitelink assets recommended at the customer level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v13.resources.Asset recommended_customer_sitelink_assets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param array<\Google\Ads\GoogleAds\V13\Resources\Asset>|\Google\Protobuf\Internal\RepeatedField $var

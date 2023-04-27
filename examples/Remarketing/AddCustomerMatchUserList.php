@@ -344,30 +344,30 @@ class AddCustomerMatchUserList
         // The first user data has an email address and a phone number.
         $rawRecord1 = [
             // The first user data has an email address and a phone number.
-            'email' => 'test@gmail.com',
+            'email' => 'dana@example.com',
             // Phone number to be converted to E.164 format, with a leading '+' as required. This
             // includes whitespace that will be removed later.
-            'phone' => '+1 234 5678910'
+            'phone' => '+1 800 5550101'
         ];
         $rawRecords[] = $rawRecord1;
 
         // The second user data has an email address, a mailing address, and a phone number.
         $rawRecord2 = [
             // Email address that includes a period (.) before the Gmail domain.
-            'email' => 'test.2@gmail.com',
+            'email' => 'alex.2@example.com',
             // Address that includes all four required elements: first name, last name, country
             // code, and postal code.
-            'firstName' => 'John',
-            'lastName' => 'Doe',
+            'firstName' => 'Alex',
+            'lastName' => 'Quinn',
             'countryCode' => 'US',
-            'postalCode' => '10011',
+            'postalCode' => '94045',
             // Phone number to be converted to E.164 format, with a leading '+' as required.
-            'phone' => '+1 234 5678911',
+            'phone' => '+1 800 5550102',
         ];
         $rawRecords[] = $rawRecord2;
 
         // The third user data only has an email address.
-        $rawRecord3 = ['email' => 'test3@gmail.com'];
+        $rawRecord3 = ['email' => 'charlie@example.com'];
         $rawRecords[] = $rawRecord3;
 
         // Iterates over the raw input list and creates a UserData object for each record.

@@ -188,6 +188,25 @@ class UserListError
      * Generated from protobuf enum <code>CAN_NOT_MIX_CRM_BASED_IN_LOGICAL_LIST_WITH_OTHER_LISTS = 36;</code>
      */
     const CAN_NOT_MIX_CRM_BASED_IN_LOGICAL_LIST_WITH_OTHER_LISTS = 36;
+    /**
+     * crm_based_user_list.app_id field can only be set when upload_key_type is
+     * MOBILE_ADVERTISING_ID.
+     *
+     * Generated from protobuf enum <code>APP_ID_NOT_ALLOWED = 39;</code>
+     */
+    const APP_ID_NOT_ALLOWED = 39;
+    /**
+     * Google system generated user lists cannot be mutated.
+     *
+     * Generated from protobuf enum <code>CANNOT_MUTATE_SYSTEM_LIST = 40;</code>
+     */
+    const CANNOT_MUTATE_SYSTEM_LIST = 40;
+    /**
+     * The mobile app associated with the remarketing list is sensitive.
+     *
+     * Generated from protobuf enum <code>MOBILE_APP_IS_SENSITIVE = 41;</code>
+     */
+    const MOBILE_APP_IS_SENSITIVE = 41;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -218,6 +237,9 @@ class UserListError
         self::RULE_TYPE_IS_NOT_SUPPORTED => 'RULE_TYPE_IS_NOT_SUPPORTED',
         self::CAN_NOT_ADD_A_SIMILAR_USERLIST_AS_LOGICAL_LIST_OPERAND => 'CAN_NOT_ADD_A_SIMILAR_USERLIST_AS_LOGICAL_LIST_OPERAND',
         self::CAN_NOT_MIX_CRM_BASED_IN_LOGICAL_LIST_WITH_OTHER_LISTS => 'CAN_NOT_MIX_CRM_BASED_IN_LOGICAL_LIST_WITH_OTHER_LISTS',
+        self::APP_ID_NOT_ALLOWED => 'APP_ID_NOT_ALLOWED',
+        self::CANNOT_MUTATE_SYSTEM_LIST => 'CANNOT_MUTATE_SYSTEM_LIST',
+        self::MOBILE_APP_IS_SENSITIVE => 'MOBILE_APP_IS_SENSITIVE',
     ];
 
     public static function name($value)

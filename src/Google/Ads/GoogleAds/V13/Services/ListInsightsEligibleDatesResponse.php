@@ -22,6 +22,15 @@ class ListInsightsEligibleDatesResponse extends \Google\Protobuf\Internal\Messag
      * Generated from protobuf field <code>repeated string data_months = 1;</code>
      */
     private $data_months;
+    /**
+     * The actual dates covered by the "last 30 days" date range that will be used
+     * implicitly for
+     * [AudienceInsightsService.GenerateAudienceCompositionInsights][google.ads.googleads.v13.services.AudienceInsightsService.GenerateAudienceCompositionInsights]
+     * requests that have no data_month set.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.common.DateRange last_thirty_days = 2;</code>
+     */
+    protected $last_thirty_days = null;
 
     /**
      * Constructor.
@@ -32,6 +41,11 @@ class ListInsightsEligibleDatesResponse extends \Google\Protobuf\Internal\Messag
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $data_months
      *           The months for which AudienceInsights data is currently
      *           available, each represented as a string in the form "YYYY-MM".
+     *     @type \Google\Ads\GoogleAds\V13\Common\DateRange $last_thirty_days
+     *           The actual dates covered by the "last 30 days" date range that will be used
+     *           implicitly for
+     *           [AudienceInsightsService.GenerateAudienceCompositionInsights][google.ads.googleads.v13.services.AudienceInsightsService.GenerateAudienceCompositionInsights]
+     *           requests that have no data_month set.
      * }
      */
     public function __construct($data = NULL) {
@@ -63,6 +77,48 @@ class ListInsightsEligibleDatesResponse extends \Google\Protobuf\Internal\Messag
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->data_months = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The actual dates covered by the "last 30 days" date range that will be used
+     * implicitly for
+     * [AudienceInsightsService.GenerateAudienceCompositionInsights][google.ads.googleads.v13.services.AudienceInsightsService.GenerateAudienceCompositionInsights]
+     * requests that have no data_month set.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.common.DateRange last_thirty_days = 2;</code>
+     * @return \Google\Ads\GoogleAds\V13\Common\DateRange|null
+     */
+    public function getLastThirtyDays()
+    {
+        return $this->last_thirty_days;
+    }
+
+    public function hasLastThirtyDays()
+    {
+        return isset($this->last_thirty_days);
+    }
+
+    public function clearLastThirtyDays()
+    {
+        unset($this->last_thirty_days);
+    }
+
+    /**
+     * The actual dates covered by the "last 30 days" date range that will be used
+     * implicitly for
+     * [AudienceInsightsService.GenerateAudienceCompositionInsights][google.ads.googleads.v13.services.AudienceInsightsService.GenerateAudienceCompositionInsights]
+     * requests that have no data_month set.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.common.DateRange last_thirty_days = 2;</code>
+     * @param \Google\Ads\GoogleAds\V13\Common\DateRange $var
+     * @return $this
+     */
+    public function setLastThirtyDays($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Common\DateRange::class);
+        $this->last_thirty_days = $var;
 
         return $this;
     }

@@ -1,3 +1,9 @@
+## 19.1.0
+*   Added support for v13_1 of Google Ads API.
+*   Renamed the HotelAds example directory to Travel.
+*   Added AddThingsToDoAd example.
+*   Updated AddPerformanceMaxForTravelGoalsCampaign example.
+
 ## 19.0.0
 *   Removed support for v11 of Google Ads API.
 *   Updated CreateExperiment example.

@@ -130,8 +130,8 @@ class RecommendationType
      */
     const MARGINAL_ROI_CAMPAIGN_BUDGET = 19;
     /**
-     * Recommendation to expand keywords to broad match for fully automated
-     * conversion-based bidding campaigns.
+     * Recommendation to add broad match versions of keywords for fully
+     * automated conversion-based bidding campaigns.
      *
      * Generated from protobuf enum <code>USE_BROAD_MATCH_KEYWORD = 20;</code>
      */
@@ -172,7 +172,7 @@ class RecommendationType
      * Recommendation to raise target CPA when it is too low and there are very
      * few or no conversions.
      * It is applied asynchronously and can take minutes
-     * depending on the number of ad groups there is in the related campaign.
+     * depending on the number of ad groups there are in the related campaign.
      *
      * Generated from protobuf enum <code>RAISE_TARGET_CPA_BID_TOO_LOW = 26;</code>
      */
@@ -203,6 +203,87 @@ class RecommendationType
      * Generated from protobuf enum <code>CALL_ASSET = 30;</code>
      */
     const CALL_ASSET = 30;
+    /**
+     * Recommendation to add the age group attribute to offers that are
+     * demoted because of a missing age group.
+     *
+     * Generated from protobuf enum <code>SHOPPING_ADD_AGE_GROUP = 31;</code>
+     */
+    const SHOPPING_ADD_AGE_GROUP = 31;
+    /**
+     * Recommendation to add a color to offers that are demoted
+     * because of a missing color.
+     *
+     * Generated from protobuf enum <code>SHOPPING_ADD_COLOR = 32;</code>
+     */
+    const SHOPPING_ADD_COLOR = 32;
+    /**
+     * Recommendation to add a gender to offers that are demoted
+     * because of a missing gender.
+     *
+     * Generated from protobuf enum <code>SHOPPING_ADD_GENDER = 33;</code>
+     */
+    const SHOPPING_ADD_GENDER = 33;
+    /**
+     * Recommendation to add a GTIN (Global Trade Item Number) to offers
+     * that are demoted because of a missing GTIN.
+     *
+     * Generated from protobuf enum <code>SHOPPING_ADD_GTIN = 34;</code>
+     */
+    const SHOPPING_ADD_GTIN = 34;
+    /**
+     * Recommendation to add more identifiers to offers that are demoted because
+     * of missing identifiers.
+     *
+     * Generated from protobuf enum <code>SHOPPING_ADD_MORE_IDENTIFIERS = 35;</code>
+     */
+    const SHOPPING_ADD_MORE_IDENTIFIERS = 35;
+    /**
+     * Recommendation to add the size to offers that are demoted
+     * because of a missing size.
+     *
+     * Generated from protobuf enum <code>SHOPPING_ADD_SIZE = 36;</code>
+     */
+    const SHOPPING_ADD_SIZE = 36;
+    /**
+     * Recommendation informing a customer about a campaign that cannot serve
+     * because no products are being targeted.
+     *
+     * Generated from protobuf enum <code>SHOPPING_ADD_PRODUCTS_TO_CAMPAIGN = 37;</code>
+     */
+    const SHOPPING_ADD_PRODUCTS_TO_CAMPAIGN = 37;
+    /**
+     * The shopping recommendation informing a customer about campaign with a
+     * high percentage of disapproved products.
+     *
+     * Generated from protobuf enum <code>SHOPPING_FIX_DISAPPROVED_PRODUCTS = 38;</code>
+     */
+    const SHOPPING_FIX_DISAPPROVED_PRODUCTS = 38;
+    /**
+     * Recommendation to create a catch-all campaign that targets all offers.
+     *
+     * Generated from protobuf enum <code>SHOPPING_TARGET_ALL_OFFERS = 39;</code>
+     */
+    const SHOPPING_TARGET_ALL_OFFERS = 39;
+    /**
+     * Recommendation to fix Merchant Center account suspension issues.
+     *
+     * Generated from protobuf enum <code>SHOPPING_FIX_SUSPENDED_MERCHANT_CENTER_ACCOUNT = 40;</code>
+     */
+    const SHOPPING_FIX_SUSPENDED_MERCHANT_CENTER_ACCOUNT = 40;
+    /**
+     * Recommendation to fix Merchant Center account suspension warning issues.
+     *
+     * Generated from protobuf enum <code>SHOPPING_FIX_MERCHANT_CENTER_ACCOUNT_SUSPENSION_WARNING = 41;</code>
+     */
+    const SHOPPING_FIX_MERCHANT_CENTER_ACCOUNT_SUSPENSION_WARNING = 41;
+    /**
+     * Recommendation to migrate offers targeted by Regular Shopping Campaigns
+     * to existing Performance Max campaigns.
+     *
+     * Generated from protobuf enum <code>SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX = 42;</code>
+     */
+    const SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX = 42;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -233,6 +314,18 @@ class RecommendationType
         self::CALLOUT_ASSET => 'CALLOUT_ASSET',
         self::SITELINK_ASSET => 'SITELINK_ASSET',
         self::CALL_ASSET => 'CALL_ASSET',
+        self::SHOPPING_ADD_AGE_GROUP => 'SHOPPING_ADD_AGE_GROUP',
+        self::SHOPPING_ADD_COLOR => 'SHOPPING_ADD_COLOR',
+        self::SHOPPING_ADD_GENDER => 'SHOPPING_ADD_GENDER',
+        self::SHOPPING_ADD_GTIN => 'SHOPPING_ADD_GTIN',
+        self::SHOPPING_ADD_MORE_IDENTIFIERS => 'SHOPPING_ADD_MORE_IDENTIFIERS',
+        self::SHOPPING_ADD_SIZE => 'SHOPPING_ADD_SIZE',
+        self::SHOPPING_ADD_PRODUCTS_TO_CAMPAIGN => 'SHOPPING_ADD_PRODUCTS_TO_CAMPAIGN',
+        self::SHOPPING_FIX_DISAPPROVED_PRODUCTS => 'SHOPPING_FIX_DISAPPROVED_PRODUCTS',
+        self::SHOPPING_TARGET_ALL_OFFERS => 'SHOPPING_TARGET_ALL_OFFERS',
+        self::SHOPPING_FIX_SUSPENDED_MERCHANT_CENTER_ACCOUNT => 'SHOPPING_FIX_SUSPENDED_MERCHANT_CENTER_ACCOUNT',
+        self::SHOPPING_FIX_MERCHANT_CENTER_ACCOUNT_SUSPENSION_WARNING => 'SHOPPING_FIX_MERCHANT_CENTER_ACCOUNT_SUSPENSION_WARNING',
+        self::SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX => 'SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX',
     ];
 
     public static function name($value)

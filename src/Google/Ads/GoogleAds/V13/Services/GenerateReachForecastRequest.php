@@ -105,7 +105,6 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     protected $forecast_metric_options = null;
     /**
      * The name of the customer being planned for. This is a user-defined value.
-     * Required if targeting.audience_targeting is set.
      *
      * Generated from protobuf field <code>optional string customer_reach_group = 14;</code>
      */
@@ -166,7 +165,6 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      *           Controls the forecast metrics returned in the response.
      *     @type string $customer_reach_group
      *           The name of the customer being planned for. This is a user-defined value.
-     *           Required if targeting.audience_targeting is set.
      * }
      */
     public function __construct($data = NULL) {
@@ -570,7 +568,6 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The name of the customer being planned for. This is a user-defined value.
-     * Required if targeting.audience_targeting is set.
      *
      * Generated from protobuf field <code>optional string customer_reach_group = 14;</code>
      * @return string
@@ -592,7 +589,6 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The name of the customer being planned for. This is a user-defined value.
-     * Required if targeting.audience_targeting is set.
      *
      * Generated from protobuf field <code>optional string customer_reach_group = 14;</code>
      * @param string $var

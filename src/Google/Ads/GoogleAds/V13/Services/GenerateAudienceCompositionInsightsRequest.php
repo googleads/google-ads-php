@@ -29,6 +29,13 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      */
     protected $audience = null;
     /**
+     * The baseline audience to which the audience of interest is being
+     * compared.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.services.InsightsAudience baseline_audience = 6;</code>
+     */
+    protected $baseline_audience = null;
+    /**
      * The one-month range of historical data to use for insights, in the format
      * "yyyy-mm". If unset, insights will be returned for the last thirty days of
      * data.
@@ -60,6 +67,9 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      *           Required. The ID of the customer.
      *     @type \Google\Ads\GoogleAds\V13\Services\InsightsAudience $audience
      *           Required. The audience of interest for which insights are being requested.
+     *     @type \Google\Ads\GoogleAds\V13\Services\InsightsAudience $baseline_audience
+     *           The baseline audience to which the audience of interest is being
+     *           compared.
      *     @type string $data_month
      *           The one-month range of historical data to use for insights, in the format
      *           "yyyy-mm". If unset, insights will be returned for the last thirty days of
@@ -134,6 +144,44 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Services\InsightsAudience::class);
         $this->audience = $var;
+
+        return $this;
+    }
+
+    /**
+     * The baseline audience to which the audience of interest is being
+     * compared.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.services.InsightsAudience baseline_audience = 6;</code>
+     * @return \Google\Ads\GoogleAds\V13\Services\InsightsAudience|null
+     */
+    public function getBaselineAudience()
+    {
+        return $this->baseline_audience;
+    }
+
+    public function hasBaselineAudience()
+    {
+        return isset($this->baseline_audience);
+    }
+
+    public function clearBaselineAudience()
+    {
+        unset($this->baseline_audience);
+    }
+
+    /**
+     * The baseline audience to which the audience of interest is being
+     * compared.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v13.services.InsightsAudience baseline_audience = 6;</code>
+     * @param \Google\Ads\GoogleAds\V13\Services\InsightsAudience $var
+     * @return $this
+     */
+    public function setBaselineAudience($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V13\Services\InsightsAudience::class);
+        $this->baseline_audience = $var;
 
         return $this;
     }

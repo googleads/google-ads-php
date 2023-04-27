@@ -156,12 +156,19 @@ class AssetLinkError
      */
     const CANNOT_LINK_TO_AUTOMATICALLY_CREATED_ASSET = 20;
     /**
-     * Automatically created links cannot be changed into adveritser links or
+     * Automatically created links cannot be changed into advertiser links or
      * the reverse.
      *
      * Generated from protobuf enum <code>CANNOT_MODIFY_ASSET_LINK_SOURCE = 21;</code>
      */
     const CANNOT_MODIFY_ASSET_LINK_SOURCE = 21;
+    /**
+     * Lead Form asset with Location answer type can't be linked to the
+     * Customer/Campaign because there are no Location assets.
+     *
+     * Generated from protobuf enum <code>CANNOT_LINK_LOCATION_LEAD_FORM_WITHOUT_LOCATION_ASSET = 22;</code>
+     */
+    const CANNOT_LINK_LOCATION_LEAD_FORM_WITHOUT_LOCATION_ASSET = 22;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -186,6 +193,7 @@ class AssetLinkError
         self::CANNOT_CREATE_AUTOMATICALLY_CREATED_LINKS => 'CANNOT_CREATE_AUTOMATICALLY_CREATED_LINKS',
         self::CANNOT_LINK_TO_AUTOMATICALLY_CREATED_ASSET => 'CANNOT_LINK_TO_AUTOMATICALLY_CREATED_ASSET',
         self::CANNOT_MODIFY_ASSET_LINK_SOURCE => 'CANNOT_MODIFY_ASSET_LINK_SOURCE',
+        self::CANNOT_LINK_LOCATION_LEAD_FORM_WITHOUT_LOCATION_ASSET => 'CANNOT_LINK_LOCATION_LEAD_FORM_WITHOUT_LOCATION_ASSET',
     ];
 
     public static function name($value)

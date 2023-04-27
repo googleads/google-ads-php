@@ -239,6 +239,12 @@ class AssetError
      * Generated from protobuf enum <code>CANNOT_MODIFY_AUTOMATICALLY_CREATED_ASSET = 36;</code>
      */
     const CANNOT_MODIFY_AUTOMATICALLY_CREATED_ASSET = 36;
+    /**
+     * Lead Form is disallowed to use "LOCATION" answer type.
+     *
+     * Generated from protobuf enum <code>LEAD_FORM_LOCATION_ANSWER_TYPE_DISALLOWED = 37;</code>
+     */
+    const LEAD_FORM_LOCATION_ANSWER_TYPE_DISALLOWED = 37;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -277,6 +283,7 @@ class AssetError
         self::NAME_CONFLICT_FOR_ASSET_TYPE => 'NAME_CONFLICT_FOR_ASSET_TYPE',
         self::CANNOT_MODIFY_ASSET_SOURCE => 'CANNOT_MODIFY_ASSET_SOURCE',
         self::CANNOT_MODIFY_AUTOMATICALLY_CREATED_ASSET => 'CANNOT_MODIFY_AUTOMATICALLY_CREATED_ASSET',
+        self::LEAD_FORM_LOCATION_ANSWER_TYPE_DISALLOWED => 'LEAD_FORM_LOCATION_ANSWER_TYPE_DISALLOWED',
     ];
 
     public static function name($value)

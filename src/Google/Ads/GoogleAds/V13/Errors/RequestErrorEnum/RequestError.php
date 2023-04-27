@@ -169,6 +169,12 @@ class RequestError
      * Generated from protobuf enum <code>RPC_DEADLINE_TOO_SHORT = 33;</code>
      */
     const RPC_DEADLINE_TOO_SHORT = 33;
+    /**
+     * This API version has been sunset and is no longer supported.
+     *
+     * Generated from protobuf enum <code>UNSUPPORTED_VERSION = 38;</code>
+     */
+    const UNSUPPORTED_VERSION = 38;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -196,6 +202,7 @@ class RequestError
         self::INCONSISTENT_RETURN_SUMMARY_ROW_VALUE => 'INCONSISTENT_RETURN_SUMMARY_ROW_VALUE',
         self::TOTAL_RESULTS_COUNT_NOT_ORIGINALLY_REQUESTED => 'TOTAL_RESULTS_COUNT_NOT_ORIGINALLY_REQUESTED',
         self::RPC_DEADLINE_TOO_SHORT => 'RPC_DEADLINE_TOO_SHORT',
+        self::UNSUPPORTED_VERSION => 'UNSUPPORTED_VERSION',
     ];
 
     public static function name($value)

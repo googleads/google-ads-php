@@ -93,7 +93,7 @@ class AssetFieldType
      */
     const STRUCTURED_SNIPPET = 12;
     /**
-     * The asset is linked for use as a Sitelink extension.
+     * The asset is linked for use as a Sitelink.
      *
      * Generated from protobuf enum <code>SITELINK = 13;</code>
      */

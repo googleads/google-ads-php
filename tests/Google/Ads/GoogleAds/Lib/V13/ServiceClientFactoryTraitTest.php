@@ -85,6 +85,7 @@ use Google\Ads\GoogleAds\V13\Services\CustomerLabelServiceClient;
 use Google\Ads\GoogleAds\V13\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V13\Services\CustomerNegativeCriterionServiceClient;
 use Google\Ads\GoogleAds\V13\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V13\Services\CustomerSkAdNetworkConversionValueSchemaServiceClient;
 use Google\Ads\GoogleAds\V13\Services\CustomerUserAccessInvitationServiceClient;
 use Google\Ads\GoogleAds\V13\Services\CustomerUserAccessServiceClient;
 use Google\Ads\GoogleAds\V13\Services\CustomInterestServiceClient;
@@ -684,6 +685,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         $this->assertInstanceOf(
             CustomerServiceClient::class,
             $this->googleAdsClient->getCustomerServiceClient()
+        );
+    }
+
+    public function testGetCustomerSkAdNetworkConversionValueSchemaServiceClient()
+    {
+        $this->assertInstanceOf(
+            CustomerSkAdNetworkConversionValueSchemaServiceClient::class,
+            $this->googleAdsClient->getCustomerSkAdNetworkConversionValueSchemaServiceClient()
         );
     }
 

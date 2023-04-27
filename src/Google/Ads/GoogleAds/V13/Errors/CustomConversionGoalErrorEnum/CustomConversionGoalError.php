@@ -57,6 +57,13 @@ class CustomConversionGoalError
      * Generated from protobuf enum <code>DUPLICATE_CONVERSION_ACTION_LIST = 6;</code>
      */
     const DUPLICATE_CONVERSION_ACTION_LIST = 6;
+    /**
+     * Conversion types that cannot be biddable should not be included in custom
+     * goal.
+     *
+     * Generated from protobuf enum <code>NON_BIDDABLE_CONVERSION_ACTION_NOT_ELIGIBLE_FOR_CUSTOM_GOAL = 7;</code>
+     */
+    const NON_BIDDABLE_CONVERSION_ACTION_NOT_ELIGIBLE_FOR_CUSTOM_GOAL = 7;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -66,6 +73,7 @@ class CustomConversionGoalError
         self::CANNOT_REMOVE_LINKED_CUSTOM_CONVERSION_GOAL => 'CANNOT_REMOVE_LINKED_CUSTOM_CONVERSION_GOAL',
         self::CUSTOM_GOAL_DUPLICATE_NAME => 'CUSTOM_GOAL_DUPLICATE_NAME',
         self::DUPLICATE_CONVERSION_ACTION_LIST => 'DUPLICATE_CONVERSION_ACTION_LIST',
+        self::NON_BIDDABLE_CONVERSION_ACTION_NOT_ELIGIBLE_FOR_CUSTOM_GOAL => 'NON_BIDDABLE_CONVERSION_ACTION_NOT_ELIGIBLE_FOR_CUSTOM_GOAL',
     ];
 
     public static function name($value)

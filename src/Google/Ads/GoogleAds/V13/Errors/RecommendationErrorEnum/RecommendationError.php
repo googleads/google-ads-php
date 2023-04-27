@@ -113,6 +113,12 @@ class RecommendationError
      * Generated from protobuf enum <code>INVALID_APPLY_REQUEST = 15;</code>
      */
     const INVALID_APPLY_REQUEST = 15;
+    /**
+     * The type of recommendation requested to apply is not supported.
+     *
+     * Generated from protobuf enum <code>RECOMMENDATION_TYPE_APPLY_NOT_SUPPORTED = 17;</code>
+     */
+    const RECOMMENDATION_TYPE_APPLY_NOT_SUPPORTED = 17;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -131,6 +137,7 @@ class RecommendationError
         self::DUPLICATE_RESOURCE_NAME => 'DUPLICATE_RESOURCE_NAME',
         self::RECOMMENDATION_ALREADY_DISMISSED => 'RECOMMENDATION_ALREADY_DISMISSED',
         self::INVALID_APPLY_REQUEST => 'INVALID_APPLY_REQUEST',
+        self::RECOMMENDATION_TYPE_APPLY_NOT_SUPPORTED => 'RECOMMENDATION_TYPE_APPLY_NOT_SUPPORTED',
     ];
 
     public static function name($value)

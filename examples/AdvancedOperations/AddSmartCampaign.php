@@ -107,7 +107,7 @@ class AddSmartCampaign
     // https://developers.google.com/google-ads/api/reference/data/codes-formats#expandable-7
     private const LANGUAGE_CODE = 'en';
     private const LANDING_PAGE_URL = 'http://www.example.com';
-    private const PHONE_NUMBER = '555-555-5555';
+    private const PHONE_NUMBER = '800-555-0100';
     private const BUDGET_TEMPORARY_ID = '-1';
     private const SMART_CAMPAIGN_TEMPORARY_ID = '-2';
     private const AD_GROUP_TEMPORARY_ID = '-3';

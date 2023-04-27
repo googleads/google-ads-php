@@ -250,7 +250,6 @@ class ReachPlanServiceGapicClient
      *           Controls the forecast metrics returned in the response.
      *     @type string $customerReachGroup
      *           The name of the customer being planned for. This is a user-defined value.
-     *           Required if targeting.audience_targeting is set.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on

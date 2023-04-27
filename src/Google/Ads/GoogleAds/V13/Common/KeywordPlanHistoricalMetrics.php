@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Historical metrics specific to the targeting options selected.
- * Targeting options include geographies, network, etc.
+ * Targeting options include geographies, network, and so on.
  * Refer to https://support.google.com/google-ads/answer/3022575 for more
  * details.
  *
@@ -19,7 +19,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Approximate number of monthly searches on this query averaged
+     * Approximate number of monthly searches on this query, averaged
      * for the past 12 months.
      *
      * Generated from protobuf field <code>optional int64 avg_monthly_searches = 7;</code>
@@ -73,7 +73,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $avg_monthly_searches
-     *           Approximate number of monthly searches on this query averaged
+     *           Approximate number of monthly searches on this query, averaged
      *           for the past 12 months.
      *     @type array<\Google\Ads\GoogleAds\V13\Common\MonthlySearchVolume>|\Google\Protobuf\Internal\RepeatedField $monthly_search_volumes
      *           Approximate number of searches on this query for the past twelve months.
@@ -99,7 +99,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Approximate number of monthly searches on this query averaged
+     * Approximate number of monthly searches on this query, averaged
      * for the past 12 months.
      *
      * Generated from protobuf field <code>optional int64 avg_monthly_searches = 7;</code>
@@ -121,7 +121,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Approximate number of monthly searches on this query averaged
+     * Approximate number of monthly searches on this query, averaged
      * for the past 12 months.
      *
      * Generated from protobuf field <code>optional int64 avg_monthly_searches = 7;</code>

@@ -119,7 +119,7 @@ class AddCallAd
      * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID to add a call ad to
      * @param string $phoneCountry the phone country (2-letter code)
-     * @param string $phoneNumber the raw phone number, e.g. '(123) 456-7890'
+     * @param string $phoneNumber the raw phone number, e.g. '(800) 555-0100'
      * @param int|null $conversionActionId the conversion action ID to attribute conversions to
      */
     public static function runExample(

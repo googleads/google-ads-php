@@ -44,7 +44,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Square logo images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must
-     * be 1:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
+     * be 1:1 (+-1%). Combined with `logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v13.common.AdImageAsset square_logo_images = 4;</code>
      */
@@ -162,7 +162,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *     @type array<\Google\Ads\GoogleAds\V13\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $square_logo_images
      *           Square logo images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must
-     *           be 1:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
+     *           be 1:1 (+-1%). Combined with `logo_images`, the maximum is 5.
      *     @type array<\Google\Ads\GoogleAds\V13\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
      *           Short format headlines for the ad. The maximum length is 30 characters.
      *           At least 1 and max 5 headlines can be specified.
@@ -304,7 +304,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Square logo images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must
-     * be 1:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
+     * be 1:1 (+-1%). Combined with `logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v13.common.AdImageAsset square_logo_images = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -317,7 +317,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Square logo images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must
-     * be 1:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
+     * be 1:1 (+-1%). Combined with `logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v13.common.AdImageAsset square_logo_images = 4;</code>
      * @param array<\Google\Ads\GoogleAds\V13\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var

@@ -370,6 +370,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional string hotel_property_asset_set = 83 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $hotel_property_asset_set = null;
+    /**
+     * Immutable. Listing type of ads served for this campaign.
+     * Field is restricted for usage with Performance Max campaigns.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v13.enums.ListingTypeEnum.ListingType listing_type = 86 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    protected $listing_type = null;
     protected $campaign_bidding_strategy;
 
     /**
@@ -541,6 +548,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type string $hotel_property_asset_set
      *           Immutable. The set of hotel properties for Performance Max for travel goals
      *           campaigns.
+     *     @type int $listing_type
+     *           Immutable. Listing type of ads served for this campaign.
+     *           Field is restricted for usage with Performance Max campaigns.
      *     @type string $bidding_strategy
      *           Portfolio bidding strategy used by campaign.
      *     @type \Google\Ads\GoogleAds\V13\Common\Commission $commission
@@ -2260,6 +2270,44 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->hotel_property_asset_set = $var;
+
+        return $this;
+    }
+
+    /**
+     * Immutable. Listing type of ads served for this campaign.
+     * Field is restricted for usage with Performance Max campaigns.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v13.enums.ListingTypeEnum.ListingType listing_type = 86 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return int
+     */
+    public function getListingType()
+    {
+        return isset($this->listing_type) ? $this->listing_type : 0;
+    }
+
+    public function hasListingType()
+    {
+        return isset($this->listing_type);
+    }
+
+    public function clearListingType()
+    {
+        unset($this->listing_type);
+    }
+
+    /**
+     * Immutable. Listing type of ads served for this campaign.
+     * Field is restricted for usage with Performance Max campaigns.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v13.enums.ListingTypeEnum.ListingType listing_type = 86 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setListingType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V13\Enums\ListingTypeEnum\ListingType::class);
+        $this->listing_type = $var;
 
         return $this;
     }
