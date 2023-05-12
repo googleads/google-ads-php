@@ -187,6 +187,7 @@ class AddCustomerMatchUserList
      * @param int $customerId the customer ID
      * @return string the resource name of the newly created user list
      */
+    // [START add_customer_match_user_list_3]
     private static function createCustomerMatchUserList(
         GoogleAdsClient $googleAdsClient,
         int $customerId
@@ -220,6 +221,7 @@ class AddCustomerMatchUserList
 
         return $userListResourceName;
     }
+    // [END add_customer_match_user_list_3]
 
     /**
      * Creates and executes an asynchronous job to add users to the Customer Match user list.
@@ -457,7 +459,6 @@ class AddCustomerMatchUserList
                 $userDataList[] = new UserData(['user_identifiers' => $userIdentifiers]);
             }
         }
-        // [END add_customer_match_user_list_2]
 
         // Creates the operations to add users.
         $operations = array_map(
@@ -466,6 +467,7 @@ class AddCustomerMatchUserList
             },
             $userDataList
         );
+        // [END add_customer_match_user_list_2]
         return $operations;
     }
 
@@ -477,6 +479,7 @@ class AddCustomerMatchUserList
      * @param string $offlineUserDataJobResourceName the resource name of the offline user data job
      *     to get the status for
      */
+    // [START add_customer_match_user_list_4]
     private static function checkJobStatus(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -531,6 +534,7 @@ class AddCustomerMatchUserList
             );
         }
     }
+    // [END add_customer_match_user_list_4]
 
     /**
      * Prints information about the Customer Match user list.
@@ -545,6 +549,7 @@ class AddCustomerMatchUserList
         int $customerId,
         string $userListResourceName
     ) {
+        // [START add_customer_match_user_list_5]
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
 
         // Creates a query that retrieves the user list.
@@ -556,6 +561,7 @@ class AddCustomerMatchUserList
         // Issues a search stream request.
         /** @var GoogleAdsServerStreamDecorator $stream */
         $stream = $googleAdsServiceClient->searchStream($customerId, $query);
+        // [END add_customer_match_user_list_5]
 
         // Prints out some information about the user list.
         /** @var GoogleAdsRow $googleAdsRow */
