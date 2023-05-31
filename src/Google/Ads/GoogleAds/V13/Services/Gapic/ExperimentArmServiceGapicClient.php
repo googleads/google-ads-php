@@ -80,6 +80,10 @@ class ExperimentArmServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $campaignNameTemplate;
+
+    private static $experimentNameTemplate;
+
     private static $experimentArmNameTemplate;
 
     private static $pathTemplateMap;
@@ -103,6 +107,24 @@ class ExperimentArmServiceGapicClient
         ];
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
+    private static function getExperimentNameTemplate()
+    {
+        if (self::$experimentNameTemplate == null) {
+            self::$experimentNameTemplate = new PathTemplate('customers/{customer_id}/experiments/{trial_id}');
+        }
+
+        return self::$experimentNameTemplate;
+    }
+
     private static function getExperimentArmNameTemplate()
     {
         if (self::$experimentArmNameTemplate == null) {
@@ -116,11 +138,47 @@ class ExperimentArmServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
+                'experiment' => self::getExperimentNameTemplate(),
                 'experimentArm' => self::getExperimentArmNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a experiment
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $trialId
+     *
+     * @return string The formatted experiment resource.
+     */
+    public static function experimentName($customerId, $trialId)
+    {
+        return self::getExperimentNameTemplate()->render([
+            'customer_id' => $customerId,
+            'trial_id' => $trialId,
+        ]);
     }
 
     /**
@@ -146,6 +204,8 @@ class ExperimentArmServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
+     * - experiment: customers/{customer_id}/experiments/{trial_id}
      * - experimentArm: customers/{customer_id}/experimentArms/{trial_id}~{trial_arm_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

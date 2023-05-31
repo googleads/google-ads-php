@@ -80,7 +80,15 @@ class ExtensionFeedItemServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $adGroupNameTemplate;
+
+    private static $assetNameTemplate;
+
+    private static $campaignNameTemplate;
+
     private static $extensionFeedItemNameTemplate;
+
+    private static $geoTargetConstantNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +111,33 @@ class ExtensionFeedItemServiceGapicClient
         ];
     }
 
+    private static function getAdGroupNameTemplate()
+    {
+        if (self::$adGroupNameTemplate == null) {
+            self::$adGroupNameTemplate = new PathTemplate('customers/{customer_id}/adGroups/{ad_group_id}');
+        }
+
+        return self::$adGroupNameTemplate;
+    }
+
+    private static function getAssetNameTemplate()
+    {
+        if (self::$assetNameTemplate == null) {
+            self::$assetNameTemplate = new PathTemplate('customers/{customer_id}/assets/{asset_id}');
+        }
+
+        return self::$assetNameTemplate;
+    }
+
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getExtensionFeedItemNameTemplate()
     {
         if (self::$extensionFeedItemNameTemplate == null) {
@@ -112,15 +147,79 @@ class ExtensionFeedItemServiceGapicClient
         return self::$extensionFeedItemNameTemplate;
     }
 
+    private static function getGeoTargetConstantNameTemplate()
+    {
+        if (self::$geoTargetConstantNameTemplate == null) {
+            self::$geoTargetConstantNameTemplate = new PathTemplate('geoTargetConstants/{criterion_id}');
+        }
+
+        return self::$geoTargetConstantNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'adGroup' => self::getAdGroupNameTemplate(),
+                'asset' => self::getAssetNameTemplate(),
+                'campaign' => self::getCampaignNameTemplate(),
                 'extensionFeedItem' => self::getExtensionFeedItemNameTemplate(),
+                'geoTargetConstant' => self::getGeoTargetConstantNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a ad_group
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     *
+     * @return string The formatted ad_group resource.
+     */
+    public static function adGroupName($customerId, $adGroupId)
+    {
+        return self::getAdGroupNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetId
+     *
+     * @return string The formatted asset resource.
+     */
+    public static function assetName($customerId, $assetId)
+    {
+        return self::getAssetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'asset_id' => $assetId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
     }
 
     /**
@@ -141,10 +240,29 @@ class ExtensionFeedItemServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * geo_target_constant resource.
+     *
+     * @param string $criterionId
+     *
+     * @return string The formatted geo_target_constant resource.
+     */
+    public static function geoTargetConstantName($criterionId)
+    {
+        return self::getGeoTargetConstantNameTemplate()->render([
+            'criterion_id' => $criterionId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - adGroup: customers/{customer_id}/adGroups/{ad_group_id}
+     * - asset: customers/{customer_id}/assets/{asset_id}
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - extensionFeedItem: customers/{customer_id}/extensionFeedItems/{feed_item_id}
+     * - geoTargetConstant: geoTargetConstants/{criterion_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

@@ -83,6 +83,12 @@ class RecommendationServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $adNameTemplate;
+
+    private static $assetNameTemplate;
+
+    private static $conversionActionNameTemplate;
+
     private static $recommendationNameTemplate;
 
     private static $pathTemplateMap;
@@ -106,6 +112,33 @@ class RecommendationServiceGapicClient
         ];
     }
 
+    private static function getAdNameTemplate()
+    {
+        if (self::$adNameTemplate == null) {
+            self::$adNameTemplate = new PathTemplate('customers/{customer_id}/ads/{ad_id}');
+        }
+
+        return self::$adNameTemplate;
+    }
+
+    private static function getAssetNameTemplate()
+    {
+        if (self::$assetNameTemplate == null) {
+            self::$assetNameTemplate = new PathTemplate('customers/{customer_id}/assets/{asset_id}');
+        }
+
+        return self::$assetNameTemplate;
+    }
+
+    private static function getConversionActionNameTemplate()
+    {
+        if (self::$conversionActionNameTemplate == null) {
+            self::$conversionActionNameTemplate = new PathTemplate('customers/{customer_id}/conversionActions/{conversion_action_id}');
+        }
+
+        return self::$conversionActionNameTemplate;
+    }
+
     private static function getRecommendationNameTemplate()
     {
         if (self::$recommendationNameTemplate == null) {
@@ -119,11 +152,64 @@ class RecommendationServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'ad' => self::getAdNameTemplate(),
+                'asset' => self::getAssetNameTemplate(),
+                'conversionAction' => self::getConversionActionNameTemplate(),
                 'recommendation' => self::getRecommendationNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a ad resource.
+     *
+     * @param string $customerId
+     * @param string $adId
+     *
+     * @return string The formatted ad resource.
+     */
+    public static function adName($customerId, $adId)
+    {
+        return self::getAdNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_id' => $adId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetId
+     *
+     * @return string The formatted asset resource.
+     */
+    public static function assetName($customerId, $assetId)
+    {
+        return self::getAssetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'asset_id' => $assetId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * conversion_action resource.
+     *
+     * @param string $customerId
+     * @param string $conversionActionId
+     *
+     * @return string The formatted conversion_action resource.
+     */
+    public static function conversionActionName($customerId, $conversionActionId)
+    {
+        return self::getConversionActionNameTemplate()->render([
+            'customer_id' => $customerId,
+            'conversion_action_id' => $conversionActionId,
+        ]);
     }
 
     /**
@@ -147,6 +233,9 @@ class RecommendationServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - ad: customers/{customer_id}/ads/{ad_id}
+     * - asset: customers/{customer_id}/assets/{asset_id}
+     * - conversionAction: customers/{customer_id}/conversionActions/{conversion_action_id}
      * - recommendation: customers/{customer_id}/recommendations/{recommendation_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

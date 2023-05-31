@@ -82,6 +82,14 @@ class ConversionValueRuleServiceGapicClient
 
     private static $conversionValueRuleNameTemplate;
 
+    private static $customerNameTemplate;
+
+    private static $geoTargetConstantNameTemplate;
+
+    private static $userInterestNameTemplate;
+
+    private static $userListNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -112,11 +120,51 @@ class ConversionValueRuleServiceGapicClient
         return self::$conversionValueRuleNameTemplate;
     }
 
+    private static function getCustomerNameTemplate()
+    {
+        if (self::$customerNameTemplate == null) {
+            self::$customerNameTemplate = new PathTemplate('customers/{customer_id}');
+        }
+
+        return self::$customerNameTemplate;
+    }
+
+    private static function getGeoTargetConstantNameTemplate()
+    {
+        if (self::$geoTargetConstantNameTemplate == null) {
+            self::$geoTargetConstantNameTemplate = new PathTemplate('geoTargetConstants/{criterion_id}');
+        }
+
+        return self::$geoTargetConstantNameTemplate;
+    }
+
+    private static function getUserInterestNameTemplate()
+    {
+        if (self::$userInterestNameTemplate == null) {
+            self::$userInterestNameTemplate = new PathTemplate('customers/{customer_id}/userInterests/{user_interest_id}');
+        }
+
+        return self::$userInterestNameTemplate;
+    }
+
+    private static function getUserListNameTemplate()
+    {
+        if (self::$userListNameTemplate == null) {
+            self::$userListNameTemplate = new PathTemplate('customers/{customer_id}/userLists/{user_list_id}');
+        }
+
+        return self::$userListNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'conversionValueRule' => self::getConversionValueRuleNameTemplate(),
+                'customer' => self::getCustomerNameTemplate(),
+                'geoTargetConstant' => self::getGeoTargetConstantNameTemplate(),
+                'userInterest' => self::getUserInterestNameTemplate(),
+                'userList' => self::getUserListNameTemplate(),
             ];
         }
 
@@ -141,10 +189,78 @@ class ConversionValueRuleServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a customer
+     * resource.
+     *
+     * @param string $customerId
+     *
+     * @return string The formatted customer resource.
+     */
+    public static function customerName($customerId)
+    {
+        return self::getCustomerNameTemplate()->render([
+            'customer_id' => $customerId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * geo_target_constant resource.
+     *
+     * @param string $criterionId
+     *
+     * @return string The formatted geo_target_constant resource.
+     */
+    public static function geoTargetConstantName($criterionId)
+    {
+        return self::getGeoTargetConstantNameTemplate()->render([
+            'criterion_id' => $criterionId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * user_interest resource.
+     *
+     * @param string $customerId
+     * @param string $userInterestId
+     *
+     * @return string The formatted user_interest resource.
+     */
+    public static function userInterestName($customerId, $userInterestId)
+    {
+        return self::getUserInterestNameTemplate()->render([
+            'customer_id' => $customerId,
+            'user_interest_id' => $userInterestId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a user_list
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $userListId
+     *
+     * @return string The formatted user_list resource.
+     */
+    public static function userListName($customerId, $userListId)
+    {
+        return self::getUserListNameTemplate()->render([
+            'customer_id' => $customerId,
+            'user_list_id' => $userListId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - conversionValueRule: customers/{customer_id}/conversionValueRules/{conversion_value_rule_id}
+     * - customer: customers/{customer_id}
+     * - geoTargetConstant: geoTargetConstants/{criterion_id}
+     * - userInterest: customers/{customer_id}/userInterests/{user_interest_id}
+     * - userList: customers/{customer_id}/userLists/{user_list_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

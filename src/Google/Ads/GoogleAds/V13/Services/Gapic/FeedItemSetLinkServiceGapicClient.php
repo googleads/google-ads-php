@@ -80,6 +80,10 @@ class FeedItemSetLinkServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $feedItemNameTemplate;
+
+    private static $feedItemSetNameTemplate;
+
     private static $feedItemSetLinkNameTemplate;
 
     private static $pathTemplateMap;
@@ -103,6 +107,24 @@ class FeedItemSetLinkServiceGapicClient
         ];
     }
 
+    private static function getFeedItemNameTemplate()
+    {
+        if (self::$feedItemNameTemplate == null) {
+            self::$feedItemNameTemplate = new PathTemplate('customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}');
+        }
+
+        return self::$feedItemNameTemplate;
+    }
+
+    private static function getFeedItemSetNameTemplate()
+    {
+        if (self::$feedItemSetNameTemplate == null) {
+            self::$feedItemSetNameTemplate = new PathTemplate('customers/{customer_id}/feedItemSets/{feed_id}~{feed_item_set_id}');
+        }
+
+        return self::$feedItemSetNameTemplate;
+    }
+
     private static function getFeedItemSetLinkNameTemplate()
     {
         if (self::$feedItemSetLinkNameTemplate == null) {
@@ -116,11 +138,51 @@ class FeedItemSetLinkServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'feedItem' => self::getFeedItemNameTemplate(),
+                'feedItemSet' => self::getFeedItemSetNameTemplate(),
                 'feedItemSetLink' => self::getFeedItemSetLinkNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a feed_item
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $feedId
+     * @param string $feedItemId
+     *
+     * @return string The formatted feed_item resource.
+     */
+    public static function feedItemName($customerId, $feedId, $feedItemId)
+    {
+        return self::getFeedItemNameTemplate()->render([
+            'customer_id' => $customerId,
+            'feed_id' => $feedId,
+            'feed_item_id' => $feedItemId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * feed_item_set resource.
+     *
+     * @param string $customerId
+     * @param string $feedId
+     * @param string $feedItemSetId
+     *
+     * @return string The formatted feed_item_set resource.
+     */
+    public static function feedItemSetName($customerId, $feedId, $feedItemSetId)
+    {
+        return self::getFeedItemSetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'feed_id' => $feedId,
+            'feed_item_set_id' => $feedItemSetId,
+        ]);
     }
 
     /**
@@ -148,6 +210,8 @@ class FeedItemSetLinkServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - feedItem: customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}
+     * - feedItemSet: customers/{customer_id}/feedItemSets/{feed_id}~{feed_item_set_id}
      * - feedItemSetLink: customers/{customer_id}/feedItemSetLinks/{feed_id}~{feed_item_set_id}~{feed_item_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

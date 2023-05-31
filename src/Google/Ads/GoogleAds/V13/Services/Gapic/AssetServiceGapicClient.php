@@ -30,6 +30,7 @@ use Google\Ads\GoogleAds\V13\Services\MutateAssetsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -54,6 +55,11 @@ use Google\Auth\FetchAuthTokenInterface;
  *     $assetServiceClient->close();
  * }
  * ```
+ *
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assist with these names, this class includes a format method for each type of
+ * name, and additionally a parseName method to extract the individual identifiers
+ * contained within formatted names that are returned by the API.
  */
 class AssetServiceGapicClient
 {
@@ -76,6 +82,12 @@ class AssetServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $assetNameTemplate;
+
+    private static $conversionActionNameTemplate;
+
+    private static $pathTemplateMap;
+
     private static function getClientDefaults()
     {
         return [
@@ -93,6 +105,112 @@ class AssetServiceGapicClient
                 ],
             ],
         ];
+    }
+
+    private static function getAssetNameTemplate()
+    {
+        if (self::$assetNameTemplate == null) {
+            self::$assetNameTemplate = new PathTemplate('customers/{customer_id}/assets/{asset_id}');
+        }
+
+        return self::$assetNameTemplate;
+    }
+
+    private static function getConversionActionNameTemplate()
+    {
+        if (self::$conversionActionNameTemplate == null) {
+            self::$conversionActionNameTemplate = new PathTemplate('customers/{customer_id}/conversionActions/{conversion_action_id}');
+        }
+
+        return self::$conversionActionNameTemplate;
+    }
+
+    private static function getPathTemplateMap()
+    {
+        if (self::$pathTemplateMap == null) {
+            self::$pathTemplateMap = [
+                'asset' => self::getAssetNameTemplate(),
+                'conversionAction' => self::getConversionActionNameTemplate(),
+            ];
+        }
+
+        return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetId
+     *
+     * @return string The formatted asset resource.
+     */
+    public static function assetName($customerId, $assetId)
+    {
+        return self::getAssetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'asset_id' => $assetId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * conversion_action resource.
+     *
+     * @param string $customerId
+     * @param string $conversionActionId
+     *
+     * @return string The formatted conversion_action resource.
+     */
+    public static function conversionActionName($customerId, $conversionActionId)
+    {
+        return self::getConversionActionNameTemplate()->render([
+            'customer_id' => $customerId,
+            'conversion_action_id' => $conversionActionId,
+        ]);
+    }
+
+    /**
+     * Parses a formatted name string and returns an associative array of the components in the name.
+     * The following name formats are supported:
+     * Template: Pattern
+     * - asset: customers/{customer_id}/assets/{asset_id}
+     * - conversionAction: customers/{customer_id}/conversionActions/{conversion_action_id}
+     *
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
+     *
+     * @param string $formattedName The formatted name string
+     * @param string $template      Optional name of template to match
+     *
+     * @return array An associative array from name component IDs to component values.
+     *
+     * @throws ValidationException If $formattedName could not be matched.
+     */
+    public static function parseName($formattedName, $template = null)
+    {
+        $templateMap = self::getPathTemplateMap();
+        if ($template) {
+            if (!isset($templateMap[$template])) {
+                throw new ValidationException("Template name $template does not exist");
+            }
+
+            return $templateMap[$template]->match($formattedName);
+        }
+
+        foreach ($templateMap as $templateName => $pathTemplate) {
+            try {
+                return $pathTemplate->match($formattedName);
+            } catch (ValidationException $ex) {
+                // Swallow the exception to continue trying other path templates
+            }
+        }
+
+        throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
     /**

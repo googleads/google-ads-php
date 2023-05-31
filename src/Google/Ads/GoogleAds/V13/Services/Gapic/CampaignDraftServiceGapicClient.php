@@ -97,6 +97,8 @@ class CampaignDraftServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $campaignNameTemplate;
+
     private static $campaignDraftNameTemplate;
 
     private static $pathTemplateMap;
@@ -122,6 +124,15 @@ class CampaignDraftServiceGapicClient
         ];
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getCampaignDraftNameTemplate()
     {
         if (self::$campaignDraftNameTemplate == null) {
@@ -135,11 +146,29 @@ class CampaignDraftServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
                 'campaignDraft' => self::getCampaignDraftNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
     }
 
     /**
@@ -165,6 +194,7 @@ class CampaignDraftServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - campaignDraft: customers/{customer_id}/campaignDrafts/{base_campaign_id}~{draft_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

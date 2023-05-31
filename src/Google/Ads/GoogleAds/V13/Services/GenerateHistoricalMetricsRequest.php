@@ -37,6 +37,20 @@ class GenerateHistoricalMetricsRequest extends \Google\Protobuf\Internal\Message
     protected $historical_metrics_options = null;
 
     /**
+     * @param string $keywordPlan Required. The resource name of the keyword plan of which historical metrics
+     *                            are requested.
+     *
+     * @return \Google\Ads\GoogleAds\V13\Services\GenerateHistoricalMetricsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $keywordPlan): self
+    {
+        return (new self())
+            ->setKeywordPlan($keywordPlan);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

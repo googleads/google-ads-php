@@ -80,7 +80,13 @@ class KeywordPlanCampaignServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $geoTargetConstantNameTemplate;
+
+    private static $keywordPlanNameTemplate;
+
     private static $keywordPlanCampaignNameTemplate;
+
+    private static $languageConstantNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +109,24 @@ class KeywordPlanCampaignServiceGapicClient
         ];
     }
 
+    private static function getGeoTargetConstantNameTemplate()
+    {
+        if (self::$geoTargetConstantNameTemplate == null) {
+            self::$geoTargetConstantNameTemplate = new PathTemplate('geoTargetConstants/{criterion_id}');
+        }
+
+        return self::$geoTargetConstantNameTemplate;
+    }
+
+    private static function getKeywordPlanNameTemplate()
+    {
+        if (self::$keywordPlanNameTemplate == null) {
+            self::$keywordPlanNameTemplate = new PathTemplate('customers/{customer_id}/keywordPlans/{keyword_plan_id}');
+        }
+
+        return self::$keywordPlanNameTemplate;
+    }
+
     private static function getKeywordPlanCampaignNameTemplate()
     {
         if (self::$keywordPlanCampaignNameTemplate == null) {
@@ -112,15 +136,59 @@ class KeywordPlanCampaignServiceGapicClient
         return self::$keywordPlanCampaignNameTemplate;
     }
 
+    private static function getLanguageConstantNameTemplate()
+    {
+        if (self::$languageConstantNameTemplate == null) {
+            self::$languageConstantNameTemplate = new PathTemplate('languageConstants/{criterion_id}');
+        }
+
+        return self::$languageConstantNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'geoTargetConstant' => self::getGeoTargetConstantNameTemplate(),
+                'keywordPlan' => self::getKeywordPlanNameTemplate(),
                 'keywordPlanCampaign' => self::getKeywordPlanCampaignNameTemplate(),
+                'languageConstant' => self::getLanguageConstantNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * geo_target_constant resource.
+     *
+     * @param string $criterionId
+     *
+     * @return string The formatted geo_target_constant resource.
+     */
+    public static function geoTargetConstantName($criterionId)
+    {
+        return self::getGeoTargetConstantNameTemplate()->render([
+            'criterion_id' => $criterionId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a keyword_plan
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $keywordPlanId
+     *
+     * @return string The formatted keyword_plan resource.
+     */
+    public static function keywordPlanName($customerId, $keywordPlanId)
+    {
+        return self::getKeywordPlanNameTemplate()->render([
+            'customer_id' => $customerId,
+            'keyword_plan_id' => $keywordPlanId,
+        ]);
     }
 
     /**
@@ -141,10 +209,28 @@ class KeywordPlanCampaignServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * language_constant resource.
+     *
+     * @param string $criterionId
+     *
+     * @return string The formatted language_constant resource.
+     */
+    public static function languageConstantName($criterionId)
+    {
+        return self::getLanguageConstantNameTemplate()->render([
+            'criterion_id' => $criterionId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - geoTargetConstant: geoTargetConstants/{criterion_id}
+     * - keywordPlan: customers/{customer_id}/keywordPlans/{keyword_plan_id}
      * - keywordPlanCampaign: customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}
+     * - languageConstant: languageConstants/{criterion_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

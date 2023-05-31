@@ -53,6 +53,25 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
     private $location_country_filters;
 
     /**
+     * @param string $customerId Required. The ID of the customer.
+     * @param int[]  $dimensions Required. The types of attributes to be returned.
+     *                           For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V13\Enums\AudienceInsightsDimensionEnum\AudienceInsightsDimension}
+     * @param string $queryText  Required. A free text query.  Attributes matching or related to this string
+     *                           will be returned.
+     *
+     * @return \Google\Ads\GoogleAds\V13\Services\ListAudienceInsightsAttributesRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $dimensions, string $queryText): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setDimensions($dimensions)
+            ->setQueryText($queryText);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

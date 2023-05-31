@@ -55,6 +55,23 @@ class MutateSmartCampaignSettingsRequest extends \Google\Protobuf\Internal\Messa
     protected $response_content_type = 0;
 
     /**
+     * @param string                                                             $customerId Required. The ID of the customer whose Smart campaign settings are being
+     *                                                                                       modified.
+     * @param \Google\Ads\GoogleAds\V13\Services\SmartCampaignSettingOperation[] $operations Required. The list of operations to perform on individual Smart campaign
+     *                                                                                       settings.
+     *
+     * @return \Google\Ads\GoogleAds\V13\Services\MutateSmartCampaignSettingsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

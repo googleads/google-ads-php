@@ -86,6 +86,8 @@ class AccountLinkServiceGapicClient
 
     private static $accountLinkNameTemplate;
 
+    private static $customerNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -116,11 +118,21 @@ class AccountLinkServiceGapicClient
         return self::$accountLinkNameTemplate;
     }
 
+    private static function getCustomerNameTemplate()
+    {
+        if (self::$customerNameTemplate == null) {
+            self::$customerNameTemplate = new PathTemplate('customers/{customer_id}');
+        }
+
+        return self::$customerNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'accountLink' => self::getAccountLinkNameTemplate(),
+                'customer' => self::getCustomerNameTemplate(),
             ];
         }
 
@@ -145,10 +157,26 @@ class AccountLinkServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a customer
+     * resource.
+     *
+     * @param string $customerId
+     *
+     * @return string The formatted customer resource.
+     */
+    public static function customerName($customerId)
+    {
+        return self::getCustomerNameTemplate()->render([
+            'customer_id' => $customerId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - accountLink: customers/{customer_id}/accountLinks/{account_link_id}
+     * - customer: customers/{customer_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

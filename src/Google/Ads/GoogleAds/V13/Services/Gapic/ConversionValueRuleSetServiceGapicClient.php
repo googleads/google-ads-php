@@ -80,7 +80,13 @@ class ConversionValueRuleSetServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $campaignNameTemplate;
+
+    private static $conversionValueRuleNameTemplate;
+
     private static $conversionValueRuleSetNameTemplate;
+
+    private static $customerNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +109,24 @@ class ConversionValueRuleSetServiceGapicClient
         ];
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
+    private static function getConversionValueRuleNameTemplate()
+    {
+        if (self::$conversionValueRuleNameTemplate == null) {
+            self::$conversionValueRuleNameTemplate = new PathTemplate('customers/{customer_id}/conversionValueRules/{conversion_value_rule_id}');
+        }
+
+        return self::$conversionValueRuleNameTemplate;
+    }
+
     private static function getConversionValueRuleSetNameTemplate()
     {
         if (self::$conversionValueRuleSetNameTemplate == null) {
@@ -112,15 +136,61 @@ class ConversionValueRuleSetServiceGapicClient
         return self::$conversionValueRuleSetNameTemplate;
     }
 
+    private static function getCustomerNameTemplate()
+    {
+        if (self::$customerNameTemplate == null) {
+            self::$customerNameTemplate = new PathTemplate('customers/{customer_id}');
+        }
+
+        return self::$customerNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
+                'conversionValueRule' => self::getConversionValueRuleNameTemplate(),
                 'conversionValueRuleSet' => self::getConversionValueRuleSetNameTemplate(),
+                'customer' => self::getCustomerNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * conversion_value_rule resource.
+     *
+     * @param string $customerId
+     * @param string $conversionValueRuleId
+     *
+     * @return string The formatted conversion_value_rule resource.
+     */
+    public static function conversionValueRuleName($customerId, $conversionValueRuleId)
+    {
+        return self::getConversionValueRuleNameTemplate()->render([
+            'customer_id' => $customerId,
+            'conversion_value_rule_id' => $conversionValueRuleId,
+        ]);
     }
 
     /**
@@ -141,10 +211,28 @@ class ConversionValueRuleSetServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a customer
+     * resource.
+     *
+     * @param string $customerId
+     *
+     * @return string The formatted customer resource.
+     */
+    public static function customerName($customerId)
+    {
+        return self::getCustomerNameTemplate()->render([
+            'customer_id' => $customerId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
+     * - conversionValueRule: customers/{customer_id}/conversionValueRules/{conversion_value_rule_id}
      * - conversionValueRuleSet: customers/{customer_id}/conversionValueRuleSets/{conversion_value_rule_set_id}
+     * - customer: customers/{customer_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

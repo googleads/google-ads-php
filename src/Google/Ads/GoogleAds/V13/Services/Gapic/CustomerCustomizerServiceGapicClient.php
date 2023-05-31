@@ -82,6 +82,8 @@ class CustomerCustomizerServiceGapicClient
 
     private static $customerCustomizerNameTemplate;
 
+    private static $customizerAttributeNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -112,11 +114,21 @@ class CustomerCustomizerServiceGapicClient
         return self::$customerCustomizerNameTemplate;
     }
 
+    private static function getCustomizerAttributeNameTemplate()
+    {
+        if (self::$customizerAttributeNameTemplate == null) {
+            self::$customizerAttributeNameTemplate = new PathTemplate('customers/{customer_id}/customizerAttributes/{customizer_attribute_id}');
+        }
+
+        return self::$customizerAttributeNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'customerCustomizer' => self::getCustomerCustomizerNameTemplate(),
+                'customizerAttribute' => self::getCustomizerAttributeNameTemplate(),
             ];
         }
 
@@ -141,10 +153,28 @@ class CustomerCustomizerServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * customizer_attribute resource.
+     *
+     * @param string $customerId
+     * @param string $customizerAttributeId
+     *
+     * @return string The formatted customizer_attribute resource.
+     */
+    public static function customizerAttributeName($customerId, $customizerAttributeId)
+    {
+        return self::getCustomizerAttributeNameTemplate()->render([
+            'customer_id' => $customerId,
+            'customizer_attribute_id' => $customizerAttributeId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - customerCustomizer: customers/{customer_id}/customerCustomizers/{customizer_attribute_id}
+     * - customizerAttribute: customers/{customer_id}/customizerAttributes/{customizer_attribute_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

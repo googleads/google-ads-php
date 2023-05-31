@@ -80,7 +80,11 @@ class CampaignSharedSetServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $campaignNameTemplate;
+
     private static $campaignSharedSetNameTemplate;
+
+    private static $sharedSetNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +107,15 @@ class CampaignSharedSetServiceGapicClient
         ];
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getCampaignSharedSetNameTemplate()
     {
         if (self::$campaignSharedSetNameTemplate == null) {
@@ -112,15 +125,43 @@ class CampaignSharedSetServiceGapicClient
         return self::$campaignSharedSetNameTemplate;
     }
 
+    private static function getSharedSetNameTemplate()
+    {
+        if (self::$sharedSetNameTemplate == null) {
+            self::$sharedSetNameTemplate = new PathTemplate('customers/{customer_id}/sharedSets/{shared_set_id}');
+        }
+
+        return self::$sharedSetNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
                 'campaignSharedSet' => self::getCampaignSharedSetNameTemplate(),
+                'sharedSet' => self::getSharedSetNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
     }
 
     /**
@@ -143,10 +184,29 @@ class CampaignSharedSetServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a shared_set
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $sharedSetId
+     *
+     * @return string The formatted shared_set resource.
+     */
+    public static function sharedSetName($customerId, $sharedSetId)
+    {
+        return self::getSharedSetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'shared_set_id' => $sharedSetId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - campaignSharedSet: customers/{customer_id}/campaignSharedSets/{campaign_id}~{shared_set_id}
+     * - sharedSet: customers/{customer_id}/sharedSets/{shared_set_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

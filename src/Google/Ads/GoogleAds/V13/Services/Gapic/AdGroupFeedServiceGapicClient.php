@@ -80,7 +80,11 @@ class AdGroupFeedServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $adGroupNameTemplate;
+
     private static $adGroupFeedNameTemplate;
+
+    private static $feedNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +107,15 @@ class AdGroupFeedServiceGapicClient
         ];
     }
 
+    private static function getAdGroupNameTemplate()
+    {
+        if (self::$adGroupNameTemplate == null) {
+            self::$adGroupNameTemplate = new PathTemplate('customers/{customer_id}/adGroups/{ad_group_id}');
+        }
+
+        return self::$adGroupNameTemplate;
+    }
+
     private static function getAdGroupFeedNameTemplate()
     {
         if (self::$adGroupFeedNameTemplate == null) {
@@ -112,15 +125,43 @@ class AdGroupFeedServiceGapicClient
         return self::$adGroupFeedNameTemplate;
     }
 
+    private static function getFeedNameTemplate()
+    {
+        if (self::$feedNameTemplate == null) {
+            self::$feedNameTemplate = new PathTemplate('customers/{customer_id}/feeds/{feed_id}');
+        }
+
+        return self::$feedNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'adGroup' => self::getAdGroupNameTemplate(),
                 'adGroupFeed' => self::getAdGroupFeedNameTemplate(),
+                'feed' => self::getFeedNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a ad_group
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     *
+     * @return string The formatted ad_group resource.
+     */
+    public static function adGroupName($customerId, $adGroupId)
+    {
+        return self::getAdGroupNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+        ]);
     }
 
     /**
@@ -143,10 +184,29 @@ class AdGroupFeedServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a feed
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $feedId
+     *
+     * @return string The formatted feed resource.
+     */
+    public static function feedName($customerId, $feedId)
+    {
+        return self::getFeedNameTemplate()->render([
+            'customer_id' => $customerId,
+            'feed_id' => $feedId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - adGroup: customers/{customer_id}/adGroups/{ad_group_id}
      * - adGroupFeed: customers/{customer_id}/adGroupFeeds/{ad_group_id}~{feed_id}
+     * - feed: customers/{customer_id}/feeds/{feed_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

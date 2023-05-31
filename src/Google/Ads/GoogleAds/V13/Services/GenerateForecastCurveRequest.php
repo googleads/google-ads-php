@@ -24,6 +24,19 @@ class GenerateForecastCurveRequest extends \Google\Protobuf\Internal\Message
     protected $keyword_plan = '';
 
     /**
+     * @param string $keywordPlan Required. The resource name of the keyword plan to be forecasted.
+     *
+     * @return \Google\Ads\GoogleAds\V13\Services\GenerateForecastCurveRequest
+     *
+     * @experimental
+     */
+    public static function build(string $keywordPlan): self
+    {
+        return (new self())
+            ->setKeywordPlan($keywordPlan);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

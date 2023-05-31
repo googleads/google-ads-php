@@ -30,6 +30,21 @@ class MutateCustomerUserAccessInvitationRequest extends \Google\Protobuf\Interna
     protected $operation = null;
 
     /**
+     * @param string                                                                   $customerId Required. The ID of the customer whose access invitation is being modified.
+     * @param \Google\Ads\GoogleAds\V13\Services\CustomerUserAccessInvitationOperation $operation  Required. The operation to perform on the access invitation
+     *
+     * @return \Google\Ads\GoogleAds\V13\Services\MutateCustomerUserAccessInvitationRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, \Google\Ads\GoogleAds\V13\Services\CustomerUserAccessInvitationOperation $operation): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperation($operation);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

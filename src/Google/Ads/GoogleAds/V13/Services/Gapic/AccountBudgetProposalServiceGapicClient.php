@@ -88,7 +88,11 @@ class AccountBudgetProposalServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $accountBudgetNameTemplate;
+
     private static $accountBudgetProposalNameTemplate;
+
+    private static $billingSetupNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -111,6 +115,15 @@ class AccountBudgetProposalServiceGapicClient
         ];
     }
 
+    private static function getAccountBudgetNameTemplate()
+    {
+        if (self::$accountBudgetNameTemplate == null) {
+            self::$accountBudgetNameTemplate = new PathTemplate('customers/{customer_id}/accountBudgets/{account_budget_id}');
+        }
+
+        return self::$accountBudgetNameTemplate;
+    }
+
     private static function getAccountBudgetProposalNameTemplate()
     {
         if (self::$accountBudgetProposalNameTemplate == null) {
@@ -120,15 +133,43 @@ class AccountBudgetProposalServiceGapicClient
         return self::$accountBudgetProposalNameTemplate;
     }
 
+    private static function getBillingSetupNameTemplate()
+    {
+        if (self::$billingSetupNameTemplate == null) {
+            self::$billingSetupNameTemplate = new PathTemplate('customers/{customer_id}/billingSetups/{billing_setup_id}');
+        }
+
+        return self::$billingSetupNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'accountBudget' => self::getAccountBudgetNameTemplate(),
                 'accountBudgetProposal' => self::getAccountBudgetProposalNameTemplate(),
+                'billingSetup' => self::getBillingSetupNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * account_budget resource.
+     *
+     * @param string $customerId
+     * @param string $accountBudgetId
+     *
+     * @return string The formatted account_budget resource.
+     */
+    public static function accountBudgetName($customerId, $accountBudgetId)
+    {
+        return self::getAccountBudgetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'account_budget_id' => $accountBudgetId,
+        ]);
     }
 
     /**
@@ -149,10 +190,29 @@ class AccountBudgetProposalServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * billing_setup resource.
+     *
+     * @param string $customerId
+     * @param string $billingSetupId
+     *
+     * @return string The formatted billing_setup resource.
+     */
+    public static function billingSetupName($customerId, $billingSetupId)
+    {
+        return self::getBillingSetupNameTemplate()->render([
+            'customer_id' => $customerId,
+            'billing_setup_id' => $billingSetupId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - accountBudget: customers/{customer_id}/accountBudgets/{account_budget_id}
      * - accountBudgetProposal: customers/{customer_id}/accountBudgetProposals/{account_budget_proposal_id}
+     * - billingSetup: customers/{customer_id}/billingSetups/{billing_setup_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is
