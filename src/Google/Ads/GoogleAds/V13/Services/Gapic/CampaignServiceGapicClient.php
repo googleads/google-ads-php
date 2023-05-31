@@ -80,7 +80,23 @@ class CampaignServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $accessibleBiddingStrategyNameTemplate;
+
+    private static $assetSetNameTemplate;
+
+    private static $biddingStrategyNameTemplate;
+
     private static $campaignNameTemplate;
+
+    private static $campaignBudgetNameTemplate;
+
+    private static $campaignGroupNameTemplate;
+
+    private static $campaignLabelNameTemplate;
+
+    private static $conversionActionNameTemplate;
+
+    private static $feedNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +119,33 @@ class CampaignServiceGapicClient
         ];
     }
 
+    private static function getAccessibleBiddingStrategyNameTemplate()
+    {
+        if (self::$accessibleBiddingStrategyNameTemplate == null) {
+            self::$accessibleBiddingStrategyNameTemplate = new PathTemplate('customers/{customer_id}/accessibleBiddingStrategies/{bidding_strategy_id}');
+        }
+
+        return self::$accessibleBiddingStrategyNameTemplate;
+    }
+
+    private static function getAssetSetNameTemplate()
+    {
+        if (self::$assetSetNameTemplate == null) {
+            self::$assetSetNameTemplate = new PathTemplate('customers/{customer_id}/assetSets/{asset_set_id}');
+        }
+
+        return self::$assetSetNameTemplate;
+    }
+
+    private static function getBiddingStrategyNameTemplate()
+    {
+        if (self::$biddingStrategyNameTemplate == null) {
+            self::$biddingStrategyNameTemplate = new PathTemplate('customers/{customer_id}/biddingStrategies/{bidding_strategy_id}');
+        }
+
+        return self::$biddingStrategyNameTemplate;
+    }
+
     private static function getCampaignNameTemplate()
     {
         if (self::$campaignNameTemplate == null) {
@@ -112,15 +155,119 @@ class CampaignServiceGapicClient
         return self::$campaignNameTemplate;
     }
 
+    private static function getCampaignBudgetNameTemplate()
+    {
+        if (self::$campaignBudgetNameTemplate == null) {
+            self::$campaignBudgetNameTemplate = new PathTemplate('customers/{customer_id}/campaignBudgets/{campaign_budget_id}');
+        }
+
+        return self::$campaignBudgetNameTemplate;
+    }
+
+    private static function getCampaignGroupNameTemplate()
+    {
+        if (self::$campaignGroupNameTemplate == null) {
+            self::$campaignGroupNameTemplate = new PathTemplate('customers/{customer_id}/campaignGroups/{campaign_group_id}');
+        }
+
+        return self::$campaignGroupNameTemplate;
+    }
+
+    private static function getCampaignLabelNameTemplate()
+    {
+        if (self::$campaignLabelNameTemplate == null) {
+            self::$campaignLabelNameTemplate = new PathTemplate('customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}');
+        }
+
+        return self::$campaignLabelNameTemplate;
+    }
+
+    private static function getConversionActionNameTemplate()
+    {
+        if (self::$conversionActionNameTemplate == null) {
+            self::$conversionActionNameTemplate = new PathTemplate('customers/{customer_id}/conversionActions/{conversion_action_id}');
+        }
+
+        return self::$conversionActionNameTemplate;
+    }
+
+    private static function getFeedNameTemplate()
+    {
+        if (self::$feedNameTemplate == null) {
+            self::$feedNameTemplate = new PathTemplate('customers/{customer_id}/feeds/{feed_id}');
+        }
+
+        return self::$feedNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'accessibleBiddingStrategy' => self::getAccessibleBiddingStrategyNameTemplate(),
+                'assetSet' => self::getAssetSetNameTemplate(),
+                'biddingStrategy' => self::getBiddingStrategyNameTemplate(),
                 'campaign' => self::getCampaignNameTemplate(),
+                'campaignBudget' => self::getCampaignBudgetNameTemplate(),
+                'campaignGroup' => self::getCampaignGroupNameTemplate(),
+                'campaignLabel' => self::getCampaignLabelNameTemplate(),
+                'conversionAction' => self::getConversionActionNameTemplate(),
+                'feed' => self::getFeedNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * accessible_bidding_strategy resource.
+     *
+     * @param string $customerId
+     * @param string $biddingStrategyId
+     *
+     * @return string The formatted accessible_bidding_strategy resource.
+     */
+    public static function accessibleBiddingStrategyName($customerId, $biddingStrategyId)
+    {
+        return self::getAccessibleBiddingStrategyNameTemplate()->render([
+            'customer_id' => $customerId,
+            'bidding_strategy_id' => $biddingStrategyId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset_set
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetSetId
+     *
+     * @return string The formatted asset_set resource.
+     */
+    public static function assetSetName($customerId, $assetSetId)
+    {
+        return self::getAssetSetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'asset_set_id' => $assetSetId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * bidding_strategy resource.
+     *
+     * @param string $customerId
+     * @param string $biddingStrategyId
+     *
+     * @return string The formatted bidding_strategy resource.
+     */
+    public static function biddingStrategyName($customerId, $biddingStrategyId)
+    {
+        return self::getBiddingStrategyNameTemplate()->render([
+            'customer_id' => $customerId,
+            'bidding_strategy_id' => $biddingStrategyId,
+        ]);
     }
 
     /**
@@ -141,10 +288,105 @@ class CampaignServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * campaign_budget resource.
+     *
+     * @param string $customerId
+     * @param string $campaignBudgetId
+     *
+     * @return string The formatted campaign_budget resource.
+     */
+    public static function campaignBudgetName($customerId, $campaignBudgetId)
+    {
+        return self::getCampaignBudgetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_budget_id' => $campaignBudgetId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * campaign_group resource.
+     *
+     * @param string $customerId
+     * @param string $campaignGroupId
+     *
+     * @return string The formatted campaign_group resource.
+     */
+    public static function campaignGroupName($customerId, $campaignGroupId)
+    {
+        return self::getCampaignGroupNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_group_id' => $campaignGroupId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * campaign_label resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     * @param string $labelId
+     *
+     * @return string The formatted campaign_label resource.
+     */
+    public static function campaignLabelName($customerId, $campaignId, $labelId)
+    {
+        return self::getCampaignLabelNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+            'label_id' => $labelId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * conversion_action resource.
+     *
+     * @param string $customerId
+     * @param string $conversionActionId
+     *
+     * @return string The formatted conversion_action resource.
+     */
+    public static function conversionActionName($customerId, $conversionActionId)
+    {
+        return self::getConversionActionNameTemplate()->render([
+            'customer_id' => $customerId,
+            'conversion_action_id' => $conversionActionId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a feed
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $feedId
+     *
+     * @return string The formatted feed resource.
+     */
+    public static function feedName($customerId, $feedId)
+    {
+        return self::getFeedNameTemplate()->render([
+            'customer_id' => $customerId,
+            'feed_id' => $feedId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - accessibleBiddingStrategy: customers/{customer_id}/accessibleBiddingStrategies/{bidding_strategy_id}
+     * - assetSet: customers/{customer_id}/assetSets/{asset_set_id}
+     * - biddingStrategy: customers/{customer_id}/biddingStrategies/{bidding_strategy_id}
      * - campaign: customers/{customer_id}/campaigns/{campaign_id}
+     * - campaignBudget: customers/{customer_id}/campaignBudgets/{campaign_budget_id}
+     * - campaignGroup: customers/{customer_id}/campaignGroups/{campaign_group_id}
+     * - campaignLabel: customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}
+     * - conversionAction: customers/{customer_id}/conversionActions/{conversion_action_id}
+     * - feed: customers/{customer_id}/feeds/{feed_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

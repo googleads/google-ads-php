@@ -81,6 +81,8 @@ class SmartCampaignSettingServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $campaignNameTemplate;
+
     private static $smartCampaignSettingNameTemplate;
 
     private static $pathTemplateMap;
@@ -104,6 +106,15 @@ class SmartCampaignSettingServiceGapicClient
         ];
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getSmartCampaignSettingNameTemplate()
     {
         if (self::$smartCampaignSettingNameTemplate == null) {
@@ -117,11 +128,29 @@ class SmartCampaignSettingServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
                 'smartCampaignSetting' => self::getSmartCampaignSettingNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
     }
 
     /**
@@ -145,6 +174,7 @@ class SmartCampaignSettingServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - smartCampaignSetting: customers/{customer_id}/smartCampaignSettings/{campaign_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

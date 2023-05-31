@@ -80,6 +80,10 @@ class AssetSetAssetServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $assetNameTemplate;
+
+    private static $assetSetNameTemplate;
+
     private static $assetSetAssetNameTemplate;
 
     private static $pathTemplateMap;
@@ -103,6 +107,24 @@ class AssetSetAssetServiceGapicClient
         ];
     }
 
+    private static function getAssetNameTemplate()
+    {
+        if (self::$assetNameTemplate == null) {
+            self::$assetNameTemplate = new PathTemplate('customers/{customer_id}/assets/{asset_id}');
+        }
+
+        return self::$assetNameTemplate;
+    }
+
+    private static function getAssetSetNameTemplate()
+    {
+        if (self::$assetSetNameTemplate == null) {
+            self::$assetSetNameTemplate = new PathTemplate('customers/{customer_id}/assetSets/{asset_set_id}');
+        }
+
+        return self::$assetSetNameTemplate;
+    }
+
     private static function getAssetSetAssetNameTemplate()
     {
         if (self::$assetSetAssetNameTemplate == null) {
@@ -116,11 +138,47 @@ class AssetSetAssetServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'asset' => self::getAssetNameTemplate(),
+                'assetSet' => self::getAssetSetNameTemplate(),
                 'assetSetAsset' => self::getAssetSetAssetNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetId
+     *
+     * @return string The formatted asset resource.
+     */
+    public static function assetName($customerId, $assetId)
+    {
+        return self::getAssetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'asset_id' => $assetId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset_set
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetSetId
+     *
+     * @return string The formatted asset_set resource.
+     */
+    public static function assetSetName($customerId, $assetSetId)
+    {
+        return self::getAssetSetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'asset_set_id' => $assetSetId,
+        ]);
     }
 
     /**
@@ -146,6 +204,8 @@ class AssetSetAssetServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - asset: customers/{customer_id}/assets/{asset_id}
+     * - assetSet: customers/{customer_id}/assetSets/{asset_set_id}
      * - assetSetAsset: customers/{customer_id}/assetSetAssets/{asset_set_id}~{asset_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

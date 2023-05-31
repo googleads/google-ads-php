@@ -80,6 +80,10 @@ class CampaignAssetServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $assetNameTemplate;
+
+    private static $campaignNameTemplate;
+
     private static $campaignAssetNameTemplate;
 
     private static $pathTemplateMap;
@@ -103,6 +107,24 @@ class CampaignAssetServiceGapicClient
         ];
     }
 
+    private static function getAssetNameTemplate()
+    {
+        if (self::$assetNameTemplate == null) {
+            self::$assetNameTemplate = new PathTemplate('customers/{customer_id}/assets/{asset_id}');
+        }
+
+        return self::$assetNameTemplate;
+    }
+
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getCampaignAssetNameTemplate()
     {
         if (self::$campaignAssetNameTemplate == null) {
@@ -116,11 +138,47 @@ class CampaignAssetServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'asset' => self::getAssetNameTemplate(),
+                'campaign' => self::getCampaignNameTemplate(),
                 'campaignAsset' => self::getCampaignAssetNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetId
+     *
+     * @return string The formatted asset resource.
+     */
+    public static function assetName($customerId, $assetId)
+    {
+        return self::getAssetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'asset_id' => $assetId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
     }
 
     /**
@@ -148,6 +206,8 @@ class CampaignAssetServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - asset: customers/{customer_id}/assets/{asset_id}
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - campaignAsset: customers/{customer_id}/campaignAssets/{campaign_id}~{asset_id}~{field_type}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

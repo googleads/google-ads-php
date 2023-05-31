@@ -80,7 +80,11 @@ class CampaignFeedServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $campaignNameTemplate;
+
     private static $campaignFeedNameTemplate;
+
+    private static $feedNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +107,15 @@ class CampaignFeedServiceGapicClient
         ];
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getCampaignFeedNameTemplate()
     {
         if (self::$campaignFeedNameTemplate == null) {
@@ -112,15 +125,43 @@ class CampaignFeedServiceGapicClient
         return self::$campaignFeedNameTemplate;
     }
 
+    private static function getFeedNameTemplate()
+    {
+        if (self::$feedNameTemplate == null) {
+            self::$feedNameTemplate = new PathTemplate('customers/{customer_id}/feeds/{feed_id}');
+        }
+
+        return self::$feedNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
                 'campaignFeed' => self::getCampaignFeedNameTemplate(),
+                'feed' => self::getFeedNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
     }
 
     /**
@@ -143,10 +184,29 @@ class CampaignFeedServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a feed
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $feedId
+     *
+     * @return string The formatted feed resource.
+     */
+    public static function feedName($customerId, $feedId)
+    {
+        return self::getFeedNameTemplate()->render([
+            'customer_id' => $customerId,
+            'feed_id' => $feedId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - campaignFeed: customers/{customer_id}/campaignFeeds/{campaign_id}~{feed_id}
+     * - feed: customers/{customer_id}/feeds/{feed_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

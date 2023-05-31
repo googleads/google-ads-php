@@ -80,6 +80,8 @@ class AdParameterServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $adGroupCriterionNameTemplate;
+
     private static $adParameterNameTemplate;
 
     private static $pathTemplateMap;
@@ -103,6 +105,15 @@ class AdParameterServiceGapicClient
         ];
     }
 
+    private static function getAdGroupCriterionNameTemplate()
+    {
+        if (self::$adGroupCriterionNameTemplate == null) {
+            self::$adGroupCriterionNameTemplate = new PathTemplate('customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}');
+        }
+
+        return self::$adGroupCriterionNameTemplate;
+    }
+
     private static function getAdParameterNameTemplate()
     {
         if (self::$adParameterNameTemplate == null) {
@@ -116,11 +127,31 @@ class AdParameterServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'adGroupCriterion' => self::getAdGroupCriterionNameTemplate(),
                 'adParameter' => self::getAdParameterNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * ad_group_criterion resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     * @param string $criterionId
+     *
+     * @return string The formatted ad_group_criterion resource.
+     */
+    public static function adGroupCriterionName($customerId, $adGroupId, $criterionId)
+    {
+        return self::getAdGroupCriterionNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+            'criterion_id' => $criterionId,
+        ]);
     }
 
     /**
@@ -148,6 +179,7 @@ class AdParameterServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - adGroupCriterion: customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}
      * - adParameter: customers/{customer_id}/adParameters/{ad_group_id}~{criterion_id}~{parameter_index}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

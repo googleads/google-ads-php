@@ -82,6 +82,10 @@ class AdGroupServiceGapicClient
 
     private static $adGroupNameTemplate;
 
+    private static $adGroupLabelNameTemplate;
+
+    private static $campaignNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -112,11 +116,31 @@ class AdGroupServiceGapicClient
         return self::$adGroupNameTemplate;
     }
 
+    private static function getAdGroupLabelNameTemplate()
+    {
+        if (self::$adGroupLabelNameTemplate == null) {
+            self::$adGroupLabelNameTemplate = new PathTemplate('customers/{customer_id}/adGroupLabels/{ad_group_id}~{label_id}');
+        }
+
+        return self::$adGroupLabelNameTemplate;
+    }
+
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'adGroup' => self::getAdGroupNameTemplate(),
+                'adGroupLabel' => self::getAdGroupLabelNameTemplate(),
+                'campaign' => self::getCampaignNameTemplate(),
             ];
         }
 
@@ -141,10 +165,48 @@ class AdGroupServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * ad_group_label resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     * @param string $labelId
+     *
+     * @return string The formatted ad_group_label resource.
+     */
+    public static function adGroupLabelName($customerId, $adGroupId, $labelId)
+    {
+        return self::getAdGroupLabelNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+            'label_id' => $labelId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - adGroup: customers/{customer_id}/adGroups/{ad_group_id}
+     * - adGroupLabel: customers/{customer_id}/adGroupLabels/{ad_group_id}~{label_id}
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

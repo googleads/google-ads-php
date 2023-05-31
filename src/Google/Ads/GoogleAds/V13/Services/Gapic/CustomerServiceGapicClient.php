@@ -85,6 +85,8 @@ class CustomerServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $conversionActionNameTemplate;
+
     private static $customerNameTemplate;
 
     private static $pathTemplateMap;
@@ -108,6 +110,15 @@ class CustomerServiceGapicClient
         ];
     }
 
+    private static function getConversionActionNameTemplate()
+    {
+        if (self::$conversionActionNameTemplate == null) {
+            self::$conversionActionNameTemplate = new PathTemplate('customers/{customer_id}/conversionActions/{conversion_action_id}');
+        }
+
+        return self::$conversionActionNameTemplate;
+    }
+
     private static function getCustomerNameTemplate()
     {
         if (self::$customerNameTemplate == null) {
@@ -121,11 +132,29 @@ class CustomerServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'conversionAction' => self::getConversionActionNameTemplate(),
                 'customer' => self::getCustomerNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * conversion_action resource.
+     *
+     * @param string $customerId
+     * @param string $conversionActionId
+     *
+     * @return string The formatted conversion_action resource.
+     */
+    public static function conversionActionName($customerId, $conversionActionId)
+    {
+        return self::getConversionActionNameTemplate()->render([
+            'customer_id' => $customerId,
+            'conversion_action_id' => $conversionActionId,
+        ]);
     }
 
     /**
@@ -147,6 +176,7 @@ class CustomerServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - conversionAction: customers/{customer_id}/conversionActions/{conversion_action_id}
      * - customer: customers/{customer_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

@@ -80,7 +80,11 @@ class AdGroupExtensionSettingServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $adGroupNameTemplate;
+
     private static $adGroupExtensionSettingNameTemplate;
+
+    private static $extensionFeedItemNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +107,15 @@ class AdGroupExtensionSettingServiceGapicClient
         ];
     }
 
+    private static function getAdGroupNameTemplate()
+    {
+        if (self::$adGroupNameTemplate == null) {
+            self::$adGroupNameTemplate = new PathTemplate('customers/{customer_id}/adGroups/{ad_group_id}');
+        }
+
+        return self::$adGroupNameTemplate;
+    }
+
     private static function getAdGroupExtensionSettingNameTemplate()
     {
         if (self::$adGroupExtensionSettingNameTemplate == null) {
@@ -112,15 +125,43 @@ class AdGroupExtensionSettingServiceGapicClient
         return self::$adGroupExtensionSettingNameTemplate;
     }
 
+    private static function getExtensionFeedItemNameTemplate()
+    {
+        if (self::$extensionFeedItemNameTemplate == null) {
+            self::$extensionFeedItemNameTemplate = new PathTemplate('customers/{customer_id}/extensionFeedItems/{feed_item_id}');
+        }
+
+        return self::$extensionFeedItemNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'adGroup' => self::getAdGroupNameTemplate(),
                 'adGroupExtensionSetting' => self::getAdGroupExtensionSettingNameTemplate(),
+                'extensionFeedItem' => self::getExtensionFeedItemNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a ad_group
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     *
+     * @return string The formatted ad_group resource.
+     */
+    public static function adGroupName($customerId, $adGroupId)
+    {
+        return self::getAdGroupNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+        ]);
     }
 
     /**
@@ -143,10 +184,29 @@ class AdGroupExtensionSettingServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * extension_feed_item resource.
+     *
+     * @param string $customerId
+     * @param string $feedItemId
+     *
+     * @return string The formatted extension_feed_item resource.
+     */
+    public static function extensionFeedItemName($customerId, $feedItemId)
+    {
+        return self::getExtensionFeedItemNameTemplate()->render([
+            'customer_id' => $customerId,
+            'feed_item_id' => $feedItemId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - adGroup: customers/{customer_id}/adGroups/{ad_group_id}
      * - adGroupExtensionSetting: customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}
+     * - extensionFeedItem: customers/{customer_id}/extensionFeedItems/{feed_item_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

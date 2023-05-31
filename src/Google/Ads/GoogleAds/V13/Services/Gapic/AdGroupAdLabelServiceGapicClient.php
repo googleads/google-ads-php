@@ -80,7 +80,11 @@ class AdGroupAdLabelServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $adGroupAdNameTemplate;
+
     private static $adGroupAdLabelNameTemplate;
+
+    private static $labelNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +107,15 @@ class AdGroupAdLabelServiceGapicClient
         ];
     }
 
+    private static function getAdGroupAdNameTemplate()
+    {
+        if (self::$adGroupAdNameTemplate == null) {
+            self::$adGroupAdNameTemplate = new PathTemplate('customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}');
+        }
+
+        return self::$adGroupAdNameTemplate;
+    }
+
     private static function getAdGroupAdLabelNameTemplate()
     {
         if (self::$adGroupAdLabelNameTemplate == null) {
@@ -112,15 +125,45 @@ class AdGroupAdLabelServiceGapicClient
         return self::$adGroupAdLabelNameTemplate;
     }
 
+    private static function getLabelNameTemplate()
+    {
+        if (self::$labelNameTemplate == null) {
+            self::$labelNameTemplate = new PathTemplate('customers/{customer_id}/labels/{label_id}');
+        }
+
+        return self::$labelNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'adGroupAd' => self::getAdGroupAdNameTemplate(),
                 'adGroupAdLabel' => self::getAdGroupAdLabelNameTemplate(),
+                'label' => self::getLabelNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a ad_group_ad
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     * @param string $adId
+     *
+     * @return string The formatted ad_group_ad resource.
+     */
+    public static function adGroupAdName($customerId, $adGroupId, $adId)
+    {
+        return self::getAdGroupAdNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+            'ad_id' => $adId,
+        ]);
     }
 
     /**
@@ -145,10 +188,29 @@ class AdGroupAdLabelServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a label
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $labelId
+     *
+     * @return string The formatted label resource.
+     */
+    public static function labelName($customerId, $labelId)
+    {
+        return self::getLabelNameTemplate()->render([
+            'customer_id' => $customerId,
+            'label_id' => $labelId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - adGroupAd: customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}
      * - adGroupAdLabel: customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}~{label_id}
+     * - label: customers/{customer_id}/labels/{label_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

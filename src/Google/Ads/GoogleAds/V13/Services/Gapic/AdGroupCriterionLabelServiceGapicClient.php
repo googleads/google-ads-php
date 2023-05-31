@@ -80,7 +80,11 @@ class AdGroupCriterionLabelServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $adGroupCriterionNameTemplate;
+
     private static $adGroupCriterionLabelNameTemplate;
+
+    private static $labelNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +107,15 @@ class AdGroupCriterionLabelServiceGapicClient
         ];
     }
 
+    private static function getAdGroupCriterionNameTemplate()
+    {
+        if (self::$adGroupCriterionNameTemplate == null) {
+            self::$adGroupCriterionNameTemplate = new PathTemplate('customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}');
+        }
+
+        return self::$adGroupCriterionNameTemplate;
+    }
+
     private static function getAdGroupCriterionLabelNameTemplate()
     {
         if (self::$adGroupCriterionLabelNameTemplate == null) {
@@ -112,15 +125,45 @@ class AdGroupCriterionLabelServiceGapicClient
         return self::$adGroupCriterionLabelNameTemplate;
     }
 
+    private static function getLabelNameTemplate()
+    {
+        if (self::$labelNameTemplate == null) {
+            self::$labelNameTemplate = new PathTemplate('customers/{customer_id}/labels/{label_id}');
+        }
+
+        return self::$labelNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'adGroupCriterion' => self::getAdGroupCriterionNameTemplate(),
                 'adGroupCriterionLabel' => self::getAdGroupCriterionLabelNameTemplate(),
+                'label' => self::getLabelNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * ad_group_criterion resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     * @param string $criterionId
+     *
+     * @return string The formatted ad_group_criterion resource.
+     */
+    public static function adGroupCriterionName($customerId, $adGroupId, $criterionId)
+    {
+        return self::getAdGroupCriterionNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+            'criterion_id' => $criterionId,
+        ]);
     }
 
     /**
@@ -145,10 +188,29 @@ class AdGroupCriterionLabelServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a label
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $labelId
+     *
+     * @return string The formatted label resource.
+     */
+    public static function labelName($customerId, $labelId)
+    {
+        return self::getLabelNameTemplate()->render([
+            'customer_id' => $customerId,
+            'label_id' => $labelId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - adGroupCriterion: customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}
      * - adGroupCriterionLabel: customers/{customer_id}/adGroupCriterionLabels/{ad_group_id}~{criterion_id}~{label_id}
+     * - label: customers/{customer_id}/labels/{label_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

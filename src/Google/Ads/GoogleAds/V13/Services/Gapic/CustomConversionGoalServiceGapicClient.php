@@ -80,6 +80,8 @@ class CustomConversionGoalServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $conversionActionNameTemplate;
+
     private static $customConversionGoalNameTemplate;
 
     private static $pathTemplateMap;
@@ -103,6 +105,15 @@ class CustomConversionGoalServiceGapicClient
         ];
     }
 
+    private static function getConversionActionNameTemplate()
+    {
+        if (self::$conversionActionNameTemplate == null) {
+            self::$conversionActionNameTemplate = new PathTemplate('customers/{customer_id}/conversionActions/{conversion_action_id}');
+        }
+
+        return self::$conversionActionNameTemplate;
+    }
+
     private static function getCustomConversionGoalNameTemplate()
     {
         if (self::$customConversionGoalNameTemplate == null) {
@@ -116,11 +127,29 @@ class CustomConversionGoalServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'conversionAction' => self::getConversionActionNameTemplate(),
                 'customConversionGoal' => self::getCustomConversionGoalNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * conversion_action resource.
+     *
+     * @param string $customerId
+     * @param string $conversionActionId
+     *
+     * @return string The formatted conversion_action resource.
+     */
+    public static function conversionActionName($customerId, $conversionActionId)
+    {
+        return self::getConversionActionNameTemplate()->render([
+            'customer_id' => $customerId,
+            'conversion_action_id' => $conversionActionId,
+        ]);
     }
 
     /**
@@ -144,6 +173,7 @@ class CustomConversionGoalServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - conversionAction: customers/{customer_id}/conversionActions/{conversion_action_id}
      * - customConversionGoal: customers/{customer_id}/customConversionGoals/{goal_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

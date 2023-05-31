@@ -80,6 +80,8 @@ class AdGroupBidModifierServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $adGroupNameTemplate;
+
     private static $adGroupBidModifierNameTemplate;
 
     private static $pathTemplateMap;
@@ -103,6 +105,15 @@ class AdGroupBidModifierServiceGapicClient
         ];
     }
 
+    private static function getAdGroupNameTemplate()
+    {
+        if (self::$adGroupNameTemplate == null) {
+            self::$adGroupNameTemplate = new PathTemplate('customers/{customer_id}/adGroups/{ad_group_id}');
+        }
+
+        return self::$adGroupNameTemplate;
+    }
+
     private static function getAdGroupBidModifierNameTemplate()
     {
         if (self::$adGroupBidModifierNameTemplate == null) {
@@ -116,11 +127,29 @@ class AdGroupBidModifierServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'adGroup' => self::getAdGroupNameTemplate(),
                 'adGroupBidModifier' => self::getAdGroupBidModifierNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a ad_group
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     *
+     * @return string The formatted ad_group resource.
+     */
+    public static function adGroupName($customerId, $adGroupId)
+    {
+        return self::getAdGroupNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+        ]);
     }
 
     /**
@@ -146,6 +175,7 @@ class AdGroupBidModifierServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - adGroup: customers/{customer_id}/adGroups/{ad_group_id}
      * - adGroupBidModifier: customers/{customer_id}/adGroupBidModifiers/{ad_group_id}~{criterion_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

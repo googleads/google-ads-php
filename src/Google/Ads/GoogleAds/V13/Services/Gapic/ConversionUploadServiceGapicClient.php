@@ -33,6 +33,7 @@ use Google\Ads\GoogleAds\V13\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -56,6 +57,11 @@ use Google\Auth\FetchAuthTokenInterface;
  *     $conversionUploadServiceClient->close();
  * }
  * ```
+ *
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assist with these names, this class includes a format method for each type of
+ * name, and additionally a parseName method to extract the individual identifiers
+ * contained within formatted names that are returned by the API.
  */
 class ConversionUploadServiceGapicClient
 {
@@ -78,6 +84,10 @@ class ConversionUploadServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $conversionCustomVariableNameTemplate;
+
+    private static $pathTemplateMap;
+
     private static function getClientDefaults()
     {
         return [
@@ -95,6 +105,84 @@ class ConversionUploadServiceGapicClient
                 ],
             ],
         ];
+    }
+
+    private static function getConversionCustomVariableNameTemplate()
+    {
+        if (self::$conversionCustomVariableNameTemplate == null) {
+            self::$conversionCustomVariableNameTemplate = new PathTemplate('customers/{customer_id}/conversionCustomVariables/{conversion_custom_variable_id}');
+        }
+
+        return self::$conversionCustomVariableNameTemplate;
+    }
+
+    private static function getPathTemplateMap()
+    {
+        if (self::$pathTemplateMap == null) {
+            self::$pathTemplateMap = [
+                'conversionCustomVariable' => self::getConversionCustomVariableNameTemplate(),
+            ];
+        }
+
+        return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * conversion_custom_variable resource.
+     *
+     * @param string $customerId
+     * @param string $conversionCustomVariableId
+     *
+     * @return string The formatted conversion_custom_variable resource.
+     */
+    public static function conversionCustomVariableName($customerId, $conversionCustomVariableId)
+    {
+        return self::getConversionCustomVariableNameTemplate()->render([
+            'customer_id' => $customerId,
+            'conversion_custom_variable_id' => $conversionCustomVariableId,
+        ]);
+    }
+
+    /**
+     * Parses a formatted name string and returns an associative array of the components in the name.
+     * The following name formats are supported:
+     * Template: Pattern
+     * - conversionCustomVariable: customers/{customer_id}/conversionCustomVariables/{conversion_custom_variable_id}
+     *
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
+     *
+     * @param string $formattedName The formatted name string
+     * @param string $template      Optional name of template to match
+     *
+     * @return array An associative array from name component IDs to component values.
+     *
+     * @throws ValidationException If $formattedName could not be matched.
+     */
+    public static function parseName($formattedName, $template = null)
+    {
+        $templateMap = self::getPathTemplateMap();
+        if ($template) {
+            if (!isset($templateMap[$template])) {
+                throw new ValidationException("Template name $template does not exist");
+            }
+
+            return $templateMap[$template]->match($formattedName);
+        }
+
+        foreach ($templateMap as $templateName => $pathTemplate) {
+            try {
+                return $pathTemplate->match($formattedName);
+            } catch (ValidationException $ex) {
+                // Swallow the exception to continue trying other path templates
+            }
+        }
+
+        throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
     /**

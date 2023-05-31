@@ -82,6 +82,8 @@ class KeywordPlanAdGroupServiceGapicClient
 
     private static $keywordPlanAdGroupNameTemplate;
 
+    private static $keywordPlanCampaignNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -112,11 +114,21 @@ class KeywordPlanAdGroupServiceGapicClient
         return self::$keywordPlanAdGroupNameTemplate;
     }
 
+    private static function getKeywordPlanCampaignNameTemplate()
+    {
+        if (self::$keywordPlanCampaignNameTemplate == null) {
+            self::$keywordPlanCampaignNameTemplate = new PathTemplate('customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}');
+        }
+
+        return self::$keywordPlanCampaignNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'keywordPlanAdGroup' => self::getKeywordPlanAdGroupNameTemplate(),
+                'keywordPlanCampaign' => self::getKeywordPlanCampaignNameTemplate(),
             ];
         }
 
@@ -141,10 +153,28 @@ class KeywordPlanAdGroupServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * keyword_plan_campaign resource.
+     *
+     * @param string $customerId
+     * @param string $keywordPlanCampaignId
+     *
+     * @return string The formatted keyword_plan_campaign resource.
+     */
+    public static function keywordPlanCampaignName($customerId, $keywordPlanCampaignId)
+    {
+        return self::getKeywordPlanCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'keyword_plan_campaign_id' => $keywordPlanCampaignId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - keywordPlanAdGroup: customers/{customer_id}/keywordPlanAdGroups/{keyword_plan_ad_group_id}
+     * - keywordPlanCampaign: customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

@@ -80,7 +80,11 @@ class AdGroupCustomizerServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $adGroupNameTemplate;
+
     private static $adGroupCustomizerNameTemplate;
+
+    private static $customizerAttributeNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +107,15 @@ class AdGroupCustomizerServiceGapicClient
         ];
     }
 
+    private static function getAdGroupNameTemplate()
+    {
+        if (self::$adGroupNameTemplate == null) {
+            self::$adGroupNameTemplate = new PathTemplate('customers/{customer_id}/adGroups/{ad_group_id}');
+        }
+
+        return self::$adGroupNameTemplate;
+    }
+
     private static function getAdGroupCustomizerNameTemplate()
     {
         if (self::$adGroupCustomizerNameTemplate == null) {
@@ -112,15 +125,43 @@ class AdGroupCustomizerServiceGapicClient
         return self::$adGroupCustomizerNameTemplate;
     }
 
+    private static function getCustomizerAttributeNameTemplate()
+    {
+        if (self::$customizerAttributeNameTemplate == null) {
+            self::$customizerAttributeNameTemplate = new PathTemplate('customers/{customer_id}/customizerAttributes/{customizer_attribute_id}');
+        }
+
+        return self::$customizerAttributeNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'adGroup' => self::getAdGroupNameTemplate(),
                 'adGroupCustomizer' => self::getAdGroupCustomizerNameTemplate(),
+                'customizerAttribute' => self::getCustomizerAttributeNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a ad_group
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     *
+     * @return string The formatted ad_group resource.
+     */
+    public static function adGroupName($customerId, $adGroupId)
+    {
+        return self::getAdGroupNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+        ]);
     }
 
     /**
@@ -143,10 +184,29 @@ class AdGroupCustomizerServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * customizer_attribute resource.
+     *
+     * @param string $customerId
+     * @param string $customizerAttributeId
+     *
+     * @return string The formatted customizer_attribute resource.
+     */
+    public static function customizerAttributeName($customerId, $customizerAttributeId)
+    {
+        return self::getCustomizerAttributeNameTemplate()->render([
+            'customer_id' => $customerId,
+            'customizer_attribute_id' => $customizerAttributeId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - adGroup: customers/{customer_id}/adGroups/{ad_group_id}
      * - adGroupCustomizer: customers/{customer_id}/adGroupCustomizers/{ad_group_id}~{customizer_attribute_id}
+     * - customizerAttribute: customers/{customer_id}/customizerAttributes/{customizer_attribute_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

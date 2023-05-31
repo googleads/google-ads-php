@@ -82,6 +82,8 @@ class BiddingDataExclusionServiceGapicClient
 
     private static $biddingDataExclusionNameTemplate;
 
+    private static $campaignNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -112,11 +114,21 @@ class BiddingDataExclusionServiceGapicClient
         return self::$biddingDataExclusionNameTemplate;
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (self::$campaignNameTemplate == null) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'biddingDataExclusion' => self::getBiddingDataExclusionNameTemplate(),
+                'campaign' => self::getCampaignNameTemplate(),
             ];
         }
 
@@ -141,10 +153,28 @@ class BiddingDataExclusionServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     *
+     * @return string The formatted campaign resource.
+     */
+    public static function campaignName($customerId, $campaignId)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - biddingDataExclusion: customers/{customer_id}/biddingDataExclusions/{seasonality_event_id}
+     * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

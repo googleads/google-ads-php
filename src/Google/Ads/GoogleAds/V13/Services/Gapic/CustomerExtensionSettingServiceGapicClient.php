@@ -82,6 +82,8 @@ class CustomerExtensionSettingServiceGapicClient
 
     private static $customerExtensionSettingNameTemplate;
 
+    private static $extensionFeedItemNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -112,11 +114,21 @@ class CustomerExtensionSettingServiceGapicClient
         return self::$customerExtensionSettingNameTemplate;
     }
 
+    private static function getExtensionFeedItemNameTemplate()
+    {
+        if (self::$extensionFeedItemNameTemplate == null) {
+            self::$extensionFeedItemNameTemplate = new PathTemplate('customers/{customer_id}/extensionFeedItems/{feed_item_id}');
+        }
+
+        return self::$extensionFeedItemNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'customerExtensionSetting' => self::getCustomerExtensionSettingNameTemplate(),
+                'extensionFeedItem' => self::getExtensionFeedItemNameTemplate(),
             ];
         }
 
@@ -141,10 +153,28 @@ class CustomerExtensionSettingServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * extension_feed_item resource.
+     *
+     * @param string $customerId
+     * @param string $feedItemId
+     *
+     * @return string The formatted extension_feed_item resource.
+     */
+    public static function extensionFeedItemName($customerId, $feedItemId)
+    {
+        return self::getExtensionFeedItemNameTemplate()->render([
+            'customer_id' => $customerId,
+            'feed_item_id' => $feedItemId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - customerExtensionSetting: customers/{customer_id}/customerExtensionSettings/{extension_type}
+     * - extensionFeedItem: customers/{customer_id}/extensionFeedItems/{feed_item_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

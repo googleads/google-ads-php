@@ -80,7 +80,11 @@ class AdGroupAssetSetServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $adGroupNameTemplate;
+
     private static $adGroupAssetSetNameTemplate;
+
+    private static $assetSetNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +107,15 @@ class AdGroupAssetSetServiceGapicClient
         ];
     }
 
+    private static function getAdGroupNameTemplate()
+    {
+        if (self::$adGroupNameTemplate == null) {
+            self::$adGroupNameTemplate = new PathTemplate('customers/{customer_id}/adGroups/{ad_group_id}');
+        }
+
+        return self::$adGroupNameTemplate;
+    }
+
     private static function getAdGroupAssetSetNameTemplate()
     {
         if (self::$adGroupAssetSetNameTemplate == null) {
@@ -112,15 +125,43 @@ class AdGroupAssetSetServiceGapicClient
         return self::$adGroupAssetSetNameTemplate;
     }
 
+    private static function getAssetSetNameTemplate()
+    {
+        if (self::$assetSetNameTemplate == null) {
+            self::$assetSetNameTemplate = new PathTemplate('customers/{customer_id}/assetSets/{asset_set_id}');
+        }
+
+        return self::$assetSetNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'adGroup' => self::getAdGroupNameTemplate(),
                 'adGroupAssetSet' => self::getAdGroupAssetSetNameTemplate(),
+                'assetSet' => self::getAssetSetNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a ad_group
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     *
+     * @return string The formatted ad_group resource.
+     */
+    public static function adGroupName($customerId, $adGroupId)
+    {
+        return self::getAdGroupNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+        ]);
     }
 
     /**
@@ -143,10 +184,29 @@ class AdGroupAssetSetServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a asset_set
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetSetId
+     *
+     * @return string The formatted asset_set resource.
+     */
+    public static function assetSetName($customerId, $assetSetId)
+    {
+        return self::getAssetSetNameTemplate()->render([
+            'customer_id' => $customerId,
+            'asset_set_id' => $assetSetId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - adGroup: customers/{customer_id}/adGroups/{ad_group_id}
      * - adGroupAssetSet: customers/{customer_id}/adGroupAssetSets/{ad_group_id}~{asset_set_id}
+     * - assetSet: customers/{customer_id}/assetSets/{asset_set_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

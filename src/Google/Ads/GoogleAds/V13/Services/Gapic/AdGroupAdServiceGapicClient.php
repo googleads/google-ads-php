@@ -80,7 +80,13 @@ class AdGroupAdServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $adNameTemplate;
+
+    private static $adGroupNameTemplate;
+
     private static $adGroupAdNameTemplate;
+
+    private static $adGroupAdLabelNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +109,24 @@ class AdGroupAdServiceGapicClient
         ];
     }
 
+    private static function getAdNameTemplate()
+    {
+        if (self::$adNameTemplate == null) {
+            self::$adNameTemplate = new PathTemplate('customers/{customer_id}/ads/{ad_id}');
+        }
+
+        return self::$adNameTemplate;
+    }
+
+    private static function getAdGroupNameTemplate()
+    {
+        if (self::$adGroupNameTemplate == null) {
+            self::$adGroupNameTemplate = new PathTemplate('customers/{customer_id}/adGroups/{ad_group_id}');
+        }
+
+        return self::$adGroupNameTemplate;
+    }
+
     private static function getAdGroupAdNameTemplate()
     {
         if (self::$adGroupAdNameTemplate == null) {
@@ -112,15 +136,60 @@ class AdGroupAdServiceGapicClient
         return self::$adGroupAdNameTemplate;
     }
 
+    private static function getAdGroupAdLabelNameTemplate()
+    {
+        if (self::$adGroupAdLabelNameTemplate == null) {
+            self::$adGroupAdLabelNameTemplate = new PathTemplate('customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}~{label_id}');
+        }
+
+        return self::$adGroupAdLabelNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'ad' => self::getAdNameTemplate(),
+                'adGroup' => self::getAdGroupNameTemplate(),
                 'adGroupAd' => self::getAdGroupAdNameTemplate(),
+                'adGroupAdLabel' => self::getAdGroupAdLabelNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a ad resource.
+     *
+     * @param string $customerId
+     * @param string $adId
+     *
+     * @return string The formatted ad resource.
+     */
+    public static function adName($customerId, $adId)
+    {
+        return self::getAdNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_id' => $adId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a ad_group
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     *
+     * @return string The formatted ad_group resource.
+     */
+    public static function adGroupName($customerId, $adGroupId)
+    {
+        return self::getAdGroupNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+        ]);
     }
 
     /**
@@ -143,10 +212,34 @@ class AdGroupAdServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * ad_group_ad_label resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     * @param string $adId
+     * @param string $labelId
+     *
+     * @return string The formatted ad_group_ad_label resource.
+     */
+    public static function adGroupAdLabelName($customerId, $adGroupId, $adId, $labelId)
+    {
+        return self::getAdGroupAdLabelNameTemplate()->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+            'ad_id' => $adId,
+            'label_id' => $labelId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - ad: customers/{customer_id}/ads/{ad_id}
+     * - adGroup: customers/{customer_id}/adGroups/{ad_group_id}
      * - adGroupAd: customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}
+     * - adGroupAdLabel: customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}~{label_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

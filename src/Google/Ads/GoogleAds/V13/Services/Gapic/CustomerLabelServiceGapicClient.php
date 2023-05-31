@@ -80,7 +80,11 @@ class CustomerLabelServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $customerNameTemplate;
+
     private static $customerLabelNameTemplate;
+
+    private static $labelNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -103,6 +107,15 @@ class CustomerLabelServiceGapicClient
         ];
     }
 
+    private static function getCustomerNameTemplate()
+    {
+        if (self::$customerNameTemplate == null) {
+            self::$customerNameTemplate = new PathTemplate('customers/{customer_id}');
+        }
+
+        return self::$customerNameTemplate;
+    }
+
     private static function getCustomerLabelNameTemplate()
     {
         if (self::$customerLabelNameTemplate == null) {
@@ -112,15 +125,41 @@ class CustomerLabelServiceGapicClient
         return self::$customerLabelNameTemplate;
     }
 
+    private static function getLabelNameTemplate()
+    {
+        if (self::$labelNameTemplate == null) {
+            self::$labelNameTemplate = new PathTemplate('customers/{customer_id}/labels/{label_id}');
+        }
+
+        return self::$labelNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'customer' => self::getCustomerNameTemplate(),
                 'customerLabel' => self::getCustomerLabelNameTemplate(),
+                'label' => self::getLabelNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a customer
+     * resource.
+     *
+     * @param string $customerId
+     *
+     * @return string The formatted customer resource.
+     */
+    public static function customerName($customerId)
+    {
+        return self::getCustomerNameTemplate()->render([
+            'customer_id' => $customerId,
+        ]);
     }
 
     /**
@@ -141,10 +180,29 @@ class CustomerLabelServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a label
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $labelId
+     *
+     * @return string The formatted label resource.
+     */
+    public static function labelName($customerId, $labelId)
+    {
+        return self::getLabelNameTemplate()->render([
+            'customer_id' => $customerId,
+            'label_id' => $labelId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - customer: customers/{customer_id}
      * - customerLabel: customers/{customer_id}/customerLabels/{label_id}
+     * - label: customers/{customer_id}/labels/{label_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

@@ -90,6 +90,8 @@ class BillingSetupServiceGapicClient
 
     private static $billingSetupNameTemplate;
 
+    private static $paymentsAccountNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -120,11 +122,21 @@ class BillingSetupServiceGapicClient
         return self::$billingSetupNameTemplate;
     }
 
+    private static function getPaymentsAccountNameTemplate()
+    {
+        if (self::$paymentsAccountNameTemplate == null) {
+            self::$paymentsAccountNameTemplate = new PathTemplate('customers/{customer_id}/paymentsAccounts/{payments_account_id}');
+        }
+
+        return self::$paymentsAccountNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'billingSetup' => self::getBillingSetupNameTemplate(),
+                'paymentsAccount' => self::getPaymentsAccountNameTemplate(),
             ];
         }
 
@@ -149,10 +161,28 @@ class BillingSetupServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * payments_account resource.
+     *
+     * @param string $customerId
+     * @param string $paymentsAccountId
+     *
+     * @return string The formatted payments_account resource.
+     */
+    public static function paymentsAccountName($customerId, $paymentsAccountId)
+    {
+        return self::getPaymentsAccountNameTemplate()->render([
+            'customer_id' => $customerId,
+            'payments_account_id' => $paymentsAccountId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - billingSetup: customers/{customer_id}/billingSetups/{billing_setup_id}
+     * - paymentsAccount: customers/{customer_id}/paymentsAccounts/{payments_account_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is
