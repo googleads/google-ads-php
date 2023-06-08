@@ -23,13 +23,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V13\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V14\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V13\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\V13\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V13\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V14\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\ApiStatus;
 
@@ -133,7 +133,7 @@ class SetCustomClientTimeouts
                 [
                     // Any server streaming call has a default timeout setting. For this
                     // particular call, the default setting can be found in the following file:
-                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V13/Services/resources/google_ads_service_client_config.json.
+                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V14/Services/resources/google_ads_service_client_config.json.
                     //
                     // When making a server streaming call, an optional argument is provided and can
                     // be used to override the default timeout setting with a given value.
@@ -184,7 +184,7 @@ class SetCustomClientTimeouts
                     // https://googleapis.github.io/gax-php/master/Google/ApiCore/RetrySettings.html.
                     // For this particular call, the default retry settings can be found in the
                     // following file:
-                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V13/Services/resources/google_ads_service_client_config.json.
+                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V14/Services/resources/google_ads_service_client_config.json.
                     //
                     // When making an unary call, an optional argument is provided and can be
                     // used to override the default retry settings with given values.

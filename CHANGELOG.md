@@ -1,3 +1,11 @@
+## 19.2.0
+*   Added support for v14 of Google Ads API.
+*   Updated AddPerformanceMaxForTravelGoalsCampaign example.
+*   Removed code examples:
+    * GenerateForecastMetrics
+    * GenerateHistoricalMetrics
+    * GetCampaignCriterionBidModifierSimulations
+
 ## 19.1.0
 *   Added support for v13_1 of Google Ads API.
 *   Renamed the HotelAds example directory to Travel.

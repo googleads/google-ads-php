@@ -24,16 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V13\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V13\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V13\ResourceNames;
-use Google\Ads\GoogleAds\V13\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
-use Google\Ads\GoogleAds\V13\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V13\Services\GenerateKeywordIdeaResult;
-use Google\Ads\GoogleAds\V13\Services\KeywordAndUrlSeed;
-use Google\Ads\GoogleAds\V13\Services\KeywordSeed;
-use Google\Ads\GoogleAds\V13\Services\UrlSeed;
+use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V14\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V14\ResourceNames;
+use Google\Ads\GoogleAds\V14\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
+use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V14\Services\GenerateKeywordIdeaResult;
+use Google\Ads\GoogleAds\V14\Services\KeywordAndUrlSeed;
+use Google\Ads\GoogleAds\V14\Services\KeywordSeed;
+use Google\Ads\GoogleAds\V14\Services\UrlSeed;
 use Google\ApiCore\ApiException;
 
 /** This example generates keyword ideas from a list of seed keywords or a seed page URL. */
