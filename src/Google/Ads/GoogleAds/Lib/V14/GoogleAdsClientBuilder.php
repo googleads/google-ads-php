@@ -31,6 +31,7 @@ use Grpc\Interceptor;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
+use UnexpectedValueException;
 
 /**
  * Builds Google Ads API clients.
@@ -415,6 +416,48 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
                 'The gRPC channel credential can only be set when the transport is "grpc".'
             );
         }
+        // Check if the version of the grpc extension installed by Composer is greater than that of
+        // the extension installed by PECL, throw an exception to remind the user to upgrade.
+        $grpcPackageVersion = floatval(phpversion('grpc'));
+        $grpcComposerVersion = $this->getGrpcComposerVersion();
+        if (!empty($grpcComposerVersion) &&  $grpcComposerVersion > $grpcPackageVersion) {
+            throw new UnexpectedValueException(
+                'The grpc extension installed by Composer has a greater version than that'
+                . ' installed by PECL. Upgrade the PECL extension to avoid issues caused by the'
+                . ' version difference. For linux, run "sudo pecl install grpc".'
+            );
+        }
+    }
+
+    /**
+     * Gets the grpc version installed by Composer from the composer.lock file. Returns null if the
+     * if that information cannot be found by any causes.
+     *
+     * @param string $fileName the file name to extract the grpc version from
+     * @return null|float the grpc version
+     */
+    private function getGrpcComposerVersion(string $fileName = 'composer.lock'): ?float
+    {
+        if (!file_exists($fileName)) {
+            return null;
+        }
+        $composerLockFileContents = file_get_contents($fileName);
+        if (empty($composerLockFileContents)) {
+            return null;
+        }
+
+        $composerLockJson = json_decode($composerLockFileContents, true);
+        if (!array_key_exists('packages', $composerLockJson)) {
+            return null;
+        }
+
+        $grpcComposerVersion = null;
+        foreach ($composerLockJson['packages'] as $package) {
+            if ($package['name'] === 'grpc/grpc') {
+                return floatval($package['version']);
+            }
+        }
+        return null;
     }
 
     /**
