@@ -418,9 +418,12 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
         }
         // Check if the version of the grpc extension installed by Composer is greater than that of
         // the extension installed by PECL, throw an exception to remind the user to upgrade.
-        $grpcPackageVersion = floatval(phpversion('grpc'));
+        $grpcPackageVersion = phpversion('grpc');
         $grpcComposerVersion = $this->getGrpcComposerVersion();
-        if (!empty($grpcComposerVersion) &&  $grpcComposerVersion > $grpcPackageVersion) {
+        if (
+            !empty($grpcComposerVersion)
+            && version_compare($grpcComposerVersion, $grpcPackageVersion, '>')
+        ) {
             throw new UnexpectedValueException(
                 'The grpc extension installed by Composer has a greater version than that'
                 . ' installed by PECL. Upgrade the PECL extension to avoid issues caused by the'
@@ -430,13 +433,13 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
-     * Gets the grpc version installed by Composer from the composer.lock file. Returns null if the
-     * if that information cannot be found by any causes.
+     * Gets the grpc version installed by Composer from the composer.lock file. Returns null if
+     * that information cannot be found by any causes.
      *
      * @param string $fileName the file name to extract the grpc version from
-     * @return null|float the grpc version
+     * @return null|string the grpc version
      */
-    private function getGrpcComposerVersion(string $fileName = 'composer.lock'): ?float
+    private function getGrpcComposerVersion(string $fileName = 'composer.lock'): ?string
     {
         if (!file_exists($fileName)) {
             return null;
@@ -454,7 +457,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
         $grpcComposerVersion = null;
         foreach ($composerLockJson['packages'] as $package) {
             if ($package['name'] === 'grpc/grpc') {
-                return floatval($package['version']);
+                return $package['version'];
             }
         }
         return null;
