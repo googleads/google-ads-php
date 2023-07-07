@@ -1,3 +1,12 @@
+## 20.0.0
+*   Updated `composer.json` to require the minimum PHP version of 8.0. See also
+    [README](README.md) for more details.
+*   Updated the minimum required version of `google/gax` to 1.19.1.
+*   Added a check for the versions of grpc installed by Composer and installed
+    as a platform package to `GoogleAdsClientBuilder::validate()`. This is a fix for
+    [#406](https://github.com/googleads/google-ads-php/issues/406).
+*   Fixed dependabot alert in `examples/LaravelSampleApp/composer.lock`.
+
 ## 19.2.0
 *   Added support for v14 of Google Ads API.
 *   Updated AddPerformanceMaxForTravelGoalsCampaign example.
