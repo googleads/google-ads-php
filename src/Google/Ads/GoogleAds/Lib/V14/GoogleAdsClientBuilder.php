@@ -18,11 +18,12 @@
 
 namespace Google\Ads\GoogleAds\Lib\V14;
 
+use Google\Ads\GoogleAds\Lib\AbstractGoogleAdsBuilder;
 use Google\Ads\GoogleAds\Lib\Configuration;
 use Google\Ads\GoogleAds\Lib\ConfigurationLoader;
 use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
-use Google\Ads\GoogleAds\Lib\AbstractGoogleAdsBuilder;
 use Google\Ads\GoogleAds\Lib\GoogleAdsMiddlewareAbstract;
+use Google\Ads\GoogleAds\Util\Dependencies;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\ApiCore\GrpcSupportTrait;
 use Google\Auth\FetchAuthTokenInterface;
@@ -61,6 +62,8 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $unaryMiddlewares = [];
     private $streamingMiddlewares = [];
     private $grpcInterceptors = [];
+    /** @var Dependencies $dependencies */
+    private $dependencies;
 
     public function __construct(
         ConfigurationLoader $configurationLoader = null,
@@ -317,6 +320,18 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
+     * Sets the Dependencies utilities for this Google Ads client builder.
+     *
+     * @param Dependencies $dependencies
+     * @return self this builder
+     */
+    public function withDependencies(Dependencies $dependencies)
+    {
+        $this->dependencies = $dependencies;
+        return $this;
+    }
+
+    /**
      * @see GoogleAdsBuilder::build()
      *
      * @return GoogleAdsClient the created Google Ads client
@@ -334,7 +349,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
      */
     public function defaultOptionals()
     {
-        // No default optionals for this class.
+        $this->dependencies = $this->dependencies ?? new Dependencies();
     }
 
     /**
@@ -417,11 +432,12 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
             );
         }
         // Check if the version of the grpc extension installed by Composer is greater than that of
-        // the extension installed by PECL, throw an exception to remind the user to upgrade.
-        $grpcPackageVersion = phpversion('grpc');
-        $grpcComposerVersion = $this->getGrpcComposerVersion();
+        // the extension installed as a system package, throw an exception to remind the user to
+        // upgrade.
+        $grpcPackageVersion = $this->dependencies->getGrpcSystemPackageVersion();
+        $grpcComposerVersion = $this->dependencies->getGrpcComposerVersion();
         if (
-            !empty($grpcComposerVersion)
+            !empty($grpcComposerVersion) && !empty($grpcPackageVersion)
             && version_compare($grpcComposerVersion, $grpcPackageVersion, '>')
         ) {
             throw new UnexpectedValueException(
@@ -430,37 +446,6 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
                 . ' version difference. For linux, run "sudo pecl install grpc".'
             );
         }
-    }
-
-    /**
-     * Gets the grpc version installed by Composer from the composer.lock file. Returns null if
-     * that information cannot be found by any causes.
-     *
-     * @param string $fileName the file name to extract the grpc version from
-     * @return null|string the grpc version
-     */
-    private function getGrpcComposerVersion(string $fileName = 'composer.lock'): ?string
-    {
-        if (!file_exists($fileName)) {
-            return null;
-        }
-        $composerLockFileContents = file_get_contents($fileName);
-        if (empty($composerLockFileContents)) {
-            return null;
-        }
-
-        $composerLockJson = json_decode($composerLockFileContents, true);
-        if (!array_key_exists('packages', $composerLockJson)) {
-            return null;
-        }
-
-        $grpcComposerVersion = null;
-        foreach ($composerLockJson['packages'] as $package) {
-            if ($package['name'] === 'grpc/grpc') {
-                return $package['version'];
-            }
-        }
-        return null;
     }
 
     /**
