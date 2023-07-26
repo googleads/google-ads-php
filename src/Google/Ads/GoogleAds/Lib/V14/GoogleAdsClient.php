@@ -49,6 +49,7 @@ final class GoogleAdsClient
         $this->transport = $builder->getTransport();
         $this->grpcChannelIsSecure = $builder->getGrpcChannelIsSecure();
         $this->grpcChannelCredential = $builder->getGrpcChannelCredential();
+        $this->useGapicV2Source = $builder->useGapicV2Source();
         $this->unaryMiddlewares = $builder->getUnaryMiddlewares();
         $this->streamingMiddlewares = $builder->getStreamingMiddlewares();
         $this->grpcInterceptors = $builder->getGrpcInterceptors();
