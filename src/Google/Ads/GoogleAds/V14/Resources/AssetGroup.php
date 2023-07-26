@@ -67,6 +67,21 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
+     * Output only. The primary status of the asset group. Provides insights into
+     * why an asset group is not serving or not serving optimally.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.enums.AssetGroupPrimaryStatusEnum.AssetGroupPrimaryStatus primary_status = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $primary_status = 0;
+    /**
+     * Output only. Provides reasons into why an asset group is not serving or not
+     * serving optimally. It will be empty when the asset group is serving without
+     * issues.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v14.enums.AssetGroupPrimaryStatusReasonEnum.AssetGroupPrimaryStatusReason primary_status_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $primary_status_reasons;
+    /**
      * First part of text that may appear appended to the url displayed in
      * the ad.
      *
@@ -114,6 +129,13 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      *           unless opted out.
      *     @type int $status
      *           The status of the asset group.
+     *     @type int $primary_status
+     *           Output only. The primary status of the asset group. Provides insights into
+     *           why an asset group is not serving or not serving optimally.
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $primary_status_reasons
+     *           Output only. Provides reasons into why an asset group is not serving or not
+     *           serving optimally. It will be empty when the asset group is serving without
+     *           issues.
      *     @type string $path1
      *           First part of text that may appear appended to the url displayed in
      *           the ad.
@@ -321,6 +343,64 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V14\Enums\AssetGroupStatusEnum\AssetGroupStatus::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The primary status of the asset group. Provides insights into
+     * why an asset group is not serving or not serving optimally.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.enums.AssetGroupPrimaryStatusEnum.AssetGroupPrimaryStatus primary_status = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int
+     */
+    public function getPrimaryStatus()
+    {
+        return $this->primary_status;
+    }
+
+    /**
+     * Output only. The primary status of the asset group. Provides insights into
+     * why an asset group is not serving or not serving optimally.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.enums.AssetGroupPrimaryStatusEnum.AssetGroupPrimaryStatus primary_status = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPrimaryStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V14\Enums\AssetGroupPrimaryStatusEnum\AssetGroupPrimaryStatus::class);
+        $this->primary_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Provides reasons into why an asset group is not serving or not
+     * serving optimally. It will be empty when the asset group is serving without
+     * issues.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v14.enums.AssetGroupPrimaryStatusReasonEnum.AssetGroupPrimaryStatusReason primary_status_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPrimaryStatusReasons()
+    {
+        return $this->primary_status_reasons;
+    }
+
+    /**
+     * Output only. Provides reasons into why an asset group is not serving or not
+     * serving optimally. It will be empty when the asset group is serving without
+     * issues.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v14.enums.AssetGroupPrimaryStatusReasonEnum.AssetGroupPrimaryStatusReason primary_status_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPrimaryStatusReasons($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V14\Enums\AssetGroupPrimaryStatusReasonEnum\AssetGroupPrimaryStatusReason::class);
+        $this->primary_status_reasons = $arr;
 
         return $this;
     }

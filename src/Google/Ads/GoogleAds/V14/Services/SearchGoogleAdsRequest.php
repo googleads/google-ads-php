@@ -69,6 +69,21 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
     protected $summary_row_setting = 0;
 
     /**
+     * @param string $customerId Required. The ID of the customer being queried.
+     * @param string $query      Required. The query string.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, string $query): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setQuery($query);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

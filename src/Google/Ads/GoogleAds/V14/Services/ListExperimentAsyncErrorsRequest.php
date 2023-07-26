@@ -43,6 +43,20 @@ class ListExperimentAsyncErrorsRequest extends \Google\Protobuf\Internal\Message
     protected $page_size = 0;
 
     /**
+     * @param string $resourceName Required. The name of the experiment from which to retrieve the async
+     *                             errors.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\ListExperimentAsyncErrorsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $resourceName): self
+    {
+        return (new self())
+            ->setResourceName($resourceName);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

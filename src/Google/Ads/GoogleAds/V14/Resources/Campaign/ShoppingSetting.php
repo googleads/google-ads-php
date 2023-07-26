@@ -71,6 +71,13 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool use_vehicle_inventory = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $use_vehicle_inventory = false;
+    /**
+     * Immutable. The ads account IDs of advertising partners cooperating within
+     * the campaign.
+     *
+     * Generated from protobuf field <code>repeated int64 advertising_partner_ids = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    private $advertising_partner_ids;
 
     /**
      * Constructor.
@@ -108,6 +115,9 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *           Immutable. Whether to target Vehicle Listing inventory. This field is
      *           supported only in Smart Shopping Campaigns. For setting Vehicle Listing
      *           inventory in Performance Max campaigns, use `listing_type` instead.
+     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $advertising_partner_ids
+     *           Immutable. The ads account IDs of advertising partners cooperating within
+     *           the campaign.
      * }
      */
     public function __construct($data = NULL) {
@@ -343,6 +353,34 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->use_vehicle_inventory = $var;
+
+        return $this;
+    }
+
+    /**
+     * Immutable. The ads account IDs of advertising partners cooperating within
+     * the campaign.
+     *
+     * Generated from protobuf field <code>repeated int64 advertising_partner_ids = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAdvertisingPartnerIds()
+    {
+        return $this->advertising_partner_ids;
+    }
+
+    /**
+     * Immutable. The ads account IDs of advertising partners cooperating within
+     * the campaign.
+     *
+     * Generated from protobuf field <code>repeated int64 advertising_partner_ids = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAdvertisingPartnerIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::INT64);
+        $this->advertising_partner_ids = $arr;
 
         return $this;
     }

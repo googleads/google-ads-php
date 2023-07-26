@@ -51,6 +51,10 @@ use Google\Auth\FetchAuthTokenInterface;
  *     $paymentsAccountServiceClient->close();
  * }
  * ```
+ *
+ * This service has a new (beta) implementation. See {@see
+ * \Google\Ads\GoogleAds\V14\Services\Client\PaymentsAccountServiceClient} to use
+ * the new surface.
  */
 class PaymentsAccountServiceGapicClient
 {

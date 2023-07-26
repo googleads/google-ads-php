@@ -23,113 +23,113 @@ namespace Google\Ads\GoogleAds\Lib\V14;
 use Google\Ads\GoogleAds\Constants;
 use Google\Ads\GoogleAds\Lib\ConfigurationTrait;
 use Google\Ads\GoogleAds\Lib\InsecureCredentialsWrapper;
-use Google\Ads\GoogleAds\V14\Services\AccountBudgetProposalServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AccountLinkServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupAdLabelServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupAdServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupAssetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupAssetSetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupBidModifierServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupCriterionCustomizerServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupCriterionLabelServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupCriterionServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupCustomizerServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupExtensionSettingServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupFeedServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupLabelServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdGroupServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdParameterServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AdServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AssetGroupAssetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AssetGroupListingGroupFilterServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AssetGroupServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AssetGroupSignalServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AssetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AssetSetAssetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AssetSetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AudienceInsightsServiceClient;
-use Google\Ads\GoogleAds\V14\Services\AudienceServiceClient;
-use Google\Ads\GoogleAds\V14\Services\BatchJobServiceClient;
-use Google\Ads\GoogleAds\V14\Services\BiddingDataExclusionServiceClient;
-use Google\Ads\GoogleAds\V14\Services\BiddingSeasonalityAdjustmentServiceClient;
-use Google\Ads\GoogleAds\V14\Services\BiddingStrategyServiceClient;
-use Google\Ads\GoogleAds\V14\Services\BillingSetupServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignAssetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignAssetSetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignBidModifierServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignBudgetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignConversionGoalServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignCriterionServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignCustomizerServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignDraftServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignExtensionSettingServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignFeedServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignGroupServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignLabelServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CampaignSharedSetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ConversionActionServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ConversionAdjustmentUploadServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ConversionCustomVariableServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ConversionGoalCampaignConfigServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ConversionUploadServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ConversionValueRuleServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ConversionValueRuleSetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomAudienceServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomConversionGoalServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerAssetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerAssetSetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerClientLinkServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerConversionGoalServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerCustomizerServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerExtensionSettingServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerFeedServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerLabelServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerManagerLinkServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerNegativeCriterionServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerSkAdNetworkConversionValueSchemaServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerUserAccessInvitationServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomerUserAccessServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomInterestServiceClient;
-use Google\Ads\GoogleAds\V14\Services\CustomizerAttributeServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ExperimentArmServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ExperimentServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ExtensionFeedItemServiceClient;
-use Google\Ads\GoogleAds\V14\Services\FeedItemServiceClient;
-use Google\Ads\GoogleAds\V14\Services\FeedItemSetLinkServiceClient;
-use Google\Ads\GoogleAds\V14\Services\FeedItemSetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\FeedItemTargetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\FeedMappingServiceClient;
-use Google\Ads\GoogleAds\V14\Services\FeedServiceClient;
-use Google\Ads\GoogleAds\V14\Services\GeoTargetConstantServiceClient;
-use Google\Ads\GoogleAds\V14\Services\GoogleAdsFieldServiceClient;
-use Google\Ads\GoogleAds\V14\Services\GoogleAdsServiceClient;
-use Google\Ads\GoogleAds\V14\Services\InvoiceServiceClient;
-use Google\Ads\GoogleAds\V14\Services\KeywordPlanAdGroupKeywordServiceClient;
-use Google\Ads\GoogleAds\V14\Services\KeywordPlanAdGroupServiceClient;
-use Google\Ads\GoogleAds\V14\Services\KeywordPlanCampaignKeywordServiceClient;
-use Google\Ads\GoogleAds\V14\Services\KeywordPlanCampaignServiceClient;
-use Google\Ads\GoogleAds\V14\Services\KeywordPlanIdeaServiceClient;
-use Google\Ads\GoogleAds\V14\Services\KeywordPlanServiceClient;
-use Google\Ads\GoogleAds\V14\Services\KeywordThemeConstantServiceClient;
-use Google\Ads\GoogleAds\V14\Services\LabelServiceClient;
-use Google\Ads\GoogleAds\V14\Services\MediaFileServiceClient;
-use Google\Ads\GoogleAds\V14\Services\MerchantCenterLinkServiceClient;
-use Google\Ads\GoogleAds\V14\Services\OfflineUserDataJobServiceClient;
-use Google\Ads\GoogleAds\V14\Services\PaymentsAccountServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ProductLinkServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ReachPlanServiceClient;
-use Google\Ads\GoogleAds\V14\Services\RecommendationServiceClient;
-use Google\Ads\GoogleAds\V14\Services\RemarketingActionServiceClient;
-use Google\Ads\GoogleAds\V14\Services\SharedCriterionServiceClient;
-use Google\Ads\GoogleAds\V14\Services\SharedSetServiceClient;
-use Google\Ads\GoogleAds\V14\Services\SmartCampaignSettingServiceClient;
-use Google\Ads\GoogleAds\V14\Services\SmartCampaignSuggestServiceClient;
-use Google\Ads\GoogleAds\V14\Services\ThirdPartyAppAnalyticsLinkServiceClient;
-use Google\Ads\GoogleAds\V14\Services\TravelAssetSuggestionServiceClient;
-use Google\Ads\GoogleAds\V14\Services\UserDataServiceClient;
-use Google\Ads\GoogleAds\V14\Services\UserListServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AccountBudgetProposalServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AccountLinkServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupAdLabelServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupAdServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupAssetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupAssetSetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupBidModifierServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupCriterionCustomizerServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupCriterionLabelServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupCriterionServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupCustomizerServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupExtensionSettingServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupFeedServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupLabelServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdGroupServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdParameterServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AdServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AssetGroupAssetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AssetGroupListingGroupFilterServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AssetGroupServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AssetGroupSignalServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AssetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AssetSetAssetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AssetSetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AudienceInsightsServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\AudienceServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\BatchJobServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\BiddingDataExclusionServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\BiddingSeasonalityAdjustmentServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\BiddingStrategyServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\BillingSetupServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignAssetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignAssetSetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignBidModifierServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignBudgetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignConversionGoalServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignCriterionServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignCustomizerServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignDraftServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignExtensionSettingServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignFeedServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignGroupServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignLabelServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CampaignSharedSetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ConversionActionServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ConversionAdjustmentUploadServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ConversionCustomVariableServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ConversionGoalCampaignConfigServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ConversionUploadServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ConversionValueRuleServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ConversionValueRuleSetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomAudienceServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomConversionGoalServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerAssetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerAssetSetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerClientLinkServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerConversionGoalServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerCustomizerServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerExtensionSettingServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerFeedServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerLabelServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerManagerLinkServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerNegativeCriterionServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerSkAdNetworkConversionValueSchemaServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerUserAccessInvitationServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomerUserAccessServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomInterestServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\CustomizerAttributeServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ExperimentArmServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ExperimentServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ExtensionFeedItemServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\FeedItemServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\FeedItemSetLinkServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\FeedItemSetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\FeedItemTargetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\FeedMappingServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\FeedServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\GeoTargetConstantServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\GoogleAdsFieldServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\GoogleAdsServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\InvoiceServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\KeywordPlanAdGroupKeywordServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\KeywordPlanAdGroupServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\KeywordPlanCampaignKeywordServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\KeywordPlanCampaignServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\KeywordPlanIdeaServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\KeywordPlanServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\KeywordThemeConstantServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\LabelServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\MediaFileServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\MerchantCenterLinkServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\OfflineUserDataJobServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\PaymentsAccountServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ProductLinkServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ReachPlanServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\RecommendationServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\RemarketingActionServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\SharedCriterionServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\SharedSetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\SmartCampaignSettingServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\SmartCampaignSuggestServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\ThirdPartyAppAnalyticsLinkServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\TravelAssetSuggestionServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\UserDataServiceClient;
+use Google\Ads\GoogleAds\V14\Services\Client\UserListServiceClient;
 use Google\ApiCore\GrpcSupportTrait;
 use Grpc\ChannelCredentials;
 
@@ -233,858 +233,1393 @@ trait ServiceClientFactoryTrait
     }
 
     /**
-     * @return AccountBudgetProposalServiceClient
+     * @return AccountBudgetProposalServiceClient|\Google\Ads\GoogleAds\V14\Services\AccountBudgetProposalServiceClient
      */
     public function getAccountBudgetProposalServiceClient(): AccountBudgetProposalServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AccountBudgetProposalServiceClient
     {
-        return new AccountBudgetProposalServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AccountBudgetProposalServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AccountBudgetProposalServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AccountLinkServiceClient
+     * @return AccountLinkServiceClient|\Google\Ads\GoogleAds\V14\Services\AccountLinkServiceClient
      */
     public function getAccountLinkServiceClient(): AccountLinkServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AccountLinkServiceClient
     {
-        return new AccountLinkServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AccountLinkServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AccountLinkServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupAdLabelServiceClient
+     * @return AdGroupAdLabelServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupAdLabelServiceClient
      */
     public function getAdGroupAdLabelServiceClient(): AdGroupAdLabelServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupAdLabelServiceClient
     {
-        return new AdGroupAdLabelServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupAdLabelServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupAdLabelServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupAdServiceClient
+     * @return AdGroupAdServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupAdServiceClient
      */
     public function getAdGroupAdServiceClient(): AdGroupAdServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupAdServiceClient
     {
-        return new AdGroupAdServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupAdServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupAdServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupAssetServiceClient
+     * @return AdGroupAssetServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupAssetServiceClient
      */
     public function getAdGroupAssetServiceClient(): AdGroupAssetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupAssetServiceClient
     {
-        return new AdGroupAssetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupAssetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupAssetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupAssetSetServiceClient
+     * @return AdGroupAssetSetServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupAssetSetServiceClient
      */
     public function getAdGroupAssetSetServiceClient(): AdGroupAssetSetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupAssetSetServiceClient
     {
-        return new AdGroupAssetSetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupAssetSetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupAssetSetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupBidModifierServiceClient
+     * @return AdGroupBidModifierServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupBidModifierServiceClient
      */
     public function getAdGroupBidModifierServiceClient(): AdGroupBidModifierServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupBidModifierServiceClient
     {
-        return new AdGroupBidModifierServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupBidModifierServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupBidModifierServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupCriterionCustomizerServiceClient
+     * @return AdGroupCriterionCustomizerServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupCriterionCustomizerServiceClient
      */
     public function getAdGroupCriterionCustomizerServiceClient(): AdGroupCriterionCustomizerServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupCriterionCustomizerServiceClient
     {
-        return new AdGroupCriterionCustomizerServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupCriterionCustomizerServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupCriterionCustomizerServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupCriterionLabelServiceClient
+     * @return AdGroupCriterionLabelServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupCriterionLabelServiceClient
      */
     public function getAdGroupCriterionLabelServiceClient(): AdGroupCriterionLabelServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupCriterionLabelServiceClient
     {
-        return new AdGroupCriterionLabelServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupCriterionLabelServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupCriterionLabelServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupCriterionServiceClient
+     * @return AdGroupCriterionServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupCriterionServiceClient
      */
     public function getAdGroupCriterionServiceClient(): AdGroupCriterionServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupCriterionServiceClient
     {
-        return new AdGroupCriterionServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupCriterionServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupCriterionServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupCustomizerServiceClient
+     * @return AdGroupCustomizerServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupCustomizerServiceClient
      */
     public function getAdGroupCustomizerServiceClient(): AdGroupCustomizerServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupCustomizerServiceClient
     {
-        return new AdGroupCustomizerServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupCustomizerServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupCustomizerServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupExtensionSettingServiceClient
+     * @return AdGroupExtensionSettingServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupExtensionSettingServiceClient
      */
     public function getAdGroupExtensionSettingServiceClient(): AdGroupExtensionSettingServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupExtensionSettingServiceClient
     {
-        return new AdGroupExtensionSettingServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupExtensionSettingServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupExtensionSettingServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupFeedServiceClient
+     * @return AdGroupFeedServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupFeedServiceClient
      */
     public function getAdGroupFeedServiceClient(): AdGroupFeedServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupFeedServiceClient
     {
-        return new AdGroupFeedServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupFeedServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupFeedServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupLabelServiceClient
+     * @return AdGroupLabelServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupLabelServiceClient
      */
     public function getAdGroupLabelServiceClient(): AdGroupLabelServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupLabelServiceClient
     {
-        return new AdGroupLabelServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupLabelServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupLabelServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdGroupServiceClient
+     * @return AdGroupServiceClient|\Google\Ads\GoogleAds\V14\Services\AdGroupServiceClient
      */
     public function getAdGroupServiceClient(): AdGroupServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdGroupServiceClient
     {
-        return new AdGroupServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdGroupServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdGroupServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdParameterServiceClient
+     * @return AdParameterServiceClient|\Google\Ads\GoogleAds\V14\Services\AdParameterServiceClient
      */
     public function getAdParameterServiceClient(): AdParameterServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdParameterServiceClient
     {
-        return new AdParameterServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdParameterServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdParameterServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AdServiceClient
+     * @return AdServiceClient|\Google\Ads\GoogleAds\V14\Services\AdServiceClient
      */
     public function getAdServiceClient(): AdServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AdServiceClient
     {
-        return new AdServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AdServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AdServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AssetGroupAssetServiceClient
+     * @return AssetGroupAssetServiceClient|\Google\Ads\GoogleAds\V14\Services\AssetGroupAssetServiceClient
      */
     public function getAssetGroupAssetServiceClient(): AssetGroupAssetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AssetGroupAssetServiceClient
     {
-        return new AssetGroupAssetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AssetGroupAssetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AssetGroupAssetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AssetGroupListingGroupFilterServiceClient
+     * @return AssetGroupListingGroupFilterServiceClient|\Google\Ads\GoogleAds\V14\Services\AssetGroupListingGroupFilterServiceClient
      */
     public function getAssetGroupListingGroupFilterServiceClient(): AssetGroupListingGroupFilterServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AssetGroupListingGroupFilterServiceClient
     {
-        return new AssetGroupListingGroupFilterServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AssetGroupListingGroupFilterServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AssetGroupListingGroupFilterServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AssetGroupServiceClient
+     * @return AssetGroupServiceClient|\Google\Ads\GoogleAds\V14\Services\AssetGroupServiceClient
      */
     public function getAssetGroupServiceClient(): AssetGroupServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AssetGroupServiceClient
     {
-        return new AssetGroupServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AssetGroupServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AssetGroupServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AssetGroupSignalServiceClient
+     * @return AssetGroupSignalServiceClient|\Google\Ads\GoogleAds\V14\Services\AssetGroupSignalServiceClient
      */
     public function getAssetGroupSignalServiceClient(): AssetGroupSignalServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AssetGroupSignalServiceClient
     {
-        return new AssetGroupSignalServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AssetGroupSignalServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AssetGroupSignalServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AssetServiceClient
+     * @return AssetServiceClient|\Google\Ads\GoogleAds\V14\Services\AssetServiceClient
      */
     public function getAssetServiceClient(): AssetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AssetServiceClient
     {
-        return new AssetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AssetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AssetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AssetSetAssetServiceClient
+     * @return AssetSetAssetServiceClient|\Google\Ads\GoogleAds\V14\Services\AssetSetAssetServiceClient
      */
     public function getAssetSetAssetServiceClient(): AssetSetAssetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AssetSetAssetServiceClient
     {
-        return new AssetSetAssetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AssetSetAssetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AssetSetAssetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AssetSetServiceClient
+     * @return AssetSetServiceClient|\Google\Ads\GoogleAds\V14\Services\AssetSetServiceClient
      */
     public function getAssetSetServiceClient(): AssetSetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AssetSetServiceClient
     {
-        return new AssetSetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AssetSetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AssetSetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AudienceInsightsServiceClient
+     * @return AudienceInsightsServiceClient|\Google\Ads\GoogleAds\V14\Services\AudienceInsightsServiceClient
      */
     public function getAudienceInsightsServiceClient(): AudienceInsightsServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AudienceInsightsServiceClient
     {
-        return new AudienceInsightsServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AudienceInsightsServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AudienceInsightsServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return AudienceServiceClient
+     * @return AudienceServiceClient|\Google\Ads\GoogleAds\V14\Services\AudienceServiceClient
      */
     public function getAudienceServiceClient(): AudienceServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\AudienceServiceClient
     {
-        return new AudienceServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new AudienceServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\AudienceServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return BatchJobServiceClient
+     * @return BatchJobServiceClient|\Google\Ads\GoogleAds\V14\Services\BatchJobServiceClient
      */
     public function getBatchJobServiceClient(): BatchJobServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\BatchJobServiceClient
     {
-        return new BatchJobServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new BatchJobServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\BatchJobServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return BiddingDataExclusionServiceClient
+     * @return BiddingDataExclusionServiceClient|\Google\Ads\GoogleAds\V14\Services\BiddingDataExclusionServiceClient
      */
     public function getBiddingDataExclusionServiceClient(): BiddingDataExclusionServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\BiddingDataExclusionServiceClient
     {
-        return new BiddingDataExclusionServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new BiddingDataExclusionServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\BiddingDataExclusionServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return BiddingSeasonalityAdjustmentServiceClient
+     * @return BiddingSeasonalityAdjustmentServiceClient|\Google\Ads\GoogleAds\V14\Services\BiddingSeasonalityAdjustmentServiceClient
      */
     public function getBiddingSeasonalityAdjustmentServiceClient(): BiddingSeasonalityAdjustmentServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\BiddingSeasonalityAdjustmentServiceClient
     {
-        return new BiddingSeasonalityAdjustmentServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new BiddingSeasonalityAdjustmentServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\BiddingSeasonalityAdjustmentServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return BiddingStrategyServiceClient
+     * @return BiddingStrategyServiceClient|\Google\Ads\GoogleAds\V14\Services\BiddingStrategyServiceClient
      */
     public function getBiddingStrategyServiceClient(): BiddingStrategyServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\BiddingStrategyServiceClient
     {
-        return new BiddingStrategyServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new BiddingStrategyServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\BiddingStrategyServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return BillingSetupServiceClient
+     * @return BillingSetupServiceClient|\Google\Ads\GoogleAds\V14\Services\BillingSetupServiceClient
      */
     public function getBillingSetupServiceClient(): BillingSetupServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\BillingSetupServiceClient
     {
-        return new BillingSetupServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new BillingSetupServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\BillingSetupServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignAssetServiceClient
+     * @return CampaignAssetServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignAssetServiceClient
      */
     public function getCampaignAssetServiceClient(): CampaignAssetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignAssetServiceClient
     {
-        return new CampaignAssetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignAssetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignAssetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignAssetSetServiceClient
+     * @return CampaignAssetSetServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignAssetSetServiceClient
      */
     public function getCampaignAssetSetServiceClient(): CampaignAssetSetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignAssetSetServiceClient
     {
-        return new CampaignAssetSetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignAssetSetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignAssetSetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignBidModifierServiceClient
+     * @return CampaignBidModifierServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignBidModifierServiceClient
      */
     public function getCampaignBidModifierServiceClient(): CampaignBidModifierServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignBidModifierServiceClient
     {
-        return new CampaignBidModifierServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignBidModifierServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignBidModifierServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignBudgetServiceClient
+     * @return CampaignBudgetServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignBudgetServiceClient
      */
     public function getCampaignBudgetServiceClient(): CampaignBudgetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignBudgetServiceClient
     {
-        return new CampaignBudgetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignBudgetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignBudgetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignConversionGoalServiceClient
+     * @return CampaignConversionGoalServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignConversionGoalServiceClient
      */
     public function getCampaignConversionGoalServiceClient(): CampaignConversionGoalServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignConversionGoalServiceClient
     {
-        return new CampaignConversionGoalServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignConversionGoalServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignConversionGoalServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignCriterionServiceClient
+     * @return CampaignCriterionServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignCriterionServiceClient
      */
     public function getCampaignCriterionServiceClient(): CampaignCriterionServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignCriterionServiceClient
     {
-        return new CampaignCriterionServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignCriterionServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignCriterionServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignCustomizerServiceClient
+     * @return CampaignCustomizerServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignCustomizerServiceClient
      */
     public function getCampaignCustomizerServiceClient(): CampaignCustomizerServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignCustomizerServiceClient
     {
-        return new CampaignCustomizerServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignCustomizerServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignCustomizerServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignDraftServiceClient
+     * @return CampaignDraftServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignDraftServiceClient
      */
     public function getCampaignDraftServiceClient(): CampaignDraftServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignDraftServiceClient
     {
-        return new CampaignDraftServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignDraftServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignDraftServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignExtensionSettingServiceClient
+     * @return CampaignExtensionSettingServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignExtensionSettingServiceClient
      */
     public function getCampaignExtensionSettingServiceClient(): CampaignExtensionSettingServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignExtensionSettingServiceClient
     {
-        return new CampaignExtensionSettingServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignExtensionSettingServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignExtensionSettingServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignFeedServiceClient
+     * @return CampaignFeedServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignFeedServiceClient
      */
     public function getCampaignFeedServiceClient(): CampaignFeedServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignFeedServiceClient
     {
-        return new CampaignFeedServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignFeedServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignFeedServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignGroupServiceClient
+     * @return CampaignGroupServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignGroupServiceClient
      */
     public function getCampaignGroupServiceClient(): CampaignGroupServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignGroupServiceClient
     {
-        return new CampaignGroupServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignGroupServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignGroupServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignLabelServiceClient
+     * @return CampaignLabelServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignLabelServiceClient
      */
     public function getCampaignLabelServiceClient(): CampaignLabelServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignLabelServiceClient
     {
-        return new CampaignLabelServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignLabelServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignLabelServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignServiceClient
+     * @return CampaignServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignServiceClient
      */
     public function getCampaignServiceClient(): CampaignServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignServiceClient
     {
-        return new CampaignServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CampaignSharedSetServiceClient
+     * @return CampaignSharedSetServiceClient|\Google\Ads\GoogleAds\V14\Services\CampaignSharedSetServiceClient
      */
     public function getCampaignSharedSetServiceClient(): CampaignSharedSetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CampaignSharedSetServiceClient
     {
-        return new CampaignSharedSetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CampaignSharedSetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CampaignSharedSetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ConversionActionServiceClient
+     * @return ConversionActionServiceClient|\Google\Ads\GoogleAds\V14\Services\ConversionActionServiceClient
      */
     public function getConversionActionServiceClient(): ConversionActionServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ConversionActionServiceClient
     {
-        return new ConversionActionServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ConversionActionServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ConversionActionServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ConversionAdjustmentUploadServiceClient
+     * @return ConversionAdjustmentUploadServiceClient|\Google\Ads\GoogleAds\V14\Services\ConversionAdjustmentUploadServiceClient
      */
     public function getConversionAdjustmentUploadServiceClient(): ConversionAdjustmentUploadServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ConversionAdjustmentUploadServiceClient
     {
-        return new ConversionAdjustmentUploadServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ConversionAdjustmentUploadServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ConversionAdjustmentUploadServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ConversionCustomVariableServiceClient
+     * @return ConversionCustomVariableServiceClient|\Google\Ads\GoogleAds\V14\Services\ConversionCustomVariableServiceClient
      */
     public function getConversionCustomVariableServiceClient(): ConversionCustomVariableServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ConversionCustomVariableServiceClient
     {
-        return new ConversionCustomVariableServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ConversionCustomVariableServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ConversionCustomVariableServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ConversionGoalCampaignConfigServiceClient
+     * @return ConversionGoalCampaignConfigServiceClient|\Google\Ads\GoogleAds\V14\Services\ConversionGoalCampaignConfigServiceClient
      */
     public function getConversionGoalCampaignConfigServiceClient(): ConversionGoalCampaignConfigServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ConversionGoalCampaignConfigServiceClient
     {
-        return new ConversionGoalCampaignConfigServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ConversionGoalCampaignConfigServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ConversionGoalCampaignConfigServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ConversionUploadServiceClient
+     * @return ConversionUploadServiceClient|\Google\Ads\GoogleAds\V14\Services\ConversionUploadServiceClient
      */
     public function getConversionUploadServiceClient(): ConversionUploadServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ConversionUploadServiceClient
     {
-        return new ConversionUploadServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ConversionUploadServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ConversionUploadServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ConversionValueRuleServiceClient
+     * @return ConversionValueRuleServiceClient|\Google\Ads\GoogleAds\V14\Services\ConversionValueRuleServiceClient
      */
     public function getConversionValueRuleServiceClient(): ConversionValueRuleServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ConversionValueRuleServiceClient
     {
-        return new ConversionValueRuleServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ConversionValueRuleServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ConversionValueRuleServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ConversionValueRuleSetServiceClient
+     * @return ConversionValueRuleSetServiceClient|\Google\Ads\GoogleAds\V14\Services\ConversionValueRuleSetServiceClient
      */
     public function getConversionValueRuleSetServiceClient(): ConversionValueRuleSetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ConversionValueRuleSetServiceClient
     {
-        return new ConversionValueRuleSetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ConversionValueRuleSetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ConversionValueRuleSetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomAudienceServiceClient
+     * @return CustomAudienceServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomAudienceServiceClient
      */
     public function getCustomAudienceServiceClient(): CustomAudienceServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomAudienceServiceClient
     {
-        return new CustomAudienceServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomAudienceServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomAudienceServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomConversionGoalServiceClient
+     * @return CustomConversionGoalServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomConversionGoalServiceClient
      */
     public function getCustomConversionGoalServiceClient(): CustomConversionGoalServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomConversionGoalServiceClient
     {
-        return new CustomConversionGoalServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomConversionGoalServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomConversionGoalServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerAssetServiceClient
+     * @return CustomerAssetServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerAssetServiceClient
      */
     public function getCustomerAssetServiceClient(): CustomerAssetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerAssetServiceClient
     {
-        return new CustomerAssetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerAssetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerAssetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerAssetSetServiceClient
+     * @return CustomerAssetSetServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerAssetSetServiceClient
      */
     public function getCustomerAssetSetServiceClient(): CustomerAssetSetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerAssetSetServiceClient
     {
-        return new CustomerAssetSetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerAssetSetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerAssetSetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerClientLinkServiceClient
+     * @return CustomerClientLinkServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerClientLinkServiceClient
      */
     public function getCustomerClientLinkServiceClient(): CustomerClientLinkServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerClientLinkServiceClient
     {
-        return new CustomerClientLinkServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerClientLinkServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerClientLinkServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerConversionGoalServiceClient
+     * @return CustomerConversionGoalServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerConversionGoalServiceClient
      */
     public function getCustomerConversionGoalServiceClient(): CustomerConversionGoalServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerConversionGoalServiceClient
     {
-        return new CustomerConversionGoalServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerConversionGoalServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerConversionGoalServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerCustomizerServiceClient
+     * @return CustomerCustomizerServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerCustomizerServiceClient
      */
     public function getCustomerCustomizerServiceClient(): CustomerCustomizerServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerCustomizerServiceClient
     {
-        return new CustomerCustomizerServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerCustomizerServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerCustomizerServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerExtensionSettingServiceClient
+     * @return CustomerExtensionSettingServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerExtensionSettingServiceClient
      */
     public function getCustomerExtensionSettingServiceClient(): CustomerExtensionSettingServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerExtensionSettingServiceClient
     {
-        return new CustomerExtensionSettingServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerExtensionSettingServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerExtensionSettingServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerFeedServiceClient
+     * @return CustomerFeedServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerFeedServiceClient
      */
     public function getCustomerFeedServiceClient(): CustomerFeedServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerFeedServiceClient
     {
-        return new CustomerFeedServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerFeedServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerFeedServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerLabelServiceClient
+     * @return CustomerLabelServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerLabelServiceClient
      */
     public function getCustomerLabelServiceClient(): CustomerLabelServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerLabelServiceClient
     {
-        return new CustomerLabelServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerLabelServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerLabelServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerManagerLinkServiceClient
+     * @return CustomerManagerLinkServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerManagerLinkServiceClient
      */
     public function getCustomerManagerLinkServiceClient(): CustomerManagerLinkServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerManagerLinkServiceClient
     {
-        return new CustomerManagerLinkServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerManagerLinkServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerManagerLinkServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerNegativeCriterionServiceClient
+     * @return CustomerNegativeCriterionServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerNegativeCriterionServiceClient
      */
     public function getCustomerNegativeCriterionServiceClient(): CustomerNegativeCriterionServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerNegativeCriterionServiceClient
     {
-        return new CustomerNegativeCriterionServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerNegativeCriterionServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerNegativeCriterionServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerServiceClient
+     * @return CustomerServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerServiceClient
      */
     public function getCustomerServiceClient(): CustomerServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerServiceClient
     {
-        return new CustomerServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerSkAdNetworkConversionValueSchemaServiceClient
+     * @return CustomerSkAdNetworkConversionValueSchemaServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerSkAdNetworkConversionValueSchemaServiceClient
      */
     public function getCustomerSkAdNetworkConversionValueSchemaServiceClient(): CustomerSkAdNetworkConversionValueSchemaServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerSkAdNetworkConversionValueSchemaServiceClient
     {
-        return new CustomerSkAdNetworkConversionValueSchemaServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerSkAdNetworkConversionValueSchemaServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerSkAdNetworkConversionValueSchemaServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerUserAccessInvitationServiceClient
+     * @return CustomerUserAccessInvitationServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerUserAccessInvitationServiceClient
      */
     public function getCustomerUserAccessInvitationServiceClient(): CustomerUserAccessInvitationServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerUserAccessInvitationServiceClient
     {
-        return new CustomerUserAccessInvitationServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerUserAccessInvitationServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerUserAccessInvitationServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomerUserAccessServiceClient
+     * @return CustomerUserAccessServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomerUserAccessServiceClient
      */
     public function getCustomerUserAccessServiceClient(): CustomerUserAccessServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomerUserAccessServiceClient
     {
-        return new CustomerUserAccessServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomerUserAccessServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomerUserAccessServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomInterestServiceClient
+     * @return CustomInterestServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomInterestServiceClient
      */
     public function getCustomInterestServiceClient(): CustomInterestServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomInterestServiceClient
     {
-        return new CustomInterestServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomInterestServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomInterestServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return CustomizerAttributeServiceClient
+     * @return CustomizerAttributeServiceClient|\Google\Ads\GoogleAds\V14\Services\CustomizerAttributeServiceClient
      */
     public function getCustomizerAttributeServiceClient(): CustomizerAttributeServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\CustomizerAttributeServiceClient
     {
-        return new CustomizerAttributeServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new CustomizerAttributeServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\CustomizerAttributeServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ExperimentArmServiceClient
+     * @return ExperimentArmServiceClient|\Google\Ads\GoogleAds\V14\Services\ExperimentArmServiceClient
      */
     public function getExperimentArmServiceClient(): ExperimentArmServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ExperimentArmServiceClient
     {
-        return new ExperimentArmServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ExperimentArmServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ExperimentArmServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ExperimentServiceClient
+     * @return ExperimentServiceClient|\Google\Ads\GoogleAds\V14\Services\ExperimentServiceClient
      */
     public function getExperimentServiceClient(): ExperimentServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ExperimentServiceClient
     {
-        return new ExperimentServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ExperimentServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ExperimentServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ExtensionFeedItemServiceClient
+     * @return ExtensionFeedItemServiceClient|\Google\Ads\GoogleAds\V14\Services\ExtensionFeedItemServiceClient
      */
     public function getExtensionFeedItemServiceClient(): ExtensionFeedItemServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ExtensionFeedItemServiceClient
     {
-        return new ExtensionFeedItemServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ExtensionFeedItemServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ExtensionFeedItemServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return FeedItemServiceClient
+     * @return FeedItemServiceClient|\Google\Ads\GoogleAds\V14\Services\FeedItemServiceClient
      */
     public function getFeedItemServiceClient(): FeedItemServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\FeedItemServiceClient
     {
-        return new FeedItemServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new FeedItemServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\FeedItemServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return FeedItemSetLinkServiceClient
+     * @return FeedItemSetLinkServiceClient|\Google\Ads\GoogleAds\V14\Services\FeedItemSetLinkServiceClient
      */
     public function getFeedItemSetLinkServiceClient(): FeedItemSetLinkServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\FeedItemSetLinkServiceClient
     {
-        return new FeedItemSetLinkServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new FeedItemSetLinkServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\FeedItemSetLinkServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return FeedItemSetServiceClient
+     * @return FeedItemSetServiceClient|\Google\Ads\GoogleAds\V14\Services\FeedItemSetServiceClient
      */
     public function getFeedItemSetServiceClient(): FeedItemSetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\FeedItemSetServiceClient
     {
-        return new FeedItemSetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new FeedItemSetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\FeedItemSetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return FeedItemTargetServiceClient
+     * @return FeedItemTargetServiceClient|\Google\Ads\GoogleAds\V14\Services\FeedItemTargetServiceClient
      */
     public function getFeedItemTargetServiceClient(): FeedItemTargetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\FeedItemTargetServiceClient
     {
-        return new FeedItemTargetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new FeedItemTargetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\FeedItemTargetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return FeedMappingServiceClient
+     * @return FeedMappingServiceClient|\Google\Ads\GoogleAds\V14\Services\FeedMappingServiceClient
      */
     public function getFeedMappingServiceClient(): FeedMappingServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\FeedMappingServiceClient
     {
-        return new FeedMappingServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new FeedMappingServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\FeedMappingServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return FeedServiceClient
+     * @return FeedServiceClient|\Google\Ads\GoogleAds\V14\Services\FeedServiceClient
      */
     public function getFeedServiceClient(): FeedServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\FeedServiceClient
     {
-        return new FeedServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new FeedServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\FeedServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return GeoTargetConstantServiceClient
+     * @return GeoTargetConstantServiceClient|\Google\Ads\GoogleAds\V14\Services\GeoTargetConstantServiceClient
      */
     public function getGeoTargetConstantServiceClient(): GeoTargetConstantServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\GeoTargetConstantServiceClient
     {
-        return new GeoTargetConstantServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new GeoTargetConstantServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\GeoTargetConstantServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return GoogleAdsFieldServiceClient
+     * @return GoogleAdsFieldServiceClient|\Google\Ads\GoogleAds\V14\Services\GoogleAdsFieldServiceClient
      */
     public function getGoogleAdsFieldServiceClient(): GoogleAdsFieldServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\GoogleAdsFieldServiceClient
     {
-        return new GoogleAdsFieldServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new GoogleAdsFieldServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\GoogleAdsFieldServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return GoogleAdsServiceClient
+     * @return GoogleAdsServiceClient|\Google\Ads\GoogleAds\V14\Services\GoogleAdsServiceClient
      */
     public function getGoogleAdsServiceClient(): GoogleAdsServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\GoogleAdsServiceClient
     {
-        return new GoogleAdsServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new GoogleAdsServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\GoogleAdsServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return InvoiceServiceClient
+     * @return InvoiceServiceClient|\Google\Ads\GoogleAds\V14\Services\InvoiceServiceClient
      */
     public function getInvoiceServiceClient(): InvoiceServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\InvoiceServiceClient
     {
-        return new InvoiceServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new InvoiceServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\InvoiceServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return KeywordPlanAdGroupKeywordServiceClient
+     * @return KeywordPlanAdGroupKeywordServiceClient|\Google\Ads\GoogleAds\V14\Services\KeywordPlanAdGroupKeywordServiceClient
      */
     public function getKeywordPlanAdGroupKeywordServiceClient(): KeywordPlanAdGroupKeywordServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\KeywordPlanAdGroupKeywordServiceClient
     {
-        return new KeywordPlanAdGroupKeywordServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new KeywordPlanAdGroupKeywordServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\KeywordPlanAdGroupKeywordServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return KeywordPlanAdGroupServiceClient
+     * @return KeywordPlanAdGroupServiceClient|\Google\Ads\GoogleAds\V14\Services\KeywordPlanAdGroupServiceClient
      */
     public function getKeywordPlanAdGroupServiceClient(): KeywordPlanAdGroupServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\KeywordPlanAdGroupServiceClient
     {
-        return new KeywordPlanAdGroupServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new KeywordPlanAdGroupServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\KeywordPlanAdGroupServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return KeywordPlanCampaignKeywordServiceClient
+     * @return KeywordPlanCampaignKeywordServiceClient|\Google\Ads\GoogleAds\V14\Services\KeywordPlanCampaignKeywordServiceClient
      */
     public function getKeywordPlanCampaignKeywordServiceClient(): KeywordPlanCampaignKeywordServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\KeywordPlanCampaignKeywordServiceClient
     {
-        return new KeywordPlanCampaignKeywordServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new KeywordPlanCampaignKeywordServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\KeywordPlanCampaignKeywordServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return KeywordPlanCampaignServiceClient
+     * @return KeywordPlanCampaignServiceClient|\Google\Ads\GoogleAds\V14\Services\KeywordPlanCampaignServiceClient
      */
     public function getKeywordPlanCampaignServiceClient(): KeywordPlanCampaignServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\KeywordPlanCampaignServiceClient
     {
-        return new KeywordPlanCampaignServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new KeywordPlanCampaignServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\KeywordPlanCampaignServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return KeywordPlanIdeaServiceClient
+     * @return KeywordPlanIdeaServiceClient|\Google\Ads\GoogleAds\V14\Services\KeywordPlanIdeaServiceClient
      */
     public function getKeywordPlanIdeaServiceClient(): KeywordPlanIdeaServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\KeywordPlanIdeaServiceClient
     {
-        return new KeywordPlanIdeaServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new KeywordPlanIdeaServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\KeywordPlanIdeaServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return KeywordPlanServiceClient
+     * @return KeywordPlanServiceClient|\Google\Ads\GoogleAds\V14\Services\KeywordPlanServiceClient
      */
     public function getKeywordPlanServiceClient(): KeywordPlanServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\KeywordPlanServiceClient
     {
-        return new KeywordPlanServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new KeywordPlanServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\KeywordPlanServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return KeywordThemeConstantServiceClient
+     * @return KeywordThemeConstantServiceClient|\Google\Ads\GoogleAds\V14\Services\KeywordThemeConstantServiceClient
      */
     public function getKeywordThemeConstantServiceClient(): KeywordThemeConstantServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\KeywordThemeConstantServiceClient
     {
-        return new KeywordThemeConstantServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new KeywordThemeConstantServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\KeywordThemeConstantServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return LabelServiceClient
+     * @return LabelServiceClient|\Google\Ads\GoogleAds\V14\Services\LabelServiceClient
      */
     public function getLabelServiceClient(): LabelServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\LabelServiceClient
     {
-        return new LabelServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new LabelServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\LabelServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return MediaFileServiceClient
+     * @return MediaFileServiceClient|\Google\Ads\GoogleAds\V14\Services\MediaFileServiceClient
      */
     public function getMediaFileServiceClient(): MediaFileServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\MediaFileServiceClient
     {
-        return new MediaFileServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new MediaFileServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\MediaFileServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return MerchantCenterLinkServiceClient
+     * @return MerchantCenterLinkServiceClient|\Google\Ads\GoogleAds\V14\Services\MerchantCenterLinkServiceClient
      */
     public function getMerchantCenterLinkServiceClient(): MerchantCenterLinkServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\MerchantCenterLinkServiceClient
     {
-        return new MerchantCenterLinkServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new MerchantCenterLinkServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\MerchantCenterLinkServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return OfflineUserDataJobServiceClient
+     * @return OfflineUserDataJobServiceClient|\Google\Ads\GoogleAds\V14\Services\OfflineUserDataJobServiceClient
      */
     public function getOfflineUserDataJobServiceClient(): OfflineUserDataJobServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\OfflineUserDataJobServiceClient
     {
-        return new OfflineUserDataJobServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new OfflineUserDataJobServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\OfflineUserDataJobServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return PaymentsAccountServiceClient
+     * @return PaymentsAccountServiceClient|\Google\Ads\GoogleAds\V14\Services\PaymentsAccountServiceClient
      */
     public function getPaymentsAccountServiceClient(): PaymentsAccountServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\PaymentsAccountServiceClient
     {
-        return new PaymentsAccountServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new PaymentsAccountServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\PaymentsAccountServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ProductLinkServiceClient
+     * @return ProductLinkServiceClient|\Google\Ads\GoogleAds\V14\Services\ProductLinkServiceClient
      */
     public function getProductLinkServiceClient(): ProductLinkServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ProductLinkServiceClient
     {
-        return new ProductLinkServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ProductLinkServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ProductLinkServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ReachPlanServiceClient
+     * @return ReachPlanServiceClient|\Google\Ads\GoogleAds\V14\Services\ReachPlanServiceClient
      */
     public function getReachPlanServiceClient(): ReachPlanServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ReachPlanServiceClient
     {
-        return new ReachPlanServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ReachPlanServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ReachPlanServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return RecommendationServiceClient
+     * @return RecommendationServiceClient|\Google\Ads\GoogleAds\V14\Services\RecommendationServiceClient
      */
     public function getRecommendationServiceClient(): RecommendationServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\RecommendationServiceClient
     {
-        return new RecommendationServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new RecommendationServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\RecommendationServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return RemarketingActionServiceClient
+     * @return RemarketingActionServiceClient|\Google\Ads\GoogleAds\V14\Services\RemarketingActionServiceClient
      */
     public function getRemarketingActionServiceClient(): RemarketingActionServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\RemarketingActionServiceClient
     {
-        return new RemarketingActionServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new RemarketingActionServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\RemarketingActionServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return SharedCriterionServiceClient
+     * @return SharedCriterionServiceClient|\Google\Ads\GoogleAds\V14\Services\SharedCriterionServiceClient
      */
     public function getSharedCriterionServiceClient(): SharedCriterionServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\SharedCriterionServiceClient
     {
-        return new SharedCriterionServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new SharedCriterionServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\SharedCriterionServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return SharedSetServiceClient
+     * @return SharedSetServiceClient|\Google\Ads\GoogleAds\V14\Services\SharedSetServiceClient
      */
     public function getSharedSetServiceClient(): SharedSetServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\SharedSetServiceClient
     {
-        return new SharedSetServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new SharedSetServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\SharedSetServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return SmartCampaignSettingServiceClient
+     * @return SmartCampaignSettingServiceClient|\Google\Ads\GoogleAds\V14\Services\SmartCampaignSettingServiceClient
      */
     public function getSmartCampaignSettingServiceClient(): SmartCampaignSettingServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\SmartCampaignSettingServiceClient
     {
-        return new SmartCampaignSettingServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new SmartCampaignSettingServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\SmartCampaignSettingServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return SmartCampaignSuggestServiceClient
+     * @return SmartCampaignSuggestServiceClient|\Google\Ads\GoogleAds\V14\Services\SmartCampaignSuggestServiceClient
      */
     public function getSmartCampaignSuggestServiceClient(): SmartCampaignSuggestServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\SmartCampaignSuggestServiceClient
     {
-        return new SmartCampaignSuggestServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new SmartCampaignSuggestServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\SmartCampaignSuggestServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return ThirdPartyAppAnalyticsLinkServiceClient
+     * @return ThirdPartyAppAnalyticsLinkServiceClient|\Google\Ads\GoogleAds\V14\Services\ThirdPartyAppAnalyticsLinkServiceClient
      */
     public function getThirdPartyAppAnalyticsLinkServiceClient(): ThirdPartyAppAnalyticsLinkServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\ThirdPartyAppAnalyticsLinkServiceClient
     {
-        return new ThirdPartyAppAnalyticsLinkServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new ThirdPartyAppAnalyticsLinkServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\ThirdPartyAppAnalyticsLinkServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return TravelAssetSuggestionServiceClient
+     * @return TravelAssetSuggestionServiceClient|\Google\Ads\GoogleAds\V14\Services\TravelAssetSuggestionServiceClient
      */
     public function getTravelAssetSuggestionServiceClient(): TravelAssetSuggestionServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\TravelAssetSuggestionServiceClient
     {
-        return new TravelAssetSuggestionServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new TravelAssetSuggestionServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\TravelAssetSuggestionServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return UserDataServiceClient
+     * @return UserDataServiceClient|\Google\Ads\GoogleAds\V14\Services\UserDataServiceClient
      */
     public function getUserDataServiceClient(): UserDataServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\UserDataServiceClient
     {
-        return new UserDataServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new UserDataServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\UserDataServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 
     /**
-     * @return UserListServiceClient
+     * @return UserListServiceClient|\Google\Ads\GoogleAds\V14\Services\UserListServiceClient
      */
     public function getUserListServiceClient(): UserListServiceClient
+        |\Google\Ads\GoogleAds\V14\Services\UserListServiceClient
     {
-        return new UserListServiceClient($this->getGoogleAdsClientOptions());
+        return $this->useGapicV2Source()
+            ? new UserListServiceClient($this->getGoogleAdsClientOptions())
+            : new \Google\Ads\GoogleAds\V14\Services\UserListServiceClient(
+                $this->getGoogleAdsClientOptions()
+            );
     }
 }

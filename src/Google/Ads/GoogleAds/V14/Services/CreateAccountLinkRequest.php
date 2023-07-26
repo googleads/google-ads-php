@@ -30,6 +30,21 @@ class CreateAccountLinkRequest extends \Google\Protobuf\Internal\Message
     protected $account_link = null;
 
     /**
+     * @param string                                          $customerId  Required. The ID of the customer for which the account link is created.
+     * @param \Google\Ads\GoogleAds\V14\Resources\AccountLink $accountLink Required. The account link to be created.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\CreateAccountLinkRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, \Google\Ads\GoogleAds\V14\Resources\AccountLink $accountLink): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setAccountLink($accountLink);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

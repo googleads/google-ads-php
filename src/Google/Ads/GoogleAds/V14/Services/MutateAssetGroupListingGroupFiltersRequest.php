@@ -48,6 +48,23 @@ class MutateAssetGroupListingGroupFiltersRequest extends \Google\Protobuf\Intern
     protected $response_content_type = 0;
 
     /**
+     * @param string                                                                     $customerId Required. The ID of the customer whose asset group listing group filters
+     *                                                                                               are being modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\AssetGroupListingGroupFilterOperation[] $operations Required. The list of operations to perform on individual asset group
+     *                                                                                               listing group filters.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateAssetGroupListingGroupFiltersRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

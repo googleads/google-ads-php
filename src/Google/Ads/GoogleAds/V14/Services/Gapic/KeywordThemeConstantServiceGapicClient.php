@@ -48,6 +48,10 @@ use Google\Auth\FetchAuthTokenInterface;
  *     $keywordThemeConstantServiceClient->close();
  * }
  * ```
+ *
+ * This service has a new (beta) implementation. See {@see
+ * \Google\Ads\GoogleAds\V14\Services\Client\KeywordThemeConstantServiceClient} to
+ * use the new surface.
  */
 class KeywordThemeConstantServiceGapicClient
 {

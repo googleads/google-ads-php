@@ -49,6 +49,29 @@ class UploadConversionAdjustmentsRequest extends \Google\Protobuf\Internal\Messa
     protected $validate_only = false;
 
     /**
+     * @param string                                                    $customerId            Required. The ID of the customer performing the upload.
+     * @param \Google\Ads\GoogleAds\V14\Services\ConversionAdjustment[] $conversionAdjustments Required. The conversion adjustments that are being uploaded.
+     * @param bool                                                      $partialFailure        Required. If true, successful operations will be carried out and invalid
+     *                                                                                         operations will return errors. If false, all operations will be carried out
+     *                                                                                         in one transaction if and only if they are all valid. This should always be
+     *                                                                                         set to true.
+     *                                                                                         See
+     *                                                                                         https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
+     *                                                                                         for more information about partial failure.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\UploadConversionAdjustmentsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $conversionAdjustments, bool $partialFailure): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setConversionAdjustments($conversionAdjustments)
+            ->setPartialFailure($partialFailure);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

@@ -46,6 +46,18 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $ad_network_type = 0;
     /**
+     * Resource name of the ad group.
+     *
+     * Generated from protobuf field <code>optional string ad_group = 158;</code>
+     */
+    protected $ad_group = null;
+    /**
+     * Resource name of the asset group.
+     *
+     * Generated from protobuf field <code>optional string asset_group = 159;</code>
+     */
+    protected $asset_group = null;
+    /**
      * Domain (visible URL) of a participant in the Auction Insights report.
      *
      * Generated from protobuf field <code>optional string auction_insight_domain = 145;</code>
@@ -57,6 +69,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v14.common.BudgetCampaignAssociationStatus budget_campaign_association_status = 134;</code>
      */
     protected $budget_campaign_association_status = null;
+    /**
+     * Resource name of the campaign.
+     *
+     * Generated from protobuf field <code>optional string campaign = 157;</code>
+     */
+    protected $campaign = null;
     /**
      * Click type.
      *
@@ -516,6 +534,19 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $search_engine_results_page_type = 0;
     /**
+     * A search term subcategory. An empty string denotes the catch-all
+     * subcategory for search terms that didn't fit into another subcategory.
+     *
+     * Generated from protobuf field <code>optional string search_subcategory = 155;</code>
+     */
+    protected $search_subcategory = null;
+    /**
+     * A search term.
+     *
+     * Generated from protobuf field <code>optional string search_term = 156;</code>
+     */
+    protected $search_term = null;
+    /**
      * Match type of the keyword that triggered the ad, including variants.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v14.enums.SearchTermMatchTypeEnum.SearchTermMatchType search_term_match_type = 22;</code>
@@ -607,6 +638,14 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional .google.ads.googleads.v14.common.AssetInteractionTarget asset_interaction_target = 139;</code>
      */
     protected $asset_interaction_target = null;
+    /**
+     * This is for segmenting conversions by whether the user is a new customer
+     * or a returning customer. This segmentation is typically used to measure
+     * the impact of customer acquisition goal.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.enums.ConvertingUserPriorEngagementTypeAndLtvBucketEnum.ConvertingUserPriorEngagementTypeAndLtvBucket new_versus_returning_customers = 160;</code>
+     */
+    protected $new_versus_returning_customers = 0;
 
     /**
      * Constructor.
@@ -624,10 +663,16 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Ad Destination type.
      *     @type int $ad_network_type
      *           Ad network type.
+     *     @type string $ad_group
+     *           Resource name of the ad group.
+     *     @type string $asset_group
+     *           Resource name of the asset group.
      *     @type string $auction_insight_domain
      *           Domain (visible URL) of a participant in the Auction Insights report.
      *     @type \Google\Ads\GoogleAds\V14\Common\BudgetCampaignAssociationStatus $budget_campaign_association_status
      *           Budget campaign association status.
+     *     @type string $campaign
+     *           Resource name of the campaign.
      *     @type int $click_type
      *           Click type.
      *     @type string $conversion_action
@@ -790,6 +835,11 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Recommendation type.
      *     @type int $search_engine_results_page_type
      *           Type of the search engine results page.
+     *     @type string $search_subcategory
+     *           A search term subcategory. An empty string denotes the catch-all
+     *           subcategory for search terms that didn't fit into another subcategory.
+     *     @type string $search_term
+     *           A search term.
      *     @type int $search_term_match_type
      *           Match type of the keyword that triggered the ad, including variants.
      *     @type int $slot
@@ -834,6 +884,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           interaction_on_this_asset is false, it means the interactions is not on
      *           this specific asset but on other parts of the served ad this asset is
      *           served with.
+     *     @type int $new_versus_returning_customers
+     *           This is for segmenting conversions by whether the user is a new customer
+     *           or a returning customer. This segmentation is typically used to measure
+     *           the impact of customer acquisition goal.
      * }
      */
     public function __construct($data = NULL) {
@@ -1002,6 +1056,78 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Resource name of the ad group.
+     *
+     * Generated from protobuf field <code>optional string ad_group = 158;</code>
+     * @return string
+     */
+    public function getAdGroup()
+    {
+        return isset($this->ad_group) ? $this->ad_group : '';
+    }
+
+    public function hasAdGroup()
+    {
+        return isset($this->ad_group);
+    }
+
+    public function clearAdGroup()
+    {
+        unset($this->ad_group);
+    }
+
+    /**
+     * Resource name of the ad group.
+     *
+     * Generated from protobuf field <code>optional string ad_group = 158;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAdGroup($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ad_group = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource name of the asset group.
+     *
+     * Generated from protobuf field <code>optional string asset_group = 159;</code>
+     * @return string
+     */
+    public function getAssetGroup()
+    {
+        return isset($this->asset_group) ? $this->asset_group : '';
+    }
+
+    public function hasAssetGroup()
+    {
+        return isset($this->asset_group);
+    }
+
+    public function clearAssetGroup()
+    {
+        unset($this->asset_group);
+    }
+
+    /**
+     * Resource name of the asset group.
+     *
+     * Generated from protobuf field <code>optional string asset_group = 159;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAssetGroup($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->asset_group = $var;
+
+        return $this;
+    }
+
+    /**
      * Domain (visible URL) of a participant in the Auction Insights report.
      *
      * Generated from protobuf field <code>optional string auction_insight_domain = 145;</code>
@@ -1069,6 +1195,42 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Common\BudgetCampaignAssociationStatus::class);
         $this->budget_campaign_association_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource name of the campaign.
+     *
+     * Generated from protobuf field <code>optional string campaign = 157;</code>
+     * @return string
+     */
+    public function getCampaign()
+    {
+        return isset($this->campaign) ? $this->campaign : '';
+    }
+
+    public function hasCampaign()
+    {
+        return isset($this->campaign);
+    }
+
+    public function clearCampaign()
+    {
+        unset($this->campaign);
+    }
+
+    /**
+     * Resource name of the campaign.
+     *
+     * Generated from protobuf field <code>optional string campaign = 157;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCampaign($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->campaign = $var;
 
         return $this;
     }
@@ -3576,6 +3738,80 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A search term subcategory. An empty string denotes the catch-all
+     * subcategory for search terms that didn't fit into another subcategory.
+     *
+     * Generated from protobuf field <code>optional string search_subcategory = 155;</code>
+     * @return string
+     */
+    public function getSearchSubcategory()
+    {
+        return isset($this->search_subcategory) ? $this->search_subcategory : '';
+    }
+
+    public function hasSearchSubcategory()
+    {
+        return isset($this->search_subcategory);
+    }
+
+    public function clearSearchSubcategory()
+    {
+        unset($this->search_subcategory);
+    }
+
+    /**
+     * A search term subcategory. An empty string denotes the catch-all
+     * subcategory for search terms that didn't fit into another subcategory.
+     *
+     * Generated from protobuf field <code>optional string search_subcategory = 155;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearchSubcategory($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search_subcategory = $var;
+
+        return $this;
+    }
+
+    /**
+     * A search term.
+     *
+     * Generated from protobuf field <code>optional string search_term = 156;</code>
+     * @return string
+     */
+    public function getSearchTerm()
+    {
+        return isset($this->search_term) ? $this->search_term : '';
+    }
+
+    public function hasSearchTerm()
+    {
+        return isset($this->search_term);
+    }
+
+    public function clearSearchTerm()
+    {
+        unset($this->search_term);
+    }
+
+    /**
+     * A search term.
+     *
+     * Generated from protobuf field <code>optional string search_term = 156;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearchTerm($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search_term = $var;
+
+        return $this;
+    }
+
+    /**
      * Match type of the keyword that triggered the ad, including variants.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v14.enums.SearchTermMatchTypeEnum.SearchTermMatchType search_term_match_type = 22;</code>
@@ -3983,6 +4219,36 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Common\AssetInteractionTarget::class);
         $this->asset_interaction_target = $var;
+
+        return $this;
+    }
+
+    /**
+     * This is for segmenting conversions by whether the user is a new customer
+     * or a returning customer. This segmentation is typically used to measure
+     * the impact of customer acquisition goal.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.enums.ConvertingUserPriorEngagementTypeAndLtvBucketEnum.ConvertingUserPriorEngagementTypeAndLtvBucket new_versus_returning_customers = 160;</code>
+     * @return int
+     */
+    public function getNewVersusReturningCustomers()
+    {
+        return $this->new_versus_returning_customers;
+    }
+
+    /**
+     * This is for segmenting conversions by whether the user is a new customer
+     * or a returning customer. This segmentation is typically used to measure
+     * the impact of customer acquisition goal.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.enums.ConvertingUserPriorEngagementTypeAndLtvBucketEnum.ConvertingUserPriorEngagementTypeAndLtvBucket new_versus_returning_customers = 160;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNewVersusReturningCustomers($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V14\Enums\ConvertingUserPriorEngagementTypeAndLtvBucketEnum\ConvertingUserPriorEngagementTypeAndLtvBucket::class);
+        $this->new_versus_returning_customers = $var;
 
         return $this;
     }

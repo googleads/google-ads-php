@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for
- * [ConversionGoalCampaignConfigService.MutateConversionGoalCampaignConfig][].
+ * [ConversionGoalCampaignConfigService.MutateConversionGoalCampaignConfigs][google.ads.googleads.v14.services.ConversionGoalCampaignConfigService.MutateConversionGoalCampaignConfigs].
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.services.MutateConversionGoalCampaignConfigsRequest</code>
  */
@@ -44,6 +44,23 @@ class MutateConversionGoalCampaignConfigsRequest extends \Google\Protobuf\Intern
      * Generated from protobuf field <code>.google.ads.googleads.v14.enums.ResponseContentTypeEnum.ResponseContentType response_content_type = 4;</code>
      */
     protected $response_content_type = 0;
+
+    /**
+     * @param string                                                                     $customerId Required. The ID of the customer whose custom conversion goals are being
+     *                                                                                               modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\ConversionGoalCampaignConfigOperation[] $operations Required. The list of operations to perform on individual conversion goal
+     *                                                                                               campaign config.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateConversionGoalCampaignConfigsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
 
     /**
      * Constructor.

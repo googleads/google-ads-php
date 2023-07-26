@@ -12,6 +12,15 @@ return [
                     'maxPollDelayMillis' => '5000',
                     'totalPollTimeoutMillis' => '300000',
                 ],
+                'callType' => \Google\ApiCore\Call::LONGRUNNING_CALL,
+                'headerParams' => [
+                    [
+                        'keyName' => 'resource_name',
+                        'fieldAccessors' => [
+                            'getResourceName',
+                        ],
+                    ],
+                ],
             ],
             'ScheduleExperiment' => [
                 'longRunning' => [
@@ -21,6 +30,39 @@ return [
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
                     'totalPollTimeoutMillis' => '300000',
+                ],
+                'callType' => \Google\ApiCore\Call::LONGRUNNING_CALL,
+                'headerParams' => [
+                    [
+                        'keyName' => 'resource_name',
+                        'fieldAccessors' => [
+                            'getResourceName',
+                        ],
+                    ],
+                ],
+            ],
+            'EndExperiment' => [
+                'callType' => \Google\ApiCore\Call::UNARY_CALL,
+                'responseType' => 'Google\Protobuf\GPBEmpty',
+                'headerParams' => [
+                    [
+                        'keyName' => 'experiment',
+                        'fieldAccessors' => [
+                            'getExperiment',
+                        ],
+                    ],
+                ],
+            ],
+            'GraduateExperiment' => [
+                'callType' => \Google\ApiCore\Call::UNARY_CALL,
+                'responseType' => 'Google\Protobuf\GPBEmpty',
+                'headerParams' => [
+                    [
+                        'keyName' => 'experiment',
+                        'fieldAccessors' => [
+                            'getExperiment',
+                        ],
+                    ],
                 ],
             ],
             'ListExperimentAsyncErrors' => [
@@ -32,6 +74,33 @@ return [
                     'responsePageTokenGetMethod' => 'getNextPageToken',
                     'resourcesGetMethod' => 'getErrors',
                 ],
+                'callType' => \Google\ApiCore\Call::PAGINATED_CALL,
+                'responseType' => 'Google\Ads\GoogleAds\V14\Services\ListExperimentAsyncErrorsResponse',
+                'headerParams' => [
+                    [
+                        'keyName' => 'resource_name',
+                        'fieldAccessors' => [
+                            'getResourceName',
+                        ],
+                    ],
+                ],
+            ],
+            'MutateExperiments' => [
+                'callType' => \Google\ApiCore\Call::UNARY_CALL,
+                'responseType' => 'Google\Ads\GoogleAds\V14\Services\MutateExperimentsResponse',
+                'headerParams' => [
+                    [
+                        'keyName' => 'customer_id',
+                        'fieldAccessors' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
+            'templateMap' => [
+                'campaign' => 'customers/{customer_id}/campaigns/{campaign_id}',
+                'campaignBudget' => 'customers/{customer_id}/campaignBudgets/{campaign_budget_id}',
+                'experiment' => 'customers/{customer_id}/experiments/{trial_id}',
             ],
         ],
     ],

@@ -53,6 +53,23 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
     protected $validate_only = false;
 
     /**
+     * @param string                                       $customerId     Required. The ID of the Manager under whom client customer is being
+     *                                                                     created.
+     * @param \Google\Ads\GoogleAds\V14\Resources\Customer $customerClient Required. The new client customer to create. The resource name on this
+     *                                                                     customer will be ignored.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\CreateCustomerClientRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, \Google\Ads\GoogleAds\V14\Resources\Customer $customerClient): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setCustomerClient($customerClient);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

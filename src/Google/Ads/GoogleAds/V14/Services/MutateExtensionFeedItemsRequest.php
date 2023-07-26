@@ -55,6 +55,23 @@ class MutateExtensionFeedItemsRequest extends \Google\Protobuf\Internal\Message
     protected $response_content_type = 0;
 
     /**
+     * @param string                                                          $customerId Required. The ID of the customer whose extension feed items are being
+     *                                                                                    modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\ExtensionFeedItemOperation[] $operations Required. The list of operations to perform on individual extension feed
+     *                                                                                    items.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateExtensionFeedItemsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Possible errors for offline conversion client summary.
- *  Next tag: 11
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.resources.OfflineConversionUploadError</code>
  */

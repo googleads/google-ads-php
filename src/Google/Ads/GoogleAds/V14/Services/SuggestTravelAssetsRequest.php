@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for
- * [TravelSuggestAssetsService.SuggestTravelAssets][].
+ * [TravelAssetSuggestionService.SuggestTravelAssets][google.ads.googleads.v14.services.TravelAssetSuggestionService.SuggestTravelAssets].
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.services.SuggestTravelAssetsRequest</code>
  */
@@ -38,6 +38,23 @@ class SuggestTravelAssetsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string place_ids = 4;</code>
      */
     private $place_ids;
+
+    /**
+     * @param string $customerId     Required. The ID of the customer.
+     * @param string $languageOption Required. The language specifications in BCP 47 format (for example, en-US,
+     *                               zh-CN, etc.) for the asset suggestions. Text will be in this language.
+     *                               Usually matches one of the campaign target languages.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\SuggestTravelAssetsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, string $languageOption): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setLanguageOption($languageOption);
+    }
 
     /**
      * Constructor.

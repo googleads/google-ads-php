@@ -25,6 +25,7 @@ use Google\Ads\GoogleAds\V14\Services\AccountLinkServiceClient;
 use Google\Ads\GoogleAds\V14\Services\AdGroupAdLabelServiceClient;
 use Google\Ads\GoogleAds\V14\Services\AdGroupAdServiceClient;
 use Google\Ads\GoogleAds\V14\Services\AdGroupAssetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\AdGroupAssetSetServiceClient;
 use Google\Ads\GoogleAds\V14\Services\AdGroupBidModifierServiceClient;
 use Google\Ads\GoogleAds\V14\Services\AdGroupCriterionCustomizerServiceClient;
 use Google\Ads\GoogleAds\V14\Services\AdGroupCriterionLabelServiceClient;
@@ -40,8 +41,10 @@ use Google\Ads\GoogleAds\V14\Services\AssetGroupAssetServiceClient;
 use Google\Ads\GoogleAds\V14\Services\AssetGroupListingGroupFilterServiceClient;
 use Google\Ads\GoogleAds\V14\Services\AssetGroupServiceClient;
 use Google\Ads\GoogleAds\V14\Services\AssetGroupSignalServiceClient;
+use Google\Ads\GoogleAds\V14\Services\AssetServiceClient;
 use Google\Ads\GoogleAds\V14\Services\AssetSetAssetServiceClient;
 use Google\Ads\GoogleAds\V14\Services\AssetSetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\AudienceServiceClient;
 use Google\Ads\GoogleAds\V14\Services\BatchJobServiceClient;
 use Google\Ads\GoogleAds\V14\Services\BiddingDataExclusionServiceClient;
 use Google\Ads\GoogleAds\V14\Services\BiddingSeasonalityAdjustmentServiceClient;
@@ -51,28 +54,38 @@ use Google\Ads\GoogleAds\V14\Services\CampaignAssetServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CampaignAssetSetServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CampaignBidModifierServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CampaignBudgetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\CampaignConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CampaignCriterionServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CampaignCustomizerServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CampaignDraftServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CampaignExtensionSettingServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CampaignFeedServiceClient;
+use Google\Ads\GoogleAds\V14\Services\CampaignGroupServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CampaignLabelServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CampaignSharedSetServiceClient;
 use Google\Ads\GoogleAds\V14\Services\ConversionActionServiceClient;
+use Google\Ads\GoogleAds\V14\Services\ConversionCustomVariableServiceClient;
+use Google\Ads\GoogleAds\V14\Services\ConversionGoalCampaignConfigServiceClient;
 use Google\Ads\GoogleAds\V14\Services\ConversionValueRuleServiceClient;
 use Google\Ads\GoogleAds\V14\Services\ConversionValueRuleSetServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CustomAudienceServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CustomConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CustomerAssetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\CustomerAssetSetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\CustomerClientLinkServiceClient;
+use Google\Ads\GoogleAds\V14\Services\CustomerConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CustomerCustomizerServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CustomerExtensionSettingServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CustomerFeedServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CustomerLabelServiceClient;
+use Google\Ads\GoogleAds\V14\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CustomerNegativeCriterionServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V14\Services\CustomerSkAdNetworkConversionValueSchemaServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CustomerUserAccessInvitationServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CustomerUserAccessServiceClient;
+use Google\Ads\GoogleAds\V14\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V14\Services\CustomizerAttributeServiceClient;
 use Google\Ads\GoogleAds\V14\Services\ExperimentArmServiceClient;
 use Google\Ads\GoogleAds\V14\Services\ExperimentServiceClient;
@@ -84,17 +97,22 @@ use Google\Ads\GoogleAds\V14\Services\FeedItemTargetServiceClient;
 use Google\Ads\GoogleAds\V14\Services\FeedMappingServiceClient;
 use Google\Ads\GoogleAds\V14\Services\FeedServiceClient;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsFieldServiceClient;
+use Google\Ads\GoogleAds\V14\Services\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V14\Services\KeywordPlanAdGroupKeywordServiceClient;
 use Google\Ads\GoogleAds\V14\Services\KeywordPlanAdGroupServiceClient;
 use Google\Ads\GoogleAds\V14\Services\KeywordPlanCampaignKeywordServiceClient;
 use Google\Ads\GoogleAds\V14\Services\KeywordPlanCampaignServiceClient;
 use Google\Ads\GoogleAds\V14\Services\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V14\Services\LabelServiceClient;
+use Google\Ads\GoogleAds\V14\Services\MediaFileServiceClient;
 use Google\Ads\GoogleAds\V14\Services\MerchantCenterLinkServiceClient;
 use Google\Ads\GoogleAds\V14\Services\OfflineUserDataJobServiceClient;
+use Google\Ads\GoogleAds\V14\Services\ProductLinkServiceClient;
 use Google\Ads\GoogleAds\V14\Services\RecommendationServiceClient;
+use Google\Ads\GoogleAds\V14\Services\RemarketingActionServiceClient;
 use Google\Ads\GoogleAds\V14\Services\SharedCriterionServiceClient;
 use Google\Ads\GoogleAds\V14\Services\SharedSetServiceClient;
+use Google\Ads\GoogleAds\V14\Services\SmartCampaignSettingServiceClient;
 use Google\Ads\GoogleAds\V14\Services\ThirdPartyAppAnalyticsLinkServiceClient;
 use Google\Ads\GoogleAds\V14\Services\UserListServiceClient;
 use Google\ApiCore\PathTemplate;
@@ -104,191 +122,6 @@ use Google\ApiCore\PathTemplate;
  */
 final class ResourceNames
 {
-    /**
-     * Generates a resource name of product link.
-     *
-     * @param string $customerId
-     * @param string $productLinkId
-     * @return string the product link resource name
-     */
-    public static function forProductLink(
-        $customerId,
-        $productLinkId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/productLinks/{product_link_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'product_link_id' => $productLinkId
-        ]);
-    }
-
-    /**
-     * Generates a resource name of qualifying question.
-     *
-     * @param string $qualifyingQuestionId
-     * @return string the qualifying question resource name
-     */
-    public static function forQualifyingQuestion(
-        $qualifyingQuestionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'qualifyingQuestions/{qualifying_question_id}'
-        );
-        return $pathTemplate->render([
-            'qualifying_question_id' => $qualifyingQuestionId
-        ]);
-    }
-
-    /**
-     * Generates a resource name of customer asset set.
-     *
-     * @param string $customerId
-     * @param string $assetSetId
-     * @return string the customer asset set resource name
-     */
-    public static function forCustomerAssetSet(
-        $customerId,
-        $assetSetId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/customerAssetSets/{asset_set_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'asset_set_id' => $assetSetId
-        ]);
-    }
-
-    /**
-     * Generates a resource name of ad group asset set.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $assetSetId
-     * @return string the ad group asset set resource name
-     */
-    public static function forAdGroupAssetSet(
-        $customerId,
-        $adGroupId,
-        $assetSetId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/adGroupAssetSets/{ad_group_id}~{asset_set_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'asset_set_id' => $assetSetId
-        ]);
-    }
-
-    /**
-     * Generates a resource name of campaign group.
-     *
-     * @param string $customerId
-     * @param string $campaignGroupId
-     * @return string the campaign group resource name
-     */
-    public static function forCampaignGroup(
-        $customerId,
-        $campaignGroupId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/campaignGroups/{campaign_group_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'campaign_group_id' => $campaignGroupId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of lead form submission data.
-     *
-     * @param string $customerId
-     * @param string $leadFormSubmissionDataId
-     * @return string the lead form submission data resource name
-     */
-    public static function forLeadFormSubmissionData(
-        $customerId,
-        $leadFormSubmissionDataId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/leadFormSubmissionData/{lead_form_submission_data_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'lead_form_submission_data_id' => $leadFormSubmissionDataId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of audience.
-     *
-     * @param string $customerId
-     * @param string $audienceId
-     * @return string the audience resource name
-     */
-    public static function forAudience(
-        $customerId,
-        $audienceId
-    ): string {
-        $pathTemplate = new PathTemplate('customers/{customer_id}/audiences/{audience_id}');
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'audience_id' => $audienceId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of campaign conversion goal type.
-     *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param int $category
-     * @param int $origin
-     * @return string the campaign conversion goal resource name
-     */
-    public static function forCampaignConversionGoal(
-        $customerId,
-        $campaignId,
-        $category,
-        $origin
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/campaignConversionGoals/' .
-            '{campaign_id}~{category}~{origin}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'campaign_id' => $campaignId,
-            'category' => $category,
-            'origin' => $origin,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of payments account type.
-     *
-     * @param string $customerId
-     * @param string $paymentsAccountId
-     * @return string the payments account resource name
-     */
-    public static function forPaymentsAccount(
-        $customerId,
-        $paymentsAccountId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer}/paymentsAccounts/{payments_account}'
-        );
-        return $pathTemplate->render([
-            'customer' => $customerId,
-            'payments_account' => $paymentsAccountId,
-        ]);
-    }
-
     /**
      * Generates a resource name of accessible bidding strategy type.
      *
@@ -300,13 +133,10 @@ final class ResourceNames
         $customerId,
         $biddingStrategyId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/accessibleBiddingStrategies/{bidding_strategy_id}'
+        return CampaignServiceClient::accessibleBiddingStrategyName(
+            $customerId,
+            $biddingStrategyId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'bidding_strategy_id' => $biddingStrategyId,
-        ]);
     }
 
     /**
@@ -320,13 +150,10 @@ final class ResourceNames
         $customerId,
         $accountBudgetId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/accountBudgets/{account_budget_id}'
+        return AccountBudgetProposalServiceClient::accountBudgetName(
+            $customerId,
+            $accountBudgetId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'account_budget_id' => $accountBudgetId,
-        ]);
     }
 
     /**
@@ -418,35 +245,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of ad group ad asset view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $adId
-     * @param string $assetId
-     * @param string $fieldType
-     * @return string the ad group ad asset view resource name
-     */
-    public static function forAdGroupAdAssetView(
-        $customerId,
-        $adGroupId,
-        $adId,
-        $assetId,
-        $fieldType
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/adGroupAdAssetViews/{ad_group_id}~{ad_id}~{asset_id}~{field_type}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'ad_id' => $adId,
-            'asset_id' => $assetId,
-            'field_type' => $fieldType,
-        ]);
-    }
-
-    /**
      * Generates a resource name of ad group ad label type.
      *
      * @param string $customerId
@@ -493,26 +291,23 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of ad group audience view type.
+     * Generates a resource name of ad group asset set type.
      *
      * @param string $customerId
      * @param string $adGroupId
-     * @param string $criterionId
-     * @return string the ad group audience view resource name
+     * @param string $assetSetId
+     * @return string the ad group asset set resource name
      */
-    public static function forAdGroupAudienceView(
+    public static function forAdGroupAssetSet(
         $customerId,
         $adGroupId,
-        $criterionId
+        $assetSetId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/adGroupAudienceViews/{ad_group_id}~{criterion_id}'
+        return AdGroupAssetSetServiceClient::adGroupAssetSetName(
+            $customerId,
+            $adGroupId,
+            $assetSetId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'criterion_id' => $criterionId,
-        ]);
     }
 
     /**
@@ -602,41 +397,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of ad group criterion simulation type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @param string $type
-     * @param string $modificationMethod
-     * @param string $startDate
-     * @param string $endDate
-     * @return string the ad group criterion simulation resource name
-     */
-    public static function forAdGroupCriterionSimulation(
-        $customerId,
-        $adGroupId,
-        $criterionId,
-        $type,
-        $modificationMethod,
-        $startDate,
-        $endDate
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/adGroupCriterionSimulations/{ad_group_id}~{criterion_id}~{type}~{modification_method}~{start_date}~{end_date}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'criterion_id' => $criterionId,
-            'type' => $type,
-            'modification_method' => $modificationMethod,
-            'start_date' => $startDate,
-            'end_date' => $endDate,
-        ]);
-    }
-
-    /**
      * Generates a resource name of ad group customizer type.
      *
      * @param string $customerId
@@ -717,38 +477,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of ad group simulation type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $type
-     * @param string $modificationMethod
-     * @param string $startDate
-     * @param string $endDate
-     * @return string the ad group simulation resource name
-     */
-    public static function forAdGroupSimulation(
-        $customerId,
-        $adGroupId,
-        $type,
-        $modificationMethod,
-        $startDate,
-        $endDate
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/adGroupSimulations/{ad_group_id}~{type}~{modification_method}~{start_date}~{end_date}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'type' => $type,
-            'modification_method' => $modificationMethod,
-            'start_date' => $startDate,
-            'end_date' => $endDate,
-        ]);
-    }
-
-    /**
      * Generates a resource name of ad parameter type.
      *
      * @param string $customerId
@@ -772,52 +500,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of ad schedule view type.
-     *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $criterionId
-     * @return string the ad schedule view resource name
-     */
-    public static function forAdScheduleView(
-        $customerId,
-        $campaignId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/adScheduleViews/{campaign_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'campaign_id' => $campaignId,
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of age range view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @return string the age range view resource name
-     */
-    public static function forAgeRangeView(
-        $customerId,
-        $adGroupId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/ageRangeViews/{ad_group_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
      * Generates a resource name of asset type.
      *
      * @param string $customerId
@@ -828,33 +510,10 @@ final class ResourceNames
         $customerId,
         $assetId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/assets/{asset_id}'
+        return AssetServiceClient::assetName(
+            $customerId,
+            $assetId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'asset_id' => $assetId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of asset field type view type.
-     *
-     * @param string $customerId
-     * @param string $fieldType
-     * @return string the asset field type view resource name
-     */
-    public static function forAssetFieldTypeView(
-        $customerId,
-        $fieldType
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/assetFieldTypeViews/{field_type}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'field_type' => $fieldType,
-        ]);
     }
 
     /**
@@ -975,6 +634,23 @@ final class ResourceNames
     }
 
     /**
+     * Generates a resource name of audience type.
+     *
+     * @param string $customerId
+     * @param string $audienceId
+     * @return string the audience resource name
+     */
+    public static function forAudience(
+        $customerId,
+        $audienceId
+    ): string {
+        return AudienceServiceClient::audienceName(
+            $customerId,
+            $audienceId
+        );
+    }
+
+    /**
      * Generates a resource name of batch job type.
      *
      * @param string $customerId
@@ -1040,38 +716,6 @@ final class ResourceNames
             $customerId,
             $biddingStrategyId
         );
-    }
-
-    /**
-     * Generates a resource name of bidding strategy simulation type.
-     *
-     * @param string $customerId
-     * @param string $biddingStrategyId
-     * @param string $type
-     * @param string $modificationMethod
-     * @param string $startDate
-     * @param string $endDate
-     * @return string the bidding strategy simulation resource name
-     */
-    public static function forBiddingStrategySimulation(
-        $customerId,
-        $biddingStrategyId,
-        $type,
-        $modificationMethod,
-        $startDate,
-        $endDate
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/biddingStrategySimulations/{bidding_strategy_id}~{type}~{modification_method}~{start_date}~{end_date}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'bidding_strategy_id' => $biddingStrategyId,
-            'type' => $type,
-            'modification_method' => $modificationMethod,
-            'start_date' => $startDate,
-            'end_date' => $endDate,
-        ]);
     }
 
     /**
@@ -1152,29 +796,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of campaign audience view type.
-     *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $criterionId
-     * @return string the campaign audience view resource name
-     */
-    public static function forCampaignAudienceView(
-        $customerId,
-        $campaignId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/campaignAudienceViews/{campaign_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'campaign_id' => $campaignId,
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
      * Generates a resource name of campaign bid modifier type.
      *
      * @param string $customerId
@@ -1208,6 +829,29 @@ final class ResourceNames
         return CampaignBudgetServiceClient::campaignBudgetName(
             $customerId,
             $campaignBudgetId
+        );
+    }
+
+    /**
+     * Generates a resource name of campaign conversion goal type.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     * @param string $category
+     * @param string $source
+     * @return string the campaign conversion goal resource name
+     */
+    public static function forCampaignConversionGoal(
+        $customerId,
+        $campaignId,
+        $category,
+        $source
+    ): string {
+        return CampaignConversionGoalServiceClient::campaignConversionGoalName(
+            $customerId,
+            $campaignId,
+            $category,
+            $source
         );
     }
 
@@ -1312,6 +956,23 @@ final class ResourceNames
     }
 
     /**
+     * Generates a resource name of campaign group type.
+     *
+     * @param string $customerId
+     * @param string $campaignGroupId
+     * @return string the campaign group resource name
+     */
+    public static function forCampaignGroup(
+        $customerId,
+        $campaignGroupId
+    ): string {
+        return CampaignGroupServiceClient::campaignGroupName(
+            $customerId,
+            $campaignGroupId
+        );
+    }
+
+    /**
      * Generates a resource name of campaign label type.
      *
      * @param string $customerId
@@ -1352,118 +1013,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of campaign simulation type.
-     *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $type
-     * @param string $modificationMethod
-     * @param string $startDate
-     * @param string $endDate
-     * @return string the campaign simulation resource name
-     */
-    public static function forCampaignSimulation(
-        $customerId,
-        $campaignId,
-        $type,
-        $modificationMethod,
-        $startDate,
-        $endDate
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/campaignSimulations/{campaign_id}~{type}~{modification_method}~{start_date}~{end_date}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'campaign_id' => $campaignId,
-            'type' => $type,
-            'modification_method' => $modificationMethod,
-            'start_date' => $startDate,
-            'end_date' => $endDate,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of carrier constant type.
-     *
-     * @param string $criterionId
-     * @return string the carrier constant resource name
-     */
-    public static function forCarrierConstant(
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'carrierConstants/{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of change status type.
-     *
-     * @param string $customerId
-     * @param string $changeStatusId
-     * @return string the change status resource name
-     */
-    public static function forChangeStatus(
-        $customerId,
-        $changeStatusId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/changeStatus/{change_status_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'change_status_id' => $changeStatusId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of click view type.
-     *
-     * @param string $customerId
-     * @param string $date
-     * @param string $gclid
-     * @return string the click view resource name
-     */
-    public static function forClickView(
-        $customerId,
-        $date,
-        $gclid
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/clickViews/{date}~{gclid}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'date' => $date,
-            'gclid' => $gclid,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of combined audience type.
-     *
-     * @param string $customerId
-     * @param string $combinedAudienceId
-     * @return string the combined audience resource name
-     */
-    public static function forCombinedAudience(
-        $customerId,
-        $combinedAudienceId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/combinedAudiences/{combined_audience_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'combined_audience_id' => $combinedAudienceId,
-        ]);
-    }
-
-    /**
      * Generates a resource name of conversion action type.
      *
      * @param string $customerId
@@ -1491,13 +1040,27 @@ final class ResourceNames
         $customerId,
         $conversionCustomVariableId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/conversionCustomVariables/{conversion_custom_variable_id}'
+        return ConversionCustomVariableServiceClient::conversionCustomVariableName(
+            $customerId,
+            $conversionCustomVariableId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'conversion_custom_variable_id' => $conversionCustomVariableId,
-        ]);
+    }
+
+    /**
+     * Generates a resource name of conversion goal campaign config type.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     * @return string the conversion goal campaign config resource name
+     */
+    public static function forConversionGoalCampaignConfig(
+        $customerId,
+        $campaignId
+    ): string {
+        return ConversionGoalCampaignConfigServiceClient::conversionGoalCampaignConfigName(
+            $customerId,
+            $campaignId
+        );
     }
 
     /**
@@ -1532,23 +1095,6 @@ final class ResourceNames
             $customerId,
             $conversionValueRuleSetId
         );
-    }
-
-    /**
-     * Generates a resource name of currency constant type.
-     *
-     * @param string $code
-     * @return string the currency constant resource name
-     */
-    public static function forCurrencyConstant(
-        $code
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'currencyConstants/{code}'
-        );
-        return $pathTemplate->render([
-            'code' => $code,
-        ]);
     }
 
     /**
@@ -1620,23 +1166,20 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of customer client type.
+     * Generates a resource name of customer asset set type.
      *
      * @param string $customerId
-     * @param string $clientCustomerId
-     * @return string the customer client resource name
+     * @param string $assetSetId
+     * @return string the customer asset set resource name
      */
-    public static function forCustomerClient(
+    public static function forCustomerAssetSet(
         $customerId,
-        $clientCustomerId
+        $assetSetId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/customerClients/{client_customer_id}'
+        return CustomerAssetSetServiceClient::customerAssetSetName(
+            $customerId,
+            $assetSetId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'client_customer_id' => $clientCustomerId,
-        ]);
     }
 
     /**
@@ -1652,14 +1195,31 @@ final class ResourceNames
         $clientCustomerId,
         $managerLinkId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/customerClientLinks/{client_customer_id}~{manager_link_id}'
+        return CustomerClientLinkServiceClient::customerClientLinkName(
+            $customerId,
+            $clientCustomerId,
+            $managerLinkId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'client_customer_id' => $clientCustomerId,
-            'manager_link_id' => $managerLinkId,
-        ]);
+    }
+
+    /**
+     * Generates a resource name of customer conversion goal type.
+     *
+     * @param string $customerId
+     * @param string $category
+     * @param string $source
+     * @return string the customer conversion goal resource name
+     */
+    public static function forCustomerConversionGoal(
+        $customerId,
+        $category,
+        $source
+    ): string {
+        return CustomerConversionGoalServiceClient::customerConversionGoalName(
+            $customerId,
+            $category,
+            $source
+        );
     }
 
     /**
@@ -1743,14 +1303,11 @@ final class ResourceNames
         $managerCustomerId,
         $managerLinkId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/customerManagerLinks/{manager_customer_id}~{manager_link_id}'
+        return CustomerManagerLinkServiceClient::customerManagerLinkName(
+            $customerId,
+            $managerCustomerId,
+            $managerLinkId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'manager_customer_id' => $managerCustomerId,
-            'manager_link_id' => $managerLinkId,
-        ]);
     }
 
     /**
@@ -1767,6 +1324,23 @@ final class ResourceNames
         return CustomerNegativeCriterionServiceClient::customerNegativeCriterionName(
             $customerId,
             $criterionId
+        );
+    }
+
+    /**
+     * Generates a resource name of customer sk ad network conversion value schema type.
+     *
+     * @param string $customerId
+     * @param string $accountLinkId
+     * @return string the customer sk ad network conversion value schema resource name
+     */
+    public static function forCustomerSkAdNetworkConversionValueSchema(
+        $customerId,
+        $accountLinkId
+    ): string {
+        return CustomerSkAdNetworkConversionValueSchemaServiceClient::customerSkAdNetworkConversionValueSchemaName(
+            $customerId,
+            $accountLinkId
         );
     }
 
@@ -1815,13 +1389,10 @@ final class ResourceNames
         $customerId,
         $customInterestId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/customInterests/{custom_interest_id}'
+        return CustomInterestServiceClient::customInterestName(
+            $customerId,
+            $customInterestId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'custom_interest_id' => $customInterestId,
-        ]);
     }
 
     /**
@@ -1839,173 +1410,6 @@ final class ResourceNames
             $customerId,
             $customizerAttributeId
         );
-    }
-
-    /**
-     * Generates a resource name of detailed demographic type.
-     *
-     * @param string $customerId
-     * @param string $detailedDemographicId
-     * @return string the detailed demographic resource name
-     */
-    public static function forDetailedDemographic(
-        $customerId,
-        $detailedDemographicId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/detailedDemographics/{detailed_demographic_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'detailed_demographic_id' => $detailedDemographicId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of detail placement view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $base64Placement
-     * @return string the detail placement view resource name
-     */
-    public static function forDetailPlacementView(
-        $customerId,
-        $adGroupId,
-        $base64Placement
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/detailPlacementViews/{ad_group_id}~{base64_placement}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'base64_placement' => $base64Placement,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of display keyword view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @return string the display keyword view resource name
-     */
-    public static function forDisplayKeywordView(
-        $customerId,
-        $adGroupId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/displayKeywordViews/{ad_group_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of distance view type.
-     *
-     * @param string $customerId
-     * @param string $placeholderChainId
-     * @param string $distanceBucket
-     * @return string the distance view resource name
-     */
-    public static function forDistanceView(
-        $customerId,
-        $placeholderChainId,
-        $distanceBucket
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/distanceViews/{placeholder_chain_id}~{distance_bucket}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'placeholder_chain_id' => $placeholderChainId,
-            'distance_bucket' => $distanceBucket,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of domain category type.
-     *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $base64Category
-     * @param string $languageCode
-     * @return string the domain category resource name
-     */
-    public static function forDomainCategory(
-        $customerId,
-        $campaignId,
-        $base64Category,
-        $languageCode
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/domainCategories/{campaign_id}~{base64_category}~{language_code}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'campaign_id' => $campaignId,
-            'base64_category' => $base64Category,
-            'language_code' => $languageCode,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of dynamic search ads search term view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $searchTermFingerprint
-     * @param string $headlineFingerprint
-     * @param string $landingPageFingerprint
-     * @param string $pageUrlFingerprint
-     * @return string the dynamic search ads search term view resource name
-     */
-    public static function forDynamicSearchAdsSearchTermView(
-        $customerId,
-        $adGroupId,
-        $searchTermFingerprint,
-        $headlineFingerprint,
-        $landingPageFingerprint,
-        $pageUrlFingerprint
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/dynamicSearchAdsSearchTermViews/{ad_group_id}~{search_term_fingerprint}~{headline_fingerprint}~{landing_page_fingerprint}~{page_url_fingerprint}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'search_term_fingerprint' => $searchTermFingerprint,
-            'headline_fingerprint' => $headlineFingerprint,
-            'landing_page_fingerprint' => $landingPageFingerprint,
-            'page_url_fingerprint' => $pageUrlFingerprint,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of expanded landing page view type.
-     *
-     * @param string $customerId
-     * @param string $expandedFinalUrlFingerprint
-     * @return string the expanded landing page view resource name
-     */
-    public static function forExpandedLandingPageView(
-        $customerId,
-        $expandedFinalUrlFingerprint
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/expandedLandingPageViews/{expanded_final_url_fingerprint}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'expanded_final_url_fingerprint' => $expandedFinalUrlFingerprint,
-        ]);
     }
 
     /**
@@ -2189,72 +1593,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of feed placeholder view type.
-     *
-     * @param string $customerId
-     * @param string $placeholderType
-     * @return string the feed placeholder view resource name
-     */
-    public static function forFeedPlaceholderView(
-        $customerId,
-        $placeholderType
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/feedPlaceholderViews/{placeholder_type}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'placeholder_type' => $placeholderType,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of gender view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @return string the gender view resource name
-     */
-    public static function forGenderView(
-        $customerId,
-        $adGroupId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/genderViews/{ad_group_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of geographic view type.
-     *
-     * @param string $customerId
-     * @param string $countryCriterionId
-     * @param string $locationType
-     * @return string the geographic view resource name
-     */
-    public static function forGeographicView(
-        $customerId,
-        $countryCriterionId,
-        $locationType
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/geographicViews/{country_criterion_id}~{location_type}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'country_criterion_id' => $countryCriterionId,
-            'location_type' => $locationType,
-        ]);
-    }
-
-    /**
      * Generates a resource name of geo target constant type.
      *
      * @param string $criterionId
@@ -2263,12 +1601,9 @@ final class ResourceNames
     public static function forGeoTargetConstant(
         $criterionId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'geoTargetConstants/{criterion_id}'
+        return GoogleAdsServiceClient::geoTargetConstantName(
+            $criterionId
         );
-        return $pathTemplate->render([
-            'criterion_id' => $criterionId,
-        ]);
     }
 
     /**
@@ -2283,92 +1618,6 @@ final class ResourceNames
         return GoogleAdsFieldServiceClient::googleAdsFieldName(
             $googleAdsField
         );
-    }
-
-    /**
-     * Generates a resource name of group placement view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $base64Placement
-     * @return string the group placement view resource name
-     */
-    public static function forGroupPlacementView(
-        $customerId,
-        $adGroupId,
-        $base64Placement
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/groupPlacementViews/{ad_group_id}~{base64_placement}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'base64_placement' => $base64Placement,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of hotel group view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @return string the hotel group view resource name
-     */
-    public static function forHotelGroupView(
-        $customerId,
-        $adGroupId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/hotelGroupViews/{ad_group_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of hotel performance view type.
-     *
-     * @param string $customerId
-     * @return string the hotel performance view resource name
-     */
-    public static function forHotelPerformanceView(
-        $customerId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/hotelPerformanceView'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of income range view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @return string the income range view resource name
-     */
-    public static function forIncomeRangeView(
-        $customerId,
-        $adGroupId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/incomeRangeViews/{ad_group_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'criterion_id' => $criterionId,
-        ]);
     }
 
     /**
@@ -2457,49 +1706,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of keyword theme constant type.
-     *
-     * @param string $expressCategoryId
-     * @param string $expressSubCategoryId
-     * @return string the keyword theme constant resource name
-     */
-    public static function forKeywordThemeConstant(
-        $expressCategoryId,
-        $expressSubCategoryId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'keywordThemeConstants/{express_category_id}~{express_sub_category_id}'
-        );
-        return $pathTemplate->render([
-            'express_category_id' => $expressCategoryId,
-            'express_sub_category_id' => $expressSubCategoryId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of keyword view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @return string the keyword view resource name
-     */
-    public static function forKeywordView(
-        $customerId,
-        $adGroupId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/keywordViews/{ad_group_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
      * Generates a resource name of label type.
      *
      * @param string $customerId
@@ -2517,26 +1723,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of landing page view type.
-     *
-     * @param string $customerId
-     * @param string $unexpandedFinalUrlFingerprint
-     * @return string the landing page view resource name
-     */
-    public static function forLandingPageView(
-        $customerId,
-        $unexpandedFinalUrlFingerprint
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/landingPageViews/{unexpanded_final_url_fingerprint}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'unexpanded_final_url_fingerprint' => $unexpandedFinalUrlFingerprint,
-        ]);
-    }
-
-    /**
      * Generates a resource name of language constant type.
      *
      * @param string $criterionId
@@ -2545,78 +1731,9 @@ final class ResourceNames
     public static function forLanguageConstant(
         $criterionId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'languageConstants/{criterion_id}'
+        return GoogleAdsServiceClient::languageConstantName(
+            $criterionId
         );
-        return $pathTemplate->render([
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of life event type.
-     *
-     * @param string $customerId
-     * @param string $lifeEventId
-     * @return string the life event resource name
-     */
-    public static function forLifeEvent(
-        $customerId,
-        $lifeEventId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/lifeEvents/{life_event_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'life_event_id' => $lifeEventId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of location view type.
-     *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $criterionId
-     * @return string the location view resource name
-     */
-    public static function forLocationView(
-        $customerId,
-        $campaignId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/locationViews/{campaign_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'campaign_id' => $campaignId,
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of managed placement view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @return string the managed placement view resource name
-     */
-    public static function forManagedPlacementView(
-        $customerId,
-        $adGroupId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/managedPlacementViews/{ad_group_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'criterion_id' => $criterionId,
-        ]);
     }
 
     /**
@@ -2630,13 +1747,10 @@ final class ResourceNames
         $customerId,
         $mediaFileId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/mediaFiles/{media_file_id}'
+        return MediaFileServiceClient::mediaFileName(
+            $customerId,
+            $mediaFileId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'media_file_id' => $mediaFileId,
-        ]);
     }
 
     /**
@@ -2657,40 +1771,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of mobile app category constant type.
-     *
-     * @param string $mobileAppCategoryId
-     * @return string the mobile app category constant resource name
-     */
-    public static function forMobileAppCategoryConstant(
-        $mobileAppCategoryId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'mobileAppCategoryConstants/{mobile_app_category_id}'
-        );
-        return $pathTemplate->render([
-            'mobile_app_category_id' => $mobileAppCategoryId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of mobile device constant type.
-     *
-     * @param string $criterionId
-     * @return string the mobile device constant resource name
-     */
-    public static function forMobileDeviceConstant(
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'mobileDeviceConstants/{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
      * Generates a resource name of offline user data job type.
      *
      * @param string $customerId
@@ -2708,115 +1788,37 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of operating system version constant type.
-     *
-     * @param string $criterionId
-     * @return string the operating system version constant resource name
-     */
-    public static function forOperatingSystemVersionConstant(
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'operatingSystemVersionConstants/{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of paid organic search term view type.
+     * Generates a resource name of payments account type.
      *
      * @param string $customerId
-     * @param string $campaignId
-     * @param string $adGroupId
-     * @param string $base64SearchTerm
-     * @return string the paid organic search term view resource name
+     * @param string $paymentsAccountId
+     * @return string the payments account resource name
      */
-    public static function forPaidOrganicSearchTermView(
+    public static function forPaymentsAccount(
         $customerId,
-        $campaignId,
-        $adGroupId,
-        $base64SearchTerm
+        $paymentsAccountId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/paidOrganicSearchTermViews/{campaign_id}~{ad_group_id}~{base64_search_term}'
+        return BillingSetupServiceClient::paymentsAccountName(
+            $customerId,
+            $paymentsAccountId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'campaign_id' => $campaignId,
-            'ad_group_id' => $adGroupId,
-            'base64_search_term' => $base64SearchTerm,
-        ]);
     }
 
     /**
-     * Generates a resource name of parental status view type.
+     * Generates a resource name of product link type.
      *
      * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @return string the parental status view resource name
+     * @param string $productLinkId
+     * @return string the product link resource name
      */
-    public static function forParentalStatusView(
+    public static function forProductLink(
         $customerId,
-        $adGroupId,
-        $criterionId
+        $productLinkId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/parentalStatusViews/{ad_group_id}~{criterion_id}'
+        return ProductLinkServiceClient::productLinkName(
+            $customerId,
+            $productLinkId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of product bidding category constant type.
-     *
-     * @param string $countryCode
-     * @param string $level
-     * @param string $id
-     * @return string the product bidding category constant resource name
-     */
-    public static function forProductBiddingCategoryConstant(
-        $countryCode,
-        $level,
-        $id
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'productBiddingCategoryConstants/{country_code}~{level}~{id}'
-        );
-        return $pathTemplate->render([
-            'country_code' => $countryCode,
-            'level' => $level,
-            'id' => $id,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of product group view type.
-     *
-     * @param string $customerId
-     * @param string $adgroupId
-     * @param string $criterionId
-     * @return string the product group view resource name
-     */
-    public static function forProductGroupView(
-        $customerId,
-        $adgroupId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/productGroupViews/{adgroup_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'adgroup_id' => $adgroupId,
-            'criterion_id' => $criterionId,
-        ]);
     }
 
     /**
@@ -2847,39 +1849,10 @@ final class ResourceNames
         $customerId,
         $remarketingActionId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/remarketingActions/{remarketing_action_id}'
+        return RemarketingActionServiceClient::remarketingActionName(
+            $customerId,
+            $remarketingActionId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'remarketing_action_id' => $remarketingActionId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of search term view type.
-     *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $adGroupId
-     * @param string $query
-     * @return string the search term view resource name
-     */
-    public static function forSearchTermView(
-        $customerId,
-        $campaignId,
-        $adGroupId,
-        $query
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~{query}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'campaign_id' => $campaignId,
-            'ad_group_id' => $adGroupId,
-            'query' => $query,
-        ]);
     }
 
     /**
@@ -2920,46 +1893,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of shopping performance view type.
-     *
-     * @param string $customerId
-     * @return string the shopping performance view resource name
-     */
-    public static function forShoppingPerformanceView(
-        $customerId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/shoppingPerformanceView'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of smart campaign search term view type.
-     *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $query
-     * @return string the smart campaign search term view resource name
-     */
-    public static function forSmartCampaignSearchTermView(
-        $customerId,
-        $campaignId,
-        $query
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/smartCampaignSearchTermViews/{campaign_id}~{query}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'campaign_id' => $campaignId,
-            'query' => $query,
-        ]);
-    }
-
-    /**
      * Generates a resource name of smart campaign setting type.
      *
      * @param string $customerId
@@ -2970,13 +1903,10 @@ final class ResourceNames
         $customerId,
         $campaignId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/smartCampaignSettings/{campaign_id}'
+        return SmartCampaignSettingServiceClient::smartCampaignSettingName(
+            $customerId,
+            $campaignId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'campaign_id' => $campaignId,
-        ]);
     }
 
     /**
@@ -2997,46 +1927,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates a resource name of topic constant type.
-     *
-     * @param string $topicId
-     * @return string the topic constant resource name
-     */
-    public static function forTopicConstant(
-        $topicId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'topicConstants/{topic_id}'
-        );
-        return $pathTemplate->render([
-            'topic_id' => $topicId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of topic view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @return string the topic view resource name
-     */
-    public static function forTopicView(
-        $customerId,
-        $adGroupId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/topicViews/{ad_group_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'criterion_id' => $criterionId,
-        ]);
-    }
-
-    /**
      * Generates a resource name of user interest type.
      *
      * @param string $customerId
@@ -3047,13 +1937,10 @@ final class ResourceNames
         $customerId,
         $userInterestId
     ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/userInterests/{user_interest_id}'
+        return GoogleAdsServiceClient::userInterestName(
+            $customerId,
+            $userInterestId
         );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'user_interest_id' => $userInterestId,
-        ]);
     }
 
     /**
@@ -3071,71 +1958,5 @@ final class ResourceNames
             $customerId,
             $userListId
         );
-    }
-
-    /**
-     * Generates a resource name of user location view type.
-     *
-     * @param string $customerId
-     * @param string $countryCriterionId
-     * @param string $isTargetingLocation
-     * @return string the user location view resource name
-     */
-    public static function forUserLocationView(
-        $customerId,
-        $countryCriterionId,
-        $isTargetingLocation
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/userLocationViews/{country_criterion_id}~{is_targeting_location}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'country_criterion_id' => $countryCriterionId,
-            'is_targeting_location' => $isTargetingLocation,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of video type.
-     *
-     * @param string $customerId
-     * @param string $videoId
-     * @return string the video resource name
-     */
-    public static function forVideo(
-        $customerId,
-        $videoId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/videos/{video_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'video_id' => $videoId,
-        ]);
-    }
-
-    /**
-     * Generates a resource name of webpage view type.
-     *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @return string the webpage view resource name
-     */
-    public static function forWebpageView(
-        $customerId,
-        $adGroupId,
-        $criterionId
-    ): string {
-        $pathTemplate = new PathTemplate(
-            'customers/{customer_id}/webpageViews/{ad_group_id}~{criterion_id}'
-        );
-        return $pathTemplate->render([
-            'customer_id' => $customerId,
-            'ad_group_id' => $adGroupId,
-            'criterion_id' => $criterionId,
-        ]);
     }
 }

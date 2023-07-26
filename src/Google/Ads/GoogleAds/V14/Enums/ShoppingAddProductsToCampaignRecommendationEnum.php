@@ -11,7 +11,6 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Indicates the key issue that results in a shopping campaign targeting zero
  * products.
- * Next Id: 5
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.enums.ShoppingAddProductsToCampaignRecommendationEnum</code>
  */

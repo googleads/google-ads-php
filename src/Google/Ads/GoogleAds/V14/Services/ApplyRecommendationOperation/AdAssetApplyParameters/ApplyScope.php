@@ -8,7 +8,6 @@ use UnexpectedValueException;
 
 /**
  * Scope to apply the assets to.
- * Next ID: 4
  *
  * Protobuf type <code>google.ads.googleads.v14.services.ApplyRecommendationOperation.AdAssetApplyParameters.ApplyScope</code>
  */

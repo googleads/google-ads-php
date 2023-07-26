@@ -53,6 +53,21 @@ class MutateFeedMappingsRequest extends \Google\Protobuf\Internal\Message
     protected $response_content_type = 0;
 
     /**
+     * @param string                                                    $customerId Required. The ID of the customer whose feed mappings are being modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\FeedMappingOperation[] $operations Required. The list of operations to perform on individual feed mappings.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateFeedMappingsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

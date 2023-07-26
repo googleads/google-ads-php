@@ -175,6 +175,25 @@ class ExperimentError
      * Generated from protobuf enum <code>STATUS_TRANSITION_INVALID = 25;</code>
      */
     const STATUS_TRANSITION_INVALID = 25;
+    /**
+     * The experiment campaign name conflicts with a pre-existing campaign.
+     *
+     * Generated from protobuf enum <code>DUPLICATE_EXPERIMENT_CAMPAIGN_NAME = 26;</code>
+     */
+    const DUPLICATE_EXPERIMENT_CAMPAIGN_NAME = 26;
+    /**
+     * Cannot remove in creation experiments.
+     *
+     * Generated from protobuf enum <code>CANNOT_REMOVE_IN_CREATION_EXPERIMENT = 27;</code>
+     */
+    const CANNOT_REMOVE_IN_CREATION_EXPERIMENT = 27;
+    /**
+     * Cannot add campaign with deprecated ad types. Deprecated ad types:
+     * ENHANCED_DISPLAY, GALLERY, GMAIL, KEYWORDLESS, TEXT.
+     *
+     * Generated from protobuf enum <code>CANNOT_ADD_CAMPAIGN_WITH_DEPRECATED_AD_TYPES = 28;</code>
+     */
+    const CANNOT_ADD_CAMPAIGN_WITH_DEPRECATED_AD_TYPES = 28;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -203,6 +222,9 @@ class ExperimentError
         self::CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_SHARED_BUDGET => 'CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_SHARED_BUDGET',
         self::CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_CUSTOM_BUDGET => 'CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_CUSTOM_BUDGET',
         self::STATUS_TRANSITION_INVALID => 'STATUS_TRANSITION_INVALID',
+        self::DUPLICATE_EXPERIMENT_CAMPAIGN_NAME => 'DUPLICATE_EXPERIMENT_CAMPAIGN_NAME',
+        self::CANNOT_REMOVE_IN_CREATION_EXPERIMENT => 'CANNOT_REMOVE_IN_CREATION_EXPERIMENT',
+        self::CANNOT_ADD_CAMPAIGN_WITH_DEPRECATED_AD_TYPES => 'CANNOT_ADD_CAMPAIGN_WITH_DEPRECATED_AD_TYPES',
     ];
 
     public static function name($value)

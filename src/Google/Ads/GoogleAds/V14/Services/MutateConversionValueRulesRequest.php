@@ -55,6 +55,23 @@ class MutateConversionValueRulesRequest extends \Google\Protobuf\Internal\Messag
     protected $response_content_type = 0;
 
     /**
+     * @param string                                                            $customerId Required. The ID of the customer whose conversion value rules are being
+     *                                                                                      modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\ConversionValueRuleOperation[] $operations Required. The list of operations to perform on individual conversion value
+     *                                                                                      rules.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateConversionValueRulesRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

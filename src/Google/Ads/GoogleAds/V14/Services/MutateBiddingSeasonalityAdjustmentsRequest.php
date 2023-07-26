@@ -55,6 +55,23 @@ class MutateBiddingSeasonalityAdjustmentsRequest extends \Google\Protobuf\Intern
     protected $response_content_type = 0;
 
     /**
+     * @param string                                                                     $customerId Required. ID of the customer whose seasonality adjustments are being
+     *                                                                                               modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\BiddingSeasonalityAdjustmentOperation[] $operations Required. The list of operations to perform on individual seasonality
+     *                                                                                               adjustments.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateBiddingSeasonalityAdjustmentsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

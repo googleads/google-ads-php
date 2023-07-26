@@ -32,7 +32,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
      * If present, will always be a GeoTargetConstant ID. Additional information
      * such as country name is provided by
      * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v14.services.ReachPlanService.ListPlannableLocations]
-     * or [GoogleAdsService.Search/SearchStream][].
+     * or GoogleAdsService.Search/SearchStream.
      *
      * Generated from protobuf field <code>optional int64 parent_country_id = 6;</code>
      */
@@ -45,7 +45,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
     protected $country_code = null;
     /**
      * The location's type. Location types correspond to target_type returned by
-     * searching location type in [GoogleAdsService.Search/SearchStream][].
+     * searching location type in GoogleAdsService.Search/SearchStream.
      *
      * Generated from protobuf field <code>optional string location_type = 8;</code>
      */
@@ -66,12 +66,12 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
      *           If present, will always be a GeoTargetConstant ID. Additional information
      *           such as country name is provided by
      *           [ReachPlanService.ListPlannableLocations][google.ads.googleads.v14.services.ReachPlanService.ListPlannableLocations]
-     *           or [GoogleAdsService.Search/SearchStream][].
+     *           or GoogleAdsService.Search/SearchStream.
      *     @type string $country_code
      *           The ISO-3166-1 alpha-2 country code that is associated with the location.
      *     @type string $location_type
      *           The location's type. Location types correspond to target_type returned by
-     *           searching location type in [GoogleAdsService.Search/SearchStream][].
+     *           searching location type in GoogleAdsService.Search/SearchStream.
      * }
      */
     public function __construct($data = NULL) {
@@ -156,7 +156,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
      * If present, will always be a GeoTargetConstant ID. Additional information
      * such as country name is provided by
      * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v14.services.ReachPlanService.ListPlannableLocations]
-     * or [GoogleAdsService.Search/SearchStream][].
+     * or GoogleAdsService.Search/SearchStream.
      *
      * Generated from protobuf field <code>optional int64 parent_country_id = 6;</code>
      * @return int|string
@@ -181,7 +181,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
      * If present, will always be a GeoTargetConstant ID. Additional information
      * such as country name is provided by
      * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v14.services.ReachPlanService.ListPlannableLocations]
-     * or [GoogleAdsService.Search/SearchStream][].
+     * or GoogleAdsService.Search/SearchStream.
      *
      * Generated from protobuf field <code>optional int64 parent_country_id = 6;</code>
      * @param int|string $var
@@ -233,7 +233,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
 
     /**
      * The location's type. Location types correspond to target_type returned by
-     * searching location type in [GoogleAdsService.Search/SearchStream][].
+     * searching location type in GoogleAdsService.Search/SearchStream.
      *
      * Generated from protobuf field <code>optional string location_type = 8;</code>
      * @return string
@@ -255,7 +255,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
 
     /**
      * The location's type. Location types correspond to target_type returned by
-     * searching location type in [GoogleAdsService.Search/SearchStream][].
+     * searching location type in GoogleAdsService.Search/SearchStream.
      *
      * Generated from protobuf field <code>optional string location_type = 8;</code>
      * @param string $var

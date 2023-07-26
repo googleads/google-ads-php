@@ -58,6 +58,10 @@ use Google\Auth\FetchAuthTokenInterface;
  *     $userDataServiceClient->close();
  * }
  * ```
+ *
+ * This service has a new (beta) implementation. See {@see
+ * \Google\Ads\GoogleAds\V14\Services\Client\UserDataServiceClient} to use the new
+ * surface.
  */
 class UserDataServiceGapicClient
 {

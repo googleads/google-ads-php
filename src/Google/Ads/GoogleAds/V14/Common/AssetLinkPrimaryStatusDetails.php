@@ -16,7 +16,6 @@ use Google\Protobuf\Internal\GPBUtil;
  * annotated with it.  For instance, when the reason is ASSET_DISAPPROVED, the
  * details field will contain additional information about the offline
  * evaluation errors which led to the asset being disapproved.
- * Next Id: 4
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.common.AssetLinkPrimaryStatusDetails</code>
  */

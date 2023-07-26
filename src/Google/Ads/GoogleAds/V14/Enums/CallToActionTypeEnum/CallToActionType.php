@@ -79,6 +79,54 @@ class CallToActionType
      * Generated from protobuf enum <code>SHOP_NOW = 10;</code>
      */
     const SHOP_NOW = 10;
+    /**
+     * The call to action type is buy now.
+     *
+     * Generated from protobuf enum <code>BUY_NOW = 11;</code>
+     */
+    const BUY_NOW = 11;
+    /**
+     * The call to action type is donate now.
+     *
+     * Generated from protobuf enum <code>DONATE_NOW = 12;</code>
+     */
+    const DONATE_NOW = 12;
+    /**
+     * The call to action type is order now.
+     *
+     * Generated from protobuf enum <code>ORDER_NOW = 13;</code>
+     */
+    const ORDER_NOW = 13;
+    /**
+     * The call to action type is play now.
+     *
+     * Generated from protobuf enum <code>PLAY_NOW = 14;</code>
+     */
+    const PLAY_NOW = 14;
+    /**
+     * The call to action type is see more.
+     *
+     * Generated from protobuf enum <code>SEE_MORE = 15;</code>
+     */
+    const SEE_MORE = 15;
+    /**
+     * The call to action type is start now.
+     *
+     * Generated from protobuf enum <code>START_NOW = 16;</code>
+     */
+    const START_NOW = 16;
+    /**
+     * The call to action type is visit site.
+     *
+     * Generated from protobuf enum <code>VISIT_SITE = 17;</code>
+     */
+    const VISIT_SITE = 17;
+    /**
+     * The call to action type is watch now.
+     *
+     * Generated from protobuf enum <code>WATCH_NOW = 18;</code>
+     */
+    const WATCH_NOW = 18;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -92,6 +140,14 @@ class CallToActionType
         self::DOWNLOAD => 'DOWNLOAD',
         self::BOOK_NOW => 'BOOK_NOW',
         self::SHOP_NOW => 'SHOP_NOW',
+        self::BUY_NOW => 'BUY_NOW',
+        self::DONATE_NOW => 'DONATE_NOW',
+        self::ORDER_NOW => 'ORDER_NOW',
+        self::PLAY_NOW => 'PLAY_NOW',
+        self::SEE_MORE => 'SEE_MORE',
+        self::START_NOW => 'START_NOW',
+        self::VISIT_SITE => 'VISIT_SITE',
+        self::WATCH_NOW => 'WATCH_NOW',
     ];
 
     public static function name($value)

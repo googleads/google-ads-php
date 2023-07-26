@@ -30,6 +30,22 @@ class MutateBillingSetupRequest extends \Google\Protobuf\Internal\Message
     protected $operation = null;
 
     /**
+     * @param string                                                   $customerId Required. Id of the customer to apply the billing setup mutate operation
+     *                                                                             to.
+     * @param \Google\Ads\GoogleAds\V14\Services\BillingSetupOperation $operation  Required. The operation to perform.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateBillingSetupRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, \Google\Ads\GoogleAds\V14\Services\BillingSetupOperation $operation): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperation($operation);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

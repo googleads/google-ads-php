@@ -25,6 +25,20 @@ class GetSmartCampaignStatusRequest extends \Google\Protobuf\Internal\Message
     protected $resource_name = '';
 
     /**
+     * @param string $resourceName Required. The resource name of the Smart campaign setting belonging to the
+     *                             Smart campaign to fetch the status of.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\GetSmartCampaignStatusRequest
+     *
+     * @experimental
+     */
+    public static function build(string $resourceName): self
+    {
+        return (new self())
+            ->setResourceName($resourceName);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

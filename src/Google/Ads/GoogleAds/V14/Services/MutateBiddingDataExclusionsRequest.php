@@ -53,6 +53,21 @@ class MutateBiddingDataExclusionsRequest extends \Google\Protobuf\Internal\Messa
     protected $response_content_type = 0;
 
     /**
+     * @param string                                                             $customerId Required. ID of the customer whose data exclusions are being modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\BiddingDataExclusionOperation[] $operations Required. The list of operations to perform on individual data exclusions.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateBiddingDataExclusionsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

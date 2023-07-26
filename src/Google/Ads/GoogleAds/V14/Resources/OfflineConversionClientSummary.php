@@ -12,7 +12,6 @@ use Google\Protobuf\Internal\GPBUtil;
  * Offline conversion upload diagnostic summarized by client. This proto
  * contains general information, breakdown by date/job and alerts for offline
  * conversion upload results.
- * Next tag: 10
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.resources.OfflineConversionClientSummary</code>
  */

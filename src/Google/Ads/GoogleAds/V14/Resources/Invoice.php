@@ -130,12 +130,9 @@ class Invoice extends \Google\Protobuf\Internal\Message
      */
     protected $regulatory_costs_total_amount_micros = 0;
     /**
-     * Output only. The pretax subtotal amount, in micros. This equals the
-     * sum of the AccountBudgetSummary subtotal amounts,
-     * Invoice.adjustments_subtotal_amount_micros, and
-     * Invoice.regulatory_costs_subtotal_amount_micros.
-     * Starting with v6, the Invoice.regulatory_costs_subtotal_amount_micros is no
-     * longer included.
+     * Output only. The pretax subtotal amount, in micros. This is equal to the
+     * sum of the AccountBudgetSummary subtotal amounts and
+     * Invoice.adjustments_subtotal_amount_micros.
      *
      * Generated from protobuf field <code>optional int64 subtotal_amount_micros = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -150,10 +147,10 @@ class Invoice extends \Google\Protobuf\Internal\Message
     protected $tax_amount_micros = null;
     /**
      * Output only. The total amount, in micros. This equals the sum of
-     * Invoice.subtotal_amount_micros and Invoice.tax_amount_micros.
-     * Starting with v6, Invoice.regulatory_costs_subtotal_amount_micros is
-     * also added as it is no longer already included in
-     * Invoice.tax_amount_micros.
+     * Invoice.subtotal_amount_micros, Invoice.tax_amount_micros,
+     * Invoice.regulatory_costs_subtotal_amount_micros, and
+     * Invoice.export_charge_subtotal_amount_micros (which is separated into a
+     * separate line item starting with V14.1).
      *
      * Generated from protobuf field <code>optional int64 total_amount_micros = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -256,22 +253,19 @@ class Invoice extends \Google\Protobuf\Internal\Message
      *     @type int|string $regulatory_costs_total_amount_micros
      *           Output only. The total amount of invoice level regulatory costs, in micros.
      *     @type int|string $subtotal_amount_micros
-     *           Output only. The pretax subtotal amount, in micros. This equals the
-     *           sum of the AccountBudgetSummary subtotal amounts,
-     *           Invoice.adjustments_subtotal_amount_micros, and
-     *           Invoice.regulatory_costs_subtotal_amount_micros.
-     *           Starting with v6, the Invoice.regulatory_costs_subtotal_amount_micros is no
-     *           longer included.
+     *           Output only. The pretax subtotal amount, in micros. This is equal to the
+     *           sum of the AccountBudgetSummary subtotal amounts and
+     *           Invoice.adjustments_subtotal_amount_micros.
      *     @type int|string $tax_amount_micros
      *           Output only. The sum of all taxes on the invoice, in micros. This equals
      *           the sum of the AccountBudgetSummary tax amounts, plus taxes not associated
      *           with a specific account budget.
      *     @type int|string $total_amount_micros
      *           Output only. The total amount, in micros. This equals the sum of
-     *           Invoice.subtotal_amount_micros and Invoice.tax_amount_micros.
-     *           Starting with v6, Invoice.regulatory_costs_subtotal_amount_micros is
-     *           also added as it is no longer already included in
-     *           Invoice.tax_amount_micros.
+     *           Invoice.subtotal_amount_micros, Invoice.tax_amount_micros,
+     *           Invoice.regulatory_costs_subtotal_amount_micros, and
+     *           Invoice.export_charge_subtotal_amount_micros (which is separated into a
+     *           separate line item starting with V14.1).
      *     @type string $corrected_invoice
      *           Output only. The resource name of the original invoice corrected, wrote
      *           off, or canceled by this invoice, if applicable. If `corrected_invoice` is
@@ -830,12 +824,9 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The pretax subtotal amount, in micros. This equals the
-     * sum of the AccountBudgetSummary subtotal amounts,
-     * Invoice.adjustments_subtotal_amount_micros, and
-     * Invoice.regulatory_costs_subtotal_amount_micros.
-     * Starting with v6, the Invoice.regulatory_costs_subtotal_amount_micros is no
-     * longer included.
+     * Output only. The pretax subtotal amount, in micros. This is equal to the
+     * sum of the AccountBudgetSummary subtotal amounts and
+     * Invoice.adjustments_subtotal_amount_micros.
      *
      * Generated from protobuf field <code>optional int64 subtotal_amount_micros = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
@@ -856,12 +847,9 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The pretax subtotal amount, in micros. This equals the
-     * sum of the AccountBudgetSummary subtotal amounts,
-     * Invoice.adjustments_subtotal_amount_micros, and
-     * Invoice.regulatory_costs_subtotal_amount_micros.
-     * Starting with v6, the Invoice.regulatory_costs_subtotal_amount_micros is no
-     * longer included.
+     * Output only. The pretax subtotal amount, in micros. This is equal to the
+     * sum of the AccountBudgetSummary subtotal amounts and
+     * Invoice.adjustments_subtotal_amount_micros.
      *
      * Generated from protobuf field <code>optional int64 subtotal_amount_micros = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
@@ -917,10 +905,10 @@ class Invoice extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The total amount, in micros. This equals the sum of
-     * Invoice.subtotal_amount_micros and Invoice.tax_amount_micros.
-     * Starting with v6, Invoice.regulatory_costs_subtotal_amount_micros is
-     * also added as it is no longer already included in
-     * Invoice.tax_amount_micros.
+     * Invoice.subtotal_amount_micros, Invoice.tax_amount_micros,
+     * Invoice.regulatory_costs_subtotal_amount_micros, and
+     * Invoice.export_charge_subtotal_amount_micros (which is separated into a
+     * separate line item starting with V14.1).
      *
      * Generated from protobuf field <code>optional int64 total_amount_micros = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
@@ -942,10 +930,10 @@ class Invoice extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The total amount, in micros. This equals the sum of
-     * Invoice.subtotal_amount_micros and Invoice.tax_amount_micros.
-     * Starting with v6, Invoice.regulatory_costs_subtotal_amount_micros is
-     * also added as it is no longer already included in
-     * Invoice.tax_amount_micros.
+     * Invoice.subtotal_amount_micros, Invoice.tax_amount_micros,
+     * Invoice.regulatory_costs_subtotal_amount_micros, and
+     * Invoice.export_charge_subtotal_amount_micros (which is separated into a
+     * separate line item starting with V14.1).
      *
      * Generated from protobuf field <code>optional int64 total_amount_micros = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
