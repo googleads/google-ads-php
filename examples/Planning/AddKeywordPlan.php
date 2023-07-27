@@ -45,6 +45,11 @@ use Google\Ads\GoogleAds\V14\Services\KeywordPlanAdGroupOperation;
 use Google\Ads\GoogleAds\V14\Services\KeywordPlanCampaignKeywordOperation;
 use Google\Ads\GoogleAds\V14\Services\KeywordPlanCampaignOperation;
 use Google\Ads\GoogleAds\V14\Services\KeywordPlanOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateKeywordPlanAdGroupKeywordsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateKeywordPlanAdGroupsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateKeywordPlanCampaignKeywordsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateKeywordPlanCampaignsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateKeywordPlansRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -71,6 +76,11 @@ class AddKeywordPlan
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -169,10 +179,10 @@ class AddKeywordPlan
 
         // Issues a mutate request to add the keyword plan.
         $keywordPlanServiceClient = $googleAdsClient->getKeywordPlanServiceClient();
-        $response = $keywordPlanServiceClient->mutateKeywordPlans(
+        $response = $keywordPlanServiceClient->mutateKeywordPlans(MutateKeywordPlansRequest::build(
             $customerId,
             [$keywordPlanOperation]
-        );
+        ));
 
         $resourceName = $response->getResults()[0]->getResourceName();
         printf("Created keyword plan: '%s'%s", $resourceName, PHP_EOL);
@@ -221,8 +231,7 @@ class AddKeywordPlan
         $keywordPlanCampaignServiceClient =
             $googleAdsClient->getKeywordPlanCampaignServiceClient();
         $response = $keywordPlanCampaignServiceClient->mutateKeywordPlanCampaigns(
-            $customerId,
-            [$keywordPlanCampaignOperation]
+            MutateKeywordPlanCampaignsRequest::build($customerId, [$keywordPlanCampaignOperation])
         );
 
         $planCampaignResource = $response->getResults()[0]->getResourceName();
@@ -259,8 +268,7 @@ class AddKeywordPlan
 
         $keywordPlanAdGroupServiceClient = $googleAdsClient->getKeywordPlanAdGroupServiceClient();
         $response = $keywordPlanAdGroupServiceClient->mutateKeywordPlanAdGroups(
-            $customerId,
-            [$keywordPlanAdGroupOperation]
+            MutateKeywordPlanAdGroupsRequest::build($customerId, [$keywordPlanAdGroupOperation])
         );
 
         $planAdGroupResource = $response->getResults()[0]->getResourceName();
@@ -321,8 +329,10 @@ class AddKeywordPlan
 
         // Adds the keyword plan ad group keywords.
         $response = $keywordPlanAdGroupKeywordServiceClient->mutateKeywordPlanAdGroupKeywords(
-            $customerId,
-            $keywordPlanAdGroupKeywordOperations
+            MutateKeywordPlanAdGroupKeywordsRequest::build(
+                $customerId,
+                $keywordPlanAdGroupKeywordOperations
+            )
         );
 
         /** @var KeywordPlanAdGroupKeyword $result */
@@ -364,8 +374,10 @@ class AddKeywordPlan
 
         // Adds the negative campaign keyword.
         $response = $keywordPlanCampaignKeywordServiceClient->mutateKeywordPlanCampaignKeywords(
-            $customerId,
-            [$keywordPlanCampaignKeywordOperation]
+            MutateKeywordPlanCampaignKeywordsRequest::build(
+                $customerId,
+                [$keywordPlanCampaignKeywordOperation]
+            )
         );
 
         /** @var KeywordPlanCampaignKeyword $result */

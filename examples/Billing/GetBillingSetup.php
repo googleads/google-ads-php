@@ -30,6 +30,7 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\V14\Enums\BillingSetupStatusEnum\BillingSetupStatus;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /** This sample gets all BillingSetup objects available for the specified customer ID. */
@@ -54,6 +55,11 @@ class GetBillingSetup
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -109,8 +115,9 @@ class GetBillingSetup
         . 'FROM billing_setup';
 
         // Issues a search request by specifying page size.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        $response = $googleAdsServiceClient->search(
+            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
+        );
 
         // Iterates over all rows in all pages and prints the requested field values for
         // the billing setup in each row.
@@ -120,9 +127,9 @@ class GetBillingSetup
             if (is_null($paymentAccountInfo)) {
                 printf(
                     'Found the billing setup with ID %1$d, %3$s'
-                    . '  status \'%2$d\' with no payment account info. %3$s',
+                    . '  status \'%2$s\' with no payment account info. %3$s',
                     $googleAdsRow->getBillingSetup()->getId(),
-                    $googleAdsRow->getBillingSetup()->getStatus(),
+                    BillingSetupStatus::name($googleAdsRow->getBillingSetup()->getStatus()),
                     PHP_EOL
                 );
                 continue;
@@ -141,9 +148,7 @@ class GetBillingSetup
                 $paymentAccountInfo->getPaymentsAccountName(),
                 $paymentAccountInfo->getPaymentsProfileId(),
                 $paymentAccountInfo->getPaymentsProfileName(),
-                $paymentAccountInfo->getSecondaryPaymentsProfileId()
-                    ? $paymentAccountInfo->getSecondaryPaymentsProfileId()
-                    : 'None',
+                $paymentAccountInfo->getSecondaryPaymentsProfileId(),
                 PHP_EOL
             );
         }

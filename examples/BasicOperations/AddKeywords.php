@@ -34,6 +34,7 @@ use Google\Ads\GoogleAds\V14\Enums\KeywordMatchTypeEnum\KeywordMatchType;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\AdGroupCriterion;
 use Google\Ads\GoogleAds\V14\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupCriteriaRequest;
 use Google\ApiCore\ApiException;
 
 /** This example demonstrates how to add a keyword to an ad group. */
@@ -61,6 +62,11 @@ class AddKeywords
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -130,8 +136,7 @@ class AddKeywords
         // Issues a mutate request to add the ad group criterion.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-            $customerId,
-            [$adGroupCriterionOperation]
+            MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])
         );
 
         printf("Added %d ad group criteria:%s", $response->getResults()->count(), PHP_EOL);

@@ -31,6 +31,7 @@ use Google\Ads\GoogleAds\Util\V14\ResourceNames;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\BillingSetup;
 use Google\Ads\GoogleAds\V14\Services\BillingSetupOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateBillingSetupRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -58,6 +59,11 @@ class RemoveBillingSetup
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -115,8 +121,9 @@ class RemoveBillingSetup
 
         // Issues a mutate request to remove the billing setup.
         $billingSetupServiceClient = $googleAdsClient->getBillingSetupServiceClient();
-        $response =
-            $billingSetupServiceClient->mutateBillingSetup($customerId, $billingSetupOperation);
+        $response = $billingSetupServiceClient->mutateBillingSetup(
+            MutateBillingSetupRequest::build($customerId, $billingSetupOperation)
+        );
 
         /** @var BillingSetup $removedBillingSetup */
         $removedBillingSetup = $response->getResult();

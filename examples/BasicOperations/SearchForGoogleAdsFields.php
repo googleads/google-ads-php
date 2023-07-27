@@ -31,6 +31,7 @@ use Google\Ads\GoogleAds\V14\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCate
 use Google\Ads\GoogleAds\V14\Enums\GoogleAdsFieldDataTypeEnum\GoogleAdsFieldDataType;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\GoogleAdsField;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsFieldsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -58,6 +59,11 @@ class SearchForGoogleAdsFields
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -105,7 +111,9 @@ class SearchForGoogleAdsFields
         // A single "%" is the wildcard token in the Google Ads Query language.
         $query = "SELECT name, category, selectable, filterable, sortable, selectable_with, "
             . "data_type, is_repeated WHERE name LIKE '$namePrefix%'";
-        $response = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
+        $response = $googleAdsFieldServiceClient->searchGoogleAdsFields(
+            SearchGoogleAdsFieldsRequest::build($query)
+        );
 
         if (iterator_count($response->getIterator()) === 0) {
             printf(

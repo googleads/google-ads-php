@@ -32,6 +32,7 @@ use Google\Ads\GoogleAds\V14\Enums\ChangeStatusResourceTypeEnum\ChangeStatusReso
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\ChangeStatus;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -57,6 +58,11 @@ class GetChangeSummary
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -122,8 +128,9 @@ class GetChangeSummary
             . 'LIMIT 10000';
 
         // Issues a search request by specifying page size.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        $response = $googleAdsServiceClient->search(
+            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
+        );
 
         // Iterates over all rows in all pages and prints the requested field values for
         // the change status in each row.

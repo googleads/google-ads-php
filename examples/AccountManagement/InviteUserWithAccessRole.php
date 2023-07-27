@@ -31,6 +31,7 @@ use Google\Ads\GoogleAds\V14\Enums\AccessRoleEnum\AccessRole;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\CustomerUserAccessInvitation;
 use Google\Ads\GoogleAds\V14\Services\CustomerUserAccessInvitationOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateCustomerUserAccessInvitationRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -64,6 +65,11 @@ class InviteUserWithAccessRole
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -130,8 +136,10 @@ class InviteUserWithAccessRole
         $customerUserAccessInvitationServiceClient =
             $googleAdsClient->getCustomerUserAccessInvitationServiceClient();
         $response = $customerUserAccessInvitationServiceClient->mutateCustomerUserAccessInvitation(
-            $customerId,
-            $customerUserAccessInvitationOperation
+            MutateCustomerUserAccessInvitationRequest::build(
+                $customerId,
+                $customerUserAccessInvitationOperation
+            )
         );
         printf(
             "Customer user access invitation with resource name '%s' was sent from customer "

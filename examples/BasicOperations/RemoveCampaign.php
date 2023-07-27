@@ -31,6 +31,7 @@ use Google\Ads\GoogleAds\Util\V14\ResourceNames;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\Campaign;
 use Google\Ads\GoogleAds\V14\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example deletes a campaign using the 'REMOVE' operation. To get campaigns, run
@@ -57,6 +58,11 @@ class RemoveCampaign
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -113,7 +119,9 @@ class RemoveCampaign
 
         // Issues a mutate request to remove the campaign.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
-        $response = $campaignServiceClient->mutateCampaigns($customerId, [$campaignOperation]);
+        $response = $campaignServiceClient->mutateCampaigns(
+            MutateCampaignsRequest::build($customerId, [$campaignOperation])
+        );
 
         /** @var Campaign $removedCampaign */
         $removedCampaign = $response->getResults()[0];

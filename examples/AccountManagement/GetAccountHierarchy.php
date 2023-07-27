@@ -32,6 +32,8 @@ use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\CustomerClient;
 use Google\Ads\GoogleAds\V14\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\ListAccessibleCustomersRequest;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -55,7 +57,7 @@ class GetAccountHierarchy
 
     // Stores the mapping from the root customer IDs (the ones that will be used as a start point
     // for printing each hierarchy) to their `CustomerClient` objects.
-    private static $rootCustomerClients = [];
+    private static array $rootCustomerClients = [];
 
     public static function main()
     {
@@ -83,6 +85,11 @@ class GetAccountHierarchy
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -202,6 +209,11 @@ class GetAccountHierarchy
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
             ->withLoginCustomerId($loginCustomerId ?? $rootCustomerId)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         // Creates the Google Ads Service client.
@@ -225,10 +237,10 @@ class GetAccountHierarchy
             $customerIdToSearch = array_shift($managerCustomerIdsToSearch);
             // Issues a search request by specifying page size.
             /** @var GoogleAdsServerStreamDecorator $stream */
-            $stream = $googleAdsServiceClient->searchStream(
+            $stream = $googleAdsServiceClient->searchStream(SearchGoogleAdsStreamRequest::build(
                 $customerIdToSearch,
                 $query
-            );
+            ));
 
             // Iterates over all elements to get all customer clients under the specified customer's
             // hierarchy.
@@ -285,7 +297,8 @@ class GetAccountHierarchy
         // Issues a request for listing all customers accessible by this authenticated Google
         // account.
         $customerServiceClient = $googleAdsClient->getCustomerServiceClient();
-        $accessibleCustomers = $customerServiceClient->listAccessibleCustomers();
+        $accessibleCustomers =
+            $customerServiceClient->listAccessibleCustomers(new ListAccessibleCustomersRequest());
 
         print 'No manager customer ID is specified. The example will print the hierarchies of'
             . ' all accessible customer IDs:' . PHP_EOL;

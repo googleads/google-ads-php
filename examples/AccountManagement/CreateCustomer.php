@@ -29,6 +29,7 @@ use Google\Ads\GoogleAds\Lib\V14\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\Customer;
+use Google\Ads\GoogleAds\V14\Services\CreateCustomerClientRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -54,9 +55,13 @@ class CreateCustomer
 
         // Construct a Google Ads client configured from a properties file and the
         // OAuth2 credentials above.
-        $googleAdsClient = (new GoogleAdsClientBuilder())
-            ->fromFile()
+        $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -114,7 +119,9 @@ class CreateCustomer
 
         // Issues a mutate request to create an account
         $customerServiceClient = $googleAdsClient->getCustomerServiceClient();
-        $response = $customerServiceClient->createCustomerClient($managerCustomerId, $customer);
+        $response = $customerServiceClient->createCustomerClient(
+            CreateCustomerClientRequest::build($managerCustomerId, $customer)
+        );
 
         printf(
             'Created a customer with resource name "%s" under the manager account with '

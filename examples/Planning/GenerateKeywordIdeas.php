@@ -31,6 +31,7 @@ use Google\Ads\GoogleAds\Util\V14\ResourceNames;
 use Google\Ads\GoogleAds\V14\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Services\GenerateKeywordIdeaResult;
+use Google\Ads\GoogleAds\V14\Services\GenerateKeywordIdeasRequest;
 use Google\Ads\GoogleAds\V14\Services\KeywordAndUrlSeed;
 use Google\Ads\GoogleAds\V14\Services\KeywordSeed;
 use Google\Ads\GoogleAds\V14\Services\UrlSeed;
@@ -76,6 +77,11 @@ class GenerateKeywordIdeas
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -168,7 +174,7 @@ class GenerateKeywordIdeas
 
         // Generate keyword ideas based on the specified parameters.
         $response = $keywordPlanIdeaServiceClient->generateKeywordIdeas(
-            [
+            new GenerateKeywordIdeasRequest([
                 // Set the language resource using the provided language ID.
                 'language' => ResourceNames::forLanguageConstant($languageId),
                 'customerId' => $customerId,
@@ -177,7 +183,7 @@ class GenerateKeywordIdeas
                 // Set the network. To restrict to only Google Search, change the parameter below to
                 // KeywordPlanNetwork::GOOGLE_SEARCH.
                 'keywordPlanNetwork' => KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS
-            ] + $requestOptionalArgs
+            ] + $requestOptionalArgs)
         );
 
         // Iterate over the results and print its detail.
