@@ -25,6 +25,7 @@ use Google\Ads\GoogleAds\V14\Resources\FeedAttribute;
 use Google\Ads\GoogleAds\V14\Resources\FeedItem;
 use Google\Ads\GoogleAds\V14\Resources\FeedItemAttributeValue;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
 
 /**
  * Utilities that are shared between code examples related to feeds.
@@ -51,8 +52,11 @@ final class Feeds
         $query = "SELECT feed_item.attribute_values FROM feed_item"
             . " WHERE feed_item.resource_name = '$feedItemResourceName'";
         // Issues a search request by specifying page size.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        $response = ($googleAdsClient->useGapicV2Source())
+            ? $googleAdsServiceClient->search(
+                SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
+            )
+            : $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
 
         // Returns the feed item attribute values, which belongs to the first item. We can ensure
         // it belongs to the first one because we specified the feed item resource name in the
@@ -187,8 +191,11 @@ final class Feeds
         // Constructs the query to get the feed attributes for the specified feed resource name.
         $query = "SELECT feed.attributes FROM feed WHERE feed.resource_name = '$feedResourceName'";
         // Issues a search request by specifying page size.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        $response = ($googleAdsClient->useGapicV2Source())
+            ? $googleAdsServiceClient->search(
+                SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
+            )
+            : $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
 
         // Gets the first result because we only need the single feed we created previously.
         /** @var GoogleAdsRow $googleAdsRow */

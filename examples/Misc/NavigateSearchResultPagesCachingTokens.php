@@ -28,8 +28,9 @@ use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V14\GoogleAdsException;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V14\Services\Client\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V14\Services\GoogleAdsServiceClient;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Page;
 
@@ -72,6 +73,11 @@ class NavigateSearchResultPagesCachingTokens
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -129,13 +135,17 @@ class NavigateSearchResultPagesCachingTokens
         // Issues a paginated search request.
         $searchOptions = [
             // Sets the number of results to return per page.
-            'pageSize' => self::PAGE_SIZE,
+            'page_size' => self::PAGE_SIZE,
             // Requests to return the total results count. This is necessary to determine how many
             // pages of results there are.
-            'returnTotalResultsCount' => true
+            'return_total_results_count' => true
         ];
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        $response = $googleAdsServiceClient->search($customerId, $query, $searchOptions);
+        $response = $googleAdsServiceClient->search(
+            (new SearchGoogleAdsRequest($searchOptions))
+                ->setCustomerId($customerId)
+                ->setQuery($query)
+        );
         self::cacheNextPageToken($pageTokens, $response->getPage(), 1);
 
         // Determines the total number of results and prints it.
@@ -226,12 +236,12 @@ class NavigateSearchResultPagesCachingTokens
             // Fetches the next page.
             printf('Fetching page #%d...%s', $currentPageNumber, PHP_EOL);
             $response = $googleAdsServiceClient->search(
-                $customerId,
-                $searchQuery,
-                $searchOptions + [
-                    // Uses the page token cached for the current page number.
-                    'pageToken' => $pageTokens[$currentPageNumber]
-                ]
+                (new SearchGoogleAdsRequest(
+                    $searchOptions + [
+                        // Uses the page token cached for the current page number.
+                        'page_token' => $pageTokens[$currentPageNumber]
+                    ]
+                ))->setCustomerId($customerId)->setQuery($searchQuery)
             );
             self::cacheNextPageToken($pageTokens, $response->getPage(), $currentPageNumber);
             $currentPageNumber++;

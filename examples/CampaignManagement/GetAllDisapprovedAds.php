@@ -33,6 +33,7 @@ use Google\Ads\GoogleAds\V14\Enums\AdTypeEnum\AdType;
 use Google\Ads\GoogleAds\V14\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example retrieves all the disapproved ads in a given campaign. */
@@ -60,6 +61,11 @@ class GetAllDisapprovedAds
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -119,9 +125,9 @@ class GetAllDisapprovedAds
 
         // Issues a search request by specifying page size.
         $response = $googleAdsServiceClient->search(
-            $customerId,
-            $query,
-            ['pageSize' => self::PAGE_SIZE, 'returnTotalResultsCount' => true]
+            SearchGoogleAdsRequest::build($customerId, $query)
+                ->setPageSize(self::PAGE_SIZE)
+                ->setReturnTotalResultsCount(true)
         );
 
         // Iterates over all rows in all pages and counts disapproved ads.
@@ -149,13 +155,15 @@ class GetAllDisapprovedAds
                 foreach ($policyTopicEntry->getEvidences() as $evidence) {
                     /** @var PolicyTopicEvidence $evidence */
                     $textList = $evidence->getTextList();
-                    for ($i = 0; $i < $textList->getTexts()->count(); $i++) {
-                        printf(
-                            "    evidence text[%d]: '%s'%s",
-                            $i,
-                            $textList->getTexts()[$i],
-                            PHP_EOL
-                        );
+                    if (!empty($textList)) {
+                        for ($i = 0; $i < $textList->getTexts()->count(); $i++) {
+                            printf(
+                                "    evidence text[%d]: '%s'%s",
+                                $i,
+                                $textList->getTexts()[$i],
+                                PHP_EOL
+                            );
+                        }
                     }
                 }
             }

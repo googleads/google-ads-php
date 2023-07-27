@@ -41,6 +41,9 @@ use Google\Ads\GoogleAds\V14\Resources\CampaignBudget;
 use Google\Ads\GoogleAds\V14\Services\BiddingStrategyOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignBudgetOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateBiddingStrategiesRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignBudgetsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -71,6 +74,11 @@ class UsePortfolioBiddingStrategy
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -159,8 +167,7 @@ class UsePortfolioBiddingStrategy
         // Issues a mutate request to create the bidding strategy.
         $biddingStrategyServiceClient = $googleAdsClient->getBiddingStrategyServiceClient();
         $response = $biddingStrategyServiceClient->mutateBiddingStrategies(
-            $customerId,
-            [$biddingStrategyOperation]
+            MutateBiddingStrategiesRequest::build($customerId, [$biddingStrategyOperation])
         );
         /** @var BiddingStrategy $addedBiddingStrategy */
         $addedBiddingStrategy = $response->getResults()[0];
@@ -205,8 +212,7 @@ class UsePortfolioBiddingStrategy
         // Issues a mutate request to create the budget.
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         $response = $campaignBudgetServiceClient->mutateCampaignBudgets(
-            $customerId,
-            [$campaignBudgetOperation]
+            MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
 
         /** @var CampaignBudget $addedBudget */
@@ -262,7 +268,9 @@ class UsePortfolioBiddingStrategy
 
         // Issues a mutate request to add the campaign.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
-        $response = $campaignServiceClient->mutateCampaigns($customerId, [$campaignOperation]);
+        $response = $campaignServiceClient->mutateCampaigns(
+            MutateCampaignsRequest::build($customerId, [$campaignOperation])
+        );
 
         /** @var Campaign $addedCampaign */
         $addedCampaign = $response->getResults()[0];

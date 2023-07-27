@@ -31,6 +31,7 @@ use Google\Ads\GoogleAds\Util\V14\ResourceNames;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\CampaignLabel;
 use Google\Ads\GoogleAds\V14\Services\CampaignLabelOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignLabelsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example adds a campaign label to a list of campaigns. */
@@ -59,6 +60,11 @@ class AddCampaignLabels
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -130,8 +136,7 @@ class AddCampaignLabels
         // Issues a mutate request to add the labels to the campaigns.
         $campaignLabelServiceClient = $googleAdsClient->getCampaignLabelServiceClient();
         $response = $campaignLabelServiceClient->mutateCampaignLabels(
-            $customerId,
-            $operations
+            MutateCampaignLabelsRequest::build($customerId, $operations)
         );
 
         printf("Added %d campaign labels:%s", $response->getResults()->count(), PHP_EOL);

@@ -34,6 +34,7 @@ use Google\Ads\GoogleAds\V14\Enums\ResponseContentTypeEnum\ResponseContentType;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\CampaignBidModifier;
 use Google\Ads\GoogleAds\V14\Services\CampaignBidModifierOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignBidModifiersRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -62,6 +63,11 @@ class AddCampaignBidModifier
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -133,9 +139,8 @@ class AddCampaignBidModifier
         // response contains the mutated object and not just its resource name.
         $campaignBidModifierServiceClient = $googleAdsClient->getCampaignBidModifierServiceClient();
         $response = $campaignBidModifierServiceClient->mutateCampaignBidModifiers(
-            $customerId,
-            [$campaignBidModifierOperation],
-            ['responseContentType' => ResponseContentType::MUTABLE_RESOURCE]
+            MutateCampaignBidModifiersRequest::build($customerId, [$campaignBidModifierOperation])
+                ->setResponseContentType(ResponseContentType::MUTABLE_RESOURCE)
         );
 
         // The resource returned in the response can be accessed directly in the results list.

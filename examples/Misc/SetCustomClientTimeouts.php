@@ -30,6 +30,8 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V14\GoogleAdsServerStreamDecorator;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\ApiStatus;
 
@@ -62,6 +64,11 @@ class SetCustomClientTimeouts
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -128,8 +135,7 @@ class SetCustomClientTimeouts
             // Issues a search stream request by setting a custom client timeout.
             /** @var GoogleAdsServerStreamDecorator $stream */
             $stream = $googleAdsServiceClient->searchStream(
-                $customerId,
-                $query,
+                SearchGoogleAdsStreamRequest::build($customerId, $query),
                 [
                     // Any server streaming call has a default timeout setting. For this
                     // particular call, the default setting can be found in the following file:
@@ -176,8 +182,7 @@ class SetCustomClientTimeouts
         try {
             // Issues a search request by setting a custom client timeout.
             $response = $googleAdsServiceClient->search(
-                $customerId,
-                $query,
+                SearchGoogleAdsRequest::build($customerId, $query),
                 [
                     // Any unary call is retryable and has default retry settings.
                     // Complete information about these settings can be found here:

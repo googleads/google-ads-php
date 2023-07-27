@@ -30,20 +30,20 @@ use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V14\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
 use Google\Ads\GoogleAds\Util\V14\ResourceNames;
-use Google\Ads\GoogleAds\V14\Enums\CampaignExperimentTrafficSplitTypeEnum\CampaignExperimentTrafficSplitType;
 use Google\Ads\GoogleAds\V14\Enums\ExperimentStatusEnum\ExperimentStatus;
 use Google\Ads\GoogleAds\V14\Enums\ExperimentTypeEnum\ExperimentType;
 use Google\Ads\GoogleAds\V14\Enums\ResponseContentTypeEnum\ResponseContentType;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\Campaign;
-use Google\Ads\GoogleAds\V14\Resources\CampaignExperiment;
 use Google\Ads\GoogleAds\V14\Resources\Experiment;
 use Google\Ads\GoogleAds\V14\Resources\ExperimentArm;
 use Google\Ads\GoogleAds\V14\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V14\Services\Client\ExperimentServiceClient;
 use Google\Ads\GoogleAds\V14\Services\ExperimentArmOperation;
 use Google\Ads\GoogleAds\V14\Services\ExperimentOperation;
-use Google\Ads\GoogleAds\V14\Services\ExperimentServiceClient;
-use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateExperimentArmsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateExperimentsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -72,6 +72,11 @@ class CreateExperiment
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -160,8 +165,7 @@ class CreateExperiment
 
         // Issues a request to create the experiment.
         $response = $experimentServiceClient->mutateExperiments(
-            $customerId,
-            [$experimentOperation]
+            MutateExperimentsRequest::build($customerId, [$experimentOperation])
         );
         $experimentResourceName = $response->getResults()[0]->getResourceName();
         print "Created experiment with resource name '$experimentResourceName'" . PHP_EOL;
@@ -211,11 +215,10 @@ class CreateExperiment
         // Issues a request to create the experiment arms.
         $experimentArmServiceClient = $googleAdsClient->getExperimentArmServiceClient();
         $response = $experimentArmServiceClient->mutateExperimentArms(
-            $customerId,
-            $operations,
-            // We want to fetch the draft campaign IDs from the treatment arm, so the easiest way
-            // to do that is to have the response return the newly created entities.
-            ['responseContentType' => ResponseContentType::MUTABLE_RESOURCE]
+            MutateExperimentArmsRequest::build($customerId, $operations)
+                // We want to fetch the draft campaign IDs from the treatment arm, so the easiest
+                // way to do that is to have the response return the newly created entities.
+                ->setResponseContentType(ResponseContentType::MUTABLE_RESOURCE)
         );
         // Results always return in the order that you specify them in the request.
         // Since we created the treatment arm last, it will be the last result.
@@ -256,7 +259,9 @@ class CreateExperiment
 
         // Issues a request to update the campaign.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
-        $campaignServiceClient->mutateCampaigns($customerId, [$campaignOperation]);
+        $campaignServiceClient->mutateCampaigns(
+            MutateCampaignsRequest::build($customerId, [$campaignOperation])
+        );
 
         print "Updated the name for the campaign '$draftCampaignResourceName'" . PHP_EOL;
     }

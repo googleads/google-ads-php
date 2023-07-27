@@ -33,6 +33,7 @@ use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\Asset;
 use Google\Ads\GoogleAds\V14\Services\AssetOperation;
 use Google\Ads\GoogleAds\V14\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\V14\Services\MutateAssetsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example uploads an image asset. To get image assets, run GetAllImageAssets.php. */
@@ -57,6 +58,11 @@ class UploadImageAsset
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -119,10 +125,10 @@ class UploadImageAsset
 
         // Issues a mutate request to add the asset.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
-        $response = $assetServiceClient->mutateAssets(
+        $response = $assetServiceClient->mutateAssets(MutateAssetsRequest::build(
             $customerId,
             [$assetOperation]
-        );
+        ));
 
         if (!empty($response->getResults())) {
             // Prints the resource name of the added image asset.
