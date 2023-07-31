@@ -47,6 +47,11 @@ use Google\Ads\GoogleAds\V14\Services\CustomerFeedOperation;
 use Google\Ads\GoogleAds\V14\Services\FeedOperation;
 use Google\Ads\GoogleAds\V14\Services\FeedServiceClient;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignFeedsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCustomerFeedsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateFeedsRequest;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 use RuntimeException;
 
@@ -92,6 +97,11 @@ class AddAffiliateLocationExtensions
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -224,7 +234,9 @@ class AddAffiliateLocationExtensions
             'AND customer_feed.status = ENABLED';
         // Issues a search stream request.
         /** @var GoogleAdsServerStreamDecorator $stream */
-        $stream = $googleAdsServiceClient->searchStream($customerId, $query);
+        $stream = $googleAdsServiceClient->searchStream(
+            SearchGoogleAdsStreamRequest::build($customerId, $query)
+        );
         // Iterates over all rows in all messages to collect the results.
         foreach ($stream->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
@@ -256,8 +268,7 @@ class AddAffiliateLocationExtensions
 
         // Issues a mutate request to remove the customer feeds.
         $googleAdsClient->getCustomerFeedServiceClient()->mutateCustomerFeeds(
-            $customerId,
-            $operations
+            MutateCustomerFeedsRequest::build($customerId, $operations)
         );
     }
 
@@ -282,7 +293,9 @@ class AddAffiliateLocationExtensions
             'AND feed.origin = USER';
         // Issues a search stream request.
         /** @var GoogleAdsServerStreamDecorator $stream */
-        $stream = $googleAdsServiceClient->searchStream($customerId, $query);
+        $stream = $googleAdsServiceClient->searchStream(
+            SearchGoogleAdsStreamRequest::build($customerId, $query)
+        );
         // Iterates over all rows in all messages to collect the results.
         foreach ($stream->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
@@ -314,8 +327,7 @@ class AddAffiliateLocationExtensions
 
         // Issues a mutate request to remove the feeds.
         $googleAdsClient->getFeedServiceClient()->mutateFeeds(
-            $customerId,
-            $operations
+            MutateFeedsRequest::build($customerId, $operations)
         );
     }
 
@@ -353,7 +365,8 @@ class AddAffiliateLocationExtensions
 
         // Issues a mutate request to add the feed and prints some information.
         $feedServiceClient = $googleAdsClient->getFeedServiceClient();
-        $response = $feedServiceClient->mutateFeeds($customerId, [$operation]);
+        $response =
+            $feedServiceClient->mutateFeeds(MutateFeedsRequest::build($customerId, [$operation]));
         $feedResourceName = $response->getResults()[0]->getResourceName();
         printf(
             "Affiliate location extension feed created with resource name: '%s'.%s",
@@ -451,9 +464,7 @@ class AddAffiliateLocationExtensions
 
         // Issues a search request.
         $response = $googleAdsServiceClient->search(
-            $customerId,
-            $query,
-            ['returnTotalResultsCount' => true]
+            SearchGoogleAdsRequest::build($customerId, $query)->setReturnTotalResultsCount(true)
         );
 
         return $response->getPage()->getPageElementCount() === 1
@@ -503,7 +514,9 @@ class AddAffiliateLocationExtensions
 
         // Issues a mutate request to add the campaign feed and prints some information.
         $campaignFeedServiceClient = $googleAdsClient->getCampaignFeedServiceClient();
-        $response = $campaignFeedServiceClient->MutateCampaignFeeds($customerId, [$operation]);
+        $response = $campaignFeedServiceClient->mutateCampaignFeeds(
+            MutateCampaignFeedsRequest::build($customerId, [$operation])
+        );
         printf(
             "Campaign feed created with resource name: '%s'.%s",
             $response->getResults()[0]->getResourceName(),

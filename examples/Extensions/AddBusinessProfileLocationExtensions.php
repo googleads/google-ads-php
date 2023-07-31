@@ -41,6 +41,8 @@ use Google\Ads\GoogleAds\V14\Resources\Feed\PlacesLocationFeedData;
 use Google\Ads\GoogleAds\V14\Resources\Feed\PlacesLocationFeedData\OAuthInfo;
 use Google\Ads\GoogleAds\V14\Services\CustomerFeedOperation;
 use Google\Ads\GoogleAds\V14\Services\FeedOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateCustomerFeedsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateFeedsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -79,6 +81,11 @@ class AddBusinessProfileLocationExtensions
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -211,8 +218,7 @@ class AddBusinessProfileLocationExtensions
         //    placeholder fields of the LOCATION placeholder type.
         $feedServiceClient = $googleAdsClient->getFeedServiceClient();
         $response = $feedServiceClient->mutateFeeds(
-            $customerId,
-            [$feedOperation]
+            MutateFeedsRequest::build($customerId, [$feedOperation])
         );
         $businessProfileFeedResourceName = $response->getResults()[0]->getResourceName();
         printf(
@@ -273,8 +279,7 @@ class AddBusinessProfileLocationExtensions
                 // Issues a mutate request to add a customer feed and print its information if the
                 // request succeeded.
                 $addedCustomerFeed = $customerFeedServiceClient->mutateCustomerFeeds(
-                    $customerId,
-                    [$customerFeedOperation]
+                    MutateCustomerFeedsRequest::build($customerId, [$customerFeedOperation])
                 );
                 printf(
                     "Customer feed created with resource name: '%s'.%s",

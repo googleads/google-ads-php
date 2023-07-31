@@ -41,6 +41,8 @@ use Google\Ads\GoogleAds\V14\Resources\CampaignExtensionSetting;
 use Google\Ads\GoogleAds\V14\Resources\ExtensionFeedItem;
 use Google\Ads\GoogleAds\V14\Services\CampaignExtensionSettingOperation;
 use Google\Ads\GoogleAds\V14\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignExtensionSettingsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateExtensionFeedItemsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -71,6 +73,11 @@ class AddSitelinks
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -140,8 +147,10 @@ class AddSitelinks
         $campaignExtensionSettingServiceClient =
             $googleAdsClient->getCampaignExtensionSettingServiceClient();
         $response = $campaignExtensionSettingServiceClient->mutateCampaignExtensionSettings(
-            $customerId,
-            [$campaignExtensionSettingOperation]
+            MutateCampaignExtensionSettingsRequest::build(
+                $customerId,
+                [$campaignExtensionSettingOperation]
+            )
         );
 
         // Prints the resource name of the created campaign extension setting.
@@ -278,13 +287,15 @@ class AddSitelinks
         // Issues a mutate request to add the extension feed items.
         $extensionFeedItemServiceClient = $googleAdsClient->getExtensionFeedItemServiceClient();
         $response = $extensionFeedItemServiceClient->mutateExtensionFeedItems(
-            $customerId,
-            [
-                new ExtensionFeedItemOperation(['create' => $extensionFeedItem1]),
-                new ExtensionFeedItemOperation(['create' => $extensionFeedItem2]),
-                new ExtensionFeedItemOperation(['create' => $extensionFeedItem3]),
-                new ExtensionFeedItemOperation(['create' => $extensionFeedItem4])
-            ]
+            MutateExtensionFeedItemsRequest::build(
+                $customerId,
+                [
+                    new ExtensionFeedItemOperation(['create' => $extensionFeedItem1]),
+                    new ExtensionFeedItemOperation(['create' => $extensionFeedItem2]),
+                    new ExtensionFeedItemOperation(['create' => $extensionFeedItem3]),
+                    new ExtensionFeedItemOperation(['create' => $extensionFeedItem4])
+                ]
+            )
         );
 
         // Prints some information about the created extension feed items.

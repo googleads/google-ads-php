@@ -35,7 +35,9 @@ use Google\Ads\GoogleAds\V14\Resources\CustomerAsset;
 use Google\Ads\GoogleAds\V14\Services\AssetOperation;
 use Google\Ads\GoogleAds\V14\Services\CustomerAssetOperation;
 use Google\Ads\GoogleAds\V14\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\V14\Services\MutateAssetsRequest;
 use Google\Ads\GoogleAds\V14\Services\MutateCustomerAssetResult;
+use Google\Ads\GoogleAds\V14\Services\MutateCustomerAssetsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -65,6 +67,11 @@ class AddHotelCallout
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -149,7 +156,9 @@ class AddHotelCallout
 
         // Issues a mutate request to add the assets and print its information.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
-        $response = $assetServiceClient->mutateAssets($customerId, $assetOperations);
+        $response = $assetServiceClient->mutateAssets(
+            MutateAssetsRequest::build($customerId, $assetOperations)
+        );
         $createdAssetResourceNames = [];
         foreach ($response->getResults() as $result) {
             /** @var MutateAssetResult $result */
@@ -188,8 +197,7 @@ class AddHotelCallout
         // Issues a mutate request to add the customer assets and prints its information.
         $customerAssetServiceClient = $googleAdsClient->getCustomerAssetServiceClient();
         $response = $customerAssetServiceClient->mutateCustomerAssets(
-            $customerId,
-            $customerAssetOperations
+            MutateCustomerAssetsRequest::build($customerId, $customerAssetOperations)
         );
         foreach ($response->getResults() as $result) {
             /** @var MutateCustomerAssetResult $result */

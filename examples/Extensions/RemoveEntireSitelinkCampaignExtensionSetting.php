@@ -32,10 +32,12 @@ use Google\Ads\GoogleAds\Util\V14\ResourceNames;
 use Google\Ads\GoogleAds\V14\Enums\ExtensionTypeEnum\ExtensionType;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Services\CampaignExtensionSettingOperation;
+use Google\Ads\GoogleAds\V14\Services\Client\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V14\Services\ExtensionFeedItemOperation;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V14\Services\GoogleAdsServiceClient;
+use Google\Ads\GoogleAds\V14\Services\MutateGoogleAdsRequest;
 use Google\Ads\GoogleAds\V14\Services\MutateOperation;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -68,6 +70,11 @@ class RemoveEntireSitelinkCampaignExtensionSetting
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -139,7 +146,9 @@ class RemoveEntireSitelinkCampaignExtensionSetting
 
         // Issues a mutate request to remove the campaign extension setting and its extension
         // feed items.
-        $response = $googleAdsServiceClient->mutate($customerId, $mutateOperations);
+        $response = $googleAdsServiceClient->mutate(
+            MutateGoogleAdsRequest::build($customerId, $mutateOperations)
+        );
         $mutateOperationResponses = $response->getMutateOperationResponses();
 
         // Prints the information on the removed campaign extension setting and its extension feed
@@ -219,7 +228,9 @@ class RemoveEntireSitelinkCampaignExtensionSetting
 
         // Issues a search stream request.
         /** @var GoogleAdsServerStreamDecorator $stream */
-        $stream = $googleAdsServiceClient->searchStream($customerId, $query);
+        $stream = $googleAdsServiceClient->searchStream(
+            SearchGoogleAdsStreamRequest::build($customerId, $query)
+        );
 
         $extensionFeedItemResourceNames = [];
         // Iterates over all rows in all messages and prints the requested field values for

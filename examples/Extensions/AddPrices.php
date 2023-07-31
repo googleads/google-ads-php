@@ -39,6 +39,8 @@ use Google\Ads\GoogleAds\V14\Resources\Asset;
 use Google\Ads\GoogleAds\V14\Resources\CustomerAsset;
 use Google\Ads\GoogleAds\V14\Services\AssetOperation;
 use Google\Ads\GoogleAds\V14\Services\CustomerAssetOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateAssetsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCustomerAssetsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -63,6 +65,11 @@ class AddPrices
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -173,8 +180,7 @@ class AddPrices
         // Issues a mutate request to add the asset and print its information.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
         $response = $assetServiceClient->mutateAssets(
-            $customerId,
-            [$assetOperation]
+            MutateAssetsRequest::build($customerId, [$assetOperation])
         );
         $assetResourceName = $response->getResults()[0]->getResourceName();
         printf(
@@ -211,8 +217,7 @@ class AddPrices
         // Issues a mutate request to add the customer asset and print its information.
         $customerAssetServiceClient = $googleAdsClient->getCustomerAssetServiceClient();
         $response = $customerAssetServiceClient->mutateCustomerAssets(
-            $customerId,
-            [$customerAssetOperation]
+            MutateCustomerAssetsRequest::build($customerId, [$customerAssetOperation])
         );
         printf(
             "Created customer asset with resource name: '%s'.%s",

@@ -43,6 +43,8 @@ use Google\Ads\GoogleAds\V14\Resources\Asset;
 use Google\Ads\GoogleAds\V14\Resources\CampaignAsset;
 use Google\Ads\GoogleAds\V14\Services\AssetOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignAssetOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateAssetsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignAssetsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -70,6 +72,11 @@ class AddLeadFormExtension
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -198,7 +205,9 @@ class AddLeadFormExtension
 
         // Issues a mutate request to add the asset and prints its information.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
-        $response = $assetServiceClient->mutateAssets($customerId, [$assetOperation]);
+        $response = $assetServiceClient->mutateAssets(
+            MutateAssetsRequest::build($customerId, [$assetOperation])
+        );
         $assetResourceName = $response->getResults()[0]->getResourceName();
         printf("Created an asset with resource name: '%s'.%s", $assetResourceName, PHP_EOL);
 
@@ -235,8 +244,7 @@ class AddLeadFormExtension
         // Issues a mutate request to add the campaign asset and prints its information.
         $campaignAssetServiceClient = $googleAdsClient->getCampaignAssetServiceClient();
         $response = $campaignAssetServiceClient->mutateCampaignAssets(
-            $customerId,
-            [$campaignAssetOperation]
+            MutateCampaignAssetsRequest::build($customerId, [$campaignAssetOperation])
         );
         printf(
             "Created a campaign asset with resource name '%s' for campaign ID %d.%s",
