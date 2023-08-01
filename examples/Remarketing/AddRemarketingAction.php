@@ -34,7 +34,9 @@ use Google\Ads\GoogleAds\V14\Enums\TrackingCodeTypeEnum\TrackingCodeType;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\RemarketingAction;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\MutateRemarketingActionsRequest;
 use Google\Ads\GoogleAds\V14\Services\RemarketingActionOperation;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -63,6 +65,11 @@ class AddRemarketingAction
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -118,8 +125,7 @@ class AddRemarketingAction
         // Issues a mutate request to add the remarketing action and prints out some information.
         $remarketingActionServiceClient = $googleAdsClient->getRemarketingActionServiceClient();
         $response = $remarketingActionServiceClient->mutateRemarketingActions(
-            $customerId,
-            [$remarketingActionOperation]
+            MutateRemarketingActionsRequest::build($customerId, [$remarketingActionOperation])
         );
         $remarketingActionResourceName = $response->getResults()[0]->getResourceName();
         printf(
@@ -141,8 +147,9 @@ class AddRemarketingAction
 
         // Issues a search request by specifying page size.
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        $response = $googleAdsServiceClient->search(
+            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
+        );
 
         // There is only one row because we limited the search using the resource name, which is
         // unique.

@@ -42,6 +42,9 @@ use Google\Ads\GoogleAds\V14\Resources\FeedMapping;
 use Google\Ads\GoogleAds\V14\Services\FeedItemOperation;
 use Google\Ads\GoogleAds\V14\Services\FeedMappingOperation;
 use Google\Ads\GoogleAds\V14\Services\FeedOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateFeedItemsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateFeedMappingsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateFeedsRequest;
 use Google\ApiCore\ApiException;
 
 /** Adds a flights feed, creates the associated feed mapping, and adds a feed item. */
@@ -65,6 +68,11 @@ class AddFlightsFeed
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -182,7 +190,8 @@ class AddFlightsFeed
 
         // Issues a mutate request to add the feed and print some information.
         $feedServiceClient = $googleAdsClient->getFeedServiceClient();
-        $response = $feedServiceClient->mutateFeeds($customerId, [$operation]);
+        $response =
+            $feedServiceClient->mutateFeeds(MutateFeedsRequest::build($customerId, [$operation]));
         $feedResourceName = $response->getResults()[0]->getResourceName();
         printf("Feed with resource name '%s' was created.%s", $feedResourceName, PHP_EOL);
 
@@ -250,7 +259,9 @@ class AddFlightsFeed
 
         // Issues a mutate request to add the feed mapping and print some information.
         $feedMappingServiceClient = $googleAdsClient->getFeedMappingServiceClient();
-        $response = $feedMappingServiceClient->mutateFeedMappings($customerId, [$operation]);
+        $response = $feedMappingServiceClient->mutateFeedMappings(
+            MutateFeedMappingsRequest::build($customerId, [$operation])
+        );
         printf(
             "Feed mapping with resource name '%s' was created.%s",
             $response->getResults()[0]->getResourceName(),
@@ -322,7 +333,9 @@ class AddFlightsFeed
 
         // Issues a mutate request to add the feed item and print some information.
         $feedItemServiceClient = $googleAdsClient->getFeedItemServiceClient();
-        $response = $feedItemServiceClient->mutateFeedItems($customerId, [$operation]);
+        $response = $feedItemServiceClient->mutateFeedItems(
+            MutateFeedItemsRequest::build($customerId, [$operation])
+        );
         printf(
             "Feed item with resource name '%s' was created.%s",
             $response->getResults()[0]->getResourceName(),

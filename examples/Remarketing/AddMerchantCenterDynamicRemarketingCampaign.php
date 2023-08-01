@@ -53,7 +53,12 @@ use Google\Ads\GoogleAds\V14\Services\AdGroupCriterionOperation;
 use Google\Ads\GoogleAds\V14\Services\AdGroupOperation;
 use Google\Ads\GoogleAds\V14\Services\AssetOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupAdsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupsRequest;
 use Google\Ads\GoogleAds\V14\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\V14\Services\MutateAssetsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -87,6 +92,11 @@ class AddMerchantCenterDynamicRemarketingCampaign
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -206,7 +216,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         // Issues a mutate request to add the campaign.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
-        $response = $campaignServiceClient->mutateCampaigns($customerId, [$campaignOperation]);
+        $response = $campaignServiceClient->mutateCampaigns(
+            MutateCampaignsRequest::build($customerId, [$campaignOperation])
+        );
 
         /** @var Campaign $addedCampaign */
         $addedCampaign = $response->getResults()[0];
@@ -245,7 +257,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         // Issues a mutate request to add the ad group.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
-        $response = $adGroupServiceClient->mutateAdGroups($customerId, [$adGroupOperation]);
+        $response = $adGroupServiceClient->mutateAdGroups(
+            MutateAdGroupsRequest::build($customerId, [$adGroupOperation])
+        );
 
         /** @var AdGroup $addedAdGroup */
         $addedAdGroup = $response->getResults()[0];
@@ -328,7 +342,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         // Issues a mutate request to add the ad group ad.
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
-        $response = $adGroupAdServiceClient->mutateAdGroupAds($customerId, [$adGroupAdOperation]);
+        $response = $adGroupAdServiceClient->mutateAdGroupAds(
+            MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
+        );
 
         /** @var AdGroupAd $addedAdGroupAd */
         $addedAdGroupAd = $response->getResults()[0];
@@ -368,7 +384,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         // Issues a mutate request to add the asset.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
-        $response = $assetServiceClient->mutateAssets($customerId, [$assetOperation]);
+        $response = $assetServiceClient->mutateAssets(
+            MutateAssetsRequest::build($customerId, [$assetOperation])
+        );
 
         // Prints the resource name of the added image asset.
         /** @var MutateAssetResult $addedImageAsset */
@@ -414,8 +432,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
         // Issues a mutate request to add the ad group criterion.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-            $customerId,
-            [$adGroupCriterionOperation]
+            MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])
         );
 
         /** @var AdGroupCriterion $addedAdGroupCriterion */

@@ -39,6 +39,8 @@ use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\AdGroupCriterion;
 use Google\Ads\GoogleAds\V14\Services\AdGroupCriterionOperation;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -80,6 +82,11 @@ class AddShoppingProductListingGroupTree
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see examples/Authentication/google_ads_php.ini.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -258,8 +265,7 @@ class AddShoppingProductListingGroupTree
         // Issues a mutate request.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-            $customerId,
-            $operations
+            MutateAdGroupCriteriaRequest::build($customerId, $operations)
         );
         printf(
             'Added %d ad group criteria for listing group tree with the following resource '
@@ -297,8 +303,9 @@ class AddShoppingProductListingGroupTree
             . 'AND ad_group.id = ' . $adGroupId;
 
         // Issues a search request by specifying page size.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        $response = $googleAdsServiceClient->search(
+            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
+        );
 
         $operations = [];
         // Iterates over all rows in all pages and prints the requested field values for
@@ -321,8 +328,7 @@ class AddShoppingProductListingGroupTree
             // Issues a mutate request.
             $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
             $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-                $customerId,
-                $operations
+                MutateAdGroupCriteriaRequest::build($customerId, $operations)
             );
             printf("Removed %d ad group criteria.%s", $response->getResults()->count(), PHP_EOL);
         }
