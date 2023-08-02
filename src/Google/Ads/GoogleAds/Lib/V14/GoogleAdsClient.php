@@ -23,7 +23,7 @@ use Google\Ads\GoogleAds\Util\V14\GoogleAdsFailures;
 /**
  * A Google Ads API client for handling common configuration and OAuth2 settings.
  */
-final class GoogleAdsClient
+class GoogleAdsClient
 {
     use ServiceClientFactoryTrait;
 
