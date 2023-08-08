@@ -182,6 +182,12 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v14.resources.OfflineConversionClientSummary offline_conversion_client_summaries = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $offline_conversion_client_summaries;
+    /**
+     * Output only. Customer Agreement Setting for a customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.CustomerAgreementSetting customer_agreement_setting = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $customer_agreement_setting = null;
 
     /**
      * Constructor.
@@ -264,6 +270,8 @@ class Customer extends \Google\Protobuf\Internal\Message
      *           image in yyyy-MM-dd HH:mm:ss format.
      *     @type array<\Google\Ads\GoogleAds\V14\Resources\OfflineConversionClientSummary>|\Google\Protobuf\Internal\RepeatedField $offline_conversion_client_summaries
      *           Output only. Offline conversion upload diagnostics.
+     *     @type \Google\Ads\GoogleAds\V14\Resources\CustomerAgreementSetting $customer_agreement_setting
+     *           Output only. Customer Agreement Setting for a customer.
      * }
      */
     public function __construct($data = NULL) {
@@ -1103,6 +1111,42 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V14\Resources\OfflineConversionClientSummary::class);
         $this->offline_conversion_client_summaries = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Customer Agreement Setting for a customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.CustomerAgreementSetting customer_agreement_setting = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V14\Resources\CustomerAgreementSetting|null
+     */
+    public function getCustomerAgreementSetting()
+    {
+        return $this->customer_agreement_setting;
+    }
+
+    public function hasCustomerAgreementSetting()
+    {
+        return isset($this->customer_agreement_setting);
+    }
+
+    public function clearCustomerAgreementSetting()
+    {
+        unset($this->customer_agreement_setting);
+    }
+
+    /**
+     * Output only. Customer Agreement Setting for a customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.CustomerAgreementSetting customer_agreement_setting = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V14\Resources\CustomerAgreementSetting $var
+     * @return $this
+     */
+    public function setCustomerAgreementSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Resources\CustomerAgreementSetting::class);
+        $this->customer_agreement_setting = $var;
 
         return $this;
     }

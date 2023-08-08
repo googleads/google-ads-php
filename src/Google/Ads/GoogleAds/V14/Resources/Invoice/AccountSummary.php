@@ -94,6 +94,24 @@ class AccountSummary extends \Google\Protobuf\Internal\Message
      */
     protected $regulatory_costs_total_amount_micros = null;
     /**
+     * Output only. Pretax export charge subtotal amount, in micros.
+     *
+     * Generated from protobuf field <code>optional int64 export_charge_subtotal_amount_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $export_charge_subtotal_amount_micros = null;
+    /**
+     * Output only. Tax on export charge, in micros.
+     *
+     * Generated from protobuf field <code>optional int64 export_charge_tax_amount_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $export_charge_tax_amount_micros = null;
+    /**
+     * Output only. Total export charge amount, in micros.
+     *
+     * Generated from protobuf field <code>optional int64 export_charge_total_amount_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $export_charge_total_amount_micros = null;
+    /**
      * Output only. Total pretax subtotal amount attributable to the account
      * during the service period, in micros.
      *
@@ -148,6 +166,12 @@ class AccountSummary extends \Google\Protobuf\Internal\Message
      *           Output only. Tax on regulatory costs, in micros.
      *     @type int|string $regulatory_costs_total_amount_micros
      *           Output only. Total regulatory costs amount, in micros.
+     *     @type int|string $export_charge_subtotal_amount_micros
+     *           Output only. Pretax export charge subtotal amount, in micros.
+     *     @type int|string $export_charge_tax_amount_micros
+     *           Output only. Tax on export charge, in micros.
+     *     @type int|string $export_charge_total_amount_micros
+     *           Output only. Total export charge amount, in micros.
      *     @type int|string $subtotal_amount_micros
      *           Output only. Total pretax subtotal amount attributable to the account
      *           during the service period, in micros.
@@ -629,6 +653,114 @@ class AccountSummary extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->regulatory_costs_total_amount_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Pretax export charge subtotal amount, in micros.
+     *
+     * Generated from protobuf field <code>optional int64 export_charge_subtotal_amount_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int|string
+     */
+    public function getExportChargeSubtotalAmountMicros()
+    {
+        return isset($this->export_charge_subtotal_amount_micros) ? $this->export_charge_subtotal_amount_micros : 0;
+    }
+
+    public function hasExportChargeSubtotalAmountMicros()
+    {
+        return isset($this->export_charge_subtotal_amount_micros);
+    }
+
+    public function clearExportChargeSubtotalAmountMicros()
+    {
+        unset($this->export_charge_subtotal_amount_micros);
+    }
+
+    /**
+     * Output only. Pretax export charge subtotal amount, in micros.
+     *
+     * Generated from protobuf field <code>optional int64 export_charge_subtotal_amount_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setExportChargeSubtotalAmountMicros($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->export_charge_subtotal_amount_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Tax on export charge, in micros.
+     *
+     * Generated from protobuf field <code>optional int64 export_charge_tax_amount_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int|string
+     */
+    public function getExportChargeTaxAmountMicros()
+    {
+        return isset($this->export_charge_tax_amount_micros) ? $this->export_charge_tax_amount_micros : 0;
+    }
+
+    public function hasExportChargeTaxAmountMicros()
+    {
+        return isset($this->export_charge_tax_amount_micros);
+    }
+
+    public function clearExportChargeTaxAmountMicros()
+    {
+        unset($this->export_charge_tax_amount_micros);
+    }
+
+    /**
+     * Output only. Tax on export charge, in micros.
+     *
+     * Generated from protobuf field <code>optional int64 export_charge_tax_amount_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setExportChargeTaxAmountMicros($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->export_charge_tax_amount_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Total export charge amount, in micros.
+     *
+     * Generated from protobuf field <code>optional int64 export_charge_total_amount_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int|string
+     */
+    public function getExportChargeTotalAmountMicros()
+    {
+        return isset($this->export_charge_total_amount_micros) ? $this->export_charge_total_amount_micros : 0;
+    }
+
+    public function hasExportChargeTotalAmountMicros()
+    {
+        return isset($this->export_charge_total_amount_micros);
+    }
+
+    public function clearExportChargeTotalAmountMicros()
+    {
+        unset($this->export_charge_total_amount_micros);
+    }
+
+    /**
+     * Output only. Total export charge amount, in micros.
+     *
+     * Generated from protobuf field <code>optional int64 export_charge_total_amount_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setExportChargeTotalAmountMicros($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->export_charge_total_amount_micros = $var;
 
         return $this;
     }
