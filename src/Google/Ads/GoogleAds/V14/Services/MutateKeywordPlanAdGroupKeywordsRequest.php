@@ -48,6 +48,23 @@ class MutateKeywordPlanAdGroupKeywordsRequest extends \Google\Protobuf\Internal\
     protected $validate_only = false;
 
     /**
+     * @param string                                                                  $customerId Required. The ID of the customer whose Keyword Plan ad group keywords are
+     *                                                                                            being modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\KeywordPlanAdGroupKeywordOperation[] $operations Required. The list of operations to perform on individual Keyword Plan ad
+     *                                                                                            group keywords.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateKeywordPlanAdGroupKeywordsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

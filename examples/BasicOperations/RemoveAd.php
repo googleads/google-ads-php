@@ -31,6 +31,7 @@ use Google\Ads\GoogleAds\Util\V14\ResourceNames;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\AdGroupAd;
 use Google\Ads\GoogleAds\V14\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -59,6 +60,12 @@ class RemoveAd
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -118,10 +125,10 @@ class RemoveAd
 
         // Issues a mutate request to remove the ad group ad.
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
-        $response = $adGroupAdServiceClient->mutateAdGroupAds(
+        $response = $adGroupAdServiceClient->mutateAdGroupAds(MutateAdGroupAdsRequest::build(
             $customerId,
             [$adGroupAdOperation]
-        );
+        ));
 
         // Prints the resource name of the removed ad group ad.
         /** @var AdGroupAd $removedAdGroupAd */

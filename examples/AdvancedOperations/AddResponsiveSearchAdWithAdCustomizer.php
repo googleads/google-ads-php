@@ -41,6 +41,9 @@ use Google\Ads\GoogleAds\V14\Resources\CustomizerAttribute;
 use Google\Ads\GoogleAds\V14\Services\AdGroupAdOperation;
 use Google\Ads\GoogleAds\V14\Services\CustomerCustomizerOperation;
 use Google\Ads\GoogleAds\V14\Services\CustomizerAttributeOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupAdsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCustomerCustomizersRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCustomizerAttributesRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -77,6 +80,12 @@ class AddResponsiveSearchAdWithAdCustomizer
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -175,8 +184,7 @@ class AddResponsiveSearchAdWithAdCustomizer
         // Issues a mutate request to add the customizer attribute and prints its information.
         $customizerAttributeServiceClient = $googleAdsClient->getCustomizerAttributeServiceClient();
         $response = $customizerAttributeServiceClient->mutateCustomizerAttributes(
-            $customerId,
-            [$operation]
+            MutateCustomizerAttributesRequest::build($customerId, [$operation])
         );
         $customizerAttributeResourceName = $response->getResults()[0]->getResourceName();
         printf(
@@ -221,8 +229,7 @@ class AddResponsiveSearchAdWithAdCustomizer
         // Issues a mutate request to add the customer customizer and prints its information.
         $customerCustomizerServiceClient = $googleAdsClient->getCustomerCustomizerServiceClient();
         $response = $customerCustomizerServiceClient->mutateCustomerCustomizers(
-            $customerId,
-            [$operation]
+            MutateCustomerCustomizersRequest::build($customerId, [$operation])
         );
         printf(
             "Added a customer customizer with resource name '%s'.%s",
@@ -283,7 +290,9 @@ class AddResponsiveSearchAdWithAdCustomizer
 
         // Issues a mutate request to add the ad group ad and prints its information.
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
-        $response = $adGroupAdServiceClient->mutateAdGroupAds($customerId, [$adGroupAdOperation]);
+        $response = $adGroupAdServiceClient->mutateAdGroupAds(
+            MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
+        );
         printf(
             "Created responsive search ad with resource name '%s'.%s",
             $response->getResults()[0]->getResourceName(),

@@ -39,6 +39,24 @@ class RemoveProductLinkRequest extends \Google\Protobuf\Internal\Message
     protected $validate_only = false;
 
     /**
+     * @param string $customerId   Required. The ID of the customer being modified.
+     * @param string $resourceName Required. Remove operation: A resource name for the product link to remove
+     *                             is expected, in this format:
+     *
+     *                             `customers/{customer_id}/productLinks/{product_link_id} `
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\RemoveProductLinkRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, string $resourceName): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setResourceName($resourceName);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

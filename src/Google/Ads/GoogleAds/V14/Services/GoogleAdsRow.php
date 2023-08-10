@@ -352,6 +352,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $campaign_label = null;
     /**
+     * The campaign search term insight referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.CampaignSearchTermInsight campaign_search_term_insight = 204;</code>
+     */
+    protected $campaign_search_term_insight = null;
+    /**
      * Campaign Shared Set referenced in AWQL query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v14.resources.CampaignSharedSet campaign_shared_set = 30;</code>
@@ -531,6 +537,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v14.resources.CustomerNegativeCriterion customer_negative_criterion = 88;</code>
      */
     protected $customer_negative_criterion = null;
+    /**
+     * The customer search term insight referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.CustomerSearchTermInsight customer_search_term_insight = 205;</code>
+     */
+    protected $customer_search_term_insight = null;
     /**
      * The CustomerUserAccess referenced in the query.
      *
@@ -1088,6 +1100,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           Campaign Group referenced in AWQL query.
      *     @type \Google\Ads\GoogleAds\V14\Resources\CampaignLabel $campaign_label
      *           The campaign label referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V14\Resources\CampaignSearchTermInsight $campaign_search_term_insight
+     *           The campaign search term insight referenced in the query.
      *     @type \Google\Ads\GoogleAds\V14\Resources\CampaignSharedSet $campaign_shared_set
      *           Campaign Shared Set referenced in AWQL query.
      *     @type \Google\Ads\GoogleAds\V14\Resources\CampaignSimulation $campaign_simulation
@@ -1148,6 +1162,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The customer label referenced in the query.
      *     @type \Google\Ads\GoogleAds\V14\Resources\CustomerNegativeCriterion $customer_negative_criterion
      *           The customer negative criterion referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V14\Resources\CustomerSearchTermInsight $customer_search_term_insight
+     *           The customer search term insight referenced in the query.
      *     @type \Google\Ads\GoogleAds\V14\Resources\CustomerUserAccess $customer_user_access
      *           The CustomerUserAccess referenced in the query.
      *     @type \Google\Ads\GoogleAds\V14\Resources\CustomerUserAccessInvitation $customer_user_access_invitation
@@ -3318,6 +3334,42 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The campaign search term insight referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.CampaignSearchTermInsight campaign_search_term_insight = 204;</code>
+     * @return \Google\Ads\GoogleAds\V14\Resources\CampaignSearchTermInsight|null
+     */
+    public function getCampaignSearchTermInsight()
+    {
+        return $this->campaign_search_term_insight;
+    }
+
+    public function hasCampaignSearchTermInsight()
+    {
+        return isset($this->campaign_search_term_insight);
+    }
+
+    public function clearCampaignSearchTermInsight()
+    {
+        unset($this->campaign_search_term_insight);
+    }
+
+    /**
+     * The campaign search term insight referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.CampaignSearchTermInsight campaign_search_term_insight = 204;</code>
+     * @param \Google\Ads\GoogleAds\V14\Resources\CampaignSearchTermInsight $var
+     * @return $this
+     */
+    public function setCampaignSearchTermInsight($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Resources\CampaignSearchTermInsight::class);
+        $this->campaign_search_term_insight = $var;
+
+        return $this;
+    }
+
+    /**
      * Campaign Shared Set referenced in AWQL query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v14.resources.CampaignSharedSet campaign_shared_set = 30;</code>
@@ -4393,6 +4445,42 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Resources\CustomerNegativeCriterion::class);
         $this->customer_negative_criterion = $var;
+
+        return $this;
+    }
+
+    /**
+     * The customer search term insight referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.CustomerSearchTermInsight customer_search_term_insight = 205;</code>
+     * @return \Google\Ads\GoogleAds\V14\Resources\CustomerSearchTermInsight|null
+     */
+    public function getCustomerSearchTermInsight()
+    {
+        return $this->customer_search_term_insight;
+    }
+
+    public function hasCustomerSearchTermInsight()
+    {
+        return isset($this->customer_search_term_insight);
+    }
+
+    public function clearCustomerSearchTermInsight()
+    {
+        unset($this->customer_search_term_insight);
+    }
+
+    /**
+     * The customer search term insight referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.CustomerSearchTermInsight customer_search_term_insight = 205;</code>
+     * @param \Google\Ads\GoogleAds\V14\Resources\CustomerSearchTermInsight $var
+     * @return $this
+     */
+    public function setCustomerSearchTermInsight($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Resources\CustomerSearchTermInsight::class);
+        $this->customer_search_term_insight = $var;
 
         return $this;
     }

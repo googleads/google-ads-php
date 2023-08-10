@@ -41,6 +41,23 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
     protected $partial_failure = false;
 
     /**
+     * @param string                                                            $customerId Required. The ID of the customer with the recommendation.
+     * @param \Google\Ads\GoogleAds\V14\Services\ApplyRecommendationOperation[] $operations Required. The list of operations to apply recommendations.
+     *                                                                                      If partial_failure=false all recommendations should be of the same type
+     *                                                                                      There is a limit of 100 operations per request.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\ApplyRecommendationRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

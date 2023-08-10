@@ -306,6 +306,26 @@ class RecommendationType
      * Generated from protobuf enum <code>LOWER_TARGET_ROAS = 45;</code>
      */
     const LOWER_TARGET_ROAS = 45;
+    /**
+     * Recommendation to opt into Performance Max campaigns.
+     *
+     * Generated from protobuf enum <code>PERFORMANCE_MAX_OPT_IN = 46;</code>
+     */
+    const PERFORMANCE_MAX_OPT_IN = 46;
+    /**
+     * Recommendation to improve the asset group strength of a Performance Max
+     * campaign to an "Excellent" rating.
+     *
+     * Generated from protobuf enum <code>IMPROVE_PERFORMANCE_MAX_AD_STRENGTH = 47;</code>
+     */
+    const IMPROVE_PERFORMANCE_MAX_AD_STRENGTH = 47;
+    /**
+     * Recommendation to migrate Dynamic Search Ads to Performance Max
+     * campaigns.
+     *
+     * Generated from protobuf enum <code>MIGRATE_DYNAMIC_SEARCH_ADS_CAMPAIGN_TO_PERFORMANCE_MAX = 48;</code>
+     */
+    const MIGRATE_DYNAMIC_SEARCH_ADS_CAMPAIGN_TO_PERFORMANCE_MAX = 48;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -351,6 +371,9 @@ class RecommendationType
         self::DYNAMIC_IMAGE_EXTENSION_OPT_IN => 'DYNAMIC_IMAGE_EXTENSION_OPT_IN',
         self::RAISE_TARGET_CPA => 'RAISE_TARGET_CPA',
         self::LOWER_TARGET_ROAS => 'LOWER_TARGET_ROAS',
+        self::PERFORMANCE_MAX_OPT_IN => 'PERFORMANCE_MAX_OPT_IN',
+        self::IMPROVE_PERFORMANCE_MAX_AD_STRENGTH => 'IMPROVE_PERFORMANCE_MAX_AD_STRENGTH',
+        self::MIGRATE_DYNAMIC_SEARCH_ADS_CAMPAIGN_TO_PERFORMANCE_MAX => 'MIGRATE_DYNAMIC_SEARCH_ADS_CAMPAIGN_TO_PERFORMANCE_MAX',
     ];
 
     public static function name($value)

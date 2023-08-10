@@ -39,6 +39,23 @@ class MutateCustomerConversionGoalsRequest extends \Google\Protobuf\Internal\Mes
     protected $validate_only = false;
 
     /**
+     * @param string                                                               $customerId Required. The ID of the customer whose customer conversion goals are being
+     *                                                                                         modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\CustomerConversionGoalOperation[] $operations Required. The list of operations to perform on individual customer
+     *                                                                                         conversion goal.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateCustomerConversionGoalsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

@@ -70,6 +70,29 @@ class UploadClickConversionsRequest extends \Google\Protobuf\Internal\Message
     protected $debug_enabled = false;
 
     /**
+     * @param string                                               $customerId     Required. The ID of the customer performing the upload.
+     * @param \Google\Ads\GoogleAds\V14\Services\ClickConversion[] $conversions    Required. The conversions that are being uploaded.
+     * @param bool                                                 $partialFailure Required. If true, successful operations will be carried out and invalid
+     *                                                                             operations will return errors. If false, all operations will be carried
+     *                                                                             out in one transaction if and only if they are all valid.
+     *                                                                             This should always be set to true.
+     *                                                                             See
+     *                                                                             https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
+     *                                                                             for more information about partial failure.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\UploadClickConversionsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $conversions, bool $partialFailure): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setConversions($conversions)
+            ->setPartialFailure($partialFailure);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

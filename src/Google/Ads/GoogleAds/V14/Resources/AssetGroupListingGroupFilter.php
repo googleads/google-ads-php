@@ -64,6 +64,12 @@ class AssetGroupListingGroupFilter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string parent_listing_group_filter = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $parent_listing_group_filter = '';
+    /**
+     * Output only. The path of dimensions defining this listing group filter.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.ListingGroupFilterDimensionPath path = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $path = null;
 
     /**
      * Constructor.
@@ -91,6 +97,8 @@ class AssetGroupListingGroupFilter extends \Google\Protobuf\Internal\Message
      *     @type string $parent_listing_group_filter
      *           Immutable. Resource name of the parent listing group subdivision. Null for
      *           the root listing group filter node.
+     *     @type \Google\Ads\GoogleAds\V14\Resources\ListingGroupFilterDimensionPath $path
+     *           Output only. The path of dimensions defining this listing group filter.
      * }
      */
     public function __construct($data = NULL) {
@@ -298,6 +306,42 @@ class AssetGroupListingGroupFilter extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->parent_listing_group_filter = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The path of dimensions defining this listing group filter.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.ListingGroupFilterDimensionPath path = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V14\Resources\ListingGroupFilterDimensionPath|null
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    public function hasPath()
+    {
+        return isset($this->path);
+    }
+
+    public function clearPath()
+    {
+        unset($this->path);
+    }
+
+    /**
+     * Output only. The path of dimensions defining this listing group filter.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.ListingGroupFilterDimensionPath path = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V14\Resources\ListingGroupFilterDimensionPath $var
+     * @return $this
+     */
+    public function setPath($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Resources\ListingGroupFilterDimensionPath::class);
+        $this->path = $var;
 
         return $this;
     }

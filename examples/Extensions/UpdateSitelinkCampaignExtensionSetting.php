@@ -33,6 +33,7 @@ use Google\Ads\GoogleAds\V14\Enums\ExtensionTypeEnum\ExtensionType;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\CampaignExtensionSetting;
 use Google\Ads\GoogleAds\V14\Services\CampaignExtensionSettingOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignExtensionSettingsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -65,6 +66,12 @@ class UpdateSitelinkCampaignExtensionSetting
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -146,8 +153,10 @@ class UpdateSitelinkCampaignExtensionSetting
         $campaignExtensionSettingServiceClient =
             $googleAdsClient->getCampaignExtensionSettingServiceClient();
         $response = $campaignExtensionSettingServiceClient->mutateCampaignExtensionSettings(
-            $customerId,
-            [$campaignExtensionSettingOperation]
+            MutateCampaignExtensionSettingsRequest::build(
+                $customerId,
+                [$campaignExtensionSettingOperation]
+            )
         );
 
         // Prints the resource name of the updated campaign extension setting.

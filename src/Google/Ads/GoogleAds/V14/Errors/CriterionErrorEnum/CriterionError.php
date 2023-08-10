@@ -912,6 +912,25 @@ class CriterionError
      * Generated from protobuf enum <code>CANNOT_TARGET_SIMILAR_USER_LIST = 151;</code>
      */
     const CANNOT_TARGET_SIMILAR_USER_LIST = 151;
+    /**
+     * Audience segment criteria cannot be added when use_audience_grouped bit
+     * is set.
+     *
+     * Generated from protobuf enum <code>CANNOT_ADD_AUDIENCE_SEGMENT_CRITERION_WHEN_AUDIENCE_GROUPED_IS_SET = 152;</code>
+     */
+    const CANNOT_ADD_AUDIENCE_SEGMENT_CRITERION_WHEN_AUDIENCE_GROUPED_IS_SET = 152;
+    /**
+     * Only one audience is allowed in an ad group.
+     *
+     * Generated from protobuf enum <code>ONE_AUDIENCE_ALLOWED_PER_AD_GROUP = 153;</code>
+     */
+    const ONE_AUDIENCE_ALLOWED_PER_AD_GROUP = 153;
+    /**
+     * Invalid detailed demographics criterion.
+     *
+     * Generated from protobuf enum <code>INVALID_DETAILED_DEMOGRAPHIC = 154;</code>
+     */
+    const INVALID_DETAILED_DEMOGRAPHIC = 154;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -1057,6 +1076,9 @@ class CriterionError
         self::CANNOT_HAVE_MULTIPLE_NEGATIVE_KEYWORD_LIST_PER_ACCOUNT => 'CANNOT_HAVE_MULTIPLE_NEGATIVE_KEYWORD_LIST_PER_ACCOUNT',
         self::CUSTOMER_CANNOT_ADD_CRITERION_OF_THIS_TYPE => 'CUSTOMER_CANNOT_ADD_CRITERION_OF_THIS_TYPE',
         self::CANNOT_TARGET_SIMILAR_USER_LIST => 'CANNOT_TARGET_SIMILAR_USER_LIST',
+        self::CANNOT_ADD_AUDIENCE_SEGMENT_CRITERION_WHEN_AUDIENCE_GROUPED_IS_SET => 'CANNOT_ADD_AUDIENCE_SEGMENT_CRITERION_WHEN_AUDIENCE_GROUPED_IS_SET',
+        self::ONE_AUDIENCE_ALLOWED_PER_AD_GROUP => 'ONE_AUDIENCE_ALLOWED_PER_AD_GROUP',
+        self::INVALID_DETAILED_DEMOGRAPHIC => 'INVALID_DETAILED_DEMOGRAPHIC',
     ];
 
     public static function name($value)

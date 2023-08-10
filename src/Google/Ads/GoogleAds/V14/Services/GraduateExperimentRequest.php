@@ -39,6 +39,23 @@ class GraduateExperimentRequest extends \Google\Protobuf\Internal\Message
     protected $validate_only = false;
 
     /**
+     * @param string                                                     $experiment             Required. The experiment to be graduated.
+     * @param \Google\Ads\GoogleAds\V14\Services\CampaignBudgetMapping[] $campaignBudgetMappings Required. List of campaign budget mappings for graduation. Each campaign
+     *                                                                                           that appears here will graduate, and will be assigned a new budget that is
+     *                                                                                           paired with it in the mapping. The maximum size is one.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\GraduateExperimentRequest
+     *
+     * @experimental
+     */
+    public static function build(string $experiment, array $campaignBudgetMappings): self
+    {
+        return (new self())
+            ->setExperiment($experiment)
+            ->setCampaignBudgetMappings($campaignBudgetMappings);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

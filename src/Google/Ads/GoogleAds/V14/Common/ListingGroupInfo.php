@@ -35,6 +35,12 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional string parent_ad_group_criterion = 4;</code>
      */
     protected $parent_ad_group_criterion = null;
+    /**
+     * The path of dimensions defining this listing group.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v14.common.ListingDimensionPath path = 5;</code>
+     */
+    protected $path = null;
 
     /**
      * Constructor.
@@ -50,6 +56,8 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      *     @type string $parent_ad_group_criterion
      *           Resource name of ad group criterion which is the parent listing group
      *           subdivision. Null for the root group.
+     *     @type \Google\Ads\GoogleAds\V14\Common\ListingDimensionPath $path
+     *           The path of dimensions defining this listing group.
      * }
      */
     public function __construct($data = NULL) {
@@ -155,6 +163,42 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->parent_ad_group_criterion = $var;
+
+        return $this;
+    }
+
+    /**
+     * The path of dimensions defining this listing group.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v14.common.ListingDimensionPath path = 5;</code>
+     * @return \Google\Ads\GoogleAds\V14\Common\ListingDimensionPath|null
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    public function hasPath()
+    {
+        return isset($this->path);
+    }
+
+    public function clearPath()
+    {
+        unset($this->path);
+    }
+
+    /**
+     * The path of dimensions defining this listing group.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v14.common.ListingDimensionPath path = 5;</code>
+     * @param \Google\Ads\GoogleAds\V14\Common\ListingDimensionPath $var
+     * @return $this
+     */
+    public function setPath($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Common\ListingDimensionPath::class);
+        $this->path = $var;
 
         return $this;
     }

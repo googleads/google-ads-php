@@ -31,6 +31,19 @@ class ScheduleExperimentRequest extends \Google\Protobuf\Internal\Message
     protected $validate_only = false;
 
     /**
+     * @param string $resourceName Required. The scheduled experiment.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\ScheduleExperimentRequest
+     *
+     * @experimental
+     */
+    public static function build(string $resourceName): self
+    {
+        return (new self())
+            ->setResourceName($resourceName);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

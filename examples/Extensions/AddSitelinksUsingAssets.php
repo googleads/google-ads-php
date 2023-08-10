@@ -36,7 +36,9 @@ use Google\Ads\GoogleAds\V14\Resources\CampaignAsset;
 use Google\Ads\GoogleAds\V14\Services\AssetOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignAssetOperation;
 use Google\Ads\GoogleAds\V14\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\V14\Services\MutateAssetsRequest;
 use Google\Ads\GoogleAds\V14\Services\MutateCampaignAssetResult;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignAssetsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -63,6 +65,12 @@ class AddSitelinksUsingAssets
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -178,7 +186,9 @@ class AddSitelinksUsingAssets
 
         // Issues a mutate request to add the assets and print its information.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
-        $response = $assetServiceClient->mutateAssets($customerId, $assetOperations);
+        $response = $assetServiceClient->mutateAssets(
+            MutateAssetsRequest::build($customerId, $assetOperations)
+        );
         $createdAssetResourceNames = [];
         foreach ($response->getResults() as $result) {
             /** @var MutateAssetResult $result */
@@ -224,8 +234,7 @@ class AddSitelinksUsingAssets
         // Issues a mutate request to add the campaign assets and prints its information.
         $campaignAssetServiceClient = $googleAdsClient->getCampaignAssetServiceClient();
         $response = $campaignAssetServiceClient->mutateCampaignAssets(
-            $customerId,
-            $campaignAssetOperations
+            MutateCampaignAssetsRequest::build($customerId, $campaignAssetOperations)
         );
         foreach ($response->getResults() as $result) {
             /** @var MutateCampaignAssetResult $result */

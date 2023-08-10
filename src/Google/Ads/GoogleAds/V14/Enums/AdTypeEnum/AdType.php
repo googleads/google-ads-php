@@ -207,6 +207,12 @@ class AdType
      * Generated from protobuf enum <code>TRAVEL_AD = 37;</code>
      */
     const TRAVEL_AD = 37;
+    /**
+     * Discovery video responsive ad.
+     *
+     * Generated from protobuf enum <code>DISCOVERY_VIDEO_RESPONSIVE_AD = 38;</code>
+     */
+    const DISCOVERY_VIDEO_RESPONSIVE_AD = 38;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -241,6 +247,7 @@ class AdType
         self::DISCOVERY_MULTI_ASSET_AD => 'DISCOVERY_MULTI_ASSET_AD',
         self::DISCOVERY_CAROUSEL_AD => 'DISCOVERY_CAROUSEL_AD',
         self::TRAVEL_AD => 'TRAVEL_AD',
+        self::DISCOVERY_VIDEO_RESPONSIVE_AD => 'DISCOVERY_VIDEO_RESPONSIVE_AD',
     ];
 
     public static function name($value)

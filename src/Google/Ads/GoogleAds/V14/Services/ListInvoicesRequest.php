@@ -44,6 +44,29 @@ class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
     protected $issue_month = 0;
 
     /**
+     * @param string $customerId   Required. The ID of the customer to fetch invoices for.
+     * @param string $billingSetup Required. The billing setup resource name of the requested invoices.
+     *
+     *                             `customers/{customer_id}/billingSetups/{billing_setup_id}`
+     * @param string $issueYear    Required. The issue year to retrieve invoices, in yyyy format. Only
+     *                             invoices issued in 2019 or later can be retrieved.
+     * @param int    $issueMonth   Required. The issue month to retrieve invoices.
+     *                             For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V14\Enums\MonthOfYearEnum\MonthOfYear}
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\ListInvoicesRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, string $billingSetup, string $issueYear, int $issueMonth): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setBillingSetup($billingSetup)
+            ->setIssueYear($issueYear)
+            ->setIssueMonth($issueMonth);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

@@ -47,6 +47,59 @@ class AddBatchJobOperationsRequest extends \Google\Protobuf\Internal\Message
     private $mutate_operations;
 
     /**
+     * @param string                                               $resourceName     Required. The resource name of the batch job.
+     * @param string                                               $sequenceToken    A token used to enforce sequencing.
+     *
+     *                                                                               The first AddBatchJobOperations request for a batch job should not set
+     *                                                                               sequence_token. Subsequent requests must set sequence_token to the value of
+     *                                                                               next_sequence_token received in the previous AddBatchJobOperations
+     *                                                                               response.
+     * @param \Google\Ads\GoogleAds\V14\Services\MutateOperation[] $mutateOperations Required. The list of mutates being added.
+     *
+     *                                                                               Operations can use negative integers as temp ids to signify dependencies
+     *                                                                               between entities created in this batch job. For example, a customer with
+     *                                                                               id = 1234 can create a campaign and an ad group in that same campaign by
+     *                                                                               creating a campaign in the first operation with the resource name
+     *                                                                               explicitly set to "customers/1234/campaigns/-1", and creating an ad group
+     *                                                                               in the second operation with the campaign field also set to
+     *                                                                               "customers/1234/campaigns/-1".
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\AddBatchJobOperationsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $resourceName, string $sequenceToken, array $mutateOperations): self
+    {
+        return (new self())
+            ->setResourceName($resourceName)
+            ->setSequenceToken($sequenceToken)
+            ->setMutateOperations($mutateOperations);
+    }
+
+    /**
+     * @param string                                               $resourceName     Required. The resource name of the batch job.
+     * @param \Google\Ads\GoogleAds\V14\Services\MutateOperation[] $mutateOperations Required. The list of mutates being added.
+     *
+     *                                                                               Operations can use negative integers as temp ids to signify dependencies
+     *                                                                               between entities created in this batch job. For example, a customer with
+     *                                                                               id = 1234 can create a campaign and an ad group in that same campaign by
+     *                                                                               creating a campaign in the first operation with the resource name
+     *                                                                               explicitly set to "customers/1234/campaigns/-1", and creating an ad group
+     *                                                                               in the second operation with the campaign field also set to
+     *                                                                               "customers/1234/campaigns/-1".
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\AddBatchJobOperationsRequest
+     *
+     * @experimental
+     */
+    public static function buildFromResourceNameMutateOperations(string $resourceName, array $mutateOperations): self
+    {
+        return (new self())
+            ->setResourceName($resourceName)
+            ->setMutateOperations($mutateOperations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

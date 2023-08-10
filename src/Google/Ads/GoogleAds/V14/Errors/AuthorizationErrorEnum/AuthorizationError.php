@@ -119,6 +119,12 @@ class AuthorizationError
      * Generated from protobuf enum <code>METRIC_ACCESS_DENIED = 26;</code>
      */
     const METRIC_ACCESS_DENIED = 26;
+    /**
+     * The Google Cloud project is not under the required organization.
+     *
+     * Generated from protobuf enum <code>CLOUD_PROJECT_NOT_UNDER_ORGANIZATION = 27;</code>
+     */
+    const CLOUD_PROJECT_NOT_UNDER_ORGANIZATION = 27;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -137,6 +143,7 @@ class AuthorizationError
         self::SERVICE_ACCESS_DENIED => 'SERVICE_ACCESS_DENIED',
         self::ACCESS_DENIED_FOR_ACCOUNT_TYPE => 'ACCESS_DENIED_FOR_ACCOUNT_TYPE',
         self::METRIC_ACCESS_DENIED => 'METRIC_ACCESS_DENIED',
+        self::CLOUD_PROJECT_NOT_UNDER_ORGANIZATION => 'CLOUD_PROJECT_NOT_UNDER_ORGANIZATION',
     ];
 
     public static function name($value)

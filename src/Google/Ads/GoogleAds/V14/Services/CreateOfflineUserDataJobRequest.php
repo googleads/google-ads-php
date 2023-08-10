@@ -45,6 +45,22 @@ class CreateOfflineUserDataJobRequest extends \Google\Protobuf\Internal\Message
     protected $enable_match_rate_range_preview = false;
 
     /**
+     * @param string                                                 $customerId Required. The ID of the customer for which to create an offline user data
+     *                                                                           job.
+     * @param \Google\Ads\GoogleAds\V14\Resources\OfflineUserDataJob $job        Required. The offline user data job to be created.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\CreateOfflineUserDataJobRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, \Google\Ads\GoogleAds\V14\Resources\OfflineUserDataJob $job): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setJob($job);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

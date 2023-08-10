@@ -37,6 +37,21 @@ class MutateCustomInterestsRequest extends \Google\Protobuf\Internal\Message
     protected $validate_only = false;
 
     /**
+     * @param string                                                       $customerId Required. The ID of the customer whose custom interests are being modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\CustomInterestOperation[] $operations Required. The list of operations to perform on individual custom interests.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateCustomInterestsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

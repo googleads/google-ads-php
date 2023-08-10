@@ -111,6 +111,24 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     protected $customer_reach_group = null;
 
     /**
+     * @param string                                              $customerId       Required. The ID of the customer.
+     * @param \Google\Ads\GoogleAds\V14\Services\CampaignDuration $campaignDuration Required. Campaign duration.
+     * @param \Google\Ads\GoogleAds\V14\Services\PlannedProduct[] $plannedProducts  Required. The products to be forecast.
+     *                                                                              The max number of allowed planned products is 15.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\GenerateReachForecastRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, \Google\Ads\GoogleAds\V14\Services\CampaignDuration $campaignDuration, array $plannedProducts): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setCampaignDuration($campaignDuration)
+            ->setPlannedProducts($plannedProducts);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

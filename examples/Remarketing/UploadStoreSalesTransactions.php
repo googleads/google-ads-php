@@ -43,11 +43,15 @@ use Google\Ads\GoogleAds\V14\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJ
 use Google\Ads\GoogleAds\V14\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\OfflineUserDataJob;
+use Google\Ads\GoogleAds\V14\Services\AddOfflineUserDataJobOperationsRequest;
 use Google\Ads\GoogleAds\V14\Services\AddOfflineUserDataJobOperationsResponse;
+use Google\Ads\GoogleAds\V14\Services\Client\OfflineUserDataJobServiceClient;
+use Google\Ads\GoogleAds\V14\Services\CreateOfflineUserDataJobRequest;
 use Google\Ads\GoogleAds\V14\Services\CreateOfflineUserDataJobResponse;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V14\Services\OfflineUserDataJobOperation;
-use Google\Ads\GoogleAds\V14\Services\OfflineUserDataJobServiceClient;
+use Google\Ads\GoogleAds\V14\Services\RunOfflineUserDataJobRequest;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -148,6 +152,12 @@ class UploadStoreSalesTransactions
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -270,7 +280,9 @@ class UploadStoreSalesTransactions
         );
 
         // Issues an asynchronous request to run the offline user data job.
-        $offlineUserDataJobServiceClient->runOfflineUserDataJob($offlineUserDataJobResourceName);
+        $offlineUserDataJobServiceClient->runOfflineUserDataJob(
+            RunOfflineUserDataJobRequest::build($offlineUserDataJobResourceName)
+        );
 
         printf(
             "Sent request to asynchronously run offline user data job: '%s'.%s",
@@ -388,8 +400,7 @@ class UploadStoreSalesTransactions
         /** @var CreateOfflineUserDataJobResponse $createOfflineUserDataJobResponse */
         $createOfflineUserDataJobResponse =
             $offlineUserDataJobServiceClient->createOfflineUserDataJob(
-                $customerId,
-                $offlineUserDataJob
+                CreateOfflineUserDataJobRequest::build($customerId, $offlineUserDataJob)
             );
         $offlineUserDataJobResourceName = $createOfflineUserDataJobResponse->getResourceName();
         printf(
@@ -445,12 +456,13 @@ class UploadStoreSalesTransactions
         // [START enable_warnings_1]
         // Issues a request to add the operations to the offline user data job.
         /** @var AddOfflineUserDataJobOperationsResponse $operationResponse */
-        $response = $offlineUserDataJobServiceClient->addOfflineUserDataJobOperations(
+        $request = AddOfflineUserDataJobOperationsRequest::build(
             $offlineUserDataJobResourceName,
-            $userDataJobOperations,
-            // (Optional) Enables partial failure and warnings.
-            ['enablePartialFailure' => true, 'enableWarnings' => true]
+            $userDataJobOperations
         );
+        // (Optional) Enables partial failure and warnings.
+        $request->setEnablePartialFailure(true)->setEnableWarnings(true);
+        $response = $offlineUserDataJobServiceClient->addOfflineUserDataJobOperations($request);
         // [END enable_warnings_1]
 
         // Prints the status message if any partial failure error is returned.
@@ -637,7 +649,9 @@ class UploadStoreSalesTransactions
 
         // Issues a search stream request.
         /** @var GoogleAdsServerStreamDecorator $stream */
-        $stream = $googleAdsServiceClient->searchStream($customerId, $query);
+        $stream = $googleAdsServiceClient->searchStream(
+            SearchGoogleAdsStreamRequest::build($customerId, $query)
+        );
 
         // Prints out some information about the offline user data.
         /** @var GoogleAdsRow $googleAdsRow */

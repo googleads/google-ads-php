@@ -233,6 +233,8 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           Details pertaining to a discovery multi asset ad.
      *     @type \Google\Ads\GoogleAds\V14\Common\DiscoveryCarouselAdInfo $discovery_carousel_ad
      *           Details pertaining to a discovery carousel ad.
+     *     @type \Google\Ads\GoogleAds\V14\Common\DiscoveryVideoResponsiveAdInfo $discovery_video_responsive_ad
+     *           Details pertaining to a discovery video responsive ad.
      *     @type \Google\Ads\GoogleAds\V14\Common\TravelAdInfo $travel_ad
      *           Details pertaining to a travel ad.
      * }
@@ -1449,6 +1451,37 @@ class Ad extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Common\DiscoveryCarouselAdInfo::class);
         $this->writeOneof(52, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to a discovery video responsive ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.common.DiscoveryVideoResponsiveAdInfo discovery_video_responsive_ad = 60;</code>
+     * @return \Google\Ads\GoogleAds\V14\Common\DiscoveryVideoResponsiveAdInfo|null
+     */
+    public function getDiscoveryVideoResponsiveAd()
+    {
+        return $this->readOneof(60);
+    }
+
+    public function hasDiscoveryVideoResponsiveAd()
+    {
+        return $this->hasOneof(60);
+    }
+
+    /**
+     * Details pertaining to a discovery video responsive ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.common.DiscoveryVideoResponsiveAdInfo discovery_video_responsive_ad = 60;</code>
+     * @param \Google\Ads\GoogleAds\V14\Common\DiscoveryVideoResponsiveAdInfo $var
+     * @return $this
+     */
+    public function setDiscoveryVideoResponsiveAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Common\DiscoveryVideoResponsiveAdInfo::class);
+        $this->writeOneof(60, $var);
 
         return $this;
     }

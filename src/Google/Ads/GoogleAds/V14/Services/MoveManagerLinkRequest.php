@@ -47,6 +47,27 @@ class MoveManagerLinkRequest extends \Google\Protobuf\Internal\Message
     protected $validate_only = false;
 
     /**
+     * @param string $customerId                  Required. The ID of the client customer that is being moved.
+     * @param string $previousCustomerManagerLink Required. The resource name of the previous CustomerManagerLink.
+     *                                            The resource name has the form:
+     *                                            `customers/{customer_id}/customerManagerLinks/{manager_customer_id}~{manager_link_id}`
+     * @param string $newManager                  Required. The resource name of the new manager customer that the client
+     *                                            wants to move to. Customer resource names have the format:
+     *                                            "customers/{customer_id}"
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MoveManagerLinkRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, string $previousCustomerManagerLink, string $newManager): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setPreviousCustomerManagerLink($previousCustomerManagerLink)
+            ->setNewManager($newManager);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

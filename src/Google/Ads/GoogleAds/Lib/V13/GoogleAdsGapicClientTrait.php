@@ -34,11 +34,13 @@ trait GoogleAdsGapicClientTrait
 
     private static $DEVELOPER_TOKEN_KEY = 'developer-token';
     private static $LOGIN_CUSTOMER_ID = 'login-customer-id';
+    private static $LINKED_CUSTOMER_ID = 'linked-customer-id';
     private static $UNARY_MIDDLEWARES = 'unary-middlewares';
     private static $STREAMING_MIDDLEWARES = 'streaming-middlewares';
 
     private $developerToken = null;
     private $loginCustomerId = null;
+    private $linkedCustomerId = null;
     private $unaryMiddlewares = [];
     private $streamingMiddlewares = [];
 
@@ -47,18 +49,11 @@ trait GoogleAdsGapicClientTrait
      */
     protected function modifyClientOptions(array &$options)
     {
-        if (isset($options[self::$DEVELOPER_TOKEN_KEY])) {
-            $this->developerToken = $options[self::$DEVELOPER_TOKEN_KEY];
-        }
-        if (isset($options[self::$LOGIN_CUSTOMER_ID])) {
-            $this->loginCustomerId = $options[self::$LOGIN_CUSTOMER_ID];
-        }
-        if (isset($options[self::$UNARY_MIDDLEWARES])) {
-            $this->unaryMiddlewares = $options[self::$UNARY_MIDDLEWARES];
-        }
-        if (isset($options[self::$STREAMING_MIDDLEWARES])) {
-            $this->streamingMiddlewares = $options[self::$STREAMING_MIDDLEWARES];
-        }
+        $this->developerToken = $options[self::$DEVELOPER_TOKEN_KEY] ?? null;
+        $this->loginCustomerId = $options[self::$LOGIN_CUSTOMER_ID] ?? null;
+        $this->linkedCustomerId = $options[self::$LINKED_CUSTOMER_ID] ?? null;
+        $this->unaryMiddlewares = $options[self::$UNARY_MIDDLEWARES] ?? [];
+        $this->streamingMiddlewares = $options[self::$STREAMING_MIDDLEWARES] ?? [];
         // Ensure that this isn't already an OperationsClient nor GoogleAdsOperationClient to avoid
         // recursion.
         if (
@@ -91,6 +86,9 @@ trait GoogleAdsGapicClientTrait
 
             if (!is_null($this->loginCustomerId)) {
                 $headers[self::$LOGIN_CUSTOMER_ID] = [$this->loginCustomerId];
+            }
+            if (!is_null($this->linkedCustomerId)) {
+                $headers[self::$LINKED_CUSTOMER_ID] = [$this->linkedCustomerId];
             }
 
             $callable = new FixedHeaderMiddleware($callable, $headers);

@@ -31,6 +31,19 @@ class PromoteCampaignDraftRequest extends \Google\Protobuf\Internal\Message
     protected $validate_only = false;
 
     /**
+     * @param string $campaignDraft Required. The resource name of the campaign draft to promote.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\PromoteCampaignDraftRequest
+     *
+     * @experimental
+     */
+    public static function build(string $campaignDraft): self
+    {
+        return (new self())
+            ->setCampaignDraft($campaignDraft);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

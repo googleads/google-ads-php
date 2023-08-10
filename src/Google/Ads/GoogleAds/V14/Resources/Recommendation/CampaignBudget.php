@@ -30,7 +30,8 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The date when the new budget would start being used.
      * This field will be set for the following recommendation types:
-     * FORECASTING_SET_TARGET_ROAS. YYYY-MM-DD format, for example, 2018-04-17.
+     * FORECASTING_SET_TARGET_ROAS
+     * YYYY-MM-DD format, for example, 2018-04-17.
      *
      * Generated from protobuf field <code>string new_start_date = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -49,7 +50,8 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      *     @type string $new_start_date
      *           Output only. The date when the new budget would start being used.
      *           This field will be set for the following recommendation types:
-     *           FORECASTING_SET_TARGET_ROAS. YYYY-MM-DD format, for example, 2018-04-17.
+     *           FORECASTING_SET_TARGET_ROAS
+     *           YYYY-MM-DD format, for example, 2018-04-17.
      * }
      */
     public function __construct($data = NULL) {
@@ -112,7 +114,8 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The date when the new budget would start being used.
      * This field will be set for the following recommendation types:
-     * FORECASTING_SET_TARGET_ROAS. YYYY-MM-DD format, for example, 2018-04-17.
+     * FORECASTING_SET_TARGET_ROAS
+     * YYYY-MM-DD format, for example, 2018-04-17.
      *
      * Generated from protobuf field <code>string new_start_date = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -125,7 +128,8 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The date when the new budget would start being used.
      * This field will be set for the following recommendation types:
-     * FORECASTING_SET_TARGET_ROAS. YYYY-MM-DD format, for example, 2018-04-17.
+     * FORECASTING_SET_TARGET_ROAS
+     * YYYY-MM-DD format, for example, 2018-04-17.
      *
      * Generated from protobuf field <code>string new_start_date = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

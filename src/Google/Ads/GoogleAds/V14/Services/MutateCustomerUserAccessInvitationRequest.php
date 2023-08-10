@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for
- * [CustomerUserAccessInvitation.MutateCustomerUserAccessInvitation][]
+ * [CustomerUserAccessInvitationService.MutateCustomerUserAccessInvitation][google.ads.googleads.v14.services.CustomerUserAccessInvitationService.MutateCustomerUserAccessInvitation]
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.services.MutateCustomerUserAccessInvitationRequest</code>
  */
@@ -28,6 +28,21 @@ class MutateCustomerUserAccessInvitationRequest extends \Google\Protobuf\Interna
      * Generated from protobuf field <code>.google.ads.googleads.v14.services.CustomerUserAccessInvitationOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $operation = null;
+
+    /**
+     * @param string                                                                   $customerId Required. The ID of the customer whose access invitation is being modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\CustomerUserAccessInvitationOperation $operation  Required. The operation to perform on the access invitation
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateCustomerUserAccessInvitationRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, \Google\Ads\GoogleAds\V14\Services\CustomerUserAccessInvitationOperation $operation): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperation($operation);
+    }
 
     /**
      * Constructor.

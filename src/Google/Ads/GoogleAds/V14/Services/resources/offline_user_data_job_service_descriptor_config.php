@@ -12,6 +12,42 @@ return [
                     'maxPollDelayMillis' => '3600000',
                     'totalPollTimeoutMillis' => '43200000',
                 ],
+                'callType' => \Google\ApiCore\Call::LONGRUNNING_CALL,
+                'headerParams' => [
+                    [
+                        'keyName' => 'resource_name',
+                        'fieldAccessors' => [
+                            'getResourceName',
+                        ],
+                    ],
+                ],
+            ],
+            'AddOfflineUserDataJobOperations' => [
+                'callType' => \Google\ApiCore\Call::UNARY_CALL,
+                'responseType' => 'Google\Ads\GoogleAds\V14\Services\AddOfflineUserDataJobOperationsResponse',
+                'headerParams' => [
+                    [
+                        'keyName' => 'resource_name',
+                        'fieldAccessors' => [
+                            'getResourceName',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateOfflineUserDataJob' => [
+                'callType' => \Google\ApiCore\Call::UNARY_CALL,
+                'responseType' => 'Google\Ads\GoogleAds\V14\Services\CreateOfflineUserDataJobResponse',
+                'headerParams' => [
+                    [
+                        'keyName' => 'customer_id',
+                        'fieldAccessors' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
+            'templateMap' => [
+                'offlineUserDataJob' => 'customers/{customer_id}/offlineUserDataJobs/{offline_user_data_update_id}',
             ],
         ],
     ],

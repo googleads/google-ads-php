@@ -46,6 +46,11 @@ use Google\Ads\GoogleAds\V14\Services\AssetOperation;
 use Google\Ads\GoogleAds\V14\Services\AssetSetAssetOperation;
 use Google\Ads\GoogleAds\V14\Services\AssetSetOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignAssetSetOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateAssetSetAssetsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateAssetSetsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateAssetsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignAssetSetsRequest;
 use Google\ApiCore\ApiException;
 
 /** Adds a page feed with URLs for a Dynamic Search Ads campaign. */
@@ -72,6 +77,12 @@ class AddDynamicPageFeedAsset
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -194,10 +205,10 @@ class AddDynamicPageFeedAsset
 
         // Issues a mutate request to add the assets and prints its information.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
-        $response = $assetServiceClient->mutateAssets(
+        $response = $assetServiceClient->mutateAssets(MutateAssetsRequest::build(
             $customerId,
             $operations
-        );
+        ));
         $assetResourceNames = [];
         printf("Added %d assets:%s", $response->getResults()->count(), PHP_EOL);
         foreach ($response->getResults() as $addedAsset) {
@@ -239,10 +250,10 @@ class AddDynamicPageFeedAsset
 
         // Issues a mutate request to add the asset set and prints its information.
         $assetSetServiceClient = $googleAdsClient->getAssetSetServiceClient();
-        $response = $assetSetServiceClient->mutateAssetSets(
+        $response = $assetSetServiceClient->mutateAssetSets(MutateAssetSetsRequest::build(
             $customerId,
             [$assetSetOperation]
-        );
+        ));
         $assetSetResourceName = $response->getResults()[0]->getResourceName();
         printf(
             "Created an asset set with resource name: '%s'.%s",
@@ -286,8 +297,7 @@ class AddDynamicPageFeedAsset
         // Issues a mutate request to add the asset set assets and prints its information.
         $assetSetAssetServiceClient = $googleAdsClient->getAssetSetAssetServiceClient();
         $response = $assetSetAssetServiceClient->mutateAssetSetAssets(
-            $customerId,
-            $operations
+            MutateAssetSetAssetsRequest::build($customerId, $operations)
         );
         printf("Added %d asset set assets:%s", $response->getResults()->count(), PHP_EOL);
         foreach ($response->getResults() as $addedAssetSetAsset) {
@@ -329,8 +339,7 @@ class AddDynamicPageFeedAsset
         // Issues a mutate request to add the campaign asset set and prints its information.
         $campaignAssetSetServiceClient = $googleAdsClient->getCampaignAssetSetServiceClient();
         $response = $campaignAssetSetServiceClient->mutateCampaignAssetSets(
-            $customerId,
-            [$campaignAssetSetOperation]
+            MutateCampaignAssetSetsRequest::build($customerId, [$campaignAssetSetOperation])
         );
         printf(
             "Created a campaign asset set with resource name: '%s'.%s",
@@ -382,8 +391,7 @@ class AddDynamicPageFeedAsset
         // Issues a mutate request to add the ad group criterion and prints its information.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-            $customerId,
-            [$adGroupCriterionOperation]
+            MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])
         );
         printf(
             "Created ad group criterion with resource name '%s'.%s",

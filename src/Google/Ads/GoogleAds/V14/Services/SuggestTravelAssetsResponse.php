@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Response message for
- * [TravelSuggestAssetsService.SuggestTravelAssets][].
+ * [TravelAssetSuggestionService.SuggestTravelAssets][google.ads.googleads.v14.services.TravelAssetSuggestionService.SuggestTravelAssets].
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.services.SuggestTravelAssetsResponse</code>
  */

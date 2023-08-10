@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request message for [AudienceInsightsService.ListAudienceInsightsDates][].
+ * Request message for
+ * [AudienceInsightsService.ListInsightsEligibleDates][google.ads.googleads.v14.services.AudienceInsightsService.ListInsightsEligibleDates].
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.services.ListInsightsEligibleDatesRequest</code>
  */

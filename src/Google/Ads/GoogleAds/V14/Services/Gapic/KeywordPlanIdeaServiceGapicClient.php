@@ -66,6 +66,10 @@ use Google\Auth\FetchAuthTokenInterface;
  *     $keywordPlanIdeaServiceClient->close();
  * }
  * ```
+ *
+ * This service has a new (beta) implementation. See {@see
+ * \Google\Ads\GoogleAds\V14\Services\Client\KeywordPlanIdeaServiceClient} to use
+ * the new surface.
  */
 class KeywordPlanIdeaServiceGapicClient
 {

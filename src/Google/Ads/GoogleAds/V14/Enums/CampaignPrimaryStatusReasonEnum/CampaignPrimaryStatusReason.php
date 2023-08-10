@@ -226,6 +226,24 @@ class CampaignPrimaryStatusReason
      * Generated from protobuf enum <code>APP_PARTIALLY_RELEASED = 33;</code>
      */
     const APP_PARTIALLY_RELEASED = 33;
+    /**
+     * At least one asset group in this campaign is disapproved.
+     *
+     * Generated from protobuf enum <code>HAS_ASSET_GROUPS_DISAPPROVED = 34;</code>
+     */
+    const HAS_ASSET_GROUPS_DISAPPROVED = 34;
+    /**
+     * At least one asset group in this campaign is limited by policy.
+     *
+     * Generated from protobuf enum <code>HAS_ASSET_GROUPS_LIMITED_BY_POLICY = 35;</code>
+     */
+    const HAS_ASSET_GROUPS_LIMITED_BY_POLICY = 35;
+    /**
+     * Most asset groups in this campaign are pending review.
+     *
+     * Generated from protobuf enum <code>MOST_ASSET_GROUPS_UNDER_REVIEW = 36;</code>
+     */
+    const MOST_ASSET_GROUPS_UNDER_REVIEW = 36;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -262,6 +280,9 @@ class CampaignPrimaryStatusReason
         self::CAMPAIGN_GROUP_ALL_GROUP_BUDGETS_ENDED => 'CAMPAIGN_GROUP_ALL_GROUP_BUDGETS_ENDED',
         self::APP_NOT_RELEASED => 'APP_NOT_RELEASED',
         self::APP_PARTIALLY_RELEASED => 'APP_PARTIALLY_RELEASED',
+        self::HAS_ASSET_GROUPS_DISAPPROVED => 'HAS_ASSET_GROUPS_DISAPPROVED',
+        self::HAS_ASSET_GROUPS_LIMITED_BY_POLICY => 'HAS_ASSET_GROUPS_LIMITED_BY_POLICY',
+        self::MOST_ASSET_GROUPS_UNDER_REVIEW => 'MOST_ASSET_GROUPS_UNDER_REVIEW',
     ];
 
     public static function name($value)

@@ -37,6 +37,21 @@ class MutateCustomAudiencesRequest extends \Google\Protobuf\Internal\Message
     protected $validate_only = false;
 
     /**
+     * @param string                                                       $customerId Required. The ID of the customer whose custom audiences are being modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\CustomAudienceOperation[] $operations Required. The list of operations to perform on individual custom audiences.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateCustomAudiencesRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

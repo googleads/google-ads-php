@@ -47,6 +47,22 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
     protected $validate_only = false;
 
     /**
+     * @param string                                                              $customerId Required. ID of the customer whose ad group criterion labels are being
+     *                                                                                        modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\AdGroupCriterionLabelOperation[] $operations Required. The list of operations to perform on ad group criterion labels.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateAdGroupCriterionLabelsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

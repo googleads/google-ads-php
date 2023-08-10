@@ -46,6 +46,21 @@ class MutateUserListsRequest extends \Google\Protobuf\Internal\Message
     protected $validate_only = false;
 
     /**
+     * @param string                                                 $customerId Required. The ID of the customer whose user lists are being modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\UserListOperation[] $operations Required. The list of operations to perform on individual user lists.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateUserListsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

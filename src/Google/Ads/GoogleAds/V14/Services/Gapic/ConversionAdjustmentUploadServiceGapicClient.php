@@ -53,6 +53,10 @@ use Google\Auth\FetchAuthTokenInterface;
  *     $conversionAdjustmentUploadServiceClient->close();
  * }
  * ```
+ *
+ * This service has a new (beta) implementation. See {@see
+ * \Google\Ads\GoogleAds\V14\Services\Client\ConversionAdjustmentUploadServiceClient}
+ * to use the new surface.
  */
 class ConversionAdjustmentUploadServiceGapicClient
 {

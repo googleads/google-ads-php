@@ -30,6 +30,7 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\ProductBiddingCategoryConstant;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /** Fetches the set of valid ProductBiddingCategories. */
@@ -54,6 +55,12 @@ class GetProductBiddingCategoryConstant
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -106,9 +113,7 @@ class GetProductBiddingCategoryConstant
 
         // Performs the search request.
         $response = $googleAdsServiceClient->search(
-            $customerId,
-            $query,
-            ['pageSize' => self::PAGE_SIZE]
+            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
         );
 
         // Creates a map of top level categories.

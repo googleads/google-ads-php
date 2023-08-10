@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for
- * [SmartCampaignSuggestService.SuggestSmartCampaignBudgets][].
+ * [SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions][google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions].
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsRequest</code>
  */

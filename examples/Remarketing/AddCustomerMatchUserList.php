@@ -42,10 +42,16 @@ use Google\Ads\GoogleAds\V14\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJob
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\OfflineUserDataJob;
 use Google\Ads\GoogleAds\V14\Resources\UserList;
+use Google\Ads\GoogleAds\V14\Services\AddOfflineUserDataJobOperationsRequest;
 use Google\Ads\GoogleAds\V14\Services\AddOfflineUserDataJobOperationsResponse;
+use Google\Ads\GoogleAds\V14\Services\CreateOfflineUserDataJobRequest;
 use Google\Ads\GoogleAds\V14\Services\CreateOfflineUserDataJobResponse;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\MutateUserListsRequest;
 use Google\Ads\GoogleAds\V14\Services\OfflineUserDataJobOperation;
+use Google\Ads\GoogleAds\V14\Services\RunOfflineUserDataJobRequest;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsStreamRequest;
 use Google\Ads\GoogleAds\V14\Services\UserListOperation;
 use Google\ApiCore\ApiException;
 
@@ -101,6 +107,12 @@ class AddCustomerMatchUserList
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -215,7 +227,9 @@ class AddCustomerMatchUserList
 
         // Issues a mutate request to add the user list and prints some information.
         $userListServiceClient = $googleAdsClient->getUserListServiceClient();
-        $response = $userListServiceClient->mutateUserLists($customerId, [$operation]);
+        $response = $userListServiceClient->mutateUserLists(
+            MutateUserListsRequest::build($customerId, [$operation])
+        );
         $userListResourceName = $response->getResults()[0]->getResourceName();
         printf("User list with resource name '%s' was created.%s", $userListResourceName, PHP_EOL);
 
@@ -260,8 +274,7 @@ class AddCustomerMatchUserList
             /** @var CreateOfflineUserDataJobResponse $createOfflineUserDataJobResponse */
             $createOfflineUserDataJobResponse =
                 $offlineUserDataJobServiceClient->createOfflineUserDataJob(
-                    $customerId,
-                    $offlineUserDataJob
+                    CreateOfflineUserDataJobRequest::build($customerId, $offlineUserDataJob)
                 );
             $offlineUserDataJobResourceName = $createOfflineUserDataJobResponse->getResourceName();
             printf(
@@ -284,9 +297,10 @@ class AddCustomerMatchUserList
         // for more information on the per-request limits.
         /** @var AddOfflineUserDataJobOperationsResponse $operationResponse */
         $response = $offlineUserDataJobServiceClient->addOfflineUserDataJobOperations(
-            $offlineUserDataJobResourceName,
-            self::buildOfflineUserDataJobOperations(),
-            ['enablePartialFailure' => true]
+            AddOfflineUserDataJobOperationsRequest::build(
+                $offlineUserDataJobResourceName,
+                self::buildOfflineUserDataJobOperations()
+            )->setEnablePartialFailure(true)
         );
 
         // Prints the status message if any partial failure error is returned.
@@ -319,7 +333,9 @@ class AddCustomerMatchUserList
         // Issues an asynchronous request to run the offline user data job for executing all added
         // operations. The result is OperationResponse. Visit the OperationResponse.php file for
         // more details.
-        $offlineUserDataJobServiceClient->runOfflineUserDataJob($offlineUserDataJobResourceName);
+        $offlineUserDataJobServiceClient->runOfflineUserDataJob(
+            RunOfflineUserDataJobRequest::build($offlineUserDataJobResourceName)
+        );
 
         // Offline user data jobs may take 6 hours or more to complete, so instead of waiting
         // for the job to complete, retrieves and displays the job status once. If the job is
@@ -500,7 +516,9 @@ class AddCustomerMatchUserList
         // Issues a search request to get the GoogleAdsRow containing the job from the response.
         /** @var GoogleAdsRow $googleAdsRow */
         $googleAdsRow =
-            $googleAdsServiceClient->search($customerId, $query)->getIterator()->current();
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query))
+                ->getIterator()
+                ->current();
         $offlineUserDataJob = $googleAdsRow->getOfflineUserDataJob();
 
         // Prints out some information about the offline user data job.
@@ -560,7 +578,9 @@ class AddCustomerMatchUserList
 
         // Issues a search stream request.
         /** @var GoogleAdsServerStreamDecorator $stream */
-        $stream = $googleAdsServiceClient->searchStream($customerId, $query);
+        $stream = $googleAdsServiceClient->searchStream(
+            SearchGoogleAdsStreamRequest::build($customerId, $query)
+        );
         // [END add_customer_match_user_list_5]
 
         // Prints out some information about the user list.

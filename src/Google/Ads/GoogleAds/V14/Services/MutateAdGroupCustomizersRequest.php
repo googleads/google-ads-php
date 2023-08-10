@@ -55,6 +55,23 @@ class MutateAdGroupCustomizersRequest extends \Google\Protobuf\Internal\Message
     protected $response_content_type = 0;
 
     /**
+     * @param string                                                          $customerId Required. The ID of the customer whose ad group customizers are being
+     *                                                                                    modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\AdGroupCustomizerOperation[] $operations Required. The list of operations to perform on individual ad group
+     *                                                                                    customizers.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateAdGroupCustomizersRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

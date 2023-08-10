@@ -24,6 +24,19 @@ class GetAdRequest extends \Google\Protobuf\Internal\Message
     protected $resource_name = '';
 
     /**
+     * @param string $resourceName Required. The resource name of the ad to fetch.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\GetAdRequest
+     *
+     * @experimental
+     */
+    public static function build(string $resourceName): self
+    {
+        return (new self())
+            ->setResourceName($resourceName);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

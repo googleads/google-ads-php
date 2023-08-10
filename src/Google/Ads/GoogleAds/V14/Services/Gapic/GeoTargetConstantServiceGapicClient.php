@@ -50,6 +50,10 @@ use Google\Auth\FetchAuthTokenInterface;
  *     $geoTargetConstantServiceClient->close();
  * }
  * ```
+ *
+ * This service has a new (beta) implementation. See {@see
+ * \Google\Ads\GoogleAds\V14\Services\Client\GeoTargetConstantServiceClient} to use
+ * the new surface.
  */
 class GeoTargetConstantServiceGapicClient
 {

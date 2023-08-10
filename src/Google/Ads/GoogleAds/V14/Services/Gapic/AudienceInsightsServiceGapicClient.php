@@ -63,6 +63,10 @@ use Google\Auth\FetchAuthTokenInterface;
  *     $audienceInsightsServiceClient->close();
  * }
  * ```
+ *
+ * This service has a new (beta) implementation. See {@see
+ * \Google\Ads\GoogleAds\V14\Services\Client\AudienceInsightsServiceClient} to use
+ * the new surface.
  */
 class AudienceInsightsServiceGapicClient
 {

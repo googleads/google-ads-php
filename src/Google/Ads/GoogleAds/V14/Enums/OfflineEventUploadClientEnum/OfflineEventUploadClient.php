@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V14\Enums\OfflineEventUploadClientEnum;
 use UnexpectedValueException;
 
 /**
- * Next id: 5
+ * Type of client.
  *
  * Protobuf type <code>google.ads.googleads.v14.enums.OfflineEventUploadClientEnum.OfflineEventUploadClient</code>
  */

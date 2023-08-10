@@ -475,6 +475,19 @@ class CampaignError
      * Generated from protobuf enum <code>CONVERSION_LAG_TOO_HIGH = 82;</code>
      */
     const CONVERSION_LAG_TOO_HIGH = 82;
+    /**
+     * The advertiser set as an advertising partner is not an actively linked
+     * advertiser to this customer.
+     *
+     * Generated from protobuf enum <code>NOT_LINKED_ADVERTISING_PARTNER = 83;</code>
+     */
+    const NOT_LINKED_ADVERTISING_PARTNER = 83;
+    /**
+     * Invalid number of advertising partner IDs.
+     *
+     * Generated from protobuf enum <code>INVALID_NUMBER_OF_ADVERTISING_PARTNER_IDS = 84;</code>
+     */
+    const INVALID_NUMBER_OF_ADVERTISING_PARTNER_IDS = 84;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -549,6 +562,8 @@ class CampaignError
         self::NOT_COMPATIBLE_WITH_BIDDING_STRATEGY_TYPE => 'NOT_COMPATIBLE_WITH_BIDDING_STRATEGY_TYPE',
         self::NOT_COMPATIBLE_WITH_GOOGLE_ATTRIBUTION_CONVERSIONS => 'NOT_COMPATIBLE_WITH_GOOGLE_ATTRIBUTION_CONVERSIONS',
         self::CONVERSION_LAG_TOO_HIGH => 'CONVERSION_LAG_TOO_HIGH',
+        self::NOT_LINKED_ADVERTISING_PARTNER => 'NOT_LINKED_ADVERTISING_PARTNER',
+        self::INVALID_NUMBER_OF_ADVERTISING_PARTNER_IDS => 'INVALID_NUMBER_OF_ADVERTISING_PARTNER_IDS',
     ];
 
     public static function name($value)

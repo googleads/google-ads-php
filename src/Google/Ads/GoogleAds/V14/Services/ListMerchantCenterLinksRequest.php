@@ -25,6 +25,20 @@ class ListMerchantCenterLinksRequest extends \Google\Protobuf\Internal\Message
     protected $customer_id = '';
 
     /**
+     * @param string $customerId Required. The ID of the customer onto which to apply the Merchant Center
+     *                           link list operation.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\ListMerchantCenterLinksRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId): self
+    {
+        return (new self())
+            ->setCustomerId($customerId);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {
