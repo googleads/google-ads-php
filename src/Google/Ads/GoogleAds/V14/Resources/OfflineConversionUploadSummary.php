@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Historical upload summary, grouped by upload date or job.
- * Next tag: 5
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.resources.OfflineConversionUploadSummary</code>
  */

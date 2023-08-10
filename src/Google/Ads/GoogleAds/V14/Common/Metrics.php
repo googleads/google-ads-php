@@ -93,6 +93,18 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $all_conversions_value_by_conversion_date = 0.0;
     /**
+     * All of new customers' lifetime conversion value. If you have set up
+     * customer acquisition goal at either account level or campaign level, this
+     * will include the additional conversion value from new customers for both
+     * biddable and non-biddable conversions. If your campaign has adopted the
+     * customer acquisition goal and selected "bid higher for new customers",
+     * these values will be included in "all_conversions_value". See
+     * https://support.google.com/google-ads/answer/12080169 for more details.
+     *
+     * Generated from protobuf field <code>optional double all_new_customer_lifetime_value = 294;</code>
+     */
+    protected $all_new_customer_lifetime_value = null;
+    /**
      * The total number of conversions. This includes all conversions regardless
      * of the value of include_in_conversions_metric.
      *
@@ -425,6 +437,18 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>double conversions_value_by_conversion_date = 242;</code>
      */
     protected $conversions_value_by_conversion_date = 0.0;
+    /**
+     * New customers' lifetime conversion value. If you have set up
+     * customer acquisition goal at either account level or campaign level, this
+     * will include the additional conversion value from new customers for
+     * biddable conversions. If your campaign has adopted the customer
+     * acquisition goal and selected "bid higher for new customers", these values
+     * will be included in "conversions_value" for optimization. See
+     * https://support.google.com/google-ads/answer/12080169 for more details.
+     *
+     * Generated from protobuf field <code>optional double new_customer_lifetime_value = 293;</code>
+     */
+    protected $new_customer_lifetime_value = null;
     /**
      * The value of conversions divided by the cost of ad interactions. This only
      * includes conversion actions which include_in_conversions_metric attribute
@@ -929,6 +953,12 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $search_top_impression_share = null;
     /**
+     * Search volume range for a search term insight category.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v14.common.SearchVolumeRange search_volume = 295;</code>
+     */
+    protected $search_volume = null;
+    /**
      * A measure of how quickly your page loads after clicks on your mobile ads.
      * The score is a range from 1 to 10, 10 being the fastest.
      *
@@ -1236,6 +1266,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           values in date column means the conversion date. Details for the
      *           by_conversion_date columns are available at
      *           https://support.google.com/google-ads/answer/9549009.
+     *     @type float $all_new_customer_lifetime_value
+     *           All of new customers' lifetime conversion value. If you have set up
+     *           customer acquisition goal at either account level or campaign level, this
+     *           will include the additional conversion value from new customers for both
+     *           biddable and non-biddable conversions. If your campaign has adopted the
+     *           customer acquisition goal and selected "bid higher for new customers",
+     *           these values will be included in "all_conversions_value". See
+     *           https://support.google.com/google-ads/answer/12080169 for more details.
      *     @type float $all_conversions
      *           The total number of conversions. This includes all conversions regardless
      *           of the value of include_in_conversions_metric.
@@ -1405,6 +1443,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           column means the conversion date. Details for the by_conversion_date
      *           columns are available at
      *           https://support.google.com/google-ads/answer/9549009.
+     *     @type float $new_customer_lifetime_value
+     *           New customers' lifetime conversion value. If you have set up
+     *           customer acquisition goal at either account level or campaign level, this
+     *           will include the additional conversion value from new customers for
+     *           biddable conversions. If your campaign has adopted the customer
+     *           acquisition goal and selected "bid higher for new customers", these values
+     *           will be included in "conversions_value" for optimization. See
+     *           https://support.google.com/google-ads/answer/12080169 for more details.
      *     @type float $conversions_value_per_cost
      *           The value of conversions divided by the cost of ad interactions. This only
      *           includes conversion actions which include_in_conversions_metric attribute
@@ -1656,6 +1702,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           were eligible to receive in the top location.
      *           Note: Search top impression share is reported in the range of 0.1 to 1. Any
      *           value below 0.1 is reported as 0.0999.
+     *     @type \Google\Ads\GoogleAds\V14\Common\SearchVolumeRange $search_volume
+     *           Search volume range for a search term insight category.
      *     @type int|string $speed_score
      *           A measure of how quickly your page loads after clicks on your mobile ads.
      *           The score is a range from 1 to 10, 10 being the fastest.
@@ -2191,6 +2239,54 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->all_conversions_value_by_conversion_date = $var;
+
+        return $this;
+    }
+
+    /**
+     * All of new customers' lifetime conversion value. If you have set up
+     * customer acquisition goal at either account level or campaign level, this
+     * will include the additional conversion value from new customers for both
+     * biddable and non-biddable conversions. If your campaign has adopted the
+     * customer acquisition goal and selected "bid higher for new customers",
+     * these values will be included in "all_conversions_value". See
+     * https://support.google.com/google-ads/answer/12080169 for more details.
+     *
+     * Generated from protobuf field <code>optional double all_new_customer_lifetime_value = 294;</code>
+     * @return float
+     */
+    public function getAllNewCustomerLifetimeValue()
+    {
+        return isset($this->all_new_customer_lifetime_value) ? $this->all_new_customer_lifetime_value : 0.0;
+    }
+
+    public function hasAllNewCustomerLifetimeValue()
+    {
+        return isset($this->all_new_customer_lifetime_value);
+    }
+
+    public function clearAllNewCustomerLifetimeValue()
+    {
+        unset($this->all_new_customer_lifetime_value);
+    }
+
+    /**
+     * All of new customers' lifetime conversion value. If you have set up
+     * customer acquisition goal at either account level or campaign level, this
+     * will include the additional conversion value from new customers for both
+     * biddable and non-biddable conversions. If your campaign has adopted the
+     * customer acquisition goal and selected "bid higher for new customers",
+     * these values will be included in "all_conversions_value". See
+     * https://support.google.com/google-ads/answer/12080169 for more details.
+     *
+     * Generated from protobuf field <code>optional double all_new_customer_lifetime_value = 294;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setAllNewCustomerLifetimeValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->all_new_customer_lifetime_value = $var;
 
         return $this;
     }
@@ -3821,6 +3917,54 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->conversions_value_by_conversion_date = $var;
+
+        return $this;
+    }
+
+    /**
+     * New customers' lifetime conversion value. If you have set up
+     * customer acquisition goal at either account level or campaign level, this
+     * will include the additional conversion value from new customers for
+     * biddable conversions. If your campaign has adopted the customer
+     * acquisition goal and selected "bid higher for new customers", these values
+     * will be included in "conversions_value" for optimization. See
+     * https://support.google.com/google-ads/answer/12080169 for more details.
+     *
+     * Generated from protobuf field <code>optional double new_customer_lifetime_value = 293;</code>
+     * @return float
+     */
+    public function getNewCustomerLifetimeValue()
+    {
+        return isset($this->new_customer_lifetime_value) ? $this->new_customer_lifetime_value : 0.0;
+    }
+
+    public function hasNewCustomerLifetimeValue()
+    {
+        return isset($this->new_customer_lifetime_value);
+    }
+
+    public function clearNewCustomerLifetimeValue()
+    {
+        unset($this->new_customer_lifetime_value);
+    }
+
+    /**
+     * New customers' lifetime conversion value. If you have set up
+     * customer acquisition goal at either account level or campaign level, this
+     * will include the additional conversion value from new customers for
+     * biddable conversions. If your campaign has adopted the customer
+     * acquisition goal and selected "bid higher for new customers", these values
+     * will be included in "conversions_value" for optimization. See
+     * https://support.google.com/google-ads/answer/12080169 for more details.
+     *
+     * Generated from protobuf field <code>optional double new_customer_lifetime_value = 293;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setNewCustomerLifetimeValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->new_customer_lifetime_value = $var;
 
         return $this;
     }
@@ -6289,6 +6433,42 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->search_top_impression_share = $var;
+
+        return $this;
+    }
+
+    /**
+     * Search volume range for a search term insight category.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v14.common.SearchVolumeRange search_volume = 295;</code>
+     * @return \Google\Ads\GoogleAds\V14\Common\SearchVolumeRange|null
+     */
+    public function getSearchVolume()
+    {
+        return $this->search_volume;
+    }
+
+    public function hasSearchVolume()
+    {
+        return isset($this->search_volume);
+    }
+
+    public function clearSearchVolume()
+    {
+        unset($this->search_volume);
+    }
+
+    /**
+     * Search volume range for a search term insight category.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v14.common.SearchVolumeRange search_volume = 295;</code>
+     * @param \Google\Ads\GoogleAds\V14\Common\SearchVolumeRange $var
+     * @return $this
+     */
+    public function setSearchVolume($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Common\SearchVolumeRange::class);
+        $this->search_volume = $var;
 
         return $this;
     }

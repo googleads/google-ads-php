@@ -37,6 +37,21 @@ class MutateMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
     protected $validate_only = false;
 
     /**
+     * @param string                                                         $customerId Required. The ID of the customer being modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\MerchantCenterLinkOperation $operation  Required. The operation to perform on the link
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateMerchantCenterLinkRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, \Google\Ads\GoogleAds\V14\Services\MerchantCenterLinkOperation $operation): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperation($operation);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

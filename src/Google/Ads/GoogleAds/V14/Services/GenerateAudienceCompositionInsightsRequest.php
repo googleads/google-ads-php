@@ -58,6 +58,25 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
     protected $customer_insights_group = '';
 
     /**
+     * @param string                                              $customerId Required. The ID of the customer.
+     * @param \Google\Ads\GoogleAds\V14\Services\InsightsAudience $audience   Required. The audience of interest for which insights are being requested.
+     * @param int[]                                               $dimensions Required. The audience dimensions for which composition insights should be
+     *                                                                        returned.
+     *                                                                        For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V14\Enums\AudienceInsightsDimensionEnum\AudienceInsightsDimension}
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\GenerateAudienceCompositionInsightsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, \Google\Ads\GoogleAds\V14\Services\InsightsAudience $audience, array $dimensions): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setAudience($audience)
+            ->setDimensions($dimensions);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

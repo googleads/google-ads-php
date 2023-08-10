@@ -55,6 +55,23 @@ class MutateCampaignExtensionSettingsRequest extends \Google\Protobuf\Internal\M
     protected $response_content_type = 0;
 
     /**
+     * @param string                                                                 $customerId Required. The ID of the customer whose campaign extension settings are
+     *                                                                                           being modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\CampaignExtensionSettingOperation[] $operations Required. The list of operations to perform on individual campaign
+     *                                                                                           extension settings.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateCampaignExtensionSettingsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

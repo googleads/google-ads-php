@@ -54,17 +54,15 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION,
      * RESPONSIVE_SEARCH_AD,
      * RESPONSIVE_SEARCH_AD_ASSET,
-     * SEARCH_PARTNERS_OPT_IN,
-     * DISPLAY_EXPANSION_OPT_IN, SITELINK_EXTENSION, TARGET_CPA_OPT_IN,
-     * TARGET_ROAS_OPT_IN, TEXT_AD,
-     * UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX ,
-     * RAISE_TARGET_CPA_BID_TOO_LOW, FORECASTING_SET_TARGET_ROAS
+     * SEARCH_PARTNERS_OPT_IN, DISPLAY_EXPANSION_OPT_IN, SITELINK_EXTENSION,
+     * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD,
+     * UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX,
+     * RAISE_TARGET_CPA_BID_TOO_LOW, FORECASTING_SET_TARGET_ROAS,
      * SHOPPING_ADD_AGE_GROUP, SHOPPING_ADD_COLOR, SHOPPING_ADD_GENDER,
      * SHOPPING_ADD_SIZE, SHOPPING_ADD_GTIN, SHOPPING_ADD_MORE_IDENTIFIERS,
      * SHOPPING_ADD_PRODUCTS_TO_CAMPAIGN, SHOPPING_FIX_DISAPPROVED_PRODUCTS,
-     * SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX
-     *  DYNAMIC_IMAGE_EXTENSION_OPT_IN, RAISE_TARGET_CPA,
-     * LOWER_TARGET_ROAS
+     * SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX,
+     * DYNAMIC_IMAGE_EXTENSION_OPT_IN, RAISE_TARGET_CPA, LOWER_TARGET_ROAS,
      *
      * Generated from protobuf field <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
@@ -125,17 +123,15 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION,
      *           RESPONSIVE_SEARCH_AD,
      *           RESPONSIVE_SEARCH_AD_ASSET,
-     *           SEARCH_PARTNERS_OPT_IN,
-     *           DISPLAY_EXPANSION_OPT_IN, SITELINK_EXTENSION, TARGET_CPA_OPT_IN,
-     *           TARGET_ROAS_OPT_IN, TEXT_AD,
-     *           UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX ,
-     *           RAISE_TARGET_CPA_BID_TOO_LOW, FORECASTING_SET_TARGET_ROAS
+     *           SEARCH_PARTNERS_OPT_IN, DISPLAY_EXPANSION_OPT_IN, SITELINK_EXTENSION,
+     *           TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD,
+     *           UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX,
+     *           RAISE_TARGET_CPA_BID_TOO_LOW, FORECASTING_SET_TARGET_ROAS,
      *           SHOPPING_ADD_AGE_GROUP, SHOPPING_ADD_COLOR, SHOPPING_ADD_GENDER,
      *           SHOPPING_ADD_SIZE, SHOPPING_ADD_GTIN, SHOPPING_ADD_MORE_IDENTIFIERS,
      *           SHOPPING_ADD_PRODUCTS_TO_CAMPAIGN, SHOPPING_FIX_DISAPPROVED_PRODUCTS,
-     *           SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX
-     *            DYNAMIC_IMAGE_EXTENSION_OPT_IN, RAISE_TARGET_CPA,
-     *           LOWER_TARGET_ROAS
+     *           SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX,
+     *           DYNAMIC_IMAGE_EXTENSION_OPT_IN, RAISE_TARGET_CPA, LOWER_TARGET_ROAS,
      *     @type string $ad_group
      *           Output only. The ad group targeted by this recommendation. This will be set
      *           only when the recommendation affects a single ad group.
@@ -238,6 +234,13 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           Output only. Recommendation to raise Target CPA.
      *     @type \Google\Ads\GoogleAds\V14\Resources\Recommendation\LowerTargetRoasRecommendation $lower_target_roas_recommendation
      *           Output only. Recommendation to lower Target ROAS.
+     *     @type \Google\Ads\GoogleAds\V14\Resources\Recommendation\PerformanceMaxOptInRecommendation $performance_max_opt_in_recommendation
+     *           Output only. The Performance Max Opt In recommendation.
+     *     @type \Google\Ads\GoogleAds\V14\Resources\Recommendation\ImprovePerformanceMaxAdStrengthRecommendation $improve_performance_max_ad_strength_recommendation
+     *           Output only. The improve Performance Max ad strength recommendation.
+     *     @type \Google\Ads\GoogleAds\V14\Resources\Recommendation\MigrateDynamicSearchAdsCampaignToPerformanceMaxRecommendation $migrate_dynamic_search_ads_campaign_to_performance_max_recommendation
+     *           Output only. The Dynamic Search Ads to Performance Max migration
+     *           recommendation.
      * }
      */
     public function __construct($data = NULL) {
@@ -390,17 +393,15 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION,
      * RESPONSIVE_SEARCH_AD,
      * RESPONSIVE_SEARCH_AD_ASSET,
-     * SEARCH_PARTNERS_OPT_IN,
-     * DISPLAY_EXPANSION_OPT_IN, SITELINK_EXTENSION, TARGET_CPA_OPT_IN,
-     * TARGET_ROAS_OPT_IN, TEXT_AD,
-     * UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX ,
-     * RAISE_TARGET_CPA_BID_TOO_LOW, FORECASTING_SET_TARGET_ROAS
+     * SEARCH_PARTNERS_OPT_IN, DISPLAY_EXPANSION_OPT_IN, SITELINK_EXTENSION,
+     * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD,
+     * UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX,
+     * RAISE_TARGET_CPA_BID_TOO_LOW, FORECASTING_SET_TARGET_ROAS,
      * SHOPPING_ADD_AGE_GROUP, SHOPPING_ADD_COLOR, SHOPPING_ADD_GENDER,
      * SHOPPING_ADD_SIZE, SHOPPING_ADD_GTIN, SHOPPING_ADD_MORE_IDENTIFIERS,
      * SHOPPING_ADD_PRODUCTS_TO_CAMPAIGN, SHOPPING_FIX_DISAPPROVED_PRODUCTS,
-     * SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX
-     *  DYNAMIC_IMAGE_EXTENSION_OPT_IN, RAISE_TARGET_CPA,
-     * LOWER_TARGET_ROAS
+     * SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX,
+     * DYNAMIC_IMAGE_EXTENSION_OPT_IN, RAISE_TARGET_CPA, LOWER_TARGET_ROAS,
      *
      * Generated from protobuf field <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
@@ -429,17 +430,15 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION,
      * RESPONSIVE_SEARCH_AD,
      * RESPONSIVE_SEARCH_AD_ASSET,
-     * SEARCH_PARTNERS_OPT_IN,
-     * DISPLAY_EXPANSION_OPT_IN, SITELINK_EXTENSION, TARGET_CPA_OPT_IN,
-     * TARGET_ROAS_OPT_IN, TEXT_AD,
-     * UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX ,
-     * RAISE_TARGET_CPA_BID_TOO_LOW, FORECASTING_SET_TARGET_ROAS
+     * SEARCH_PARTNERS_OPT_IN, DISPLAY_EXPANSION_OPT_IN, SITELINK_EXTENSION,
+     * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD,
+     * UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX,
+     * RAISE_TARGET_CPA_BID_TOO_LOW, FORECASTING_SET_TARGET_ROAS,
      * SHOPPING_ADD_AGE_GROUP, SHOPPING_ADD_COLOR, SHOPPING_ADD_GENDER,
      * SHOPPING_ADD_SIZE, SHOPPING_ADD_GTIN, SHOPPING_ADD_MORE_IDENTIFIERS,
      * SHOPPING_ADD_PRODUCTS_TO_CAMPAIGN, SHOPPING_FIX_DISAPPROVED_PRODUCTS,
-     * SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX
-     *  DYNAMIC_IMAGE_EXTENSION_OPT_IN, RAISE_TARGET_CPA,
-     * LOWER_TARGET_ROAS
+     * SHOPPING_MIGRATE_REGULAR_SHOPPING_CAMPAIGN_OFFERS_TO_PERFORMANCE_MAX,
+     * DYNAMIC_IMAGE_EXTENSION_OPT_IN, RAISE_TARGET_CPA, LOWER_TARGET_ROAS,
      *
      * Generated from protobuf field <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -1846,6 +1845,101 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Resources\Recommendation\LowerTargetRoasRecommendation::class);
         $this->writeOneof(56, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The Performance Max Opt In recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.Recommendation.PerformanceMaxOptInRecommendation performance_max_opt_in_recommendation = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V14\Resources\Recommendation\PerformanceMaxOptInRecommendation|null
+     */
+    public function getPerformanceMaxOptInRecommendation()
+    {
+        return $this->readOneof(57);
+    }
+
+    public function hasPerformanceMaxOptInRecommendation()
+    {
+        return $this->hasOneof(57);
+    }
+
+    /**
+     * Output only. The Performance Max Opt In recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.Recommendation.PerformanceMaxOptInRecommendation performance_max_opt_in_recommendation = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V14\Resources\Recommendation\PerformanceMaxOptInRecommendation $var
+     * @return $this
+     */
+    public function setPerformanceMaxOptInRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Resources\Recommendation\PerformanceMaxOptInRecommendation::class);
+        $this->writeOneof(57, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The improve Performance Max ad strength recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.Recommendation.ImprovePerformanceMaxAdStrengthRecommendation improve_performance_max_ad_strength_recommendation = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V14\Resources\Recommendation\ImprovePerformanceMaxAdStrengthRecommendation|null
+     */
+    public function getImprovePerformanceMaxAdStrengthRecommendation()
+    {
+        return $this->readOneof(58);
+    }
+
+    public function hasImprovePerformanceMaxAdStrengthRecommendation()
+    {
+        return $this->hasOneof(58);
+    }
+
+    /**
+     * Output only. The improve Performance Max ad strength recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.Recommendation.ImprovePerformanceMaxAdStrengthRecommendation improve_performance_max_ad_strength_recommendation = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V14\Resources\Recommendation\ImprovePerformanceMaxAdStrengthRecommendation $var
+     * @return $this
+     */
+    public function setImprovePerformanceMaxAdStrengthRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Resources\Recommendation\ImprovePerformanceMaxAdStrengthRecommendation::class);
+        $this->writeOneof(58, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The Dynamic Search Ads to Performance Max migration
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.Recommendation.MigrateDynamicSearchAdsCampaignToPerformanceMaxRecommendation migrate_dynamic_search_ads_campaign_to_performance_max_recommendation = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V14\Resources\Recommendation\MigrateDynamicSearchAdsCampaignToPerformanceMaxRecommendation|null
+     */
+    public function getMigrateDynamicSearchAdsCampaignToPerformanceMaxRecommendation()
+    {
+        return $this->readOneof(59);
+    }
+
+    public function hasMigrateDynamicSearchAdsCampaignToPerformanceMaxRecommendation()
+    {
+        return $this->hasOneof(59);
+    }
+
+    /**
+     * Output only. The Dynamic Search Ads to Performance Max migration
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.Recommendation.MigrateDynamicSearchAdsCampaignToPerformanceMaxRecommendation migrate_dynamic_search_ads_campaign_to_performance_max_recommendation = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V14\Resources\Recommendation\MigrateDynamicSearchAdsCampaignToPerformanceMaxRecommendation $var
+     * @return $this
+     */
+    public function setMigrateDynamicSearchAdsCampaignToPerformanceMaxRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Resources\Recommendation\MigrateDynamicSearchAdsCampaignToPerformanceMaxRecommendation::class);
+        $this->writeOneof(59, $var);
 
         return $this;
     }

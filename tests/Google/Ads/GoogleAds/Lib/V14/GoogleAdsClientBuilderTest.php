@@ -80,7 +80,8 @@ class GoogleAdsClientBuilderTest extends TestCase
             ['endpoint', 'GOOGLE_ADS', 'https://abc.xyz:443'],
             ['proxy', 'CONNECTION', 'https://localhost:8080'],
             ['transport', 'CONNECTION', 'grpc'],
-            ['grpcChannelIsSecure', 'CONNECTION', 'true']
+            ['grpcChannelIsSecure', 'CONNECTION', 'true'],
+            ['useGapicV2Source', 'GAPIC', 'true']
         ];
         $configurationMock = $this->getMockBuilder(Configuration::class)
             ->disableOriginalConstructor()
@@ -101,8 +102,9 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame('https://abc.xyz:443', $googleAdsClient->getEndpoint());
         $this->assertSame('https://localhost:8080', $googleAdsClient->getProxy());
         $this->assertSame('grpc', $googleAdsClient->getTransport());
-        $this->assertSame(true, $googleAdsClient->getGrpcChannelIsSecure());
+        $this->assertTrue($googleAdsClient->getGrpcChannelIsSecure());
         $this->assertSame($this->loggerMock, $googleAdsClient->getLogger());
+        $this->assertTrue($googleAdsClient->useGapicV2Source());
     }
 
     /**
@@ -314,6 +316,7 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->withLoginCustomerId(self::$LOGIN_CUSTOMER_ID)
             ->withEndpoint('abc.xyz.com')
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->usingGapicV2Source(false)
             ->build();
 
         $this->assertSame(self::$DEVELOPER_TOKEN, $googleAdsClient->getDeveloperToken());
@@ -323,6 +326,7 @@ class GoogleAdsClientBuilderTest extends TestCase
             FetchAuthTokenInterface::class,
             $googleAdsClient->getOAuth2Credential()
         );
+        $this->assertFalse($googleAdsClient->useGapicV2Source());
     }
 
     public function testBuildDefaults()
@@ -630,5 +634,16 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->withDependencies($dependenciesMock)
             ->build();
+    }
+
+    public function testBuildUsingGapicV2Source()
+    {
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->usingGapicV2Source(true)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertTrue($googleAdsClient->useGapicV2Source());
     }
 }

@@ -40,6 +40,19 @@ class SearchGoogleAdsFieldsRequest extends \Google\Protobuf\Internal\Message
     protected $page_size = 0;
 
     /**
+     * @param string $query Required. The query string.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsFieldsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $query): self
+    {
+        return (new self())
+            ->setQuery($query);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

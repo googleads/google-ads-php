@@ -31,6 +31,19 @@ class EndExperimentRequest extends \Google\Protobuf\Internal\Message
     protected $validate_only = false;
 
     /**
+     * @param string $experiment Required. The resource name of the campaign experiment to end.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\EndExperimentRequest
+     *
+     * @experimental
+     */
+    public static function build(string $experiment): self
+    {
+        return (new self())
+            ->setExperiment($experiment);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

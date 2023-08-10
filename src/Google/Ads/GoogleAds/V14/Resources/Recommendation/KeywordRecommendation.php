@@ -22,6 +22,13 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
      */
     protected $keyword = null;
     /**
+     * Output only. A list of search terms this keyword matches. The same search
+     * term may be repeated for multiple keywords.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v14.resources.Recommendation.KeywordRecommendation.SearchTerm search_terms = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $search_terms;
+    /**
      * Output only. The recommended CPC (cost-per-click) bid.
      *
      * Generated from protobuf field <code>optional int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -36,6 +43,9 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Ads\GoogleAds\V14\Common\KeywordInfo $keyword
      *           Output only. The recommended keyword.
+     *     @type array<\Google\Ads\GoogleAds\V14\Resources\Recommendation\KeywordRecommendation\SearchTerm>|\Google\Protobuf\Internal\RepeatedField $search_terms
+     *           Output only. A list of search terms this keyword matches. The same search
+     *           term may be repeated for multiple keywords.
      *     @type int|string $recommended_cpc_bid_micros
      *           Output only. The recommended CPC (cost-per-click) bid.
      * }
@@ -77,6 +87,34 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Common\KeywordInfo::class);
         $this->keyword = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. A list of search terms this keyword matches. The same search
+     * term may be repeated for multiple keywords.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v14.resources.Recommendation.KeywordRecommendation.SearchTerm search_terms = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSearchTerms()
+    {
+        return $this->search_terms;
+    }
+
+    /**
+     * Output only. A list of search terms this keyword matches. The same search
+     * term may be repeated for multiple keywords.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v14.resources.Recommendation.KeywordRecommendation.SearchTerm search_terms = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param array<\Google\Ads\GoogleAds\V14\Resources\Recommendation\KeywordRecommendation\SearchTerm>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSearchTerms($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V14\Resources\Recommendation\KeywordRecommendation\SearchTerm::class);
+        $this->search_terms = $arr;
 
         return $this;
     }

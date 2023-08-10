@@ -1,3 +1,24 @@
+## 20.1.0
+*   Added support for v14_1 of Google Ads API.
+*   Removed the `final` modifier from `GoogleAdsClient`. This fixes
+    https://github.com/googleads/google-ads-php/issues/347.
+*   Fixed https://github.com/googleads/google-ads-php/issues/902 by passing
+    `linked-customer-id` to the header of a request.
+*   Made `GoogleAdsCallLogger::getNextFinerLogLevel` aligned with PSR-3
+    `LogLevel` enum by returning a lowercase string. This fixes
+    https://github.com/googleads/google-ads-php/issues/849.
+*   Fixed the issue of the check for grpc versions in
+    `GoogleAdsClientBuilder::validate()`. It now supports the case when
+    the system-package version is not found.
+*   Added support for [the GAPIC v2 source
+    code](https://developers.google.com/google-ads/api/docs/client-libs/php/gapic).
+    * Added support for the `useGapicV2Source` configuration.
+    * Updated all code examples to show how to use the GAPIC v2 source code.
+*   Added code examples:
+    * GenerateForecastMetrics (new version that uses `KeywordPlanIdeaService`)
+    * GenerateHistoricalMetrics (new version that uses `KeywordPlanIdeaService`)
+*   Removed AddKeywordPlan example.
+
 ## 20.0.0
 *   Updated `composer.json` to require the minimum PHP version of 8.0. See also
     [README](README.md) for more details.

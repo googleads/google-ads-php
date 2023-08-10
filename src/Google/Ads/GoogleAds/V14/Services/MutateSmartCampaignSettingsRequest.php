@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for
- * [SmartCampaignSettingService.MutateSmartCampaignSetting][].
+ * [SmartCampaignSettingService.MutateSmartCampaignSettings][google.ads.googleads.v14.services.SmartCampaignSettingService.MutateSmartCampaignSettings].
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.services.MutateSmartCampaignSettingsRequest</code>
  */
@@ -53,6 +53,23 @@ class MutateSmartCampaignSettingsRequest extends \Google\Protobuf\Internal\Messa
      * Generated from protobuf field <code>.google.ads.googleads.v14.enums.ResponseContentTypeEnum.ResponseContentType response_content_type = 5;</code>
      */
     protected $response_content_type = 0;
+
+    /**
+     * @param string                                                             $customerId Required. The ID of the customer whose Smart campaign settings are being
+     *                                                                                       modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\SmartCampaignSettingOperation[] $operations Required. The list of operations to perform on individual Smart campaign
+     *                                                                                       settings.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateSmartCampaignSettingsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
 
     /**
      * Constructor.

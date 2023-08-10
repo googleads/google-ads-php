@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Alert for offline conversion client summary.
- * Next tag: 3
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.resources.OfflineConversionUploadAlert</code>
  */

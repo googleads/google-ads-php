@@ -45,6 +45,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
 
     private const DEFAULT_LOGGER_CHANNEL = 'google-ads';
     private const DEFAULT_GRPC_CHANNEL_IS_SECURE = true;
+    private const DEFAULT_USE_GAPIC_V2_SOURCE = false;
 
     private $loggerFactory;
 
@@ -59,6 +60,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $transport;
     private $grpcChannelIsSecure;
     private $grpcChannelCredential;
+    private $useGapicV2Source;
     private $unaryMiddlewares = [];
     private $streamingMiddlewares = [];
     private $grpcInterceptors = [];
@@ -108,6 +110,19 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
                     // Defaults when value is not a valid boolean.
                     [
                         'options' => ['default' => self::DEFAULT_GRPC_CHANNEL_IS_SECURE],
+                        'flags' => FILTER_NULL_ON_FAILURE
+                    ]
+                );
+        $this->useGapicV2Source =
+            is_null($configuration->getConfiguration('useGapicV2Source', 'GAPIC'))
+            || $configuration->getConfiguration('useGapicV2Source', 'GAPIC') === ""
+                ? self::DEFAULT_USE_GAPIC_V2_SOURCE
+                : filter_var(
+                    $configuration->getConfiguration('useGapicV2Source', 'GAPIC'),
+                    FILTER_VALIDATE_BOOLEAN,
+                    // Defaults when value is not a valid boolean.
+                    [
+                        'options' => ['default' => self::DEFAULT_USE_GAPIC_V2_SOURCE],
                         'flags' => FILTER_NULL_ON_FAILURE
                     ]
                 );
@@ -277,6 +292,18 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     public function withGrpcChannelCredential(ChannelCredentials $grpcChannelCredential)
     {
         $this->grpcChannelCredential = $grpcChannelCredential;
+        return $this;
+    }
+
+    /**
+     * Sets whether this library should use GAPIC v2 source code or not.
+     *
+     * @param bool $useGapicV2Source
+     * @return self this builder
+     */
+    public function usingGapicV2Source(bool $useGapicV2Source)
+    {
+        $this->useGapicV2Source = $useGapicV2Source;
         return $this;
     }
 
@@ -556,6 +583,16 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     public function getGrpcChannelCredential()
     {
         return $this->grpcChannelCredential;
+    }
+
+    /**
+     * Returns true when this library is set to use GAPIC v2 source.
+     *
+     * @return bool
+     */
+    public function useGapicV2Source()
+    {
+        return $this->useGapicV2Source;
     }
 
     /**

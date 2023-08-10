@@ -175,6 +175,12 @@ class RequestError
      * Generated from protobuf enum <code>UNSUPPORTED_VERSION = 38;</code>
      */
     const UNSUPPORTED_VERSION = 38;
+    /**
+     * The Google Cloud project in the request was not found.
+     *
+     * Generated from protobuf enum <code>CLOUD_PROJECT_NOT_FOUND = 39;</code>
+     */
+    const CLOUD_PROJECT_NOT_FOUND = 39;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -203,6 +209,7 @@ class RequestError
         self::TOTAL_RESULTS_COUNT_NOT_ORIGINALLY_REQUESTED => 'TOTAL_RESULTS_COUNT_NOT_ORIGINALLY_REQUESTED',
         self::RPC_DEADLINE_TOO_SHORT => 'RPC_DEADLINE_TOO_SHORT',
         self::UNSUPPORTED_VERSION => 'UNSUPPORTED_VERSION',
+        self::CLOUD_PROJECT_NOT_FOUND => 'CLOUD_PROJECT_NOT_FOUND',
     ];
 
     public static function name($value)

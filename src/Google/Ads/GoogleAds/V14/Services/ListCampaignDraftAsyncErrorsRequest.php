@@ -42,6 +42,20 @@ class ListCampaignDraftAsyncErrorsRequest extends \Google\Protobuf\Internal\Mess
     protected $page_size = 0;
 
     /**
+     * @param string $resourceName Required. The name of the campaign draft from which to retrieve the async
+     *                             errors.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\ListCampaignDraftAsyncErrorsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $resourceName): self
+    {
+        return (new self())
+            ->setResourceName($resourceName);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

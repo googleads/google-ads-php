@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V14\Enums\OfflineConversionDiagnosticStatusEnum;
 use UnexpectedValueException;
 
 /**
- * Next id: 8
+ * Possible statuses of the offline ingestion setup.
  *
  * Protobuf type <code>google.ads.googleads.v14.enums.OfflineConversionDiagnosticStatusEnum.OfflineConversionDiagnosticStatus</code>
  */

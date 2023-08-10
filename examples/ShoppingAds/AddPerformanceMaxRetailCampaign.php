@@ -63,9 +63,11 @@ use Google\Ads\GoogleAds\V14\Services\CampaignConversionGoalOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignCriterionOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignOperation;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\MutateGoogleAdsRequest;
 use Google\Ads\GoogleAds\V14\Services\MutateGoogleAdsResponse;
 use Google\Ads\GoogleAds\V14\Services\MutateOperation;
 use Google\Ads\GoogleAds\V14\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Serializer;
 
@@ -137,6 +139,12 @@ class AddPerformanceMaxRetailCampaign
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -251,8 +259,7 @@ class AddPerformanceMaxRetailCampaign
         // Issues a mutate request to create everything and prints its information.
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         $response = $googleAdsServiceClient->mutate(
-            $customerId,
-            $operations
+            MutateGoogleAdsRequest::build($customerId, $operations)
         );
 
         self::printResponseDetails($response);
@@ -483,9 +490,11 @@ class AddPerformanceMaxRetailCampaign
         }
 
         // Issues a mutate request to add all assets.
-        $googleAdsService = $googleAdsClient->getGoogleAdsServiceClient();
+        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         /** @var MutateGoogleAdsResponse $mutateGoogleAdsResponse */
-        $mutateGoogleAdsResponse = $googleAdsService->mutate($customerId, $operations);
+        $mutateGoogleAdsResponse = $googleAdsServiceClient->mutate(
+            MutateGoogleAdsRequest::build($customerId, $operations)
+        );
 
         $assetResourceNames = [];
         foreach ($mutateGoogleAdsResponse->getMutateOperationResponses() as $response) {
@@ -821,8 +830,9 @@ class AddPerformanceMaxRetailCampaign
             'FROM customer_conversion_goal';
         // The number of conversion goals is typically less than 50 so we use a search request
         // instead of search stream.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        $response = $googleAdsServiceClient->search(
+            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
+        );
 
         // Iterates over all rows in all pages and builds the list of conversion goals.
         foreach ($response->iterateAllElements() as $googleAdsRow) {

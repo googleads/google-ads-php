@@ -21,7 +21,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * To list the available plannable product codes use
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v14.services.ReachPlanService.ListPlannableProducts].
      *
-     * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
+     * Generated from protobuf field <code>optional string plannable_product_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $plannable_product_code = null;
     /**
@@ -29,7 +29,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * The value is specified in the selected planning currency_code.
      * For example: 1 000 000$ = 1 000 000 000 000 micros.
      *
-     * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 budget_micros = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $budget_micros = null;
     /**
@@ -73,7 +73,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * To list the available plannable product codes use
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v14.services.ReachPlanService.ListPlannableProducts].
      *
-     * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
+     * Generated from protobuf field <code>optional string plannable_product_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getPlannableProductCode()
@@ -97,7 +97,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * To list the available plannable product codes use
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v14.services.ReachPlanService.ListPlannableProducts].
      *
-     * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
+     * Generated from protobuf field <code>optional string plannable_product_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -114,7 +114,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * The value is specified in the selected planning currency_code.
      * For example: 1 000 000$ = 1 000 000 000 000 micros.
      *
-     * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 budget_micros = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return int|string
      */
     public function getBudgetMicros()
@@ -137,7 +137,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * The value is specified in the selected planning currency_code.
      * For example: 1 000 000$ = 1 000 000 000 000 micros.
      *
-     * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 budget_micros = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int|string $var
      * @return $this
      */

@@ -24,6 +24,19 @@ class GetMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
     protected $resource_name = '';
 
     /**
+     * @param string $resourceName Required. Resource name of the Merchant Center link.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\GetMerchantCenterLinkRequest
+     *
+     * @experimental
+     */
+    public static function build(string $resourceName): self
+    {
+        return (new self())
+            ->setResourceName($resourceName);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

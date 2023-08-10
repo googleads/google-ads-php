@@ -53,10 +53,15 @@ use Google\Ads\GoogleAds\V14\Services\AdGroupOperation;
 use Google\Ads\GoogleAds\V14\Services\AdGroupAdOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignBudgetOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupAdsRequest;
 use Google\Ads\GoogleAds\V14\Services\MutateAdGroupAdsResponse;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupsRequest;
 use Google\Ads\GoogleAds\V14\Services\MutateAdGroupsResponse;
 use Google\Ads\GoogleAds\V14\Services\MutateAdGroupCriteriaResponse;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignBudgetsRequest;
 use Google\Ads\GoogleAds\V14\Services\MutateCampaignBudgetsResponse;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignsRequest;
 use Google\Ads\GoogleAds\V14\Services\MutateCampaignsResponse;
 use Google\ApiCore\ApiException;
 
@@ -82,6 +87,12 @@ class AddDynamicSearchAds
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -166,8 +177,7 @@ class AddDynamicSearchAds
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         /** @var MutateCampaignBudgetsResponse $campaignBudgetResponse */
         $campaignBudgetResponse = $campaignBudgetServiceClient->mutateCampaignBudgets(
-            $customerId,
-            [$campaignBudgetOperation]
+            MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
 
         $campaignBudgetResourceName = $campaignBudgetResponse->getResults()[0]->getResourceName();
@@ -215,8 +225,7 @@ class AddDynamicSearchAds
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
         /** @var MutateCampaignsResponse $campaignResponse */
         $campaignResponse = $campaignServiceClient->mutateCampaigns(
-            $customerId,
-            [$campaignOperation]
+            MutateCampaignsRequest::build($customerId, [$campaignOperation])
         );
 
         $campaignResourceName = $campaignResponse->getResults()[0]->getResourceName();
@@ -257,7 +266,9 @@ class AddDynamicSearchAds
         // Issues a mutate request to add the ad groups.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
         /** @var MutateAdGroupsResponse $adGroupResponse */
-        $adGroupResponse = $adGroupServiceClient->mutateAdGroups($customerId, [$adGroupOperation]);
+        $adGroupResponse = $adGroupServiceClient->mutateAdGroups(
+            MutateAdGroupsRequest::build($customerId, [$adGroupOperation])
+        );
 
         $adGroupResourceName = $adGroupResponse->getResults()[0]->getResourceName();
         printf("Added ad group named '%s'.%s", $adGroupResourceName, PHP_EOL);
@@ -296,8 +307,7 @@ class AddDynamicSearchAds
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
         /** @var MutateAdGroupAdsResponse $adGroupAdResponse */
         $adGroupAdResponse = $adGroupAdServiceClient->mutateAdGroupAds(
-            $customerId,
-            [$adGroupAdOperation]
+            MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
         );
 
         $adGroupAdResourceName = $adGroupAdResponse->getResults()[0]->getResourceName();
@@ -346,8 +356,7 @@ class AddDynamicSearchAds
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         /** @var MutateAdGroupCriteriaResponse $adGroupCriterionResponse */
         $adGroupCriterionResponse = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-            $customerId,
-            [$adGroupCriterionOperation]
+            MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])
         );
 
         $adGroupCriterionResourceName =

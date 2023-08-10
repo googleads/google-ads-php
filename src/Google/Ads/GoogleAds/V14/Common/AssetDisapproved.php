@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Details related to AssetLinkPrimaryStatusReasonPB.ASSET_DISAPPROVED
- * Next Id: 2
  *
  * Generated from protobuf message <code>google.ads.googleads.v14.common.AssetDisapproved</code>
  */

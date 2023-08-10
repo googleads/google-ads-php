@@ -56,6 +56,11 @@ use Google\Ads\GoogleAds\V14\Services\AdGroupOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignBudgetOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignCriterionOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupAdsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateAdGroupsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignBudgetsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignCriteriaRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -87,6 +92,12 @@ class AddAppCampaign
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -183,8 +194,7 @@ class AddAppCampaign
         // Submits the campaign budget operation to add the campaign budget.
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         $response = $campaignBudgetServiceClient->mutateCampaignBudgets(
-            $customerId,
-            [$campaignBudgetOperation]
+            MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
 
         $createdCampaignBudgetResourceName = $response->getResults()[0]->getResourceName();
@@ -259,7 +269,9 @@ class AddAppCampaign
 
         // Submits the campaign operation and prints the results.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
-        $response = $campaignServiceClient->mutateCampaigns($customerId, [$campaignOperation]);
+        $response = $campaignServiceClient->mutateCampaigns(
+            MutateCampaignsRequest::build($customerId, [$campaignOperation])
+        );
 
         $createdCampaignResourceName = $response->getResults()[0]->getResourceName();
         printf(
@@ -336,8 +348,7 @@ class AddAppCampaign
         // Submits the criteria operations and prints their information.
         $campaignCriterionServiceClient = $googleAdsClient->getCampaignCriterionServiceClient();
         $response = $campaignCriterionServiceClient->mutateCampaignCriteria(
-            $customerId,
-            $campaignCriterionOperations
+            MutateCampaignCriteriaRequest::build($customerId, $campaignCriterionOperations)
         );
 
         printf(
@@ -382,7 +393,9 @@ class AddAppCampaign
 
         // Submits the ad group operation to add the ad group and prints the results.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
-        $response = $adGroupServiceClient->mutateAdGroups($customerId, [$adGroupOperation]);
+        $response = $adGroupServiceClient->mutateAdGroups(
+            MutateAdGroupsRequest::build($customerId, [$adGroupOperation])
+        );
 
         $createdAdGroupResourceName = $response->getResults()[0]->getResourceName();
         printf(
@@ -439,7 +452,9 @@ class AddAppCampaign
 
         // Submits the ad group ad operation to add the ad group ad and prints the results.
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
-        $response = $adGroupAdServiceClient->mutateAdGroupAds($customerId, [$adGroupAdOperation]);
+        $response = $adGroupAdServiceClient->mutateAdGroupAds(
+            MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
+        );
 
         $createdAdGroupAdResourceName = $response->getResults()[0]->getResourceName();
         printf(

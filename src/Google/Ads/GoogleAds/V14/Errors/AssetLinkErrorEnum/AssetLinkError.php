@@ -169,6 +169,18 @@ class AssetLinkError
      * Generated from protobuf enum <code>CANNOT_LINK_LOCATION_LEAD_FORM_WITHOUT_LOCATION_ASSET = 22;</code>
      */
     const CANNOT_LINK_LOCATION_LEAD_FORM_WITHOUT_LOCATION_ASSET = 22;
+    /**
+     * Customer is not verified.
+     *
+     * Generated from protobuf enum <code>CUSTOMER_NOT_VERIFIED = 23;</code>
+     */
+    const CUSTOMER_NOT_VERIFIED = 23;
+    /**
+     * Call to action value is not supported.
+     *
+     * Generated from protobuf enum <code>UNSUPPORTED_CALL_TO_ACTION = 24;</code>
+     */
+    const UNSUPPORTED_CALL_TO_ACTION = 24;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -194,6 +206,8 @@ class AssetLinkError
         self::CANNOT_LINK_TO_AUTOMATICALLY_CREATED_ASSET => 'CANNOT_LINK_TO_AUTOMATICALLY_CREATED_ASSET',
         self::CANNOT_MODIFY_ASSET_LINK_SOURCE => 'CANNOT_MODIFY_ASSET_LINK_SOURCE',
         self::CANNOT_LINK_LOCATION_LEAD_FORM_WITHOUT_LOCATION_ASSET => 'CANNOT_LINK_LOCATION_LEAD_FORM_WITHOUT_LOCATION_ASSET',
+        self::CUSTOMER_NOT_VERIFIED => 'CUSTOMER_NOT_VERIFIED',
+        self::UNSUPPORTED_CALL_TO_ACTION => 'UNSUPPORTED_CALL_TO_ACTION',
     ];
 
     public static function name($value)

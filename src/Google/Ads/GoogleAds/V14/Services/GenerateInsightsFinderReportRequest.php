@@ -45,6 +45,26 @@ class GenerateInsightsFinderReportRequest extends \Google\Protobuf\Internal\Mess
     protected $customer_insights_group = '';
 
     /**
+     * @param string                                                   $customerId       Required. The ID of the customer.
+     * @param \Google\Ads\GoogleAds\V14\Services\BasicInsightsAudience $baselineAudience Required. A baseline audience for this report, typically all people in a
+     *                                                                                   region.
+     * @param \Google\Ads\GoogleAds\V14\Services\BasicInsightsAudience $specificAudience Required. The specific audience of interest for this report.  The insights
+     *                                                                                   in the report will be based on attributes more prevalent in this audience
+     *                                                                                   than in the report's baseline audience.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\GenerateInsightsFinderReportRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, \Google\Ads\GoogleAds\V14\Services\BasicInsightsAudience $baselineAudience, \Google\Ads\GoogleAds\V14\Services\BasicInsightsAudience $specificAudience): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setBaselineAudience($baselineAudience)
+            ->setSpecificAudience($specificAudience);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

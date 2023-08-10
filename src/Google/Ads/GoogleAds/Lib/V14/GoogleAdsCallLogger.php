@@ -200,6 +200,6 @@ final class GoogleAdsCallLogger
             return $level;
         }
 
-        return array_flip(self::LOG_LEVELS)[$currentLevel - 1];
+        return strtolower(array_flip(self::LOG_LEVELS)[$currentLevel - 1]);
     }
 }

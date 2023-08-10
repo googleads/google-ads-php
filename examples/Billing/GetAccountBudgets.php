@@ -34,6 +34,7 @@ use Google\Ads\GoogleAds\V14\Enums\SpendingLimitTypeEnum\SpendingLimitType;
 use Google\Ads\GoogleAds\V14\Enums\TimeTypeEnum\TimeType;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 
 /** This example retrieves all account budgets for a Google Ads customer. */
@@ -57,6 +58,12 @@ class GetAccountBudgets
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -118,7 +125,9 @@ class GetAccountBudgets
             . 'FROM account_budget';
 
         // Issues a search request by specifying page size.
-        $stream = $googleAdsServiceClient->searchStream($customerId, $query);
+        $stream = $googleAdsServiceClient->searchStream(
+            SearchGoogleAdsStreamRequest::build($customerId, $query)
+        );
         /** @var GoogleAdsServerStreamDecorator $stream */
 
         // Iterates over all rows in all pages and prints the requested field values for

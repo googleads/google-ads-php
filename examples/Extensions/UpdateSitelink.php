@@ -33,6 +33,7 @@ use Google\Ads\GoogleAds\V14\Common\SitelinkFeedItem;
 use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V14\Resources\ExtensionFeedItem;
 use Google\Ads\GoogleAds\V14\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateExtensionFeedItemsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -61,6 +62,12 @@ class UpdateSitelink
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -128,8 +135,7 @@ class UpdateSitelink
         // Issues a mutate request to update the extension feed item.
         $extensionFeedItemServiceClient = $googleAdsClient->getExtensionFeedItemServiceClient();
         $response = $extensionFeedItemServiceClient->mutateExtensionFeedItems(
-            $customerId,
-            [$extensionFeedItemOperation]
+            MutateExtensionFeedItemsRequest::build($customerId, [$extensionFeedItemOperation])
         );
 
         // Prints the resource name of the updated extension feed item.

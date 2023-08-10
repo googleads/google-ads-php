@@ -138,6 +138,26 @@ class AuthenticationError
      * Generated from protobuf enum <code>ADVANCED_PROTECTION_NOT_ENROLLED = 24;</code>
      */
     const ADVANCED_PROTECTION_NOT_ENROLLED = 24;
+    /**
+     * The Cloud organization associated with the project is not recognized.
+     *
+     * Generated from protobuf enum <code>ORGANIZATION_NOT_RECOGNIZED = 26;</code>
+     */
+    const ORGANIZATION_NOT_RECOGNIZED = 26;
+    /**
+     * The Cloud organization associated with the project is not approved for
+     * prod access.
+     *
+     * Generated from protobuf enum <code>ORGANIZATION_NOT_APPROVED = 27;</code>
+     */
+    const ORGANIZATION_NOT_APPROVED = 27;
+    /**
+     * The Cloud organization associated with the project is not associated with
+     * the developer token.
+     *
+     * Generated from protobuf enum <code>ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN = 28;</code>
+     */
+    const ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN = 28;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -160,6 +180,9 @@ class AuthenticationError
         self::USER_ID_INVALID => 'USER_ID_INVALID',
         self::TWO_STEP_VERIFICATION_NOT_ENROLLED => 'TWO_STEP_VERIFICATION_NOT_ENROLLED',
         self::ADVANCED_PROTECTION_NOT_ENROLLED => 'ADVANCED_PROTECTION_NOT_ENROLLED',
+        self::ORGANIZATION_NOT_RECOGNIZED => 'ORGANIZATION_NOT_RECOGNIZED',
+        self::ORGANIZATION_NOT_APPROVED => 'ORGANIZATION_NOT_APPROVED',
+        self::ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN => 'ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN',
     ];
 
     public static function name($value)

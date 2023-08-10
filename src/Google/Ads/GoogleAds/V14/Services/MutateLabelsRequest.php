@@ -53,6 +53,21 @@ class MutateLabelsRequest extends \Google\Protobuf\Internal\Message
     protected $response_content_type = 0;
 
     /**
+     * @param string                                              $customerId Required. ID of the customer whose labels are being modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\LabelOperation[] $operations Required. The list of operations to perform on labels.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateLabelsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

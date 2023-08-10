@@ -50,6 +50,31 @@ class AssetGroupAsset extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
+     * Output only. Provides the PrimaryStatus of this asset link.
+     * Primary status is meant essentially to differentiate between the plain
+     * "status" field, which has advertiser set values of enabled, paused, or
+     * removed.  The primary status takes into account other signals (for assets
+     * its mainly policy and quality approvals) to come up with a more
+     * comprehensive status to indicate its serving state.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.enums.AssetLinkPrimaryStatusEnum.AssetLinkPrimaryStatus primary_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $primary_status = 0;
+    /**
+     * Output only. Provides a list of reasons for why an asset is not serving or
+     * not serving at full capacity.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v14.enums.AssetLinkPrimaryStatusReasonEnum.AssetLinkPrimaryStatusReason primary_status_reasons = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $primary_status_reasons;
+    /**
+     * Output only. Provides the details of the primary status and its associated
+     * reasons.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v14.common.AssetLinkPrimaryStatusDetails primary_status_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $primary_status_details;
+    /**
      * Output only. The performance of this asset group asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v14.enums.AssetPerformanceLabelEnum.AssetPerformanceLabel performance_label = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -81,6 +106,19 @@ class AssetGroupAsset extends \Google\Protobuf\Internal\Message
      *           example: HEADLINE, YOUTUBE_VIDEO etc
      *     @type int $status
      *           The status of the link between an asset and asset group.
+     *     @type int $primary_status
+     *           Output only. Provides the PrimaryStatus of this asset link.
+     *           Primary status is meant essentially to differentiate between the plain
+     *           "status" field, which has advertiser set values of enabled, paused, or
+     *           removed.  The primary status takes into account other signals (for assets
+     *           its mainly policy and quality approvals) to come up with a more
+     *           comprehensive status to indicate its serving state.
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $primary_status_reasons
+     *           Output only. Provides a list of reasons for why an asset is not serving or
+     *           not serving at full capacity.
+     *     @type array<\Google\Ads\GoogleAds\V14\Common\AssetLinkPrimaryStatusDetails>|\Google\Protobuf\Internal\RepeatedField $primary_status_details
+     *           Output only. Provides the details of the primary status and its associated
+     *           reasons.
      *     @type int $performance_label
      *           Output only. The performance of this asset group asset.
      *     @type \Google\Ads\GoogleAds\V14\Common\PolicySummary $policy_summary
@@ -224,6 +262,98 @@ class AssetGroupAsset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V14\Enums\AssetLinkStatusEnum\AssetLinkStatus::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Provides the PrimaryStatus of this asset link.
+     * Primary status is meant essentially to differentiate between the plain
+     * "status" field, which has advertiser set values of enabled, paused, or
+     * removed.  The primary status takes into account other signals (for assets
+     * its mainly policy and quality approvals) to come up with a more
+     * comprehensive status to indicate its serving state.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.enums.AssetLinkPrimaryStatusEnum.AssetLinkPrimaryStatus primary_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int
+     */
+    public function getPrimaryStatus()
+    {
+        return $this->primary_status;
+    }
+
+    /**
+     * Output only. Provides the PrimaryStatus of this asset link.
+     * Primary status is meant essentially to differentiate between the plain
+     * "status" field, which has advertiser set values of enabled, paused, or
+     * removed.  The primary status takes into account other signals (for assets
+     * its mainly policy and quality approvals) to come up with a more
+     * comprehensive status to indicate its serving state.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.enums.AssetLinkPrimaryStatusEnum.AssetLinkPrimaryStatus primary_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPrimaryStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V14\Enums\AssetLinkPrimaryStatusEnum\AssetLinkPrimaryStatus::class);
+        $this->primary_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Provides a list of reasons for why an asset is not serving or
+     * not serving at full capacity.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v14.enums.AssetLinkPrimaryStatusReasonEnum.AssetLinkPrimaryStatusReason primary_status_reasons = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPrimaryStatusReasons()
+    {
+        return $this->primary_status_reasons;
+    }
+
+    /**
+     * Output only. Provides a list of reasons for why an asset is not serving or
+     * not serving at full capacity.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v14.enums.AssetLinkPrimaryStatusReasonEnum.AssetLinkPrimaryStatusReason primary_status_reasons = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPrimaryStatusReasons($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V14\Enums\AssetLinkPrimaryStatusReasonEnum\AssetLinkPrimaryStatusReason::class);
+        $this->primary_status_reasons = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Provides the details of the primary status and its associated
+     * reasons.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v14.common.AssetLinkPrimaryStatusDetails primary_status_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPrimaryStatusDetails()
+    {
+        return $this->primary_status_details;
+    }
+
+    /**
+     * Output only. Provides the details of the primary status and its associated
+     * reasons.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v14.common.AssetLinkPrimaryStatusDetails primary_status_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param array<\Google\Ads\GoogleAds\V14\Common\AssetLinkPrimaryStatusDetails>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPrimaryStatusDetails($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V14\Common\AssetLinkPrimaryStatusDetails::class);
+        $this->primary_status_details = $arr;
 
         return $this;
     }

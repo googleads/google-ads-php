@@ -245,6 +245,12 @@ class AssetError
      * Generated from protobuf enum <code>LEAD_FORM_LOCATION_ANSWER_TYPE_DISALLOWED = 37;</code>
      */
     const LEAD_FORM_LOCATION_ANSWER_TYPE_DISALLOWED = 37;
+    /**
+     * Page Feed label text contains invalid characters.
+     *
+     * Generated from protobuf enum <code>PAGE_FEED_INVALID_LABEL_TEXT = 38;</code>
+     */
+    const PAGE_FEED_INVALID_LABEL_TEXT = 38;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -284,6 +290,7 @@ class AssetError
         self::CANNOT_MODIFY_ASSET_SOURCE => 'CANNOT_MODIFY_ASSET_SOURCE',
         self::CANNOT_MODIFY_AUTOMATICALLY_CREATED_ASSET => 'CANNOT_MODIFY_AUTOMATICALLY_CREATED_ASSET',
         self::LEAD_FORM_LOCATION_ANSWER_TYPE_DISALLOWED => 'LEAD_FORM_LOCATION_ANSWER_TYPE_DISALLOWED',
+        self::PAGE_FEED_INVALID_LABEL_TEXT => 'PAGE_FEED_INVALID_LABEL_TEXT',
     ];
 
     public static function name($value)

@@ -364,6 +364,10 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           Immutable. Combined Audience.
      *     @type \Google\Ads\GoogleAds\V14\Common\AudienceInfo $audience
      *           Immutable. Audience.
+     *     @type \Google\Ads\GoogleAds\V14\Common\LocationInfo $location
+     *           Immutable. Location.
+     *     @type \Google\Ads\GoogleAds\V14\Common\LanguageInfo $language
+     *           Immutable. Language.
      * }
      */
     public function __construct($data = NULL) {
@@ -2038,6 +2042,68 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Common\AudienceInfo::class);
         $this->writeOneof(79, $var);
+
+        return $this;
+    }
+
+    /**
+     * Immutable. Location.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.common.LocationInfo location = 82 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Ads\GoogleAds\V14\Common\LocationInfo|null
+     */
+    public function getLocation()
+    {
+        return $this->readOneof(82);
+    }
+
+    public function hasLocation()
+    {
+        return $this->hasOneof(82);
+    }
+
+    /**
+     * Immutable. Location.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.common.LocationInfo location = 82 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Ads\GoogleAds\V14\Common\LocationInfo $var
+     * @return $this
+     */
+    public function setLocation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Common\LocationInfo::class);
+        $this->writeOneof(82, $var);
+
+        return $this;
+    }
+
+    /**
+     * Immutable. Language.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.common.LanguageInfo language = 83 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Ads\GoogleAds\V14\Common\LanguageInfo|null
+     */
+    public function getLanguage()
+    {
+        return $this->readOneof(83);
+    }
+
+    public function hasLanguage()
+    {
+        return $this->hasOneof(83);
+    }
+
+    /**
+     * Immutable. Language.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.common.LanguageInfo language = 83 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Ads\GoogleAds\V14\Common\LanguageInfo $var
+     * @return $this
+     */
+    public function setLanguage($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Common\LanguageInfo::class);
+        $this->writeOneof(83, $var);
 
         return $this;
     }

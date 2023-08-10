@@ -25,6 +25,21 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
     protected $plannable_location_id = '';
 
     /**
+     * @param string $plannableLocationId Required. The ID of the selected location for planning. To list the
+     *                                    available plannable location IDs use
+     *                                    [ReachPlanService.ListPlannableLocations][google.ads.googleads.v14.services.ReachPlanService.ListPlannableLocations].
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\ListPlannableProductsRequest
+     *
+     * @experimental
+     */
+    public static function build(string $plannableLocationId): self
+    {
+        return (new self())
+            ->setPlannableLocationId($plannableLocationId);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {

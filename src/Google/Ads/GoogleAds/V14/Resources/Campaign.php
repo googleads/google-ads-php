@@ -128,6 +128,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $travel_campaign_settings = null;
     /**
+     * Settings for Discovery campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.Campaign.DiscoveryCampaignSettings discovery_campaign_settings = 87;</code>
+     */
+    protected $discovery_campaign_settings = null;
+    /**
      * Settings for Real-Time Bidding, a feature only available for campaigns
      * targeting the Ad Exchange network.
      *
@@ -287,6 +293,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * Selective optimization setting for this campaign, which includes a set of
      * conversion actions to optimize this campaign towards.
+     * This feature only applies to app campaigns that use MULTI_CHANNEL as
+     * AdvertisingChannelType and APP_CAMPAIGN or APP_CAMPAIGN_FOR_ENGAGEMENT as
+     * AdvertisingChannelSubType.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v14.resources.Campaign.SelectiveOptimization selective_optimization = 45;</code>
      */
@@ -437,6 +446,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           The Local Services Campaign related settings.
      *     @type \Google\Ads\GoogleAds\V14\Resources\Campaign\TravelCampaignSettings $travel_campaign_settings
      *           Settings for Travel campaign.
+     *     @type \Google\Ads\GoogleAds\V14\Resources\Campaign\DiscoveryCampaignSettings $discovery_campaign_settings
+     *           Settings for Discovery campaign.
      *     @type \Google\Ads\GoogleAds\V14\Common\RealTimeBiddingSetting $real_time_bidding_setting
      *           Settings for Real-Time Bidding, a feature only available for campaigns
      *           targeting the Ad Exchange network.
@@ -505,6 +516,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V14\Resources\Campaign\SelectiveOptimization $selective_optimization
      *           Selective optimization setting for this campaign, which includes a set of
      *           conversion actions to optimize this campaign towards.
+     *           This feature only applies to app campaigns that use MULTI_CHANNEL as
+     *           AdvertisingChannelType and APP_CAMPAIGN or APP_CAMPAIGN_FOR_ENGAGEMENT as
+     *           AdvertisingChannelSubType.
      *     @type \Google\Ads\GoogleAds\V14\Resources\Campaign\OptimizationGoalSetting $optimization_goal_setting
      *           Optimization goal setting for this campaign, which includes a set of
      *           optimization goal types.
@@ -568,8 +582,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           Manual impression-based bidding where user pays per thousand
      *           impressions.
      *     @type \Google\Ads\GoogleAds\V14\Common\ManualCpv $manual_cpv
-     *           Output only. A bidding strategy that pays a configurable amount per video
-     *           view.
+     *           A bidding strategy that pays a configurable amount per video view.
      *     @type \Google\Ads\GoogleAds\V14\Common\MaximizeConversions $maximize_conversions
      *           Standard Maximize Conversions bidding strategy that automatically
      *           maximizes number of conversions while spending your budget.
@@ -1082,6 +1095,42 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Resources\Campaign\TravelCampaignSettings::class);
         $this->travel_campaign_settings = $var;
+
+        return $this;
+    }
+
+    /**
+     * Settings for Discovery campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.Campaign.DiscoveryCampaignSettings discovery_campaign_settings = 87;</code>
+     * @return \Google\Ads\GoogleAds\V14\Resources\Campaign\DiscoveryCampaignSettings|null
+     */
+    public function getDiscoveryCampaignSettings()
+    {
+        return $this->discovery_campaign_settings;
+    }
+
+    public function hasDiscoveryCampaignSettings()
+    {
+        return isset($this->discovery_campaign_settings);
+    }
+
+    public function clearDiscoveryCampaignSettings()
+    {
+        unset($this->discovery_campaign_settings);
+    }
+
+    /**
+     * Settings for Discovery campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v14.resources.Campaign.DiscoveryCampaignSettings discovery_campaign_settings = 87;</code>
+     * @param \Google\Ads\GoogleAds\V14\Resources\Campaign\DiscoveryCampaignSettings $var
+     * @return $this
+     */
+    public function setDiscoveryCampaignSettings($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V14\Resources\Campaign\DiscoveryCampaignSettings::class);
+        $this->discovery_campaign_settings = $var;
 
         return $this;
     }
@@ -1895,6 +1944,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * Selective optimization setting for this campaign, which includes a set of
      * conversion actions to optimize this campaign towards.
+     * This feature only applies to app campaigns that use MULTI_CHANNEL as
+     * AdvertisingChannelType and APP_CAMPAIGN or APP_CAMPAIGN_FOR_ENGAGEMENT as
+     * AdvertisingChannelSubType.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v14.resources.Campaign.SelectiveOptimization selective_optimization = 45;</code>
      * @return \Google\Ads\GoogleAds\V14\Resources\Campaign\SelectiveOptimization|null
@@ -1917,6 +1969,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * Selective optimization setting for this campaign, which includes a set of
      * conversion actions to optimize this campaign towards.
+     * This feature only applies to app campaigns that use MULTI_CHANNEL as
+     * AdvertisingChannelType and APP_CAMPAIGN or APP_CAMPAIGN_FOR_ENGAGEMENT as
+     * AdvertisingChannelSubType.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v14.resources.Campaign.SelectiveOptimization selective_optimization = 45;</code>
      * @param \Google\Ads\GoogleAds\V14\Resources\Campaign\SelectiveOptimization $var
@@ -2480,10 +2535,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. A bidding strategy that pays a configurable amount per video
-     * view.
+     * A bidding strategy that pays a configurable amount per video view.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v14.common.ManualCpv manual_cpv = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v14.common.ManualCpv manual_cpv = 37;</code>
      * @return \Google\Ads\GoogleAds\V14\Common\ManualCpv|null
      */
     public function getManualCpv()
@@ -2497,10 +2551,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. A bidding strategy that pays a configurable amount per video
-     * view.
+     * A bidding strategy that pays a configurable amount per video view.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v14.common.ManualCpv manual_cpv = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v14.common.ManualCpv manual_cpv = 37;</code>
      * @param \Google\Ads\GoogleAds\V14\Common\ManualCpv $var
      * @return $this
      */

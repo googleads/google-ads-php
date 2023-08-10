@@ -37,6 +37,9 @@ use Google\Ads\GoogleAds\V14\Resources\CampaignSharedSet;
 use Google\Ads\GoogleAds\V14\Resources\SharedCriterion;
 use Google\Ads\GoogleAds\V14\Resources\SharedSet;
 use Google\Ads\GoogleAds\V14\Services\CampaignSharedSetOperation;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignSharedSetsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateSharedCriteriaRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateSharedSetsRequest;
 use Google\Ads\GoogleAds\V14\Services\SharedCriterionOperation;
 use Google\Ads\GoogleAds\V14\Services\SharedSetOperation;
 use Google\ApiCore\ApiException;
@@ -66,6 +69,12 @@ class CreateAndAttachSharedKeywordSet
         // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
+            // We set this value to true to show how to use GAPIC v2 source code. You can remove the
+            // below line if you wish to use the old-style source code. Note that in that case, you
+            // probably need to modify some parts of the code below to make it work.
+            // For more information, see
+            // https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic.
+            ->usingGapicV2Source(true)
             ->build();
 
         try {
@@ -123,10 +132,10 @@ class CreateAndAttachSharedKeywordSet
         $sharedSetOperation->setCreate($sharedSet);
 
         $sharedSetServiceClient = $googleAdsClient->getSharedSetServiceClient();
-        $response = $sharedSetServiceClient->mutateSharedSets(
+        $response = $sharedSetServiceClient->mutateSharedSets(MutateSharedSetsRequest::build(
             $customerId,
             [$sharedSetOperation]
-        );
+        ));
 
         $sharedSetResourceName = $response->getResults()[0]->getResourceName();
         print 'Created shared set ' . $sharedSetResourceName . PHP_EOL;
@@ -151,8 +160,7 @@ class CreateAndAttachSharedKeywordSet
 
         $sharedCriterionServiceClient = $googleAdsClient->getSharedCriterionServiceClient();
         $response = $sharedCriterionServiceClient->mutateSharedCriteria(
-            $customerId,
-            $sharedCriterionOperations
+            MutateSharedCriteriaRequest::build($customerId, $sharedCriterionOperations)
         );
 
         printf("Added %d shared criteria:%s", $response->getResults()->count(), PHP_EOL);
@@ -172,8 +180,7 @@ class CreateAndAttachSharedKeywordSet
 
         $campaignSharedSetServiceClient = $googleAdsClient->getCampaignSharedSetServiceClient();
         $response = $campaignSharedSetServiceClient->mutateCampaignSharedSets(
-            $customerId,
-            [$campaignSharedSetOperation]
+            MutateCampaignSharedSetsRequest::build($customerId, [$campaignSharedSetOperation])
         );
 
         print 'Created campaign shared set: ' . $response->getResults()[0]->getResourceName()

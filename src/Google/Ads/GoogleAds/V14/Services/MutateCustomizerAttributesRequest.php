@@ -55,6 +55,23 @@ class MutateCustomizerAttributesRequest extends \Google\Protobuf\Internal\Messag
     protected $response_content_type = 0;
 
     /**
+     * @param string                                                            $customerId Required. The ID of the customer whose customizer attributes are being
+     *                                                                                      modified.
+     * @param \Google\Ads\GoogleAds\V14\Services\CustomizerAttributeOperation[] $operations Required. The list of operations to perform on individual customizer
+     *                                                                                      attributes.
+     *
+     * @return \Google\Ads\GoogleAds\V14\Services\MutateCustomizerAttributesRequest
+     *
+     * @experimental
+     */
+    public static function build(string $customerId, array $operations): self
+    {
+        return (new self())
+            ->setCustomerId($customerId)
+            ->setOperations($operations);
+    }
+
+    /**
      * Constructor.
      *
      * @param array $data {
