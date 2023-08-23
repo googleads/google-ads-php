@@ -47,6 +47,6 @@ final class LoggerFactory
         $handler->getFormatter()->ignoreEmptyContextAndExtra();
         $handler->getFormatter()->allowInlineLineBreaks();
 
-        return new Logger($channel, [$handler]);
+        return new Logger(name: $channel, handlers: [$handler]);
     }
 }

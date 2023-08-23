@@ -48,30 +48,21 @@ class InfoRedactor
     private const SENSITIVE_TEXT_REPLACEMENT_FORMAT = '$1%s$2';
 
     /** @var array the list of customer user access' fields containing email addresses. */
-    private static $CUSTOMER_USER_ACCESS_EMAIL_FIELDS;
+    private const CUSTOMER_USER_ACCESS_EMAIL_FIELDS = [
+        'customer_user_access.inviter_user_email_address',
+        'customer_user_access.email_address'
+    ];
     /**
      * @var array the list of customer user access invitation' fields containing email addresses.
      */
-    private static $CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS;
+    private const CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS
+        = ['customer_user_access_invitation.email_address'];
     /** @var array the list of change event's fields containing email addresses. */
-    private static $CHANGE_EVENT_EMAIL_FIELDS;
+    private const CHANGE_EVENT_EMAIL_FIELDS = ['change_event.user_email'];
     /** @var array the list of feed placeholder's fields containing email addresses. */
-    private static $FEED_EMAIL_FIELDS;
+    private const FEED_EMAIL_FIELDS = ['feed.places_location_feed_data.email_address'];
     /** @var array the map of header keys to redacted values. */
     private static $HEADER_KEYS_TO_REDACTED_VALUES;
-
-    public function __construct()
-    {
-        // Initializes the private constants, as PHP doesn't support constants of an array type.
-        self::$CUSTOMER_USER_ACCESS_EMAIL_FIELDS = [
-            'customer_user_access.inviter_user_email_address',
-            'customer_user_access.email_address'
-        ];
-        self::$CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS =
-            ['customer_user_access_invitation.email_address'];
-        self::$CHANGE_EVENT_EMAIL_FIELDS = ['change_event.user_email'];
-        self::$FEED_EMAIL_FIELDS = ['feed.places_location_feed_data.email_address'];
-    }
 
     /**
      * Redacts the specified headers with the provided redacted values.
@@ -223,10 +214,10 @@ class InfoRedactor
         // Mask any emails in the WHERE clause of the GAQL query of the request.
         foreach (
             array_merge(
-                self::$CUSTOMER_USER_ACCESS_EMAIL_FIELDS,
-                self::$CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS,
-                self::$CHANGE_EVENT_EMAIL_FIELDS,
-                self::$FEED_EMAIL_FIELDS
+                self::CUSTOMER_USER_ACCESS_EMAIL_FIELDS,
+                self::CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS,
+                self::CHANGE_EVENT_EMAIL_FIELDS,
+                self::FEED_EMAIL_FIELDS
             ) as $field
         ) {
             $redactedQuery = preg_replace(
@@ -257,15 +248,15 @@ class InfoRedactor
         foreach ($response->getFieldMask()->getPaths() as $path) {
             foreach ($response->getResults() as $result) {
                 /** @var GoogleAdsRow $result */
-                if (in_array($path, self::$CUSTOMER_USER_ACCESS_EMAIL_FIELDS)) {
+                if (in_array($path, self::CUSTOMER_USER_ACCESS_EMAIL_FIELDS)) {
                     self::redactCustomerUserAccess($result->getCustomerUserAccess());
-                } elseif (in_array($path, self::$CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS)) {
+                } elseif (in_array($path, self::CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS)) {
                     self::redactCustomerUserAccessInvitation(
                         $result->getCustomerUserAccessInvitation()
                     );
-                } elseif (in_array($path, self::$CHANGE_EVENT_EMAIL_FIELDS)) {
+                } elseif (in_array($path, self::CHANGE_EVENT_EMAIL_FIELDS)) {
                     self::redactChangeEvent($result->getChangeEvent());
-                } elseif (in_array($path, self::$FEED_EMAIL_FIELDS)) {
+                } elseif (in_array($path, self::FEED_EMAIL_FIELDS)) {
                     self::redactFeed($result->getFeed());
                 }
             }

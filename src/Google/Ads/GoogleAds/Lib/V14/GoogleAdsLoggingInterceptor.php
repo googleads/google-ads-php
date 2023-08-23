@@ -57,9 +57,9 @@ class GoogleAdsLoggingInterceptor extends Interceptor
         array $options = []
     ) {
         return new GoogleAdsLoggingUnaryCall(
-            $continuation($method, $argument, $deserialize, $metadata, $options),
-            compact('method', 'argument', 'deserialize', 'metadata', 'options'),
-            $this->callLogger
+            innerCall: $continuation($method, $argument, $deserialize, $metadata, $options),
+            lastRequestData: compact('method', 'argument', 'deserialize', 'metadata', 'options'),
+            googleAdsCallLogger: $this->callLogger
         );
     }
 
@@ -83,9 +83,9 @@ class GoogleAdsLoggingInterceptor extends Interceptor
         array $options = []
     ) {
         return new GoogleAdsLoggingServerStreamingCall(
-            $continuation($method, $argument, $deserialize, $metadata, $options),
-            compact('method', 'argument', 'deserialize', 'metadata', 'options'),
-            $this->callLogger
+            innerCall: $continuation($method, $argument, $deserialize, $metadata, $options),
+            lastRequestData: compact('method', 'argument', 'deserialize', 'metadata', 'options'),
+            googleAdsCallLogger: $this->callLogger
         );
     }
 

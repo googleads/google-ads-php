@@ -79,7 +79,11 @@ final class ConfigurationLoader
             }
         }
 
-        return new Configuration(parse_ini_file($configIniFilePath, true, INI_SCANNER_TYPED));
+        return new Configuration(parse_ini_file(
+            filename: $configIniFilePath,
+            process_sections: true,
+            scanner_mode: INI_SCANNER_TYPED
+        ));
     }
 
     /**
@@ -90,7 +94,11 @@ final class ConfigurationLoader
      */
     public function fromString($iniString)
     {
-        return new Configuration(parse_ini_string($iniString, true, INI_SCANNER_TYPED));
+        return new Configuration(parse_ini_string(
+            ini_string: $iniString,
+            process_sections: true,
+            scanner_mode: INI_SCANNER_TYPED
+        ));
     }
 
     /**

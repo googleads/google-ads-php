@@ -88,12 +88,12 @@ final class GoogleAdsCallLogger
         ?object $response = null
     ) {
         $this->logSummary(
-            $requestData,
-            compact('response', 'status') + ['call' => $forwardingCall]
+            requestData: $requestData,
+            responseData: compact('response', 'status') + ['call' => $forwardingCall]
         );
         $this->logDetails(
-            $requestData,
-            compact('response', 'status') + ['call' => $forwardingCall]
+            requestData: $requestData,
+            responseData: compact('response', 'status') + ['call' => $forwardingCall]
         );
     }
 
