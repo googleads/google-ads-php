@@ -64,7 +64,7 @@ class FieldMasks
             ));
         }
         $paths = [];
-        self::buildPaths($paths, '', $original, $modified);
+        self::buildPaths($paths, currentField: '', original: $original, modified: $modified);
 
         return (new FieldMask())->setPaths($paths);
     }

@@ -91,7 +91,7 @@ trait GoogleAdsGapicClientTrait
                 $headers[self::$LINKED_CUSTOMER_ID] = [$this->linkedCustomerId];
             }
 
-            $callable = new FixedHeaderMiddleware($callable, $headers);
+            $callable = new FixedHeaderMiddleware(nextHandler: $callable, headers: $headers);
         }
         return $callable;
     }

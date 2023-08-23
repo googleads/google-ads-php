@@ -167,11 +167,14 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                 $this->impersonatedEmail
             );
         } else {
-            return new UserRefreshCredentials(null, [
-                'client_id' => $this->clientId,
-                'client_secret' => $this->clientSecret,
-                'refresh_token' => $this->refreshToken
-            ]);
+            return new UserRefreshCredentials(
+                scope: null,
+                jsonKey: [
+                    'client_id' => $this->clientId,
+                    'client_secret' => $this->clientSecret,
+                    'refresh_token' => $this->refreshToken
+                ]
+            );
         }
     }
 

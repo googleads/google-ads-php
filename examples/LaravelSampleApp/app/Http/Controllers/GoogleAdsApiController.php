@@ -31,7 +31,7 @@ use Illuminate\View\View;
 
 class GoogleAdsApiController extends Controller
 {
-    private static $REPORT_TYPE_TO_DEFAULT_SELECTED_FIELDS = [
+    private const REPORT_TYPE_TO_DEFAULT_SELECTED_FIELDS = [
         'campaign' => ['campaign.id', 'campaign.name', 'campaign.status'],
         'customer' => ['customer.id']
     ];
@@ -71,7 +71,7 @@ class GoogleAdsApiController extends Controller
 
             // Merges the list of metric fields to the resource ones that are selected by default.
             $selectedFields = array_merge(
-                self::$REPORT_TYPE_TO_DEFAULT_SELECTED_FIELDS[$reportType],
+                self::REPORT_TYPE_TO_DEFAULT_SELECTED_FIELDS[$reportType],
                 $selectedFields
             );
 
