@@ -157,13 +157,13 @@ class GenerateKeywordIdeas
         $requestOptionalArgs = [];
         if (empty($keywords)) {
             // Only page URL was specified, so use a UrlSeed.
-            $requestOptionalArgs['urlSeed'] = new UrlSeed(['url' => $pageUrl]);
+            $requestOptionalArgs['url_seed'] = new UrlSeed(['url' => $pageUrl]);
         } elseif (is_null($pageUrl)) {
             // Only keywords were specified, so use a KeywordSeed.
-            $requestOptionalArgs['keywordSeed'] = new KeywordSeed(['keywords' => $keywords]);
+            $requestOptionalArgs['keyword_seed'] = new KeywordSeed(['keywords' => $keywords]);
         } else {
             // Both page URL and keywords were specified, so use a KeywordAndUrlSeed.
-            $requestOptionalArgs['keywordAndUrlSeed'] =
+            $requestOptionalArgs['keyword_and_url_seed'] =
                 new KeywordAndUrlSeed(['url' => $pageUrl, 'keywords' => $keywords]);
         }
 
@@ -178,12 +178,12 @@ class GenerateKeywordIdeas
             new GenerateKeywordIdeasRequest([
                 // Set the language resource using the provided language ID.
                 'language' => ResourceNames::forLanguageConstant($languageId),
-                'customerId' => $customerId,
+                'customer_id' => $customerId,
                 // Add the resource name of each location ID to the request.
-                'geoTargetConstants' => $geoTargetConstants,
+                'geo_target_constants' => $geoTargetConstants,
                 // Set the network. To restrict to only Google Search, change the parameter below to
                 // KeywordPlanNetwork::GOOGLE_SEARCH.
-                'keywordPlanNetwork' => KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS
+                'keyword_plan_network' => KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS
             ] + $requestOptionalArgs)
         );
 
