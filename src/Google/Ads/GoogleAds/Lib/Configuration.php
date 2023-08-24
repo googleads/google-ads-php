@@ -23,16 +23,13 @@ namespace Google\Ads\GoogleAds\Lib;
  */
 class Configuration
 {
-    private $config;
-
     /**
-     * Creates a new configuration from the specified associative array of settings.
+     * Creates a new configuration from the specified associative array of config settings.
      *
-     * @param array $settings an associative array of settings
+     * @param array $config an associative array of config settings
      */
-    public function __construct(array $settings)
+    public function __construct(private array $config)
     {
-        $this->config = $settings;
     }
 
     /**

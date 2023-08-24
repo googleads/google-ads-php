@@ -38,10 +38,7 @@ class UnaryGoogleAdsResponseMetadataCallable extends GoogleAdsMiddlewareAbstract
      */
     public function __invoke(Call $call, array $options)
     {
-        if (
-            isset($options['withResponseMetadata'])
-            && !empty($options['withResponseMetadata'])
-        ) {
+        if (!empty($options['withResponseMetadata'])) {
             $next = new ResponseMetadataMiddleware($this->getNextHandler());
             return $next($call, $options)->then(function ($responseList) {
                 list($response, $metadata) = $responseList;
