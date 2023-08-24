@@ -287,7 +287,7 @@ class AddBusinessProfileLocationExtensions
                     $addedCustomerFeed->getResults()[0]->getResourceName(),
                     PHP_EOL
                 );
-            } catch (GoogleAdsException $googleAdsException) {
+            } catch (GoogleAdsException) {
                 // Waits using exponential backoff policy.
                 $sleepSeconds = self::POLL_FREQUENCY_SECONDS * pow(2, $numberOfAttempts);
                 // Exits the loop early if $sleepSeconds grows too large in the event that
