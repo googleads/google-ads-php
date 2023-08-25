@@ -36,7 +36,7 @@ class UnaryGoogleAdsExceptionMiddleware extends GoogleAdsMiddlewareAbstract
      * Creates the `GoogleAdsException` middleware.
      *
      * @param callable|null $nextHandler
-     * @param StatusMetadataExtractor $statusMetadataExtractor
+     * @param StatusMetadataExtractor|null $statusMetadataExtractor
      */
     public function __construct(
         callable $nextHandler = null,

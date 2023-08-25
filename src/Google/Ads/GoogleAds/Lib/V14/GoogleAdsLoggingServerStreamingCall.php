@@ -26,8 +26,6 @@ use Grpc\ServerStreamingCall;
  */
 class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
 {
-    private $googleAdsCallLogger;
-    private $lastRequestData;
     private $storedResponses;
 
     /**
@@ -39,12 +37,10 @@ class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
      */
     public function __construct(
         $innerCall,
-        array $lastRequestData,
-        GoogleAdsCallLogger $googleAdsCallLogger
+        private array $lastRequestData,
+        private GoogleAdsCallLogger $googleAdsCallLogger
     ) {
         parent::__construct($innerCall);
-        $this->lastRequestData = $lastRequestData;
-        $this->googleAdsCallLogger = $googleAdsCallLogger;
         if ($this->googleAdsCallLogger->isLoggingResponsesEnabled()) {
             $this->storedResponses = [];
         }
