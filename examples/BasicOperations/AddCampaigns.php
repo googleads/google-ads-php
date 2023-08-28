@@ -39,6 +39,7 @@ use Google\Ads\GoogleAds\V14\Resources\CampaignBudget;
 use Google\Ads\GoogleAds\V14\Services\CampaignBudgetOperation;
 use Google\Ads\GoogleAds\V14\Services\CampaignOperation;
 use Google\Ads\GoogleAds\V14\Services\MutateCampaignsRequest;
+use Google\Ads\GoogleAds\V14\Services\MutateCampaignBudgetsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example adds new campaigns to an account. */
@@ -190,8 +191,7 @@ class AddCampaigns
         // Issues a mutate request.
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         $response = $campaignBudgetServiceClient->mutateCampaignBudgets(
-            $customerId,
-            [$campaignBudgetOperation]
+            MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
 
         /** @var CampaignBudget $addedBudget */
