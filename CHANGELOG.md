@@ -1,3 +1,16 @@
+## 21.0.0
+*   Removed support for v12 of Google Ads API.
+*   Use [the GAPIC v2 source
+    code](https://developers.google.com/google-ads/api/docs/client-libs/php/gapic)
+    in `ResourceNames` and `ServiceClientFactoryTrait` of v14.
+*   Updated the source code to use PHP 8 features, e.g., named arguments,
+    private constants, constructor promotion, removing unused exception variables.
+*   Updated code examples:
+    * AddCampaigns
+    * GenerateKeywordIdeas
+*   Removed trivial code examples that can be easily obtained by changing small
+    parts of other code examples.
+
 ## 20.1.0
 *   Added support for v14_1 of Google Ads API.
 *   Removed the `final` modifier from `GoogleAdsClient`. This fixes
