@@ -16,6 +16,7 @@ return [
                 ],
             ],
             'templateMap' => [
+                'mobileAppCategoryConstant' => 'mobileAppCategoryConstants/{mobile_app_category_id}',
                 'sharedCriterion' => 'customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}',
                 'sharedSet' => 'customers/{customer_id}/sharedSets/{shared_set_id}',
             ],

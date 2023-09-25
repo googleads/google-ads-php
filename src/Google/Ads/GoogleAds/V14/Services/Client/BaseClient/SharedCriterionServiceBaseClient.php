@@ -100,6 +100,21 @@ abstract class SharedCriterionServiceBaseClient
 
     /**
      * Formats a string containing the fully-qualified path to represent a
+     * mobile_app_category_constant resource.
+     *
+     * @param string $mobileAppCategoryId
+     *
+     * @return string The formatted mobile_app_category_constant resource.
+     */
+    public static function mobileAppCategoryConstantName(string $mobileAppCategoryId): string
+    {
+        return self::getPathTemplate('mobileAppCategoryConstant')->render([
+            'mobile_app_category_id' => $mobileAppCategoryId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
      * shared_criterion resource.
      *
      * @param string $customerId
@@ -138,6 +153,7 @@ abstract class SharedCriterionServiceBaseClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - mobileAppCategoryConstant: mobileAppCategoryConstants/{mobile_app_category_id}
      * - sharedCriterion: customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}
      * - sharedSet: customers/{customer_id}/sharedSets/{shared_set_id}
      *

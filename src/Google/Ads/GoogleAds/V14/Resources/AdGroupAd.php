@@ -55,8 +55,8 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     protected $ad_strength = 0;
     /**
      * Output only. A list of recommendations to improve the ad strength. For
-     * example, a recommendation could be "Your headlines are a little too
-     * similar. Try adding more distinct headlines.".
+     * example, a recommendation could be "Try adding a few more unique headlines
+     * or unpinning some assets.".
      *
      * Generated from protobuf field <code>repeated string action_items = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -90,8 +90,8 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      *           Output only. Overall ad strength for this ad group ad.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $action_items
      *           Output only. A list of recommendations to improve the ad strength. For
-     *           example, a recommendation could be "Your headlines are a little too
-     *           similar. Try adding more distinct headlines.".
+     *           example, a recommendation could be "Try adding a few more unique headlines
+     *           or unpinning some assets.".
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Output only. The resource names of labels attached to this ad group ad.
      * }
@@ -293,8 +293,8 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. A list of recommendations to improve the ad strength. For
-     * example, a recommendation could be "Your headlines are a little too
-     * similar. Try adding more distinct headlines.".
+     * example, a recommendation could be "Try adding a few more unique headlines
+     * or unpinning some assets.".
      *
      * Generated from protobuf field <code>repeated string action_items = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -306,8 +306,8 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. A list of recommendations to improve the ad strength. For
-     * example, a recommendation could be "Your headlines are a little too
-     * similar. Try adding more distinct headlines.".
+     * example, a recommendation could be "Try adding a few more unique headlines
+     * or unpinning some assets.".
      *
      * Generated from protobuf field <code>repeated string action_items = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var

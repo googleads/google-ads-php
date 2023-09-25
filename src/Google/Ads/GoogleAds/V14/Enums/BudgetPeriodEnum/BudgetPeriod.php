@@ -33,7 +33,7 @@ class BudgetPeriod
     const DAILY = 2;
     /**
      * Custom budget, added back in V5.
-     * Custom bugdet can be used with total_amount to specify lifetime budget
+     * Custom budget can be used with total_amount to specify lifetime budget
      * limit. See: https://support.google.com/google-ads/answer/6385083 for more
      * info.
      *

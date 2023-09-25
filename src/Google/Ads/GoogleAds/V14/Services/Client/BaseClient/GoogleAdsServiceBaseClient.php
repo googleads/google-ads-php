@@ -854,6 +854,23 @@ abstract class GoogleAdsServiceBaseClient
 
     /**
      * Formats a string containing the fully-qualified path to represent a
+     * combined_audience resource.
+     *
+     * @param string $customerId
+     * @param string $combinedAudienceId
+     *
+     * @return string The formatted combined_audience resource.
+     */
+    public static function combinedAudienceName(string $customerId, string $combinedAudienceId): string
+    {
+        return self::getPathTemplate('combinedAudience')->render([
+            'customer_id' => $customerId,
+            'combined_audience_id' => $combinedAudienceId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
      * conversion_action resource.
      *
      * @param string $customerId
@@ -1431,6 +1448,21 @@ abstract class GoogleAdsServiceBaseClient
 
     /**
      * Formats a string containing the fully-qualified path to represent a
+     * mobile_app_category_constant resource.
+     *
+     * @param string $mobileAppCategoryId
+     *
+     * @return string The formatted mobile_app_category_constant resource.
+     */
+    public static function mobileAppCategoryConstantName(string $mobileAppCategoryId): string
+    {
+        return self::getPathTemplate('mobileAppCategoryConstant')->render([
+            'mobile_app_category_id' => $mobileAppCategoryId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
      * remarketing_action resource.
      *
      * @param string $customerId
@@ -1496,6 +1528,21 @@ abstract class GoogleAdsServiceBaseClient
         return self::getPathTemplate('smartCampaignSetting')->render([
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * topic_constant resource.
+     *
+     * @param string $topicId
+     *
+     * @return string The formatted topic_constant resource.
+     */
+    public static function topicConstantName(string $topicId): string
+    {
+        return self::getPathTemplate('topicConstant')->render([
+            'topic_id' => $topicId,
         ]);
     }
 
@@ -1577,6 +1624,7 @@ abstract class GoogleAdsServiceBaseClient
      * - campaignGroup: customers/{customer_id}/campaignGroups/{campaign_group_id}
      * - campaignLabel: customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}
      * - campaignSharedSet: customers/{customer_id}/campaignSharedSets/{campaign_id}~{shared_set_id}
+     * - combinedAudience: customers/{customer_id}/combinedAudiences/{combined_audience_id}
      * - conversionAction: customers/{customer_id}/conversionActions/{conversion_action_id}
      * - conversionCustomVariable: customers/{customer_id}/conversionCustomVariables/{conversion_custom_variable_id}
      * - conversionGoalCampaignConfig: customers/{customer_id}/conversionGoalCampaignConfigs/{campaign_id}
@@ -1610,10 +1658,12 @@ abstract class GoogleAdsServiceBaseClient
      * - label: customers/{customer_id}/labels/{label_id}
      * - languageConstant: languageConstants/{criterion_id}
      * - mediaFile: customers/{customer_id}/mediaFiles/{media_file_id}
+     * - mobileAppCategoryConstant: mobileAppCategoryConstants/{mobile_app_category_id}
      * - remarketingAction: customers/{customer_id}/remarketingActions/{remarketing_action_id}
      * - sharedCriterion: customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}
      * - sharedSet: customers/{customer_id}/sharedSets/{shared_set_id}
      * - smartCampaignSetting: customers/{customer_id}/smartCampaignSettings/{campaign_id}
+     * - topicConstant: topicConstants/{topic_id}
      * - userInterest: customers/{customer_id}/userInterests/{user_interest_id}
      * - userList: customers/{customer_id}/userLists/{user_list_id}
      *

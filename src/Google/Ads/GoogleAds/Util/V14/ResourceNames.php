@@ -1013,6 +1013,23 @@ final class ResourceNames
     }
 
     /**
+     * Generates a resource name of combined audience type.
+     *
+     * @param string $customerId
+     * @param string $combinedAudienceId
+     * @return string the combined audience resource name
+     */
+    public static function forCombinedAudience(
+        $customerId,
+        $combinedAudienceId
+    ): string {
+        return GoogleAdsServiceClient::combinedAudienceName(
+            $customerId,
+            $combinedAudienceId
+        );
+    }
+
+    /**
      * Generates a resource name of conversion action type.
      *
      * @param string $customerId
@@ -1771,6 +1788,20 @@ final class ResourceNames
     }
 
     /**
+     * Generates a resource name of mobile app category constant type.
+     *
+     * @param string $mobileAppCategoryId
+     * @return string the mobile app category constant resource name
+     */
+    public static function forMobileAppCategoryConstant(
+        $mobileAppCategoryId
+    ): string {
+        return GoogleAdsServiceClient::mobileAppCategoryConstantName(
+            $mobileAppCategoryId
+        );
+    }
+
+    /**
      * Generates a resource name of offline user data job type.
      *
      * @param string $customerId
@@ -1923,6 +1954,20 @@ final class ResourceNames
         return ThirdPartyAppAnalyticsLinkServiceClient::thirdPartyAppAnalyticsLinkName(
             $customerId,
             $customerLinkId
+        );
+    }
+
+    /**
+     * Generates a resource name of topic constant type.
+     *
+     * @param string $topicId
+     * @return string the topic constant resource name
+     */
+    public static function forTopicConstant(
+        $topicId
+    ): string {
+        return GoogleAdsServiceClient::topicConstantName(
+            $topicId
         );
     }
 

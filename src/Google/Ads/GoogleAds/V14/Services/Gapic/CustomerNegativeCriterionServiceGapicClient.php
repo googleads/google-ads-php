@@ -86,6 +86,8 @@ class CustomerNegativeCriterionServiceGapicClient
 
     private static $customerNegativeCriterionNameTemplate;
 
+    private static $mobileAppCategoryConstantNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -116,11 +118,21 @@ class CustomerNegativeCriterionServiceGapicClient
         return self::$customerNegativeCriterionNameTemplate;
     }
 
+    private static function getMobileAppCategoryConstantNameTemplate()
+    {
+        if (self::$mobileAppCategoryConstantNameTemplate == null) {
+            self::$mobileAppCategoryConstantNameTemplate = new PathTemplate('mobileAppCategoryConstants/{mobile_app_category_id}');
+        }
+
+        return self::$mobileAppCategoryConstantNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'customerNegativeCriterion' => self::getCustomerNegativeCriterionNameTemplate(),
+                'mobileAppCategoryConstant' => self::getMobileAppCategoryConstantNameTemplate(),
             ];
         }
 
@@ -145,10 +157,26 @@ class CustomerNegativeCriterionServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * mobile_app_category_constant resource.
+     *
+     * @param string $mobileAppCategoryId
+     *
+     * @return string The formatted mobile_app_category_constant resource.
+     */
+    public static function mobileAppCategoryConstantName($mobileAppCategoryId)
+    {
+        return self::getMobileAppCategoryConstantNameTemplate()->render([
+            'mobile_app_category_id' => $mobileAppCategoryId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - customerNegativeCriterion: customers/{customer_id}/customerNegativeCriteria/{criterion_id}
+     * - mobileAppCategoryConstant: mobileAppCategoryConstants/{mobile_app_category_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

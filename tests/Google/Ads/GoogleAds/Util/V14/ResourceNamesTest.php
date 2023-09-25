@@ -1420,6 +1420,31 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V14\ResourceNames::forCombinedAudience()
+     */
+    public function testGetNameForCombinedAudience()
+    {
+        $customerId = '111111';
+        $combinedAudienceId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/combinedAudiences/%s",
+            $customerId,
+            $combinedAudienceId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forCombinedAudience(
+                $customerId,
+                $combinedAudienceId
+            )
+        );
+
+        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($combinedAudienceId, $names['combined_audience_id']);
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V14\ResourceNames::forConversionAction()
      */
     public function testGetNameForConversionAction()
@@ -2531,6 +2556,27 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V14\ResourceNames::forMobileAppCategoryConstant()
+     */
+    public function testGetNameForMobileAppCategoryConstant()
+    {
+        $mobileAppCategoryId = '111111';
+        $expectedResourceName = sprintf(
+            "mobileAppCategoryConstants/%s",
+            $mobileAppCategoryId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forMobileAppCategoryConstant(
+                $mobileAppCategoryId
+            )
+        );
+
+        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($mobileAppCategoryId, $names['mobile_app_category_id']);
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V14\ResourceNames::forOfflineUserDataJob()
      */
     public function testGetNameForOfflineUserDataJob()
@@ -2757,6 +2803,27 @@ class ResourceNamesTest extends TestCase
         $names = ThirdPartyAppAnalyticsLinkServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($customerLinkId, $names['customer_link_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V14\ResourceNames::forTopicConstant()
+     */
+    public function testGetNameForTopicConstant()
+    {
+        $topicId = '111111';
+        $expectedResourceName = sprintf(
+            "topicConstants/%s",
+            $topicId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forTopicConstant(
+                $topicId
+            )
+        );
+
+        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($topicId, $names['topic_id']);
     }
 
     /**

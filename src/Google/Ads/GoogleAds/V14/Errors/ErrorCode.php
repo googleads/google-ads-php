@@ -42,7 +42,7 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *     @type int $internal_error
      *           An unexpected server-side error.
      *     @type int $quota_error
-     *           An error with the amonut of quota remaining.
+     *           An error with the amount of quota remaining.
      *     @type int $ad_error
      *           An error with an Ad Group Ad mutate.
      *     @type int $ad_group_error
@@ -598,7 +598,7 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An error with the amonut of quota remaining.
+     * An error with the amount of quota remaining.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v14.errors.QuotaErrorEnum.QuotaError quota_error = 11;</code>
      * @return int
@@ -614,7 +614,7 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An error with the amonut of quota remaining.
+     * An error with the amount of quota remaining.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v14.errors.QuotaErrorEnum.QuotaError quota_error = 11;</code>
      * @param int $var

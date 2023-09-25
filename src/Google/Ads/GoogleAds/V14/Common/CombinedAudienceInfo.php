@@ -18,7 +18,7 @@ class CombinedAudienceInfo extends \Google\Protobuf\Internal\Message
     /**
      * The CombinedAudience resource name.
      *
-     * Generated from protobuf field <code>string combined_audience = 1;</code>
+     * Generated from protobuf field <code>string combined_audience = 1 [(.google.api.resource_reference) = {</code>
      */
     protected $combined_audience = '';
 
@@ -40,7 +40,7 @@ class CombinedAudienceInfo extends \Google\Protobuf\Internal\Message
     /**
      * The CombinedAudience resource name.
      *
-     * Generated from protobuf field <code>string combined_audience = 1;</code>
+     * Generated from protobuf field <code>string combined_audience = 1 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCombinedAudience()
@@ -51,7 +51,7 @@ class CombinedAudienceInfo extends \Google\Protobuf\Internal\Message
     /**
      * The CombinedAudience resource name.
      *
-     * Generated from protobuf field <code>string combined_audience = 1;</code>
+     * Generated from protobuf field <code>string combined_audience = 1 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
