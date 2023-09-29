@@ -88,6 +88,12 @@ class CampaignCriterionServiceGapicClient
 
     private static $campaignCriterionNameTemplate;
 
+    private static $combinedAudienceNameTemplate;
+
+    private static $mobileAppCategoryConstantNameTemplate;
+
+    private static $topicConstantNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -127,12 +133,42 @@ class CampaignCriterionServiceGapicClient
         return self::$campaignCriterionNameTemplate;
     }
 
+    private static function getCombinedAudienceNameTemplate()
+    {
+        if (self::$combinedAudienceNameTemplate == null) {
+            self::$combinedAudienceNameTemplate = new PathTemplate('customers/{customer_id}/combinedAudiences/{combined_audience_id}');
+        }
+
+        return self::$combinedAudienceNameTemplate;
+    }
+
+    private static function getMobileAppCategoryConstantNameTemplate()
+    {
+        if (self::$mobileAppCategoryConstantNameTemplate == null) {
+            self::$mobileAppCategoryConstantNameTemplate = new PathTemplate('mobileAppCategoryConstants/{mobile_app_category_id}');
+        }
+
+        return self::$mobileAppCategoryConstantNameTemplate;
+    }
+
+    private static function getTopicConstantNameTemplate()
+    {
+        if (self::$topicConstantNameTemplate == null) {
+            self::$topicConstantNameTemplate = new PathTemplate('topicConstants/{topic_id}');
+        }
+
+        return self::$topicConstantNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'campaign' => self::getCampaignNameTemplate(),
                 'campaignCriterion' => self::getCampaignCriterionNameTemplate(),
+                'combinedAudience' => self::getCombinedAudienceNameTemplate(),
+                'mobileAppCategoryConstant' => self::getMobileAppCategoryConstantNameTemplate(),
+                'topicConstant' => self::getTopicConstantNameTemplate(),
             ];
         }
 
@@ -176,11 +212,61 @@ class CampaignCriterionServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * combined_audience resource.
+     *
+     * @param string $customerId
+     * @param string $combinedAudienceId
+     *
+     * @return string The formatted combined_audience resource.
+     */
+    public static function combinedAudienceName($customerId, $combinedAudienceId)
+    {
+        return self::getCombinedAudienceNameTemplate()->render([
+            'customer_id' => $customerId,
+            'combined_audience_id' => $combinedAudienceId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * mobile_app_category_constant resource.
+     *
+     * @param string $mobileAppCategoryId
+     *
+     * @return string The formatted mobile_app_category_constant resource.
+     */
+    public static function mobileAppCategoryConstantName($mobileAppCategoryId)
+    {
+        return self::getMobileAppCategoryConstantNameTemplate()->render([
+            'mobile_app_category_id' => $mobileAppCategoryId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * topic_constant resource.
+     *
+     * @param string $topicId
+     *
+     * @return string The formatted topic_constant resource.
+     */
+    public static function topicConstantName($topicId)
+    {
+        return self::getTopicConstantNameTemplate()->render([
+            'topic_id' => $topicId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - campaignCriterion: customers/{customer_id}/campaignCriteria/{campaign_id}~{criterion_id}
+     * - combinedAudience: customers/{customer_id}/combinedAudiences/{combined_audience_id}
+     * - mobileAppCategoryConstant: mobileAppCategoryConstants/{mobile_app_category_id}
+     * - topicConstant: topicConstants/{topic_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

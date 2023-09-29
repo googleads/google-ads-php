@@ -84,6 +84,8 @@ class SharedCriterionServiceGapicClient
         'https://www.googleapis.com/auth/adwords',
     ];
 
+    private static $mobileAppCategoryConstantNameTemplate;
+
     private static $sharedCriterionNameTemplate;
 
     private static $sharedSetNameTemplate;
@@ -109,6 +111,15 @@ class SharedCriterionServiceGapicClient
         ];
     }
 
+    private static function getMobileAppCategoryConstantNameTemplate()
+    {
+        if (self::$mobileAppCategoryConstantNameTemplate == null) {
+            self::$mobileAppCategoryConstantNameTemplate = new PathTemplate('mobileAppCategoryConstants/{mobile_app_category_id}');
+        }
+
+        return self::$mobileAppCategoryConstantNameTemplate;
+    }
+
     private static function getSharedCriterionNameTemplate()
     {
         if (self::$sharedCriterionNameTemplate == null) {
@@ -131,12 +142,28 @@ class SharedCriterionServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'mobileAppCategoryConstant' => self::getMobileAppCategoryConstantNameTemplate(),
                 'sharedCriterion' => self::getSharedCriterionNameTemplate(),
                 'sharedSet' => self::getSharedSetNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * mobile_app_category_constant resource.
+     *
+     * @param string $mobileAppCategoryId
+     *
+     * @return string The formatted mobile_app_category_constant resource.
+     */
+    public static function mobileAppCategoryConstantName($mobileAppCategoryId)
+    {
+        return self::getMobileAppCategoryConstantNameTemplate()->render([
+            'mobile_app_category_id' => $mobileAppCategoryId,
+        ]);
     }
 
     /**
@@ -179,6 +206,7 @@ class SharedCriterionServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - mobileAppCategoryConstant: mobileAppCategoryConstants/{mobile_app_category_id}
      * - sharedCriterion: customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}
      * - sharedSet: customers/{customer_id}/sharedSets/{shared_set_id}
      *

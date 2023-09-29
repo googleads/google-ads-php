@@ -18,7 +18,7 @@ class MobileAppCategoryInfo extends \Google\Protobuf\Internal\Message
     /**
      * The mobile app category constant resource name.
      *
-     * Generated from protobuf field <code>optional string mobile_app_category_constant = 2;</code>
+     * Generated from protobuf field <code>optional string mobile_app_category_constant = 2 [(.google.api.resource_reference) = {</code>
      */
     protected $mobile_app_category_constant = null;
 
@@ -40,7 +40,7 @@ class MobileAppCategoryInfo extends \Google\Protobuf\Internal\Message
     /**
      * The mobile app category constant resource name.
      *
-     * Generated from protobuf field <code>optional string mobile_app_category_constant = 2;</code>
+     * Generated from protobuf field <code>optional string mobile_app_category_constant = 2 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getMobileAppCategoryConstant()
@@ -61,7 +61,7 @@ class MobileAppCategoryInfo extends \Google\Protobuf\Internal\Message
     /**
      * The mobile app category constant resource name.
      *
-     * Generated from protobuf field <code>optional string mobile_app_category_constant = 2;</code>
+     * Generated from protobuf field <code>optional string mobile_app_category_constant = 2 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

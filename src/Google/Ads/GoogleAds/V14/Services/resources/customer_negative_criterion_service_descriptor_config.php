@@ -17,6 +17,7 @@ return [
             ],
             'templateMap' => [
                 'customerNegativeCriterion' => 'customers/{customer_id}/customerNegativeCriteria/{criterion_id}',
+                'mobileAppCategoryConstant' => 'mobileAppCategoryConstants/{mobile_app_category_id}',
             ],
         ],
     ],
