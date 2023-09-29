@@ -1,3 +1,7 @@
+## 21.0.1
+*   Fixed #946 by adding `forTopicConstant()` to
+    [ResourceNames](https://github.com/googleads/google-ads-php/blob/main/src/Google/Ads/GoogleAds/Util/V14/ResourceNames.php).
+
 ## 21.0.0
 *   Removed support for v12 of Google Ads API.
 *   Use [the GAPIC v2 source
