@@ -28,8 +28,6 @@ use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V15\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\V15\ResourceNames;
-use Google\Ads\GoogleAds\V15\Common\Consent;
-use Google\Ads\GoogleAds\V15\Enums\ConsentStatusEnum\ConsentStatus;
 use Google\Ads\GoogleAds\V15\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V15\Services\ClickConversion;
 use Google\Ads\GoogleAds\V15\Services\ClickConversionResult;
@@ -65,8 +63,6 @@ class UploadOfflineConversion
     // associate with the click conversion upload.
     private const CONVERSION_CUSTOM_VARIABLE_ID = null;
     private const CONVERSION_CUSTOM_VARIABLE_VALUE = null;
-    // Optional: The consent status for ad user data.
-    private const AD_USER_DATA_CONSENT = null;
 
     public static function main()
     {
@@ -82,8 +78,7 @@ class UploadOfflineConversion
             ArgumentNames::CONVERSION_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_VALUE => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_CUSTOM_VARIABLE_ID => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::CONVERSION_CUSTOM_VARIABLE_VALUE => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::AD_USER_DATA_CONSENT => GetOpt::OPTIONAL_ARGUMENT
+            ArgumentNames::CONVERSION_CUSTOM_VARIABLE_VALUE => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -116,10 +111,7 @@ class UploadOfflineConversion
                 $options[ArgumentNames::CONVERSION_CUSTOM_VARIABLE_ID]
                     ?: self::CONVERSION_CUSTOM_VARIABLE_ID,
                 $options[ArgumentNames::CONVERSION_CUSTOM_VARIABLE_VALUE]
-                    ?: self::CONVERSION_CUSTOM_VARIABLE_VALUE,
-                $options[ArgumentNames::AD_USER_DATA_CONSENT]
-                    ? ConsentStatus::value($options[ArgumentNames::AD_USER_DATA_CONSENT])
-                    : self::AD_USER_DATA_CONSENT
+                    ?: self::CONVERSION_CUSTOM_VARIABLE_VALUE
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -170,7 +162,6 @@ class UploadOfflineConversion
      *     associate with the upload
      * @param string|null $conversionCustomVariableValue the value of the conversion custom
      *     variable to associate with the upload
-     * @param int|null $adUserDataConsent the ad user data consent for the click
      */
     // [START upload_offline_conversion]
     public static function runExample(
@@ -184,8 +175,7 @@ class UploadOfflineConversion
         string $conversionDateTime,
         float $conversionValue,
         ?string $conversionCustomVariableId,
-        ?string $conversionCustomVariableValue,
-        ?int $adUserDataConsent
+        ?string $conversionCustomVariableValue
     ) {
         // Verifies that exactly one of gclid, gbraid, and wbraid is specified, as required.
         // See https://developers.google.com/google-ads/api/docs/conversions/upload-clicks for details.
@@ -230,12 +220,6 @@ class UploadOfflineConversion
                 ),
                 'value' => $conversionCustomVariableValue
             ])]);
-        }
-        // Sets the ad user data consent, if provided.
-        if (!empty($adUserDataConsent)) {
-            // Specifies whether user consent was obtained for the data you are uploading. See
-            // https://www.google.com/about/company/user-consent-policy for details.
-            $clickConversion->setConsent(new Consent(['ad_user_data' => $adUserDataConsent]));
         }
 
         if (!empty($orderId)) {
