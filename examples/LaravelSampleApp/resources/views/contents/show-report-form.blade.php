@@ -42,7 +42,7 @@
                 <div class="col-sm-2">
                     <label for="reportType" class="col-form-label">Type
                         <small id="reportTypeHelp" class="form-text text-muted">See all types
-                            <a href="https://developers.google.com/google-ads/api/fields/v14/overview" target="_blank">here</a>.
+                            <a href="https://developers.google.com/google-ads/api/fields/v15/overview" target="_blank">here</a>.
                         </small>
                     </label>
                 </div>
@@ -55,7 +55,7 @@
                         specific to the specified type will also be selected. For example,
                         <code>campaign.id</code> and
                         <code>campaign.status</code> will be selected when <code>
-                            <a href="https://developers.google.com/google-ads/api/fields/v14/campaign"
+                            <a href="https://developers.google.com/google-ads/api/fields/v15/campaign"
                                     target="_blank">campaign</a>
                         </code> is specified.
                     </small>
@@ -64,7 +64,7 @@
             <fieldset class="form-group">
                 <div class="row">
                     <legend class="col-sm-2 col-form-label pt-0">
-                        <a href="https://developers.google.com/google-ads/api/fields/v14/metrics"
+                        <a href="https://developers.google.com/google-ads/api/fields/v15/metrics"
                            target="_blank">Metric fields</a> to be retrieved:
                     </legend>
                     <div class="col-sm-4">

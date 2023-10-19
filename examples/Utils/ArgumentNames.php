@@ -30,6 +30,8 @@ final class ArgumentNames
     public const AD_ID = 'adId';
     public const AD_GROUP_ID = 'adGroupId';
     public const AD_GROUP_IDS = 'adGroupIds';
+    public const AD_PERSONALIZATION_CONSENT = 'adPersonalizationConsent';
+    public const AD_USER_DATA_CONSENT = 'adUserDataConsent';
     public const ASSET_GROUP_ID = 'assetGroupId';
     public const ATTRIBUTE_VALUE = 'attributeValue';
     public const AUDIENCE_ID = 'audienceId';
@@ -138,6 +140,8 @@ final class ArgumentNames
         self::AD_ID => 'The ad ID',
         self::AD_GROUP_ID => 'The ad group ID',
         self::AD_GROUP_IDS => 'The ad group IDs',
+        self::AD_PERSONALIZATION_CONSENT => 'The ad personalization consent, e.g., GRANTED',
+        self::AD_USER_DATA_CONSENT => 'The ad user data consent, e.g., GRANTED',
         self::ASSET_GROUP_ID => 'The asset group ID',
         self::ATTRIBUTE_VALUE => 'The attribute value',
         self::AUDIENCE_ID => 'The audience ID',

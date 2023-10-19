@@ -1,3 +1,30 @@
+## 21.1.0
+*   Added support for v15 of Google Ads API. The following code examples still use v14 because the services in the examples were removed in v15:
+    * ApproveMerchantCenterLink
+    * RejectMerchantCenterLink
+    * UploadImage
+    * UploadMediaBundle
+*   The GAPIC v2 service clients (`src/Google/Ads/GoogleAds/v15/Services/Client/<SERVICE_NAME>Client.php`) no longer rely on base classes (`src/Google/Ads/GoogleAds/v15/Services/Client/BaseClient/<SERVICE_NAME>BaseClient.php`). All functions and variables are now directly included in the service classes.
+*   Added support for `useCloudOrgForApiAccess` config. This is in preparation for the pilot that uses Google Cloud orgs for API Access levels.
+*   Updated
+    [`InfoRedactor`](https://github.com/googleads/google-ads-php/blob/main/src/Google/Ads/GoogleAds/Lib/V15/InfoRedactor.php) to redact fields of Local Services lead and Local Services lead
+conversation.
+*   Updated code examples:
+    * AddBillingSetup
+    * AddPerformanceMaxProductListingGroupTree
+    * AddCustomerMatchUserList
+    * UploadCallConversion
+    * UploadOfflineConversion
+    * UploadStoreSalesTransactions
+*   Renamed and updated code examples:
+    * UploadConversionWithIdentifiers to UploadEnhancedConversionsForLeads
+    * UploadConversionEnhancement to UploadEnhancedConversionsForWeb
+*   Fixed the following Shopping examples after the `ShoppingSetting::sales_country` field is
+    removed:
+    * AddMerchantCenterDynamicRemarketingCampaign
+    * AddPerformanceMaxRetailCampaign
+    * AddShoppingProductAd
+
 ## 21.0.1
 *   Fixed #946 by adding `forTopicConstant()` to
     [ResourceNames](https://github.com/googleads/google-ads-php/blob/main/src/Google/Ads/GoogleAds/Util/V14/ResourceNames.php).

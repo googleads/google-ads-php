@@ -35,7 +35,17 @@ use Google\Ads\GoogleAds\V14\Services\MediaFileOperation;
 use Google\Ads\GoogleAds\V14\Services\MutateMediaFilesRequest;
 use Google\ApiCore\ApiException;
 
-/** This example uploads an HTML5 zip file as a media bundle. */
+/**
+ * This example uploads an HTML5 zip file as a media bundle.
+ *
+ * This code example uses version v14 of the Google Ads API. Google Ads is migrating
+ * from individual media files to assets, and version v15 of the API removed support for
+ * MediaFileService as part of this migration. Once your Ads account is migrated, this code
+ * example will stop working, and you should use UploadImageAsset.php instead. This code
+ * example will be removed once the migration completes. See
+ * https://ads-developers.googleblog.com/2023/07/image-and-location-auto-migration.html for
+ * more details.
+ */
 class UploadMediaBundle
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';

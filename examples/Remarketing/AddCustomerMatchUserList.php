@@ -25,34 +25,36 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V14\GoogleAdsFailures;
-use Google\Ads\GoogleAds\Util\V14\ResourceNames;
-use Google\Ads\GoogleAds\V14\Common\CrmBasedUserListInfo;
-use Google\Ads\GoogleAds\V14\Common\CustomerMatchUserListMetadata;
-use Google\Ads\GoogleAds\V14\Common\OfflineUserAddressInfo;
-use Google\Ads\GoogleAds\V14\Common\UserData;
-use Google\Ads\GoogleAds\V14\Common\UserIdentifier;
-use Google\Ads\GoogleAds\V14\Enums\CustomerMatchUploadKeyTypeEnum\CustomerMatchUploadKeyType;
-use Google\Ads\GoogleAds\V14\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
-use Google\Ads\GoogleAds\V14\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
-use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V14\Resources\OfflineUserDataJob;
-use Google\Ads\GoogleAds\V14\Resources\UserList;
-use Google\Ads\GoogleAds\V14\Services\AddOfflineUserDataJobOperationsRequest;
-use Google\Ads\GoogleAds\V14\Services\AddOfflineUserDataJobOperationsResponse;
-use Google\Ads\GoogleAds\V14\Services\CreateOfflineUserDataJobRequest;
-use Google\Ads\GoogleAds\V14\Services\CreateOfflineUserDataJobResponse;
-use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V14\Services\MutateUserListsRequest;
-use Google\Ads\GoogleAds\V14\Services\OfflineUserDataJobOperation;
-use Google\Ads\GoogleAds\V14\Services\RunOfflineUserDataJobRequest;
-use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
-use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsStreamRequest;
-use Google\Ads\GoogleAds\V14\Services\UserListOperation;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V15\GoogleAdsFailures;
+use Google\Ads\GoogleAds\Util\V15\ResourceNames;
+use Google\Ads\GoogleAds\V15\Common\Consent;
+use Google\Ads\GoogleAds\V15\Common\CrmBasedUserListInfo;
+use Google\Ads\GoogleAds\V15\Common\CustomerMatchUserListMetadata;
+use Google\Ads\GoogleAds\V15\Common\OfflineUserAddressInfo;
+use Google\Ads\GoogleAds\V15\Common\UserData;
+use Google\Ads\GoogleAds\V15\Common\UserIdentifier;
+use Google\Ads\GoogleAds\V15\Enums\ConsentStatusEnum\ConsentStatus;
+use Google\Ads\GoogleAds\V15\Enums\CustomerMatchUploadKeyTypeEnum\CustomerMatchUploadKeyType;
+use Google\Ads\GoogleAds\V15\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
+use Google\Ads\GoogleAds\V15\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
+use Google\Ads\GoogleAds\V15\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V15\Resources\OfflineUserDataJob;
+use Google\Ads\GoogleAds\V15\Resources\UserList;
+use Google\Ads\GoogleAds\V15\Services\AddOfflineUserDataJobOperationsRequest;
+use Google\Ads\GoogleAds\V15\Services\AddOfflineUserDataJobOperationsResponse;
+use Google\Ads\GoogleAds\V15\Services\CreateOfflineUserDataJobRequest;
+use Google\Ads\GoogleAds\V15\Services\CreateOfflineUserDataJobResponse;
+use Google\Ads\GoogleAds\V15\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V15\Services\MutateUserListsRequest;
+use Google\Ads\GoogleAds\V15\Services\OfflineUserDataJobOperation;
+use Google\Ads\GoogleAds\V15\Services\RunOfflineUserDataJobRequest;
+use Google\Ads\GoogleAds\V15\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\V15\Services\SearchGoogleAdsStreamRequest;
+use Google\Ads\GoogleAds\V15\Services\UserListOperation;
 use Google\ApiCore\ApiException;
 
 /**
@@ -84,6 +86,10 @@ class AddCustomerMatchUserList
     // Optional: The ID of an existing offline user data job in the PENDING state. If not specified,
     // this example will create a new job.
     private const OFFLINE_USER_DATA_JOB_ID = null;
+    // Optional: The consent status for ad personalization.
+    private const AD_PERSONALIZATION_CONSENT = null;
+    // Optional: The consent status for ad user data.
+    private const AD_USER_DATA_CONSENT = null;
     // Optional: If true, runs the offline user data job after adding operations. The default value
     // is false.
     private const RUN_JOB = false;
@@ -96,7 +102,9 @@ class AddCustomerMatchUserList
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::RUN_JOB => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::USER_LIST_ID => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::OFFLINE_USER_DATA_JOB_ID => GetOpt::OPTIONAL_ARGUMENT
+            ArgumentNames::OFFLINE_USER_DATA_JOB_ID => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::AD_PERSONALIZATION_CONSENT => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::AD_USER_DATA_CONSENT => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -124,7 +132,13 @@ class AddCustomerMatchUserList
                     FILTER_VALIDATE_BOOLEAN
                 ),
                 $options[ArgumentNames::USER_LIST_ID] ?: self::USER_LIST_ID,
-                $options[ArgumentNames::OFFLINE_USER_DATA_JOB_ID] ?: self::OFFLINE_USER_DATA_JOB_ID
+                $options[ArgumentNames::OFFLINE_USER_DATA_JOB_ID] ?: self::OFFLINE_USER_DATA_JOB_ID,
+                $options[ArgumentNames::AD_PERSONALIZATION_CONSENT]
+                    ? ConsentStatus::value($options[ArgumentNames::AD_PERSONALIZATION_CONSENT])
+                    : self::AD_PERSONALIZATION_CONSENT,
+                $options[ArgumentNames::AD_USER_DATA_CONSENT]
+                    ? ConsentStatus::value($options[ArgumentNames::AD_USER_DATA_CONSENT])
+                    : self::AD_USER_DATA_CONSENT
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -164,13 +178,19 @@ class AddCustomerMatchUserList
      *     user list
      * @param int|null $offlineUserDataJobId optional ID of an existing OfflineUserDataJob in the
      *     PENDING state. If `null`, create a new job
+     * @param int|null $adPersonalizationConsent consent status for ad personalization for all
+     *     members in the job
+     * @param int|null $adUserDataConsent the consent status for ad user data for all members in
+     *     the job
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         bool $runJob,
         ?int $userListId,
-        ?int $offlineUserDataJobId
+        ?int $offlineUserDataJobId,
+        ?int $adPersonalizationConsent,
+        ?int $adUserDataConsent
     ) {
         $userListResourceName = null;
         if (is_null($offlineUserDataJobId)) {
@@ -188,7 +208,9 @@ class AddCustomerMatchUserList
             $customerId,
             $runJob,
             $userListResourceName,
-            $offlineUserDataJobId
+            $offlineUserDataJobId,
+            $adPersonalizationConsent,
+            $adUserDataConsent
         );
     }
 
@@ -248,6 +270,10 @@ class AddCustomerMatchUserList
      *     user list
      * @param int|null $offlineUserDataJobId optional ID of an existing OfflineUserDataJob in the
      *     PENDING state. If `null`, create a new job
+     * @param int|null $adPersonalizationConsent consent status for ad personalization for all
+     *     members in the job. Only used if $offlineUserDataJobId is `null`
+     * @param int|null $adUserDataConsent consent status for ad user data for all members in the
+     *     job. Only used if $offlineUserDataJobId is `null`
      */
     // [START add_customer_match_user_list]
     private static function addUsersToCustomerMatchUserList(
@@ -255,9 +281,10 @@ class AddCustomerMatchUserList
         int $customerId,
         bool $runJob,
         ?string $userListResourceName,
-        ?int $offlineUserDataJobId
+        ?int $offlineUserDataJobId,
+        ?int $adPersonalizationConsent,
+        ?int $adUserDataConsent
     ) {
-        $offlineUserDataJobResourceName = null;
         $offlineUserDataJobServiceClient =
             $googleAdsClient->getOfflineUserDataJobServiceClient();
 
@@ -269,6 +296,19 @@ class AddCustomerMatchUserList
                     'user_list' => $userListResourceName
                 ])
             ]);
+            // Adds consent information to the job if specified.
+            if (!empty($adPersonalizationConsent) || !empty($adUserDataConsent)) {
+                $consent = new Consent();
+                if (!empty($adPersonalizationConsent)) {
+                    $consent->setAdPersonalization($adPersonalizationConsent);
+                }
+                if (!empty($adUserDataConsent)) {
+                    $consent->setAdUserData($adUserDataConsent);
+                }
+                // Specifies whether user consent was obtained for the data you are uploading. See
+                // https://www.google.com/about/company/user-consent-policy for details.
+                $offlineUserDataJob->getCustomerMatchUserListMetadata()->setConsent($consent);
+            }
 
             // Issues a request to create the offline user data job.
             /** @var CreateOfflineUserDataJobResponse $createOfflineUserDataJobResponse */
