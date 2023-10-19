@@ -24,38 +24,38 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V14\Common\ListingGroupInfo;
-use Google\Ads\GoogleAds\V14\Common\ManualCpc;
-use Google\Ads\GoogleAds\V14\Common\ShoppingProductAdInfo;
-use Google\Ads\GoogleAds\V14\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V14\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V14\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V14\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V14\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V14\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V14\Enums\ListingGroupTypeEnum\ListingGroupType;
-use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V14\Resources\Ad;
-use Google\Ads\GoogleAds\V14\Resources\AdGroup;
-use Google\Ads\GoogleAds\V14\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V14\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V14\Resources\Campaign;
-use Google\Ads\GoogleAds\V14\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V14\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V14\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V14\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V14\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V14\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V14\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V14\Services\MutateAdGroupAdsRequest;
-use Google\Ads\GoogleAds\V14\Services\MutateAdGroupCriteriaRequest;
-use Google\Ads\GoogleAds\V14\Services\MutateAdGroupsRequest;
-use Google\Ads\GoogleAds\V14\Services\MutateCampaignBudgetsRequest;
-use Google\Ads\GoogleAds\V14\Services\MutateCampaignsRequest;
+use Google\Ads\GoogleAds\V15\Common\ListingGroupInfo;
+use Google\Ads\GoogleAds\V15\Common\ManualCpc;
+use Google\Ads\GoogleAds\V15\Common\ShoppingProductAdInfo;
+use Google\Ads\GoogleAds\V15\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V15\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V15\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V15\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V15\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V15\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V15\Enums\ListingGroupTypeEnum\ListingGroupType;
+use Google\Ads\GoogleAds\V15\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V15\Resources\Ad;
+use Google\Ads\GoogleAds\V15\Resources\AdGroup;
+use Google\Ads\GoogleAds\V15\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V15\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V15\Resources\Campaign;
+use Google\Ads\GoogleAds\V15\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V15\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V15\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V15\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V15\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V15\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V15\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V15\Services\MutateAdGroupAdsRequest;
+use Google\Ads\GoogleAds\V15\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V15\Services\MutateAdGroupsRequest;
+use Google\Ads\GoogleAds\V15\Services\MutateCampaignBudgetsRequest;
+use Google\Ads\GoogleAds\V15\Services\MutateCampaignsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -238,8 +238,6 @@ class AddShoppingProductAd
             'advertising_channel_type' => AdvertisingChannelType::SHOPPING,
             // Configures the shopping settings.
             'shopping_setting' => new ShoppingSetting([
-                // Sets the sales country of products to include in the campaign.
-                'sales_country' => 'US',
                 // Sets the priority of the campaign. Higher numbers take priority over lower
                 // numbers. For Shopping product ad campaigns, allowed values are between 0 and 2,
                 // inclusive.

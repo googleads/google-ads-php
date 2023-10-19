@@ -23,15 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V14\Enums\GeoTargetConstantStatusEnum\GeoTargetConstantStatus;
-use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V14\Services\GeoTargetConstantSuggestion;
-use Google\Ads\GoogleAds\V14\Services\SuggestGeoTargetConstantsRequest;
-use Google\Ads\GoogleAds\V14\Services\SuggestGeoTargetConstantsRequest\LocationNames;
+use Google\Ads\GoogleAds\V15\Enums\GeoTargetConstantStatusEnum\GeoTargetConstantStatus;
+use Google\Ads\GoogleAds\V15\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V15\Services\GeoTargetConstantSuggestion;
+use Google\Ads\GoogleAds\V15\Services\SuggestGeoTargetConstantsRequest;
+use Google\Ads\GoogleAds\V15\Services\SuggestGeoTargetConstantsRequest\LocationNames;
 use Google\ApiCore\ApiException;
 
 /**

@@ -24,41 +24,41 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V14\ResourceNames;
-use Google\Ads\GoogleAds\V14\Common\AdImageAsset;
-use Google\Ads\GoogleAds\V14\Common\AdTextAsset;
-use Google\Ads\GoogleAds\V14\Common\ImageAsset;
-use Google\Ads\GoogleAds\V14\Common\ManualCpc;
-use Google\Ads\GoogleAds\V14\Common\ResponsiveDisplayAdInfo;
-use Google\Ads\GoogleAds\V14\Common\UserListInfo;
-use Google\Ads\GoogleAds\V14\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V14\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V14\Enums\AssetTypeEnum\AssetType;
-use Google\Ads\GoogleAds\V14\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V14\Enums\DisplayAdFormatSettingEnum\DisplayAdFormatSetting;
-use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V14\Resources\Ad;
-use Google\Ads\GoogleAds\V14\Resources\AdGroup;
-use Google\Ads\GoogleAds\V14\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V14\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V14\Resources\Asset;
-use Google\Ads\GoogleAds\V14\Resources\Campaign;
-use Google\Ads\GoogleAds\V14\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V14\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V14\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V14\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V14\Services\AssetOperation;
-use Google\Ads\GoogleAds\V14\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V14\Services\MutateAdGroupAdsRequest;
-use Google\Ads\GoogleAds\V14\Services\MutateAdGroupCriteriaRequest;
-use Google\Ads\GoogleAds\V14\Services\MutateAdGroupsRequest;
-use Google\Ads\GoogleAds\V14\Services\MutateAssetResult;
-use Google\Ads\GoogleAds\V14\Services\MutateAssetsRequest;
-use Google\Ads\GoogleAds\V14\Services\MutateCampaignsRequest;
+use Google\Ads\GoogleAds\Util\V15\ResourceNames;
+use Google\Ads\GoogleAds\V15\Common\AdImageAsset;
+use Google\Ads\GoogleAds\V15\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V15\Common\ImageAsset;
+use Google\Ads\GoogleAds\V15\Common\ManualCpc;
+use Google\Ads\GoogleAds\V15\Common\ResponsiveDisplayAdInfo;
+use Google\Ads\GoogleAds\V15\Common\UserListInfo;
+use Google\Ads\GoogleAds\V15\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V15\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V15\Enums\AssetTypeEnum\AssetType;
+use Google\Ads\GoogleAds\V15\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V15\Enums\DisplayAdFormatSettingEnum\DisplayAdFormatSetting;
+use Google\Ads\GoogleAds\V15\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V15\Resources\Ad;
+use Google\Ads\GoogleAds\V15\Resources\AdGroup;
+use Google\Ads\GoogleAds\V15\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V15\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V15\Resources\Asset;
+use Google\Ads\GoogleAds\V15\Resources\Campaign;
+use Google\Ads\GoogleAds\V15\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V15\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V15\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V15\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V15\Services\AssetOperation;
+use Google\Ads\GoogleAds\V15\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V15\Services\MutateAdGroupAdsRequest;
+use Google\Ads\GoogleAds\V15\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V15\Services\MutateAdGroupsRequest;
+use Google\Ads\GoogleAds\V15\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\V15\Services\MutateAssetsRequest;
+use Google\Ads\GoogleAds\V15\Services\MutateCampaignsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -191,11 +191,6 @@ class AddMerchantCenterDynamicRemarketingCampaign
         $shoppingSettings = new ShoppingSetting([
             'campaign_priority' => 0,
             'merchant_id' => $merchantCenterAccountId,
-            // Display Network campaigns do not support partition by country. The only
-            // supported value is "ZZ". This signals that products from all countries are
-            // available in the campaign. The actual products which serve are based on
-            // the products tagged in the user list entry.
-            'sales_country' => 'ZZ',
             'enable_local' => true
         ]);
 

@@ -23,16 +23,16 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V14\Enums\ChangeStatusOperationEnum\ChangeStatusOperation;
-use Google\Ads\GoogleAds\V14\Enums\ChangeStatusResourceTypeEnum\ChangeStatusResourceType;
-use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V14\Resources\ChangeStatus;
-use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\V15\Enums\ChangeStatusOperationEnum\ChangeStatusOperation;
+use Google\Ads\GoogleAds\V15\Enums\ChangeStatusResourceTypeEnum\ChangeStatusResourceType;
+use Google\Ads\GoogleAds\V15\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V15\Resources\ChangeStatus;
+use Google\Ads\GoogleAds\V15\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V15\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**

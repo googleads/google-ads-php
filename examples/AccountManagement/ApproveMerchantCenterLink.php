@@ -46,6 +46,10 @@ use Google\ApiCore\ApiException;
  * <p>To run this example, you must use the Merchant Center UI or the Content API for Shopping to
  * send a link request between your Merchant Center and Google Ads accounts.
  * See https://support.google.com/merchants/answer/6159060 for details.
+ *
+ * <p> This code example uses version v14 of the Google Ads API. Version v15 of the
+ * Google Ads API replaces MerchantCenterLinkService with ProductLinkInvitationService and
+ * ProductLinkService. We will add new code examples using these services shortly.
  */
 class ApproveMerchantCenterLink
 {

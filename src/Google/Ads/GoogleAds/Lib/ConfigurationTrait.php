@@ -29,6 +29,7 @@ use Psr\Log\LoggerInterface;
 trait ConfigurationTrait
 {
     private $developerToken;
+    private $useCloudOrgForApiAccess;
     private $loginCustomerId;
     private $linkedCustomerId;
     private $endpoint;
@@ -55,6 +56,16 @@ trait ConfigurationTrait
     public function getDeveloperToken()
     {
         return $this->developerToken;
+    }
+
+    /**
+     * Returns true when this library is set to use Google Cloud organization for API access.
+     *
+     * @return bool
+     */
+    public function useCloudOrgForApiAccess()
+    {
+        return $this->useCloudOrgForApiAccess;
     }
 
     /**

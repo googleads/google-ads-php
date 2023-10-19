@@ -26,17 +26,18 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V14\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V14\ResourceNames;
-use Google\Ads\GoogleAds\V14\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V14\Resources\BillingSetup;
-use Google\Ads\GoogleAds\V14\Resources\BillingSetup\PaymentsAccountInfo;
-use Google\Ads\GoogleAds\V14\Services\BillingSetupOperation;
-use Google\Ads\GoogleAds\V14\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V14\Services\SearchGoogleAdsStreamRequest;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V15\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V15\ResourceNames;
+use Google\Ads\GoogleAds\V15\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V15\Resources\BillingSetup;
+use Google\Ads\GoogleAds\V15\Resources\BillingSetup\PaymentsAccountInfo;
+use Google\Ads\GoogleAds\V15\Services\BillingSetupOperation;
+use Google\Ads\GoogleAds\V15\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V15\Services\MutateBillingSetupRequest;
+use Google\Ads\GoogleAds\V15\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -155,8 +156,7 @@ class AddBillingSetup
         // Issues a mutate request to add the billing setup.
         $billingSetupServiceClient = $googleAdsClient->getBillingSetupServiceClient();
         $response = $billingSetupServiceClient->mutateBillingSetup(
-            $customerId,
-            $billingSetupOperation
+            MutateBillingSetupRequest::build($customerId, $billingSetupOperation)
         );
 
         printf(
