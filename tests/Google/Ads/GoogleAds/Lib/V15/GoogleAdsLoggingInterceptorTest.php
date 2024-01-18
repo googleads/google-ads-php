@@ -66,7 +66,8 @@ class GoogleAdsLoggingInterceptorTest extends TestCase
                 new SearchGoogleAdsRequest(),
                 ['PagedListResponse', 'decode'],
                 function ($method, $argument, $deserialize, $metadata, $options) {
-                    // The function body is not needed for testing.
+                    // The gax-php ForwardingCall now requires a non-null object to be returned.
+                    return new \stdClass();
                 }
             )
         );
@@ -81,7 +82,8 @@ class GoogleAdsLoggingInterceptorTest extends TestCase
                 new SearchGoogleAdsStreamRequest(),
                 ['SearchGoogleAdsStreamResponse', 'decode'],
                 function ($method, $argument, $deserialize, $metadata, $options) {
-                    // The function body is not needed for testing.
+                    // The gax-php ForwardingCall now requires a non-null object to be returned.
+                    return new \stdClass();
                 }
             )
         );
