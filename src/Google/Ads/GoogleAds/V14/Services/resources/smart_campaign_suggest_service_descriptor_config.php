@@ -41,6 +41,7 @@ return [
             ],
             'templateMap' => [
                 'campaign' => 'customers/{customer_id}/campaigns/{campaign_id}',
+                'keywordThemeConstant' => 'keywordThemeConstants/{express_category_id}~{express_sub_category_id}',
             ],
         ],
     ],

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,12 +52,6 @@ use GuzzleHttp\Promise\PromiseInterface;
  * name, and additionally a parseName method to extract the individual identifiers
  * contained within formatted names that are returned by the API.
  *
- * This class is currently experimental and may be subject to changes. See {@see
- * \Google\Ads\GoogleAds\V15\Services\GoogleAdsServiceClient} for the stable
- * implementation
- *
- * @experimental
- *
  * @method PromiseInterface mutateAsync(MutateGoogleAdsRequest $request, array $optionalArgs = [])
  * @method PromiseInterface searchAsync(SearchGoogleAdsRequest $request, array $optionalArgs = [])
  */
@@ -73,8 +67,15 @@ final class GoogleAdsServiceClient
     /** The name of the service. */
     private const SERVICE_NAME = 'google.ads.googleads.v15.services.GoogleAdsService';
 
-    /** The default address of the service. */
+    /**
+     * The default address of the service.
+     *
+     * @deprecated SERVICE_ADDRESS_TEMPLATE should be used instead.
+     */
     private const SERVICE_ADDRESS = 'googleads.googleapis.com';
+
+    /** The address template of the service. */
+    private const SERVICE_ADDRESS_TEMPLATE = 'googleads.UNIVERSE_DOMAIN';
 
     /** The default port of the service. */
     private const DEFAULT_SERVICE_PORT = 443;
@@ -857,6 +858,21 @@ final class GoogleAdsServiceClient
 
     /**
      * Formats a string containing the fully-qualified path to represent a
+     * carrier_constant resource.
+     *
+     * @param string $criterionId
+     *
+     * @return string The formatted carrier_constant resource.
+     */
+    public static function carrierConstantName(string $criterionId): string
+    {
+        return self::getPathTemplate('carrierConstant')->render([
+            'criterion_id' => $criterionId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
      * combined_audience resource.
      *
      * @param string $customerId
@@ -1126,6 +1142,23 @@ final class GoogleAdsServiceClient
         return self::getPathTemplate('customizerAttribute')->render([
             'customer_id' => $customerId,
             'customizer_attribute_id' => $customizerAttributeId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * detailed_demographic resource.
+     *
+     * @param string $customerId
+     * @param string $detailedDemographicId
+     *
+     * @return string The formatted detailed_demographic resource.
+     */
+    public static function detailedDemographicName(string $customerId, string $detailedDemographicId): string
+    {
+        return self::getPathTemplate('detailedDemographic')->render([
+            'customer_id' => $customerId,
+            'detailed_demographic_id' => $detailedDemographicId,
         ]);
     }
 
@@ -1401,6 +1434,23 @@ final class GoogleAdsServiceClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * keyword_theme_constant resource.
+     *
+     * @param string $expressCategoryId
+     * @param string $expressSubCategoryId
+     *
+     * @return string The formatted keyword_theme_constant resource.
+     */
+    public static function keywordThemeConstantName(string $expressCategoryId, string $expressSubCategoryId): string
+    {
+        return self::getPathTemplate('keywordThemeConstant')->render([
+            'express_category_id' => $expressCategoryId,
+            'express_sub_category_id' => $expressSubCategoryId,
+        ]);
+    }
+
+    /**
      * Formats a string containing the fully-qualified path to represent a label
      * resource.
      *
@@ -1433,6 +1483,23 @@ final class GoogleAdsServiceClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a life_event
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $lifeEventId
+     *
+     * @return string The formatted life_event resource.
+     */
+    public static function lifeEventName(string $customerId, string $lifeEventId): string
+    {
+        return self::getPathTemplate('lifeEvent')->render([
+            'customer_id' => $customerId,
+            'life_event_id' => $lifeEventId,
+        ]);
+    }
+
+    /**
      * Formats a string containing the fully-qualified path to represent a
      * mobile_app_category_constant resource.
      *
@@ -1444,6 +1511,36 @@ final class GoogleAdsServiceClient
     {
         return self::getPathTemplate('mobileAppCategoryConstant')->render([
             'mobile_app_category_id' => $mobileAppCategoryId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * mobile_device_constant resource.
+     *
+     * @param string $criterionId
+     *
+     * @return string The formatted mobile_device_constant resource.
+     */
+    public static function mobileDeviceConstantName(string $criterionId): string
+    {
+        return self::getPathTemplate('mobileDeviceConstant')->render([
+            'criterion_id' => $criterionId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * operating_system_version_constant resource.
+     *
+     * @param string $criterionId
+     *
+     * @return string The formatted operating_system_version_constant resource.
+     */
+    public static function operatingSystemVersionConstantName(string $criterionId): string
+    {
+        return self::getPathTemplate('operatingSystemVersionConstant')->render([
+            'criterion_id' => $criterionId,
         ]);
     }
 
@@ -1627,6 +1724,7 @@ final class GoogleAdsServiceClient
      * - campaignGroup: customers/{customer_id}/campaignGroups/{campaign_group_id}
      * - campaignLabel: customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}
      * - campaignSharedSet: customers/{customer_id}/campaignSharedSets/{campaign_id}~{shared_set_id}
+     * - carrierConstant: carrierConstants/{criterion_id}
      * - combinedAudience: customers/{customer_id}/combinedAudiences/{combined_audience_id}
      * - conversionAction: customers/{customer_id}/conversionActions/{conversion_action_id}
      * - conversionCustomVariable: customers/{customer_id}/conversionCustomVariables/{conversion_custom_variable_id}
@@ -1643,6 +1741,7 @@ final class GoogleAdsServiceClient
      * - customerLabel: customers/{customer_id}/customerLabels/{label_id}
      * - customerNegativeCriterion: customers/{customer_id}/customerNegativeCriteria/{criterion_id}
      * - customizerAttribute: customers/{customer_id}/customizerAttributes/{customizer_attribute_id}
+     * - detailedDemographic: customers/{customer_id}/detailedDemographics/{detailed_demographic_id}
      * - experiment: customers/{customer_id}/experiments/{trial_id}
      * - experimentArm: customers/{customer_id}/experimentArms/{trial_id}~{trial_arm_id}
      * - extensionFeedItem: customers/{customer_id}/extensionFeedItems/{feed_item_id}
@@ -1658,9 +1757,13 @@ final class GoogleAdsServiceClient
      * - keywordPlanAdGroupKeyword: customers/{customer_id}/keywordPlanAdGroupKeywords/{keyword_plan_ad_group_keyword_id}
      * - keywordPlanCampaign: customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}
      * - keywordPlanCampaignKeyword: customers/{customer_id}/keywordPlanCampaignKeywords/{keyword_plan_campaign_keyword_id}
+     * - keywordThemeConstant: keywordThemeConstants/{express_category_id}~{express_sub_category_id}
      * - label: customers/{customer_id}/labels/{label_id}
      * - languageConstant: languageConstants/{criterion_id}
+     * - lifeEvent: customers/{customer_id}/lifeEvents/{life_event_id}
      * - mobileAppCategoryConstant: mobileAppCategoryConstants/{mobile_app_category_id}
+     * - mobileDeviceConstant: mobileDeviceConstants/{criterion_id}
+     * - operatingSystemVersionConstant: operatingSystemVersionConstants/{criterion_id}
      * - recommendationSubscription: customers/{customer_id}/recommendationSubscriptions/{recommendation_type}
      * - remarketingAction: customers/{customer_id}/remarketingActions/{remarketing_action_id}
      * - sharedCriterion: customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}

@@ -18,6 +18,8 @@ return [
             'templateMap' => [
                 'assetGroup' => 'customers/{customer_id}/assetGroups/{asset_group_id}',
                 'audience' => 'customers/{customer_id}/audiences/{audience_id}',
+                'detailedDemographic' => 'customers/{customer_id}/detailedDemographics/{detailed_demographic_id}',
+                'lifeEvent' => 'customers/{customer_id}/lifeEvents/{life_event_id}',
             ],
         ],
     ],

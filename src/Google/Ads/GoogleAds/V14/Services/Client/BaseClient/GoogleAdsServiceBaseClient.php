@@ -854,6 +854,21 @@ abstract class GoogleAdsServiceBaseClient
 
     /**
      * Formats a string containing the fully-qualified path to represent a
+     * carrier_constant resource.
+     *
+     * @param string $criterionId
+     *
+     * @return string The formatted carrier_constant resource.
+     */
+    public static function carrierConstantName(string $criterionId): string
+    {
+        return self::getPathTemplate('carrierConstant')->render([
+            'criterion_id' => $criterionId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
      * combined_audience resource.
      *
      * @param string $customerId
@@ -1123,6 +1138,23 @@ abstract class GoogleAdsServiceBaseClient
         return self::getPathTemplate('customizerAttribute')->render([
             'customer_id' => $customerId,
             'customizer_attribute_id' => $customizerAttributeId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * detailed_demographic resource.
+     *
+     * @param string $customerId
+     * @param string $detailedDemographicId
+     *
+     * @return string The formatted detailed_demographic resource.
+     */
+    public static function detailedDemographicName(string $customerId, string $detailedDemographicId): string
+    {
+        return self::getPathTemplate('detailedDemographic')->render([
+            'customer_id' => $customerId,
+            'detailed_demographic_id' => $detailedDemographicId,
         ]);
     }
 
@@ -1398,6 +1430,23 @@ abstract class GoogleAdsServiceBaseClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * keyword_theme_constant resource.
+     *
+     * @param string $expressCategoryId
+     * @param string $expressSubCategoryId
+     *
+     * @return string The formatted keyword_theme_constant resource.
+     */
+    public static function keywordThemeConstantName(string $expressCategoryId, string $expressSubCategoryId): string
+    {
+        return self::getPathTemplate('keywordThemeConstant')->render([
+            'express_category_id' => $expressCategoryId,
+            'express_sub_category_id' => $expressSubCategoryId,
+        ]);
+    }
+
+    /**
      * Formats a string containing the fully-qualified path to represent a label
      * resource.
      *
@@ -1430,6 +1479,23 @@ abstract class GoogleAdsServiceBaseClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a life_event
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $lifeEventId
+     *
+     * @return string The formatted life_event resource.
+     */
+    public static function lifeEventName(string $customerId, string $lifeEventId): string
+    {
+        return self::getPathTemplate('lifeEvent')->render([
+            'customer_id' => $customerId,
+            'life_event_id' => $lifeEventId,
+        ]);
+    }
+
+    /**
      * Formats a string containing the fully-qualified path to represent a media_file
      * resource.
      *
@@ -1458,6 +1524,36 @@ abstract class GoogleAdsServiceBaseClient
     {
         return self::getPathTemplate('mobileAppCategoryConstant')->render([
             'mobile_app_category_id' => $mobileAppCategoryId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * mobile_device_constant resource.
+     *
+     * @param string $criterionId
+     *
+     * @return string The formatted mobile_device_constant resource.
+     */
+    public static function mobileDeviceConstantName(string $criterionId): string
+    {
+        return self::getPathTemplate('mobileDeviceConstant')->render([
+            'criterion_id' => $criterionId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * operating_system_version_constant resource.
+     *
+     * @param string $criterionId
+     *
+     * @return string The formatted operating_system_version_constant resource.
+     */
+    public static function operatingSystemVersionConstantName(string $criterionId): string
+    {
+        return self::getPathTemplate('operatingSystemVersionConstant')->render([
+            'criterion_id' => $criterionId,
         ]);
     }
 
