@@ -1447,6 +1447,27 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V15\ResourceNames::forCarrierConstant()
+     */
+    public function testGetNameForCarrierConstant()
+    {
+        $criterionId = '111111';
+        $expectedResourceName = sprintf(
+            "carrierConstants/%s",
+            $criterionId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forCarrierConstant(
+                $criterionId
+            )
+        );
+
+        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($criterionId, $names['criterion_id']);
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V15\ResourceNames::forCombinedAudience()
      */
     public function testGetNameForCombinedAudience()
@@ -2080,6 +2101,31 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V15\ResourceNames::forDetailedDemographic()
+     */
+    public function testGetNameForDetailedDemographic()
+    {
+        $customerId = '111111';
+        $detailedDemographicId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/detailedDemographics/%s",
+            $customerId,
+            $detailedDemographicId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forDetailedDemographic(
+                $customerId,
+                $detailedDemographicId
+            )
+        );
+
+        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($detailedDemographicId, $names['detailed_demographic_id']);
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V15\ResourceNames::forExperiment()
      */
     public function testGetNameForExperiment()
@@ -2508,6 +2554,31 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V15\ResourceNames::forKeywordThemeConstant()
+     */
+    public function testGetNameForKeywordThemeConstant()
+    {
+        $expressCategoryId = '111111';
+        $expressSubCategoryId = '222222';
+        $expectedResourceName = sprintf(
+            "keywordThemeConstants/%s~%s",
+            $expressCategoryId,
+            $expressSubCategoryId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forKeywordThemeConstant(
+                $expressCategoryId,
+                $expressSubCategoryId
+            )
+        );
+
+        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($expressCategoryId, $names['express_category_id']);
+        $this->assertEquals($expressSubCategoryId, $names['express_sub_category_id']);
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V15\ResourceNames::forLabel()
      */
     public function testGetNameForLabel()
@@ -2554,6 +2625,31 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V15\ResourceNames::forLifeEvent()
+     */
+    public function testGetNameForLifeEvent()
+    {
+        $customerId = '111111';
+        $lifeEventId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/lifeEvents/%s",
+            $customerId,
+            $lifeEventId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forLifeEvent(
+                $customerId,
+                $lifeEventId
+            )
+        );
+
+        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($lifeEventId, $names['life_event_id']);
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V15\ResourceNames::forMobileAppCategoryConstant()
      */
     public function testGetNameForMobileAppCategoryConstant()
@@ -2572,6 +2668,27 @@ class ResourceNamesTest extends TestCase
 
         $names = GoogleAdsServiceClient::parseName($expectedResourceName);
         $this->assertEquals($mobileAppCategoryId, $names['mobile_app_category_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V15\ResourceNames::forMobileDeviceConstant()
+     */
+    public function testGetNameForMobileDeviceConstant()
+    {
+        $criterionId = '111111';
+        $expectedResourceName = sprintf(
+            "mobileDeviceConstants/%s",
+            $criterionId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forMobileDeviceConstant(
+                $criterionId
+            )
+        );
+
+        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
     /**
@@ -2597,6 +2714,27 @@ class ResourceNamesTest extends TestCase
         $names = OfflineUserDataJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($offlineUserDataUpdateId, $names['offline_user_data_update_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V15\ResourceNames::forOperatingSystemVersionConstant()
+     */
+    public function testGetNameForOperatingSystemVersionConstant()
+    {
+        $criterionId = '111111';
+        $expectedResourceName = sprintf(
+            "operatingSystemVersionConstants/%s",
+            $criterionId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forOperatingSystemVersionConstant(
+                $criterionId
+            )
+        );
+
+        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
     /**

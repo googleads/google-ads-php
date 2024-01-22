@@ -117,7 +117,6 @@ use Google\Ads\GoogleAds\V15\Services\Client\SharedSetServiceClient;
 use Google\Ads\GoogleAds\V15\Services\Client\SmartCampaignSettingServiceClient;
 use Google\Ads\GoogleAds\V15\Services\Client\ThirdPartyAppAnalyticsLinkServiceClient;
 use Google\Ads\GoogleAds\V15\Services\Client\UserListServiceClient;
-use Google\ApiCore\PathTemplate;
 
 /**
  * Provides resource names for Google Ads API entities.
@@ -1032,6 +1031,20 @@ final class ResourceNames
     }
 
     /**
+     * Generates a resource name of carrier constant type.
+     *
+     * @param string $criterionId
+     * @return string the carrier constant resource name
+     */
+    public static function forCarrierConstant(
+        $criterionId
+    ): string {
+        return GoogleAdsServiceClient::carrierConstantName(
+            $criterionId
+        );
+    }
+
+    /**
      * Generates a resource name of combined audience type.
      *
      * @param string $customerId
@@ -1463,6 +1476,23 @@ final class ResourceNames
     }
 
     /**
+     * Generates a resource name of detailed demographic type.
+     *
+     * @param string $customerId
+     * @param string $detailedDemographicId
+     * @return string the detailed demographic resource name
+     */
+    public static function forDetailedDemographic(
+        $customerId,
+        $detailedDemographicId
+    ): string {
+        return GoogleAdsServiceClient::detailedDemographicName(
+            $customerId,
+            $detailedDemographicId
+        );
+    }
+
+    /**
      * Generates a resource name of experiment type.
      *
      * @param string $customerId
@@ -1756,6 +1786,23 @@ final class ResourceNames
     }
 
     /**
+     * Generates a resource name of keyword theme constant type.
+     *
+     * @param string $expressCategoryId
+     * @param string $expressSubCategoryId
+     * @return string the keyword theme constant resource name
+     */
+    public static function forKeywordThemeConstant(
+        $expressCategoryId,
+        $expressSubCategoryId
+    ): string {
+        return GoogleAdsServiceClient::keywordThemeConstantName(
+            $expressCategoryId,
+            $expressSubCategoryId
+        );
+    }
+
+    /**
      * Generates a resource name of label type.
      *
      * @param string $customerId
@@ -1787,6 +1834,23 @@ final class ResourceNames
     }
 
     /**
+     * Generates a resource name of life event type.
+     *
+     * @param string $customerId
+     * @param string $lifeEventId
+     * @return string the life event resource name
+     */
+    public static function forLifeEvent(
+        $customerId,
+        $lifeEventId
+    ): string {
+        return GoogleAdsServiceClient::lifeEventName(
+            $customerId,
+            $lifeEventId
+        );
+    }
+
+    /**
      * Generates a resource name of mobile app category constant type.
      *
      * @param string $mobileAppCategoryId
@@ -1797,6 +1861,20 @@ final class ResourceNames
     ): string {
         return GoogleAdsServiceClient::mobileAppCategoryConstantName(
             $mobileAppCategoryId
+        );
+    }
+
+    /**
+     * Generates a resource name of mobile device constant type.
+     *
+     * @param string $criterionId
+     * @return string the mobile device constant resource name
+     */
+    public static function forMobileDeviceConstant(
+        $criterionId
+    ): string {
+        return GoogleAdsServiceClient::mobileDeviceConstantName(
+            $criterionId
         );
     }
 
@@ -1814,6 +1892,20 @@ final class ResourceNames
         return OfflineUserDataJobServiceClient::offlineUserDataJobName(
             $customerId,
             $offlineUserDataUpdateId
+        );
+    }
+
+    /**
+     * Generates a resource name of operating system version constant type.
+     *
+     * @param string $criterionId
+     * @return string the operating system version constant resource name
+     */
+    public static function forOperatingSystemVersionConstant(
+        $criterionId
+    ): string {
+        return GoogleAdsServiceClient::operatingSystemVersionConstantName(
+            $criterionId
         );
     }
 
