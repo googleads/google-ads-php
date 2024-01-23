@@ -171,7 +171,6 @@ class AddFlexibleRuleUserList
             'description' => 'Visitors of both http://example.com/example1 AND ' .
                 'http://example.com/example2 but NOT http://example.com/example3',
             'membership_status' => UserListMembershipStatus::OPEN,
-            'membership_life_span' => 365,
             'rule_based_user_list' => $ruleBasedUserListInfo
         ]);
 
