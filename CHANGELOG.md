@@ -1,3 +1,11 @@
+## 22.0.0
+*   Removed support for v13 of Google Ads API.
+*   Added more methods to `ResourceNames` of v14 and v15.
+*   Updated `GoogleAdsFailuresInterceptorTest.php` and `GoogleAdsLoggingInterceptorTest` to make them work with the latest version of `google/gax`.
+*   Updated code examples:
+    * AddShoppingProductAd
+    * UploadOfflineConversion
+
 ## 21.1.0
 *   Added support for v15 of Google Ads API. The following code examples still use v14 because the services in the examples were removed in v15:
     * ApproveMerchantCenterLink
