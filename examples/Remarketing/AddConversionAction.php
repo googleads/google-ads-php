@@ -110,6 +110,9 @@ class AddConversionAction
     {
         // Creates a conversion action.
         $conversionAction = new ConversionAction([
+            // Note that conversion action names must be unique.
+            // If a conversion action already exists with the specified conversion_action_name
+            // the create operation will fail with a ConversionActionError.DUPLICATE_NAME error.
             'name' => 'Earth to Mars Cruises Conversion #' . Helper::getPrintableDatetime(),
             'category' => ConversionActionCategory::PBDEFAULT,
             'type' => ConversionActionType::WEBPAGE,
