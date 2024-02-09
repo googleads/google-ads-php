@@ -145,14 +145,31 @@ class GetAdGroupBidModifiers
             /** @var GoogleAdsRow $googleAdsRow */
             $adGroupBidModifier = $googleAdsRow->getAdGroupBidModifier();
             printf(
-                "Ad group bid modifier with criterion ID %d, bid modifier value %f "
-                . "was found in an ad group ID %d of campaign ID %d.%s",
+                "Ad group bid modifier with criterion ID %d in ad group ID %d of campaign ID %d ",
                 $adGroupBidModifier->getCriterionId(),
-                $adGroupBidModifier->getBidModifier(),
                 $googleAdsRow->getAdGroup()->getId(),
-                $googleAdsRow->getCampaign()->getId(),
-                PHP_EOL
+                $googleAdsRow->getCampaign()->getId()
             );
+
+            // When working with an 'optional' protocol buffer field such as AdGroup::$bid_modifier,
+            // use hasXX() to check if the field is set, and only retrieve the value using getXX()
+            // if hasXX() returns true. See the protocol buffer documentation on field presence for
+            // more information:
+            // https://protobuf.dev/programming-guides/field_presence/#presence-in-proto3-apis
+
+            if ($adGroupBidModifier->hasBidModifier()) {
+                // Prints the bid modifier value since it is set.
+                printf(
+                    "has a bid modifier value of %.2f.%s",
+                    $adGroupBidModifier->getBidModifier(),
+                    PHP_EOL
+                );
+            } else {
+                // Does not print the bid modifier value since it is not set. Printing the result of
+                // $adGroupBidModifier->getBidModifier() in this case would be misleading, since it
+                // will be 0.
+                print 'does NOT have a bid modifier value.' . PHP_EOL;
+            }
 
             $criterionDetails = ' - Criterion type: ' . $adGroupBidModifier->getCriterion() . ', ';
             switch ($adGroupBidModifier->getCriterion()) {
