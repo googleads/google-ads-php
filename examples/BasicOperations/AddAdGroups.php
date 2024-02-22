@@ -24,17 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V15\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V15\ResourceNames;
-use Google\Ads\GoogleAds\V15\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V15\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V15\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V15\Resources\AdGroup;
-use Google\Ads\GoogleAds\V15\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V15\Services\MutateAdGroupsRequest;
+use Google\Ads\GoogleAds\Util\V16\ResourceNames;
+use Google\Ads\GoogleAds\V16\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V16\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V16\Resources\AdGroup;
+use Google\Ads\GoogleAds\V16\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V16\Services\MutateAdGroupsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example adds ad groups to a campaign. */

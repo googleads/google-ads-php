@@ -23,17 +23,17 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V15\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V15\ResourceNames;
-use Google\Ads\GoogleAds\V15\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V15\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V15\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V15\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V15\Services\MutateAdGroupAdsRequest;
+use Google\Ads\GoogleAds\Util\V16\ResourceNames;
+use Google\Ads\GoogleAds\V16\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V16\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V16\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V16\Services\MutateAdGroupAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**

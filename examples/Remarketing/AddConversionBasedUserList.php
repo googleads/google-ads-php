@@ -25,17 +25,17 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V15\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V15\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V15\ResourceNames;
-use Google\Ads\GoogleAds\V15\Common\BasicUserListInfo;
-use Google\Ads\GoogleAds\V15\Common\UserListActionInfo;
-use Google\Ads\GoogleAds\V15\Enums\UserListMembershipStatusEnum\UserListMembershipStatus;
-use Google\Ads\GoogleAds\V15\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V15\Resources\UserList;
-use Google\Ads\GoogleAds\V15\Services\MutateUserListsRequest;
-use Google\Ads\GoogleAds\V15\Services\UserListOperation;
+use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V16\ResourceNames;
+use Google\Ads\GoogleAds\V16\Common\BasicUserListInfo;
+use Google\Ads\GoogleAds\V16\Common\UserListActionInfo;
+use Google\Ads\GoogleAds\V16\Enums\UserListMembershipStatusEnum\UserListMembershipStatus;
+use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V16\Resources\UserList;
+use Google\Ads\GoogleAds\V16\Services\MutateUserListsRequest;
+use Google\Ads\GoogleAds\V16\Services\UserListOperation;
 use Google\ApiCore\ApiException;
 
 /**
