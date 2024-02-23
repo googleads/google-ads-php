@@ -1,3 +1,26 @@
+## 22.1.0
+*   Added support for v16 of Google Ads API.
+*   Fixed dependabot alert in `examples/LaravelSampleApp/composer.lock`.
+*   Renamed `examples/Extensions` to `examples/Assets`. Removed some logic
+    related to the extensions.
+*   Renamed code examples:
+    * from AddLeadFormExtension to AddLeadFormAsset
+    * from AddSitelinksUsingAssets to AddSitelinks
+*   Updated code examples:
+    * AddConversionAction
+    * AddFlexibleRuleUserList
+    * GetAdGroupBidModifiers
+*   Removed code examples:
+    * AddAffiliateLocationExtensions
+    * AddBusinessProfileLocationExtensions
+    * AddGeoTarget
+    * AddImageExtension
+    * AddSitelinks (the old one that uses extensions)
+    * MigratePromotionFeedToAsset
+    * RemoveEntireSitelinkCampaignExtensionSetting
+    * UpdateSitelink
+    * UpdateSitelinkCampaignExtensionSetting
+
 ## 22.0.0
 *   Removed support for v13 of Google Ads API.
 *   Added more methods to `ResourceNames` of v14 and v15.
