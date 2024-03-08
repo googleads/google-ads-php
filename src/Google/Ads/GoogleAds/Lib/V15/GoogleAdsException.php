@@ -28,6 +28,8 @@ class GoogleAdsException extends ApiException
 {
     use GoogleAdsMetadataTrait;
 
+    private GoogleAdsFailure $googleAdsFailure;
+
     /**
      * Creates a `GoogleAdsException` instance with the specified parameters.
      *
@@ -37,7 +39,7 @@ class GoogleAdsException extends ApiException
      */
     public function __construct(
         ApiException $original,
-        private GoogleAdsFailure $googleAdsFailure,
+        GoogleAdsFailure $googleAdsFailure,
         array $optionalArgs = []
     ) {
         parent::__construct(
@@ -46,6 +48,7 @@ class GoogleAdsException extends ApiException
             $original->getStatus(),
             $optionalArgs
         );
+        $this->googleAdsFailure = $googleAdsFailure;
     }
 
     /**

@@ -46,7 +46,7 @@ class GetGeoTargetConstantsByNames
     // https://developers.google.com/google-ads/api/reference/data/geotargets.
     private const COUNTRY_CODE = 'FR';
     // The location names to get suggested geo target constants.
-    private const LOCATION_NAMES = ['Paris', 'Quebec', 'Spain', 'Deutschland'];
+    private static $LOCATION_NAMES = ['Paris', 'Quebec', 'Spain', 'Deutschland'];
 
     public static function main()
     {
@@ -77,7 +77,7 @@ class GetGeoTargetConstantsByNames
         try {
             self::runExample(
                 $googleAdsClient,
-                $options[ArgumentNames::LOCATION_NAMES] ?: self::LOCATION_NAMES,
+                $options[ArgumentNames::LOCATION_NAMES] ?: self::$LOCATION_NAMES,
                 $options[ArgumentNames::LOCALE] ?: self::LOCALE,
                 $options[ArgumentNames::COUNTRY_CODE] ?: self::COUNTRY_CODE
             );
