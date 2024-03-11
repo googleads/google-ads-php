@@ -25,13 +25,16 @@ class GoogleAdsResponseMetadata
 {
     use GoogleAdsMetadataTrait;
 
+    private array $metadata;
+
     /**
      * Creates a `GoogleAdsResponseMetadata` instance with the specified parameters.
      *
      * @param array $metadata the metadata
      */
-    public function __construct(private array $metadata)
+    public function __construct(array $metadata)
     {
+        $this->metadata = $metadata;
     }
 
     /**

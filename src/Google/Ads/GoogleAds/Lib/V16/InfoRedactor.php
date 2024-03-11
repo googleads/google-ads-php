@@ -50,33 +50,44 @@ class InfoRedactor
     private const SENSITIVE_TEXT_REPLACEMENT_FORMAT = '$1%s$2';
 
     /** @var array the list of customer user access' fields containing email addresses. */
-    private const CUSTOMER_USER_ACCESS_EMAIL_FIELDS = [
-        'customer_user_access.inviter_user_email_address',
-        'customer_user_access.email_address'
-    ];
+    private static $CUSTOMER_USER_ACCESS_EMAIL_FIELDS;
     /**
      * @var array the list of customer user access invitation' fields containing email addresses.
      */
-    private const CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS
-        = ['customer_user_access_invitation.email_address'];
+    private static $CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS;
     /** @var array the list of change event's fields containing email addresses. */
-    private const CHANGE_EVENT_EMAIL_FIELDS = ['change_event.user_email'];
+    private static $CHANGE_EVENT_EMAIL_FIELDS;
     /** @var array the list of feed placeholder's fields containing email addresses. */
-    private const FEED_EMAIL_FIELDS = ['feed.places_location_feed_data.email_address'];
+    private static $FEED_EMAIL_FIELDS;
     /**
      * @var array the list of local services lead contact details' fields containing email
      *     addresses.
      */
-    private const LOCAL_SERVICES_LEAD_CONTACT_DETAILS_EMAIL
-        = ['local_services_lead.contact_details.email'];
+    private static $LOCAL_SERVICES_LEAD_CONTACT_DETAILS_EMAIL;
     /**
      * @var array the list of local services lead conversion message detail text's fields
      *     containing email addresses.
      */
-    private const LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT
-        = ['local_services_lead_conversation.message_details.text'];
+    private static $LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT;
     /** @var array the map of header keys to redacted values. */
     private static $HEADER_KEYS_TO_REDACTED_VALUES;
+
+    public function __construct()
+    {
+        // Initializes the private constants, as PHP doesn't support constants of an array type.
+        self::$CUSTOMER_USER_ACCESS_EMAIL_FIELDS = [
+            'customer_user_access.inviter_user_email_address',
+            'customer_user_access.email_address'
+        ];
+        self::$CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS =
+            ['customer_user_access_invitation.email_address'];
+        self::$CHANGE_EVENT_EMAIL_FIELDS = ['change_event.user_email'];
+        self::$FEED_EMAIL_FIELDS = ['feed.places_location_feed_data.email_address'];
+        self::$LOCAL_SERVICES_LEAD_CONTACT_DETAILS_EMAIL =
+            ['local_services_lead.contact_details.email'];
+        self::$LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT =
+            ['local_services_lead_conversation.message_details.text'];
+    }
 
     /**
      * Redacts the specified headers with the provided redacted values.
@@ -228,12 +239,12 @@ class InfoRedactor
         // Mask any emails in the WHERE clause of the GAQL query of the request.
         foreach (
             array_merge(
-                self::CUSTOMER_USER_ACCESS_EMAIL_FIELDS,
-                self::CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS,
-                self::CHANGE_EVENT_EMAIL_FIELDS,
-                self::FEED_EMAIL_FIELDS,
-                self::LOCAL_SERVICES_LEAD_CONTACT_DETAILS_EMAIL,
-                self::LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT
+                self::$CUSTOMER_USER_ACCESS_EMAIL_FIELDS,
+                self::$CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS,
+                self::$CHANGE_EVENT_EMAIL_FIELDS,
+                self::$FEED_EMAIL_FIELDS,
+                self::$LOCAL_SERVICES_LEAD_CONTACT_DETAILS_EMAIL,
+                self::$LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT
             ) as $field
         ) {
             $redactedQuery = preg_replace(
@@ -264,24 +275,24 @@ class InfoRedactor
         foreach ($response->getFieldMask()->getPaths() as $path) {
             foreach ($response->getResults() as $result) {
                 /** @var GoogleAdsRow $result */
-                if (in_array($path, self::CUSTOMER_USER_ACCESS_EMAIL_FIELDS)) {
+                if (in_array($path, self::$CUSTOMER_USER_ACCESS_EMAIL_FIELDS)) {
                     self::redactCustomerUserAccess($result->getCustomerUserAccess());
-                } elseif (in_array($path, self::CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS)) {
+                } elseif (in_array($path, self::$CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS)) {
                     self::redactCustomerUserAccessInvitation(
                         $result->getCustomerUserAccessInvitation()
                     );
-                } elseif (in_array($path, self::CHANGE_EVENT_EMAIL_FIELDS)) {
+                } elseif (in_array($path, self::$CHANGE_EVENT_EMAIL_FIELDS)) {
                     self::redactChangeEvent($result->getChangeEvent());
-                } elseif (in_array($path, self::FEED_EMAIL_FIELDS)) {
+                } elseif (in_array($path, self::$FEED_EMAIL_FIELDS)) {
                     self::redactFeed($result->getFeed());
-                } elseif (in_array($path, self::LOCAL_SERVICES_LEAD_CONTACT_DETAILS_EMAIL)) {
+                } elseif (in_array($path, self::$LOCAL_SERVICES_LEAD_CONTACT_DETAILS_EMAIL)) {
                     self::redactLocalServicesLeadContactDetailsEmail(
                         $result->getLocalServicesLead()
                     );
                 } elseif (
                     in_array(
                         $path,
-                        self::LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT
+                        self::$LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT
                     )
                 ) {
                     self::redactLocalServicesLeadConversationMessageDetailsText(
