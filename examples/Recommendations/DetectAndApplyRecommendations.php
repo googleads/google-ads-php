@@ -223,7 +223,7 @@ class DetectAndApplyRecommendations
             );
         }
     }
-    // [EMD apply_recommendation]
+    // [END apply_recommendation]
 }
 
 DetectAndApplyRecommendations::main();
