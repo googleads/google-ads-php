@@ -35,8 +35,7 @@ use Google\Ads\GoogleAds\V16\Services\DismissRecommendationRequest\DismissRecomm
 use Google\ApiCore\ApiException;
 
 /**
- * This example dismisses a given recommendation. To retrieve recommendations for text ads,
- * run GetTextAdRecommendations.php.
+ * This example dismisses a given recommendation.
  */
 class DismissRecommendation
 {
@@ -44,7 +43,6 @@ class DismissRecommendation
     // Recommendation ID is the last alphanumeric portion of the resource name obtained from
     // ResourceNames::forRecommendation(), which has the format of
     // `customers/<customer_id>/recommendations/<recommendation_id>`.
-    // An example can be retrieved from GetTextAdRecommendations.php
     private const RECOMMENDATION_ID = 'INSERT_RECOMMENDATION_ID_HERE';
 
     public static function main()
