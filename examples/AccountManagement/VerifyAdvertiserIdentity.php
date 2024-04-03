@@ -124,26 +124,40 @@ class VerifyAdvertiserIdentity
             print 'See https://support.google.com/adspolicy/answer/9703665 for details on how and'
                 . ' when an account is required to undergo the advertiser identity verification'
                 . ' program.' . PHP_EOL;
-        } elseif (
-            $identityVerification->hasVerificationProgress()
-            && empty($identityVerification->getVerificationProgress()->getActionUrl())
-        ) {
-            // Starts an identity verification session.
-            self::startIdentityVerification($customerId, $identityVerificationServiceClient);
-            // Calls getIdentityVerification again to retrieve the verification progress after
-            // starting an identity verification session.
-            self::getIdentityVerification($customerId, $identityVerificationServiceClient);
-        } else {
-            // If there is an identity verification session in progress, there is no need to
-            // start another one by calling startIdentityVerification.
-            print 'There is an advertiser identify verification session in progress.';
-            printf(
-                "The URL for the verification process is '%s' and it will expire at '%s'.%s",
-                $identityVerification->getVerificationProgress()->getActionUrl(),
-                $identityVerification->getVerificationProgress()
-                    ->getInvitationLinkExpirationTime(),
-                PHP_EOL
-            );
+            return;
+        }
+
+        switch ($identityVerification->getVerificationProgress()->getProgramStatus()) {
+            case IdentityVerificationProgramStatus::UNSPECIFIED:
+                // Starts an identity verification session.
+                self::startIdentityVerification($customerId, $identityVerificationServiceClient);
+                // Calls getIdentityVerification again to retrieve the verification progress after
+                // starting an identity verification session.
+                self::getIdentityVerification($customerId, $identityVerificationServiceClient);
+                break;
+            case IdentityVerificationProgramStatus::PENDING_USER_ACTION:
+                // If there is an identity verification session in progress, there is no need to
+                // start another one by calling startIdentityVerification.
+                print 'There is an advertiser identify verification session in progress.';
+                printf(
+                    "The URL for the verification process is '%s' and it will expire at '%s'.%s",
+                    $identityVerification->getVerificationProgress()->getActionUrl(),
+                    $identityVerification->getVerificationProgress()
+                        ->getInvitationLinkExpirationTime(),
+                    PHP_EOL
+                );
+                break;
+            case IdentityVerificationProgramStatus::PENDING_REVIEW:
+                print 'The verification is under review' . PHP_EOL;
+                break;
+            case IdentityVerificationProgramStatus::SUCCESS:
+                print 'The verification already completed' . PHP_EOL;
+                break;
+            case IdentityVerificationProgramStatus::UNKNOWN:
+            default:
+                throw new \UnexpectedValueException(
+                    'The identity verification has an unknown state.'
+                );
         }
     }
 
