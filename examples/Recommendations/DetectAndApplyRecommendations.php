@@ -23,41 +23,38 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\V16\Enums\KeywordMatchTypeEnum\KeywordMatchType;
 use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V16\Resources\Recommendation;
 use Google\Ads\GoogleAds\V16\Services\ApplyRecommendationOperation;
-use Google\Ads\GoogleAds\V16\Services\ApplyRecommendationResult;
+use Google\Ads\GoogleAds\V16\Services\ApplyRecommendationRequest;
 use Google\Ads\GoogleAds\V16\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V16\Services\SearchGoogleAdsStreamRequest;
+use Google\Ads\GoogleAds\V16\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
- * The auto-apply feature, which automatically applies recommendations as they become eligible,
- * is currently supported by the Google Ads UI but not by the Google Ads API. See
- * https://support.google.com/google-ads/answer/10279006 for more information on using auto-apply
- * in the Google Ads UI.
+ * This example shows how to retrieve recommendations and apply them in a batch.
  *
- * This example demonstrates how an alternative can be implemented with the features that are
- * currently supported by the Google Ads API. It periodically retrieves and applies `KEYWORD`
- * recommendations with default parameters.
+ * Recommendations should be applied shortly after they're retrieved. Depending on
+ * the recommendation type, a recommendation can become obsolete quickly, and
+ * obsolete recommendations throw an error when applied. For more details, see:
+ * https://developers.google.com/google-ads/api/docs/recommendations#take_action
+ *
+ * As of Google Ads API v15 users can subscribe to certain recommendation types to
+ * apply them automatically. For more details, see:
+ * https://developers.google.com/google-ads/api/docs/recommendations#auto-apply
+ *
+ * As of Google Ads API v16 users can proactively generate certain recommendation
+ * types during the campaign construction process. For more details see:
+ * https://developers.google.com/google-ads/api/docs/recommendations#recommendations-in-campaign-construction.
  */
 class DetectAndApplyRecommendations
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-
-    // The maximum number of recommendations to periodically retrieve and apply.  In a real
-    // application, such a limit would typically not be used.
-    private const MAX_RESULT_SIZE = 2;
-    // The number of times to retrieve and apply recommendations. In a real application, such a
-    // limit would typically not be used.
-    private const NUMBER_OF_RUNS = 3;
-    // The time to wait between two runs. In a real application, this would typically be set to
-    // minutes or hours instead of seconds.
-    private const PERIOD_IN_SECONDS = 5;
 
     public static function main()
     {
@@ -122,59 +119,118 @@ class DetectAndApplyRecommendations
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
+        // [START detect_keyword_recommendations]
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves keyword recommendations.
-        $query = 'SELECT recommendation.resource_name '
+        $query = 'SELECT recommendation.resource_name, recommendation.campaign, '
+            . 'recommendation.keyword_recommendation '
             . 'FROM recommendation '
-            . 'WHERE recommendation.type = KEYWORD '
-            . 'LIMIT ' . self::MAX_RESULT_SIZE;
+            . 'WHERE recommendation.type = KEYWORD ';
+        // Issues a search request to detect keyword recommendations that exist for the
+        // customer account.
+        $response =
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
-        $recommendationServiceClient = $googleAdsClient->getRecommendationServiceClient();
-        for ($i = 0; $i < self::NUMBER_OF_RUNS; $i++) {
-            // Issues a search stream request.
-            /* @var GoogleAdsServerStreamDecorator $stream */
-            $stream = $googleAdsServiceClient->searchStream(
-                SearchGoogleAdsStreamRequest::build($customerId, $query)
+        $operations = [];
+        // Iterates over all rows in all pages and prints the requested field values for
+        // the recommendation in each row.
+        foreach ($response->iterateAllElements() as $googleAdsRow) {
+            /** @var GoogleAdsRow $googleAdsRow */
+            $recommendation = $googleAdsRow->getRecommendation();
+            printf(
+                "Keyword recommendation with resource name '%s' was found for campaign "
+                . "with resource name '%s':%s",
+                $recommendation->getResourceName(),
+                $recommendation->getCampaign(),
+                PHP_EOL
             );
-
-            // Creates apply operations for all the recommendations found.
-            $applyRecommendationOperations = [];
-            foreach ($stream->iterateAllElements() as $googleAdsRow) {
-                /** @var GoogleAdsRow $googleAdsRow */
-                $applyRecommendationOperations[] = new ApplyRecommendationOperation([
-                    'resource_name' => $googleAdsRow->getRecommendation()->getResourceName()
-                ]);
-            }
-
-            if ($applyRecommendationOperations) {
-                // Sends the apply recommendation request and prints information.
-                $response = $recommendationServiceClient->applyRecommendation(
-                    $customerId,
-                    $applyRecommendationOperations
-                );
-                foreach ($response->getResults() as $result) {
-                    /** @var ApplyRecommendationResult $result */
-                    printf(
-                        'Applied recommendation with resource name: "%s".%s',
-                        $result->getResourceName(),
-                        PHP_EOL
-                    );
-                }
-            } else {
-                print 'No recommendations were found.' . PHP_EOL;
-            }
-            print PHP_EOL;
-
-            if ($i < self::NUMBER_OF_RUNS - 1) {
+            if (!is_null($recommendation->getKeywordRecommendation())) {
+                $keyword = $recommendation->getKeywordRecommendation()->getKeyword();
                 printf(
-                    "Waiting %d seconds before checking for additional recommendations.%s",
-                    self::PERIOD_IN_SECONDS,
+                    "\tKeyword = '%s'%s\ttype = '%s'%s",
+                    $keyword->getText(),
+                    PHP_EOL,
+                    KeywordMatchType::name($keyword->getMatchType()),
                     PHP_EOL
                 );
-                sleep(self::PERIOD_IN_SECONDS);
             }
+            // Creates an ApplyRecommendationOperation that will be used to apply this
+            // recommendation, and adds it to the list of operations.
+            $operations[] = self::buildRecommendationOperation($recommendation->getResourceName());
+        }
+        // [END detect_keyword_recommendations]
+
+        // If there are operations present, send a request to apply the recommendations.
+        if (empty($operations)) {
+            print 'No recommendations found.' . PHP_EOL;
+        } else {
+            self::applyRecommendations($googleAdsClient, $customerId, $operations);
         }
     }
+
+    /**
+     * Creates a ApplyRecommendationOperation to apply the given recommendation.
+     *
+     * @param string $recommendationResourceName the resource name of the recommendation to apply
+     * @return ApplyRecommendationOperation the created ApplyRecommendationOperation
+     */
+    // [START build_apply_recommendation_operation]
+    private static function buildRecommendationOperation(
+        string $recommendationResourceName
+    ): ApplyRecommendationOperation {
+        // If you have a recommendation_id instead of the resource name, you can create a resource
+        // name from it like this:
+        /*
+        $recommendationResourceName =
+            ResourceNames::forRecommendation($customerId, $recommendationId);
+        */
+
+        // Each recommendation type has optional parameters to override the recommended values.
+        // This is an example to override a recommended ad when a TextAdRecommendation is applied.
+        // For details, please read
+        // https://developers.google.com/google-ads/api/reference/rpc/latest/ApplyRecommendationOperation.
+        /*
+        $overridingAd = new Ad([
+            'id' => 'INSERT_AD_ID_AS_INTEGER_HERE'
+        ]);
+        $applyRecommendationOperation->setTextAd(new TextAdParameters(['ad' => $overridingAd]));
+        */
+
+        // Issues a mutate request to apply the recommendation.
+        $applyRecommendationOperation = new ApplyRecommendationOperation();
+        $applyRecommendationOperation->setResourceName($recommendationResourceName);
+        return $applyRecommendationOperation;
+    }
+    // [END build_apply_recommendation_operation]
+
+    /**
+     * Applies a batch of recommendations.
+     *
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the customer ID
+     * @param array $operations the list of ApplyRecommendationOperation to be sent
+     */
+    // [START apply_recommendation]
+    private static function applyRecommendations(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        array $operations
+    ): void {
+        // Issues a mutate request to apply the recommendations.
+        $recommendationServiceClient = $googleAdsClient->getRecommendationServiceClient();
+        $response = $recommendationServiceClient->applyRecommendation(
+            ApplyRecommendationRequest::build($customerId, $operations)
+        );
+        foreach ($response->getResults() as $appliedRecommendation) {
+            /** @var Recommendation $appliedRecommendation */
+            printf(
+                "Applied a recommendation with resource name: '%s'.%s",
+                $appliedRecommendation->getResourceName(),
+                PHP_EOL
+            );
+        }
+    }
+    // [END apply_recommendation]
 }
 
 DetectAndApplyRecommendations::main();
