@@ -119,6 +119,7 @@ class DetectAndApplyRecommendations
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
+        // [START detect_keyword_recommendations]
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves keyword recommendations.
         $query = 'SELECT recommendation.resource_name, recommendation.campaign, '
@@ -154,11 +155,15 @@ class DetectAndApplyRecommendations
                 );
             }
             // Creates an ApplyRecommendationOperation that will be used to apply this
-            // recommendation, and add it to the list of operations.
+            // recommendation, and adds it to the list of operations.
             $operations[] = self::buildRecommendationOperation($recommendation->getResourceName());
         }
+        // [END detect_keyword_recommendations]
+
         // If there are operations present, send a request to apply the recommendations.
-        if (!empty($operations)) {
+        if (empty($operations)) {
+            print 'No recommendations found.' . PHP_EOL;
+        } else {
             self::applyRecommendations($googleAdsClient, $customerId, $operations);
         }
     }
@@ -169,6 +174,7 @@ class DetectAndApplyRecommendations
      * @param string $recommendationResourceName the resource name of the recommendation to apply
      * @return ApplyRecommendationOperation the created ApplyRecommendationOperation
      */
+    // [START build_apply_recommendation_operation]
     private static function buildRecommendationOperation(
         string $recommendationResourceName
     ): ApplyRecommendationOperation {
@@ -195,6 +201,7 @@ class DetectAndApplyRecommendations
         $applyRecommendationOperation->setResourceName($recommendationResourceName);
         return $applyRecommendationOperation;
     }
+    // [END build_apply_recommendation_operation]
 
     /**
      * Applies a batch of recommendations.
