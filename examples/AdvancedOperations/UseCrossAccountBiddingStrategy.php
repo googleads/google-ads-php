@@ -37,7 +37,6 @@ use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V16\Resources\BiddingStrategy;
 use Google\Ads\GoogleAds\V16\Resources\Campaign;
 use Google\Ads\GoogleAds\V16\Services\BiddingStrategyOperation;
-use Google\Ads\GoogleAds\V16\Services\BiddingStrategyServiceClient;
 use Google\Ads\GoogleAds\V16\Services\CampaignOperation;
 use Google\Ads\GoogleAds\V16\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V16\Services\MutateBiddingStrategiesRequest;
