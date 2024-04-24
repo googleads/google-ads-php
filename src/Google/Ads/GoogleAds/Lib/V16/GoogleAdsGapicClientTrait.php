@@ -130,7 +130,7 @@ trait GoogleAdsGapicClientTrait
         return $this->responseMetadata;
     }
 
-    public function setResponseMetadata(GoogleAdsResponseMetadata $responseMetadata): void
+    public function setResponseMetadata(?GoogleAdsResponseMetadata $responseMetadata): void
     {
         $this->responseMetadata = $responseMetadata;
     }
