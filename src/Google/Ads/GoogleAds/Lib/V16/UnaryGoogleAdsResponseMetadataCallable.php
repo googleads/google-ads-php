@@ -29,6 +29,14 @@ class UnaryGoogleAdsResponseMetadataCallable extends GoogleAdsMiddlewareAbstract
 {
     use GoogleAdsMetadataTrait;
 
+    private $adsClient;
+
+    public function __construct(callable $nextHandler = null, $adsClient = null)
+    {
+        $this->adsClient = $adsClient;
+        parent::__construct($nextHandler);
+    }
+
     /**
      * @param Call $call the current request
      * @param array $options the optional parameters
@@ -39,14 +47,11 @@ class UnaryGoogleAdsResponseMetadataCallable extends GoogleAdsMiddlewareAbstract
     public function __invoke(Call $call, array $options)
     {
         if (!empty($options['withResponseMetadata'])) {
-            $next = new ResponseMetadataMiddleware($this->getNextHandler());
-            return $next($call, $options)->then(function ($responseList) {
-                list($response, $metadata) = $responseList;
-                return [$response, new GoogleAdsResponseMetadata($metadata)];
-            });
-        } else {
-            $next = $this->getNextHandler();
-            return $next($call, $options);
+            $options['metadataCallback'] = function (array $metadata) {
+                $this->adsClient->setResponseMetadata(new GoogleAdsResponseMetadata($metadata));
+            };
         }
+        $next = $this->getNextHandler();
+        return $next($call, $options);
     }
 }
