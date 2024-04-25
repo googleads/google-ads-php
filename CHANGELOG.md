@@ -1,3 +1,25 @@
+## 23.0.0
+*   Added support for v16_1 of Google Ads API.
+*   Removed support for v14 of Google Ads API.
+*   Added support for `google/protobuf` v4.26.
+*   Updated `composer.json` to require the minimum PHP version of 8.1.
+*   Rolled back changes to the code base that requires PHP 8.0 or above, so PHP
+    7 users can still easily clone this library to work with the legacy code.
+*   Updated `package.json` of LaravelSampleApp.
+*   Added VerifyAdvertiserIdentity example.
+*   Updated code examples:
+    * AddCompleteCampaignsUsingBatchJob
+    * DetectAndApplyRecommendations
+    * DismissRecommendation
+    * UploadConversionAdjustment
+*   Removed code examples:
+    * AddFlightsFeed
+    * AddRealEstateFeed
+    * ApplyRecommendation
+    * ApproveMerchantCenterLink
+    * DismissRecommendation
+    * RejectMerchantCenterLink
+
 ## 22.1.0
 *   Added support for v16 of Google Ads API.
 *   Fixed dependabot alert in `examples/LaravelSampleApp/composer.lock`.
