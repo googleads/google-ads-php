@@ -99,6 +99,7 @@ use Google\Ads\GoogleAds\V16\Services\Client\FeedItemTargetServiceClient;
 use Google\Ads\GoogleAds\V16\Services\Client\FeedMappingServiceClient;
 use Google\Ads\GoogleAds\V16\Services\Client\FeedServiceClient;
 use Google\Ads\GoogleAds\V16\Services\Client\GoogleAdsFieldServiceClient;
+use Google\Ads\GoogleAds\V16\Services\Client\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V16\Services\Client\KeywordPlanAdGroupKeywordServiceClient;
 use Google\Ads\GoogleAds\V16\Services\Client\KeywordPlanAdGroupServiceClient;
 use Google\Ads\GoogleAds\V16\Services\Client\KeywordPlanCampaignKeywordServiceClient;
@@ -133,7 +134,7 @@ final class ResourceNames
         $customerId,
         $biddingStrategyId
     ): string {
-        return BatchJobServiceClient::accessibleBiddingStrategyName(
+        return GoogleAdsServiceClient::accessibleBiddingStrategyName(
             $customerId,
             $biddingStrategyId
         );
@@ -1038,7 +1039,7 @@ final class ResourceNames
     public static function forCarrierConstant(
         $criterionId
     ): string {
-        return BatchJobServiceClient::carrierConstantName(
+        return GoogleAdsServiceClient::carrierConstantName(
             $criterionId
         );
     }
@@ -1054,7 +1055,7 @@ final class ResourceNames
         $customerId,
         $combinedAudienceId
     ): string {
-        return BatchJobServiceClient::combinedAudienceName(
+        return GoogleAdsServiceClient::combinedAudienceName(
             $customerId,
             $combinedAudienceId
         );
@@ -1485,7 +1486,7 @@ final class ResourceNames
         $customerId,
         $detailedDemographicId
     ): string {
-        return BatchJobServiceClient::detailedDemographicName(
+        return GoogleAdsServiceClient::detailedDemographicName(
             $customerId,
             $detailedDemographicId
         );
@@ -1680,7 +1681,7 @@ final class ResourceNames
     public static function forGeoTargetConstant(
         $criterionId
     ): string {
-        return ExtensionFeedItemServiceClient::geoTargetConstantName(
+        return GoogleAdsServiceClient::geoTargetConstantName(
             $criterionId
         );
     }
@@ -1795,7 +1796,7 @@ final class ResourceNames
         $expressCategoryId,
         $expressSubCategoryId
     ): string {
-        return BatchJobServiceClient::keywordThemeConstantName(
+        return GoogleAdsServiceClient::keywordThemeConstantName(
             $expressCategoryId,
             $expressSubCategoryId
         );
@@ -1827,7 +1828,7 @@ final class ResourceNames
     public static function forLanguageConstant(
         $criterionId
     ): string {
-        return BatchJobServiceClient::languageConstantName(
+        return GoogleAdsServiceClient::languageConstantName(
             $criterionId
         );
     }
@@ -1843,7 +1844,7 @@ final class ResourceNames
         $customerId,
         $lifeEventId
     ): string {
-        return BatchJobServiceClient::lifeEventName(
+        return GoogleAdsServiceClient::lifeEventName(
             $customerId,
             $lifeEventId
         );
@@ -1858,7 +1859,7 @@ final class ResourceNames
     public static function forMobileAppCategoryConstant(
         $mobileAppCategoryId
     ): string {
-        return BatchJobServiceClient::mobileAppCategoryConstantName(
+        return GoogleAdsServiceClient::mobileAppCategoryConstantName(
             $mobileAppCategoryId
         );
     }
@@ -1872,7 +1873,7 @@ final class ResourceNames
     public static function forMobileDeviceConstant(
         $criterionId
     ): string {
-        return BatchJobServiceClient::mobileDeviceConstantName(
+        return GoogleAdsServiceClient::mobileDeviceConstantName(
             $criterionId
         );
     }
@@ -1903,7 +1904,7 @@ final class ResourceNames
     public static function forOperatingSystemVersionConstant(
         $criterionId
     ): string {
-        return BatchJobServiceClient::operatingSystemVersionConstantName(
+        return GoogleAdsServiceClient::operatingSystemVersionConstantName(
             $criterionId
         );
     }
@@ -2090,7 +2091,7 @@ final class ResourceNames
     public static function forTopicConstant(
         $topicId
     ): string {
-        return BatchJobServiceClient::topicConstantName(
+        return GoogleAdsServiceClient::topicConstantName(
             $topicId
         );
     }
@@ -2106,7 +2107,7 @@ final class ResourceNames
         $customerId,
         $userInterestId
     ): string {
-        return BatchJobServiceClient::userInterestName(
+        return GoogleAdsServiceClient::userInterestName(
             $customerId,
             $userInterestId
         );
