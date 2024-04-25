@@ -21,6 +21,7 @@ namespace Google\Ads\GoogleAds\Lib\V16;
 use Google\Ads\GoogleAds\Lib\GoogleAdsMiddlewareAbstract;
 use Google\ApiCore\Call;
 use Google\ApiCore\Middleware\ResponseMetadataMiddleware;
+use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  * Callable for returning `GoogleAdsResponseMetadata` from unary calls to the API.
@@ -39,23 +40,28 @@ class UnaryGoogleAdsResponseMetadataCallable extends GoogleAdsMiddlewareAbstract
     /**
      * @param Call $call the current request
      * @param array $options the optional parameters
-     * @return array|\GuzzleHttp\Promise\PromiseInterface the two-member array of
+     * @return array|PromiseInterface the two-member array of
      *     response and metadata if `withResponseMetadata` is specified as an option;
      *     Or else, the `Promise` interface of the next handler
      */
     public function __invoke(Call $call, array $options)
     {
+        $next = $this->getNextHandler();
         if (empty($options['withResponseMetadata'])) {
             // Bypass this middleware if the option is not set.
-            $next = $this->getNextHandler();
-            return $next($call, $options);
+            return $next($call, $options)->then(
+                function ($response) {
+                    // Reset the metadata to null.
+                    $this->adsClient->setResponseMetadata(null);
+                    return $response;
+                }
+            );
         }
 
         $metadataReceiver = new Promise();
         $options['metadataCallback'] = function ($metadata) use ($metadataReceiver) {
             $metadataReceiver->resolve($metadata);
         };
-        $next = $this->nextHandler;
         return $next($call, $options)->then(
             function ($response) use ($metadataReceiver) {
                 $metadata = null;
