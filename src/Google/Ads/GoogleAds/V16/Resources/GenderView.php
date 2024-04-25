@@ -10,6 +10,9 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A gender view.
+ * The gender_view resource reflects the effective serving state, rather than
+ * what criteria were added. An ad group without gender criteria by default
+ * shows to all genders, so all genders appear in gender_view with stats.
  *
  * Generated from protobuf message <code>google.ads.googleads.v16.resources.GenderView</code>
  */

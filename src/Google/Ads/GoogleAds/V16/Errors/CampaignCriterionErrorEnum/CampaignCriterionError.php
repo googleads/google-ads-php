@@ -187,6 +187,16 @@ class CampaignCriterionError
      * Generated from protobuf enum <code>CANNOT_ATTACH_BRAND_LIST_TO_NON_QUALIFIED_SEARCH_CAMPAIGN = 26;</code>
      */
     const CANNOT_ATTACH_BRAND_LIST_TO_NON_QUALIFIED_SEARCH_CAMPAIGN = 26;
+    /**
+     * Campaigns that target all countries and territories are limited to a
+     * certain number of top-level location exclusions. If removing a criterion
+     * causes the campaign to target all countries and territories and the
+     * campaign has more top-level location exclusions than the limit allows,
+     * then this error is returned.
+     *
+     * Generated from protobuf enum <code>CANNOT_REMOVE_ALL_LOCATIONS_DUE_TO_TOO_MANY_COUNTRY_EXCLUSIONS = 27;</code>
+     */
+    const CANNOT_REMOVE_ALL_LOCATIONS_DUE_TO_TOO_MANY_COUNTRY_EXCLUSIONS = 27;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -216,6 +226,7 @@ class CampaignCriterionError
         self::AT_LEAST_ONE_LOCAL_SERVICE_ID_CRITERION_REQUIRED_FOR_LOCAL_SERVICES_CAMPAIGN => 'AT_LEAST_ONE_LOCAL_SERVICE_ID_CRITERION_REQUIRED_FOR_LOCAL_SERVICES_CAMPAIGN',
         self::LOCAL_SERVICE_ID_NOT_FOUND_FOR_CATEGORY => 'LOCAL_SERVICE_ID_NOT_FOUND_FOR_CATEGORY',
         self::CANNOT_ATTACH_BRAND_LIST_TO_NON_QUALIFIED_SEARCH_CAMPAIGN => 'CANNOT_ATTACH_BRAND_LIST_TO_NON_QUALIFIED_SEARCH_CAMPAIGN',
+        self::CANNOT_REMOVE_ALL_LOCATIONS_DUE_TO_TOO_MANY_COUNTRY_EXCLUSIONS => 'CANNOT_REMOVE_ALL_LOCATIONS_DUE_TO_TOO_MANY_COUNTRY_EXCLUSIONS',
     ];
 
     public static function name($value)

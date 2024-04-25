@@ -26,8 +26,9 @@ class ResponseContentType
      */
     const RESOURCE_NAME_ONLY = 1;
     /**
-     * The mutate response will be the resource name and the resource with
-     * all mutable fields.
+     * The mutate response will contain the resource name and the resource with
+     * mutable fields if possible. Otherwise, only the resource name will be
+     * returned.
      *
      * Generated from protobuf enum <code>MUTABLE_RESOURCE = 2;</code>
      */

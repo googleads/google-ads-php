@@ -17,9 +17,6 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
 {
     /**
      * User Lists.
-     * The Similar Audiences sunset starts May 2023. Refer to
-     * https://ads-developers.googleblog.com/2022/11/announcing-deprecation-and-sunset-of.html
-     * for other options.
      *
      * Generated from protobuf field <code>repeated string user_lists = 1 [(.google.api.resource_reference) = {</code>
      */
@@ -39,9 +36,6 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
      *
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_lists
      *           User Lists.
-     *           The Similar Audiences sunset starts May 2023. Refer to
-     *           https://ads-developers.googleblog.com/2022/11/announcing-deprecation-and-sunset-of.html
-     *           for other options.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_interests
      *           User Interests.
      * }
@@ -53,9 +47,6 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
 
     /**
      * User Lists.
-     * The Similar Audiences sunset starts May 2023. Refer to
-     * https://ads-developers.googleblog.com/2022/11/announcing-deprecation-and-sunset-of.html
-     * for other options.
      *
      * Generated from protobuf field <code>repeated string user_lists = 1 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -67,9 +58,6 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
 
     /**
      * User Lists.
-     * The Similar Audiences sunset starts May 2023. Refer to
-     * https://ads-developers.googleblog.com/2022/11/announcing-deprecation-and-sunset-of.html
-     * for other options.
      *
      * Generated from protobuf field <code>repeated string user_lists = 1 [(.google.api.resource_reference) = {</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var

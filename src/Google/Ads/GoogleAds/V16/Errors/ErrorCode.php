@@ -51,6 +51,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           An error with a Campaign Budget mutate.
      *     @type int $campaign_error
      *           An error with a Campaign mutate.
+     *     @type int $video_campaign_error
+     *           An error with a Video Campaign mutate.
      *     @type int $authentication_error
      *           Indicates failure to properly authenticate user.
      *     @type int $ad_group_criterion_customizer_error
@@ -762,6 +764,37 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V16\Errors\CampaignErrorEnum\CampaignError::class);
         $this->writeOneof(15, $var);
+
+        return $this;
+    }
+
+    /**
+     * An error with a Video Campaign mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v16.errors.VideoCampaignErrorEnum.VideoCampaignError video_campaign_error = 182;</code>
+     * @return int
+     */
+    public function getVideoCampaignError()
+    {
+        return $this->readOneof(182);
+    }
+
+    public function hasVideoCampaignError()
+    {
+        return $this->hasOneof(182);
+    }
+
+    /**
+     * An error with a Video Campaign mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v16.errors.VideoCampaignErrorEnum.VideoCampaignError video_campaign_error = 182;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVideoCampaignError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V16\Errors\VideoCampaignErrorEnum\VideoCampaignError::class);
+        $this->writeOneof(182, $var);
 
         return $this;
     }
