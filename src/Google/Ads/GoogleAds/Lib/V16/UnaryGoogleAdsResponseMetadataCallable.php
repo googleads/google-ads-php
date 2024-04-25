@@ -21,6 +21,7 @@ namespace Google\Ads\GoogleAds\Lib\V16;
 use Google\Ads\GoogleAds\Lib\GoogleAdsMiddlewareAbstract;
 use Google\ApiCore\Call;
 use Google\ApiCore\Middleware\ResponseMetadataMiddleware;
+use GuzzleHttp\Promise\Promise;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
