@@ -1,3 +1,7 @@
+## 23.0.1
+*   Re-generated the source code for v16_1 of Google Ads API to add some missing
+    classes and enum values.
+
 ## 23.0.0
 *   Added support for v16_1 of Google Ads API.
 *   Removed support for v14 of Google Ads API.

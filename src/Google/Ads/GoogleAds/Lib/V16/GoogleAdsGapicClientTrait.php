@@ -43,6 +43,7 @@ trait GoogleAdsGapicClientTrait
     private $linkedCustomerId = null;
     private $unaryMiddlewares = [];
     private $streamingMiddlewares = [];
+    private ?GoogleAdsResponseMetadata $responseMetadata = null;
 
     /**
      * @see GapicClientTrait::modifyClientOptions()
@@ -103,7 +104,7 @@ trait GoogleAdsGapicClientTrait
     {
         $callable = $this->addFixedHeaderMiddleware($callable);
         $callable = new UnaryGoogleAdsExceptionMiddleware($callable);
-        $callable = new UnaryGoogleAdsResponseMetadataCallable($callable);
+        $callable = new UnaryGoogleAdsResponseMetadataCallable($callable, $this);
         foreach ($this->unaryMiddlewares as $unaryMiddleware) {
             /** @var GoogleAdsMiddlewareAbstract $unaryMiddleware */
             $callable = $unaryMiddleware->withNextHandler($callable);
@@ -122,5 +123,15 @@ trait GoogleAdsGapicClientTrait
             /** @var GoogleAdsMiddlewareAbstract $streamingMiddleware */
             $callable = $streamingMiddleware->withNextHandler($callable);
         }
+    }
+
+    public function getResponseMetadata(): ?GoogleAdsResponseMetadata
+    {
+        return $this->responseMetadata;
+    }
+
+    public function setResponseMetadata(?GoogleAdsResponseMetadata $responseMetadata): void
+    {
+        $this->responseMetadata = $responseMetadata;
     }
 }

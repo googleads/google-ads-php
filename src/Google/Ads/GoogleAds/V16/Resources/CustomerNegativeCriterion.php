@@ -65,6 +65,8 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
      *           Immutable. YouTube Channel.
      *     @type \Google\Ads\GoogleAds\V16\Common\NegativeKeywordListInfo $negative_keyword_list
      *           Immutable. NegativeKeywordList.
+     *     @type \Google\Ads\GoogleAds\V16\Common\IpBlockInfo $ip_block
+     *           Immutable. IPBLock
      * }
      */
     public function __construct($data = NULL) {
@@ -377,6 +379,37 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V16\Common\NegativeKeywordListInfo::class);
         $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Immutable. IPBLock
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v16.common.IpBlockInfo ip_block = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Ads\GoogleAds\V16\Common\IpBlockInfo|null
+     */
+    public function getIpBlock()
+    {
+        return $this->readOneof(12);
+    }
+
+    public function hasIpBlock()
+    {
+        return $this->hasOneof(12);
+    }
+
+    /**
+     * Immutable. IPBLock
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v16.common.IpBlockInfo ip_block = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Ads\GoogleAds\V16\Common\IpBlockInfo $var
+     * @return $this
+     */
+    public function setIpBlock($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V16\Common\IpBlockInfo::class);
+        $this->writeOneof(12, $var);
 
         return $this;
     }

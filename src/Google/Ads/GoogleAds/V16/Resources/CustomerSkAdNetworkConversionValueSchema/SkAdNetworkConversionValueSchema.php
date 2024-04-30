@@ -32,10 +32,21 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
     protected $measurement_window_hours = 0;
     /**
      * Output only. Fine grained conversion value mappings.
+     * For SkAdNetwork versions >= 4.0 that support multiple conversion
+     * windows, fine grained conversion value mappings are only applicable to
+     * the first postback.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v16.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings fine_grained_conversion_value_mappings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $fine_grained_conversion_value_mappings;
+    /**
+     * Output only. Per-postback conversion value mappings for postbacks in
+     * multiple conversion windows. Only applicable for SkAdNetwork versions
+     * >= 4.0.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v16.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping postback_mappings = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $postback_mappings;
 
     /**
      * Constructor.
@@ -52,6 +63,13 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
      *           (https://developer.apple.com/documentation/storekit/skadnetwork/3566697-updateconversionvalue).
      *     @type array<\Google\Ads\GoogleAds\V16\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\FineGrainedConversionValueMappings>|\Google\Protobuf\Internal\RepeatedField $fine_grained_conversion_value_mappings
      *           Output only. Fine grained conversion value mappings.
+     *           For SkAdNetwork versions >= 4.0 that support multiple conversion
+     *           windows, fine grained conversion value mappings are only applicable to
+     *           the first postback.
+     *     @type array<\Google\Ads\GoogleAds\V16\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\PostbackMapping>|\Google\Protobuf\Internal\RepeatedField $postback_mappings
+     *           Output only. Per-postback conversion value mappings for postbacks in
+     *           multiple conversion windows. Only applicable for SkAdNetwork versions
+     *           >= 4.0.
      * }
      */
     public function __construct($data = NULL) {
@@ -119,6 +137,9 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Fine grained conversion value mappings.
+     * For SkAdNetwork versions >= 4.0 that support multiple conversion
+     * windows, fine grained conversion value mappings are only applicable to
+     * the first postback.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v16.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings fine_grained_conversion_value_mappings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -130,6 +151,9 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Fine grained conversion value mappings.
+     * For SkAdNetwork versions >= 4.0 that support multiple conversion
+     * windows, fine grained conversion value mappings are only applicable to
+     * the first postback.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v16.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings fine_grained_conversion_value_mappings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param array<\Google\Ads\GoogleAds\V16\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\FineGrainedConversionValueMappings>|\Google\Protobuf\Internal\RepeatedField $var
@@ -139,6 +163,36 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V16\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\FineGrainedConversionValueMappings::class);
         $this->fine_grained_conversion_value_mappings = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Per-postback conversion value mappings for postbacks in
+     * multiple conversion windows. Only applicable for SkAdNetwork versions
+     * >= 4.0.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v16.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping postback_mappings = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPostbackMappings()
+    {
+        return $this->postback_mappings;
+    }
+
+    /**
+     * Output only. Per-postback conversion value mappings for postbacks in
+     * multiple conversion windows. Only applicable for SkAdNetwork versions
+     * >= 4.0.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v16.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping postback_mappings = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param array<\Google\Ads\GoogleAds\V16\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\PostbackMapping>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPostbackMappings($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V16\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\PostbackMapping::class);
+        $this->postback_mappings = $arr;
 
         return $this;
     }

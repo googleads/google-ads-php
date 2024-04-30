@@ -130,6 +130,13 @@ class AdGroupPrimaryStatusReason
      * Generated from protobuf enum <code>CAMPAIGN_DRAFT = 16;</code>
      */
     const CAMPAIGN_DRAFT = 16;
+    /**
+     * Ad group has been paused due to prolonged low activity in serving.
+     * Contributes to AdGroupPrimaryStatus.PAUSED.
+     *
+     * Generated from protobuf enum <code>AD_GROUP_PAUSED_DUE_TO_LOW_ACTIVITY = 19;</code>
+     */
+    const AD_GROUP_PAUSED_DUE_TO_LOW_ACTIVITY = 19;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -149,6 +156,7 @@ class AdGroupPrimaryStatusReason
         self::HAS_ADS_LIMITED_BY_POLICY => 'HAS_ADS_LIMITED_BY_POLICY',
         self::MOST_ADS_UNDER_REVIEW => 'MOST_ADS_UNDER_REVIEW',
         self::CAMPAIGN_DRAFT => 'CAMPAIGN_DRAFT',
+        self::AD_GROUP_PAUSED_DUE_TO_LOW_ACTIVITY => 'AD_GROUP_PAUSED_DUE_TO_LOW_ACTIVITY',
     ];
 
     public static function name($value)

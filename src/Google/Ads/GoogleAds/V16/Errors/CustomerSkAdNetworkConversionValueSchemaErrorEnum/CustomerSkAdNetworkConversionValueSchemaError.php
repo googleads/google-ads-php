@@ -49,6 +49,18 @@ class CustomerSkAdNetworkConversionValueSchemaError
      * Generated from protobuf enum <code>LINK_CODE_NOT_FOUND = 5;</code>
      */
     const LINK_CODE_NOT_FOUND = 5;
+    /**
+     * The SkAdNetwork event counter provided is invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_EVENT_COUNTER = 7;</code>
+     */
+    const INVALID_EVENT_COUNTER = 7;
+    /**
+     * The SkAdNetwork event name provided is invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_EVENT_NAME = 8;</code>
+     */
+    const INVALID_EVENT_NAME = 8;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -57,6 +69,8 @@ class CustomerSkAdNetworkConversionValueSchemaError
         self::INVALID_APP_ID => 'INVALID_APP_ID',
         self::INVALID_SCHEMA => 'INVALID_SCHEMA',
         self::LINK_CODE_NOT_FOUND => 'LINK_CODE_NOT_FOUND',
+        self::INVALID_EVENT_COUNTER => 'INVALID_EVENT_COUNTER',
+        self::INVALID_EVENT_NAME => 'INVALID_EVENT_NAME',
     ];
 
     public static function name($value)
