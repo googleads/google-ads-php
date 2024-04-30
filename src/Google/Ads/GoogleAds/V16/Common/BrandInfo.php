@@ -17,11 +17,35 @@ use Google\Protobuf\Internal\GPBUtil;
 class BrandInfo extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Output only. A text representation of a brand.
+     *
+     * Generated from protobuf field <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $display_name = null;
+    /**
      * The Commercial KG MID for the brand.
      *
      * Generated from protobuf field <code>optional string entity_id = 1;</code>
      */
     protected $entity_id = null;
+    /**
+     * Output only. The primary url of a brand.
+     *
+     * Generated from protobuf field <code>optional string primary_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $primary_url = null;
+    /**
+     * Output only. The rejection reason when a brand status is REJECTED.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v16.enums.BrandRequestRejectionReasonEnum.BrandRequestRejectionReason rejection_reason = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $rejection_reason = null;
+    /**
+     * Output only. The status of a brand.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v16.enums.BrandStateEnum.BrandState status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $status = null;
 
     /**
      * Constructor.
@@ -29,13 +53,57 @@ class BrandInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $display_name
+     *           Output only. A text representation of a brand.
      *     @type string $entity_id
      *           The Commercial KG MID for the brand.
+     *     @type string $primary_url
+     *           Output only. The primary url of a brand.
+     *     @type int $rejection_reason
+     *           Output only. The rejection reason when a brand status is REJECTED.
+     *     @type int $status
+     *           Output only. The status of a brand.
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V16\Common\Criteria::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Output only. A text representation of a brand.
+     *
+     * Generated from protobuf field <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return isset($this->display_name) ? $this->display_name : '';
+    }
+
+    public function hasDisplayName()
+    {
+        return isset($this->display_name);
+    }
+
+    public function clearDisplayName()
+    {
+        unset($this->display_name);
+    }
+
+    /**
+     * Output only. A text representation of a brand.
+     *
+     * Generated from protobuf field <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDisplayName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->display_name = $var;
+
+        return $this;
     }
 
     /**
@@ -70,6 +138,114 @@ class BrandInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->entity_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The primary url of a brand.
+     *
+     * Generated from protobuf field <code>optional string primary_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getPrimaryUrl()
+    {
+        return isset($this->primary_url) ? $this->primary_url : '';
+    }
+
+    public function hasPrimaryUrl()
+    {
+        return isset($this->primary_url);
+    }
+
+    public function clearPrimaryUrl()
+    {
+        unset($this->primary_url);
+    }
+
+    /**
+     * Output only. The primary url of a brand.
+     *
+     * Generated from protobuf field <code>optional string primary_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPrimaryUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->primary_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The rejection reason when a brand status is REJECTED.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v16.enums.BrandRequestRejectionReasonEnum.BrandRequestRejectionReason rejection_reason = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int
+     */
+    public function getRejectionReason()
+    {
+        return isset($this->rejection_reason) ? $this->rejection_reason : 0;
+    }
+
+    public function hasRejectionReason()
+    {
+        return isset($this->rejection_reason);
+    }
+
+    public function clearRejectionReason()
+    {
+        unset($this->rejection_reason);
+    }
+
+    /**
+     * Output only. The rejection reason when a brand status is REJECTED.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v16.enums.BrandRequestRejectionReasonEnum.BrandRequestRejectionReason rejection_reason = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRejectionReason($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V16\Enums\BrandRequestRejectionReasonEnum\BrandRequestRejectionReason::class);
+        $this->rejection_reason = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The status of a brand.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v16.enums.BrandStateEnum.BrandState status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return isset($this->status) ? $this->status : 0;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
+    }
+
+    /**
+     * Output only. The status of a brand.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v16.enums.BrandStateEnum.BrandState status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V16\Enums\BrandStateEnum\BrandState::class);
+        $this->status = $var;
 
         return $this;
     }

@@ -903,6 +903,12 @@ class ResourceLimitType
      * Generated from protobuf enum <code>SHARED_SETS_PER_ACCOUNT_FOR_BRAND = 185;</code>
      */
     const SHARED_SETS_PER_ACCOUNT_FOR_BRAND = 185;
+    /**
+     * Maximum number of lookalike lists per customer.
+     *
+     * Generated from protobuf enum <code>LOOKALIKE_USER_LISTS_PER_CUSTOMER = 186;</code>
+     */
+    const LOOKALIKE_USER_LISTS_PER_CUSTOMER = 186;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -1048,6 +1054,7 @@ class ResourceLimitType
         self::BRANDS_PER_SHARED_SET => 'BRANDS_PER_SHARED_SET',
         self::ENABLED_BRAND_LIST_CRITERIA_PER_CAMPAIGN => 'ENABLED_BRAND_LIST_CRITERIA_PER_CAMPAIGN',
         self::SHARED_SETS_PER_ACCOUNT_FOR_BRAND => 'SHARED_SETS_PER_ACCOUNT_FOR_BRAND',
+        self::LOOKALIKE_USER_LISTS_PER_CUSTOMER => 'LOOKALIKE_USER_LISTS_PER_CUSTOMER',
     ];
 
     public static function name($value)

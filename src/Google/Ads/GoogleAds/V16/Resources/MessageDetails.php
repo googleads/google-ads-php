@@ -21,6 +21,13 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string text = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $text = '';
+    /**
+     * Output only. URL to the SMS or email attachments. These URLs can be used to
+     * download the contents of the attachment by using the developer token.
+     *
+     * Generated from protobuf field <code>repeated string attachment_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $attachment_urls;
 
     /**
      * Constructor.
@@ -30,6 +37,9 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
      *
      *     @type string $text
      *           Output only. Textual content of the message.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $attachment_urls
+     *           Output only. URL to the SMS or email attachments. These URLs can be used to
+     *           download the contents of the attachment by using the developer token.
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +69,34 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->text = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. URL to the SMS or email attachments. These URLs can be used to
+     * download the contents of the attachment by using the developer token.
+     *
+     * Generated from protobuf field <code>repeated string attachment_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAttachmentUrls()
+    {
+        return $this->attachment_urls;
+    }
+
+    /**
+     * Output only. URL to the SMS or email attachments. These URLs can be used to
+     * download the contents of the attachment by using the developer token.
+     *
+     * Generated from protobuf field <code>repeated string attachment_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAttachmentUrls($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->attachment_urls = $arr;
 
         return $this;
     }

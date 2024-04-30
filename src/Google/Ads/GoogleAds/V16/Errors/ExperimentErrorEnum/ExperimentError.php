@@ -202,6 +202,12 @@ class ExperimentError
      * Generated from protobuf enum <code>CANNOT_ENABLE_SYNC_FOR_UNSUPPORTED_EXPERIMENT_TYPE = 29;</code>
      */
     const CANNOT_ENABLE_SYNC_FOR_UNSUPPORTED_EXPERIMENT_TYPE = 29;
+    /**
+     * Experiment length cannot be longer than max length.
+     *
+     * Generated from protobuf enum <code>INVALID_DURATION_FOR_AN_EXPERIMENT = 30;</code>
+     */
+    const INVALID_DURATION_FOR_AN_EXPERIMENT = 30;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -234,6 +240,7 @@ class ExperimentError
         self::CANNOT_REMOVE_IN_CREATION_EXPERIMENT => 'CANNOT_REMOVE_IN_CREATION_EXPERIMENT',
         self::CANNOT_ADD_CAMPAIGN_WITH_DEPRECATED_AD_TYPES => 'CANNOT_ADD_CAMPAIGN_WITH_DEPRECATED_AD_TYPES',
         self::CANNOT_ENABLE_SYNC_FOR_UNSUPPORTED_EXPERIMENT_TYPE => 'CANNOT_ENABLE_SYNC_FOR_UNSUPPORTED_EXPERIMENT_TYPE',
+        self::INVALID_DURATION_FOR_AN_EXPERIMENT => 'INVALID_DURATION_FOR_AN_EXPERIMENT',
     ];
 
     public static function name($value)

@@ -95,6 +95,12 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool lead_charged = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $lead_charged = false;
+    /**
+     * Output only. Credit details of the lead.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v16.resources.CreditDetails credit_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $credit_details = null;
 
     /**
      * Constructor.
@@ -135,6 +141,8 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
      *           Output only. Note added by advertiser for the lead.
      *     @type bool $lead_charged
      *           Output only. True if the advertiser was charged for the lead.
+     *     @type \Google\Ads\GoogleAds\V16\Resources\CreditDetails $credit_details
+     *           Output only. Credit details of the lead.
      * }
      */
     public function __construct($data = NULL) {
@@ -466,6 +474,42 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->lead_charged = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Credit details of the lead.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v16.resources.CreditDetails credit_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V16\Resources\CreditDetails|null
+     */
+    public function getCreditDetails()
+    {
+        return $this->credit_details;
+    }
+
+    public function hasCreditDetails()
+    {
+        return isset($this->credit_details);
+    }
+
+    public function clearCreditDetails()
+    {
+        unset($this->credit_details);
+    }
+
+    /**
+     * Output only. Credit details of the lead.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v16.resources.CreditDetails credit_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V16\Resources\CreditDetails $var
+     * @return $this
+     */
+    public function setCreditDetails($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V16\Resources\CreditDetails::class);
+        $this->credit_details = $var;
 
         return $this;
     }

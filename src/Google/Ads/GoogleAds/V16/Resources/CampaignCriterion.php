@@ -123,9 +123,6 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *           Immutable. Parental status.
      *     @type \Google\Ads\GoogleAds\V16\Common\UserListInfo $user_list
      *           Immutable. User List.
-     *           The Similar Audiences sunset starts May 2023. Refer to
-     *           https://ads-developers.googleblog.com/2022/11/announcing-deprecation-and-sunset-of.html
-     *           for other options.
      *     @type \Google\Ads\GoogleAds\V16\Common\YouTubeVideoInfo $youtube_video
      *           Immutable. YouTube Video.
      *     @type \Google\Ads\GoogleAds\V16\Common\YouTubeChannelInfo $youtube_channel
@@ -776,9 +773,6 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. User List.
-     * The Similar Audiences sunset starts May 2023. Refer to
-     * https://ads-developers.googleblog.com/2022/11/announcing-deprecation-and-sunset-of.html
-     * for other options.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v16.common.UserListInfo user_list = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V16\Common\UserListInfo|null
@@ -795,9 +789,6 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. User List.
-     * The Similar Audiences sunset starts May 2023. Refer to
-     * https://ads-developers.googleblog.com/2022/11/announcing-deprecation-and-sunset-of.html
-     * for other options.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v16.common.UserListInfo user_list = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V16\Common\UserListInfo $var
