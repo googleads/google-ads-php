@@ -71,7 +71,6 @@ use Google\Ads\GoogleAds\V16\Services\SuggestKeywordThemesRequest;
 use Google\Ads\GoogleAds\V16\Services\SuggestKeywordThemesResponse\KeywordTheme;
 use Google\Ads\GoogleAds\V16\Services\SuggestSmartCampaignAdRequest;
 use Google\Ads\GoogleAds\V16\Services\SuggestSmartCampaignBudgetOptionsRequest;
-use Google\Ads\GoogleAds\V16\Services\SuggestSmartCampaignBudgetOptionsRequest\SuggestionDataOneof;
 use Google\ApiCore\ApiException;
 use InvalidArgumentException;
 
