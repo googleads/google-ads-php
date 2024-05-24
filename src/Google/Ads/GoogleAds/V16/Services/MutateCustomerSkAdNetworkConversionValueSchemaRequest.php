@@ -35,6 +35,14 @@ class MutateCustomerSkAdNetworkConversionValueSchemaRequest extends \Google\Prot
      * Generated from protobuf field <code>bool validate_only = 3;</code>
      */
     protected $validate_only = false;
+    /**
+     * Optional. If true, enables returning warnings. Warnings return error
+     * messages and error codes without blocking the execution of the mutate
+     * operation.
+     *
+     * Generated from protobuf field <code>bool enable_warnings = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $enable_warnings = false;
 
     /**
      * Constructor.
@@ -49,6 +57,10 @@ class MutateCustomerSkAdNetworkConversionValueSchemaRequest extends \Google\Prot
      *     @type bool $validate_only
      *           If true, the request is validated but not executed. Only errors are
      *           returned, not results.
+     *     @type bool $enable_warnings
+     *           Optional. If true, enables returning warnings. Warnings return error
+     *           messages and error codes without blocking the execution of the mutate
+     *           operation.
      * }
      */
     public function __construct($data = NULL) {
@@ -142,6 +154,36 @@ class MutateCustomerSkAdNetworkConversionValueSchemaRequest extends \Google\Prot
     {
         GPBUtil::checkBool($var);
         $this->validate_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. If true, enables returning warnings. Warnings return error
+     * messages and error codes without blocking the execution of the mutate
+     * operation.
+     *
+     * Generated from protobuf field <code>bool enable_warnings = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return bool
+     */
+    public function getEnableWarnings()
+    {
+        return $this->enable_warnings;
+    }
+
+    /**
+     * Optional. If true, enables returning warnings. Warnings return error
+     * messages and error codes without blocking the execution of the mutate
+     * operation.
+     *
+     * Generated from protobuf field <code>bool enable_warnings = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableWarnings($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_warnings = $var;
 
         return $this;
     }

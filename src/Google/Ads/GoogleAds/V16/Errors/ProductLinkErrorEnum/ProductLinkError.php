@@ -44,6 +44,12 @@ class ProductLinkError
      * Generated from protobuf enum <code>INVITATION_EXISTS = 4;</code>
      */
     const INVITATION_EXISTS = 4;
+    /**
+     * A link cannot be created because an active link already exists.
+     *
+     * Generated from protobuf enum <code>LINK_EXISTS = 5;</code>
+     */
+    const LINK_EXISTS = 5;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -51,6 +57,7 @@ class ProductLinkError
         self::INVALID_OPERATION => 'INVALID_OPERATION',
         self::CREATION_NOT_PERMITTED => 'CREATION_NOT_PERMITTED',
         self::INVITATION_EXISTS => 'INVITATION_EXISTS',
+        self::LINK_EXISTS => 'LINK_EXISTS',
     ];
 
     public static function name($value)

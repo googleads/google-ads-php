@@ -188,6 +188,15 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v16.resources.LocalServicesSettings local_services_settings = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $local_services_settings = null;
+    /**
+     * Output only. Brand Safety setting at the account level. Allows for
+     * selecting an inventory type to show your ads on content that is the right
+     * fit for your brand. See
+     * https://support.google.com/google-ads/answer/7515513.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v16.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $video_brand_safety_suitability = 0;
 
     /**
      * Constructor.
@@ -272,6 +281,11 @@ class Customer extends \Google\Protobuf\Internal\Message
      *           Output only. Customer Agreement Setting for a customer.
      *     @type \Google\Ads\GoogleAds\V16\Resources\LocalServicesSettings $local_services_settings
      *           Output only. Settings for Local Services customer.
+     *     @type int $video_brand_safety_suitability
+     *           Output only. Brand Safety setting at the account level. Allows for
+     *           selecting an inventory type to show your ads on content that is the right
+     *           fit for your brand. See
+     *           https://support.google.com/google-ads/answer/7515513.
      * }
      */
     public function __construct($data = NULL) {
@@ -1157,6 +1171,38 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V16\Resources\LocalServicesSettings::class);
         $this->local_services_settings = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Brand Safety setting at the account level. Allows for
+     * selecting an inventory type to show your ads on content that is the right
+     * fit for your brand. See
+     * https://support.google.com/google-ads/answer/7515513.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v16.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int
+     */
+    public function getVideoBrandSafetySuitability()
+    {
+        return $this->video_brand_safety_suitability;
+    }
+
+    /**
+     * Output only. Brand Safety setting at the account level. Allows for
+     * selecting an inventory type to show your ads on content that is the right
+     * fit for your brand. See
+     * https://support.google.com/google-ads/answer/7515513.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v16.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVideoBrandSafetySuitability($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V16\Enums\BrandSafetySuitabilityEnum\BrandSafetySuitability::class);
+        $this->video_brand_safety_suitability = $var;
 
         return $this;
     }

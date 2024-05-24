@@ -21,6 +21,13 @@ class MutateCustomerSkAdNetworkConversionValueSchemaResponse extends \Google\Pro
      * Generated from protobuf field <code>.google.ads.googleads.v16.services.MutateCustomerSkAdNetworkConversionValueSchemaResult result = 1;</code>
      */
     protected $result = null;
+    /**
+     * Non blocking errors that provides schema validation failure details.
+     * Returned only when enable_warnings = true.
+     *
+     * Generated from protobuf field <code>.google.rpc.Status warning = 2;</code>
+     */
+    protected $warning = null;
 
     /**
      * Constructor.
@@ -30,6 +37,9 @@ class MutateCustomerSkAdNetworkConversionValueSchemaResponse extends \Google\Pro
      *
      *     @type \Google\Ads\GoogleAds\V16\Services\MutateCustomerSkAdNetworkConversionValueSchemaResult $result
      *           All results for the mutate.
+     *     @type \Google\Rpc\Status $warning
+     *           Non blocking errors that provides schema validation failure details.
+     *           Returned only when enable_warnings = true.
      * }
      */
     public function __construct($data = NULL) {
@@ -69,6 +79,44 @@ class MutateCustomerSkAdNetworkConversionValueSchemaResponse extends \Google\Pro
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V16\Services\MutateCustomerSkAdNetworkConversionValueSchemaResult::class);
         $this->result = $var;
+
+        return $this;
+    }
+
+    /**
+     * Non blocking errors that provides schema validation failure details.
+     * Returned only when enable_warnings = true.
+     *
+     * Generated from protobuf field <code>.google.rpc.Status warning = 2;</code>
+     * @return \Google\Rpc\Status|null
+     */
+    public function getWarning()
+    {
+        return $this->warning;
+    }
+
+    public function hasWarning()
+    {
+        return isset($this->warning);
+    }
+
+    public function clearWarning()
+    {
+        unset($this->warning);
+    }
+
+    /**
+     * Non blocking errors that provides schema validation failure details.
+     * Returned only when enable_warnings = true.
+     *
+     * Generated from protobuf field <code>.google.rpc.Status warning = 2;</code>
+     * @param \Google\Rpc\Status $var
+     * @return $this
+     */
+    public function setWarning($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Rpc\Status::class);
+        $this->warning = $var;
 
         return $this;
     }

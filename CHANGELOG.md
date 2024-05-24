@@ -1,3 +1,6 @@
+## 22.1.1
+*   Added support for v16_1 of Google Ads API.
+
 ## 22.1.0
 *   Added support for v16 of Google Ads API.
 *   Fixed dependabot alert in `examples/LaravelSampleApp/composer.lock`.

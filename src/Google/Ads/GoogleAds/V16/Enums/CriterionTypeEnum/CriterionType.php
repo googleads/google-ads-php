@@ -259,6 +259,12 @@ class CriterionType
      * Generated from protobuf enum <code>BRAND_LIST = 40;</code>
      */
     const BRAND_LIST = 40;
+    /**
+     * Life Event
+     *
+     * Generated from protobuf enum <code>LIFE_EVENT = 41;</code>
+     */
+    const LIFE_EVENT = 41;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -302,6 +308,7 @@ class CriterionType
         self::SEARCH_THEME => 'SEARCH_THEME',
         self::BRAND => 'BRAND',
         self::BRAND_LIST => 'BRAND_LIST',
+        self::LIFE_EVENT => 'LIFE_EVENT',
     ];
 
     public static function name($value)

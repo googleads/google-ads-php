@@ -16,8 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class Metrics extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The percent of your ad impressions that are shown as the very first ad
-     * above the organic search results.
+     * Search absolute top impression share is the percentage of your Search ad
+     * impressions that are shown in the most prominent Search position.
      *
      * Generated from protobuf field <code>optional double absolute_top_impression_percentage = 183;</code>
      */
@@ -192,8 +192,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $all_conversions_from_store_website = null;
     /**
      * This metric is part of the Auction Insights report, and tells how often
-     * the ads of another participant showed as the very first ad above the
-     * organic search results.
+     * the ads of another participant showed in the most prominent position on the
+     * search results page.
      * This percentage is computed only over the auctions that you appeared in
      * the page.
      * This metric is not publicly available.
@@ -242,9 +242,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $auction_insight_search_position_above_rate = null;
     /**
      * This metric is part of the Auction Insights report, and tells how often
-     * the ads of another participant showed above the organic search results.
-     * This percentage is computed only over the auctions that you appeared in
-     * the page.
+     * the ads of another participant showed adjacent to the top organic search
+     * results. This percentage is computed only over the auctions that you
+     * appeared in the page.
      * This metric is not publicly available.
      *
      * Generated from protobuf field <code>optional double auction_insight_search_top_impression_percentage = 263;</code>
@@ -866,8 +866,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $search_absolute_top_impression_share = null;
     /**
-     * The number estimating how often your ad wasn't the very first ad above the
-     * organic search results due to a low budget. Note: Search
+     * The number estimating how often your ad wasn't the very first ad among the
+     * top ads in the search results due to a low budget. Note: Search
      * budget lost absolute top impression share is reported in the range of 0 to
      * 0.9. Any value above 0.9 is reported as 0.9001.
      *
@@ -884,7 +884,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $search_budget_lost_impression_share = null;
     /**
-     * The number estimating how often your ad didn't show anywhere above the
+     * The number estimating how often your ad didn't show adjacent to the top
      * organic search results due to a low budget. Note: Search
      * budget lost top impression share is reported in the range of 0 to 0.9. Any
      * value above 0.9 is reported as 0.9001.
@@ -922,8 +922,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $search_impression_share = null;
     /**
-     * The number estimating how often your ad wasn't the very first ad above the
-     * organic search results due to poor Ad Rank.
+     * The number estimating how often your ad wasn't the very first ad among the
+     * top ads in the search results due to poor Ad Rank.
      * Note: Search rank lost absolute top impression share is reported in the
      * range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
      *
@@ -940,7 +940,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $search_rank_lost_impression_share = null;
     /**
-     * The number estimating how often your ad didn't show anywhere above the
+     * The number estimating how often your ad didn't show adjacent to the top
      * organic search results due to poor Ad Rank.
      * Note: Search rank lost top impression share is reported in the range of 0
      * to 0.9. Any value above 0.9 is reported as 0.9001.
@@ -949,11 +949,12 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $search_rank_lost_top_impression_share = null;
     /**
-     * The impressions you've received in the top location (anywhere above the
-     * organic search results) compared to the estimated number of impressions you
-     * were eligible to receive in the top location.
+     * The impressions you've received among the top ads compared to the estimated
+     * number of impressions you were eligible to receive among the top ads.
      * Note: Search top impression share is reported in the range of 0.1 to 1. Any
      * value below 0.1 is reported as 0.0999.
+     * Top ads are generally above the top organic results, although they may show
+     * below the top organic results on certain queries.
      *
      * Generated from protobuf field <code>optional double search_top_impression_share = 146;</code>
      */
@@ -986,7 +987,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $average_target_roas = null;
     /**
-     * The percent of your ad impressions that are shown anywhere above the
+     * The percent of your ad impressions that are shown adjacent to the top
      * organic search results.
      *
      * Generated from protobuf field <code>optional double top_impression_percentage = 148;</code>
@@ -1524,8 +1525,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type float $absolute_top_impression_percentage
-     *           The percent of your ad impressions that are shown as the very first ad
-     *           above the organic search results.
+     *           Search absolute top impression share is the percentage of your Search ad
+     *           impressions that are shown in the most prominent Search position.
      *     @type float $active_view_cpm
      *           Average cost of viewable impressions (`active_view_impressions`).
      *     @type float $active_view_ctr
@@ -1608,8 +1609,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           This metric applies to feed items only.
      *     @type float $auction_insight_search_absolute_top_impression_percentage
      *           This metric is part of the Auction Insights report, and tells how often
-     *           the ads of another participant showed as the very first ad above the
-     *           organic search results.
+     *           the ads of another participant showed in the most prominent position on the
+     *           search results page.
      *           This percentage is computed only over the auctions that you appeared in
      *           the page.
      *           This metric is not publicly available.
@@ -1638,9 +1639,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           This metric is not publicly available.
      *     @type float $auction_insight_search_top_impression_percentage
      *           This metric is part of the Auction Insights report, and tells how often
-     *           the ads of another participant showed above the organic search results.
-     *           This percentage is computed only over the auctions that you appeared in
-     *           the page.
+     *           the ads of another participant showed adjacent to the top organic search
+     *           results. This percentage is computed only over the auctions that you
+     *           appeared in the page.
      *           This metric is not publicly available.
      *     @type float $average_cost
      *           The average amount you pay per interaction. This amount is the total cost
@@ -1942,8 +1943,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           https://support.google.com/google-ads/answer/7501826
      *           for details. Any value below 0.1 is reported as 0.0999.
      *     @type float $search_budget_lost_absolute_top_impression_share
-     *           The number estimating how often your ad wasn't the very first ad above the
-     *           organic search results due to a low budget. Note: Search
+     *           The number estimating how often your ad wasn't the very first ad among the
+     *           top ads in the search results due to a low budget. Note: Search
      *           budget lost absolute top impression share is reported in the range of 0 to
      *           0.9. Any value above 0.9 is reported as 0.9001.
      *     @type float $search_budget_lost_impression_share
@@ -1952,7 +1953,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           budget lost impression share is reported in the range of 0 to 0.9. Any
      *           value above 0.9 is reported as 0.9001.
      *     @type float $search_budget_lost_top_impression_share
-     *           The number estimating how often your ad didn't show anywhere above the
+     *           The number estimating how often your ad didn't show adjacent to the top
      *           organic search results due to a low budget. Note: Search
      *           budget lost top impression share is reported in the range of 0 to 0.9. Any
      *           value above 0.9 is reported as 0.9001.
@@ -1974,8 +1975,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           Note: Search impression share is reported in the range of 0.1 to 1. Any
      *           value below 0.1 is reported as 0.0999.
      *     @type float $search_rank_lost_absolute_top_impression_share
-     *           The number estimating how often your ad wasn't the very first ad above the
-     *           organic search results due to poor Ad Rank.
+     *           The number estimating how often your ad wasn't the very first ad among the
+     *           top ads in the search results due to poor Ad Rank.
      *           Note: Search rank lost absolute top impression share is reported in the
      *           range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
      *     @type float $search_rank_lost_impression_share
@@ -1984,16 +1985,17 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           Note: Search rank lost impression share is reported in the range of 0 to
      *           0.9. Any value above 0.9 is reported as 0.9001.
      *     @type float $search_rank_lost_top_impression_share
-     *           The number estimating how often your ad didn't show anywhere above the
+     *           The number estimating how often your ad didn't show adjacent to the top
      *           organic search results due to poor Ad Rank.
      *           Note: Search rank lost top impression share is reported in the range of 0
      *           to 0.9. Any value above 0.9 is reported as 0.9001.
      *     @type float $search_top_impression_share
-     *           The impressions you've received in the top location (anywhere above the
-     *           organic search results) compared to the estimated number of impressions you
-     *           were eligible to receive in the top location.
+     *           The impressions you've received among the top ads compared to the estimated
+     *           number of impressions you were eligible to receive among the top ads.
      *           Note: Search top impression share is reported in the range of 0.1 to 1. Any
      *           value below 0.1 is reported as 0.0999.
+     *           Top ads are generally above the top organic results, although they may show
+     *           below the top organic results on certain queries.
      *     @type \Google\Ads\GoogleAds\V16\Common\SearchVolumeRange $search_volume
      *           Search volume range for a search term insight category.
      *     @type int|string $speed_score
@@ -2006,7 +2008,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The average Target ROAS, or unset if not available (for example, for
      *           campaigns that had traffic from portfolio bidding strategies or non-tROAS).
      *     @type float $top_impression_percentage
-     *           The percent of your ad impressions that are shown anywhere above the
+     *           The percent of your ad impressions that are shown adjacent to the top
      *           organic search results.
      *     @type float $valid_accelerated_mobile_pages_clicks_percentage
      *           The percentage of ad clicks to Accelerated Mobile Pages (AMP) landing pages
@@ -2336,8 +2338,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The percent of your ad impressions that are shown as the very first ad
-     * above the organic search results.
+     * Search absolute top impression share is the percentage of your Search ad
+     * impressions that are shown in the most prominent Search position.
      *
      * Generated from protobuf field <code>optional double absolute_top_impression_percentage = 183;</code>
      * @return float
@@ -2358,8 +2360,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The percent of your ad impressions that are shown as the very first ad
-     * above the organic search results.
+     * Search absolute top impression share is the percentage of your Search ad
+     * impressions that are shown in the most prominent Search position.
      *
      * Generated from protobuf field <code>optional double absolute_top_impression_percentage = 183;</code>
      * @param float $var
@@ -3219,8 +3221,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * This metric is part of the Auction Insights report, and tells how often
-     * the ads of another participant showed as the very first ad above the
-     * organic search results.
+     * the ads of another participant showed in the most prominent position on the
+     * search results page.
      * This percentage is computed only over the auctions that you appeared in
      * the page.
      * This metric is not publicly available.
@@ -3245,8 +3247,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * This metric is part of the Auction Insights report, and tells how often
-     * the ads of another participant showed as the very first ad above the
-     * organic search results.
+     * the ads of another participant showed in the most prominent position on the
+     * search results page.
      * This percentage is computed only over the auctions that you appeared in
      * the page.
      * This metric is not publicly available.
@@ -3439,9 +3441,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * This metric is part of the Auction Insights report, and tells how often
-     * the ads of another participant showed above the organic search results.
-     * This percentage is computed only over the auctions that you appeared in
-     * the page.
+     * the ads of another participant showed adjacent to the top organic search
+     * results. This percentage is computed only over the auctions that you
+     * appeared in the page.
      * This metric is not publicly available.
      *
      * Generated from protobuf field <code>optional double auction_insight_search_top_impression_percentage = 263;</code>
@@ -3464,9 +3466,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * This metric is part of the Auction Insights report, and tells how often
-     * the ads of another participant showed above the organic search results.
-     * This percentage is computed only over the auctions that you appeared in
-     * the page.
+     * the ads of another participant showed adjacent to the top organic search
+     * results. This percentage is computed only over the auctions that you
+     * appeared in the page.
      * This metric is not publicly available.
      *
      * Generated from protobuf field <code>optional double auction_insight_search_top_impression_percentage = 263;</code>
@@ -6548,8 +6550,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number estimating how often your ad wasn't the very first ad above the
-     * organic search results due to a low budget. Note: Search
+     * The number estimating how often your ad wasn't the very first ad among the
+     * top ads in the search results due to a low budget. Note: Search
      * budget lost absolute top impression share is reported in the range of 0 to
      * 0.9. Any value above 0.9 is reported as 0.9001.
      *
@@ -6572,8 +6574,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number estimating how often your ad wasn't the very first ad above the
-     * organic search results due to a low budget. Note: Search
+     * The number estimating how often your ad wasn't the very first ad among the
+     * top ads in the search results due to a low budget. Note: Search
      * budget lost absolute top impression share is reported in the range of 0 to
      * 0.9. Any value above 0.9 is reported as 0.9001.
      *
@@ -6632,7 +6634,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number estimating how often your ad didn't show anywhere above the
+     * The number estimating how often your ad didn't show adjacent to the top
      * organic search results due to a low budget. Note: Search
      * budget lost top impression share is reported in the range of 0 to 0.9. Any
      * value above 0.9 is reported as 0.9001.
@@ -6656,7 +6658,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number estimating how often your ad didn't show anywhere above the
+     * The number estimating how often your ad didn't show adjacent to the top
      * organic search results due to a low budget. Note: Search
      * budget lost top impression share is reported in the range of 0 to 0.9. Any
      * value above 0.9 is reported as 0.9001.
@@ -6804,8 +6806,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number estimating how often your ad wasn't the very first ad above the
-     * organic search results due to poor Ad Rank.
+     * The number estimating how often your ad wasn't the very first ad among the
+     * top ads in the search results due to poor Ad Rank.
      * Note: Search rank lost absolute top impression share is reported in the
      * range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
      *
@@ -6828,8 +6830,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number estimating how often your ad wasn't the very first ad above the
-     * organic search results due to poor Ad Rank.
+     * The number estimating how often your ad wasn't the very first ad among the
+     * top ads in the search results due to poor Ad Rank.
      * Note: Search rank lost absolute top impression share is reported in the
      * range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
      *
@@ -6888,7 +6890,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number estimating how often your ad didn't show anywhere above the
+     * The number estimating how often your ad didn't show adjacent to the top
      * organic search results due to poor Ad Rank.
      * Note: Search rank lost top impression share is reported in the range of 0
      * to 0.9. Any value above 0.9 is reported as 0.9001.
@@ -6912,7 +6914,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number estimating how often your ad didn't show anywhere above the
+     * The number estimating how often your ad didn't show adjacent to the top
      * organic search results due to poor Ad Rank.
      * Note: Search rank lost top impression share is reported in the range of 0
      * to 0.9. Any value above 0.9 is reported as 0.9001.
@@ -6930,11 +6932,12 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The impressions you've received in the top location (anywhere above the
-     * organic search results) compared to the estimated number of impressions you
-     * were eligible to receive in the top location.
+     * The impressions you've received among the top ads compared to the estimated
+     * number of impressions you were eligible to receive among the top ads.
      * Note: Search top impression share is reported in the range of 0.1 to 1. Any
      * value below 0.1 is reported as 0.0999.
+     * Top ads are generally above the top organic results, although they may show
+     * below the top organic results on certain queries.
      *
      * Generated from protobuf field <code>optional double search_top_impression_share = 146;</code>
      * @return float
@@ -6955,11 +6958,12 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The impressions you've received in the top location (anywhere above the
-     * organic search results) compared to the estimated number of impressions you
-     * were eligible to receive in the top location.
+     * The impressions you've received among the top ads compared to the estimated
+     * number of impressions you were eligible to receive among the top ads.
      * Note: Search top impression share is reported in the range of 0.1 to 1. Any
      * value below 0.1 is reported as 0.0999.
+     * Top ads are generally above the top organic results, although they may show
+     * below the top organic results on certain queries.
      *
      * Generated from protobuf field <code>optional double search_top_impression_share = 146;</code>
      * @param float $var
@@ -7124,7 +7128,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The percent of your ad impressions that are shown anywhere above the
+     * The percent of your ad impressions that are shown adjacent to the top
      * organic search results.
      *
      * Generated from protobuf field <code>optional double top_impression_percentage = 148;</code>
@@ -7146,7 +7150,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The percent of your ad impressions that are shown anywhere above the
+     * The percent of your ad impressions that are shown adjacent to the top
      * organic search results.
      *
      * Generated from protobuf field <code>optional double top_impression_percentage = 148;</code>

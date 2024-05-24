@@ -45,6 +45,12 @@ class ProductLinkInvitationError
      * Generated from protobuf enum <code>NO_INVITATION_REQUIRED = 4;</code>
      */
     const NO_INVITATION_REQUIRED = 4;
+    /**
+     * The customer is not permitted to create the invitation.
+     *
+     * Generated from protobuf enum <code>CUSTOMER_NOT_PERMITTED_TO_CREATE_INVITATION = 5;</code>
+     */
+    const CUSTOMER_NOT_PERMITTED_TO_CREATE_INVITATION = 5;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -52,6 +58,7 @@ class ProductLinkInvitationError
         self::INVALID_STATUS => 'INVALID_STATUS',
         self::PERMISSION_DENIED => 'PERMISSION_DENIED',
         self::NO_INVITATION_REQUIRED => 'NO_INVITATION_REQUIRED',
+        self::CUSTOMER_NOT_PERMITTED_TO_CREATE_INVITATION => 'CUSTOMER_NOT_PERMITTED_TO_CREATE_INVITATION',
     ];
 
     public static function name($value)

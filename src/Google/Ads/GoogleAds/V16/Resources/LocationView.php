@@ -9,8 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A location view summarizes the performance of campaigns by
- * Location criteria.
+ * A location view summarizes the performance of campaigns by a Location
+ * criterion.
+ * If no Location criterion is set, no results are returned; instead, use
+ * geographic_view or user_location_view for visitor location data.
  *
  * Generated from protobuf message <code>google.ads.googleads.v16.resources.LocationView</code>
  */
