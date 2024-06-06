@@ -24,20 +24,20 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V16\ResourceNames;
-use Google\Ads\GoogleAds\V16\Enums\ManagerLinkStatusEnum\ManagerLinkStatus;
-use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V16\Resources\CustomerClientLink;
-use Google\Ads\GoogleAds\V16\Resources\CustomerManagerLink;
-use Google\Ads\GoogleAds\V16\Services\CustomerClientLinkOperation;
-use Google\Ads\GoogleAds\V16\Services\CustomerManagerLinkOperation;
-use Google\Ads\GoogleAds\V16\Services\MutateCustomerClientLinkRequest;
-use Google\Ads\GoogleAds\V16\Services\MutateCustomerManagerLinkRequest;
-use Google\Ads\GoogleAds\V16\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Util\V17\ResourceNames;
+use Google\Ads\GoogleAds\V17\Enums\ManagerLinkStatusEnum\ManagerLinkStatus;
+use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V17\Resources\CustomerClientLink;
+use Google\Ads\GoogleAds\V17\Resources\CustomerManagerLink;
+use Google\Ads\GoogleAds\V17\Services\CustomerClientLinkOperation;
+use Google\Ads\GoogleAds\V17\Services\CustomerManagerLinkOperation;
+use Google\Ads\GoogleAds\V17\Services\MutateCustomerClientLinkRequest;
+use Google\Ads\GoogleAds\V17\Services\MutateCustomerManagerLinkRequest;
+use Google\Ads\GoogleAds\V17\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -48,7 +48,6 @@ class LinkManagerToClient
 {
     private const MANAGER_CUSTOMER_ID = 'INSERT_MANAGER_CUSTOMER_ID_HERE';
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const PAGE_SIZE = 50;
 
     public static function main()
     {
@@ -192,10 +191,10 @@ class LinkManagerToClient
         $query = "SELECT customer_client_link.manager_link_id FROM customer_client_link" .
             " WHERE customer_client_link.resource_name = '$customerClientLinkResourceName'";
 
-        // Issues a search request by specifying the page size.
+        // Issues a search request.
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         $response = $googleAdsServiceClient->search(
-            SearchGoogleAdsRequest::build($managerCustomerId, $query)->setPageSize(self::PAGE_SIZE)
+            SearchGoogleAdsRequest::build($managerCustomerId, $query)
         );
 
         // Gets the ID and resource name associated to the manager link found.

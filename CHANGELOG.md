@@ -1,3 +1,25 @@
+## 23.1.0
+*   Added support for v17 of Google Ads API.
+*   Updated code examples for removing the usage of `pageSize`:
+    * GetAccountHierarchy
+    * GetChangeDetails
+    * GetChangeSummary
+    * LinkManagerToClient
+    * FindAndRemoveCriteriaFromSharedSet
+    * GetAdGroupBidModifiers
+    * GetResponsiveSearchAds
+    * GetAllDisapprovedAds
+    * CampaignReportToCsv
+    * SetUpRemarketing
+    * UpdateAudienceTargetRestriction
+    * AddPerformanceMaxProductListingGroupTree
+    * AddPerformanceMaxRetailCampaign
+    * AddShoppingProductListingGroupTree
+    * GetProductCategoryConstants
+    * Utils\Feeds
+*   Removed code examples:
+    * NavigateSearchResultPagesCachingTokens
+
 ## 23.0.1
 *   Re-generated the source code for v16_1 of Google Ads API to add some missing
     classes and enum values.

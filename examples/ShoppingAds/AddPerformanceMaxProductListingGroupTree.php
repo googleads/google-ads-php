@@ -24,25 +24,25 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V16\ResourceNames;
-use Google\Ads\GoogleAds\V16\Enums\ListingGroupFilterListingSourceEnum\ListingGroupFilterListingSource;
-use Google\Ads\GoogleAds\V16\Enums\ListingGroupFilterProductConditionEnum\ListingGroupFilterProductCondition;
-use Google\Ads\GoogleAds\V16\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
-use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V16\Resources\AssetGroupListingGroupFilter;
-use Google\Ads\GoogleAds\V16\Resources\ListingGroupFilterDimension;
-use Google\Ads\GoogleAds\V16\Resources\ListingGroupFilterDimension\ProductBrand;
-use Google\Ads\GoogleAds\V16\Resources\ListingGroupFilterDimension\ProductCondition;
-use Google\Ads\GoogleAds\V16\Services\AssetGroupListingGroupFilterOperation;
-use Google\Ads\GoogleAds\V16\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V16\Services\MutateGoogleAdsRequest;
-use Google\Ads\GoogleAds\V16\Services\MutateGoogleAdsResponse;
-use Google\Ads\GoogleAds\V16\Services\MutateOperation;
-use Google\Ads\GoogleAds\V16\Services\MutateOperationResponse;
-use Google\Ads\GoogleAds\V16\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V17\ResourceNames;
+use Google\Ads\GoogleAds\V17\Enums\ListingGroupFilterListingSourceEnum\ListingGroupFilterListingSource;
+use Google\Ads\GoogleAds\V17\Enums\ListingGroupFilterProductConditionEnum\ListingGroupFilterProductCondition;
+use Google\Ads\GoogleAds\V17\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
+use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V17\Resources\AssetGroupListingGroupFilter;
+use Google\Ads\GoogleAds\V17\Resources\ListingGroupFilterDimension;
+use Google\Ads\GoogleAds\V17\Resources\ListingGroupFilterDimension\ProductBrand;
+use Google\Ads\GoogleAds\V17\Resources\ListingGroupFilterDimension\ProductCondition;
+use Google\Ads\GoogleAds\V17\Services\AssetGroupListingGroupFilterOperation;
+use Google\Ads\GoogleAds\V17\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V17\Services\MutateGoogleAdsRequest;
+use Google\Ads\GoogleAds\V17\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V17\Services\MutateOperation;
+use Google\Ads\GoogleAds\V17\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\V17\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Serializer;
 
@@ -72,8 +72,6 @@ class AddPerformanceMaxProductListingGroupTree
     // We specify temporary IDs that are specific to a single mutate request.
     // Temporary IDs are always negative and unique within one mutate request.
     private const LISTING_GROUP_ROOT_TEMPORARY_ID = -1;
-
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -297,10 +295,9 @@ class AddPerformanceMaxProductListingGroupTree
             $assetGroupResourceName
         );
 
-        // Issues a search request by specifying page size.
-        $response = $googleAdsServiceClient->search(
-            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
-        );
+        // Issues a search request.
+        $response =
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
         $assetGroupListingGroupFilters = [];
         // Iterates over all rows in all pages to get an asset group listing group filter.

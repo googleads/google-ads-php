@@ -24,17 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V16\ResourceNames;
-use Google\Ads\GoogleAds\V16\Enums\InvoiceTypeEnum\InvoiceType;
-use Google\Ads\GoogleAds\V16\Enums\MonthOfYearEnum\MonthOfYear;
-use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V16\Resources\Invoice;
-use Google\Ads\GoogleAds\V16\Resources\Invoice\AccountBudgetSummary;
-use Google\Ads\GoogleAds\V16\Services\ListInvoicesRequest;
+use Google\Ads\GoogleAds\Util\V17\ResourceNames;
+use Google\Ads\GoogleAds\V17\Enums\InvoiceTypeEnum\InvoiceType;
+use Google\Ads\GoogleAds\V17\Enums\MonthOfYearEnum\MonthOfYear;
+use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V17\Resources\Invoice;
+use Google\Ads\GoogleAds\V17\Resources\Invoice\AccountBudgetSummary;
+use Google\Ads\GoogleAds\V17\Services\ListInvoicesRequest;
 use Google\ApiCore\ApiException;
 
 /**

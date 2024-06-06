@@ -24,15 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
-use Google\Ads\GoogleAds\V16\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V16\Enums\DeviceEnum\Device;
-use Google\Ads\GoogleAds\V16\Enums\HotelDateSelectionTypeEnum\HotelDateSelectionType;
-use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V16\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V16\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
+use Google\Ads\GoogleAds\V17\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V17\Enums\DeviceEnum\Device;
+use Google\Ads\GoogleAds\V17\Enums\HotelDateSelectionTypeEnum\HotelDateSelectionType;
+use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V17\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V17\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example gets ad group bid modifiers. */
@@ -41,8 +41,6 @@ class GetAdGroupBidModifiers
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     // Optional: Specify an ad group ID below to restrict search to only a given ad group.
     private const AD_GROUP_ID = null;
-
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -134,10 +132,9 @@ class GetAdGroupBidModifiers
         }
         $query .= " LIMIT 10000";
 
-        // Issues a search request by specifying page size.
-        $response = $googleAdsServiceClient->search(
-            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
-        );
+        // Issues a search request.
+        $response =
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
         // Iterates over all rows in all pages and prints the requested field values for
         // the ad group bid modifier in each row.
