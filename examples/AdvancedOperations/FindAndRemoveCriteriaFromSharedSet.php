@@ -23,18 +23,18 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V16\Enums\CriterionTypeEnum\CriterionType;
-use Google\Ads\GoogleAds\V16\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V16\Resources\SharedCriterion;
-use Google\Ads\GoogleAds\V16\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V16\Services\MutateSharedCriteriaRequest;
-use Google\Ads\GoogleAds\V16\Services\SearchGoogleAdsRequest;
-use Google\Ads\GoogleAds\V16\Services\SharedCriterionOperation;
+use Google\Ads\GoogleAds\V17\Enums\CriterionTypeEnum\CriterionType;
+use Google\Ads\GoogleAds\V17\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V17\Resources\SharedCriterion;
+use Google\Ads\GoogleAds\V17\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V17\Services\MutateSharedCriteriaRequest;
+use Google\Ads\GoogleAds\V17\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\V17\Services\SharedCriterionOperation;
 use Google\ApiCore\ApiException;
 
 /**
@@ -45,8 +45,6 @@ class FindAndRemoveCriteriaFromSharedSet
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
-
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -125,10 +123,9 @@ class FindAndRemoveCriteriaFromSharedSet
         $query = "SELECT shared_set.id, shared_set.name FROM campaign_shared_set WHERE "
             . "campaign.id = $campaignId";
 
-        // Issues a search request by specifying page size.
-        $response = $googleAdsServiceClient->search(
-            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
-        );
+        // Issues a search request.
+        $response =
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
         // Iterates over all rows in all pages and prints the requested field values for
         // the shared set in each row.
@@ -149,10 +146,9 @@ class FindAndRemoveCriteriaFromSharedSet
               . "FROM shared_criterion "
               . "WHERE shared_set.id IN (%s)", implode(',', $sharedSetIds));
 
-        // Issues a search request by specifying page size.
-        $response = $googleAdsServiceClient->search(
-            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
-        );
+        // Issues a search request.
+        $response =
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
         // Iterates over all rows in all pages and prints the requested field values for
         // the shared criterion in each row.

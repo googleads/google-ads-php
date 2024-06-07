@@ -24,16 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V16\Resources\CustomerClient;
-use Google\Ads\GoogleAds\V16\Services\CustomerServiceClient;
-use Google\Ads\GoogleAds\V16\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V16\Services\ListAccessibleCustomersRequest;
-use Google\Ads\GoogleAds\V16\Services\SearchGoogleAdsStreamRequest;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V17\Resources\CustomerClient;
+use Google\Ads\GoogleAds\V17\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V17\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V17\Services\ListAccessibleCustomersRequest;
+use Google\Ads\GoogleAds\V17\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -237,7 +237,7 @@ class GetAccountHierarchy
 
         while (!empty($managerCustomerIdsToSearch)) {
             $customerIdToSearch = array_shift($managerCustomerIdsToSearch);
-            // Issues a search request by specifying page size.
+            // Issues a search request.
             /** @var GoogleAdsServerStreamDecorator $stream */
             $stream = $googleAdsServiceClient->searchStream(SearchGoogleAdsStreamRequest::build(
                 $customerIdToSearch,

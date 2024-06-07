@@ -24,21 +24,20 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
-use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V16\Resources\ProductCategoryConstant;
-use Google\Ads\GoogleAds\V16\Resources\ProductCategoryConstant\ProductCategoryLocalization;
-use Google\Ads\GoogleAds\V16\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V16\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
+use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V17\Resources\ProductCategoryConstant;
+use Google\Ads\GoogleAds\V17\Resources\ProductCategoryConstant\ProductCategoryLocalization;
+use Google\Ads\GoogleAds\V17\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V17\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /** Fetches the set of all ProductCategoryConstants. */
 class GetProductCategoryConstants
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -111,9 +110,8 @@ class GetProductCategoryConstants
             . "FROM product_category_constant ";
 
         // Performs the search request.
-        $response = $googleAdsServiceClient->search(
-            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
-        );
+        $response =
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
         // Creates a map of top level categories.
         $rootCategories = [];

@@ -24,12 +24,12 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
-use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V16\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V16\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
+use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V17\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V17\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -43,7 +43,6 @@ class CampaignReportToCsv
     // neither are set a null value will be passed to the runExample() method and the default
     // path will be used: `CampaignReportToCsv.csv` file in the folder where the script is located.
     private const OUTPUT_FILE_PATH = null;
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -128,10 +127,9 @@ class CampaignReportToCsv
                 . "AND campaign.status = 'ENABLED' "
             . "ORDER BY segments.date DESC";
 
-        // Issues a search request by specifying page size.
-        $response = $googleAdsServiceClient->search(
-            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
-        );
+        // Issues a search request.
+        $response =
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
         // Iterates over all rows in all pages and extracts the information.
         $csvRows = [];

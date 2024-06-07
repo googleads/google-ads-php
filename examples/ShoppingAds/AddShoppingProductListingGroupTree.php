@@ -23,24 +23,24 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V16\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V16\ResourceNames;
-use Google\Ads\GoogleAds\V16\Common\ProductBrandInfo;
-use Google\Ads\GoogleAds\V16\Common\ListingDimensionInfo;
-use Google\Ads\GoogleAds\V16\Common\ListingGroupInfo;
-use Google\Ads\GoogleAds\V16\Common\ProductConditionInfo;
-use Google\Ads\GoogleAds\V16\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V16\Enums\ListingGroupTypeEnum\ListingGroupType;
-use Google\Ads\GoogleAds\V16\Enums\ProductConditionEnum\ProductCondition;
-use Google\Ads\GoogleAds\V16\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V16\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V16\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V16\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V16\Services\MutateAdGroupCriteriaRequest;
-use Google\Ads\GoogleAds\V16\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Util\V17\ResourceNames;
+use Google\Ads\GoogleAds\V17\Common\ProductBrandInfo;
+use Google\Ads\GoogleAds\V17\Common\ListingDimensionInfo;
+use Google\Ads\GoogleAds\V17\Common\ListingGroupInfo;
+use Google\Ads\GoogleAds\V17\Common\ProductConditionInfo;
+use Google\Ads\GoogleAds\V17\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V17\Enums\ListingGroupTypeEnum\ListingGroupType;
+use Google\Ads\GoogleAds\V17\Enums\ProductConditionEnum\ProductCondition;
+use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V17\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V17\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V17\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V17\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V17\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -62,8 +62,6 @@ class AddShoppingProductListingGroupTree
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
     private const REPLACE_EXISTING_TREE = 'INSERT_BOOLEAN_TRUE_OR_FALSE_HERE';
-
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -303,10 +301,9 @@ class AddShoppingProductListingGroupTree
             . 'AND ad_group_criterion.listing_group.parent_ad_group_criterion IS NULL '
             . 'AND ad_group.id = ' . $adGroupId;
 
-        // Issues a search request by specifying page size.
-        $response = $googleAdsServiceClient->search(
-            SearchGoogleAdsRequest::build($customerId, $query)->setPageSize(self::PAGE_SIZE)
-        );
+        // Issues a search request.
+        $response =
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
         $operations = [];
         // Iterates over all rows in all pages and prints the requested field values for
