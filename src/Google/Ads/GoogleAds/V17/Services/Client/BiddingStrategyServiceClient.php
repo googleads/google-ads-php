@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateBiddingStrategiesAsync(MutateBiddingStrategiesRequest $request, array $optionalArgs = [])
  */
-final class BiddingStrategyServiceClient
+class BiddingStrategyServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

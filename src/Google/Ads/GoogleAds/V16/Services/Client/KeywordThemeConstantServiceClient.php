@@ -44,7 +44,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface suggestKeywordThemeConstantsAsync(SuggestKeywordThemeConstantsRequest $request, array $optionalArgs = [])
  */
-final class KeywordThemeConstantServiceClient
+class KeywordThemeConstantServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

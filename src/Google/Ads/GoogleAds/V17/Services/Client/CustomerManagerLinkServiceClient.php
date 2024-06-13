@@ -53,7 +53,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface moveManagerLinkAsync(MoveManagerLinkRequest $request, array $optionalArgs = [])
  * @method PromiseInterface mutateCustomerManagerLinkAsync(MutateCustomerManagerLinkRequest $request, array $optionalArgs = [])
  */
-final class CustomerManagerLinkServiceClient
+class CustomerManagerLinkServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateRecommendationSubscriptionAsync(MutateRecommendationSubscriptionRequest $request, array $optionalArgs = [])
  */
-final class RecommendationSubscriptionServiceClient
+class RecommendationSubscriptionServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

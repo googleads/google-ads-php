@@ -58,7 +58,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface createOfflineUserDataJobAsync(CreateOfflineUserDataJobRequest $request, array $optionalArgs = [])
  * @method PromiseInterface runOfflineUserDataJobAsync(RunOfflineUserDataJobRequest $request, array $optionalArgs = [])
  */
-final class OfflineUserDataJobServiceClient
+class OfflineUserDataJobServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

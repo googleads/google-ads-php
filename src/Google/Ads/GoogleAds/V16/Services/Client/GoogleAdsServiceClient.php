@@ -55,7 +55,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface mutateAsync(MutateGoogleAdsRequest $request, array $optionalArgs = [])
  * @method PromiseInterface searchAsync(SearchGoogleAdsRequest $request, array $optionalArgs = [])
  */
-final class GoogleAdsServiceClient
+class GoogleAdsServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

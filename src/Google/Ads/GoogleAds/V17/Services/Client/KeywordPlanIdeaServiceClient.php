@@ -53,7 +53,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface generateKeywordHistoricalMetricsAsync(GenerateKeywordHistoricalMetricsRequest $request, array $optionalArgs = [])
  * @method PromiseInterface generateKeywordIdeasAsync(GenerateKeywordIdeasRequest $request, array $optionalArgs = [])
  */
-final class KeywordPlanIdeaServiceClient
+class KeywordPlanIdeaServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

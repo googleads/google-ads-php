@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateBiddingSeasonalityAdjustmentsAsync(MutateBiddingSeasonalityAdjustmentsRequest $request, array $optionalArgs = [])
  */
-final class BiddingSeasonalityAdjustmentServiceClient
+class BiddingSeasonalityAdjustmentServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

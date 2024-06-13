@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateSharedSetsAsync(MutateSharedSetsRequest $request, array $optionalArgs = [])
  */
-final class SharedSetServiceClient
+class SharedSetServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

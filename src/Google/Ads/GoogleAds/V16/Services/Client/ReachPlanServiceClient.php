@@ -54,7 +54,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface listPlannableLocationsAsync(ListPlannableLocationsRequest $request, array $optionalArgs = [])
  * @method PromiseInterface listPlannableProductsAsync(ListPlannableProductsRequest $request, array $optionalArgs = [])
  */
-final class ReachPlanServiceClient
+class ReachPlanServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

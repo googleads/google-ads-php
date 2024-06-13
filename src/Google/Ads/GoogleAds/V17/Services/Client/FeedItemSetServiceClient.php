@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateFeedItemSetsAsync(MutateFeedItemSetsRequest $request, array $optionalArgs = [])
  */
-final class FeedItemSetServiceClient
+class FeedItemSetServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

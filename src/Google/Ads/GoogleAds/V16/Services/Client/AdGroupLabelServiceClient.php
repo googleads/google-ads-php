@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateAdGroupLabelsAsync(MutateAdGroupLabelsRequest $request, array $optionalArgs = [])
  */
-final class AdGroupLabelServiceClient
+class AdGroupLabelServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

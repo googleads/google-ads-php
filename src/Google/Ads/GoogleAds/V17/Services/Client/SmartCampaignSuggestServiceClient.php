@@ -56,7 +56,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface suggestSmartCampaignAdAsync(SuggestSmartCampaignAdRequest $request, array $optionalArgs = [])
  * @method PromiseInterface suggestSmartCampaignBudgetOptionsAsync(SuggestSmartCampaignBudgetOptionsRequest $request, array $optionalArgs = [])
  */
-final class SmartCampaignSuggestServiceClient
+class SmartCampaignSuggestServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

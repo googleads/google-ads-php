@@ -53,7 +53,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface getGoogleAdsFieldAsync(GetGoogleAdsFieldRequest $request, array $optionalArgs = [])
  * @method PromiseInterface searchGoogleAdsFieldsAsync(SearchGoogleAdsFieldsRequest $request, array $optionalArgs = [])
  */
-final class GoogleAdsFieldServiceClient
+class GoogleAdsFieldServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;
