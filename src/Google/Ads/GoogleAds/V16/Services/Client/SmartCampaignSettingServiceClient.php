@@ -53,7 +53,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface getSmartCampaignStatusAsync(GetSmartCampaignStatusRequest $request, array $optionalArgs = [])
  * @method PromiseInterface mutateSmartCampaignSettingsAsync(MutateSmartCampaignSettingsRequest $request, array $optionalArgs = [])
  */
-final class SmartCampaignSettingServiceClient
+class SmartCampaignSettingServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

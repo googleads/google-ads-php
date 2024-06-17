@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateConversionValueRuleSetsAsync(MutateConversionValueRuleSetsRequest $request, array $optionalArgs = [])
  */
-final class ConversionValueRuleSetServiceClient
+class ConversionValueRuleSetServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

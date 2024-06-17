@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateCustomerSkAdNetworkConversionValueSchemaAsync(MutateCustomerSkAdNetworkConversionValueSchemaRequest $request, array $optionalArgs = [])
  */
-final class CustomerSkAdNetworkConversionValueSchemaServiceClient
+class CustomerSkAdNetworkConversionValueSchemaServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

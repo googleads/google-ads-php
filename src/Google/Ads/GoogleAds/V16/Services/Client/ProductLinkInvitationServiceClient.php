@@ -57,7 +57,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface removeProductLinkInvitationAsync(RemoveProductLinkInvitationRequest $request, array $optionalArgs = [])
  * @method PromiseInterface updateProductLinkInvitationAsync(UpdateProductLinkInvitationRequest $request, array $optionalArgs = [])
  */
-final class ProductLinkInvitationServiceClient
+class ProductLinkInvitationServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

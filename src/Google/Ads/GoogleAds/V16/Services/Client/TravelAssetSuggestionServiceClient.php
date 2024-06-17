@@ -44,7 +44,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface suggestTravelAssetsAsync(SuggestTravelAssetsRequest $request, array $optionalArgs = [])
  */
-final class TravelAssetSuggestionServiceClient
+class TravelAssetSuggestionServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

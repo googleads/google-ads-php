@@ -51,7 +51,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateCustomerUserAccessInvitationAsync(MutateCustomerUserAccessInvitationRequest $request, array $optionalArgs = [])
  */
-final class CustomerUserAccessInvitationServiceClient
+class CustomerUserAccessInvitationServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

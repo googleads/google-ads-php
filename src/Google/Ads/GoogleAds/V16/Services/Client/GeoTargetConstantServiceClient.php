@@ -44,7 +44,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface suggestGeoTargetConstantsAsync(SuggestGeoTargetConstantsRequest $request, array $optionalArgs = [])
  */
-final class GeoTargetConstantServiceClient
+class GeoTargetConstantServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

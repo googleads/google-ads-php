@@ -58,7 +58,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateBillingSetupAsync(MutateBillingSetupRequest $request, array $optionalArgs = [])
  */
-final class BillingSetupServiceClient
+class BillingSetupServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

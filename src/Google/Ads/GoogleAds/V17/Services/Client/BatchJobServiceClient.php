@@ -62,7 +62,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface mutateBatchJobAsync(MutateBatchJobRequest $request, array $optionalArgs = [])
  * @method PromiseInterface runBatchJobAsync(RunBatchJobRequest $request, array $optionalArgs = [])
  */
-final class BatchJobServiceClient
+class BatchJobServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

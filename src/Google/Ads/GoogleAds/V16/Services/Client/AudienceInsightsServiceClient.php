@@ -58,7 +58,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface listAudienceInsightsAttributesAsync(ListAudienceInsightsAttributesRequest $request, array $optionalArgs = [])
  * @method PromiseInterface listInsightsEligibleDatesAsync(ListInsightsEligibleDatesRequest $request, array $optionalArgs = [])
  */
-final class AudienceInsightsServiceClient
+class AudienceInsightsServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

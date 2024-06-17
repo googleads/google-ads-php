@@ -44,7 +44,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface uploadConversionAdjustmentsAsync(UploadConversionAdjustmentsRequest $request, array $optionalArgs = [])
  */
-final class ConversionAdjustmentUploadServiceClient
+class ConversionAdjustmentUploadServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateRemarketingActionsAsync(MutateRemarketingActionsRequest $request, array $optionalArgs = [])
  */
-final class RemarketingActionServiceClient
+class RemarketingActionServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

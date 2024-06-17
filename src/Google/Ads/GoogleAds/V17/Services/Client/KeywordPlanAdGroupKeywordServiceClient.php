@@ -54,7 +54,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateKeywordPlanAdGroupKeywordsAsync(MutateKeywordPlanAdGroupKeywordsRequest $request, array $optionalArgs = [])
  */
-final class KeywordPlanAdGroupKeywordServiceClient
+class KeywordPlanAdGroupKeywordServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

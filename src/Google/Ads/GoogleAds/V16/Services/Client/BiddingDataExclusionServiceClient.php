@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateBiddingDataExclusionsAsync(MutateBiddingDataExclusionsRequest $request, array $optionalArgs = [])
  */
-final class BiddingDataExclusionServiceClient
+class BiddingDataExclusionServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

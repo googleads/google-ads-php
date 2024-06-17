@@ -64,7 +64,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface promoteExperimentAsync(PromoteExperimentRequest $request, array $optionalArgs = [])
  * @method PromiseInterface scheduleExperimentAsync(ScheduleExperimentRequest $request, array $optionalArgs = [])
  */
-final class ExperimentServiceClient
+class ExperimentServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

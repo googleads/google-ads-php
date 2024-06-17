@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateAssetGroupSignalsAsync(MutateAssetGroupSignalsRequest $request, array $optionalArgs = [])
  */
-final class AssetGroupSignalServiceClient
+class AssetGroupSignalServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

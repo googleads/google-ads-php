@@ -49,7 +49,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface uploadUserDataAsync(UploadUserDataRequest $request, array $optionalArgs = [])
  */
-final class UserDataServiceClient
+class UserDataServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

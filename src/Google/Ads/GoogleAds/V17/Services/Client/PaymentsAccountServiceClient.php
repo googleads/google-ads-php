@@ -45,7 +45,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface listPaymentsAccountsAsync(ListPaymentsAccountsRequest $request, array $optionalArgs = [])
  */
-final class PaymentsAccountServiceClient
+class PaymentsAccountServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

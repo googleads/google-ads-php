@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateCustomAudiencesAsync(MutateCustomAudiencesRequest $request, array $optionalArgs = [])
  */
-final class CustomAudienceServiceClient
+class CustomAudienceServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

@@ -51,7 +51,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface appendLeadConversationAsync(AppendLeadConversationRequest $request, array $optionalArgs = [])
  */
-final class LocalServicesLeadServiceClient
+class LocalServicesLeadServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

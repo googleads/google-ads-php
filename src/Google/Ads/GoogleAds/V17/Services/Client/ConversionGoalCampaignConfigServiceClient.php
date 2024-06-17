@@ -50,7 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface mutateConversionGoalCampaignConfigsAsync(MutateConversionGoalCampaignConfigsRequest $request, array $optionalArgs = [])
  */
-final class ConversionGoalCampaignConfigServiceClient
+class ConversionGoalCampaignConfigServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

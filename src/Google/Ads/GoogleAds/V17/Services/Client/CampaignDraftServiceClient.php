@@ -58,7 +58,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface mutateCampaignDraftsAsync(MutateCampaignDraftsRequest $request, array $optionalArgs = [])
  * @method PromiseInterface promoteCampaignDraftAsync(PromoteCampaignDraftRequest $request, array $optionalArgs = [])
  */
-final class CampaignDraftServiceClient
+class CampaignDraftServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

@@ -44,7 +44,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface suggestBrandsAsync(SuggestBrandsRequest $request, array $optionalArgs = [])
  */
-final class BrandSuggestionServiceClient
+class BrandSuggestionServiceClient
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;
