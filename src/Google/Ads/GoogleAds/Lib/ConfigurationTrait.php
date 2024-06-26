@@ -19,6 +19,8 @@
 namespace Google\Ads\GoogleAds\Lib;
 
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Auth\HttpHandler\Guzzle6HttpHandler;
+use Google\Auth\HttpHandler\Guzzle7HttpHandler;
 use Grpc\ChannelCredentials;
 use Grpc\Interceptor;
 use Psr\Log\LoggerInterface;
@@ -47,6 +49,7 @@ trait ConfigurationTrait
     private $unaryMiddlewares;
     private $streamingMiddlewares;
     private $grpcInterceptors;
+    private $restHttpHandler;
 
     /**
      * Gets the developer token.
@@ -198,7 +201,7 @@ trait ConfigurationTrait
         return $this->streamingMiddlewares;
     }
 
-    /*
+    /**
      * Gets the gRPC interceptors.
      *
      * @return Interceptor[] the gRPC interceptors
@@ -206,5 +209,15 @@ trait ConfigurationTrait
     public function getGrpcInterceptors()
     {
         return $this->grpcInterceptors;
+    }
+
+    /**
+     * Gets the REST HTTP handler.
+     *
+     * @return Guzzle6HttpHandler|Guzzle7HttpHandler
+     */
+    public function getRestHttpHandler()
+    {
+        return $this->restHttpHandler;
     }
 }

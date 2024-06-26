@@ -25,6 +25,7 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
 use Google\Ads\GoogleAds\Util\Dependencies;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Auth\HttpHandler\HttpHandlerFactory;
 use Grpc\ChannelCredentials;
 use Grpc\Interceptor;
 use InvalidArgumentException;
@@ -476,6 +477,19 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
 
         $this->assertSame($grpcInterceptors, $googleAdsClient->getGrpcInterceptors());
+    }
+
+    public function testBuildWithRestHttpHandler()
+    {
+        $restHttpHandler = HttpHandlerFactory::build();
+
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withRestHttpHandler($restHttpHandler)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame($restHttpHandler, $googleAdsClient->getRestHttpHandler());
     }
 
     /**
