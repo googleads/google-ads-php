@@ -479,17 +479,17 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame($grpcInterceptors, $googleAdsClient->getGrpcInterceptors());
     }
 
-    public function testBuildWithRestHttpHandler()
+    public function testBuildWithHttpHandler()
     {
-        $restHttpHandler = HttpHandlerFactory::build();
+        $httpHandler = HttpHandlerFactory::build();
 
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
-            ->withRestHttpHandler($restHttpHandler)
+            ->withHttpHandler($httpHandler)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
 
-        $this->assertSame($restHttpHandler, $googleAdsClient->getRestHttpHandler());
+        $this->assertSame($httpHandler, $googleAdsClient->getHttpHandler());
     }
 
     /**

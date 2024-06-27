@@ -66,7 +66,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $unaryMiddlewares = [];
     private $streamingMiddlewares = [];
     private $grpcInterceptors = [];
-    private $restHttpHandler =  null;
+    private $httpHandler =  null;
     /** @var Dependencies $dependencies */
     private $dependencies;
 
@@ -377,12 +377,12 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Sets the REST HTTP handler for Google Ads API requests.
      *
-     * @param callable $restHttpHandler the HTTP handler
+     * @param callable $httpHandler the HTTP handler
      * @return self this builder
      */
-    public function withRestHttpHandler(callable $restHttpHandler)
+    public function withHttpHandler(callable $httpHandler)
     {
-        $this->restHttpHandler = $restHttpHandler;
+        $this->httpHandler = $httpHandler;
         return $this;
     }
 
@@ -683,8 +683,8 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
      *
      * @return callable|null the REST HTTP handler
      */
-    public function getRestHttpHandler()
+    public function getHttpHandler()
     {
-        return $this->restHttpHandler;
+        return $this->httpHandler;
     }
 }

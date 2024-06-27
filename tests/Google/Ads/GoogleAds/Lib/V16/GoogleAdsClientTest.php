@@ -84,7 +84,7 @@ class GoogleAdsClientTest extends TestCase
             new ServerStreamingGoogleAdsExceptionMiddleware()
         ];
         $grpcInterceptors = [new Interceptor(), new Interceptor()];
-        $restHttpHandler = HttpHandlerFactory::build();
+        $httpHandler = HttpHandlerFactory::build();
 
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
@@ -99,7 +99,7 @@ class GoogleAdsClientTest extends TestCase
             ->withUnaryMiddlewares(...$unaryMiddlewares)
             ->withStreamingMiddlewares(...$streamingMiddlewares)
             ->withGrpcInterceptors(...$grpcInterceptors)
-            ->withRestHttpHandler($restHttpHandler)
+            ->withHttpHandler($httpHandler)
             ->build();
         $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
 
@@ -126,7 +126,7 @@ class GoogleAdsClientTest extends TestCase
             );
         }
         $this->assertSame(
-            $restHttpHandler,
+            $httpHandler,
             $clientOptions['transportConfig']['rest']['httpHandler']
         );
         $this->assertSame(

@@ -173,9 +173,9 @@ class ServiceClientFactoryTraitTest extends TestCase
             ->build();
     }
 
-    public function testSetRestHttpHandler()
+    public function testSetHttpHandler()
     {
-        $restHttpHandler = HttpHandlerFactory::build();
+        $httpHandler = HttpHandlerFactory::build();
         $fetchAuthTokenInterfaceMock = $this
             ->getMockBuilder(FetchAuthTokenInterface::class)
             ->disableOriginalConstructor()
@@ -185,10 +185,10 @@ class ServiceClientFactoryTraitTest extends TestCase
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withLoginCustomerId(self::$LOGIN_CUSTOMER_ID)
             ->withLogger(new Logger('', [new NullHandler()]))
-            ->withRestHttpHandler($restHttpHandler)
+            ->withHttpHandler($httpHandler)
             ->build();
         $this->assertSame(
-            $restHttpHandler,
+            $httpHandler,
             $googleAdsClient->getGoogleAdsClientOptions()['transportConfig']['rest']['httpHandler']
         );
     }
