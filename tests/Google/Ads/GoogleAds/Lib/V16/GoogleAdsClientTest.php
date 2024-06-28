@@ -20,6 +20,7 @@ namespace Google\Ads\GoogleAds\Lib\V16;
 
 use Google\Ads\GoogleAds\Lib\InsecureCredentialsWrapper;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Auth\HttpHandler\HttpHandlerFactory;
 use Grpc\ChannelCredentials;
 use Grpc\Interceptor;
 use Monolog\Handler\NullHandler;
@@ -83,6 +84,7 @@ class GoogleAdsClientTest extends TestCase
             new ServerStreamingGoogleAdsExceptionMiddleware()
         ];
         $grpcInterceptors = [new Interceptor(), new Interceptor()];
+        $httpHandler = HttpHandlerFactory::build();
 
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
@@ -97,6 +99,7 @@ class GoogleAdsClientTest extends TestCase
             ->withUnaryMiddlewares(...$unaryMiddlewares)
             ->withStreamingMiddlewares(...$streamingMiddlewares)
             ->withGrpcInterceptors(...$grpcInterceptors)
+            ->withHttpHandler($httpHandler)
             ->build();
         $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
 
@@ -122,6 +125,10 @@ class GoogleAdsClientTest extends TestCase
                 $clientOptions['transportConfig']['grpc']['interceptors'][$index]
             );
         }
+        $this->assertSame(
+            $httpHandler,
+            $clientOptions['transportConfig']['rest']['httpHandler']
+        );
         $this->assertSame(
             getenv('http_proxy'),
             self::$PROXY

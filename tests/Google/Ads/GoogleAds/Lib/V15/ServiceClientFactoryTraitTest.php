@@ -131,6 +131,7 @@ use Google\Ads\GoogleAds\V15\Services\TravelAssetSuggestionServiceClient;
 use Google\Ads\GoogleAds\V15\Services\UserDataServiceClient;
 use Google\Ads\GoogleAds\V15\Services\UserListServiceClient;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Auth\HttpHandler\HttpHandlerFactory;
 use Monolog\Handler\NullHandler;
 use Monolog\Logger;
 use PHPUnit\Framework\TestCase;
@@ -169,6 +170,26 @@ class ServiceClientFactoryTraitTest extends TestCase
             ->withProxy(self::$PROXY)
             ->withTransport(self::$TRANSPORT)
             ->build();
+    }
+
+    public function testSetHttpHandler()
+    {
+        $httpHandler = HttpHandlerFactory::build();
+        $fetchAuthTokenInterfaceMock = $this
+            ->getMockBuilder(FetchAuthTokenInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $googleAdsClient = (new GoogleAdsClientBuilder())
+            ->withOAuth2Credential($fetchAuthTokenInterfaceMock)
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withLoginCustomerId(self::$LOGIN_CUSTOMER_ID)
+            ->withLogger(new Logger('', [new NullHandler()]))
+            ->withHttpHandler($httpHandler)
+            ->build();
+        $this->assertSame(
+            $httpHandler,
+            $googleAdsClient->getGoogleAdsClientOptions()['transportConfig']['rest']['httpHandler']
+        );
     }
 
     public function testGetAccountBudgetProposalServiceClient()

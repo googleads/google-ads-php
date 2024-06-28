@@ -47,6 +47,7 @@ trait ConfigurationTrait
     private $unaryMiddlewares;
     private $streamingMiddlewares;
     private $grpcInterceptors;
+    private $httpHandler;
 
     /**
      * Gets the developer token.
@@ -198,7 +199,7 @@ trait ConfigurationTrait
         return $this->streamingMiddlewares;
     }
 
-    /*
+    /**
      * Gets the gRPC interceptors.
      *
      * @return Interceptor[] the gRPC interceptors
@@ -206,5 +207,15 @@ trait ConfigurationTrait
     public function getGrpcInterceptors()
     {
         return $this->grpcInterceptors;
+    }
+
+    /**
+     * Gets the REST HTTP handler.
+     *
+     * @return callable
+     */
+    public function getHttpHandler()
+    {
+        return $this->httpHandler;
     }
 }
