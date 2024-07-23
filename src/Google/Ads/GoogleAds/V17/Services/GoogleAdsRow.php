@@ -832,7 +832,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $mobile_device_constant = null;
     /**
-     * Offline conversion upload client summary.
+     * Offline conversion upload summary at customer level.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v17.resources.OfflineConversionUploadClientSummary offline_conversion_upload_client_summary = 216;</code>
      */
@@ -1369,7 +1369,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V17\Resources\MobileDeviceConstant $mobile_device_constant
      *           The mobile device constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V17\Resources\OfflineConversionUploadClientSummary $offline_conversion_upload_client_summary
-     *           Offline conversion upload client summary.
+     *           Offline conversion upload summary at customer level.
      *     @type \Google\Ads\GoogleAds\V17\Resources\OfflineUserDataJob $offline_user_data_job
      *           The offline user data job referenced in the query.
      *     @type \Google\Ads\GoogleAds\V17\Resources\OperatingSystemVersionConstant $operating_system_version_constant
@@ -6358,7 +6358,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Offline conversion upload client summary.
+     * Offline conversion upload summary at customer level.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v17.resources.OfflineConversionUploadClientSummary offline_conversion_upload_client_summary = 216;</code>
      * @return \Google\Ads\GoogleAds\V17\Resources\OfflineConversionUploadClientSummary|null
@@ -6379,7 +6379,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Offline conversion upload client summary.
+     * Offline conversion upload summary at customer level.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v17.resources.OfflineConversionUploadClientSummary offline_conversion_upload_client_summary = 216;</code>
      * @param \Google\Ads\GoogleAds\V17\Resources\OfflineConversionUploadClientSummary $var

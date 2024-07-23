@@ -331,6 +331,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for a user list customer type error.
      *     @type int $shopping_product_error
      *           The reasons for error in querying shopping product.
+     *     @type int $shareable_preview_error
+     *           The reasons for the shareable preview error.
      * }
      */
     public function __construct($data = NULL) {
@@ -5108,6 +5110,37 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V17\Errors\ShoppingProductErrorEnum\ShoppingProductError::class);
         $this->writeOneof(184, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the shareable preview error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.errors.ShareablePreviewErrorEnum.ShareablePreviewError shareable_preview_error = 186;</code>
+     * @return int
+     */
+    public function getShareablePreviewError()
+    {
+        return $this->readOneof(186);
+    }
+
+    public function hasShareablePreviewError()
+    {
+        return $this->hasOneof(186);
+    }
+
+    /**
+     * The reasons for the shareable preview error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.errors.ShareablePreviewErrorEnum.ShareablePreviewError shareable_preview_error = 186;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setShareablePreviewError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V17\Errors\ShareablePreviewErrorEnum\ShareablePreviewError::class);
+        $this->writeOneof(186, $var);
 
         return $this;
     }

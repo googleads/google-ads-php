@@ -150,6 +150,20 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     protected $percent_cpc_bid_micros = null;
     /**
+     * The fixed amount in micros that the advertiser pays for every thousand
+     * impressions of the ad.
+     *
+     * Generated from protobuf field <code>optional int64 fixed_cpm_micros = 64;</code>
+     */
+    protected $fixed_cpm_micros = null;
+    /**
+     * Average amount in micros that the advertiser is willing to pay for every ad
+     * view.
+     *
+     * Generated from protobuf field <code>optional int64 target_cpv_micros = 65;</code>
+     */
+    protected $target_cpv_micros = null;
+    /**
      * True if optimized targeting is enabled. Optimized Targeting is the
      * replacement for Audience Expansion.
      *
@@ -322,6 +336,12 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *           The percent cpc bid amount, expressed as a fraction of the advertised price
      *           for some good or service. The valid range for the fraction is [0,1) and the
      *           value stored here is 1,000,000 * [fraction].
+     *     @type int|string $fixed_cpm_micros
+     *           The fixed amount in micros that the advertiser pays for every thousand
+     *           impressions of the ad.
+     *     @type int|string $target_cpv_micros
+     *           Average amount in micros that the advertiser is willing to pay for every ad
+     *           view.
      *     @type bool $optimized_targeting_enabled
      *           True if optimized targeting is enabled. Optimized Targeting is the
      *           replacement for Audience Expansion.
@@ -1023,6 +1043,82 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->percent_cpc_bid_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * The fixed amount in micros that the advertiser pays for every thousand
+     * impressions of the ad.
+     *
+     * Generated from protobuf field <code>optional int64 fixed_cpm_micros = 64;</code>
+     * @return int|string
+     */
+    public function getFixedCpmMicros()
+    {
+        return isset($this->fixed_cpm_micros) ? $this->fixed_cpm_micros : 0;
+    }
+
+    public function hasFixedCpmMicros()
+    {
+        return isset($this->fixed_cpm_micros);
+    }
+
+    public function clearFixedCpmMicros()
+    {
+        unset($this->fixed_cpm_micros);
+    }
+
+    /**
+     * The fixed amount in micros that the advertiser pays for every thousand
+     * impressions of the ad.
+     *
+     * Generated from protobuf field <code>optional int64 fixed_cpm_micros = 64;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setFixedCpmMicros($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->fixed_cpm_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Average amount in micros that the advertiser is willing to pay for every ad
+     * view.
+     *
+     * Generated from protobuf field <code>optional int64 target_cpv_micros = 65;</code>
+     * @return int|string
+     */
+    public function getTargetCpvMicros()
+    {
+        return isset($this->target_cpv_micros) ? $this->target_cpv_micros : 0;
+    }
+
+    public function hasTargetCpvMicros()
+    {
+        return isset($this->target_cpv_micros);
+    }
+
+    public function clearTargetCpvMicros()
+    {
+        unset($this->target_cpv_micros);
+    }
+
+    /**
+     * Average amount in micros that the advertiser is willing to pay for every ad
+     * view.
+     *
+     * Generated from protobuf field <code>optional int64 target_cpv_micros = 65;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setTargetCpvMicros($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->target_cpv_micros = $var;
 
         return $this;
     }

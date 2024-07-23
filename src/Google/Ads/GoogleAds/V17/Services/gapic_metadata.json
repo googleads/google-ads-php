@@ -356,6 +356,11 @@
                                 "generateAudienceCompositionInsights"
                             ]
                         },
+                        "GenerateAudienceOverlapInsights": {
+                            "methods": [
+                                "generateAudienceOverlapInsights"
+                            ]
+                        },
                         "GenerateInsightsFinderReport": {
                             "methods": [
                                 "generateInsightsFinderReport"
@@ -1691,6 +1696,20 @@
                         "GenerateRecommendations": {
                             "methods": [
                                 "generateRecommendations"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ShareablePreviewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ShareablePreviewServiceGapicClient",
+                    "rpcs": {
+                        "GenerateShareablePreviews": {
+                            "methods": [
+                                "generateShareablePreviews"
                             ]
                         }
                     }

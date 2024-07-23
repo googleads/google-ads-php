@@ -124,6 +124,7 @@ use Google\Ads\GoogleAds\V17\Services\Client\ReachPlanServiceClient;
 use Google\Ads\GoogleAds\V17\Services\Client\RecommendationServiceClient;
 use Google\Ads\GoogleAds\V17\Services\Client\RecommendationSubscriptionServiceClient;
 use Google\Ads\GoogleAds\V17\Services\Client\RemarketingActionServiceClient;
+use Google\Ads\GoogleAds\V17\Services\Client\ShareablePreviewServiceClient;
 use Google\Ads\GoogleAds\V17\Services\Client\SharedCriterionServiceClient;
 use Google\Ads\GoogleAds\V17\Services\Client\SharedSetServiceClient;
 use Google\Ads\GoogleAds\V17\Services\Client\SmartCampaignSettingServiceClient;
@@ -1024,6 +1025,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         $this->assertInstanceOf(
             RemarketingActionServiceClient::class,
             $this->googleAdsClient->getRemarketingActionServiceClient()
+        );
+    }
+
+    public function testGetShareablePreviewServiceClient()
+    {
+        $this->assertInstanceOf(
+            ShareablePreviewServiceClient::class,
+            $this->googleAdsClient->getShareablePreviewServiceClient()
         );
     }
 

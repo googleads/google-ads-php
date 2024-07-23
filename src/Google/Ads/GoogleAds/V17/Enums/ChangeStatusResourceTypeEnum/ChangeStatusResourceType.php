@@ -128,6 +128,12 @@ class ChangeStatusResourceType
      * Generated from protobuf enum <code>COMBINED_AUDIENCE = 20;</code>
      */
     const COMBINED_AUDIENCE = 20;
+    /**
+     * An AssetGroup resource change.
+     *
+     * Generated from protobuf enum <code>ASSET_GROUP = 21;</code>
+     */
+    const ASSET_GROUP = 21;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -149,6 +155,7 @@ class ChangeStatusResourceType
         self::CAMPAIGN_ASSET => 'CAMPAIGN_ASSET',
         self::AD_GROUP_ASSET => 'AD_GROUP_ASSET',
         self::COMBINED_AUDIENCE => 'COMBINED_AUDIENCE',
+        self::ASSET_GROUP => 'ASSET_GROUP',
     ];
 
     public static function name($value)

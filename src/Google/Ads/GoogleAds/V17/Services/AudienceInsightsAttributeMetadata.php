@@ -45,6 +45,17 @@ class AudienceInsightsAttributeMetadata extends \Google\Protobuf\Internal\Messag
      * Generated from protobuf field <code>string display_info = 5;</code>
      */
     protected $display_info = '';
+    /**
+     * An estimate of the number of reachable YouTube users matching this
+     * attribute in the requested location, or zero if that information is not
+     * available for this attribute.  Only populated in
+     * GenerateAudienceOverlapInsightsResponses and in
+     * ListAudienceInsightsAttributesResponses when youtube_reach_location is
+     * present in the request.
+     *
+     * Generated from protobuf field <code>int64 potential_youtube_reach = 9;</code>
+     */
+    protected $potential_youtube_reach = 0;
     protected $dimension_metadata;
 
     /**
@@ -66,6 +77,13 @@ class AudienceInsightsAttributeMetadata extends \Google\Protobuf\Internal\Messag
      *           If the dimension is CATEGORY, this is the complete path to the category in
      *           The Product & Service taxonomy, for example
      *           "/Apparel/Clothing/Outerwear".
+     *     @type int|string $potential_youtube_reach
+     *           An estimate of the number of reachable YouTube users matching this
+     *           attribute in the requested location, or zero if that information is not
+     *           available for this attribute.  Only populated in
+     *           GenerateAudienceOverlapInsightsResponses and in
+     *           ListAudienceInsightsAttributesResponses when youtube_reach_location is
+     *           present in the request.
      *     @type \Google\Ads\GoogleAds\V17\Services\YouTubeChannelAttributeMetadata $youtube_channel_metadata
      *           Special metadata for a YouTube channel.
      *     @type \Google\Ads\GoogleAds\V17\Services\DynamicLineupAttributeMetadata $dynamic_attribute_metadata
@@ -199,6 +217,42 @@ class AudienceInsightsAttributeMetadata extends \Google\Protobuf\Internal\Messag
     {
         GPBUtil::checkString($var, True);
         $this->display_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * An estimate of the number of reachable YouTube users matching this
+     * attribute in the requested location, or zero if that information is not
+     * available for this attribute.  Only populated in
+     * GenerateAudienceOverlapInsightsResponses and in
+     * ListAudienceInsightsAttributesResponses when youtube_reach_location is
+     * present in the request.
+     *
+     * Generated from protobuf field <code>int64 potential_youtube_reach = 9;</code>
+     * @return int|string
+     */
+    public function getPotentialYoutubeReach()
+    {
+        return $this->potential_youtube_reach;
+    }
+
+    /**
+     * An estimate of the number of reachable YouTube users matching this
+     * attribute in the requested location, or zero if that information is not
+     * available for this attribute.  Only populated in
+     * GenerateAudienceOverlapInsightsResponses and in
+     * ListAudienceInsightsAttributesResponses when youtube_reach_location is
+     * present in the request.
+     *
+     * Generated from protobuf field <code>int64 potential_youtube_reach = 9;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setPotentialYoutubeReach($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->potential_youtube_reach = $var;
 
         return $this;
     }
