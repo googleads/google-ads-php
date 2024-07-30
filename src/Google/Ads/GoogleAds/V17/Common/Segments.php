@@ -58,6 +58,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $ad_destination_type = 0;
     /**
+     * Ad Format type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.enums.AdFormatTypeEnum.AdFormatType ad_format_type = 191;</code>
+     */
+    protected $ad_format_type = 0;
+    /**
      * Ad network type.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v17.enums.AdNetworkTypeEnum.AdNetworkType ad_network_type = 3;</code>
@@ -732,6 +738,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Advertiser supplied activity ID.
      *     @type int $ad_destination_type
      *           Ad Destination type.
+     *     @type int $ad_format_type
+     *           Ad Format type.
      *     @type int $ad_network_type
      *           Ad network type.
      *     @type string $ad_group
@@ -1227,6 +1235,32 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V17\Enums\AdDestinationTypeEnum\AdDestinationType::class);
         $this->ad_destination_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Ad Format type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.enums.AdFormatTypeEnum.AdFormatType ad_format_type = 191;</code>
+     * @return int
+     */
+    public function getAdFormatType()
+    {
+        return $this->ad_format_type;
+    }
+
+    /**
+     * Ad Format type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.enums.AdFormatTypeEnum.AdFormatType ad_format_type = 191;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAdFormatType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V17\Enums\AdFormatTypeEnum\AdFormatType::class);
+        $this->ad_format_type = $var;
 
         return $this;
     }

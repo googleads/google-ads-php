@@ -61,6 +61,11 @@
                             "methods": [
                                 "mutateAdGroupAds"
                             ]
+                        },
+                        "RemoveAutomaticallyCreatedAssets": {
+                            "methods": [
+                                "removeAutomaticallyCreatedAssets"
+                            ]
                         }
                     }
                 }

@@ -331,6 +331,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for a user list customer type error.
      *     @type int $shopping_product_error
      *           The reasons for error in querying shopping product.
+     *     @type int $automatically_created_asset_removal_error
+     *           The reasons for error in automatically created asset removal action.
      *     @type int $shareable_preview_error
      *           The reasons for the shareable preview error.
      * }
@@ -5110,6 +5112,37 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V17\Errors\ShoppingProductErrorEnum\ShoppingProductError::class);
         $this->writeOneof(184, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for error in automatically created asset removal action.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.errors.AutomaticallyCreatedAssetRemovalErrorEnum.AutomaticallyCreatedAssetRemovalError automatically_created_asset_removal_error = 185;</code>
+     * @return int
+     */
+    public function getAutomaticallyCreatedAssetRemovalError()
+    {
+        return $this->readOneof(185);
+    }
+
+    public function hasAutomaticallyCreatedAssetRemovalError()
+    {
+        return $this->hasOneof(185);
+    }
+
+    /**
+     * The reasons for error in automatically created asset removal action.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.errors.AutomaticallyCreatedAssetRemovalErrorEnum.AutomaticallyCreatedAssetRemovalError automatically_created_asset_removal_error = 185;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAutomaticallyCreatedAssetRemovalError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V17\Errors\AutomaticallyCreatedAssetRemovalErrorEnum\AutomaticallyCreatedAssetRemovalError::class);
+        $this->writeOneof(185, $var);
 
         return $this;
     }
