@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class TextLabel extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Background color of the label in RGB format. This string must match the
+     * Background color of the label in HEX format. This string must match the
      * regular expression '^\#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$'.
      * Note: The background color may not be visible for manager accounts.
      *
@@ -38,7 +38,7 @@ class TextLabel extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $background_color
-     *           Background color of the label in RGB format. This string must match the
+     *           Background color of the label in HEX format. This string must match the
      *           regular expression '^\#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$'.
      *           Note: The background color may not be visible for manager accounts.
      *     @type string $description
@@ -52,7 +52,7 @@ class TextLabel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Background color of the label in RGB format. This string must match the
+     * Background color of the label in HEX format. This string must match the
      * regular expression '^\#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$'.
      * Note: The background color may not be visible for manager accounts.
      *
@@ -75,7 +75,7 @@ class TextLabel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Background color of the label in RGB format. This string must match the
+     * Background color of the label in HEX format. This string must match the
      * regular expression '^\#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$'.
      * Note: The background color may not be visible for manager accounts.
      *

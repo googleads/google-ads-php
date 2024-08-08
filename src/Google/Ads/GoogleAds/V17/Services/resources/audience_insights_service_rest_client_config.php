@@ -35,6 +35,18 @@ return [
                     ],
                 ],
             ],
+            'GenerateAudienceOverlapInsights' => [
+                'method' => 'post',
+                'uriTemplate' => '/v17/customers/{customer_id=*}:generateAudienceOverlapInsights',
+                'body' => '*',
+                'placeholders' => [
+                    'customer_id' => [
+                        'getters' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
             'GenerateInsightsFinderReport' => [
                 'method' => 'post',
                 'uriTemplate' => '/v17/customers/{customer_id=*}:generateInsightsFinderReport',

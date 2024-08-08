@@ -94,4 +94,30 @@ class AdGroupAdServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Remove automatically created assets from an ad.
+     *
+     * List of thrown errors:
+     *   [AdError]()
+     *   [AuthenticationError]()
+     *   [AuthorizationError]()
+     *   [AutomaticallyCreatedAssetRemovalError]()
+     *   [HeaderError]()
+     *   [InternalError]()
+     *   [MutateError]()
+     *   [QuotaError]()
+     *   [RequestError]()
+     * @param \Google\Ads\GoogleAds\V17\Services\RemoveAutomaticallyCreatedAssetsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function RemoveAutomaticallyCreatedAssets(\Google\Ads\GoogleAds\V17\Services\RemoveAutomaticallyCreatedAssetsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v17.services.AdGroupAdService/RemoveAutomaticallyCreatedAssets',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
 }

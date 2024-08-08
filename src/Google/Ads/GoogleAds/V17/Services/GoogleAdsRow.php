@@ -832,11 +832,17 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $mobile_device_constant = null;
     /**
-     * Offline conversion upload client summary.
+     * Offline conversion upload summary at customer level.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v17.resources.OfflineConversionUploadClientSummary offline_conversion_upload_client_summary = 216;</code>
      */
     protected $offline_conversion_upload_client_summary = null;
+    /**
+     * Offline conversion upload summary at conversion type level.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.resources.OfflineConversionUploadConversionActionSummary offline_conversion_upload_conversion_action_summary = 228;</code>
+     */
+    protected $offline_conversion_upload_conversion_action_summary = null;
     /**
      * The offline user data job referenced in the query.
      *
@@ -1369,7 +1375,9 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V17\Resources\MobileDeviceConstant $mobile_device_constant
      *           The mobile device constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V17\Resources\OfflineConversionUploadClientSummary $offline_conversion_upload_client_summary
-     *           Offline conversion upload client summary.
+     *           Offline conversion upload summary at customer level.
+     *     @type \Google\Ads\GoogleAds\V17\Resources\OfflineConversionUploadConversionActionSummary $offline_conversion_upload_conversion_action_summary
+     *           Offline conversion upload summary at conversion type level.
      *     @type \Google\Ads\GoogleAds\V17\Resources\OfflineUserDataJob $offline_user_data_job
      *           The offline user data job referenced in the query.
      *     @type \Google\Ads\GoogleAds\V17\Resources\OperatingSystemVersionConstant $operating_system_version_constant
@@ -6358,7 +6366,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Offline conversion upload client summary.
+     * Offline conversion upload summary at customer level.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v17.resources.OfflineConversionUploadClientSummary offline_conversion_upload_client_summary = 216;</code>
      * @return \Google\Ads\GoogleAds\V17\Resources\OfflineConversionUploadClientSummary|null
@@ -6379,7 +6387,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Offline conversion upload client summary.
+     * Offline conversion upload summary at customer level.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v17.resources.OfflineConversionUploadClientSummary offline_conversion_upload_client_summary = 216;</code>
      * @param \Google\Ads\GoogleAds\V17\Resources\OfflineConversionUploadClientSummary $var
@@ -6389,6 +6397,42 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V17\Resources\OfflineConversionUploadClientSummary::class);
         $this->offline_conversion_upload_client_summary = $var;
+
+        return $this;
+    }
+
+    /**
+     * Offline conversion upload summary at conversion type level.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.resources.OfflineConversionUploadConversionActionSummary offline_conversion_upload_conversion_action_summary = 228;</code>
+     * @return \Google\Ads\GoogleAds\V17\Resources\OfflineConversionUploadConversionActionSummary|null
+     */
+    public function getOfflineConversionUploadConversionActionSummary()
+    {
+        return $this->offline_conversion_upload_conversion_action_summary;
+    }
+
+    public function hasOfflineConversionUploadConversionActionSummary()
+    {
+        return isset($this->offline_conversion_upload_conversion_action_summary);
+    }
+
+    public function clearOfflineConversionUploadConversionActionSummary()
+    {
+        unset($this->offline_conversion_upload_conversion_action_summary);
+    }
+
+    /**
+     * Offline conversion upload summary at conversion type level.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.resources.OfflineConversionUploadConversionActionSummary offline_conversion_upload_conversion_action_summary = 228;</code>
+     * @param \Google\Ads\GoogleAds\V17\Resources\OfflineConversionUploadConversionActionSummary $var
+     * @return $this
+     */
+    public function setOfflineConversionUploadConversionActionSummary($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V17\Resources\OfflineConversionUploadConversionActionSummary::class);
+        $this->offline_conversion_upload_conversion_action_summary = $var;
 
         return $this;
     }

@@ -134,6 +134,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $demand_gen_campaign_settings = null;
     /**
+     * Settings for Video campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.resources.Campaign.VideoCampaignSettings video_campaign_settings = 94;</code>
+     */
+    protected $video_campaign_settings = null;
+    /**
      * Settings for Real-Time Bidding, a feature only available for campaigns
      * targeting the Ad Exchange network.
      *
@@ -465,6 +471,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           Settings for Travel campaign.
      *     @type \Google\Ads\GoogleAds\V17\Resources\Campaign\DemandGenCampaignSettings $demand_gen_campaign_settings
      *           Settings for Demand Gen campaign.
+     *     @type \Google\Ads\GoogleAds\V17\Resources\Campaign\VideoCampaignSettings $video_campaign_settings
+     *           Settings for Video campaign.
      *     @type \Google\Ads\GoogleAds\V17\Common\RealTimeBiddingSetting $real_time_bidding_setting
      *           Settings for Real-Time Bidding, a feature only available for campaigns
      *           targeting the Ad Exchange network.
@@ -634,6 +642,11 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V17\Common\TargetCpm $target_cpm
      *           A bidding strategy that automatically optimizes cost per thousand
      *           impressions.
+     *     @type \Google\Ads\GoogleAds\V17\Common\FixedCpm $fixed_cpm
+     *           A manual bidding strategy with a fixed CPM.
+     *     @type \Google\Ads\GoogleAds\V17\Common\TargetCpv $target_cpv
+     *           An automated bidding strategy that sets bids to optimize performance
+     *           given the target CPV you set.
      * }
      */
     public function __construct($data = NULL) {
@@ -1157,6 +1170,42 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V17\Resources\Campaign\DemandGenCampaignSettings::class);
         $this->demand_gen_campaign_settings = $var;
+
+        return $this;
+    }
+
+    /**
+     * Settings for Video campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.resources.Campaign.VideoCampaignSettings video_campaign_settings = 94;</code>
+     * @return \Google\Ads\GoogleAds\V17\Resources\Campaign\VideoCampaignSettings|null
+     */
+    public function getVideoCampaignSettings()
+    {
+        return $this->video_campaign_settings;
+    }
+
+    public function hasVideoCampaignSettings()
+    {
+        return isset($this->video_campaign_settings);
+    }
+
+    public function clearVideoCampaignSettings()
+    {
+        unset($this->video_campaign_settings);
+    }
+
+    /**
+     * Settings for Video campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.resources.Campaign.VideoCampaignSettings video_campaign_settings = 94;</code>
+     * @param \Google\Ads\GoogleAds\V17\Resources\Campaign\VideoCampaignSettings $var
+     * @return $this
+     */
+    public function setVideoCampaignSettings($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V17\Resources\Campaign\VideoCampaignSettings::class);
+        $this->video_campaign_settings = $var;
 
         return $this;
     }
@@ -2915,6 +2964,70 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V17\Common\TargetCpm::class);
         $this->writeOneof(41, $var);
+
+        return $this;
+    }
+
+    /**
+     * A manual bidding strategy with a fixed CPM.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.common.FixedCpm fixed_cpm = 92;</code>
+     * @return \Google\Ads\GoogleAds\V17\Common\FixedCpm|null
+     */
+    public function getFixedCpm()
+    {
+        return $this->readOneof(92);
+    }
+
+    public function hasFixedCpm()
+    {
+        return $this->hasOneof(92);
+    }
+
+    /**
+     * A manual bidding strategy with a fixed CPM.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.common.FixedCpm fixed_cpm = 92;</code>
+     * @param \Google\Ads\GoogleAds\V17\Common\FixedCpm $var
+     * @return $this
+     */
+    public function setFixedCpm($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V17\Common\FixedCpm::class);
+        $this->writeOneof(92, $var);
+
+        return $this;
+    }
+
+    /**
+     * An automated bidding strategy that sets bids to optimize performance
+     * given the target CPV you set.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.common.TargetCpv target_cpv = 93;</code>
+     * @return \Google\Ads\GoogleAds\V17\Common\TargetCpv|null
+     */
+    public function getTargetCpv()
+    {
+        return $this->readOneof(93);
+    }
+
+    public function hasTargetCpv()
+    {
+        return $this->hasOneof(93);
+    }
+
+    /**
+     * An automated bidding strategy that sets bids to optimize performance
+     * given the target CPV you set.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.common.TargetCpv target_cpv = 93;</code>
+     * @param \Google\Ads\GoogleAds\V17\Common\TargetCpv $var
+     * @return $this
+     */
+    public function setTargetCpv($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V17\Common\TargetCpv::class);
+        $this->writeOneof(93, $var);
 
         return $this;
     }

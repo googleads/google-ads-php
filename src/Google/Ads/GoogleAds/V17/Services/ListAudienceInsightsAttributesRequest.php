@@ -54,6 +54,16 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * Generated from protobuf field <code>repeated .google.ads.googleads.v17.common.LocationInfo location_country_filters = 5;</code>
      */
     private $location_country_filters;
+    /**
+     * If present, potential YouTube reach estimates within the specified market
+     * will be returned for attributes for which they are available.  Reach is
+     * only available for the AGE_RANGE, GENDER, AFFINITY_USER_INTEREST and
+     * IN_MARKET_USER_INTEREST dimensions, and may not be available for every
+     * attribute of those dimensions in every market.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.common.LocationInfo youtube_reach_location = 6;</code>
+     */
+    protected $youtube_reach_location = null;
 
     /**
      * @param string $customerId Required. The ID of the customer.
@@ -101,6 +111,12 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      *           will be located in these countries. If this field is absent, then location
      *           attributes are not filtered by country. Setting this field when
      *           SUB_COUNTRY_LOCATION attributes are not requested will return an error.
+     *     @type \Google\Ads\GoogleAds\V17\Common\LocationInfo $youtube_reach_location
+     *           If present, potential YouTube reach estimates within the specified market
+     *           will be returned for attributes for which they are available.  Reach is
+     *           only available for the AGE_RANGE, GENDER, AFFINITY_USER_INTEREST and
+     *           IN_MARKET_USER_INTEREST dimensions, and may not be available for every
+     *           attribute of those dimensions in every market.
      * }
      */
     public function __construct($data = NULL) {
@@ -250,6 +266,50 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V17\Common\LocationInfo::class);
         $this->location_country_filters = $arr;
+
+        return $this;
+    }
+
+    /**
+     * If present, potential YouTube reach estimates within the specified market
+     * will be returned for attributes for which they are available.  Reach is
+     * only available for the AGE_RANGE, GENDER, AFFINITY_USER_INTEREST and
+     * IN_MARKET_USER_INTEREST dimensions, and may not be available for every
+     * attribute of those dimensions in every market.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.common.LocationInfo youtube_reach_location = 6;</code>
+     * @return \Google\Ads\GoogleAds\V17\Common\LocationInfo|null
+     */
+    public function getYoutubeReachLocation()
+    {
+        return $this->youtube_reach_location;
+    }
+
+    public function hasYoutubeReachLocation()
+    {
+        return isset($this->youtube_reach_location);
+    }
+
+    public function clearYoutubeReachLocation()
+    {
+        unset($this->youtube_reach_location);
+    }
+
+    /**
+     * If present, potential YouTube reach estimates within the specified market
+     * will be returned for attributes for which they are available.  Reach is
+     * only available for the AGE_RANGE, GENDER, AFFINITY_USER_INTEREST and
+     * IN_MARKET_USER_INTEREST dimensions, and may not be available for every
+     * attribute of those dimensions in every market.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.common.LocationInfo youtube_reach_location = 6;</code>
+     * @param \Google\Ads\GoogleAds\V17\Common\LocationInfo $var
+     * @return $this
+     */
+    public function setYoutubeReachLocation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V17\Common\LocationInfo::class);
+        $this->youtube_reach_location = $var;
 
         return $this;
     }

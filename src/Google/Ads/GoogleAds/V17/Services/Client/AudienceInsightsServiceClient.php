@@ -27,6 +27,8 @@ namespace Google\Ads\GoogleAds\V17\Services\Client;
 use Google\Ads\GoogleAds\Lib\V17\GoogleAdsGapicClientTrait;
 use Google\Ads\GoogleAds\V17\Services\GenerateAudienceCompositionInsightsRequest;
 use Google\Ads\GoogleAds\V17\Services\GenerateAudienceCompositionInsightsResponse;
+use Google\Ads\GoogleAds\V17\Services\GenerateAudienceOverlapInsightsRequest;
+use Google\Ads\GoogleAds\V17\Services\GenerateAudienceOverlapInsightsResponse;
 use Google\Ads\GoogleAds\V17\Services\GenerateInsightsFinderReportRequest;
 use Google\Ads\GoogleAds\V17\Services\GenerateInsightsFinderReportResponse;
 use Google\Ads\GoogleAds\V17\Services\GenerateSuggestedTargetingInsightsRequest;
@@ -53,6 +55,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * calls that map to API methods.
  *
  * @method PromiseInterface generateAudienceCompositionInsightsAsync(GenerateAudienceCompositionInsightsRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface generateAudienceOverlapInsightsAsync(GenerateAudienceOverlapInsightsRequest $request, array $optionalArgs = [])
  * @method PromiseInterface generateInsightsFinderReportAsync(GenerateInsightsFinderReportRequest $request, array $optionalArgs = [])
  * @method PromiseInterface generateSuggestedTargetingInsightsAsync(GenerateSuggestedTargetingInsightsRequest $request, array $optionalArgs = [])
  * @method PromiseInterface listAudienceInsightsAttributesAsync(ListAudienceInsightsAttributesRequest $request, array $optionalArgs = [])
@@ -217,6 +220,44 @@ class AudienceInsightsServiceClient
     public function generateAudienceCompositionInsights(GenerateAudienceCompositionInsightsRequest $request, array $callOptions = []): GenerateAudienceCompositionInsightsResponse
     {
         return $this->startApiCall('GenerateAudienceCompositionInsights', $request, $callOptions)->wait();
+    }
+
+    /**
+     * Returns a collection of audience attributes along with estimates of the
+     * overlap between their potential YouTube reach and that of a given input
+     * attribute.
+     *
+     * List of thrown errors:
+     * [AudienceInsightsError]()
+     * [AuthenticationError]()
+     * [AuthorizationError]()
+     * [FieldError]()
+     * [HeaderError]()
+     * [InternalError]()
+     * [QuotaError]()
+     * [RangeError]()
+     * [RequestError]()
+     *
+     * The async variant is
+     * {@see AudienceInsightsServiceClient::generateAudienceOverlapInsightsAsync()} .
+     *
+     * @param GenerateAudienceOverlapInsightsRequest $request     A request to house fields associated with the call.
+     * @param array                                  $callOptions {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
+     * }
+     *
+     * @return GenerateAudienceOverlapInsightsResponse
+     *
+     * @throws ApiException Thrown if the API call fails.
+     */
+    public function generateAudienceOverlapInsights(GenerateAudienceOverlapInsightsRequest $request, array $callOptions = []): GenerateAudienceOverlapInsightsResponse
+    {
+        return $this->startApiCall('GenerateAudienceOverlapInsights', $request, $callOptions)->wait();
     }
 
     /**

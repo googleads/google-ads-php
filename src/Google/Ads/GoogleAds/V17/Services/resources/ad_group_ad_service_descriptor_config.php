@@ -35,11 +35,24 @@ return [
                     ],
                 ],
             ],
+            'RemoveAutomaticallyCreatedAssets' => [
+                'callType' => \Google\ApiCore\Call::UNARY_CALL,
+                'responseType' => 'Google\Protobuf\GPBEmpty',
+                'headerParams' => [
+                    [
+                        'keyName' => 'ad_group_ad',
+                        'fieldAccessors' => [
+                            'getAdGroupAd',
+                        ],
+                    ],
+                ],
+            ],
             'templateMap' => [
                 'ad' => 'customers/{customer_id}/ads/{ad_id}',
                 'adGroup' => 'customers/{customer_id}/adGroups/{ad_group_id}',
                 'adGroupAd' => 'customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}',
                 'adGroupAdLabel' => 'customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}~{label_id}',
+                'asset' => 'customers/{customer_id}/assets/{asset_id}',
             ],
         ],
     ],

@@ -79,6 +79,48 @@ class UserListCustomerTypeCategory
      * Generated from protobuf enum <code>CART_ABANDONERS = 10;</code>
      */
     const CART_ABANDONERS = 10;
+    /**
+     * Customer type category for loyalty tier 1 members.
+     *
+     * Generated from protobuf enum <code>LOYALTY_TIER_1_MEMBERS = 11;</code>
+     */
+    const LOYALTY_TIER_1_MEMBERS = 11;
+    /**
+     * Customer type category for loyalty tier 2 members.
+     *
+     * Generated from protobuf enum <code>LOYALTY_TIER_2_MEMBERS = 12;</code>
+     */
+    const LOYALTY_TIER_2_MEMBERS = 12;
+    /**
+     * Customer type category for loyalty tier 3 members.
+     *
+     * Generated from protobuf enum <code>LOYALTY_TIER_3_MEMBERS = 13;</code>
+     */
+    const LOYALTY_TIER_3_MEMBERS = 13;
+    /**
+     * Customer type category for loyalty tier 4 members.
+     *
+     * Generated from protobuf enum <code>LOYALTY_TIER_4_MEMBERS = 14;</code>
+     */
+    const LOYALTY_TIER_4_MEMBERS = 14;
+    /**
+     * Customer type category for loyalty tier 5 members.
+     *
+     * Generated from protobuf enum <code>LOYALTY_TIER_5_MEMBERS = 15;</code>
+     */
+    const LOYALTY_TIER_5_MEMBERS = 15;
+    /**
+     * Customer type category for loyalty tier 6 members.
+     *
+     * Generated from protobuf enum <code>LOYALTY_TIER_6_MEMBERS = 16;</code>
+     */
+    const LOYALTY_TIER_6_MEMBERS = 16;
+    /**
+     * Customer type category for loyalty tier 7 members.
+     *
+     * Generated from protobuf enum <code>LOYALTY_TIER_7_MEMBERS = 17;</code>
+     */
+    const LOYALTY_TIER_7_MEMBERS = 17;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -92,6 +134,13 @@ class UserListCustomerTypeCategory
         self::PAID_SUBSCRIBERS => 'PAID_SUBSCRIBERS',
         self::LOYALTY_SIGN_UPS => 'LOYALTY_SIGN_UPS',
         self::CART_ABANDONERS => 'CART_ABANDONERS',
+        self::LOYALTY_TIER_1_MEMBERS => 'LOYALTY_TIER_1_MEMBERS',
+        self::LOYALTY_TIER_2_MEMBERS => 'LOYALTY_TIER_2_MEMBERS',
+        self::LOYALTY_TIER_3_MEMBERS => 'LOYALTY_TIER_3_MEMBERS',
+        self::LOYALTY_TIER_4_MEMBERS => 'LOYALTY_TIER_4_MEMBERS',
+        self::LOYALTY_TIER_5_MEMBERS => 'LOYALTY_TIER_5_MEMBERS',
+        self::LOYALTY_TIER_6_MEMBERS => 'LOYALTY_TIER_6_MEMBERS',
+        self::LOYALTY_TIER_7_MEMBERS => 'LOYALTY_TIER_7_MEMBERS',
     ];
 
     public static function name($value)

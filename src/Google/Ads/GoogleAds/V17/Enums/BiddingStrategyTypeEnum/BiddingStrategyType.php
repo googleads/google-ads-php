@@ -41,6 +41,12 @@ class BiddingStrategyType
      */
     const ENHANCED_CPC = 2;
     /**
+     * Fixed CPM is a manual bidding strategy with a fixed CPM.
+     *
+     * Generated from protobuf enum <code>FIXED_CPM = 19;</code>
+     */
+    const FIXED_CPM = 19;
+    /**
      * Used for return value only. Indicates that a campaign does not have a
      * bidding strategy. This prevents the campaign from serving. For example,
      * a campaign may be attached to a manager bidding strategy and the serving
@@ -124,6 +130,13 @@ class BiddingStrategyType
      */
     const TARGET_CPM = 14;
     /**
+     * Target CPV is an automated bidding strategy that sets bids to optimize
+     * performance given the average target cost per view.
+     *
+     * Generated from protobuf enum <code>TARGET_CPV = 20;</code>
+     */
+    const TARGET_CPV = 20;
+    /**
      * An automated bidding strategy that sets bids so that a certain percentage
      * of search ads are shown at the top of the first page (or other targeted
      * location).
@@ -161,6 +174,7 @@ class BiddingStrategyType
         self::UNKNOWN => 'UNKNOWN',
         self::COMMISSION => 'COMMISSION',
         self::ENHANCED_CPC => 'ENHANCED_CPC',
+        self::FIXED_CPM => 'FIXED_CPM',
         self::INVALID => 'INVALID',
         self::MANUAL_CPA => 'MANUAL_CPA',
         self::MANUAL_CPC => 'MANUAL_CPC',
@@ -172,6 +186,7 @@ class BiddingStrategyType
         self::PERCENT_CPC => 'PERCENT_CPC',
         self::TARGET_CPA => 'TARGET_CPA',
         self::TARGET_CPM => 'TARGET_CPM',
+        self::TARGET_CPV => 'TARGET_CPV',
         self::TARGET_IMPRESSION_SHARE => 'TARGET_IMPRESSION_SHARE',
         self::TARGET_OUTRANK_SHARE => 'TARGET_OUTRANK_SHARE',
         self::TARGET_ROAS => 'TARGET_ROAS',

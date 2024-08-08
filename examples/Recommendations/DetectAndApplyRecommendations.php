@@ -44,11 +44,11 @@ use Google\ApiCore\ApiException;
  * obsolete recommendations throw an error when applied. For more details, see:
  * https://developers.google.com/google-ads/api/docs/recommendations#take_action
  *
- * As of Google Ads API v15 users can subscribe to certain recommendation types to
- * apply them automatically. For more details, see:
+ * You can subscribe to certain recommendation types to apply them automatically.
+ * For more details, see:
  * https://developers.google.com/google-ads/api/docs/recommendations#auto-apply
  *
- * As of Google Ads API v16 users can proactively generate certain recommendation
+ * You can also proactively generate certain recommendation
  * types during the campaign construction process. For more details see:
  * https://developers.google.com/google-ads/api/docs/recommendations#recommendations-in-campaign-construction.
  */

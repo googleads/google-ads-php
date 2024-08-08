@@ -58,6 +58,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $ad_destination_type = 0;
     /**
+     * Ad Format type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.enums.AdFormatTypeEnum.AdFormatType ad_format_type = 191;</code>
+     */
+    protected $ad_format_type = 0;
+    /**
      * Ad network type.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v17.enums.AdNetworkTypeEnum.AdNetworkType ad_network_type = 3;</code>
@@ -683,6 +689,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $sk_ad_network_postback_sequence_index = null;
     /**
+     * The version of the SKAdNetwork API used.
+     *
+     * Generated from protobuf field <code>optional string sk_ad_network_version = 192;</code>
+     */
+    protected $sk_ad_network_version = null;
+    /**
      * Only used with CustomerAsset, CampaignAsset and AdGroupAsset metrics.
      * Indicates whether the interaction metrics occurred on the asset itself
      * or a different asset or ad unit.
@@ -726,6 +738,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Advertiser supplied activity ID.
      *     @type int $ad_destination_type
      *           Ad Destination type.
+     *     @type int $ad_format_type
+     *           Ad Format type.
      *     @type int $ad_network_type
      *           Ad network type.
      *     @type string $ad_group
@@ -959,6 +973,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           present in any postbacks sent by Apple.
      *     @type int|string $sk_ad_network_postback_sequence_index
      *           iOS Store Kit Ad Network postback sequence index.
+     *     @type string $sk_ad_network_version
+     *           The version of the SKAdNetwork API used.
      *     @type \Google\Ads\GoogleAds\V17\Common\AssetInteractionTarget $asset_interaction_target
      *           Only used with CustomerAsset, CampaignAsset and AdGroupAsset metrics.
      *           Indicates whether the interaction metrics occurred on the asset itself
@@ -1219,6 +1235,32 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V17\Enums\AdDestinationTypeEnum\AdDestinationType::class);
         $this->ad_destination_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Ad Format type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.enums.AdFormatTypeEnum.AdFormatType ad_format_type = 191;</code>
+     * @return int
+     */
+    public function getAdFormatType()
+    {
+        return $this->ad_format_type;
+    }
+
+    /**
+     * Ad Format type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v17.enums.AdFormatTypeEnum.AdFormatType ad_format_type = 191;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAdFormatType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V17\Enums\AdFormatTypeEnum\AdFormatType::class);
+        $this->ad_format_type = $var;
 
         return $this;
     }
@@ -4541,6 +4583,42 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->sk_ad_network_postback_sequence_index = $var;
+
+        return $this;
+    }
+
+    /**
+     * The version of the SKAdNetwork API used.
+     *
+     * Generated from protobuf field <code>optional string sk_ad_network_version = 192;</code>
+     * @return string
+     */
+    public function getSkAdNetworkVersion()
+    {
+        return isset($this->sk_ad_network_version) ? $this->sk_ad_network_version : '';
+    }
+
+    public function hasSkAdNetworkVersion()
+    {
+        return isset($this->sk_ad_network_version);
+    }
+
+    public function clearSkAdNetworkVersion()
+    {
+        unset($this->sk_ad_network_version);
+    }
+
+    /**
+     * The version of the SKAdNetwork API used.
+     *
+     * Generated from protobuf field <code>optional string sk_ad_network_version = 192;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSkAdNetworkVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->sk_ad_network_version = $var;
 
         return $this;
     }

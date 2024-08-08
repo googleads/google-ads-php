@@ -147,6 +147,12 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string combined_audience = 40 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $combined_audience = '';
+    /**
+     * Output only. The AssetGroup affected by this change.
+     *
+     * Generated from protobuf field <code>string asset_group = 41 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $asset_group = '';
 
     /**
      * Constructor.
@@ -201,6 +207,8 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      *           Output only. The AdGroupAsset affected by this change.
      *     @type string $combined_audience
      *           Output only. The CombinedAudience affected by this change.
+     *     @type string $asset_group
+     *           Output only. The AssetGroup affected by this change.
      * }
      */
     public function __construct($data = NULL) {
@@ -870,6 +878,32 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->combined_audience = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The AssetGroup affected by this change.
+     *
+     * Generated from protobuf field <code>string asset_group = 41 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getAssetGroup()
+    {
+        return $this->asset_group;
+    }
+
+    /**
+     * Output only. The AssetGroup affected by this change.
+     *
+     * Generated from protobuf field <code>string asset_group = 41 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAssetGroup($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->asset_group = $var;
 
         return $this;
     }

@@ -35,6 +35,18 @@ return [
                     ],
                 ],
             ],
+            'GenerateAudienceOverlapInsights' => [
+                'callType' => \Google\ApiCore\Call::UNARY_CALL,
+                'responseType' => 'Google\Ads\GoogleAds\V17\Services\GenerateAudienceOverlapInsightsResponse',
+                'headerParams' => [
+                    [
+                        'keyName' => 'customer_id',
+                        'fieldAccessors' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
             'GenerateInsightsFinderReport' => [
                 'callType' => \Google\ApiCore\Call::UNARY_CALL,
                 'responseType' => 'Google\Ads\GoogleAds\V17\Services\GenerateInsightsFinderReportResponse',
