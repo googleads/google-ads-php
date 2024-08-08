@@ -27,6 +27,12 @@ class OfflineConversionSummary extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 failed_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $failed_count = 0;
+    /**
+     * Output only. Total count of pending uploaded event.
+     *
+     * Generated from protobuf field <code>int64 pending_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $pending_count = 0;
     protected $dimension_key;
 
     /**
@@ -39,6 +45,8 @@ class OfflineConversionSummary extends \Google\Protobuf\Internal\Message
      *           Output only. Total count of successful event.
      *     @type int|string $failed_count
      *           Output only. Total count of failed event.
+     *     @type int|string $pending_count
+     *           Output only. Total count of pending uploaded event.
      *     @type int|string $job_id
      *           Output only. Dimension key for last N jobs.
      *     @type string $upload_date
@@ -98,6 +106,32 @@ class OfflineConversionSummary extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->failed_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Total count of pending uploaded event.
+     *
+     * Generated from protobuf field <code>int64 pending_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int|string
+     */
+    public function getPendingCount()
+    {
+        return $this->pending_count;
+    }
+
+    /**
+     * Output only. Total count of pending uploaded event.
+     *
+     * Generated from protobuf field <code>int64 pending_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setPendingCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->pending_count = $var;
 
         return $this;
     }
