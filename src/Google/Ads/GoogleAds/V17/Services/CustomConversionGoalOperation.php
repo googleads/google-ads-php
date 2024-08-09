@@ -40,7 +40,7 @@ class CustomConversionGoalOperation extends \Google\Protobuf\Internal\Message
      *     @type string $remove
      *           Remove operation: A resource name for the removed custom conversion goal
      *           is expected, in this format:
-     *           'customers/{customer_id}/conversionActions/{ConversionGoal.custom_goal_config.conversion_type_ids}'
+     *           'customers/{customer_id}/customConversionGoals/{goal_id}'
      * }
      */
     public function __construct($data = NULL) {
@@ -153,7 +153,7 @@ class CustomConversionGoalOperation extends \Google\Protobuf\Internal\Message
     /**
      * Remove operation: A resource name for the removed custom conversion goal
      * is expected, in this format:
-     * 'customers/{customer_id}/conversionActions/{ConversionGoal.custom_goal_config.conversion_type_ids}'
+     * 'customers/{customer_id}/customConversionGoals/{goal_id}'
      *
      * Generated from protobuf field <code>string remove = 3 [(.google.api.resource_reference) = {</code>
      * @return string
@@ -171,7 +171,7 @@ class CustomConversionGoalOperation extends \Google\Protobuf\Internal\Message
     /**
      * Remove operation: A resource name for the removed custom conversion goal
      * is expected, in this format:
-     * 'customers/{customer_id}/conversionActions/{ConversionGoal.custom_goal_config.conversion_type_ids}'
+     * 'customers/{customer_id}/customConversionGoals/{goal_id}'
      *
      * Generated from protobuf field <code>string remove = 3 [(.google.api.resource_reference) = {</code>
      * @param string $var

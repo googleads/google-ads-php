@@ -34,6 +34,11 @@
                     "retry_codes_name": "retry_policy_1_codes",
                     "retry_params_name": "retry_policy_1_params"
                 },
+                "GenerateAudienceOverlapInsights": {
+                    "timeout_millis": 14400000,
+                    "retry_codes_name": "retry_policy_1_codes",
+                    "retry_params_name": "retry_policy_1_params"
+                },
                 "GenerateInsightsFinderReport": {
                     "timeout_millis": 14400000,
                     "retry_codes_name": "retry_policy_1_codes",

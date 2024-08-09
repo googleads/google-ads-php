@@ -166,4 +166,32 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Returns a collection of audience attributes along with estimates of the
+     * overlap between their potential YouTube reach and that of a given input
+     * attribute.
+     *
+     * List of thrown errors:
+     *   [AudienceInsightsError]()
+     *   [AuthenticationError]()
+     *   [AuthorizationError]()
+     *   [FieldError]()
+     *   [HeaderError]()
+     *   [InternalError]()
+     *   [QuotaError]()
+     *   [RangeError]()
+     *   [RequestError]()
+     * @param \Google\Ads\GoogleAds\V17\Services\GenerateAudienceOverlapInsightsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GenerateAudienceOverlapInsights(\Google\Ads\GoogleAds\V17\Services\GenerateAudienceOverlapInsightsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v17.services.AudienceInsightsService/GenerateAudienceOverlapInsights',
+        $argument,
+        ['\Google\Ads\GoogleAds\V17\Services\GenerateAudienceOverlapInsightsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

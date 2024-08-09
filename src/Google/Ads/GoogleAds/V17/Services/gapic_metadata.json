@@ -61,6 +61,11 @@
                             "methods": [
                                 "mutateAdGroupAds"
                             ]
+                        },
+                        "RemoveAutomaticallyCreatedAssets": {
+                            "methods": [
+                                "removeAutomaticallyCreatedAssets"
+                            ]
                         }
                     }
                 }
@@ -354,6 +359,11 @@
                         "GenerateAudienceCompositionInsights": {
                             "methods": [
                                 "generateAudienceCompositionInsights"
+                            ]
+                        },
+                        "GenerateAudienceOverlapInsights": {
+                            "methods": [
+                                "generateAudienceOverlapInsights"
                             ]
                         },
                         "GenerateInsightsFinderReport": {
@@ -1691,6 +1701,20 @@
                         "GenerateRecommendations": {
                             "methods": [
                                 "generateRecommendations"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ShareablePreviewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ShareablePreviewServiceGapicClient",
+                    "rpcs": {
+                        "GenerateShareablePreviews": {
+                            "methods": [
+                                "generateShareablePreviews"
                             ]
                         }
                     }

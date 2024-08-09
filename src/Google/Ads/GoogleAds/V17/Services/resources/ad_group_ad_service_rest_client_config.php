@@ -35,6 +35,18 @@ return [
                     ],
                 ],
             ],
+            'RemoveAutomaticallyCreatedAssets' => [
+                'method' => 'post',
+                'uriTemplate' => '/v17/{ad_group_ad=customers/*/adGroupAds/*}:removeAutomaticallyCreatedAssets',
+                'body' => '*',
+                'placeholders' => [
+                    'ad_group_ad' => [
+                        'getters' => [
+                            'getAdGroupAd',
+                        ],
+                    ],
+                ],
+            ],
         ],
         'google.longrunning.Operations' => [
             'CancelOperation' => [

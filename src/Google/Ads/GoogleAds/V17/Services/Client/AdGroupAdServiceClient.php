@@ -27,6 +27,7 @@ namespace Google\Ads\GoogleAds\V17\Services\Client;
 use Google\Ads\GoogleAds\Lib\V17\GoogleAdsGapicClientTrait;
 use Google\Ads\GoogleAds\V17\Services\MutateAdGroupAdsRequest;
 use Google\Ads\GoogleAds\V17\Services\MutateAdGroupAdsResponse;
+use Google\Ads\GoogleAds\V17\Services\RemoveAutomaticallyCreatedAssetsRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
@@ -49,6 +50,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * contained within formatted names that are returned by the API.
  *
  * @method PromiseInterface mutateAdGroupAdsAsync(MutateAdGroupAdsRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface removeAutomaticallyCreatedAssetsAsync(RemoveAutomaticallyCreatedAssetsRequest $request, array $optionalArgs = [])
  */
 class AdGroupAdServiceClient
 {
@@ -176,6 +178,23 @@ class AdGroupAdServiceClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a asset
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetId
+     *
+     * @return string The formatted asset resource.
+     */
+    public static function assetName(string $customerId, string $assetId): string
+    {
+        return self::getPathTemplate('asset')->render([
+            'customer_id' => $customerId,
+            'asset_id' => $assetId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
@@ -183,6 +202,7 @@ class AdGroupAdServiceClient
      * - adGroup: customers/{customer_id}/adGroups/{ad_group_id}
      * - adGroupAd: customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}
      * - adGroupAdLabel: customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}~{label_id}
+     * - asset: customers/{customer_id}/assets/{asset_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is
@@ -340,5 +360,39 @@ class AdGroupAdServiceClient
     public function mutateAdGroupAds(MutateAdGroupAdsRequest $request, array $callOptions = []): MutateAdGroupAdsResponse
     {
         return $this->startApiCall('MutateAdGroupAds', $request, $callOptions)->wait();
+    }
+
+    /**
+     * Remove automatically created assets from an ad.
+     *
+     * List of thrown errors:
+     * [AdError]()
+     * [AuthenticationError]()
+     * [AuthorizationError]()
+     * [AutomaticallyCreatedAssetRemovalError]()
+     * [HeaderError]()
+     * [InternalError]()
+     * [MutateError]()
+     * [QuotaError]()
+     * [RequestError]()
+     *
+     * The async variant is
+     * {@see AdGroupAdServiceClient::removeAutomaticallyCreatedAssetsAsync()} .
+     *
+     * @param RemoveAutomaticallyCreatedAssetsRequest $request     A request to house fields associated with the call.
+     * @param array                                   $callOptions {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException Thrown if the API call fails.
+     */
+    public function removeAutomaticallyCreatedAssets(RemoveAutomaticallyCreatedAssetsRequest $request, array $callOptions = []): void
+    {
+        $this->startApiCall('RemoveAutomaticallyCreatedAssets', $request, $callOptions)->wait();
     }
 }

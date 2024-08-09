@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Offline conversion upload client summary.
+ * Offline conversion upload summary at customer level.
  *
  * Generated from protobuf message <code>google.ads.googleads.v17.resources.OfflineConversionUploadClientSummary</code>
  */
 class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Output only. The resource name of the offline conversion upload client
-     * summary. Offline conversion upload client summary resource names have the
-     * form:
+     * Output only. The resource name of the offline conversion upload summary at
+     * customer level. Offline conversion upload client summary resource names
+     * have the form:
      * `customers/{customer_id}/offlineConversionUploadClientSummaries/{client}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
@@ -32,8 +32,7 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
     protected $client = 0;
     /**
      * Output only. Overall status for offline conversion client summary. Status
-     * is generated
-     *  from most recent calendar day with upload stats
+     * is generated from most recent calendar day with upload stats.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v17.enums.OfflineConversionDiagnosticStatusEnum.OfflineConversionDiagnosticStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -56,6 +55,18 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
      * Generated from protobuf field <code>double success_rate = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $success_rate = 0.0;
+    /**
+     * Output only. Total count of pending uploaded events.
+     *
+     * Generated from protobuf field <code>int64 pending_event_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $pending_event_count = 0;
+    /**
+     * Output only. The ratio of total pending events to total events.
+     *
+     * Generated from protobuf field <code>double pending_rate = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $pending_rate = 0.0;
     /**
      * Output only. Date for the latest upload batch. The format is "yyyy-mm-dd
      * hh:mm:ss", and it's in the time zone of the Google Ads account.
@@ -90,22 +101,25 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           Output only. The resource name of the offline conversion upload client
-     *           summary. Offline conversion upload client summary resource names have the
-     *           form:
+     *           Output only. The resource name of the offline conversion upload summary at
+     *           customer level. Offline conversion upload client summary resource names
+     *           have the form:
      *           `customers/{customer_id}/offlineConversionUploadClientSummaries/{client}`
      *     @type int $client
      *           Output only. Client type of the upload event.
      *     @type int $status
      *           Output only. Overall status for offline conversion client summary. Status
-     *           is generated
-     *            from most recent calendar day with upload stats
+     *           is generated from most recent calendar day with upload stats.
      *     @type int|string $total_event_count
      *           Output only. Total count of uploaded events.
      *     @type int|string $successful_event_count
      *           Output only. Total count of successful uploaded events.
      *     @type float $success_rate
      *           Output only. Successful rate.
+     *     @type int|string $pending_event_count
+     *           Output only. Total count of pending uploaded events.
+     *     @type float $pending_rate
+     *           Output only. The ratio of total pending events to total events.
      *     @type string $last_upload_date_time
      *           Output only. Date for the latest upload batch. The format is "yyyy-mm-dd
      *           hh:mm:ss", and it's in the time zone of the Google Ads account.
@@ -124,9 +138,9 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Output only. The resource name of the offline conversion upload client
-     * summary. Offline conversion upload client summary resource names have the
-     * form:
+     * Output only. The resource name of the offline conversion upload summary at
+     * customer level. Offline conversion upload client summary resource names
+     * have the form:
      * `customers/{customer_id}/offlineConversionUploadClientSummaries/{client}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
@@ -138,9 +152,9 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Output only. The resource name of the offline conversion upload client
-     * summary. Offline conversion upload client summary resource names have the
-     * form:
+     * Output only. The resource name of the offline conversion upload summary at
+     * customer level. Offline conversion upload client summary resource names
+     * have the form:
      * `customers/{customer_id}/offlineConversionUploadClientSummaries/{client}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
@@ -183,8 +197,7 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
 
     /**
      * Output only. Overall status for offline conversion client summary. Status
-     * is generated
-     *  from most recent calendar day with upload stats
+     * is generated from most recent calendar day with upload stats.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v17.enums.OfflineConversionDiagnosticStatusEnum.OfflineConversionDiagnosticStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
@@ -196,8 +209,7 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
 
     /**
      * Output only. Overall status for offline conversion client summary. Status
-     * is generated
-     *  from most recent calendar day with upload stats
+     * is generated from most recent calendar day with upload stats.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v17.enums.OfflineConversionDiagnosticStatusEnum.OfflineConversionDiagnosticStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
@@ -285,6 +297,58 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
     {
         GPBUtil::checkDouble($var);
         $this->success_rate = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Total count of pending uploaded events.
+     *
+     * Generated from protobuf field <code>int64 pending_event_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int|string
+     */
+    public function getPendingEventCount()
+    {
+        return $this->pending_event_count;
+    }
+
+    /**
+     * Output only. Total count of pending uploaded events.
+     *
+     * Generated from protobuf field <code>int64 pending_event_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setPendingEventCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->pending_event_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The ratio of total pending events to total events.
+     *
+     * Generated from protobuf field <code>double pending_rate = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return float
+     */
+    public function getPendingRate()
+    {
+        return $this->pending_rate;
+    }
+
+    /**
+     * Output only. The ratio of total pending events to total events.
+     *
+     * Generated from protobuf field <code>double pending_rate = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setPendingRate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->pending_rate = $var;
 
         return $this;
     }

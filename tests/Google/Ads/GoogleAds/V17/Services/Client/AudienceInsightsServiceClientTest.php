@@ -22,10 +22,14 @@
 
 namespace Google\Ads\GoogleAds\V17\Services\Client;
 
+use Google\Ads\GoogleAds\V17\Common\LocationInfo;
+use Google\Ads\GoogleAds\V17\Services\AudienceInsightsAttribute;
 use Google\Ads\GoogleAds\V17\Services\BasicInsightsAudience;
 use Google\Ads\GoogleAds\V17\Services\Client\AudienceInsightsServiceClient;
 use Google\Ads\GoogleAds\V17\Services\GenerateAudienceCompositionInsightsRequest;
 use Google\Ads\GoogleAds\V17\Services\GenerateAudienceCompositionInsightsResponse;
+use Google\Ads\GoogleAds\V17\Services\GenerateAudienceOverlapInsightsRequest;
+use Google\Ads\GoogleAds\V17\Services\GenerateAudienceOverlapInsightsResponse;
 use Google\Ads\GoogleAds\V17\Services\GenerateInsightsFinderReportRequest;
 use Google\Ads\GoogleAds\V17\Services\GenerateInsightsFinderReportResponse;
 use Google\Ads\GoogleAds\V17\Services\GenerateSuggestedTargetingInsightsRequest;
@@ -137,6 +141,86 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
             ->setDimensions($dimensions);
         try {
             $gapicClient->generateAudienceCompositionInsights($request);
+            // If the $gapicClient method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function generateAudienceOverlapInsightsTest()
+    {
+        $transport = $this->createTransport();
+        $gapicClient = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new GenerateAudienceOverlapInsightsResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $countryLocation = new LocationInfo();
+        $primaryAttribute = new AudienceInsightsAttribute();
+        $dimensions = [];
+        $request = (new GenerateAudienceOverlapInsightsRequest())
+            ->setCustomerId($customerId)
+            ->setCountryLocation($countryLocation)
+            ->setPrimaryAttribute($primaryAttribute)
+            ->setDimensions($dimensions);
+        $response = $gapicClient->generateAudienceOverlapInsights($request);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v17.services.AudienceInsightsService/GenerateAudienceOverlapInsights', $actualFuncCall);
+        $actualValue = $actualRequestObject->getCustomerId();
+        $this->assertProtobufEquals($customerId, $actualValue);
+        $actualValue = $actualRequestObject->getCountryLocation();
+        $this->assertProtobufEquals($countryLocation, $actualValue);
+        $actualValue = $actualRequestObject->getPrimaryAttribute();
+        $this->assertProtobufEquals($primaryAttribute, $actualValue);
+        $actualValue = $actualRequestObject->getDimensions();
+        $this->assertProtobufEquals($dimensions, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function generateAudienceOverlapInsightsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $gapicClient = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $countryLocation = new LocationInfo();
+        $primaryAttribute = new AudienceInsightsAttribute();
+        $dimensions = [];
+        $request = (new GenerateAudienceOverlapInsightsRequest())
+            ->setCustomerId($customerId)
+            ->setCountryLocation($countryLocation)
+            ->setPrimaryAttribute($primaryAttribute)
+            ->setDimensions($dimensions);
+        try {
+            $gapicClient->generateAudienceOverlapInsights($request);
             // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
