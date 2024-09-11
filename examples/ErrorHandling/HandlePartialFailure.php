@@ -181,8 +181,7 @@ class HandlePartialFailure
         // Issues the mutate request, enabling partial failure mode.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
         return $adGroupServiceClient->mutateAdGroups(
-            MutateAdGroupsRequest::build($customerId, $operations),
-            ['partialFailure' => true]
+            MutateAdGroupsRequest::build($customerId, $operations)->setPartialFailure(true)
         );
     }
     // [END handle_partial_failure]
