@@ -40,7 +40,7 @@ class GoogleAdsApiController extends Controller
 
     // The limit of the number of the returned results. This is set to prevent you from accidentally
     // fetching a very large number of campaigns and freezing your browser. Change it to a larger
-    // number if you're sure that your request doesn't result in too many number of results.
+    // number if you're sure that your request doesn't result in too many results.
     private const RESULTS_LIMIT = 1000;
     // Google Ads API default page size.
     private const DEFAULT_PAGE_SIZE = 10000;
@@ -169,16 +169,19 @@ class GoogleAdsApiController extends Controller
             $response->getPage()->getResponseObject()->getTotalResultsCount()
         );
 
-        // Extracts the results for the requested page.
+        // Extracts the specific subset of the results for the requested page.
         $results = [];
-        foreach ($response->getPage()->getIterator() as $googleAdsRow) {
-            /** @var GoogleAdsRow $googleAdsRow */
-            // Converts each result as a Plain Old PHP Object (POPO) using JSON.
-            $results[] = json_decode($googleAdsRow->serializeToJsonString(), true);
+        $startIndex = ($pageNo - 1) * $entriesPerPage;
+        foreach ($response->getPage()->getIterator() as $index => $googleAdsRow) {
+            if ($index >= $startIndex) {
+                /** @var GoogleAdsRow $googleAdsRow */
+                // Converts each result as a Plain Old PHP Object (POPO) using JSON.
+                $results[] = json_decode($googleAdsRow->serializeToJsonString(), true);
+            }
+            if (count($results) >= $entriesPerPage) {
+                break;
+            }
         }
-        // We need to slice the array here so it shows the correct set of results based on the
-        // requested page number.
-        $results = array_slice($results, ($pageNo - 1) * $entriesPerPage, $entriesPerPage);
 
         // Creates a length aware paginator to supply a given page of results for the view.
         $paginatedResults = new LengthAwarePaginator(
