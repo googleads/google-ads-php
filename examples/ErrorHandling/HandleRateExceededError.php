@@ -253,8 +253,9 @@ class HandleRateExceededError
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         // Makes a validateOnly mutate request.
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-            MutateAdGroupCriteriaRequest::build($customerId, $operations),
-            ['partialFailure' => false, 'validateOnly' => true]
+            MutateAdGroupCriteriaRequest::build($customerId, $operations)
+                ->setPartialFailure(false)
+                ->setValidateOnly(true)
         );
         // Displays the results.
         printf(
