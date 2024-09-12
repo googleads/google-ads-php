@@ -25,6 +25,8 @@ use Google\Ads\GoogleAds\V17\Enums\CampaignStatusEnum\CampaignStatus;
 use Google\Ads\GoogleAds\V17\Resources\Campaign;
 use Google\Ads\GoogleAds\V17\Services\CampaignOperation;
 use Google\Ads\GoogleAds\V17\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V17\Services\MutateCampaignsRequest;
+use Google\Ads\GoogleAds\V17\Services\SearchGoogleAdsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\View\View;
@@ -36,7 +38,12 @@ class GoogleAdsApiController extends Controller
         'customer' => ['customer.id']
     ];
 
-    private const RESULTS_LIMIT = 100;
+    // The limit of the number of the returned results. This is set to prevent you from accidentally
+    // fetching a very large number of campaigns and freezing your browser. Change it to a larger
+    // number if you're sure that your request doesn't result in too many results.
+    private const RESULTS_LIMIT = 1000;
+    // Google Ads API default page size.
+    private const DEFAULT_PAGE_SIZE = 10000;
 
     /**
      * Controls a POST or GET request submitted in the context of the "Show Report" form.
@@ -114,54 +121,45 @@ class GoogleAdsApiController extends Controller
         // Determines the number of the page to load (the first one by default).
         $pageNo = $request->input('page') ?: 1;
 
+        // Page number of the Google Ads API result is not the same as the requested UI page number.
+        // This is because Google Ads API has a defined default page size and users cannot specify
+        // it.
+        $resultPageNo = intval($entriesPerPage * $pageNo / self::DEFAULT_PAGE_SIZE);
         // Fetches next pages in sequence and stores their page tokens until the page token of the
         // requested page is retrieved.
-        while (count($pageTokens) < $pageNo) {
+        while (count($pageTokens) < $resultPageNo) {
             // Fetches the next unknown page.
             $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
-                $customerId,
-                $query,
-                [
-                    'pageSize' => $entriesPerPage,
+                SearchGoogleAdsRequest::build($customerId, $query)
                     // Requests to return the total results count. This is necessary to
                     // determine how many pages of results exist.
-                    'returnTotalResultsCount' => true,
+                    ->setReturnTotalResultsCount(true)
                     // There is no need to go over the pages we already know the page tokens for.
                     // Fetches the last page we know the page token for so that we can retrieve the
                     // token of the page that comes after it.
-                    'pageToken' => end($pageTokens)
-                ]
+                    ->setPageToken(end($pageTokens))
             );
-            if ($response->getPage()->getNextPageToken()) {
+            if ($response->getPage()->hasNextPage()) {
                 // Stores the page token of the page that comes after the one we just fetched if
                 // any so that it can be reused later if necessary.
                 $pageTokens[] = $response->getPage()->getNextPageToken();
             } else {
                 // Otherwise changes the requested page number for the latest page that we have
                 // fetched until now, the requested page number was invalid.
-                $pageNo = count($pageTokens);
+                $resultPageNo = count($pageTokens);
             }
         }
 
         // Fetches the actual page that we want to display the results of.
         $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
-            $customerId,
-            $query,
-            [
-                'pageSize' => $entriesPerPage,
+            SearchGoogleAdsRequest::build($customerId, $query)
                 // Requests to return the total results count. This is necessary to
                 // determine how many pages of results exist.
-                'returnTotalResultsCount' => true,
+                ->setReturnTotalResultsCount(true)
                 // The page token of the requested page is in the page token list because of the
                 // processing done in the previous loop.
-                'pageToken' => $pageTokens[$pageNo - 1]
-            ]
+                ->setPageToken($pageTokens[$resultPageNo])
         );
-        if ($response->getPage()->getNextPageToken()) {
-            // Stores the page token of the page that comes after the one we just fetched if any so
-            // that it can be reused later if necessary.
-            $pageTokens[] = $response->getPage()->getNextPageToken();
-        }
 
         // Determines the total number of results to display.
         // The total results count does not take into consideration the LIMIT clause of the query
@@ -171,12 +169,18 @@ class GoogleAdsApiController extends Controller
             $response->getPage()->getResponseObject()->getTotalResultsCount()
         );
 
-        // Extracts the results for the requested page.
+        // Extracts the specific subset of the results for the requested page.
         $results = [];
-        foreach ($response->getPage()->getIterator() as $googleAdsRow) {
-            /** @var GoogleAdsRow $googleAdsRow */
-            // Converts each result as a Plain Old PHP Object (POPO) using JSON.
-            $results[] = json_decode($googleAdsRow->serializeToJsonString(), true);
+        $startIndex = ($pageNo - 1) * $entriesPerPage;
+        foreach ($response->getPage()->getIterator() as $index => $googleAdsRow) {
+            if ($index >= $startIndex) {
+                /** @var GoogleAdsRow $googleAdsRow */
+                // Converts each result as a Plain Old PHP Object (POPO) using JSON.
+                $results[] = json_decode($googleAdsRow->serializeToJsonString(), true);
+            }
+            if (count($results) >= $entriesPerPage) {
+                break;
+            }
         }
 
         // Creates a length aware paginator to supply a given page of results for the view.
@@ -231,8 +235,7 @@ class GoogleAdsApiController extends Controller
 
         // Issues a mutate request to pause the campaign.
         $googleAdsClient->getCampaignServiceClient()->mutateCampaigns(
-            $customerId,
-            [$campaignOperation]
+            MutateCampaignsRequest::build($customerId, [$campaignOperation])
         );
 
         // Builds the GAQL query to retrieve more information about the now paused campaign.
@@ -244,8 +247,7 @@ class GoogleAdsApiController extends Controller
 
         // Searches the result.
         $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
-            $customerId,
-            $query
+            SearchGoogleAdsRequest::build($customerId, $query)
         );
 
         // Fetches and converts the result as a POPO using JSON.
