@@ -50,9 +50,8 @@ final class Feeds
         $query = "SELECT feed_item.attribute_values FROM feed_item"
             . " WHERE feed_item.resource_name = '$feedItemResourceName'";
         // Issues a search request.
-        $response = ($googleAdsClient->useGapicV2Source())
-            ? $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query))
-            : $googleAdsServiceClient->search($customerId, $query);
+        $response =
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
         // Returns the feed item attribute values, which belongs to the first item. We can ensure
         // it belongs to the first one because we specified the feed item resource name in the
@@ -187,9 +186,8 @@ final class Feeds
         // Constructs the query to get the feed attributes for the specified feed resource name.
         $query = "SELECT feed.attributes FROM feed WHERE feed.resource_name = '$feedResourceName'";
         // Issues a search request.
-        $response = ($googleAdsClient->useGapicV2Source())
-            ? $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query))
-            : $googleAdsServiceClient->search($customerId, $query);
+        $response =
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
         // Gets the first result because we only need the single feed we created previously.
         /** @var GoogleAdsRow $googleAdsRow */
