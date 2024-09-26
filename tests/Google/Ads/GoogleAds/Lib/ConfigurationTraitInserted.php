@@ -46,7 +46,6 @@ class ConfigurationTraitInserted
      * @param string $logLevel
      * @param string $proxy
      * @param string $transport
-     * @param bool $useGapicV2Source
      */
     public function __construct(
         string $developerToken,
@@ -57,8 +56,7 @@ class ConfigurationTraitInserted
         LoggerInterface $logger,
         string $logLevel,
         string $proxy,
-        string $transport,
-        bool $useGapicV2Source
+        string $transport
     ) {
         $this->developerToken = $developerToken;
         $this->loginCustomerId = $loginCustomerId;
@@ -69,6 +67,5 @@ class ConfigurationTraitInserted
         $this->logLevel = $logLevel;
         $this->proxy = $proxy;
         $this->transport = $transport;
-        $this->useGapicV2Source = $useGapicV2Source;
     }
 }

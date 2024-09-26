@@ -39,7 +39,6 @@ trait ConfigurationTrait
     private $proxy;
     private $transport;
     private $grpcChannelIsSecure;
-    private $useGapicV2Source;
 
     // The following configuration settings are based on complex objects. They cannot be set in
     // configuration files like the others but only dynamically.
@@ -167,16 +166,6 @@ trait ConfigurationTrait
     public function getGrpcChannelCredential()
     {
         return $this->grpcChannelCredential;
-    }
-
-    /**
-     * Returns true when this library is set to use GAPIC v2 source.
-     *
-     * @return bool
-     */
-    public function useGapicV2Source()
-    {
-        return $this->useGapicV2Source;
     }
 
     /**
