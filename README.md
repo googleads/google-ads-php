@@ -152,12 +152,6 @@ For more information on how to configure a client when instantiating it, see the
 Once you have an instance of `GoogleAdsClient`, you can obtain a service client
 for a particular service using one of the `get...ServiceClient()` methods.
 
-The created service client can be either GAPIC (Generated API Client) v1 or v2 source code, based
-on the value of the `useGapicV2Source` configuration.
-See [GAPIC](https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/gapic)
-and [Configuration fields](https://developers.devsite.corp.google.com/google-ads/api/docs/client-libs/php/configuration#config-field)
-for details.
-
 ## Client configuration
 
 See the [Configuration guide](https://developers.google.com/google-ads/api/docs/client-libs/php/configuration).

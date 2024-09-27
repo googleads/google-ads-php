@@ -59,8 +59,7 @@ class ConfigurationTraitTest extends TestCase
             $this->loggerMock,
             LogLevel::INFO,
             'localhost',
-            'grpc',
-            true
+            'grpc'
         );
     }
 
@@ -110,10 +109,5 @@ class ConfigurationTraitTest extends TestCase
     public function testGetTransport()
     {
         $this->assertEquals('grpc', $this->configurationTraitInserted->getTransport());
-    }
-
-    public function testUseGapicV2Source()
-    {
-        $this->assertTrue($this->configurationTraitInserted->useGapicV2Source());
     }
 }
