@@ -24,17 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V17\ResourceNames;
-use Google\Ads\GoogleAds\V17\Common\Consent;
-use Google\Ads\GoogleAds\V17\Enums\ConsentStatusEnum\ConsentStatus;
-use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V17\Services\CallConversion;
-use Google\Ads\GoogleAds\V17\Services\CallConversionResult;
-use Google\Ads\GoogleAds\V17\Services\CustomVariable;
-use Google\Ads\GoogleAds\V17\Services\UploadCallConversionsRequest;
+use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V18\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V18\ResourceNames;
+use Google\Ads\GoogleAds\V18\Common\Consent;
+use Google\Ads\GoogleAds\V18\Enums\ConsentStatusEnum\ConsentStatus;
+use Google\Ads\GoogleAds\V18\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V18\Services\CallConversion;
+use Google\Ads\GoogleAds\V18\Services\CallConversionResult;
+use Google\Ads\GoogleAds\V18\Services\CustomVariable;
+use Google\Ads\GoogleAds\V18\Services\UploadCallConversionsRequest;
 use Google\ApiCore\ApiException;
 
 /**

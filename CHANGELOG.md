@@ -1,3 +1,12 @@
+## 25.0.0
+*   Added support for v18 of Google Ads API.
+*   Removed support for the `useGapicV2Source` configuration, as the source code
+    of all versions are generated as GAPIC v2.
+    * Fixed the LaravelSampleApp to use GAPIC v2.
+*   Updated code examples:
+    * GetAllDisapprovedAds
+    * HandlePartialFailure
+
 ## 24.0.0
 *   Added support for v17_1 of Google Ads API.
 *   Removed support for v15 of Google Ads API.

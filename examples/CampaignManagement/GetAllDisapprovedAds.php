@@ -23,17 +23,18 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V18\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V17\Common\PolicyTopicEntry;
-use Google\Ads\GoogleAds\V17\Common\PolicyTopicEvidence;
-use Google\Ads\GoogleAds\V17\Enums\AdTypeEnum\AdType;
-use Google\Ads\GoogleAds\V17\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
-use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V17\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V17\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\V18\Common\PolicyTopicEntry;
+use Google\Ads\GoogleAds\V18\Common\PolicyTopicEvidence;
+use Google\Ads\GoogleAds\V18\Enums\AdTypeEnum\AdType;
+use Google\Ads\GoogleAds\V18\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
+use Google\Ads\GoogleAds\V18\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V18\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V18\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\V18\Services\SearchSettings;
 use Google\ApiCore\ApiException;
 
 /** This example retrieves all the disapproved ads in a given campaign. */
@@ -118,7 +119,9 @@ class GetAllDisapprovedAds
 
         // Issues a search request.
         $response = $googleAdsServiceClient->search(
-            SearchGoogleAdsRequest::build($customerId, $query)->setReturnTotalResultsCount(true)
+            SearchGoogleAdsRequest::build($customerId, $query)->setSearchSettings(
+                new SearchSettings(['return_total_results_count' => true])
+            )
         );
 
         // Iterates over all rows in all pages and counts disapproved ads.
