@@ -24,14 +24,14 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V17\ResourceNames;
-use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V17\Resources\FeedItemSetLink;
-use Google\Ads\GoogleAds\V17\Services\FeedItemSetLinkOperation;
-use Google\Ads\GoogleAds\V17\Services\MutateFeedItemSetLinksRequest;
+use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V18\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V18\ResourceNames;
+use Google\Ads\GoogleAds\V18\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V18\Resources\FeedItemSetLink;
+use Google\Ads\GoogleAds\V18\Services\FeedItemSetLinkOperation;
+use Google\Ads\GoogleAds\V18\Services\MutateFeedItemSetLinksRequest;
 use Google\ApiCore\ApiException;
 
 /**

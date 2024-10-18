@@ -24,16 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsException;
-use Google\Ads\GoogleAds\V17\Enums\IdentityVerificationProgramEnum\IdentityVerificationProgram;
-use Google\Ads\GoogleAds\V17\Enums\IdentityVerificationProgramStatusEnum\IdentityVerificationProgramStatus;
-use Google\Ads\GoogleAds\V17\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V17\Services\Client\IdentityVerificationServiceClient;
-use Google\Ads\GoogleAds\V17\Services\GetIdentityVerificationRequest;
-use Google\Ads\GoogleAds\V17\Services\IdentityVerification;
-use Google\Ads\GoogleAds\V17\Services\StartIdentityVerificationRequest;
+use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V18\GoogleAdsException;
+use Google\Ads\GoogleAds\V18\Enums\IdentityVerificationProgramEnum\IdentityVerificationProgram;
+use Google\Ads\GoogleAds\V18\Enums\IdentityVerificationProgramStatusEnum\IdentityVerificationProgramStatus;
+use Google\Ads\GoogleAds\V18\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V18\Services\Client\IdentityVerificationServiceClient;
+use Google\Ads\GoogleAds\V18\Services\GetIdentityVerificationRequest;
+use Google\Ads\GoogleAds\V18\Services\IdentityVerification;
+use Google\Ads\GoogleAds\V18\Services\StartIdentityVerificationRequest;
 use Google\ApiCore\ApiException;
 
 /**
