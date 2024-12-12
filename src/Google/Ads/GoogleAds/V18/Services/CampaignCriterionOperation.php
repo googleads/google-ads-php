@@ -35,7 +35,8 @@ class CampaignCriterionOperation extends \Google\Protobuf\Internal\Message
      *           Create operation: No resource name is expected for the new criterion.
      *     @type \Google\Ads\GoogleAds\V18\Resources\CampaignCriterion $update
      *           Update operation: The criterion is expected to have a valid resource
-     *           name.
+     *           name. Note that for smart campaigns, you cannot use the update method to
+     *           edit the geolocation target.
      *     @type string $remove
      *           Remove operation: A resource name for the removed criterion is expected,
      *           in this format:
@@ -116,7 +117,8 @@ class CampaignCriterionOperation extends \Google\Protobuf\Internal\Message
 
     /**
      * Update operation: The criterion is expected to have a valid resource
-     * name.
+     * name. Note that for smart campaigns, you cannot use the update method to
+     * edit the geolocation target.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v18.resources.CampaignCriterion update = 2;</code>
      * @return \Google\Ads\GoogleAds\V18\Resources\CampaignCriterion|null
@@ -133,7 +135,8 @@ class CampaignCriterionOperation extends \Google\Protobuf\Internal\Message
 
     /**
      * Update operation: The criterion is expected to have a valid resource
-     * name.
+     * name. Note that for smart campaigns, you cannot use the update method to
+     * edit the geolocation target.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v18.resources.CampaignCriterion update = 2;</code>
      * @param \Google\Ads\GoogleAds\V18\Resources\CampaignCriterion $var

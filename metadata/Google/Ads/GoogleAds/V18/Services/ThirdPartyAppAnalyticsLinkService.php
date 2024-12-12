@@ -14,11 +14,11 @@ class ThirdPartyAppAnalyticsLinkService
           return;
         }
         \GPBMetadata\Google\Protobuf\Duration::initOnce();
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\LaunchStage::initOnce();
         \GPBMetadata\Google\Api\Client::initOnce();
-        \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\Http::initOnce();
+        \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
 Ù
