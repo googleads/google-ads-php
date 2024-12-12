@@ -40,7 +40,11 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Number of elements to retrieve in a single page.
      * When too large a page is requested, the server may decide to
-     * further limit the number of returned resources.
+     * further limit the number of returned resources. This value is set at
+     * 10,000. Do not attempt to set this value. For v17 and later, attempting to
+     * set this value will result in an INVALID_PAGE_SIZE error. For v16,
+     * attempting to set this value will result in a PAGE_SIZE_NOT_SUPPORTED
+     * error.
      *
      * Generated from protobuf field <code>int32 page_size = 4;</code>
      */
@@ -92,7 +96,11 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $page_size
      *           Number of elements to retrieve in a single page.
      *           When too large a page is requested, the server may decide to
-     *           further limit the number of returned resources.
+     *           further limit the number of returned resources. This value is set at
+     *           10,000. Do not attempt to set this value. For v17 and later, attempting to
+     *           set this value will result in an INVALID_PAGE_SIZE error. For v16,
+     *           attempting to set this value will result in a PAGE_SIZE_NOT_SUPPORTED
+     *           error.
      *     @type bool $validate_only
      *           If true, the request is validated but not executed.
      *     @type \Google\Ads\GoogleAds\V18\Services\SearchSettings $search_settings
@@ -192,7 +200,11 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Number of elements to retrieve in a single page.
      * When too large a page is requested, the server may decide to
-     * further limit the number of returned resources.
+     * further limit the number of returned resources. This value is set at
+     * 10,000. Do not attempt to set this value. For v17 and later, attempting to
+     * set this value will result in an INVALID_PAGE_SIZE error. For v16,
+     * attempting to set this value will result in a PAGE_SIZE_NOT_SUPPORTED
+     * error.
      *
      * Generated from protobuf field <code>int32 page_size = 4;</code>
      * @return int
@@ -205,7 +217,11 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Number of elements to retrieve in a single page.
      * When too large a page is requested, the server may decide to
-     * further limit the number of returned resources.
+     * further limit the number of returned resources. This value is set at
+     * 10,000. Do not attempt to set this value. For v17 and later, attempting to
+     * set this value will result in an INVALID_PAGE_SIZE error. For v16,
+     * attempting to set this value will result in a PAGE_SIZE_NOT_SUPPORTED
+     * error.
      *
      * Generated from protobuf field <code>int32 page_size = 4;</code>
      * @param int $var

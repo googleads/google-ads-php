@@ -41,6 +41,7 @@ use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use GuzzleHttp\Promise\PromiseInterface;
+use Psr\Log\LoggerInterface;
 
 /**
  * Service Description: Service to generate keyword ideas.
@@ -48,10 +49,10 @@ use GuzzleHttp\Promise\PromiseInterface;
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods.
  *
- * @method PromiseInterface generateAdGroupThemesAsync(GenerateAdGroupThemesRequest $request, array $optionalArgs = [])
- * @method PromiseInterface generateKeywordForecastMetricsAsync(GenerateKeywordForecastMetricsRequest $request, array $optionalArgs = [])
- * @method PromiseInterface generateKeywordHistoricalMetricsAsync(GenerateKeywordHistoricalMetricsRequest $request, array $optionalArgs = [])
- * @method PromiseInterface generateKeywordIdeasAsync(GenerateKeywordIdeasRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface<GenerateAdGroupThemesResponse> generateAdGroupThemesAsync(GenerateAdGroupThemesRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface<GenerateKeywordForecastMetricsResponse> generateKeywordForecastMetricsAsync(GenerateKeywordForecastMetricsRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface<GenerateKeywordHistoricalMetricsResponse> generateKeywordHistoricalMetricsAsync(GenerateKeywordHistoricalMetricsRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface<PagedListResponse> generateKeywordIdeasAsync(GenerateKeywordIdeasRequest $request, array $optionalArgs = [])
  */
 class KeywordPlanIdeaServiceClient
 {
@@ -154,6 +155,9 @@ class KeywordPlanIdeaServiceClient
      *     @type callable $clientCertSource
      *           A callable which returns the client cert as a string. This can be used to
      *           provide a certificate and private key to the transport layer for mTLS.
+     *     @type false|LoggerInterface $logger
+     *           A PSR-3 compliant logger. If set to false, logging is disabled, ignoring the
+     *           'GOOGLE_SDK_PHP_LOGGING' environment flag
      * }
      *
      * @throws ValidationException

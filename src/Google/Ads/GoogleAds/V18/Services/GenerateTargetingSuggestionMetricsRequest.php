@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for
- * [AudienceInsightsService.GenerateTargetingSuggestionMetrics].
+ * [AudienceInsightsService.GenerateTargetingSuggestionMetrics][google.ads.googleads.v18.services.AudienceInsightsService.GenerateTargetingSuggestionMetrics].
  *
  * Generated from protobuf message <code>google.ads.googleads.v18.services.GenerateTargetingSuggestionMetricsRequest</code>
  */

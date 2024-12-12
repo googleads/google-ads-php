@@ -47,6 +47,7 @@ use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use GuzzleHttp\Promise\PromiseInterface;
+use Psr\Log\LoggerInterface;
 
 /**
  * Service Description: Audience Insights Service helps users find information about groups of
@@ -56,13 +57,13 @@ use GuzzleHttp\Promise\PromiseInterface;
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods.
  *
- * @method PromiseInterface generateAudienceCompositionInsightsAsync(GenerateAudienceCompositionInsightsRequest $request, array $optionalArgs = [])
- * @method PromiseInterface generateAudienceOverlapInsightsAsync(GenerateAudienceOverlapInsightsRequest $request, array $optionalArgs = [])
- * @method PromiseInterface generateInsightsFinderReportAsync(GenerateInsightsFinderReportRequest $request, array $optionalArgs = [])
- * @method PromiseInterface generateSuggestedTargetingInsightsAsync(GenerateSuggestedTargetingInsightsRequest $request, array $optionalArgs = [])
- * @method PromiseInterface generateTargetingSuggestionMetricsAsync(GenerateTargetingSuggestionMetricsRequest $request, array $optionalArgs = [])
- * @method PromiseInterface listAudienceInsightsAttributesAsync(ListAudienceInsightsAttributesRequest $request, array $optionalArgs = [])
- * @method PromiseInterface listInsightsEligibleDatesAsync(ListInsightsEligibleDatesRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface<GenerateAudienceCompositionInsightsResponse> generateAudienceCompositionInsightsAsync(GenerateAudienceCompositionInsightsRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface<GenerateAudienceOverlapInsightsResponse> generateAudienceOverlapInsightsAsync(GenerateAudienceOverlapInsightsRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface<GenerateInsightsFinderReportResponse> generateInsightsFinderReportAsync(GenerateInsightsFinderReportRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface<GenerateSuggestedTargetingInsightsResponse> generateSuggestedTargetingInsightsAsync(GenerateSuggestedTargetingInsightsRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface<GenerateTargetingSuggestionMetricsResponse> generateTargetingSuggestionMetricsAsync(GenerateTargetingSuggestionMetricsRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface<ListAudienceInsightsAttributesResponse> listAudienceInsightsAttributesAsync(ListAudienceInsightsAttributesRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface<ListInsightsEligibleDatesResponse> listInsightsEligibleDatesAsync(ListInsightsEligibleDatesRequest $request, array $optionalArgs = [])
  */
 class AudienceInsightsServiceClient
 {
@@ -165,6 +166,9 @@ class AudienceInsightsServiceClient
      *     @type callable $clientCertSource
      *           A callable which returns the client cert as a string. This can be used to
      *           provide a certificate and private key to the transport layer for mTLS.
+     *     @type false|LoggerInterface $logger
+     *           A PSR-3 compliant logger. If set to false, logging is disabled, ignoring the
+     *           'GOOGLE_SDK_PHP_LOGGING' environment flag
      * }
      *
      * @throws ValidationException

@@ -22,7 +22,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
      */
     protected $url = null;
     /**
-     * Requires at least one keyword.
+     * Requires at least one keyword and no more than 20 keywords.
      *
      * Generated from protobuf field <code>repeated string keywords = 4;</code>
      */
@@ -37,7 +37,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
      *     @type string $url
      *           The URL to crawl in order to generate keyword ideas.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keywords
-     *           Requires at least one keyword.
+     *           Requires at least one keyword and no more than 20 keywords.
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Requires at least one keyword.
+     * Requires at least one keyword and no more than 20 keywords.
      *
      * Generated from protobuf field <code>repeated string keywords = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -93,7 +93,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Requires at least one keyword.
+     * Requires at least one keyword and no more than 20 keywords.
      *
      * Generated from protobuf field <code>repeated string keywords = 4;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
