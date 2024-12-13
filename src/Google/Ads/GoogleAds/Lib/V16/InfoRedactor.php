@@ -385,7 +385,10 @@ class InfoRedactor
     private static function redactLocalServicesLeadContactDetailsEmail(
         LocalServicesLead $localServicesLead
     ) {
-        if ($localServicesLead?->getContactDetails()?->getEmail()) {
+        if (
+            !is_null($localServicesLead->getContactDetails())
+            && !is_null($localServicesLead->getContactDetails()->getEmail())
+        ) {
             $localServicesLead->getContactDetails()->setEmail(self::REDACTED_STRING);
         }
     }
@@ -399,7 +402,10 @@ class InfoRedactor
     private static function redactLocalServicesLeadConversationMessageDetailsText(
         LocalServicesLeadConversation $localServicesLeadConversation
     ) {
-        if ($localServicesLeadConversation?->getMessageDetails()?->getText()) {
+        if (
+            !is_null($localServicesLeadConversation->getMessageDetails())
+            && !is_null($localServicesLeadConversation->getMessageDetails()->getText())
+        ) {
             $localServicesLeadConversation->getMessageDetails()->setText(self::REDACTED_STRING);
         }
     }
