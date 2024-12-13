@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class KeywordSeed extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Requires at least one keyword.
+     * Requires at least one keyword and no more than 20 keywords.
      *
      * Generated from protobuf field <code>repeated string keywords = 2;</code>
      */
@@ -29,7 +29,7 @@ class KeywordSeed extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keywords
-     *           Requires at least one keyword.
+     *           Requires at least one keyword and no more than 20 keywords.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ class KeywordSeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Requires at least one keyword.
+     * Requires at least one keyword and no more than 20 keywords.
      *
      * Generated from protobuf field <code>repeated string keywords = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -49,7 +49,7 @@ class KeywordSeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Requires at least one keyword.
+     * Requires at least one keyword and no more than 20 keywords.
      *
      * Generated from protobuf field <code>repeated string keywords = 2;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
