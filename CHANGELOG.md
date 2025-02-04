@@ -1,3 +1,6 @@
+## 26.0.0
+*   Removed support for v16 of Google Ads API.
+
 ## 25.0.0
 *   Added support for v18 of Google Ads API.
 *   Removed support for the `useGapicV2Source` configuration, as the source code
