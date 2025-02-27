@@ -38,6 +38,7 @@ final class ArgumentNames
     public const BASE_CAMPAIGN_ID = 'baseCampaignId';
     public const BID_MODIFIER_VALUE = 'bidModifierValue';
     public const BILLING_SETUP_ID = 'billingSetupId';
+    public const BRAND_GUIDELINES_ENABLED = 'brandGuidelinesEnabled';
     public const BRIDGE_MAP_VERSION_ID = 'bridgeMapVersionId';
     public const BUSINESS_ACCOUNT_IDENTIFIER = 'businessAccountIdentifier';
     public const BUSINESS_PROFILE_LOCATION = 'businessProfileLocation';
@@ -122,7 +123,6 @@ final class ArgumentNames
     public const REPLACE_EXISTING_TREE = 'replaceExistingTree';
     public const QUANTITY = 'quantity';
     public const RUN_JOB = 'runJob';
-    public const SALES_COUNTRY = 'salesCountry';
     public const SITELINK_TEXT = 'sitelinkText';
     public const SQUARE_MARKETING_IMAGE_ASSET_ID = 'squareMarketingImageAssetId';
     public const START_DATE_TIME = "startDateTime";
@@ -148,6 +148,8 @@ final class ArgumentNames
         self::BASE_CAMPAIGN_ID => 'The base campaign ID',
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
         self::BILLING_SETUP_ID => 'The billing setup ID',
+        self::BRAND_GUIDELINES_ENABLED
+            => 'Whether the brand guidelines should be enabled for a campaign',
         self::BRIDGE_MAP_VERSION_ID
             => 'The version of partner IDs to be used for store-sale uploads',
         self::BUSINESS_ACCOUNT_IDENTIFIER => 'The account number of the Business Profile account',
@@ -238,7 +240,6 @@ final class ArgumentNames
             'Whether it should replace the existing listing group tree on an ad group/asset group',
         self::QUANTITY => 'The quantity',
         self::RUN_JOB => 'Whether it should run the offline user data job',
-        self::SALES_COUNTRY => 'The sales country',
         self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_ID => 'The ID of square marketing image asset',
         self::START_DATE_TIME => 'The start date time',

@@ -1,3 +1,12 @@
+## 26.1.0
+*   Added support for v19 of Google Ads API.
+*   Removed support for Feed-related classes, fields and enums in v19.
+*   Updated code examples:
+    * AddPerformanceMaxCampaign
+    * AddPerformanceMaxRetailCampaign
+    * AddShoppingProductAd
+    * GetChangeDetails
+
 ## 26.0.0
 *   Removed support for v16 of Google Ads API.
 

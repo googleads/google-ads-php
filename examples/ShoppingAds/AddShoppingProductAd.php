@@ -24,38 +24,38 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V18\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V18\Common\ListingGroupInfo;
-use Google\Ads\GoogleAds\V18\Common\ManualCpc;
-use Google\Ads\GoogleAds\V18\Common\ShoppingProductAdInfo;
-use Google\Ads\GoogleAds\V18\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V18\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V18\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V18\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V18\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V18\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V18\Enums\ListingGroupTypeEnum\ListingGroupType;
-use Google\Ads\GoogleAds\V18\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V18\Resources\Ad;
-use Google\Ads\GoogleAds\V18\Resources\AdGroup;
-use Google\Ads\GoogleAds\V18\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V18\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V18\Resources\Campaign;
-use Google\Ads\GoogleAds\V18\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V18\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V18\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V18\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V18\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V18\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V18\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V18\Services\MutateAdGroupAdsRequest;
-use Google\Ads\GoogleAds\V18\Services\MutateAdGroupCriteriaRequest;
-use Google\Ads\GoogleAds\V18\Services\MutateAdGroupsRequest;
-use Google\Ads\GoogleAds\V18\Services\MutateCampaignBudgetsRequest;
-use Google\Ads\GoogleAds\V18\Services\MutateCampaignsRequest;
+use Google\Ads\GoogleAds\V19\Common\ListingGroupInfo;
+use Google\Ads\GoogleAds\V19\Common\ManualCpc;
+use Google\Ads\GoogleAds\V19\Common\ShoppingProductAdInfo;
+use Google\Ads\GoogleAds\V19\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V19\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V19\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V19\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V19\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V19\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V19\Enums\ListingGroupTypeEnum\ListingGroupType;
+use Google\Ads\GoogleAds\V19\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V19\Resources\Ad;
+use Google\Ads\GoogleAds\V19\Resources\AdGroup;
+use Google\Ads\GoogleAds\V19\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V19\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V19\Resources\Campaign;
+use Google\Ads\GoogleAds\V19\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V19\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V19\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V19\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V19\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V19\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V19\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V19\Services\MutateAdGroupAdsRequest;
+use Google\Ads\GoogleAds\V19\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V19\Services\MutateAdGroupsRequest;
+use Google\Ads\GoogleAds\V19\Services\MutateCampaignBudgetsRequest;
+use Google\Ads\GoogleAds\V19\Services\MutateCampaignsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -244,15 +244,11 @@ class AddShoppingProductAd
             // the ads from immediately serving. Set to ENABLED once you've added
             // targeting and the ads are ready to serve.
             'status' => CampaignStatus::PAUSED,
-            // Sets the bidding strategy to Manual CPC (with eCPC disabled). eCPC for standard
-            // Shopping campaigns is deprecated. If eCPC is set to true, Google Ads ignores the
-            // setting and behaves as if the setting was false. See this blog post for more
-            // information:
-            // https://ads-developers.googleblog.com/2023/09/google-ads-shopping-campaign-enhanced.html
+            // Sets the bidding strategy to Manual CPC.
             // Recommendation: Use one of the automated bidding strategies for Shopping campaigns
             // to help you optimize your advertising spend. More information can be found here:
             // https://support.google.com/google-ads/answer/6309029.
-            'manual_cpc' => new ManualCpc(['enhanced_cpc_enabled' => false]),
+            'manual_cpc' => new ManualCpc(),
             // Sets the budget.
             'campaign_budget' => $budgetResourceName
         ]);

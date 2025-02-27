@@ -36,7 +36,6 @@ use Google\Ads\GoogleAds\V18\Services\CampaignOperation;
 use Google\Ads\GoogleAds\V18\Services\CreateCustomerClientRequest;
 use Google\Ads\GoogleAds\V18\Services\CreateCustomerClientResponse;
 use Google\Ads\GoogleAds\V18\Services\GeoTargetConstantSuggestion;
-use Google\Ads\GoogleAds\V18\Services\GetCustomerRequest;
 use Google\Ads\GoogleAds\V18\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V18\Services\MutateCampaignResult;
 use Google\Ads\GoogleAds\V18\Services\MutateCampaignsRequest;
