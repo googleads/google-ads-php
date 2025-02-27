@@ -23,15 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V18\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V18\ResourceNames;
-use Google\Ads\GoogleAds\V18\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V18\Resources\Campaign;
-use Google\Ads\GoogleAds\V18\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V18\Services\MutateCampaignsRequest;
+use Google\Ads\GoogleAds\Util\V19\ResourceNames;
+use Google\Ads\GoogleAds\V19\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V19\Resources\Campaign;
+use Google\Ads\GoogleAds\V19\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V19\Services\MutateCampaignsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example deletes a campaign using the 'REMOVE' operation. To get campaigns, run

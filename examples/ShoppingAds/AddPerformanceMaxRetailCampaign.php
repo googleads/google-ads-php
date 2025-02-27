@@ -25,49 +25,51 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V18\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V18\ResourceNames;
-use Google\Ads\GoogleAds\V18\Common\ImageAsset;
-use Google\Ads\GoogleAds\V18\Common\LanguageInfo;
-use Google\Ads\GoogleAds\V18\Common\LocationInfo;
-use Google\Ads\GoogleAds\V18\Common\MaximizeConversionValue;
-use Google\Ads\GoogleAds\V18\Common\TextAsset;
-use Google\Ads\GoogleAds\V18\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V18\Enums\AssetFieldTypeEnum\AssetFieldType;
-use Google\Ads\GoogleAds\V18\Enums\AssetGroupStatusEnum\AssetGroupStatus;
-use Google\Ads\GoogleAds\V18\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V18\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V18\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
-use Google\Ads\GoogleAds\V18\Enums\ConversionOriginEnum\ConversionOrigin;
-use Google\Ads\GoogleAds\V18\Enums\ListingGroupFilterListingSourceEnum\ListingGroupFilterListingSource;
-use Google\Ads\GoogleAds\V18\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
-use Google\Ads\GoogleAds\V18\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V18\Resources\Asset;
-use Google\Ads\GoogleAds\V18\Resources\AssetGroup;
-use Google\Ads\GoogleAds\V18\Resources\AssetGroupAsset;
-use Google\Ads\GoogleAds\V18\Resources\AssetGroupListingGroupFilter;
-use Google\Ads\GoogleAds\V18\Resources\Campaign;
-use Google\Ads\GoogleAds\V18\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V18\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V18\Resources\CampaignConversionGoal;
-use Google\Ads\GoogleAds\V18\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V18\Services\AssetGroupAssetOperation;
-use Google\Ads\GoogleAds\V18\Services\AssetGroupListingGroupFilterOperation;
-use Google\Ads\GoogleAds\V18\Services\AssetGroupOperation;
-use Google\Ads\GoogleAds\V18\Services\AssetOperation;
-use Google\Ads\GoogleAds\V18\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V18\Services\CampaignConversionGoalOperation;
-use Google\Ads\GoogleAds\V18\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V18\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V18\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V18\Services\MutateGoogleAdsRequest;
-use Google\Ads\GoogleAds\V18\Services\MutateGoogleAdsResponse;
-use Google\Ads\GoogleAds\V18\Services\MutateOperation;
-use Google\Ads\GoogleAds\V18\Services\MutateOperationResponse;
-use Google\Ads\GoogleAds\V18\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Util\V19\ResourceNames;
+use Google\Ads\GoogleAds\V19\Common\ImageAsset;
+use Google\Ads\GoogleAds\V19\Common\LanguageInfo;
+use Google\Ads\GoogleAds\V19\Common\LocationInfo;
+use Google\Ads\GoogleAds\V19\Common\MaximizeConversionValue;
+use Google\Ads\GoogleAds\V19\Common\TextAsset;
+use Google\Ads\GoogleAds\V19\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V19\Enums\AssetFieldTypeEnum\AssetFieldType;
+use Google\Ads\GoogleAds\V19\Enums\AssetGroupStatusEnum\AssetGroupStatus;
+use Google\Ads\GoogleAds\V19\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V19\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V19\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
+use Google\Ads\GoogleAds\V19\Enums\ConversionOriginEnum\ConversionOrigin;
+use Google\Ads\GoogleAds\V19\Enums\ListingGroupFilterListingSourceEnum\ListingGroupFilterListingSource;
+use Google\Ads\GoogleAds\V19\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
+use Google\Ads\GoogleAds\V19\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V19\Resources\Asset;
+use Google\Ads\GoogleAds\V19\Resources\AssetGroup;
+use Google\Ads\GoogleAds\V19\Resources\AssetGroupAsset;
+use Google\Ads\GoogleAds\V19\Resources\AssetGroupListingGroupFilter;
+use Google\Ads\GoogleAds\V19\Resources\Campaign;
+use Google\Ads\GoogleAds\V19\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V19\Resources\CampaignAsset;
+use Google\Ads\GoogleAds\V19\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V19\Resources\CampaignConversionGoal;
+use Google\Ads\GoogleAds\V19\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V19\Services\AssetGroupAssetOperation;
+use Google\Ads\GoogleAds\V19\Services\AssetGroupListingGroupFilterOperation;
+use Google\Ads\GoogleAds\V19\Services\AssetGroupOperation;
+use Google\Ads\GoogleAds\V19\Services\AssetOperation;
+use Google\Ads\GoogleAds\V19\Services\CampaignAssetOperation;
+use Google\Ads\GoogleAds\V19\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V19\Services\CampaignConversionGoalOperation;
+use Google\Ads\GoogleAds\V19\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V19\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V19\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V19\Services\MutateGoogleAdsRequest;
+use Google\Ads\GoogleAds\V19\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V19\Services\MutateOperation;
+use Google\Ads\GoogleAds\V19\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\V19\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Serializer;
 
@@ -97,10 +99,11 @@ class AddPerformanceMaxRetailCampaign
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const MERCHANT_CENTER_ACCOUNT_ID = 'INSERT_MERCHANT_CENTER_ACCOUNT_ID_HERE';
-    private const SALES_COUNTRY = 'US';
     // The final URL for the generated ads. Must have the same domain as the Merchant Center
     // account.
     private const FINAL_URL = 'INSERT_FINAL_URL_HERE';
+    // Optional: Indicates whether the created campaign is enabled for brand guidelines.
+    private const BRAND_GUIDELINES_ENABLED = false;
 
     // We specify temporary IDs that are specific to a single mutate request.
     // Temporary IDs are always negative and unique within one mutate request.
@@ -125,7 +128,8 @@ class AddPerformanceMaxRetailCampaign
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::FINAL_URL => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::FINAL_URL => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::BRAND_GUIDELINES_ENABLED => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -144,8 +148,12 @@ class AddPerformanceMaxRetailCampaign
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID]
                     ?: self::MERCHANT_CENTER_ACCOUNT_ID,
-                $options[ArgumentNames::SALES_COUNTRY] ?: self::SALES_COUNTRY,
-                $options[ArgumentNames::FINAL_URL] ?: self::FINAL_URL
+                $options[ArgumentNames::FINAL_URL] ?: self::FINAL_URL,
+                filter_var(
+                    $options[ArgumentNames::BRAND_GUIDELINES_ENABLED]
+                        ?: self::BRAND_GUIDELINES_ENABLED,
+                    FILTER_VALIDATE_BOOLEAN
+                )
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -181,13 +189,16 @@ class AddPerformanceMaxRetailCampaign
      * @param int $customerId the customer ID
      * @param int $merchantCenterAccountId the Merchant Center account ID
      * @param string $finalUrl the final URL for the asset group of the campaign
+     * @param bool $brandGuidelinesEnabled whether the created campaign will be enabled for brand
+     *      guidelines
      */
     // [START add_performance_max_retail_campaign]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $merchantCenterAccountId,
-        string $finalUrl
+        string $finalUrl,
+        bool $brandGuidelinesEnabled
     ) {
         // [START add_performance_max_retail_campaign_1]
         // This campaign will override the customer conversion goals.
@@ -228,7 +239,8 @@ class AddPerformanceMaxRetailCampaign
         $operations[] = self::createCampaignBudgetOperation($customerId);
         $operations[] = self::createPerformanceMaxCampaignOperation(
             $customerId,
-            $merchantCenterAccountId
+            $merchantCenterAccountId,
+            $brandGuidelinesEnabled
         );
         $operations =
             array_merge($operations, self::createCampaignCriterionOperations($customerId));
@@ -237,7 +249,8 @@ class AddPerformanceMaxRetailCampaign
         $operations = array_merge($operations, self::createAssetandAssetGroupAssetOperations(
             $customerId,
             $headlineAssetResourceNames,
-            $descriptionAssetResourceNames
+            $descriptionAssetResourceNames,
+            $brandGuidelinesEnabled
         ));
         $operations = array_merge($operations, self::createConversionGoalOperations(
             $customerId,
@@ -297,12 +310,15 @@ class AddPerformanceMaxRetailCampaign
      *
      * @param int $customerId the customer ID
      * @param int $merchantCenterAccountId the Merchant Center account ID
+     * @param bool $brandGuidelinesEnabled whether the created campaign will be enabled for brand
+     *      guidelines
      * @return MutateOperation the mutate operation that creates the campaign
      */
     // [START add_performance_max_retail_campaign_3]
     private static function createPerformanceMaxCampaignOperation(
         int $customerId,
-        int $merchantCenterAccountId
+        int $merchantCenterAccountId,
+        bool $brandGuidelinesEnabled
     ): MutateOperation {
         // Creates a mutate operation that creates a campaign operation.
         return new MutateOperation([
@@ -359,6 +375,11 @@ class AddPerformanceMaxRetailCampaign
                     // For a Retail campaign, we want the final URL's to be limited to those
                     // explicitly surfaced via GMC.
                     'url_expansion_opt_out' => true,
+
+                    // Sets if the campaign is enabled for brand guidelines. For more information
+                    // on brand guidelines, see
+                    // https://support.google.com/google-ads/answer/14934472.
+                    'brand_guidelines_enabled' => $brandGuidelinesEnabled,
 
                     // Sets the shopping settings.
                     'shopping_setting' => new ShoppingSetting([
@@ -581,6 +602,8 @@ class AddPerformanceMaxRetailCampaign
      * @param int $customerId the customer ID
      * @param string[] $headlineAssetResourceNames a list of headline resource names
      * @param string[] $descriptionAssetResourceNames a list of description resource names
+     * @param bool $brandGuidelinesEnabled whether the created campaign will be enabled for brand
+     *      guidelines
      * @return MutateOperation[] a list of MutateOperations that create new asset group assets and
      *     assets
      */
@@ -588,7 +611,8 @@ class AddPerformanceMaxRetailCampaign
     private static function createAssetandAssetGroupAssetOperations(
         int $customerId,
         array $headlineAssetResourceNames,
-        array $descriptionAssetResourceNames
+        array $descriptionAssetResourceNames,
+        bool $brandGuidelinesEnabled
     ): array {
         $operations = [];
         // For the list of required assets for a Performance Max campaign, see
@@ -643,21 +667,16 @@ class AddPerformanceMaxRetailCampaign
             AssetFieldType::LONG_HEADLINE
         ));
         // Creates and links the business name text asset.
-        $operations = array_merge($operations, self::createAndLinkTextAsset(
+        $operations = array_merge($operations, self::createAndLinkBrandAssets(
             $customerId,
+            $brandGuidelinesEnabled,
             'Interplanetary Cruises',
-            AssetFieldType::BUSINESS_NAME
+            'https://gaagl.page.link/1Crm',
+            'Logo Image'
         ));
 
         // Creates and links the image assets.
 
-        // Creates and links the Logo Asset.
-        $operations = array_merge($operations, self::createAndLinkImageAsset(
-            $customerId,
-            'https://gaagl.page.link/1Crm',
-            AssetFieldType::LOGO,
-            'Marketing Logo'
-        ));
         // Creates and links the Marketing Image Asset.
         $operations = array_merge($operations, self::createAndLinkImageAsset(
             $customerId,
@@ -772,6 +791,109 @@ class AddPerformanceMaxRetailCampaign
         return $operations;
     }
     // [END add_performance_max_retail_campaign_8]
+
+    /**
+     * Creates a list of MutateOperations that create linked brand assets.
+     *
+     * @param int $customerId the customer ID
+     * @param bool $brandGuidelinesEnabled whether the created campaign will be enabled for brand
+     *     guidelines
+     * @param string $businessName the business name text to be put into an asset
+     * @param string $logoUrl the URL of the logo to be retrieved and put into an asset
+     * @param string $logoName the asset name of the logo
+     * @return MutateOperation[] a list of MutateOperations that create a new linked text asset
+     */
+    private static function createAndLinkBrandAssets(
+        int $customerId,
+        bool $brandGuidelinesEnabled,
+        string $businessName,
+        string $logoUrl,
+        string $logoName
+    ): array {
+        $operations = [];
+        // Creates a new mutate operation that creates a text asset.
+        $businessNameTempId = self::$nextTempId--;
+        $operations[] = new MutateOperation([
+            'asset_operation' => new AssetOperation([
+                'create' => new Asset([
+                    'resource_name' => ResourceNames::forAsset($customerId, $businessNameTempId),
+                    'text_asset' => new TextAsset(['text' => $businessName])
+                ])
+            ])
+        ]);
+
+        $logoTempId = self::$nextTempId--;
+        // Creates a new mutate operation that creates an image asset.
+        $operations[] = new MutateOperation([
+            'asset_operation' => new AssetOperation([
+                'create' => new Asset([
+                    'resource_name' => ResourceNames::forAsset($customerId, $logoTempId),
+                    // Provide a unique friendly name to identify your asset.
+                    // When there is an existing image asset with the same content but a different
+                    // name, the new name will be dropped silently.
+                    'name' => $logoName,
+                    'image_asset' => new ImageAsset(['data' => file_get_contents($logoUrl)])
+                ])
+            ])
+        ]);
+
+        if ($brandGuidelinesEnabled) {
+            // Creates a campaign asset to link the business name and logo assets to the campaign.
+            $operations[] = new MutateOperation([
+                'campaign_asset_operation' => new CampaignAssetOperation([
+                    'create' => new CampaignAsset([
+                        'asset' => ResourceNames::forAsset($customerId, $businessNameTempId),
+                        'campaign' => ResourceNames::forCampaign(
+                            $customerId,
+                            self::PERFORMANCE_MAX_CAMPAIGN_TEMPORARY_ID
+                        ),
+                        'field_type' => AssetFieldType::BUSINESS_NAME
+                    ])
+                ])
+            ]);
+            $operations[] = new MutateOperation([
+                'campaign_asset_operation' => new CampaignAssetOperation([
+                    'create' => new CampaignAsset([
+                        'asset' => ResourceNames::forAsset($customerId, $logoTempId),
+                        'campaign' => ResourceNames::forCampaign(
+                            $customerId,
+                            self::PERFORMANCE_MAX_CAMPAIGN_TEMPORARY_ID
+                        ),
+                        'field_type' => AssetFieldType::LOGO
+                    ])
+                ])
+            ]);
+        } else {
+            // Creates an asset group asset to link the business name and logo assets to the asset
+            // group.
+            $operations[] = new MutateOperation([
+                'asset_group_asset_operation' => new AssetGroupAssetOperation([
+                    'create' => new AssetGroupAsset([
+                        'asset' => ResourceNames::forAsset($customerId, $businessNameTempId),
+                        'asset_group' => ResourceNames::forAssetGroup(
+                            $customerId,
+                            self::ASSET_GROUP_TEMPORARY_ID
+                        ),
+                        'field_type' => AssetFieldType::BUSINESS_NAME
+                    ])
+                ])
+            ]);
+            $operations[] = new MutateOperation([
+                'asset_group_asset_operation' => new AssetGroupAssetOperation([
+                    'create' => new AssetGroupAsset([
+                        'asset' => ResourceNames::forAsset($customerId, $logoTempId),
+                        'asset_group' => ResourceNames::forAssetGroup(
+                            $customerId,
+                            self::ASSET_GROUP_TEMPORARY_ID
+                        ),
+                        'field_type' => AssetFieldType::LOGO
+                    ])
+                ])
+            ]);
+        }
+
+        return $operations;
+    }
 
     /**
      * Sorts a list of asset and asset group asset operations. This sorts the list such that all

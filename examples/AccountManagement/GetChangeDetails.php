@@ -25,16 +25,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V18\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\V18\Enums\ChangeClientTypeEnum\ChangeClientType;
-use Google\Ads\GoogleAds\V18\Enums\ChangeEventResourceTypeEnum\ChangeEventResourceType;
-use Google\Ads\GoogleAds\V18\Enums\ResourceChangeOperationEnum\ResourceChangeOperation;
-use Google\Ads\GoogleAds\V18\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V18\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V18\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\V19\Enums\ChangeClientTypeEnum\ChangeClientType;
+use Google\Ads\GoogleAds\V19\Enums\ChangeEventResourceTypeEnum\ChangeEventResourceType;
+use Google\Ads\GoogleAds\V19\Enums\ResourceChangeOperationEnum\ResourceChangeOperation;
+use Google\Ads\GoogleAds\V19\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V19\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V19\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\Internal\Message;
 use Google\Protobuf\Internal\RepeatedField;
@@ -204,25 +204,9 @@ class GetChangeDetails
                     $oldResourceEntity = $oldResource->getCampaignCriterion();
                     $newResourceEntity = $newResource->getCampaignCriterion();
                     break;
-                case ChangeEventResourceType::AD_GROUP_FEED:
-                    $oldResourceEntity = $oldResource->getAdGroupFeed();
-                    $newResourceEntity = $newResource->getAdGroupFeed();
-                    break;
-                case ChangeEventResourceType::CAMPAIGN_FEED:
-                    $oldResourceEntity = $oldResource->getCampaignFeed();
-                    $newResourceEntity = $newResource->getCampaignFeed();
-                    break;
                 case ChangeEventResourceType::CUSTOMER_ASSET:
                     $oldResourceEntity = $oldResource->getCustomerAsset();
                     $newResourceEntity = $newResource->getCustomerAsset();
-                    break;
-                case ChangeEventResourceType::FEED:
-                    $oldResourceEntity = $oldResource->getFeed();
-                    $newResourceEntity = $newResource->getFeed();
-                    break;
-                case ChangeEventResourceType::FEED_ITEM:
-                    $oldResourceEntity = $oldResource->getFeedItem();
-                    $newResourceEntity = $newResource->getFeedItem();
                     break;
                 default:
                     $isResourceTypeKnown = false;
