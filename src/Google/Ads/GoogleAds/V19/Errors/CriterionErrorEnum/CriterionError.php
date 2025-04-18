@@ -957,6 +957,13 @@ class CriterionError
      * Generated from protobuf enum <code>ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE = 158;</code>
      */
     const ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE = 158;
+    /**
+     * Cannot positively target locations outside of restricted area for
+     * campaign.
+     *
+     * Generated from protobuf enum <code>LOCATION_TARGETING_NOT_ELIGIBLE_FOR_RESTRICTED_CAMPAIGN = 166;</code>
+     */
+    const LOCATION_TARGETING_NOT_ELIGIBLE_FOR_RESTRICTED_CAMPAIGN = 166;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -1109,6 +1116,7 @@ class CriterionError
         self::BRAND_SHARED_SET_DOES_NOT_EXIST => 'BRAND_SHARED_SET_DOES_NOT_EXIST',
         self::CANNOT_ADD_REMOVED_BRAND_SHARED_SET => 'CANNOT_ADD_REMOVED_BRAND_SHARED_SET',
         self::ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE => 'ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE',
+        self::LOCATION_TARGETING_NOT_ELIGIBLE_FOR_RESTRICTED_CAMPAIGN => 'LOCATION_TARGETING_NOT_ELIGIBLE_FOR_RESTRICTED_CAMPAIGN',
     ];
 
     public static function name($value)

@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A view on the usage of ad group ad asset combination.
+ * A view on the usage of asset group asset top combinations.
  *
  * Generated from protobuf message <code>google.ads.googleads.v19.resources.AssetGroupTopCombinationView</code>
  */

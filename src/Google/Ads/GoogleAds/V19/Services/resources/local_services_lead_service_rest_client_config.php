@@ -35,6 +35,18 @@ return [
                     ],
                 ],
             ],
+            'ProvideLeadFeedback' => [
+                'method' => 'post',
+                'uriTemplate' => '/v19/{resource_name=customers/*/localServicesLeads/*}:provideLeadFeedback',
+                'body' => '*',
+                'placeholders' => [
+                    'resource_name' => [
+                        'getters' => [
+                            'getResourceName',
+                        ],
+                    ],
+                ],
+            ],
         ],
         'google.longrunning.Operations' => [
             'CancelOperation' => [

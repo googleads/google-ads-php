@@ -23,6 +23,10 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v19.services.ReachPlanService' => [
+            'GenerateConversionRates' => [
+                'callType' => \Google\ApiCore\Call::UNARY_CALL,
+                'responseType' => 'Google\Ads\GoogleAds\V19\Services\GenerateConversionRatesResponse',
+            ],
             'GenerateReachForecast' => [
                 'callType' => \Google\ApiCore\Call::UNARY_CALL,
                 'responseType' => 'Google\Ads\GoogleAds\V19\Services\GenerateReachForecastResponse',

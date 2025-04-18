@@ -39,6 +39,30 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Returns a collection of conversion rate suggestions for supported plannable
+     * products.
+     *
+     * List of thrown errors:
+     *   [AuthenticationError]()
+     *   [AuthorizationError]()
+     *   [HeaderError]()
+     *   [InternalError]()
+     *   [QuotaError]()
+     *   [RequestError]()
+     * @param \Google\Ads\GoogleAds\V19\Services\GenerateConversionRatesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GenerateConversionRates(\Google\Ads\GoogleAds\V19\Services\GenerateConversionRatesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v19.services.ReachPlanService/GenerateConversionRates',
+        $argument,
+        ['\Google\Ads\GoogleAds\V19\Services\GenerateConversionRatesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Returns the list of plannable locations (for example, countries).
      *
      * List of thrown errors:

@@ -22,9 +22,12 @@
 
 namespace Google\Ads\GoogleAds\V19\Services\Client;
 
+use Google\Ads\GoogleAds\V19\Enums\LocalServicesLeadSurveyAnswerEnum\SurveyAnswer;
 use Google\Ads\GoogleAds\V19\Services\AppendLeadConversationRequest;
 use Google\Ads\GoogleAds\V19\Services\AppendLeadConversationResponse;
 use Google\Ads\GoogleAds\V19\Services\Client\LocalServicesLeadServiceClient;
+use Google\Ads\GoogleAds\V19\Services\ProvideLeadFeedbackRequest;
+use Google\Ads\GoogleAds\V19\Services\ProvideLeadFeedbackResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
@@ -117,6 +120,74 @@ class LocalServicesLeadServiceClientTest extends GeneratedTest
             ->setConversations($conversations);
         try {
             $gapicClient->appendLeadConversation($request);
+            // If the $gapicClient method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function provideLeadFeedbackTest()
+    {
+        $transport = $this->createTransport();
+        $gapicClient = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new ProvideLeadFeedbackResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedResourceName = $gapicClient->localServicesLeadName('[CUSTOMER_ID]', '[LOCAL_SERVICES_LEAD_ID]');
+        $surveyAnswer = SurveyAnswer::UNSPECIFIED;
+        $request = (new ProvideLeadFeedbackRequest())
+            ->setResourceName($formattedResourceName)
+            ->setSurveyAnswer($surveyAnswer);
+        $response = $gapicClient->provideLeadFeedback($request);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v19.services.LocalServicesLeadService/ProvideLeadFeedback', $actualFuncCall);
+        $actualValue = $actualRequestObject->getResourceName();
+        $this->assertProtobufEquals($formattedResourceName, $actualValue);
+        $actualValue = $actualRequestObject->getSurveyAnswer();
+        $this->assertProtobufEquals($surveyAnswer, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function provideLeadFeedbackExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $gapicClient = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedResourceName = $gapicClient->localServicesLeadName('[CUSTOMER_ID]', '[LOCAL_SERVICES_LEAD_ID]');
+        $surveyAnswer = SurveyAnswer::UNSPECIFIED;
+        $request = (new ProvideLeadFeedbackRequest())
+            ->setResourceName($formattedResourceName)
+            ->setSurveyAnswer($surveyAnswer);
+        try {
+            $gapicClient->provideLeadFeedback($request);
             // If the $gapicClient method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

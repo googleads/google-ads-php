@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Response message for data exlusions mutate.
+ * Response message for data exclusions mutate.
  *
  * Generated from protobuf message <code>google.ads.googleads.v19.services.MutateBiddingDataExclusionsResponse</code>
  */

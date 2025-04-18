@@ -110,6 +110,15 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional int64 views = 15;</code>
      */
     protected $views = null;
+    /**
+     * The number of conversions.
+     * This metric is only available for DEMAND_GEN plannable products.
+     * See https://support.google.com/google-ads/answer/2375431 for
+     * more information on conversions.
+     *
+     * Generated from protobuf field <code>optional double conversions = 16;</code>
+     */
+    protected $conversions = null;
 
     /**
      * Constructor.
@@ -168,6 +177,11 @@ class Forecast extends \Google\Protobuf\Internal\Message
      *           an ad beyond an impression.
      *           See https://support.google.com/google-ads/answer/2375431 for
      *           more information on views.
+     *     @type float $conversions
+     *           The number of conversions.
+     *           This metric is only available for DEMAND_GEN plannable products.
+     *           See https://support.google.com/google-ads/answer/2375431 for
+     *           more information on conversions.
      * }
      */
     public function __construct($data = NULL) {
@@ -615,6 +629,48 @@ class Forecast extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->views = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of conversions.
+     * This metric is only available for DEMAND_GEN plannable products.
+     * See https://support.google.com/google-ads/answer/2375431 for
+     * more information on conversions.
+     *
+     * Generated from protobuf field <code>optional double conversions = 16;</code>
+     * @return float
+     */
+    public function getConversions()
+    {
+        return isset($this->conversions) ? $this->conversions : 0.0;
+    }
+
+    public function hasConversions()
+    {
+        return isset($this->conversions);
+    }
+
+    public function clearConversions()
+    {
+        unset($this->conversions);
+    }
+
+    /**
+     * The number of conversions.
+     * This metric is only available for DEMAND_GEN plannable products.
+     * See https://support.google.com/google-ads/answer/2375431 for
+     * more information on conversions.
+     *
+     * Generated from protobuf field <code>optional double conversions = 16;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversions($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversions = $var;
 
         return $this;
     }

@@ -122,6 +122,12 @@ class AdGroupType
      * Generated from protobuf enum <code>TRAVEL_ADS = 19;</code>
      */
     const TRAVEL_ADS = 19;
+    /**
+     * Ad group type for YouTube Audio campaigns.
+     *
+     * Generated from protobuf enum <code>YOUTUBE_AUDIO = 20;</code>
+     */
+    const YOUTUBE_AUDIO = 20;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -142,6 +148,7 @@ class AdGroupType
         self::VIDEO_EFFICIENT_REACH => 'VIDEO_EFFICIENT_REACH',
         self::SMART_CAMPAIGN_ADS => 'SMART_CAMPAIGN_ADS',
         self::TRAVEL_ADS => 'TRAVEL_ADS',
+        self::YOUTUBE_AUDIO => 'YOUTUBE_AUDIO',
     ];
 
     public static function name($value)

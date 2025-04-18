@@ -579,6 +579,14 @@ class CampaignError
      */
     const REQUIRED_LOGO_ASSET_NOT_LINKED = 96;
     /**
+     * This campaign does not support brand targeting overrides. Brand targeting
+     * overrides are only supported for Performance Max campaigns that have a
+     * product feed.
+     *
+     * Generated from protobuf enum <code>BRAND_TARGETING_OVERRIDES_NOT_SUPPORTED = 97;</code>
+     */
+    const BRAND_TARGETING_OVERRIDES_NOT_SUPPORTED = 97;
+    /**
      * Brand Guideline fields can only be set for campaigns that have Brand
      * Guidelines enabled.
      *
@@ -715,6 +723,7 @@ class CampaignError
         self::CANNOT_ENABLE_BROAD_MATCH_FOR_PROMOTING_TRIAL_CAMPAIGN => 'CANNOT_ENABLE_BROAD_MATCH_FOR_PROMOTING_TRIAL_CAMPAIGN',
         self::REQUIRED_BUSINESS_NAME_ASSET_NOT_LINKED => 'REQUIRED_BUSINESS_NAME_ASSET_NOT_LINKED',
         self::REQUIRED_LOGO_ASSET_NOT_LINKED => 'REQUIRED_LOGO_ASSET_NOT_LINKED',
+        self::BRAND_TARGETING_OVERRIDES_NOT_SUPPORTED => 'BRAND_TARGETING_OVERRIDES_NOT_SUPPORTED',
         self::BRAND_GUIDELINES_NOT_ENABLED_FOR_CAMPAIGN => 'BRAND_GUIDELINES_NOT_ENABLED_FOR_CAMPAIGN',
         self::BRAND_GUIDELINES_MAIN_AND_ACCENT_COLORS_REQUIRED => 'BRAND_GUIDELINES_MAIN_AND_ACCENT_COLORS_REQUIRED',
         self::BRAND_GUIDELINES_COLOR_INVALID_FORMAT => 'BRAND_GUIDELINES_COLOR_INVALID_FORMAT',

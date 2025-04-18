@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Represents a bidding data exclusion. Cannot be used in manager accounts.
+ * Represents a bidding data exclusion. Bidding data exclusions can be set in
+ * client accounts only, and cannot be used in manager accounts.
  * See "About data exclusions" at
  * https://support.google.com/google-ads/answer/10370710.
  *

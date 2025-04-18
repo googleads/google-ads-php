@@ -160,6 +160,12 @@ class AuthenticationError
      * Generated from protobuf enum <code>ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN = 28;</code>
      */
     const ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN = 28;
+    /**
+     * The developer token is not valid.
+     *
+     * Generated from protobuf enum <code>DEVELOPER_TOKEN_INVALID = 29;</code>
+     */
+    const DEVELOPER_TOKEN_INVALID = 29;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -185,6 +191,7 @@ class AuthenticationError
         self::ORGANIZATION_NOT_RECOGNIZED => 'ORGANIZATION_NOT_RECOGNIZED',
         self::ORGANIZATION_NOT_APPROVED => 'ORGANIZATION_NOT_APPROVED',
         self::ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN => 'ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN',
+        self::DEVELOPER_TOKEN_INVALID => 'DEVELOPER_TOKEN_INVALID',
     ];
 
     public static function name($value)

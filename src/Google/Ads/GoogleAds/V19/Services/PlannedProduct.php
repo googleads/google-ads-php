@@ -33,6 +33,16 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      */
     protected $budget_micros = null;
     /**
+     * Conversion rate as a decimal between 0 and 1, exclusive.
+     * For example: if 2% of ad interactions are expected to lead to conversions,
+     * conversion_rate should be 0.02.
+     * This field is required for DEMAND_GEN plannable products. It is not
+     * supported for other plannable products.
+     *
+     * Generated from protobuf field <code>optional double conversion_rate = 6;</code>
+     */
+    protected $conversion_rate = null;
+    /**
      * Targeting settings for the selected product.
      * To list the available targeting for each product use
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v19.services.ReachPlanService.ListPlannableProducts].
@@ -56,6 +66,12 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      *           Required. Maximum budget allocation in micros for the selected product.
      *           The value is specified in the selected planning currency_code.
      *           For example: 1 000 000$ = 1 000 000 000 000 micros.
+     *     @type float $conversion_rate
+     *           Conversion rate as a decimal between 0 and 1, exclusive.
+     *           For example: if 2% of ad interactions are expected to lead to conversions,
+     *           conversion_rate should be 0.02.
+     *           This field is required for DEMAND_GEN plannable products. It is not
+     *           supported for other plannable products.
      *     @type \Google\Ads\GoogleAds\V19\Services\AdvancedProductTargeting $advanced_product_targeting
      *           Targeting settings for the selected product.
      *           To list the available targeting for each product use
@@ -145,6 +161,50 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->budget_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Conversion rate as a decimal between 0 and 1, exclusive.
+     * For example: if 2% of ad interactions are expected to lead to conversions,
+     * conversion_rate should be 0.02.
+     * This field is required for DEMAND_GEN plannable products. It is not
+     * supported for other plannable products.
+     *
+     * Generated from protobuf field <code>optional double conversion_rate = 6;</code>
+     * @return float
+     */
+    public function getConversionRate()
+    {
+        return isset($this->conversion_rate) ? $this->conversion_rate : 0.0;
+    }
+
+    public function hasConversionRate()
+    {
+        return isset($this->conversion_rate);
+    }
+
+    public function clearConversionRate()
+    {
+        unset($this->conversion_rate);
+    }
+
+    /**
+     * Conversion rate as a decimal between 0 and 1, exclusive.
+     * For example: if 2% of ad interactions are expected to lead to conversions,
+     * conversion_rate should be 0.02.
+     * This field is required for DEMAND_GEN plannable products. It is not
+     * supported for other plannable products.
+     *
+     * Generated from protobuf field <code>optional double conversion_rate = 6;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversionRate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversion_rate = $var;
 
         return $this;
     }

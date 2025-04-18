@@ -729,6 +729,26 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v19.enums.ConvertingUserPriorEngagementTypeAndLtvBucketEnum.ConvertingUserPriorEngagementTypeAndLtvBucket new_versus_returning_customers = 160;</code>
      */
     protected $new_versus_returning_customers = 0;
+    /**
+     * Adjusted age range. This is the age range of the user after applying
+     * modeling to get more accurate age and gender information. Currently, both
+     * adjusted_age_range and adjusted_gender need to be selected together to get
+     * valid reach stats. These segmentations are only available for allowlisted
+     * customers.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.enums.AgeRangeTypeEnum.AgeRangeType adjusted_age_range = 196;</code>
+     */
+    protected $adjusted_age_range = 0;
+    /**
+     * Adjusted gender. This is the gender of the user after applying modeling to
+     * get more accurate age and gender information. Currently, both
+     * adjusted_age_range and adjusted_gender need to be selected together to get
+     * valid reach stats. These segmentations are only available for allowlisted
+     * customers.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.enums.GenderTypeEnum.GenderType adjusted_gender = 197;</code>
+     */
+    protected $adjusted_gender = 0;
 
     /**
      * Constructor.
@@ -1006,6 +1026,18 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           This is for segmenting conversions by whether the user is a new customer
      *           or a returning customer. This segmentation is typically used to measure
      *           the impact of customer acquisition goal.
+     *     @type int $adjusted_age_range
+     *           Adjusted age range. This is the age range of the user after applying
+     *           modeling to get more accurate age and gender information. Currently, both
+     *           adjusted_age_range and adjusted_gender need to be selected together to get
+     *           valid reach stats. These segmentations are only available for allowlisted
+     *           customers.
+     *     @type int $adjusted_gender
+     *           Adjusted gender. This is the gender of the user after applying modeling to
+     *           get more accurate age and gender information. Currently, both
+     *           adjusted_age_range and adjusted_gender need to be selected together to get
+     *           valid reach stats. These segmentations are only available for allowlisted
+     *           customers.
      * }
      */
     public function __construct($data = NULL) {
@@ -4801,6 +4833,74 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V19\Enums\ConvertingUserPriorEngagementTypeAndLtvBucketEnum\ConvertingUserPriorEngagementTypeAndLtvBucket::class);
         $this->new_versus_returning_customers = $var;
+
+        return $this;
+    }
+
+    /**
+     * Adjusted age range. This is the age range of the user after applying
+     * modeling to get more accurate age and gender information. Currently, both
+     * adjusted_age_range and adjusted_gender need to be selected together to get
+     * valid reach stats. These segmentations are only available for allowlisted
+     * customers.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.enums.AgeRangeTypeEnum.AgeRangeType adjusted_age_range = 196;</code>
+     * @return int
+     */
+    public function getAdjustedAgeRange()
+    {
+        return $this->adjusted_age_range;
+    }
+
+    /**
+     * Adjusted age range. This is the age range of the user after applying
+     * modeling to get more accurate age and gender information. Currently, both
+     * adjusted_age_range and adjusted_gender need to be selected together to get
+     * valid reach stats. These segmentations are only available for allowlisted
+     * customers.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.enums.AgeRangeTypeEnum.AgeRangeType adjusted_age_range = 196;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAdjustedAgeRange($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V19\Enums\AgeRangeTypeEnum\AgeRangeType::class);
+        $this->adjusted_age_range = $var;
+
+        return $this;
+    }
+
+    /**
+     * Adjusted gender. This is the gender of the user after applying modeling to
+     * get more accurate age and gender information. Currently, both
+     * adjusted_age_range and adjusted_gender need to be selected together to get
+     * valid reach stats. These segmentations are only available for allowlisted
+     * customers.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.enums.GenderTypeEnum.GenderType adjusted_gender = 197;</code>
+     * @return int
+     */
+    public function getAdjustedGender()
+    {
+        return $this->adjusted_gender;
+    }
+
+    /**
+     * Adjusted gender. This is the gender of the user after applying modeling to
+     * get more accurate age and gender information. Currently, both
+     * adjusted_age_range and adjusted_gender need to be selected together to get
+     * valid reach stats. These segmentations are only available for allowlisted
+     * customers.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.enums.GenderTypeEnum.GenderType adjusted_gender = 197;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAdjustedGender($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V19\Enums\GenderTypeEnum\GenderType::class);
+        $this->adjusted_gender = $var;
 
         return $this;
     }

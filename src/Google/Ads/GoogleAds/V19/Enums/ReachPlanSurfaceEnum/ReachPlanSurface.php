@@ -26,6 +26,18 @@ class ReachPlanSurface
      */
     const UNKNOWN = 1;
     /**
+     * Discover feed ad surface.
+     *
+     * Generated from protobuf enum <code>DISCOVER_FEED = 7;</code>
+     */
+    const DISCOVER_FEED = 7;
+    /**
+     * Gmail ad surface.
+     *
+     * Generated from protobuf enum <code>GMAIL = 8;</code>
+     */
+    const GMAIL = 8;
+    /**
      * In-Feed ad surface.
      *
      * Generated from protobuf enum <code>IN_FEED = 2;</code>
@@ -59,6 +71,8 @@ class ReachPlanSurface
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
+        self::DISCOVER_FEED => 'DISCOVER_FEED',
+        self::GMAIL => 'GMAIL',
         self::IN_FEED => 'IN_FEED',
         self::IN_STREAM_BUMPER => 'IN_STREAM_BUMPER',
         self::IN_STREAM_NON_SKIPPABLE => 'IN_STREAM_NON_SKIPPABLE',

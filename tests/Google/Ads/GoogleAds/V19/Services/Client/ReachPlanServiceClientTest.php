@@ -24,6 +24,8 @@ namespace Google\Ads\GoogleAds\V19\Services\Client;
 
 use Google\Ads\GoogleAds\V19\Services\CampaignDuration;
 use Google\Ads\GoogleAds\V19\Services\Client\ReachPlanServiceClient;
+use Google\Ads\GoogleAds\V19\Services\GenerateConversionRatesRequest;
+use Google\Ads\GoogleAds\V19\Services\GenerateConversionRatesResponse;
 use Google\Ads\GoogleAds\V19\Services\GenerateReachForecastRequest;
 use Google\Ads\GoogleAds\V19\Services\GenerateReachForecastResponse;
 use Google\Ads\GoogleAds\V19\Services\ListPlannableLocationsRequest;
@@ -63,6 +65,68 @@ class ReachPlanServiceClientTest extends GeneratedTest
             'credentials' => $this->createCredentials(),
         ];
         return new ReachPlanServiceClient($options);
+    }
+
+    /** @test */
+    public function generateConversionRatesTest()
+    {
+        $transport = $this->createTransport();
+        $gapicClient = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new GenerateConversionRatesResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $request = (new GenerateConversionRatesRequest())
+            ->setCustomerId($customerId);
+        $response = $gapicClient->generateConversionRates($request);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v19.services.ReachPlanService/GenerateConversionRates', $actualFuncCall);
+        $actualValue = $actualRequestObject->getCustomerId();
+        $this->assertProtobufEquals($customerId, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function generateConversionRatesExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $gapicClient = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $request = (new GenerateConversionRatesRequest())
+            ->setCustomerId($customerId);
+        try {
+            $gapicClient->generateConversionRates($request);
+            // If the $gapicClient method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
     }
 
     /** @test */
@@ -256,7 +320,7 @@ class ReachPlanServiceClientTest extends GeneratedTest
     }
 
     /** @test */
-    public function generateReachForecastAsyncTest()
+    public function generateConversionRatesAsyncTest()
     {
         $transport = $this->createTransport();
         $gapicClient = $this->createClient([
@@ -264,29 +328,21 @@ class ReachPlanServiceClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $expectedResponse = new GenerateReachForecastResponse();
+        $expectedResponse = new GenerateConversionRatesResponse();
         $transport->addResponse($expectedResponse);
         // Mock request
         $customerId = 'customerId-1772061412';
-        $campaignDuration = new CampaignDuration();
-        $plannedProducts = [];
-        $request = (new GenerateReachForecastRequest())
-            ->setCustomerId($customerId)
-            ->setCampaignDuration($campaignDuration)
-            ->setPlannedProducts($plannedProducts);
-        $response = $gapicClient->generateReachForecastAsync($request)->wait();
+        $request = (new GenerateConversionRatesRequest())
+            ->setCustomerId($customerId);
+        $response = $gapicClient->generateConversionRatesAsync($request)->wait();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v19.services.ReachPlanService/GenerateReachForecast', $actualFuncCall);
+        $this->assertSame('/google.ads.googleads.v19.services.ReachPlanService/GenerateConversionRates', $actualFuncCall);
         $actualValue = $actualRequestObject->getCustomerId();
         $this->assertProtobufEquals($customerId, $actualValue);
-        $actualValue = $actualRequestObject->getCampaignDuration();
-        $this->assertProtobufEquals($campaignDuration, $actualValue);
-        $actualValue = $actualRequestObject->getPlannedProducts();
-        $this->assertProtobufEquals($plannedProducts, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 }

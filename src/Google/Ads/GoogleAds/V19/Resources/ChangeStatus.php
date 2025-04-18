@@ -129,6 +129,12 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string asset_group = 41 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $asset_group = '';
+    /**
+     * Output only. The CampaignBudget affected by this change.
+     *
+     * Generated from protobuf field <code>string campaign_budget = 42 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $campaign_budget = '';
 
     /**
      * Constructor.
@@ -177,6 +183,8 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      *           Output only. The CombinedAudience affected by this change.
      *     @type string $asset_group
      *           Output only. The AssetGroup affected by this change.
+     *     @type string $campaign_budget
+     *           Output only. The CampaignBudget affected by this change.
      * }
      */
     public function __construct($data = NULL) {
@@ -728,6 +736,32 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->asset_group = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The CampaignBudget affected by this change.
+     *
+     * Generated from protobuf field <code>string campaign_budget = 42 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getCampaignBudget()
+    {
+        return $this->campaign_budget;
+    }
+
+    /**
+     * Output only. The CampaignBudget affected by this change.
+     *
+     * Generated from protobuf field <code>string campaign_budget = 42 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCampaignBudget($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->campaign_budget = $var;
 
         return $this;
     }

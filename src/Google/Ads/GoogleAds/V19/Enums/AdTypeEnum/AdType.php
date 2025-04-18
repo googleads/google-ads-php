@@ -213,6 +213,12 @@ class AdType
      * Generated from protobuf enum <code>DEMAND_GEN_PRODUCT_AD = 39;</code>
      */
     const DEMAND_GEN_PRODUCT_AD = 39;
+    /**
+     * YouTube Audio ad.
+     *
+     * Generated from protobuf enum <code>YOUTUBE_AUDIO_AD = 44;</code>
+     */
+    const YOUTUBE_AUDIO_AD = 44;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -248,6 +254,7 @@ class AdType
         self::TRAVEL_AD => 'TRAVEL_AD',
         self::DEMAND_GEN_VIDEO_RESPONSIVE_AD => 'DEMAND_GEN_VIDEO_RESPONSIVE_AD',
         self::DEMAND_GEN_PRODUCT_AD => 'DEMAND_GEN_PRODUCT_AD',
+        self::YOUTUBE_AUDIO_AD => 'YOUTUBE_AUDIO_AD',
     ];
 
     public static function name($value)

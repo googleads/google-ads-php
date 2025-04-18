@@ -23,6 +23,11 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v19.services.ReachPlanService' => [
+            'GenerateConversionRates' => [
+                'method' => 'post',
+                'uriTemplate' => '/v19:generateConversionRates',
+                'body' => '*',
+            ],
             'GenerateReachForecast' => [
                 'method' => 'post',
                 'uriTemplate' => '/v19/customers/{customer_id=*}:generateReachForecast',

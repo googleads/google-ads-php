@@ -25,6 +25,8 @@
 namespace Google\Ads\GoogleAds\V19\Services\Client;
 
 use Google\Ads\GoogleAds\Lib\V19\GoogleAdsGapicClientTrait;
+use Google\Ads\GoogleAds\V19\Services\GenerateConversionRatesRequest;
+use Google\Ads\GoogleAds\V19\Services\GenerateConversionRatesResponse;
 use Google\Ads\GoogleAds\V19\Services\GenerateReachForecastRequest;
 use Google\Ads\GoogleAds\V19\Services\GenerateReachForecastResponse;
 use Google\Ads\GoogleAds\V19\Services\ListPlannableLocationsRequest;
@@ -51,6 +53,7 @@ use Psr\Log\LoggerInterface;
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods.
  *
+ * @method PromiseInterface<GenerateConversionRatesResponse> generateConversionRatesAsync(GenerateConversionRatesRequest $request, array $optionalArgs = [])
  * @method PromiseInterface<GenerateReachForecastResponse> generateReachForecastAsync(GenerateReachForecastRequest $request, array $optionalArgs = [])
  * @method PromiseInterface<ListPlannableLocationsResponse> listPlannableLocationsAsync(ListPlannableLocationsRequest $request, array $optionalArgs = [])
  * @method PromiseInterface<ListPlannableProductsResponse> listPlannableProductsAsync(ListPlannableProductsRequest $request, array $optionalArgs = [])
@@ -184,6 +187,40 @@ class ReachPlanServiceClient
 
         array_unshift($args, substr($method, 0, -5));
         return call_user_func_array([$this, 'startAsyncCall'], $args);
+    }
+
+    /**
+     * Returns a collection of conversion rate suggestions for supported plannable
+     * products.
+     *
+     * List of thrown errors:
+     * [AuthenticationError]()
+     * [AuthorizationError]()
+     * [HeaderError]()
+     * [InternalError]()
+     * [QuotaError]()
+     * [RequestError]()
+     *
+     * The async variant is
+     * {@see ReachPlanServiceClient::generateConversionRatesAsync()} .
+     *
+     * @param GenerateConversionRatesRequest $request     A request to house fields associated with the call.
+     * @param array                          $callOptions {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
+     * }
+     *
+     * @return GenerateConversionRatesResponse
+     *
+     * @throws ApiException Thrown if the API call fails.
+     */
+    public function generateConversionRates(GenerateConversionRatesRequest $request, array $callOptions = []): GenerateConversionRatesResponse
+    {
+        return $this->startApiCall('GenerateConversionRates', $request, $callOptions)->wait();
     }
 
     /**
