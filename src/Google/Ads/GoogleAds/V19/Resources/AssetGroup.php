@@ -101,6 +101,12 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength ad_strength = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $ad_strength = 0;
+    /**
+     * Output only. The asset coverage of this asset group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.AssetCoverage asset_coverage = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $asset_coverage = null;
 
     /**
      * Constructor.
@@ -144,6 +150,8 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      *           the ad. This field can only be set when path1 is set.
      *     @type int $ad_strength
      *           Output only. Overall ad strength of this asset group.
+     *     @type \Google\Ads\GoogleAds\V19\Resources\AssetCoverage $asset_coverage
+     *           Output only. The asset coverage of this asset group.
      * }
      */
     public function __construct($data = NULL) {
@@ -483,6 +491,42 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V19\Enums\AdStrengthEnum\AdStrength::class);
         $this->ad_strength = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The asset coverage of this asset group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.AssetCoverage asset_coverage = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V19\Resources\AssetCoverage|null
+     */
+    public function getAssetCoverage()
+    {
+        return $this->asset_coverage;
+    }
+
+    public function hasAssetCoverage()
+    {
+        return isset($this->asset_coverage);
+    }
+
+    public function clearAssetCoverage()
+    {
+        unset($this->asset_coverage);
+    }
+
+    /**
+     * Output only. The asset coverage of this asset group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.AssetCoverage asset_coverage = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V19\Resources\AssetCoverage $var
+     * @return $this
+     */
+    public function setAssetCoverage($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V19\Resources\AssetCoverage::class);
+        $this->asset_coverage = $var;
 
         return $this;
     }

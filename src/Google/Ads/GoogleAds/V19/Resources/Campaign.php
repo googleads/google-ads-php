@@ -140,6 +140,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $video_campaign_settings = null;
     /**
+     * Settings for Performance Max campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings pmax_campaign_settings = 97;</code>
+     */
+    protected $pmax_campaign_settings = null;
+    /**
      * Settings for Real-Time Bidding, a feature only available for campaigns
      * targeting the Ad Exchange network.
      *
@@ -501,6 +507,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           Settings for Demand Gen campaign.
      *     @type \Google\Ads\GoogleAds\V19\Resources\Campaign\VideoCampaignSettings $video_campaign_settings
      *           Settings for Video campaign.
+     *     @type \Google\Ads\GoogleAds\V19\Resources\Campaign\PmaxCampaignSettings $pmax_campaign_settings
+     *           Settings for Performance Max campaign.
      *     @type \Google\Ads\GoogleAds\V19\Common\RealTimeBiddingSetting $real_time_bidding_setting
      *           Settings for Real-Time Bidding, a feature only available for campaigns
      *           targeting the Ad Exchange network.
@@ -1254,6 +1262,42 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V19\Resources\Campaign\VideoCampaignSettings::class);
         $this->video_campaign_settings = $var;
+
+        return $this;
+    }
+
+    /**
+     * Settings for Performance Max campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings pmax_campaign_settings = 97;</code>
+     * @return \Google\Ads\GoogleAds\V19\Resources\Campaign\PmaxCampaignSettings|null
+     */
+    public function getPmaxCampaignSettings()
+    {
+        return $this->pmax_campaign_settings;
+    }
+
+    public function hasPmaxCampaignSettings()
+    {
+        return isset($this->pmax_campaign_settings);
+    }
+
+    public function clearPmaxCampaignSettings()
+    {
+        unset($this->pmax_campaign_settings);
+    }
+
+    /**
+     * Settings for Performance Max campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.Campaign.PmaxCampaignSettings pmax_campaign_settings = 97;</code>
+     * @param \Google\Ads\GoogleAds\V19\Resources\Campaign\PmaxCampaignSettings $var
+     * @return $this
+     */
+    public function setPmaxCampaignSettings($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V19\Resources\Campaign\PmaxCampaignSettings::class);
+        $this->pmax_campaign_settings = $var;
 
         return $this;
     }

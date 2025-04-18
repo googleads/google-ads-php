@@ -35,6 +35,18 @@ return [
                     ],
                 ],
             ],
+            'ProvideLeadFeedback' => [
+                'callType' => \Google\ApiCore\Call::UNARY_CALL,
+                'responseType' => 'Google\Ads\GoogleAds\V19\Services\ProvideLeadFeedbackResponse',
+                'headerParams' => [
+                    [
+                        'keyName' => 'resource_name',
+                        'fieldAccessors' => [
+                            'getResourceName',
+                        ],
+                    ],
+                ],
+            ],
             'templateMap' => [
                 'localServicesLead' => 'customers/{customer_id}/localServicesLeads/{local_services_lead_id}',
             ],

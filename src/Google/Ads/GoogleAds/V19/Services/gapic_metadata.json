@@ -1444,6 +1444,11 @@
                             "methods": [
                                 "appendLeadConversation"
                             ]
+                        },
+                        "ProvideLeadFeedback": {
+                            "methods": [
+                                "provideLeadFeedback"
+                            ]
                         }
                     }
                 }
@@ -1535,6 +1540,11 @@
                 "grpc": {
                     "libraryClient": "ReachPlanServiceGapicClient",
                     "rpcs": {
+                        "GenerateConversionRates": {
+                            "methods": [
+                                "generateConversionRates"
+                            ]
+                        },
                         "GenerateReachForecast": {
                             "methods": [
                                 "generateReachForecast"

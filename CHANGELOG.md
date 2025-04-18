@@ -1,3 +1,6 @@
+## 27.1.0
+*    Compatibility with v19.1 of the API: https://developers.google.com/google-ads/api/docs/release-notes
+
 ## 26.1.0
 *   Added support for v19 of Google Ads API.
 *   Removed support for Feed-related classes, fields and enums in v19.

@@ -141,6 +141,12 @@ class AdvertisingChannelSubType
      * Generated from protobuf enum <code>TRAVEL_ACTIVITIES = 20;</code>
      */
     const TRAVEL_ACTIVITIES = 20;
+    /**
+     * YouTube Audio campaigns.
+     *
+     * Generated from protobuf enum <code>YOUTUBE_AUDIO = 22;</code>
+     */
+    const YOUTUBE_AUDIO = 22;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -163,6 +169,7 @@ class AdvertisingChannelSubType
         self::APP_CAMPAIGN_FOR_PRE_REGISTRATION => 'APP_CAMPAIGN_FOR_PRE_REGISTRATION',
         self::VIDEO_REACH_TARGET_FREQUENCY => 'VIDEO_REACH_TARGET_FREQUENCY',
         self::TRAVEL_ACTIVITIES => 'TRAVEL_ACTIVITIES',
+        self::YOUTUBE_AUDIO => 'YOUTUBE_AUDIO',
     ];
 
     public static function name($value)

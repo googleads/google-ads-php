@@ -62,8 +62,9 @@ class AdNetworkType
      */
     const GOOGLE_TV = 9;
     /**
-     * Google Owned Channels such as Discover feed, Gmail, YouTube. This network
-     * is only used by Demand Gen campaigns.
+     * Google Owned Channels such as Discover feed, Gmail,
+     * YouTube. This network is only used by Demand Gen
+     * campaigns.
      *
      * Generated from protobuf enum <code>GOOGLE_OWNED_CHANNELS = 10;</code>
      */

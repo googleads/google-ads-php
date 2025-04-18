@@ -31,11 +31,18 @@ class TargetFrequencyTimeUnit
      * Generated from protobuf enum <code>WEEKLY = 2;</code>
      */
     const WEEKLY = 2;
+    /**
+     * Optimize bidding to reach Target Frequency in a month.
+     *
+     * Generated from protobuf enum <code>MONTHLY = 3;</code>
+     */
+    const MONTHLY = 3;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::WEEKLY => 'WEEKLY',
+        self::MONTHLY => 'MONTHLY',
     ];
 
     public static function name($value)

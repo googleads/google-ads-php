@@ -22,6 +22,12 @@ class ImprovePerformanceMaxAdStrengthRecommendation extends \Google\Protobuf\Int
      * Generated from protobuf field <code>string asset_group = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $asset_group = '';
+    /**
+     * Output only. The current ad strength score of the asset group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength ad_strength = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $ad_strength = 0;
 
     /**
      * Constructor.
@@ -31,6 +37,8 @@ class ImprovePerformanceMaxAdStrengthRecommendation extends \Google\Protobuf\Int
      *
      *     @type string $asset_group
      *           Output only. The asset group resource name.
+     *     @type int $ad_strength
+     *           Output only. The current ad strength score of the asset group.
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +68,32 @@ class ImprovePerformanceMaxAdStrengthRecommendation extends \Google\Protobuf\Int
     {
         GPBUtil::checkString($var, True);
         $this->asset_group = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The current ad strength score of the asset group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength ad_strength = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int
+     */
+    public function getAdStrength()
+    {
+        return $this->ad_strength;
+    }
+
+    /**
+     * Output only. The current ad strength score of the asset group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength ad_strength = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAdStrength($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V19\Enums\AdStrengthEnum\AdStrength::class);
+        $this->ad_strength = $var;
 
         return $this;
     }

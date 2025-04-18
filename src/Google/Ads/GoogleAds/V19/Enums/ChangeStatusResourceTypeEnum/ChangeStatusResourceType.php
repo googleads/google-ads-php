@@ -57,6 +57,12 @@ class ChangeStatusResourceType
      */
     const CAMPAIGN_CRITERION = 7;
     /**
+     * A CampaignBudget resource change.
+     *
+     * Generated from protobuf enum <code>CAMPAIGN_BUDGET = 8;</code>
+     */
+    const CAMPAIGN_BUDGET = 8;
+    /**
      * A Feed resource change.
      *
      * Generated from protobuf enum <code>FEED = 9;</code>
@@ -134,6 +140,18 @@ class ChangeStatusResourceType
      * Generated from protobuf enum <code>ASSET_GROUP = 21;</code>
      */
     const ASSET_GROUP = 21;
+    /**
+     * An AssetSet resource change.
+     *
+     * Generated from protobuf enum <code>ASSET_SET = 22;</code>
+     */
+    const ASSET_SET = 22;
+    /**
+     * A CampaignAssetSet resource change.
+     *
+     * Generated from protobuf enum <code>CAMPAIGN_ASSET_SET = 23;</code>
+     */
+    const CAMPAIGN_ASSET_SET = 23;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -143,6 +161,7 @@ class ChangeStatusResourceType
         self::AD_GROUP_CRITERION => 'AD_GROUP_CRITERION',
         self::CAMPAIGN => 'CAMPAIGN',
         self::CAMPAIGN_CRITERION => 'CAMPAIGN_CRITERION',
+        self::CAMPAIGN_BUDGET => 'CAMPAIGN_BUDGET',
         self::FEED => 'FEED',
         self::FEED_ITEM => 'FEED_ITEM',
         self::AD_GROUP_FEED => 'AD_GROUP_FEED',
@@ -156,6 +175,8 @@ class ChangeStatusResourceType
         self::AD_GROUP_ASSET => 'AD_GROUP_ASSET',
         self::COMBINED_AUDIENCE => 'COMBINED_AUDIENCE',
         self::ASSET_GROUP => 'ASSET_GROUP',
+        self::ASSET_SET => 'ASSET_SET',
+        self::CAMPAIGN_ASSET_SET => 'CAMPAIGN_ASSET_SET',
     ];
 
     public static function name($value)

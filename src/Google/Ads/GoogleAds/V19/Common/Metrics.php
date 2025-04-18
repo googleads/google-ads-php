@@ -318,6 +318,13 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $biddable_app_post_install_conversions = null;
     /**
+     * Participated in-app actions. The number of in app actions that come
+     * directly or indirectly from the campaign.
+     *
+     * Generated from protobuf field <code>optional double biddable_cohort_app_post_install_conversions = 378;</code>
+     */
+    protected $biddable_cohort_app_post_install_conversions = null;
+    /**
      * An indication on how other advertisers' Shopping ads for similar products
      * are performing based on how often people who see their ad click on it.
      *
@@ -1793,6 +1800,26 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional double video_view_rate_shorts = 369;</code>
      */
     protected $video_view_rate_shorts = null;
+    /**
+     * All co-viewed impressions represent the total number of people who saw your
+     * ad. This includes people who are signed into their Google Account, as well
+     * as other people who are watching the same ad on a connected TV. This metric
+     * is only available for the Campaign resource with adjusted_age_range and
+     * adjusted_gender segments. These segmentations are mandatory to get the
+     * all coviewed impressions.
+     *
+     * Generated from protobuf field <code>optional int64 coviewed_impressions = 380;</code>
+     */
+    protected $coviewed_impressions = null;
+    /**
+     * Primary impression is counted each time your ad is served. This metric is
+     * only available for the Campaign resource with adjusted_age_range and
+     * adjusted_gender segments. These segmentations are mandatory to get the
+     * primary impressions.
+     *
+     * Generated from protobuf field <code>optional int64 primary_impressions = 381;</code>
+     */
+    protected $primary_impressions = null;
 
     /**
      * Constructor.
@@ -1946,6 +1973,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           Number of app installs.
      *     @type float $biddable_app_post_install_conversions
      *           Number of in-app actions.
+     *     @type float $biddable_cohort_app_post_install_conversions
+     *           Participated in-app actions. The number of in app actions that come
+     *           directly or indirectly from the campaign.
      *     @type float $benchmark_ctr
      *           An indication on how other advertisers' Shopping ads for similar products
      *           are performing based on how often people who see their ad click on it.
@@ -2762,6 +2792,18 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type float $video_view_rate_shorts
      *           The number of video views divided by number of impressions that can
      *           potentially lead to video views for in shorts formats.
+     *     @type int|string $coviewed_impressions
+     *           All co-viewed impressions represent the total number of people who saw your
+     *           ad. This includes people who are signed into their Google Account, as well
+     *           as other people who are watching the same ad on a connected TV. This metric
+     *           is only available for the Campaign resource with adjusted_age_range and
+     *           adjusted_gender segments. These segmentations are mandatory to get the
+     *           all coviewed impressions.
+     *     @type int|string $primary_impressions
+     *           Primary impression is counted each time your ad is served. This metric is
+     *           only available for the Campaign resource with adjusted_age_range and
+     *           adjusted_gender segments. These segmentations are mandatory to get the
+     *           primary impressions.
      * }
      */
     public function __construct($data = NULL) {
@@ -4305,6 +4347,44 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->biddable_app_post_install_conversions = $var;
+
+        return $this;
+    }
+
+    /**
+     * Participated in-app actions. The number of in app actions that come
+     * directly or indirectly from the campaign.
+     *
+     * Generated from protobuf field <code>optional double biddable_cohort_app_post_install_conversions = 378;</code>
+     * @return float
+     */
+    public function getBiddableCohortAppPostInstallConversions()
+    {
+        return isset($this->biddable_cohort_app_post_install_conversions) ? $this->biddable_cohort_app_post_install_conversions : 0.0;
+    }
+
+    public function hasBiddableCohortAppPostInstallConversions()
+    {
+        return isset($this->biddable_cohort_app_post_install_conversions);
+    }
+
+    public function clearBiddableCohortAppPostInstallConversions()
+    {
+        unset($this->biddable_cohort_app_post_install_conversions);
+    }
+
+    /**
+     * Participated in-app actions. The number of in app actions that come
+     * directly or indirectly from the campaign.
+     *
+     * Generated from protobuf field <code>optional double biddable_cohort_app_post_install_conversions = 378;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setBiddableCohortAppPostInstallConversions($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->biddable_cohort_app_post_install_conversions = $var;
 
         return $this;
     }
@@ -11067,6 +11147,94 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->video_view_rate_shorts = $var;
+
+        return $this;
+    }
+
+    /**
+     * All co-viewed impressions represent the total number of people who saw your
+     * ad. This includes people who are signed into their Google Account, as well
+     * as other people who are watching the same ad on a connected TV. This metric
+     * is only available for the Campaign resource with adjusted_age_range and
+     * adjusted_gender segments. These segmentations are mandatory to get the
+     * all coviewed impressions.
+     *
+     * Generated from protobuf field <code>optional int64 coviewed_impressions = 380;</code>
+     * @return int|string
+     */
+    public function getCoviewedImpressions()
+    {
+        return isset($this->coviewed_impressions) ? $this->coviewed_impressions : 0;
+    }
+
+    public function hasCoviewedImpressions()
+    {
+        return isset($this->coviewed_impressions);
+    }
+
+    public function clearCoviewedImpressions()
+    {
+        unset($this->coviewed_impressions);
+    }
+
+    /**
+     * All co-viewed impressions represent the total number of people who saw your
+     * ad. This includes people who are signed into their Google Account, as well
+     * as other people who are watching the same ad on a connected TV. This metric
+     * is only available for the Campaign resource with adjusted_age_range and
+     * adjusted_gender segments. These segmentations are mandatory to get the
+     * all coviewed impressions.
+     *
+     * Generated from protobuf field <code>optional int64 coviewed_impressions = 380;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setCoviewedImpressions($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->coviewed_impressions = $var;
+
+        return $this;
+    }
+
+    /**
+     * Primary impression is counted each time your ad is served. This metric is
+     * only available for the Campaign resource with adjusted_age_range and
+     * adjusted_gender segments. These segmentations are mandatory to get the
+     * primary impressions.
+     *
+     * Generated from protobuf field <code>optional int64 primary_impressions = 381;</code>
+     * @return int|string
+     */
+    public function getPrimaryImpressions()
+    {
+        return isset($this->primary_impressions) ? $this->primary_impressions : 0;
+    }
+
+    public function hasPrimaryImpressions()
+    {
+        return isset($this->primary_impressions);
+    }
+
+    public function clearPrimaryImpressions()
+    {
+        unset($this->primary_impressions);
+    }
+
+    /**
+     * Primary impression is counted each time your ad is served. This metric is
+     * only available for the Campaign resource with adjusted_age_range and
+     * adjusted_gender segments. These segmentations are mandatory to get the
+     * primary impressions.
+     *
+     * Generated from protobuf field <code>optional int64 primary_impressions = 381;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setPrimaryImpressions($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->primary_impressions = $var;
 
         return $this;
     }

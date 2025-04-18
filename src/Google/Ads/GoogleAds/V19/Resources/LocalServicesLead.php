@@ -101,6 +101,12 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional .google.ads.googleads.v19.resources.CreditDetails credit_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $credit_details = null;
+    /**
+     * Output only. True if the advertiser submitted feedback for the lead.
+     *
+     * Generated from protobuf field <code>bool lead_feedback_submitted = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $lead_feedback_submitted = false;
 
     /**
      * Constructor.
@@ -143,6 +149,8 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
      *           Output only. True if the advertiser was charged for the lead.
      *     @type \Google\Ads\GoogleAds\V19\Resources\CreditDetails $credit_details
      *           Output only. Credit details of the lead.
+     *     @type bool $lead_feedback_submitted
+     *           Output only. True if the advertiser submitted feedback for the lead.
      * }
      */
     public function __construct($data = NULL) {
@@ -510,6 +518,32 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V19\Resources\CreditDetails::class);
         $this->credit_details = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. True if the advertiser submitted feedback for the lead.
+     *
+     * Generated from protobuf field <code>bool lead_feedback_submitted = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return bool
+     */
+    public function getLeadFeedbackSubmitted()
+    {
+        return $this->lead_feedback_submitted;
+    }
+
+    /**
+     * Output only. True if the advertiser submitted feedback for the lead.
+     *
+     * Generated from protobuf field <code>bool lead_feedback_submitted = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setLeadFeedbackSubmitted($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->lead_feedback_submitted = $var;
 
         return $this;
     }

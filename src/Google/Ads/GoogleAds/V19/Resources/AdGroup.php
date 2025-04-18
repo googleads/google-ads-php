@@ -276,6 +276,12 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v19.enums.AdGroupPrimaryStatusReasonEnum.AdGroupPrimaryStatusReason primary_status_reasons = 63 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $primary_status_reasons;
+    /**
+     * Settings for Demand Gen ad groups.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings demand_gen_ad_group_settings = 91;</code>
+     */
+    protected $demand_gen_ad_group_settings = null;
 
     /**
      * Constructor.
@@ -404,6 +410,8 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $primary_status_reasons
      *           Output only. Provides reasons for why an ad group is not serving or not
      *           serving optimally.
+     *     @type \Google\Ads\GoogleAds\V19\Resources\AdGroup\DemandGenAdGroupSettings $demand_gen_ad_group_settings
+     *           Settings for Demand Gen ad groups.
      * }
      */
     public function __construct($data = NULL) {
@@ -1619,6 +1627,42 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V19\Enums\AdGroupPrimaryStatusReasonEnum\AdGroupPrimaryStatusReason::class);
         $this->primary_status_reasons = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Settings for Demand Gen ad groups.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings demand_gen_ad_group_settings = 91;</code>
+     * @return \Google\Ads\GoogleAds\V19\Resources\AdGroup\DemandGenAdGroupSettings|null
+     */
+    public function getDemandGenAdGroupSettings()
+    {
+        return $this->demand_gen_ad_group_settings;
+    }
+
+    public function hasDemandGenAdGroupSettings()
+    {
+        return isset($this->demand_gen_ad_group_settings);
+    }
+
+    public function clearDemandGenAdGroupSettings()
+    {
+        unset($this->demand_gen_ad_group_settings);
+    }
+
+    /**
+     * Settings for Demand Gen ad groups.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.AdGroup.DemandGenAdGroupSettings demand_gen_ad_group_settings = 91;</code>
+     * @param \Google\Ads\GoogleAds\V19\Resources\AdGroup\DemandGenAdGroupSettings $var
+     * @return $this
+     */
+    public function setDemandGenAdGroupSettings($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V19\Resources\AdGroup\DemandGenAdGroupSettings::class);
+        $this->demand_gen_ad_group_settings = $var;
 
         return $this;
     }

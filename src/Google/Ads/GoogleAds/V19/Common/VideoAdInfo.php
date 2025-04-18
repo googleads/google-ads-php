@@ -41,6 +41,8 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      *           Video non-skippable in-stream ad format.
      *     @type \Google\Ads\GoogleAds\V19\Common\InFeedVideoAdInfo $in_feed
      *           In-feed video ad format.
+     *     @type \Google\Ads\GoogleAds\V19\Common\YouTubeAudioAdInfo $audio
+     *           YouTube Audio ad format.
      * }
      */
     public function __construct($data = NULL) {
@@ -235,6 +237,37 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V19\Common\InFeedVideoAdInfo::class);
         $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * YouTube Audio ad format.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.common.YouTubeAudioAdInfo audio = 10;</code>
+     * @return \Google\Ads\GoogleAds\V19\Common\YouTubeAudioAdInfo|null
+     */
+    public function getAudio()
+    {
+        return $this->readOneof(10);
+    }
+
+    public function hasAudio()
+    {
+        return $this->hasOneof(10);
+    }
+
+    /**
+     * YouTube Audio ad format.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v19.common.YouTubeAudioAdInfo audio = 10;</code>
+     * @param \Google\Ads\GoogleAds\V19\Common\YouTubeAudioAdInfo $var
+     * @return $this
+     */
+    public function setAudio($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V19\Common\YouTubeAudioAdInfo::class);
+        $this->writeOneof(10, $var);
 
         return $this;
     }

@@ -48,4 +48,19 @@ class LocalServicesLeadServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * RPC to provide feedback on Local Services Lead resources.
+     * @param \Google\Ads\GoogleAds\V19\Services\ProvideLeadFeedbackRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ProvideLeadFeedback(\Google\Ads\GoogleAds\V19\Services\ProvideLeadFeedbackRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v19.services.LocalServicesLeadService/ProvideLeadFeedback',
+        $argument,
+        ['\Google\Ads\GoogleAds\V19\Services\ProvideLeadFeedbackResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

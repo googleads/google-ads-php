@@ -28,6 +28,8 @@ use Google\Ads\GoogleAds\Lib\V19\GoogleAdsGapicClientTrait;
 use Google\Ads\GoogleAds\V19\Services\AppendLeadConversationRequest;
 use Google\Ads\GoogleAds\V19\Services\AppendLeadConversationResponse;
 use Google\Ads\GoogleAds\V19\Services\Conversation;
+use Google\Ads\GoogleAds\V19\Services\ProvideLeadFeedbackRequest;
+use Google\Ads\GoogleAds\V19\Services\ProvideLeadFeedbackResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
@@ -51,6 +53,7 @@ use Psr\Log\LoggerInterface;
  * contained within formatted names that are returned by the API.
  *
  * @method PromiseInterface<AppendLeadConversationResponse> appendLeadConversationAsync(AppendLeadConversationRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface<ProvideLeadFeedbackResponse> provideLeadFeedbackAsync(ProvideLeadFeedbackRequest $request, array $optionalArgs = [])
  */
 class LocalServicesLeadServiceClient
 {
@@ -249,5 +252,30 @@ class LocalServicesLeadServiceClient
     public function appendLeadConversation(AppendLeadConversationRequest $request, array $callOptions = []): AppendLeadConversationResponse
     {
         return $this->startApiCall('AppendLeadConversation', $request, $callOptions)->wait();
+    }
+
+    /**
+     * RPC to provide feedback on Local Services Lead resources.
+     *
+     * The async variant is
+     * {@see LocalServicesLeadServiceClient::provideLeadFeedbackAsync()} .
+     *
+     * @param ProvideLeadFeedbackRequest $request     A request to house fields associated with the call.
+     * @param array                      $callOptions {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
+     *           associative array of retry settings parameters. See the documentation on
+     *           {@see RetrySettings} for example usage.
+     * }
+     *
+     * @return ProvideLeadFeedbackResponse
+     *
+     * @throws ApiException Thrown if the API call fails.
+     */
+    public function provideLeadFeedback(ProvideLeadFeedbackRequest $request, array $callOptions = []): ProvideLeadFeedbackResponse
+    {
+        return $this->startApiCall('ProvideLeadFeedback', $request, $callOptions)->wait();
     }
 }

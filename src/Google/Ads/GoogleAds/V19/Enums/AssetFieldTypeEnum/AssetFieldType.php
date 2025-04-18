@@ -201,6 +201,12 @@ class AssetFieldType
      * Generated from protobuf enum <code>BUSINESS_MESSAGE = 31;</code>
      */
     const BUSINESS_MESSAGE = 31;
+    /**
+     * The asset is linked for use as a tall portrait marketing image.
+     *
+     * Generated from protobuf enum <code>TALL_PORTRAIT_MARKETING_IMAGE = 32;</code>
+     */
+    const TALL_PORTRAIT_MARKETING_IMAGE = 32;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -234,6 +240,7 @@ class AssetFieldType
         self::HOTEL_PROPERTY => 'HOTEL_PROPERTY',
         self::DEMAND_GEN_CAROUSEL_CARD => 'DEMAND_GEN_CAROUSEL_CARD',
         self::BUSINESS_MESSAGE => 'BUSINESS_MESSAGE',
+        self::TALL_PORTRAIT_MARKETING_IMAGE => 'TALL_PORTRAIT_MARKETING_IMAGE',
     ];
 
     public static function name($value)

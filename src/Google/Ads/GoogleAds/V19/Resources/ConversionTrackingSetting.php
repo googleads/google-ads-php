@@ -61,10 +61,10 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      */
     protected $enhanced_conversions_for_leads_enabled = false;
     /**
-     * Output only. The resource name of the customer where conversions are
-     * created and managed. This field is read-only.
+     * Immutable. The resource name of the customer where conversions are created
+     * and managed. This field is read-only.
      *
-     * Generated from protobuf field <code>string google_ads_conversion_customer = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>string google_ads_conversion_customer = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $google_ads_conversion_customer = '';
 
@@ -99,8 +99,8 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      *           for leads. If using cross-account conversion tracking, this value is
      *           inherited from the manager. This field is read-only.
      *     @type string $google_ads_conversion_customer
-     *           Output only. The resource name of the customer where conversions are
-     *           created and managed. This field is read-only.
+     *           Immutable. The resource name of the customer where conversions are created
+     *           and managed. This field is read-only.
      * }
      */
     public function __construct($data = NULL) {
@@ -287,10 +287,10 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The resource name of the customer where conversions are
-     * created and managed. This field is read-only.
+     * Immutable. The resource name of the customer where conversions are created
+     * and managed. This field is read-only.
      *
-     * Generated from protobuf field <code>string google_ads_conversion_customer = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>string google_ads_conversion_customer = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getGoogleAdsConversionCustomer()
@@ -299,10 +299,10 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The resource name of the customer where conversions are
-     * created and managed. This field is read-only.
+     * Immutable. The resource name of the customer where conversions are created
+     * and managed. This field is read-only.
      *
-     * Generated from protobuf field <code>string google_ads_conversion_customer = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>string google_ads_conversion_customer = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */

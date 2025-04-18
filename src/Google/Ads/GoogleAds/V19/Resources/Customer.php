@@ -99,9 +99,9 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     protected $call_reporting_setting = null;
     /**
-     * Output only. Conversion tracking setting for a customer.
+     * Immutable. Conversion tracking setting for a customer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.ConversionTrackingSetting conversion_tracking_setting = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.ConversionTrackingSetting conversion_tracking_setting = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $conversion_tracking_setting = null;
     /**
@@ -241,7 +241,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      *           Call reporting setting for a customer. Only mutable in an `update`
      *           operation.
      *     @type \Google\Ads\GoogleAds\V19\Resources\ConversionTrackingSetting $conversion_tracking_setting
-     *           Output only. Conversion tracking setting for a customer.
+     *           Immutable. Conversion tracking setting for a customer.
      *     @type \Google\Ads\GoogleAds\V19\Resources\RemarketingSetting $remarketing_setting
      *           Output only. Remarketing setting for a customer.
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $pay_per_conversion_eligibility_failure_reasons
@@ -740,9 +740,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Conversion tracking setting for a customer.
+     * Immutable. Conversion tracking setting for a customer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.ConversionTrackingSetting conversion_tracking_setting = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.ConversionTrackingSetting conversion_tracking_setting = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V19\Resources\ConversionTrackingSetting|null
      */
     public function getConversionTrackingSetting()
@@ -761,9 +761,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Conversion tracking setting for a customer.
+     * Immutable. Conversion tracking setting for a customer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.ConversionTrackingSetting conversion_tracking_setting = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v19.resources.ConversionTrackingSetting conversion_tracking_setting = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V19\Resources\ConversionTrackingSetting $var
      * @return $this
      */
