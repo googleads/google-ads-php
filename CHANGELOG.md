@@ -1,4 +1,4 @@
-## 27.1.0
+## 26.2.0
 *    Compatibility with v19.1 of the API: https://developers.google.com/google-ads/api/docs/release-notes
 
 ## 26.1.0
