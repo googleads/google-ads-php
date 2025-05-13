@@ -1,3 +1,6 @@
+## 27.2.0
+*    Removed support for v17 of the API: https://ads-developers.googleblog.com/2025/04/google-ads-api-v17-sunset-reminder.html
+
 ## 26.2.0
 *    Compatibility with v19.1 of the API: https://developers.google.com/google-ads/api/docs/release-notes
 
