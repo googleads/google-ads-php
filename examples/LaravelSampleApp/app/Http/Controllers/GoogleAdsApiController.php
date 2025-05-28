@@ -27,8 +27,11 @@ use Google\Ads\GoogleAds\V19\Services\CampaignOperation;
 use Google\Ads\GoogleAds\V19\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V19\Services\MutateCampaignsRequest;
 use Google\Ads\GoogleAds\V19\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Lib\V19\GoogleAdsException;
+use Google\ApiCore\ApiException;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 
 class GoogleAdsApiController extends Controller
@@ -127,39 +130,48 @@ class GoogleAdsApiController extends Controller
         $resultPageNo = intval($entriesPerPage * $pageNo / self::DEFAULT_PAGE_SIZE);
         // Fetches next pages in sequence and stores their page tokens until the page token of the
         // requested page is retrieved.
-        while (count($pageTokens) < $resultPageNo) {
-            // Fetches the next unknown page.
+        $response = null;
+        try {
+            while (count($pageTokens) < $resultPageNo) {
+                // Fetches the next unknown page.
+                $currentResponse = $googleAdsClient->getGoogleAdsServiceClient()->search(
+                    SearchGoogleAdsRequest::build($customerId, $query)
+                        // Requests to return the total results count. This is necessary to
+                        // determine how many pages of results exist.
+                        ->setReturnTotalResultsCount(true)
+                        // There is no need to go over the pages we already know the page tokens for.
+                        // Fetches the last page we know the page token for so that we can retrieve the
+                        // token of the page that comes after it.
+                        ->setPageToken(end($pageTokens))
+                );
+                if ($currentResponse->getPage()->hasNextPage()) {
+                    // Stores the page token of the page that comes after the one we just fetched if
+                    // any so that it can be reused later if necessary.
+                    $pageTokens[] = $currentResponse->getPage()->getNextPageToken();
+                } else {
+                    // Otherwise changes the requested page number for the latest page that we have
+                    // fetched until now, the requested page number was invalid.
+                    $resultPageNo = count($pageTokens);
+                }
+            }
+
+            // Fetches the actual page that we want to display the results of.
             $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
                 SearchGoogleAdsRequest::build($customerId, $query)
                     // Requests to return the total results count. This is necessary to
                     // determine how many pages of results exist.
                     ->setReturnTotalResultsCount(true)
-                    // There is no need to go over the pages we already know the page tokens for.
-                    // Fetches the last page we know the page token for so that we can retrieve the
-                    // token of the page that comes after it.
-                    ->setPageToken(end($pageTokens))
+                    // The page token of the requested page is in the page token list because of the
+                    // processing done in the previous loop.
+                    ->setPageToken($pageTokens[$resultPageNo])
             );
-            if ($response->getPage()->hasNextPage()) {
-                // Stores the page token of the page that comes after the one we just fetched if
-                // any so that it can be reused later if necessary.
-                $pageTokens[] = $response->getPage()->getNextPageToken();
-            } else {
-                // Otherwise changes the requested page number for the latest page that we have
-                // fetched until now, the requested page number was invalid.
-                $resultPageNo = count($pageTokens);
-            }
+        } catch (GoogleAdsException $e) {
+            Log::error($e->getMessage());
+            return view('error-page', ['error' => 'An error occurred while fetching the report. Please try again later. Details: ' . $e->getMessage()]);
+        } catch (ApiException $e) {
+            Log::error($e->getMessage());
+            return view('error-page', ['error' => 'An error occurred while fetching the report. Please try again later. Details: ' . $e->getMessage()]);
         }
-
-        // Fetches the actual page that we want to display the results of.
-        $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
-            SearchGoogleAdsRequest::build($customerId, $query)
-                // Requests to return the total results count. This is necessary to
-                // determine how many pages of results exist.
-                ->setReturnTotalResultsCount(true)
-                // The page token of the requested page is in the page token list because of the
-                // processing done in the previous loop.
-                ->setPageToken($pageTokens[$resultPageNo])
-        );
 
         // Determines the total number of results to display.
         // The total results count does not take into consideration the LIMIT clause of the query
@@ -234,31 +246,39 @@ class GoogleAdsApiController extends Controller
         $campaignOperation->setUpdateMask(FieldMasks::allSetFieldsOf($campaign));
 
         // Issues a mutate request to pause the campaign.
-        $googleAdsClient->getCampaignServiceClient()->mutateCampaigns(
-            MutateCampaignsRequest::build($customerId, [$campaignOperation])
-        );
+        try {
+            $googleAdsClient->getCampaignServiceClient()->mutateCampaigns(
+                MutateCampaignsRequest::build($customerId, [$campaignOperation])
+            );
 
-        // Builds the GAQL query to retrieve more information about the now paused campaign.
-        $query = sprintf(
-            "SELECT campaign.id, campaign.name, campaign.status FROM campaign " .
-            "WHERE campaign.resource_name = '%s' LIMIT 1",
-            $campaignResourceName
-        );
+            // Builds the GAQL query to retrieve more information about the now paused campaign.
+            $query = sprintf(
+                "SELECT campaign.id, campaign.name, campaign.status FROM campaign " .
+                "WHERE campaign.resource_name = '%s' LIMIT 1",
+                $campaignResourceName
+            );
 
-        // Searches the result.
-        $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
-            SearchGoogleAdsRequest::build($customerId, $query)
-        );
+            // Searches the result.
+            $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
+                SearchGoogleAdsRequest::build($customerId, $query)
+            );
 
-        // Fetches and converts the result as a POPO using JSON.
-        $campaign = json_decode(
-            $response->iterateAllElements()->current()->getCampaign()->serializeToJsonString(),
-            true
-        );
+            // Fetches and converts the result as a POPO using JSON.
+            $campaign = json_decode(
+                $response->iterateAllElements()->current()->getCampaign()->serializeToJsonString(),
+                true
+            );
 
-        return view(
-            'pause-result',
-            compact('customerId', 'campaign')
-        );
+            return view(
+                'pause-result',
+                compact('customerId', 'campaign')
+            );
+        } catch (GoogleAdsException $e) {
+            Log::error($e->getMessage());
+            return view('error-page', ['error' => 'An error occurred while pausing the campaign. Please try again later. Details: ' . $e->getMessage()]);
+        } catch (ApiException $e) {
+            Log::error($e->getMessage());
+            return view('error-page', ['error' => 'An error occurred while pausing the campaign. Please try again later. Details: ' . $e->getMessage()]);
+        }
     }
 }

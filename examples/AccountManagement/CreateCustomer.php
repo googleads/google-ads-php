@@ -62,7 +62,7 @@ class CreateCustomer
         try {
             self::runExample(
                 $googleAdsClient,
-                $options[ArgumentNames::MANAGER_CUSTOMER_ID] ?: self::MANAGER_CUSTOMER_ID
+                $options[ArgumentNames::MANAGER_CUSTOMER_ID] ?? self::MANAGER_CUSTOMER_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
