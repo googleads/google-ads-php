@@ -24,14 +24,14 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V19\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V19\ResourceNames;
-use Google\Ads\GoogleAds\V19\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V19\Resources\Recommendation;
-use Google\Ads\GoogleAds\V19\Services\DismissRecommendationRequest;
-use Google\Ads\GoogleAds\V19\Services\DismissRecommendationRequest\DismissRecommendationOperation;
+use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V20\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V20\ResourceNames;
+use Google\Ads\GoogleAds\V20\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V20\Resources\Recommendation;
+use Google\Ads\GoogleAds\V20\Services\DismissRecommendationRequest;
+use Google\Ads\GoogleAds\V20\Services\DismissRecommendationRequest\DismissRecommendationOperation;
 use Google\ApiCore\ApiException;
 
 /**

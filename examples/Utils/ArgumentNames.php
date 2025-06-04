@@ -123,6 +123,8 @@ final class ArgumentNames
     public const REPLACE_EXISTING_TREE = 'replaceExistingTree';
     public const QUANTITY = 'quantity';
     public const RUN_JOB = 'runJob';
+    public const SESSION_ATTRIBUTES_ENCODED = 'sessionAttributesEncoded';
+    public const SESSION_ATTRIBUTES_DICT = 'sessionAttributesDict';
     public const SITELINK_TEXT = 'sitelinkText';
     public const SQUARE_MARKETING_IMAGE_ASSET_ID = 'squareMarketingImageAssetId';
     public const START_DATE_TIME = "startDateTime";
@@ -240,6 +242,8 @@ final class ArgumentNames
             'Whether it should replace the existing listing group tree on an ad group/asset group',
         self::QUANTITY => 'The quantity',
         self::RUN_JOB => 'Whether it should run the offline user data job',
+        self::SESSION_ATTRIBUTES_ENCODED => 'a str token of encoded session atttributes',
+        self::SESSION_ATTRIBUTES_DICT => 'a string of session attribute key value pairs.',
         self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_ID => 'The ID of square marketing image asset',
         self::START_DATE_TIME => 'The start date time',
