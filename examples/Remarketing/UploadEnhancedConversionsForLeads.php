@@ -24,19 +24,21 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V19\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V19\ResourceNames;
-use Google\Ads\GoogleAds\V19\Common\Consent;
-use Google\Ads\GoogleAds\V19\Common\OfflineUserAddressInfo;
-use Google\Ads\GoogleAds\V19\Common\UserIdentifier;
-use Google\Ads\GoogleAds\V19\Enums\ConsentStatusEnum\ConsentStatus;
-use Google\Ads\GoogleAds\V19\Enums\UserIdentifierSourceEnum\UserIdentifierSource;
-use Google\Ads\GoogleAds\V19\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V19\Services\ClickConversion;
-use Google\Ads\GoogleAds\V19\Services\ClickConversionResult;
-use Google\Ads\GoogleAds\V19\Services\UploadClickConversionsRequest;
+use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V20\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V20\ResourceNames;
+use Google\Ads\GoogleAds\V20\Common\Consent;
+use Google\Ads\GoogleAds\V20\Common\OfflineUserAddressInfo;
+use Google\Ads\GoogleAds\V20\Common\UserIdentifier;
+use Google\Ads\GoogleAds\V20\Enums\ConsentStatusEnum\ConsentStatus;
+use Google\Ads\GoogleAds\V20\Enums\UserIdentifierSourceEnum\UserIdentifierSource;
+use Google\Ads\GoogleAds\V20\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V20\Services\ClickConversion;
+use Google\Ads\GoogleAds\V20\Services\ClickConversionResult;
+use Google\Ads\GoogleAds\V20\Services\UploadClickConversionsRequest;
+use Google\Ads\GoogleAds\V20\Services\SessionAttributeKeyValuePair;
+use Google\Ads\GoogleAds\V20\Services\SessionAttributesKeyValuePairs;
 use Google\ApiCore\ApiException;
 
 /**
@@ -61,6 +63,13 @@ class UploadEnhancedConversionsForLeads
     private const GCLID = null;
     // Optional: The consent status for ad user data.
     private const AD_USER_DATA_CONSENT = null;
+    // Optional: a str token of encoded session atttributes. Only one of
+    // SESSION_ATTRIBUTES_ENCODED or SESSION_ATTRIBUTES_DICT should be passed.
+    private const SESSION_ATTRIBUTES_ENCODED = null;
+    // Optional: a dict[str, str] of session attribute
+    // key value pairs. Only one of SESSION_ATTRIBUTES_ENCODED or
+    // SESSION_ATTRIBUTES_DICT should be passed.
+    private const SESSION_ATTRIBUTES_DICT = null;
 
     public static function main()
     {
@@ -73,8 +82,30 @@ class UploadEnhancedConversionsForLeads
             ArgumentNames::CONVERSION_VALUE => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::ORDER_ID => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::GCLID => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::AD_USER_DATA_CONSENT => GetOpt::OPTIONAL_ARGUMENT
+            ArgumentNames::AD_USER_DATA_CONSENT => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::SESSION_ATTRIBUTES_ENCODED => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::SESSION_ATTRIBUTES_DICT => GetOpt::OPTIONAL_ARGUMENT // e.g. "foo=bar, bcd=xyz"
         ]);
+
+        // Parse SESSION_ATTRIBUTES_DICT into an associative array if provided
+        $sessionAttributesDict = [];
+        if (!empty($options[ArgumentNames::SESSION_ATTRIBUTES_DICT])) {
+            $pairs = explode(',', $options[ArgumentNames::SESSION_ATTRIBUTES_DICT]);
+            foreach ($pairs as $pair) {
+                [$key, $value] = explode('=', $pair, 2);
+                $sessionAttributesDict[trim($key)] = trim($value);
+            }
+        }
+
+        if (
+            !empty($options[ArgumentNames::SESSION_ATTRIBUTES_ENCODED]) &&
+            !empty($options[ArgumentNames::SESSION_ATTRIBUTES_DICT])
+        ) {
+            throw new \InvalidArgumentException(
+                "Only one of 'session_attributes_encoded' or " .
+                "'session_attributes_dict' can be set."
+            );
+        }
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -97,7 +128,11 @@ class UploadEnhancedConversionsForLeads
                 $options[ArgumentNames::GCLID] ?: self::GCLID,
                 $options[ArgumentNames::AD_USER_DATA_CONSENT]
                     ? ConsentStatus::value($options[ArgumentNames::AD_USER_DATA_CONSENT])
-                    : self::AD_USER_DATA_CONSENT
+                    : self::AD_USER_DATA_CONSENT,
+                $options[ArgumentNames::SESSION_ATTRIBUTES_ENCODED] ?: self::SESSION_ATTRIBUTES_ENCODED,
+                // Check to make sure the unnested argument passed of SESSION_ATTRIBUTES_DICT is
+                // not the default empty array.
+                !empty($sessionAttributesDict) ? $sessionAttributesDict : self::SESSION_ATTRIBUTES_DICT
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -139,6 +174,8 @@ class UploadEnhancedConversionsForLeads
      * @param string|null $orderId the unique order ID (transaction ID) of the conversion
      * @param string|null $gclid the Google click ID of the conversion
      * @param int|null $adUserDataConsent the ad user data consent for the click
+     * @param string|null $sessionAttributesEncoded the str token of encoded session atttributes
+     * @param array<string,string>|null $sessionAttributesDict An associative array of str session attributes tokens
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -148,7 +185,12 @@ class UploadEnhancedConversionsForLeads
         float $conversionValue,
         ?string $orderId,
         ?string $gclid,
-        ?int $adUserDataConsent
+        ?int $adUserDataConsent,
+        // Only one of 'sessionAttributesEncoded' or
+        // 'sessionAttributesDict' can be passed at a time. If both are
+        // passed the example will fail with an InvalidArgumentException.
+        ?string $sessionAttributesEncoded,
+        ?array $sessionAttributesDict
     ) {
         // [START add_user_identifiers]
         // Creates a click conversion with the specified attributes.
@@ -187,7 +229,9 @@ class UploadEnhancedConversionsForLeads
             'conversionDateTime' => $conversionDateTime,
             'conversionValue' => $conversionValue,
             'currencyCode' => 'USD',
-            'adUserDataConsent' => $adUserDataConsent
+            'adUserDataConsent' => $adUserDataConsent,
+            'sessionAttributesEncoded' => $sessionAttributesEncoded,
+            'sessionAttributesDict' => $sessionAttributesDict
         ];
 
         // Creates a list for the user identifiers.
@@ -254,6 +298,30 @@ class UploadEnhancedConversionsForLeads
                 new Consent(['ad_user_data' => $rawRecord['adUserDataConsent']])
             );
         }
+
+        // [START add_session_attributes]
+        // Set one of the sessionAttributesEncoded or
+        // SessionAttributeKeyValuePair fields if either are provided.
+        if (!empty($sessionAttributesEncoded)) {
+            $clickConversion->setSessionAttributesEncoded($sessionAttributesEncoded);
+        } elseif (!empty($sessionAttributesDict)) {
+            // Create a new container object to hold key-value pairs.
+            $sessionAttributesKeyValuePairs = new SessionAttributesKeyValuePairs();
+            // Initialize an array to hold individual key-value pair messages.
+            $keyValuePairs = [];
+            // Append each key-value pair provided to the $keyValuePairs array
+            foreach ($sessionAttributesDict as $key => $value) {
+                $pair = new SessionAttributeKeyValuePair();
+                $pair->setSessionAttributeKey($key);
+                $pair->setSessionAttributeValue($value);
+                $keyValuePairs[] = $pair;
+            }
+            // Set the the full list of key-value pairs on the container object.
+            $sessionAttributesKeyValuePairs->setKeyValuePairs($keyValuePairs);
+            // Attach the container of key-value pairs to the ClickConversion object.
+            $clickConversion->setSessionAttributesKeyValuePairs($sessionAttributesKeyValuePairs);
+        }
+        // [END add_session_attributes]
         // [END add_conversion_details]
 
         // [START upload_conversion]

@@ -353,7 +353,7 @@ class FieldMasks
      */
     private static function isFieldRepeated(FieldDescriptor $fieldDescriptor)
     {
-        return $fieldDescriptor->getLabel() === GPBLabel::REPEATED;
+        return $fieldDescriptor->isRepeated();
     }
 
     // TODO: We can remove this function when it's supported in google/gax-php:

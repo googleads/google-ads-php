@@ -24,16 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V19\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V19\GoogleAdsException;
-use Google\Ads\GoogleAds\V19\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V19\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V19\Resources\Recommendation;
-use Google\Ads\GoogleAds\V19\Services\ApplyRecommendationOperation;
-use Google\Ads\GoogleAds\V19\Services\ApplyRecommendationRequest;
-use Google\Ads\GoogleAds\V19\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V19\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V20\GoogleAdsException;
+use Google\Ads\GoogleAds\V20\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V20\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V20\Resources\Recommendation;
+use Google\Ads\GoogleAds\V20\Services\ApplyRecommendationOperation;
+use Google\Ads\GoogleAds\V20\Services\ApplyRecommendationRequest;
+use Google\Ads\GoogleAds\V20\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V20\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
