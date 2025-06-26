@@ -34,7 +34,11 @@ function printExtensionInformation(string $extensionName)
 
 // Prints the general information about PHP.
 print '================= PHP GENERAL INFORMATION' . PHP_EOL;
-phpinfo(INFO_GENERAL) . PHP_EOL;
+// Uncomment the line below to get information about your
+// PHP locally, but make sure to keep it commented out on
+// any code accessible via the internet.
+
+// phpinfo(INFO_GENERAL) . PHP_EOL;
 
 // Prints information about the two optional PHP Extensions.
 print '================= PHP EXTENSION INFORMATION' . PHP_EOL;
