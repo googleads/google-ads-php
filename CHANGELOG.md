@@ -1,3 +1,6 @@
+## 29.0.0
+*    Security fixes, updated deprecated getLabel to isRepeated.
+
 ## 28.0.0
 *    Compatibility with v20.0 of the API: https://developers.google.com/google-ads/api/docs/release-notes
 
