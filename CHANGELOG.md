@@ -1,3 +1,7 @@
+## 30.0.0
+*    Fixed the potential break in v29.0.0 (due to dependency conflicts) by pinning the protobuf dependency to be <=4.30.0 and reverting back to the old getLabel method.
+*    Fixed the potential maximum call size error due to a bug in the GRPC C extension by pinning ext-grpc to be <=1.66.0
+
 ## 29.0.0
 *    Security fixes, updated deprecated getLabel to isRepeated.
 
