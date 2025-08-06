@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class BudgetInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. Current budget amount.
+     * Required. Current budget amount in micros.
      * This field is necessary for the following recommendation_types if
      * budget_info is set:
      * CAMPAIGN_BUDGET
@@ -32,7 +32,7 @@ class BudgetInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $current_budget
-     *           Required. Current budget amount.
+     *           Required. Current budget amount in micros.
      *           This field is necessary for the following recommendation_types if
      *           budget_info is set:
      *           CAMPAIGN_BUDGET
@@ -44,7 +44,7 @@ class BudgetInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Current budget amount.
+     * Required. Current budget amount in micros.
      * This field is necessary for the following recommendation_types if
      * budget_info is set:
      * CAMPAIGN_BUDGET
@@ -68,7 +68,7 @@ class BudgetInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Current budget amount.
+     * Required. Current budget amount in micros.
      * This field is necessary for the following recommendation_types if
      * budget_info is set:
      * CAMPAIGN_BUDGET

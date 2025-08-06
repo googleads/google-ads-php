@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Format-restricting control enabling usage of Video Responsive ads in
+ * Format-restricting control enabling usage of video responsive ads in
  * format defined Video campaigns (for example, non-skippable).
  *
  * Generated from protobuf message <code>google.ads.googleads.v20.resources.Campaign.VideoCampaignSettings.VideoAdFormatControl</code>

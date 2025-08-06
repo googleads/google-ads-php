@@ -25,43 +25,44 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V20\ResourceNames;
-use Google\Ads\GoogleAds\V20\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V20\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V20\Common\ManualCpc;
-use Google\Ads\GoogleAds\V20\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V20\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V20\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V20\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V20\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V20\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V20\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V20\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V20\Resources\Ad;
-use Google\Ads\GoogleAds\V20\Resources\AdGroup;
-use Google\Ads\GoogleAds\V20\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V20\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V20\Resources\BatchJob;
-use Google\Ads\GoogleAds\V20\Resources\Campaign;
-use Google\Ads\GoogleAds\V20\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V20\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V20\Services\AddBatchJobOperationsRequest;
-use Google\Ads\GoogleAds\V20\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V20\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V20\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V20\Services\BatchJobOperation;
-use Google\Ads\GoogleAds\V20\Services\BatchJobResult;
-use Google\Ads\GoogleAds\V20\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V20\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V20\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V20\Services\Client\BatchJobServiceClient;
-use Google\Ads\GoogleAds\V20\Services\ListBatchJobResultsRequest;
-use Google\Ads\GoogleAds\V20\Services\MutateBatchJobRequest;
-use Google\Ads\GoogleAds\V20\Services\MutateOperation;
-use Google\Ads\GoogleAds\V20\Services\RunBatchJobRequest;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V21\ResourceNames;
+use Google\Ads\GoogleAds\V21\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V21\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V21\Common\ManualCpc;
+use Google\Ads\GoogleAds\V21\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V21\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V21\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V21\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V21\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V21\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V21\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V21\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V21\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V21\Resources\Ad;
+use Google\Ads\GoogleAds\V21\Resources\AdGroup;
+use Google\Ads\GoogleAds\V21\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V21\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V21\Resources\BatchJob;
+use Google\Ads\GoogleAds\V21\Resources\Campaign;
+use Google\Ads\GoogleAds\V21\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V21\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V21\Services\AddBatchJobOperationsRequest;
+use Google\Ads\GoogleAds\V21\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V21\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V21\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V21\Services\BatchJobOperation;
+use Google\Ads\GoogleAds\V21\Services\BatchJobResult;
+use Google\Ads\GoogleAds\V21\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V21\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V21\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V21\Services\Client\BatchJobServiceClient;
+use Google\Ads\GoogleAds\V21\Services\ListBatchJobResultsRequest;
+use Google\Ads\GoogleAds\V21\Services\MutateBatchJobRequest;
+use Google\Ads\GoogleAds\V21\Services\MutateOperation;
+use Google\Ads\GoogleAds\V21\Services\RunBatchJobRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\OperationResponse;
 
@@ -421,6 +422,9 @@ class AddCompleteCampaignsUsingBatchJob
                 // Sets the bidding strategy and budget.
                 'manual_cpc' => new ManualCpc(),
                 'campaign_budget' => $campaignBudgetResourceName,
+                // Declare whether or not this campaign serves political ads targeting the EU.
+                'contains_eu_political_advertising' =>
+                    EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
             ]);
 
             // Creates a campaign operation and add it to the operations list.

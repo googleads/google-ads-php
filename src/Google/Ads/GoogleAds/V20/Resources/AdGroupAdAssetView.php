@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A link between an AdGroupAd and an Asset. AdGroupAdAssetView supports AppAds,
- * Demand Gen camapaigns, and Responsive Search Ads.
+ * Demand Gen campaigns, and Responsive Search Ads.
  *
  * Generated from protobuf message <code>google.ads.googleads.v20.resources.AdGroupAdAssetView</code>
  */

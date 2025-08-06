@@ -8,7 +8,7 @@ use UnexpectedValueException;
 
 /**
  * Enum describing the allowed minimum duration values for videos used in
- * non-skippable Responsive Video Ads.
+ * non-skippable video responsive ads.
  *
  * Protobuf type <code>google.ads.googleads.v20.enums.NonSkippableMinDurationEnum.NonSkippableMinDuration</code>
  */

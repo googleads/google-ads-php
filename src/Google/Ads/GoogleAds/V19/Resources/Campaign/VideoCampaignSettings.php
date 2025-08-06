@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class VideoCampaignSettings extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Inventory control for responsive ad containers in reach campaigns.
+     * Inventory control for video responsive ads in reach campaigns.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v19.resources.Campaign.VideoCampaignSettings.VideoAdInventoryControl video_ad_inventory_control = 1;</code>
      */
@@ -29,7 +29,7 @@ class VideoCampaignSettings extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V19\Resources\Campaign\VideoCampaignSettings\VideoAdInventoryControl $video_ad_inventory_control
-     *           Inventory control for responsive ad containers in reach campaigns.
+     *           Inventory control for video responsive ads in reach campaigns.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ class VideoCampaignSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Inventory control for responsive ad containers in reach campaigns.
+     * Inventory control for video responsive ads in reach campaigns.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v19.resources.Campaign.VideoCampaignSettings.VideoAdInventoryControl video_ad_inventory_control = 1;</code>
      * @return \Google\Ads\GoogleAds\V19\Resources\Campaign\VideoCampaignSettings\VideoAdInventoryControl|null
@@ -59,7 +59,7 @@ class VideoCampaignSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Inventory control for responsive ad containers in reach campaigns.
+     * Inventory control for video responsive ads in reach campaigns.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v19.resources.Campaign.VideoCampaignSettings.VideoAdInventoryControl video_ad_inventory_control = 1;</code>
      * @param \Google\Ads\GoogleAds\V19\Resources\Campaign\VideoCampaignSettings\VideoAdInventoryControl $var

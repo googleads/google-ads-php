@@ -24,14 +24,14 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V20\ResourceNames;
-use Google\Ads\GoogleAds\V20\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V20\Resources\CampaignLabel;
-use Google\Ads\GoogleAds\V20\Services\CampaignLabelOperation;
-use Google\Ads\GoogleAds\V20\Services\MutateCampaignLabelsRequest;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V21\ResourceNames;
+use Google\Ads\GoogleAds\V21\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V21\Resources\CampaignLabel;
+use Google\Ads\GoogleAds\V21\Services\CampaignLabelOperation;
+use Google\Ads\GoogleAds\V21\Services\MutateCampaignLabelsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example adds a campaign label to a list of campaigns. */

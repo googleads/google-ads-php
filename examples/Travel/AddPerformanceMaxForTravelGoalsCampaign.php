@@ -25,46 +25,47 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V20\ResourceNames;
-use Google\Ads\GoogleAds\V20\Common\CallToActionAsset;
-use Google\Ads\GoogleAds\V20\Common\HotelPropertyAsset;
-use Google\Ads\GoogleAds\V20\Common\ImageAsset;
-use Google\Ads\GoogleAds\V20\Common\MaximizeConversionValue;
-use Google\Ads\GoogleAds\V20\Common\TextAsset;
-use Google\Ads\GoogleAds\V20\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V20\Enums\AssetFieldTypeEnum\AssetFieldType;
-use Google\Ads\GoogleAds\V20\Enums\AssetGroupStatusEnum\AssetGroupStatus;
-use Google\Ads\GoogleAds\V20\Enums\AssetSetTypeEnum\AssetSetType;
-use Google\Ads\GoogleAds\V20\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V20\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V20\Enums\HotelAssetSuggestionStatusEnum\HotelAssetSuggestionStatus;
-use Google\Ads\GoogleAds\V20\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V20\Resources\Asset;
-use Google\Ads\GoogleAds\V20\Resources\AssetGroup;
-use Google\Ads\GoogleAds\V20\Resources\AssetGroupAsset;
-use Google\Ads\GoogleAds\V20\Resources\AssetSet;
-use Google\Ads\GoogleAds\V20\Resources\AssetSetAsset;
-use Google\Ads\GoogleAds\V20\Resources\Campaign;
-use Google\Ads\GoogleAds\V20\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V20\Services\AssetGroupAssetOperation;
-use Google\Ads\GoogleAds\V20\Services\AssetGroupOperation;
-use Google\Ads\GoogleAds\V20\Services\AssetOperation;
-use Google\Ads\GoogleAds\V20\Services\AssetSetAssetOperation;
-use Google\Ads\GoogleAds\V20\Services\AssetSetOperation;
-use Google\Ads\GoogleAds\V20\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V20\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V20\Services\HotelAssetSuggestion;
-use Google\Ads\GoogleAds\V20\Services\HotelImageAsset;
-use Google\Ads\GoogleAds\V20\Services\HotelTextAsset;
-use Google\Ads\GoogleAds\V20\Services\MutateAssetSetsRequest;
-use Google\Ads\GoogleAds\V20\Services\MutateGoogleAdsRequest;
-use Google\Ads\GoogleAds\V20\Services\MutateGoogleAdsResponse;
-use Google\Ads\GoogleAds\V20\Services\MutateOperation;
-use Google\Ads\GoogleAds\V20\Services\MutateOperationResponse;
-use Google\Ads\GoogleAds\V20\Services\SuggestTravelAssetsRequest;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V21\ResourceNames;
+use Google\Ads\GoogleAds\V21\Common\CallToActionAsset;
+use Google\Ads\GoogleAds\V21\Common\HotelPropertyAsset;
+use Google\Ads\GoogleAds\V21\Common\ImageAsset;
+use Google\Ads\GoogleAds\V21\Common\MaximizeConversionValue;
+use Google\Ads\GoogleAds\V21\Common\TextAsset;
+use Google\Ads\GoogleAds\V21\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V21\Enums\AssetFieldTypeEnum\AssetFieldType;
+use Google\Ads\GoogleAds\V21\Enums\AssetGroupStatusEnum\AssetGroupStatus;
+use Google\Ads\GoogleAds\V21\Enums\AssetSetTypeEnum\AssetSetType;
+use Google\Ads\GoogleAds\V21\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V21\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V21\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V21\Enums\HotelAssetSuggestionStatusEnum\HotelAssetSuggestionStatus;
+use Google\Ads\GoogleAds\V21\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V21\Resources\Asset;
+use Google\Ads\GoogleAds\V21\Resources\AssetGroup;
+use Google\Ads\GoogleAds\V21\Resources\AssetGroupAsset;
+use Google\Ads\GoogleAds\V21\Resources\AssetSet;
+use Google\Ads\GoogleAds\V21\Resources\AssetSetAsset;
+use Google\Ads\GoogleAds\V21\Resources\Campaign;
+use Google\Ads\GoogleAds\V21\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V21\Services\AssetGroupAssetOperation;
+use Google\Ads\GoogleAds\V21\Services\AssetGroupOperation;
+use Google\Ads\GoogleAds\V21\Services\AssetOperation;
+use Google\Ads\GoogleAds\V21\Services\AssetSetAssetOperation;
+use Google\Ads\GoogleAds\V21\Services\AssetSetOperation;
+use Google\Ads\GoogleAds\V21\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V21\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V21\Services\HotelAssetSuggestion;
+use Google\Ads\GoogleAds\V21\Services\HotelImageAsset;
+use Google\Ads\GoogleAds\V21\Services\HotelTextAsset;
+use Google\Ads\GoogleAds\V21\Services\MutateAssetSetsRequest;
+use Google\Ads\GoogleAds\V21\Services\MutateGoogleAdsRequest;
+use Google\Ads\GoogleAds\V21\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V21\Services\MutateOperation;
+use Google\Ads\GoogleAds\V21\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\V21\Services\SuggestTravelAssetsRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Serializer;
 
@@ -555,6 +556,10 @@ class AddPerformanceMaxForTravelGoalsCampaign
                     // Performance Max campaigns have an advertising_channel_type of
                     // PERFORMANCE_MAX. The advertising_channel_sub_type should not be set.
                     'advertising_channel_type' => AdvertisingChannelType::PERFORMANCE_MAX,
+
+                    // Declare whether or not this campaign serves political ads targeting the EU.
+                    'contains_eu_political_advertising' =>
+                        EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING,
 
                     // To create a Performance Max for travel goals campaign, you need to set
                     // `hotel_property_asset_set`.

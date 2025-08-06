@@ -208,6 +208,13 @@ class ExperimentError
      * Generated from protobuf enum <code>INVALID_DURATION_FOR_AN_EXPERIMENT = 30;</code>
      */
     const INVALID_DURATION_FOR_AN_EXPERIMENT = 30;
+    /**
+     * The experiment's campaigns must self-declare whether they contain
+     * political advertising that targets the European Union.
+     *
+     * Generated from protobuf enum <code>MISSING_EU_POLITICAL_ADVERTISING_SELF_DECLARATION = 31;</code>
+     */
+    const MISSING_EU_POLITICAL_ADVERTISING_SELF_DECLARATION = 31;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -241,6 +248,7 @@ class ExperimentError
         self::CANNOT_ADD_CAMPAIGN_WITH_DEPRECATED_AD_TYPES => 'CANNOT_ADD_CAMPAIGN_WITH_DEPRECATED_AD_TYPES',
         self::CANNOT_ENABLE_SYNC_FOR_UNSUPPORTED_EXPERIMENT_TYPE => 'CANNOT_ENABLE_SYNC_FOR_UNSUPPORTED_EXPERIMENT_TYPE',
         self::INVALID_DURATION_FOR_AN_EXPERIMENT => 'INVALID_DURATION_FOR_AN_EXPERIMENT',
+        self::MISSING_EU_POLITICAL_ADVERTISING_SELF_DECLARATION => 'MISSING_EU_POLITICAL_ADVERTISING_SELF_DECLARATION',
     ];
 
     public static function name($value)

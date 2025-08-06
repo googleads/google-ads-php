@@ -76,13 +76,17 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      */
     public function getTargetSpendMicros()
     {
-        @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
+        if (isset($this->target_spend_micros)) {
+            @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->target_spend_micros) ? $this->target_spend_micros : 0;
     }
 
     public function hasTargetSpendMicros()
     {
-        @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
+        if (isset($this->target_spend_micros)) {
+            @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->target_spend_micros);
     }
 

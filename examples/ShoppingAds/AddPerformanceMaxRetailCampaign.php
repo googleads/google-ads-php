@@ -25,51 +25,52 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V20\ResourceNames;
-use Google\Ads\GoogleAds\V20\Common\ImageAsset;
-use Google\Ads\GoogleAds\V20\Common\LanguageInfo;
-use Google\Ads\GoogleAds\V20\Common\LocationInfo;
-use Google\Ads\GoogleAds\V20\Common\MaximizeConversionValue;
-use Google\Ads\GoogleAds\V20\Common\TextAsset;
-use Google\Ads\GoogleAds\V20\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V20\Enums\AssetFieldTypeEnum\AssetFieldType;
-use Google\Ads\GoogleAds\V20\Enums\AssetGroupStatusEnum\AssetGroupStatus;
-use Google\Ads\GoogleAds\V20\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V20\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V20\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
-use Google\Ads\GoogleAds\V20\Enums\ConversionOriginEnum\ConversionOrigin;
-use Google\Ads\GoogleAds\V20\Enums\ListingGroupFilterListingSourceEnum\ListingGroupFilterListingSource;
-use Google\Ads\GoogleAds\V20\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
-use Google\Ads\GoogleAds\V20\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V20\Resources\Asset;
-use Google\Ads\GoogleAds\V20\Resources\AssetGroup;
-use Google\Ads\GoogleAds\V20\Resources\AssetGroupAsset;
-use Google\Ads\GoogleAds\V20\Resources\AssetGroupListingGroupFilter;
-use Google\Ads\GoogleAds\V20\Resources\Campaign;
-use Google\Ads\GoogleAds\V20\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V20\Resources\CampaignAsset;
-use Google\Ads\GoogleAds\V20\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V20\Resources\CampaignConversionGoal;
-use Google\Ads\GoogleAds\V20\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V20\Services\AssetGroupAssetOperation;
-use Google\Ads\GoogleAds\V20\Services\AssetGroupListingGroupFilterOperation;
-use Google\Ads\GoogleAds\V20\Services\AssetGroupOperation;
-use Google\Ads\GoogleAds\V20\Services\AssetOperation;
-use Google\Ads\GoogleAds\V20\Services\CampaignAssetOperation;
-use Google\Ads\GoogleAds\V20\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V20\Services\CampaignConversionGoalOperation;
-use Google\Ads\GoogleAds\V20\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V20\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V20\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V20\Services\MutateGoogleAdsRequest;
-use Google\Ads\GoogleAds\V20\Services\MutateGoogleAdsResponse;
-use Google\Ads\GoogleAds\V20\Services\MutateOperation;
-use Google\Ads\GoogleAds\V20\Services\MutateOperationResponse;
-use Google\Ads\GoogleAds\V20\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Util\V21\ResourceNames;
+use Google\Ads\GoogleAds\V21\Common\ImageAsset;
+use Google\Ads\GoogleAds\V21\Common\LanguageInfo;
+use Google\Ads\GoogleAds\V21\Common\LocationInfo;
+use Google\Ads\GoogleAds\V21\Common\MaximizeConversionValue;
+use Google\Ads\GoogleAds\V21\Common\TextAsset;
+use Google\Ads\GoogleAds\V21\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V21\Enums\AssetFieldTypeEnum\AssetFieldType;
+use Google\Ads\GoogleAds\V21\Enums\AssetGroupStatusEnum\AssetGroupStatus;
+use Google\Ads\GoogleAds\V21\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V21\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V21\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
+use Google\Ads\GoogleAds\V21\Enums\ConversionOriginEnum\ConversionOrigin;
+use Google\Ads\GoogleAds\V21\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V21\Enums\ListingGroupFilterListingSourceEnum\ListingGroupFilterListingSource;
+use Google\Ads\GoogleAds\V21\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
+use Google\Ads\GoogleAds\V21\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V21\Resources\Asset;
+use Google\Ads\GoogleAds\V21\Resources\AssetGroup;
+use Google\Ads\GoogleAds\V21\Resources\AssetGroupAsset;
+use Google\Ads\GoogleAds\V21\Resources\AssetGroupListingGroupFilter;
+use Google\Ads\GoogleAds\V21\Resources\Campaign;
+use Google\Ads\GoogleAds\V21\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V21\Resources\CampaignAsset;
+use Google\Ads\GoogleAds\V21\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V21\Resources\CampaignConversionGoal;
+use Google\Ads\GoogleAds\V21\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V21\Services\AssetGroupAssetOperation;
+use Google\Ads\GoogleAds\V21\Services\AssetGroupListingGroupFilterOperation;
+use Google\Ads\GoogleAds\V21\Services\AssetGroupOperation;
+use Google\Ads\GoogleAds\V21\Services\AssetOperation;
+use Google\Ads\GoogleAds\V21\Services\CampaignAssetOperation;
+use Google\Ads\GoogleAds\V21\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V21\Services\CampaignConversionGoalOperation;
+use Google\Ads\GoogleAds\V21\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V21\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V21\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V21\Services\MutateGoogleAdsRequest;
+use Google\Ads\GoogleAds\V21\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V21\Services\MutateOperation;
+use Google\Ads\GoogleAds\V21\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\V21\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Serializer;
 
@@ -390,7 +391,9 @@ class AddPerformanceMaxRetailCampaign
                         // Removing the feed_label field will use products from all feeds.
                         // 'feed_label' => 'INSERT_FEED_LABEL_HERE'
                     ]),
-
+                    // Declare whether or not this campaign serves political ads targeting the EU.
+                    'contains_eu_political_advertising' =>
+                        EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
                     // Optional fields.
                     'start_date' => date('Ymd', strtotime('+1 day')),
                     'end_date' => date('Ymd', strtotime('+365 days'))

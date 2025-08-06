@@ -26,7 +26,7 @@ class VideoAdFormatRestriction
      */
     const UNKNOWN = 1;
     /**
-     * Non-skippable in-stream Video Responsive Ad.
+     * Non-skippable in-stream video responsive ad.
      *
      * Generated from protobuf enum <code>NON_SKIPPABLE_IN_STREAM = 2;</code>
      */

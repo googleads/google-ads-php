@@ -9,28 +9,28 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * For campaigns using responsive ad containers inventory controls determine
- * on which inventories the ads can be shown. This only applies for
- * campaigns with the bidding strategies TARGET_CPM and FIXED_CPM.
+ * For campaigns using video responsive ads inventory controls determine on
+ * which inventories the ads can be shown. This only applies for campaigns
+ * with the bidding strategies TARGET_CPM and FIXED_CPM.
  *
  * Generated from protobuf message <code>google.ads.googleads.v19.resources.Campaign.VideoCampaignSettings.VideoAdInventoryControl</code>
  */
 class VideoAdInventoryControl extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Determine if VideoResponsiveAds can be used for in-stream video ads.
+     * Determine if video responsive ads can be used for in-stream video ads.
      *
      * Generated from protobuf field <code>optional bool allow_in_stream = 1;</code>
      */
     protected $allow_in_stream = null;
     /**
-     * Determine if VideoResponsiveAds can be used for in-feed video ads.
+     * Determine if video responsive ads can be used for in-feed video ads.
      *
      * Generated from protobuf field <code>optional bool allow_in_feed = 2;</code>
      */
     protected $allow_in_feed = null;
     /**
-     * Determine if VideoResponsiveAds can be used as shorts format.
+     * Determine if video responsive ads can be used as shorts format.
      *
      * Generated from protobuf field <code>optional bool allow_shorts = 3;</code>
      */
@@ -43,11 +43,11 @@ class VideoAdInventoryControl extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $allow_in_stream
-     *           Determine if VideoResponsiveAds can be used for in-stream video ads.
+     *           Determine if video responsive ads can be used for in-stream video ads.
      *     @type bool $allow_in_feed
-     *           Determine if VideoResponsiveAds can be used for in-feed video ads.
+     *           Determine if video responsive ads can be used for in-feed video ads.
      *     @type bool $allow_shorts
-     *           Determine if VideoResponsiveAds can be used as shorts format.
+     *           Determine if video responsive ads can be used as shorts format.
      * }
      */
     public function __construct($data = NULL) {
@@ -56,7 +56,7 @@ class VideoAdInventoryControl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Determine if VideoResponsiveAds can be used for in-stream video ads.
+     * Determine if video responsive ads can be used for in-stream video ads.
      *
      * Generated from protobuf field <code>optional bool allow_in_stream = 1;</code>
      * @return bool
@@ -77,7 +77,7 @@ class VideoAdInventoryControl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Determine if VideoResponsiveAds can be used for in-stream video ads.
+     * Determine if video responsive ads can be used for in-stream video ads.
      *
      * Generated from protobuf field <code>optional bool allow_in_stream = 1;</code>
      * @param bool $var
@@ -92,7 +92,7 @@ class VideoAdInventoryControl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Determine if VideoResponsiveAds can be used for in-feed video ads.
+     * Determine if video responsive ads can be used for in-feed video ads.
      *
      * Generated from protobuf field <code>optional bool allow_in_feed = 2;</code>
      * @return bool
@@ -113,7 +113,7 @@ class VideoAdInventoryControl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Determine if VideoResponsiveAds can be used for in-feed video ads.
+     * Determine if video responsive ads can be used for in-feed video ads.
      *
      * Generated from protobuf field <code>optional bool allow_in_feed = 2;</code>
      * @param bool $var
@@ -128,7 +128,7 @@ class VideoAdInventoryControl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Determine if VideoResponsiveAds can be used as shorts format.
+     * Determine if video responsive ads can be used as shorts format.
      *
      * Generated from protobuf field <code>optional bool allow_shorts = 3;</code>
      * @return bool
@@ -149,7 +149,7 @@ class VideoAdInventoryControl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Determine if VideoResponsiveAds can be used as shorts format.
+     * Determine if video responsive ads can be used as shorts format.
      *
      * Generated from protobuf field <code>optional bool allow_shorts = 3;</code>
      * @param bool $var

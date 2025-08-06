@@ -443,6 +443,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v20.resources.Campaign.BrandGuidelines brand_guidelines = 98;</code>
      */
     protected $brand_guidelines = null;
+    /**
+     * The advertiser should self-declare whether this campaign contains
+     * political advertising content targeted towards the European Union.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v20.enums.EuPoliticalAdvertisingStatusEnum.EuPoliticalAdvertisingStatus contains_eu_political_advertising = 102;</code>
+     */
+    protected $contains_eu_political_advertising = 0;
     protected $campaign_bidding_strategy;
 
     /**
@@ -655,6 +662,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           These settings control how your brand appears in automatically generated
      *           assets and formats within this campaign. Note: These settings can only be
      *           used for Performance Max campaigns that have Brand Guidelines enabled.
+     *     @type int $contains_eu_political_advertising
+     *           The advertiser should self-declare whether this campaign contains
+     *           political advertising content targeted towards the European Union.
      *     @type string $bidding_strategy
      *           The resource name of the portfolio bidding strategy used by the campaign.
      *     @type \Google\Ads\GoogleAds\V20\Common\Commission $commission
@@ -2696,6 +2706,34 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V20\Resources\Campaign\BrandGuidelines::class);
         $this->brand_guidelines = $var;
+
+        return $this;
+    }
+
+    /**
+     * The advertiser should self-declare whether this campaign contains
+     * political advertising content targeted towards the European Union.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v20.enums.EuPoliticalAdvertisingStatusEnum.EuPoliticalAdvertisingStatus contains_eu_political_advertising = 102;</code>
+     * @return int
+     */
+    public function getContainsEuPoliticalAdvertising()
+    {
+        return $this->contains_eu_political_advertising;
+    }
+
+    /**
+     * The advertiser should self-declare whether this campaign contains
+     * political advertising content targeted towards the European Union.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v20.enums.EuPoliticalAdvertisingStatusEnum.EuPoliticalAdvertisingStatus contains_eu_political_advertising = 102;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setContainsEuPoliticalAdvertising($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V20\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus::class);
+        $this->contains_eu_political_advertising = $var;
 
         return $this;
     }

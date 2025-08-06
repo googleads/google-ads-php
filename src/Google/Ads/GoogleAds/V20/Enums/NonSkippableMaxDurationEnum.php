@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Container for enum describing the allowed maximum duration values for videos
- * used in non-skippable Responsive Video Ads.
+ * used in non-skippable video responsive ads.
  *
  * Generated from protobuf message <code>google.ads.googleads.v20.enums.NonSkippableMaxDurationEnum</code>
  */
