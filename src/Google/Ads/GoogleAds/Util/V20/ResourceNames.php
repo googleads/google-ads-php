@@ -964,7 +964,7 @@ final class ResourceNames
         $customerId,
         $combinedAudienceId
     ): string {
-        return BatchJobServiceClient::combinedAudienceName(
+        return AdGroupCriterionServiceClient::combinedAudienceName(
             $customerId,
             $combinedAudienceId
         );
@@ -1628,7 +1628,7 @@ final class ResourceNames
     public static function forMobileAppCategoryConstant(
         $mobileAppCategoryId
     ): string {
-        return BatchJobServiceClient::mobileAppCategoryConstantName(
+        return AdGroupCriterionServiceClient::mobileAppCategoryConstantName(
             $mobileAppCategoryId
         );
     }
@@ -1860,7 +1860,7 @@ final class ResourceNames
     public static function forTopicConstant(
         $topicId
     ): string {
-        return BatchJobServiceClient::topicConstantName(
+        return AdGroupCriterionServiceClient::topicConstantName(
             $topicId
         );
     }

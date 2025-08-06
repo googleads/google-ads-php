@@ -32,8 +32,7 @@ class ConversionUploadError
      */
     const TOO_MANY_CONVERSIONS_IN_REQUEST = 2;
     /**
-     * The imported gclid could not be decoded. Make sure you have not modified
-     * the click IDs.
+     * The imported gclid could not be decoded.
      *
      * Generated from protobuf enum <code>UNPARSEABLE_GCLID = 3;</code>
      */

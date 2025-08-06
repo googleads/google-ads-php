@@ -9,7 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A Campaign search term view.
+ * This report provides a high-level view of search demand at the campaign
+ * level by grouping similar search terms into categories and showing their
+ * search volume.
  * Historical data is available starting March 2023.
  *
  * Generated from protobuf message <code>google.ads.googleads.v19.resources.CampaignSearchTermInsight</code>

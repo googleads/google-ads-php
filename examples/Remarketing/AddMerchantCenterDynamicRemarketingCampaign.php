@@ -24,41 +24,42 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V20\ResourceNames;
-use Google\Ads\GoogleAds\V20\Common\AdImageAsset;
-use Google\Ads\GoogleAds\V20\Common\AdTextAsset;
-use Google\Ads\GoogleAds\V20\Common\ImageAsset;
-use Google\Ads\GoogleAds\V20\Common\ManualCpc;
-use Google\Ads\GoogleAds\V20\Common\ResponsiveDisplayAdInfo;
-use Google\Ads\GoogleAds\V20\Common\UserListInfo;
-use Google\Ads\GoogleAds\V20\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V20\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V20\Enums\AssetTypeEnum\AssetType;
-use Google\Ads\GoogleAds\V20\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V20\Enums\DisplayAdFormatSettingEnum\DisplayAdFormatSetting;
-use Google\Ads\GoogleAds\V20\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V20\Resources\Ad;
-use Google\Ads\GoogleAds\V20\Resources\AdGroup;
-use Google\Ads\GoogleAds\V20\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V20\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V20\Resources\Asset;
-use Google\Ads\GoogleAds\V20\Resources\Campaign;
-use Google\Ads\GoogleAds\V20\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V20\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V20\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V20\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V20\Services\AssetOperation;
-use Google\Ads\GoogleAds\V20\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V20\Services\MutateAdGroupAdsRequest;
-use Google\Ads\GoogleAds\V20\Services\MutateAdGroupCriteriaRequest;
-use Google\Ads\GoogleAds\V20\Services\MutateAdGroupsRequest;
-use Google\Ads\GoogleAds\V20\Services\MutateAssetResult;
-use Google\Ads\GoogleAds\V20\Services\MutateAssetsRequest;
-use Google\Ads\GoogleAds\V20\Services\MutateCampaignsRequest;
+use Google\Ads\GoogleAds\Util\V21\ResourceNames;
+use Google\Ads\GoogleAds\V21\Common\AdImageAsset;
+use Google\Ads\GoogleAds\V21\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V21\Common\ImageAsset;
+use Google\Ads\GoogleAds\V21\Common\ManualCpc;
+use Google\Ads\GoogleAds\V21\Common\ResponsiveDisplayAdInfo;
+use Google\Ads\GoogleAds\V21\Common\UserListInfo;
+use Google\Ads\GoogleAds\V21\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V21\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V21\Enums\AssetTypeEnum\AssetType;
+use Google\Ads\GoogleAds\V21\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V21\Enums\DisplayAdFormatSettingEnum\DisplayAdFormatSetting;
+use Google\Ads\GoogleAds\V21\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V21\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V21\Resources\Ad;
+use Google\Ads\GoogleAds\V21\Resources\AdGroup;
+use Google\Ads\GoogleAds\V21\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V21\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V21\Resources\Asset;
+use Google\Ads\GoogleAds\V21\Resources\Campaign;
+use Google\Ads\GoogleAds\V21\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V21\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V21\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V21\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V21\Services\AssetOperation;
+use Google\Ads\GoogleAds\V21\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V21\Services\MutateAdGroupAdsRequest;
+use Google\Ads\GoogleAds\V21\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V21\Services\MutateAdGroupsRequest;
+use Google\Ads\GoogleAds\V21\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\V21\Services\MutateAssetsRequest;
+use Google\Ads\GoogleAds\V21\Services\MutateCampaignsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -196,6 +197,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
             'status' => CampaignStatus::PAUSED,
             'campaign_budget' => ResourceNames::forCampaignBudget($customerId, $campaignBudgetId),
             'manual_cpc' => new ManualCpc(),
+            // Declare whether or not this campaign serves political ads targeting the EU.
+            'contains_eu_political_advertising' =>
+                EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
             // This connects the campaign to the merchant center account.
             'shopping_setting' => $shoppingSettings
         ]);

@@ -142,7 +142,7 @@ Follow the below steps if you want to try our code examples.
 ### Instantiate a client
 
 To issue requests via the Google Ads API, you first need to create a
-[GoogleAdsClient](https://github.com/googleads/google-ads-php/blob/HEAD/src/Google/Ads/GoogleAds/Lib/V20/GoogleAdsClient.php).
+[GoogleAdsClient](https://github.com/googleads/google-ads-php/blob/HEAD/src/Google/Ads/GoogleAds/Lib/V21/GoogleAdsClient.php).
 
 For more information on how to configure a client when instantiating it, see the
 [configuration guide](https://developers.google.com/google-ads/api/docs/client-libs/php/configuration).

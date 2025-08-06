@@ -113,7 +113,8 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Immutable. The name of the ad. This is only used to be able to identify the
      * ad. It does not need to be unique and does not affect the served ad. The
      * name field is currently only supported for DisplayUploadAd, ImageAd,
-     * ShoppingComparisonListingAd and VideoAd.
+     * LegacyAppInstallAd, ShoppingComparisonListingAd, VideoAd, VideoResponsiveAd
+     * and DemandGen ads.
      *
      * Generated from protobuf field <code>optional string name = 47 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -179,7 +180,8 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           Immutable. The name of the ad. This is only used to be able to identify the
      *           ad. It does not need to be unique and does not affect the served ad. The
      *           name field is currently only supported for DisplayUploadAd, ImageAd,
-     *           ShoppingComparisonListingAd and VideoAd.
+     *           LegacyAppInstallAd, ShoppingComparisonListingAd, VideoAd, VideoResponsiveAd
+     *           and DemandGen ads.
      *     @type int $system_managed_resource_source
      *           Output only. If this ad is system managed, then this field will indicate
      *           the source. This field is read-only.
@@ -670,7 +672,8 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Immutable. The name of the ad. This is only used to be able to identify the
      * ad. It does not need to be unique and does not affect the served ad. The
      * name field is currently only supported for DisplayUploadAd, ImageAd,
-     * ShoppingComparisonListingAd and VideoAd.
+     * LegacyAppInstallAd, ShoppingComparisonListingAd, VideoAd, VideoResponsiveAd
+     * and DemandGen ads.
      *
      * Generated from protobuf field <code>optional string name = 47 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
@@ -694,7 +697,8 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Immutable. The name of the ad. This is only used to be able to identify the
      * ad. It does not need to be unique and does not affect the served ad. The
      * name field is currently only supported for DisplayUploadAd, ImageAd,
-     * ShoppingComparisonListingAd and VideoAd.
+     * LegacyAppInstallAd, ShoppingComparisonListingAd, VideoAd, VideoResponsiveAd
+     * and DemandGen ads.
      *
      * Generated from protobuf field <code>optional string name = 47 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var

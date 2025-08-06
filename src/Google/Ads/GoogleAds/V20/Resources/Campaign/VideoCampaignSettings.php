@@ -24,9 +24,9 @@ class VideoCampaignSettings extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V20\Resources\Campaign\VideoCampaignSettings\VideoAdInventoryControl $video_ad_inventory_control
-     *           Inventory control for Video Responsive ads in reach campaigns.
+     *           Inventory control for video responsive ads in reach campaigns.
      *     @type \Google\Ads\GoogleAds\V20\Resources\Campaign\VideoCampaignSettings\VideoAdFormatControl $video_ad_format_control
-     *           Format-restricting control enabling usage of Video Responsive ads in
+     *           Format-restricting control enabling usage of video responsive ads in
      *           format defined Video campaigns (for example, non-skippable).
      * }
      */
@@ -36,7 +36,7 @@ class VideoCampaignSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Inventory control for Video Responsive ads in reach campaigns.
+     * Inventory control for video responsive ads in reach campaigns.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v20.resources.Campaign.VideoCampaignSettings.VideoAdInventoryControl video_ad_inventory_control = 2;</code>
      * @return \Google\Ads\GoogleAds\V20\Resources\Campaign\VideoCampaignSettings\VideoAdInventoryControl|null
@@ -52,7 +52,7 @@ class VideoCampaignSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Inventory control for Video Responsive ads in reach campaigns.
+     * Inventory control for video responsive ads in reach campaigns.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v20.resources.Campaign.VideoCampaignSettings.VideoAdInventoryControl video_ad_inventory_control = 2;</code>
      * @param \Google\Ads\GoogleAds\V20\Resources\Campaign\VideoCampaignSettings\VideoAdInventoryControl $var
@@ -67,7 +67,7 @@ class VideoCampaignSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Format-restricting control enabling usage of Video Responsive ads in
+     * Format-restricting control enabling usage of video responsive ads in
      * format defined Video campaigns (for example, non-skippable).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v20.resources.Campaign.VideoCampaignSettings.VideoAdFormatControl video_ad_format_control = 3;</code>
@@ -84,7 +84,7 @@ class VideoCampaignSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Format-restricting control enabling usage of Video Responsive ads in
+     * Format-restricting control enabling usage of video responsive ads in
      * format defined Video campaigns (for example, non-skippable).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v20.resources.Campaign.VideoCampaignSettings.VideoAdFormatControl video_ad_format_control = 3;</code>

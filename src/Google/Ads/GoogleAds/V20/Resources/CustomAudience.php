@@ -10,6 +10,9 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A custom audience. This is a list of users by interest.
+ * The unique key of a custom audience consists of the following fields: name.
+ * Violating the unique key constraint produces error:
+ * CustomAudienceError.NAME_ALREADY_USED
  *
  * Generated from protobuf message <code>google.ads.googleads.v20.resources.CustomAudience</code>
  */

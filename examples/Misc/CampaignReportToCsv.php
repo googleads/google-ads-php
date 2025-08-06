@@ -24,12 +24,12 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V20\GoogleAdsException;
-use Google\Ads\GoogleAds\V20\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V20\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V20\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V21\GoogleAdsException;
+use Google\Ads\GoogleAds\V21\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V21\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V21\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -112,6 +112,7 @@ class CampaignReportToCsv
         $query =
             "SELECT campaign.id, "
                 . "campaign.name, "
+                . "campaign.contains_eu_political_advertising, "
                 . "segments.date, "
                 . "metrics.impressions, "
                 . "metrics.clicks, "
@@ -132,6 +133,7 @@ class CampaignReportToCsv
             $csvRows[] = [
                 'campaign.id' => $googleAdsRow->getCampaign()->getId(),
                 'campaign.name' => $googleAdsRow->getCampaign()->getName(),
+                "campaign.contains_eu_political_advertising" => $googleAdsRow->getCampaign()->getContainsEuPoliticalAdvertising(),
                 'segments.date' => $googleAdsRow->getSegments()->getDate(),
                 'metrics.impressions' => $googleAdsRow->getMetrics()->getImpressions(),
                 'metrics.clicks' => $googleAdsRow->getMetrics()->getClicks(),

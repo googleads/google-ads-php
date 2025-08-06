@@ -8,7 +8,7 @@ use UnexpectedValueException;
 
 /**
  * Enumerates Google Ads format types.
- * Note that this segmentation is available only for Video and Discovery
+ * Note that this segmentation is available only for Video and Demand Gen
  * campaigns. For assets, only video assets are supported.
  *
  * Protobuf type <code>google.ads.googleads.v19.enums.AdFormatTypeEnum.AdFormatType</code>
@@ -29,7 +29,7 @@ class AdFormatType
     const UNKNOWN = 1;
     /**
      * Value assigned to formats (such as experimental formats) which don't
-     * support format segmentation in Video and Discovery campaigns.
+     * support format segmentation in Video and Demand Gen campaigns.
      * Note that these formats may change categories in the future, for example
      * if an experimental format is exposed or a new format is added. We
      * strongly recommend to not rely on this field for long term decisions.
@@ -60,8 +60,8 @@ class AdFormatType
      */
     const INSTREAM_NON_SKIPPABLE = 5;
     /**
-     * In-feed YouTube or discovery image ads served on feed surfaces (e.g.
-     * Discover Feed, YouTube Home, etc.).
+     * In-feed YouTube or image ads served on feed surfaces (e.g. Discover Feed,
+     * YouTube Home, etc.).
      *
      * Generated from protobuf enum <code>INFEED = 6;</code>
      */
@@ -91,8 +91,8 @@ class AdFormatType
      */
     const AUDIO = 10;
     /**
-     * Vertical full-screen video or discovery image ad served on YouTube Shorts
-     * or BrandConnect ads served as organic YouTube Shorts.
+     * Vertical full-screen video or image ads served on YouTube Shorts or
+     * BrandConnect ads served as organic YouTube Shorts.
      *
      * Generated from protobuf enum <code>SHORTS = 11;</code>
      */

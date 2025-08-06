@@ -27,5 +27,5 @@ class Constants
     public const LIBRARY_NAME = 'gccl';
 
     // The library version.
-    public const LIBRARY_VERSION = '30.0.0';
+    public const LIBRARY_VERSION = '31.0.0';
 }

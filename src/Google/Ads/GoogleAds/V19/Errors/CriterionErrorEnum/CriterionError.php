@@ -964,6 +964,13 @@ class CriterionError
      * Generated from protobuf enum <code>LOCATION_TARGETING_NOT_ELIGIBLE_FOR_RESTRICTED_CAMPAIGN = 166;</code>
      */
     const LOCATION_TARGETING_NOT_ELIGIBLE_FOR_RESTRICTED_CAMPAIGN = 166;
+    /**
+     * The operation failed because the campaign is missing the
+     * self-declaration on political advertising status in the EU.
+     *
+     * Generated from protobuf enum <code>MISSING_EU_POLITICAL_ADVERTISING_SELF_DECLARATION = 176;</code>
+     */
+    const MISSING_EU_POLITICAL_ADVERTISING_SELF_DECLARATION = 176;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -1117,6 +1124,7 @@ class CriterionError
         self::CANNOT_ADD_REMOVED_BRAND_SHARED_SET => 'CANNOT_ADD_REMOVED_BRAND_SHARED_SET',
         self::ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE => 'ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE',
         self::LOCATION_TARGETING_NOT_ELIGIBLE_FOR_RESTRICTED_CAMPAIGN => 'LOCATION_TARGETING_NOT_ELIGIBLE_FOR_RESTRICTED_CAMPAIGN',
+        self::MISSING_EU_POLITICAL_ADVERTISING_SELF_DECLARATION => 'MISSING_EU_POLITICAL_ADVERTISING_SELF_DECLARATION',
     ];
 
     public static function name($value)

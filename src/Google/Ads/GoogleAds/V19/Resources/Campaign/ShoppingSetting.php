@@ -62,8 +62,11 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      */
     protected $use_vehicle_inventory = false;
     /**
-     * Immutable. The ads account IDs of advertising partners cooperating within
-     * the campaign.
+     * Immutable. The list of Google Ads accounts IDs of advertising partners
+     * cooperating within the campaign. This feature is currently available only
+     * for accounts having an advertising partner link. This feature is
+     * currently supported only for Performance Max, Shopping, Search and Demand
+     * Gen campaign types.
      *
      * Generated from protobuf field <code>repeated int64 advertising_partner_ids = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -109,8 +112,11 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *           supported only in Smart Shopping Campaigns. For setting Vehicle Listing
      *           inventory in Performance Max campaigns, use `listing_type` instead.
      *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $advertising_partner_ids
-     *           Immutable. The ads account IDs of advertising partners cooperating within
-     *           the campaign.
+     *           Immutable. The list of Google Ads accounts IDs of advertising partners
+     *           cooperating within the campaign. This feature is currently available only
+     *           for accounts having an advertising partner link. This feature is
+     *           currently supported only for Performance Max, Shopping, Search and Demand
+     *           Gen campaign types.
      *     @type bool $disable_product_feed
      *           Disable the optional product feed. This field is currently supported
      *           only for Demand Gen campaigns. See
@@ -312,8 +318,11 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The ads account IDs of advertising partners cooperating within
-     * the campaign.
+     * Immutable. The list of Google Ads accounts IDs of advertising partners
+     * cooperating within the campaign. This feature is currently available only
+     * for accounts having an advertising partner link. This feature is
+     * currently supported only for Performance Max, Shopping, Search and Demand
+     * Gen campaign types.
      *
      * Generated from protobuf field <code>repeated int64 advertising_partner_ids = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -324,8 +333,11 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The ads account IDs of advertising partners cooperating within
-     * the campaign.
+     * Immutable. The list of Google Ads accounts IDs of advertising partners
+     * cooperating within the campaign. This feature is currently available only
+     * for accounts having an advertising partner link. This feature is
+     * currently supported only for Performance Max, Shopping, Search and Demand
+     * Gen campaign types.
      *
      * Generated from protobuf field <code>repeated int64 advertising_partner_ids = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var

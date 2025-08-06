@@ -1360,7 +1360,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = BatchJobServiceClient::parseName($expectedResourceName);
+        $names = AdGroupCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($combinedAudienceId, $names['combined_audience_id']);
     }
@@ -2336,7 +2336,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = BatchJobServiceClient::parseName($expectedResourceName);
+        $names = AdGroupCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals($mobileAppCategoryId, $names['mobile_app_category_id']);
     }
 
@@ -2678,7 +2678,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = BatchJobServiceClient::parseName($expectedResourceName);
+        $names = AdGroupCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals($topicId, $names['topic_id']);
     }
 
