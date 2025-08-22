@@ -1,3 +1,6 @@
+## 31.0.1
+*    Updated protobuf constraint in to be less restrictive for users on the Protobuf 3.x series and preserve backwards compatibility.
+
 ## 31.0.0
 *    Compatibility with v21.0 of the API: https://developers.google.com/google-ads/api/docs/release-notes
 *    Added support for declaring EU political advertising status on campaign creation in examples.
