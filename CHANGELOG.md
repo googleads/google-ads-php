@@ -1,3 +1,10 @@
+## 31.1.0
+*   Added support for Google Ads API V22.
+*   Updated generated code for Google Ads API V21 to include recent fixes.
+*   Updated `examples/AdvancedOperations/AddPerformanceMaxCampaign.php` and `examples/ShoppingAds/AddPerformanceMaxRetailCampaign.php`:
+*   Examples now use Google Ads API V22.
+*   Replaced deprecated `url_expansion_opt_out` field with `AssetAutomationSettings` to control URL expansion and text asset automation.
+
 ## 31.0.1
 *    Updated protobuf constraint in to be less restrictive for users on the Protobuf 3.x series and preserve backwards compatibility.
 

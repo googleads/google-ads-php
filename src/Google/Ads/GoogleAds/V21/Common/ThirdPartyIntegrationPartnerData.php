@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Contains third party measurement partner related data for video campaigns.
- * Next Id = 3
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.common.ThirdPartyIntegrationPartnerData</code>
  */

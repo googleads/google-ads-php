@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class AiMaxSetting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Controls whether or not AI Max features are serve for this campaign.
+     * Controls whether or not AI Max features are served for this campaign.
      * Individual AI Max features are enabled or disabled by their respective
      * settings. But if enable_ai_max is set to false or cleared, then no AI
      * Max features will serve for this campaign, regardless of the other
@@ -43,7 +43,7 @@ class AiMaxSetting extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $enable_ai_max
-     *           Controls whether or not AI Max features are serve for this campaign.
+     *           Controls whether or not AI Max features are served for this campaign.
      *           Individual AI Max features are enabled or disabled by their respective
      *           settings. But if enable_ai_max is set to false or cleared, then no AI
      *           Max features will serve for this campaign, regardless of the other
@@ -62,7 +62,7 @@ class AiMaxSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Controls whether or not AI Max features are serve for this campaign.
+     * Controls whether or not AI Max features are served for this campaign.
      * Individual AI Max features are enabled or disabled by their respective
      * settings. But if enable_ai_max is set to false or cleared, then no AI
      * Max features will serve for this campaign, regardless of the other
@@ -89,7 +89,7 @@ class AiMaxSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Controls whether or not AI Max features are serve for this campaign.
+     * Controls whether or not AI Max features are served for this campaign.
      * Individual AI Max features are enabled or disabled by their respective
      * settings. But if enable_ai_max is set to false or cleared, then no AI
      * Max features will serve for this campaign, regardless of the other
