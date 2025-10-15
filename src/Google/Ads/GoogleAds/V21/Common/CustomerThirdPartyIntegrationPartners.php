@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Container for Customer level third party integration partners.
- * Next Id = 5
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.common.CustomerThirdPartyIntegrationPartners</code>
  */

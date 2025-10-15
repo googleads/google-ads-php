@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Container for third party brand safety integration data for Customer.
- * Next Id = 2
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.common.CustomerThirdPartyBrandSafetyIntegrationPartner</code>
  */

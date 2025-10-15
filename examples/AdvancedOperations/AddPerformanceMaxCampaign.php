@@ -25,43 +25,46 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V21\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V21\ResourceNames;
-use Google\Ads\GoogleAds\V21\Common\AudienceInfo;
-use Google\Ads\GoogleAds\V21\Common\ImageAsset;
-use Google\Ads\GoogleAds\V21\Common\LanguageInfo;
-use Google\Ads\GoogleAds\V21\Common\LocationInfo;
-use Google\Ads\GoogleAds\V21\Common\MaximizeConversionValue;
-use Google\Ads\GoogleAds\V21\Common\TextAsset;
-use Google\Ads\GoogleAds\V21\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V21\Enums\AssetFieldTypeEnum\AssetFieldType;
-use Google\Ads\GoogleAds\V21\Enums\AssetGroupStatusEnum\AssetGroupStatus;
-use Google\Ads\GoogleAds\V21\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V21\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V21\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
-use Google\Ads\GoogleAds\V21\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V21\Resources\Asset;
-use Google\Ads\GoogleAds\V21\Resources\AssetGroup;
-use Google\Ads\GoogleAds\V21\Resources\AssetGroupAsset;
-use Google\Ads\GoogleAds\V21\Resources\AssetGroupSignal;
-use Google\Ads\GoogleAds\V21\Resources\Campaign;
-use Google\Ads\GoogleAds\V21\Resources\CampaignAsset;
-use Google\Ads\GoogleAds\V21\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V21\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V21\Services\AssetGroupAssetOperation;
-use Google\Ads\GoogleAds\V21\Services\AssetGroupOperation;
-use Google\Ads\GoogleAds\V21\Services\AssetGroupSignalOperation;
-use Google\Ads\GoogleAds\V21\Services\AssetOperation;
-use Google\Ads\GoogleAds\V21\Services\CampaignAssetOperation;
-use Google\Ads\GoogleAds\V21\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V21\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V21\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V21\Services\MutateGoogleAdsRequest;
-use Google\Ads\GoogleAds\V21\Services\MutateGoogleAdsResponse;
-use Google\Ads\GoogleAds\V21\Services\MutateOperation;
-use Google\Ads\GoogleAds\V21\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\AudienceInfo;
+use Google\Ads\GoogleAds\V22\Common\ImageAsset;
+use Google\Ads\GoogleAds\V22\Common\LanguageInfo;
+use Google\Ads\GoogleAds\V22\Common\LocationInfo;
+use Google\Ads\GoogleAds\V22\Common\MaximizeConversionValue;
+use Google\Ads\GoogleAds\V22\Common\TextAsset;
+use Google\Ads\GoogleAds\V22\Enums\AssetAutomationTypeEnum\AssetAutomationType;
+use Google\Ads\GoogleAds\V22\Enums\AssetAutomationStatusEnum\AssetAutomationStatus;
+use Google\Ads\GoogleAds\V22\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V22\Enums\AssetFieldTypeEnum\AssetFieldType;
+use Google\Ads\GoogleAds\V22\Enums\AssetGroupStatusEnum\AssetGroupStatus;
+use Google\Ads\GoogleAds\V22\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V22\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V22\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\Asset;
+use Google\Ads\GoogleAds\V22\Resources\AssetGroup;
+use Google\Ads\GoogleAds\V22\Resources\AssetGroupAsset;
+use Google\Ads\GoogleAds\V22\Resources\AssetGroupSignal;
+use Google\Ads\GoogleAds\V22\Resources\Campaign;
+use Google\Ads\GoogleAds\V22\Resources\Campaign\AssetAutomationSetting;
+use Google\Ads\GoogleAds\V22\Resources\CampaignAsset;
+use Google\Ads\GoogleAds\V22\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V22\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V22\Services\AssetGroupAssetOperation;
+use Google\Ads\GoogleAds\V22\Services\AssetGroupOperation;
+use Google\Ads\GoogleAds\V22\Services\AssetGroupSignalOperation;
+use Google\Ads\GoogleAds\V22\Services\AssetOperation;
+use Google\Ads\GoogleAds\V22\Services\CampaignAssetOperation;
+use Google\Ads\GoogleAds\V22\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V22\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V22\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V22\Services\MutateOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateOperationResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Serializer;
 
@@ -322,14 +325,17 @@ class AddPerformanceMaxCampaign
                         'target_roas' => 3.5
                     ]),
 
-                    // Sets the Final URL expansion opt out. This flag is specific to
-                    // Performance Max campaigns. If opted out (true), only the final URLs in
-                    // the asset group or URLs specified in the advertiser's Google Merchant
-                    // Center or business data feeds are targeted.
-                    // If opted in (false), the entire domain will be targeted. For best
-                    // results, set this value to false to opt in and allow URL expansions. You
-                    // can optionally add exclusions to limit traffic to parts of your website.
-                    'url_expansion_opt_out' => false,
+                    'asset_automation_settings' => [
+                        new AssetAutomationSetting([
+                            'asset_automation_type' => AssetAutomationType::TEXT_ASSET_AUTOMATION,
+                            'asset_automation_status' => AssetAutomationStatus::OPTED_IN
+                        ]),
+                        new AssetAutomationSetting([
+                            'asset_automation_type' => AssetAutomationType::URL_EXPANSION,
+                            'asset_automation_status' => AssetAutomationStatus::OPTED_IN
+                        ])
+                    ],
+
 
                     // Sets if the campaign is enabled for brand guidelines. For more information
                     // on brand guidelines, see

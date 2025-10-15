@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A detail content suitability placement view.
- * {-- next tag to use: 6 --}
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.resources.DetailContentSuitabilityPlacementView</code>
  */

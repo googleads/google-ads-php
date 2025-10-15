@@ -34,9 +34,9 @@ class BudgetPerDayMinimumErrorDetails extends \Google\Protobuf\Internal\Message
      * in micros of the advertiser currency. Only set if this error is caused by
      * the amount field value.
      *
-     * Generated from protobuf field <code>int64 minimum_bugdet_amount_micros = 3;</code>
+     * Generated from protobuf field <code>int64 minimum_budget_amount_micros = 3;</code>
      */
-    protected $minimum_bugdet_amount_micros = 0;
+    protected $minimum_budget_amount_micros = 0;
     /**
      * The minimum value for the budget's total_amount field required by the
      * campaign given its configured start and end time, in micros of the
@@ -75,7 +75,7 @@ class BudgetPerDayMinimumErrorDetails extends \Google\Protobuf\Internal\Message
      *     @type int|string $budget_per_day_minimum_micros
      *           The minimum budget required by the campaign per day, in micros of the
      *           advertiser currency. Applies to both daily and custom budgets.
-     *     @type int|string $minimum_bugdet_amount_micros
+     *     @type int|string $minimum_budget_amount_micros
      *           The minimum value for the budget's amount field required by the campaign,
      *           in micros of the advertiser currency. Only set if this error is caused by
      *           the amount field value.
@@ -160,12 +160,12 @@ class BudgetPerDayMinimumErrorDetails extends \Google\Protobuf\Internal\Message
      * in micros of the advertiser currency. Only set if this error is caused by
      * the amount field value.
      *
-     * Generated from protobuf field <code>int64 minimum_bugdet_amount_micros = 3;</code>
+     * Generated from protobuf field <code>int64 minimum_budget_amount_micros = 3;</code>
      * @return int|string
      */
-    public function getMinimumBugdetAmountMicros()
+    public function getMinimumBudgetAmountMicros()
     {
-        return $this->minimum_bugdet_amount_micros;
+        return $this->minimum_budget_amount_micros;
     }
 
     /**
@@ -173,14 +173,14 @@ class BudgetPerDayMinimumErrorDetails extends \Google\Protobuf\Internal\Message
      * in micros of the advertiser currency. Only set if this error is caused by
      * the amount field value.
      *
-     * Generated from protobuf field <code>int64 minimum_bugdet_amount_micros = 3;</code>
+     * Generated from protobuf field <code>int64 minimum_budget_amount_micros = 3;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setMinimumBugdetAmountMicros($var)
+    public function setMinimumBudgetAmountMicros($var)
     {
         GPBUtil::checkInt64($var);
-        $this->minimum_bugdet_amount_micros = $var;
+        $this->minimum_budget_amount_micros = $var;
 
         return $this;
     }

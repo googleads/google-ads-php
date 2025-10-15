@@ -56,10 +56,10 @@ class AssetSet extends \Google\Protobuf\Internal\Message
      */
     protected $merchant_center_feed = null;
     /**
-     * Immutable. Parent asset set id for the asset set where the elements of this
+     * Immutable. Parent asset set ID for the asset set where the elements of this
      * asset set come from. For example: the sync level location AssetSet id where
-     * the the elements in LocationGroup AssetSet come from. This field is
-     * required and only applicable for Location Group typed AssetSet.
+     * the elements in LocationGroup AssetSet come from. This field is required
+     * and only applicable for Location Group typed AssetSet.
      *
      * Generated from protobuf field <code>int64 location_group_parent_asset_set_id = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -95,10 +95,10 @@ class AssetSet extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V21\Resources\AssetSet\MerchantCenterFeed $merchant_center_feed
      *           Merchant ID and Feed Label from Google Merchant Center.
      *     @type int|string $location_group_parent_asset_set_id
-     *           Immutable. Parent asset set id for the asset set where the elements of this
+     *           Immutable. Parent asset set ID for the asset set where the elements of this
      *           asset set come from. For example: the sync level location AssetSet id where
-     *           the the elements in LocationGroup AssetSet come from. This field is
-     *           required and only applicable for Location Group typed AssetSet.
+     *           the elements in LocationGroup AssetSet come from. This field is required
+     *           and only applicable for Location Group typed AssetSet.
      *     @type \Google\Ads\GoogleAds\V21\Resources\AssetSet\HotelPropertyData $hotel_property_data
      *           Output only. For Performance Max for travel goals campaigns with a Hotel
      *           Center account link. Read-only.
@@ -291,10 +291,10 @@ class AssetSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. Parent asset set id for the asset set where the elements of this
+     * Immutable. Parent asset set ID for the asset set where the elements of this
      * asset set come from. For example: the sync level location AssetSet id where
-     * the the elements in LocationGroup AssetSet come from. This field is
-     * required and only applicable for Location Group typed AssetSet.
+     * the elements in LocationGroup AssetSet come from. This field is required
+     * and only applicable for Location Group typed AssetSet.
      *
      * Generated from protobuf field <code>int64 location_group_parent_asset_set_id = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string
@@ -305,10 +305,10 @@ class AssetSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. Parent asset set id for the asset set where the elements of this
+     * Immutable. Parent asset set ID for the asset set where the elements of this
      * asset set come from. For example: the sync level location AssetSet id where
-     * the the elements in LocationGroup AssetSet come from. This field is
-     * required and only applicable for Location Group typed AssetSet.
+     * the elements in LocationGroup AssetSet come from. This field is required
+     * and only applicable for Location Group typed AssetSet.
      *
      * Generated from protobuf field <code>int64 location_group_parent_asset_set_id = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string $var

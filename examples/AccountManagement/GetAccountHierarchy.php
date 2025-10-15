@@ -24,16 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V21\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V21\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\V21\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V21\Resources\CustomerClient;
-use Google\Ads\GoogleAds\V21\Services\CustomerServiceClient;
-use Google\Ads\GoogleAds\V21\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V21\Services\ListAccessibleCustomersRequest;
-use Google\Ads\GoogleAds\V21\Services\SearchGoogleAdsStreamRequest;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\CustomerClient;
+use Google\Ads\GoogleAds\V22\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V22\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V22\Services\ListAccessibleCustomersRequest;
+use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 
 /**

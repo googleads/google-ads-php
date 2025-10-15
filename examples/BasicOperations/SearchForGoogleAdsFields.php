@@ -23,15 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V21\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V21\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V21\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory;
-use Google\Ads\GoogleAds\V21\Enums\GoogleAdsFieldDataTypeEnum\GoogleAdsFieldDataType;
-use Google\Ads\GoogleAds\V21\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V21\Resources\GoogleAdsField;
-use Google\Ads\GoogleAds\V21\Services\SearchGoogleAdsFieldsRequest;
+use Google\Ads\GoogleAds\V22\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory;
+use Google\Ads\GoogleAds\V22\Enums\GoogleAdsFieldDataTypeEnum\GoogleAdsFieldDataType;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\GoogleAdsField;
+use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsFieldsRequest;
 use Google\ApiCore\ApiException;
 
 /**

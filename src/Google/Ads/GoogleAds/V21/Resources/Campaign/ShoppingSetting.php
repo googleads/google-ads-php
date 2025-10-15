@@ -65,7 +65,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * The list of Google Ads accounts IDs of advertising partners cooperating
      * within the campaign.
      * This feature is currently available only for accounts having an
-     * advertising partner link.
+     * advertising partner link. Once set, the field is immutable.
      * This feature is currently supported only for Performance Max, Shopping,
      * Search and Demand Gen campaign types.
      *
@@ -116,7 +116,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *           The list of Google Ads accounts IDs of advertising partners cooperating
      *           within the campaign.
      *           This feature is currently available only for accounts having an
-     *           advertising partner link.
+     *           advertising partner link. Once set, the field is immutable.
      *           This feature is currently supported only for Performance Max, Shopping,
      *           Search and Demand Gen campaign types.
      *     @type bool $disable_product_feed
@@ -323,7 +323,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * The list of Google Ads accounts IDs of advertising partners cooperating
      * within the campaign.
      * This feature is currently available only for accounts having an
-     * advertising partner link.
+     * advertising partner link. Once set, the field is immutable.
      * This feature is currently supported only for Performance Max, Shopping,
      * Search and Demand Gen campaign types.
      *
@@ -339,7 +339,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * The list of Google Ads accounts IDs of advertising partners cooperating
      * within the campaign.
      * This feature is currently available only for accounts having an
-     * advertising partner link.
+     * advertising partner link. Once set, the field is immutable.
      * This feature is currently supported only for Performance Max, Shopping,
      * Search and Demand Gen campaign types.
      *

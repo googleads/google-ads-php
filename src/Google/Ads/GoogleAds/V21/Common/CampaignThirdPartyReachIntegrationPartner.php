@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Container for third party reach integration data for Campaign.
- * Next Id = 4
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.common.CampaignThirdPartyReachIntegrationPartner</code>
  */

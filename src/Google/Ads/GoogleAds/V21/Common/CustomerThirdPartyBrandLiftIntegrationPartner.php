@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Container for third party Brand Lift integration data for Customer.
- * Next Id = 3
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.common.CustomerThirdPartyBrandLiftIntegrationPartner</code>
  */
