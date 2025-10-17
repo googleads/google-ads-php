@@ -687,6 +687,8 @@ class AddPerformanceMaxCampaign
     }
     // [END add_performance_max_campaign_8]
 
+    // [START createAndLinkBrandAssets]
+
     /**
      * Creates a list of MutateOperations that create linked brand assets.
      *
@@ -789,6 +791,8 @@ class AddPerformanceMaxCampaign
 
         return $operations;
     }
+
+    // [END createAndLinkBrandAssets]
 
     /**
      * Creates a list of MutateOperations that may create asset group signals.
