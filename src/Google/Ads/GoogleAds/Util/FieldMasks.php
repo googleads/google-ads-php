@@ -331,7 +331,9 @@ class FieldMasks
      */
     private static function isFieldRepeated(FieldDescriptor $fieldDescriptor)
     {
-        return $fieldDescriptor->getLabel() === GPBLabel::REPEATED;
+        // The isRepeated() method is the recommended non-deprecated replacement 
+        // for checking FieldDescriptorProto\Label::LABEL_REPEATED.
+        return $fieldDescriptor->isRepeated();
     }
 
     /**
