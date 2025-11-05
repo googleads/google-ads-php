@@ -31,7 +31,6 @@ use UnexpectedValueException;
  */
 final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
 {
-
     private $jsonKeyFilePath;
     private $scopes;
     private $impersonatedEmail;
@@ -39,6 +38,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
     private $clientId;
     private $clientSecret;
     private $refreshToken;
+    private $useApplicationDefaultCredentials;
 
     /**
      * @see GoogleAdsBuilder::from()
@@ -51,6 +51,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
         $this->jsonKeyFilePath = $configuration->getConfiguration('jsonKeyFilePath', 'OAUTH2');
         $this->scopes = $configuration->getConfiguration('scopes', 'OAUTH2');
         $this->impersonatedEmail = $configuration->getConfiguration('impersonatedEmail', 'OAUTH2');
+        $this->useApplicationDefaultCredentials = $configuration->getConfiguration('useApplicationDefaultCredentials', 'OAUTH2');
 
         return $this;
     }
@@ -156,23 +157,48 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      *
      * @return FetchAuthTokenInterface the created OAuth2 object that can fetch auth tokens
      */
-    public function build()
+    public function build(): FetchAuthTokenInterface
     {
-        $this->defaultOptionals();
+        $this->defaultOptionals(); // Currently does nothing.
+
+        $scopes = ['https://www.googleapis.com/auth/adwords'];
+
+        // 1. Attempt to use Application Default Credentials if enabled.
+        if ($this->useApplicationDefaultCredentials === true) {
+            error_log("Attempting to use Application Default Credentials...");
+            try {
+                // ApplicationDefaultCredentials::getCredentials() finds credentials
+                // from environment variables, gcloud CLI, or metadata server.
+                $credentials = ApplicationDefaultCredentials::getCredentials($scopes);
+                error_log("Successfully obtained credentials via Application Default Credentials.");
+                return $credentials; // Return successfully found ADC credentials.
+            } catch (\Exception $e) {
+                // Log the failure but continue to try INI-based credentials.
+                error_log("ADC failed: " . $e->getMessage() . ". Falling back to INI file credentials.");
+            }
+        }
+
+        // 2. Fallback: If ADC was not used or failed, validate and build from INI settings.
+        // The existing validate() checks for proper INI configurations.
         $this->validate();
 
         if ($this->jsonKeyFilePath !== null) {
+            // Service Account Flow
             return new ServiceAccountCredentials(
                 $this->scopes,
                 $this->jsonKeyFilePath,
                 $this->impersonatedEmail
             );
         } else {
-            return new UserRefreshCredentials(null, [
-                'client_id' => $this->clientId,
-                'client_secret' => $this->clientSecret,
-                'refresh_token' => $this->refreshToken
-            ]);
+            // User Refresh Token Flow
+            return new UserRefreshCredentials(
+                $scopes, // Explicitly pass the scopes for UserRefreshCredentials
+                [
+                    'client_id' => $this->clientId,
+                    'client_secret' => $this->clientSecret,
+                    'refresh_token' => $this->refreshToken
+                ]
+            );
         }
     }
 
@@ -189,10 +215,14 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      */
     public function validate()
     {
+    // If useApplicationDefaultCredentials is true, we skip validating the explicit INI fields.
+        if ($this->useApplicationDefaultCredentials === true) {
+        }
+
         if (
             (!is_null($this->jsonKeyFilePath) || !is_null($this->scopes))
             && (!is_null($this->clientId) || !is_null($this->clientSecret)
-                || !is_null($this->refreshToken))
+            || !is_null($this->refreshToken))
         ) {
             throw new InvalidArgumentException(
                 'Cannot have both service account '
@@ -276,5 +306,14 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
     public function getImpersonatedEmail()
     {
         return $this->impersonatedEmail;
+    }
+    /**
+     * Gets whether Application Default Credentials are enabled.
+     *
+     * @return bool|null
+     */
+    public function getUseApplicationDefaultCredentials()
+    {
+        return $this->useApplicationDefaultCredentials;
     }
 }
