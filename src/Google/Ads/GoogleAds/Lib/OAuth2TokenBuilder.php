@@ -18,6 +18,9 @@
 
 namespace Google\Ads\GoogleAds\Lib;
 
+use DomainException;
+use Google\Auth\ApplicationDefaultCredentials; 
+use Google\Auth\CredentialsLoaderException;
 use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google\Auth\Credentials\UserRefreshCredentials;
 use Google\Auth\FetchAuthTokenInterface;
@@ -38,8 +41,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
     private $clientId;
     private $clientSecret;
     private $refreshToken;
-    private $useApplicationDefaultCredentials;
-
+ 
     /**
      * @see GoogleAdsBuilder::from()
      */
@@ -51,8 +53,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
         $this->jsonKeyFilePath = $configuration->getConfiguration('jsonKeyFilePath', 'OAUTH2');
         $this->scopes = $configuration->getConfiguration('scopes', 'OAUTH2');
         $this->impersonatedEmail = $configuration->getConfiguration('impersonatedEmail', 'OAUTH2');
-        $this->useApplicationDefaultCredentials = $configuration->getConfiguration('useApplicationDefaultCredentials', 'OAUTH2');
-
+        
         return $this;
     }
 
@@ -157,42 +158,31 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      *
      * @return FetchAuthTokenInterface the created OAuth2 object that can fetch auth tokens
      */
+
     public function build(): FetchAuthTokenInterface
     {
-        $this->defaultOptionals(); // Currently does nothing.
+        // The default scope for Google Ads API.
+        $adsScope = ['https://www.googleapis.com/auth/adwords'];
+        
+        // Determine the scope array to use for explicit flows. If the user provided scopes 
+        // (typically for Service Account), use them; otherwise, use the default Ads scope.
+        $scopesForExplicitFlows = $this->scopes ? explode(' ', $this->scopes) : $adsScope;
 
-        $scopes = ['https://www.googleapis.com/auth/adwords'];
-
-        // 1. Attempt to use Application Default Credentials if enabled.
-        if ($this->useApplicationDefaultCredentials === true) {
-            error_log("Attempting to use Application Default Credentials...");
-            try {
-                // ApplicationDefaultCredentials::getCredentials() finds credentials
-                // from environment variables, gcloud CLI, or metadata server.
-                $credentials = ApplicationDefaultCredentials::getCredentials($scopes);
-                error_log("Successfully obtained credentials via Application Default Credentials.");
-                return $credentials; // Return successfully found ADC credentials.
-            } catch (\Exception $e) {
-                // Log the failure but continue to try INI-based credentials.
-                error_log("ADC failed: " . $e->getMessage() . ". Falling back to INI file credentials.");
-            }
-        }
-
-        // 2. Fallback: If ADC was not used or failed, validate and build from INI settings.
-        // The existing validate() checks for proper INI configurations.
-        $this->validate();
-
-        if ($this->jsonKeyFilePath !== null) {
-            // Service Account Flow
+        // 1. Check for **EXPLICIT** Service Account Flow
+        if (!empty($this->jsonKeyFilePath)) {
+            $this->validate();
             return new ServiceAccountCredentials(
-                $this->scopes,
+                $scopesForExplicitFlows,
                 $this->jsonKeyFilePath,
                 $this->impersonatedEmail
             );
-        } else {
-            // User Refresh Token Flow
+        }
+        
+        // 2. Check for **EXPLICIT** User Refresh Token Flow (Installed/Web App)
+        if (!empty($this->refreshToken)) {
+            $this->validate();
             return new UserRefreshCredentials(
-                $scopes, // Explicitly pass the scopes for UserRefreshCredentials
+                $adsScope, // Always use the core Ads scope for 3-legged OAuth
                 [
                     'client_id' => $this->clientId,
                     'client_secret' => $this->clientSecret,
@@ -200,7 +190,27 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                 ]
             );
         }
+
+        // 3. FALLBACK: Use Application Default Credentials (ADC)
+        // This executes only if no explicit credentials were set above.
+        try {
+            // 
+            // This is the cleanest way to automatically use ADC.
+            return ApplicationDefaultCredentials::getCredentials($adsScope);
+        } catch (CredentialsLoaderException $e) {
+            // Throw DomainException as suggested for a clear, actionable failure.
+            throw new DomainException(
+                "No OAuth2 credentials were provided, and the automatic Application Default " .
+                "Credentials (ADC) search failed. Please ensure you have run " .
+                "'gcloud auth application-default login' or set explicit credentials. " .
+                "Underlying error: " . $e->getMessage(),
+                0,
+                $e
+            );
+        }
     }
+
+
 
     /**
      * @see GoogleAdsBuilder::defaultOptionals()
@@ -215,10 +225,6 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      */
     public function validate()
     {
-    // If useApplicationDefaultCredentials is true, we skip validating the explicit INI fields.
-        if ($this->useApplicationDefaultCredentials === true) {
-        }
-
         if (
             (!is_null($this->jsonKeyFilePath) || !is_null($this->scopes))
             && (!is_null($this->clientId) || !is_null($this->clientSecret)
@@ -306,14 +312,5 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
     public function getImpersonatedEmail()
     {
         return $this->impersonatedEmail;
-    }
-    /**
-     * Gets whether Application Default Credentials are enabled.
-     *
-     * @return bool|null
-     */
-    public function getUseApplicationDefaultCredentials()
-    {
-        return $this->useApplicationDefaultCredentials;
     }
 }
