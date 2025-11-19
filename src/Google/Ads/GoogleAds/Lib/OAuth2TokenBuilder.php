@@ -194,7 +194,6 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
         // 3. FALLBACK: Use Application Default Credentials (ADC)
         // This executes only if no explicit credentials were set above.
         try {
-            // 
             // This is the cleanest way to automatically use ADC.
             return ApplicationDefaultCredentials::getCredentials($adsScope);
         } catch (CredentialsLoaderException $e) {
