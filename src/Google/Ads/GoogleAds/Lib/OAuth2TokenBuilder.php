@@ -20,12 +20,14 @@ namespace Google\Ads\GoogleAds\Lib;
 
 use DomainException;
 use Google\Auth\ApplicationDefaultCredentials; 
-use Google\Auth\CredentialsLoaderException;
+//use Google\Auth\CredentialsLoaderException;
 use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google\Auth\Credentials\UserRefreshCredentials;
 use Google\Auth\FetchAuthTokenInterface;
 use InvalidArgumentException;
 use UnexpectedValueException;
+use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
+// ...
 
 /**
  * Builds OAuth2 access token fetchers.
@@ -41,6 +43,17 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
     private $clientId;
     private $clientSecret;
     private $refreshToken;
+
+    private $adcFetcher;
+    
+    public function __construct(
+        ConfigurationLoader $configurationLoader = null,
+        ?EnvironmentalVariables $environmentalVariables = null,
+        callable $adcFetcher = null
+    ) {
+        parent::__construct($configurationLoader, $environmentalVariables);
+        $this->adcFetcher = $adcFetcher ?? [ApplicationDefaultCredentials::class, 'getCredentials'];
+    }
  
     /**
      * @see GoogleAdsBuilder::from()
@@ -164,25 +177,29 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
         // The default scope for Google Ads API.
         $adsScope = ['https://www.googleapis.com/auth/adwords'];
         
-        // Determine the scope array to use for explicit flows. If the user provided scopes 
-        // (typically for Service Account), use them; otherwise, use the default Ads scope.
-        $scopesForExplicitFlows = $this->scopes ? explode(' ', $this->scopes) : $adsScope;
-
         // 1. Check for **EXPLICIT** Service Account Flow
         if (!empty($this->jsonKeyFilePath)) {
-            $this->validate();
+            if (is_null($this->scopes)) {
+                throw new InvalidArgumentException("Both 'jsonKeyFilePath' and 'scopes' must be set when using service account flow.");
+            }
+            if (!is_null($this->clientId) || !is_null($this->clientSecret) || !is_null($this->refreshToken)) {
+                 throw new InvalidArgumentException('Cannot have both service account flow and installed/web application flow credential values set.');
+            }
+            $scopesForExplicitFlows = explode(' ', $this->scopes);
             return new ServiceAccountCredentials(
                 $scopesForExplicitFlows,
                 $this->jsonKeyFilePath,
                 $this->impersonatedEmail
             );
         }
-        
+
         // 2. Check for **EXPLICIT** User Refresh Token Flow (Installed/Web App)
         if (!empty($this->refreshToken)) {
-            $this->validate();
+            if (is_null($this->clientId) || is_null($this->clientSecret)) {
+                throw new UnexpectedValueException("Both 'clientId' and 'clientSecret' must be set when using 'refreshToken'.");
+            }
             return new UserRefreshCredentials(
-                $adsScope, // Always use the core Ads scope for 3-legged OAuth
+                $adsScope,
                 [
                     'client_id' => $this->clientId,
                     'client_secret' => $this->clientSecret,
@@ -190,14 +207,10 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                 ]
             );
         }
-
-        // 3. FALLBACK: Use Application Default Credentials (ADC)
-        // This executes only if no explicit credentials were set above.
+      // 3. FALLBACK: Use Application Default Credentials (ADC)
         try {
-            // This is the cleanest way to automatically use ADC.
-            return ApplicationDefaultCredentials::getCredentials($adsScope);
-        } catch (CredentialsLoaderException $e) {
-            // Throw DomainException as suggested for a clear, actionable failure.
+            return call_user_func($this->adcFetcher, $adsScope);
+        } catch (\Google\Auth\CredentialsLoaderException $e) { // <-- USE FQCN HERE
             throw new DomainException(
                 "No OAuth2 credentials were provided, and the automatic Application Default " .
                 "Credentials (ADC) search failed. Please ensure you have run " .
@@ -207,9 +220,8 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                 $e
             );
         }
+     
     }
-
-
 
     /**
      * @see GoogleAdsBuilder::defaultOptionals()

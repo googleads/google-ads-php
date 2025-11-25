@@ -1,3 +1,11 @@
+## [Frontlog]
+
+### Features
+*   Added support for Application Default Credentials (ADC) as a fallback 
+    authentication mechanism. The library now attempts to load 
+    credentials from the environment using ADC if no explicit OAuth2 
+    credentials (refresh token or service account key file) are configured.
+
 ## 12.0.0
 *   Added support for sending the library name and version with each request.
 *   Updated the minimum required version of `google/protobuf` to 3.18.0.
