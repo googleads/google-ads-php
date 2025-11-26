@@ -20,14 +20,12 @@ namespace Google\Ads\GoogleAds\Lib;
 
 use DomainException;
 use Google\Auth\ApplicationDefaultCredentials; 
-//use Google\Auth\CredentialsLoaderException;
 use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google\Auth\Credentials\UserRefreshCredentials;
 use Google\Auth\FetchAuthTokenInterface;
 use InvalidArgumentException;
 use UnexpectedValueException;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
-// ...
 
 /**
  * Builds OAuth2 access token fetchers.
@@ -180,10 +178,16 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
         // 1. Check for **EXPLICIT** Service Account Flow
         if (!empty($this->jsonKeyFilePath)) {
             if (is_null($this->scopes)) {
-                throw new InvalidArgumentException("Both 'jsonKeyFilePath' and 'scopes' must be set when using service account flow.");
+                throw new InvalidArgumentException(
+                    "Both 'jsonKeyFilePath' and 'scopes' must be set when "
+                    . "using service account flow."
+                );
             }
             if (!is_null($this->clientId) || !is_null($this->clientSecret) || !is_null($this->refreshToken)) {
-                 throw new InvalidArgumentException('Cannot have both service account flow and installed/web application flow credential values set.');
+                 throw new InvalidArgumentException(
+                    "Cannot have both service account flow and installed/web "
+                    . "application flow credential values set."
+                );
             }
             $scopesForExplicitFlows = explode(' ', $this->scopes);
             return new ServiceAccountCredentials(
@@ -196,7 +200,9 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
         // 2. Check for **EXPLICIT** User Refresh Token Flow (Installed/Web App)
         if (!empty($this->refreshToken)) {
             if (is_null($this->clientId) || is_null($this->clientSecret)) {
-                throw new UnexpectedValueException("Both 'clientId' and 'clientSecret' must be set when using 'refreshToken'.");
+                throw new UnexpectedValueException(
+                    "Both 'clientId' and 'clientSecret' must be set when using 'refreshToken'."
+                );
             }
             return new UserRefreshCredentials(
                 $adsScope,
@@ -207,7 +213,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                 ]
             );
         }
-      // 3. FALLBACK: Use Application Default Credentials (ADC)
+        // 3. FALLBACK: Use Application Default Credentials (ADC)
         try {
             return call_user_func($this->adcFetcher, $adsScope);
         } catch (\Google\Auth\CredentialsLoaderException $e) { // <-- USE FQCN HERE
