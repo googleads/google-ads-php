@@ -24,20 +24,21 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\ListingDimensionInfo;
-use Google\Ads\GoogleAds\V8\Common\ListingScopeInfo;
-use Google\Ads\GoogleAds\V8\Common\ProductBrandInfo;
-use Google\Ads\GoogleAds\V8\Common\ProductCustomAttributeInfo;
-use Google\Ads\GoogleAds\V8\Common\ProductTypeInfo;
-use Google\Ads\GoogleAds\V8\Enums\ProductCustomAttributeIndexEnum\ProductCustomAttributeIndex;
-use Google\Ads\GoogleAds\V8\Enums\ProductTypeLevelEnum\ProductTypeLevel;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V8\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\ListingDimensionInfo;
+use Google\Ads\GoogleAds\V22\Common\ListingScopeInfo;
+use Google\Ads\GoogleAds\V22\Common\ProductBrandInfo;
+use Google\Ads\GoogleAds\V22\Common\ProductCustomAttributeInfo;
+use Google\Ads\GoogleAds\V22\Common\ProductTypeInfo;
+use Google\Ads\GoogleAds\V22\Enums\ProductCustomAttributeIndexEnum\ProductCustomAttributeIndex;
+use Google\Ads\GoogleAds\V22\Enums\ProductTypeLevelEnum\ProductTypeLevel;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V22\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignCriteriaRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -171,8 +172,7 @@ class AddListingScope
         // Issues a mutate request to create a campaign criterion on the server and print its info.
         $campaignCriterionServiceClient = $googleAdsClient->getCampaignCriterionServiceClient();
         $response = $campaignCriterionServiceClient->mutateCampaignCriteria(
-            $customerId,
-            [$campaignCriterionOperation]
+            MutateCampaignCriteriaRequest::build($customerId, [$campaignCriterionOperation])
         );
         /** @var CampaignCriterion $addedCampaignCriterion */
         $addedCampaignCriterion = $response->getResults()[0];

@@ -24,16 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\AdGroup;
-use Google\Ads\GoogleAds\V8\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V22\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\AdGroup;
+use Google\Ads\GoogleAds\V22\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example adds ad groups to a campaign. */
@@ -137,10 +138,10 @@ class AddAdGroups
 
         // Issues a mutate request to add the ad groups.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
-        $response = $adGroupServiceClient->mutateAdGroups(
+        $response = $adGroupServiceClient->mutateAdGroups(MutateAdGroupsRequest::build(
             $customerId,
             $operations
-        );
+        ));
 
         printf("Added %d ad groups:%s", $response->getResults()->count(), PHP_EOL);
 

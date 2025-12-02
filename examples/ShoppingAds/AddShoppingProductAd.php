@@ -24,33 +24,39 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V8\Common\ListingGroupInfo;
-use Google\Ads\GoogleAds\V8\Common\ManualCpc;
-use Google\Ads\GoogleAds\V8\Common\ShoppingProductAdInfo;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V8\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V8\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V8\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V8\Enums\ListingGroupTypeEnum\ListingGroupType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\Ad;
-use Google\Ads\GoogleAds\V8\Resources\AdGroup;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V8\Resources\Campaign;
-use Google\Ads\GoogleAds\V8\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V8\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V8\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V8\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V8\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V8\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V8\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V22\Common\ListingGroupInfo;
+use Google\Ads\GoogleAds\V22\Common\ManualCpc;
+use Google\Ads\GoogleAds\V22\Common\ShoppingProductAdInfo;
+use Google\Ads\GoogleAds\V22\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V22\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V22\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V22\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V22\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V22\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V22\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V22\Enums\ListingGroupTypeEnum\ListingGroupType;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\Ad;
+use Google\Ads\GoogleAds\V22\Resources\AdGroup;
+use Google\Ads\GoogleAds\V22\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V22\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V22\Resources\Campaign;
+use Google\Ads\GoogleAds\V22\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V22\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V22\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V22\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V22\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V22\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V22\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignBudgetsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -189,8 +195,7 @@ class AddShoppingProductAd
         // Issues a mutate request.
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         $response = $campaignBudgetServiceClient->mutateCampaignBudgets(
-            $customerId,
-            [$campaignBudgetOperation]
+            MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
 
         /** @var CampaignBudget $addedBudget */
@@ -228,8 +233,6 @@ class AddShoppingProductAd
             'advertising_channel_type' => AdvertisingChannelType::SHOPPING,
             // Configures the shopping settings.
             'shopping_setting' => new ShoppingSetting([
-                // Sets the sales country of products to include in the campaign.
-                'sales_country' => 'US',
                 // Sets the priority of the campaign. Higher numbers take priority over lower
                 // numbers. For Shopping product ad campaigns, allowed values are between 0 and 2,
                 // inclusive.
@@ -242,13 +245,16 @@ class AddShoppingProductAd
             // the ads from immediately serving. Set to ENABLED once you've added
             // targeting and the ads are ready to serve.
             'status' => CampaignStatus::PAUSED,
-            // Sets the bidding strategy to Manual CPC (with eCPC enabled)
+            // Sets the bidding strategy to Manual CPC.
             // Recommendation: Use one of the automated bidding strategies for Shopping campaigns
             // to help you optimize your advertising spend. More information can be found here:
             // https://support.google.com/google-ads/answer/6309029.
-            'manual_cpc' => new ManualCpc(['enhanced_cpc_enabled' => true]),
+            'manual_cpc' => new ManualCpc(),
             // Sets the budget.
-            'campaign_budget' => $budgetResourceName
+            'campaign_budget' => $budgetResourceName,
+            // Declare whether or not this campaign serves political ads targeting the EU.
+            'contains_eu_political_advertising' =>
+                EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
         ]);
 
         // Creates a campaign operation.
@@ -257,7 +263,9 @@ class AddShoppingProductAd
 
         // Issues a mutate request to add campaigns.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
-        $response = $campaignServiceClient->mutateCampaigns($customerId, [$campaignOperation]);
+        $response = $campaignServiceClient->mutateCampaigns(
+            MutateCampaignsRequest::build($customerId, [$campaignOperation])
+        );
 
         /** @var Campaign $addedCampaign */
         $addedCampaign = $response->getResults()[0];
@@ -304,7 +312,9 @@ class AddShoppingProductAd
 
         // Issues a mutate request to add an ad group.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
-        $response = $adGroupServiceClient->mutateAdGroups($customerId, [$adGroupOperation]);
+        $response = $adGroupServiceClient->mutateAdGroups(
+            MutateAdGroupsRequest::build($customerId, [$adGroupOperation])
+        );
 
         /** @var AdGroup $addedAdGroup */
         $addedAdGroup = $response->getResults()[0];
@@ -349,7 +359,9 @@ class AddShoppingProductAd
 
         // Issues a mutate request to add an ad group ad.
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
-        $response = $adGroupAdServiceClient->mutateAdGroupAds($customerId, [$adGroupAdOperation]);
+        $response = $adGroupAdServiceClient->mutateAdGroupAds(
+            MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
+        );
 
         /** @var AdGroupAd $addedAdGroupAd */
         $addedAdGroupAd = $response->getResults()[0];
@@ -397,8 +409,7 @@ class AddShoppingProductAd
         // Issues a mutate request to add an ad group criterion.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-            $customerId,
-            [$adGroupCriterionOperation]
+            MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])
         );
 
         /** @var AdGroupCriterion $addedAdGroupCriterion */

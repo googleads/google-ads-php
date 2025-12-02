@@ -23,14 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V8\Enums\GeoTargetConstantStatusEnum\GeoTargetConstantStatus;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Services\GeoTargetConstantSuggestion;
-use Google\Ads\GoogleAds\V8\Services\SuggestGeoTargetConstantsRequest\LocationNames;
+use Google\Ads\GoogleAds\V22\Enums\GeoTargetConstantStatusEnum\GeoTargetConstantStatus;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Services\GeoTargetConstantSuggestion;
+use Google\Ads\GoogleAds\V22\Services\SuggestGeoTargetConstantsRequest;
+use Google\Ads\GoogleAds\V22\Services\SuggestGeoTargetConstantsRequest\LocationNames;
 use Google\ApiCore\ApiException;
 
 /**
@@ -118,11 +119,13 @@ class GetGeoTargetConstantsByNames
     ) {
         $geoTargetConstantServiceClient = $googleAdsClient->getGeoTargetConstantServiceClient();
 
-        $response = $geoTargetConstantServiceClient->suggestGeoTargetConstants([
-            'locale' => $locale,
-            'countryCode' => $countryCode,
-            'locationNames' => new LocationNames(['names' => $locationNames])
-        ]);
+        $response = $geoTargetConstantServiceClient->suggestGeoTargetConstants(
+            new SuggestGeoTargetConstantsRequest([
+                'locale' => $locale,
+                'country_code' => $countryCode,
+                'location_names' => new LocationNames(['names' => $locationNames])
+            ])
+        );
 
         // Iterates over all geo target constant suggestion objects and prints the requested field
         // values for each one.

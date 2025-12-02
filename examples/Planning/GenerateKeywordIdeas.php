@@ -24,16 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Services\GenerateKeywordIdeaResult;
-use Google\Ads\GoogleAds\V8\Services\KeywordAndUrlSeed;
-use Google\Ads\GoogleAds\V8\Services\KeywordSeed;
-use Google\Ads\GoogleAds\V8\Services\UrlSeed;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Services\GenerateKeywordIdeaResult;
+use Google\Ads\GoogleAds\V22\Services\GenerateKeywordIdeasRequest;
+use Google\Ads\GoogleAds\V22\Services\KeywordAndUrlSeed;
+use Google\Ads\GoogleAds\V22\Services\KeywordSeed;
+use Google\Ads\GoogleAds\V22\Services\UrlSeed;
 use Google\ApiCore\ApiException;
 
 /** This example generates keyword ideas from a list of seed keywords or a seed page URL. */
@@ -150,13 +151,13 @@ class GenerateKeywordIdeas
         $requestOptionalArgs = [];
         if (empty($keywords)) {
             // Only page URL was specified, so use a UrlSeed.
-            $requestOptionalArgs['urlSeed'] = new UrlSeed(['url' => $pageUrl]);
+            $requestOptionalArgs['url_seed'] = new UrlSeed(['url' => $pageUrl]);
         } elseif (is_null($pageUrl)) {
             // Only keywords were specified, so use a KeywordSeed.
-            $requestOptionalArgs['keywordSeed'] = new KeywordSeed(['keywords' => $keywords]);
+            $requestOptionalArgs['keyword_seed'] = new KeywordSeed(['keywords' => $keywords]);
         } else {
             // Both page URL and keywords were specified, so use a KeywordAndUrlSeed.
-            $requestOptionalArgs['keywordAndUrlSeed'] =
+            $requestOptionalArgs['keyword_and_url_seed'] =
                 new KeywordAndUrlSeed(['url' => $pageUrl, 'keywords' => $keywords]);
         }
 
@@ -168,16 +169,16 @@ class GenerateKeywordIdeas
 
         // Generate keyword ideas based on the specified parameters.
         $response = $keywordPlanIdeaServiceClient->generateKeywordIdeas(
-            [
+            new GenerateKeywordIdeasRequest([
                 // Set the language resource using the provided language ID.
                 'language' => ResourceNames::forLanguageConstant($languageId),
-                'customerId' => $customerId,
+                'customer_id' => $customerId,
                 // Add the resource name of each location ID to the request.
-                'geoTargetConstants' => $geoTargetConstants,
+                'geo_target_constants' => $geoTargetConstants,
                 // Set the network. To restrict to only Google Search, change the parameter below to
                 // KeywordPlanNetwork::GOOGLE_SEARCH.
-                'keywordPlanNetwork' => KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS
-            ] + $requestOptionalArgs
+                'keyword_plan_network' => KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS
+            ] + $requestOptionalArgs)
         );
 
         // Iterate over the results and print its detail.

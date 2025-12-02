@@ -24,14 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\CustomerClient;
-use Google\Ads\GoogleAds\V8\Services\CustomerServiceClient;
-use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\CustomerClient;
+use Google\Ads\GoogleAds\V22\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V22\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V22\Services\ListAccessibleCustomersRequest;
+use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -55,7 +57,7 @@ class GetAccountHierarchy
 
     // Stores the mapping from the root customer IDs (the ones that will be used as a start point
     // for printing each hierarchy) to their `CustomerClient` objects.
-    private static $rootCustomerClients = [];
+    private static array $rootCustomerClients = [];
 
     public static function main()
     {
@@ -223,12 +225,12 @@ class GetAccountHierarchy
 
         while (!empty($managerCustomerIdsToSearch)) {
             $customerIdToSearch = array_shift($managerCustomerIdsToSearch);
-            // Issues a search request by specifying page size.
+            // Issues a search request.
             /** @var GoogleAdsServerStreamDecorator $stream */
-            $stream = $googleAdsServiceClient->searchStream(
+            $stream = $googleAdsServiceClient->searchStream(SearchGoogleAdsStreamRequest::build(
                 $customerIdToSearch,
                 $query
-            );
+            ));
 
             // Iterates over all elements to get all customer clients under the specified customer's
             // hierarchy.
@@ -285,7 +287,8 @@ class GetAccountHierarchy
         // Issues a request for listing all customers accessible by this authenticated Google
         // account.
         $customerServiceClient = $googleAdsClient->getCustomerServiceClient();
-        $accessibleCustomers = $customerServiceClient->listAccessibleCustomers();
+        $accessibleCustomers =
+            $customerServiceClient->listAccessibleCustomers(new ListAccessibleCustomersRequest());
 
         print 'No manager customer ID is specified. The example will print the hierarchies of'
             . ' all accessible customer IDs:' . PHP_EOL;

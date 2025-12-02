@@ -30,14 +30,18 @@ final class ArgumentNames
     public const AD_ID = 'adId';
     public const AD_GROUP_ID = 'adGroupId';
     public const AD_GROUP_IDS = 'adGroupIds';
-    public const ARTIFACT_NAME = 'artifactName';
+    public const AD_PERSONALIZATION_CONSENT = 'adPersonalizationConsent';
+    public const AD_USER_DATA_CONSENT = 'adUserDataConsent';
+    public const ASSET_GROUP_ID = 'assetGroupId';
     public const ATTRIBUTE_VALUE = 'attributeValue';
+    public const AUDIENCE_ID = 'audienceId';
     public const BASE_CAMPAIGN_ID = 'baseCampaignId';
     public const BID_MODIFIER_VALUE = 'bidModifierValue';
     public const BILLING_SETUP_ID = 'billingSetupId';
+    public const BRAND_GUIDELINES_ENABLED = 'brandGuidelinesEnabled';
     public const BRIDGE_MAP_VERSION_ID = 'bridgeMapVersionId';
     public const BUSINESS_ACCOUNT_IDENTIFIER = 'businessAccountIdentifier';
-    public const BUSINESS_LOCATION_ID = 'businessLocationId';
+    public const BUSINESS_PROFILE_LOCATION = 'businessProfileLocation';
     public const BUSINESS_NAME = 'businessName';
     public const CALL_START_DATE_TIME = 'callStartDateTime';
     public const CALLER_ID = 'callerId';
@@ -60,7 +64,9 @@ final class ArgumentNames
     public const CPC_BID_CEILING_MICRO_AMOUNT = 'cpcBidCeilingMicroAmount';
     public const CPC_BID_MICRO_AMOUNT = 'cpcBidMicroAmount';
     public const CRITERION_ID = 'criterionId';
+    public const CURRENCY_CODE = 'currencyCode';
     public const CUSTOMER_ID = 'customerId';
+    public const CUSTOMIZER_ATTRIBUTE_NAME = 'customizerAttributeName';
     public const CUSTOM_KEY = 'customKey';
     public const DRAFT_ID = 'draftId';
     public const EMAIL_ADDRESS = 'emailAddress';
@@ -70,11 +76,14 @@ final class ArgumentNames
     public const FEED_ITEM_ID = 'feedItemId';
     public const FEED_ITEM_IDS = 'feedItemIds';
     public const FEED_ITEM_SET_ID = 'feedItemSetId';
+    public const FINAL_URL = 'finalUrl';
     public const FLIGHT_PLACEHOLDER_FIELD_NAME = 'flightPlaceholderFieldName';
+    public const FREE_FORM_KEYWORD_TEXT = 'freeFormKeywordText';
+    public const GBRAID = 'gbraid';
     public const GCLID = 'gclid';
     public const GEO_TARGET_CONSTANT_ID = 'geoTargetConstantId';
-    public const GMB_ACCESS_TOKEN = 'gmbAccessToken';
-    public const GMB_EMAIL_ADDRESS = 'gmbEmailAddress';
+    public const BUSINESS_PROFILE_ACCESS_TOKEN = 'businessProfileAccessToken';
+    public const BUSINESS_PROFILE_EMAIL = 'businessProfileEmail';
     public const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
     public const IMAGE_ASSET_ID = 'imageAssetId';
     public const ITEM_ID = 'itemId';
@@ -93,24 +102,37 @@ final class ArgumentNames
     public const MANAGER_CUSTOMER_ID = 'managerCustomerId';
     public const MARKETING_IMAGE_ASSET_ID = 'marketingImageAssetId';
     public const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
+    public const NAME_PREFIX = 'namePrefix';
+    public const OFFLINE_USER_DATA_JOB_ID = 'offlineUserDataJobId';
     public const OFFLINE_USER_DATA_JOB_TYPE = 'offlineUserDataJobType';
+    public const OMIT_UNSELECTED_RESOURCE_NAMES = 'omitUnselectedResourceNames';
+    public const ORDER_ID = 'orderId';
     public const OUTPUT_FILE_PATH = 'outputFilePath';
     public const PAGE_URL = 'pageUrl';
     public const PARTNER_ID = 'partnerId';
     public const PAYMENTS_ACCOUNT_ID = 'paymentsAccountId';
     public const PAYMENTS_PROFILE_ID = 'paymentsProfileId';
     public const PERCENT_CPC_BID_MICRO_AMOUNT = 'percentCpcBidMicroAmount';
+    public const PHONE_COUNTRY = 'phoneCountry';
+    public const PHONE_NUMBER = 'phoneNumber';
+    public const PLACE_ID = 'placeId';
     public const RECOMMENDATION_ID = 'recommendationId';
     public const RESTATEMENT_VALUE = 'restatementValue';
     public const CREATE_DEFAULT_LISTING_GROUP = 'createDefaultListingGroup';
     public const DELETE_EXISTING_FEEDS = 'deleteExistingFeeds';
     public const REPLACE_EXISTING_TREE = 'replaceExistingTree';
     public const QUANTITY = 'quantity';
+    public const RUN_JOB = 'runJob';
+    public const SESSION_ATTRIBUTES_ENCODED = 'sessionAttributesEncoded';
+    public const SESSION_ATTRIBUTES_DICT = 'sessionAttributesDict';
     public const SITELINK_TEXT = 'sitelinkText';
     public const SQUARE_MARKETING_IMAGE_ASSET_ID = 'squareMarketingImageAssetId';
     public const START_DATE_TIME = "startDateTime";
+    public const THINGS_TO_DO_CENTER_ACCOUNT_ID = 'thingsToDoCenterAccountId';
+    public const USER_AGENT = 'userAgent';
     public const USER_LIST_ID = 'userListId';
     public const USER_LIST_IDS = 'userListIds';
+    public const WBRAID = 'wbraid';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
         self::ACCESS_ROLE => 'The user access role',
@@ -120,16 +142,21 @@ final class ArgumentNames
         self::AD_ID => 'The ad ID',
         self::AD_GROUP_ID => 'The ad group ID',
         self::AD_GROUP_IDS => 'The ad group IDs',
-        self::ARTIFACT_NAME => 'The artifact name',
+        self::AD_PERSONALIZATION_CONSENT => 'The ad personalization consent, e.g., GRANTED',
+        self::AD_USER_DATA_CONSENT => 'The ad user data consent, e.g., GRANTED',
+        self::ASSET_GROUP_ID => 'The asset group ID',
         self::ATTRIBUTE_VALUE => 'The attribute value',
+        self::AUDIENCE_ID => 'The audience ID',
         self::BASE_CAMPAIGN_ID => 'The base campaign ID',
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
         self::BILLING_SETUP_ID => 'The billing setup ID',
+        self::BRAND_GUIDELINES_ENABLED
+            => 'Whether the brand guidelines should be enabled for a campaign',
         self::BRIDGE_MAP_VERSION_ID
             => 'The version of partner IDs to be used for store-sale uploads',
-        self::BUSINESS_ACCOUNT_IDENTIFIER => 'The account number of the GMB account',
-        self::BUSINESS_LOCATION_ID => 'The GMB location ID',
-        self::BUSINESS_NAME => 'The GMB business name',
+        self::BUSINESS_ACCOUNT_IDENTIFIER => 'The account number of the Business Profile account',
+        self::BUSINESS_PROFILE_LOCATION => 'The Business Profile location resource name',
+        self::BUSINESS_NAME => 'The Business Profile business name',
         self::CALL_START_DATE_TIME => 'The call start date time',
         self::CALLER_ID => 'The caller ID',
         self::CALLOUT_TEXT => 'The callout text',
@@ -151,7 +178,9 @@ final class ArgumentNames
         self::CPC_BID_CEILING_MICRO_AMOUNT => 'The CPC bid ceiling micro amount',
         self::CPC_BID_MICRO_AMOUNT => 'The CPC bid micro amount',
         self::CRITERION_ID => 'The criterion ID',
+        self::CURRENCY_CODE => 'The currency code',
         self::CUSTOMER_ID => 'The customer ID without dashes',
+        self::CUSTOMIZER_ATTRIBUTE_NAME => 'The customizer attribute name',
         self::CUSTOM_KEY => 'The custom key',
         self::DRAFT_ID => 'The draft ID',
         self::EMAIL_ADDRESS => 'The email address',
@@ -161,11 +190,15 @@ final class ArgumentNames
         self::FEED_ITEM_ID => 'The feed item ID',
         self::FEED_ITEM_IDS => 'The feed item IDs',
         self::FEED_ITEM_SET_ID => 'The feed item set ID',
+        self::FINAL_URL => 'The final URL',
         self::FLIGHT_PLACEHOLDER_FIELD_NAME => 'The flight placeholder field name',
+        self::FREE_FORM_KEYWORD_TEXT => 'The free-form keyword text',
+        self::GBRAID => 'The GBRAID identifier for an iOS app conversion',
         self::GCLID => 'The Google Click ID',
         self::GEO_TARGET_CONSTANT_ID => 'The geo target constant ID',
-        self::GMB_ACCESS_TOKEN => 'The access token used for uploading GMB location feed data',
-        self::GMB_EMAIL_ADDRESS => 'The email address associated with the GMB account',
+        self::BUSINESS_PROFILE_ACCESS_TOKEN => 'The access token used for uploading Business Profile '
+            . 'location feed data',
+        self::BUSINESS_PROFILE_EMAIL => 'The email address associated with the Business Profile account',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
         self::IMAGE_ASSET_ID => 'The image asset ID',
         self::ITEM_ID => 'The item ID',
@@ -184,7 +217,11 @@ final class ArgumentNames
         self::MANAGER_CUSTOMER_ID => 'The manager customer ID',
         self::MARKETING_IMAGE_ASSET_ID => 'The ID of marketing image asset',
         self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',
+        self::NAME_PREFIX => 'The name prefix',
+        self::OFFLINE_USER_DATA_JOB_ID => 'The offline user data job ID',
         self::OFFLINE_USER_DATA_JOB_TYPE => 'The offline user data job type',
+        self::OMIT_UNSELECTED_RESOURCE_NAMES => 'Whether to omit unselected resource names',
+        self::ORDER_ID => 'The order ID',
         self::OUTPUT_FILE_PATH => 'The output file path',
         self::PAGE_URL => 'The page URL',
         self::PARTNER_ID => 'The partner ID',
@@ -192,6 +229,9 @@ final class ArgumentNames
         self::PAYMENTS_PROFILE_ID => 'The payments profile ID',
         self::PERCENT_CPC_BID_MICRO_AMOUNT =>
             'The CPC bid micro amount for the Percent CPC bidding strategy',
+        self::PHONE_COUNTRY => 'The phone country',
+        self::PHONE_NUMBER => 'The phone number',
+        self::PLACE_ID => 'The place ID',
         self::RECOMMENDATION_ID => 'The recommendation ID',
         self::RESTATEMENT_VALUE => 'The restatement value',
         self::CREATE_DEFAULT_LISTING_GROUP =>
@@ -199,12 +239,18 @@ final class ArgumentNames
         self::DELETE_EXISTING_FEEDS =>
             'Whether it should delete the existing feeds',
         self::REPLACE_EXISTING_TREE =>
-            'Whether it should replace the existing listing group tree on an ad group',
+            'Whether it should replace the existing listing group tree on an ad group/asset group',
         self::QUANTITY => 'The quantity',
+        self::RUN_JOB => 'Whether it should run the offline user data job',
+        self::SESSION_ATTRIBUTES_ENCODED => 'a str token of encoded session atttributes',
+        self::SESSION_ATTRIBUTES_DICT => 'a string of session attribute key value pairs.',
         self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_ID => 'The ID of square marketing image asset',
         self::START_DATE_TIME => 'The start date time',
+        self::USER_AGENT => 'The user agent',
         self::USER_LIST_ID => 'The user list ID',
-        self::USER_LIST_IDS => 'The user list IDs'
+        self::USER_LIST_IDS => 'The user list IDs',
+        self::THINGS_TO_DO_CENTER_ACCOUNT_ID => 'The Things to Do Center account ID',
+        self::WBRAID => 'The WBRAID identifer for an iOS web conversion'
     ];
 }

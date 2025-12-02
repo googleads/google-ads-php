@@ -25,16 +25,17 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\BasicUserListInfo;
-use Google\Ads\GoogleAds\V8\Common\UserListActionInfo;
-use Google\Ads\GoogleAds\V8\Enums\UserListMembershipStatusEnum\UserListMembershipStatus;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\UserList;
-use Google\Ads\GoogleAds\V8\Services\UserListOperation;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\BasicUserListInfo;
+use Google\Ads\GoogleAds\V22\Common\UserListActionInfo;
+use Google\Ads\GoogleAds\V22\Enums\UserListMembershipStatusEnum\UserListMembershipStatus;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\UserList;
+use Google\Ads\GoogleAds\V22\Services\MutateUserListsRequest;
+use Google\Ads\GoogleAds\V22\Services\UserListOperation;
 use Google\ApiCore\ApiException;
 
 /**
@@ -143,7 +144,9 @@ class AddConversionBasedUserList
 
         // Issues a mutate request to add the user list and prints some information.
         $userListServiceClient = $googleAdsClient->getUserListServiceClient();
-        $response = $userListServiceClient->mutateUserLists($customerId, [$operation]);
+        $response = $userListServiceClient->mutateUserLists(
+            MutateUserListsRequest::build($customerId, [$operation])
+        );
         printf(
             "Created basic user list with resource name '%s'.%s",
             $response->getResults()[0]->getResourceName(),

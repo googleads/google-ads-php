@@ -24,16 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Enums\ConversionAdjustmentTypeEnum\ConversionAdjustmentType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Services\ConversionAdjustment;
-use Google\Ads\GoogleAds\V8\Services\ConversionAdjustmentResult;
-use Google\Ads\GoogleAds\V8\Services\GclidDateTimePair;
-use Google\Ads\GoogleAds\V8\Services\RestatementValue;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Enums\ConversionAdjustmentTypeEnum\ConversionAdjustmentType;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Services\ConversionAdjustment;
+use Google\Ads\GoogleAds\V22\Services\ConversionAdjustmentResult;
+use Google\Ads\GoogleAds\V22\Services\GclidDateTimePair;
+use Google\Ads\GoogleAds\V22\Services\RestatementValue;
+use Google\Ads\GoogleAds\V22\Services\UploadConversionAdjustmentsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -44,10 +45,12 @@ class UploadConversionAdjustment
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
-    private const GCLID = 'INSERT_GCLID_HERE';
+    // The transaction ID of the conversion to adjust. Required if the conversion being adjusted
+    // meets the criteria described at
+    // https://developers.google.com/google-ads/api/docs/conversions/upload-adjustments#requirements.
+    private const ORDER_ID = 'INSERT_ORDER_ID_HERE';
+    // RETRACTION negates a conversion, and RESTATEMENT changes the value of a conversion.
     private const ADJUSTMENT_TYPE = "INSERT_ADJUSTMENT_TYPE_HERE";
-    // The conversion date time in "yyyy-mm-dd hh:mm:ss+|-hh:mm" format.
-    private const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
     // The adjustment date time in "yyyy-mm-dd hh:mm:ss+|-hh:mm" format.
     private const ADJUSTMENT_DATE_TIME = "INSERT_ADJUSTMENT_DATE_TIME_HERE";
     // Optional: Specify an adjusted value below for adjustment type RESTATEMENT.
@@ -61,9 +64,8 @@ class UploadConversionAdjustment
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::GCLID => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::ORDER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::ADJUSTMENT_TYPE => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CONVERSION_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::ADJUSTMENT_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::RESTATEMENT_VALUE => GetOpt::OPTIONAL_ARGUMENT
         ]);
@@ -83,9 +85,8 @@ class UploadConversionAdjustment
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::CONVERSION_ACTION_ID] ?: self::CONVERSION_ACTION_ID,
-                $options[ArgumentNames::GCLID] ?: self::GCLID,
+                $options[ArgumentNames::ORDER_ID] ?: self::ORDER_ID,
                 $options[ArgumentNames::ADJUSTMENT_TYPE] ?: self::ADJUSTMENT_TYPE,
-                $options[ArgumentNames::CONVERSION_DATE_TIME] ?: self::CONVERSION_DATE_TIME,
                 $options[ArgumentNames::ADJUSTMENT_DATE_TIME] ?: self::ADJUSTMENT_DATE_TIME,
                 $options[ArgumentNames::RESTATEMENT_VALUE] ?: self::RESTATEMENT_VALUE
             );
@@ -122,12 +123,11 @@ class UploadConversionAdjustment
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param int $conversionActionId the ID of the conversion action to upload adjustment to
-     * @param string $gclid the GCLID for the conversion
+     * @param string $orderId the order ID for the conversion. Strongly recommended instead of
+     *     using GCLID and conversion date time
      * @param string $adjustmentType the type of adjustment, e.g. RETRACTION, RESTATEMENT
-     * @param string $conversionDateTime the date and time of the conversion.
-     *      The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”
      * @param string $adjustmentDateTime the date and time of the adjustment.
-     *      The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”
+     *     The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”
      * @param float|null $restatementValue the adjusted value for adjustment type RESTATEMENT
      */
     // [START upload_conversion_adjustment]
@@ -135,24 +135,29 @@ class UploadConversionAdjustment
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $conversionActionId,
-        string $gclid,
+        string $orderId,
         string $adjustmentType,
-        string $conversionDateTime,
         string $adjustmentDateTime,
-        float $restatementValue
+        ?float $restatementValue
     ) {
         $conversionAdjustmentType = ConversionAdjustmentType::value($adjustmentType);
 
-        // Associates conversion adjustments with the existing conversion action.
-        // The GCLID should have been uploaded before with a conversion.
+        // Applies the conversion adjustment to the existing conversion.
         $conversionAdjustment = new ConversionAdjustment([
             'conversion_action' =>
                 ResourceNames::forConversionAction($customerId, $conversionActionId),
             'adjustment_type' => $conversionAdjustmentType,
+            // Sets the orderId to identify the conversion to adjust.
+            'order_id' => $orderId,
+            // As an alternative to setting orderId, you can provide a 'gclid_date_time_pair', but
+            // setting 'order_id' instead is strongly recommended.
+            // 'conversion_date_time' must be in "yyyy-mm-dd hh:mm:ss+|-hh:mm" format.
+            /*
             'gclid_date_time_pair' => new GclidDateTimePair([
-                'gclid' => $gclid,
-                'conversion_date_time' => $conversionDateTime
+                'gclid' => 'INSERT_YOUR_GCLID_HERE',
+                'conversion_date_time' => 'INSERT_YOUR_CONVERSION_DATE_TIME_HERE'
             ]),
+            */
             'adjustment_date_time' => $adjustmentDateTime
         ]);
 
@@ -170,15 +175,14 @@ class UploadConversionAdjustment
         $conversionAdjustmentUploadServiceClient =
             $googleAdsClient->getConversionAdjustmentUploadServiceClient();
         $response = $conversionAdjustmentUploadServiceClient->uploadConversionAdjustments(
-            $customerId,
-            [$conversionAdjustment],
-            true
+            // Enables partial failure (must be true).
+            UploadConversionAdjustmentsRequest::build($customerId, [$conversionAdjustment], true)
         );
 
         // Prints the status message if any partial failure error is returned.
         // Note: The details of each partial failure error are not printed here, you can refer to
         // the example HandlePartialFailure.php to learn more.
-        if (!is_null($response->getPartialFailureError())) {
+        if ($response->hasPartialFailureError()) {
             printf(
                 "Partial failures occurred: '%s'.%s",
                 $response->getPartialFailureError()->getMessage(),
@@ -189,9 +193,9 @@ class UploadConversionAdjustment
             /** @var ConversionAdjustmentResult $uploadedConversionAdjustment */
             $uploadedConversionAdjustment = $response->getResults()[0];
             printf(
-                "Uploaded conversion adjustment of '%s' for Google Click ID '%s'.%s",
+                "Uploaded conversion adjustment of '%s' for order ID '%s'.%s",
                 $uploadedConversionAdjustment->getConversionAction(),
-                $uploadedConversionAdjustment->getGclidDateTimePair()->getGclid(),
+                $uploadedConversionAdjustment->getOrderId(),
                 PHP_EOL
             );
         }

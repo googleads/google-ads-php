@@ -24,20 +24,23 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V8\Common\ManualCpc;
-use Google\Ads\GoogleAds\V8\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V8\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V8\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\Campaign;
-use Google\Ads\GoogleAds\V8\Resources\Campaign\NetworkSettings;
-use Google\Ads\GoogleAds\V8\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V8\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V8\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V22\Common\ManualCpc;
+use Google\Ads\GoogleAds\V22\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V22\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V22\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V22\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\Campaign;
+use Google\Ads\GoogleAds\V22\Resources\Campaign\NetworkSettings;
+use Google\Ads\GoogleAds\V22\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V22\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V22\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignBudgetsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example adds new campaigns to an account. */
@@ -111,7 +114,9 @@ class AddCampaigns
         $networkSettings = new NetworkSettings([
             'target_google_search' => true,
             'target_search_network' => true,
-            'target_content_network' => false,
+            // Enables Display Expansion on Search campaigns. See
+            // https://support.google.com/google-ads/answer/7193800 to learn more.
+            'target_content_network' => true,
             'target_partner_search_network' => false
         ]);
 
@@ -131,6 +136,9 @@ class AddCampaigns
                 'campaign_budget' => $budgetResourceName,
                 // Adds the network settings configured above.
                 'network_settings' => $networkSettings,
+                // Declare whether or not this campaign serves political ads targeting the EU.
+                'contains_eu_political_advertising' =>
+                    EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
                 // Optional: Sets the start and end dates.
                 'start_date' => date('Ymd', strtotime('+1 day')),
                 'end_date' => date('Ymd', strtotime('+1 month'))
@@ -145,7 +153,9 @@ class AddCampaigns
 
         // Issues a mutate request to add campaigns.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
-        $response = $campaignServiceClient->mutateCampaigns($customerId, $campaignOperations);
+        $response = $campaignServiceClient->mutateCampaigns(
+            MutateCampaignsRequest::build($customerId, $campaignOperations)
+        );
 
         printf("Added %d campaigns:%s", $response->getResults()->count(), PHP_EOL);
 
@@ -179,8 +189,7 @@ class AddCampaigns
         // Issues a mutate request.
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         $response = $campaignBudgetServiceClient->mutateCampaignBudgets(
-            $customerId,
-            [$campaignBudgetOperation]
+            MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
 
         /** @var CampaignBudget $addedBudget */

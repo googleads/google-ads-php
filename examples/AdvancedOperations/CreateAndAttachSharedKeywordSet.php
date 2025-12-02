@@ -24,21 +24,24 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V8\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V8\Enums\SharedSetTypeEnum\SharedSetType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\CampaignSharedSet;
-use Google\Ads\GoogleAds\V8\Resources\SharedCriterion;
-use Google\Ads\GoogleAds\V8\Resources\SharedSet;
-use Google\Ads\GoogleAds\V8\Services\CampaignSharedSetOperation;
-use Google\Ads\GoogleAds\V8\Services\SharedCriterionOperation;
-use Google\Ads\GoogleAds\V8\Services\SharedSetOperation;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V22\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V22\Enums\SharedSetTypeEnum\SharedSetType;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\CampaignSharedSet;
+use Google\Ads\GoogleAds\V22\Resources\SharedCriterion;
+use Google\Ads\GoogleAds\V22\Resources\SharedSet;
+use Google\Ads\GoogleAds\V22\Services\CampaignSharedSetOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignSharedSetsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateSharedCriteriaRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateSharedSetsRequest;
+use Google\Ads\GoogleAds\V22\Services\SharedCriterionOperation;
+use Google\Ads\GoogleAds\V22\Services\SharedSetOperation;
 use Google\ApiCore\ApiException;
 
 /**
@@ -123,10 +126,10 @@ class CreateAndAttachSharedKeywordSet
         $sharedSetOperation->setCreate($sharedSet);
 
         $sharedSetServiceClient = $googleAdsClient->getSharedSetServiceClient();
-        $response = $sharedSetServiceClient->mutateSharedSets(
+        $response = $sharedSetServiceClient->mutateSharedSets(MutateSharedSetsRequest::build(
             $customerId,
             [$sharedSetOperation]
-        );
+        ));
 
         $sharedSetResourceName = $response->getResults()[0]->getResourceName();
         print 'Created shared set ' . $sharedSetResourceName . PHP_EOL;
@@ -151,8 +154,7 @@ class CreateAndAttachSharedKeywordSet
 
         $sharedCriterionServiceClient = $googleAdsClient->getSharedCriterionServiceClient();
         $response = $sharedCriterionServiceClient->mutateSharedCriteria(
-            $customerId,
-            $sharedCriterionOperations
+            MutateSharedCriteriaRequest::build($customerId, $sharedCriterionOperations)
         );
 
         printf("Added %d shared criteria:%s", $response->getResults()->count(), PHP_EOL);
@@ -172,8 +174,7 @@ class CreateAndAttachSharedKeywordSet
 
         $campaignSharedSetServiceClient = $googleAdsClient->getCampaignSharedSetServiceClient();
         $response = $campaignSharedSetServiceClient->mutateCampaignSharedSets(
-            $customerId,
-            [$campaignSharedSetOperation]
+            MutateCampaignSharedSetsRequest::build($customerId, [$campaignSharedSetOperation])
         );
 
         print 'Created campaign shared set: ' . $response->getResults()[0]->getResourceName()

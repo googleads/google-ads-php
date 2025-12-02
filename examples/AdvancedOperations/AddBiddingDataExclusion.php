@@ -25,14 +25,15 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\V8\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V8\Enums\SeasonalityEventScopeEnum\SeasonalityEventScope;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\BiddingDataExclusion;
-use Google\Ads\GoogleAds\V8\Services\BiddingDataExclusionOperation;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\V22\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V22\Enums\SeasonalityEventScopeEnum\SeasonalityEventScope;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\BiddingDataExclusion;
+use Google\Ads\GoogleAds\V22\Services\BiddingDataExclusionOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateBiddingDataExclusionsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -145,8 +146,7 @@ class AddBiddingDataExclusion
         $biddingDataExclusionServiceClient =
             $googleAdsClient->getBiddingDataExclusionServiceClient();
         $response = $biddingDataExclusionServiceClient->mutateBiddingDataExclusions(
-            $customerId,
-            [$biddingDataExclusionOperation]
+            MutateBiddingDataExclusionsRequest::build($customerId, [$biddingDataExclusionOperation])
         );
 
         printf(

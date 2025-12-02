@@ -21,13 +21,13 @@ namespace Google\Ads\GoogleAds\Util;
 use Google\Ads\GoogleAds\Util\FieldMasks\FieldMasksTestDataProvider;
 use Google\Ads\GoogleAds\Util\FieldMasks\Proto\Resource;
 use Google\Ads\GoogleAds\Util\FieldMasks\Proto\TestSuite;
-use Google\Ads\GoogleAds\V8\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V8\Common\PercentCpc;
-use Google\Ads\GoogleAds\V8\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V8\Resources\Ad;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V8\Resources\Campaign;
-use Google\Ads\GoogleAds\V8\Resources\Campaign\DynamicSearchAdsSetting;
+use Google\Ads\GoogleAds\V22\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V22\Common\PercentCpc;
+use Google\Ads\GoogleAds\V22\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V22\Resources\Ad;
+use Google\Ads\GoogleAds\V22\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V22\Resources\Campaign;
+use Google\Ads\GoogleAds\V22\Resources\Campaign\DynamicSearchAdsSetting;
 use Google\Protobuf\FieldMask;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
@@ -42,7 +42,6 @@ use UnexpectedValueException;
  */
 class FieldMasksTest extends TestCase
 {
-
     private static $testCases = null;
 
     private static function loadTestCases()
@@ -151,10 +150,7 @@ class FieldMasksTest extends TestCase
         $campaign = new Campaign([
             'name' => 'test',
             'percent_cpc' => new PercentCpc(['cpc_bid_ceiling_micros' => 1000000]),
-            'advertising_channel_type' => AdvertisingChannelType::SEARCH,
-            'dynamic_search_ads_setting' => new DynamicSearchAdsSetting([
-                'feeds' => ['feed 1', 'feed 2']
-            ])
+            'advertising_channel_type' => AdvertisingChannelType::SEARCH
         ]);
         // A value of a field of simple type can be obtained.
         $this->assertEquals('test', FieldMasks::getFieldValue('name', $campaign));
@@ -168,15 +164,6 @@ class FieldMasksTest extends TestCase
             AdvertisingChannelType::SEARCH,
             FieldMasks::getFieldValue('advertising_channel_type', $campaign)
         );
-        // A value of a repeated field type can be obtained.
-        $this->assertEquals(
-            ['feed 1', 'feed 2'],
-            iterator_to_array(
-                FieldMasks::getFieldValue('dynamic_search_ads_setting.feeds', $campaign)
-                    ->getIterator()
-            )
-        );
-
         $adGroupAd = new AdGroupAd([
             'ad' => new Ad([
                 'expanded_text_ad' => new ExpandedTextAdInfo(['headline_part1' => 'test'])

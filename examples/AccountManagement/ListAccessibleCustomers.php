@@ -20,11 +20,12 @@ namespace Google\Ads\GoogleAds\Examples\AccountManagement;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Services\ListAccessibleCustomersRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -38,7 +39,6 @@ use Google\ApiCore\ApiException;
  */
 class ListAccessibleCustomers
 {
-
     public static function main()
     {
         // Generate a refreshable OAuth2 credential for authentication.
@@ -90,7 +90,8 @@ class ListAccessibleCustomers
         $customerServiceClient = $googleAdsClient->getCustomerServiceClient();
 
         // Issues a request for listing all accessible customers.
-        $accessibleCustomers = $customerServiceClient->listAccessibleCustomers();
+        $accessibleCustomers =
+            $customerServiceClient->listAccessibleCustomers(new ListAccessibleCustomersRequest());
         print 'Total results: ' . count($accessibleCustomers->getResourceNames()) . PHP_EOL;
 
         // Iterates over all accessible customers' resource names and prints them.

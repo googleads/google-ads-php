@@ -23,16 +23,18 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V8\Common\PolicyTopicEntry;
-use Google\Ads\GoogleAds\V8\Common\PolicyTopicEvidence;
-use Google\Ads\GoogleAds\V8\Enums\AdTypeEnum\AdType;
-use Google\Ads\GoogleAds\V8\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V22\Common\PolicyTopicEntry;
+use Google\Ads\GoogleAds\V22\Common\PolicyTopicEvidence;
+use Google\Ads\GoogleAds\V22\Enums\AdTypeEnum\AdType;
+use Google\Ads\GoogleAds\V22\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\V22\Services\SearchSettings;
 use Google\ApiCore\ApiException;
 
 /** This example retrieves all the disapproved ads in a given campaign. */
@@ -40,8 +42,6 @@ class GetAllDisapprovedAds
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
-
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -117,11 +117,11 @@ class GetAllDisapprovedAds
                   . 'WHERE campaign.id = ' . $campaignId . ' '
                   . 'AND ad_group_ad.policy_summary.approval_status = DISAPPROVED';
 
-        // Issues a search request by specifying page size.
+        // Issues a search request.
         $response = $googleAdsServiceClient->search(
-            $customerId,
-            $query,
-            ['pageSize' => self::PAGE_SIZE, 'returnTotalResultsCount' => true]
+            SearchGoogleAdsRequest::build($customerId, $query)->setSearchSettings(
+                new SearchSettings(['return_total_results_count' => true])
+            )
         );
 
         // Iterates over all rows in all pages and counts disapproved ads.
@@ -149,13 +149,15 @@ class GetAllDisapprovedAds
                 foreach ($policyTopicEntry->getEvidences() as $evidence) {
                     /** @var PolicyTopicEvidence $evidence */
                     $textList = $evidence->getTextList();
-                    for ($i = 0; $i < $textList->getTexts()->count(); $i++) {
-                        printf(
-                            "    evidence text[%d]: '%s'%s",
-                            $i,
-                            $textList->getTexts()[$i],
-                            PHP_EOL
-                        );
+                    if (!empty($textList)) {
+                        for ($i = 0; $i < $textList->getTexts()->count(); $i++) {
+                            printf(
+                                "    evidence text[%d]: '%s'%s",
+                                $i,
+                                $textList->getTexts()[$i],
+                                PHP_EOL
+                            );
+                        }
                     }
                 }
             }

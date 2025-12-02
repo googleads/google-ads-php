@@ -24,17 +24,18 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V8\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
-use Google\Ads\GoogleAds\V8\Enums\ConversionActionStatusEnum\ConversionActionStatus;
-use Google\Ads\GoogleAds\V8\Enums\ConversionActionTypeEnum\ConversionActionType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\ConversionAction;
-use Google\Ads\GoogleAds\V8\Resources\ConversionAction\ValueSettings;
-use Google\Ads\GoogleAds\V8\Services\ConversionActionOperation;
+use Google\Ads\GoogleAds\V22\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
+use Google\Ads\GoogleAds\V22\Enums\ConversionActionStatusEnum\ConversionActionStatus;
+use Google\Ads\GoogleAds\V22\Enums\ConversionActionTypeEnum\ConversionActionType;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\ConversionAction;
+use Google\Ads\GoogleAds\V22\Resources\ConversionAction\ValueSettings;
+use Google\Ads\GoogleAds\V22\Services\ConversionActionOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateConversionActionsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example illustrates adding a conversion action. */
@@ -103,6 +104,9 @@ class AddConversionAction
     {
         // Creates a conversion action.
         $conversionAction = new ConversionAction([
+            // Note that conversion action names must be unique.
+            // If a conversion action already exists with the specified conversion_action_name
+            // the create operation will fail with a ConversionActionError.DUPLICATE_NAME error.
             'name' => 'Earth to Mars Cruises Conversion #' . Helper::getPrintableDatetime(),
             'category' => ConversionActionCategory::PBDEFAULT,
             'type' => ConversionActionType::WEBPAGE,
@@ -121,8 +125,7 @@ class AddConversionAction
         // Issues a mutate request to add the conversion action.
         $conversionActionServiceClient = $googleAdsClient->getConversionActionServiceClient();
         $response = $conversionActionServiceClient->mutateConversionActions(
-            $customerId,
-            [$conversionActionOperation]
+            MutateConversionActionsRequest::build($customerId, [$conversionActionOperation])
         );
 
         printf("Added %d conversion actions:%s", $response->getResults()->count(), PHP_EOL);

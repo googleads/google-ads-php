@@ -26,16 +26,18 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\BillingSetup;
-use Google\Ads\GoogleAds\V8\Resources\BillingSetup\PaymentsAccountInfo;
-use Google\Ads\GoogleAds\V8\Services\BillingSetupOperation;
-use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\BillingSetup;
+use Google\Ads\GoogleAds\V22\Resources\BillingSetup\PaymentsAccountInfo;
+use Google\Ads\GoogleAds\V22\Services\BillingSetupOperation;
+use Google\Ads\GoogleAds\V22\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V22\Services\MutateBillingSetupRequest;
+use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -148,8 +150,7 @@ class AddBillingSetup
         // Issues a mutate request to add the billing setup.
         $billingSetupServiceClient = $googleAdsClient->getBillingSetupServiceClient();
         $response = $billingSetupServiceClient->mutateBillingSetup(
-            $customerId,
-            $billingSetupOperation
+            MutateBillingSetupRequest::build($customerId, $billingSetupOperation)
         );
 
         printf(
@@ -228,7 +229,9 @@ class AddBillingSetup
 
         // Issues a search stream request.
         /** @var GoogleAdsServerStreamDecorator $stream */
-        $stream = $googleAdsClient->getGoogleAdsServiceClient()->searchStream($customerId, $query);
+        $stream = $googleAdsClient->getGoogleAdsServiceClient()->searchStream(
+            SearchGoogleAdsStreamRequest::build($customerId, $query)
+        );
         /** @var GoogleAdsRow $googleAdsRow */
         $googleAdsRow = $stream->iterateAllElements()->current();
 

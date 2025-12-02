@@ -23,14 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\AdParameter;
-use Google\Ads\GoogleAds\V8\Services\AdParameterOperation;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\AdParameter;
+use Google\Ads\GoogleAds\V22\Services\AdParameterOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateAdParametersRequest;
 use Google\ApiCore\ApiException;
 
 /** This example sets ad parameters for an ad group criterion. */
@@ -138,10 +139,10 @@ class SetAdParameters
 
         // Issues a mutate request to set the ad parameters.
         $adParameterServiceClient = $googleAdsClient->getAdParameterServiceClient();
-        $response = $adParameterServiceClient->mutateAdParameters(
+        $response = $adParameterServiceClient->mutateAdParameters(MutateAdParametersRequest::build(
             $customerId,
             [$adParameterOperation1, $adParameterOperation2]
-        );
+        ));
 
         printf("Set %d ad parameters:%s", $response->getResults()->count(), PHP_EOL);
 

@@ -23,20 +23,21 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\AddressInfo;
-use Google\Ads\GoogleAds\V8\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V8\Common\LocationInfo;
-use Google\Ads\GoogleAds\V8\Common\ProximityInfo;
-use Google\Ads\GoogleAds\V8\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V8\Enums\ProximityRadiusUnitsEnum\ProximityRadiusUnits;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V8\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\AddressInfo;
+use Google\Ads\GoogleAds\V22\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V22\Common\LocationInfo;
+use Google\Ads\GoogleAds\V22\Common\ProximityInfo;
+use Google\Ads\GoogleAds\V22\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V22\Enums\ProximityRadiusUnitsEnum\ProximityRadiusUnits;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V22\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignCriteriaRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -142,8 +143,9 @@ class AddCampaignTargetingCriteria
 
         // Issues a mutate request to add the campaign criterion.
         $campaignCriterionServiceClient = $googleAdsClient->getCampaignCriterionServiceClient();
-        $response =
-            $campaignCriterionServiceClient->mutateCampaignCriteria($customerId, $operations);
+        $response = $campaignCriterionServiceClient->mutateCampaignCriteria(
+            MutateCampaignCriteriaRequest::build($customerId, $operations)
+        );
 
         printf("Added %d campaign criteria:%s", $response->getResults()->count(), PHP_EOL);
 

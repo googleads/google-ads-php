@@ -24,18 +24,19 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V8\Common\PolicyViolationKey;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V8\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V8\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V8\Services\AdGroupCriterionServiceClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V22\Common\PolicyViolationKey;
+use Google\Ads\GoogleAds\V22\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V22\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V22\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V22\Services\Client\AdGroupCriterionServiceClient;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupCriteriaRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -143,8 +144,7 @@ class HandleKeywordPolicyViolations
         try {
             // Try sending a mutate request to add the keyword.
             $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-                $customerId,
-                [$adGroupCriterionOperation]
+                MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])
             );
             printf(
                 "Added a keyword with resource name '%s'.%s",
@@ -261,8 +261,7 @@ class HandleKeywordPolicyViolations
             . " violations." . PHP_EOL;
         $adGroupCriterionOperation->setExemptPolicyViolationKeys($exemptPolicyViolationKeys);
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-            $customerId,
-            [$adGroupCriterionOperation]
+            MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])
         );
         printf(
             "Successfully added a keyword with resource name '%s' by requesting for"

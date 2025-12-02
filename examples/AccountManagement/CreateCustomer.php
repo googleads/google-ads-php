@@ -23,12 +23,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\Customer;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\Customer;
+use Google\Ads\GoogleAds\V22\Services\CreateCustomerClientRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -54,8 +55,7 @@ class CreateCustomer
 
         // Construct a Google Ads client configured from a properties file and the
         // OAuth2 credentials above.
-        $googleAdsClient = (new GoogleAdsClientBuilder())
-            ->fromFile()
+        $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
             ->build();
 
@@ -114,7 +114,9 @@ class CreateCustomer
 
         // Issues a mutate request to create an account
         $customerServiceClient = $googleAdsClient->getCustomerServiceClient();
-        $response = $customerServiceClient->createCustomerClient($managerCustomerId, $customer);
+        $response = $customerServiceClient->createCustomerClient(
+            CreateCustomerClientRequest::build($managerCustomerId, $customer)
+        );
 
         printf(
             'Created a customer with resource name "%s" under the manager account with '

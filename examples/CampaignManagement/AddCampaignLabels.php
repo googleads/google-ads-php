@@ -24,13 +24,14 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\CampaignLabel;
-use Google\Ads\GoogleAds\V8\Services\CampaignLabelOperation;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\CampaignLabel;
+use Google\Ads\GoogleAds\V22\Services\CampaignLabelOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignLabelsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example adds a campaign label to a list of campaigns. */
@@ -130,8 +131,7 @@ class AddCampaignLabels
         // Issues a mutate request to add the labels to the campaigns.
         $campaignLabelServiceClient = $googleAdsClient->getCampaignLabelServiceClient();
         $response = $campaignLabelServiceClient->mutateCampaignLabels(
-            $customerId,
-            $operations
+            MutateCampaignLabelsRequest::build($customerId, $operations)
         );
 
         printf("Added %d campaign labels:%s", $response->getResults()->count(), PHP_EOL);

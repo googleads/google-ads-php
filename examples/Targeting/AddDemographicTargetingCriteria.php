@@ -24,17 +24,18 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\AgeRangeInfo;
-use Google\Ads\GoogleAds\V8\Common\GenderInfo;
-use Google\Ads\GoogleAds\V8\Enums\AgeRangeTypeEnum\AgeRangeType;
-use Google\Ads\GoogleAds\V8\Enums\GenderTypeEnum\GenderType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V8\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\AgeRangeInfo;
+use Google\Ads\GoogleAds\V22\Common\GenderInfo;
+use Google\Ads\GoogleAds\V22\Enums\AgeRangeTypeEnum\AgeRangeType;
+use Google\Ads\GoogleAds\V22\Enums\GenderTypeEnum\GenderType;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V22\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupCriteriaRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -136,8 +137,7 @@ class AddDemographicTargetingCriteria
         // Issues a mutate request to add the ad group criteria and print out some information.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-            $customerId,
-            $operations
+            MutateAdGroupCriteriaRequest::build($customerId, $operations)
         );
         printf(
             "Added %d demographic ad group criteria:%s",

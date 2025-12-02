@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2019 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,30 +24,40 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Services\KeywordPlanKeywordForecast;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\DateRange;
+use Google\Ads\GoogleAds\V22\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V22\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V22\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Services\BiddableKeyword;
+use Google\Ads\GoogleAds\V22\Services\CampaignToForecast;
+use Google\Ads\GoogleAds\V22\Services\CampaignToForecast\CampaignBiddingStrategy;
+use Google\Ads\GoogleAds\V22\Services\CriterionBidModifier;
+use Google\Ads\GoogleAds\V22\Services\ForecastAdGroup;
+use Google\Ads\GoogleAds\V22\Services\GenerateKeywordForecastMetricsRequest;
+use Google\Ads\GoogleAds\V22\Services\ManualCpcBiddingStrategy;
 use Google\ApiCore\ApiException;
 
 /**
- * This code example generates forecast metrics for a keyword plan. To create a keyword plan,
- * run AddKeywordPlan.php.
+ * Generates forecast metrics for keyword planning.
+ *
+ * Guide:
+ * https://developers.google.com/google-ads/api/docs/keyword-planning/generate-forecast-metrics
  */
 class GenerateForecastMetrics
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const KEYWORD_PLAN_ID = 'INSERT_KEYWORD_PLAN_ID_HERE';
 
     public static function main()
     {
-        // Either pass the required parameters for this example on the command line, or insert
-        // them into the constants above.
+        // Either pass the required parameters for this example on the command line, or insert them
+        // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
-            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::KEYWORD_PLAN_ID => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -55,16 +65,14 @@ class GenerateForecastMetrics
 
         // Construct a Google Ads client configured from a properties file and the
         // OAuth2 credentials above.
-        $googleAdsClient = (new GoogleAdsClientBuilder())
-            ->fromFile()
+        $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
             ->build();
 
         try {
             self::runExample(
                 $googleAdsClient,
-                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::KEYWORD_PLAN_ID] ?: self::KEYWORD_PLAN_ID
+                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -98,50 +106,117 @@ class GenerateForecastMetrics
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $keywordPlanId the keyword plan ID
      */
     // [START generate_forecast_metrics]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        int $customerId,
-        int $keywordPlanId
-    ) {
-        $keywordPlanServiceClient = $googleAdsClient->getKeywordPlanServiceClient();
-
-        // Issues a request to generate forecast metrics based on the specific keyword plan ID.
-        $generateForecastMetricsResponse = $keywordPlanServiceClient->generateForecastMetrics(
-            ResourceNames::forKeywordPlan($customerId, $keywordPlanId)
+        int $customerId
+    ): void {
+        $campaignToForecast = self::createCampaignToForecast();
+        $keywordPlanIdeaServiceClient = $googleAdsClient->getKeywordPlanIdeaServiceClient();
+        // Generates keyword forecast metrics based on the specified parameters.
+        $response = $keywordPlanIdeaServiceClient->generateKeywordForecastMetrics(
+            new GenerateKeywordForecastMetricsRequest([
+                'customer_id' => $customerId,
+                'campaign' => $campaignToForecast,
+                'forecast_period' => new DateRange([
+                    // Sets the forecast start date to tomorrow.
+                    'start_date' => date('Ymd', strtotime('+1 day')),
+                    // Sets the forecast end date to 30 days from today.
+                    'end_date' => date('Ymd', strtotime('+30 days'))
+                ])
+            ])
         );
 
-        $i = 0;
-        foreach ($generateForecastMetricsResponse->getKeywordForecasts() as $forecast) {
-            /** @var KeywordPlanKeywordForecast $forecast */
+        $metrics = $response->getCampaignForecastMetrics();
+        printf(
+            "Estimated daily clicks: %s%s",
+            $metrics->hasClicks() ? sprintf("%.2f", $metrics->getClicks()) : "'none'",
+            PHP_EOL
+        );
+        printf(
+            "Estimated daily impressions: %s%s",
+            $metrics->hasImpressions() ? sprintf("%.2f", $metrics->getImpressions()) : "'none'",
+            PHP_EOL
+        );
+        printf(
+            "Estimated average CPC (micros): %s%s",
+            $metrics->hasAverageCpcMicros()
+                ? sprintf("%d", $metrics->getAverageCpcMicros()) : "'none'",
+            PHP_EOL
+        );
+    }
 
-            $metrics = $forecast->getKeywordForecast();
-            printf(
-                "%d) Keyword ID: %s%s",
-                ++$i,
-                $forecast->getKeywordPlanAdGroupKeyword(),
-                PHP_EOL
-            );
-            printf(
-                "Estimated daily clicks: %s%s",
-                is_null($metrics->getClicks()) ? 'null'
-                    : sprintf("%.2f", $metrics->getClicks()),
-                PHP_EOL
-            );
-            printf(
-                "Estimated daily impressions: %s%s",
-                is_null($metrics->getImpressions())
-                    ? 'null' : sprintf("%.2f", $metrics->getImpressions()),
-                PHP_EOL
-            );
-            printf(
-                "Estimated average cpc (micros): %s%s",
-                is_null($metrics->getAverageCpc()) ? 'null' : $metrics->getAverageCpc(),
-                PHP_EOL
-            );
-        }
+    /**
+     * Creates the campaign to forecast. A campaign to forecast lets you try out various
+     * configurations and keywords to find the best optimization for your future campaigns. Once
+     * you've found the best campaign configuration, create a serving campaign in your Google Ads
+     * account with similar values and keywords. For more details, see:
+     *
+     * https://support.google.com/google-ads/answer/3022575
+     *
+     * @return CampaignToForecast the created campaign to forecast
+     */
+    private static function createCampaignToForecast(): CampaignToForecast
+    {
+        // Creates a campaign to forecast.
+        $campaignToForecast = new CampaignToForecast([
+            'keyword_plan_network' => KeywordPlanNetwork::GOOGLE_SEARCH,
+            'bidding_strategy' => new CampaignBiddingStrategy([
+                'manual_cpc_bidding_strategy' => new ManualCpcBiddingStrategy([
+                    'max_cpc_bid_micros' => 1_000_000
+                ])
+            ]),
+            // See https://developers.google.com/google-ads/api/reference/data/geotargets for the
+            // list of geo target IDs.
+            'geo_modifiers' => [
+                new CriterionBidModifier([
+                    // Geo target constant 2840 is for USA.
+                    'geo_target_constant' => ResourceNames::forGeoTargetConstant(2840)
+                ])
+            ],
+            // See
+            // https://developers.google.com/google-ads/api/reference/data/codes-formats#languages
+            // for the list of language criteria IDs. Language constant 1000 is for English.
+            'language_constants' => [ResourceNames::forLanguageConstant(1000)],
+        ]);
+
+        // Creates forecast ad group based on themes such as creative relevance, product category,
+        // or cost per click.
+        $forecastAdGroup = new ForecastAdGroup([
+            'biddable_keywords' => [
+                new BiddableKeyword([
+                    'max_cpc_bid_micros' => 2_500_000,
+                    'keyword' => new KeywordInfo([
+                        'text' => 'mars cruise',
+                        'match_type' => KeywordMatchType::BROAD
+                    ])
+                ]),
+                new BiddableKeyword([
+                    'max_cpc_bid_micros' => 1_500_000,
+                    'keyword' => new KeywordInfo([
+                        'text' => 'cheap cruise',
+                        'match_type' => KeywordMatchType::PHRASE
+                    ])
+                ]),
+                new BiddableKeyword([
+                    'max_cpc_bid_micros' => 1_990_000,
+                    'keyword' => new KeywordInfo([
+                        'text' => 'jupiter cruise',
+                        'match_type' => KeywordMatchType::BROAD
+                    ])
+                ])
+            ],
+            'negative_keywords' => [
+                new KeywordInfo([
+                    'text' => 'moon walk',
+                    'match_type' => KeywordMatchType::BROAD
+                ])
+            ]
+        ]);
+        $campaignToForecast->setAdGroups([$forecastAdGroup]);
+
+        return $campaignToForecast;
     }
     // [END generate_forecast_metrics]
 }

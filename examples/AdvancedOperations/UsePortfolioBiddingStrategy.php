@@ -24,23 +24,27 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\TargetSpend;
-use Google\Ads\GoogleAds\V8\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V8\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V8\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\BiddingStrategy;
-use Google\Ads\GoogleAds\V8\Resources\Campaign;
-use Google\Ads\GoogleAds\V8\Resources\Campaign\NetworkSettings;
-use Google\Ads\GoogleAds\V8\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V8\Services\BiddingStrategyOperation;
-use Google\Ads\GoogleAds\V8\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V8\Services\CampaignOperation;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\TargetSpend;
+use Google\Ads\GoogleAds\V22\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V22\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V22\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V22\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\BiddingStrategy;
+use Google\Ads\GoogleAds\V22\Resources\Campaign;
+use Google\Ads\GoogleAds\V22\Resources\Campaign\NetworkSettings;
+use Google\Ads\GoogleAds\V22\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V22\Services\BiddingStrategyOperation;
+use Google\Ads\GoogleAds\V22\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V22\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateBiddingStrategiesRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignBudgetsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -159,8 +163,7 @@ class UsePortfolioBiddingStrategy
         // Issues a mutate request to create the bidding strategy.
         $biddingStrategyServiceClient = $googleAdsClient->getBiddingStrategyServiceClient();
         $response = $biddingStrategyServiceClient->mutateBiddingStrategies(
-            $customerId,
-            [$biddingStrategyOperation]
+            MutateBiddingStrategiesRequest::build($customerId, [$biddingStrategyOperation])
         );
         /** @var BiddingStrategy $addedBiddingStrategy */
         $addedBiddingStrategy = $response->getResults()[0];
@@ -205,8 +208,7 @@ class UsePortfolioBiddingStrategy
         // Issues a mutate request to create the budget.
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         $response = $campaignBudgetServiceClient->mutateCampaignBudgets(
-            $customerId,
-            [$campaignBudgetOperation]
+            MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
 
         /** @var CampaignBudget $addedBudget */
@@ -252,7 +254,10 @@ class UsePortfolioBiddingStrategy
             ]),
             // Sets the bidding strategy and budget.
             'bidding_strategy' => $biddingStrategyResourceName,
-            'campaign_budget' => $campaignBudgetResourceName
+            'campaign_budget' => $campaignBudgetResourceName,
+            // Declare whether or not this campaign serves political ads targeting the EU.
+            'contains_eu_political_advertising' =>
+                EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
         ]);
         // [END use_portfolio_bidding_strategy_2]
 
@@ -262,7 +267,9 @@ class UsePortfolioBiddingStrategy
 
         // Issues a mutate request to add the campaign.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
-        $response = $campaignServiceClient->mutateCampaigns($customerId, [$campaignOperation]);
+        $response = $campaignServiceClient->mutateCampaigns(
+            MutateCampaignsRequest::build($customerId, [$campaignOperation])
+        );
 
         /** @var Campaign $addedCampaign */
         $addedCampaign = $response->getResults()[0];

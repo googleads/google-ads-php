@@ -24,13 +24,14 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\V8\Enums\AccessRoleEnum\AccessRole;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\CustomerUserAccessInvitation;
-use Google\Ads\GoogleAds\V8\Services\CustomerUserAccessInvitationOperation;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\V22\Enums\AccessRoleEnum\AccessRole;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\CustomerUserAccessInvitation;
+use Google\Ads\GoogleAds\V22\Services\CustomerUserAccessInvitationOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateCustomerUserAccessInvitationRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -130,8 +131,10 @@ class InviteUserWithAccessRole
         $customerUserAccessInvitationServiceClient =
             $googleAdsClient->getCustomerUserAccessInvitationServiceClient();
         $response = $customerUserAccessInvitationServiceClient->mutateCustomerUserAccessInvitation(
-            $customerId,
-            $customerUserAccessInvitationOperation
+            MutateCustomerUserAccessInvitationRequest::build(
+                $customerId,
+                $customerUserAccessInvitationOperation
+            )
         );
         printf(
             "Customer user access invitation with resource name '%s' was sent from customer "

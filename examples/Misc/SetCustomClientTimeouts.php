@@ -23,13 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\ApiStatus;
 
@@ -128,12 +130,11 @@ class SetCustomClientTimeouts
             // Issues a search stream request by setting a custom client timeout.
             /** @var GoogleAdsServerStreamDecorator $stream */
             $stream = $googleAdsServiceClient->searchStream(
-                $customerId,
-                $query,
+                SearchGoogleAdsStreamRequest::build($customerId, $query),
                 [
                     // Any server streaming call has a default timeout setting. For this
                     // particular call, the default setting can be found in the following file:
-                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V8/Services/resources/google_ads_service_client_config.json.
+                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V22/Services/resources/google_ads_service_client_config.json.
                     //
                     // When making a server streaming call, an optional argument is provided and can
                     // be used to override the default timeout setting with a given value.
@@ -176,15 +177,14 @@ class SetCustomClientTimeouts
         try {
             // Issues a search request by setting a custom client timeout.
             $response = $googleAdsServiceClient->search(
-                $customerId,
-                $query,
+                SearchGoogleAdsRequest::build($customerId, $query),
                 [
                     // Any unary call is retryable and has default retry settings.
                     // Complete information about these settings can be found here:
                     // https://googleapis.github.io/gax-php/master/Google/ApiCore/RetrySettings.html.
                     // For this particular call, the default retry settings can be found in the
                     // following file:
-                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V8/Services/resources/google_ads_service_client_config.json.
+                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V22/Services/resources/google_ads_service_client_config.json.
                     //
                     // When making an unary call, an optional argument is provided and can be
                     // used to override the default retry settings with given values.
@@ -193,6 +193,9 @@ class SetCustomClientTimeouts
                         'totalTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS,
                         // Sets the timeout that is used for the first try to one tenth of the
                         // maximum accumulative timeout of the call.
+                        // Note: This overrides the default value and can lead to
+                        // RequestError.RPC_DEADLINE_TOO_SHORT errors when too small. We recommend
+                        // to do it only if necessary.
                         'initialRpcTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS / 10,
                         // Sets the maximum timeout that can be used for any given try to one fifth
                         // of the maximum accumulative timeout of the call (two times greater than

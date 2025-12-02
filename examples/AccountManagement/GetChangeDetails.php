@@ -25,16 +25,18 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\V8\Enums\ChangeClientTypeEnum\ChangeClientType;
-use Google\Ads\GoogleAds\V8\Enums\ChangeEventResourceTypeEnum\ChangeEventResourceType;
-use Google\Ads\GoogleAds\V8\Enums\ResourceChangeOperationEnum\ResourceChangeOperation;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V22\Enums\ChangeClientTypeEnum\ChangeClientType;
+use Google\Ads\GoogleAds\V22\Enums\ChangeEventResourceTypeEnum\ChangeEventResourceType;
+use Google\Ads\GoogleAds\V22\Enums\ResourceChangeOperationEnum\ResourceChangeOperation;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
+use Google\Protobuf\Internal\Message;
 use Google\Protobuf\Internal\RepeatedField;
 
 /**
@@ -44,7 +46,6 @@ use Google\Protobuf\Internal\RepeatedField;
 class GetChangeDetails
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -131,12 +132,9 @@ class GetChangeDetails
                 date_format(new DateTime('-14 days'), 'Ymd')
             ) . 'ORDER BY change_event.change_date_time DESC '
             . 'LIMIT 5';
-        // Issues a search request by specifying page size.
-        // The page size is superfluous with the default limit set above, but it's
-        // shown here since it's a good practice to use a reasonable page size when
-        // you set a higher limit.
+        // Issues a search request.
         $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
         // Iterates over all rows in all pages and prints the requested field values for
         // the change event in each row.
@@ -178,6 +176,14 @@ class GetChangeDetails
                     $oldResourceEntity = $oldResource->getAsset();
                     $newResourceEntity = $newResource->getAsset();
                     break;
+                case ChangeEventResourceType::ASSET_SET:
+                    $oldResourceEntity = $oldResource->getAssetSet();
+                    $newResourceEntity = $newResource->getAssetSet();
+                    break;
+                case ChangeEventResourceType::ASSET_SET_ASSET:
+                    $oldResourceEntity = $oldResource->getAssetSetAsset();
+                    $newResourceEntity = $newResource->getAssetSetAsset();
+                    break;
                 case ChangeEventResourceType::CAMPAIGN:
                     $oldResourceEntity = $oldResource->getCampaign();
                     $newResourceEntity = $newResource->getCampaign();
@@ -185,6 +191,10 @@ class GetChangeDetails
                 case ChangeEventResourceType::CAMPAIGN_ASSET:
                     $oldResourceEntity = $oldResource->getCampaignAsset();
                     $newResourceEntity = $newResource->getCampaignAsset();
+                    break;
+                case ChangeEventResourceType::CAMPAIGN_ASSET_SET:
+                    $oldResourceEntity = $oldResource->getCampaignAssetSet();
+                    $newResourceEntity = $newResource->getCampaignAssetSet();
                     break;
                 case ChangeEventResourceType::CAMPAIGN_BUDGET:
                     $oldResourceEntity = $oldResource->getCampaignBudget();
@@ -194,25 +204,9 @@ class GetChangeDetails
                     $oldResourceEntity = $oldResource->getCampaignCriterion();
                     $newResourceEntity = $newResource->getCampaignCriterion();
                     break;
-                case ChangeEventResourceType::AD_GROUP_FEED:
-                    $oldResourceEntity = $oldResource->getAdGroupFeed();
-                    $newResourceEntity = $newResource->getAdGroupFeed();
-                    break;
-                case ChangeEventResourceType::CAMPAIGN_FEED:
-                    $oldResourceEntity = $oldResource->getCampaignFeed();
-                    $newResourceEntity = $newResource->getCampaignFeed();
-                    break;
                 case ChangeEventResourceType::CUSTOMER_ASSET:
                     $oldResourceEntity = $oldResource->getCustomerAsset();
                     $newResourceEntity = $newResource->getCustomerAsset();
-                    break;
-                case ChangeEventResourceType::FEED:
-                    $oldResourceEntity = $oldResource->getFeed();
-                    $newResourceEntity = $newResource->getFeed();
-                    break;
-                case ChangeEventResourceType::FEED_ITEM:
-                    $oldResourceEntity = $oldResource->getFeedItem();
-                    $newResourceEntity = $newResource->getFeedItem();
                     break;
                 default:
                     $isResourceTypeKnown = false;
@@ -249,10 +243,10 @@ class GetChangeDetails
                     FieldMasks::getFieldValue($path, $newResourceEntity, true)
                 );
                 if ($resourceChangeOperation === ResourceChangeOperation::CREATE) {
-                    printf("'$path' set to '%s'.%s", $newValueStr, PHP_EOL);
+                    printf("\t'$path' set to '%s'.%s", $newValueStr, PHP_EOL);
                 } elseif ($resourceChangeOperation === ResourceChangeOperation::UPDATE) {
                     printf(
-                        "'$path' changed from '%s' to '%s'.%s",
+                        "\t'$path' changed from '%s' to '%s'.%s",
                         self::convertToString(
                             FieldMasks::getFieldValue($path, $oldResourceEntity, true)
                         ),
@@ -277,8 +271,16 @@ class GetChangeDetails
         }
         if (gettype($value) === 'boolean') {
             return $value ? 'true' : 'false';
-        } elseif (gettype($value) === 'object' && get_class($value) === RepeatedField::class) {
-            return json_encode(iterator_to_array($value->getIterator()));
+        } elseif (gettype($value) === 'object') {
+            if (get_class($value) === RepeatedField::class) {
+                $strValues = [];
+                foreach (iterator_to_array($value->getIterator()) as $element) {
+                    /** @type Message $element */
+                    $strValues[] = $element->serializeToJsonString();
+                }
+                return '[' . implode(',', $strValues) . ']';
+            }
+            return json_encode($value);
         } else {
             return strval($value);
         }

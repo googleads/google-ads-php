@@ -24,40 +24,46 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V8\Common\ExpandedDynamicSearchAdInfo;
-use Google\Ads\GoogleAds\V8\Common\ManualCpc;
-use Google\Ads\GoogleAds\V8\Common\WebpageConditionInfo;
-use Google\Ads\GoogleAds\V8\Common\WebpageInfo;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V8\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V8\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V8\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V8\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\Ad;
-use Google\Ads\GoogleAds\V8\Resources\AdGroup;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V8\Resources\Campaign;
-use Google\Ads\GoogleAds\V8\Resources\Campaign\DynamicSearchAdsSetting;
-use Google\Ads\GoogleAds\V8\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V8\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V8\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V8\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V8\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V8\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V8\Services\MutateAdGroupAdsResponse;
-use Google\Ads\GoogleAds\V8\Services\MutateAdGroupsResponse;
-use Google\Ads\GoogleAds\V8\Services\MutateAdGroupCriteriaResponse;
-use Google\Ads\GoogleAds\V8\Services\MutateCampaignBudgetsResponse;
-use Google\Ads\GoogleAds\V8\Services\MutateCampaignsResponse;
+use Google\Ads\GoogleAds\V22\Common\ExpandedDynamicSearchAdInfo;
+use Google\Ads\GoogleAds\V22\Common\ManualCpc;
+use Google\Ads\GoogleAds\V22\Common\WebpageConditionInfo;
+use Google\Ads\GoogleAds\V22\Common\WebpageInfo;
+use Google\Ads\GoogleAds\V22\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V22\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V22\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V22\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V22\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V22\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V22\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V22\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V22\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\Ad;
+use Google\Ads\GoogleAds\V22\Resources\AdGroup;
+use Google\Ads\GoogleAds\V22\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V22\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V22\Resources\Campaign;
+use Google\Ads\GoogleAds\V22\Resources\Campaign\DynamicSearchAdsSetting;
+use Google\Ads\GoogleAds\V22\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V22\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V22\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V22\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V22\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V22\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdsResponse;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupsResponse;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupCriteriaResponse;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignBudgetsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignBudgetsResponse;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignsResponse;
 use Google\ApiCore\ApiException;
 
 /**
@@ -166,8 +172,7 @@ class AddDynamicSearchAds
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         /** @var MutateCampaignBudgetsResponse $campaignBudgetResponse */
         $campaignBudgetResponse = $campaignBudgetServiceClient->mutateCampaignBudgets(
-            $customerId,
-            [$campaignBudgetOperation]
+            MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
 
         $campaignBudgetResourceName = $campaignBudgetResponse->getResults()[0]->getResourceName();
@@ -201,6 +206,9 @@ class AddDynamicSearchAds
                 'domain_name' => 'example.com',
                 'language_code' => 'en'
             ]),
+            // Declare whether or not this campaign serves political ads targeting the EU.
+            'contains_eu_political_advertising' =>
+                EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING,
             // Optional: Sets the start and end dates for the campaign, beginning one day from
             // now and ending a month from now.
             'start_date' => date('Ymd', strtotime('+1 day')),
@@ -215,8 +223,7 @@ class AddDynamicSearchAds
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
         /** @var MutateCampaignsResponse $campaignResponse */
         $campaignResponse = $campaignServiceClient->mutateCampaigns(
-            $customerId,
-            [$campaignOperation]
+            MutateCampaignsRequest::build($customerId, [$campaignOperation])
         );
 
         $campaignResourceName = $campaignResponse->getResults()[0]->getResourceName();
@@ -257,7 +264,9 @@ class AddDynamicSearchAds
         // Issues a mutate request to add the ad groups.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
         /** @var MutateAdGroupsResponse $adGroupResponse */
-        $adGroupResponse = $adGroupServiceClient->mutateAdGroups($customerId, [$adGroupOperation]);
+        $adGroupResponse = $adGroupServiceClient->mutateAdGroups(
+            MutateAdGroupsRequest::build($customerId, [$adGroupOperation])
+        );
 
         $adGroupResourceName = $adGroupResponse->getResults()[0]->getResourceName();
         printf("Added ad group named '%s'.%s", $adGroupResourceName, PHP_EOL);
@@ -296,8 +305,7 @@ class AddDynamicSearchAds
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
         /** @var MutateAdGroupAdsResponse $adGroupAdResponse */
         $adGroupAdResponse = $adGroupAdServiceClient->mutateAdGroupAds(
-            $customerId,
-            [$adGroupAdOperation]
+            MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
         );
 
         $adGroupAdResourceName = $adGroupAdResponse->getResults()[0]->getResourceName();
@@ -346,8 +354,7 @@ class AddDynamicSearchAds
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         /** @var MutateAdGroupCriteriaResponse $adGroupCriterionResponse */
         $adGroupCriterionResponse = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-            $customerId,
-            [$adGroupCriterionOperation]
+            MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])
         );
 
         $adGroupCriterionResourceName =

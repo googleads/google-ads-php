@@ -24,25 +24,25 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\V8\Common\DeviceInfo;
-use Google\Ads\GoogleAds\V8\Common\GenderInfo;
-use Google\Ads\GoogleAds\V8\Enums\DeviceEnum\Device;
-use Google\Ads\GoogleAds\V8\Enums\GenderTypeEnum\GenderType;
-use Google\Ads\GoogleAds\V8\Enums\ReachPlanAdLengthEnum\ReachPlanAdLength;
-use Google\Ads\GoogleAds\V8\Enums\ReachPlanAgeRangeEnum\ReachPlanAgeRange;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Services\CampaignDuration;
-use Google\Ads\GoogleAds\V8\Services\PlannableLocation;
-use Google\Ads\GoogleAds\V8\Services\PlannedProduct;
-use Google\Ads\GoogleAds\V8\Services\PlannedProductReachForecast;
-use Google\Ads\GoogleAds\V8\Services\Preferences;
-use Google\Ads\GoogleAds\V8\Services\ProductAllocation;
-use Google\Ads\GoogleAds\V8\Services\ProductMetadata;
-use Google\Ads\GoogleAds\V8\Services\ReachForecast;
-use Google\Ads\GoogleAds\V8\Services\Targeting;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\V22\Common\DeviceInfo;
+use Google\Ads\GoogleAds\V22\Common\GenderInfo;
+use Google\Ads\GoogleAds\V22\Enums\DeviceEnum\Device;
+use Google\Ads\GoogleAds\V22\Enums\GenderTypeEnum\GenderType;
+use Google\Ads\GoogleAds\V22\Enums\ReachPlanAgeRangeEnum\ReachPlanAgeRange;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Services\CampaignDuration;
+use Google\Ads\GoogleAds\V22\Services\GenerateReachForecastRequest;
+use Google\Ads\GoogleAds\V22\Services\ListPlannableLocationsRequest;
+use Google\Ads\GoogleAds\V22\Services\ListPlannableProductsRequest;
+use Google\Ads\GoogleAds\V22\Services\PlannableLocation;
+use Google\Ads\GoogleAds\V22\Services\PlannedProduct;
+use Google\Ads\GoogleAds\V22\Services\PlannedProductReachForecast;
+use Google\Ads\GoogleAds\V22\Services\ProductMetadata;
+use Google\Ads\GoogleAds\V22\Services\ReachForecast;
+use Google\Ads\GoogleAds\V22\Services\Targeting;
 use Google\ApiCore\ApiException;
 
 /**
@@ -120,7 +120,6 @@ class ForecastReach
         self::showPlannableLocations($googleAdsClient);
         self::showPlannableProducts($googleAdsClient);
         self::forecastManualMix($googleAdsClient, $customerId);
-        self::forecastSuggestedMix($googleAdsClient, $customerId);
     }
 
     /**
@@ -130,7 +129,9 @@ class ForecastReach
      */
     private static function showPlannableLocations(GoogleAdsClient $googleAdsClient)
     {
-        $response = $googleAdsClient->getReachPlanServiceClient()->listPlannableLocations();
+        $response = $googleAdsClient->getReachPlanServiceClient()->listPlannableLocations(
+            new ListPlannableLocationsRequest()
+        );
 
         printf("Plannable Locations:%sName, Id, ParentCountryId%s", PHP_EOL, PHP_EOL);
         foreach ($response->getPlannableLocations() as $location) {
@@ -154,7 +155,7 @@ class ForecastReach
     private static function showPlannableProducts(GoogleAdsClient $googleAdsClient)
     {
         $response = $googleAdsClient->getReachPlanServiceClient()->listPlannableProducts(
-            self::LOCATION_ID
+            ListPlannableProductsRequest::build(self::LOCATION_ID)
         );
 
         print 'Plannable Products for Location ID ' . self::LOCATION_ID . ':' . PHP_EOL;
@@ -218,10 +219,9 @@ class ForecastReach
         // See the docs for defaults and valid ranges:
         // https://developers.google.com/google-ads/api/reference/rpc/latest/GenerateReachForecastRequest
         $response = $googleAdsClient->getReachPlanServiceClient()->generateReachForecast(
-            $customerId,
-            $duration,
-            $productMix,
-            ['currencyCode' => $currencyCode, 'targeting' => $targeting]
+            GenerateReachForecastRequest::build($customerId, $duration, $productMix)
+                ->setCurrencyCode($currencyCode)
+                ->setTargeting($targeting)
         );
 
         printf(
@@ -292,50 +292,6 @@ class ForecastReach
         );
     }
     // [END forecast_reach_3]
-
-    /**
-     * Gets a forecast for a product mix based on your set of preferences.
-     *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     */
-    // [START forecast_reach_1]
-    private static function forecastSuggestedMix(GoogleAdsClient $googleAdsClient, int $customerId)
-    {
-        $preferences = new Preferences([
-            'has_guaranteed_price' => true,
-            'starts_with_sound' => true,
-            'is_skippable' => false,
-            'top_content_only' => true,
-            'ad_length' => ReachPlanAdLength::FIFTEEN_OR_TWENTY_SECONDS
-        ]);
-
-        $mixResponse = $googleAdsClient->getReachPlanServiceClient()->generateProductMixIdeas(
-            $customerId,
-            self::LOCATION_ID,
-            self::CURRENCY_CODE,
-            self::BUDGET_MICROS,
-            ['preferences' => $preferences]
-        );
-
-        $productMix = [];
-        foreach ($mixResponse->getProductAllocation() as $product) {
-            /** @var ProductAllocation $product */
-            $productMix[] = new PlannedProduct([
-                'plannable_product_code' => $product->getPlannableProductCode(),
-                'budget_micros' => $product->getBudgetMicros()
-            ]);
-        }
-
-        self::getReachCurve(
-            $googleAdsClient,
-            $customerId,
-            $productMix,
-            self::LOCATION_ID,
-            self::CURRENCY_CODE
-        );
-    }
-    // [END forecast_reach_1]
 }
 
 ForecastReach::main();

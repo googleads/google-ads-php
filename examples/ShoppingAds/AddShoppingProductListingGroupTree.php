@@ -23,22 +23,24 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\ProductBrandInfo;
-use Google\Ads\GoogleAds\V8\Common\ListingDimensionInfo;
-use Google\Ads\GoogleAds\V8\Common\ListingGroupInfo;
-use Google\Ads\GoogleAds\V8\Common\ProductConditionInfo;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V8\Enums\ListingGroupTypeEnum\ListingGroupType;
-use Google\Ads\GoogleAds\V8\Enums\ProductConditionEnum\ProductCondition;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V8\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\ProductBrandInfo;
+use Google\Ads\GoogleAds\V22\Common\ListingDimensionInfo;
+use Google\Ads\GoogleAds\V22\Common\ListingGroupInfo;
+use Google\Ads\GoogleAds\V22\Common\ProductConditionInfo;
+use Google\Ads\GoogleAds\V22\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V22\Enums\ListingGroupTypeEnum\ListingGroupType;
+use Google\Ads\GoogleAds\V22\Enums\ProductConditionEnum\ProductCondition;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V22\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V22\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -60,8 +62,6 @@ class AddShoppingProductListingGroupTree
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
     private const REPLACE_EXISTING_TREE = 'INSERT_BOOLEAN_TRUE_OR_FALSE_HERE';
-
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -258,8 +258,7 @@ class AddShoppingProductListingGroupTree
         // Issues a mutate request.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-            $customerId,
-            $operations
+            MutateAdGroupCriteriaRequest::build($customerId, $operations)
         );
         printf(
             'Added %d ad group criteria for listing group tree with the following resource '
@@ -296,9 +295,9 @@ class AddShoppingProductListingGroupTree
             . 'AND ad_group_criterion.listing_group.parent_ad_group_criterion IS NULL '
             . 'AND ad_group.id = ' . $adGroupId;
 
-        // Issues a search request by specifying page size.
+        // Issues a search request.
         $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
         $operations = [];
         // Iterates over all rows in all pages and prints the requested field values for
@@ -321,8 +320,7 @@ class AddShoppingProductListingGroupTree
             // Issues a mutate request.
             $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
             $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-                $customerId,
-                $operations
+                MutateAdGroupCriteriaRequest::build($customerId, $operations)
             );
             printf("Removed %d ad group criteria.%s", $response->getResults()->count(), PHP_EOL);
         }

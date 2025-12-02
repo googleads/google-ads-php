@@ -23,15 +23,16 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V8\Enums\ChangeStatusOperationEnum\ChangeStatusOperation;
-use Google\Ads\GoogleAds\V8\Enums\ChangeStatusResourceTypeEnum\ChangeStatusResourceType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\ChangeStatus;
-use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V22\Enums\ChangeStatusOperationEnum\ChangeStatusOperation;
+use Google\Ads\GoogleAds\V22\Enums\ChangeStatusResourceTypeEnum\ChangeStatusResourceType;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\ChangeStatus;
+use Google\Ads\GoogleAds\V22\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -40,7 +41,6 @@ use Google\ApiCore\ApiException;
 class GetChangeSummary
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -121,9 +121,10 @@ class GetChangeSummary
             . 'ORDER BY change_status.last_change_date_time '
             . 'LIMIT 10000';
 
-        // Issues a search request by specifying page size.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        // Issues a search request.
+        $response = $googleAdsServiceClient->search(
+            SearchGoogleAdsRequest::build($customerId, $query)
+        );
 
         // Iterates over all rows in all pages and prints the requested field values for
         // the change status in each row.

@@ -23,16 +23,17 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\DeviceInfo;
-use Google\Ads\GoogleAds\V8\Enums\DeviceEnum\Device;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupBidModifier;
-use Google\Ads\GoogleAds\V8\Services\AdGroupBidModifierOperation;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\DeviceInfo;
+use Google\Ads\GoogleAds\V22\Enums\DeviceEnum\Device;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\AdGroupBidModifier;
+use Google\Ads\GoogleAds\V22\Services\AdGroupBidModifierOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupBidModifiersRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -129,8 +130,7 @@ class AddAdGroupBidModifier
         // Issues a mutate request to add the ad group bid modifier.
         $adGroupBidModifierServiceClient = $googleAdsClient->getAdGroupBidModifierServiceClient();
         $response = $adGroupBidModifierServiceClient->mutateAdGroupBidModifiers(
-            $customerId,
-            [$adGroupBidModifierOperation]
+            MutateAdGroupBidModifiersRequest::build($customerId, [$adGroupBidModifierOperation])
         );
 
         printf("Added %d ad group bid modifier:%s", $response->getResults()->count(), PHP_EOL);

@@ -24,36 +24,42 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\AdImageAsset;
-use Google\Ads\GoogleAds\V8\Common\AdTextAsset;
-use Google\Ads\GoogleAds\V8\Common\ImageAsset;
-use Google\Ads\GoogleAds\V8\Common\ManualCpc;
-use Google\Ads\GoogleAds\V8\Common\ResponsiveDisplayAdInfo;
-use Google\Ads\GoogleAds\V8\Common\UserListInfo;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V8\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V8\Enums\AssetTypeEnum\AssetType;
-use Google\Ads\GoogleAds\V8\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V8\Enums\DisplayAdFormatSettingEnum\DisplayAdFormatSetting;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\Ad;
-use Google\Ads\GoogleAds\V8\Resources\AdGroup;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V8\Resources\Asset;
-use Google\Ads\GoogleAds\V8\Resources\Campaign;
-use Google\Ads\GoogleAds\V8\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V8\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V8\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V8\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V8\Services\AssetOperation;
-use Google\Ads\GoogleAds\V8\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V8\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\AdImageAsset;
+use Google\Ads\GoogleAds\V22\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V22\Common\ImageAsset;
+use Google\Ads\GoogleAds\V22\Common\ManualCpc;
+use Google\Ads\GoogleAds\V22\Common\ResponsiveDisplayAdInfo;
+use Google\Ads\GoogleAds\V22\Common\UserListInfo;
+use Google\Ads\GoogleAds\V22\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V22\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V22\Enums\AssetTypeEnum\AssetType;
+use Google\Ads\GoogleAds\V22\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V22\Enums\DisplayAdFormatSettingEnum\DisplayAdFormatSetting;
+use Google\Ads\GoogleAds\V22\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\Ad;
+use Google\Ads\GoogleAds\V22\Resources\AdGroup;
+use Google\Ads\GoogleAds\V22\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V22\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V22\Resources\Asset;
+use Google\Ads\GoogleAds\V22\Resources\Campaign;
+use Google\Ads\GoogleAds\V22\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V22\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V22\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V22\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V22\Services\AssetOperation;
+use Google\Ads\GoogleAds\V22\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\V22\Services\MutateAssetsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateCampaignsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -180,11 +186,6 @@ class AddMerchantCenterDynamicRemarketingCampaign
         $shoppingSettings = new ShoppingSetting([
             'campaign_priority' => 0,
             'merchant_id' => $merchantCenterAccountId,
-            // Display Network campaigns do not support partition by country. The only
-            // supported value is "ZZ". This signals that products from all countries are
-            // available in the campaign. The actual products which serve are based on
-            // the products tagged in the user list entry.
-            'sales_country' => 'ZZ',
             'enable_local' => true
         ]);
 
@@ -196,6 +197,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
             'status' => CampaignStatus::PAUSED,
             'campaign_budget' => ResourceNames::forCampaignBudget($customerId, $campaignBudgetId),
             'manual_cpc' => new ManualCpc(),
+            // Declare whether or not this campaign serves political ads targeting the EU.
+            'contains_eu_political_advertising' =>
+                EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
             // This connects the campaign to the merchant center account.
             'shopping_setting' => $shoppingSettings
         ]);
@@ -206,7 +210,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         // Issues a mutate request to add the campaign.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
-        $response = $campaignServiceClient->mutateCampaigns($customerId, [$campaignOperation]);
+        $response = $campaignServiceClient->mutateCampaigns(
+            MutateCampaignsRequest::build($customerId, [$campaignOperation])
+        );
 
         /** @var Campaign $addedCampaign */
         $addedCampaign = $response->getResults()[0];
@@ -245,7 +251,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         // Issues a mutate request to add the ad group.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
-        $response = $adGroupServiceClient->mutateAdGroups($customerId, [$adGroupOperation]);
+        $response = $adGroupServiceClient->mutateAdGroups(
+            MutateAdGroupsRequest::build($customerId, [$adGroupOperation])
+        );
 
         /** @var AdGroup $addedAdGroup */
         $addedAdGroup = $response->getResults()[0];
@@ -328,7 +336,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         // Issues a mutate request to add the ad group ad.
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
-        $response = $adGroupAdServiceClient->mutateAdGroupAds($customerId, [$adGroupAdOperation]);
+        $response = $adGroupAdServiceClient->mutateAdGroupAds(
+            MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
+        );
 
         /** @var AdGroupAd $addedAdGroupAd */
         $addedAdGroupAd = $response->getResults()[0];
@@ -368,7 +378,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         // Issues a mutate request to add the asset.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
-        $response = $assetServiceClient->mutateAssets($customerId, [$assetOperation]);
+        $response = $assetServiceClient->mutateAssets(
+            MutateAssetsRequest::build($customerId, [$assetOperation])
+        );
 
         // Prints the resource name of the added image asset.
         /** @var MutateAssetResult $addedImageAsset */
@@ -414,8 +426,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
         // Issues a mutate request to add the ad group criterion.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
-            $customerId,
-            [$adGroupCriterionOperation]
+            MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])
         );
 
         /** @var AdGroupCriterion $addedAdGroupCriterion */

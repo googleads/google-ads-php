@@ -24,16 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Enums\InvoiceTypeEnum\InvoiceType;
-use Google\Ads\GoogleAds\V8\Enums\MonthOfYearEnum\MonthOfYear;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\Invoice;
-use Google\Ads\GoogleAds\V8\Resources\Invoice\AccountBudgetSummary;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Enums\InvoiceTypeEnum\InvoiceType;
+use Google\Ads\GoogleAds\V22\Enums\MonthOfYearEnum\MonthOfYear;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\Invoice;
+use Google\Ads\GoogleAds\V22\Resources\Invoice\AccountBudgetSummary;
+use Google\Ads\GoogleAds\V22\Services\ListInvoicesRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -114,11 +115,13 @@ class GetInvoices
         // [START get_invoices]
         // Issues the request.
         $response = $googleAdsClient->getInvoiceServiceClient()->listInvoices(
-            $customerId,
-            ResourceNames::forBillingSetup($customerId, $billingSetupId),
-            // The year needs to be 2019 or later.
-            date('Y', $lastMonth),
-            MonthOfYear::value(strtoupper(date('F', $lastMonth)))
+            ListInvoicesRequest::build(
+                $customerId,
+                ResourceNames::forBillingSetup($customerId, $billingSetupId),
+                // The year needs to be 2019 or later.
+                date('Y', $lastMonth),
+                MonthOfYear::value(strtoupper(date('F', $lastMonth)))
+            )
         );
         // [END get_invoices]
 

@@ -23,19 +23,19 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\Recommendation;
-use Google\Ads\GoogleAds\V8\Services\DismissRecommendationRequest\DismissRecommendationOperation;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\Recommendation;
+use Google\Ads\GoogleAds\V22\Services\DismissRecommendationRequest;
+use Google\Ads\GoogleAds\V22\Services\DismissRecommendationRequest\DismissRecommendationOperation;
 use Google\ApiCore\ApiException;
 
 /**
- * This example dismisses a given recommendation. To retrieve recommendations for text ads,
- * run GetTextAdRecommendations.php.
+ * This example dismisses a given recommendation.
  */
 class DismissRecommendation
 {
@@ -43,7 +43,6 @@ class DismissRecommendation
     // Recommendation ID is the last alphanumeric portion of the resource name obtained from
     // ResourceNames::forRecommendation(), which has the format of
     // `customers/<customer_id>/recommendations/<recommendation_id>`.
-    // An example can be retrieved from GetTextAdRecommendations.php
     private const RECOMMENDATION_ID = 'INSERT_RECOMMENDATION_ID_HERE';
 
     public static function main()
@@ -118,8 +117,7 @@ class DismissRecommendation
         // Issues a mutate request to dismiss the recommendation.
         $recommendationServiceClient = $googleAdsClient->getRecommendationServiceClient();
         $response = $recommendationServiceClient->dismissRecommendation(
-            $customerId,
-            [$dismissRecommendationOperation]
+            DismissRecommendationRequest::build($customerId, [$dismissRecommendationOperation])
         );
         /** @var Recommendation $dismissedRecommendation */
         $dismissedRecommendation = $response->getResults()[0];

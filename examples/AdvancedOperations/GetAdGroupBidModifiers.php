@@ -24,15 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\V8\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V8\Enums\DeviceEnum\Device;
-use Google\Ads\GoogleAds\V8\Enums\HotelDateSelectionTypeEnum\HotelDateSelectionType;
-use Google\Ads\GoogleAds\V8\Enums\PreferredContentTypeEnum\PreferredContentType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\V22\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V22\Enums\DeviceEnum\Device;
+use Google\Ads\GoogleAds\V22\Enums\HotelDateSelectionTypeEnum\HotelDateSelectionType;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example gets ad group bid modifiers. */
@@ -41,8 +41,6 @@ class GetAdGroupBidModifiers
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     // Optional: Specify an ad group ID below to restrict search to only a given ad group.
     private const AD_GROUP_ID = null;
-
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -121,17 +119,16 @@ class GetAdGroupBidModifiers
               . 'ad_group_bid_modifier.hotel_length_of_stay.max_nights, '
               . 'ad_group_bid_modifier.hotel_check_in_day.day_of_week, '
               . 'ad_group_bid_modifier.hotel_check_in_date_range.start_date, '
-              . 'ad_group_bid_modifier.hotel_check_in_date_range.end_date, '
-              . 'ad_group_bid_modifier.preferred_content.type '
+              . 'ad_group_bid_modifier.hotel_check_in_date_range.end_date '
           . 'FROM ad_group_bid_modifier';
         if ($adGroupId !== null) {
             $query .= " WHERE ad_group.id = $adGroupId";
         }
         $query .= " LIMIT 10000";
 
-        // Issues a search request by specifying page size.
+        // Issues a search request.
         $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
 
         // Iterates over all rows in all pages and prints the requested field values for
         // the ad group bid modifier in each row.
@@ -139,14 +136,31 @@ class GetAdGroupBidModifiers
             /** @var GoogleAdsRow $googleAdsRow */
             $adGroupBidModifier = $googleAdsRow->getAdGroupBidModifier();
             printf(
-                "Ad group bid modifier with criterion ID %d, bid modifier value %f "
-                . "was found in an ad group ID %d of campaign ID %d.%s",
+                "Ad group bid modifier with criterion ID %d in ad group ID %d of campaign ID %d ",
                 $adGroupBidModifier->getCriterionId(),
-                $adGroupBidModifier->getBidModifier(),
                 $googleAdsRow->getAdGroup()->getId(),
-                $googleAdsRow->getCampaign()->getId(),
-                PHP_EOL
+                $googleAdsRow->getCampaign()->getId()
             );
+
+            // When working with an 'optional' protocol buffer field such as AdGroup::$bid_modifier,
+            // use hasXX() to check if the field is set, and only retrieve the value using getXX()
+            // if hasXX() returns true. See the protocol buffer documentation on field presence for
+            // more information:
+            // https://protobuf.dev/programming-guides/field_presence/#presence-in-proto3-apis
+
+            if ($adGroupBidModifier->hasBidModifier()) {
+                // Prints the bid modifier value since it is set.
+                printf(
+                    "has a bid modifier value of %.2f.%s",
+                    $adGroupBidModifier->getBidModifier(),
+                    PHP_EOL
+                );
+            } else {
+                // Does not print the bid modifier value since it is not set. Printing the result of
+                // $adGroupBidModifier->getBidModifier() in this case would be misleading, since it
+                // will be 0.
+                print 'does NOT have a bid modifier value.' . PHP_EOL;
+            }
 
             $criterionDetails = ' - Criterion type: ' . $adGroupBidModifier->getCriterion() . ', ';
             switch ($adGroupBidModifier->getCriterion()) {
@@ -175,12 +189,6 @@ class GetAdGroupBidModifiers
                         $adGroupBidModifier->getHotelLengthOfStay()->getMinNights() . ', ';
                     $criterionDetails .= 'Max Nights: ' .
                         $adGroupBidModifier->getHotelLengthOfStay()->getMaxNights();
-                    break;
-                case 'preferred_content':
-                    $criterionDetails .= 'Type: ' .
-                        PreferredContentType::name(
-                            $adGroupBidModifier->getPreferredContent()->getType()
-                        );
                     break;
                 case 'hotel_check_in_date_range':
                     $criterionDetails .= 'Start Date: ' .

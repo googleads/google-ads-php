@@ -27,7 +27,6 @@ use UnexpectedValueException;
  */
 final class ConfigurationLoader
 {
-
     private $environmentalVariables;
 
     /**
@@ -80,7 +79,7 @@ final class ConfigurationLoader
             }
         }
 
-        return new Configuration(parse_ini_file($configIniFilePath, true));
+        return new Configuration(parse_ini_file($configIniFilePath, true, INI_SCANNER_TYPED));
     }
 
     /**
@@ -91,7 +90,7 @@ final class ConfigurationLoader
      */
     public function fromString($iniString)
     {
-        return new Configuration(parse_ini_string($iniString, true));
+        return new Configuration(parse_ini_string($iniString, true, INI_SCANNER_TYPED));
     }
 
     /**

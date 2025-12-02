@@ -24,15 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\V8\Common\PlacementInfo;
-use Google\Ads\GoogleAds\V8\Enums\ContentLabelTypeEnum\ContentLabelType;
-use Google\Ads\GoogleAds\V8\Common\ContentLabelInfo;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\CustomerNegativeCriterion;
-use Google\Ads\GoogleAds\V8\Services\CustomerNegativeCriterionOperation;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\V22\Common\PlacementInfo;
+use Google\Ads\GoogleAds\V22\Enums\ContentLabelTypeEnum\ContentLabelType;
+use Google\Ads\GoogleAds\V22\Common\ContentLabelInfo;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\CustomerNegativeCriterion;
+use Google\Ads\GoogleAds\V22\Services\CustomerNegativeCriterionOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateCustomerNegativeCriteriaRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -125,8 +126,10 @@ class AddCustomerNegativeCriteria
         $customerNegativeCriterionServiceClient =
             $googleAdsClient->getCustomerNegativeCriterionServiceClient();
         $response = $customerNegativeCriterionServiceClient->mutateCustomerNegativeCriteria(
-            $customerId,
-            [$tragedyCriterionOperation, $placementCriterionOperation]
+            MutateCustomerNegativeCriteriaRequest::build(
+                $customerId,
+                [$tragedyCriterionOperation, $placementCriterionOperation]
+            )
         );
 
         printf(

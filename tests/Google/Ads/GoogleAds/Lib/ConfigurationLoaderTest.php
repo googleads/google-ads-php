@@ -31,7 +31,6 @@ use UnexpectedValueException;
  */
 class ConfigurationLoaderTest extends TestCase
 {
-
     /** @var ConfigurationLoader $configurationLoader */
     private $configurationLoader;
 

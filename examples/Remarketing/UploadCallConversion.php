@@ -24,14 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Services\CallConversion;
-use Google\Ads\GoogleAds\V8\Services\CallConversionResult;
-use Google\Ads\GoogleAds\V8\Services\CustomVariable;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Common\Consent;
+use Google\Ads\GoogleAds\V22\Enums\ConsentStatusEnum\ConsentStatus;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Services\CallConversion;
+use Google\Ads\GoogleAds\V22\Services\CallConversionResult;
+use Google\Ads\GoogleAds\V22\Services\CustomVariable;
+use Google\Ads\GoogleAds\V22\Services\UploadCallConversionsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -50,6 +53,8 @@ class UploadCallConversion
     // associate with the call conversion upload.
     private const CONVERSION_CUSTOM_VARIABLE_ID = null;
     private const CONVERSION_CUSTOM_VARIABLE_VALUE = null;
+    // Optional: The consent status for ad user data.
+    private const AD_USER_DATA_CONSENT = null;
 
     public static function main()
     {
@@ -63,7 +68,8 @@ class UploadCallConversion
             ArgumentNames::CONVERSION_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_VALUE => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_CUSTOM_VARIABLE_ID => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::CONVERSION_CUSTOM_VARIABLE_VALUE => GetOpt::OPTIONAL_ARGUMENT
+            ArgumentNames::CONVERSION_CUSTOM_VARIABLE_VALUE => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::AD_USER_DATA_CONSENT => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -88,7 +94,10 @@ class UploadCallConversion
                 $options[ArgumentNames::CONVERSION_CUSTOM_VARIABLE_ID]
                     ?: self::CONVERSION_CUSTOM_VARIABLE_ID,
                 $options[ArgumentNames::CONVERSION_CUSTOM_VARIABLE_VALUE]
-                    ?: self::CONVERSION_CUSTOM_VARIABLE_VALUE
+                    ?: self::CONVERSION_CUSTOM_VARIABLE_VALUE,
+                $options[ArgumentNames::AD_USER_DATA_CONSENT]
+                    ? ConsentStatus::value($options[ArgumentNames::AD_USER_DATA_CONSENT])
+                    : self::AD_USER_DATA_CONSENT
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -124,7 +133,7 @@ class UploadCallConversion
      * @param int $customerId the customer ID
      * @param int $conversionActionId the ID of the conversion action to upload to
      * @param string $callerId the caller ID from which this call was placed. Caller ID is expected
-     *     to be in E.164 format with preceding '+' sign. e.g. "+16502531234"
+     *     to be in E.164 format with preceding '+' sign. e.g. "+18005550100"
      * @param string $callStartDateTime the date and time at which the call occurred. The format is
      *     "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”
      * @param string $conversionDateTime the date and time of the conversion (should be after the
@@ -135,6 +144,7 @@ class UploadCallConversion
      *     associate with the upload
      * @param string|null $conversionCustomVariableValue the value of the conversion custom
      *     variable to associate with the upload
+     * @param int|null $adUserDataConsent the consent status for ad user data
      */
     // [START upload_call_conversion]
     public static function runExample(
@@ -146,7 +156,8 @@ class UploadCallConversion
         string $conversionDateTime,
         float $conversionValue,
         ?string $conversionCustomVariableId,
-        ?string $conversionCustomVariableValue
+        ?string $conversionCustomVariableValue,
+        ?int $adUserDataConsent
     ) {
         // Creates a call conversion by specifying currency as USD.
         $callConversion = new CallConversion([
@@ -167,19 +178,29 @@ class UploadCallConversion
                 'value' => $conversionCustomVariableValue
             ])]);
         }
+        // Sets the consent information, if provided.
+        if (!empty($adUserDataConsent)) {
+            // Specifies whether user consent was obtained for the data you are uploading. See
+            // https://www.google.com/about/company/user-consent-policy for details.
+            $callConversion->setConsent(new Consent(['ad_user_data' => $adUserDataConsent]));
+        }
 
         // Issues a request to upload the call conversion.
         $conversionUploadServiceClient = $googleAdsClient->getConversionUploadServiceClient();
+        // NOTE: This request contains a single conversion as a demonstration.  However, if you have
+        // multiple conversions to upload, it's best to upload multiple conversions per request
+        // instead of sending a separate request per conversion. See the following for per-request
+        // limits:
+        // https://developers.google.com/google-ads/api/docs/best-practices/quotas#conversion_upload_service
         $response = $conversionUploadServiceClient->uploadCallConversions(
-            $customerId,
-            [$callConversion],
-            true
+            // Partial failure MUST be enabled for this request.
+            UploadCallConversionsRequest::build($customerId, [$callConversion], true)
         );
 
         // Prints the status message if any partial failure error is returned.
         // Note: The details of each partial failure error are not printed here, you can refer to
         // the example HandlePartialFailure.php to learn more.
-        if (!is_null($response->getPartialFailureError())) {
+        if ($response->hasPartialFailureError()) {
             printf(
                 "Partial failures occurred: '%s'.%s",
                 $response->getPartialFailureError()->getMessage(),

@@ -24,17 +24,18 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V8\GoogleAdsErrors;
-use Google\Ads\GoogleAds\Util\V8\PartialFailures;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\AdGroup;
-use Google\Ads\GoogleAds\V8\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V8\Services\MutateAdGroupsResponse;
+use Google\Ads\GoogleAds\Util\V22\GoogleAdsErrors;
+use Google\Ads\GoogleAds\Util\V22\PartialFailures;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\AdGroup;
+use Google\Ads\GoogleAds\V22\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupsRequest;
+use Google\Ads\GoogleAds\V22\Services\MutateAdGroupsResponse;
 use Google\ApiCore\ApiException;
 
 /**
@@ -174,9 +175,7 @@ class HandlePartialFailure
         // Issues the mutate request, enabling partial failure mode.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
         return $adGroupServiceClient->mutateAdGroups(
-            $customerId,
-            $operations,
-            ['partialFailure' => true]
+            MutateAdGroupsRequest::build($customerId, $operations)->setPartialFailure(true)
         );
     }
     // [END handle_partial_failure]
@@ -189,7 +188,7 @@ class HandlePartialFailure
     // [START handle_partial_failure_1]
     private static function checkIfPartialFailureErrorExists(MutateAdGroupsResponse $response)
     {
-        if (!is_null($response->getPartialFailureError())) {
+        if ($response->hasPartialFailureError()) {
             printf("Partial failures occurred. Details will be shown below.%s", PHP_EOL);
         } else {
             printf(

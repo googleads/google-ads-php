@@ -24,15 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Enums\AccessRoleEnum\AccessRole;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\CustomerUserAccess;
-use Google\Ads\GoogleAds\V8\Services\CustomerUserAccessOperation;
+use Google\Ads\GoogleAds\Util\V22\ResourceNames;
+use Google\Ads\GoogleAds\V22\Enums\AccessRoleEnum\AccessRole;
+use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V22\Resources\CustomerUserAccess;
+use Google\Ads\GoogleAds\V22\Services\CustomerUserAccessOperation;
+use Google\Ads\GoogleAds\V22\Services\MutateCustomerUserAccessRequest;
+use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -146,7 +148,8 @@ class UpdateUserAccess
             . "WHERE customer_user_access.email_address LIKE '$emailAddress'";
 
         // Issues a search request by to retrieve the customer user accesses.
-        $response = $googleAdsServiceClient->search($customerId, $query);
+        $response =
+            $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query));
         if (iterator_count($response) > 0) {
             /** @var CustomerUserAccess $customerUserAccess */
             $customerUserAccess = $response->getIterator()->current()->getCustomerUserAccess();
@@ -200,8 +203,7 @@ class UpdateUserAccess
         // Issues a mutate request to update the customer user access.
         $customerUserAccessServiceClient = $googleAdsClient->getCustomerUserAccessServiceClient();
         $response = $customerUserAccessServiceClient->mutateCustomerUserAccess(
-            $customerId,
-            $customerUserAccessOperation
+            MutateCustomerUserAccessRequest::build($customerId, $customerUserAccessOperation)
         );
 
         // Prints the resource name of the updated customer user access.

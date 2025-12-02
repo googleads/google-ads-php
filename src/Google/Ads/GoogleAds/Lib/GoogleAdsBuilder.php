@@ -25,7 +25,6 @@ namespace Google\Ads\GoogleAds\Lib;
  */
 interface GoogleAdsBuilder
 {
-
     /**
      * @var string the default filename for the configuration file for this
      *     library
