@@ -19,7 +19,7 @@
 namespace Google\Ads\GoogleAds\Lib;
 
 use DomainException;
-use Google\Auth\ApplicationDefaultCredentials; 
+use Google\Auth\ApplicationDefaultCredentials;
 use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google\Auth\Credentials\UserRefreshCredentials;
 use Google\Auth\FetchAuthTokenInterface;
@@ -43,7 +43,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
     private $refreshToken;
 
     private $adcFetcher;
-    
+
     public function __construct(
         ConfigurationLoader $configurationLoader = null,
         ?EnvironmentalVariables $environmentalVariables = null,
@@ -52,7 +52,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
         parent::__construct($configurationLoader, $environmentalVariables);
         $this->adcFetcher = $adcFetcher ?? [ApplicationDefaultCredentials::class, 'getCredentials'];
     }
- 
+
     /**
      * @see GoogleAdsBuilder::from()
      */
@@ -64,7 +64,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
         $this->jsonKeyFilePath = $configuration->getConfiguration('jsonKeyFilePath', 'OAUTH2');
         $this->scopes = $configuration->getConfiguration('scopes', 'OAUTH2');
         $this->impersonatedEmail = $configuration->getConfiguration('impersonatedEmail', 'OAUTH2');
-        
+
         return $this;
     }
 
@@ -169,26 +169,30 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      *
      * @return FetchAuthTokenInterface the created OAuth2 object that can fetch auth tokens
      */
-
     public function build(): FetchAuthTokenInterface
     {
-        // The default scope for Google Ads API.
-        $adsScope = ['https://www.googleapis.com/auth/adwords'];
-        
+        $defaultScopeString = 'https://www.googleapis.com/auth/adwords';
+        // Determine the final scope array to use for User Refresh and ADC.
+        // 1. If $this->scopes is set (space-delimited string), use that value (converted to array).
+        // 2. Otherwise, use the default scope string (converted to array).
+        $scopeArrayForUserAndAdc = $this->scopes
+        ? explode(' ', $this->scopes)
+        : [$defaultScopeString];
+
         // 1. Check for **EXPLICIT** Service Account Flow
         if (!empty($this->jsonKeyFilePath)) {
             if (is_null($this->scopes)) {
                 throw new InvalidArgumentException(
-                    "Both 'jsonKeyFilePath' and 'scopes' must be set when "
-                    . "using service account flow."
+                    "Both 'jsonKeyFilePath' and 'scopes' must be set when using service account flow."
                 );
             }
             if (!is_null($this->clientId) || !is_null($this->clientSecret) || !is_null($this->refreshToken)) {
-                 throw new InvalidArgumentException(
+                throw new InvalidArgumentException(
                     "Cannot have both service account flow and installed/web "
                     . "application flow credential values set."
                 );
             }
+            // Service Account flow uses the specific configured scope string
             $scopesForExplicitFlows = explode(' ', $this->scopes);
             return new ServiceAccountCredentials(
                 $scopesForExplicitFlows,
@@ -205,7 +209,8 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                 );
             }
             return new UserRefreshCredentials(
-                $adsScope,
+                // Use the determined scope array, allowing configuration via $this->scopes
+                $scopeArrayForUserAndAdc,
                 [
                     'client_id' => $this->clientId,
                     'client_secret' => $this->clientSecret,
@@ -213,20 +218,21 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                 ]
             );
         }
+
         // 3. FALLBACK: Use Application Default Credentials (ADC)
         try {
-            return call_user_func($this->adcFetcher, $adsScope);
-        } catch (\Google\Auth\CredentialsLoaderException $e) { // <-- USE FQCN HERE
+            // Use the determined scope array, allowing configuration via $this->scopes
+            return call_user_func($this->adcFetcher, $scopeArrayForUserAndAdc);
+        } catch (\Google\Auth\CredentialsLoaderException $e) {
             throw new DomainException(
-                "No OAuth2 credentials were provided, and the automatic Application Default " .
-                "Credentials (ADC) search failed. Please ensure you have run " .
-                "'gcloud auth application-default login' or set explicit credentials. " .
-                "Underlying error: " . $e->getMessage(),
+                "No OAuth2 credentials were provided, and the automatic Application Default "
+                . "Credentials (ADC) search failed. Please ensure you have run "
+                . "'gcloud auth application-default login' or set explicit credentials. "
+                . "Underlying error: " . $e->getMessage(),
                 0,
                 $e
             );
         }
-     
     }
 
     /**
