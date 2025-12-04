@@ -22,7 +22,7 @@ use DomainException;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google\Auth\Credentials\UserRefreshCredentials;
-use Google\Auth\CredentialsLoaderException; // *** ADD THIS LINE ***
+use Google\Auth\CredentialsLoaderException;
 use Google\Auth\FetchAuthTokenInterface;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
@@ -32,8 +32,12 @@ class OAuth2TokenBuilderTest extends TestCase
 {
     /** @var OAuth2TokenBuilder $oAuth2TokenBuilder */
     private $oAuth2TokenBuilder;
+    /** @var string $jsonKeyFilePath */
     private $jsonKeyFilePath;
 
+    /**
+     * @see \PHPUnit\Framework\TestCase::setUp()
+     */
     protected function setUp(): void
     {
         $this->oAuth2TokenBuilder = new OAuth2TokenBuilder();
@@ -60,11 +64,11 @@ class OAuth2TokenBuilderTest extends TestCase
     {
     // Mock the EnvironmentalVariables to control the path to the fake home directory.
         $environmentalVariablesMock = $this
-        ->createMock(EnvironmentalVariables::class);
+            ->createMock(EnvironmentalVariables::class);
         $fakeHomePath = ConfigurationLoaderTestProvider::getFilePathToFakeHome();
         $environmentalVariablesMock
-        ->method('getHome')
-        ->willReturn($fakeHomePath);
+            ->method('getHome')
+            ->willReturn($fakeHomePath);
 
     // --- SETUP: Create the temporary configuration file ---
         $fakeIniPath = $fakeHomePath . '/home_google_ads_php.ini';
@@ -90,8 +94,8 @@ class OAuth2TokenBuilderTest extends TestCase
 
     // The call to fromFile() will succeed because the file now exists at the mocked location.
         $tokenFetcher = $oAuth2TokenBuilder
-        ->fromFile('home_google_ads_php.ini')
-        ->build();
+            ->fromFile('home_google_ads_php.ini')
+            ->build();
 
     // Assertions
         $this->assertInstanceOf(UserRefreshCredentials::class, $tokenFetcher);
@@ -176,7 +180,7 @@ class OAuth2TokenBuilderTest extends TestCase
             ], [
                 'scopes',
                 'OAUTH2',
-                'https://www.googleapis.com/auth/adwords'
+                'https://www.googleapis.com/auth/adwords_test'
             ],
         ];
         $configurationMock = $this->getMockBuilder(Configuration::class)
@@ -284,7 +288,11 @@ class OAuth2TokenBuilderTest extends TestCase
             return $mockAdcCreds;
         };
 
-        $builder = new OAuth2TokenBuilder(null, null, $adcFetcher);
+        $builder = new OAuth2TokenBuilder();
+        $builder->setAdcFetcherForTesting($adcFetcher);
+
+        $builder->defaultOptionals();
+
         $credentials = $builder->build();
         $this->assertSame($mockAdcCreds, $credentials);
     }
@@ -301,7 +309,9 @@ class OAuth2TokenBuilderTest extends TestCase
             throw new \Google\Auth\CredentialsLoaderException('Mocked ADC failure');
         };
 
-        $builder = new OAuth2TokenBuilder(null, null, $adcFetcher);
+        $builder = new OAuth2TokenBuilder();
+
+        $builder->setAdcFetcherForTesting($adcFetcher);
 
         $this->expectException(DomainException::class);
         $this->expectExceptionMessageMatches('/Mocked ADC failure/');

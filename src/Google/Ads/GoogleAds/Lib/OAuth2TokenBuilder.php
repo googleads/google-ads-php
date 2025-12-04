@@ -34,6 +34,8 @@ use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
  */
 final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
 {
+    private const DEFAULT_SCOPE = 'https://www.googleapis.com/auth/adwords';
+
     private $jsonKeyFilePath;
     private $scopes;
     private $impersonatedEmail;
@@ -47,10 +49,9 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
     public function __construct(
         ConfigurationLoader $configurationLoader = null,
         ?EnvironmentalVariables $environmentalVariables = null,
-        callable $adcFetcher = null
     ) {
         parent::__construct($configurationLoader, $environmentalVariables);
-        $this->adcFetcher = $adcFetcher ?? [ApplicationDefaultCredentials::class, 'getCredentials'];
+        $this->adcFetcher = [ApplicationDefaultCredentials::class, 'getCredentials'];
     }
 
     /**
@@ -171,13 +172,9 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      */
     public function build(): FetchAuthTokenInterface
     {
-        $defaultScopeString = 'https://www.googleapis.com/auth/adwords';
         // Determine the final scope array to use for User Refresh and ADC.
-        // 1. If $this->scopes is set (space-delimited string), use that value (converted to array).
-        // 2. Otherwise, use the default scope string (converted to array).
-        $scopeArrayForUserAndAdc = $this->scopes
-        ? explode(' ', $this->scopes)
-        : [$defaultScopeString];
+        // // NOTE: $this->scopes is guaranteed to be set by defaultOptionals().
+        $scopeArrayForUserAndAdc = explode(' ', $this->scopes);
 
         // 1. Check for **EXPLICIT** Service Account Flow
         if (!empty($this->jsonKeyFilePath)) {
@@ -240,7 +237,12 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      */
     public function defaultOptionals()
     {
-        // Nothing to default for this builder.
+        // If the user has not set a custom scope via config or withScopes(),
+        // default to the mandatory Google Ads API scope. This is needed for the
+        // User Refresh Token and ADC fallback flows.
+        if (is_null($this->scopes)) {
+            $this->scopes = self::DEFAULT_SCOPE;
+        }
     }
 
     /**
@@ -258,17 +260,17 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                 . 'flow and installed/web application flow credential values set.'
             );
         }
-        if (!is_null($this->jsonKeyFilePath) || !is_null($this->scopes)) {
-            if (is_null($this->jsonKeyFilePath) || is_null($this->scopes)) {
+        if (!is_null($this->jsonKeyFilePath) || $this->scopes !== self::DEFAULT_SCOPE) {
+            if (is_null($this->jsonKeyFilePath) || $this->scopes === self::DEFAULT_SCOPE) {
                 throw new InvalidArgumentException(
                     "Both 'jsonKeyFilePath' and "
                     . "'scopes' must be set when using service account flow."
                 );
             }
         } elseif (
-            is_null($this->clientId)
-            || is_null($this->clientSecret)
-            || is_null($this->refreshToken)
+            !is_null($this->clientId)
+            || !is_null($this->clientSecret)
+            || !is_null($this->refreshToken)
         ) {
             throw new UnexpectedValueException(
                 "All of 'clientId', 'clientSecret', and 'refreshToken' must be set when using "
@@ -335,5 +337,16 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
     public function getImpersonatedEmail()
     {
         return $this->impersonatedEmail;
+    }
+
+    /**
+     * Overrides the internal Application Default Credentials fetcher for testing purposes.
+     * @param callable $adcFetcher The mock or custom callable.
+     * @return self
+     */
+    public function setAdcFetcherForTesting(callable $adcFetcher): self
+    {
+        $this->adcFetcher = $adcFetcher;
+        return $this;
     }
 }
