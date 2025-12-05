@@ -271,12 +271,16 @@ class OAuth2TokenBuilderTest extends TestCase
 
     public function testBuildFailsWhenMissingRequiredValuesForServiceAccountFlow()
     {
+        $builder = (new OAuth2TokenBuilder())
+            ->withJsonKeyFilePath('path/to/mock/key.json');
+
+        $builder->defaultOptionals();
+
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("Both 'jsonKeyFilePath' and 'scopes' must be set when" .
             " using service account flow.");
-        $this->oAuth2TokenBuilder
-            ->withJsonKeyFilePath($this->jsonKeyFilePath)
-            ->build();
+
+        $builder->validate();
     }
 
     // New ADC Tests
@@ -289,7 +293,10 @@ class OAuth2TokenBuilderTest extends TestCase
         };
 
         $builder = new OAuth2TokenBuilder();
-        $builder->setAdcFetcherForTesting($adcFetcher);
+
+        $method = new \ReflectionMethod(OAuth2TokenBuilder::class, 'setAdcFetcherForTesting');
+        $method->setAccessible(true);
+        $method->invoke($builder, $adcFetcher);
 
         $builder->defaultOptionals();
 

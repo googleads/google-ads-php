@@ -172,8 +172,9 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      */
     public function build(): FetchAuthTokenInterface
     {
+        $this->defaultOptionals();
+
         // Determine the final scope array to use for User Refresh and ADC.
-        // // NOTE: $this->scopes is guaranteed to be set by defaultOptionals().
         $scopeArrayForUserAndAdc = explode(' ', $this->scopes);
 
         // 1. Check for **EXPLICIT** Service Account Flow
@@ -183,16 +184,19 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                     "Both 'jsonKeyFilePath' and 'scopes' must be set when using service account flow."
                 );
             }
-            if (!is_null($this->clientId) || !is_null($this->clientSecret) || !is_null($this->refreshToken)) {
-                throw new InvalidArgumentException(
-                    "Cannot have both service account flow and installed/web "
-                    . "application flow credential values set."
-                );
+            if (
+                !is_null($this->clientId)
+                || !is_null($this->clientSecret)
+                || !is_null($this->refreshToken)
+            ) {
+                    throw new InvalidArgumentException(
+                        "Cannot have both service account flow and installed/web "
+                        . "application flow credential values set."
+                    );
             }
             // Service Account flow uses the specific configured scope string
-            $scopesForExplicitFlows = explode(' ', $this->scopes);
             return new ServiceAccountCredentials(
-                $scopesForExplicitFlows,
+                $scopeArrayForUserAndAdc,
                 $this->jsonKeyFilePath,
                 $this->impersonatedEmail
             );
@@ -260,13 +264,14 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                 . 'flow and installed/web application flow credential values set.'
             );
         }
-        if (!is_null($this->jsonKeyFilePath) || $this->scopes !== self::DEFAULT_SCOPE) {
-            if (is_null($this->jsonKeyFilePath) || $this->scopes === self::DEFAULT_SCOPE) {
+        if (!is_null($this->jsonKeyFilePath)) {
+            if ($this->scopes === self::DEFAULT_SCOPE) {
                 throw new InvalidArgumentException(
                     "Both 'jsonKeyFilePath' and "
                     . "'scopes' must be set when using service account flow."
                 );
             }
+        // Triggers validation if any part of the Installed/Web flow is set; otherwise, allows the ADC fallback.
         } elseif (
             !is_null($this->clientId)
             || !is_null($this->clientSecret)
@@ -344,7 +349,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      * @param callable $adcFetcher The mock or custom callable.
      * @return self
      */
-    public function setAdcFetcherForTesting(callable $adcFetcher): self
+    protected function setAdcFetcherForTesting(callable $adcFetcher): self
     {
         $this->adcFetcher = $adcFetcher;
         return $this;
