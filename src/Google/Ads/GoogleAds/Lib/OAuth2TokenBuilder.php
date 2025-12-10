@@ -19,6 +19,7 @@
 namespace Google\Ads\GoogleAds\Lib;
 
 use DomainException;
+use Google\Auth\CredentialsLoaderException;
 use Google\Auth\ApplicationDefaultCredentials;
 use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google\Auth\Credentials\UserRefreshCredentials;
@@ -234,7 +235,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
         try {
             // Use the determined scope array, allowing configuration via $this->scopes
             return call_user_func($this->adcFetcher, $this->scopes);
-        } catch (\Google\Auth\CredentialsLoaderException $e) {
+        } catch (CredentialsLoaderException $e) {
             throw new DomainException(
                 "No OAuth2 credentials were provided, and the automatic Application Default "
                 . "Credentials (ADC) search failed. Please ensure you have run "
