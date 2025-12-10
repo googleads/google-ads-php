@@ -288,13 +288,13 @@ class OAuth2TokenBuilderTest extends TestCase
     {
         $mockAdcCreds = $this->createMock(FetchAuthTokenInterface::class);
         $adcFetcher = function ($scopes) use ($mockAdcCreds) {
-            $this->assertEquals(['https://www.googleapis.com/auth/adwords'], $scopes);
+            $this->assertEquals('https://www.googleapis.com/auth/adwords', $scopes);
             return $mockAdcCreds;
         };
 
         $builder = new OAuth2TokenBuilder();
 
-        $method = new \ReflectionMethod(OAuth2TokenBuilder::class, 'setAdcFetcherForTesting');
+        $method = new \ReflectionMethod(OAuth2TokenBuilder::class, 'withAdcFetcher');
         $method->setAccessible(true);
         $method->invoke($builder, $adcFetcher);
 
@@ -318,7 +318,9 @@ class OAuth2TokenBuilderTest extends TestCase
 
         $builder = new OAuth2TokenBuilder();
 
-        $builder->setAdcFetcherForTesting($adcFetcher);
+        $method = new \ReflectionMethod(OAuth2TokenBuilder::class, 'withAdcFetcher');
+        $method->setAccessible(true);
+        $method->invoke($builder, $adcFetcher);
 
         $this->expectException(DomainException::class);
         $this->expectExceptionMessageMatches('/Mocked ADC failure/');

@@ -166,6 +166,17 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
+     * Overrides the internal Application Default Credentials fetcher for testing purposes.
+     * @param callable $adcFetcher The mock or custom callable.
+     * @return self
+     */
+    protected function withAdcFetcher(callable $adcFetcher): self
+    {
+        $this->adcFetcher = $adcFetcher;
+        return $this;
+    }
+
+    /**
      * @see GoogleAdsBuilder::build()
      *
      * @return FetchAuthTokenInterface the created OAuth2 object that can fetch auth tokens
@@ -174,8 +185,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
     {
         $this->defaultOptionals();
 
-        // Determine the final scope array to use for User Refresh and ADC.
-        $scopeArrayForUserAndAdc = explode(' ', $this->scopes);
+
 
         // 1. Check for **EXPLICIT** Service Account Flow
         if (!empty($this->jsonKeyFilePath)) {
@@ -196,7 +206,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
             }
             // Service Account flow uses the specific configured scope string
             return new ServiceAccountCredentials(
-                $scopeArrayForUserAndAdc,
+                $this->scopes,
                 $this->jsonKeyFilePath,
                 $this->impersonatedEmail
             );
@@ -211,7 +221,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
             }
             return new UserRefreshCredentials(
                 // Use the determined scope array, allowing configuration via $this->scopes
-                $scopeArrayForUserAndAdc,
+                $this->scopes,
                 [
                     'client_id' => $this->clientId,
                     'client_secret' => $this->clientSecret,
@@ -223,7 +233,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
         // 3. FALLBACK: Use Application Default Credentials (ADC)
         try {
             // Use the determined scope array, allowing configuration via $this->scopes
-            return call_user_func($this->adcFetcher, $scopeArrayForUserAndAdc);
+            return call_user_func($this->adcFetcher, $this->scopes);
         } catch (\Google\Auth\CredentialsLoaderException $e) {
             throw new DomainException(
                 "No OAuth2 credentials were provided, and the automatic Application Default "
@@ -277,10 +287,12 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
             || !is_null($this->clientSecret)
             || !is_null($this->refreshToken)
         ) {
-            throw new UnexpectedValueException(
-                "All of 'clientId', 'clientSecret', and 'refreshToken' must be set when using "
-                . "installed/web application flow."
-            );
+            if ((is_null($this->clientId) || is_null($this->clientSecret) || is_null($this->refreshToken))) {
+                throw new UnexpectedValueException(
+                    "All of 'clientId', 'clientSecret', and 'refreshToken' must be set when using "
+                    . "installed/web application flow."
+                );
+            }
         }
     }
 
@@ -342,16 +354,5 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
     public function getImpersonatedEmail()
     {
         return $this->impersonatedEmail;
-    }
-
-    /**
-     * Overrides the internal Application Default Credentials fetcher for testing purposes.
-     * @param callable $adcFetcher The mock or custom callable.
-     * @return self
-     */
-    protected function setAdcFetcherForTesting(callable $adcFetcher): self
-    {
-        $this->adcFetcher = $adcFetcher;
-        return $this;
     }
 }

@@ -1,10 +1,3 @@
-## [Frontlog]
-
-### Features
-*   Added support for Application Default Credentials (ADC) as a fallback 
-    authentication mechanism. The library now attempts to load 
-    credentials from the environment using ADC if no explicit OAuth2 
-    credentials (refresh token or service account key file) are configured.
 ## 31.1.0
 *   Added support for Google Ads API V22.
 *   Updated generated code for Google Ads API V21 to include recent fixes.
