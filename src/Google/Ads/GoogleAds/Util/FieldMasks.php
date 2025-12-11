@@ -331,9 +331,13 @@ class FieldMasks
      */
     private static function isFieldRepeated(FieldDescriptor $fieldDescriptor)
     {
-        // The isRepeated() method is the recommended non-deprecated replacement 
-        // for checking FieldDescriptorProto\Label::LABEL_REPEATED.
-        return $fieldDescriptor->isRepeated();
+        // SAFE SOLUTION: Check if the modern method exists (for updated C extensions or native PHP).
+        // This protects against a fatal error in environments where the C extension is outdated.
+        if (method_exists($fieldDescriptor, 'isRepeated')) {
+            return $fieldDescriptor->isRepeated();
+        }
+        // Fallback: Use the deprecated method for old/non-compliant C extensions.
+        return $fieldDescriptor->getLabel() === GPBLabel::REPEATED;
     }
 
     /**
