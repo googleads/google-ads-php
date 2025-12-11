@@ -7,7 +7,8 @@
     "google/gax": "^1.19.1",
     "grpc/grpc": ">=1.36.0 <=1.57.0",
     "google/protobuf": "^3.21.5 || >=4.26 <=4.30.0",
-    "monolog/monolog": "^1.26 || ^2.0 || ^3.0"
+    "monolog/monolog": "^1.26 || ^2.0 || ^3.0",
+    "google/auth": "^1.30 || ^2.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5",
