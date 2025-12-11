@@ -35,7 +35,7 @@ abstract class GoogleAdsMiddlewareAbstract
      *
      * @param callable|null $nextHandler the next handler
      */
-    public function __construct(callable $nextHandler = null)
+    public function __construct(?callable $nextHandler = null)
     {
         $this->nextHandler = $nextHandler;
     }
