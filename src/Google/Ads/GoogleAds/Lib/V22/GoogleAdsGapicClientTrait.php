@@ -37,10 +37,12 @@ trait GoogleAdsGapicClientTrait
     private static $LINKED_CUSTOMER_ID = 'linked-customer-id';
     private static $UNARY_MIDDLEWARES = 'unary-middlewares';
     private static $STREAMING_MIDDLEWARES = 'streaming-middlewares';
+    private static $USE_CLOUD_ORG_FOR_API_ACCESS_KEY = 'use-cloud-org-for-api-access';
 
     private $developerToken = null;
     private $loginCustomerId = null;
     private $linkedCustomerId = null;
+    private $useCloudOrgForApiAccess = null;
     private $unaryMiddlewares = [];
     private $streamingMiddlewares = [];
     private ?GoogleAdsResponseMetadata $responseMetadata = null;
@@ -55,6 +57,7 @@ trait GoogleAdsGapicClientTrait
         $this->linkedCustomerId = $options[self::$LINKED_CUSTOMER_ID] ?? null;
         $this->unaryMiddlewares = $options[self::$UNARY_MIDDLEWARES] ?? [];
         $this->streamingMiddlewares = $options[self::$STREAMING_MIDDLEWARES] ?? [];
+        $this->useCloudOrgForApiAccess = $options[self::$USE_CLOUD_ORG_FOR_API_ACCESS_KEY] ?? null;
         // Ensure that this isn't already an OperationsClient nor GoogleAdsOperationClient to avoid
         // recursion.
         if (
@@ -82,8 +85,11 @@ trait GoogleAdsGapicClientTrait
      */
     private function addFixedHeaderMiddleware(callable &$callable)
     {
-        if (!is_null($this->developerToken)) {
-            $headers = [self::$DEVELOPER_TOKEN_KEY => [$this->developerToken]];
+        if (!is_null($this->developerToken) || $this->useCloudOrgForApiAccess === true) {
+            $headers = [];
+            if ($this->useCloudOrgForApiAccess !== true) {
+                $headers[self::$DEVELOPER_TOKEN_KEY] = [$this->developerToken];
+            }
 
             if (!is_null($this->loginCustomerId)) {
                 $headers[self::$LOGIN_CUSTOMER_ID] = [$this->loginCustomerId];
