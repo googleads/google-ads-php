@@ -14,8 +14,6 @@
     "phpunit/phpunit": "^9.5",
     "squizlabs/php_codesniffer": "^3.5",
     "ext-bcmath": "*",
-    "ext-grpc": ">=1.57.0 <=1.66.0",
-    "ext-protobuf": "3.21.5 || >=4.26 <=4.30.0",
     "ulrichsg/getopt-php": "^3.4",
     "react/http": "^1.2.0",
     "composer/composer": "^2.0"
