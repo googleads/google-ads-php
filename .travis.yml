@@ -7,6 +7,11 @@ php:
   - 8.4
   - nightly
 
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+    - $HOME/pecl_cache # Directory to store built extensions
+
 matrix:
   allow_failures:
     - php: 8.4
@@ -22,26 +27,54 @@ matrix:
     # Exclude the original PHP 8.3 job so it doesn't duplicate work
     - php: 8.3
 
-branches:
-  only:
-  - /.*/
+before_install:
+  # Define a path for cached extensions
+  - export PECL_CACHE_DIR="$HOME/pecl_cache"
+  - export PHP_EXT_DIR=$(php-config --extension-dir)
+  - mkdir -p $PECL_CACHE_DIR
 
 before_script:
-  - composer install -o -vvv --no-interaction
-  
-  # Only run the slow PECL installation for the non-FAST_BUILD jobs
+  - composer install -o --no-interaction 
+
   - |
     if [ "$FAST_BUILD" != "true" ]; then
-      echo "Running slow full build with PECL extensions..."
-      pecl install grpc
-      pecl install protobuf
+      echo "Running full build with PECL extensions..."
+
+      # Function to install PECL extension if not cached or loaded
+      install_pecl() {
+        local ext_name=$1
+        local so_file="$ext_name.so"
+        local cache_file="$PECL_CACHE_DIR/$so_file"
+        local target_file="$PHP_EXT_DIR/$so_file"
+
+        if php -m | grep -iq $ext_name; then
+          echo "$ext_name extension is already loaded."
+        elif [ -f "$cache_file" ]; then
+          echo "Restoring $ext_name from cache..."
+          sudo cp "$cache_file" "$target_file"
+          echo "extension=$so_file" | sudo tee -a $(php -i | grep /.+ini$ -oR | head -n 1)
+        else
+          echo "Installing $ext_name PECL extension..."
+          yes | pecl install $ext_name
+          # Copy to cache for future runs
+          if [ -f "$target_file" ]; then
+            cp "$target_file" "$cache_file"
+          fi
+        fi
+      }
+
+      install_pecl grpc
+      install_pecl protobuf
+
     else
       echo "Running fast build, skipping PECL extensions."
     fi
+  # Display loaded extensions for debugging
+  - php -m
 
 script:
   - vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-clover=coverage.xml
   - vendor/bin/phpcs --standard=phpcs_ruleset.xml -np
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) 
