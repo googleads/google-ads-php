@@ -145,6 +145,7 @@ trait ServiceClientFactoryTrait
     private static $DEVELOPER_TOKEN_KEY = 'developer-token';
     private static $LOGIN_CUSTOMER_ID_KEY = 'login-customer-id';
     private static $LINKED_CUSTOMER_ID_KEY = 'linked-customer-id';
+    private static $USE_CLOUD_ORG_FOR_API_ACCESS_KEY = 'use-cloud-org-for-api-access';
     private static $SERVICE_ADDRESS_KEY = 'serviceAddress';
     private static $DEFAULT_SERVICE_ADDRESS = 'googleads.googleapis.com';
     private static $TRANSPORT_KEY = 'transport';
@@ -162,7 +163,8 @@ trait ServiceClientFactoryTrait
             self::$CREDENTIALS_LOADER_KEY => $this->getGrpcChannelIsSecure()
                 ? $this->getOAuth2Credential()
                 : new InsecureCredentialsWrapper($this->getOAuth2Credential()),
-            self::$DEVELOPER_TOKEN_KEY => $this->getDeveloperToken()
+            self::$DEVELOPER_TOKEN_KEY => $this->getDeveloperToken(),
+            self::$USE_CLOUD_ORG_FOR_API_ACCESS_KEY => $this->useCloudOrgForApiAccess()
         ];
         if (!empty($this->getLoginCustomerId())) {
             $clientOptions += [self::$LOGIN_CUSTOMER_ID_KEY => strval($this->getLoginCustomerId())];
