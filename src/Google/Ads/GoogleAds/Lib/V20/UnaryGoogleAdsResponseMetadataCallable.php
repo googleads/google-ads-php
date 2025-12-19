@@ -33,7 +33,7 @@ class UnaryGoogleAdsResponseMetadataCallable extends GoogleAdsMiddlewareAbstract
 
     private $adsClient;
 
-    public function __construct(callable $nextHandler = null, $adsClient = null)
+    public function __construct(?callable $nextHandler = null, $adsClient = null)
     {
         $this->adsClient = $adsClient;
         parent::__construct($nextHandler);

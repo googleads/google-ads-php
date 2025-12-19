@@ -39,8 +39,8 @@ class UnaryGoogleAdsExceptionMiddleware extends GoogleAdsMiddlewareAbstract
      * @param StatusMetadataExtractor|null $statusMetadataExtractor
      */
     public function __construct(
-        callable $nextHandler = null,
-        StatusMetadataExtractor $statusMetadataExtractor = null
+        ?callable $nextHandler = null,
+        ?StatusMetadataExtractor $statusMetadataExtractor = null
     ) {
         parent::__construct($nextHandler);
         $this->statusMetadataExtractor = $statusMetadataExtractor ?: new StatusMetadataExtractor();
