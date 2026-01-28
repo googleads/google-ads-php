@@ -23,13 +23,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V22\Resources\Customer;
-use Google\Ads\GoogleAds\V22\Services\CreateCustomerClientRequest;
+use Google\Ads\GoogleAds\V23\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V23\Resources\Customer;
+use Google\Ads\GoogleAds\V23\Services\CreateCustomerClientRequest;
 use Google\ApiCore\ApiException;
 
 /**

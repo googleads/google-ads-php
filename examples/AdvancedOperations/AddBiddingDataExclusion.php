@@ -25,15 +25,15 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
-use Google\Ads\GoogleAds\V22\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V22\Enums\SeasonalityEventScopeEnum\SeasonalityEventScope;
-use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V22\Resources\BiddingDataExclusion;
-use Google\Ads\GoogleAds\V22\Services\BiddingDataExclusionOperation;
-use Google\Ads\GoogleAds\V22\Services\MutateBiddingDataExclusionsRequest;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsException;
+use Google\Ads\GoogleAds\V23\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V23\Enums\SeasonalityEventScopeEnum\SeasonalityEventScope;
+use Google\Ads\GoogleAds\V23\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V23\Resources\BiddingDataExclusion;
+use Google\Ads\GoogleAds\V23\Services\BiddingDataExclusionOperation;
+use Google\Ads\GoogleAds\V23\Services\MutateBiddingDataExclusionsRequest;
 use Google\ApiCore\ApiException;
 
 /**

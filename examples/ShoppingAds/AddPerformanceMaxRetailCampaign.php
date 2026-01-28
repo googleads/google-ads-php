@@ -25,55 +25,55 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V22\ResourceNames;
-use Google\Ads\GoogleAds\V22\Common\ImageAsset;
-use Google\Ads\GoogleAds\V22\Common\LanguageInfo;
-use Google\Ads\GoogleAds\V22\Common\LocationInfo;
-use Google\Ads\GoogleAds\V22\Common\MaximizeConversionValue;
-use Google\Ads\GoogleAds\V22\Common\TextAsset;
-use Google\Ads\GoogleAds\V22\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V22\Enums\AssetAutomationTypeEnum\AssetAutomationType;
-use Google\Ads\GoogleAds\V22\Enums\AssetAutomationStatusEnum\AssetAutomationStatus;
-use Google\Ads\GoogleAds\V22\Enums\AssetFieldTypeEnum\AssetFieldType;
-use Google\Ads\GoogleAds\V22\Enums\AssetGroupStatusEnum\AssetGroupStatus;
-use Google\Ads\GoogleAds\V22\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V22\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V22\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
-use Google\Ads\GoogleAds\V22\Enums\ConversionOriginEnum\ConversionOrigin;
-use Google\Ads\GoogleAds\V22\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
-use Google\Ads\GoogleAds\V22\Enums\ListingGroupFilterListingSourceEnum\ListingGroupFilterListingSource;
-use Google\Ads\GoogleAds\V22\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
-use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V22\Resources\Asset;
-use Google\Ads\GoogleAds\V22\Resources\AssetGroup;
-use Google\Ads\GoogleAds\V22\Resources\AssetGroupAsset;
-use Google\Ads\GoogleAds\V22\Resources\AssetGroupListingGroupFilter;
-use Google\Ads\GoogleAds\V22\Resources\Campaign\AssetAutomationSetting;
-use Google\Ads\GoogleAds\V22\Resources\Campaign;
-use Google\Ads\GoogleAds\V22\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V22\Resources\CampaignAsset;
-use Google\Ads\GoogleAds\V22\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V22\Resources\CampaignConversionGoal;
-use Google\Ads\GoogleAds\V22\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V22\Services\AssetGroupAssetOperation;
-use Google\Ads\GoogleAds\V22\Services\AssetGroupListingGroupFilterOperation;
-use Google\Ads\GoogleAds\V22\Services\AssetGroupOperation;
-use Google\Ads\GoogleAds\V22\Services\AssetOperation;
-use Google\Ads\GoogleAds\V22\Services\CampaignAssetOperation;
-use Google\Ads\GoogleAds\V22\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V22\Services\CampaignConversionGoalOperation;
-use Google\Ads\GoogleAds\V22\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V22\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V22\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsRequest;
-use Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsResponse;
-use Google\Ads\GoogleAds\V22\Services\MutateOperation;
-use Google\Ads\GoogleAds\V22\Services\MutateOperationResponse;
-use Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Util\V23\ResourceNames;
+use Google\Ads\GoogleAds\V23\Common\ImageAsset;
+use Google\Ads\GoogleAds\V23\Common\LanguageInfo;
+use Google\Ads\GoogleAds\V23\Common\LocationInfo;
+use Google\Ads\GoogleAds\V23\Common\MaximizeConversionValue;
+use Google\Ads\GoogleAds\V23\Common\TextAsset;
+use Google\Ads\GoogleAds\V23\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V23\Enums\AssetAutomationTypeEnum\AssetAutomationType;
+use Google\Ads\GoogleAds\V23\Enums\AssetAutomationStatusEnum\AssetAutomationStatus;
+use Google\Ads\GoogleAds\V23\Enums\AssetFieldTypeEnum\AssetFieldType;
+use Google\Ads\GoogleAds\V23\Enums\AssetGroupStatusEnum\AssetGroupStatus;
+use Google\Ads\GoogleAds\V23\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V23\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V23\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
+use Google\Ads\GoogleAds\V23\Enums\ConversionOriginEnum\ConversionOrigin;
+use Google\Ads\GoogleAds\V23\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V23\Enums\ListingGroupFilterListingSourceEnum\ListingGroupFilterListingSource;
+use Google\Ads\GoogleAds\V23\Enums\ListingGroupFilterTypeEnum\ListingGroupFilterType;
+use Google\Ads\GoogleAds\V23\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V23\Resources\Asset;
+use Google\Ads\GoogleAds\V23\Resources\AssetGroup;
+use Google\Ads\GoogleAds\V23\Resources\AssetGroupAsset;
+use Google\Ads\GoogleAds\V23\Resources\AssetGroupListingGroupFilter;
+use Google\Ads\GoogleAds\V23\Resources\Campaign\AssetAutomationSetting;
+use Google\Ads\GoogleAds\V23\Resources\Campaign;
+use Google\Ads\GoogleAds\V23\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V23\Resources\CampaignAsset;
+use Google\Ads\GoogleAds\V23\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V23\Resources\CampaignConversionGoal;
+use Google\Ads\GoogleAds\V23\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V23\Services\AssetGroupAssetOperation;
+use Google\Ads\GoogleAds\V23\Services\AssetGroupListingGroupFilterOperation;
+use Google\Ads\GoogleAds\V23\Services\AssetGroupOperation;
+use Google\Ads\GoogleAds\V23\Services\AssetOperation;
+use Google\Ads\GoogleAds\V23\Services\CampaignAssetOperation;
+use Google\Ads\GoogleAds\V23\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V23\Services\CampaignConversionGoalOperation;
+use Google\Ads\GoogleAds\V23\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V23\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V23\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V23\Services\MutateGoogleAdsRequest;
+use Google\Ads\GoogleAds\V23\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V23\Services\MutateOperation;
+use Google\Ads\GoogleAds\V23\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\V23\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Serializer;
 
@@ -107,7 +107,7 @@ class AddPerformanceMaxRetailCampaign
     // account.
     private const FINAL_URL = 'INSERT_FINAL_URL_HERE';
     // Optional: Indicates whether the created campaign is enabled for brand guidelines.
-    private const BRAND_GUIDELINES_ENABLED = false;
+    private const BRAND_GUIDELINES_ENABLED = true;
 
     // We specify temporary IDs that are specific to a single mutate request.
     // Temporary IDs are always negative and unique within one mutate request.
@@ -396,8 +396,8 @@ class AddPerformanceMaxRetailCampaign
                     'contains_eu_political_advertising' =>
                         EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING,
                     // Optional fields.
-                    'start_date' => date('Ymd', strtotime('+1 day')),
-                    'end_date' => date('Ymd', strtotime('+365 days'))
+                    'start_date_time' => date('Y-m-d 00:00:00', strtotime('+1 day')),
+                    'end_date_time' => date('Y-m-d 23:59:59', strtotime('+365 days'))
                 ])
             ])
         ]);

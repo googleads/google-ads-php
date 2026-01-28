@@ -24,23 +24,23 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V22\Common\ManualCpc;
-use Google\Ads\GoogleAds\V22\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V22\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V22\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V22\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
-use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V22\Resources\Campaign;
-use Google\Ads\GoogleAds\V22\Resources\Campaign\NetworkSettings;
-use Google\Ads\GoogleAds\V22\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V22\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V22\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V22\Services\MutateCampaignsRequest;
-use Google\Ads\GoogleAds\V22\Services\MutateCampaignBudgetsRequest;
+use Google\Ads\GoogleAds\V23\Common\ManualCpc;
+use Google\Ads\GoogleAds\V23\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V23\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V23\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V23\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V23\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V23\Resources\Campaign;
+use Google\Ads\GoogleAds\V23\Resources\Campaign\NetworkSettings;
+use Google\Ads\GoogleAds\V23\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V23\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V23\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V23\Services\MutateCampaignsRequest;
+use Google\Ads\GoogleAds\V23\Services\MutateCampaignBudgetsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example adds new campaigns to an account. */
@@ -138,10 +138,10 @@ class AddCampaigns
                 'network_settings' => $networkSettings,
                 // Declare whether or not this campaign serves political ads targeting the EU.
                 'contains_eu_political_advertising' =>
-                    EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
+                    EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING,
                 // Optional: Sets the start and end dates.
-                'start_date' => date('Ymd', strtotime('+1 day')),
-                'end_date' => date('Ymd', strtotime('+1 month'))
+                'start_date_time' => date('Y-m-d 00:00:00', strtotime('+1 day')),
+                'end_date_time' => date('Y-m-d 23:59:59', strtotime('+1 month'))
             ]);
             // [END add_campaigns_1]
 
