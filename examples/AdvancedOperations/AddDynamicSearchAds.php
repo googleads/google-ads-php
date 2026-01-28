@@ -24,46 +24,46 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V22\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V23\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V22\Common\ExpandedDynamicSearchAdInfo;
-use Google\Ads\GoogleAds\V22\Common\ManualCpc;
-use Google\Ads\GoogleAds\V22\Common\WebpageConditionInfo;
-use Google\Ads\GoogleAds\V22\Common\WebpageInfo;
-use Google\Ads\GoogleAds\V22\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V22\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V22\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V22\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V22\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V22\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V22\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V22\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
-use Google\Ads\GoogleAds\V22\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
-use Google\Ads\GoogleAds\V22\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V22\Resources\Ad;
-use Google\Ads\GoogleAds\V22\Resources\AdGroup;
-use Google\Ads\GoogleAds\V22\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V22\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V22\Resources\Campaign;
-use Google\Ads\GoogleAds\V22\Resources\Campaign\DynamicSearchAdsSetting;
-use Google\Ads\GoogleAds\V22\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V22\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V22\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V22\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V22\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V22\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdsRequest;
-use Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdsResponse;
-use Google\Ads\GoogleAds\V22\Services\MutateAdGroupCriteriaRequest;
-use Google\Ads\GoogleAds\V22\Services\MutateAdGroupsRequest;
-use Google\Ads\GoogleAds\V22\Services\MutateAdGroupsResponse;
-use Google\Ads\GoogleAds\V22\Services\MutateAdGroupCriteriaResponse;
-use Google\Ads\GoogleAds\V22\Services\MutateCampaignBudgetsRequest;
-use Google\Ads\GoogleAds\V22\Services\MutateCampaignBudgetsResponse;
-use Google\Ads\GoogleAds\V22\Services\MutateCampaignsRequest;
-use Google\Ads\GoogleAds\V22\Services\MutateCampaignsResponse;
+use Google\Ads\GoogleAds\V23\Common\ExpandedDynamicSearchAdInfo;
+use Google\Ads\GoogleAds\V23\Common\ManualCpc;
+use Google\Ads\GoogleAds\V23\Common\WebpageConditionInfo;
+use Google\Ads\GoogleAds\V23\Common\WebpageInfo;
+use Google\Ads\GoogleAds\V23\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V23\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V23\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V23\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V23\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V23\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V23\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V23\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V23\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
+use Google\Ads\GoogleAds\V23\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V23\Resources\Ad;
+use Google\Ads\GoogleAds\V23\Resources\AdGroup;
+use Google\Ads\GoogleAds\V23\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V23\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V23\Resources\Campaign;
+use Google\Ads\GoogleAds\V23\Resources\Campaign\DynamicSearchAdsSetting;
+use Google\Ads\GoogleAds\V23\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V23\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V23\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V23\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V23\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V23\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V23\Services\MutateAdGroupAdsRequest;
+use Google\Ads\GoogleAds\V23\Services\MutateAdGroupAdsResponse;
+use Google\Ads\GoogleAds\V23\Services\MutateAdGroupCriteriaRequest;
+use Google\Ads\GoogleAds\V23\Services\MutateAdGroupsRequest;
+use Google\Ads\GoogleAds\V23\Services\MutateAdGroupsResponse;
+use Google\Ads\GoogleAds\V23\Services\MutateAdGroupCriteriaResponse;
+use Google\Ads\GoogleAds\V23\Services\MutateCampaignBudgetsRequest;
+use Google\Ads\GoogleAds\V23\Services\MutateCampaignBudgetsResponse;
+use Google\Ads\GoogleAds\V23\Services\MutateCampaignsRequest;
+use Google\Ads\GoogleAds\V23\Services\MutateCampaignsResponse;
 use Google\ApiCore\ApiException;
 
 /**
@@ -211,8 +211,8 @@ class AddDynamicSearchAds
                 EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING,
             // Optional: Sets the start and end dates for the campaign, beginning one day from
             // now and ending a month from now.
-            'start_date' => date('Ymd', strtotime('+1 day')),
-            'end_date' => date('Ymd', strtotime('+1 month'))
+            'start_date_time' => date('Y-m-d 00:00:00', strtotime('+1 day')),
+            'end_date_time' => date('Y-m-d 23:59:59', strtotime('+1 month'))
         ]);
 
         // Creates a campaign operation.

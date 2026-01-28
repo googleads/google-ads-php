@@ -1,3 +1,13 @@
+## 32.1.0
+*   Added support for Google Ads API v23.
+*   Removed support for Google Ads API v19.
+*   Updated examples in examples in `AddCampaigns`, `AddDynamicSearchAds`, `AddPerformanceMaxCampaign`, `AddPerformanceMaxRetailCampaign`, and `AddAppCampaign`.
+*   Removed the `AddCallAd.php` example as Call Ads are no longer supported in the API.
+*   Changed the default value of the `brandGuidelinesEnabled` parameter to `true` in `AddPerformanceMaxCampaign` and `AddPerformanceMaxRetailCampaign` examples.
+*   Ensured deprecated `salesCountry` parameter is not used in `AddPerformanceMaxRetailCampaign` example.
+*   Updated dependencies via `composer update`.
+
+
 ## 31.1.0
 *   Added support for Google Ads API V22.
 *   Updated generated code for Google Ads API V21 to include recent fixes.
