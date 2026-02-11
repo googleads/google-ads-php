@@ -22,11 +22,11 @@ use DomainException;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google\Auth\Credentials\UserRefreshCredentials;
-use Google\Auth\CredentialsLoaderException;
 use Google\Auth\FetchAuthTokenInterface;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use UnexpectedValueException;
+
 
 class OAuth2TokenBuilderTest extends TestCase
 {
@@ -62,92 +62,92 @@ class OAuth2TokenBuilderTest extends TestCase
 
     public function testBuildWithWebOrInstalledAppFlowFromFile()
     {
-    // Mock the EnvironmentalVariables to control the path to the fake home directory.
-        $environmentalVariablesMock = $this
-            ->createMock(EnvironmentalVariables::class);
-        $fakeHomePath = ConfigurationLoaderTestProvider::getFilePathToFakeHome();
+        // Mock the EnvironmentalVariables to control the path.
+        $environmentalVariablesMock = $this->createMock(EnvironmentalVariables::class);
+        
+        // --- FIX: Use a UNIQUE temp directory instead of the shared fakeHome ---
+        $tempDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . uniqid('google_ads_test_', true);
+        mkdir($tempDir, 0777, true);
+        $fakeIniPath = $tempDir . DIRECTORY_SEPARATOR . 'home_google_ads_php.ini';
+
+        // Tell the mock to point to our private temp directory
         $environmentalVariablesMock
             ->method('getHome')
-            ->willReturn($fakeHomePath);
+            ->willReturn($tempDir);
+        // -----------------------------------------------------------------------
 
-    // --- SETUP: Create the temporary configuration file ---
-        $fakeIniPath = $fakeHomePath . '/home_google_ads_php.ini';
-
-    // Ensure the directory exists
-        if (!is_dir($fakeHomePath)) {
-            mkdir($fakeHomePath, 0777, true);
-        }
-
-    // Write the fake configuration content
+        // Write the fake configuration content to our private temp file
         $iniContent = "[OAUTH2]\n"
             . "clientId = \"test-id\"\n"
             . "clientSecret = \"test-secret\"\n"
             . "refreshToken = \"test-refresh-token\"\n";
         file_put_contents($fakeIniPath, $iniContent);
-    // ----------------------------------------------------
 
-    // Instantiate the REAL ConfigurationLoader, injecting the mock EnvVars.
+        // Instantiate the REAL ConfigurationLoader, injecting the mock EnvVars.
         $configurationLoader = new ConfigurationLoader($environmentalVariablesMock);
 
-    // Instantiate the builder with the ConfigurationLoader.
+        // Instantiate the builder with the ConfigurationLoader.
         $oAuth2TokenBuilder = new OAuth2TokenBuilder($configurationLoader);
 
-    // The call to fromFile() will succeed because the file now exists at the mocked location.
+        // This will now look in our private $tempDir
         $tokenFetcher = $oAuth2TokenBuilder
             ->fromFile('home_google_ads_php.ini')
             ->build();
 
-    // Assertions
+        // Assertions
         $this->assertInstanceOf(UserRefreshCredentials::class, $tokenFetcher);
         $this->assertEquals('test-id', $oAuth2TokenBuilder->getClientId());
         $this->assertEquals('test-secret', $oAuth2TokenBuilder->getClientSecret());
         $this->assertEquals('test-refresh-token', $oAuth2TokenBuilder->getRefreshToken());
 
-    // --- TEARDOWN: Clean up the temporary file and directory ---
+        // --- TEARDOWN: Clean up ONLY our private temp file and directory ---
         unlink($fakeIniPath);
-        rmdir($fakeHomePath);
-    // ----------------------------------------------------------
+        rmdir($tempDir); 
+        // -------------------------------------------------------------------
     }
 
     public function testBuildWithWebOrInstalledAppFlowFromCustomDefaultFile()
     {
-    // Use the FQCN string to create the mock to satisfy strict type hints
         $environmentalVariablesMock = $this->createMock('Google\Ads\GoogleAds\Util\EnvironmentalVariables');
-        $fakeIniPath = ConfigurationLoaderTestProvider::getFakeHomeFilePathForTestIniFile();
-        $environmentalVariablesMock
-        ->method('get')
-        ->with(GoogleAdsBuilder::DEFAULT_CONFIGURATION_FILENAME_ENVIRONMENT_VARIABLE_NAME)
-        ->willReturn($fakeIniPath);
 
-    // Create the temporary file (I/O) that the REAL ConfigurationLoader will read
-        $iniDir = dirname($fakeIniPath);
-        if (!is_dir($iniDir)) {
-            mkdir($iniDir, 0777, true);
-        }
+        // --- FIX: Use a unique temporary file instead of the shared Provider path ---
+        $tempIniPath = tempnam(sys_get_temp_dir(), 'google_ads_custom_ini_');
+        
+        $environmentalVariablesMock
+            ->method('get')
+            ->with(GoogleAdsBuilder::DEFAULT_CONFIGURATION_FILENAME_ENVIRONMENT_VARIABLE_NAME)
+            ->willReturn($tempIniPath);
+        // ---------------------------------------------------------------------------
+
         $iniContent = "[OAUTH2]\n"
             . "clientId = \"test-id\"\n"
             . "clientSecret = \"test-secret\"\n"
             . "refreshToken = \"test-refresh-token\"\n";
-        file_put_contents($fakeIniPath, $iniContent);
+        file_put_contents($tempIniPath, $iniContent);
 
-    // Instantiate the REAL ConfigurationLoader, injecting the mocked EnvVars
+        // Instantiate the REAL ConfigurationLoader, injecting the mocked EnvVars
         $configurationLoader = new ConfigurationLoader($environmentalVariablesMock);
 
         $oAuth2TokenBuilder = new OAuth2TokenBuilder(
             $configurationLoader,
-            $environmentalVariablesMock // Pass the mock that should now satisfy the type hint
+            $environmentalVariablesMock
         );
+        
         $tokenFetcher = $oAuth2TokenBuilder
-        ->fromFile()
-        ->build();
+            ->fromFile()
+            ->build();
 
         $this->assertInstanceOf(UserRefreshCredentials::class, $tokenFetcher);
         $this->assertEquals('test-id', $oAuth2TokenBuilder->getClientId());
-    // ... remaining assertions ...
+        $this->assertEquals('test-secret', $oAuth2TokenBuilder->getClientSecret());
+        $this->assertEquals('test-refresh-token', $oAuth2TokenBuilder->getRefreshToken());
 
-    // Clean up the temporary file
-        unlink($fakeIniPath);
-        rmdir($iniDir);
+        // --- TEARDOWN: Clean up only our unique temporary file ---
+        if (file_exists($tempIniPath)) {
+            unlink($tempIniPath);
+        }
+        // No rmdir needed here because tempnam creates a file in the existing system temp dir
+        // ---------------------------------------------------------
     }
 
     public function testBuildFailsWhenRefreshTokenSetButMissingClientSecret()
@@ -303,26 +303,22 @@ class OAuth2TokenBuilderTest extends TestCase
         $credentials = $builder->build();
         $this->assertSame($mockAdcCreds, $credentials);
     }
-
+    
     public function testBuildWithAdcFailure()
     {
-        $this->markTestSkipped(
-            'Skipping due to persistent autoloader failure on CredentialsLoaderException '
-            . 'in test environment.'
-        );
-
         $adcFetcher = function ($scopes) {
-            // Use FQCN here as well, since the class must be loaded before it's thrown.
-            throw new \Google\Auth\CredentialsLoaderException('Mocked ADC failure');
+            // We throw a standard RuntimeException because CredentialsLoaderException is gone
+            throw new \RuntimeException('Mocked ADC failure');
         };
-
+        
         $builder = new OAuth2TokenBuilder();
 
         $method = new \ReflectionMethod(OAuth2TokenBuilder::class, 'withAdcFetcher');
         $method->setAccessible(true);
         $method->invoke($builder, $adcFetcher);
 
-        $this->expectException(DomainException::class);
+        // The builder will catch the RuntimeException and wrap it in a DomainException
+        $this->expectException(\DomainException::class);
         $this->expectExceptionMessageMatches('/Mocked ADC failure/');
 
         $builder->build();
