@@ -46,12 +46,10 @@ class ConfigurationLoaderTestProvider
     {
         $path = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'fakehome';
         
-        // --- NEW CODE STARTS HERE ---
         // Automatically create the directory if it doesn't exist
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
         }
-        // --- NEW CODE ENDS HERE ---
         
         return $path;
     }
@@ -65,7 +63,6 @@ class ConfigurationLoaderTestProvider
     {
         $filePath = self::getFilePathToFakeHome() . DIRECTORY_SEPARATOR . 'home_google_ads_php.ini';
         
-        // --- NEW CODE STARTS HERE ---
         // Automatically create a dummy .ini file if it doesn't exist
         if (!file_exists($filePath)) {
             $dummyContent = "[GOOGLE_ADS]\ndeveloperToken = 'dummy-token'\n"
@@ -74,7 +71,6 @@ class ConfigurationLoaderTestProvider
                 . "refreshToken = 'dummy-token'";
             file_put_contents($filePath, $dummyContent);
         }
-        // --- NEW CODE ENDS HERE ---
         
         return $filePath;
     }
