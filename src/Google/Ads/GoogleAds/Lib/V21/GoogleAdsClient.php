@@ -44,7 +44,7 @@ class GoogleAdsClient
         $this->useCloudOrgForApiAccess = $builder->useCloudOrgForApiAccess();
         $this->loginCustomerId = $builder->getLoginCustomerId();
         $this->linkedCustomerId = $builder->getLinkedCustomerId();
-         $this->googleAdsApiAssistant = $builder->getGoogleAdsApiAssistant();
+        $this->googleAdsApiAssistant = $builder->getGoogleAdsApiAssistant();
         $this->endpoint = $builder->getEndpoint();
         $this->oAuth2Credential = $builder->getOAuth2Credential();
         $this->logger = $builder->getLogger();
