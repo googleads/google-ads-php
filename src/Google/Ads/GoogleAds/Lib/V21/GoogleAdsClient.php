@@ -36,12 +36,15 @@ class GoogleAdsClient
      * @param GoogleAdsClientBuilder $builder the builder to create an instance
      *     of this client from
      */
+    private $googleAdsApiAssistant;
+
     public function __construct(GoogleAdsClientBuilder $builder)
     {
         $this->developerToken = $builder->getDeveloperToken();
         $this->useCloudOrgForApiAccess = $builder->useCloudOrgForApiAccess();
         $this->loginCustomerId = $builder->getLoginCustomerId();
         $this->linkedCustomerId = $builder->getLinkedCustomerId();
+         $this->googleAdsApiAssistant = $builder->getGoogleAdsApiAssistant();
         $this->endpoint = $builder->getEndpoint();
         $this->oAuth2Credential = $builder->getOAuth2Credential();
         $this->logger = $builder->getLogger();
@@ -60,5 +63,15 @@ class GoogleAdsClient
         if (!self::getGrpcDependencyStatus()) {
             GoogleAdsFailures::init();
         }
+    }
+    
+    /**
+     * Gets the Google Ads API assistant metadata.
+     *
+     * @return string|null
+     */
+    public function getGoogleAdsApiAssistant()
+    {
+        return $this->googleAdsApiAssistant;
     }
 }
