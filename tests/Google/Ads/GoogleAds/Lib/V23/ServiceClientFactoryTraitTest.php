@@ -129,6 +129,7 @@ use Google\Ads\GoogleAds\V23\Services\Client\TravelAssetSuggestionServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\UserDataServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\UserListCustomerTypeServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\UserListServiceClient;
+use Google\Ads\GoogleAds\V23\Services\Client\YouTubeVideoUploadServiceClient;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Auth\HttpHandler\HttpHandlerFactory;
 use Monolog\Handler\NullHandler;
@@ -1060,6 +1061,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         $this->assertInstanceOf(
             UserListServiceClient::class,
             $this->googleAdsClient->getUserListServiceClient()
+        );
+    }
+
+    public function testGetYouTubeVideoUploadServiceClient()
+    {
+        $this->assertInstanceOf(
+            YouTubeVideoUploadServiceClient::class,
+            $this->googleAdsClient->getYouTubeVideoUploadServiceClient()
         );
     }
 }

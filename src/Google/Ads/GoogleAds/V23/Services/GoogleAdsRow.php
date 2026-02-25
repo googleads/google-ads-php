@@ -1078,6 +1078,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $android_privacy_shared_key_google_network_type = null;
     /**
+     * The YouTube video upload referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.YouTubeVideoUpload you_tube_video_upload = 245;</code>
+     */
+    protected $you_tube_video_upload = null;
+    /**
      * The applied incentive referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.resources.AppliedIncentive applied_incentive = 246;</code>
@@ -1456,6 +1462,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The android privacy shared key google campaign referenced in the query.
      *     @type \Google\Ads\GoogleAds\V23\Resources\AndroidPrivacySharedKeyGoogleNetworkType $android_privacy_shared_key_google_network_type
      *           The android privacy shared key google network type referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V23\Resources\YouTubeVideoUpload $you_tube_video_upload
+     *           The YouTube video upload referenced in the query.
      *     @type \Google\Ads\GoogleAds\V23\Resources\AppliedIncentive $applied_incentive
      *           The applied incentive referenced in the query.
      *     @type \Google\Ads\GoogleAds\V23\Common\Metrics $metrics
@@ -7837,6 +7845,42 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Resources\AndroidPrivacySharedKeyGoogleNetworkType::class);
         $this->android_privacy_shared_key_google_network_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * The YouTube video upload referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.YouTubeVideoUpload you_tube_video_upload = 245;</code>
+     * @return \Google\Ads\GoogleAds\V23\Resources\YouTubeVideoUpload|null
+     */
+    public function getYouTubeVideoUpload()
+    {
+        return $this->you_tube_video_upload;
+    }
+
+    public function hasYouTubeVideoUpload()
+    {
+        return isset($this->you_tube_video_upload);
+    }
+
+    public function clearYouTubeVideoUpload()
+    {
+        unset($this->you_tube_video_upload);
+    }
+
+    /**
+     * The YouTube video upload referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.YouTubeVideoUpload you_tube_video_upload = 245;</code>
+     * @param \Google\Ads\GoogleAds\V23\Resources\YouTubeVideoUpload $var
+     * @return $this
+     */
+    public function setYouTubeVideoUpload($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Resources\YouTubeVideoUpload::class);
+        $this->you_tube_video_upload = $var;
 
         return $this;
     }

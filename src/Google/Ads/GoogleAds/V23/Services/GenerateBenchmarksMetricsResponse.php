@@ -28,6 +28,12 @@ class GenerateBenchmarksMetricsResponse extends \Google\Protobuf\Internal\Messag
      * Generated from protobuf field <code>.google.ads.googleads.v23.services.Metrics average_benchmarks_metrics = 2;</code>
      */
     protected $average_benchmarks_metrics = null;
+    /**
+     * Breakdown metrics grouped by dimensions.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BreakdownMetrics breakdown_metrics = 3;</code>
+     */
+    private $breakdown_metrics;
 
     /**
      * Constructor.
@@ -39,6 +45,8 @@ class GenerateBenchmarksMetricsResponse extends \Google\Protobuf\Internal\Messag
      *           Metrics belonging to the customer.
      *     @type \Google\Ads\GoogleAds\V23\Services\Metrics $average_benchmarks_metrics
      *           Metrics for the selected benchmarks source.
+     *     @type array<\Google\Ads\GoogleAds\V23\Services\BreakdownMetrics>|\Google\Protobuf\Internal\RepeatedField $breakdown_metrics
+     *           Breakdown metrics grouped by dimensions.
      * }
      */
     public function __construct($data = NULL) {
@@ -114,6 +122,32 @@ class GenerateBenchmarksMetricsResponse extends \Google\Protobuf\Internal\Messag
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Services\Metrics::class);
         $this->average_benchmarks_metrics = $var;
+
+        return $this;
+    }
+
+    /**
+     * Breakdown metrics grouped by dimensions.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BreakdownMetrics breakdown_metrics = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getBreakdownMetrics()
+    {
+        return $this->breakdown_metrics;
+    }
+
+    /**
+     * Breakdown metrics grouped by dimensions.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BreakdownMetrics breakdown_metrics = 3;</code>
+     * @param array<\Google\Ads\GoogleAds\V23\Services\BreakdownMetrics>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setBreakdownMetrics($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V23\Services\BreakdownMetrics::class);
+        $this->breakdown_metrics = $arr;
 
         return $this;
     }

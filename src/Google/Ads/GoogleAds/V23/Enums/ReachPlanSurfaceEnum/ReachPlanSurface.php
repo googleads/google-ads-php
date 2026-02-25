@@ -67,6 +67,12 @@ class ReachPlanSurface
      * Generated from protobuf enum <code>SHORTS = 6;</code>
      */
     const SHORTS = 6;
+    /**
+     * Google Display Network ad surface.
+     *
+     * Generated from protobuf enum <code>GOOGLE_DISPLAY_NETWORK = 9;</code>
+     */
+    const GOOGLE_DISPLAY_NETWORK = 9;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -78,6 +84,7 @@ class ReachPlanSurface
         self::IN_STREAM_NON_SKIPPABLE => 'IN_STREAM_NON_SKIPPABLE',
         self::IN_STREAM_SKIPPABLE => 'IN_STREAM_SKIPPABLE',
         self::SHORTS => 'SHORTS',
+        self::GOOGLE_DISPLAY_NETWORK => 'GOOGLE_DISPLAY_NETWORK',
     ];
 
     public static function name($value)

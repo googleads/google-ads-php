@@ -38,13 +38,17 @@ class OfflineUserDataJobStatus
      */
     const RUNNING = 3;
     /**
-     * Uploaded data has been successfully processed.
+     * Uploaded data has been successfully processed. The job might have no
+     * operations, which can happen if the job was run without any operations
+     * added, or if all operations failed validation individually when
+     * attempting to add them to the job.
      *
      * Generated from protobuf enum <code>SUCCESS = 4;</code>
      */
     const SUCCESS = 4;
     /**
-     * Uploaded data has failed to be processed.
+     * Uploaded data has failed to be processed. Some operations may have been
+     * successfully processed.
      *
      * Generated from protobuf enum <code>FAILED = 5;</code>
      */

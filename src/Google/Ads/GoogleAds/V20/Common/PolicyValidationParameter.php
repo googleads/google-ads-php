@@ -16,12 +16,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The list of policy topics that should not cause a PolicyFindingError to
-     * be reported. This field is currently only compatible with Enhanced Text Ad.
-     * It corresponds to the PolicyTopicEntry.topic field.
-     * Resources violating these policies will be saved, but will not be eligible
-     * to serve. They may begin serving at a later time due to a change in
-     * policies, re-review of the resource, or a change in advertiser
+     * The list of policy topics that should not cause a `PolicyFindingError` to
+     * be reported. This field is used for ad policy exemptions. It corresponds
+     * to the `PolicyTopicEntry.topic` field.
+     * If this field is populated, then `exempt_policy_violation_keys` must be
+     * empty.
+     * Resources that violate these policies will be saved, but will not be
+     * eligible to serve. They may begin serving at a later time due to a change
+     * in policies, re-review of the resource, or a change in advertiser
      * certificates.
      *
      * Generated from protobuf field <code>repeated string ignorable_policy_topics = 3;</code>
@@ -29,12 +31,13 @@ class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
     private $ignorable_policy_topics;
     /**
      * The list of policy violation keys that should not cause a
-     * PolicyViolationError to be reported. Not all policy violations are
-     * exemptable, refer to the is_exemptible field in the returned
-     * PolicyViolationError.
-     * Resources violating these polices will be saved, but will not be eligible
-     * to serve. They may begin serving at a later time due to a change in
-     * policies, re-review of the resource, or a change in advertiser
+     * `PolicyViolationError` to be reported. Not all policy violations are
+     * exemptable. Refer to the `is_exemptible` field in the returned
+     * `PolicyViolationError`. This field is used for keyword policy exemptions.
+     * If this field is populated, then `ignorable_policy_topics` must be empty.
+     * Resources that violate these policies will be saved, but will not be
+     * eligible to serve. They may begin serving at a later time due to a change
+     * in policies, re-review of the resource, or a change in advertiser
      * certificates.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.PolicyViolationKey exempt_policy_violation_keys = 2;</code>
@@ -48,21 +51,24 @@ class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ignorable_policy_topics
-     *           The list of policy topics that should not cause a PolicyFindingError to
-     *           be reported. This field is currently only compatible with Enhanced Text Ad.
-     *           It corresponds to the PolicyTopicEntry.topic field.
-     *           Resources violating these policies will be saved, but will not be eligible
-     *           to serve. They may begin serving at a later time due to a change in
-     *           policies, re-review of the resource, or a change in advertiser
+     *           The list of policy topics that should not cause a `PolicyFindingError` to
+     *           be reported. This field is used for ad policy exemptions. It corresponds
+     *           to the `PolicyTopicEntry.topic` field.
+     *           If this field is populated, then `exempt_policy_violation_keys` must be
+     *           empty.
+     *           Resources that violate these policies will be saved, but will not be
+     *           eligible to serve. They may begin serving at a later time due to a change
+     *           in policies, re-review of the resource, or a change in advertiser
      *           certificates.
      *     @type array<\Google\Ads\GoogleAds\V20\Common\PolicyViolationKey>|\Google\Protobuf\Internal\RepeatedField $exempt_policy_violation_keys
      *           The list of policy violation keys that should not cause a
-     *           PolicyViolationError to be reported. Not all policy violations are
-     *           exemptable, refer to the is_exemptible field in the returned
-     *           PolicyViolationError.
-     *           Resources violating these polices will be saved, but will not be eligible
-     *           to serve. They may begin serving at a later time due to a change in
-     *           policies, re-review of the resource, or a change in advertiser
+     *           `PolicyViolationError` to be reported. Not all policy violations are
+     *           exemptable. Refer to the `is_exemptible` field in the returned
+     *           `PolicyViolationError`. This field is used for keyword policy exemptions.
+     *           If this field is populated, then `ignorable_policy_topics` must be empty.
+     *           Resources that violate these policies will be saved, but will not be
+     *           eligible to serve. They may begin serving at a later time due to a change
+     *           in policies, re-review of the resource, or a change in advertiser
      *           certificates.
      * }
      */
@@ -72,12 +78,14 @@ class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of policy topics that should not cause a PolicyFindingError to
-     * be reported. This field is currently only compatible with Enhanced Text Ad.
-     * It corresponds to the PolicyTopicEntry.topic field.
-     * Resources violating these policies will be saved, but will not be eligible
-     * to serve. They may begin serving at a later time due to a change in
-     * policies, re-review of the resource, or a change in advertiser
+     * The list of policy topics that should not cause a `PolicyFindingError` to
+     * be reported. This field is used for ad policy exemptions. It corresponds
+     * to the `PolicyTopicEntry.topic` field.
+     * If this field is populated, then `exempt_policy_violation_keys` must be
+     * empty.
+     * Resources that violate these policies will be saved, but will not be
+     * eligible to serve. They may begin serving at a later time due to a change
+     * in policies, re-review of the resource, or a change in advertiser
      * certificates.
      *
      * Generated from protobuf field <code>repeated string ignorable_policy_topics = 3;</code>
@@ -89,12 +97,14 @@ class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of policy topics that should not cause a PolicyFindingError to
-     * be reported. This field is currently only compatible with Enhanced Text Ad.
-     * It corresponds to the PolicyTopicEntry.topic field.
-     * Resources violating these policies will be saved, but will not be eligible
-     * to serve. They may begin serving at a later time due to a change in
-     * policies, re-review of the resource, or a change in advertiser
+     * The list of policy topics that should not cause a `PolicyFindingError` to
+     * be reported. This field is used for ad policy exemptions. It corresponds
+     * to the `PolicyTopicEntry.topic` field.
+     * If this field is populated, then `exempt_policy_violation_keys` must be
+     * empty.
+     * Resources that violate these policies will be saved, but will not be
+     * eligible to serve. They may begin serving at a later time due to a change
+     * in policies, re-review of the resource, or a change in advertiser
      * certificates.
      *
      * Generated from protobuf field <code>repeated string ignorable_policy_topics = 3;</code>
@@ -111,12 +121,13 @@ class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
 
     /**
      * The list of policy violation keys that should not cause a
-     * PolicyViolationError to be reported. Not all policy violations are
-     * exemptable, refer to the is_exemptible field in the returned
-     * PolicyViolationError.
-     * Resources violating these polices will be saved, but will not be eligible
-     * to serve. They may begin serving at a later time due to a change in
-     * policies, re-review of the resource, or a change in advertiser
+     * `PolicyViolationError` to be reported. Not all policy violations are
+     * exemptable. Refer to the `is_exemptible` field in the returned
+     * `PolicyViolationError`. This field is used for keyword policy exemptions.
+     * If this field is populated, then `ignorable_policy_topics` must be empty.
+     * Resources that violate these policies will be saved, but will not be
+     * eligible to serve. They may begin serving at a later time due to a change
+     * in policies, re-review of the resource, or a change in advertiser
      * certificates.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.PolicyViolationKey exempt_policy_violation_keys = 2;</code>
@@ -129,12 +140,13 @@ class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
 
     /**
      * The list of policy violation keys that should not cause a
-     * PolicyViolationError to be reported. Not all policy violations are
-     * exemptable, refer to the is_exemptible field in the returned
-     * PolicyViolationError.
-     * Resources violating these polices will be saved, but will not be eligible
-     * to serve. They may begin serving at a later time due to a change in
-     * policies, re-review of the resource, or a change in advertiser
+     * `PolicyViolationError` to be reported. Not all policy violations are
+     * exemptable. Refer to the `is_exemptible` field in the returned
+     * `PolicyViolationError`. This field is used for keyword policy exemptions.
+     * If this field is populated, then `ignorable_policy_topics` must be empty.
+     * Resources that violate these policies will be saved, but will not be
+     * eligible to serve. They may begin serving at a later time due to a change
+     * in policies, re-review of the resource, or a change in advertiser
      * certificates.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.PolicyViolationKey exempt_policy_violation_keys = 2;</code>

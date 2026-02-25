@@ -129,9 +129,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $all_conversions_value_per_cost = null;
     /**
-     * The number of times people clicked the "Call" button to call a store during
-     * or after clicking an ad. This number doesn't include whether or not calls
-     * were connected, or the duration of any calls.
+     * The number of times people clicked the "Call" button to call a business
+     * during or after clicking an ad. This number doesn't include whether or not
+     * calls were connected, or the duration of any calls.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_click_to_call = 195;</code>
@@ -139,7 +139,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $all_conversions_from_click_to_call = null;
     /**
      * The number of times people clicked a "Get directions" button to navigate to
-     * a store after clicking an ad.
+     * a business after clicking an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_directions = 196;</code>
@@ -153,7 +153,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $all_conversions_from_interactions_value_per_interaction = null;
     /**
-     * The number of times people clicked a link to view a store's menu after
+     * The number of times people clicked a link to view a business's menu after
      * clicking an ad.
      * This metric applies to feed items only.
      *
@@ -161,7 +161,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $all_conversions_from_menu = null;
     /**
-     * The number of times people placed an order at a store after clicking an ad.
+     * The number of times people placed an order at a business after clicking an
+     * ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_order = 199;</code>
@@ -169,22 +170,22 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $all_conversions_from_order = null;
     /**
      * The number of other conversions (for example, posting a review or saving a
-     * location for a store) that occurred after people clicked an ad.
+     * location for a business) that occurred after people clicked an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_other_engagement = 200;</code>
      */
     protected $all_conversions_from_other_engagement = null;
     /**
-     * Estimated number of times people visited a store after clicking an ad.
+     * Estimated number of times people visited a business after clicking an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_store_visit = 201;</code>
      */
     protected $all_conversions_from_store_visit = null;
     /**
-     * The number of times that people were taken to a store's URL after clicking
-     * an ad.
+     * The number of times that people were taken to a business's URL after
+     * clicking an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_store_website = 202;</code>
@@ -699,7 +700,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $gmail_secondary_clicks = null;
     /**
-     * The number of times a store's location-based ad was shown.
+     * The number of times a business's location-based ad was shown.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional int64 impressions_from_store_reach = 220;</code>
@@ -1206,7 +1207,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $all_conversions_from_location_asset_other_engagement = null;
     /**
-     * Estimated number of visits to the store after a chargeable
+     * Estimated number of visits to the business after a chargeable
      * ad event (click or impression). This measure is coming from Asset
      * based location.
      *
@@ -1222,8 +1223,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $all_conversions_from_location_asset_website = null;
     /**
-     * Number of impressions in which the store location was shown or the location
-     * was used for targeting. This measure is coming from Asset based
+     * Number of impressions in which the business location was shown or the
+     * location was used for targeting. This measure is coming from Asset based
      * location.
      *
      * Generated from protobuf field <code>optional int64 eligible_impressions_from_location_asset_store_reach = 274;</code>
@@ -1265,7 +1266,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $view_through_conversions_from_location_asset_other_engagement = null;
     /**
-     * Estimated number of visits to the store after an impression.
+     * Estimated number of visits to the business after an impression.
      * This measure is coming from Asset based location.
      *
      * Generated from protobuf field <code>optional double view_through_conversions_from_location_asset_store_visits = 280;</code>
@@ -1774,7 +1775,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $asset_unrated_performance_cost_percentage = null;
     /**
-     * The amount of store visits attributed by the last click model.
+     * The amount of business visits attributed by the last click model.
      *
      * Generated from protobuf field <code>optional double store_visits_last_click_model_attributed_conversions = 365;</code>
      */
@@ -2025,34 +2026,35 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The value of all conversions divided by the total cost of ad interactions
      *           (such as clicks for text ads or views for video ads).
      *     @type float $all_conversions_from_click_to_call
-     *           The number of times people clicked the "Call" button to call a store during
-     *           or after clicking an ad. This number doesn't include whether or not calls
-     *           were connected, or the duration of any calls.
+     *           The number of times people clicked the "Call" button to call a business
+     *           during or after clicking an ad. This number doesn't include whether or not
+     *           calls were connected, or the duration of any calls.
      *           This metric applies to feed items only.
      *     @type float $all_conversions_from_directions
      *           The number of times people clicked a "Get directions" button to navigate to
-     *           a store after clicking an ad.
+     *           a business after clicking an ad.
      *           This metric applies to feed items only.
      *     @type float $all_conversions_from_interactions_value_per_interaction
      *           The value of all conversions from interactions divided by the total number
      *           of interactions.
      *     @type float $all_conversions_from_menu
-     *           The number of times people clicked a link to view a store's menu after
+     *           The number of times people clicked a link to view a business's menu after
      *           clicking an ad.
      *           This metric applies to feed items only.
      *     @type float $all_conversions_from_order
-     *           The number of times people placed an order at a store after clicking an ad.
+     *           The number of times people placed an order at a business after clicking an
+     *           ad.
      *           This metric applies to feed items only.
      *     @type float $all_conversions_from_other_engagement
      *           The number of other conversions (for example, posting a review or saving a
-     *           location for a store) that occurred after people clicked an ad.
+     *           location for a business) that occurred after people clicked an ad.
      *           This metric applies to feed items only.
      *     @type float $all_conversions_from_store_visit
-     *           Estimated number of times people visited a store after clicking an ad.
+     *           Estimated number of times people visited a business after clicking an ad.
      *           This metric applies to feed items only.
      *     @type float $all_conversions_from_store_website
-     *           The number of times that people were taken to a store's URL after clicking
-     *           an ad.
+     *           The number of times that people were taken to a business's URL after
+     *           clicking an ad.
      *           This metric applies to feed items only.
      *     @type float $auction_insight_search_absolute_top_impression_percentage
      *           This metric is part of the Auction Insights report, and tells how often
@@ -2311,7 +2313,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The number of clicks to the landing page on the expanded state of Gmail
      *           ads.
      *     @type int|string $impressions_from_store_reach
-     *           The number of times a store's location-based ad was shown.
+     *           The number of times a business's location-based ad was shown.
      *           This metric applies to feed items only.
      *     @type int|string $impressions
      *           Count of how often your ad has appeared on a search results page or
@@ -2562,7 +2564,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           a chargeable ad event (click or impression). This measure is coming
      *           from Asset based location.
      *     @type float $all_conversions_from_location_asset_store_visits
-     *           Estimated number of visits to the store after a chargeable
+     *           Estimated number of visits to the business after a chargeable
      *           ad event (click or impression). This measure is coming from Asset
      *           based location.
      *     @type float $all_conversions_from_location_asset_website
@@ -2570,8 +2572,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           event (click or impression). This measure is coming from Asset based
      *           location.
      *     @type int|string $eligible_impressions_from_location_asset_store_reach
-     *           Number of impressions in which the store location was shown or the location
-     *           was used for targeting. This measure is coming from Asset based
+     *           Number of impressions in which the business location was shown or the
+     *           location was used for targeting. This measure is coming from Asset based
      *           location.
      *     @type float $view_through_conversions_from_location_asset_click_to_call
      *           Number of call button clicks on any location surface after an impression.
@@ -2589,7 +2591,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           Number of other types of local action clicks on any location surface after
      *           an impression. This measure is coming from Asset based location.
      *     @type float $view_through_conversions_from_location_asset_store_visits
-     *           Estimated number of visits to the store after an impression.
+     *           Estimated number of visits to the business after an impression.
      *           This measure is coming from Asset based location.
      *     @type float $view_through_conversions_from_location_asset_website
      *           Number of website URL clicks on any location surface after an impression.
@@ -2926,7 +2928,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           CampaignAggregateAssetView.
      *           This metric is only supported in Performance Max channel.
      *     @type float $store_visits_last_click_model_attributed_conversions
-     *           The amount of store visits attributed by the last click model.
+     *           The amount of business visits attributed by the last click model.
      *     @type float $results_conversions_purchase
      *           The purchase conversion stats for the unified goals results.
      *     @type float $video_view_rate_in_feed
@@ -3618,9 +3620,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times people clicked the "Call" button to call a store during
-     * or after clicking an ad. This number doesn't include whether or not calls
-     * were connected, or the duration of any calls.
+     * The number of times people clicked the "Call" button to call a business
+     * during or after clicking an ad. This number doesn't include whether or not
+     * calls were connected, or the duration of any calls.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_click_to_call = 195;</code>
@@ -3642,9 +3644,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times people clicked the "Call" button to call a store during
-     * or after clicking an ad. This number doesn't include whether or not calls
-     * were connected, or the duration of any calls.
+     * The number of times people clicked the "Call" button to call a business
+     * during or after clicking an ad. This number doesn't include whether or not
+     * calls were connected, or the duration of any calls.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_click_to_call = 195;</code>
@@ -3661,7 +3663,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of times people clicked a "Get directions" button to navigate to
-     * a store after clicking an ad.
+     * a business after clicking an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_directions = 196;</code>
@@ -3684,7 +3686,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of times people clicked a "Get directions" button to navigate to
-     * a store after clicking an ad.
+     * a business after clicking an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_directions = 196;</code>
@@ -3738,7 +3740,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times people clicked a link to view a store's menu after
+     * The number of times people clicked a link to view a business's menu after
      * clicking an ad.
      * This metric applies to feed items only.
      *
@@ -3761,7 +3763,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times people clicked a link to view a store's menu after
+     * The number of times people clicked a link to view a business's menu after
      * clicking an ad.
      * This metric applies to feed items only.
      *
@@ -3778,7 +3780,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times people placed an order at a store after clicking an ad.
+     * The number of times people placed an order at a business after clicking an
+     * ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_order = 199;</code>
@@ -3800,7 +3803,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times people placed an order at a store after clicking an ad.
+     * The number of times people placed an order at a business after clicking an
+     * ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_order = 199;</code>
@@ -3817,7 +3821,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of other conversions (for example, posting a review or saving a
-     * location for a store) that occurred after people clicked an ad.
+     * location for a business) that occurred after people clicked an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_other_engagement = 200;</code>
@@ -3840,7 +3844,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of other conversions (for example, posting a review or saving a
-     * location for a store) that occurred after people clicked an ad.
+     * location for a business) that occurred after people clicked an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_other_engagement = 200;</code>
@@ -3856,7 +3860,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of times people visited a store after clicking an ad.
+     * Estimated number of times people visited a business after clicking an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_store_visit = 201;</code>
@@ -3878,7 +3882,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of times people visited a store after clicking an ad.
+     * Estimated number of times people visited a business after clicking an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_store_visit = 201;</code>
@@ -3894,8 +3898,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times that people were taken to a store's URL after clicking
-     * an ad.
+     * The number of times that people were taken to a business's URL after
+     * clicking an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_store_website = 202;</code>
@@ -3917,8 +3921,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times that people were taken to a store's URL after clicking
-     * an ad.
+     * The number of times that people were taken to a business's URL after
+     * clicking an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional double all_conversions_from_store_website = 202;</code>
@@ -6432,7 +6436,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times a store's location-based ad was shown.
+     * The number of times a business's location-based ad was shown.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional int64 impressions_from_store_reach = 220;</code>
@@ -6454,7 +6458,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times a store's location-based ad was shown.
+     * The number of times a business's location-based ad was shown.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>optional int64 impressions_from_store_reach = 220;</code>
@@ -8922,7 +8926,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of visits to the store after a chargeable
+     * Estimated number of visits to the business after a chargeable
      * ad event (click or impression). This measure is coming from Asset
      * based location.
      *
@@ -8945,7 +8949,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of visits to the store after a chargeable
+     * Estimated number of visits to the business after a chargeable
      * ad event (click or impression). This measure is coming from Asset
      * based location.
      *
@@ -9002,8 +9006,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of impressions in which the store location was shown or the location
-     * was used for targeting. This measure is coming from Asset based
+     * Number of impressions in which the business location was shown or the
+     * location was used for targeting. This measure is coming from Asset based
      * location.
      *
      * Generated from protobuf field <code>optional int64 eligible_impressions_from_location_asset_store_reach = 274;</code>
@@ -9025,8 +9029,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of impressions in which the store location was shown or the location
-     * was used for targeting. This measure is coming from Asset based
+     * Number of impressions in which the business location was shown or the
+     * location was used for targeting. This measure is coming from Asset based
      * location.
      *
      * Generated from protobuf field <code>optional int64 eligible_impressions_from_location_asset_store_reach = 274;</code>
@@ -9232,7 +9236,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of visits to the store after an impression.
+     * Estimated number of visits to the business after an impression.
      * This measure is coming from Asset based location.
      *
      * Generated from protobuf field <code>optional double view_through_conversions_from_location_asset_store_visits = 280;</code>
@@ -9254,7 +9258,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of visits to the store after an impression.
+     * Estimated number of visits to the business after an impression.
      * This measure is coming from Asset based location.
      *
      * Generated from protobuf field <code>optional double view_through_conversions_from_location_asset_store_visits = 280;</code>
@@ -11222,7 +11226,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The amount of store visits attributed by the last click model.
+     * The amount of business visits attributed by the last click model.
      *
      * Generated from protobuf field <code>optional double store_visits_last_click_model_attributed_conversions = 365;</code>
      * @return float
@@ -11243,7 +11247,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The amount of store visits attributed by the last click model.
+     * The amount of business visits attributed by the last click model.
      *
      * Generated from protobuf field <code>optional double store_visits_last_click_model_attributed_conversions = 365;</code>
      * @param float $var

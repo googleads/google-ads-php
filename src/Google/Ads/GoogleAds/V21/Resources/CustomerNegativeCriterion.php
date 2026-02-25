@@ -66,7 +66,8 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V21\Common\NegativeKeywordListInfo $negative_keyword_list
      *           Immutable. NegativeKeywordList.
      *     @type \Google\Ads\GoogleAds\V21\Common\IpBlockInfo $ip_block
-     *           Immutable. IPBLock
+     *           Immutable. IpBlock.
+     *           You can exclude up to 500 IP addresses per account.
      *     @type \Google\Ads\GoogleAds\V21\Common\PlacementListInfo $placement_list
      *           Immutable. PlacementList.
      * }
@@ -386,7 +387,8 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. IPBLock
+     * Immutable. IpBlock.
+     * You can exclude up to 500 IP addresses per account.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v21.common.IpBlockInfo ip_block = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V21\Common\IpBlockInfo|null
@@ -402,7 +404,8 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. IPBLock
+     * Immutable. IpBlock.
+     * You can exclude up to 500 IP addresses per account.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v21.common.IpBlockInfo ip_block = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V21\Common\IpBlockInfo $var

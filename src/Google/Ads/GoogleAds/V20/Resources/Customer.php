@@ -198,6 +198,16 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v20.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $video_brand_safety_suitability = 0;
+    /**
+     * Output only. Returns the advertiser self-declaration status of whether this
+     * customer contains political advertising content targeted towards the
+     * European Union. You can use the Google Ads UI to update this account-level
+     * declaration, or use the API to update the self-declaration status of
+     * individual campaigns.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v20.enums.EuPoliticalAdvertisingStatusEnum.EuPoliticalAdvertisingStatus contains_eu_political_advertising = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $contains_eu_political_advertising = 0;
 
     /**
      * Constructor.
@@ -288,6 +298,12 @@ class Customer extends \Google\Protobuf\Internal\Message
      *           selecting an inventory type to show your ads on content that is the right
      *           fit for your brand. See
      *           https://support.google.com/google-ads/answer/7515513.
+     *     @type int $contains_eu_political_advertising
+     *           Output only. Returns the advertiser self-declaration status of whether this
+     *           customer contains political advertising content targeted towards the
+     *           European Union. You can use the Google Ads UI to update this account-level
+     *           declaration, or use the API to update the self-declaration status of
+     *           individual campaigns.
      * }
      */
     public function __construct($data = NULL) {
@@ -1207,6 +1223,40 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V20\Enums\BrandSafetySuitabilityEnum\BrandSafetySuitability::class);
         $this->video_brand_safety_suitability = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Returns the advertiser self-declaration status of whether this
+     * customer contains political advertising content targeted towards the
+     * European Union. You can use the Google Ads UI to update this account-level
+     * declaration, or use the API to update the self-declaration status of
+     * individual campaigns.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v20.enums.EuPoliticalAdvertisingStatusEnum.EuPoliticalAdvertisingStatus contains_eu_political_advertising = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int
+     */
+    public function getContainsEuPoliticalAdvertising()
+    {
+        return $this->contains_eu_political_advertising;
+    }
+
+    /**
+     * Output only. Returns the advertiser self-declaration status of whether this
+     * customer contains political advertising content targeted towards the
+     * European Union. You can use the Google Ads UI to update this account-level
+     * declaration, or use the API to update the self-declaration status of
+     * individual campaigns.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v20.enums.EuPoliticalAdvertisingStatusEnum.EuPoliticalAdvertisingStatus contains_eu_political_advertising = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setContainsEuPoliticalAdvertising($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V20\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus::class);
+        $this->contains_eu_political_advertising = $var;
 
         return $this;
     }

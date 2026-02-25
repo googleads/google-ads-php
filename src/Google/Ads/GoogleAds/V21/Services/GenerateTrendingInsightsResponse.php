@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Response message for [ContentCreatorInsightsService.GenerateTrendingInsights]
+ * Response message for
+ * [ContentCreatorInsightsService.GenerateTrendingInsights][google.ads.googleads.v21.services.ContentCreatorInsightsService.GenerateTrendingInsights].
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.services.GenerateTrendingInsightsResponse</code>
  */

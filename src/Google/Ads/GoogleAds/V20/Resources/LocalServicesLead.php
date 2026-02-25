@@ -19,11 +19,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class LocalServicesLead extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Output only. The resource name of the local services lead data.
+     * Immutable. The resource name of the local services lead data.
      * Local Services Lead resource name have the form
      * `customers/{customer_id}/localServicesLead/{local_services_lead_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
@@ -115,7 +115,7 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           Output only. The resource name of the local services lead data.
+     *           Immutable. The resource name of the local services lead data.
      *           Local Services Lead resource name have the form
      *           `customers/{customer_id}/localServicesLead/{local_services_lead_id}`
      *     @type int|string $id
@@ -159,11 +159,11 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The resource name of the local services lead data.
+     * Immutable. The resource name of the local services lead data.
      * Local Services Lead resource name have the form
      * `customers/{customer_id}/localServicesLead/{local_services_lead_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -172,11 +172,11 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The resource name of the local services lead data.
+     * Immutable. The resource name of the local services lead data.
      * Local Services Lead resource name have the form
      * `customers/{customer_id}/localServicesLead/{local_services_lead_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

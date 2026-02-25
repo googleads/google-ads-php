@@ -450,6 +450,16 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v20.enums.EuPoliticalAdvertisingStatusEnum.EuPoliticalAdvertisingStatus contains_eu_political_advertising = 102;</code>
      */
     protected $contains_eu_political_advertising = 0;
+    /**
+     * Output only. Indicates whether this campaign is missing a declaration about
+     * whether it contains political advertising targeted towards the EU and is
+     * ineligible for any exemptions. If this field is true, use the
+     * contains_eu_political_advertising field to add the required declaration.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>bool missing_eu_political_advertising_declaration = 108 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $missing_eu_political_advertising_declaration = false;
     protected $campaign_bidding_strategy;
 
     /**
@@ -665,6 +675,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type int $contains_eu_political_advertising
      *           The advertiser should self-declare whether this campaign contains
      *           political advertising content targeted towards the European Union.
+     *     @type bool $missing_eu_political_advertising_declaration
+     *           Output only. Indicates whether this campaign is missing a declaration about
+     *           whether it contains political advertising targeted towards the EU and is
+     *           ineligible for any exemptions. If this field is true, use the
+     *           contains_eu_political_advertising field to add the required declaration.
+     *           This field is read-only.
      *     @type string $bidding_strategy
      *           The resource name of the portfolio bidding strategy used by the campaign.
      *     @type \Google\Ads\GoogleAds\V20\Common\Commission $commission
@@ -2734,6 +2750,40 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V20\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus::class);
         $this->contains_eu_political_advertising = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Indicates whether this campaign is missing a declaration about
+     * whether it contains political advertising targeted towards the EU and is
+     * ineligible for any exemptions. If this field is true, use the
+     * contains_eu_political_advertising field to add the required declaration.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>bool missing_eu_political_advertising_declaration = 108 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return bool
+     */
+    public function getMissingEuPoliticalAdvertisingDeclaration()
+    {
+        return $this->missing_eu_political_advertising_declaration;
+    }
+
+    /**
+     * Output only. Indicates whether this campaign is missing a declaration about
+     * whether it contains political advertising targeted towards the EU and is
+     * ineligible for any exemptions. If this field is true, use the
+     * contains_eu_political_advertising field to add the required declaration.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>bool missing_eu_political_advertising_declaration = 108 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setMissingEuPoliticalAdvertisingDeclaration($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->missing_eu_political_advertising_declaration = $var;
 
         return $this;
     }

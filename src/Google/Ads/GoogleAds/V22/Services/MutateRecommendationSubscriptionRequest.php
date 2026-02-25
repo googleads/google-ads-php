@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for
- * [RecommendationSubscriptionService.MutateRecommendationSubscription]
+ * [RecommendationSubscriptionService.MutateRecommendationSubscription][google.ads.googleads.v22.services.RecommendationSubscriptionService.MutateRecommendationSubscription]
  *
  * Generated from protobuf message <code>google.ads.googleads.v22.services.MutateRecommendationSubscriptionRequest</code>
  */

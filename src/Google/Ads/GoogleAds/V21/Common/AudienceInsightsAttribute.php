@@ -11,7 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * An audience attribute that can be used to request insights about the
  * audience. Valid inputs for these fields are available from
- * [AudienceInsightsService.ListAudienceInsightsAttributes][].
+ * [AudienceInsightsService.ListAudienceInsightsAttributes][google.ads.googleads.v21.services.AudienceInsightsService.ListAudienceInsightsAttributes].
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.common.AudienceInsightsAttribute</code>
  */

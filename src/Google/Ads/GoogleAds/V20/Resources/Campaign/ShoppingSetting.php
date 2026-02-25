@@ -27,11 +27,13 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     protected $merchant_id = null;
     /**
      * Feed label of products to include in the campaign.
-     * Only one of feed_label or sales_country can be set.
-     * If used instead of sales_country, the feed_label field accepts country
-     * codes in the same format for example: 'XX'.
-     * Otherwise can be any string used for feed label in Google Merchant
-     * Center.
+     * Valid feed labels may contain a maximum of 20 characters including
+     * uppercase letters, numbers, hyphens, and underscores.
+     * If you previously used the deprecated `sales_country` in the two-letter
+     * country code (`XX`) format, the `feed_label` field should be used
+     * instead. For more information see the
+     * [feed label](//support.google.com/merchants/answer/12453549)
+     * support article.
      *
      * Generated from protobuf field <code>string feed_label = 10;</code>
      */
@@ -93,11 +95,13 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *           Shopping campaigns.
      *     @type string $feed_label
      *           Feed label of products to include in the campaign.
-     *           Only one of feed_label or sales_country can be set.
-     *           If used instead of sales_country, the feed_label field accepts country
-     *           codes in the same format for example: 'XX'.
-     *           Otherwise can be any string used for feed label in Google Merchant
-     *           Center.
+     *           Valid feed labels may contain a maximum of 20 characters including
+     *           uppercase letters, numbers, hyphens, and underscores.
+     *           If you previously used the deprecated `sales_country` in the two-letter
+     *           country code (`XX`) format, the `feed_label` field should be used
+     *           instead. For more information see the
+     *           [feed label](//support.google.com/merchants/answer/12453549)
+     *           support article.
      *     @type int $campaign_priority
      *           Priority of the campaign. Campaigns with numerically higher priorities
      *           take precedence over those with lower priorities.
@@ -171,11 +175,13 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
 
     /**
      * Feed label of products to include in the campaign.
-     * Only one of feed_label or sales_country can be set.
-     * If used instead of sales_country, the feed_label field accepts country
-     * codes in the same format for example: 'XX'.
-     * Otherwise can be any string used for feed label in Google Merchant
-     * Center.
+     * Valid feed labels may contain a maximum of 20 characters including
+     * uppercase letters, numbers, hyphens, and underscores.
+     * If you previously used the deprecated `sales_country` in the two-letter
+     * country code (`XX`) format, the `feed_label` field should be used
+     * instead. For more information see the
+     * [feed label](//support.google.com/merchants/answer/12453549)
+     * support article.
      *
      * Generated from protobuf field <code>string feed_label = 10;</code>
      * @return string
@@ -187,11 +193,13 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
 
     /**
      * Feed label of products to include in the campaign.
-     * Only one of feed_label or sales_country can be set.
-     * If used instead of sales_country, the feed_label field accepts country
-     * codes in the same format for example: 'XX'.
-     * Otherwise can be any string used for feed label in Google Merchant
-     * Center.
+     * Valid feed labels may contain a maximum of 20 characters including
+     * uppercase letters, numbers, hyphens, and underscores.
+     * If you previously used the deprecated `sales_country` in the two-letter
+     * country code (`XX`) format, the `feed_label` field should be used
+     * instead. For more information see the
+     * [feed label](//support.google.com/merchants/answer/12453549)
+     * support article.
      *
      * Generated from protobuf field <code>string feed_label = 10;</code>
      * @param string $var

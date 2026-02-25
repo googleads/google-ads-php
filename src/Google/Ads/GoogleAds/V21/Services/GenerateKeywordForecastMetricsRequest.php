@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request message for [KeywordPlanIdeaService.GenerateKeywordForecastMetrics].
+ * Request message for
+ * [KeywordPlanIdeaService.GenerateKeywordForecastMetrics][google.ads.googleads.v21.services.KeywordPlanIdeaService.GenerateKeywordForecastMetrics].
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.services.GenerateKeywordForecastMetricsRequest</code>
  */

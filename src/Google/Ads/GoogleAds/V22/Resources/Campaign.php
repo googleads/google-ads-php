@@ -457,6 +457,16 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.AssetSetTypeEnum.AssetSetType feed_types = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $feed_types;
+    /**
+     * Output only. Indicates whether this campaign is missing a declaration about
+     * whether it contains political advertising targeted towards the EU and is
+     * ineligible for any exemptions. If this field is true, use the
+     * contains_eu_political_advertising field to add the required declaration.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>bool missing_eu_political_advertising_declaration = 108 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $missing_eu_political_advertising_declaration = false;
     protected $campaign_bidding_strategy;
 
     /**
@@ -671,6 +681,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           political advertising content targeted towards the European Union.
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $feed_types
      *           Output only. Types of feeds that are attached directly to this campaign.
+     *     @type bool $missing_eu_political_advertising_declaration
+     *           Output only. Indicates whether this campaign is missing a declaration about
+     *           whether it contains political advertising targeted towards the EU and is
+     *           ineligible for any exemptions. If this field is true, use the
+     *           contains_eu_political_advertising field to add the required declaration.
+     *           This field is read-only.
      *     @type string $bidding_strategy
      *           The resource name of the portfolio bidding strategy used by the campaign.
      *     @type \Google\Ads\GoogleAds\V22\Common\Commission $commission
@@ -2795,6 +2811,40 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V22\Enums\AssetSetTypeEnum\AssetSetType::class);
         $this->feed_types = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Indicates whether this campaign is missing a declaration about
+     * whether it contains political advertising targeted towards the EU and is
+     * ineligible for any exemptions. If this field is true, use the
+     * contains_eu_political_advertising field to add the required declaration.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>bool missing_eu_political_advertising_declaration = 108 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return bool
+     */
+    public function getMissingEuPoliticalAdvertisingDeclaration()
+    {
+        return $this->missing_eu_political_advertising_declaration;
+    }
+
+    /**
+     * Output only. Indicates whether this campaign is missing a declaration about
+     * whether it contains political advertising targeted towards the EU and is
+     * ineligible for any exemptions. If this field is true, use the
+     * contains_eu_political_advertising field to add the required declaration.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>bool missing_eu_political_advertising_declaration = 108 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setMissingEuPoliticalAdvertisingDeclaration($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->missing_eu_political_advertising_declaration = $var;
 
         return $this;
     }

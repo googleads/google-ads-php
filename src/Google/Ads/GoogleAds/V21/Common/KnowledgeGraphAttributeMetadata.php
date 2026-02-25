@@ -16,7 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class KnowledgeGraphAttributeMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The capabilities of the entity used in [ContentCreatorInsightsService][].
+     * The capabilities of the entity used in
+     * [ContentCreatorInsightsService][google.ads.googleads.v21.services.ContentCreatorInsightsService].
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities entity_capabilities = 1;</code>
      */
@@ -35,7 +36,8 @@ class KnowledgeGraphAttributeMetadata extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $entity_capabilities
-     *           The capabilities of the entity used in [ContentCreatorInsightsService][].
+     *           The capabilities of the entity used in
+     *           [ContentCreatorInsightsService][google.ads.googleads.v21.services.ContentCreatorInsightsService].
      *     @type array<\Google\Ads\GoogleAds\V21\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $related_categories
      *           A list of CATEGORY attributes related to this entity.
      * }
@@ -46,7 +48,8 @@ class KnowledgeGraphAttributeMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The capabilities of the entity used in [ContentCreatorInsightsService][].
+     * The capabilities of the entity used in
+     * [ContentCreatorInsightsService][google.ads.googleads.v21.services.ContentCreatorInsightsService].
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities entity_capabilities = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -57,7 +60,8 @@ class KnowledgeGraphAttributeMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The capabilities of the entity used in [ContentCreatorInsightsService][].
+     * The capabilities of the entity used in
+     * [ContentCreatorInsightsService][google.ads.googleads.v21.services.ContentCreatorInsightsService].
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities entity_capabilities = 1;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var

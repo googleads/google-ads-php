@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for
- * [AdGroupAdService.RemoveAutomaticallyCreatedAssetsRequest][].
+ * [AdGroupAdService.RemoveAutomaticallyCreatedAssets][google.ads.googleads.v21.services.AdGroupAdService.RemoveAutomaticallyCreatedAssets].
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.services.RemoveAutomaticallyCreatedAssetsRequest</code>
  */

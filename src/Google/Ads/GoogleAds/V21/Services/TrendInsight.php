@@ -22,7 +22,8 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      */
     protected $trend_attribute = null;
     /**
-     * Metrics associated with this trend.
+     * Metrics associated with this trend. These metrics are for the latest
+     * available month and the comparison period is 3 months.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v21.services.TrendInsightMetrics trend_metrics = 2;</code>
      */
@@ -43,7 +44,8 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V21\Common\AudienceInsightsAttributeMetadata $trend_attribute
      *           The attribute this trend is for.
      *     @type \Google\Ads\GoogleAds\V21\Services\TrendInsightMetrics $trend_metrics
-     *           Metrics associated with this trend.
+     *           Metrics associated with this trend. These metrics are for the latest
+     *           available month and the comparison period is 3 months.
      *     @type int $trend
      *           The direction of trend (such as RISING or DECLINING).
      * }
@@ -90,7 +92,8 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Metrics associated with this trend.
+     * Metrics associated with this trend. These metrics are for the latest
+     * available month and the comparison period is 3 months.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v21.services.TrendInsightMetrics trend_metrics = 2;</code>
      * @return \Google\Ads\GoogleAds\V21\Services\TrendInsightMetrics|null
@@ -111,7 +114,8 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Metrics associated with this trend.
+     * Metrics associated with this trend. These metrics are for the latest
+     * available month and the comparison period is 3 months.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v21.services.TrendInsightMetrics trend_metrics = 2;</code>
      * @param \Google\Ads\GoogleAds\V21\Services\TrendInsightMetrics $var

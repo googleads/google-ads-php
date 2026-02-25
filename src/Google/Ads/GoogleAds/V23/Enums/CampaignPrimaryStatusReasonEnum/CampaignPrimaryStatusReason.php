@@ -263,6 +263,38 @@ class CampaignPrimaryStatusReason
      * Generated from protobuf enum <code>MISSING_LOCATION_TARGETING = 39;</code>
      */
     const MISSING_LOCATION_TARGETING = 39;
+    /**
+     * The campaign is a campaign with the FIXED_CPM bidding strategy but is not
+     * booked. Contributes to CampaignPrimaryStatus.NOT_ELIGIBLE when the
+     * campaign is not paused, and CampaignPrimaryStatus.PAUSED when the
+     * campaign is paused.
+     *
+     * Generated from protobuf enum <code>CAMPAIGN_NOT_BOOKED = 40;</code>
+     */
+    const CAMPAIGN_NOT_BOOKED = 40;
+    /**
+     * The campaign is a campaign with the FIXED_CPM bidding strategy for which
+     * inventory was held, with the hold expiring. The hold expiry time can be
+     * read from Campaign.booking_details.hold_expiration_date_time. Contributes
+     * to CampaignPrimaryStatus.PAUSED.
+     *
+     * Generated from protobuf enum <code>BOOKING_HOLD_EXPIRING = 41;</code>
+     */
+    const BOOKING_HOLD_EXPIRING = 41;
+    /**
+     * The campaign is a campaign with the FIXED_CPM bidding strategy with the
+     * inventory hold expired. Contributes to CampaignPrimaryStatus.PAUSED.
+     *
+     * Generated from protobuf enum <code>BOOKING_HOLD_EXPIRED = 42;</code>
+     */
+    const BOOKING_HOLD_EXPIRED = 42;
+    /**
+     * The campaign is a campaign with the FIXED_CPM bidding strategy that has
+     * been auto-cancelled. Contributes to CampaignPrimaryStatus.NOT_ELIGIBLE.
+     *
+     * Generated from protobuf enum <code>BOOKING_CANCELLED = 43;</code>
+     */
+    const BOOKING_CANCELLED = 43;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -305,6 +337,10 @@ class CampaignPrimaryStatusReason
         self::NO_ASSET_GROUPS => 'NO_ASSET_GROUPS',
         self::ASSET_GROUPS_PAUSED => 'ASSET_GROUPS_PAUSED',
         self::MISSING_LOCATION_TARGETING => 'MISSING_LOCATION_TARGETING',
+        self::CAMPAIGN_NOT_BOOKED => 'CAMPAIGN_NOT_BOOKED',
+        self::BOOKING_HOLD_EXPIRING => 'BOOKING_HOLD_EXPIRING',
+        self::BOOKING_HOLD_EXPIRED => 'BOOKING_HOLD_EXPIRED',
+        self::BOOKING_CANCELLED => 'BOOKING_CANCELLED',
     ];
 
     public static function name($value)

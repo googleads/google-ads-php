@@ -132,6 +132,7 @@ use Google\Ads\GoogleAds\V23\Services\Client\TravelAssetSuggestionServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\UserDataServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\UserListCustomerTypeServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\UserListServiceClient;
+use Google\Ads\GoogleAds\V23\Services\Client\YouTubeVideoUploadServiceClient;
 use Google\ApiCore\GrpcSupportTrait;
 use Grpc\ChannelCredentials;
 
@@ -1107,5 +1108,13 @@ trait ServiceClientFactoryTrait
     public function getUserListServiceClient(): UserListServiceClient
     {
         return new UserListServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return YouTubeVideoUploadServiceClient
+     */
+    public function getYouTubeVideoUploadServiceClient(): YouTubeVideoUploadServiceClient
+    {
+        return new YouTubeVideoUploadServiceClient($this->getGoogleAdsClientOptions());
     }
 }
