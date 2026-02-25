@@ -47,6 +47,7 @@ class ProductLinkInvitation extends \Google\Protobuf\Internal\Message
      */
     protected $type = 0;
     protected $invited_account;
+    protected $invited_account_properties;
 
     /**
      * Constructor.
@@ -74,6 +75,10 @@ class ProductLinkInvitation extends \Google\Protobuf\Internal\Message
      *           Output only. Merchant Center link invitation.
      *     @type \Google\Ads\GoogleAds\V23\Resources\AdvertisingPartnerLinkInvitationIdentifier $advertising_partner
      *           Output only. Advertising Partner link invitation.
+     *     @type \Google\Ads\GoogleAds\V23\Resources\AdvertisingPartnerLinkInvitationProperties $advertising_partner_properties
+     *           Output only. Advertising Partner link invitation properties. These
+     *           properties are only applicable when the link is for an Advertising
+     *           Partner.
      * }
      */
     public function __construct($data = NULL) {
@@ -291,11 +296,54 @@ class ProductLinkInvitation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Output only. Advertising Partner link invitation properties. These
+     * properties are only applicable when the link is for an Advertising
+     * Partner.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.AdvertisingPartnerLinkInvitationProperties advertising_partner_properties = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V23\Resources\AdvertisingPartnerLinkInvitationProperties|null
+     */
+    public function getAdvertisingPartnerProperties()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasAdvertisingPartnerProperties()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * Output only. Advertising Partner link invitation properties. These
+     * properties are only applicable when the link is for an Advertising
+     * Partner.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.AdvertisingPartnerLinkInvitationProperties advertising_partner_properties = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V23\Resources\AdvertisingPartnerLinkInvitationProperties $var
+     * @return $this
+     */
+    public function setAdvertisingPartnerProperties($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Resources\AdvertisingPartnerLinkInvitationProperties::class);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getInvitedAccount()
     {
         return $this->whichOneof("invited_account");
+    }
+
+    /**
+     * @return string
+     */
+    public function getInvitedAccountProperties()
+    {
+        return $this->whichOneof("invited_account_properties");
     }
 
 }

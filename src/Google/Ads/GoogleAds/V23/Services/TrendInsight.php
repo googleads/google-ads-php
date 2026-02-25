@@ -22,7 +22,8 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      */
     protected $trend_attribute = null;
     /**
-     * Metrics associated with this trend.
+     * Metrics associated with this trend. These metrics are for the latest
+     * available month and the comparison period is 3 months.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.services.TrendInsightMetrics trend_metrics = 2;</code>
      */
@@ -33,6 +34,16 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v23.enums.InsightsTrendEnum.InsightsTrend trend = 3;</code>
      */
     protected $trend = 0;
+    /**
+     * 12 months of historical data for the trend, including the most recent month
+     * the TrendInsight represents. Each data point represents 1 month of data and
+     * the comparison period is 1 month. The data points are ordered from most
+     * recent month to least recent month. Only populated for trends using
+     * search_topics.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.TrendInsightDataPoint trend_data_points = 6;</code>
+     */
+    private $trend_data_points;
     /**
      * Related videos for this topic. Only populated for trends using
      * search_topics.
@@ -57,9 +68,16 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata $trend_attribute
      *           The attribute this trend is for.
      *     @type \Google\Ads\GoogleAds\V23\Services\TrendInsightMetrics $trend_metrics
-     *           Metrics associated with this trend.
+     *           Metrics associated with this trend. These metrics are for the latest
+     *           available month and the comparison period is 3 months.
      *     @type int $trend
      *           The direction of trend (such as RISING or DECLINING).
+     *     @type array<\Google\Ads\GoogleAds\V23\Services\TrendInsightDataPoint>|\Google\Protobuf\Internal\RepeatedField $trend_data_points
+     *           12 months of historical data for the trend, including the most recent month
+     *           the TrendInsight represents. Each data point represents 1 month of data and
+     *           the comparison period is 1 month. The data points are ordered from most
+     *           recent month to least recent month. Only populated for trends using
+     *           search_topics.
      *     @type array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $related_videos
      *           Related videos for this topic. Only populated for trends using
      *           search_topics.
@@ -110,7 +128,8 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Metrics associated with this trend.
+     * Metrics associated with this trend. These metrics are for the latest
+     * available month and the comparison period is 3 months.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.services.TrendInsightMetrics trend_metrics = 2;</code>
      * @return \Google\Ads\GoogleAds\V23\Services\TrendInsightMetrics|null
@@ -131,7 +150,8 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Metrics associated with this trend.
+     * Metrics associated with this trend. These metrics are for the latest
+     * available month and the comparison period is 3 months.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.services.TrendInsightMetrics trend_metrics = 2;</code>
      * @param \Google\Ads\GoogleAds\V23\Services\TrendInsightMetrics $var
@@ -167,6 +187,40 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V23\Enums\InsightsTrendEnum\InsightsTrend::class);
         $this->trend = $var;
+
+        return $this;
+    }
+
+    /**
+     * 12 months of historical data for the trend, including the most recent month
+     * the TrendInsight represents. Each data point represents 1 month of data and
+     * the comparison period is 1 month. The data points are ordered from most
+     * recent month to least recent month. Only populated for trends using
+     * search_topics.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.TrendInsightDataPoint trend_data_points = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTrendDataPoints()
+    {
+        return $this->trend_data_points;
+    }
+
+    /**
+     * 12 months of historical data for the trend, including the most recent month
+     * the TrendInsight represents. Each data point represents 1 month of data and
+     * the comparison period is 1 month. The data points are ordered from most
+     * recent month to least recent month. Only populated for trends using
+     * search_topics.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.TrendInsightDataPoint trend_data_points = 6;</code>
+     * @param array<\Google\Ads\GoogleAds\V23\Services\TrendInsightDataPoint>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTrendDataPoints($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V23\Services\TrendInsightDataPoint::class);
+        $this->trend_data_points = $arr;
 
         return $this;
     }

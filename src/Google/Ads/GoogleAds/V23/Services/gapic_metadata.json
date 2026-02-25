@@ -1810,6 +1810,30 @@
                     }
                 }
             }
+        },
+        "YouTubeVideoUploadService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "YouTubeVideoUploadServiceGapicClient",
+                    "rpcs": {
+                        "CreateYouTubeVideoUpload": {
+                            "methods": [
+                                "createYouTubeVideoUpload"
+                            ]
+                        },
+                        "RemoveYouTubeVideoUpload": {
+                            "methods": [
+                                "removeYouTubeVideoUpload"
+                            ]
+                        },
+                        "UpdateYouTubeVideoUpload": {
+                            "methods": [
+                                "updateYouTubeVideoUpload"
+                            ]
+                        }
+                    }
+                }
+            }
         }
     }
 }

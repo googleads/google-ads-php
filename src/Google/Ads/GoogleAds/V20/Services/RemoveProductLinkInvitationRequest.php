@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for
- * [ProductLinkinvitationService.RemoveProductLinkInvitation][].
+ * [ProductLinkInvitationService.RemoveProductLinkInvitation][google.ads.googleads.v20.services.ProductLinkInvitationService.RemoveProductLinkInvitation].
  *
  * Generated from protobuf message <code>google.ads.googleads.v20.services.RemoveProductLinkInvitationRequest</code>
  */
@@ -25,7 +25,8 @@ class RemoveProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Required. The resource name of the product link invitation being removed.
      * expected, in this format:
-     * ` `
+     * `customers/{customer_id}/productLinkInvitations/{product_link_invitation_id}
+     * `
      *
      * Generated from protobuf field <code>string resource_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -36,7 +37,8 @@ class RemoveProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
      * @param string $resourceName Required. The resource name of the product link invitation being removed.
      *                             expected, in this format:
      *
-     *                             ` `
+     *                             `customers/{customer_id}/productLinkInvitations/{product_link_invitation_id}
+     *                             `
      *
      * @return \Google\Ads\GoogleAds\V20\Services\RemoveProductLinkInvitationRequest
      *
@@ -60,7 +62,8 @@ class RemoveProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
      *     @type string $resource_name
      *           Required. The resource name of the product link invitation being removed.
      *           expected, in this format:
-     *           ` `
+     *           `customers/{customer_id}/productLinkInvitations/{product_link_invitation_id}
+     *           `
      * }
      */
     public function __construct($data = NULL) {
@@ -97,7 +100,8 @@ class RemoveProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Required. The resource name of the product link invitation being removed.
      * expected, in this format:
-     * ` `
+     * `customers/{customer_id}/productLinkInvitations/{product_link_invitation_id}
+     * `
      *
      * Generated from protobuf field <code>string resource_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -110,7 +114,8 @@ class RemoveProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Required. The resource name of the product link invitation being removed.
      * expected, in this format:
-     * ` `
+     * `customers/{customer_id}/productLinkInvitations/{product_link_invitation_id}
+     * `
      *
      * Generated from protobuf field <code>string resource_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

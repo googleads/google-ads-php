@@ -971,6 +971,13 @@ class CriterionError
      */
     const ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE = 158;
     /**
+     * The combination of demographic criteria would result in only targeting
+     * the "undetermined" segment, which is prohibited.
+     *
+     * Generated from protobuf enum <code>CANNOT_TARGET_ONLY_UNDETERMINED = 165;</code>
+     */
+    const CANNOT_TARGET_ONLY_UNDETERMINED = 165;
+    /**
      * Cannot positively target locations outside of restricted area for
      * campaign.
      *
@@ -1216,6 +1223,7 @@ class CriterionError
         self::BRAND_SHARED_SET_DOES_NOT_EXIST => 'BRAND_SHARED_SET_DOES_NOT_EXIST',
         self::CANNOT_ADD_REMOVED_BRAND_SHARED_SET => 'CANNOT_ADD_REMOVED_BRAND_SHARED_SET',
         self::ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE => 'ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE',
+        self::CANNOT_TARGET_ONLY_UNDETERMINED => 'CANNOT_TARGET_ONLY_UNDETERMINED',
         self::LOCATION_TARGETING_NOT_ELIGIBLE_FOR_RESTRICTED_CAMPAIGN => 'LOCATION_TARGETING_NOT_ELIGIBLE_FOR_RESTRICTED_CAMPAIGN',
         self::ONLY_INCLUSION_BRAND_LIST_ALLOWED_FOR_AD_GROUPS => 'ONLY_INCLUSION_BRAND_LIST_ALLOWED_FOR_AD_GROUPS',
         self::CANNOT_ADD_REMOVED_PLACEMENT_LIST_SHARED_SET => 'CANNOT_ADD_REMOVED_PLACEMENT_LIST_SHARED_SET',

@@ -110,6 +110,7 @@ use Google\Ads\GoogleAds\V23\Services\Client\SmartCampaignSuggestServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\ThirdPartyAppAnalyticsLinkServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\UserListCustomerTypeServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\UserListServiceClient;
+use Google\Ads\GoogleAds\V23\Services\Client\YouTubeVideoUploadServiceClient;
 
 /**
  * Provides resource names for Google Ads API entities.
@@ -1957,6 +1958,23 @@ final class ResourceNames
             $customerId,
             $userListId,
             $semanticLabel
+        );
+    }
+
+    /**
+     * Generates a resource name of you tube video upload type.
+     *
+     * @param string $customerId
+     * @param string $videoUploadId
+     * @return string the you tube video upload resource name
+     */
+    public static function forYouTubeVideoUpload(
+        $customerId,
+        $videoUploadId
+    ): string {
+        return YouTubeVideoUploadServiceClient::youTubeVideoUploadName(
+            $customerId,
+            $videoUploadId
         );
     }
 }

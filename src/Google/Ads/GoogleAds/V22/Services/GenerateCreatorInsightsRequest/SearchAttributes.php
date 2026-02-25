@@ -31,8 +31,8 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      * Optional. Creator attributes that describe a collection of types of
      * content. This is used to search for creators whose content matches the
      * input creator attributes. Only Knowledge Graph Entities tagged with
-     * [InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE][] are
-     * supported. Use
+     * [CREATOR_ATTRIBUTE][google.ads.googleads.v22.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE]
+     * are supported. Use
      * [AudienceInsightsService.ListAudienceInsightsAttributes][google.ads.googleads.v22.services.AudienceInsightsService.ListAudienceInsightsAttributes]
      * to get the list of supported entities. Other attributes including
      * location are not supported.
@@ -57,8 +57,8 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      *           Optional. Creator attributes that describe a collection of types of
      *           content. This is used to search for creators whose content matches the
      *           input creator attributes. Only Knowledge Graph Entities tagged with
-     *           [InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE][] are
-     *           supported. Use
+     *           [CREATOR_ATTRIBUTE][google.ads.googleads.v22.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE]
+     *           are supported. Use
      *           [AudienceInsightsService.ListAudienceInsightsAttributes][google.ads.googleads.v22.services.AudienceInsightsService.ListAudienceInsightsAttributes]
      *           to get the list of supported entities. Other attributes including
      *           location are not supported.
@@ -107,8 +107,8 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      * Optional. Creator attributes that describe a collection of types of
      * content. This is used to search for creators whose content matches the
      * input creator attributes. Only Knowledge Graph Entities tagged with
-     * [InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE][] are
-     * supported. Use
+     * [CREATOR_ATTRIBUTE][google.ads.googleads.v22.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE]
+     * are supported. Use
      * [AudienceInsightsService.ListAudienceInsightsAttributes][google.ads.googleads.v22.services.AudienceInsightsService.ListAudienceInsightsAttributes]
      * to get the list of supported entities. Other attributes including
      * location are not supported.
@@ -125,8 +125,8 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      * Optional. Creator attributes that describe a collection of types of
      * content. This is used to search for creators whose content matches the
      * input creator attributes. Only Knowledge Graph Entities tagged with
-     * [InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE][] are
-     * supported. Use
+     * [CREATOR_ATTRIBUTE][google.ads.googleads.v22.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE]
+     * are supported. Use
      * [AudienceInsightsService.ListAudienceInsightsAttributes][google.ads.googleads.v22.services.AudienceInsightsService.ListAudienceInsightsAttributes]
      * to get the list of supported entities. Other attributes including
      * location are not supported.

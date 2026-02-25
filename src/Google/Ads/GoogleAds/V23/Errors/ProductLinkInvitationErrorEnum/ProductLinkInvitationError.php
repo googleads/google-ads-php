@@ -51,6 +51,12 @@ class ProductLinkInvitationError
      * Generated from protobuf enum <code>CUSTOMER_NOT_PERMITTED_TO_CREATE_INVITATION = 5;</code>
      */
     const CUSTOMER_NOT_PERMITTED_TO_CREATE_INVITATION = 5;
+    /**
+     * The `allowed_domain` property for the advertising partner is invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_ADVERTISING_PARTNER_ALLOWED_DOMAIN = 6;</code>
+     */
+    const INVALID_ADVERTISING_PARTNER_ALLOWED_DOMAIN = 6;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -59,6 +65,7 @@ class ProductLinkInvitationError
         self::PERMISSION_DENIED => 'PERMISSION_DENIED',
         self::NO_INVITATION_REQUIRED => 'NO_INVITATION_REQUIRED',
         self::CUSTOMER_NOT_PERMITTED_TO_CREATE_INVITATION => 'CUSTOMER_NOT_PERMITTED_TO_CREATE_INVITATION',
+        self::INVALID_ADVERTISING_PARTNER_ALLOWED_DOMAIN => 'INVALID_ADVERTISING_PARTNER_ALLOWED_DOMAIN',
     ];
 
     public static function name($value)

@@ -10,7 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * This report provides granular performance data, including cost metrics, for
- * each individual search term that triggered your ads.
+ * each individual search term that triggered your ads. If keyword-related
+ * segments are used, Performance Max data will be excluded from the results.
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.resources.CampaignSearchTermView</code>
  */

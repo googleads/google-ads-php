@@ -21,6 +21,20 @@ class VideoCampaignSettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v23.resources.Campaign.VideoCampaignSettings.VideoAdSequence video_ad_sequence = 4;</code>
      */
     protected $video_ad_sequence = null;
+    /**
+     * Ad category self-disclosure for campaigns with the FIXED_CPM or
+     * FIXED_SHARE_OF_VOICE bidding strategies.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.Campaign.VideoCampaignSettings.ReservationAdCategorySelfDisclosure reservation_ad_category_self_disclosure = 5;</code>
+     */
+    protected $reservation_ad_category_self_disclosure = null;
+    /**
+     * Output only. Booking information for campaigns with the FIXED_CPM or
+     * FIXED_SHARE_OF_VOICE bidding strategies.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.Campaign.VideoCampaignSettings.BookingDetails booking_details = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $booking_details = null;
     protected $fluidity_control;
 
     /**
@@ -31,6 +45,12 @@ class VideoCampaignSettings extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\VideoAdSequence $video_ad_sequence
      *           Container for video ads sequencing definition.
+     *     @type \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\ReservationAdCategorySelfDisclosure $reservation_ad_category_self_disclosure
+     *           Ad category self-disclosure for campaigns with the FIXED_CPM or
+     *           FIXED_SHARE_OF_VOICE bidding strategies.
+     *     @type \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\BookingDetails $booking_details
+     *           Output only. Booking information for campaigns with the FIXED_CPM or
+     *           FIXED_SHARE_OF_VOICE bidding strategies.
      *     @type \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\VideoAdInventoryControl $video_ad_inventory_control
      *           Inventory control for video responsive ads in reach campaigns.
      *     @type \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\VideoAdFormatControl $video_ad_format_control
@@ -75,6 +95,82 @@ class VideoCampaignSettings extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\VideoAdSequence::class);
         $this->video_ad_sequence = $var;
+
+        return $this;
+    }
+
+    /**
+     * Ad category self-disclosure for campaigns with the FIXED_CPM or
+     * FIXED_SHARE_OF_VOICE bidding strategies.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.Campaign.VideoCampaignSettings.ReservationAdCategorySelfDisclosure reservation_ad_category_self_disclosure = 5;</code>
+     * @return \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\ReservationAdCategorySelfDisclosure|null
+     */
+    public function getReservationAdCategorySelfDisclosure()
+    {
+        return $this->reservation_ad_category_self_disclosure;
+    }
+
+    public function hasReservationAdCategorySelfDisclosure()
+    {
+        return isset($this->reservation_ad_category_self_disclosure);
+    }
+
+    public function clearReservationAdCategorySelfDisclosure()
+    {
+        unset($this->reservation_ad_category_self_disclosure);
+    }
+
+    /**
+     * Ad category self-disclosure for campaigns with the FIXED_CPM or
+     * FIXED_SHARE_OF_VOICE bidding strategies.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.Campaign.VideoCampaignSettings.ReservationAdCategorySelfDisclosure reservation_ad_category_self_disclosure = 5;</code>
+     * @param \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\ReservationAdCategorySelfDisclosure $var
+     * @return $this
+     */
+    public function setReservationAdCategorySelfDisclosure($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\ReservationAdCategorySelfDisclosure::class);
+        $this->reservation_ad_category_self_disclosure = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Booking information for campaigns with the FIXED_CPM or
+     * FIXED_SHARE_OF_VOICE bidding strategies.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.Campaign.VideoCampaignSettings.BookingDetails booking_details = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\BookingDetails|null
+     */
+    public function getBookingDetails()
+    {
+        return $this->booking_details;
+    }
+
+    public function hasBookingDetails()
+    {
+        return isset($this->booking_details);
+    }
+
+    public function clearBookingDetails()
+    {
+        unset($this->booking_details);
+    }
+
+    /**
+     * Output only. Booking information for campaigns with the FIXED_CPM or
+     * FIXED_SHARE_OF_VOICE bidding strategies.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.Campaign.VideoCampaignSettings.BookingDetails booking_details = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\BookingDetails $var
+     * @return $this
+     */
+    public function setBookingDetails($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\BookingDetails::class);
+        $this->booking_details = $var;
 
         return $this;
     }

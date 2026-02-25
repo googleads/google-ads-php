@@ -43,7 +43,9 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
     private $country_locations;
     /**
      * The sub-country geographic locations to search that apply to the criteria.
-     * Only supported for [SearchAttributes] criteria.
+     * Only supported for
+     * [SearchAttributes][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.SearchAttributes]
+     * criteria.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.LocationInfo sub_country_locations = 7;</code>
      */
@@ -67,17 +69,23 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
      *           Required. The countries to search that apply to the criteria.
      *     @type array<\Google\Ads\GoogleAds\V20\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $sub_country_locations
      *           The sub-country geographic locations to search that apply to the criteria.
-     *           Only supported for [SearchAttributes] criteria.
+     *           Only supported for
+     *           [SearchAttributes][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.SearchAttributes]
+     *           criteria.
      *     @type \Google\Ads\GoogleAds\V20\Services\GenerateCreatorInsightsRequest\SearchAttributes $search_attributes
      *           The attributes used to identify top creators. Data fetched is based on
      *           the list of countries or sub-country locations specified in
-     *           [country_locations] or [sub_country_locations].
+     *           [country_locations][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.country_locations]
+     *           or
+     *           [sub_country_locations][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.sub_country_locations].
      *     @type \Google\Ads\GoogleAds\V20\Services\GenerateCreatorInsightsRequest\SearchBrand $search_brand
      *           A brand used to search for top creators. Data fetched is based on the
-     *           list of countries specified in [country_locations].
+     *           list of countries specified in
+     *           [country_locations][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.country_locations].
      *     @type \Google\Ads\GoogleAds\V20\Services\GenerateCreatorInsightsRequest\YouTubeChannels $search_channels
      *           YouTube Channel IDs for Creator Insights. Data fetched for channels is
-     *           based on the list of countries specified in [country_locations].
+     *           based on the list of countries specified in
+     *           [country_locations][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.country_locations].
      * }
      */
     public function __construct($data = NULL) {
@@ -203,7 +211,9 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The sub-country geographic locations to search that apply to the criteria.
-     * Only supported for [SearchAttributes] criteria.
+     * Only supported for
+     * [SearchAttributes][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.SearchAttributes]
+     * criteria.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.LocationInfo sub_country_locations = 7;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -215,7 +225,9 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The sub-country geographic locations to search that apply to the criteria.
-     * Only supported for [SearchAttributes] criteria.
+     * Only supported for
+     * [SearchAttributes][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.SearchAttributes]
+     * criteria.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.LocationInfo sub_country_locations = 7;</code>
      * @param array<\Google\Ads\GoogleAds\V20\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $var
@@ -232,7 +244,9 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The attributes used to identify top creators. Data fetched is based on
      * the list of countries or sub-country locations specified in
-     * [country_locations] or [sub_country_locations].
+     * [country_locations][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.country_locations]
+     * or
+     * [sub_country_locations][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.sub_country_locations].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.SearchAttributes search_attributes = 3;</code>
      * @return \Google\Ads\GoogleAds\V20\Services\GenerateCreatorInsightsRequest\SearchAttributes|null
@@ -250,7 +264,9 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The attributes used to identify top creators. Data fetched is based on
      * the list of countries or sub-country locations specified in
-     * [country_locations] or [sub_country_locations].
+     * [country_locations][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.country_locations]
+     * or
+     * [sub_country_locations][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.sub_country_locations].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.SearchAttributes search_attributes = 3;</code>
      * @param \Google\Ads\GoogleAds\V20\Services\GenerateCreatorInsightsRequest\SearchAttributes $var
@@ -266,7 +282,8 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * A brand used to search for top creators. Data fetched is based on the
-     * list of countries specified in [country_locations].
+     * list of countries specified in
+     * [country_locations][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.country_locations].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.SearchBrand search_brand = 5;</code>
      * @return \Google\Ads\GoogleAds\V20\Services\GenerateCreatorInsightsRequest\SearchBrand|null
@@ -283,7 +300,8 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * A brand used to search for top creators. Data fetched is based on the
-     * list of countries specified in [country_locations].
+     * list of countries specified in
+     * [country_locations][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.country_locations].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.SearchBrand search_brand = 5;</code>
      * @param \Google\Ads\GoogleAds\V20\Services\GenerateCreatorInsightsRequest\SearchBrand $var
@@ -299,7 +317,8 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * YouTube Channel IDs for Creator Insights. Data fetched for channels is
-     * based on the list of countries specified in [country_locations].
+     * based on the list of countries specified in
+     * [country_locations][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.country_locations].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.YouTubeChannels search_channels = 4;</code>
      * @return \Google\Ads\GoogleAds\V20\Services\GenerateCreatorInsightsRequest\YouTubeChannels|null
@@ -316,7 +335,8 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * YouTube Channel IDs for Creator Insights. Data fetched for channels is
-     * based on the list of countries specified in [country_locations].
+     * based on the list of countries specified in
+     * [country_locations][google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.country_locations].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.YouTubeChannels search_channels = 4;</code>
      * @param \Google\Ads\GoogleAds\V20\Services\GenerateCreatorInsightsRequest\YouTubeChannels $var
