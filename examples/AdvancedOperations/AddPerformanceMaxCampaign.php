@@ -325,6 +325,7 @@ class AddPerformanceMaxCampaign
                         'target_roas' => 3.5
                     ]),
 
+                    // [START add_pmax_asset_automation_settings]
                     'asset_automation_settings' => [
                         new AssetAutomationSetting([
                             'asset_automation_type' => AssetAutomationType::TEXT_ASSET_AUTOMATION,
@@ -335,6 +336,7 @@ class AddPerformanceMaxCampaign
                             'asset_automation_status' => AssetAutomationStatus::OPTED_IN
                         ])
                     ],
+                    // [END add_pmax_asset_automation_settings]
 
 
                     // Sets if the campaign is enabled for brand guidelines. For more information
