@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for
- * [CampaignLifecycleGoalService.configureCampaignLifecycleGoals][].
+ * [CampaignLifecycleGoalService.ConfigureCampaignLifecycleGoals][google.ads.googleads.v22.services.CampaignLifecycleGoalService.ConfigureCampaignLifecycleGoals].
  *
  * Generated from protobuf message <code>google.ads.googleads.v22.services.ConfigureCampaignLifecycleGoalsRequest</code>
  */

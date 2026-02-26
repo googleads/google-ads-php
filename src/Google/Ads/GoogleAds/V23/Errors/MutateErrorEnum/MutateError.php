@@ -80,6 +80,13 @@ class MutateError
      * Generated from protobuf enum <code>RESOURCE_READ_ONLY = 13;</code>
      */
     const RESOURCE_READ_ONLY = 13;
+    /**
+     * Mutates are generally not allowed if the customer contains non-exempt
+     * campaigns without the EU political advertising declaration.
+     *
+     * Generated from protobuf enum <code>EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED = 17;</code>
+     */
+    const EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED = 17;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -93,6 +100,7 @@ class MutateError
         self::RESOURCE_DOES_NOT_SUPPORT_VALIDATE_ONLY => 'RESOURCE_DOES_NOT_SUPPORT_VALIDATE_ONLY',
         self::OPERATION_DOES_NOT_SUPPORT_PARTIAL_FAILURE => 'OPERATION_DOES_NOT_SUPPORT_PARTIAL_FAILURE',
         self::RESOURCE_READ_ONLY => 'RESOURCE_READ_ONLY',
+        self::EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED => 'EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED',
     ];
 
     public static function name($value)

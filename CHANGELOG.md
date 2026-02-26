@@ -1,3 +1,8 @@
+## 32.2.0
+*   Added support for Google Ads API v23.1.
+*   Regenerated stubs for Google Ads API v20, v21, and v22 to incorporate changes for supporting European Union Political Ads Regulation in Google Ads API
+*   Updated dependencies.
+
 ## 32.1.0
 *   Added support for Google Ads API v23.
 *   Removed support for Google Ads API v19.

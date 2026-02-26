@@ -16,12 +16,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class TrendInsightMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The number of views for this trend. This is only populated for SearchTopics
-     * requests.
+     * The number of views for this trend. This is only populated for the latest
+     * month of data for SearchTopics requests.
      *
      * Generated from protobuf field <code>int64 views_count = 1;</code>
      */
     protected $views_count = 0;
+    /**
+     * Views value normalized to be in the range 0-100. This is only populated for
+     * SearchTopics requests.
+     *
+     * Generated from protobuf field <code>int64 views_indexed_value = 4;</code>
+     */
+    protected $views_indexed_value = 0;
     /**
      * The fraction (from 0 to 1 inclusive) of the requested audience that has
      * has searched or viewed this trend. This is only populated for
@@ -32,8 +39,8 @@ class TrendInsightMetrics extends \Google\Protobuf\Internal\Message
     protected $audience_share = 0.0;
     /**
      * The percentage of the change in the trend's value over the comparison
-     * period, where 1.0 represents 100%. If this is not set, it means that the
-     * trend is emerging.
+     * period, where 1.0 represents 100%. If this is 0, it means that the trend is
+     * emerging (new) or sustained (existing but unchanged).
      *
      * Generated from protobuf field <code>double trend_change_percent = 3;</code>
      */
@@ -46,16 +53,19 @@ class TrendInsightMetrics extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $views_count
-     *           The number of views for this trend. This is only populated for SearchTopics
-     *           requests.
+     *           The number of views for this trend. This is only populated for the latest
+     *           month of data for SearchTopics requests.
+     *     @type int|string $views_indexed_value
+     *           Views value normalized to be in the range 0-100. This is only populated for
+     *           SearchTopics requests.
      *     @type float $audience_share
      *           The fraction (from 0 to 1 inclusive) of the requested audience that has
      *           has searched or viewed this trend. This is only populated for
      *           SearchAudience requests.
      *     @type float $trend_change_percent
      *           The percentage of the change in the trend's value over the comparison
-     *           period, where 1.0 represents 100%. If this is not set, it means that the
-     *           trend is emerging.
+     *           period, where 1.0 represents 100%. If this is 0, it means that the trend is
+     *           emerging (new) or sustained (existing but unchanged).
      * }
      */
     public function __construct($data = NULL) {
@@ -64,8 +74,8 @@ class TrendInsightMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of views for this trend. This is only populated for SearchTopics
-     * requests.
+     * The number of views for this trend. This is only populated for the latest
+     * month of data for SearchTopics requests.
      *
      * Generated from protobuf field <code>int64 views_count = 1;</code>
      * @return int|string
@@ -76,8 +86,8 @@ class TrendInsightMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of views for this trend. This is only populated for SearchTopics
-     * requests.
+     * The number of views for this trend. This is only populated for the latest
+     * month of data for SearchTopics requests.
      *
      * Generated from protobuf field <code>int64 views_count = 1;</code>
      * @param int|string $var
@@ -87,6 +97,34 @@ class TrendInsightMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->views_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Views value normalized to be in the range 0-100. This is only populated for
+     * SearchTopics requests.
+     *
+     * Generated from protobuf field <code>int64 views_indexed_value = 4;</code>
+     * @return int|string
+     */
+    public function getViewsIndexedValue()
+    {
+        return $this->views_indexed_value;
+    }
+
+    /**
+     * Views value normalized to be in the range 0-100. This is only populated for
+     * SearchTopics requests.
+     *
+     * Generated from protobuf field <code>int64 views_indexed_value = 4;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setViewsIndexedValue($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->views_indexed_value = $var;
 
         return $this;
     }
@@ -123,8 +161,8 @@ class TrendInsightMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The percentage of the change in the trend's value over the comparison
-     * period, where 1.0 represents 100%. If this is not set, it means that the
-     * trend is emerging.
+     * period, where 1.0 represents 100%. If this is 0, it means that the trend is
+     * emerging (new) or sustained (existing but unchanged).
      *
      * Generated from protobuf field <code>double trend_change_percent = 3;</code>
      * @return float
@@ -136,8 +174,8 @@ class TrendInsightMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The percentage of the change in the trend's value over the comparison
-     * period, where 1.0 represents 100%. If this is not set, it means that the
-     * trend is emerging.
+     * period, where 1.0 represents 100%. If this is 0, it means that the trend is
+     * emerging (new) or sustained (existing but unchanged).
      *
      * Generated from protobuf field <code>double trend_change_percent = 3;</code>
      * @param float $var

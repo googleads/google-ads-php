@@ -110,6 +110,7 @@ use Google\Ads\GoogleAds\V23\Services\Client\SmartCampaignSuggestServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\ThirdPartyAppAnalyticsLinkServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\UserListCustomerTypeServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\UserListServiceClient;
+use Google\Ads\GoogleAds\V23\Services\Client\YouTubeVideoUploadServiceClient;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -2817,5 +2818,30 @@ class ResourceNamesTest extends TestCase
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($userListId, $names['user_list_id']);
         $this->assertEquals($semanticLabel, $names['semantic_label']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V23\ResourceNames::forYouTubeVideoUpload()
+     */
+    public function testGetNameForYouTubeVideoUpload()
+    {
+        $customerId = '111111';
+        $videoUploadId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/youTubeVideoUploads/%s",
+            $customerId,
+            $videoUploadId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forYouTubeVideoUpload(
+                $customerId,
+                $videoUploadId
+            )
+        );
+
+        $names = YouTubeVideoUploadServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($videoUploadId, $names['video_upload_id']);
     }
 }

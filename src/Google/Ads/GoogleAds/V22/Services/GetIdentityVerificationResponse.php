@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Response message for
- *  [IdentityVerificationService.GetIdentityVerification].
+ *  [GetIdentityVerification][google.ads.googleads.v22.services.IdentityVerificationService.GetIdentityVerification].
  *
  * Generated from protobuf message <code>google.ads.googleads.v22.services.GetIdentityVerificationResponse</code>
  */

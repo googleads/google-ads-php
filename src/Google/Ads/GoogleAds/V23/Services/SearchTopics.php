@@ -19,6 +19,9 @@ class SearchTopics extends \Google\Protobuf\Internal\Message
      * Required. A list of knowledge graph entities to retrieve trend information
      * for. Supported entities are tagged with
      * [CONTENT_TRENDING_INSIGHTS][google.ads.googleads.v23.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CONTENT_TRENDING_INSIGHTS].
+     * Use
+     * [AudienceInsightsService.ListAudienceInsightsAttributes][google.ads.googleads.v23.services.AudienceInsightsService.ListAudienceInsightsAttributes]
+     * to get the list of supported entities.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsEntity entities = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -34,6 +37,9 @@ class SearchTopics extends \Google\Protobuf\Internal\Message
      *           Required. A list of knowledge graph entities to retrieve trend information
      *           for. Supported entities are tagged with
      *           [CONTENT_TRENDING_INSIGHTS][google.ads.googleads.v23.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CONTENT_TRENDING_INSIGHTS].
+     *           Use
+     *           [AudienceInsightsService.ListAudienceInsightsAttributes][google.ads.googleads.v23.services.AudienceInsightsService.ListAudienceInsightsAttributes]
+     *           to get the list of supported entities.
      * }
      */
     public function __construct($data = NULL) {
@@ -45,6 +51,9 @@ class SearchTopics extends \Google\Protobuf\Internal\Message
      * Required. A list of knowledge graph entities to retrieve trend information
      * for. Supported entities are tagged with
      * [CONTENT_TRENDING_INSIGHTS][google.ads.googleads.v23.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CONTENT_TRENDING_INSIGHTS].
+     * Use
+     * [AudienceInsightsService.ListAudienceInsightsAttributes][google.ads.googleads.v23.services.AudienceInsightsService.ListAudienceInsightsAttributes]
+     * to get the list of supported entities.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsEntity entities = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -58,6 +67,9 @@ class SearchTopics extends \Google\Protobuf\Internal\Message
      * Required. A list of knowledge graph entities to retrieve trend information
      * for. Supported entities are tagged with
      * [CONTENT_TRENDING_INSIGHTS][google.ads.googleads.v23.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CONTENT_TRENDING_INSIGHTS].
+     * Use
+     * [AudienceInsightsService.ListAudienceInsightsAttributes][google.ads.googleads.v23.services.AudienceInsightsService.ListAudienceInsightsAttributes]
+     * to get the list of supported entities.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsEntity entities = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsEntity>|\Google\Protobuf\Internal\RepeatedField $var

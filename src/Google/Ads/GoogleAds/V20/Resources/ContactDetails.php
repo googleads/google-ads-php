@@ -16,7 +16,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ContactDetails extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Output only. Consumer phone number in E164 format.
+     * Output only. Phone number of the consumer for the lead. This can be a real
+     * phone number or a tracking number. The phone number is returned in E164
+     * format. See https://support.google.com/google-ads/answer/16355235?hl=en to
+     * learn more. Example: +16504519489.
      *
      * Generated from protobuf field <code>string phone_number = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -42,7 +45,10 @@ class ContactDetails extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $phone_number
-     *           Output only. Consumer phone number in E164 format.
+     *           Output only. Phone number of the consumer for the lead. This can be a real
+     *           phone number or a tracking number. The phone number is returned in E164
+     *           format. See https://support.google.com/google-ads/answer/16355235?hl=en to
+     *           learn more. Example: +16504519489.
      *     @type string $email
      *           Output only. Consumer email address.
      *     @type string $consumer_name
@@ -56,7 +62,10 @@ class ContactDetails extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Consumer phone number in E164 format.
+     * Output only. Phone number of the consumer for the lead. This can be a real
+     * phone number or a tracking number. The phone number is returned in E164
+     * format. See https://support.google.com/google-ads/answer/16355235?hl=en to
+     * learn more. Example: +16504519489.
      *
      * Generated from protobuf field <code>string phone_number = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -67,7 +76,10 @@ class ContactDetails extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Consumer phone number in E164 format.
+     * Output only. Phone number of the consumer for the lead. This can be a real
+     * phone number or a tracking number. The phone number is returned in E164
+     * format. See https://support.google.com/google-ads/answer/16355235?hl=en to
+     * learn more. Example: +16504519489.
      *
      * Generated from protobuf field <code>string phone_number = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

@@ -55,6 +55,13 @@ class SearchTermMatchSource
      * Generated from protobuf enum <code>PERFORMANCE_MAX = 6;</code>
      */
     const PERFORMANCE_MAX = 6;
+    /**
+     * The match is from a vertical ads data feed (e.g. Travel Ads entity
+     * targeting).
+     *
+     * Generated from protobuf enum <code>VERTICAL_ADS_DATA_FEED = 7;</code>
+     */
+    const VERTICAL_ADS_DATA_FEED = 7;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -64,6 +71,7 @@ class SearchTermMatchSource
         self::AI_MAX_BROAD_MATCH => 'AI_MAX_BROAD_MATCH',
         self::DYNAMIC_SEARCH_ADS => 'DYNAMIC_SEARCH_ADS',
         self::PERFORMANCE_MAX => 'PERFORMANCE_MAX',
+        self::VERTICAL_ADS_DATA_FEED => 'VERTICAL_ADS_DATA_FEED',
     ];
 
     public static function name($value)

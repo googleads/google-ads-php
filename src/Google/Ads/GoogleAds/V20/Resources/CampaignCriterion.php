@@ -137,6 +137,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *           Immutable. Language.
      *     @type \Google\Ads\GoogleAds\V20\Common\IpBlockInfo $ip_block
      *           Immutable. IpBlock.
+     *           You can exclude up to 500 IP addresses per campaign.
      *     @type \Google\Ads\GoogleAds\V20\Common\ContentLabelInfo $content_label
      *           Immutable. ContentLabel.
      *     @type \Google\Ads\GoogleAds\V20\Common\CarrierInfo $carrier
@@ -993,6 +994,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. IpBlock.
+     * You can exclude up to 500 IP addresses per campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v20.common.IpBlockInfo ip_block = 27 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V20\Common\IpBlockInfo|null
@@ -1009,6 +1011,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. IpBlock.
+     * You can exclude up to 500 IP addresses per campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v20.common.IpBlockInfo ip_block = 27 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V20\Common\IpBlockInfo $var

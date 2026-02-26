@@ -161,6 +161,13 @@ class ConversionActionCategory
      * Generated from protobuf enum <code>CONVERTED_LEAD = 23;</code>
      */
     const CONVERTED_LEAD = 23;
+    /**
+     * User watches an ad from a channel and later watches either the same video
+     * or a video from the same channel as the ad.
+     *
+     * Generated from protobuf enum <code>YOUTUBE_FOLLOW_ON_VIEWS = 24;</code>
+     */
+    const YOUTUBE_FOLLOW_ON_VIEWS = 24;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -186,6 +193,7 @@ class ConversionActionCategory
         self::STORE_SALE => 'STORE_SALE',
         self::QUALIFIED_LEAD => 'QUALIFIED_LEAD',
         self::CONVERTED_LEAD => 'CONVERTED_LEAD',
+        self::YOUTUBE_FOLLOW_ON_VIEWS => 'YOUTUBE_FOLLOW_ON_VIEWS',
     ];
 
     public static function name($value)

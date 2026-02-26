@@ -31,8 +31,9 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      * Optional. Creator attributes that describe a collection of types of
      * content. This is used to search for creators whose content matches the
      * input creator attributes. Attribute entity tagged with
-     * [InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE][] is
-     * supported. Other attributes including location are not supported.
+     * [CREATOR_ATTRIBUTE][google.ads.googleads.v20.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE]
+     * is supported. Other attributes including location are not
+     * supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttribute creator_attributes = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -54,8 +55,9 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      *           Optional. Creator attributes that describe a collection of types of
      *           content. This is used to search for creators whose content matches the
      *           input creator attributes. Attribute entity tagged with
-     *           [InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE][] is
-     *           supported. Other attributes including location are not supported.
+     *           [CREATOR_ATTRIBUTE][google.ads.googleads.v20.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE]
+     *           is supported. Other attributes including location are not
+     *           supported.
      * }
      */
     public function __construct($data = NULL) {
@@ -101,8 +103,9 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      * Optional. Creator attributes that describe a collection of types of
      * content. This is used to search for creators whose content matches the
      * input creator attributes. Attribute entity tagged with
-     * [InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE][] is
-     * supported. Other attributes including location are not supported.
+     * [CREATOR_ATTRIBUTE][google.ads.googleads.v20.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE]
+     * is supported. Other attributes including location are not
+     * supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttribute creator_attributes = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -116,8 +119,9 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      * Optional. Creator attributes that describe a collection of types of
      * content. This is used to search for creators whose content matches the
      * input creator attributes. Attribute entity tagged with
-     * [InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE][] is
-     * supported. Other attributes including location are not supported.
+     * [CREATOR_ATTRIBUTE][google.ads.googleads.v20.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_ATTRIBUTE]
+     * is supported. Other attributes including location are not
+     * supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttribute creator_attributes = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $var

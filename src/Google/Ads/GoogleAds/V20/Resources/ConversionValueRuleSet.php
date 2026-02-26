@@ -9,7 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A conversion value rule set
+ * A conversion value rule set is a collection of conversion value rules that
+ * lets you adjust conversion values based on the dimensions specified in
+ * the `dimensions` field.
  *
  * Generated from protobuf message <code>google.ads.googleads.v20.resources.ConversionValueRuleSet</code>
  */

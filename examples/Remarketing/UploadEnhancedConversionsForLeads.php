@@ -301,7 +301,9 @@ class UploadEnhancedConversionsForLeads
 
         // [START add_session_attributes]
         // Set one of the sessionAttributesEncoded or
-        // SessionAttributeKeyValuePair fields if either are provided.
+        // SessionAttributeKeyValuePair fields if either are provided. The session attribute
+        // fields are only available to allowlisted users. To include these fields in conversion
+        // imports, upgrade to the Data Manager API.
         if (!empty($sessionAttributesEncoded)) {
             $clickConversion->setSessionAttributesEncoded($sessionAttributesEncoded);
         } elseif (!empty($sessionAttributesDict)) {

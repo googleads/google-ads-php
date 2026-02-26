@@ -38,6 +38,7 @@ class ProductLink extends \Google\Protobuf\Internal\Message
      */
     protected $type = 0;
     protected $linked_product;
+    protected $product_link_properties;
 
     /**
      * Constructor.
@@ -62,6 +63,9 @@ class ProductLink extends \Google\Protobuf\Internal\Message
      *           Immutable. Google Merchant Center link.
      *     @type \Google\Ads\GoogleAds\V23\Resources\AdvertisingPartnerIdentifier $advertising_partner
      *           Output only. Advertising Partner link.
+     *     @type \Google\Ads\GoogleAds\V23\Resources\AdvertisingPartnerProperties $advertising_partner_properties
+     *           Output only. Advertising Partner link properties. These properties are
+     *           only applicable when the link is for an Advertising Partner.
      * }
      */
     public function __construct($data = NULL) {
@@ -288,11 +292,52 @@ class ProductLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Output only. Advertising Partner link properties. These properties are
+     * only applicable when the link is for an Advertising Partner.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.AdvertisingPartnerProperties advertising_partner_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V23\Resources\AdvertisingPartnerProperties|null
+     */
+    public function getAdvertisingPartnerProperties()
+    {
+        return $this->readOneof(15);
+    }
+
+    public function hasAdvertisingPartnerProperties()
+    {
+        return $this->hasOneof(15);
+    }
+
+    /**
+     * Output only. Advertising Partner link properties. These properties are
+     * only applicable when the link is for an Advertising Partner.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.AdvertisingPartnerProperties advertising_partner_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V23\Resources\AdvertisingPartnerProperties $var
+     * @return $this
+     */
+    public function setAdvertisingPartnerProperties($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Resources\AdvertisingPartnerProperties::class);
+        $this->writeOneof(15, $var);
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getLinkedProduct()
     {
         return $this->whichOneof("linked_product");
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductLinkProperties()
+    {
+        return $this->whichOneof("product_link_properties");
     }
 
 }

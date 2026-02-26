@@ -32,11 +32,26 @@ class IncentiveError
      * Generated from protobuf enum <code>INVALID_INCENTIVE_ID = 2;</code>
      */
     const INVALID_INCENTIVE_ID = 2;
+    /**
+     * The maximum number of coupons has been redeemed.
+     *
+     * Generated from protobuf enum <code>MAX_INCENTIVES_REDEEMED = 3;</code>
+     */
+    const MAX_INCENTIVES_REDEEMED = 3;
+    /**
+     * This incentive cannot be applied because too much time has passed since
+     * the account's first ad impression.
+     *
+     * Generated from protobuf enum <code>ACCOUNT_TOO_OLD = 4;</code>
+     */
+    const ACCOUNT_TOO_OLD = 4;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::INVALID_INCENTIVE_ID => 'INVALID_INCENTIVE_ID',
+        self::MAX_INCENTIVES_REDEEMED => 'MAX_INCENTIVES_REDEEMED',
+        self::ACCOUNT_TOO_OLD => 'ACCOUNT_TOO_OLD',
     ];
 
     public static function name($value)

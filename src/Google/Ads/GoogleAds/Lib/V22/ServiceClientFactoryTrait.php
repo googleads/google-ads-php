@@ -164,8 +164,7 @@ trait ServiceClientFactoryTrait
             self::$CREDENTIALS_LOADER_KEY => $this->getGrpcChannelIsSecure()
                 ? $this->getOAuth2Credential()
                 : new InsecureCredentialsWrapper($this->getOAuth2Credential()),
-            self::$DEVELOPER_TOKEN_KEY => $this->getDeveloperToken(),
-            self::$USE_CLOUD_ORG_FOR_API_ACCESS_KEY => $this->useCloudOrgForApiAccess()
+            self::$DEVELOPER_TOKEN_KEY => $this->getDeveloperToken()
         ];
         if (!empty($this->getLoginCustomerId())) {
             $clientOptions += [self::$LOGIN_CUSTOMER_ID_KEY => strval($this->getLoginCustomerId())];

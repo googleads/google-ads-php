@@ -436,6 +436,14 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $brand_guidelines = null;
     /**
+     * Settings to control automatically generated text assets. Only available
+     * in Performance Max and Search campaigns (Brand Guidelines does not need
+     * to be enabled).
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.Campaign.TextGuidelines text_guidelines = 107;</code>
+     */
+    protected $text_guidelines = null;
+    /**
      * Third-Party integration partners.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.common.CampaignThirdPartyIntegrationPartners third_party_integration_partners = 100;</code>
@@ -460,6 +468,16 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.AssetSetTypeEnum.AssetSetType feed_types = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $feed_types;
+    /**
+     * Output only. Indicates whether this campaign is missing a declaration about
+     * whether it contains political advertising targeted towards the EU and is
+     * ineligible for any exemptions. If this field is true, use the
+     * contains_eu_political_advertising field to add the required declaration.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>bool missing_eu_political_advertising_declaration = 108 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $missing_eu_political_advertising_declaration = false;
     protected $campaign_bidding_strategy;
 
     /**
@@ -668,6 +686,10 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           These settings control how your brand appears in automatically generated
      *           assets and formats within this campaign. Note: These settings can only be
      *           used for Performance Max campaigns that have Brand Guidelines enabled.
+     *     @type \Google\Ads\GoogleAds\V23\Resources\Campaign\TextGuidelines $text_guidelines
+     *           Settings to control automatically generated text assets. Only available
+     *           in Performance Max and Search campaigns (Brand Guidelines does not need
+     *           to be enabled).
      *     @type \Google\Ads\GoogleAds\V23\Common\CampaignThirdPartyIntegrationPartners $third_party_integration_partners
      *           Third-Party integration partners.
      *     @type \Google\Ads\GoogleAds\V23\Resources\Campaign\AiMaxSetting $ai_max_setting
@@ -677,6 +699,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           political advertising content targeted towards the European Union.
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $feed_types
      *           Output only. Types of feeds that are attached directly to this campaign.
+     *     @type bool $missing_eu_political_advertising_declaration
+     *           Output only. Indicates whether this campaign is missing a declaration about
+     *           whether it contains political advertising targeted towards the EU and is
+     *           ineligible for any exemptions. If this field is true, use the
+     *           contains_eu_political_advertising field to add the required declaration.
+     *           This field is read-only.
      *     @type string $bidding_strategy
      *           The resource name of the portfolio bidding strategy used by the campaign.
      *     @type \Google\Ads\GoogleAds\V23\Common\Commission $commission
@@ -2686,6 +2714,46 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Settings to control automatically generated text assets. Only available
+     * in Performance Max and Search campaigns (Brand Guidelines does not need
+     * to be enabled).
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.Campaign.TextGuidelines text_guidelines = 107;</code>
+     * @return \Google\Ads\GoogleAds\V23\Resources\Campaign\TextGuidelines|null
+     */
+    public function getTextGuidelines()
+    {
+        return $this->text_guidelines;
+    }
+
+    public function hasTextGuidelines()
+    {
+        return isset($this->text_guidelines);
+    }
+
+    public function clearTextGuidelines()
+    {
+        unset($this->text_guidelines);
+    }
+
+    /**
+     * Settings to control automatically generated text assets. Only available
+     * in Performance Max and Search campaigns (Brand Guidelines does not need
+     * to be enabled).
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.Campaign.TextGuidelines text_guidelines = 107;</code>
+     * @param \Google\Ads\GoogleAds\V23\Resources\Campaign\TextGuidelines $var
+     * @return $this
+     */
+    public function setTextGuidelines($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Resources\Campaign\TextGuidelines::class);
+        $this->text_guidelines = $var;
+
+        return $this;
+    }
+
+    /**
      * Third-Party integration partners.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.common.CampaignThirdPartyIntegrationPartners third_party_integration_partners = 100;</code>
@@ -2807,6 +2875,40 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V23\Enums\AssetSetTypeEnum\AssetSetType::class);
         $this->feed_types = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Indicates whether this campaign is missing a declaration about
+     * whether it contains political advertising targeted towards the EU and is
+     * ineligible for any exemptions. If this field is true, use the
+     * contains_eu_political_advertising field to add the required declaration.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>bool missing_eu_political_advertising_declaration = 108 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return bool
+     */
+    public function getMissingEuPoliticalAdvertisingDeclaration()
+    {
+        return $this->missing_eu_political_advertising_declaration;
+    }
+
+    /**
+     * Output only. Indicates whether this campaign is missing a declaration about
+     * whether it contains political advertising targeted towards the EU and is
+     * ineligible for any exemptions. If this field is true, use the
+     * contains_eu_political_advertising field to add the required declaration.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>bool missing_eu_political_advertising_declaration = 108 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setMissingEuPoliticalAdvertisingDeclaration($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->missing_eu_political_advertising_declaration = $var;
 
         return $this;
     }

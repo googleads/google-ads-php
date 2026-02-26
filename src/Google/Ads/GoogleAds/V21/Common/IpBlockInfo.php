@@ -9,18 +9,27 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * An IpBlock criterion used for IP exclusions. We allow:
- *  - IPv4 and IPv6 addresses
- *  - individual addresses (192.168.0.1)
- *  - masks for individual addresses (192.168.0.1/32)
- *  - masks for Class C networks (192.168.0.1/24)
+ * An IpBlock criterion used for excluding IP addresses.
+ * We support excluding individual IP addresses or CIDR blocks. Create one
+ * IpBlockInfo criterion for each individual IP address or CIDR block you want
+ * to exclude. You can exclude up to 500 IP addresses per campaign. For more
+ * details, see
+ * [Exclude IP addresses](//support.google.com/google-ads/answer/2456098).
+ * IPv4 examples:
+ *  * Individual address: 192.168.0.1
+ *  * Individual address as CIDR block: 192.168.0.1/32
+ *  * CIDR block: 192.168.0.0/24
+ * IPv6 examples:
+ *  * Individual address: 2001:db8:a0b:12f0::1
+ *  * Individual address as CIDR block: 2001:db8:a0b:12f0::1/128
+ *  * CIDR block: 2001:db8::/48
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.common.IpBlockInfo</code>
  */
 class IpBlockInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The IP address of this IP block.
+     * The IP address or the CIDR block to be excluded.
      *
      * Generated from protobuf field <code>optional string ip_address = 2;</code>
      */
@@ -33,7 +42,7 @@ class IpBlockInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $ip_address
-     *           The IP address of this IP block.
+     *           The IP address or the CIDR block to be excluded.
      * }
      */
     public function __construct($data = NULL) {
@@ -42,7 +51,7 @@ class IpBlockInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The IP address of this IP block.
+     * The IP address or the CIDR block to be excluded.
      *
      * Generated from protobuf field <code>optional string ip_address = 2;</code>
      * @return string
@@ -63,7 +72,7 @@ class IpBlockInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The IP address of this IP block.
+     * The IP address or the CIDR block to be excluded.
      *
      * Generated from protobuf field <code>optional string ip_address = 2;</code>
      * @param string $var

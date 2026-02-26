@@ -27,14 +27,14 @@ class InsightsKnowledgeGraphEntityCapabilities
     const UNKNOWN = 1;
     /**
      * An entity that is supported to use as a trending topic in
-     * [ContentCreatorInsightsService.GenerateTrendingInsights].
+     * [ContentCreatorInsightsService.GenerateTrendingInsights][google.ads.googleads.v22.services.ContentCreatorInsightsService.GenerateTrendingInsights].
      *
      * Generated from protobuf enum <code>CONTENT_TRENDING_INSIGHTS = 2;</code>
      */
     const CONTENT_TRENDING_INSIGHTS = 2;
     /**
      * An entity that is supported to use as a creator attribute in
-     * [ContentCreatorInsightsService.GenerateCreatorInsights].
+     * [ContentCreatorInsightsService.GenerateCreatorInsights][google.ads.googleads.v22.services.ContentCreatorInsightsService.GenerateCreatorInsights].
      *
      * Generated from protobuf enum <code>CREATOR_ATTRIBUTE = 3;</code>
      */

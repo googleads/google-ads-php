@@ -44,17 +44,35 @@ class ConfigurationLoaderTestProvider
      */
     public static function getFilePathToFakeHome()
     {
-        return dirname(__FILE__) . DIRECTORY_SEPARATOR . 'fakehome';
+        $path = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'fakehome';
+        
+        // Automatically create the directory if it doesn't exist
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+        
+        return $path;
     }
 
     /**
-     * Gets the absolute file path of the fake INI file located in the fake home directory used for
-     * `ConfigurationLoader` tests.
+     * Gets the absolute file path of the fake INI file located in the fake home directory.
      *
      * @return string
      */
     public static function getFakeHomeFilePathForTestIniFile()
     {
-        return self::getFilePathToFakeHome() . DIRECTORY_SEPARATOR . 'home_google_ads_php.ini';
+        $filePath = self::getFilePathToFakeHome() . DIRECTORY_SEPARATOR . 'home_google_ads_php.ini';
+        
+        // Automatically create a dummy .ini file if it doesn't exist
+        if (!file_exists($filePath)) {
+            $dummyContent = "[GOOGLE_ADS]\ndeveloperToken = 'dummy-token'\n"
+                . "loginCustomerId = 123456789\n\n"
+                . "[OAUTH2]\nclientId = 'dummy-id'\nclientSecret = 'dummy-secret'\n"
+                . "refreshToken = 'dummy-token'";
+            file_put_contents($filePath, $dummyContent);
+        }
+        
+        return $filePath;
     }
 }
+

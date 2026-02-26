@@ -53,6 +53,13 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $product_filter = null;
     /**
+     * Optional. The set of dimensions to group metrics by. If multiple dimensions
+     * are selected, cross-dimension breakdowns are returned.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.services.BreakdownDefinition breakdown_definition = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $breakdown_definition = null;
+    /**
      * Optional. The three-character ISO 4217 currency code. If unspecified, the
      * default currency for monetary values is USD.
      *
@@ -116,6 +123,9 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V23\Services\ProductFilter $product_filter
      *           Required. The products to aggregate metrics over. Product filter settings
      *           support a list of product IDs or a list of marketing objectives.
+     *     @type \Google\Ads\GoogleAds\V23\Services\BreakdownDefinition $breakdown_definition
+     *           Optional. The set of dimensions to group metrics by. If multiple dimensions
+     *           are selected, cross-dimension breakdowns are returned.
      *     @type string $currency_code
      *           Optional. The three-character ISO 4217 currency code. If unspecified, the
      *           default currency for monetary values is USD.
@@ -308,6 +318,44 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Services\ProductFilter::class);
         $this->product_filter = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. The set of dimensions to group metrics by. If multiple dimensions
+     * are selected, cross-dimension breakdowns are returned.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.services.BreakdownDefinition breakdown_definition = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Ads\GoogleAds\V23\Services\BreakdownDefinition|null
+     */
+    public function getBreakdownDefinition()
+    {
+        return $this->breakdown_definition;
+    }
+
+    public function hasBreakdownDefinition()
+    {
+        return isset($this->breakdown_definition);
+    }
+
+    public function clearBreakdownDefinition()
+    {
+        unset($this->breakdown_definition);
+    }
+
+    /**
+     * Optional. The set of dimensions to group metrics by. If multiple dimensions
+     * are selected, cross-dimension breakdowns are returned.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.services.BreakdownDefinition breakdown_definition = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Ads\GoogleAds\V23\Services\BreakdownDefinition $var
+     * @return $this
+     */
+    public function setBreakdownDefinition($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Services\BreakdownDefinition::class);
+        $this->breakdown_definition = $var;
 
         return $this;
     }

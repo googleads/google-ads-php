@@ -18,8 +18,8 @@ class GenerateTargetingSuggestionMetricsResponse extends \Google\Protobuf\Intern
 {
     /**
      * Suggested targetable audiences. There will be one suggestion for each
-     * [GenerateTargetingSuggestionMetricsRequest.audiences] requested, matching
-     * the order requested.
+     * [GenerateTargetingSuggestionMetricsRequest.audiences][google.ads.googleads.v20.services.GenerateTargetingSuggestionMetricsRequest.audiences]
+     * requested, matching the order requested.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.TargetingSuggestionMetrics suggestions = 1;</code>
      */
@@ -33,8 +33,8 @@ class GenerateTargetingSuggestionMetricsResponse extends \Google\Protobuf\Intern
      *
      *     @type array<\Google\Ads\GoogleAds\V20\Services\TargetingSuggestionMetrics>|\Google\Protobuf\Internal\RepeatedField $suggestions
      *           Suggested targetable audiences. There will be one suggestion for each
-     *           [GenerateTargetingSuggestionMetricsRequest.audiences] requested, matching
-     *           the order requested.
+     *           [GenerateTargetingSuggestionMetricsRequest.audiences][google.ads.googleads.v20.services.GenerateTargetingSuggestionMetricsRequest.audiences]
+     *           requested, matching the order requested.
      * }
      */
     public function __construct($data = NULL) {
@@ -44,8 +44,8 @@ class GenerateTargetingSuggestionMetricsResponse extends \Google\Protobuf\Intern
 
     /**
      * Suggested targetable audiences. There will be one suggestion for each
-     * [GenerateTargetingSuggestionMetricsRequest.audiences] requested, matching
-     * the order requested.
+     * [GenerateTargetingSuggestionMetricsRequest.audiences][google.ads.googleads.v20.services.GenerateTargetingSuggestionMetricsRequest.audiences]
+     * requested, matching the order requested.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.TargetingSuggestionMetrics suggestions = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -57,8 +57,8 @@ class GenerateTargetingSuggestionMetricsResponse extends \Google\Protobuf\Intern
 
     /**
      * Suggested targetable audiences. There will be one suggestion for each
-     * [GenerateTargetingSuggestionMetricsRequest.audiences] requested, matching
-     * the order requested.
+     * [GenerateTargetingSuggestionMetricsRequest.audiences][google.ads.googleads.v20.services.GenerateTargetingSuggestionMetricsRequest.audiences]
+     * requested, matching the order requested.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.TargetingSuggestionMetrics suggestions = 1;</code>
      * @param array<\Google\Ads\GoogleAds\V20\Services\TargetingSuggestionMetrics>|\Google\Protobuf\Internal\RepeatedField $var

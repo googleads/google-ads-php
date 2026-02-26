@@ -38,8 +38,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     protected $criterion_id = null;
     /**
      * The modifier for the bid when the criterion matches. The modifier must be
-     * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
-     * Use 0 to opt out of a Device type.
+     * in the range: 0.1 - 10.0. Use 0 to opt out of a Device type.
      *
      * Generated from protobuf field <code>optional double bid_modifier = 15;</code>
      */
@@ -79,8 +78,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      *           This field is ignored for mutates.
      *     @type float $bid_modifier
      *           The modifier for the bid when the criterion matches. The modifier must be
-     *           in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
-     *           Use 0 to opt out of a Device type.
+     *           in the range: 0.1 - 10.0. Use 0 to opt out of a Device type.
      *     @type string $base_ad_group
      *           Output only. The base ad group from which this draft/trial adgroup bid
      *           modifier was created. If ad_group is a base ad group then this field will
@@ -216,8 +214,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
 
     /**
      * The modifier for the bid when the criterion matches. The modifier must be
-     * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
-     * Use 0 to opt out of a Device type.
+     * in the range: 0.1 - 10.0. Use 0 to opt out of a Device type.
      *
      * Generated from protobuf field <code>optional double bid_modifier = 15;</code>
      * @return float
@@ -239,8 +236,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
 
     /**
      * The modifier for the bid when the criterion matches. The modifier must be
-     * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
-     * Use 0 to opt out of a Device type.
+     * in the range: 0.1 - 10.0. Use 0 to opt out of a Device type.
      *
      * Generated from protobuf field <code>optional double bid_modifier = 15;</code>
      * @param float $var

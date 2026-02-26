@@ -1803,6 +1803,46 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $cost_converted_currency_per_platform_comparable_conversion = null;
     /**
+     * This metric counts the unique individuals who were shown your video ad two
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_two_plus = 393;</code>
+     */
+    protected $unique_users_two_plus = null;
+    /**
+     * This metric counts the unique individuals who were shown your video ad
+     * three or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_three_plus = 394;</code>
+     */
+    protected $unique_users_three_plus = null;
+    /**
+     * This metric counts the unique individuals who were shown your video ad four
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_four_plus = 395;</code>
+     */
+    protected $unique_users_four_plus = null;
+    /**
+     * This metric counts the unique individuals who were shown your video ad five
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_five_plus = 396;</code>
+     */
+    protected $unique_users_five_plus = null;
+    /**
+     * This metric counts the unique individuals who were shown your video ad ten
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_ten_plus = 397;</code>
+     */
+    protected $unique_users_ten_plus = null;
+    /**
      * The conversion value rule adjustment from biddable conversions in all
      * conversion categories.
      *
@@ -2936,6 +2976,26 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type float $cost_converted_currency_per_platform_comparable_conversion
      *           The cost of the platform comparable conversion in the currency of the
      *           authorized customer.
+     *     @type int|string $unique_users_two_plus
+     *           This metric counts the unique individuals who were shown your video ad two
+     *           or more times within the selected date range. This metric cannot be
+     *           aggregated, and can only be requested for date ranges of 31 days or less.
+     *     @type int|string $unique_users_three_plus
+     *           This metric counts the unique individuals who were shown your video ad
+     *           three or more times within the selected date range. This metric cannot be
+     *           aggregated, and can only be requested for date ranges of 31 days or less.
+     *     @type int|string $unique_users_four_plus
+     *           This metric counts the unique individuals who were shown your video ad four
+     *           or more times within the selected date range. This metric cannot be
+     *           aggregated, and can only be requested for date ranges of 31 days or less.
+     *     @type int|string $unique_users_five_plus
+     *           This metric counts the unique individuals who were shown your video ad five
+     *           or more times within the selected date range. This metric cannot be
+     *           aggregated, and can only be requested for date ranges of 31 days or less.
+     *     @type int|string $unique_users_ten_plus
+     *           This metric counts the unique individuals who were shown your video ad ten
+     *           or more times within the selected date range. This metric cannot be
+     *           aggregated, and can only be requested for date ranges of 31 days or less.
      *     @type float $value_adjustment
      *           The conversion value rule adjustment from biddable conversions in all
      *           conversion categories.
@@ -11433,6 +11493,206 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->cost_converted_currency_per_platform_comparable_conversion = $var;
+
+        return $this;
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad two
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_two_plus = 393;</code>
+     * @return int|string
+     */
+    public function getUniqueUsersTwoPlus()
+    {
+        return isset($this->unique_users_two_plus) ? $this->unique_users_two_plus : 0;
+    }
+
+    public function hasUniqueUsersTwoPlus()
+    {
+        return isset($this->unique_users_two_plus);
+    }
+
+    public function clearUniqueUsersTwoPlus()
+    {
+        unset($this->unique_users_two_plus);
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad two
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_two_plus = 393;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUniqueUsersTwoPlus($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->unique_users_two_plus = $var;
+
+        return $this;
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad
+     * three or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_three_plus = 394;</code>
+     * @return int|string
+     */
+    public function getUniqueUsersThreePlus()
+    {
+        return isset($this->unique_users_three_plus) ? $this->unique_users_three_plus : 0;
+    }
+
+    public function hasUniqueUsersThreePlus()
+    {
+        return isset($this->unique_users_three_plus);
+    }
+
+    public function clearUniqueUsersThreePlus()
+    {
+        unset($this->unique_users_three_plus);
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad
+     * three or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_three_plus = 394;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUniqueUsersThreePlus($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->unique_users_three_plus = $var;
+
+        return $this;
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad four
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_four_plus = 395;</code>
+     * @return int|string
+     */
+    public function getUniqueUsersFourPlus()
+    {
+        return isset($this->unique_users_four_plus) ? $this->unique_users_four_plus : 0;
+    }
+
+    public function hasUniqueUsersFourPlus()
+    {
+        return isset($this->unique_users_four_plus);
+    }
+
+    public function clearUniqueUsersFourPlus()
+    {
+        unset($this->unique_users_four_plus);
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad four
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_four_plus = 395;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUniqueUsersFourPlus($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->unique_users_four_plus = $var;
+
+        return $this;
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad five
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_five_plus = 396;</code>
+     * @return int|string
+     */
+    public function getUniqueUsersFivePlus()
+    {
+        return isset($this->unique_users_five_plus) ? $this->unique_users_five_plus : 0;
+    }
+
+    public function hasUniqueUsersFivePlus()
+    {
+        return isset($this->unique_users_five_plus);
+    }
+
+    public function clearUniqueUsersFivePlus()
+    {
+        unset($this->unique_users_five_plus);
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad five
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_five_plus = 396;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUniqueUsersFivePlus($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->unique_users_five_plus = $var;
+
+        return $this;
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad ten
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_ten_plus = 397;</code>
+     * @return int|string
+     */
+    public function getUniqueUsersTenPlus()
+    {
+        return isset($this->unique_users_ten_plus) ? $this->unique_users_ten_plus : 0;
+    }
+
+    public function hasUniqueUsersTenPlus()
+    {
+        return isset($this->unique_users_ten_plus);
+    }
+
+    public function clearUniqueUsersTenPlus()
+    {
+        unset($this->unique_users_ten_plus);
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad ten
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_ten_plus = 397;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUniqueUsersTenPlus($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->unique_users_ten_plus = $var;
 
         return $this;
     }

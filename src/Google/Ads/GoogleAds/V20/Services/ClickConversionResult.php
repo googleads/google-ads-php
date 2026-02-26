@@ -22,15 +22,13 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      */
     protected $gclid = null;
     /**
-     * The click identifier for clicks associated with app conversions and
-     * originating from iOS devices starting with iOS14.
+     * The URL parameter for clicks associated with app conversions.
      *
      * Generated from protobuf field <code>string gbraid = 8;</code>
      */
     protected $gbraid = '';
     /**
-     * The click identifier for clicks associated with web conversions and
-     * originating from iOS devices starting with iOS14.
+     * The URL parameter for clicks associated with web conversions.
      *
      * Generated from protobuf field <code>string wbraid = 9;</code>
      */
@@ -66,11 +64,9 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      *     @type string $gclid
      *           The Google Click ID (gclid) associated with this conversion.
      *     @type string $gbraid
-     *           The click identifier for clicks associated with app conversions and
-     *           originating from iOS devices starting with iOS14.
+     *           The URL parameter for clicks associated with app conversions.
      *     @type string $wbraid
-     *           The click identifier for clicks associated with web conversions and
-     *           originating from iOS devices starting with iOS14.
+     *           The URL parameter for clicks associated with web conversions.
      *     @type string $conversion_action
      *           Resource name of the conversion action associated with this conversion.
      *     @type string $conversion_date_time
@@ -124,8 +120,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The click identifier for clicks associated with app conversions and
-     * originating from iOS devices starting with iOS14.
+     * The URL parameter for clicks associated with app conversions.
      *
      * Generated from protobuf field <code>string gbraid = 8;</code>
      * @return string
@@ -136,8 +131,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The click identifier for clicks associated with app conversions and
-     * originating from iOS devices starting with iOS14.
+     * The URL parameter for clicks associated with app conversions.
      *
      * Generated from protobuf field <code>string gbraid = 8;</code>
      * @param string $var
@@ -152,8 +146,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The click identifier for clicks associated with web conversions and
-     * originating from iOS devices starting with iOS14.
+     * The URL parameter for clicks associated with web conversions.
      *
      * Generated from protobuf field <code>string wbraid = 9;</code>
      * @return string
@@ -164,8 +157,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The click identifier for clicks associated with web conversions and
-     * originating from iOS devices starting with iOS14.
+     * The URL parameter for clicks associated with web conversions.
      *
      * Generated from protobuf field <code>string wbraid = 9;</code>
      * @param string $var
