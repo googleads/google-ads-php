@@ -67,6 +67,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $httpHandler =  null;
     /** @var Dependencies $dependencies */
     private $dependencies;
+    private $googleAdsApiAssistant;
 
     public function __construct(
         ConfigurationLoader $configurationLoader = null,
@@ -103,6 +104,8 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
         $this->loginCustomerId = $configuration->getConfiguration('loginCustomerId', 'GOOGLE_ADS');
         $this->linkedCustomerId =
             $configuration->getConfiguration('linkedCustomerId', 'GOOGLE_ADS');
+        $this->googleAdsApiAssistant = 
+            $configuration->getConfiguration('googleAdsApiAssistant', 'GOOGLE_ADS');
         $this->endpoint =
             $configuration->getConfiguration('endpoint', 'GOOGLE_ADS');
         $this->logLevel = $configuration->getConfiguration('logLevel', 'LOGGING');
@@ -145,7 +148,10 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
             $this->loginCustomerId;
         $this->linkedCustomerId = $configuration->getConfiguration('LINKED_CUSTOMER_ID') ??
             $this->linkedCustomerId;
-        $this->endpoint = $configuration->getConfiguration('ENDPOINT') ?? $this->endpoint;
+        $this->endpoint = $configuration->getConfiguration('ENDPOINT') ?? 
+            $this->endpoint;
+        $this->googleAdsApiAssistant = $configuration->getConfiguration('GOOGLE_ADS_API_ASSISTANT') ?? 
+            $this->googleAdsApiAssistant;
 
         return $this;
     }
@@ -409,6 +415,9 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
         if (!empty($this->linkedCustomerId) && $this->linkedCustomerId < 0) {
             throw new InvalidArgumentException('The linked customer ID must be a positive number.');
         }
+        if (!empty($this->googleAdsApiAssistant) && empty(trim($this->googleAdsApiAssistant))) {
+            throw new InvalidArgumentException('The Google Ads API assistant metadata must not be empty.');
+        }
 
         // Use parse_url instead of filter_var to do less restrict validation.
         // This is because we need to allow endpoint in the form of "googleads.googleapis.com",
@@ -649,5 +658,27 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     public function getHttpHandler()
     {
         return $this->httpHandler;
+    }
+
+    /**
+     * Sets the Google Ads API assistant metadata.
+     *
+     * @param string|null $googleAdsApiAssistant
+     * @return self this builder
+     */
+    public function withGoogleAdsApiAssistant(?string $googleAdsApiAssistant)
+    {
+        $this->googleAdsApiAssistant = $googleAdsApiAssistant;
+        return $this;
+    }
+
+    /**
+     * Gets the Google Ads API assistant metadata.
+     *
+     * @return string|null
+     */
+    public function getGoogleAdsApiAssistant()
+    {
+        return $this->googleAdsApiAssistant;
     }
 }

@@ -38,6 +38,7 @@ trait GoogleAdsGapicClientTrait
     private static $UNARY_MIDDLEWARES = 'unary-middlewares';
     private static $STREAMING_MIDDLEWARES = 'streaming-middlewares';
     private static $USE_CLOUD_ORG_FOR_API_ACCESS_KEY = 'use-cloud-org-for-api-access';
+    private static $GOOGLE_ADS_API_ASSISTANT = 'google-ads-api-assistant';
 
     private $developerToken = null;
     private $loginCustomerId = null;
@@ -55,6 +56,7 @@ trait GoogleAdsGapicClientTrait
         $this->developerToken = $options[self::$DEVELOPER_TOKEN_KEY] ?? null;
         $this->loginCustomerId = $options[self::$LOGIN_CUSTOMER_ID] ?? null;
         $this->linkedCustomerId = $options[self::$LINKED_CUSTOMER_ID] ?? null;
+        $this->googleAdsApiAssistant = $options[self::$GOOGLE_ADS_API_ASSISTANT] ?? null;
         $this->unaryMiddlewares = $options[self::$UNARY_MIDDLEWARES] ?? [];
         $this->streamingMiddlewares = $options[self::$STREAMING_MIDDLEWARES] ?? [];
         $this->useCloudOrgForApiAccess = $options[self::$USE_CLOUD_ORG_FOR_API_ACCESS_KEY] ?? null;
@@ -96,6 +98,9 @@ trait GoogleAdsGapicClientTrait
             }
             if (!is_null($this->linkedCustomerId)) {
                 $headers[self::$LINKED_CUSTOMER_ID] = [$this->linkedCustomerId];
+            }
+            if (!is_null($this->googleAdsApiAssistant)) {
+                $headers[self::$GOOGLE_ADS_API_ASSISTANT] = [$this->googleAdsApiAssistant];
             }
 
             $callable = new FixedHeaderMiddleware($callable, $headers);

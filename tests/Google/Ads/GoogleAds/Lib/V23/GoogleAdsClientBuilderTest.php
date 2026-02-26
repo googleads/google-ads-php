@@ -658,4 +658,20 @@ class GoogleAdsClientBuilderTest extends TestCase
 
         $this->assertTrue($googleAdsClient->useCloudOrgForApiAccess());
     }
+
+   public function testBuildWithGoogleAdsApiAssistant()
+    {
+        $assistantValue = 'test-assistant-v1';
+        $this->googleAdsClientBuilder
+            ->withDeveloperToken('dummy-token') // Required for build()
+            ->withOAuth2Credential($this->getMockBuilder(FetchAuthTokenInterface::class)->getMock()) // Required for build()
+            ->withGoogleAdsApiAssistant($assistantValue);
+    
+        $googleAdsClient = $this->googleAdsClientBuilder->build();
+
+        $this->assertEquals(
+            $assistantValue,
+            $googleAdsClient->getGoogleAdsApiAssistant()
+        );
+    }
 }
