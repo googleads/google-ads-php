@@ -67,7 +67,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $httpHandler =  null;
     /** @var Dependencies $dependencies */
     private $dependencies;
-    private $googleAdsApiAssistant;
+    private $adsAssistant;
 
     public function __construct(
         ConfigurationLoader $configurationLoader = null,
@@ -104,8 +104,8 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
         $this->loginCustomerId = $configuration->getConfiguration('loginCustomerId', 'GOOGLE_ADS');
         $this->linkedCustomerId =
             $configuration->getConfiguration('linkedCustomerId', 'GOOGLE_ADS');
-        $this->googleAdsApiAssistant =
-            $configuration->getConfiguration('googleAdsApiAssistant', 'GOOGLE_ADS');
+        $this->adsAssistant = 
+            $configuration->getConfiguration('ads_assistant', 'GOOGLE_ADS');
         $this->endpoint =
             $configuration->getConfiguration('endpoint', 'GOOGLE_ADS');
         $this->logLevel = $configuration->getConfiguration('logLevel', 'LOGGING');
@@ -150,8 +150,8 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
             $this->linkedCustomerId;
         $this->endpoint = $configuration->getConfiguration('ENDPOINT') ?? 
             $this->endpoint;
-        $this->googleAdsApiAssistant = $configuration->getConfiguration('GOOGLE_ADS_API_ASSISTANT') ??
-            $this->googleAdsApiAssistant;
+        $this->adsAssistant = $configuration->getConfiguration('ADS_ASSISTANT') ?? 
+            $this->adsAssistant;
 
         return $this;
     }
@@ -415,8 +415,8 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
         if (!empty($this->linkedCustomerId) && $this->linkedCustomerId < 0) {
             throw new InvalidArgumentException('The linked customer ID must be a positive number.');
         }
-        if (!empty($this->googleAdsApiAssistant) && empty(trim($this->googleAdsApiAssistant))) {
-            throw new InvalidArgumentException('The Google Ads API assistant metadata must not be empty.');
+        if (!empty($this->adsAssistant) && empty(trim($this->adsAssistant))) {
+            throw new InvalidArgumentException('The ads assistant metadata must not be empty.');
         }
 
         // Use parse_url instead of filter_var to do less restrict validation.
@@ -666,9 +666,9 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
      * @param string|null $googleAdsApiAssistant
      * @return self this builder
      */
-    public function withGoogleAdsApiAssistant(?string $googleAdsApiAssistant)
+    public function withAdsAssistant(?string $adsAssistant)
     {
-        $this->googleAdsApiAssistant = $googleAdsApiAssistant;
+        $this->adsAssistant = $adsAssistant;
         return $this;
     }
 
@@ -677,8 +677,8 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
      *
      * @return string|null
      */
-    public function getGoogleAdsApiAssistant()
+    public function getAdsAssistant()
     {
-        return $this->googleAdsApiAssistant;
+        return $this->adsAssistant;
     }
 }

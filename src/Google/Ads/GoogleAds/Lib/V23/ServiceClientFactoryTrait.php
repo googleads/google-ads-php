@@ -148,7 +148,7 @@ trait ServiceClientFactoryTrait
     private static $DEVELOPER_TOKEN_KEY = 'developer-token';
     private static $LOGIN_CUSTOMER_ID_KEY = 'login-customer-id';
     private static $LINKED_CUSTOMER_ID_KEY = 'linked-customer-id';
-    private static $GOOGLE_ADS_API_ASSISTANT_KEY = 'google-ads-api-assistant';
+    private static $ADS_ASSISTANT_KEY = 'ads_assistant';
     private static $SERVICE_ADDRESS_KEY = 'serviceAddress';
     private static $DEFAULT_SERVICE_ADDRESS = 'googleads.googleapis.com';
     private static $TRANSPORT_KEY = 'transport';
@@ -176,9 +176,9 @@ trait ServiceClientFactoryTrait
                 self::$LINKED_CUSTOMER_ID_KEY => strval($this->getLinkedCustomerId())
             ];
         }
-        if (!empty($this->getGoogleAdsApiAssistant())) {
+        if (!empty($this->getAdsAssistant())) {
             $clientOptions += [
-                self::$GOOGLE_ADS_API_ASSISTANT_KEY => $this->getGoogleAdsApiAssistant()
+                self::$ADS_ASSISTANT_KEY => $this->getAdsAssistant()
             ];
         }
         if (!empty($this->getEndpoint())) {
