@@ -37,13 +37,14 @@ trait GoogleAdsGapicClientTrait
     private static $LINKED_CUSTOMER_ID = 'linked-customer-id';
     private static $UNARY_MIDDLEWARES = 'unary-middlewares';
     private static $STREAMING_MIDDLEWARES = 'streaming-middlewares';
-    private static $GOOGLE_ADS_API_ASSISTANT = 'google-ads-api-assistant';
+    private static $ADS_ASSISTANT_HEADER_NAME = 'google-ads-api-assistant';
 
     private $developerToken = null;
     private $loginCustomerId = null;
     private $linkedCustomerId = null;
     private $unaryMiddlewares = [];
     private $streamingMiddlewares = [];
+    private $adsAssistant = null;
     private ?GoogleAdsResponseMetadata $responseMetadata = null;
 
     /**
@@ -54,7 +55,7 @@ trait GoogleAdsGapicClientTrait
         $this->developerToken = $options[self::$DEVELOPER_TOKEN_KEY] ?? null;
         $this->loginCustomerId = $options[self::$LOGIN_CUSTOMER_ID] ?? null;
         $this->linkedCustomerId = $options[self::$LINKED_CUSTOMER_ID] ?? null;
-        $this->googleAdsApiAssistant = $options[self::$GOOGLE_ADS_API_ASSISTANT] ?? null;
+        $this->adsAssistant = $options['ads_assistant'] ?? null;
         $this->unaryMiddlewares = $options[self::$UNARY_MIDDLEWARES] ?? [];
         $this->streamingMiddlewares = $options[self::$STREAMING_MIDDLEWARES] ?? [];
         // Ensure that this isn't already an OperationsClient nor GoogleAdsOperationClient to avoid
@@ -93,8 +94,8 @@ trait GoogleAdsGapicClientTrait
             if (!is_null($this->linkedCustomerId)) {
                 $headers[self::$LINKED_CUSTOMER_ID] = [$this->linkedCustomerId];
             }
-            if (!is_null($this->googleAdsApiAssistant)) {
-                $headers[self::$GOOGLE_ADS_API_ASSISTANT] = [$this->googleAdsApiAssistant];
+            if (!is_null($this->adsAssistant)) {
+                $headers[self::$ADS_ASSISTANT_HEADER_NAME] = [$this->adsAssistant];
             }
 
             $callable = new FixedHeaderMiddleware($callable, $headers);
