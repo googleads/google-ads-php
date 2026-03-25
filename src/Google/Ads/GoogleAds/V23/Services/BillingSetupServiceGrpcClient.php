@@ -59,7 +59,7 @@ class BillingSetupServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\MutateBillingSetupRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateBillingSetupResponse>
      */
     public function MutateBillingSetup(\Google\Ads\GoogleAds\V23\Services\MutateBillingSetupRequest $argument,
       $metadata = [], $options = []) {

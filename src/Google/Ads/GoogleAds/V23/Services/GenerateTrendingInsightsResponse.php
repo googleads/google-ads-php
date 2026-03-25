@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class GenerateTrendingInsightsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\TrendInsight>|\Google\Protobuf\Internal\RepeatedField $trend_insights
+     *     @type \Google\Ads\GoogleAds\V23\Services\TrendInsight[] $trend_insights
      *           The list of trending insights for the given criteria.
      * }
      */
@@ -42,7 +42,7 @@ class GenerateTrendingInsightsResponse extends \Google\Protobuf\Internal\Message
      * The list of trending insights for the given criteria.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.TrendInsight trend_insights = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\TrendInsight>
      */
     public function getTrendInsights()
     {
@@ -53,7 +53,7 @@ class GenerateTrendingInsightsResponse extends \Google\Protobuf\Internal\Message
      * The list of trending insights for the given criteria.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.TrendInsight trend_insights = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\TrendInsight>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\TrendInsight[] $var
      * @return $this
      */
     public function setTrendInsights($var)

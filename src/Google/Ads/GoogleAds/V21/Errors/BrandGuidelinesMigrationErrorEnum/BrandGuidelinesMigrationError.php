@@ -97,6 +97,3 @@ class BrandGuidelinesMigrationError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BrandGuidelinesMigrationError::class, \Google\Ads\GoogleAds\V21\Errors\BrandGuidelinesMigrationErrorEnum_BrandGuidelinesMigrationError::class);
-

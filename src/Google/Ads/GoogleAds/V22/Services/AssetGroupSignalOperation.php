@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A single operation (create, remove) on an asset group signal.
@@ -36,7 +36,7 @@ class AssetGroupSignalOperation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\PolicyViolationKey>|\Google\Protobuf\Internal\RepeatedField $exempt_policy_violation_keys
+     *     @type \Google\Ads\GoogleAds\V22\Common\PolicyViolationKey[] $exempt_policy_violation_keys
      *           Optional. The list of policy violation keys that should not cause a
      *           PolicyViolationError to be reported. Not all policy violations are
      *           exemptable, refer to the is_exemptible field in the returned
@@ -70,7 +70,7 @@ class AssetGroupSignalOperation extends \Google\Protobuf\Internal\Message
      * certificates.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.PolicyViolationKey exempt_policy_violation_keys = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\PolicyViolationKey>
      */
     public function getExemptPolicyViolationKeys()
     {
@@ -88,7 +88,7 @@ class AssetGroupSignalOperation extends \Google\Protobuf\Internal\Message
      * certificates.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.PolicyViolationKey exempt_policy_violation_keys = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\PolicyViolationKey>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\PolicyViolationKey[] $var
      * @return $this
      */
     public function setExemptPolicyViolationKeys($var)

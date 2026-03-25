@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The path defining of dimensions defining a listing group filter.
@@ -29,7 +29,7 @@ class ListingGroupFilterDimensionPath extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Resources\ListingGroupFilterDimension>|\Google\Protobuf\Internal\RepeatedField $dimensions
+     *     @type \Google\Ads\GoogleAds\V22\Resources\ListingGroupFilterDimension[] $dimensions
      *           Output only. The complete path of dimensions through the listing group
      *           filter hierarchy (excluding the root node) to this listing group filter.
      * }
@@ -44,7 +44,7 @@ class ListingGroupFilterDimensionPath extends \Google\Protobuf\Internal\Message
      * filter hierarchy (excluding the root node) to this listing group filter.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.resources.ListingGroupFilterDimension dimensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Resources\ListingGroupFilterDimension>
      */
     public function getDimensions()
     {
@@ -56,7 +56,7 @@ class ListingGroupFilterDimensionPath extends \Google\Protobuf\Internal\Message
      * filter hierarchy (excluding the root node) to this listing group filter.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.resources.ListingGroupFilterDimension dimensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Resources\ListingGroupFilterDimension>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Resources\ListingGroupFilterDimension[] $var
      * @return $this
      */
     public function setDimensions($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for a goal mutate.
@@ -36,7 +36,7 @@ class MutateGoalsResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Rpc\Status $partial_failure_error
      *           Errors that pertain to operation failures in the partial failure mode.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\MutateGoalResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V22\Services\MutateGoalResult[] $results
      *           All results for the mutate.
      * }
      */
@@ -85,7 +85,7 @@ class MutateGoalsResponse extends \Google\Protobuf\Internal\Message
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.MutateGoalResult results = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\MutateGoalResult>
      */
     public function getResults()
     {
@@ -96,7 +96,7 @@ class MutateGoalsResponse extends \Google\Protobuf\Internal\Message
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.MutateGoalResult results = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\MutateGoalResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\MutateGoalResult[] $var
      * @return $this
      */
     public function setResults($var)

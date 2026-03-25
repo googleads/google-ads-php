@@ -66,6 +66,3 @@ class DistinctError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DistinctError::class, \Google\Ads\GoogleAds\V21\Errors\DistinctErrorEnum_DistinctError::class);
-

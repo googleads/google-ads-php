@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Assets linked at the campaign level.
@@ -43,9 +43,9 @@ class BrandCampaignAssets extends \Google\Protobuf\Internal\Message
      *
      *     @type string $business_name_asset
      *           Required. The resource name of the business name text asset.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $logo_asset
+     *     @type string[] $logo_asset
      *           Required. The resource name of square logo assets.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $landscape_logo_asset
+     *     @type string[] $landscape_logo_asset
      *           Optional. The resource name of landscape logo assets.
      * }
      */
@@ -84,7 +84,7 @@ class BrandCampaignAssets extends \Google\Protobuf\Internal\Message
      * Required. The resource name of square logo assets.
      *
      * Generated from protobuf field <code>repeated string logo_asset = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLogoAsset()
     {
@@ -95,7 +95,7 @@ class BrandCampaignAssets extends \Google\Protobuf\Internal\Message
      * Required. The resource name of square logo assets.
      *
      * Generated from protobuf field <code>repeated string logo_asset = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLogoAsset($var)
@@ -110,7 +110,7 @@ class BrandCampaignAssets extends \Google\Protobuf\Internal\Message
      * Optional. The resource name of landscape logo assets.
      *
      * Generated from protobuf field <code>repeated string landscape_logo_asset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLandscapeLogoAsset()
     {
@@ -121,7 +121,7 @@ class BrandCampaignAssets extends \Google\Protobuf\Internal\Message
      * Optional. The resource name of landscape logo assets.
      *
      * Generated from protobuf field <code>repeated string landscape_logo_asset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLandscapeLogoAsset($var)

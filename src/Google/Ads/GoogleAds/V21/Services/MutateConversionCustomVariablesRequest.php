@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -80,7 +80,7 @@ class MutateConversionCustomVariablesRequest extends \Google\Protobuf\Internal\M
      *     @type string $customer_id
      *           Required. The ID of the customer whose conversion custom variables are
      *           being modified.
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\ConversionCustomVariableOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V21\Services\ConversionCustomVariableOperation[] $operations
      *           Required. The list of operations to perform on individual conversion custom
      *           variables.
      *     @type bool $partial_failure
@@ -134,7 +134,7 @@ class MutateConversionCustomVariablesRequest extends \Google\Protobuf\Internal\M
      * variables.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.ConversionCustomVariableOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\ConversionCustomVariableOperation>
      */
     public function getOperations()
     {
@@ -146,7 +146,7 @@ class MutateConversionCustomVariablesRequest extends \Google\Protobuf\Internal\M
      * variables.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.ConversionCustomVariableOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\ConversionCustomVariableOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\ConversionCustomVariableOperation[] $var
      * @return $this
      */
     public function setOperations($var)

@@ -59,6 +59,3 @@ class PromotionExtensionDiscountModifier
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PromotionExtensionDiscountModifier::class, \Google\Ads\GoogleAds\V21\Enums\PromotionExtensionDiscountModifierEnum_PromotionExtensionDiscountModifier::class);
-

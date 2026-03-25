@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents details of text message in case of email, message or SMS.
@@ -37,7 +37,7 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
      *
      *     @type string $text
      *           Output only. Textual content of the message.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $attachment_urls
+     *     @type string[] $attachment_urls
      *           Output only. URL to the SMS or email attachments. These URLs can be used to
      *           download the contents of the attachment by using the developer token.
      * }
@@ -78,7 +78,7 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
      * download the contents of the attachment by using the developer token.
      *
      * Generated from protobuf field <code>repeated string attachment_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getAttachmentUrls()
     {
@@ -90,7 +90,7 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
      * download the contents of the attachment by using the developer token.
      *
      * Generated from protobuf field <code>repeated string attachment_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setAttachmentUrls($var)

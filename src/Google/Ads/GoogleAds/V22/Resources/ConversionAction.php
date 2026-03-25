@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A conversion action.
@@ -224,7 +224,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      *           How to count conversion events for the conversion action.
      *     @type \Google\Ads\GoogleAds\V22\Resources\ConversionAction\AttributionModelSettings $attribution_model_settings
      *           Settings related to this conversion action's attribution model.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\TagSnippet>|\Google\Protobuf\Internal\RepeatedField $tag_snippets
+     *     @type \Google\Ads\GoogleAds\V22\Common\TagSnippet[] $tag_snippets
      *           Output only. The snippets used for tracking conversions.
      *     @type int|string $phone_call_duration_seconds
      *           The phone call duration in seconds after which a conversion should be
@@ -769,7 +769,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. The snippets used for tracking conversions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.TagSnippet tag_snippets = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\TagSnippet>
      */
     public function getTagSnippets()
     {
@@ -780,7 +780,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. The snippets used for tracking conversions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.TagSnippet tag_snippets = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\TagSnippet>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\TagSnippet[] $var
      * @return $this
      */
     public function setTagSnippets($var)

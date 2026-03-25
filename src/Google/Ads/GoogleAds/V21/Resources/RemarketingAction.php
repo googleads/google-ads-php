@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A remarketing action. A snippet of JavaScript code that will collect the
@@ -62,7 +62,7 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
      *           The name of the remarketing action.
      *           This field is required and should not be empty when creating new
      *           remarketing actions.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\TagSnippet>|\Google\Protobuf\Internal\RepeatedField $tag_snippets
+     *     @type \Google\Ads\GoogleAds\V21\Common\TagSnippet[] $tag_snippets
      *           Output only. The snippets used for tracking remarketing actions.
      * }
      */
@@ -181,7 +181,7 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
      * Output only. The snippets used for tracking remarketing actions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.TagSnippet tag_snippets = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\TagSnippet>
      */
     public function getTagSnippets()
     {
@@ -192,7 +192,7 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
      * Output only. The snippets used for tracking remarketing actions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.TagSnippet tag_snippets = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\TagSnippet>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\TagSnippet[] $var
      * @return $this
      */
     public function setTagSnippets($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents a bidding seasonality adjustment. Cannot be used in manager
@@ -146,7 +146,7 @@ class BiddingSeasonalityAdjustment extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *           The description of the seasonality adjustment. The description can be at
      *           most 2048 characters.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $devices
+     *     @type int[] $devices
      *           If not specified, all devices will be included in this adjustment.
      *           Otherwise, only the specified targeted devices will be included in this
      *           adjustment.
@@ -154,13 +154,13 @@ class BiddingSeasonalityAdjustment extends \Google\Protobuf\Internal\Message
      *           Conversion rate modifier estimated based on expected conversion rate
      *           changes. When this field is unset or set to 1.0 no adjustment will be
      *           applied to traffic. The allowed range is 0.1 to 10.0.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $campaigns
+     *     @type string[] $campaigns
      *           The seasonality adjustment will apply to the campaigns listed when the
      *           scope of this adjustment is CAMPAIGN. The maximum number of campaigns per
      *           event is 2000.
      *           Note: a seasonality adjustment with both advertising_channel_types and
      *           campaign_ids is not supported.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $advertising_channel_types
+     *     @type int[] $advertising_channel_types
      *           The seasonality adjustment will apply to all the campaigns under the listed
      *           channels retroactively as well as going forward when the scope of this
      *           adjustment is CHANNEL.
@@ -408,7 +408,7 @@ class BiddingSeasonalityAdjustment extends \Google\Protobuf\Internal\Message
      * adjustment.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.DeviceEnum.Device devices = 9;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getDevices()
     {
@@ -421,7 +421,7 @@ class BiddingSeasonalityAdjustment extends \Google\Protobuf\Internal\Message
      * adjustment.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.DeviceEnum.Device devices = 9;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setDevices($var)
@@ -470,7 +470,7 @@ class BiddingSeasonalityAdjustment extends \Google\Protobuf\Internal\Message
      * campaign_ids is not supported.
      *
      * Generated from protobuf field <code>repeated string campaigns = 11 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getCampaigns()
     {
@@ -485,7 +485,7 @@ class BiddingSeasonalityAdjustment extends \Google\Protobuf\Internal\Message
      * campaign_ids is not supported.
      *
      * Generated from protobuf field <code>repeated string campaigns = 11 [(.google.api.resource_reference) = {</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setCampaigns($var)
@@ -505,7 +505,7 @@ class BiddingSeasonalityAdjustment extends \Google\Protobuf\Internal\Message
      * campaign_ids is not supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_types = 12;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getAdvertisingChannelTypes()
     {
@@ -521,7 +521,7 @@ class BiddingSeasonalityAdjustment extends \Google\Protobuf\Internal\Message
      * campaign_ids is not supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_types = 12;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setAdvertisingChannelTypes($var)

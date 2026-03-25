@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A dynamic hotels and rentals asset.
@@ -158,7 +158,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
      *           Star rating. Must be a number between 1 to 5, inclusive.
      *     @type string $category
      *           Category, for example, Hotel suite.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
+     *     @type string[] $contextual_keywords
      *           Contextual keywords, for example, Mountain View "Hotels", South Bay hotels.
      *     @type string $address
      *           Address which can be specified in one of the following formats.
@@ -180,7 +180,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
      *     @type string $formatted_sale_price
      *           Formatted sale price which can be any characters. If set, this attribute
      *           will be used instead of 'sale price', for example, On sale for $80.00.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_property_ids
+     *     @type string[] $similar_property_ids
      *           Similar property IDs.
      * }
      */
@@ -435,7 +435,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
      * Contextual keywords, for example, Mountain View "Hotels", South Bay hotels.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getContextualKeywords()
     {
@@ -446,7 +446,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
      * Contextual keywords, for example, Mountain View "Hotels", South Bay hotels.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 10;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setContextualKeywords($var)
@@ -633,7 +633,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
      * Similar property IDs.
      *
      * Generated from protobuf field <code>repeated string similar_property_ids = 17;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSimilarPropertyIds()
     {
@@ -644,7 +644,7 @@ class DynamicHotelsAndRentalsAsset extends \Google\Protobuf\Internal\Message
      * Similar property IDs.
      *
      * Generated from protobuf field <code>repeated string similar_property_ids = 17;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSimilarPropertyIds($var)

@@ -51,7 +51,7 @@ class CustomerNegativeCriterionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\MutateCustomerNegativeCriteriaRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\MutateCustomerNegativeCriteriaResponse>
      */
     public function MutateCustomerNegativeCriteria(\Google\Ads\GoogleAds\V20\Services\MutateCustomerNegativeCriteriaRequest $argument,
       $metadata = [], $options = []) {

@@ -77,6 +77,3 @@ class ListingGroupFilterProductCondition
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListingGroupFilterProductCondition::class, \Google\Ads\GoogleAds\V22\Enums\ListingGroupFilterProductConditionEnum_ListingGroupFilterProductCondition::class);
-

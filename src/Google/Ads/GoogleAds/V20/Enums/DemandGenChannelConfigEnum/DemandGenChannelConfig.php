@@ -70,6 +70,3 @@ class DemandGenChannelConfig
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DemandGenChannelConfig::class, \Google\Ads\GoogleAds\V20\Enums\DemandGenChannelConfigEnum_DemandGenChannelConfig::class);
-

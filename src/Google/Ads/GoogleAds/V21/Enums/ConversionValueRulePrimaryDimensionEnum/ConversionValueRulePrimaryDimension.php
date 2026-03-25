@@ -109,6 +109,3 @@ class ConversionValueRulePrimaryDimension
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionValueRulePrimaryDimension::class, \Google\Ads\GoogleAds\V21\Enums\ConversionValueRulePrimaryDimensionEnum_ConversionValueRulePrimaryDimension::class);
-

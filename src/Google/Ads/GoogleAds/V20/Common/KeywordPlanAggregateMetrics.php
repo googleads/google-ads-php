@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The aggregate metrics specification of the request.
@@ -28,7 +28,7 @@ class KeywordPlanAggregateMetrics extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $aggregate_metric_types
+     *     @type int[] $aggregate_metric_types
      *           The list of aggregate metrics to fetch data.
      * }
      */
@@ -41,7 +41,7 @@ class KeywordPlanAggregateMetrics extends \Google\Protobuf\Internal\Message
      * The list of aggregate metrics to fetch data.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.KeywordPlanAggregateMetricTypeEnum.KeywordPlanAggregateMetricType aggregate_metric_types = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getAggregateMetricTypes()
     {
@@ -52,7 +52,7 @@ class KeywordPlanAggregateMetrics extends \Google\Protobuf\Internal\Message
      * The list of aggregate metrics to fetch data.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.KeywordPlanAggregateMetricTypeEnum.KeywordPlanAggregateMetricType aggregate_metric_types = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setAggregateMetricTypes($var)

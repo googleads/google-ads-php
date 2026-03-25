@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An acquisition incentive offer for a user. An offer means how the user is

@@ -89,6 +89,3 @@ class ManagerLinkStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ManagerLinkStatus::class, \Google\Ads\GoogleAds\V21\Enums\ManagerLinkStatusEnum_ManagerLinkStatus::class);
-

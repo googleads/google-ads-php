@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A YouTube video list asset.
@@ -29,7 +29,7 @@ class YouTubeVideoListAsset extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $youtube_videos
+     *     @type \Google\Ads\GoogleAds\V22\Common\AdVideoAsset[] $youtube_videos
      *           List of videos. Each is a reference to a YouTube video asset. Minimum of 2
      *           videos required and maximum of 5 allowed.
      * }
@@ -44,7 +44,7 @@ class YouTubeVideoListAsset extends \Google\Protobuf\Internal\Message
      * videos required and maximum of 5 allowed.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdVideoAsset youtube_videos = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AdVideoAsset>
      */
     public function getYoutubeVideos()
     {
@@ -56,7 +56,7 @@ class YouTubeVideoListAsset extends \Google\Protobuf\Internal\Message
      * videos required and maximum of 5 allowed.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdVideoAsset youtube_videos = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AdVideoAsset[] $var
      * @return $this
      */
     public function setYoutubeVideos($var)

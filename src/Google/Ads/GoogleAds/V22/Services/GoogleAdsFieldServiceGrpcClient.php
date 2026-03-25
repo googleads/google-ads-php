@@ -47,7 +47,7 @@ class GoogleAdsFieldServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\GetGoogleAdsFieldRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Resources\GoogleAdsField>
      */
     public function GetGoogleAdsField(\Google\Ads\GoogleAds\V22\Services\GetGoogleAdsFieldRequest $argument,
       $metadata = [], $options = []) {
@@ -71,7 +71,7 @@ class GoogleAdsFieldServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsFieldsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsFieldsResponse>
      */
     public function SearchGoogleAdsFields(\Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsFieldsRequest $argument,
       $metadata = [], $options = []) {

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An ad group ad.
@@ -110,19 +110,19 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      *           Output only. Policy information for the ad.
      *     @type int $ad_strength
      *           Output only. Overall ad strength for this ad group ad.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $action_items
+     *     @type string[] $action_items
      *           Output only. A list of recommendations to improve the ad strength. For
      *           example, a recommendation could be "Try adding a few more unique headlines
      *           or unpinning some assets.".
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type string[] $labels
      *           Output only. The resource names of labels attached to this ad group ad.
      *     @type int $primary_status
      *           Output only. Provides aggregated view into why an ad group ad is not
      *           serving or not serving optimally.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $primary_status_reasons
+     *     @type int[] $primary_status_reasons
      *           Output only. Provides reasons for why an ad group ad is not serving or not
      *           serving optimally.
-     *     @type array<\Google\Ads\GoogleAds\V20\Resources\AdGroupAdAssetAutomationSetting>|\Google\Protobuf\Internal\RepeatedField $ad_group_ad_asset_automation_settings
+     *     @type \Google\Ads\GoogleAds\V20\Resources\AdGroupAdAssetAutomationSetting[] $ad_group_ad_asset_automation_settings
      *           Settings that control the types of asset automation. See the
      *           AssetAutomationTypeEnum documentation for the default opt in/out behavior
      *           of each type.
@@ -329,7 +329,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * or unpinning some assets.".
      *
      * Generated from protobuf field <code>repeated string action_items = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getActionItems()
     {
@@ -342,7 +342,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * or unpinning some assets.".
      *
      * Generated from protobuf field <code>repeated string action_items = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setActionItems($var)
@@ -357,7 +357,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * Output only. The resource names of labels attached to this ad group ad.
      *
      * Generated from protobuf field <code>repeated string labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLabels()
     {
@@ -368,7 +368,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * Output only. The resource names of labels attached to this ad group ad.
      *
      * Generated from protobuf field <code>repeated string labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLabels($var)
@@ -412,7 +412,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * serving optimally.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AdGroupAdPrimaryStatusReasonEnum.AdGroupAdPrimaryStatusReason primary_status_reasons = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getPrimaryStatusReasons()
     {
@@ -424,7 +424,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * serving optimally.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AdGroupAdPrimaryStatusReasonEnum.AdGroupAdPrimaryStatusReason primary_status_reasons = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setPrimaryStatusReasons($var)
@@ -441,7 +441,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * of each type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.AdGroupAdAssetAutomationSetting ad_group_ad_asset_automation_settings = 18;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Resources\AdGroupAdAssetAutomationSetting>
      */
     public function getAdGroupAdAssetAutomationSettings()
     {
@@ -454,7 +454,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * of each type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.AdGroupAdAssetAutomationSetting ad_group_ad_asset_automation_settings = 18;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Resources\AdGroupAdAssetAutomationSetting>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Resources\AdGroupAdAssetAutomationSetting[] $var
      * @return $this
      */
     public function setAdGroupAdAssetAutomationSettings($var)

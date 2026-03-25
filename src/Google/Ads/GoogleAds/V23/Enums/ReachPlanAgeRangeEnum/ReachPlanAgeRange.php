@@ -74,6 +74,36 @@ class ReachPlanAgeRange
      */
     const AGE_RANGE_21_34 = 8;
     /**
+     * Between 21 and 44 years old.
+     *
+     * Generated from protobuf enum <code>AGE_RANGE_21_44 = 22;</code>
+     */
+    const AGE_RANGE_21_44 = 22;
+    /**
+     * Between 21 and 49 years old.
+     *
+     * Generated from protobuf enum <code>AGE_RANGE_21_49 = 23;</code>
+     */
+    const AGE_RANGE_21_49 = 23;
+    /**
+     * Between 21 and 54 years old.
+     *
+     * Generated from protobuf enum <code>AGE_RANGE_21_54 = 24;</code>
+     */
+    const AGE_RANGE_21_54 = 24;
+    /**
+     * Between 21 and 64 years old.
+     *
+     * Generated from protobuf enum <code>AGE_RANGE_21_64 = 25;</code>
+     */
+    const AGE_RANGE_21_64 = 25;
+    /**
+     * Between 21 and 65+ years old.
+     *
+     * Generated from protobuf enum <code>AGE_RANGE_21_65_UP = 26;</code>
+     */
+    const AGE_RANGE_21_65_UP = 26;
+    /**
      * Between 25 and 34 years old.
      *
      * Generated from protobuf enum <code>AGE_RANGE_25_34 = 503002;</code>
@@ -193,6 +223,11 @@ class ReachPlanAgeRange
         self::AGE_RANGE_18_64 => 'AGE_RANGE_18_64',
         self::AGE_RANGE_18_65_UP => 'AGE_RANGE_18_65_UP',
         self::AGE_RANGE_21_34 => 'AGE_RANGE_21_34',
+        self::AGE_RANGE_21_44 => 'AGE_RANGE_21_44',
+        self::AGE_RANGE_21_49 => 'AGE_RANGE_21_49',
+        self::AGE_RANGE_21_54 => 'AGE_RANGE_21_54',
+        self::AGE_RANGE_21_64 => 'AGE_RANGE_21_64',
+        self::AGE_RANGE_21_65_UP => 'AGE_RANGE_21_65_UP',
         self::AGE_RANGE_25_34 => 'AGE_RANGE_25_34',
         self::AGE_RANGE_25_44 => 'AGE_RANGE_25_44',
         self::AGE_RANGE_25_49 => 'AGE_RANGE_25_49',
@@ -233,7 +268,4 @@ class ReachPlanAgeRange
         return constant($const);
     }
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ReachPlanAgeRange::class, \Google\Ads\GoogleAds\V23\Enums\ReachPlanAgeRangeEnum_ReachPlanAgeRange::class);
 

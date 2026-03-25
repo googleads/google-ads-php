@@ -61,6 +61,3 @@ class BenchmarksError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BenchmarksError::class, \Google\Ads\GoogleAds\V23\Errors\BenchmarksErrorEnum_BenchmarksError::class);
-

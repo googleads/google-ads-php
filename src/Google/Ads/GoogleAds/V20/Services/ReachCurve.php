@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The reach curve for the planned products.
@@ -28,7 +28,7 @@ class ReachCurve extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\ReachForecast>|\Google\Protobuf\Internal\RepeatedField $reach_forecasts
+     *     @type \Google\Ads\GoogleAds\V20\Services\ReachForecast[] $reach_forecasts
      *           All points on the reach curve.
      * }
      */
@@ -41,7 +41,7 @@ class ReachCurve extends \Google\Protobuf\Internal\Message
      * All points on the reach curve.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.ReachForecast reach_forecasts = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\ReachForecast>
      */
     public function getReachForecasts()
     {
@@ -52,7 +52,7 @@ class ReachCurve extends \Google\Protobuf\Internal\Message
      * All points on the reach curve.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.ReachForecast reach_forecasts = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\ReachForecast>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\ReachForecast[] $var
      * @return $this
      */
     public function setReachForecasts($var)

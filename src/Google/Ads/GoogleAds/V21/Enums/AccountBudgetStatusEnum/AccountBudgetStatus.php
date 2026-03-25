@@ -73,6 +73,3 @@ class AccountBudgetStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AccountBudgetStatus::class, \Google\Ads\GoogleAds\V21\Enums\AccountBudgetStatusEnum_AccountBudgetStatus::class);
-

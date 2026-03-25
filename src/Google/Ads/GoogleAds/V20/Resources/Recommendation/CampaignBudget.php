@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A campaign budget shared amongst various budget recommendation types.
@@ -144,7 +144,4 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CampaignBudget::class, \Google\Ads\GoogleAds\V20\Resources\Recommendation_CampaignBudget::class);
 

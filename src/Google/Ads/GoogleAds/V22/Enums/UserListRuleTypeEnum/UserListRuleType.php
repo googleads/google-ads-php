@@ -66,6 +66,3 @@ class UserListRuleType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(UserListRuleType::class, \Google\Ads\GoogleAds\V22\Enums\UserListRuleTypeEnum_UserListRuleType::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Wrapper for multiple maps location sync data
@@ -28,7 +28,7 @@ class MapsLocationSet extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\MapsLocationInfo>|\Google\Protobuf\Internal\RepeatedField $maps_locations
+     *     @type \Google\Ads\GoogleAds\V20\Common\MapsLocationInfo[] $maps_locations
      *           Required. A list of maps location info that user manually synced in.
      * }
      */
@@ -41,7 +41,7 @@ class MapsLocationSet extends \Google\Protobuf\Internal\Message
      * Required. A list of maps location info that user manually synced in.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.MapsLocationInfo maps_locations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\MapsLocationInfo>
      */
     public function getMapsLocations()
     {
@@ -52,7 +52,7 @@ class MapsLocationSet extends \Google\Protobuf\Internal\Message
      * Required. A list of maps location info that user manually synced in.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.MapsLocationInfo maps_locations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\MapsLocationInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\MapsLocationInfo[] $var
      * @return $this
      */
     public function setMapsLocations($var)

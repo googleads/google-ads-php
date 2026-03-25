@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Information of brand suggestion.
@@ -50,7 +50,7 @@ class BrandSuggestion extends \Google\Protobuf\Internal\Message
      *           Id for the brand. It would be CKG MID for verified/global scoped brands.
      *     @type string $name
      *           Name of the brand.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $urls
+     *     @type string[] $urls
      *           Urls which uniquely identify the brand.
      *     @type int $state
      *           Current state of the brand.
@@ -117,7 +117,7 @@ class BrandSuggestion extends \Google\Protobuf\Internal\Message
      * Urls which uniquely identify the brand.
      *
      * Generated from protobuf field <code>repeated string urls = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getUrls()
     {
@@ -128,7 +128,7 @@ class BrandSuggestion extends \Google\Protobuf\Internal\Message
      * Urls which uniquely identify the brand.
      *
      * Generated from protobuf field <code>repeated string urls = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setUrls($var)

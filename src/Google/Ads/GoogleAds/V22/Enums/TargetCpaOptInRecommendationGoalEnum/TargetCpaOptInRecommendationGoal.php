@@ -81,6 +81,3 @@ class TargetCpaOptInRecommendationGoal
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TargetCpaOptInRecommendationGoal::class, \Google\Ads\GoogleAds\V22\Enums\TargetCpaOptInRecommendationGoalEnum_TargetCpaOptInRecommendationGoal::class);
-

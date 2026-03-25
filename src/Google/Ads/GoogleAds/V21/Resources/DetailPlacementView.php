@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A view with metrics aggregated by ad group and URL or YouTube video.

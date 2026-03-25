@@ -68,6 +68,3 @@ class AssetAutomationStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetAutomationStatus::class, \Google\Ads\GoogleAds\V20\Enums\AssetAutomationStatusEnum_AssetAutomationStatus::class);
-

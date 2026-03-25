@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A container for simulation points for simulations of type TARGET_CPA.
@@ -28,7 +28,7 @@ class TargetCpaSimulationPointList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\TargetCpaSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $points
+     *     @type \Google\Ads\GoogleAds\V22\Common\TargetCpaSimulationPoint[] $points
      *           Projected metrics for a series of target CPA amounts.
      * }
      */
@@ -41,7 +41,7 @@ class TargetCpaSimulationPointList extends \Google\Protobuf\Internal\Message
      * Projected metrics for a series of target CPA amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.TargetCpaSimulationPoint points = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\TargetCpaSimulationPoint>
      */
     public function getPoints()
     {
@@ -52,7 +52,7 @@ class TargetCpaSimulationPointList extends \Google\Protobuf\Internal\Message
      * Projected metrics for a series of target CPA amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.TargetCpaSimulationPoint points = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\TargetCpaSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\TargetCpaSimulationPoint[] $var
      * @return $this
      */
     public function setPoints($var)

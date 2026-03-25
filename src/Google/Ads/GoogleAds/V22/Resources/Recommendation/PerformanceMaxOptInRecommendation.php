@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The Performance Max Opt In recommendation.
@@ -30,7 +30,4 @@ class PerformanceMaxOptInRecommendation extends \Google\Protobuf\Internal\Messag
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PerformanceMaxOptInRecommendation::class, \Google\Ads\GoogleAds\V22\Resources\Recommendation_PerformanceMaxOptInRecommendation::class);
 

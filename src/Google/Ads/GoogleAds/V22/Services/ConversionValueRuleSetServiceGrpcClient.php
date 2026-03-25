@@ -40,7 +40,7 @@ class ConversionValueRuleSetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateConversionValueRuleSetsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateConversionValueRuleSetsResponse>
      */
     public function MutateConversionValueRuleSets(\Google\Ads\GoogleAds\V22\Services\MutateConversionValueRuleSetsRequest $argument,
       $metadata = [], $options = []) {

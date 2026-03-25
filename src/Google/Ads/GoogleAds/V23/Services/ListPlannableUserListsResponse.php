@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A response with all available user lists with their plannable status.
@@ -29,7 +29,7 @@ class ListPlannableUserListsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\PlannableUserList>|\Google\Protobuf\Internal\RepeatedField $plannable_user_lists
+     *     @type \Google\Ads\GoogleAds\V23\Services\PlannableUserList[] $plannable_user_lists
      *           The list of user lists available for planning and related targeting
      *           metadata.
      * }
@@ -44,7 +44,7 @@ class ListPlannableUserListsResponse extends \Google\Protobuf\Internal\Message
      * metadata.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.PlannableUserList plannable_user_lists = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\PlannableUserList>
      */
     public function getPlannableUserLists()
     {
@@ -56,7 +56,7 @@ class ListPlannableUserListsResponse extends \Google\Protobuf\Internal\Message
      * metadata.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.PlannableUserList plannable_user_lists = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\PlannableUserList>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\PlannableUserList[] $var
      * @return $this
      */
     public function setPlannableUserLists($var)

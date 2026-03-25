@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Forecasted traffic metrics for a planned product.
@@ -115,6 +115,15 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional int64 trueview_views = 13;</code>
      */
     protected $trueview_views = null;
+    /**
+     * The number of clicks, which is the main user action associated with an ad
+     * format of bid type CPC (Cost-Per-Click).
+     * See https://support.google.com/google-ads/answer/31799 for more
+     * information on clicks.
+     *
+     * Generated from protobuf field <code>optional int64 clicks = 14;</code>
+     */
+    protected $clicks = null;
 
     /**
      * Constructor.
@@ -174,6 +183,11 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
      *           entirety of an ad beyond an impression.
      *           See https://support.google.com/google-ads/answer/2375431 for
      *           more information on TrueView Views.
+     *     @type int|string $clicks
+     *           The number of clicks, which is the main user action associated with an ad
+     *           format of bid type CPC (Cost-Per-Click).
+     *           See https://support.google.com/google-ads/answer/31799 for more
+     *           information on clicks.
      * }
      */
     public function __construct($data = NULL) {
@@ -625,6 +639,48 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->trueview_views = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of clicks, which is the main user action associated with an ad
+     * format of bid type CPC (Cost-Per-Click).
+     * See https://support.google.com/google-ads/answer/31799 for more
+     * information on clicks.
+     *
+     * Generated from protobuf field <code>optional int64 clicks = 14;</code>
+     * @return int|string
+     */
+    public function getClicks()
+    {
+        return isset($this->clicks) ? $this->clicks : 0;
+    }
+
+    public function hasClicks()
+    {
+        return isset($this->clicks);
+    }
+
+    public function clearClicks()
+    {
+        unset($this->clicks);
+    }
+
+    /**
+     * The number of clicks, which is the main user action associated with an ad
+     * format of bid type CPC (Cost-Per-Click).
+     * See https://support.google.com/google-ads/answer/31799 for more
+     * information on clicks.
+     *
+     * Generated from protobuf field <code>optional int64 clicks = 14;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setClicks($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->clicks = $var;
 
         return $this;
     }

@@ -63,7 +63,7 @@ class CampaignSharedSetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\MutateCampaignSharedSetsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\MutateCampaignSharedSetsResponse>
      */
     public function MutateCampaignSharedSets(\Google\Ads\GoogleAds\V20\Services\MutateCampaignSharedSetsRequest $argument,
       $metadata = [], $options = []) {

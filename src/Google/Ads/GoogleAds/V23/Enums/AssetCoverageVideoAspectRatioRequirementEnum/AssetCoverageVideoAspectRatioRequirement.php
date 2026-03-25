@@ -73,6 +73,3 @@ class AssetCoverageVideoAspectRatioRequirement
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetCoverageVideoAspectRatioRequirement::class, \Google\Ads\GoogleAds\V23\Enums\AssetCoverageVideoAspectRatioRequirementEnum_AssetCoverageVideoAspectRatioRequirement::class);
-

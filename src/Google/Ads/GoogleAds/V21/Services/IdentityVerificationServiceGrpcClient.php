@@ -48,7 +48,7 @@ class IdentityVerificationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\StartIdentityVerificationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function StartIdentityVerification(\Google\Ads\GoogleAds\V21\Services\StartIdentityVerificationRequest $argument,
       $metadata = [], $options = []) {
@@ -71,7 +71,7 @@ class IdentityVerificationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\GetIdentityVerificationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\GetIdentityVerificationResponse>
      */
     public function GetIdentityVerification(\Google\Ads\GoogleAds\V21\Services\GetIdentityVerificationRequest $argument,
       $metadata = [], $options = []) {

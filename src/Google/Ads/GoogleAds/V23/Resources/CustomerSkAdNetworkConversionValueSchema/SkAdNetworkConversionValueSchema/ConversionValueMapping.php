@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents mapping from one conversion value to one or more conversion
@@ -50,7 +50,7 @@ class ConversionValueMapping extends \Google\Protobuf\Internal\Message
      *     @type int|string $max_time_post_install_hours
      *           Output only. The maximum of the time range in which a user was last
      *           active during the measurement window.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\Event>|\Google\Protobuf\Internal\RepeatedField $mapped_events
+     *     @type \Google\Ads\GoogleAds\V23\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\Event[] $mapped_events
      *           Output only. The conversion value may be mapped to multiple events with
      *           various attributes.
      * }
@@ -121,7 +121,7 @@ class ConversionValueMapping extends \Google\Protobuf\Internal\Message
      * various attributes.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event mapped_events = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\Event>
      */
     public function getMappedEvents()
     {
@@ -133,7 +133,7 @@ class ConversionValueMapping extends \Google\Protobuf\Internal\Message
      * various attributes.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event mapped_events = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\Event>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\Event[] $var
      * @return $this
      */
     public function setMappedEvents($var)
@@ -145,7 +145,4 @@ class ConversionValueMapping extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionValueMapping::class, \Google\Ads\GoogleAds\V23\Resources\CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_ConversionValueMapping::class);
 

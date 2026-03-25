@@ -110,6 +110,3 @@ class FeedItemTargetError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(FeedItemTargetError::class, \Google\Ads\GoogleAds\V20\Errors\FeedItemTargetErrorEnum_FeedItemTargetError::class);
-

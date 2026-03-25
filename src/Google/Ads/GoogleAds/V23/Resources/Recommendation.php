@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A recommendation.
@@ -146,7 +146,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           RESPONSIVE_SEARCH_AD_ASSET, TEXT_AD
      *     @type bool $dismissed
      *           Output only. Whether the recommendation is dismissed or not.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $campaigns
+     *     @type string[] $campaigns
      *           Output only. The campaigns targeted by this recommendation.
      *           This field will be set for the following recommendation types:
      *           CAMPAIGN_BUDGET, FORECASTING_CAMPAIGN_BUDGET,
@@ -572,7 +572,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * MARGINAL_ROI_CAMPAIGN_BUDGET and MOVE_UNUSED_BUDGET
      *
      * Generated from protobuf field <code>repeated string campaigns = 38 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getCampaigns()
     {
@@ -586,7 +586,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * MARGINAL_ROI_CAMPAIGN_BUDGET and MOVE_UNUSED_BUDGET
      *
      * Generated from protobuf field <code>repeated string campaigns = 38 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setCampaigns($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services\ApplyRecommendationOperation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Parameters to use when applying sitelink recommendation.
@@ -28,7 +28,7 @@ class SitelinkExtensionParameters extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\SitelinkFeedItem>|\Google\Protobuf\Internal\RepeatedField $sitelink_extensions
+     *     @type \Google\Ads\GoogleAds\V23\Common\SitelinkFeedItem[] $sitelink_extensions
      *           Sitelinks to be added. This is a required field.
      * }
      */
@@ -41,7 +41,7 @@ class SitelinkExtensionParameters extends \Google\Protobuf\Internal\Message
      * Sitelinks to be added. This is a required field.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.SitelinkFeedItem sitelink_extensions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\SitelinkFeedItem>
      */
     public function getSitelinkExtensions()
     {
@@ -52,7 +52,7 @@ class SitelinkExtensionParameters extends \Google\Protobuf\Internal\Message
      * Sitelinks to be added. This is a required field.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.SitelinkFeedItem sitelink_extensions = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\SitelinkFeedItem>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\SitelinkFeedItem[] $var
      * @return $this
      */
     public function setSitelinkExtensions($var)
@@ -64,7 +64,4 @@ class SitelinkExtensionParameters extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SitelinkExtensionParameters::class, \Google\Ads\GoogleAds\V23\Services\ApplyRecommendationOperation_SitelinkExtensionParameters::class);
 

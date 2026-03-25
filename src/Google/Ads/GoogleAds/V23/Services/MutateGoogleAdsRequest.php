@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -38,8 +38,8 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $partial_failure = false;
     /**
-     * If true, the request is validated but not executed. Only errors are
-     * returned, not results.
+     * If true, the request is validated but not executed. Mutates only return
+     * errors, not results. Actions return results and errors.
      *
      * Generated from protobuf field <code>bool validate_only = 4;</code>
      */
@@ -77,7 +77,7 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer whose resources are being modified.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\MutateOperation>|\Google\Protobuf\Internal\RepeatedField $mutate_operations
+     *     @type \Google\Ads\GoogleAds\V23\Services\MutateOperation[] $mutate_operations
      *           Required. The list of operations to perform on individual resources.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -85,8 +85,8 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      *           out in one transaction if and only if they are all valid.
      *           Default is false.
      *     @type bool $validate_only
-     *           If true, the request is validated but not executed. Only errors are
-     *           returned, not results.
+     *           If true, the request is validated but not executed. Mutates only return
+     *           errors, not results. Actions return results and errors.
      *     @type int $response_content_type
      *           The response content type setting. Determines whether the mutable resource
      *           or just the resource name should be returned post mutation. The mutable
@@ -129,7 +129,7 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      * Required. The list of operations to perform on individual resources.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.MutateOperation mutate_operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\MutateOperation>
      */
     public function getMutateOperations()
     {
@@ -140,7 +140,7 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      * Required. The list of operations to perform on individual resources.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.MutateOperation mutate_operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\MutateOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\MutateOperation[] $var
      * @return $this
      */
     public function setMutateOperations($var)
@@ -184,8 +184,8 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If true, the request is validated but not executed. Only errors are
-     * returned, not results.
+     * If true, the request is validated but not executed. Mutates only return
+     * errors, not results. Actions return results and errors.
      *
      * Generated from protobuf field <code>bool validate_only = 4;</code>
      * @return bool
@@ -196,8 +196,8 @@ class MutateGoogleAdsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If true, the request is validated but not executed. Only errors are
-     * returned, not results.
+     * If true, the request is validated but not executed. Mutates only return
+     * errors, not results. Actions return results and errors.
      *
      * Generated from protobuf field <code>bool validate_only = 4;</code>
      * @param bool $var

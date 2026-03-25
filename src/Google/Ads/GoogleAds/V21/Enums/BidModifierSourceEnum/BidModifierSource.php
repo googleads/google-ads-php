@@ -67,6 +67,3 @@ class BidModifierSource
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BidModifierSource::class, \Google\Ads\GoogleAds\V21\Enums\BidModifierSourceEnum_BidModifierSource::class);
-

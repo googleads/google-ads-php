@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -80,7 +80,7 @@ class MutateAdGroupCriterionCustomizersRequest extends \Google\Protobuf\Internal
      *     @type string $customer_id
      *           Required. The ID of the customer whose ad group criterion customizers are
      *           being modified.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\AdGroupCriterionCustomizerOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V22\Services\AdGroupCriterionCustomizerOperation[] $operations
      *           Required. The list of operations to perform on individual ad group
      *           criterion customizers.
      *     @type bool $partial_failure
@@ -134,7 +134,7 @@ class MutateAdGroupCriterionCustomizersRequest extends \Google\Protobuf\Internal
      * criterion customizers.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.AdGroupCriterionCustomizerOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\AdGroupCriterionCustomizerOperation>
      */
     public function getOperations()
     {
@@ -146,7 +146,7 @@ class MutateAdGroupCriterionCustomizersRequest extends \Google\Protobuf\Internal
      * criterion customizers.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.AdGroupCriterionCustomizerOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\AdGroupCriterionCustomizerOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\AdGroupCriterionCustomizerOperation[] $var
      * @return $this
      */
     public function setOperations($var)

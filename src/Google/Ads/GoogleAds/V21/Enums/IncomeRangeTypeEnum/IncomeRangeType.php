@@ -101,6 +101,3 @@ class IncomeRangeType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(IncomeRangeType::class, \Google\Ads\GoogleAds\V21\Enums\IncomeRangeTypeEnum_IncomeRangeType::class);
-

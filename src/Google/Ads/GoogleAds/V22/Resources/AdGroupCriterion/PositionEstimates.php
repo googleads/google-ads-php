@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\AdGroupCriterion;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Estimates for criterion bids at various positions.
@@ -270,7 +270,4 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PositionEstimates::class, \Google\Ads\GoogleAds\V22\Resources\AdGroupCriterion_PositionEstimates::class);
 

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class RemoveYouTubeVideoUploadResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $resource_names
+     *     @type string[] $resource_names
      *           The resource names of the successfully removed YouTube video uploads.
      * }
      */
@@ -42,7 +42,7 @@ class RemoveYouTubeVideoUploadResponse extends \Google\Protobuf\Internal\Message
      * The resource names of the successfully removed YouTube video uploads.
      *
      * Generated from protobuf field <code>repeated string resource_names = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getResourceNames()
     {
@@ -53,7 +53,7 @@ class RemoveYouTubeVideoUploadResponse extends \Google\Protobuf\Internal\Message
      * The resource names of the successfully removed YouTube video uploads.
      *
      * Generated from protobuf field <code>repeated string resource_names = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setResourceNames($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The improve Demand Gen ad strength recommendation.
@@ -44,7 +44,7 @@ class ImproveDemandGenAdStrengthRecommendation extends \Google\Protobuf\Internal
      *           Output only. The resource name of the ad that can be improved.
      *     @type int $ad_strength
      *           Output only. The current ad strength.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $demand_gen_asset_action_items
+     *     @type string[] $demand_gen_asset_action_items
      *           Output only. A list of recommendations to improve the ad strength.
      * }
      */
@@ -109,7 +109,7 @@ class ImproveDemandGenAdStrengthRecommendation extends \Google\Protobuf\Internal
      * Output only. A list of recommendations to improve the ad strength.
      *
      * Generated from protobuf field <code>repeated string demand_gen_asset_action_items = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getDemandGenAssetActionItems()
     {
@@ -120,7 +120,7 @@ class ImproveDemandGenAdStrengthRecommendation extends \Google\Protobuf\Internal
      * Output only. A list of recommendations to improve the ad strength.
      *
      * Generated from protobuf field <code>repeated string demand_gen_asset_action_items = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setDemandGenAssetActionItems($var)
@@ -132,7 +132,4 @@ class ImproveDemandGenAdStrengthRecommendation extends \Google\Protobuf\Internal
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ImproveDemandGenAdStrengthRecommendation::class, \Google\Ads\GoogleAds\V21\Resources\Recommendation_ImproveDemandGenAdStrengthRecommendation::class);
 

@@ -234,6 +234,3 @@ class ReachPlanAgeRange
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ReachPlanAgeRange::class, \Google\Ads\GoogleAds\V21\Enums\ReachPlanAgeRangeEnum_ReachPlanAgeRange::class);
-

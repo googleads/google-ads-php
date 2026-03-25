@@ -379,6 +379,3 @@ class ConversionOrAdjustmentLagBucket
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionOrAdjustmentLagBucket::class, \Google\Ads\GoogleAds\V20\Enums\ConversionOrAdjustmentLagBucketEnum_ConversionOrAdjustmentLagBucket::class);
-

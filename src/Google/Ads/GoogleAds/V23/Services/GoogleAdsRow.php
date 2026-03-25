@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A returned row from the query.
@@ -57,6 +57,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v23.resources.AdGroupAdAssetCombinationView ad_group_ad_asset_combination_view = 193;</code>
      */
     protected $ad_group_ad_asset_combination_view = null;
+    /**
+     * The app top combination view in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.AppTopCombinationView app_top_combination_view = 247;</code>
+     */
+    protected $app_top_combination_view = null;
     /**
      * The ad group ad asset view in the query.
      *
@@ -1036,6 +1042,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $video = null;
     /**
+     * The video enhancement referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.VideoEnhancement video_enhancement = 250;</code>
+     */
+    protected $video_enhancement = null;
+    /**
      * The webpage view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.resources.WebpageView webpage_view = 162;</code>
@@ -1122,6 +1134,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The ad referenced in the query.
      *     @type \Google\Ads\GoogleAds\V23\Resources\AdGroupAdAssetCombinationView $ad_group_ad_asset_combination_view
      *           The ad group ad asset combination view in the query.
+     *     @type \Google\Ads\GoogleAds\V23\Resources\AppTopCombinationView $app_top_combination_view
+     *           The app top combination view in the query.
      *     @type \Google\Ads\GoogleAds\V23\Resources\AdGroupAdAssetView $ad_group_ad_asset_view
      *           The ad group ad asset view in the query.
      *     @type \Google\Ads\GoogleAds\V23\Resources\AdGroupAdLabel $ad_group_ad_label
@@ -1448,6 +1462,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The topic constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V23\Resources\Video $video
      *           The video referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V23\Resources\VideoEnhancement $video_enhancement
+     *           The video enhancement referenced in the query.
      *     @type \Google\Ads\GoogleAds\V23\Resources\WebpageView $webpage_view
      *           The webpage view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V23\Resources\LeadFormSubmissionData $lead_form_submission_data
@@ -1725,6 +1741,42 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Resources\AdGroupAdAssetCombinationView::class);
         $this->ad_group_ad_asset_combination_view = $var;
+
+        return $this;
+    }
+
+    /**
+     * The app top combination view in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.AppTopCombinationView app_top_combination_view = 247;</code>
+     * @return \Google\Ads\GoogleAds\V23\Resources\AppTopCombinationView|null
+     */
+    public function getAppTopCombinationView()
+    {
+        return $this->app_top_combination_view;
+    }
+
+    public function hasAppTopCombinationView()
+    {
+        return isset($this->app_top_combination_view);
+    }
+
+    public function clearAppTopCombinationView()
+    {
+        unset($this->app_top_combination_view);
+    }
+
+    /**
+     * The app top combination view in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.AppTopCombinationView app_top_combination_view = 247;</code>
+     * @param \Google\Ads\GoogleAds\V23\Resources\AppTopCombinationView $var
+     * @return $this
+     */
+    public function setAppTopCombinationView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Resources\AppTopCombinationView::class);
+        $this->app_top_combination_view = $var;
 
         return $this;
     }
@@ -7593,6 +7645,42 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Resources\Video::class);
         $this->video = $var;
+
+        return $this;
+    }
+
+    /**
+     * The video enhancement referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.VideoEnhancement video_enhancement = 250;</code>
+     * @return \Google\Ads\GoogleAds\V23\Resources\VideoEnhancement|null
+     */
+    public function getVideoEnhancement()
+    {
+        return $this->video_enhancement;
+    }
+
+    public function hasVideoEnhancement()
+    {
+        return isset($this->video_enhancement);
+    }
+
+    public function clearVideoEnhancement()
+    {
+        unset($this->video_enhancement);
+    }
+
+    /**
+     * The video enhancement referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.resources.VideoEnhancement video_enhancement = 250;</code>
+     * @param \Google\Ads\GoogleAds\V23\Resources\VideoEnhancement $var
+     * @return $this
+     */
+    public function setVideoEnhancement($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Resources\VideoEnhancement::class);
+        $this->video_enhancement = $var;
 
         return $this;
     }

@@ -215,6 +215,3 @@ class AuthenticationError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AuthenticationError::class, \Google\Ads\GoogleAds\V21\Errors\AuthenticationErrorEnum_AuthenticationError::class);
-

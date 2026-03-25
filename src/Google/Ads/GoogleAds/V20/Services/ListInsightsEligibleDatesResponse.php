@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -39,7 +39,7 @@ class ListInsightsEligibleDatesResponse extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $data_months
+     *     @type string[] $data_months
      *           The months for which AudienceInsights data is currently
      *           available, each represented as a string in the form "YYYY-MM".
      *     @type \Google\Ads\GoogleAds\V20\Common\DateRange $last_thirty_days
@@ -59,7 +59,7 @@ class ListInsightsEligibleDatesResponse extends \Google\Protobuf\Internal\Messag
      * available, each represented as a string in the form "YYYY-MM".
      *
      * Generated from protobuf field <code>repeated string data_months = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getDataMonths()
     {
@@ -71,7 +71,7 @@ class ListInsightsEligibleDatesResponse extends \Google\Protobuf\Internal\Messag
      * available, each represented as a string in the form "YYYY-MM".
      *
      * Generated from protobuf field <code>repeated string data_months = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setDataMonths($var)

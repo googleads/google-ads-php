@@ -74,6 +74,3 @@ class PolicyTopicEvidenceDestinationNotWorkingDevice
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PolicyTopicEvidenceDestinationNotWorkingDevice::class, \Google\Ads\GoogleAds\V20\Enums\PolicyTopicEvidenceDestinationNotWorkingDeviceEnum_PolicyTopicEvidenceDestinationNotWorkingDevice::class);
-

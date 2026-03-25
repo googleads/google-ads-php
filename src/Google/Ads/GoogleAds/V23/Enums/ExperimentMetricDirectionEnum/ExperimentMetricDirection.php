@@ -89,6 +89,3 @@ class ExperimentMetricDirection
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ExperimentMetricDirection::class, \Google\Ads\GoogleAds\V23\Enums\ExperimentMetricDirectionEnum_ExperimentMetricDirection::class);
-

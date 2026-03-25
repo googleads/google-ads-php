@@ -51,7 +51,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\GenerateInsightsFinderReportRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\GenerateInsightsFinderReportResponse>
      */
     public function GenerateInsightsFinderReport(\Google\Ads\GoogleAds\V22\Services\GenerateInsightsFinderReportRequest $argument,
       $metadata = [], $options = []) {
@@ -76,7 +76,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\ListAudienceInsightsAttributesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\ListAudienceInsightsAttributesResponse>
      */
     public function ListAudienceInsightsAttributes(\Google\Ads\GoogleAds\V22\Services\ListAudienceInsightsAttributesRequest $argument,
       $metadata = [], $options = []) {
@@ -101,7 +101,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\ListInsightsEligibleDatesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\ListInsightsEligibleDatesResponse>
      */
     public function ListInsightsEligibleDates(\Google\Ads\GoogleAds\V22\Services\ListInsightsEligibleDatesRequest $argument,
       $metadata = [], $options = []) {
@@ -129,7 +129,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\GenerateAudienceCompositionInsightsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\GenerateAudienceCompositionInsightsResponse>
      */
     public function GenerateAudienceCompositionInsights(\Google\Ads\GoogleAds\V22\Services\GenerateAudienceCompositionInsightsRequest $argument,
       $metadata = [], $options = []) {
@@ -156,7 +156,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\GenerateSuggestedTargetingInsightsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\GenerateSuggestedTargetingInsightsResponse>
      */
     public function GenerateSuggestedTargetingInsights(\Google\Ads\GoogleAds\V22\Services\GenerateSuggestedTargetingInsightsRequest $argument,
       $metadata = [], $options = []) {
@@ -184,7 +184,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\GenerateAudienceOverlapInsightsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\GenerateAudienceOverlapInsightsResponse>
      */
     public function GenerateAudienceOverlapInsights(\Google\Ads\GoogleAds\V22\Services\GenerateAudienceOverlapInsightsRequest $argument,
       $metadata = [], $options = []) {
@@ -213,7 +213,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\GenerateTargetingSuggestionMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\GenerateTargetingSuggestionMetricsResponse>
      */
     public function GenerateTargetingSuggestionMetrics(\Google\Ads\GoogleAds\V22\Services\GenerateTargetingSuggestionMetricsRequest $argument,
       $metadata = [], $options = []) {

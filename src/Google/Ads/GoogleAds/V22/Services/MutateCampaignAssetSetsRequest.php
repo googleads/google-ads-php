@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -80,7 +80,7 @@ class MutateCampaignAssetSetsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $customer_id
      *           Required. The ID of the customer whose campaign asset sets are being
      *           modified.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\CampaignAssetSetOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V22\Services\CampaignAssetSetOperation[] $operations
      *           Required. The list of operations to perform on individual campaign asset
      *           sets.
      *     @type bool $partial_failure
@@ -134,7 +134,7 @@ class MutateCampaignAssetSetsRequest extends \Google\Protobuf\Internal\Message
      * sets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.CampaignAssetSetOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\CampaignAssetSetOperation>
      */
     public function getOperations()
     {
@@ -146,7 +146,7 @@ class MutateCampaignAssetSetsRequest extends \Google\Protobuf\Internal\Message
      * sets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.CampaignAssetSetOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\CampaignAssetSetOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\CampaignAssetSetOperation[] $var
      * @return $this
      */
     public function setOperations($var)

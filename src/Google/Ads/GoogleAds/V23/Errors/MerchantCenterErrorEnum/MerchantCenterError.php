@@ -66,6 +66,3 @@ class MerchantCenterError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MerchantCenterError::class, \Google\Ads\GoogleAds\V23\Errors\MerchantCenterErrorEnum_MerchantCenterError::class);
-

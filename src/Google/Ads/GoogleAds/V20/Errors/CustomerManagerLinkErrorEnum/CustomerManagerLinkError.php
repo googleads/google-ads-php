@@ -119,6 +119,3 @@ class CustomerManagerLinkError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomerManagerLinkError::class, \Google\Ads\GoogleAds\V20\Errors\CustomerManagerLinkErrorEnum_CustomerManagerLinkError::class);
-

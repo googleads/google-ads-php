@@ -37,7 +37,7 @@ class IncentiveServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\FetchIncentiveRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\FetchIncentiveResponse>
      */
     public function FetchIncentive(\Google\Ads\GoogleAds\V23\Services\FetchIncentiveRequest $argument,
       $metadata = [], $options = []) {
@@ -52,7 +52,7 @@ class IncentiveServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\ApplyIncentiveRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\ApplyIncentiveResponse>
      */
     public function ApplyIncentive(\Google\Ads\GoogleAds\V23\Services\ApplyIncentiveRequest $argument,
       $metadata = [], $options = []) {

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The result of generating keyword ideas.
@@ -63,7 +63,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V23\Common\KeywordAnnotations $keyword_annotations
      *           The annotations for the keyword.
      *           The annotation data is only provided if requested.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $close_variants
+     *     @type string[] $close_variants
      *           The list of close variants from the requested keywords that
      *           are combined into this GenerateKeywordIdeaResult. See
      *           https://support.google.com/google-ads/answer/9342105 for the
@@ -198,7 +198,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      * definition of "close variants".
      *
      * Generated from protobuf field <code>repeated string close_variants = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getCloseVariants()
     {
@@ -212,7 +212,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      * definition of "close variants".
      *
      * Generated from protobuf field <code>repeated string close_variants = 7;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setCloseVariants($var)

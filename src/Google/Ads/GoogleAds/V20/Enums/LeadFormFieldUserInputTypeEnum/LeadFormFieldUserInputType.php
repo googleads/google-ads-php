@@ -1153,6 +1153,3 @@ class LeadFormFieldUserInputType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LeadFormFieldUserInputType::class, \Google\Ads\GoogleAds\V20\Enums\LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType::class);
-

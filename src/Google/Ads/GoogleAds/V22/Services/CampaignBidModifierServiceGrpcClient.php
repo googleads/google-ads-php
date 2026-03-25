@@ -64,7 +64,7 @@ class CampaignBidModifierServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateCampaignBidModifiersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateCampaignBidModifiersResponse>
      */
     public function MutateCampaignBidModifiers(\Google\Ads\GoogleAds\V22\Services\MutateCampaignBidModifiersRequest $argument,
       $metadata = [], $options = []) {

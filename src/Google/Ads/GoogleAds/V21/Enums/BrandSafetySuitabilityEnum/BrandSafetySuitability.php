@@ -93,6 +93,3 @@ class BrandSafetySuitability
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BrandSafetySuitability::class, \Google\Ads\GoogleAds\V21\Enums\BrandSafetySuitabilityEnum_BrandSafetySuitability::class);
-

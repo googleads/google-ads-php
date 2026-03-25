@@ -445,6 +445,3 @@ class UrlFieldError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(UrlFieldError::class, \Google\Ads\GoogleAds\V23\Errors\UrlFieldErrorEnum_UrlFieldError::class);
-

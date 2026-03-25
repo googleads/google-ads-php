@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A trend insight for a given attribute.
@@ -29,13 +29,15 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      */
     protected $trend_metrics = null;
     /**
-     * The direction of trend (such as RISING or DECLINING).
+     * Indicate if a trend is sustained or emerging. Use
+     * trend_metrics.trend_change_percent to determine the direction of the
+     * trend.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.enums.InsightsTrendEnum.InsightsTrend trend = 3;</code>
      */
     protected $trend = 0;
     /**
-     * 12 months of historical data for the trend, including the most recent month
+     * 3 years of historical data for the trend, including the most recent month
      * the TrendInsight represents. Each data point represents 1 month of data and
      * the comparison period is 1 month. The data points are ordered from most
      * recent month to least recent month. Only populated for trends using
@@ -71,17 +73,19 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      *           Metrics associated with this trend. These metrics are for the latest
      *           available month and the comparison period is 3 months.
      *     @type int $trend
-     *           The direction of trend (such as RISING or DECLINING).
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\TrendInsightDataPoint>|\Google\Protobuf\Internal\RepeatedField $trend_data_points
-     *           12 months of historical data for the trend, including the most recent month
+     *           Indicate if a trend is sustained or emerging. Use
+     *           trend_metrics.trend_change_percent to determine the direction of the
+     *           trend.
+     *     @type \Google\Ads\GoogleAds\V23\Services\TrendInsightDataPoint[] $trend_data_points
+     *           3 years of historical data for the trend, including the most recent month
      *           the TrendInsight represents. Each data point represents 1 month of data and
      *           the comparison period is 1 month. The data points are ordered from most
      *           recent month to least recent month. Only populated for trends using
      *           search_topics.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $related_videos
+     *     @type \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata[] $related_videos
      *           Related videos for this topic. Only populated for trends using
      *           search_topics.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\YouTubeCreatorInsights>|\Google\Protobuf\Internal\RepeatedField $related_creators
+     *     @type \Google\Ads\GoogleAds\V23\Services\YouTubeCreatorInsights[] $related_creators
      *           Related creators for this topic. Only populated for trends using
      *           search_topics.
      * }
@@ -166,7 +170,9 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The direction of trend (such as RISING or DECLINING).
+     * Indicate if a trend is sustained or emerging. Use
+     * trend_metrics.trend_change_percent to determine the direction of the
+     * trend.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.enums.InsightsTrendEnum.InsightsTrend trend = 3;</code>
      * @return int
@@ -177,7 +183,9 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The direction of trend (such as RISING or DECLINING).
+     * Indicate if a trend is sustained or emerging. Use
+     * trend_metrics.trend_change_percent to determine the direction of the
+     * trend.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.enums.InsightsTrendEnum.InsightsTrend trend = 3;</code>
      * @param int $var
@@ -192,14 +200,14 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 12 months of historical data for the trend, including the most recent month
+     * 3 years of historical data for the trend, including the most recent month
      * the TrendInsight represents. Each data point represents 1 month of data and
      * the comparison period is 1 month. The data points are ordered from most
      * recent month to least recent month. Only populated for trends using
      * search_topics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.TrendInsightDataPoint trend_data_points = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\TrendInsightDataPoint>
      */
     public function getTrendDataPoints()
     {
@@ -207,14 +215,14 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 12 months of historical data for the trend, including the most recent month
+     * 3 years of historical data for the trend, including the most recent month
      * the TrendInsight represents. Each data point represents 1 month of data and
      * the comparison period is 1 month. The data points are ordered from most
      * recent month to least recent month. Only populated for trends using
      * search_topics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.TrendInsightDataPoint trend_data_points = 6;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\TrendInsightDataPoint>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\TrendInsightDataPoint[] $var
      * @return $this
      */
     public function setTrendDataPoints($var)
@@ -230,7 +238,7 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      * search_topics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata related_videos = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata>
      */
     public function getRelatedVideos()
     {
@@ -242,7 +250,7 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      * search_topics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata related_videos = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata[] $var
      * @return $this
      */
     public function setRelatedVideos($var)
@@ -258,7 +266,7 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      * search_topics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.YouTubeCreatorInsights related_creators = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\YouTubeCreatorInsights>
      */
     public function getRelatedCreators()
     {
@@ -270,7 +278,7 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      * search_topics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.YouTubeCreatorInsights related_creators = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\YouTubeCreatorInsights>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\YouTubeCreatorInsights[] $var
      * @return $this
      */
     public function setRelatedCreators($var)

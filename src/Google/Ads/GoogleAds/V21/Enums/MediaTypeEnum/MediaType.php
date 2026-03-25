@@ -95,6 +95,3 @@ class MediaType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MediaType::class, \Google\Ads\GoogleAds\V21\Enums\MediaTypeEnum_MediaType::class);
-

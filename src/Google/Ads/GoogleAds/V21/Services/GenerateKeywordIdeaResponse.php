@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -50,7 +50,7 @@ class GenerateKeywordIdeaResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\GenerateKeywordIdeaResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V21\Services\GenerateKeywordIdeaResult[] $results
      *           Results of generating keyword ideas.
      *     @type \Google\Ads\GoogleAds\V21\Common\KeywordPlanAggregateMetricResults $aggregate_metric_results
      *           The aggregate metrics for all keyword ideas.
@@ -72,7 +72,7 @@ class GenerateKeywordIdeaResponse extends \Google\Protobuf\Internal\Message
      * Results of generating keyword ideas.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.GenerateKeywordIdeaResult results = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\GenerateKeywordIdeaResult>
      */
     public function getResults()
     {
@@ -83,7 +83,7 @@ class GenerateKeywordIdeaResponse extends \Google\Protobuf\Internal\Message
      * Results of generating keyword ideas.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.GenerateKeywordIdeaResult results = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\GenerateKeywordIdeaResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\GenerateKeywordIdeaResult[] $var
      * @return $this
      */
     public function setResults($var)

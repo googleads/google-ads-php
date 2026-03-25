@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources\ConversionValueRule;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Condition on Audience dimension.
@@ -34,9 +34,9 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_lists
+     *     @type string[] $user_lists
      *           User Lists.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_interests
+     *     @type string[] $user_interests
      *           User Interests.
      * }
      */
@@ -49,7 +49,7 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
      * User Lists.
      *
      * Generated from protobuf field <code>repeated string user_lists = 1 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getUserLists()
     {
@@ -60,7 +60,7 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
      * User Lists.
      *
      * Generated from protobuf field <code>repeated string user_lists = 1 [(.google.api.resource_reference) = {</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setUserLists($var)
@@ -75,7 +75,7 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
      * User Interests.
      *
      * Generated from protobuf field <code>repeated string user_interests = 2 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getUserInterests()
     {
@@ -86,7 +86,7 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
      * User Interests.
      *
      * Generated from protobuf field <code>repeated string user_interests = 2 [(.google.api.resource_reference) = {</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setUserInterests($var)
@@ -98,7 +98,4 @@ class ValueRuleAudienceCondition extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ValueRuleAudienceCondition::class, \Google\Ads\GoogleAds\V21\Resources\ConversionValueRule_ValueRuleAudienceCondition::class);
 

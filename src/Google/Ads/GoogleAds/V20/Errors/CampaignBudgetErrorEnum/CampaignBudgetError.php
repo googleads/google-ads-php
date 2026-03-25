@@ -190,6 +190,3 @@ class CampaignBudgetError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CampaignBudgetError::class, \Google\Ads\GoogleAds\V20\Errors\CampaignBudgetErrorEnum_CampaignBudgetError::class);
-

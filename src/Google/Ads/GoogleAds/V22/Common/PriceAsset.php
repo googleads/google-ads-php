@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An asset representing a list of price offers.
@@ -55,7 +55,7 @@ class PriceAsset extends \Google\Protobuf\Internal\Message
      *     @type string $language_code
      *           Required. The language of the price asset.
      *           Represented as BCP 47 language tag.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\PriceOffering>|\Google\Protobuf\Internal\RepeatedField $price_offerings
+     *     @type \Google\Ads\GoogleAds\V22\Common\PriceOffering[] $price_offerings
      *           The price offerings of the price asset.
      *           The size of this collection should be between 3 and 8, inclusive.
      * }
@@ -150,7 +150,7 @@ class PriceAsset extends \Google\Protobuf\Internal\Message
      * The size of this collection should be between 3 and 8, inclusive.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.PriceOffering price_offerings = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\PriceOffering>
      */
     public function getPriceOfferings()
     {
@@ -162,7 +162,7 @@ class PriceAsset extends \Google\Protobuf\Internal\Message
      * The size of this collection should be between 3 and 8, inclusive.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.PriceOffering price_offerings = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\PriceOffering>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\PriceOffering[] $var
      * @return $this
      */
     public function setPriceOfferings($var)

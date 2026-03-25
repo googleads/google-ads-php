@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -43,7 +43,7 @@ class MutateGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      *           Returned only when partial_failure = true and all errors occur inside the
      *           operations. If any errors occur outside the operations (for example, auth
      *           errors), we return an RPC level error.
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\MutateOperationResponse>|\Google\Protobuf\Internal\RepeatedField $mutate_operation_responses
+     *     @type \Google\Ads\GoogleAds\V21\Services\MutateOperationResponse[] $mutate_operation_responses
      *           All responses for the mutate.
      * }
      */
@@ -98,7 +98,7 @@ class MutateGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      * All responses for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.MutateOperationResponse mutate_operation_responses = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\MutateOperationResponse>
      */
     public function getMutateOperationResponses()
     {
@@ -109,7 +109,7 @@ class MutateGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      * All responses for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.MutateOperationResponse mutate_operation_responses = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\MutateOperationResponse>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\MutateOperationResponse[] $var
      * @return $this
      */
     public function setMutateOperationResponses($var)

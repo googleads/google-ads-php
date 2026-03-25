@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\Campaign;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The setting for Shopping campaigns. Defines the universe of products that
@@ -116,7 +116,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *           Immutable. Whether to target Vehicle Listing inventory. This field is
      *           supported only in Smart Shopping Campaigns. For setting Vehicle Listing
      *           inventory in Performance Max campaigns, use `listing_type` instead.
-     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $advertising_partner_ids
+     *     @type int[]|string[] $advertising_partner_ids
      *           The list of Google Ads accounts IDs of advertising partners cooperating
      *           within the campaign.
      *           This feature is currently available only for accounts having an
@@ -336,7 +336,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * Search and Demand Gen campaign types.
      *
      * Generated from protobuf field <code>repeated int64 advertising_partner_ids = 11;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>|RepeatedField<string>
      */
     public function getAdvertisingPartnerIds()
     {
@@ -352,7 +352,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * Search and Demand Gen campaign types.
      *
      * Generated from protobuf field <code>repeated int64 advertising_partner_ids = 11;</code>
-     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[]|string[] $var
      * @return $this
      */
     public function setAdvertisingPartnerIds($var)
@@ -406,7 +406,4 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ShoppingSetting::class, \Google\Ads\GoogleAds\V22\Resources\Campaign_ShoppingSetting::class);
 

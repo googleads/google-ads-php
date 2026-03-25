@@ -88,6 +88,3 @@ class SkAdNetworkCoarseConversionValue
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SkAdNetworkCoarseConversionValue::class, \Google\Ads\GoogleAds\V22\Enums\SkAdNetworkCoarseConversionValueEnum_SkAdNetworkCoarseConversionValue::class);
-

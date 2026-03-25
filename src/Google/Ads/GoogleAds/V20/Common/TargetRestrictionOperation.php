@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Operation to be performed on a target restriction list in a mutate.

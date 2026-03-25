@@ -80,6 +80,3 @@ class MinuteOfHour
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MinuteOfHour::class, \Google\Ads\GoogleAds\V21\Enums\MinuteOfHourEnum_MinuteOfHour::class);
-

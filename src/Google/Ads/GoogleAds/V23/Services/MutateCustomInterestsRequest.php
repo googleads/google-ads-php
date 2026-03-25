@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -59,7 +59,7 @@ class MutateCustomInterestsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer whose custom interests are being modified.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\CustomInterestOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V23\Services\CustomInterestOperation[] $operations
      *           Required. The list of operations to perform on individual custom interests.
      *     @type bool $validate_only
      *           If true, the request is validated but not executed. Only errors are
@@ -101,7 +101,7 @@ class MutateCustomInterestsRequest extends \Google\Protobuf\Internal\Message
      * Required. The list of operations to perform on individual custom interests.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.CustomInterestOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\CustomInterestOperation>
      */
     public function getOperations()
     {
@@ -112,7 +112,7 @@ class MutateCustomInterestsRequest extends \Google\Protobuf\Internal\Message
      * Required. The list of operations to perform on individual custom interests.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.CustomInterestOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\CustomInterestOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\CustomInterestOperation[] $var
      * @return $this
      */
     public function setOperations($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Call reporting setting for a customer. Only mutable in an `update` operation.

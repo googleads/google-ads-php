@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Smart campaign ad.
@@ -36,10 +36,10 @@ class SmartCampaignAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type \Google\Ads\GoogleAds\V22\Common\AdTextAsset[] $headlines
      *           List of text assets, each of which corresponds to a headline when the ad
      *           serves. This list consists of a minimum of 3 and up to 15 text assets.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type \Google\Ads\GoogleAds\V22\Common\AdTextAsset[] $descriptions
      *           List of text assets, each of which corresponds to a description when the ad
      *           serves. This list consists of a minimum of 2 and up to 4 text assets.
      * }
@@ -54,7 +54,7 @@ class SmartCampaignAdInfo extends \Google\Protobuf\Internal\Message
      * serves. This list consists of a minimum of 3 and up to 15 text assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdTextAsset headlines = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AdTextAsset>
      */
     public function getHeadlines()
     {
@@ -66,7 +66,7 @@ class SmartCampaignAdInfo extends \Google\Protobuf\Internal\Message
      * serves. This list consists of a minimum of 3 and up to 15 text assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdTextAsset headlines = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -82,7 +82,7 @@ class SmartCampaignAdInfo extends \Google\Protobuf\Internal\Message
      * serves. This list consists of a minimum of 2 and up to 4 text assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdTextAsset descriptions = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AdTextAsset>
      */
     public function getDescriptions()
     {
@@ -94,7 +94,7 @@ class SmartCampaignAdInfo extends \Google\Protobuf\Internal\Message
      * serves. This list consists of a minimum of 2 and up to 4 text assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdTextAsset descriptions = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setDescriptions($var)

@@ -51,7 +51,7 @@ class GoogleAdsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsResponse>
      */
     public function Search(\Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest $argument,
       $metadata = [], $options = []) {
@@ -204,7 +204,7 @@ class GoogleAdsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsResponse>
      */
     public function Mutate(\Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsRequest $argument,
       $metadata = [], $options = []) {

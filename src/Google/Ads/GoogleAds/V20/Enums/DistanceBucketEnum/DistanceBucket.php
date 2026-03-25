@@ -242,6 +242,3 @@ class DistanceBucket
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DistanceBucket::class, \Google\Ads\GoogleAds\V20\Enums\DistanceBucketEnum_DistanceBucket::class);
-

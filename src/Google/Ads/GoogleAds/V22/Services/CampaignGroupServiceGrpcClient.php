@@ -40,7 +40,7 @@ class CampaignGroupServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateCampaignGroupsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateCampaignGroupsResponse>
      */
     public function MutateCampaignGroups(\Google\Ads\GoogleAds\V22\Services\MutateCampaignGroupsRequest $argument,
       $metadata = [], $options = []) {

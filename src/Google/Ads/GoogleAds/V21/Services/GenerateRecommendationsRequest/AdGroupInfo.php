@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services\GenerateRecommendationsRequest;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Current AdGroup Information of the campaign.
@@ -47,7 +47,7 @@ class AdGroupInfo extends \Google\Protobuf\Internal\Message
      *           This field is necessary for the following recommendation_types if
      *           ad_group_info is set:
      *           KEYWORD
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\KeywordInfo>|\Google\Protobuf\Internal\RepeatedField $keywords
+     *     @type \Google\Ads\GoogleAds\V21\Common\KeywordInfo[] $keywords
      *           Optional. Current keywords.
      *           This field is optional for the following recommendation_types if
      *           ad_group_info is set:
@@ -112,7 +112,7 @@ class AdGroupInfo extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.KeywordInfo keywords = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\KeywordInfo>
      */
     public function getKeywords()
     {
@@ -128,7 +128,7 @@ class AdGroupInfo extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.KeywordInfo keywords = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\KeywordInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\KeywordInfo[] $var
      * @return $this
      */
     public function setKeywords($var)
@@ -140,7 +140,4 @@ class AdGroupInfo extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdGroupInfo::class, \Google\Ads\GoogleAds\V21\Services\GenerateRecommendationsRequest_AdGroupInfo::class);
 

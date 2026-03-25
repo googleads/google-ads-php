@@ -39,7 +39,7 @@ class SmartCampaignSettingServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\GetSmartCampaignStatusRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\GetSmartCampaignStatusResponse>
      */
     public function GetSmartCampaignStatus(\Google\Ads\GoogleAds\V20\Services\GetSmartCampaignStatusRequest $argument,
       $metadata = [], $options = []) {
@@ -54,7 +54,7 @@ class SmartCampaignSettingServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\MutateSmartCampaignSettingsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\MutateSmartCampaignSettingsResponse>
      */
     public function MutateSmartCampaignSettings(\Google\Ads\GoogleAds\V20\Services\MutateSmartCampaignSettingsRequest $argument,
       $metadata = [], $options = []) {

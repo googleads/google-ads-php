@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class SuggestKeywordThemesResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesResponse\KeywordTheme>|\Google\Protobuf\Internal\RepeatedField $keyword_themes
+     *     @type \Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesResponse\KeywordTheme[] $keyword_themes
      *           Smart campaign keyword theme suggestions.
      * }
      */
@@ -42,7 +42,7 @@ class SuggestKeywordThemesResponse extends \Google\Protobuf\Internal\Message
      * Smart campaign keyword theme suggestions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.SuggestKeywordThemesResponse.KeywordTheme keyword_themes = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesResponse\KeywordTheme>
      */
     public function getKeywordThemes()
     {
@@ -53,7 +53,7 @@ class SuggestKeywordThemesResponse extends \Google\Protobuf\Internal\Message
      * Smart campaign keyword theme suggestions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.SuggestKeywordThemesResponse.KeywordTheme keyword_themes = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesResponse\KeywordTheme>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesResponse\KeywordTheme[] $var
      * @return $this
      */
     public function setKeywordThemes($var)

@@ -1261,6 +1261,3 @@ class CriterionError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CriterionError::class, \Google\Ads\GoogleAds\V23\Errors\CriterionErrorEnum_CriterionError::class);
-

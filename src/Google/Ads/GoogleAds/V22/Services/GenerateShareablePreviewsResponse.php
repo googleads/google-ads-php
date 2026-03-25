@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class GenerateShareablePreviewsResponse extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\ShareablePreviewOrError>|\Google\Protobuf\Internal\RepeatedField $responses
+     *     @type \Google\Ads\GoogleAds\V22\Services\ShareablePreviewOrError[] $responses
      *           List of generate shareable preview results.
      * }
      */
@@ -42,7 +42,7 @@ class GenerateShareablePreviewsResponse extends \Google\Protobuf\Internal\Messag
      * List of generate shareable preview results.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.ShareablePreviewOrError responses = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\ShareablePreviewOrError>
      */
     public function getResponses()
     {
@@ -53,7 +53,7 @@ class GenerateShareablePreviewsResponse extends \Google\Protobuf\Internal\Messag
      * List of generate shareable preview results.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.ShareablePreviewOrError responses = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\ShareablePreviewOrError>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\ShareablePreviewOrError[] $var
      * @return $this
      */
     public function setResponses($var)

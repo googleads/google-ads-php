@@ -754,6 +754,3 @@ class CampaignError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CampaignError::class, \Google\Ads\GoogleAds\V20\Errors\CampaignErrorEnum_CampaignError::class);
-

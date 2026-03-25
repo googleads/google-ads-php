@@ -129,6 +129,3 @@ class CampaignExperimentError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CampaignExperimentError::class, \Google\Ads\GoogleAds\V23\Errors\CampaignExperimentErrorEnum_CampaignExperimentError::class);
-

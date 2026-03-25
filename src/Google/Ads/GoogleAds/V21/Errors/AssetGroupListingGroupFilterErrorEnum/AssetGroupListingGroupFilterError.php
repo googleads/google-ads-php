@@ -218,6 +218,3 @@ class AssetGroupListingGroupFilterError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetGroupListingGroupFilterError::class, \Google\Ads\GoogleAds\V21\Errors\AssetGroupListingGroupFilterErrorEnum_AssetGroupListingGroupFilterError::class);
-

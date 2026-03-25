@@ -138,6 +138,3 @@ class DateError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DateError::class, \Google\Ads\GoogleAds\V23\Errors\DateErrorEnum_DateError::class);
-

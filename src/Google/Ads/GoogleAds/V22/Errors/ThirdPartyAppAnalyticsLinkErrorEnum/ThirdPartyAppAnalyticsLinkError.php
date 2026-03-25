@@ -81,6 +81,3 @@ class ThirdPartyAppAnalyticsLinkError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ThirdPartyAppAnalyticsLinkError::class, \Google\Ads\GoogleAds\V22\Errors\ThirdPartyAppAnalyticsLinkErrorEnum_ThirdPartyAppAnalyticsLinkError::class);
-

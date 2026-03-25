@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for a customer conversion goal mutate.
@@ -28,7 +28,7 @@ class MutateCustomerConversionGoalsResponse extends \Google\Protobuf\Internal\Me
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\MutateCustomerConversionGoalResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V21\Services\MutateCustomerConversionGoalResult[] $results
      *           All results for the mutate.
      * }
      */
@@ -41,7 +41,7 @@ class MutateCustomerConversionGoalsResponse extends \Google\Protobuf\Internal\Me
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.MutateCustomerConversionGoalResult results = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\MutateCustomerConversionGoalResult>
      */
     public function getResults()
     {
@@ -52,7 +52,7 @@ class MutateCustomerConversionGoalsResponse extends \Google\Protobuf\Internal\Me
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.MutateCustomerConversionGoalResult results = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\MutateCustomerConversionGoalResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\MutateCustomerConversionGoalResult[] $var
      * @return $this
      */
     public function setResults($var)

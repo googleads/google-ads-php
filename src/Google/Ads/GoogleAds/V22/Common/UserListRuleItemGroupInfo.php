@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A group of rule items.
@@ -28,7 +28,7 @@ class UserListRuleItemGroupInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\UserListRuleItemInfo>|\Google\Protobuf\Internal\RepeatedField $rule_items
+     *     @type \Google\Ads\GoogleAds\V22\Common\UserListRuleItemInfo[] $rule_items
      *           Rule items that will be grouped together based on rule_type.
      * }
      */
@@ -41,7 +41,7 @@ class UserListRuleItemGroupInfo extends \Google\Protobuf\Internal\Message
      * Rule items that will be grouped together based on rule_type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.UserListRuleItemInfo rule_items = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\UserListRuleItemInfo>
      */
     public function getRuleItems()
     {
@@ -52,7 +52,7 @@ class UserListRuleItemGroupInfo extends \Google\Protobuf\Internal\Message
      * Rule items that will be grouped together based on rule_type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.UserListRuleItemInfo rule_items = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\UserListRuleItemInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\UserListRuleItemInfo[] $var
      * @return $this
      */
     public function setRuleItems($var)

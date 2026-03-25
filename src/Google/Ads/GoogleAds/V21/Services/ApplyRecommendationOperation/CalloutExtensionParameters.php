@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services\ApplyRecommendationOperation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Parameters to use when applying callout extension recommendation.
@@ -28,7 +28,7 @@ class CalloutExtensionParameters extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\CalloutFeedItem>|\Google\Protobuf\Internal\RepeatedField $callout_extensions
+     *     @type \Google\Ads\GoogleAds\V21\Common\CalloutFeedItem[] $callout_extensions
      *           Callout extensions to be added. This is a required field.
      * }
      */
@@ -41,7 +41,7 @@ class CalloutExtensionParameters extends \Google\Protobuf\Internal\Message
      * Callout extensions to be added. This is a required field.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.CalloutFeedItem callout_extensions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\CalloutFeedItem>
      */
     public function getCalloutExtensions()
     {
@@ -52,7 +52,7 @@ class CalloutExtensionParameters extends \Google\Protobuf\Internal\Message
      * Callout extensions to be added. This is a required field.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.CalloutFeedItem callout_extensions = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\CalloutFeedItem>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\CalloutFeedItem[] $var
      * @return $this
      */
     public function setCalloutExtensions($var)
@@ -64,7 +64,4 @@ class CalloutExtensionParameters extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CalloutExtensionParameters::class, \Google\Ads\GoogleAds\V21\Services\ApplyRecommendationOperation_CalloutExtensionParameters::class);
 

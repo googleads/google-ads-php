@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Keyword Plan campaign.
@@ -94,7 +94,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      *           The name of the Keyword Plan campaign.
      *           This field is required and should not be empty when creating Keyword Plan
      *           campaigns.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $language_constants
+     *     @type string[] $language_constants
      *           The languages targeted for the Keyword Plan campaign.
      *           Max allowed: 1.
      *     @type int $keyword_plan_network
@@ -106,7 +106,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      *           groups under the campaign.
      *           This field is required and should not be empty when creating Keyword Plan
      *           campaigns.
-     *     @type array<\Google\Ads\GoogleAds\V21\Resources\KeywordPlanGeoTarget>|\Google\Protobuf\Internal\RepeatedField $geo_targets
+     *     @type \Google\Ads\GoogleAds\V21\Resources\KeywordPlanGeoTarget[] $geo_targets
      *           The geo targets.
      *           Max number allowed: 20.
      * }
@@ -263,7 +263,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * Max allowed: 1.
      *
      * Generated from protobuf field <code>repeated string language_constants = 12 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLanguageConstants()
     {
@@ -275,7 +275,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * Max allowed: 1.
      *
      * Generated from protobuf field <code>repeated string language_constants = 12 [(.google.api.resource_reference) = {</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLanguageConstants($var)
@@ -363,7 +363,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * Max number allowed: 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.KeywordPlanGeoTarget geo_targets = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Resources\KeywordPlanGeoTarget>
      */
     public function getGeoTargets()
     {
@@ -375,7 +375,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * Max number allowed: 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.KeywordPlanGeoTarget geo_targets = 8;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Resources\KeywordPlanGeoTarget>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Resources\KeywordPlanGeoTarget[] $var
      * @return $this
      */
     public function setGeoTargets($var)

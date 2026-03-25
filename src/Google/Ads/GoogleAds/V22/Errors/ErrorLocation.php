@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Errors;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Describes the part of the request proto that caused the error.
@@ -28,7 +28,7 @@ class ErrorLocation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Errors\ErrorLocation\FieldPathElement>|\Google\Protobuf\Internal\RepeatedField $field_path_elements
+     *     @type \Google\Ads\GoogleAds\V22\Errors\ErrorLocation\FieldPathElement[] $field_path_elements
      *           A field path that indicates which field was invalid in the request.
      * }
      */
@@ -41,7 +41,7 @@ class ErrorLocation extends \Google\Protobuf\Internal\Message
      * A field path that indicates which field was invalid in the request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.errors.ErrorLocation.FieldPathElement field_path_elements = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Errors\ErrorLocation\FieldPathElement>
      */
     public function getFieldPathElements()
     {
@@ -52,7 +52,7 @@ class ErrorLocation extends \Google\Protobuf\Internal\Message
      * A field path that indicates which field was invalid in the request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.errors.ErrorLocation.FieldPathElement field_path_elements = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Errors\ErrorLocation\FieldPathElement>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Errors\ErrorLocation\FieldPathElement[] $var
      * @return $this
      */
     public function setFieldPathElements($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services\DismissRecommendationResponse;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The result of dismissing a recommendation.
@@ -64,7 +64,4 @@ class DismissRecommendationResult extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DismissRecommendationResult::class, \Google\Ads\GoogleAds\V21\Services\DismissRecommendationResponse_DismissRecommendationResult::class);
 

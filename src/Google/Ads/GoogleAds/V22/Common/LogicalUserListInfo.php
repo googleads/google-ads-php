@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents a user list that is a custom combination of user lists.
@@ -31,7 +31,7 @@ class LogicalUserListInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\UserListLogicalRuleInfo>|\Google\Protobuf\Internal\RepeatedField $rules
+     *     @type \Google\Ads\GoogleAds\V22\Common\UserListLogicalRuleInfo[] $rules
      *           Logical list rules that define this user list. The rules are defined as a
      *           logical operator (ALL/ANY/NONE) and a list of user lists. All the rules are
      *           ANDed when they are evaluated.
@@ -50,7 +50,7 @@ class LogicalUserListInfo extends \Google\Protobuf\Internal\Message
      * Required for creating a logical user list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.UserListLogicalRuleInfo rules = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\UserListLogicalRuleInfo>
      */
     public function getRules()
     {
@@ -64,7 +64,7 @@ class LogicalUserListInfo extends \Google\Protobuf\Internal\Message
      * Required for creating a logical user list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.UserListLogicalRuleInfo rules = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\UserListLogicalRuleInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\UserListLogicalRuleInfo[] $var
      * @return $this
      */
     public function setRules($var)

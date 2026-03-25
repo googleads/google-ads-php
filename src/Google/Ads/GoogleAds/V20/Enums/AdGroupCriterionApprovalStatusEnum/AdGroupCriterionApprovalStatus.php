@@ -80,6 +80,3 @@ class AdGroupCriterionApprovalStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdGroupCriterionApprovalStatus::class, \Google\Ads\GoogleAds\V20\Enums\AdGroupCriterionApprovalStatusEnum_AdGroupCriterionApprovalStatus::class);
-

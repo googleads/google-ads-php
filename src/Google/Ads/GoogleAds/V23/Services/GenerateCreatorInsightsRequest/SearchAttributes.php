@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services\GenerateCreatorInsightsRequest;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The audience attributes (such as Age, Gender, Affinity, and In-Market) and
@@ -22,11 +22,31 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      * is used to search for creators whose own viewers match the input
      * audience. Attributes age_range, gender, user_interest, entity, category,
      * device, parental_status, and income_range are supported. Attribute
-     * location is not supported.
+     * location is not supported. Attributes user_interest, entity, and category
+     * can only be set in audience_attributes when audience_combinations is
+     * unused.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttribute audience_attributes = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private $audience_attributes;
+    /**
+     * Optional. A list of audience attribute groups consisting of one or more
+     * Knowledge Graph entities, Product & Service Categories and user interests
+     * that describes an audience. The groups have a logical AND-of-ORs
+     * structure:
+     * 1. Attributes within each InsightsAudienceAttributeGroup are combined
+     * with OR.
+     * 2. The groups themselves are combined together with AND.
+     * For example, an audience (Interest A OR Interest B) AND (Entity C) is
+     * represented using two groups. The first group contains the two interests
+     * and the second group contains the entity.
+     * This field cannot be set if any Knowledge Graph entities, Product &
+     * Service Categories, or user interests are specified in
+     * audience_attributes.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.InsightsAudienceAttributeGroup audience_combinations = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $audience_combinations;
     /**
      * Optional. Creator attributes that describe a collection of types of
      * content. This is used to search for creators whose content matches the
@@ -47,13 +67,29 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $audience_attributes
+     *     @type \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute[] $audience_attributes
      *           Optional. Audience attributes that describe an audience of viewers. This
      *           is used to search for creators whose own viewers match the input
      *           audience. Attributes age_range, gender, user_interest, entity, category,
      *           device, parental_status, and income_range are supported. Attribute
-     *           location is not supported.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $creator_attributes
+     *           location is not supported. Attributes user_interest, entity, and category
+     *           can only be set in audience_attributes when audience_combinations is
+     *           unused.
+     *     @type \Google\Ads\GoogleAds\V23\Common\InsightsAudienceAttributeGroup[] $audience_combinations
+     *           Optional. A list of audience attribute groups consisting of one or more
+     *           Knowledge Graph entities, Product & Service Categories and user interests
+     *           that describes an audience. The groups have a logical AND-of-ORs
+     *           structure:
+     *           1. Attributes within each InsightsAudienceAttributeGroup are combined
+     *           with OR.
+     *           2. The groups themselves are combined together with AND.
+     *           For example, an audience (Interest A OR Interest B) AND (Entity C) is
+     *           represented using two groups. The first group contains the two interests
+     *           and the second group contains the entity.
+     *           This field cannot be set if any Knowledge Graph entities, Product &
+     *           Service Categories, or user interests are specified in
+     *           audience_attributes.
+     *     @type \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute[] $creator_attributes
      *           Optional. Creator attributes that describe a collection of types of
      *           content. This is used to search for creators whose content matches the
      *           input creator attributes. Only Knowledge Graph Entities tagged with
@@ -74,10 +110,12 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      * is used to search for creators whose own viewers match the input
      * audience. Attributes age_range, gender, user_interest, entity, category,
      * device, parental_status, and income_range are supported. Attribute
-     * location is not supported.
+     * location is not supported. Attributes user_interest, entity, and category
+     * can only be set in audience_attributes when audience_combinations is
+     * unused.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttribute audience_attributes = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute>
      */
     public function getAudienceAttributes()
     {
@@ -89,16 +127,68 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      * is used to search for creators whose own viewers match the input
      * audience. Attributes age_range, gender, user_interest, entity, category,
      * device, parental_status, and income_range are supported. Attribute
-     * location is not supported.
+     * location is not supported. Attributes user_interest, entity, and category
+     * can only be set in audience_attributes when audience_combinations is
+     * unused.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttribute audience_attributes = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute[] $var
      * @return $this
      */
     public function setAudienceAttributes($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute::class);
         $this->audience_attributes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. A list of audience attribute groups consisting of one or more
+     * Knowledge Graph entities, Product & Service Categories and user interests
+     * that describes an audience. The groups have a logical AND-of-ORs
+     * structure:
+     * 1. Attributes within each InsightsAudienceAttributeGroup are combined
+     * with OR.
+     * 2. The groups themselves are combined together with AND.
+     * For example, an audience (Interest A OR Interest B) AND (Entity C) is
+     * represented using two groups. The first group contains the two interests
+     * and the second group contains the entity.
+     * This field cannot be set if any Knowledge Graph entities, Product &
+     * Service Categories, or user interests are specified in
+     * audience_attributes.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.InsightsAudienceAttributeGroup audience_combinations = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\InsightsAudienceAttributeGroup>
+     */
+    public function getAudienceCombinations()
+    {
+        return $this->audience_combinations;
+    }
+
+    /**
+     * Optional. A list of audience attribute groups consisting of one or more
+     * Knowledge Graph entities, Product & Service Categories and user interests
+     * that describes an audience. The groups have a logical AND-of-ORs
+     * structure:
+     * 1. Attributes within each InsightsAudienceAttributeGroup are combined
+     * with OR.
+     * 2. The groups themselves are combined together with AND.
+     * For example, an audience (Interest A OR Interest B) AND (Entity C) is
+     * represented using two groups. The first group contains the two interests
+     * and the second group contains the entity.
+     * This field cannot be set if any Knowledge Graph entities, Product &
+     * Service Categories, or user interests are specified in
+     * audience_attributes.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.InsightsAudienceAttributeGroup audience_combinations = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Ads\GoogleAds\V23\Common\InsightsAudienceAttributeGroup[] $var
+     * @return $this
+     */
+    public function setAudienceCombinations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V23\Common\InsightsAudienceAttributeGroup::class);
+        $this->audience_combinations = $arr;
 
         return $this;
     }
@@ -114,7 +204,7 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      * location are not supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttribute creator_attributes = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute>
      */
     public function getCreatorAttributes()
     {
@@ -132,7 +222,7 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
      * location are not supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttribute creator_attributes = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute[] $var
      * @return $this
      */
     public function setCreatorAttributes($var)
@@ -144,7 +234,4 @@ class SearchAttributes extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SearchAttributes::class, \Google\Ads\GoogleAds\V23\Services\GenerateCreatorInsightsRequest_SearchAttributes::class);
 

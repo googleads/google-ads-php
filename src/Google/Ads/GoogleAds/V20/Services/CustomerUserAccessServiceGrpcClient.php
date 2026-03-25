@@ -49,7 +49,7 @@ class CustomerUserAccessServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\MutateCustomerUserAccessRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\MutateCustomerUserAccessResponse>
      */
     public function MutateCustomerUserAccess(\Google\Ads\GoogleAds\V20\Services\MutateCustomerUserAccessRequest $argument,
       $metadata = [], $options = []) {

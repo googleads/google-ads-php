@@ -309,6 +309,3 @@ class RecommendationError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(RecommendationError::class, \Google\Ads\GoogleAds\V21\Errors\RecommendationErrorEnum_RecommendationError::class);
-

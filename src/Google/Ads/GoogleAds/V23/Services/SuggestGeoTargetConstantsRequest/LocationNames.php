@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services\SuggestGeoTargetConstantsRequest;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A list of location names.
@@ -28,7 +28,7 @@ class LocationNames extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $names
+     *     @type string[] $names
      *           A list of location names.
      * }
      */
@@ -41,7 +41,7 @@ class LocationNames extends \Google\Protobuf\Internal\Message
      * A list of location names.
      *
      * Generated from protobuf field <code>repeated string names = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getNames()
     {
@@ -52,7 +52,7 @@ class LocationNames extends \Google\Protobuf\Internal\Message
      * A list of location names.
      *
      * Generated from protobuf field <code>repeated string names = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setNames($var)
@@ -64,7 +64,4 @@ class LocationNames extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LocationNames::class, \Google\Ads\GoogleAds\V23\Services\SuggestGeoTargetConstantsRequest_LocationNames::class);
 

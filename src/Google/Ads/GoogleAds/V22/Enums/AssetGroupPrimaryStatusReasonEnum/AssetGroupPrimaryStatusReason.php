@@ -126,6 +126,3 @@ class AssetGroupPrimaryStatusReason
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetGroupPrimaryStatusReason::class, \Google\Ads\GoogleAds\V22\Enums\AssetGroupPrimaryStatusReasonEnum_AssetGroupPrimaryStatusReason::class);
-

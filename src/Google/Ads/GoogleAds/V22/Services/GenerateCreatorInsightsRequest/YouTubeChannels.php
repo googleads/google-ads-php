@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services\GenerateCreatorInsightsRequest;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A collection of YouTube Channels.
@@ -28,7 +28,7 @@ class YouTubeChannels extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\YouTubeChannelInfo>|\Google\Protobuf\Internal\RepeatedField $youtube_channels
+     *     @type \Google\Ads\GoogleAds\V22\Common\YouTubeChannelInfo[] $youtube_channels
      *           Optional. The YouTube Channel IDs to fetch creator insights for.
      * }
      */
@@ -41,7 +41,7 @@ class YouTubeChannels extends \Google\Protobuf\Internal\Message
      * Optional. The YouTube Channel IDs to fetch creator insights for.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.YouTubeChannelInfo youtube_channels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\YouTubeChannelInfo>
      */
     public function getYoutubeChannels()
     {
@@ -52,7 +52,7 @@ class YouTubeChannels extends \Google\Protobuf\Internal\Message
      * Optional. The YouTube Channel IDs to fetch creator insights for.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.YouTubeChannelInfo youtube_channels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\YouTubeChannelInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\YouTubeChannelInfo[] $var
      * @return $this
      */
     public function setYoutubeChannels($var)
@@ -64,7 +64,4 @@ class YouTubeChannels extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(YouTubeChannels::class, \Google\Ads\GoogleAds\V22\Services\GenerateCreatorInsightsRequest_YouTubeChannels::class);
 

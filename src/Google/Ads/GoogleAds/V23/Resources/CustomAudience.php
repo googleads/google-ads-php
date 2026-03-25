@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A custom audience. This is a list of users by interest.
@@ -95,7 +95,7 @@ class CustomAudience extends \Google\Protobuf\Internal\Message
      *           audience but kept for existing audiences)
      *     @type string $description
      *           Description of this custom audience.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\CustomAudienceMember>|\Google\Protobuf\Internal\RepeatedField $members
+     *     @type \Google\Ads\GoogleAds\V23\Resources\CustomAudienceMember[] $members
      *           List of custom audience members that this custom audience is composed of.
      *           Members can be added during CustomAudience creation. If members are
      *           presented in UPDATE operation, existing members will be overridden.
@@ -282,7 +282,7 @@ class CustomAudience extends \Google\Protobuf\Internal\Message
      * presented in UPDATE operation, existing members will be overridden.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.CustomAudienceMember members = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\CustomAudienceMember>
      */
     public function getMembers()
     {
@@ -295,7 +295,7 @@ class CustomAudience extends \Google\Protobuf\Internal\Message
      * presented in UPDATE operation, existing members will be overridden.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.CustomAudienceMember members = 7;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\CustomAudienceMember>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\CustomAudienceMember[] $var
      * @return $this
      */
     public function setMembers($var)

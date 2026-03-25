@@ -66,6 +66,3 @@ class ApplyScope
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ApplyScope::class, \Google\Ads\GoogleAds\V22\Services\ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope::class);
-

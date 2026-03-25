@@ -42,7 +42,7 @@ class AudienceServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\MutateAudiencesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateAudiencesResponse>
      */
     public function MutateAudiences(\Google\Ads\GoogleAds\V23\Services\MutateAudiencesRequest $argument,
       $metadata = [], $options = []) {

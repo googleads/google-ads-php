@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -35,7 +35,7 @@ class GenerateKeywordHistoricalMetricsResponse extends \Google\Protobuf\Internal
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\GenerateKeywordHistoricalMetricsResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V22\Services\GenerateKeywordHistoricalMetricsResult[] $results
      *           List of keywords and their historical metrics.
      *     @type \Google\Ads\GoogleAds\V22\Common\KeywordPlanAggregateMetricResults $aggregate_metric_results
      *           The aggregate metrics for all keywords.
@@ -50,7 +50,7 @@ class GenerateKeywordHistoricalMetricsResponse extends \Google\Protobuf\Internal
      * List of keywords and their historical metrics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.GenerateKeywordHistoricalMetricsResult results = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\GenerateKeywordHistoricalMetricsResult>
      */
     public function getResults()
     {
@@ -61,7 +61,7 @@ class GenerateKeywordHistoricalMetricsResponse extends \Google\Protobuf\Internal
      * List of keywords and their historical metrics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.GenerateKeywordHistoricalMetricsResult results = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\GenerateKeywordHistoricalMetricsResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\GenerateKeywordHistoricalMetricsResult[] $var
      * @return $this
      */
     public function setResults($var)

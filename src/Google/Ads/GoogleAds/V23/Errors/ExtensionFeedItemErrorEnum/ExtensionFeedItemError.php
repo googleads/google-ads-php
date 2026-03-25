@@ -383,6 +383,3 @@ class ExtensionFeedItemError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ExtensionFeedItemError::class, \Google\Ads\GoogleAds\V23\Errors\ExtensionFeedItemErrorEnum_ExtensionFeedItemError::class);
-

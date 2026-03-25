@@ -16,14 +16,7 @@ class ManagedPlacementView
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
-            '
-ý
-?google/ads/googleads/v20/resources/managed_placement_view.proto"google.ads.googleads.v20.resourcesgoogle/api/resource.proto"ä
-ManagedPlacementViewL
-resource_name (	B5àAúA/
--googleads.googleapis.com/ManagedPlacementView:~êA{
--googleads.googleapis.com/ManagedPlacementViewJcustomers/{customer_id}/managedPlacementViews/{ad_group_id}~{criterion_id}B‹
-&com.google.ads.googleads.v20.resourcesBManagedPlacementViewProtoPZKgoogle.golang.org/genproto/googleapis/ads/googleads/v20/resources;resources¢GAAª"Google.Ads.GoogleAds.V20.ResourcesÊ"Google\\Ads\\GoogleAds\\V20\\Resourcesê&Google::Ads::GoogleAds::V20::Resourcesbproto3'
+            "\x0A\xFD\x04\x0A?google/ads/googleads/v20/resources/managed_placement_view.proto\x12\"google.ads.googleads.v20.resources\x1A\x19google/api/resource.proto\"\xE4\x01\x0A\x14ManagedPlacementView\x12L\x0A\x0Dresource_name\x18\x01 \x01(\x09B5\xE0A\x03\xFAA/\x0A-googleads.googleapis.com/ManagedPlacementView:~\xEAA{\x0A-googleads.googleapis.com/ManagedPlacementView\x12Jcustomers/{customer_id}/managedPlacementViews/{ad_group_id}~{criterion_id}B\x8B\x02\x0A&com.google.ads.googleads.v20.resourcesB\x19ManagedPlacementViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v20/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V20.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V20\\Resources\xEA\x02&Google::Ads::GoogleAds::V20::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

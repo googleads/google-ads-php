@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A list of audience attributes of a single dimension, including their overlap
@@ -38,7 +38,7 @@ class DimensionOverlapResult extends \Google\Protobuf\Internal\Message
      *
      *     @type int $dimension
      *           The dimension of all the attributes in this section.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\AudienceOverlapItem>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Google\Ads\GoogleAds\V20\Services\AudienceOverlapItem[] $items
      *           The attributes and their overlap with the primary attribute.
      * }
      */
@@ -77,7 +77,7 @@ class DimensionOverlapResult extends \Google\Protobuf\Internal\Message
      * The attributes and their overlap with the primary attribute.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.AudienceOverlapItem items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\AudienceOverlapItem>
      */
     public function getItems()
     {
@@ -88,7 +88,7 @@ class DimensionOverlapResult extends \Google\Protobuf\Internal\Message
      * The attributes and their overlap with the primary attribute.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.AudienceOverlapItem items = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\AudienceOverlapItem>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\AudienceOverlapItem[] $var
      * @return $this
      */
     public function setItems($var)

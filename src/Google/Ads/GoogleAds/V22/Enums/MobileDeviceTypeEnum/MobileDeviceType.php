@@ -66,6 +66,3 @@ class MobileDeviceType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MobileDeviceType::class, \Google\Ads\GoogleAds\V22\Enums\MobileDeviceTypeEnum_MobileDeviceType::class);
-

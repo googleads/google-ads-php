@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Recommendation to deploy Google Tag on more pages.
@@ -30,7 +30,4 @@ class ImproveGoogleTagCoverageRecommendation extends \Google\Protobuf\Internal\M
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ImproveGoogleTagCoverageRecommendation::class, \Google\Ads\GoogleAds\V22\Resources\Recommendation_ImproveGoogleTagCoverageRecommendation::class);
 

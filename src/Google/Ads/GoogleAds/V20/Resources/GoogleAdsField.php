@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A field or resource (artifact) used by GoogleAdsService.
@@ -139,24 +139,24 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      *     @type bool $sortable
      *           Output only. Whether the artifact can be used in a ORDER BY clause in
      *           search queries.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $selectable_with
+     *     @type string[] $selectable_with
      *           Output only. The names of all resources, segments, and metrics that are
      *           selectable with the described artifact.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $attribute_resources
+     *     @type string[] $attribute_resources
      *           Output only. The names of all resources that are selectable with the
      *           described artifact. Fields from these resources do not segment metrics when
      *           included in search queries.
      *           This field is only set for artifacts whose category is RESOURCE.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $metrics
+     *     @type string[] $metrics
      *           Output only. This field lists the names of all metrics that are selectable
      *           with the described artifact when it is used in the FROM clause. It is only
      *           set for artifacts whose category is RESOURCE.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $segments
+     *     @type string[] $segments
      *           Output only. This field lists the names of all artifacts, whether a segment
      *           or another resource, that segment metrics when included in search queries
      *           and when the described artifact is used in the FROM clause. It is only set
      *           for artifacts whose category is RESOURCE.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $enum_values
+     *     @type string[] $enum_values
      *           Output only. Values the artifact can assume if it is a field of type ENUM.
      *           This field is only set for artifacts of category SEGMENT or ATTRIBUTE.
      *     @type int $data_type
@@ -384,7 +384,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * selectable with the described artifact.
      *
      * Generated from protobuf field <code>repeated string selectable_with = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSelectableWith()
     {
@@ -396,7 +396,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * selectable with the described artifact.
      *
      * Generated from protobuf field <code>repeated string selectable_with = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSelectableWith($var)
@@ -414,7 +414,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * This field is only set for artifacts whose category is RESOURCE.
      *
      * Generated from protobuf field <code>repeated string attribute_resources = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getAttributeResources()
     {
@@ -428,7 +428,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * This field is only set for artifacts whose category is RESOURCE.
      *
      * Generated from protobuf field <code>repeated string attribute_resources = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setAttributeResources($var)
@@ -445,7 +445,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * set for artifacts whose category is RESOURCE.
      *
      * Generated from protobuf field <code>repeated string metrics = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getMetrics()
     {
@@ -458,7 +458,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * set for artifacts whose category is RESOURCE.
      *
      * Generated from protobuf field <code>repeated string metrics = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setMetrics($var)
@@ -476,7 +476,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * for artifacts whose category is RESOURCE.
      *
      * Generated from protobuf field <code>repeated string segments = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSegments()
     {
@@ -490,7 +490,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * for artifacts whose category is RESOURCE.
      *
      * Generated from protobuf field <code>repeated string segments = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSegments($var)
@@ -506,7 +506,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * This field is only set for artifacts of category SEGMENT or ATTRIBUTE.
      *
      * Generated from protobuf field <code>repeated string enum_values = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getEnumValues()
     {
@@ -518,7 +518,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * This field is only set for artifacts of category SEGMENT or ATTRIBUTE.
      *
      * Generated from protobuf field <code>repeated string enum_values = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setEnumValues($var)

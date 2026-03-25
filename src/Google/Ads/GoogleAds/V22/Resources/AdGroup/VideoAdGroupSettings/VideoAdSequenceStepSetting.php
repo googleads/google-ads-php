@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\AdGroup\VideoAdGroupSettings;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The video ads sequence step settings containing step ID.
@@ -72,7 +72,4 @@ class VideoAdSequenceStepSetting extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(VideoAdSequenceStepSetting::class, \Google\Ads\GoogleAds\V22\Resources\AdGroup_VideoAdGroupSettings_VideoAdSequenceStepSetting::class);
 

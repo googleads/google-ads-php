@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -32,7 +32,7 @@ class GenerateRecommendationsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Resources\Recommendation>|\Google\Protobuf\Internal\RepeatedField $recommendations
+     *     @type \Google\Ads\GoogleAds\V21\Resources\Recommendation[] $recommendations
      *           List of generated recommendations from the passed in set of requested
      *           recommendation_types. If there isn't sufficient data to generate a
      *           recommendation for the requested recommendation_types, the result set won't
@@ -51,7 +51,7 @@ class GenerateRecommendationsResponse extends \Google\Protobuf\Internal\Message
      * contain a recommendation for that type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.Recommendation recommendations = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Resources\Recommendation>
      */
     public function getRecommendations()
     {
@@ -65,7 +65,7 @@ class GenerateRecommendationsResponse extends \Google\Protobuf\Internal\Message
      * contain a recommendation for that type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.Recommendation recommendations = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Resources\Recommendation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Resources\Recommendation[] $var
      * @return $this
      */
     public function setRecommendations($var)

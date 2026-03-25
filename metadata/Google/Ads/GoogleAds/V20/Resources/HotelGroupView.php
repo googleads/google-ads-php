@@ -16,14 +16,7 @@ class HotelGroupView
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
-            '
-Ù
-9google/ads/googleads/v20/resources/hotel_group_view.proto"google.ads.googleads.v20.resourcesgoogle/api/resource.proto"Ì
-HotelGroupViewF
-resource_name (	B/àAúA)
-\'googleads.googleapis.com/HotelGroupView:rêAo
-\'googleads.googleapis.com/HotelGroupViewDcustomers/{customer_id}/hotelGroupViews/{ad_group_id}~{criterion_id}B…
-&com.google.ads.googleads.v20.resourcesBHotelGroupViewProtoPZKgoogle.golang.org/genproto/googleapis/ads/googleads/v20/resources;resources¢GAAª"Google.Ads.GoogleAds.V20.ResourcesÊ"Google\\Ads\\GoogleAds\\V20\\Resourcesê&Google::Ads::GoogleAds::V20::Resourcesbproto3'
+            "\x0A\xD9\x04\x0A9google/ads/googleads/v20/resources/hotel_group_view.proto\x12\"google.ads.googleads.v20.resources\x1A\x19google/api/resource.proto\"\xCC\x01\x0A\x0EHotelGroupView\x12F\x0A\x0Dresource_name\x18\x01 \x01(\x09B/\xE0A\x03\xFAA)\x0A'googleads.googleapis.com/HotelGroupView:r\xEAAo\x0A'googleads.googleapis.com/HotelGroupView\x12Dcustomers/{customer_id}/hotelGroupViews/{ad_group_id}~{criterion_id}B\x85\x02\x0A&com.google.ads.googleads.v20.resourcesB\x13HotelGroupViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v20/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V20.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V20\\Resources\xEA\x02&Google::Ads::GoogleAds::V20::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

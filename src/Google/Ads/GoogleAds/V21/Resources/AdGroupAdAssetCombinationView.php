@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A view on the usage of ad group ad asset combination.
@@ -57,7 +57,7 @@ class AdGroupAdAssetCombinationView extends \Google\Protobuf\Internal\Message
      *           asset_combination_id_low.
      *           AdGroupAd Asset Combination view resource names have the form:
      *           `customers/{customer_id}/adGroupAdAssetCombinationViews/{AdGroupAd.ad_group_id}~{AdGroupAd.ad.ad_id}~{AssetCombination.asset_combination_id_low}~{AssetCombination.asset_combination_id_high}`
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AssetUsage>|\Google\Protobuf\Internal\RepeatedField $served_assets
+     *     @type \Google\Ads\GoogleAds\V21\Common\AssetUsage[] $served_assets
      *           Output only. Served assets.
      *     @type bool $enabled
      *           Output only. The status between the asset combination and the latest
@@ -111,7 +111,7 @@ class AdGroupAdAssetCombinationView extends \Google\Protobuf\Internal\Message
      * Output only. Served assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AssetUsage served_assets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AssetUsage>
      */
     public function getServedAssets()
     {
@@ -122,7 +122,7 @@ class AdGroupAdAssetCombinationView extends \Google\Protobuf\Internal\Message
      * Output only. Served assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AssetUsage served_assets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AssetUsage>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AssetUsage[] $var
      * @return $this
      */
     public function setServedAssets($var)

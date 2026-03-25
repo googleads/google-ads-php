@@ -98,6 +98,3 @@ class ConversionGoalCampaignConfigError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionGoalCampaignConfigError::class, \Google\Ads\GoogleAds\V21\Errors\ConversionGoalCampaignConfigErrorEnum_ConversionGoalCampaignConfigError::class);
-

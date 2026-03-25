@@ -73,6 +73,3 @@ class ProductAvailability
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProductAvailability::class, \Google\Ads\GoogleAds\V21\Enums\ProductAvailabilityEnum_ProductAvailability::class);
-

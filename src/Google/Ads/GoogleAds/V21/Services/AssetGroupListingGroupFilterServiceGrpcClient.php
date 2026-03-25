@@ -40,7 +40,7 @@ class AssetGroupListingGroupFilterServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\MutateAssetGroupListingGroupFiltersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\MutateAssetGroupListingGroupFiltersResponse>
      */
     public function MutateAssetGroupListingGroupFilters(\Google\Ads\GoogleAds\V21\Services\MutateAssetGroupListingGroupFiltersRequest $argument,
       $metadata = [], $options = []) {

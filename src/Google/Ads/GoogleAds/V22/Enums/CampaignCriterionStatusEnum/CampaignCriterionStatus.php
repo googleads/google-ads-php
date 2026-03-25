@@ -74,6 +74,3 @@ class CampaignCriterionStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CampaignCriterionStatus::class, \Google\Ads\GoogleAds\V22\Enums\CampaignCriterionStatusEnum_CampaignCriterionStatus::class);
-

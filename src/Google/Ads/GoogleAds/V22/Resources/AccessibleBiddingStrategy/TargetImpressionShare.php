@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\AccessibleBiddingStrategy;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An automated bidding strategy that sets bids so that a certain percentage
@@ -166,7 +166,4 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TargetImpressionShare::class, \Google\Ads\GoogleAds\V22\Resources\AccessibleBiddingStrategy_TargetImpressionShare::class);
 

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Enums;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Message describing Budget delivery methods. A delivery method determines the

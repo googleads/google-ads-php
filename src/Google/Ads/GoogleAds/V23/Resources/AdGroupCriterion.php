@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An ad group criterion.
@@ -281,12 +281,12 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           Output only. Serving status of the criterion.
      *     @type int $approval_status
      *           Output only. Approval status of the criterion.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $disapproval_reasons
+     *     @type string[] $disapproval_reasons
      *           Output only. List of disapproval reasons of the criterion.
      *           The different reasons for disapproving a criterion can be found here:
      *           https://support.google.com/adspolicy/answer/6008942
      *           This field is read-only.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type string[] $labels
      *           Output only. The resource names of labels attached to this ad group
      *           criterion.
      *     @type float $bid_modifier
@@ -321,21 +321,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           Output only. Source of the effective Percent CPC bid.
      *     @type \Google\Ads\GoogleAds\V23\Resources\AdGroupCriterion\PositionEstimates $position_estimates
      *           Output only. Estimates for criterion bids at various positions.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_urls
+     *     @type string[] $final_urls
      *           The list of possible final URLs after all cross-domain redirects for the
      *           ad.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
+     *     @type string[] $final_mobile_urls
      *           The list of possible final mobile URLs after all cross-domain redirects.
      *     @type string $final_url_suffix
      *           URL template for appending params to final URL.
      *     @type string $tracking_url_template
      *           The URL template for constructing a tracking URL.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *     @type \Google\Ads\GoogleAds\V23\Common\CustomParameter[] $url_custom_parameters
      *           The list of mappings used to substitute custom parameter tags in a
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type int $primary_status
      *           Output only. The primary status for the ad group criterion.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $primary_status_reasons
+     *     @type int[] $primary_status_reasons
      *           Output only. The primary status reasons for the ad group criterion.
      *     @type \Google\Ads\GoogleAds\V23\Common\KeywordInfo $keyword
      *           Immutable. Keyword.
@@ -735,7 +735,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>repeated string disapproval_reasons = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getDisapprovalReasons()
     {
@@ -749,7 +749,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>repeated string disapproval_reasons = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setDisapprovalReasons($var)
@@ -765,7 +765,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * criterion.
      *
      * Generated from protobuf field <code>repeated string labels = 60 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLabels()
     {
@@ -777,7 +777,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * criterion.
      *
      * Generated from protobuf field <code>repeated string labels = 60 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLabels($var)
@@ -1265,7 +1265,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * ad.
      *
      * Generated from protobuf field <code>repeated string final_urls = 70;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getFinalUrls()
     {
@@ -1277,7 +1277,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * ad.
      *
      * Generated from protobuf field <code>repeated string final_urls = 70;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setFinalUrls($var)
@@ -1292,7 +1292,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * The list of possible final mobile URLs after all cross-domain redirects.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 71;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getFinalMobileUrls()
     {
@@ -1303,7 +1303,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * The list of possible final mobile URLs after all cross-domain redirects.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 71;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setFinalMobileUrls($var)
@@ -1391,7 +1391,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.CustomParameter url_custom_parameters = 14;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\CustomParameter>
      */
     public function getUrlCustomParameters()
     {
@@ -1403,7 +1403,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.CustomParameter url_custom_parameters = 14;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\CustomParameter[] $var
      * @return $this
      */
     public function setUrlCustomParameters($var)
@@ -1454,7 +1454,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Output only. The primary status reasons for the ad group criterion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.AdGroupCriterionPrimaryStatusReasonEnum.AdGroupCriterionPrimaryStatusReason primary_status_reasons = 86 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getPrimaryStatusReasons()
     {
@@ -1465,7 +1465,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Output only. The primary status reasons for the ad group criterion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.AdGroupCriterionPrimaryStatusReasonEnum.AdGroupCriterionPrimaryStatusReason primary_status_reasons = 86 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setPrimaryStatusReasons($var)

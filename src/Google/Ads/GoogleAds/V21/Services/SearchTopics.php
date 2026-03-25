@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A collection of content topics to return trend information for.
@@ -33,7 +33,7 @@ class SearchTopics extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AudienceInsightsEntity>|\Google\Protobuf\Internal\RepeatedField $entities
+     *     @type \Google\Ads\GoogleAds\V21\Common\AudienceInsightsEntity[] $entities
      *           Required. A list of knowledge graph entities to retrieve trend information
      *           for. Supported entities are tagged with
      *           [CONTENT_TRENDING_INSIGHTS][google.ads.googleads.v21.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CONTENT_TRENDING_INSIGHTS].
@@ -56,7 +56,7 @@ class SearchTopics extends \Google\Protobuf\Internal\Message
      * to get the list of supported entities.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AudienceInsightsEntity entities = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AudienceInsightsEntity>
      */
     public function getEntities()
     {
@@ -72,7 +72,7 @@ class SearchTopics extends \Google\Protobuf\Internal\Message
      * to get the list of supported entities.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AudienceInsightsEntity entities = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AudienceInsightsEntity>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AudienceInsightsEntity[] $var
      * @return $this
      */
     public function setEntities($var)

@@ -73,6 +73,3 @@ class IdentityVerificationError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(IdentityVerificationError::class, \Google\Ads\GoogleAds\V21\Errors\IdentityVerificationErrorEnum_IdentityVerificationError::class);
-

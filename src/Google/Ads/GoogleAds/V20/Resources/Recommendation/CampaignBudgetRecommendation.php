@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The budget recommendation for budget constrained campaigns.
@@ -45,7 +45,7 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
      *           Output only. The current budget amount in micros.
      *     @type int|string $recommended_budget_amount_micros
      *           Output only. The recommended budget amount in micros.
-     *     @type array<\Google\Ads\GoogleAds\V20\Resources\Recommendation\CampaignBudgetRecommendation\CampaignBudgetRecommendationOption>|\Google\Protobuf\Internal\RepeatedField $budget_options
+     *     @type \Google\Ads\GoogleAds\V20\Resources\Recommendation\CampaignBudgetRecommendation\CampaignBudgetRecommendationOption[] $budget_options
      *           Output only. The budget amounts and associated impact estimates for some
      *           values of possible budget amounts.
      * }
@@ -132,7 +132,7 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
      * values of possible budget amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.Recommendation.CampaignBudgetRecommendation.CampaignBudgetRecommendationOption budget_options = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Resources\Recommendation\CampaignBudgetRecommendation\CampaignBudgetRecommendationOption>
      */
     public function getBudgetOptions()
     {
@@ -144,7 +144,7 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
      * values of possible budget amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.Recommendation.CampaignBudgetRecommendation.CampaignBudgetRecommendationOption budget_options = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Resources\Recommendation\CampaignBudgetRecommendation\CampaignBudgetRecommendationOption>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Resources\Recommendation\CampaignBudgetRecommendation\CampaignBudgetRecommendationOption[] $var
      * @return $this
      */
     public function setBudgetOptions($var)
@@ -156,7 +156,4 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CampaignBudgetRecommendation::class, \Google\Ads\GoogleAds\V20\Resources\Recommendation_CampaignBudgetRecommendation::class);
 

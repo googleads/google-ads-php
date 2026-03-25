@@ -66,6 +66,3 @@ class ProximityRadiusUnits
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProximityRadiusUnits::class, \Google\Ads\GoogleAds\V21\Enums\ProximityRadiusUnitsEnum_ProximityRadiusUnits::class);
-

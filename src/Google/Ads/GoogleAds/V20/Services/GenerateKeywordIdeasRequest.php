@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -106,7 +106,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      *           Each keyword belongs to some set of languages; a keyword is included if
      *           language is one of its languages.
      *           If not set, all keywords will be included.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
+     *     @type string[] $geo_target_constants
      *           The resource names of the location to target. Maximum is 10.
      *           An empty list MAY be used to specify all targeting geos.
      *     @type bool $include_adult_keywords
@@ -128,7 +128,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      *     @type int $keyword_plan_network
      *           Targeting network.
      *           If not set, Google Search And Partners Network will be used.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $keyword_annotation
+     *     @type int[] $keyword_annotation
      *           The keyword annotations to include in response.
      *     @type \Google\Ads\GoogleAds\V20\Common\KeywordPlanAggregateMetrics $aggregate_metrics
      *           The aggregate fields to include in response.
@@ -223,7 +223,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * An empty list MAY be used to specify all targeting geos.
      *
      * Generated from protobuf field <code>repeated string geo_target_constants = 15;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getGeoTargetConstants()
     {
@@ -235,7 +235,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * An empty list MAY be used to specify all targeting geos.
      *
      * Generated from protobuf field <code>repeated string geo_target_constants = 15;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setGeoTargetConstants($var)
@@ -376,7 +376,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * The keyword annotations to include in response.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.KeywordPlanKeywordAnnotationEnum.KeywordPlanKeywordAnnotation keyword_annotation = 17;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getKeywordAnnotation()
     {
@@ -387,7 +387,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * The keyword annotations to include in response.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.KeywordPlanKeywordAnnotationEnum.KeywordPlanKeywordAnnotation keyword_annotation = 17;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setKeywordAnnotation($var)

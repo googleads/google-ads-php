@@ -278,6 +278,3 @@ class AdType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdType::class, \Google\Ads\GoogleAds\V22\Enums\AdTypeEnum_AdType::class);
-

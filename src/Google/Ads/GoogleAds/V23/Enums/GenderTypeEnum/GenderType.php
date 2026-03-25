@@ -73,6 +73,3 @@ class GenderType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(GenderType::class, \Google\Ads\GoogleAds\V23\Enums\GenderTypeEnum_GenderType::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Campaign;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Selective optimization setting for this campaign, which includes a set of
@@ -33,7 +33,7 @@ class SelectiveOptimization extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $conversion_actions
+     *     @type string[] $conversion_actions
      *           The selected set of resource names for conversion actions for optimizing
      *           this campaign.
      * }
@@ -48,7 +48,7 @@ class SelectiveOptimization extends \Google\Protobuf\Internal\Message
      * this campaign.
      *
      * Generated from protobuf field <code>repeated string conversion_actions = 2 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getConversionActions()
     {
@@ -60,7 +60,7 @@ class SelectiveOptimization extends \Google\Protobuf\Internal\Message
      * this campaign.
      *
      * Generated from protobuf field <code>repeated string conversion_actions = 2 [(.google.api.resource_reference) = {</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setConversionActions($var)
@@ -72,7 +72,4 @@ class SelectiveOptimization extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SelectiveOptimization::class, \Google\Ads\GoogleAds\V23\Resources\Campaign_SelectiveOptimization::class);
 

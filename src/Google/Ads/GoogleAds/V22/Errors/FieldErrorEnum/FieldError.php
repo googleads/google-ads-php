@@ -108,6 +108,3 @@ class FieldError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(FieldError::class, \Google\Ads\GoogleAds\V22\Errors\FieldErrorEnum_FieldError::class);
-

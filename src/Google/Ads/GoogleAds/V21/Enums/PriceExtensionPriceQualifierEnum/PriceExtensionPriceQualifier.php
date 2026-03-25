@@ -73,6 +73,3 @@ class PriceExtensionPriceQualifier
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PriceExtensionPriceQualifier::class, \Google\Ads\GoogleAds\V21\Enums\PriceExtensionPriceQualifierEnum_PriceExtensionPriceQualifier::class);
-

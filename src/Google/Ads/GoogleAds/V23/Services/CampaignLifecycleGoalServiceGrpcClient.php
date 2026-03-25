@@ -46,7 +46,7 @@ class CampaignLifecycleGoalServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\ConfigureCampaignLifecycleGoalsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\ConfigureCampaignLifecycleGoalsResponse>
      */
     public function ConfigureCampaignLifecycleGoals(\Google\Ads\GoogleAds\V23\Services\ConfigureCampaignLifecycleGoalsRequest $argument,
       $metadata = [], $options = []) {

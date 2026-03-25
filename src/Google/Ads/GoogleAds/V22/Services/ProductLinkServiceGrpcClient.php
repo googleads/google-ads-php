@@ -49,7 +49,7 @@ class ProductLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\CreateProductLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\CreateProductLinkResponse>
      */
     public function CreateProductLink(\Google\Ads\GoogleAds\V22\Services\CreateProductLinkRequest $argument,
       $metadata = [], $options = []) {
@@ -74,7 +74,7 @@ class ProductLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\RemoveProductLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\RemoveProductLinkResponse>
      */
     public function RemoveProductLink(\Google\Ads\GoogleAds\V22\Services\RemoveProductLinkRequest $argument,
       $metadata = [], $options = []) {

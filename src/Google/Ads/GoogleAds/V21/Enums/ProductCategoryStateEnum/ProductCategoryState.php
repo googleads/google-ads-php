@@ -66,6 +66,3 @@ class ProductCategoryState
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProductCategoryState::class, \Google\Ads\GoogleAds\V21\Enums\ProductCategoryStateEnum_ProductCategoryState::class);
-

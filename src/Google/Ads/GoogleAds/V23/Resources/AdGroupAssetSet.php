@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * AdGroupAssetSet is the linkage between an ad group and an asset set.

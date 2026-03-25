@@ -52,7 +52,7 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\GenerateConversionRatesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\GenerateConversionRatesResponse>
      */
     public function GenerateConversionRates(\Google\Ads\GoogleAds\V20\Services\GenerateConversionRatesRequest $argument,
       $metadata = [], $options = []) {
@@ -75,7 +75,7 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\ListPlannableLocationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\ListPlannableLocationsResponse>
      */
     public function ListPlannableLocations(\Google\Ads\GoogleAds\V20\Services\ListPlannableLocationsRequest $argument,
       $metadata = [], $options = []) {
@@ -99,7 +99,7 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\ListPlannableProductsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\ListPlannableProductsResponse>
      */
     public function ListPlannableProducts(\Google\Ads\GoogleAds\V20\Services\ListPlannableProductsRequest $argument,
       $metadata = [], $options = []) {
@@ -125,7 +125,7 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\GenerateReachForecastRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\GenerateReachForecastResponse>
      */
     public function GenerateReachForecast(\Google\Ads\GoogleAds\V20\Services\GenerateReachForecastRequest $argument,
       $metadata = [], $options = []) {
@@ -155,7 +155,7 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\ListPlannableUserListsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\ListPlannableUserListsResponse>
      */
     public function ListPlannableUserLists(\Google\Ads\GoogleAds\V20\Services\ListPlannableUserListsRequest $argument,
       $metadata = [], $options = []) {

@@ -73,6 +73,3 @@ class TargetImpressionShareLocation
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TargetImpressionShareLocation::class, \Google\Ads\GoogleAds\V20\Enums\TargetImpressionShareLocationEnum_TargetImpressionShareLocation::class);
-

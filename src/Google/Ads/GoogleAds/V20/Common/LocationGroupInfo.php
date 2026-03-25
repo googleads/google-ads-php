@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A radius around a list of locations specified through a feed or assetSet.
@@ -75,7 +75,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
+     *     @type string[] $geo_target_constants
      *           Geo target constant(s) restricting the scope of the geographic area within
      *           the feed. Currently only one geo target constant is allowed. Cannot be set
      *           with AssetSet fields.
@@ -86,7 +86,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      *           Unit of the radius. Miles and meters are supported for geo target
      *           constants. Milli miles and meters are supported for feed item sets and
      *           asset sets. This is required and must be set in CREATE operations.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $feed_item_sets
+     *     @type string[] $feed_item_sets
      *           FeedItemSets whose FeedItems are targeted. If multiple IDs are specified,
      *           then all items that appear in at least one set are targeted. This field
      *           cannot be used with geo_target_constants. This is optional and can only be
@@ -97,7 +97,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      *           feed, geo target constants or feed item sets. When using asset sets, either
      *           this field or location_group_asset_sets should be specified. Both cannot be
      *           used at the same time. This can only be set in CREATE operations.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $location_group_asset_sets
+     *     @type string[] $location_group_asset_sets
      *           AssetSets whose Assets are targeted. If multiple IDs are specified, then
      *           all items that appear in at least one set are targeted. This field cannot
      *           be used with feed, geo target constants or feed item sets. When using asset
@@ -117,7 +117,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * with AssetSet fields.
      *
      * Generated from protobuf field <code>repeated string geo_target_constants = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getGeoTargetConstants()
     {
@@ -130,7 +130,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * with AssetSet fields.
      *
      * Generated from protobuf field <code>repeated string geo_target_constants = 6;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setGeoTargetConstants($var)
@@ -216,7 +216,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * set in CREATE operations. Cannot be set with AssetSet fields.
      *
      * Generated from protobuf field <code>repeated string feed_item_sets = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getFeedItemSets()
     {
@@ -230,7 +230,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * set in CREATE operations. Cannot be set with AssetSet fields.
      *
      * Generated from protobuf field <code>repeated string feed_item_sets = 8;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setFeedItemSets($var)
@@ -294,7 +294,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * in CREATE operations.
      *
      * Generated from protobuf field <code>repeated string location_group_asset_sets = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLocationGroupAssetSets()
     {
@@ -310,7 +310,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * in CREATE operations.
      *
      * Generated from protobuf field <code>repeated string location_group_asset_sets = 10;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLocationGroupAssetSets($var)

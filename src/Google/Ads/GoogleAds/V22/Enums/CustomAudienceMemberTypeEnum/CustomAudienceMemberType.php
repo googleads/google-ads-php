@@ -80,6 +80,3 @@ class CustomAudienceMemberType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomAudienceMemberType::class, \Google\Ads\GoogleAds\V22\Enums\CustomAudienceMemberTypeEnum_CustomAudienceMemberType::class);
-

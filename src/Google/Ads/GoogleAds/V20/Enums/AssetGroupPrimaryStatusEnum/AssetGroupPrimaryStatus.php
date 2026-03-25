@@ -95,6 +95,3 @@ class AssetGroupPrimaryStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetGroupPrimaryStatus::class, \Google\Ads\GoogleAds\V20\Enums\AssetGroupPrimaryStatusEnum_AssetGroupPrimaryStatus::class);
-

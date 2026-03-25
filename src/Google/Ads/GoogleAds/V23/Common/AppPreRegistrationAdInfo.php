@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * App pre-registration ads link to your app or game listing on Google Play, and
@@ -52,15 +52,15 @@ class AppPreRegistrationAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdTextAsset[] $headlines
      *           List of text assets for headlines. When the ad serves the headlines will
      *           be selected from this list.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdTextAsset[] $descriptions
      *           List of text assets for descriptions. When the ad serves the descriptions
      *           will be selected from this list.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $images
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdImageAsset[] $images
      *           List of image asset IDs whose images may be displayed with the ad.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $youtube_videos
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdVideoAsset[] $youtube_videos
      *           List of YouTube video asset IDs whose videos may be displayed with the ad.
      * }
      */
@@ -74,7 +74,7 @@ class AppPreRegistrationAdInfo extends \Google\Protobuf\Internal\Message
      * be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdTextAsset headlines = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>
      */
     public function getHeadlines()
     {
@@ -86,7 +86,7 @@ class AppPreRegistrationAdInfo extends \Google\Protobuf\Internal\Message
      * be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdTextAsset headlines = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -102,7 +102,7 @@ class AppPreRegistrationAdInfo extends \Google\Protobuf\Internal\Message
      * will be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdTextAsset descriptions = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>
      */
     public function getDescriptions()
     {
@@ -114,7 +114,7 @@ class AppPreRegistrationAdInfo extends \Google\Protobuf\Internal\Message
      * will be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdTextAsset descriptions = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setDescriptions($var)
@@ -129,7 +129,7 @@ class AppPreRegistrationAdInfo extends \Google\Protobuf\Internal\Message
      * List of image asset IDs whose images may be displayed with the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdImageAsset images = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdImageAsset>
      */
     public function getImages()
     {
@@ -140,7 +140,7 @@ class AppPreRegistrationAdInfo extends \Google\Protobuf\Internal\Message
      * List of image asset IDs whose images may be displayed with the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdImageAsset images = 3;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setImages($var)
@@ -155,7 +155,7 @@ class AppPreRegistrationAdInfo extends \Google\Protobuf\Internal\Message
      * List of YouTube video asset IDs whose videos may be displayed with the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdVideoAsset youtube_videos = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdVideoAsset>
      */
     public function getYoutubeVideos()
     {
@@ -166,7 +166,7 @@ class AppPreRegistrationAdInfo extends \Google\Protobuf\Internal\Message
      * List of YouTube video asset IDs whose videos may be displayed with the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdVideoAsset youtube_videos = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdVideoAsset[] $var
      * @return $this
      */
     public function setYoutubeVideos($var)

@@ -94,6 +94,3 @@ class AdGroupAdPrimaryStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdGroupAdPrimaryStatus::class, \Google\Ads\GoogleAds\V23\Enums\AdGroupAdPrimaryStatusEnum_AdGroupAdPrimaryStatus::class);
-

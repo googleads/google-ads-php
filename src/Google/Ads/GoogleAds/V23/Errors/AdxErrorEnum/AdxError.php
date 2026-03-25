@@ -59,6 +59,3 @@ class AdxError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdxError::class, \Google\Ads\GoogleAds\V23\Errors\AdxErrorEnum_AdxError::class);
-

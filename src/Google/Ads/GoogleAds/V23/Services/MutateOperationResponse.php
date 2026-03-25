@@ -5,11 +5,11 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
- * Response message for the resource mutate.
+ * Response message for the resource mutate or action.
  *
  * Generated from protobuf message <code>google.ads.googleads.v23.services.MutateOperationResponse</code>
  */
@@ -69,6 +69,8 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      *           The result for the bidding seasonality adjustment mutate.
      *     @type \Google\Ads\GoogleAds\V23\Services\MutateBiddingStrategyResult $bidding_strategy_result
      *           The result for the bidding strategy mutate.
+     *     @type \Google\Ads\GoogleAds\V23\Actions\BookCampaignsResult $book_campaigns_result
+     *           The result for the BookCampaigns action.
      *     @type \Google\Ads\GoogleAds\V23\Services\MutateCampaignAssetResult $campaign_asset_result
      *           The result for the campaign asset mutate.
      *     @type \Google\Ads\GoogleAds\V23\Services\MutateCampaignAssetSetResult $campaign_asset_set_result
@@ -135,6 +137,8 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      *           The result for the keyword plan mutate.
      *     @type \Google\Ads\GoogleAds\V23\Services\MutateLabelResult $label_result
      *           The result for the label mutate.
+     *     @type \Google\Ads\GoogleAds\V23\Actions\QuoteCampaignsResult $quote_campaigns_result
+     *           The result for the QuoteCampaigns action.
      *     @type \Google\Ads\GoogleAds\V23\Services\MutateRecommendationSubscriptionResult $recommendation_subscription_result
      *           The result for the recommendation subscription mutate.
      *     @type \Google\Ads\GoogleAds\V23\Services\MutateRemarketingActionResult $remarketing_action_result
@@ -863,6 +867,37 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Services\MutateBiddingStrategyResult::class);
         $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the BookCampaigns action.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.actions.BookCampaignsResult book_campaigns_result = 89;</code>
+     * @return \Google\Ads\GoogleAds\V23\Actions\BookCampaignsResult|null
+     */
+    public function getBookCampaignsResult()
+    {
+        return $this->readOneof(89);
+    }
+
+    public function hasBookCampaignsResult()
+    {
+        return $this->hasOneof(89);
+    }
+
+    /**
+     * The result for the BookCampaigns action.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.actions.BookCampaignsResult book_campaigns_result = 89;</code>
+     * @param \Google\Ads\GoogleAds\V23\Actions\BookCampaignsResult $var
+     * @return $this
+     */
+    public function setBookCampaignsResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Actions\BookCampaignsResult::class);
+        $this->writeOneof(89, $var);
 
         return $this;
     }
@@ -1886,6 +1921,37 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Services\MutateLabelResult::class);
         $this->writeOneof(41, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the QuoteCampaigns action.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.actions.QuoteCampaignsResult quote_campaigns_result = 88;</code>
+     * @return \Google\Ads\GoogleAds\V23\Actions\QuoteCampaignsResult|null
+     */
+    public function getQuoteCampaignsResult()
+    {
+        return $this->readOneof(88);
+    }
+
+    public function hasQuoteCampaignsResult()
+    {
+        return $this->hasOneof(88);
+    }
+
+    /**
+     * The result for the QuoteCampaigns action.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.actions.QuoteCampaignsResult quote_campaigns_result = 88;</code>
+     * @param \Google\Ads\GoogleAds\V23\Actions\QuoteCampaignsResult $var
+     * @return $this
+     */
+    public function setQuoteCampaignsResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Actions\QuoteCampaignsResult::class);
+        $this->writeOneof(88, $var);
 
         return $this;
     }

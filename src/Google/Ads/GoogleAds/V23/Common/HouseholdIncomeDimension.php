@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Dimension specifying users by their household income.
@@ -34,7 +34,7 @@ class HouseholdIncomeDimension extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $income_ranges
+     *     @type int[] $income_ranges
      *           Included household income demographic segments.
      *     @type bool $include_undetermined
      *           Include users whose household income is not determined.
@@ -49,7 +49,7 @@ class HouseholdIncomeDimension extends \Google\Protobuf\Internal\Message
      * Included household income demographic segments.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.IncomeRangeTypeEnum.IncomeRangeType income_ranges = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getIncomeRanges()
     {
@@ -60,7 +60,7 @@ class HouseholdIncomeDimension extends \Google\Protobuf\Internal\Message
      * Included household income demographic segments.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.IncomeRangeTypeEnum.IncomeRangeType income_ranges = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setIncomeRanges($var)

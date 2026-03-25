@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class GenerateTextResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\GeneratedText>|\Google\Protobuf\Internal\RepeatedField $generated_text
+     *     @type \Google\Ads\GoogleAds\V23\Services\GeneratedText[] $generated_text
      *           List of text that was generated and the field type to use it as.
      * }
      */
@@ -42,7 +42,7 @@ class GenerateTextResponse extends \Google\Protobuf\Internal\Message
      * List of text that was generated and the field type to use it as.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.GeneratedText generated_text = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\GeneratedText>
      */
     public function getGeneratedText()
     {
@@ -53,7 +53,7 @@ class GenerateTextResponse extends \Google\Protobuf\Internal\Message
      * List of text that was generated and the field type to use it as.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.GeneratedText generated_text = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\GeneratedText>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\GeneratedText[] $var
      * @return $this
      */
     public function setGeneratedText($var)

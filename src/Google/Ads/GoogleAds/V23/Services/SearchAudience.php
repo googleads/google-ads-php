@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A collection of audience attributes that describe an audience of viewers.
@@ -18,11 +18,32 @@ class SearchAudience extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Audience attributes that describe an audience of viewers. This is
-     * used to search for topics trending for the defined audience.
+     * used to search for topics trending for the defined audience. Attributes
+     * age_range, gender, user_interest, entity, category, parental_status, and
+     * income_range are supported. Attributes user_interest, entity, and category
+     * can only be set in audience_attributes when audience_combinations is
+     * unused.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttribute audience_attributes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $audience_attributes;
+    /**
+     * Optional. A list of audience attribute groups consisting of one or more
+     * Knowledge Graph entities, Product & Service Categories and user interests
+     * that describes an audience. The groups have a logical AND-of-ORs structure:
+     * 1. Attributes within each InsightsAudienceAttributeGroup are combined
+     * with OR.
+     * 2. The groups themselves are combined together with AND.
+     * For example, an audience (Interest A OR Interest B) AND (Entity C) is
+     * represented using two groups. The first group contains the two interests
+     * and the second group contains the entity.
+     * This field cannot be set if any Knowledge Graph entities, Product &
+     * Service Categories, or user interests are specified in
+     * audience_attributes.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.InsightsAudienceAttributeGroup audience_combinations = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $audience_combinations;
 
     /**
      * Constructor.
@@ -30,9 +51,26 @@ class SearchAudience extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $audience_attributes
+     *     @type \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute[] $audience_attributes
      *           Required. Audience attributes that describe an audience of viewers. This is
-     *           used to search for topics trending for the defined audience.
+     *           used to search for topics trending for the defined audience. Attributes
+     *           age_range, gender, user_interest, entity, category, parental_status, and
+     *           income_range are supported. Attributes user_interest, entity, and category
+     *           can only be set in audience_attributes when audience_combinations is
+     *           unused.
+     *     @type \Google\Ads\GoogleAds\V23\Common\InsightsAudienceAttributeGroup[] $audience_combinations
+     *           Optional. A list of audience attribute groups consisting of one or more
+     *           Knowledge Graph entities, Product & Service Categories and user interests
+     *           that describes an audience. The groups have a logical AND-of-ORs structure:
+     *           1. Attributes within each InsightsAudienceAttributeGroup are combined
+     *           with OR.
+     *           2. The groups themselves are combined together with AND.
+     *           For example, an audience (Interest A OR Interest B) AND (Entity C) is
+     *           represented using two groups. The first group contains the two interests
+     *           and the second group contains the entity.
+     *           This field cannot be set if any Knowledge Graph entities, Product &
+     *           Service Categories, or user interests are specified in
+     *           audience_attributes.
      * }
      */
     public function __construct($data = NULL) {
@@ -42,10 +80,14 @@ class SearchAudience extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Audience attributes that describe an audience of viewers. This is
-     * used to search for topics trending for the defined audience.
+     * used to search for topics trending for the defined audience. Attributes
+     * age_range, gender, user_interest, entity, category, parental_status, and
+     * income_range are supported. Attributes user_interest, entity, and category
+     * can only be set in audience_attributes when audience_combinations is
+     * unused.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttribute audience_attributes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute>
      */
     public function getAudienceAttributes()
     {
@@ -54,16 +96,68 @@ class SearchAudience extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Audience attributes that describe an audience of viewers. This is
-     * used to search for topics trending for the defined audience.
+     * used to search for topics trending for the defined audience. Attributes
+     * age_range, gender, user_interest, entity, category, parental_status, and
+     * income_range are supported. Attributes user_interest, entity, and category
+     * can only be set in audience_attributes when audience_combinations is
+     * unused.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttribute audience_attributes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute[] $var
      * @return $this
      */
     public function setAudienceAttributes($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttribute::class);
         $this->audience_attributes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. A list of audience attribute groups consisting of one or more
+     * Knowledge Graph entities, Product & Service Categories and user interests
+     * that describes an audience. The groups have a logical AND-of-ORs structure:
+     * 1. Attributes within each InsightsAudienceAttributeGroup are combined
+     * with OR.
+     * 2. The groups themselves are combined together with AND.
+     * For example, an audience (Interest A OR Interest B) AND (Entity C) is
+     * represented using two groups. The first group contains the two interests
+     * and the second group contains the entity.
+     * This field cannot be set if any Knowledge Graph entities, Product &
+     * Service Categories, or user interests are specified in
+     * audience_attributes.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.InsightsAudienceAttributeGroup audience_combinations = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\InsightsAudienceAttributeGroup>
+     */
+    public function getAudienceCombinations()
+    {
+        return $this->audience_combinations;
+    }
+
+    /**
+     * Optional. A list of audience attribute groups consisting of one or more
+     * Knowledge Graph entities, Product & Service Categories and user interests
+     * that describes an audience. The groups have a logical AND-of-ORs structure:
+     * 1. Attributes within each InsightsAudienceAttributeGroup are combined
+     * with OR.
+     * 2. The groups themselves are combined together with AND.
+     * For example, an audience (Interest A OR Interest B) AND (Entity C) is
+     * represented using two groups. The first group contains the two interests
+     * and the second group contains the entity.
+     * This field cannot be set if any Knowledge Graph entities, Product &
+     * Service Categories, or user interests are specified in
+     * audience_attributes.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.InsightsAudienceAttributeGroup audience_combinations = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Ads\GoogleAds\V23\Common\InsightsAudienceAttributeGroup[] $var
+     * @return $this
+     */
+    public function setAudienceCombinations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V23\Common\InsightsAudienceAttributeGroup::class);
+        $this->audience_combinations = $arr;
 
         return $this;
     }

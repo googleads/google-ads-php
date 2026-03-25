@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Data related to location set. One of the Google Business Profile (previously

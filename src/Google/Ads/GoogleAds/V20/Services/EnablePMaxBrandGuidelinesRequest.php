@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request to enable Brand Guidelines for a Performance Max campaign.
@@ -53,7 +53,7 @@ class EnablePMaxBrandGuidelinesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer whose campaigns are being enabled.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\EnableOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V20\Services\EnableOperation[] $operations
      *           Required. The list of individual campaign operations. A maximum of 10
      *           enable operations can be executed in a request.
      * }
@@ -94,7 +94,7 @@ class EnablePMaxBrandGuidelinesRequest extends \Google\Protobuf\Internal\Message
      * enable operations can be executed in a request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.EnableOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\EnableOperation>
      */
     public function getOperations()
     {
@@ -106,7 +106,7 @@ class EnablePMaxBrandGuidelinesRequest extends \Google\Protobuf\Internal\Message
      * enable operations can be executed in a request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.EnableOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\EnableOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\EnableOperation[] $var
      * @return $this
      */
     public function setOperations($var)

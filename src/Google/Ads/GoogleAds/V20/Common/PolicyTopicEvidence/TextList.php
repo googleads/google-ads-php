@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common\PolicyTopicEvidence;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A list of fragments of text that violated a policy.
@@ -28,7 +28,7 @@ class TextList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $texts
+     *     @type string[] $texts
      *           The fragments of text from the resource that caused the policy finding.
      * }
      */
@@ -41,7 +41,7 @@ class TextList extends \Google\Protobuf\Internal\Message
      * The fragments of text from the resource that caused the policy finding.
      *
      * Generated from protobuf field <code>repeated string texts = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getTexts()
     {
@@ -52,7 +52,7 @@ class TextList extends \Google\Protobuf\Internal\Message
      * The fragments of text from the resource that caused the policy finding.
      *
      * Generated from protobuf field <code>repeated string texts = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setTexts($var)
@@ -64,7 +64,4 @@ class TextList extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TextList::class, \Google\Ads\GoogleAds\V20\Common\PolicyTopicEvidence_TextList::class);
 

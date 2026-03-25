@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -64,7 +64,7 @@ class RemoveCampaignAutomaticallyCreatedAssetRequest extends \Google\Protobuf\In
      *
      *     @type string $customer_id
      *           Required. The ID of the customer whose assets are being removed.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetOperation[] $operations
      *           Required. The list of operations.
      *     @type bool $partial_failure
      *           Required. If true, successful operations will be carried out and invalid
@@ -107,7 +107,7 @@ class RemoveCampaignAutomaticallyCreatedAssetRequest extends \Google\Protobuf\In
      * Required. The list of operations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.RemoveCampaignAutomaticallyCreatedAssetOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetOperation>
      */
     public function getOperations()
     {
@@ -118,7 +118,7 @@ class RemoveCampaignAutomaticallyCreatedAssetRequest extends \Google\Protobuf\In
      * Required. The list of operations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.RemoveCampaignAutomaticallyCreatedAssetOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetOperation[] $var
      * @return $this
      */
     public function setOperations($var)

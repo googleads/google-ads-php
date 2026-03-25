@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Offline conversion upload summary at customer level.
@@ -123,11 +123,11 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
      *     @type string $last_upload_date_time
      *           Output only. Date for the latest upload batch. The format is "yyyy-mm-dd
      *           hh:mm:ss", and it's in the time zone of the Google Ads account.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\OfflineConversionSummary>|\Google\Protobuf\Internal\RepeatedField $daily_summaries
+     *     @type \Google\Ads\GoogleAds\V23\Resources\OfflineConversionSummary[] $daily_summaries
      *           Output only. Summary of history stats by last N days.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\OfflineConversionSummary>|\Google\Protobuf\Internal\RepeatedField $job_summaries
+     *     @type \Google\Ads\GoogleAds\V23\Resources\OfflineConversionSummary[] $job_summaries
      *           Output only. Summary of history stats by last N jobs.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\OfflineConversionAlert>|\Google\Protobuf\Internal\RepeatedField $alerts
+     *     @type \Google\Ads\GoogleAds\V23\Resources\OfflineConversionAlert[] $alerts
      *           Output only. Details for each error code. Alerts are generated from most
      *           recent calendar day with upload stats.
      * }
@@ -385,7 +385,7 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
      * Output only. Summary of history stats by last N days.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.OfflineConversionSummary daily_summaries = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\OfflineConversionSummary>
      */
     public function getDailySummaries()
     {
@@ -396,7 +396,7 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
      * Output only. Summary of history stats by last N days.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.OfflineConversionSummary daily_summaries = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\OfflineConversionSummary>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\OfflineConversionSummary[] $var
      * @return $this
      */
     public function setDailySummaries($var)
@@ -411,7 +411,7 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
      * Output only. Summary of history stats by last N jobs.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.OfflineConversionSummary job_summaries = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\OfflineConversionSummary>
      */
     public function getJobSummaries()
     {
@@ -422,7 +422,7 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
      * Output only. Summary of history stats by last N jobs.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.OfflineConversionSummary job_summaries = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\OfflineConversionSummary>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\OfflineConversionSummary[] $var
      * @return $this
      */
     public function setJobSummaries($var)
@@ -438,7 +438,7 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
      * recent calendar day with upload stats.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.OfflineConversionAlert alerts = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\OfflineConversionAlert>
      */
     public function getAlerts()
     {
@@ -450,7 +450,7 @@ class OfflineConversionUploadClientSummary extends \Google\Protobuf\Internal\Mes
      * recent calendar day with upload stats.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.OfflineConversionAlert alerts = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\OfflineConversionAlert>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\OfflineConversionAlert[] $var
      * @return $this
      */
     public function setAlerts($var)

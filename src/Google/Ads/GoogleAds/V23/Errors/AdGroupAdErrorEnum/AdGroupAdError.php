@@ -100,6 +100,12 @@ class AdGroupAdError
      * Generated from protobuf enum <code>AD_SHARING_NOT_ALLOWED = 13;</code>
      */
     const AD_SHARING_NOT_ALLOWED = 13;
+    /**
+     * The duration of the AdGroupAd is too short.
+     *
+     * Generated from protobuf enum <code>DURATION_TOO_SHORT = 14;</code>
+     */
+    const DURATION_TOO_SHORT = 14;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -116,6 +122,7 @@ class AdGroupAdError
         self::AD_TYPE_CANNOT_BE_REMOVED => 'AD_TYPE_CANNOT_BE_REMOVED',
         self::CANNOT_UPDATE_DEPRECATED_ADS => 'CANNOT_UPDATE_DEPRECATED_ADS',
         self::AD_SHARING_NOT_ALLOWED => 'AD_SHARING_NOT_ALLOWED',
+        self::DURATION_TOO_SHORT => 'DURATION_TOO_SHORT',
     ];
 
     public static function name($value)
@@ -138,7 +145,4 @@ class AdGroupAdError
         return constant($const);
     }
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdGroupAdError::class, \Google\Ads\GoogleAds\V23\Errors\AdGroupAdErrorEnum_AdGroupAdError::class);
 

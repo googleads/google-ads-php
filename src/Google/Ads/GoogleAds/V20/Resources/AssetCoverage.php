@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Information about the asset coverage of an asset group.
@@ -29,7 +29,7 @@ class AssetCoverage extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Resources\AdStrengthActionItem>|\Google\Protobuf\Internal\RepeatedField $ad_strength_action_items
+     *     @type \Google\Ads\GoogleAds\V20\Resources\AdStrengthActionItem[] $ad_strength_action_items
      *           Output only. A list of action items to improve the ad strength of an asset
      *           group.
      * }
@@ -44,7 +44,7 @@ class AssetCoverage extends \Google\Protobuf\Internal\Message
      * group.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.AdStrengthActionItem ad_strength_action_items = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Resources\AdStrengthActionItem>
      */
     public function getAdStrengthActionItems()
     {
@@ -56,7 +56,7 @@ class AssetCoverage extends \Google\Protobuf\Internal\Message
      * group.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.AdStrengthActionItem ad_strength_action_items = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Resources\AdStrengthActionItem>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Resources\AdStrengthActionItem[] $var
      * @return $this
      */
     public function setAdStrengthActionItems($var)

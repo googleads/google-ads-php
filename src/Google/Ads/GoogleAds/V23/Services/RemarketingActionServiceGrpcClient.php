@@ -48,7 +48,7 @@ class RemarketingActionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\MutateRemarketingActionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateRemarketingActionsResponse>
      */
     public function MutateRemarketingActions(\Google\Ads\GoogleAds\V23\Services\MutateRemarketingActionsRequest $argument,
       $metadata = [], $options = []) {

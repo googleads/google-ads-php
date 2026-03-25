@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -31,7 +31,7 @@ class GenerateTargetingSuggestionMetricsResponse extends \Google\Protobuf\Intern
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\TargetingSuggestionMetrics>|\Google\Protobuf\Internal\RepeatedField $suggestions
+     *     @type \Google\Ads\GoogleAds\V23\Services\TargetingSuggestionMetrics[] $suggestions
      *           Suggested targetable audiences. There will be one suggestion for each
      *           [GenerateTargetingSuggestionMetricsRequest.audiences][google.ads.googleads.v23.services.GenerateTargetingSuggestionMetricsRequest.audiences]
      *           requested, matching the order requested.
@@ -48,7 +48,7 @@ class GenerateTargetingSuggestionMetricsResponse extends \Google\Protobuf\Intern
      * requested, matching the order requested.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.TargetingSuggestionMetrics suggestions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\TargetingSuggestionMetrics>
      */
     public function getSuggestions()
     {
@@ -61,7 +61,7 @@ class GenerateTargetingSuggestionMetricsResponse extends \Google\Protobuf\Intern
      * requested, matching the order requested.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.TargetingSuggestionMetrics suggestions = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\TargetingSuggestionMetrics>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\TargetingSuggestionMetrics[] $var
      * @return $this
      */
     public function setSuggestions($var)

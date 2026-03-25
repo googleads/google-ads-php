@@ -115,6 +115,3 @@ class PriceExtensionType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PriceExtensionType::class, \Google\Ads\GoogleAds\V23\Enums\PriceExtensionTypeEnum_PriceExtensionType::class);
-

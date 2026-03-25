@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for a campaign asset set mutate.
@@ -37,7 +37,7 @@ class MutateCampaignAssetSetsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\MutateCampaignAssetSetResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V20\Services\MutateCampaignAssetSetResult[] $results
      *           All results for the mutate.
      *     @type \Google\Rpc\Status $partial_failure_error
      *           Errors that pertain to operation failures in the partial failure mode.
@@ -55,7 +55,7 @@ class MutateCampaignAssetSetsResponse extends \Google\Protobuf\Internal\Message
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.MutateCampaignAssetSetResult results = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\MutateCampaignAssetSetResult>
      */
     public function getResults()
     {
@@ -66,7 +66,7 @@ class MutateCampaignAssetSetsResponse extends \Google\Protobuf\Internal\Message
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.MutateCampaignAssetSetResult results = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\MutateCampaignAssetSetResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\MutateCampaignAssetSetResult[] $var
      * @return $this
      */
     public function setResults($var)

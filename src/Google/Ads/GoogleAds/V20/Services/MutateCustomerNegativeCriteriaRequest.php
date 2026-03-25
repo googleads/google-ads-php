@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -75,7 +75,7 @@ class MutateCustomerNegativeCriteriaRequest extends \Google\Protobuf\Internal\Me
      *
      *     @type string $customer_id
      *           Required. The ID of the customer whose criteria are being modified.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\CustomerNegativeCriterionOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V20\Services\CustomerNegativeCriterionOperation[] $operations
      *           Required. The list of operations to perform on individual criteria.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -125,7 +125,7 @@ class MutateCustomerNegativeCriteriaRequest extends \Google\Protobuf\Internal\Me
      * Required. The list of operations to perform on individual criteria.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.CustomerNegativeCriterionOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\CustomerNegativeCriterionOperation>
      */
     public function getOperations()
     {
@@ -136,7 +136,7 @@ class MutateCustomerNegativeCriteriaRequest extends \Google\Protobuf\Internal\Me
      * Required. The list of operations to perform on individual criteria.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.CustomerNegativeCriterionOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\CustomerNegativeCriterionOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\CustomerNegativeCriterionOperation[] $var
      * @return $this
      */
     public function setOperations($var)

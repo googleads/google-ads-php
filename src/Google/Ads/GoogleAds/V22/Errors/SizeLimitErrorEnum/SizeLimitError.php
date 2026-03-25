@@ -68,6 +68,3 @@ class SizeLimitError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SizeLimitError::class, \Google\Ads\GoogleAds\V22\Errors\SizeLimitErrorEnum_SizeLimitError::class);
-

@@ -183,6 +183,3 @@ class FeedMappingError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(FeedMappingError::class, \Google\Ads\GoogleAds\V22\Errors\FeedMappingErrorEnum_FeedMappingError::class);
-

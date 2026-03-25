@@ -52,7 +52,7 @@ class AdGroupAdLabelServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdLabelsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdLabelsResponse>
      */
     public function MutateAdGroupAdLabels(\Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdLabelsRequest $argument,
       $metadata = [], $options = []) {

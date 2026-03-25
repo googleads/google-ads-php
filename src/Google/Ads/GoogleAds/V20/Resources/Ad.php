@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An ad.
@@ -140,20 +140,20 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           `customers/{customer_id}/ads/{ad_id}`
      *     @type int|string $id
      *           Output only. The ID of the ad.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_urls
+     *     @type string[] $final_urls
      *           The list of possible final URLs after all cross-domain redirects for the
      *           ad.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\FinalAppUrl>|\Google\Protobuf\Internal\RepeatedField $final_app_urls
+     *     @type \Google\Ads\GoogleAds\V20\Common\FinalAppUrl[] $final_app_urls
      *           A list of final app URLs that will be used on mobile if the user has the
      *           specific app installed.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
+     *     @type string[] $final_mobile_urls
      *           The list of possible final mobile URLs after all cross-domain redirects
      *           for the ad.
      *     @type string $tracking_url_template
      *           The URL template for constructing a tracking URL.
      *     @type string $final_url_suffix
      *           The suffix to use when constructing a final URL.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *     @type \Google\Ads\GoogleAds\V20\Common\CustomParameter[] $url_custom_parameters
      *           The list of mappings that can be used to substitute custom parameter tags
      *           in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *           For mutates, use url custom parameter operations.
@@ -173,7 +173,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           displayed on other device types, for example, if no other ads are
      *           available. If unspecified (no device preference), all devices are targeted.
      *           This is only supported by some ad types.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\UrlCollection>|\Google\Protobuf\Internal\RepeatedField $url_collections
+     *     @type \Google\Ads\GoogleAds\V20\Common\UrlCollection[] $url_collections
      *           Additional URLs for the ad that are tagged with a unique identifier that
      *           can be referenced from other fields in the ad.
      *     @type string $name
@@ -319,7 +319,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * ad.
      *
      * Generated from protobuf field <code>repeated string final_urls = 41;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getFinalUrls()
     {
@@ -331,7 +331,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * ad.
      *
      * Generated from protobuf field <code>repeated string final_urls = 41;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setFinalUrls($var)
@@ -347,7 +347,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * specific app installed.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.FinalAppUrl final_app_urls = 35;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\FinalAppUrl>
      */
     public function getFinalAppUrls()
     {
@@ -359,7 +359,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * specific app installed.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.FinalAppUrl final_app_urls = 35;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\FinalAppUrl>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\FinalAppUrl[] $var
      * @return $this
      */
     public function setFinalAppUrls($var)
@@ -375,7 +375,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * for the ad.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 42;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getFinalMobileUrls()
     {
@@ -387,7 +387,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * for the ad.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 42;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setFinalMobileUrls($var)
@@ -476,7 +476,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * For mutates, use url custom parameter operations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.CustomParameter url_custom_parameters = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\CustomParameter>
      */
     public function getUrlCustomParameters()
     {
@@ -489,7 +489,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * For mutates, use url custom parameter operations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.CustomParameter url_custom_parameters = 10;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\CustomParameter[] $var
      * @return $this
      */
     public function setUrlCustomParameters($var)
@@ -645,7 +645,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * can be referenced from other fields in the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.UrlCollection url_collections = 26;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\UrlCollection>
      */
     public function getUrlCollections()
     {
@@ -657,7 +657,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * can be referenced from other fields in the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.UrlCollection url_collections = 26;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\UrlCollection>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\UrlCollection[] $var
      * @return $this
      */
     public function setUrlCollections($var)

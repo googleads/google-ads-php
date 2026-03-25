@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources\SmartCampaignSetting;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Settings for configuring a business profile optimized for ads as this
@@ -83,7 +83,4 @@ class AdOptimizedBusinessProfileSetting extends \Google\Protobuf\Internal\Messag
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdOptimizedBusinessProfileSetting::class, \Google\Ads\GoogleAds\V21\Resources\SmartCampaignSetting_AdOptimizedBusinessProfileSetting::class);
 

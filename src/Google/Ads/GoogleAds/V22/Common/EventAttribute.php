@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Advertiser defined events and their attributes. All the values in the
@@ -53,7 +53,7 @@ class EventAttribute extends \Google\Protobuf\Internal\Message
      *           The format is YYYY-MM-DD HH:MM:SS[+/-HH:MM], where [+/-HH:MM] is an
      *           optional timezone offset from UTC. If the offset is absent, the API will
      *           use the account's timezone as default.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\EventItemAttribute>|\Google\Protobuf\Internal\RepeatedField $item_attribute
+     *     @type \Google\Ads\GoogleAds\V22\Common\EventItemAttribute[] $item_attribute
      *           Required. Item attributes of the event.
      * }
      */
@@ -126,7 +126,7 @@ class EventAttribute extends \Google\Protobuf\Internal\Message
      * Required. Item attributes of the event.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.EventItemAttribute item_attribute = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\EventItemAttribute>
      */
     public function getItemAttribute()
     {
@@ -137,7 +137,7 @@ class EventAttribute extends \Google\Protobuf\Internal\Message
      * Required. Item attributes of the event.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.EventItemAttribute item_attribute = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\EventItemAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\EventItemAttribute[] $var
      * @return $this
      */
     public function setItemAttribute($var)

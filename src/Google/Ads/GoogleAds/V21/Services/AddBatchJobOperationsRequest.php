@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -113,7 +113,7 @@ class AddBatchJobOperationsRequest extends \Google\Protobuf\Internal\Message
      *           sequence_token. Subsequent requests must set sequence_token to the value of
      *           next_sequence_token received in the previous AddBatchJobOperations
      *           response.
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\MutateOperation>|\Google\Protobuf\Internal\RepeatedField $mutate_operations
+     *     @type \Google\Ads\GoogleAds\V21\Services\MutateOperation[] $mutate_operations
      *           Required. The list of mutates being added.
      *           Operations can use negative integers as temp ids to signify dependencies
      *           between entities created in this batch job. For example, a customer with
@@ -200,7 +200,7 @@ class AddBatchJobOperationsRequest extends \Google\Protobuf\Internal\Message
      * "customers/1234/campaigns/-1".
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.MutateOperation mutate_operations = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\MutateOperation>
      */
     public function getMutateOperations()
     {
@@ -218,7 +218,7 @@ class AddBatchJobOperationsRequest extends \Google\Protobuf\Internal\Message
      * "customers/1234/campaigns/-1".
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.MutateOperation mutate_operations = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\MutateOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\MutateOperation[] $var
      * @return $this
      */
     public function setMutateOperations($var)

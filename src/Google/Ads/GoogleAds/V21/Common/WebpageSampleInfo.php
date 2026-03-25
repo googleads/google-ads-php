@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * List of sample urls that match the website target
@@ -28,7 +28,7 @@ class WebpageSampleInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $sample_urls
+     *     @type string[] $sample_urls
      *           Webpage sample urls
      * }
      */
@@ -41,7 +41,7 @@ class WebpageSampleInfo extends \Google\Protobuf\Internal\Message
      * Webpage sample urls
      *
      * Generated from protobuf field <code>repeated string sample_urls = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSampleUrls()
     {
@@ -52,7 +52,7 @@ class WebpageSampleInfo extends \Google\Protobuf\Internal\Message
      * Webpage sample urls
      *
      * Generated from protobuf field <code>repeated string sample_urls = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSampleUrls($var)

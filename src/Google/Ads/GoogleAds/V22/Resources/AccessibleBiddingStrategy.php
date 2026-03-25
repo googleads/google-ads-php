@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents a view of BiddingStrategies owned by and shared with the customer.

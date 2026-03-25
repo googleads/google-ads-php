@@ -102,6 +102,3 @@ class CustomInterestError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomInterestError::class, \Google\Ads\GoogleAds\V20\Errors\CustomInterestErrorEnum_CustomInterestError::class);
-

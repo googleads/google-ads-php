@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Container for surfaces for a product. Surfaces refer to the available types
@@ -29,7 +29,7 @@ class SurfaceTargeting extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $surfaces
+     *     @type int[] $surfaces
      *           List of surfaces available to target.
      * }
      */
@@ -42,7 +42,7 @@ class SurfaceTargeting extends \Google\Protobuf\Internal\Message
      * List of surfaces available to target.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.enums.ReachPlanSurfaceEnum.ReachPlanSurface surfaces = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getSurfaces()
     {
@@ -53,7 +53,7 @@ class SurfaceTargeting extends \Google\Protobuf\Internal\Message
      * List of surfaces available to target.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.enums.ReachPlanSurfaceEnum.ReachPlanSurface surfaces = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setSurfaces($var)

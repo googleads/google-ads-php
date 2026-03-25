@@ -59,6 +59,3 @@ class RegionCodeError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(RegionCodeError::class, \Google\Ads\GoogleAds\V21\Errors\RegionCodeErrorEnum_RegionCodeError::class);
-

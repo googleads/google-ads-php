@@ -73,6 +73,12 @@ class ReachPlanSurface
      * Generated from protobuf enum <code>GOOGLE_DISPLAY_NETWORK = 9;</code>
      */
     const GOOGLE_DISPLAY_NETWORK = 9;
+    /**
+     * In-Stream non-skippable (30 seconds) ad surface.
+     *
+     * Generated from protobuf enum <code>IN_STREAM_NON_SKIPPABLE_THIRTY_SECONDS = 10;</code>
+     */
+    const IN_STREAM_NON_SKIPPABLE_THIRTY_SECONDS = 10;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -85,6 +91,7 @@ class ReachPlanSurface
         self::IN_STREAM_SKIPPABLE => 'IN_STREAM_SKIPPABLE',
         self::SHORTS => 'SHORTS',
         self::GOOGLE_DISPLAY_NETWORK => 'GOOGLE_DISPLAY_NETWORK',
+        self::IN_STREAM_NON_SKIPPABLE_THIRTY_SECONDS => 'IN_STREAM_NON_SKIPPABLE_THIRTY_SECONDS',
     ];
 
     public static function name($value)
@@ -107,7 +114,4 @@ class ReachPlanSurface
         return constant($const);
     }
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ReachPlanSurface::class, \Google\Ads\GoogleAds\V23\Enums\ReachPlanSurfaceEnum_ReachPlanSurface::class);
 

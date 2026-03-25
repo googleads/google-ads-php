@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -38,7 +38,7 @@ class DismissRecommendationResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\DismissRecommendationResponse\DismissRecommendationResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V20\Services\DismissRecommendationResponse\DismissRecommendationResult[] $results
      *           Results of operations to dismiss recommendations.
      *     @type \Google\Rpc\Status $partial_failure_error
      *           Errors that pertain to operation failures in the partial failure mode.
@@ -56,7 +56,7 @@ class DismissRecommendationResponse extends \Google\Protobuf\Internal\Message
      * Results of operations to dismiss recommendations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.DismissRecommendationResponse.DismissRecommendationResult results = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\DismissRecommendationResponse\DismissRecommendationResult>
      */
     public function getResults()
     {
@@ -67,7 +67,7 @@ class DismissRecommendationResponse extends \Google\Protobuf\Internal\Message
      * Results of operations to dismiss recommendations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.DismissRecommendationResponse.DismissRecommendationResult results = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\DismissRecommendationResponse\DismissRecommendationResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\DismissRecommendationResponse\DismissRecommendationResult[] $var
      * @return $this
      */
     public function setResults($var)

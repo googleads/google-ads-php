@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class SuggestKeywordThemeConstantsResponse extends \Google\Protobuf\Internal\Mes
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Resources\KeywordThemeConstant>|\Google\Protobuf\Internal\RepeatedField $keyword_theme_constants
+     *     @type \Google\Ads\GoogleAds\V22\Resources\KeywordThemeConstant[] $keyword_theme_constants
      *           Smart Campaign keyword theme suggestions.
      * }
      */
@@ -42,7 +42,7 @@ class SuggestKeywordThemeConstantsResponse extends \Google\Protobuf\Internal\Mes
      * Smart Campaign keyword theme suggestions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.resources.KeywordThemeConstant keyword_theme_constants = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Resources\KeywordThemeConstant>
      */
     public function getKeywordThemeConstants()
     {
@@ -53,7 +53,7 @@ class SuggestKeywordThemeConstantsResponse extends \Google\Protobuf\Internal\Mes
      * Smart Campaign keyword theme suggestions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.resources.KeywordThemeConstant keyword_theme_constants = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Resources\KeywordThemeConstant>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Resources\KeywordThemeConstant[] $var
      * @return $this
      */
     public function setKeywordThemeConstants($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A call conversion.
@@ -100,7 +100,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      *     @type string $currency_code
      *           Currency associated with the conversion value. This is the ISO 4217
      *           3-character currency code. For example: USD, EUR.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\CustomVariable>|\Google\Protobuf\Internal\RepeatedField $custom_variables
+     *     @type \Google\Ads\GoogleAds\V20\Services\CustomVariable[] $custom_variables
      *           The custom variables associated with this conversion.
      *     @type \Google\Ads\GoogleAds\V20\Common\Consent $consent
      *           The consent setting for the event.
@@ -349,7 +349,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * The custom variables associated with this conversion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.CustomVariable custom_variables = 13;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\CustomVariable>
      */
     public function getCustomVariables()
     {
@@ -360,7 +360,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * The custom variables associated with this conversion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.CustomVariable custom_variables = 13;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\CustomVariable>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\CustomVariable[] $var
      * @return $this
      */
     public function setCustomVariables($var)

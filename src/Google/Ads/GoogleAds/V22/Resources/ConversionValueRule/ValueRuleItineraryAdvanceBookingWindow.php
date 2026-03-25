@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\ConversionValueRule;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Range for the number of days between the date of the booking and the
@@ -119,7 +119,4 @@ class ValueRuleItineraryAdvanceBookingWindow extends \Google\Protobuf\Internal\M
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ValueRuleItineraryAdvanceBookingWindow::class, \Google\Ads\GoogleAds\V22\Resources\ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow::class);
 

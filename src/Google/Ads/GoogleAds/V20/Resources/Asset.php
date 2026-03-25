@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Asset is a part of an ad which can be shared across multiple ads.
@@ -112,13 +112,13 @@ class Asset extends \Google\Protobuf\Internal\Message
      *           Optional name of the asset.
      *     @type int $type
      *           Output only. Type of the asset.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_urls
+     *     @type string[] $final_urls
      *           A list of possible final URLs after all cross domain redirects.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
+     *     @type string[] $final_mobile_urls
      *           A list of possible final mobile URLs after all cross domain redirects.
      *     @type string $tracking_url_template
      *           URL template for constructing a tracking URL.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *     @type \Google\Ads\GoogleAds\V20\Common\CustomParameter[] $url_custom_parameters
      *           A list of mappings to be used for substituting URL custom parameter tags in
      *           the tracking_url_template, final_urls, and/or final_mobile_urls.
      *     @type string $final_url_suffix
@@ -128,7 +128,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      *           Output only. Source of the asset.
      *     @type \Google\Ads\GoogleAds\V20\Resources\AssetPolicySummary $policy_summary
      *           Output only. Policy information for the asset.
-     *     @type array<\Google\Ads\GoogleAds\V20\Resources\AssetFieldTypePolicySummary>|\Google\Protobuf\Internal\RepeatedField $field_type_policy_summaries
+     *     @type \Google\Ads\GoogleAds\V20\Resources\AssetFieldTypePolicySummary[] $field_type_policy_summaries
      *           Output only. Policy information for the asset for each FieldType.
      *     @type \Google\Ads\GoogleAds\V20\Common\YoutubeVideoAsset $youtube_video_asset
      *           Immutable. A YouTube video asset.
@@ -327,7 +327,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * A list of possible final URLs after all cross domain redirects.
      *
      * Generated from protobuf field <code>repeated string final_urls = 14;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getFinalUrls()
     {
@@ -338,7 +338,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * A list of possible final URLs after all cross domain redirects.
      *
      * Generated from protobuf field <code>repeated string final_urls = 14;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setFinalUrls($var)
@@ -353,7 +353,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * A list of possible final mobile URLs after all cross domain redirects.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 16;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getFinalMobileUrls()
     {
@@ -364,7 +364,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * A list of possible final mobile URLs after all cross domain redirects.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 16;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setFinalMobileUrls($var)
@@ -416,7 +416,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * the tracking_url_template, final_urls, and/or final_mobile_urls.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.CustomParameter url_custom_parameters = 18;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\CustomParameter>
      */
     public function getUrlCustomParameters()
     {
@@ -428,7 +428,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * the tracking_url_template, final_urls, and/or final_mobile_urls.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.CustomParameter url_custom_parameters = 18;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\CustomParameter[] $var
      * @return $this
      */
     public function setUrlCustomParameters($var)
@@ -543,7 +543,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Output only. Policy information for the asset for each FieldType.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.AssetFieldTypePolicySummary field_type_policy_summaries = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Resources\AssetFieldTypePolicySummary>
      */
     public function getFieldTypePolicySummaries()
     {
@@ -554,7 +554,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Output only. Policy information for the asset for each FieldType.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.AssetFieldTypePolicySummary field_type_policy_summaries = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Resources\AssetFieldTypePolicySummary>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Resources\AssetFieldTypePolicySummary[] $var
      * @return $this
      */
     public function setFieldTypePolicySummaries($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The Optimize Ad Rotation recommendation.
@@ -30,7 +30,4 @@ class OptimizeAdRotationRecommendation extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(OptimizeAdRotationRecommendation::class, \Google\Ads\GoogleAds\V23\Resources\Recommendation_OptimizeAdRotationRecommendation::class);
 

@@ -66,6 +66,3 @@ class CustomizerAttributeStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomizerAttributeStatus::class, \Google\Ads\GoogleAds\V23\Enums\CustomizerAttributeStatusEnum_CustomizerAttributeStatus::class);
-

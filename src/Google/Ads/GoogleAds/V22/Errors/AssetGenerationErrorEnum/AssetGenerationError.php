@@ -310,6 +310,3 @@ class AssetGenerationError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetGenerationError::class, \Google\Ads\GoogleAds\V22\Errors\AssetGenerationErrorEnum_AssetGenerationError::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Indicates the attributes of metrics.
@@ -36,7 +36,7 @@ class MetricAttributes extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           The name of the metric.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\MetricAttributes\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type \Google\Ads\GoogleAds\V23\Services\MetricAttributes\Attribute[] $attributes
      *           The attributes of the metric.
      * }
      */
@@ -75,7 +75,7 @@ class MetricAttributes extends \Google\Protobuf\Internal\Message
      * The attributes of the metric.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.MetricAttributes.Attribute attributes = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\MetricAttributes\Attribute>
      */
     public function getAttributes()
     {
@@ -86,7 +86,7 @@ class MetricAttributes extends \Google\Protobuf\Internal\Message
      * The attributes of the metric.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.MetricAttributes.Attribute attributes = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\MetricAttributes\Attribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\MetricAttributes\Attribute[] $var
      * @return $this
      */
     public function setAttributes($var)

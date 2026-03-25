@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Contains session attributes of the conversion, represented as key-value
@@ -29,7 +29,7 @@ class SessionAttributesKeyValuePairs extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\SessionAttributeKeyValuePair>|\Google\Protobuf\Internal\RepeatedField $key_value_pairs
+     *     @type \Google\Ads\GoogleAds\V23\Services\SessionAttributeKeyValuePair[] $key_value_pairs
      *           Required. The session attributes for the conversion.
      * }
      */
@@ -42,7 +42,7 @@ class SessionAttributesKeyValuePairs extends \Google\Protobuf\Internal\Message
      * Required. The session attributes for the conversion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.SessionAttributeKeyValuePair key_value_pairs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\SessionAttributeKeyValuePair>
      */
     public function getKeyValuePairs()
     {
@@ -53,7 +53,7 @@ class SessionAttributesKeyValuePairs extends \Google\Protobuf\Internal\Message
      * Required. The session attributes for the conversion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.SessionAttributeKeyValuePair key_value_pairs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\SessionAttributeKeyValuePair>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\SessionAttributeKeyValuePair[] $var
      * @return $this
      */
     public function setKeyValuePairs($var)

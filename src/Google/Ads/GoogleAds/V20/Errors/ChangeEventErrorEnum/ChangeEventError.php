@@ -91,6 +91,3 @@ class ChangeEventError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ChangeEventError::class, \Google\Ads\GoogleAds\V20\Errors\ChangeEventErrorEnum_ChangeEventError::class);
-

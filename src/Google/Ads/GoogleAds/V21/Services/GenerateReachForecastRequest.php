@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -182,7 +182,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      *           This is planned targeting: execution details might vary based on the
      *           advertising product, consult an implementation specialist.
      *           See specific metrics for details on how targeting affects them.
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\PlannedProduct>|\Google\Protobuf\Internal\RepeatedField $planned_products
+     *     @type \Google\Ads\GoogleAds\V21\Services\PlannedProduct[] $planned_products
      *           Required. The products to be forecast.
      *           The max number of allowed planned products is 15.
      *     @type \Google\Ads\GoogleAds\V21\Services\ForecastMetricOptions $forecast_metric_options
@@ -533,7 +533,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * The max number of allowed planned products is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.PlannedProduct planned_products = 7 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\PlannedProduct>
      */
     public function getPlannedProducts()
     {
@@ -545,7 +545,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * The max number of allowed planned products is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.PlannedProduct planned_products = 7 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\PlannedProduct>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\PlannedProduct[] $var
      * @return $this
      */
     public function setPlannedProducts($var)

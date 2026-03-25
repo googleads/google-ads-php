@@ -73,6 +73,3 @@ class UserListPrepopulationStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(UserListPrepopulationStatus::class, \Google\Ads\GoogleAds\V23\Enums\UserListPrepopulationStatusEnum_UserListPrepopulationStatus::class);
-

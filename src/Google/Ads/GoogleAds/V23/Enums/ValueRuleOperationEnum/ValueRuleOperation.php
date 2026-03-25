@@ -73,6 +73,3 @@ class ValueRuleOperation
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ValueRuleOperation::class, \Google\Ads\GoogleAds\V23\Enums\ValueRuleOperationEnum_ValueRuleOperation::class);
-

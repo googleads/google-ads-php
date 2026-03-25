@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\Campaign;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Campaign-level settings for tracking information.
@@ -74,7 +74,4 @@ class TrackingSetting extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TrackingSetting::class, \Google\Ads\GoogleAds\V20\Resources\Campaign_TrackingSetting::class);
 

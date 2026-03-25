@@ -48,7 +48,7 @@ class AutomaticallyCreatedAssetRemovalServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetResponse>
      */
     public function RemoveCampaignAutomaticallyCreatedAsset(\Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetRequest $argument,
       $metadata = [], $options = []) {

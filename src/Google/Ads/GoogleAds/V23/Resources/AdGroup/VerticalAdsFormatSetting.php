@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\AdGroup;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Vertical ads setting feature to enable/disable ad group format controls in
@@ -163,7 +163,4 @@ class VerticalAdsFormatSetting extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(VerticalAdsFormatSetting::class, \Google\Ads\GoogleAds\V23\Resources\AdGroup_VerticalAdsFormatSetting::class);
 

@@ -117,6 +117,3 @@ class LabelError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LabelError::class, \Google\Ads\GoogleAds\V22\Errors\LabelErrorEnum_LabelError::class);
-

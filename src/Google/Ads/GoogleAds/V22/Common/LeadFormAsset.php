@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Lead Form asset.
@@ -147,13 +147,13 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      *     @type string $post_submit_description
      *           Detailed description shown after form submission that describes how the
      *           advertiser will follow up with the user.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\LeadFormField>|\Google\Protobuf\Internal\RepeatedField $fields
+     *     @type \Google\Ads\GoogleAds\V22\Common\LeadFormField[] $fields
      *           Ordered list of input fields. This field can be updated by reordering
      *           questions, but not by adding or removing questions.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\LeadFormCustomQuestionField>|\Google\Protobuf\Internal\RepeatedField $custom_question_fields
+     *     @type \Google\Ads\GoogleAds\V22\Common\LeadFormCustomQuestionField[] $custom_question_fields
      *           Ordered list of custom question fields. This field is subject to a limit of
      *           5 qualifying questions per form.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\LeadFormDeliveryMethod>|\Google\Protobuf\Internal\RepeatedField $delivery_methods
+     *     @type \Google\Ads\GoogleAds\V22\Common\LeadFormDeliveryMethod[] $delivery_methods
      *           Configured methods for collected lead data to be delivered to advertiser.
      *           Only one method typed as WebhookDelivery can be configured.
      *     @type int $post_submit_call_to_action_type
@@ -420,7 +420,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * questions, but not by adding or removing questions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.LeadFormField fields = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\LeadFormField>
      */
     public function getFields()
     {
@@ -432,7 +432,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * questions, but not by adding or removing questions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.LeadFormField fields = 8;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\LeadFormField>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\LeadFormField[] $var
      * @return $this
      */
     public function setFields($var)
@@ -448,7 +448,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * 5 qualifying questions per form.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.LeadFormCustomQuestionField custom_question_fields = 23;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\LeadFormCustomQuestionField>
      */
     public function getCustomQuestionFields()
     {
@@ -460,7 +460,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * 5 qualifying questions per form.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.LeadFormCustomQuestionField custom_question_fields = 23;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\LeadFormCustomQuestionField>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\LeadFormCustomQuestionField[] $var
      * @return $this
      */
     public function setCustomQuestionFields($var)
@@ -476,7 +476,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Only one method typed as WebhookDelivery can be configured.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.LeadFormDeliveryMethod delivery_methods = 9;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\LeadFormDeliveryMethod>
      */
     public function getDeliveryMethods()
     {
@@ -488,7 +488,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Only one method typed as WebhookDelivery can be configured.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.LeadFormDeliveryMethod delivery_methods = 9;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\LeadFormDeliveryMethod>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\LeadFormDeliveryMethod[] $var
      * @return $this
      */
     public function setDeliveryMethods($var)

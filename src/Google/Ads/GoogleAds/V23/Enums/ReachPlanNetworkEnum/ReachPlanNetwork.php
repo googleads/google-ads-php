@@ -74,6 +74,3 @@ class ReachPlanNetwork
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ReachPlanNetwork::class, \Google\Ads\GoogleAds\V23\Enums\ReachPlanNetworkEnum_ReachPlanNetwork::class);
-

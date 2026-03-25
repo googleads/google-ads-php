@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -109,7 +109,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      *
      *     @type string $customer_id
      *           Required. The ID of the customer.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $dimensions
+     *     @type int[] $dimensions
      *           Required. The types of attributes to be returned. Supported
      *           dimensions are CATEGORY, KNOWLEDGE_GRAPH, DEVICE,
      *           GEO_TARGET_COUNTRY, SUB_COUNTRY_LOCATION, YOUTUBE_LINEUP,
@@ -125,7 +125,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      *           The name of the customer being planned for.  This is a user-defined value.
      *     @type \Google\Ads\GoogleAds\V22\Common\AdditionalApplicationInfo $insights_application_info
      *           Optional. Additional information on the application issuing the request.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $location_country_filters
+     *     @type \Google\Ads\GoogleAds\V22\Common\LocationInfo[] $location_country_filters
      *           If SUB_COUNTRY_LOCATION attributes are one of the requested dimensions and
      *           this field is present, then the SUB_COUNTRY_LOCATION attributes returned
      *           will be located in these countries. If this field is absent, then location
@@ -178,7 +178,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * INCOME_RANGE, AGE_RANGE, and GENDER.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getDimensions()
     {
@@ -193,7 +193,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * INCOME_RANGE, AGE_RANGE, and GENDER.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setDimensions($var)
@@ -308,7 +308,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * SUB_COUNTRY_LOCATION attributes are not requested will return an error.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.LocationInfo location_country_filters = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\LocationInfo>
      */
     public function getLocationCountryFilters()
     {
@@ -323,7 +323,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * SUB_COUNTRY_LOCATION attributes are not requested will return an error.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.LocationInfo location_country_filters = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\LocationInfo[] $var
      * @return $this
      */
     public function setLocationCountryFilters($var)

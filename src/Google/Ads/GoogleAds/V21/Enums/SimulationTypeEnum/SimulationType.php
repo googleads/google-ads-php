@@ -108,6 +108,3 @@ class SimulationType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SimulationType::class, \Google\Ads\GoogleAds\V21\Enums\SimulationTypeEnum_SimulationType::class);
-

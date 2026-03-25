@@ -48,7 +48,7 @@ class ExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateExperimentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateExperimentsResponse>
      */
     public function MutateExperiments(\Google\Ads\GoogleAds\V22\Services\MutateExperimentsRequest $argument,
       $metadata = [], $options = []) {
@@ -74,7 +74,7 @@ class ExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\EndExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function EndExperiment(\Google\Ads\GoogleAds\V22\Services\EndExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -99,7 +99,7 @@ class ExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\ListExperimentAsyncErrorsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\ListExperimentAsyncErrorsResponse>
      */
     public function ListExperimentAsyncErrors(\Google\Ads\GoogleAds\V22\Services\ListExperimentAsyncErrorsRequest $argument,
       $metadata = [], $options = []) {
@@ -124,7 +124,7 @@ class ExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\GraduateExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function GraduateExperiment(\Google\Ads\GoogleAds\V22\Services\GraduateExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -162,7 +162,7 @@ class ExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\ScheduleExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\LongRunning\Operation>
      */
     public function ScheduleExperiment(\Google\Ads\GoogleAds\V22\Services\ScheduleExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -192,7 +192,7 @@ class ExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\PromoteExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\LongRunning\Operation>
      */
     public function PromoteExperiment(\Google\Ads\GoogleAds\V22\Services\PromoteExperimentRequest $argument,
       $metadata = [], $options = []) {

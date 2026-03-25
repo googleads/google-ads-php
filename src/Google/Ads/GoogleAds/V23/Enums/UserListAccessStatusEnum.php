@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Enums;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Indicates if this client still has access to the list.

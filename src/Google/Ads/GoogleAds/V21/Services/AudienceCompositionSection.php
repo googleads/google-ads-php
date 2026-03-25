@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A collection of related attributes of the same type in an audience
@@ -45,10 +45,10 @@ class AudienceCompositionSection extends \Google\Protobuf\Internal\Message
      *
      *     @type int $dimension
      *           The type of the attributes in this section.
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttribute>|\Google\Protobuf\Internal\RepeatedField $top_attributes
+     *     @type \Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttribute[] $top_attributes
      *           The most relevant segments for this audience.  If dimension is GENDER,
      *           AGE_RANGE or PARENTAL_STATUS, then this list of attributes is exhaustive.
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttributeCluster>|\Google\Protobuf\Internal\RepeatedField $clustered_attributes
+     *     @type \Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttributeCluster[] $clustered_attributes
      *           Additional attributes for this audience, grouped into clusters.  Only
      *           populated if dimension is YOUTUBE_CHANNEL.
      * }
@@ -89,7 +89,7 @@ class AudienceCompositionSection extends \Google\Protobuf\Internal\Message
      * AGE_RANGE or PARENTAL_STATUS, then this list of attributes is exhaustive.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.AudienceCompositionAttribute top_attributes = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttribute>
      */
     public function getTopAttributes()
     {
@@ -101,7 +101,7 @@ class AudienceCompositionSection extends \Google\Protobuf\Internal\Message
      * AGE_RANGE or PARENTAL_STATUS, then this list of attributes is exhaustive.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.AudienceCompositionAttribute top_attributes = 3;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttribute[] $var
      * @return $this
      */
     public function setTopAttributes($var)
@@ -117,7 +117,7 @@ class AudienceCompositionSection extends \Google\Protobuf\Internal\Message
      * populated if dimension is YOUTUBE_CHANNEL.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.AudienceCompositionAttributeCluster clustered_attributes = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttributeCluster>
      */
     public function getClusteredAttributes()
     {
@@ -129,7 +129,7 @@ class AudienceCompositionSection extends \Google\Protobuf\Internal\Message
      * populated if dimension is YOUTUBE_CHANNEL.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.AudienceCompositionAttributeCluster clustered_attributes = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttributeCluster>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttributeCluster[] $var
      * @return $this
      */
     public function setClusteredAttributes($var)

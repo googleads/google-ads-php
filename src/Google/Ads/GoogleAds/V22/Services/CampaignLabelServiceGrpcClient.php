@@ -53,7 +53,7 @@ class CampaignLabelServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateCampaignLabelsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateCampaignLabelsResponse>
      */
     public function MutateCampaignLabels(\Google\Ads\GoogleAds\V22\Services\MutateCampaignLabelsRequest $argument,
       $metadata = [], $options = []) {

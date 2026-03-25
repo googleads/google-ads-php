@@ -73,6 +73,3 @@ class FrequencyCapTimeUnit
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(FrequencyCapTimeUnit::class, \Google\Ads\GoogleAds\V20\Enums\FrequencyCapTimeUnitEnum_FrequencyCapTimeUnit::class);
-

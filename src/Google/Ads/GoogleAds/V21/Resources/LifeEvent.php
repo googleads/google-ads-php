@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A life event: a particular interest-based vertical to be targeted to reach
@@ -75,7 +75,7 @@ class LifeEvent extends \Google\Protobuf\Internal\Message
      *     @type bool $launched_to_all
      *           Output only. True if the life event is launched to all channels and
      *           locales.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\CriterionCategoryAvailability>|\Google\Protobuf\Internal\RepeatedField $availabilities
+     *     @type \Google\Ads\GoogleAds\V21\Common\CriterionCategoryAvailability[] $availabilities
      *           Output only. Availability information of the life event.
      * }
      */
@@ -224,7 +224,7 @@ class LifeEvent extends \Google\Protobuf\Internal\Message
      * Output only. Availability information of the life event.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.CriterionCategoryAvailability availabilities = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\CriterionCategoryAvailability>
      */
     public function getAvailabilities()
     {
@@ -235,7 +235,7 @@ class LifeEvent extends \Google\Protobuf\Internal\Message
      * Output only. Availability information of the life event.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.CriterionCategoryAvailability availabilities = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\CriterionCategoryAvailability>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\CriterionCategoryAvailability[] $var
      * @return $this
      */
     public function setAvailabilities($var)

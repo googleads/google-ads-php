@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A text description of the audience of interest for which insights are being
@@ -38,7 +38,7 @@ class InsightsAudienceDescription extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $country_locations
+     *     @type \Google\Ads\GoogleAds\V23\Common\LocationInfo[] $country_locations
      *           Required. The countries for the audience.
      *     @type string $audience_description
      *           Required. An English language text description of an audience to get
@@ -60,7 +60,7 @@ class InsightsAudienceDescription extends \Google\Protobuf\Internal\Message
      * Required. The countries for the audience.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.LocationInfo country_locations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\LocationInfo>
      */
     public function getCountryLocations()
     {
@@ -71,7 +71,7 @@ class InsightsAudienceDescription extends \Google\Protobuf\Internal\Message
      * Required. The countries for the audience.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.LocationInfo country_locations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\LocationInfo[] $var
      * @return $this
      */
     public function setCountryLocations($var)

@@ -37,12 +37,27 @@ class ShareablePreviewError
      * Generated from protobuf enum <code>ASSET_GROUP_DOES_NOT_EXIST_UNDER_THIS_CUSTOMER = 3;</code>
      */
     const ASSET_GROUP_DOES_NOT_EXIST_UNDER_THIS_CUSTOMER = 3;
+    /**
+     * Unsupported ad type for the given preview type.
+     *
+     * Generated from protobuf enum <code>UNSUPPORTED_AD_TYPE = 4;</code>
+     */
+    const UNSUPPORTED_AD_TYPE = 4;
+    /**
+     * The combined number of asset groups and ad group ads exceeds the maximum
+     * of 10.
+     *
+     * Generated from protobuf enum <code>TOO_MANY_RESOURCES_IN_REQUEST = 6;</code>
+     */
+    const TOO_MANY_RESOURCES_IN_REQUEST = 6;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::TOO_MANY_ASSET_GROUPS_IN_REQUEST => 'TOO_MANY_ASSET_GROUPS_IN_REQUEST',
         self::ASSET_GROUP_DOES_NOT_EXIST_UNDER_THIS_CUSTOMER => 'ASSET_GROUP_DOES_NOT_EXIST_UNDER_THIS_CUSTOMER',
+        self::UNSUPPORTED_AD_TYPE => 'UNSUPPORTED_AD_TYPE',
+        self::TOO_MANY_RESOURCES_IN_REQUEST => 'TOO_MANY_RESOURCES_IN_REQUEST',
     ];
 
     public static function name($value)
@@ -65,7 +80,4 @@ class ShareablePreviewError
         return constant($const);
     }
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ShareablePreviewError::class, \Google\Ads\GoogleAds\V23\Errors\ShareablePreviewErrorEnum_ShareablePreviewError::class);
 

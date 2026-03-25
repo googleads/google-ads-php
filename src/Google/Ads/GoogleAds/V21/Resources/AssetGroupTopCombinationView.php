@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A view on the usage of asset group asset top combinations.
@@ -40,7 +40,7 @@ class AssetGroupTopCombinationView extends \Google\Protobuf\Internal\Message
      *           Output only. The resource name of the asset group top combination view.
      *           AssetGroup Top Combination view resource names have the form:
      *           `"customers/{customer_id}/assetGroupTopCombinationViews/{asset_group_id}~{asset_combination_category}"
-     *     @type array<\Google\Ads\GoogleAds\V21\Resources\AssetGroupAssetCombinationData>|\Google\Protobuf\Internal\RepeatedField $asset_group_top_combinations
+     *     @type \Google\Ads\GoogleAds\V21\Resources\AssetGroupAssetCombinationData[] $asset_group_top_combinations
      *           Output only. The top combinations of assets that served together.
      * }
      */
@@ -83,7 +83,7 @@ class AssetGroupTopCombinationView extends \Google\Protobuf\Internal\Message
      * Output only. The top combinations of assets that served together.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.AssetGroupAssetCombinationData asset_group_top_combinations = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Resources\AssetGroupAssetCombinationData>
      */
     public function getAssetGroupTopCombinations()
     {
@@ -94,7 +94,7 @@ class AssetGroupTopCombinationView extends \Google\Protobuf\Internal\Message
      * Output only. The top combinations of assets that served together.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.AssetGroupAssetCombinationData asset_group_top_combinations = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Resources\AssetGroupAssetCombinationData>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Resources\AssetGroupAssetCombinationData[] $var
      * @return $this
      */
     public function setAssetGroupTopCombinations($var)

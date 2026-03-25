@@ -87,6 +87,3 @@ class AdCustomizerError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdCustomizerError::class, \Google\Ads\GoogleAds\V21\Errors\AdCustomizerErrorEnum_AdCustomizerError::class);
-

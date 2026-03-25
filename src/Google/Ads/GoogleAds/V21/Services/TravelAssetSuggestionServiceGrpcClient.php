@@ -40,7 +40,7 @@ class TravelAssetSuggestionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\SuggestTravelAssetsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\SuggestTravelAssetsResponse>
      */
     public function SuggestTravelAssets(\Google\Ads\GoogleAds\V21\Services\SuggestTravelAssetsRequest $argument,
       $metadata = [], $options = []) {

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Errors;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Additional error details.
@@ -53,6 +53,12 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v23.errors.BudgetPerDayMinimumErrorDetails budget_per_day_minimum_error_details = 6;</code>
      */
     protected $budget_per_day_minimum_error_details = null;
+    /**
+     * Details for a reservation error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.errors.ReservationErrorDetails reservation_error_details = 7;</code>
+     */
+    protected $reservation_error_details = null;
 
     /**
      * Constructor.
@@ -74,6 +80,8 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      *           Details for a resource count limit exceeded error.
      *     @type \Google\Ads\GoogleAds\V23\Errors\BudgetPerDayMinimumErrorDetails $budget_per_day_minimum_error_details
      *           Details for a budget below per-day minimum error.
+     *     @type \Google\Ads\GoogleAds\V23\Errors\ReservationErrorDetails $reservation_error_details
+     *           Details for a reservation error.
      * }
      */
     public function __construct($data = NULL) {
@@ -287,6 +295,42 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Errors\BudgetPerDayMinimumErrorDetails::class);
         $this->budget_per_day_minimum_error_details = $var;
+
+        return $this;
+    }
+
+    /**
+     * Details for a reservation error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.errors.ReservationErrorDetails reservation_error_details = 7;</code>
+     * @return \Google\Ads\GoogleAds\V23\Errors\ReservationErrorDetails|null
+     */
+    public function getReservationErrorDetails()
+    {
+        return $this->reservation_error_details;
+    }
+
+    public function hasReservationErrorDetails()
+    {
+        return isset($this->reservation_error_details);
+    }
+
+    public function clearReservationErrorDetails()
+    {
+        unset($this->reservation_error_details);
+    }
+
+    /**
+     * Details for a reservation error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.errors.ReservationErrorDetails reservation_error_details = 7;</code>
+     * @param \Google\Ads\GoogleAds\V23\Errors\ReservationErrorDetails $var
+     * @return $this
+     */
+    public function setReservationErrorDetails($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Errors\ReservationErrorDetails::class);
+        $this->reservation_error_details = $var;
 
         return $this;
     }

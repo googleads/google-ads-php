@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Call asset.
@@ -74,7 +74,7 @@ class CallAsset extends \Google\Protobuf\Internal\Message
      *           default conversion action is used. This field only has effect if
      *           call_conversion_reporting_state is set to
      *           USE_RESOURCE_LEVEL_CALL_CONVERSION_ACTION.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $ad_schedule_targets
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdScheduleInfo[] $ad_schedule_targets
      *           List of non-overlapping schedules specifying all time intervals for which
      *           the asset may serve. There can be a maximum of 6 schedules per day, 42 in
      *           total.
@@ -207,7 +207,7 @@ class CallAsset extends \Google\Protobuf\Internal\Message
      * total.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdScheduleInfo ad_schedule_targets = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdScheduleInfo>
      */
     public function getAdScheduleTargets()
     {
@@ -220,7 +220,7 @@ class CallAsset extends \Google\Protobuf\Internal\Message
      * total.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdScheduleInfo ad_schedule_targets = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdScheduleInfo[] $var
      * @return $this
      */
     public function setAdScheduleTargets($var)

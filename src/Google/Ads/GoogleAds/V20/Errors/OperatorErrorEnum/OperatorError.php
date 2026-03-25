@@ -59,6 +59,3 @@ class OperatorError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(OperatorError::class, \Google\Ads\GoogleAds\V20\Errors\OperatorErrorEnum_OperatorError::class);
-

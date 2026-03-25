@@ -97,6 +97,3 @@ class CustomConversionGoalError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomConversionGoalError::class, \Google\Ads\GoogleAds\V20\Errors\CustomConversionGoalErrorEnum_CustomConversionGoalError::class);
-

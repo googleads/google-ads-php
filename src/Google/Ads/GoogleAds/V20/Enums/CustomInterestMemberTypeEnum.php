@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Enums;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The types of custom interest member, either KEYWORD or URL.

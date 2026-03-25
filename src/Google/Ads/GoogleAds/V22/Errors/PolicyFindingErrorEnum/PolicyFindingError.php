@@ -67,6 +67,3 @@ class PolicyFindingError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PolicyFindingError::class, \Google\Ads\GoogleAds\V22\Errors\PolicyFindingErrorEnum_PolicyFindingError::class);
-

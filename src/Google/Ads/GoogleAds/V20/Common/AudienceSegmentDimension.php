@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Dimension specifying users by their membership in other audience segments.
@@ -29,7 +29,7 @@ class AudienceSegmentDimension extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AudienceSegment>|\Google\Protobuf\Internal\RepeatedField $segments
+     *     @type \Google\Ads\GoogleAds\V20\Common\AudienceSegment[] $segments
      *           Included audience segments. Users are included if they belong to at least
      *           one segment.
      * }
@@ -44,7 +44,7 @@ class AudienceSegmentDimension extends \Google\Protobuf\Internal\Message
      * one segment.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceSegment segments = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AudienceSegment>
      */
     public function getSegments()
     {
@@ -56,7 +56,7 @@ class AudienceSegmentDimension extends \Google\Protobuf\Internal\Message
      * one segment.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceSegment segments = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AudienceSegment>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AudienceSegment[] $var
      * @return $this
      */
     public function setSegments($var)

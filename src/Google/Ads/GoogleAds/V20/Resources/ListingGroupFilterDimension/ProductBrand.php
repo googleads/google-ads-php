@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\ListingGroupFilterDimension;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Brand of the product.
@@ -74,7 +74,4 @@ class ProductBrand extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProductBrand::class, \Google\Ads\GoogleAds\V20\Resources\ListingGroupFilterDimension_ProductBrand::class);
 

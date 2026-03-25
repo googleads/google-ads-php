@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Mappings for fine grained conversion value.
@@ -116,7 +116,4 @@ class FineGrainedConversionValueMappings extends \Google\Protobuf\Internal\Messa
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(FineGrainedConversionValueMappings::class, \Google\Ads\GoogleAds\V20\Resources\CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_FineGrainedConversionValueMappings::class);
 

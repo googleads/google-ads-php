@@ -37,7 +37,7 @@ class SmartCampaignSuggestServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignBudgetOptionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignBudgetOptionsResponse>
      */
     public function SuggestSmartCampaignBudgetOptions(\Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignBudgetOptionsRequest $argument,
       $metadata = [], $options = []) {
@@ -53,7 +53,7 @@ class SmartCampaignSuggestServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignAdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignAdResponse>
      */
     public function SuggestSmartCampaignAd(\Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignAdRequest $argument,
       $metadata = [], $options = []) {
@@ -68,7 +68,7 @@ class SmartCampaignSuggestServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesResponse>
      */
     public function SuggestKeywordThemes(\Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesRequest $argument,
       $metadata = [], $options = []) {

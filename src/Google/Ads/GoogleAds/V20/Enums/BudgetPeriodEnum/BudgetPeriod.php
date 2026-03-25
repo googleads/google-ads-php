@@ -69,6 +69,3 @@ class BudgetPeriod
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BudgetPeriod::class, \Google\Ads\GoogleAds\V20\Enums\BudgetPeriodEnum_BudgetPeriod::class);
-

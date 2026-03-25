@@ -78,6 +78,3 @@ class StringLengthError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(StringLengthError::class, \Google\Ads\GoogleAds\V21\Errors\StringLengthErrorEnum_StringLengthError::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services\ApplyRecommendationOperation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Parameters to use when applying a raise target CPA bid too low
@@ -70,7 +70,4 @@ class RaiseTargetCpaBidTooLowParameters extends \Google\Protobuf\Internal\Messag
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(RaiseTargetCpaBidTooLowParameters::class, \Google\Ads\GoogleAds\V23\Services\ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters::class);
 

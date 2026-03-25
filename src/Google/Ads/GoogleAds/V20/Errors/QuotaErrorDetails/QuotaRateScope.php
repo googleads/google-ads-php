@@ -66,6 +66,3 @@ class QuotaRateScope
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(QuotaRateScope::class, \Google\Ads\GoogleAds\V20\Errors\QuotaErrorDetails_QuotaRateScope::class);
-

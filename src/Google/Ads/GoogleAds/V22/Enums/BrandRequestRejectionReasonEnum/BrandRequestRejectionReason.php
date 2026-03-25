@@ -80,6 +80,3 @@ class BrandRequestRejectionReason
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BrandRequestRejectionReason::class, \Google\Ads\GoogleAds\V22\Enums\BrandRequestRejectionReasonEnum_BrandRequestRejectionReason::class);
-

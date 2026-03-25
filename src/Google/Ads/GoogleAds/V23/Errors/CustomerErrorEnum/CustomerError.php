@@ -82,6 +82,3 @@ class CustomerError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomerError::class, \Google\Ads\GoogleAds\V23\Errors\CustomerErrorEnum_CustomerError::class);
-

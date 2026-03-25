@@ -66,6 +66,3 @@ class CustomInterestMemberType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomInterestMemberType::class, \Google\Ads\GoogleAds\V20\Enums\CustomInterestMemberTypeEnum_CustomInterestMemberType::class);
-

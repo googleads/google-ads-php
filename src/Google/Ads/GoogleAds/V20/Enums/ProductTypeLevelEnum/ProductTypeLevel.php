@@ -87,6 +87,3 @@ class ProductTypeLevel
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProductTypeLevel::class, \Google\Ads\GoogleAds\V20\Enums\ProductTypeLevelEnum_ProductTypeLevel::class);
-

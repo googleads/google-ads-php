@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\ListingGroupFilterDimension;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Filters for URLs in a page feed and URLs from the advertiser web domain.
@@ -40,7 +40,7 @@ class Webpage extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Resources\ListingGroupFilterDimension\WebpageCondition>|\Google\Protobuf\Internal\RepeatedField $conditions
+     *     @type \Google\Ads\GoogleAds\V20\Resources\ListingGroupFilterDimension\WebpageCondition[] $conditions
      *           The webpage conditions are case sensitive and these are and-ed together
      *           when evaluated for filtering. All the conditions should be of same type.
      *           Example1: for URL1 = www.ads.google.com?ocid=1&euid=2
@@ -73,7 +73,7 @@ class Webpage extends \Google\Protobuf\Internal\Message
      * will be matched.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.ListingGroupFilterDimension.WebpageCondition conditions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Resources\ListingGroupFilterDimension\WebpageCondition>
      */
     public function getConditions()
     {
@@ -94,7 +94,7 @@ class Webpage extends \Google\Protobuf\Internal\Message
      * will be matched.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.ListingGroupFilterDimension.WebpageCondition conditions = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Resources\ListingGroupFilterDimension\WebpageCondition>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Resources\ListingGroupFilterDimension\WebpageCondition[] $var
      * @return $this
      */
     public function setConditions($var)
@@ -106,7 +106,4 @@ class Webpage extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Webpage::class, \Google\Ads\GoogleAds\V20\Resources\ListingGroupFilterDimension_Webpage::class);
 

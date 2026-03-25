@@ -63,7 +63,7 @@ class AccountBudgetProposalServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\MutateAccountBudgetProposalRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateAccountBudgetProposalResponse>
      */
     public function MutateAccountBudgetProposal(\Google\Ads\GoogleAds\V23\Services\MutateAccountBudgetProposalRequest $argument,
       $metadata = [], $options = []) {

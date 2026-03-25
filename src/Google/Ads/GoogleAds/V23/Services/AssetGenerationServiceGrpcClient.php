@@ -47,7 +47,7 @@ class AssetGenerationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\GenerateTextRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateTextResponse>
      */
     public function GenerateText(\Google\Ads\GoogleAds\V23\Services\GenerateTextRequest $argument,
       $metadata = [], $options = []) {
@@ -72,7 +72,7 @@ class AssetGenerationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\GenerateImagesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateImagesResponse>
      */
     public function GenerateImages(\Google\Ads\GoogleAds\V23\Services\GenerateImagesRequest $argument,
       $metadata = [], $options = []) {

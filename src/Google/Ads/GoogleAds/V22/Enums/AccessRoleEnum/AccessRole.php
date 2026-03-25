@@ -81,6 +81,3 @@ class AccessRole
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AccessRole::class, \Google\Ads\GoogleAds\V22\Enums\AccessRoleEnum_AccessRole::class);
-

@@ -78,6 +78,3 @@ class AssetGroupSignalError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetGroupSignalError::class, \Google\Ads\GoogleAds\V20\Errors\AssetGroupSignalErrorEnum_AssetGroupSignalError::class);
-

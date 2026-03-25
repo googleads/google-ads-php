@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -75,7 +75,7 @@ class MutateBiddingDataExclusionsRequest extends \Google\Protobuf\Internal\Messa
      *
      *     @type string $customer_id
      *           Required. ID of the customer whose data exclusions are being modified.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\BiddingDataExclusionOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V22\Services\BiddingDataExclusionOperation[] $operations
      *           Required. The list of operations to perform on individual data exclusions.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -125,7 +125,7 @@ class MutateBiddingDataExclusionsRequest extends \Google\Protobuf\Internal\Messa
      * Required. The list of operations to perform on individual data exclusions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.BiddingDataExclusionOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\BiddingDataExclusionOperation>
      */
     public function getOperations()
     {
@@ -136,7 +136,7 @@ class MutateBiddingDataExclusionsRequest extends \Google\Protobuf\Internal\Messa
      * Required. The list of operations to perform on individual data exclusions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.BiddingDataExclusionOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\BiddingDataExclusionOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\BiddingDataExclusionOperation[] $var
      * @return $this
      */
     public function setOperations($var)

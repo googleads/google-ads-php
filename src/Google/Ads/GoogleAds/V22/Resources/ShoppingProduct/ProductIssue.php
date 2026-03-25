@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\ShoppingProduct;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An issue affecting whether a product can show in ads.
@@ -79,7 +79,7 @@ class ProductIssue extends \Google\Protobuf\Internal\Message
      *           Output only. The detailed description of the issue in English.
      *     @type string $documentation
      *           Output only. The URL of the Help Center article for the issue.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $affected_regions
+     *     @type string[] $affected_regions
      *           Output only. List of upper-case two-letter ISO 3166-1 codes of the
      *           regions affected by the issue. If empty, all regions are affected.
      * }
@@ -262,7 +262,7 @@ class ProductIssue extends \Google\Protobuf\Internal\Message
      * regions affected by the issue. If empty, all regions are affected.
      *
      * Generated from protobuf field <code>repeated string affected_regions = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getAffectedRegions()
     {
@@ -274,7 +274,7 @@ class ProductIssue extends \Google\Protobuf\Internal\Message
      * regions affected by the issue. If empty, all regions are affected.
      *
      * Generated from protobuf field <code>repeated string affected_regions = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setAffectedRegions($var)
@@ -286,7 +286,4 @@ class ProductIssue extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProductIssue::class, \Google\Ads\GoogleAds\V22\Resources\ShoppingProduct_ProductIssue::class);
 

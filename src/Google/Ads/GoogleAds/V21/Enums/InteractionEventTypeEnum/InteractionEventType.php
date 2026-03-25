@@ -86,6 +86,3 @@ class InteractionEventType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(InteractionEventType::class, \Google\Ads\GoogleAds\V21\Enums\InteractionEventTypeEnum_InteractionEventType::class);
-

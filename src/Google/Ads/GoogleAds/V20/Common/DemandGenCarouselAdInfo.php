@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Demand Gen carousel ad.
@@ -70,7 +70,7 @@ class DemandGenCarouselAdInfo extends \Google\Protobuf\Internal\Message
      *           Required. The descriptive text of the ad.
      *     @type string $call_to_action_text
      *           Call to action text.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AdDemandGenCarouselCardAsset>|\Google\Protobuf\Internal\RepeatedField $carousel_cards
+     *     @type \Google\Ads\GoogleAds\V20\Common\AdDemandGenCarouselCardAsset[] $carousel_cards
      *           Required. Carousel cards that will display with the ad. Min 2 max 10.
      * }
      */
@@ -245,7 +245,7 @@ class DemandGenCarouselAdInfo extends \Google\Protobuf\Internal\Message
      * Required. Carousel cards that will display with the ad. Min 2 max 10.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AdDemandGenCarouselCardAsset carousel_cards = 6 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AdDemandGenCarouselCardAsset>
      */
     public function getCarouselCards()
     {
@@ -256,7 +256,7 @@ class DemandGenCarouselAdInfo extends \Google\Protobuf\Internal\Message
      * Required. Carousel cards that will display with the ad. Min 2 max 10.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AdDemandGenCarouselCardAsset carousel_cards = 6 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AdDemandGenCarouselCardAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AdDemandGenCarouselCardAsset[] $var
      * @return $this
      */
     public function setCarouselCards($var)

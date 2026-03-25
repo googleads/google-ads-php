@@ -49,7 +49,7 @@ class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\GenerateKeywordIdeasRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\GenerateKeywordIdeaResponse>
      */
     public function GenerateKeywordIdeas(\Google\Ads\GoogleAds\V21\Services\GenerateKeywordIdeasRequest $argument,
       $metadata = [], $options = []) {
@@ -73,7 +73,7 @@ class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\GenerateKeywordHistoricalMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\GenerateKeywordHistoricalMetricsResponse>
      */
     public function GenerateKeywordHistoricalMetrics(\Google\Ads\GoogleAds\V21\Services\GenerateKeywordHistoricalMetricsRequest $argument,
       $metadata = [], $options = []) {
@@ -98,7 +98,7 @@ class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\GenerateAdGroupThemesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\GenerateAdGroupThemesResponse>
      */
     public function GenerateAdGroupThemes(\Google\Ads\GoogleAds\V21\Services\GenerateAdGroupThemesRequest $argument,
       $metadata = [], $options = []) {
@@ -123,7 +123,7 @@ class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\GenerateKeywordForecastMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\GenerateKeywordForecastMetricsResponse>
      */
     public function GenerateKeywordForecastMetrics(\Google\Ads\GoogleAds\V21\Services\GenerateKeywordForecastMetricsRequest $argument,
       $metadata = [], $options = []) {

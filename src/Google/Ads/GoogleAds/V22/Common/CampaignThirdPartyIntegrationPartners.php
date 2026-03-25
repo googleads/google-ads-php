@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Container for Campaign level third party integration partners.
@@ -49,16 +49,16 @@ class CampaignThirdPartyIntegrationPartners extends \Google\Protobuf\Internal\Me
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyViewabilityIntegrationPartner>|\Google\Protobuf\Internal\RepeatedField $viewability_integration_partners
+     *     @type \Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyViewabilityIntegrationPartner[] $viewability_integration_partners
      *           Third party integration partners for YouTube viewability
      *           verification for this Campaign.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyBrandLiftIntegrationPartner>|\Google\Protobuf\Internal\RepeatedField $brand_lift_integration_partners
+     *     @type \Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyBrandLiftIntegrationPartner[] $brand_lift_integration_partners
      *           Third party integration partners for Brand Lift verification for this
      *           Campaign.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyBrandSafetyIntegrationPartner>|\Google\Protobuf\Internal\RepeatedField $brand_safety_integration_partners
+     *     @type \Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyBrandSafetyIntegrationPartner[] $brand_safety_integration_partners
      *           Third party integration partners for brand safety verification for this
      *           Campaign.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyReachIntegrationPartner>|\Google\Protobuf\Internal\RepeatedField $reach_integration_partners
+     *     @type \Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyReachIntegrationPartner[] $reach_integration_partners
      *           Third party integration partners for reach verification for this Campaign.
      * }
      */
@@ -72,7 +72,7 @@ class CampaignThirdPartyIntegrationPartners extends \Google\Protobuf\Internal\Me
      * verification for this Campaign.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.CampaignThirdPartyViewabilityIntegrationPartner viewability_integration_partners = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyViewabilityIntegrationPartner>
      */
     public function getViewabilityIntegrationPartners()
     {
@@ -84,7 +84,7 @@ class CampaignThirdPartyIntegrationPartners extends \Google\Protobuf\Internal\Me
      * verification for this Campaign.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.CampaignThirdPartyViewabilityIntegrationPartner viewability_integration_partners = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyViewabilityIntegrationPartner>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyViewabilityIntegrationPartner[] $var
      * @return $this
      */
     public function setViewabilityIntegrationPartners($var)
@@ -100,7 +100,7 @@ class CampaignThirdPartyIntegrationPartners extends \Google\Protobuf\Internal\Me
      * Campaign.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.CampaignThirdPartyBrandLiftIntegrationPartner brand_lift_integration_partners = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyBrandLiftIntegrationPartner>
      */
     public function getBrandLiftIntegrationPartners()
     {
@@ -112,7 +112,7 @@ class CampaignThirdPartyIntegrationPartners extends \Google\Protobuf\Internal\Me
      * Campaign.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.CampaignThirdPartyBrandLiftIntegrationPartner brand_lift_integration_partners = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyBrandLiftIntegrationPartner>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyBrandLiftIntegrationPartner[] $var
      * @return $this
      */
     public function setBrandLiftIntegrationPartners($var)
@@ -128,7 +128,7 @@ class CampaignThirdPartyIntegrationPartners extends \Google\Protobuf\Internal\Me
      * Campaign.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.CampaignThirdPartyBrandSafetyIntegrationPartner brand_safety_integration_partners = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyBrandSafetyIntegrationPartner>
      */
     public function getBrandSafetyIntegrationPartners()
     {
@@ -140,7 +140,7 @@ class CampaignThirdPartyIntegrationPartners extends \Google\Protobuf\Internal\Me
      * Campaign.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.CampaignThirdPartyBrandSafetyIntegrationPartner brand_safety_integration_partners = 3;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyBrandSafetyIntegrationPartner>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyBrandSafetyIntegrationPartner[] $var
      * @return $this
      */
     public function setBrandSafetyIntegrationPartners($var)
@@ -155,7 +155,7 @@ class CampaignThirdPartyIntegrationPartners extends \Google\Protobuf\Internal\Me
      * Third party integration partners for reach verification for this Campaign.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.CampaignThirdPartyReachIntegrationPartner reach_integration_partners = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyReachIntegrationPartner>
      */
     public function getReachIntegrationPartners()
     {
@@ -166,7 +166,7 @@ class CampaignThirdPartyIntegrationPartners extends \Google\Protobuf\Internal\Me
      * Third party integration partners for reach verification for this Campaign.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.CampaignThirdPartyReachIntegrationPartner reach_integration_partners = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyReachIntegrationPartner>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\CampaignThirdPartyReachIntegrationPartner[] $var
      * @return $this
      */
     public function setReachIntegrationPartners($var)

@@ -353,6 +353,3 @@ class CriterionType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CriterionType::class, \Google\Ads\GoogleAds\V22\Enums\CriterionTypeEnum_CriterionType::class);
-

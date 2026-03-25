@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Metrics data.
@@ -2006,6 +2006,13 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional double active_view_audible_quartile_p100_rate = 425;</code>
      */
     protected $active_view_audible_quartile_p100_rate = null;
+    /**
+     * The number of biddable first in app conversions where the app install was
+     * driven by interaction with a web campaign.
+     *
+     * Generated from protobuf field <code>optional int64 biddable_indirect_install_first_in_app_conversion_micros = 426;</code>
+     */
+    protected $biddable_indirect_install_first_in_app_conversion_micros = null;
 
     /**
      * Constructor.
@@ -2375,7 +2382,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The number of interactions.
      *           An interaction is the main user action associated with an ad format-clicks
      *           for text and shopping ads, views for video ads, and so on.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $interaction_event_types
+     *     @type int[] $interaction_event_types
      *           The types of payable and free interactions.
      *     @type float $invalid_click_rate
      *           The percentage of clicks filtered out of your total number of clicks
@@ -2855,7 +2862,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           Number of linked resources in which the asset is used.
      *           This metric can only be selected with ChannelAggregateAssetView and
      *           CampaignAggregateAssetView.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $linked_sample_entities
+     *     @type string[] $linked_sample_entities
      *           A list of up to 20 sample linked resources in which the asset is used.
      *           This metric can only be selected with ChannelAggregateAssetView and
      *           CampaignAggregateAssetView.
@@ -3072,6 +3079,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The number of impressions that were audible at the fourth quartile of the
      *           ad playback, divided by the total number of impressions measurable for
      *           audibility.
+     *     @type int|string $biddable_indirect_install_first_in_app_conversion_micros
+     *           The number of biddable first in app conversions where the app install was
+     *           driven by interaction with a web campaign.
      * }
      */
     public function __construct($data = NULL) {
@@ -6721,7 +6731,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The types of payable and free interactions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.InteractionEventTypeEnum.InteractionEventType interaction_event_types = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getInteractionEventTypes()
     {
@@ -6732,7 +6742,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The types of payable and free interactions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.InteractionEventTypeEnum.InteractionEventType interaction_event_types = 100;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setInteractionEventTypes($var)
@@ -10471,7 +10481,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string linked_sample_entities = 342;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLinkedSampleEntities()
     {
@@ -10484,7 +10494,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string linked_sample_entities = 342;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLinkedSampleEntities($var)
@@ -12549,6 +12559,44 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->active_view_audible_quartile_p100_rate = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of biddable first in app conversions where the app install was
+     * driven by interaction with a web campaign.
+     *
+     * Generated from protobuf field <code>optional int64 biddable_indirect_install_first_in_app_conversion_micros = 426;</code>
+     * @return int|string
+     */
+    public function getBiddableIndirectInstallFirstInAppConversionMicros()
+    {
+        return isset($this->biddable_indirect_install_first_in_app_conversion_micros) ? $this->biddable_indirect_install_first_in_app_conversion_micros : 0;
+    }
+
+    public function hasBiddableIndirectInstallFirstInAppConversionMicros()
+    {
+        return isset($this->biddable_indirect_install_first_in_app_conversion_micros);
+    }
+
+    public function clearBiddableIndirectInstallFirstInAppConversionMicros()
+    {
+        unset($this->biddable_indirect_install_first_in_app_conversion_micros);
+    }
+
+    /**
+     * The number of biddable first in app conversions where the app install was
+     * driven by interaction with a web campaign.
+     *
+     * Generated from protobuf field <code>optional int64 biddable_indirect_install_first_in_app_conversion_micros = 426;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setBiddableIndirectInstallFirstInAppConversionMicros($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->biddable_indirect_install_first_in_app_conversion_micros = $var;
 
         return $this;
     }

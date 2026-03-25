@@ -70,7 +70,7 @@ class CampaignCriterionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\MutateCampaignCriteriaRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateCampaignCriteriaResponse>
      */
     public function MutateCampaignCriteria(\Google\Ads\GoogleAds\V23\Services\MutateCampaignCriteriaRequest $argument,
       $metadata = [], $options = []) {

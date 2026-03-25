@@ -80,6 +80,3 @@ class UserListDateRuleItemOperator
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(UserListDateRuleItemOperator::class, \Google\Ads\GoogleAds\V21\Enums\UserListDateRuleItemOperatorEnum_UserListDateRuleItemOperator::class);
-

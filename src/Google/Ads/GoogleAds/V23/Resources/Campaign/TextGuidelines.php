@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Campaign;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Settings to control automatically generated text assets.
@@ -37,11 +37,11 @@ class TextGuidelines extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $term_exclusions
+     *     @type string[] $term_exclusions
      *           Exact words or phrases that will be excluded from generated text
      *           assets. At most 25 exclusions may be provided. Valid exclusions may
      *           contain a maximum of 30 characters.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\Campaign\MessagingRestriction>|\Google\Protobuf\Internal\RepeatedField $messaging_restrictions
+     *     @type \Google\Ads\GoogleAds\V23\Resources\Campaign\MessagingRestriction[] $messaging_restrictions
      *           Freeform instructions that will be used to guide text asset generation
      *           using LLM inference. At most 40 restrictions may be provided.
      * }
@@ -57,7 +57,7 @@ class TextGuidelines extends \Google\Protobuf\Internal\Message
      * contain a maximum of 30 characters.
      *
      * Generated from protobuf field <code>repeated string term_exclusions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getTermExclusions()
     {
@@ -70,7 +70,7 @@ class TextGuidelines extends \Google\Protobuf\Internal\Message
      * contain a maximum of 30 characters.
      *
      * Generated from protobuf field <code>repeated string term_exclusions = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setTermExclusions($var)
@@ -86,7 +86,7 @@ class TextGuidelines extends \Google\Protobuf\Internal\Message
      * using LLM inference. At most 40 restrictions may be provided.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Campaign.MessagingRestriction messaging_restrictions = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\Campaign\MessagingRestriction>
      */
     public function getMessagingRestrictions()
     {
@@ -98,7 +98,7 @@ class TextGuidelines extends \Google\Protobuf\Internal\Message
      * using LLM inference. At most 40 restrictions may be provided.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Campaign.MessagingRestriction messaging_restrictions = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\Campaign\MessagingRestriction>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\Campaign\MessagingRestriction[] $var
      * @return $this
      */
     public function setMessagingRestrictions($var)
@@ -110,7 +110,4 @@ class TextGuidelines extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TextGuidelines::class, \Google\Ads\GoogleAds\V23\Resources\Campaign_TextGuidelines::class);
 

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -98,7 +98,7 @@ class GenerateAudienceOverlapInsightsRequest extends \Google\Protobuf\Internal\M
      *           Required. The audience attribute that should be intersected with all other
      *           eligible audiences.  This must be an Affinity or In-Market UserInterest, an
      *           AgeRange or a Gender.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $dimensions
+     *     @type int[] $dimensions
      *           Required. The types of attributes of which to calculate the overlap with
      *           the primary_attribute. The values must be a subset of
      *           AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, AGE_RANGE and GENDER.
@@ -223,7 +223,7 @@ class GenerateAudienceOverlapInsightsRequest extends \Google\Protobuf\Internal\M
      * AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, AGE_RANGE and GENDER.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getDimensions()
     {
@@ -236,7 +236,7 @@ class GenerateAudienceOverlapInsightsRequest extends \Google\Protobuf\Internal\M
      * AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, AGE_RANGE and GENDER.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setDimensions($var)

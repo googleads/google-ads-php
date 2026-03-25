@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services\Incentive\Requirement;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Spend requirements for an incentive.
@@ -130,7 +130,4 @@ class Spend extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Spend::class, \Google\Ads\GoogleAds\V23\Services\Incentive_Requirement_Spend::class);
 

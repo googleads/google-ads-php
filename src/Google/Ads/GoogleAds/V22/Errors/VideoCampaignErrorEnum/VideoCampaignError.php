@@ -60,6 +60,3 @@ class VideoCampaignError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(VideoCampaignError::class, \Google\Ads\GoogleAds\V22\Errors\VideoCampaignErrorEnum_VideoCampaignError::class);
-

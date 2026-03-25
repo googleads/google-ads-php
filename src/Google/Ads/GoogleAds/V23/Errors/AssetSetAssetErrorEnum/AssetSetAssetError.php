@@ -85,6 +85,3 @@ class AssetSetAssetError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetSetAssetError::class, \Google\Ads\GoogleAds\V23\Errors\AssetSetAssetErrorEnum_AssetSetAssetError::class);
-

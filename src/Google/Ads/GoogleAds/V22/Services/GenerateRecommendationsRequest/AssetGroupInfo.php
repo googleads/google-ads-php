@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services\GenerateRecommendationsRequest;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Current AssetGroup information of the campaign.
@@ -54,12 +54,12 @@ class AssetGroupInfo extends \Google\Protobuf\Internal\Message
      *           This field is necessary for the following recommendation_types if
      *           asset_group_info is set:
      *           CAMPAIGN_BUDGET
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $headline
+     *     @type string[] $headline
      *           Optional. Current headlines of the asset group.
      *           This field is optional for the following recommendation_types if
      *           asset_group_info is set:
      *           CAMPAIGN_BUDGET
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $description
+     *     @type string[] $description
      *           Optional. Current descriptions of the asset group.
      *           This field is optional for the following recommendation_types if
      *           asset_group_info is set:
@@ -120,7 +120,7 @@ class AssetGroupInfo extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET
      *
      * Generated from protobuf field <code>repeated string headline = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getHeadline()
     {
@@ -134,7 +134,7 @@ class AssetGroupInfo extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET
      *
      * Generated from protobuf field <code>repeated string headline = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setHeadline($var)
@@ -152,7 +152,7 @@ class AssetGroupInfo extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET
      *
      * Generated from protobuf field <code>repeated string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getDescription()
     {
@@ -166,7 +166,7 @@ class AssetGroupInfo extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET
      *
      * Generated from protobuf field <code>repeated string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setDescription($var)
@@ -178,7 +178,4 @@ class AssetGroupInfo extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetGroupInfo::class, \Google\Ads\GoogleAds\V22\Services\GenerateRecommendationsRequest_AssetGroupInfo::class);
 

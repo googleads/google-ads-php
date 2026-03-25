@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Invoice;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents a summarized account budget billable cost.
@@ -178,10 +178,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      *     @type int|string $invalid_activity_amount_micros
      *           Output only. The pretax invalid activity amount attributable to this
      *           budget in previous months, in micros (negative value).
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\Invoice\InvalidActivitySummary>|\Google\Protobuf\Internal\RepeatedField $invalid_activity_summaries
+     *     @type \Google\Ads\GoogleAds\V23\Resources\Invoice\InvalidActivitySummary[] $invalid_activity_summaries
      *           Output only. The list of summarized invalid activity credits with
      *           original linkages.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\Invoice\CampaignSummary>|\Google\Protobuf\Internal\RepeatedField $campaign_summaries
+     *     @type \Google\Ads\GoogleAds\V23\Resources\Invoice\CampaignSummary[] $campaign_summaries
      *           Output only. The list of summarized campaign level information associated
      *           with this account budget.
      * }
@@ -702,7 +702,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * original linkages.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Invoice.InvalidActivitySummary invalid_activity_summaries = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\Invoice\InvalidActivitySummary>
      */
     public function getInvalidActivitySummaries()
     {
@@ -714,7 +714,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * original linkages.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Invoice.InvalidActivitySummary invalid_activity_summaries = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\Invoice\InvalidActivitySummary>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\Invoice\InvalidActivitySummary[] $var
      * @return $this
      */
     public function setInvalidActivitySummaries($var)
@@ -730,7 +730,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * with this account budget.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Invoice.CampaignSummary campaign_summaries = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\Invoice\CampaignSummary>
      */
     public function getCampaignSummaries()
     {
@@ -742,7 +742,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * with this account budget.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Invoice.CampaignSummary campaign_summaries = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\Invoice\CampaignSummary>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\Invoice\CampaignSummary[] $var
      * @return $this
      */
     public function setCampaignSummaries($var)
@@ -754,7 +754,4 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AccountBudgetSummary::class, \Google\Ads\GoogleAds\V23\Resources\Invoice_AccountBudgetSummary::class);
 

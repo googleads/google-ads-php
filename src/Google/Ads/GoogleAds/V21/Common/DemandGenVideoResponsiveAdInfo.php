@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Demand Gen video responsive ad.
@@ -77,15 +77,15 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $headlines
      *           List of text assets used for the short headline.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $long_headlines
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $long_headlines
      *           List of text assets used for the long headline.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $descriptions
      *           List of text assets used for the description.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $videos
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdVideoAsset[] $videos
      *           List of YouTube video assets used for the ad.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $logo_images
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdImageAsset[] $logo_images
      *           Logo image to be used in the ad. Valid image types are GIF, JPEG, and PNG.
      *           The minimum size is 128x128 and the aspect ratio must be 1:1 (+-1%).
      *     @type string $breadcrumb1
@@ -94,7 +94,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      *           Second part of text that appears in the ad with the displayed URL.
      *     @type \Google\Ads\GoogleAds\V21\Common\AdTextAsset $business_name
      *           Required. The advertiser/brand name.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdCallToActionAsset>|\Google\Protobuf\Internal\RepeatedField $call_to_actions
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdCallToActionAsset[] $call_to_actions
      *           Assets of type CallToActionAsset used for the "Call To Action" button.
      * }
      */
@@ -107,7 +107,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * List of text assets used for the short headline.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset headlines = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>
      */
     public function getHeadlines()
     {
@@ -118,7 +118,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * List of text assets used for the short headline.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset headlines = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -133,7 +133,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * List of text assets used for the long headline.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset long_headlines = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>
      */
     public function getLongHeadlines()
     {
@@ -144,7 +144,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * List of text assets used for the long headline.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset long_headlines = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setLongHeadlines($var)
@@ -159,7 +159,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * List of text assets used for the description.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset descriptions = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>
      */
     public function getDescriptions()
     {
@@ -170,7 +170,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * List of text assets used for the description.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset descriptions = 3;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setDescriptions($var)
@@ -185,7 +185,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * List of YouTube video assets used for the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdVideoAsset videos = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdVideoAsset>
      */
     public function getVideos()
     {
@@ -196,7 +196,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * List of YouTube video assets used for the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdVideoAsset videos = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdVideoAsset[] $var
      * @return $this
      */
     public function setVideos($var)
@@ -212,7 +212,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * The minimum size is 128x128 and the aspect ratio must be 1:1 (+-1%).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdImageAsset logo_images = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>
      */
     public function getLogoImages()
     {
@@ -224,7 +224,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * The minimum size is 128x128 and the aspect ratio must be 1:1 (+-1%).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdImageAsset logo_images = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setLogoImages($var)
@@ -327,7 +327,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Assets of type CallToActionAsset used for the "Call To Action" button.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdCallToActionAsset call_to_actions = 9;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdCallToActionAsset>
      */
     public function getCallToActions()
     {
@@ -338,7 +338,7 @@ class DemandGenVideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Assets of type CallToActionAsset used for the "Call To Action" button.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdCallToActionAsset call_to_actions = 9;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdCallToActionAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdCallToActionAsset[] $var
      * @return $this
      */
     public function setCallToActions($var)

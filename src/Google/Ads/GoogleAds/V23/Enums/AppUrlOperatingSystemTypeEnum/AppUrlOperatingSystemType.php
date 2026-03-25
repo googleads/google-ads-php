@@ -66,6 +66,3 @@ class AppUrlOperatingSystemType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AppUrlOperatingSystemType::class, \Google\Ads\GoogleAds\V23\Enums\AppUrlOperatingSystemTypeEnum_AppUrlOperatingSystemType::class);
-

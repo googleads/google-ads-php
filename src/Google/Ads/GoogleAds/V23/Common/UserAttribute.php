@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * User attribute, can only be used with CUSTOMER_MATCH_WITH_ATTRIBUTES job
@@ -132,7 +132,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
      *           The format is YYYY-MM-DD HH:MM:SS[+/-HH:MM], where [+/-HH:MM] is an
      *           optional timezone offset from UTC. If the offset is absent, the API will
      *           use the account's timezone as default.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\EventAttribute>|\Google\Protobuf\Internal\RepeatedField $event_attribute
+     *     @type \Google\Ads\GoogleAds\V23\Common\EventAttribute[] $event_attribute
      *           Optional. Advertiser defined events and their attributes. All the values in
      *           the nested fields are required. Currently this field is in beta.
      * }
@@ -441,7 +441,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
      * the nested fields are required. Currently this field is in beta.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.EventAttribute event_attribute = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\EventAttribute>
      */
     public function getEventAttribute()
     {
@@ -453,7 +453,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
      * the nested fields are required. Currently this field is in beta.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.EventAttribute event_attribute = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\EventAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\EventAttribute[] $var
      * @return $this
      */
     public function setEventAttribute($var)

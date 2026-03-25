@@ -106,6 +106,12 @@ class RequestError
      */
     const TOO_MANY_MUTATE_OPERATIONS = 13;
     /**
+     * Received too many action operations in request.
+     *
+     * Generated from protobuf enum <code>TOO_MANY_ACTION_OPERATIONS = 41;</code>
+     */
+    const TOO_MANY_ACTION_OPERATIONS = 41;
+    /**
      * Request cannot be executed by a manager account.
      *
      * Generated from protobuf enum <code>CANNOT_BE_EXECUTED_BY_MANAGER_ACCOUNT = 14;</code>
@@ -205,6 +211,7 @@ class RequestError
         self::REQUIRED_FIELD_MISSING => 'REQUIRED_FIELD_MISSING',
         self::IMMUTABLE_FIELD => 'IMMUTABLE_FIELD',
         self::TOO_MANY_MUTATE_OPERATIONS => 'TOO_MANY_MUTATE_OPERATIONS',
+        self::TOO_MANY_ACTION_OPERATIONS => 'TOO_MANY_ACTION_OPERATIONS',
         self::CANNOT_BE_EXECUTED_BY_MANAGER_ACCOUNT => 'CANNOT_BE_EXECUTED_BY_MANAGER_ACCOUNT',
         self::CANNOT_MODIFY_FOREIGN_FIELD => 'CANNOT_MODIFY_FOREIGN_FIELD',
         self::INVALID_ENUM_VALUE => 'INVALID_ENUM_VALUE',
@@ -240,7 +247,4 @@ class RequestError
         return constant($const);
     }
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(RequestError::class, \Google\Ads\GoogleAds\V23\Errors\RequestErrorEnum_RequestError::class);
 

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A list of AudienceInsightsAttributes.
@@ -31,7 +31,7 @@ class InsightsAudienceAttributeGroup extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type \Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttribute[] $attributes
      *           Required. A collection of audience attributes to be combined with logical
      *           OR. Attributes need not all be the same dimension.  Only Knowledge Graph
      *           entities, Product & Service Categories, and Affinity and In-Market
@@ -50,7 +50,7 @@ class InsightsAudienceAttributeGroup extends \Google\Protobuf\Internal\Message
      * audiences are supported in this context.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AudienceInsightsAttribute attributes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttribute>
      */
     public function getAttributes()
     {
@@ -64,7 +64,7 @@ class InsightsAudienceAttributeGroup extends \Google\Protobuf\Internal\Message
      * audiences are supported in this context.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AudienceInsightsAttribute attributes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttribute[] $var
      * @return $this
      */
     public function setAttributes($var)

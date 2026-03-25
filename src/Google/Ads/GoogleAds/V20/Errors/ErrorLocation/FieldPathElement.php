@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Errors\ErrorLocation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A part of a field path.
@@ -108,7 +108,4 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(FieldPathElement::class, \Google\Ads\GoogleAds\V20\Errors\ErrorLocation_FieldPathElement::class);
 

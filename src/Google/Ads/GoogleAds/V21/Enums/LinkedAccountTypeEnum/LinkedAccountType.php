@@ -60,6 +60,3 @@ class LinkedAccountType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LinkedAccountType::class, \Google\Ads\GoogleAds\V21\Enums\LinkedAccountTypeEnum_LinkedAccountType::class);
-

@@ -48,7 +48,7 @@ class BatchJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateBatchJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateBatchJobResponse>
      */
     public function MutateBatchJob(\Google\Ads\GoogleAds\V22\Services\MutateBatchJobRequest $argument,
       $metadata = [], $options = []) {
@@ -73,7 +73,7 @@ class BatchJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\ListBatchJobResultsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\ListBatchJobResultsResponse>
      */
     public function ListBatchJobResults(\Google\Ads\GoogleAds\V22\Services\ListBatchJobResultsRequest $argument,
       $metadata = [], $options = []) {
@@ -101,7 +101,7 @@ class BatchJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\RunBatchJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\LongRunning\Operation>
      */
     public function RunBatchJob(\Google\Ads\GoogleAds\V22\Services\RunBatchJobRequest $argument,
       $metadata = [], $options = []) {
@@ -126,7 +126,7 @@ class BatchJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\AddBatchJobOperationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\AddBatchJobOperationsResponse>
      */
     public function AddBatchJobOperations(\Google\Ads\GoogleAds\V22\Services\AddBatchJobOperationsRequest $argument,
       $metadata = [], $options = []) {

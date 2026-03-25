@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Dimension specifying users by their gender.
@@ -34,7 +34,7 @@ class GenderDimension extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $genders
+     *     @type int[] $genders
      *           Included gender demographic segments.
      *     @type bool $include_undetermined
      *           Include users whose gender is not determined.
@@ -49,7 +49,7 @@ class GenderDimension extends \Google\Protobuf\Internal\Message
      * Included gender demographic segments.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.GenderTypeEnum.GenderType genders = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getGenders()
     {
@@ -60,7 +60,7 @@ class GenderDimension extends \Google\Protobuf\Internal\Message
      * Included gender demographic segments.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.GenderTypeEnum.GenderType genders = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setGenders($var)

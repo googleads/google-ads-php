@@ -259,6 +259,3 @@ class ConversionAdjustmentUploadError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionAdjustmentUploadError::class, \Google\Ads\GoogleAds\V20\Errors\ConversionAdjustmentUploadErrorEnum_ConversionAdjustmentUploadError::class);
-

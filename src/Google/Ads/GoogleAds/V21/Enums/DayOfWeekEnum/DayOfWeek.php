@@ -101,6 +101,3 @@ class DayOfWeek
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DayOfWeek::class, \Google\Ads\GoogleAds\V21\Enums\DayOfWeekEnum_DayOfWeek::class);
-

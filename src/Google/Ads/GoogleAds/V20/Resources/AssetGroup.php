@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An asset group.
@@ -126,10 +126,10 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Required. Name of the asset group. Required. It must have a minimum length
      *           of 1 and maximum length of 128. It must be unique under a campaign.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_urls
+     *     @type string[] $final_urls
      *           A list of final URLs after all cross domain redirects. In performance max,
      *           by default, the urls are eligible for expansion unless opted out.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
+     *     @type string[] $final_mobile_urls
      *           A list of final mobile URLs after all cross domain redirects. In
      *           performance max, by default, the urls are eligible for expansion
      *           unless opted out.
@@ -138,7 +138,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      *     @type int $primary_status
      *           Output only. The primary status of the asset group. Provides insights into
      *           why an asset group is not serving or not serving optimally.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $primary_status_reasons
+     *     @type int[] $primary_status_reasons
      *           Output only. Provides reasons into why an asset group is not serving or not
      *           serving optimally. It will be empty when the asset group is serving without
      *           issues.
@@ -276,7 +276,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      * by default, the urls are eligible for expansion unless opted out.
      *
      * Generated from protobuf field <code>repeated string final_urls = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getFinalUrls()
     {
@@ -288,7 +288,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      * by default, the urls are eligible for expansion unless opted out.
      *
      * Generated from protobuf field <code>repeated string final_urls = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setFinalUrls($var)
@@ -305,7 +305,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      * unless opted out.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getFinalMobileUrls()
     {
@@ -318,7 +318,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      * unless opted out.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 5;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setFinalMobileUrls($var)
@@ -389,7 +389,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      * issues.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AssetGroupPrimaryStatusReasonEnum.AssetGroupPrimaryStatusReason primary_status_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getPrimaryStatusReasons()
     {
@@ -402,7 +402,7 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      * issues.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AssetGroupPrimaryStatusReasonEnum.AssetGroupPrimaryStatusReason primary_status_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setPrimaryStatusReasons($var)

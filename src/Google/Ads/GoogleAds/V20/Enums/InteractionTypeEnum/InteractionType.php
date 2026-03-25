@@ -59,6 +59,3 @@ class InteractionType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(InteractionType::class, \Google\Ads\GoogleAds\V20\Enums\InteractionTypeEnum_InteractionType::class);
-

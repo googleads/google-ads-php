@@ -68,6 +68,3 @@ class InsightsKnowledgeGraphEntityCapabilities
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(InsightsKnowledgeGraphEntityCapabilities::class, \Google\Ads\GoogleAds\V20\Enums\InsightsKnowledgeGraphEntityCapabilitiesEnum_InsightsKnowledgeGraphEntityCapabilities::class);
-

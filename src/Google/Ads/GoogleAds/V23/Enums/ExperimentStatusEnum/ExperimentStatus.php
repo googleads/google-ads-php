@@ -103,6 +103,3 @@ class ExperimentStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ExperimentStatus::class, \Google\Ads\GoogleAds\V23\Enums\ExperimentStatusEnum_ExperimentStatus::class);
-

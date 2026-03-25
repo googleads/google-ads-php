@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -46,7 +46,7 @@ class GenerateImagesRequest extends \Google\Protobuf\Internal\Message
      *     @type string $customer_id
      *           Required. The ID of the customer for whom the images are being generated.
      *           Required.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $asset_field_types
+     *     @type int[] $asset_field_types
      *           Optional. Output field types for generated images. Supported values are
      *           MARKETING_IMAGE, SQUARE_MARKETING_IMAGE, PORTRAIT_MARKETING_IMAGE, and
      *           TALL_PORTRAIT_MARKETING_IMAGE. All specified field types must be
@@ -109,7 +109,7 @@ class GenerateImagesRequest extends \Google\Protobuf\Internal\Message
      * provided, images will be generated for all compatible field types.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.AssetFieldTypeEnum.AssetFieldType asset_field_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getAssetFieldTypes()
     {
@@ -125,7 +125,7 @@ class GenerateImagesRequest extends \Google\Protobuf\Internal\Message
      * provided, images will be generated for all compatible field types.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.AssetFieldTypeEnum.AssetFieldType asset_field_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setAssetFieldTypes($var)

@@ -99,6 +99,3 @@ class AssetLinkPrimaryStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetLinkPrimaryStatus::class, \Google\Ads\GoogleAds\V21\Enums\AssetLinkPrimaryStatusEnum_AssetLinkPrimaryStatus::class);
-

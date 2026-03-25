@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -62,9 +62,9 @@ class GenerateAdGroupThemesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keywords
+     *     @type string[] $keywords
      *           Required. A list of keywords to group into the provided AdGroups.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ad_groups
+     *     @type string[] $ad_groups
      *           Required. A list of resource names of AdGroups to group keywords into.
      *            Resource name format: `customers/{customer_id}/adGroups/{ad_group_id}`
      * }
@@ -104,7 +104,7 @@ class GenerateAdGroupThemesRequest extends \Google\Protobuf\Internal\Message
      * Required. A list of keywords to group into the provided AdGroups.
      *
      * Generated from protobuf field <code>repeated string keywords = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getKeywords()
     {
@@ -115,7 +115,7 @@ class GenerateAdGroupThemesRequest extends \Google\Protobuf\Internal\Message
      * Required. A list of keywords to group into the provided AdGroups.
      *
      * Generated from protobuf field <code>repeated string keywords = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setKeywords($var)
@@ -131,7 +131,7 @@ class GenerateAdGroupThemesRequest extends \Google\Protobuf\Internal\Message
      *  Resource name format: `customers/{customer_id}/adGroups/{ad_group_id}`
      *
      * Generated from protobuf field <code>repeated string ad_groups = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getAdGroups()
     {
@@ -143,7 +143,7 @@ class GenerateAdGroupThemesRequest extends \Google\Protobuf\Internal\Message
      *  Resource name format: `customers/{customer_id}/adGroups/{ad_group_id}`
      *
      * Generated from protobuf field <code>repeated string ad_groups = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setAdGroups($var)

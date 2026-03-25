@@ -50,7 +50,7 @@ class AccountLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\CreateAccountLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\CreateAccountLinkResponse>
      */
     public function CreateAccountLink(\Google\Ads\GoogleAds\V22\Services\CreateAccountLinkRequest $argument,
       $metadata = [], $options = []) {
@@ -79,7 +79,7 @@ class AccountLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateAccountLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateAccountLinkResponse>
      */
     public function MutateAccountLink(\Google\Ads\GoogleAds\V22\Services\MutateAccountLinkRequest $argument,
       $metadata = [], $options = []) {

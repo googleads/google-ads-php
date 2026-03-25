@@ -54,7 +54,7 @@ class AdParameterServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\MutateAdParametersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateAdParametersResponse>
      */
     public function MutateAdParameters(\Google\Ads\GoogleAds\V23\Services\MutateAdParametersRequest $argument,
       $metadata = [], $options = []) {

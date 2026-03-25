@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -89,7 +89,7 @@ class UploadClickConversionsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer performing the upload.
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\ClickConversion>|\Google\Protobuf\Internal\RepeatedField $conversions
+     *     @type \Google\Ads\GoogleAds\V21\Services\ClickConversion[] $conversions
      *           Required. The conversions that are being uploaded.
      *     @type bool $partial_failure
      *           Required. If true, successful operations will be carried out and invalid
@@ -145,7 +145,7 @@ class UploadClickConversionsRequest extends \Google\Protobuf\Internal\Message
      * Required. The conversions that are being uploaded.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.ClickConversion conversions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\ClickConversion>
      */
     public function getConversions()
     {
@@ -156,7 +156,7 @@ class UploadClickConversionsRequest extends \Google\Protobuf\Internal\Message
      * Required. The conversions that are being uploaded.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.ClickConversion conversions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\ClickConversion>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\ClickConversion[] $var
      * @return $this
      */
     public function setConversions($var)

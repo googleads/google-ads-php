@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services\ApplyRecommendationOperation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Common parameters used when applying ad asset recommendations.
@@ -46,10 +46,10 @@ class AdAssetApplyParameters extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Resources\Asset>|\Google\Protobuf\Internal\RepeatedField $new_assets
+     *     @type \Google\Ads\GoogleAds\V21\Resources\Asset[] $new_assets
      *           The assets to create and attach to a scope. This may be combined with
      *           existing_assets in the same call.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $existing_assets
+     *     @type string[] $existing_assets
      *           The resource names of existing assets to attach to a scope. This may be
      *           combined with new_assets in the same call.
      *     @type int $scope
@@ -70,7 +70,7 @@ class AdAssetApplyParameters extends \Google\Protobuf\Internal\Message
      * existing_assets in the same call.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.Asset new_assets = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Resources\Asset>
      */
     public function getNewAssets()
     {
@@ -82,7 +82,7 @@ class AdAssetApplyParameters extends \Google\Protobuf\Internal\Message
      * existing_assets in the same call.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.Asset new_assets = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Resources\Asset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Resources\Asset[] $var
      * @return $this
      */
     public function setNewAssets($var)
@@ -98,7 +98,7 @@ class AdAssetApplyParameters extends \Google\Protobuf\Internal\Message
      * combined with new_assets in the same call.
      *
      * Generated from protobuf field <code>repeated string existing_assets = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getExistingAssets()
     {
@@ -110,7 +110,7 @@ class AdAssetApplyParameters extends \Google\Protobuf\Internal\Message
      * combined with new_assets in the same call.
      *
      * Generated from protobuf field <code>repeated string existing_assets = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setExistingAssets($var)
@@ -156,7 +156,4 @@ class AdAssetApplyParameters extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdAssetApplyParameters::class, \Google\Ads\GoogleAds\V21\Services\ApplyRecommendationOperation_AdAssetApplyParameters::class);
 

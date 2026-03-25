@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A video responsive ad.
@@ -89,27 +89,27 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdTextAsset[] $headlines
      *           List of text assets used for the short headline. Currently, only a single
      *           value for the short headline is supported.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $long_headlines
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdTextAsset[] $long_headlines
      *           List of text assets used for the long headline.
      *           Currently, only a single value for the long headline is supported.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdTextAsset[] $descriptions
      *           List of text assets used for the description.
      *           Currently, only a single value for the description is supported.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $call_to_actions
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdTextAsset[] $call_to_actions
      *           List of text assets used for the button, for example, the "Call To Action"
      *           button. Currently, only a single value for the button is supported.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $videos
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdVideoAsset[] $videos
      *           List of YouTube video assets used for the ad.
      *           Currently, only a single value for the YouTube video asset is supported.
      *     @type \Google\Ads\GoogleAds\V23\Common\AdTextAsset $business_name
      *           Optional advertiser/brand name. Maximum display width is 25 characters.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $logo_images
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdImageAsset[] $logo_images
      *           Optional logo image to be used in the ad. The minimum size is 128x128 and
      *           the aspect ratio must be 1:1(+-1%).
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $companion_banners
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdImageAsset[] $companion_banners
      *           List of image assets used for the companion banner.
      *           Currently, only a single value for the companion banner asset is supported.
      *     @type string $breadcrumb1
@@ -128,7 +128,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * value for the short headline is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdTextAsset headlines = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>
      */
     public function getHeadlines()
     {
@@ -140,7 +140,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * value for the short headline is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdTextAsset headlines = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -156,7 +156,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Currently, only a single value for the long headline is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdTextAsset long_headlines = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>
      */
     public function getLongHeadlines()
     {
@@ -168,7 +168,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Currently, only a single value for the long headline is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdTextAsset long_headlines = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setLongHeadlines($var)
@@ -184,7 +184,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Currently, only a single value for the description is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdTextAsset descriptions = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>
      */
     public function getDescriptions()
     {
@@ -196,7 +196,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Currently, only a single value for the description is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdTextAsset descriptions = 3;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setDescriptions($var)
@@ -212,7 +212,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * button. Currently, only a single value for the button is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdTextAsset call_to_actions = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>
      */
     public function getCallToActions()
     {
@@ -224,7 +224,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * button. Currently, only a single value for the button is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdTextAsset call_to_actions = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setCallToActions($var)
@@ -240,7 +240,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Currently, only a single value for the YouTube video asset is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdVideoAsset videos = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdVideoAsset>
      */
     public function getVideos()
     {
@@ -252,7 +252,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Currently, only a single value for the YouTube video asset is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdVideoAsset videos = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdVideoAsset[] $var
      * @return $this
      */
     public function setVideos($var)
@@ -304,7 +304,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * the aspect ratio must be 1:1(+-1%).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdImageAsset logo_images = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdImageAsset>
      */
     public function getLogoImages()
     {
@@ -316,7 +316,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * the aspect ratio must be 1:1(+-1%).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdImageAsset logo_images = 10;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setLogoImages($var)
@@ -332,7 +332,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Currently, only a single value for the companion banner asset is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdImageAsset companion_banners = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdImageAsset>
      */
     public function getCompanionBanners()
     {
@@ -344,7 +344,7 @@ class VideoResponsiveAdInfo extends \Google\Protobuf\Internal\Message
      * Currently, only a single value for the companion banner asset is supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdImageAsset companion_banners = 6;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setCompanionBanners($var)

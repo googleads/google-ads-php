@@ -60,6 +60,3 @@ class SpendingLimitType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SpendingLimitType::class, \Google\Ads\GoogleAds\V21\Enums\SpendingLimitTypeEnum_SpendingLimitType::class);
-

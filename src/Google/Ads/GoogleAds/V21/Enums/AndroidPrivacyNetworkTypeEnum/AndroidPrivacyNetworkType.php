@@ -73,6 +73,3 @@ class AndroidPrivacyNetworkType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AndroidPrivacyNetworkType::class, \Google\Ads\GoogleAds\V21\Enums\AndroidPrivacyNetworkTypeEnum_AndroidPrivacyNetworkType::class);
-

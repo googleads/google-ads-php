@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Page Feed asset.
@@ -36,7 +36,7 @@ class PageFeedAsset extends \Google\Protobuf\Internal\Message
      *
      *     @type string $page_url
      *           Required. The webpage that advertisers want to target.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type string[] $labels
      *           Labels used to group the page urls.
      * }
      */
@@ -75,7 +75,7 @@ class PageFeedAsset extends \Google\Protobuf\Internal\Message
      * Labels used to group the page urls.
      *
      * Generated from protobuf field <code>repeated string labels = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLabels()
     {
@@ -86,7 +86,7 @@ class PageFeedAsset extends \Google\Protobuf\Internal\Message
      * Labels used to group the page urls.
      *
      * Generated from protobuf field <code>repeated string labels = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLabels($var)

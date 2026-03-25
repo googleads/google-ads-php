@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Campaign;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Freeform instructions that will be used to guide text asset generation
@@ -107,7 +107,4 @@ class MessagingRestriction extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MessagingRestriction::class, \Google\Ads\GoogleAds\V23\Resources\Campaign_MessagingRestriction::class);
 

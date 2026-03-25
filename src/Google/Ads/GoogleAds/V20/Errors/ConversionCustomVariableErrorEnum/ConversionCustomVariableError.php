@@ -74,6 +74,3 @@ class ConversionCustomVariableError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionCustomVariableError::class, \Google\Ads\GoogleAds\V20\Errors\ConversionCustomVariableErrorEnum_ConversionCustomVariableError::class);
-

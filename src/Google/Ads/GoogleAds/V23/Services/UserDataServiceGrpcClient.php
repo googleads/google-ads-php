@@ -57,7 +57,7 @@ class UserDataServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\UploadUserDataRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\UploadUserDataResponse>
      */
     public function UploadUserData(\Google\Ads\GoogleAds\V23\Services\UploadUserDataRequest $argument,
       $metadata = [], $options = []) {

@@ -73,6 +73,20 @@ class CustomerClientLinkError
      * Generated from protobuf enum <code>CLIENT_HAS_TOO_MANY_MANAGERS = 9;</code>
      */
     const CLIENT_HAS_TOO_MANY_MANAGERS = 9;
+    /**
+     * You have reached the maximum limit of accounts that can be created for
+     * this account.
+     *
+     * Generated from protobuf enum <code>MAX_CUSTOMER_LIMIT_REACHED = 10;</code>
+     */
+    const MAX_CUSTOMER_LIMIT_REACHED = 10;
+    /**
+     * This account cannot create new client accounts due to a Google Ads policy
+     * violation.
+     *
+     * Generated from protobuf enum <code>ACCOUNT_CREATION_POLICY_VIOLATION = 11;</code>
+     */
+    const ACCOUNT_CREATION_POLICY_VIOLATION = 11;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -85,6 +99,8 @@ class CustomerClientLinkError
         self::CANNOT_HIDE_OR_UNHIDE_MANAGER_ACCOUNTS => 'CANNOT_HIDE_OR_UNHIDE_MANAGER_ACCOUNTS',
         self::CUSTOMER_HAS_TOO_MANY_ACCOUNTS_AT_MANAGER => 'CUSTOMER_HAS_TOO_MANY_ACCOUNTS_AT_MANAGER',
         self::CLIENT_HAS_TOO_MANY_MANAGERS => 'CLIENT_HAS_TOO_MANY_MANAGERS',
+        self::MAX_CUSTOMER_LIMIT_REACHED => 'MAX_CUSTOMER_LIMIT_REACHED',
+        self::ACCOUNT_CREATION_POLICY_VIOLATION => 'ACCOUNT_CREATION_POLICY_VIOLATION',
     ];
 
     public static function name($value)
@@ -107,7 +123,4 @@ class CustomerClientLinkError
         return constant($const);
     }
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomerClientLinkError::class, \Google\Ads\GoogleAds\V23\Errors\CustomerClientLinkErrorEnum_CustomerClientLinkError::class);
 

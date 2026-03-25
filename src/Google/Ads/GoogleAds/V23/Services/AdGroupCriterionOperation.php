@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A single operation (create, remove, update) on an ad group criterion.
@@ -44,7 +44,7 @@ class AdGroupCriterionOperation extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           FieldMask that determines which resource fields are modified in an update.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\PolicyViolationKey>|\Google\Protobuf\Internal\RepeatedField $exempt_policy_violation_keys
+     *     @type \Google\Ads\GoogleAds\V23\Common\PolicyViolationKey[] $exempt_policy_violation_keys
      *           The list of policy violation keys that should not cause a
      *           PolicyViolationError to be reported. Not all policy violations are
      *           exemptable, refer to the is_exemptible field in the returned
@@ -116,7 +116,7 @@ class AdGroupCriterionOperation extends \Google\Protobuf\Internal\Message
      * certificates.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.PolicyViolationKey exempt_policy_violation_keys = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\PolicyViolationKey>
      */
     public function getExemptPolicyViolationKeys()
     {
@@ -134,7 +134,7 @@ class AdGroupCriterionOperation extends \Google\Protobuf\Internal\Message
      * certificates.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.PolicyViolationKey exempt_policy_violation_keys = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\PolicyViolationKey>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\PolicyViolationKey[] $var
      * @return $this
      */
     public function setExemptPolicyViolationKeys($var)

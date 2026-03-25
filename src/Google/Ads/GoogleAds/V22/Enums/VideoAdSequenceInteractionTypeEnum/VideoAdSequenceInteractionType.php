@@ -86,6 +86,3 @@ class VideoAdSequenceInteractionType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(VideoAdSequenceInteractionType::class, \Google\Ads\GoogleAds\V22\Enums\VideoAdSequenceInteractionTypeEnum_VideoAdSequenceInteractionType::class);
-

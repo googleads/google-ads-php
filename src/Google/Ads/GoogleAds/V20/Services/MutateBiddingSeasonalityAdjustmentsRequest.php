@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -80,7 +80,7 @@ class MutateBiddingSeasonalityAdjustmentsRequest extends \Google\Protobuf\Intern
      *     @type string $customer_id
      *           Required. ID of the customer whose seasonality adjustments are being
      *           modified.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\BiddingSeasonalityAdjustmentOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V20\Services\BiddingSeasonalityAdjustmentOperation[] $operations
      *           Required. The list of operations to perform on individual seasonality
      *           adjustments.
      *     @type bool $partial_failure
@@ -134,7 +134,7 @@ class MutateBiddingSeasonalityAdjustmentsRequest extends \Google\Protobuf\Intern
      * adjustments.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.BiddingSeasonalityAdjustmentOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\BiddingSeasonalityAdjustmentOperation>
      */
     public function getOperations()
     {
@@ -146,7 +146,7 @@ class MutateBiddingSeasonalityAdjustmentsRequest extends \Google\Protobuf\Intern
      * adjustments.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.BiddingSeasonalityAdjustmentOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\BiddingSeasonalityAdjustmentOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\BiddingSeasonalityAdjustmentOperation[] $var
      * @return $this
      */
     public function setOperations($var)

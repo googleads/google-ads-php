@@ -50,7 +50,7 @@ class CustomerManagerLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateCustomerManagerLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateCustomerManagerLinkResponse>
      */
     public function MutateCustomerManagerLink(\Google\Ads\GoogleAds\V22\Services\MutateCustomerManagerLinkRequest $argument,
       $metadata = [], $options = []) {
@@ -80,7 +80,7 @@ class CustomerManagerLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MoveManagerLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MoveManagerLinkResponse>
      */
     public function MoveManagerLink(\Google\Ads\GoogleAds\V22\Services\MoveManagerLinkRequest $argument,
       $metadata = [], $options = []) {

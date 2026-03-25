@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -55,7 +55,7 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
      *           an RPC level error. See
      *           https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
      *           for more information about partial failure.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\ConversionAdjustmentResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V23\Services\ConversionAdjustmentResult[] $results
      *           Returned for successfully processed conversion adjustments. Proto will be
      *           empty for rows that received an error. Results are not returned when
      *           validate_only is true.
@@ -120,7 +120,7 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
      * validate_only is true.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.ConversionAdjustmentResult results = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\ConversionAdjustmentResult>
      */
     public function getResults()
     {
@@ -133,7 +133,7 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
      * validate_only is true.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.ConversionAdjustmentResult results = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\ConversionAdjustmentResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\ConversionAdjustmentResult[] $var
      * @return $this
      */
     public function setResults($var)

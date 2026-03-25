@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A container for simulation points for simulations of type PERCENT_CPC_BID.
@@ -28,7 +28,7 @@ class PercentCpcBidSimulationPointList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\PercentCpcBidSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $points
+     *     @type \Google\Ads\GoogleAds\V22\Common\PercentCpcBidSimulationPoint[] $points
      *           Projected metrics for a series of percent CPC bid amounts.
      * }
      */
@@ -41,7 +41,7 @@ class PercentCpcBidSimulationPointList extends \Google\Protobuf\Internal\Message
      * Projected metrics for a series of percent CPC bid amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.PercentCpcBidSimulationPoint points = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\PercentCpcBidSimulationPoint>
      */
     public function getPoints()
     {
@@ -52,7 +52,7 @@ class PercentCpcBidSimulationPointList extends \Google\Protobuf\Internal\Message
      * Projected metrics for a series of percent CPC bid amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.PercentCpcBidSimulationPoint points = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\PercentCpcBidSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\PercentCpcBidSimulationPoint[] $var
      * @return $this
      */
     public function setPoints($var)

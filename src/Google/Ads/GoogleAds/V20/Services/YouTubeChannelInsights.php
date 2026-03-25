@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * YouTube Channel insights, and its metadata (such as channel name and channel
@@ -92,14 +92,14 @@ class YouTubeChannelInsights extends \Google\Protobuf\Internal\Message
      *           Description of the channel.
      *     @type \Google\Ads\GoogleAds\V20\Services\YouTubeMetrics $channel_metrics
      *           The metrics for a YouTube Channel.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $channel_audience_attributes
+     *     @type \Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata[] $channel_audience_attributes
      *           The types of audiences and demographics linked to the channel's main
      *           audience. Audiences and demographics have a breakdown of subscriber share
      *           across dimensions of the same value, such as Age Range, Gender, and User
      *           Interest.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $channel_attributes
+     *     @type \Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata[] $channel_attributes
      *           The attributes associated with the content made by a channel.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $top_videos
+     *     @type \Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata[] $top_videos
      *           The top 10 videos for the channel.
      *     @type string $channel_type
      *           Metadata string associated with the type of channel.
@@ -269,7 +269,7 @@ class YouTubeChannelInsights extends \Google\Protobuf\Internal\Message
      * Interest.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttributeMetadata channel_audience_attributes = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>
      */
     public function getChannelAudienceAttributes()
     {
@@ -283,7 +283,7 @@ class YouTubeChannelInsights extends \Google\Protobuf\Internal\Message
      * Interest.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttributeMetadata channel_audience_attributes = 7;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata[] $var
      * @return $this
      */
     public function setChannelAudienceAttributes($var)
@@ -298,7 +298,7 @@ class YouTubeChannelInsights extends \Google\Protobuf\Internal\Message
      * The attributes associated with the content made by a channel.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttributeMetadata channel_attributes = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>
      */
     public function getChannelAttributes()
     {
@@ -309,7 +309,7 @@ class YouTubeChannelInsights extends \Google\Protobuf\Internal\Message
      * The attributes associated with the content made by a channel.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttributeMetadata channel_attributes = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata[] $var
      * @return $this
      */
     public function setChannelAttributes($var)
@@ -324,7 +324,7 @@ class YouTubeChannelInsights extends \Google\Protobuf\Internal\Message
      * The top 10 videos for the channel.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttributeMetadata top_videos = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>
      */
     public function getTopVideos()
     {
@@ -335,7 +335,7 @@ class YouTubeChannelInsights extends \Google\Protobuf\Internal\Message
      * The top 10 videos for the channel.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttributeMetadata top_videos = 8;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata[] $var
      * @return $this
      */
     public function setTopVideos($var)

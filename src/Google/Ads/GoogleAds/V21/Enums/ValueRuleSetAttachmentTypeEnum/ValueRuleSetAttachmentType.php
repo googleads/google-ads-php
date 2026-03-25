@@ -66,6 +66,3 @@ class ValueRuleSetAttachmentType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ValueRuleSetAttachmentType::class, \Google\Ads\GoogleAds\V21\Enums\ValueRuleSetAttachmentTypeEnum_ValueRuleSetAttachmentType::class);
-

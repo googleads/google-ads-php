@@ -13,17 +13,10 @@ class LocationInterestView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
-            '
-º
-?google/ads/googleads/v21/resources/location_interest_view.proto"google.ads.googleads.v21.resourcesgoogle/api/resource.proto"¡
-LocationInterestViewL
-resource_name (	B5àAúA/
--googleads.googleapis.com/LocationInterestView:ºêA¶
--googleads.googleapis.com/LocationInterestViewXcustomers/{customer_id}/locationInterestViews/{campaign_id}~{ad_group_id}~{criterion_id}*locationInterestViews2locationInterestViewB‹
-&com.google.ads.googleads.v21.resourcesBLocationInterestViewProtoPZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources¢GAAª"Google.Ads.GoogleAds.V21.ResourcesÊ"Google\\Ads\\GoogleAds\\V21\\Resourcesê&Google::Ads::GoogleAds::V21::Resourcesbproto3'
+            "\x0A\xBA\x05\x0A?google/ads/googleads/v21/resources/location_interest_view.proto\x12\"google.ads.googleads.v21.resources\x1A\x19google/api/resource.proto\"\xA1\x02\x0A\x14LocationInterestView\x12L\x0A\x0Dresource_name\x18\x01 \x01(\x09B5\xE0A\x03\xFAA/\x0A-googleads.googleapis.com/LocationInterestView:\xBA\x01\xEAA\xB6\x01\x0A-googleads.googleapis.com/LocationInterestView\x12Xcustomers/{customer_id}/locationInterestViews/{campaign_id}~{ad_group_id}~{criterion_id}*\x15locationInterestViews2\x14locationInterestViewB\x8B\x02\x0A&com.google.ads.googleads.v21.resourcesB\x19LocationInterestViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V21.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V21\\Resources\xEA\x02&Google::Ads::GoogleAds::V21::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

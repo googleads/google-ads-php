@@ -40,7 +40,7 @@ class AssetGroupAssetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\MutateAssetGroupAssetsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\MutateAssetGroupAssetsResponse>
      */
     public function MutateAssetGroupAssets(\Google\Ads\GoogleAds\V20\Services\MutateAssetGroupAssetsRequest $argument,
       $metadata = [], $options = []) {

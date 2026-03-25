@@ -164,6 +164,3 @@ class UserListCustomerTypeCategory
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(UserListCustomerTypeCategory::class, \Google\Ads\GoogleAds\V21\Enums\UserListCustomerTypeCategoryEnum_UserListCustomerTypeCategory::class);
-

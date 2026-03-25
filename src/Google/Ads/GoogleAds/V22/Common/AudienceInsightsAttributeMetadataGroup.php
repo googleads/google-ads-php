@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A group of audience attributes with metadata, returned in response to a
@@ -29,7 +29,7 @@ class AudienceInsightsAttributeMetadataGroup extends \Google\Protobuf\Internal\M
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type \Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttributeMetadata[] $attributes
      *           Attributes with metadata returned in response to a search.
      * }
      */
@@ -42,7 +42,7 @@ class AudienceInsightsAttributeMetadataGroup extends \Google\Protobuf\Internal\M
      * Attributes with metadata returned in response to a search.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AudienceInsightsAttributeMetadata attributes = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttributeMetadata>
      */
     public function getAttributes()
     {
@@ -53,7 +53,7 @@ class AudienceInsightsAttributeMetadataGroup extends \Google\Protobuf\Internal\M
      * Attributes with metadata returned in response to a search.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AudienceInsightsAttributeMetadata attributes = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttributeMetadata[] $var
      * @return $this
      */
     public function setAttributes($var)

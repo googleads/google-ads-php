@@ -84,6 +84,3 @@ class CreditIssuanceDecision
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CreditIssuanceDecision::class, \Google\Ads\GoogleAds\V23\Enums\LocalServicesLeadCreditIssuanceDecisionEnum_CreditIssuanceDecision::class);
-

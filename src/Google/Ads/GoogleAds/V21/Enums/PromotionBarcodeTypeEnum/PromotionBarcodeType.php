@@ -137,6 +137,3 @@ class PromotionBarcodeType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PromotionBarcodeType::class, \Google\Ads\GoogleAds\V21\Enums\PromotionBarcodeTypeEnum_PromotionBarcodeType::class);
-

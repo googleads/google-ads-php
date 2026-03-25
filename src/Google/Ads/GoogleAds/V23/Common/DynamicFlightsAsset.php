@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A dynamic flights asset.
@@ -164,7 +164,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
      *           iOS app store ID. This is used to check if the user has the app installed
      *           on their device before deep linking. If this field is set, then the
      *           ios_app_link field must also be present.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_destination_ids
+     *     @type string[] $similar_destination_ids
      *           Similar destination IDs, for example, PAR,LON.
      *     @type string $custom_mapping
      *           A custom field which can be multiple key to values mapping separated by
@@ -543,7 +543,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
      * Similar destination IDs, for example, PAR,LON.
      *
      * Generated from protobuf field <code>repeated string similar_destination_ids = 14;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSimilarDestinationIds()
     {
@@ -554,7 +554,7 @@ class DynamicFlightsAsset extends \Google\Protobuf\Internal\Message
      * Similar destination IDs, for example, PAR,LON.
      *
      * Generated from protobuf field <code>repeated string similar_destination_ids = 14;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSimilarDestinationIds($var)

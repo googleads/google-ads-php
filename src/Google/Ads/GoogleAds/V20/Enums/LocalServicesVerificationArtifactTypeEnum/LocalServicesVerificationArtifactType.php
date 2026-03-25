@@ -80,6 +80,3 @@ class LocalServicesVerificationArtifactType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LocalServicesVerificationArtifactType::class, \Google\Ads\GoogleAds\V20\Enums\LocalServicesVerificationArtifactTypeEnum_LocalServicesVerificationArtifactType::class);
-

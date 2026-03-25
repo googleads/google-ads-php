@@ -59,6 +59,3 @@ class TimeZoneError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TimeZoneError::class, \Google\Ads\GoogleAds\V23\Errors\TimeZoneErrorEnum_TimeZoneError::class);
-

@@ -59,6 +59,3 @@ class VideoAdFormatRestriction
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(VideoAdFormatRestriction::class, \Google\Ads\GoogleAds\V23\Enums\VideoAdFormatRestrictionEnum_VideoAdFormatRestriction::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A user list logical rule. A rule has a logical operator (and/or/not) and a
@@ -37,7 +37,7 @@ class UserListLogicalRuleInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type int $operator
      *           The logical operator of the rule.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\LogicalUserListOperandInfo>|\Google\Protobuf\Internal\RepeatedField $rule_operands
+     *     @type \Google\Ads\GoogleAds\V20\Common\LogicalUserListOperandInfo[] $rule_operands
      *           The list of operands of the rule.
      * }
      */
@@ -76,7 +76,7 @@ class UserListLogicalRuleInfo extends \Google\Protobuf\Internal\Message
      * The list of operands of the rule.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.LogicalUserListOperandInfo rule_operands = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\LogicalUserListOperandInfo>
      */
     public function getRuleOperands()
     {
@@ -87,7 +87,7 @@ class UserListLogicalRuleInfo extends \Google\Protobuf\Internal\Message
      * The list of operands of the rule.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.LogicalUserListOperandInfo rule_operands = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\LogicalUserListOperandInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\LogicalUserListOperandInfo[] $var
      * @return $this
      */
     public function setRuleOperands($var)

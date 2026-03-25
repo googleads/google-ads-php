@@ -70,6 +70,3 @@ class YouTubeVideoPrivacy
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(YouTubeVideoPrivacy::class, \Google\Ads\GoogleAds\V23\Enums\YouTubeVideoPrivacyEnum_YouTubeVideoPrivacy::class);
-

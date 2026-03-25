@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -65,7 +65,7 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer with the recommendation.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\ApplyRecommendationOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V22\Services\ApplyRecommendationOperation[] $operations
      *           Required. The list of operations to apply recommendations.
      *           If partial_failure=false all recommendations should be of the same type
      *           There is a limit of 100 operations per request.
@@ -113,7 +113,7 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
      * There is a limit of 100 operations per request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.ApplyRecommendationOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\ApplyRecommendationOperation>
      */
     public function getOperations()
     {
@@ -126,7 +126,7 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
      * There is a limit of 100 operations per request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.ApplyRecommendationOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\ApplyRecommendationOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\ApplyRecommendationOperation[] $var
      * @return $this
      */
     public function setOperations($var)

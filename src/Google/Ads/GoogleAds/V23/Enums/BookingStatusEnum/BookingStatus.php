@@ -88,6 +88,3 @@ class BookingStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BookingStatus::class, \Google\Ads\GoogleAds\V23\Enums\BookingStatusEnum_BookingStatus::class);
-

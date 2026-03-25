@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services\SuggestSmartCampaignBudgetOptionsResponse;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Performance metrics for a given budget option.
@@ -98,7 +98,4 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Metrics::class, \Google\Ads\GoogleAds\V23\Services\SuggestSmartCampaignBudgetOptionsResponse_Metrics::class);
 

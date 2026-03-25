@@ -87,6 +87,3 @@ class AutomaticallyCreatedAssetRemovalError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AutomaticallyCreatedAssetRemovalError::class, \Google\Ads\GoogleAds\V21\Errors\AutomaticallyCreatedAssetRemovalErrorEnum_AutomaticallyCreatedAssetRemovalError::class);
-

@@ -94,6 +94,3 @@ class AdStrength
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdStrength::class, \Google\Ads\GoogleAds\V23\Enums\AdStrengthEnum_AdStrength::class);
-

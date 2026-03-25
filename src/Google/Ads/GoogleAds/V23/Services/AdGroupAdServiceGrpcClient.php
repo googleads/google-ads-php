@@ -84,7 +84,7 @@ class AdGroupAdServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\MutateAdGroupAdsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateAdGroupAdsResponse>
      */
     public function MutateAdGroupAds(\Google\Ads\GoogleAds\V23\Services\MutateAdGroupAdsRequest $argument,
       $metadata = [], $options = []) {
@@ -110,7 +110,7 @@ class AdGroupAdServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\RemoveAutomaticallyCreatedAssetsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function RemoveAutomaticallyCreatedAssets(\Google\Ads\GoogleAds\V23\Services\RemoveAutomaticallyCreatedAssetsRequest $argument,
       $metadata = [], $options = []) {

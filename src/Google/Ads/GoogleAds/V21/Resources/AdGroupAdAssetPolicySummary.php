@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Contains policy information for an ad group ad asset.
@@ -41,7 +41,7 @@ class AdGroupAdAssetPolicySummary extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\PolicyTopicEntry>|\Google\Protobuf\Internal\RepeatedField $policy_topic_entries
+     *     @type \Google\Ads\GoogleAds\V21\Common\PolicyTopicEntry[] $policy_topic_entries
      *           Output only. The list of policy findings for the ad group ad asset.
      *     @type int $review_status
      *           Output only. Where in the review process this ad group ad asset is.
@@ -59,7 +59,7 @@ class AdGroupAdAssetPolicySummary extends \Google\Protobuf\Internal\Message
      * Output only. The list of policy findings for the ad group ad asset.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.PolicyTopicEntry policy_topic_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\PolicyTopicEntry>
      */
     public function getPolicyTopicEntries()
     {
@@ -70,7 +70,7 @@ class AdGroupAdAssetPolicySummary extends \Google\Protobuf\Internal\Message
      * Output only. The list of policy findings for the ad group ad asset.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.PolicyTopicEntry policy_topic_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\PolicyTopicEntry>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\PolicyTopicEntry[] $var
      * @return $this
      */
     public function setPolicyTopicEntries($var)

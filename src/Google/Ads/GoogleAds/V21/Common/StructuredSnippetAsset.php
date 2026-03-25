@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Structured Snippet asset.
@@ -42,7 +42,7 @@ class StructuredSnippetAsset extends \Google\Protobuf\Internal\Message
      *           Required. The header of the snippet.
      *           This string should be one of the predefined values at
      *           https://developers.google.com/google-ads/api/reference/data/structured-snippet-headers
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type string[] $values
      *           Required. The values in the snippet.
      *           The size of this collection should be between 3 and 10, inclusive.
      *           The length of each value should be between 1 and 25 characters, inclusive.
@@ -89,7 +89,7 @@ class StructuredSnippetAsset extends \Google\Protobuf\Internal\Message
      * The length of each value should be between 1 and 25 characters, inclusive.
      *
      * Generated from protobuf field <code>repeated string values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getValues()
     {
@@ -102,7 +102,7 @@ class StructuredSnippetAsset extends \Google\Protobuf\Internal\Message
      * The length of each value should be between 1 and 25 characters, inclusive.
      *
      * Generated from protobuf field <code>repeated string values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setValues($var)

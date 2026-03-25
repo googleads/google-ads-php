@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A trend insight for a given attribute.
@@ -62,10 +62,10 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      *           available month and the comparison period is 3 months.
      *     @type int $trend
      *           The direction of trend (such as RISING or DECLINING).
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $related_videos
+     *     @type \Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttributeMetadata[] $related_videos
      *           Related videos for this topic. Only populated for trends using
      *           search_topics.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\YouTubeCreatorInsights>|\Google\Protobuf\Internal\RepeatedField $related_creators
+     *     @type \Google\Ads\GoogleAds\V22\Services\YouTubeCreatorInsights[] $related_creators
      *           Related creators for this topic. Only populated for trends using
      *           search_topics.
      * }
@@ -180,7 +180,7 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      * search_topics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AudienceInsightsAttributeMetadata related_videos = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttributeMetadata>
      */
     public function getRelatedVideos()
     {
@@ -192,7 +192,7 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      * search_topics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AudienceInsightsAttributeMetadata related_videos = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttributeMetadata[] $var
      * @return $this
      */
     public function setRelatedVideos($var)
@@ -208,7 +208,7 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      * search_topics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.YouTubeCreatorInsights related_creators = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\YouTubeCreatorInsights>
      */
     public function getRelatedCreators()
     {
@@ -220,7 +220,7 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      * search_topics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.YouTubeCreatorInsights related_creators = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\YouTubeCreatorInsights>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\YouTubeCreatorInsights[] $var
      * @return $this
      */
     public function setRelatedCreators($var)

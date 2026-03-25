@@ -264,6 +264,3 @@ class AssetFieldType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetFieldType::class, \Google\Ads\GoogleAds\V20\Enums\AssetFieldTypeEnum_AssetFieldType::class);
-

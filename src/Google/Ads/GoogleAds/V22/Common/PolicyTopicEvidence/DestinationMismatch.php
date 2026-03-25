@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common\PolicyTopicEvidence;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Evidence of mismatches between the URLs of a resource.
@@ -28,7 +28,7 @@ class DestinationMismatch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $url_types
+     *     @type int[] $url_types
      *           The set of URLs that did not match each other.
      * }
      */
@@ -41,7 +41,7 @@ class DestinationMismatch extends \Google\Protobuf\Internal\Message
      * The set of URLs that did not match each other.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum.PolicyTopicEvidenceDestinationMismatchUrlType url_types = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getUrlTypes()
     {
@@ -52,7 +52,7 @@ class DestinationMismatch extends \Google\Protobuf\Internal\Message
      * The set of URLs that did not match each other.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum.PolicyTopicEvidenceDestinationMismatchUrlType url_types = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setUrlTypes($var)
@@ -64,7 +64,4 @@ class DestinationMismatch extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DestinationMismatch::class, \Google\Ads\GoogleAds\V22\Common\PolicyTopicEvidence_DestinationMismatch::class);
 

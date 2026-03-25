@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An ad group.
@@ -326,7 +326,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *           This field is read-only.
      *     @type string $tracking_url_template
      *           The URL template for constructing a tracking URL.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *     @type \Google\Ads\GoogleAds\V20\Common\CustomParameter[] $url_custom_parameters
      *           The list of mappings used to substitute custom parameter tags in a
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type string $campaign
@@ -405,13 +405,13 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *     @type int $effective_target_roas_source
      *           Output only. Source of the effective target ROAS.
      *           This field is read-only.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type string[] $labels
      *           Output only. The resource names of labels attached to this ad group.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $excluded_parent_asset_field_types
+     *     @type int[] $excluded_parent_asset_field_types
      *           The asset field types that should be excluded from this ad group. Asset
      *           links with these field types will not be inherited by this ad group from
      *           the upper levels.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $excluded_parent_asset_set_types
+     *     @type int[] $excluded_parent_asset_set_types
      *           The asset set types that should be excluded from this ad group. Asset set
      *           links with these types will not be inherited by this ad group from the
      *           upper levels.
@@ -425,7 +425,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *     @type int $primary_status
      *           Output only. Provides aggregated view into why an ad group is not serving
      *           or not serving optimally.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $primary_status_reasons
+     *     @type int[] $primary_status_reasons
      *           Output only. Provides reasons for why an ad group is not serving or not
      *           serving optimally.
      *     @type \Google\Ads\GoogleAds\V20\Resources\AdGroup\DemandGenAdGroupSettings $demand_gen_ad_group_settings
@@ -714,7 +714,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.CustomParameter url_custom_parameters = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\CustomParameter>
      */
     public function getUrlCustomParameters()
     {
@@ -726,7 +726,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.CustomParameter url_custom_parameters = 6;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\CustomParameter[] $var
      * @return $this
      */
     public function setUrlCustomParameters($var)
@@ -1515,7 +1515,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Output only. The resource names of labels attached to this ad group.
      *
      * Generated from protobuf field <code>repeated string labels = 49 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLabels()
     {
@@ -1526,7 +1526,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Output only. The resource names of labels attached to this ad group.
      *
      * Generated from protobuf field <code>repeated string labels = 49 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLabels($var)
@@ -1543,7 +1543,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * the upper levels.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AssetFieldTypeEnum.AssetFieldType excluded_parent_asset_field_types = 54;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getExcludedParentAssetFieldTypes()
     {
@@ -1556,7 +1556,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * the upper levels.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AssetFieldTypeEnum.AssetFieldType excluded_parent_asset_field_types = 54;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setExcludedParentAssetFieldTypes($var)
@@ -1580,7 +1580,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Only LOCATION_SYNC is currently supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AssetSetTypeEnum.AssetSetType excluded_parent_asset_set_types = 58;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getExcludedParentAssetSetTypes()
     {
@@ -1600,7 +1600,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Only LOCATION_SYNC is currently supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AssetSetTypeEnum.AssetSetType excluded_parent_asset_set_types = 58;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setExcludedParentAssetSetTypes($var)
@@ -1644,7 +1644,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * serving optimally.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AdGroupPrimaryStatusReasonEnum.AdGroupPrimaryStatusReason primary_status_reasons = 63 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getPrimaryStatusReasons()
     {
@@ -1656,7 +1656,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * serving optimally.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AdGroupPrimaryStatusReasonEnum.AdGroupPrimaryStatusReason primary_status_reasons = 63 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setPrimaryStatusReasons($var)

@@ -86,6 +86,3 @@ class DataDrivenModelStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DataDrivenModelStatus::class, \Google\Ads\GoogleAds\V20\Enums\DataDrivenModelStatusEnum_DataDrivenModelStatus::class);
-

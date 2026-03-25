@@ -73,6 +73,3 @@ class HotelAssetSuggestionStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(HotelAssetSuggestionStatus::class, \Google\Ads\GoogleAds\V21\Enums\HotelAssetSuggestionStatusEnum_HotelAssetSuggestionStatus::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The surface targeting combinations available for an ad product.
@@ -36,7 +36,7 @@ class SurfaceTargetingCombinations extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Ads\GoogleAds\V21\Services\SurfaceTargeting $default_targeting
      *           Default surface targeting applied to the ad product.
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\SurfaceTargeting>|\Google\Protobuf\Internal\RepeatedField $available_targeting_combinations
+     *     @type \Google\Ads\GoogleAds\V21\Services\SurfaceTargeting[] $available_targeting_combinations
      *           Available surface target combinations for the ad product.
      * }
      */
@@ -85,7 +85,7 @@ class SurfaceTargetingCombinations extends \Google\Protobuf\Internal\Message
      * Available surface target combinations for the ad product.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.SurfaceTargeting available_targeting_combinations = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\SurfaceTargeting>
      */
     public function getAvailableTargetingCombinations()
     {
@@ -96,7 +96,7 @@ class SurfaceTargetingCombinations extends \Google\Protobuf\Internal\Message
      * Available surface target combinations for the ad product.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.SurfaceTargeting available_targeting_combinations = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\SurfaceTargeting>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\SurfaceTargeting[] $var
      * @return $this
      */
     public function setAvailableTargetingCombinations($var)

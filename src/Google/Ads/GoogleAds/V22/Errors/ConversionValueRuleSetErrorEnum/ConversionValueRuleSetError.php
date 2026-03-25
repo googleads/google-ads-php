@@ -170,6 +170,3 @@ class ConversionValueRuleSetError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionValueRuleSetError::class, \Google\Ads\GoogleAds\V22\Errors\ConversionValueRuleSetErrorEnum_ConversionValueRuleSetError::class);
-

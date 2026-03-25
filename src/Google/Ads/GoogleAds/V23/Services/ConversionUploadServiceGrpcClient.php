@@ -47,7 +47,7 @@ class ConversionUploadServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\UploadClickConversionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\UploadClickConversionsResponse>
      */
     public function UploadClickConversions(\Google\Ads\GoogleAds\V23\Services\UploadClickConversionsRequest $argument,
       $metadata = [], $options = []) {
@@ -71,7 +71,7 @@ class ConversionUploadServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\UploadCallConversionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\UploadCallConversionsResponse>
      */
     public function UploadCallConversions(\Google\Ads\GoogleAds\V23\Services\UploadCallConversionsRequest $argument,
       $metadata = [], $options = []) {

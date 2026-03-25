@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A container for simulation points for simulations of type TARGET_ROAS.
@@ -28,7 +28,7 @@ class TargetRoasSimulationPointList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\TargetRoasSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $points
+     *     @type \Google\Ads\GoogleAds\V23\Common\TargetRoasSimulationPoint[] $points
      *           Projected metrics for a series of target ROAS amounts.
      * }
      */
@@ -41,7 +41,7 @@ class TargetRoasSimulationPointList extends \Google\Protobuf\Internal\Message
      * Projected metrics for a series of target ROAS amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.TargetRoasSimulationPoint points = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\TargetRoasSimulationPoint>
      */
     public function getPoints()
     {
@@ -52,7 +52,7 @@ class TargetRoasSimulationPointList extends \Google\Protobuf\Internal\Message
      * Projected metrics for a series of target ROAS amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.TargetRoasSimulationPoint points = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\TargetRoasSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\TargetRoasSimulationPoint[] $var
      * @return $this
      */
     public function setPoints($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\ConversionValueRule;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Condition on Device dimension.
@@ -28,7 +28,7 @@ class ValueRuleDeviceCondition extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $device_types
+     *     @type int[] $device_types
      *           Value for device type condition.
      * }
      */
@@ -41,7 +41,7 @@ class ValueRuleDeviceCondition extends \Google\Protobuf\Internal\Message
      * Value for device type condition.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.ValueRuleDeviceTypeEnum.ValueRuleDeviceType device_types = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getDeviceTypes()
     {
@@ -52,7 +52,7 @@ class ValueRuleDeviceCondition extends \Google\Protobuf\Internal\Message
      * Value for device type condition.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.ValueRuleDeviceTypeEnum.ValueRuleDeviceType device_types = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setDeviceTypes($var)
@@ -64,7 +64,4 @@ class ValueRuleDeviceCondition extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ValueRuleDeviceCondition::class, \Google\Ads\GoogleAds\V20\Resources\ConversionValueRule_ValueRuleDeviceCondition::class);
 

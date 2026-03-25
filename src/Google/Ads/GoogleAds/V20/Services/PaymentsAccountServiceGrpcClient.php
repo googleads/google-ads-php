@@ -51,7 +51,7 @@ class PaymentsAccountServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\ListPaymentsAccountsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\ListPaymentsAccountsResponse>
      */
     public function ListPaymentsAccounts(\Google\Ads\GoogleAds\V20\Services\ListPaymentsAccountsRequest $argument,
       $metadata = [], $options = []) {

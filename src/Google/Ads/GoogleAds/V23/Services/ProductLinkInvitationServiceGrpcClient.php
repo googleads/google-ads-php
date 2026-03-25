@@ -38,7 +38,7 @@ class ProductLinkInvitationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\CreateProductLinkInvitationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\CreateProductLinkInvitationResponse>
      */
     public function CreateProductLinkInvitation(\Google\Ads\GoogleAds\V23\Services\CreateProductLinkInvitationRequest $argument,
       $metadata = [], $options = []) {
@@ -53,7 +53,7 @@ class ProductLinkInvitationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\UpdateProductLinkInvitationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\UpdateProductLinkInvitationResponse>
      */
     public function UpdateProductLinkInvitation(\Google\Ads\GoogleAds\V23\Services\UpdateProductLinkInvitationRequest $argument,
       $metadata = [], $options = []) {
@@ -68,7 +68,7 @@ class ProductLinkInvitationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\RemoveProductLinkInvitationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\RemoveProductLinkInvitationResponse>
      */
     public function RemoveProductLinkInvitation(\Google\Ads\GoogleAds\V23\Services\RemoveProductLinkInvitationRequest $argument,
       $metadata = [], $options = []) {

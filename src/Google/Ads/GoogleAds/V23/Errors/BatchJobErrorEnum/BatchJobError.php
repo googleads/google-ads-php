@@ -152,6 +152,3 @@ class BatchJobError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BatchJobError::class, \Google\Ads\GoogleAds\V23\Errors\BatchJobErrorEnum_BatchJobError::class);
-

@@ -68,6 +68,3 @@ class CustomerLifecycleOptimizationMode
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomerLifecycleOptimizationMode::class, \Google\Ads\GoogleAds\V22\Enums\CustomerLifecycleOptimizationModeEnum_CustomerLifecycleOptimizationMode::class);
-

@@ -66,6 +66,3 @@ class AudienceScope
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AudienceScope::class, \Google\Ads\GoogleAds\V20\Enums\AudienceScopeEnum_AudienceScope::class);
-

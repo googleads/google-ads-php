@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -38,7 +38,7 @@ class MutateRecommendationSubscriptionResponse extends \Google\Protobuf\Internal
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\MutateRecommendationSubscriptionResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V23\Services\MutateRecommendationSubscriptionResult[] $results
      *           Results, one per operation.
      *     @type \Google\Rpc\Status $partial_failure_error
      *           Errors that pertain to operation failures in the partial failure mode.
@@ -56,7 +56,7 @@ class MutateRecommendationSubscriptionResponse extends \Google\Protobuf\Internal
      * Results, one per operation.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.MutateRecommendationSubscriptionResult results = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\MutateRecommendationSubscriptionResult>
      */
     public function getResults()
     {
@@ -67,7 +67,7 @@ class MutateRecommendationSubscriptionResponse extends \Google\Protobuf\Internal
      * Results, one per operation.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.MutateRecommendationSubscriptionResult results = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\MutateRecommendationSubscriptionResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\MutateRecommendationSubscriptionResult[] $var
      * @return $this
      */
     public function setResults($var)

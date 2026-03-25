@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services\ProductFilter;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The list of marketing objectives to generate benchmarks metrics for.
@@ -28,7 +28,7 @@ class MarketingObjectiveList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $marketing_objectives
+     *     @type int[] $marketing_objectives
      *           Required. Marketing objectives to generate benchmarks metrics for.
      * }
      */
@@ -41,7 +41,7 @@ class MarketingObjectiveList extends \Google\Protobuf\Internal\Message
      * Required. Marketing objectives to generate benchmarks metrics for.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.BenchmarksMarketingObjectiveEnum.BenchmarksMarketingObjective marketing_objectives = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getMarketingObjectives()
     {
@@ -52,7 +52,7 @@ class MarketingObjectiveList extends \Google\Protobuf\Internal\Message
      * Required. Marketing objectives to generate benchmarks metrics for.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.BenchmarksMarketingObjectiveEnum.BenchmarksMarketingObjective marketing_objectives = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setMarketingObjectives($var)
@@ -64,7 +64,4 @@ class MarketingObjectiveList extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MarketingObjectiveList::class, \Google\Ads\GoogleAds\V23\Services\ProductFilter_MarketingObjectiveList::class);
 

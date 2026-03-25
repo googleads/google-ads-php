@@ -152,6 +152,3 @@ class ExperimentArmError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ExperimentArmError::class, \Google\Ads\GoogleAds\V21\Errors\ExperimentArmErrorEnum_ExperimentArmError::class);
-

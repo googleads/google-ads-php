@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Message containing the asset suggestions for a hotel.
@@ -72,9 +72,9 @@ class HotelAssetSuggestion extends \Google\Protobuf\Internal\Message
      *           Hotel name in requested language.
      *     @type int $call_to_action
      *           Call to action type.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\HotelTextAsset>|\Google\Protobuf\Internal\RepeatedField $text_assets
+     *     @type \Google\Ads\GoogleAds\V20\Services\HotelTextAsset[] $text_assets
      *           Text assets such as headline, description, etc.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\HotelImageAsset>|\Google\Protobuf\Internal\RepeatedField $image_assets
+     *     @type \Google\Ads\GoogleAds\V20\Services\HotelImageAsset[] $image_assets
      *           Image assets such as landscape/portrait/square, etc.
      *     @type int $status
      *           The status of the hotel asset suggestion.
@@ -193,7 +193,7 @@ class HotelAssetSuggestion extends \Google\Protobuf\Internal\Message
      * Text assets such as headline, description, etc.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.HotelTextAsset text_assets = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\HotelTextAsset>
      */
     public function getTextAssets()
     {
@@ -204,7 +204,7 @@ class HotelAssetSuggestion extends \Google\Protobuf\Internal\Message
      * Text assets such as headline, description, etc.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.HotelTextAsset text_assets = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\HotelTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\HotelTextAsset[] $var
      * @return $this
      */
     public function setTextAssets($var)
@@ -219,7 +219,7 @@ class HotelAssetSuggestion extends \Google\Protobuf\Internal\Message
      * Image assets such as landscape/portrait/square, etc.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.HotelImageAsset image_assets = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\HotelImageAsset>
      */
     public function getImageAssets()
     {
@@ -230,7 +230,7 @@ class HotelAssetSuggestion extends \Google\Protobuf\Internal\Message
      * Image assets such as landscape/portrait/square, etc.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.HotelImageAsset image_assets = 6;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\HotelImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\HotelImageAsset[] $var
      * @return $this
      */
     public function setImageAssets($var)

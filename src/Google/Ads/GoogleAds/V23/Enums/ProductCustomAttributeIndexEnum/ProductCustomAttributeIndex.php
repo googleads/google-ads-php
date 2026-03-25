@@ -87,6 +87,3 @@ class ProductCustomAttributeIndex
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProductCustomAttributeIndex::class, \Google\Ads\GoogleAds\V23\Enums\ProductCustomAttributeIndexEnum_ProductCustomAttributeIndex::class);
-

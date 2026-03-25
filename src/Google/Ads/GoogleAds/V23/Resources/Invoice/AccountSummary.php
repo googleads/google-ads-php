@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Invoice;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents a summarized view at account level.
@@ -196,10 +196,10 @@ class AccountSummary extends \Google\Protobuf\Internal\Message
      *           Output only. Total amount attributable to the account during the service
      *           period, in micros. This equals the sum of the subtotal_amount_micros and
      *           tax_amount_micros.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\Invoice\RegulatoryCostSummary>|\Google\Protobuf\Internal\RepeatedField $regulatory_cost_summaries
+     *     @type \Google\Ads\GoogleAds\V23\Resources\Invoice\RegulatoryCostSummary[] $regulatory_cost_summaries
      *           Output only. The list of regulatory cost information associated with this
      *           account.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\Invoice\AdjustmentSummary>|\Google\Protobuf\Internal\RepeatedField $adjustment_summaries
+     *     @type \Google\Ads\GoogleAds\V23\Resources\Invoice\AdjustmentSummary[] $adjustment_summaries
      *           Output only. The list of adjustment information associated with this
      *           account.
      * }
@@ -906,7 +906,7 @@ class AccountSummary extends \Google\Protobuf\Internal\Message
      * account.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Invoice.RegulatoryCostSummary regulatory_cost_summaries = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\Invoice\RegulatoryCostSummary>
      */
     public function getRegulatoryCostSummaries()
     {
@@ -918,7 +918,7 @@ class AccountSummary extends \Google\Protobuf\Internal\Message
      * account.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Invoice.RegulatoryCostSummary regulatory_cost_summaries = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\Invoice\RegulatoryCostSummary>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\Invoice\RegulatoryCostSummary[] $var
      * @return $this
      */
     public function setRegulatoryCostSummaries($var)
@@ -934,7 +934,7 @@ class AccountSummary extends \Google\Protobuf\Internal\Message
      * account.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Invoice.AdjustmentSummary adjustment_summaries = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\Invoice\AdjustmentSummary>
      */
     public function getAdjustmentSummaries()
     {
@@ -946,7 +946,7 @@ class AccountSummary extends \Google\Protobuf\Internal\Message
      * account.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Invoice.AdjustmentSummary adjustment_summaries = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\Invoice\AdjustmentSummary>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\Invoice\AdjustmentSummary[] $var
      * @return $this
      */
     public function setAdjustmentSummaries($var)
@@ -958,7 +958,4 @@ class AccountSummary extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AccountSummary::class, \Google\Ads\GoogleAds\V23\Resources\Invoice_AccountSummary::class);
 

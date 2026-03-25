@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -75,7 +75,7 @@ class ListPlannableUserInterestsRequest extends \Google\Protobuf\Internal\Messag
      *
      *     @type string $customer_id
      *           Required. The ID of the customer.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $user_interest_taxonomy_types
+     *     @type int[] $user_interest_taxonomy_types
      *           Optional. A filter by user interest type. If set, only user interests with
      *           a type listed in the filter will be returned. If not set, user interests of
      *           all supported types will be returned. Supported user interest types are
@@ -130,7 +130,7 @@ class ListPlannableUserInterestsRequest extends \Google\Protobuf\Internal\Messag
      * AFFINITY and IN_MARKET. Each type must be specified at most once.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.UserInterestTaxonomyTypeEnum.UserInterestTaxonomyType user_interest_taxonomy_types = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getUserInterestTaxonomyTypes()
     {
@@ -144,7 +144,7 @@ class ListPlannableUserInterestsRequest extends \Google\Protobuf\Internal\Messag
      * AFFINITY and IN_MARKET. Each type must be specified at most once.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.UserInterestTaxonomyTypeEnum.UserInterestTaxonomyType user_interest_taxonomy_types = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setUserInterestTaxonomyTypes($var)

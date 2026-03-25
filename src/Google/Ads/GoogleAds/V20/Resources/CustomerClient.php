@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A link between the given customer and a client customer. CustomerClients only
@@ -135,7 +135,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      *           only.
      *     @type int|string $id
      *           Output only. The ID of the client customer. Read only.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $applied_labels
+     *     @type string[] $applied_labels
      *           Output only. The resource names of the labels owned by the requesting
      *           customer that are applied to the client customer. Label resource names have
      *           the form:
@@ -522,7 +522,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/labels/{label_id}`
      *
      * Generated from protobuf field <code>repeated string applied_labels = 21 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getAppliedLabels()
     {
@@ -536,7 +536,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/labels/{label_id}`
      *
      * Generated from protobuf field <code>repeated string applied_labels = 21 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setAppliedLabels($var)

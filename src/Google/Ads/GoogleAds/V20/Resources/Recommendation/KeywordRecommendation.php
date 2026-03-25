@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The keyword recommendation.
@@ -43,7 +43,7 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Ads\GoogleAds\V20\Common\KeywordInfo $keyword
      *           Output only. The recommended keyword.
-     *     @type array<\Google\Ads\GoogleAds\V20\Resources\Recommendation\KeywordRecommendation\SearchTerm>|\Google\Protobuf\Internal\RepeatedField $search_terms
+     *     @type \Google\Ads\GoogleAds\V20\Resources\Recommendation\KeywordRecommendation\SearchTerm[] $search_terms
      *           Output only. A list of search terms this keyword matches. The same search
      *           term may be repeated for multiple keywords.
      *     @type int|string $recommended_cpc_bid_micros
@@ -96,7 +96,7 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
      * term may be repeated for multiple keywords.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.Recommendation.KeywordRecommendation.SearchTerm search_terms = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Resources\Recommendation\KeywordRecommendation\SearchTerm>
      */
     public function getSearchTerms()
     {
@@ -108,7 +108,7 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
      * term may be repeated for multiple keywords.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.Recommendation.KeywordRecommendation.SearchTerm search_terms = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Resources\Recommendation\KeywordRecommendation\SearchTerm>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Resources\Recommendation\KeywordRecommendation\SearchTerm[] $var
      * @return $this
      */
     public function setSearchTerms($var)
@@ -156,7 +156,4 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(KeywordRecommendation::class, \Google\Ads\GoogleAds\V20\Resources\Recommendation_KeywordRecommendation::class);
 

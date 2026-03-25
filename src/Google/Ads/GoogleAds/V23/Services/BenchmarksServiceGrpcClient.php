@@ -49,7 +49,7 @@ class BenchmarksServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\ListBenchmarksAvailableDatesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\ListBenchmarksAvailableDatesResponse>
      */
     public function ListBenchmarksAvailableDates(\Google\Ads\GoogleAds\V23\Services\ListBenchmarksAvailableDatesRequest $argument,
       $metadata = [], $options = []) {
@@ -74,7 +74,7 @@ class BenchmarksServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\ListBenchmarksLocationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\ListBenchmarksLocationsResponse>
      */
     public function ListBenchmarksLocations(\Google\Ads\GoogleAds\V23\Services\ListBenchmarksLocationsRequest $argument,
       $metadata = [], $options = []) {
@@ -98,7 +98,7 @@ class BenchmarksServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\ListBenchmarksProductsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\ListBenchmarksProductsResponse>
      */
     public function ListBenchmarksProducts(\Google\Ads\GoogleAds\V23\Services\ListBenchmarksProductsRequest $argument,
       $metadata = [], $options = []) {
@@ -122,7 +122,7 @@ class BenchmarksServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\ListBenchmarksSourcesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\ListBenchmarksSourcesResponse>
      */
     public function ListBenchmarksSources(\Google\Ads\GoogleAds\V23\Services\ListBenchmarksSourcesRequest $argument,
       $metadata = [], $options = []) {
@@ -149,7 +149,7 @@ class BenchmarksServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\GenerateBenchmarksMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateBenchmarksMetricsResponse>
      */
     public function GenerateBenchmarksMetrics(\Google\Ads\GoogleAds\V23\Services\GenerateBenchmarksMetricsRequest $argument,
       $metadata = [], $options = []) {
