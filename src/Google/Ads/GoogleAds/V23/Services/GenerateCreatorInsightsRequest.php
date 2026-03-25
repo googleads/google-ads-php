@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -65,9 +65,9 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
      *           user-defined value.
      *     @type \Google\Ads\GoogleAds\V23\Common\AdditionalApplicationInfo $insights_application_info
      *           Optional. Additional information on the application issuing the request.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $country_locations
+     *     @type \Google\Ads\GoogleAds\V23\Common\LocationInfo[] $country_locations
      *           Required. The countries to search that apply to the criteria.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $sub_country_locations
+     *     @type \Google\Ads\GoogleAds\V23\Common\LocationInfo[] $sub_country_locations
      *           The sub-country geographic locations to search that apply to the criteria.
      *           Only supported for
      *           [SearchAttributes][google.ads.googleads.v23.services.GenerateCreatorInsightsRequest.SearchAttributes]
@@ -187,7 +187,7 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
      * Required. The countries to search that apply to the criteria.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.LocationInfo country_locations = 6 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\LocationInfo>
      */
     public function getCountryLocations()
     {
@@ -198,7 +198,7 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
      * Required. The countries to search that apply to the criteria.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.LocationInfo country_locations = 6 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\LocationInfo[] $var
      * @return $this
      */
     public function setCountryLocations($var)
@@ -216,7 +216,7 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
      * criteria.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.LocationInfo sub_country_locations = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\LocationInfo>
      */
     public function getSubCountryLocations()
     {
@@ -230,7 +230,7 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
      * criteria.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.LocationInfo sub_country_locations = 7;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\LocationInfo[] $var
      * @return $this
      */
     public function setSubCountryLocations($var)

@@ -94,6 +94,3 @@ class CustomerSkAdNetworkConversionValueSchemaError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomerSkAdNetworkConversionValueSchemaError::class, \Google\Ads\GoogleAds\V21\Errors\CustomerSkAdNetworkConversionValueSchemaErrorEnum_CustomerSkAdNetworkConversionValueSchemaError::class);
-

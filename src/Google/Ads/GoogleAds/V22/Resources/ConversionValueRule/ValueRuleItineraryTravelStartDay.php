@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\ConversionValueRule;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The days of the week on which an itinerary's travel can start.
@@ -268,7 +268,4 @@ class ValueRuleItineraryTravelStartDay extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ValueRuleItineraryTravelStartDay::class, \Google\Ads\GoogleAds\V22\Resources\ConversionValueRule_ValueRuleItineraryTravelStartDay::class);
 

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A responsive display ad.
@@ -145,33 +145,33 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $marketing_images
+     *     @type \Google\Ads\GoogleAds\V22\Common\AdImageAsset[] $marketing_images
      *           Marketing images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 600x314 and the aspect ratio must
      *           be 1.91:1 (+-1%). At least one `marketing_image` is required. Combined
      *           with `square_marketing_images`, the maximum is 15.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $square_marketing_images
+     *     @type \Google\Ads\GoogleAds\V22\Common\AdImageAsset[] $square_marketing_images
      *           Square marketing images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 300x300 and the aspect ratio must
      *           be 1:1 (+-1%). At least one square `marketing_image` is required. Combined
      *           with `marketing_images`, the maximum is 15.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $logo_images
+     *     @type \Google\Ads\GoogleAds\V22\Common\AdImageAsset[] $logo_images
      *           Logo images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 512x128 and the aspect ratio must
      *           be 4:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $square_logo_images
+     *     @type \Google\Ads\GoogleAds\V22\Common\AdImageAsset[] $square_logo_images
      *           Square logo images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must
      *           be 1:1 (+-1%). Combined with `logo_images`, the maximum is 5.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type \Google\Ads\GoogleAds\V22\Common\AdTextAsset[] $headlines
      *           Short format headlines for the ad. The maximum length is 30 characters.
      *           At least 1 and max 5 headlines can be specified.
      *     @type \Google\Ads\GoogleAds\V22\Common\AdTextAsset $long_headline
      *           A required long format headline. The maximum length is 90 characters.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type \Google\Ads\GoogleAds\V22\Common\AdTextAsset[] $descriptions
      *           Descriptive texts for the ad. The maximum length is 90 characters. At
      *           least 1 and max 5 headlines can be specified.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $youtube_videos
+     *     @type \Google\Ads\GoogleAds\V22\Common\AdVideoAsset[] $youtube_videos
      *           Optional YouTube videos for the ad. A maximum of 5 videos can be specified.
      *     @type string $business_name
      *           The advertiser/brand name. Maximum display width is 25.
@@ -214,7 +214,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * with `square_marketing_images`, the maximum is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdImageAsset marketing_images = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AdImageAsset>
      */
     public function getMarketingImages()
     {
@@ -228,7 +228,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * with `square_marketing_images`, the maximum is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdImageAsset marketing_images = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setMarketingImages($var)
@@ -246,7 +246,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * with `marketing_images`, the maximum is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdImageAsset square_marketing_images = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AdImageAsset>
      */
     public function getSquareMarketingImages()
     {
@@ -260,7 +260,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * with `marketing_images`, the maximum is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdImageAsset square_marketing_images = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setSquareMarketingImages($var)
@@ -277,7 +277,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * be 4:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdImageAsset logo_images = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AdImageAsset>
      */
     public function getLogoImages()
     {
@@ -290,7 +290,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * be 4:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdImageAsset logo_images = 3;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setLogoImages($var)
@@ -307,7 +307,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * be 1:1 (+-1%). Combined with `logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdImageAsset square_logo_images = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AdImageAsset>
      */
     public function getSquareLogoImages()
     {
@@ -320,7 +320,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * be 1:1 (+-1%). Combined with `logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdImageAsset square_logo_images = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setSquareLogoImages($var)
@@ -336,7 +336,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * At least 1 and max 5 headlines can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdTextAsset headlines = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AdTextAsset>
      */
     public function getHeadlines()
     {
@@ -348,7 +348,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * At least 1 and max 5 headlines can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdTextAsset headlines = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -400,7 +400,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * least 1 and max 5 headlines can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdTextAsset descriptions = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AdTextAsset>
      */
     public function getDescriptions()
     {
@@ -412,7 +412,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * least 1 and max 5 headlines can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdTextAsset descriptions = 7;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setDescriptions($var)
@@ -427,7 +427,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Optional YouTube videos for the ad. A maximum of 5 videos can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdVideoAsset youtube_videos = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AdVideoAsset>
      */
     public function getYoutubeVideos()
     {
@@ -438,7 +438,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Optional YouTube videos for the ad. A maximum of 5 videos can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AdVideoAsset youtube_videos = 8;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AdVideoAsset[] $var
      * @return $this
      */
     public function setYoutubeVideos($var)

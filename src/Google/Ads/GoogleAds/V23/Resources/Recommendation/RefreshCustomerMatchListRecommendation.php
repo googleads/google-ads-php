@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The recommendation to update a customer list that hasn't been updated in
@@ -70,7 +70,7 @@ class RefreshCustomerMatchListRecommendation extends \Google\Protobuf\Internal\M
      *           Output only. The name of the list.
      *     @type int|string $days_since_last_refresh
      *           Output only. Days since last refresh.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\Recommendation\AccountInfo>|\Google\Protobuf\Internal\RepeatedField $top_spending_account
+     *     @type \Google\Ads\GoogleAds\V23\Resources\Recommendation\AccountInfo[] $top_spending_account
      *           Output only. The top spending account.
      *     @type int|string $targeting_accounts_count
      *           Output only. User lists can be shared with other accounts by the owner.
@@ -168,7 +168,7 @@ class RefreshCustomerMatchListRecommendation extends \Google\Protobuf\Internal\M
      * Output only. The top spending account.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Recommendation.AccountInfo top_spending_account = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\Recommendation\AccountInfo>
      */
     public function getTopSpendingAccount()
     {
@@ -179,7 +179,7 @@ class RefreshCustomerMatchListRecommendation extends \Google\Protobuf\Internal\M
      * Output only. The top spending account.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Recommendation.AccountInfo top_spending_account = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\Recommendation\AccountInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\Recommendation\AccountInfo[] $var
      * @return $this
      */
     public function setTopSpendingAccount($var)
@@ -259,7 +259,4 @@ class RefreshCustomerMatchListRecommendation extends \Google\Protobuf\Internal\M
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(RefreshCustomerMatchListRecommendation::class, \Google\Ads\GoogleAds\V23\Resources\Recommendation_RefreshCustomerMatchListRecommendation::class);
 

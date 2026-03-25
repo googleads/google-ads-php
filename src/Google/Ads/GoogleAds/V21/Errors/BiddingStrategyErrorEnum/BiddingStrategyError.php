@@ -89,6 +89,3 @@ class BiddingStrategyError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BiddingStrategyError::class, \Google\Ads\GoogleAds\V21\Errors\BiddingStrategyErrorEnum_BiddingStrategyError::class);
-

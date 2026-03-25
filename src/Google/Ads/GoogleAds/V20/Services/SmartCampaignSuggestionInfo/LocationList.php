@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services\SmartCampaignSuggestionInfo;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A list of locations.
@@ -28,7 +28,7 @@ class LocationList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $locations
+     *     @type \Google\Ads\GoogleAds\V20\Common\LocationInfo[] $locations
      *           Required. Locations.
      * }
      */
@@ -41,7 +41,7 @@ class LocationList extends \Google\Protobuf\Internal\Message
      * Required. Locations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.LocationInfo locations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\LocationInfo>
      */
     public function getLocations()
     {
@@ -52,7 +52,7 @@ class LocationList extends \Google\Protobuf\Internal\Message
      * Required. Locations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.LocationInfo locations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\LocationInfo[] $var
      * @return $this
      */
     public function setLocations($var)
@@ -64,7 +64,4 @@ class LocationList extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LocationList::class, \Google\Ads\GoogleAds\V20\Services\SmartCampaignSuggestionInfo_LocationList::class);
 

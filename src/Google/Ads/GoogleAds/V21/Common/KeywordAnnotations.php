@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The annotations for the keyword plan keywords.
@@ -28,7 +28,7 @@ class KeywordAnnotations extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\KeywordConcept>|\Google\Protobuf\Internal\RepeatedField $concepts
+     *     @type \Google\Ads\GoogleAds\V21\Common\KeywordConcept[] $concepts
      *           The list of concepts for the keyword.
      * }
      */
@@ -41,7 +41,7 @@ class KeywordAnnotations extends \Google\Protobuf\Internal\Message
      * The list of concepts for the keyword.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.KeywordConcept concepts = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\KeywordConcept>
      */
     public function getConcepts()
     {
@@ -52,7 +52,7 @@ class KeywordAnnotations extends \Google\Protobuf\Internal\Message
      * The list of concepts for the keyword.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.KeywordConcept concepts = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\KeywordConcept>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\KeywordConcept[] $var
      * @return $this
      */
     public function setConcepts($var)

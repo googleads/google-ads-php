@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * LookalikeUserlist, composed of users similar to those
@@ -42,11 +42,11 @@ class LookalikeUserListInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $seed_user_list_ids
+     *     @type int[]|string[] $seed_user_list_ids
      *           Seed UserList ID from which this list is derived, provided by user.
      *     @type int $expansion_level
      *           Expansion level, reflecting the size of the lookalike audience
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $country_codes
+     *     @type string[] $country_codes
      *           Countries targeted by the Lookalike. Two-letter country code as defined by
      *           ISO-3166
      * }
@@ -60,7 +60,7 @@ class LookalikeUserListInfo extends \Google\Protobuf\Internal\Message
      * Seed UserList ID from which this list is derived, provided by user.
      *
      * Generated from protobuf field <code>repeated int64 seed_user_list_ids = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>|RepeatedField<string>
      */
     public function getSeedUserListIds()
     {
@@ -71,7 +71,7 @@ class LookalikeUserListInfo extends \Google\Protobuf\Internal\Message
      * Seed UserList ID from which this list is derived, provided by user.
      *
      * Generated from protobuf field <code>repeated int64 seed_user_list_ids = 1;</code>
-     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[]|string[] $var
      * @return $this
      */
     public function setSeedUserListIds($var)
@@ -113,7 +113,7 @@ class LookalikeUserListInfo extends \Google\Protobuf\Internal\Message
      * ISO-3166
      *
      * Generated from protobuf field <code>repeated string country_codes = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getCountryCodes()
     {
@@ -125,7 +125,7 @@ class LookalikeUserListInfo extends \Google\Protobuf\Internal\Message
      * ISO-3166
      *
      * Generated from protobuf field <code>repeated string country_codes = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setCountryCodes($var)

@@ -66,6 +66,3 @@ class KeywordPlanNetwork
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(KeywordPlanNetwork::class, \Google\Ads\GoogleAds\V23\Enums\KeywordPlanNetworkEnum_KeywordPlanNetwork::class);
-

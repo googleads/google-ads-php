@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * AssetGroupSignal represents a signal in an asset group. The existence of a
@@ -65,7 +65,7 @@ class AssetGroupSignal extends \Google\Protobuf\Internal\Message
      *           Output only. Approval status is the output value for search theme signal
      *           after Google ads policy review. When using Audience signal, this field is
      *           not used and will be absent.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $disapproval_reasons
+     *     @type string[] $disapproval_reasons
      *           Output only. Computed for SearchTheme signals.
      *           When using Audience signal, this field is not used and will be absent.
      *     @type \Google\Ads\GoogleAds\V23\Common\AudienceInfo $audience
@@ -181,7 +181,7 @@ class AssetGroupSignal extends \Google\Protobuf\Internal\Message
      * When using Audience signal, this field is not used and will be absent.
      *
      * Generated from protobuf field <code>repeated string disapproval_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getDisapprovalReasons()
     {
@@ -193,7 +193,7 @@ class AssetGroupSignal extends \Google\Protobuf\Internal\Message
      * When using Audience signal, this field is not used and will be absent.
      *
      * Generated from protobuf field <code>repeated string disapproval_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setDisapprovalReasons($var)

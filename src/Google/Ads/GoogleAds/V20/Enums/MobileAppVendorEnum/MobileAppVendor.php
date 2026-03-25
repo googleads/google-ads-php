@@ -66,6 +66,3 @@ class MobileAppVendor
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MobileAppVendor::class, \Google\Ads\GoogleAds\V20\Enums\MobileAppVendorEnum_MobileAppVendor::class);
-

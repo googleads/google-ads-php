@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An ad group that is part of a campaign to be forecasted.
@@ -48,10 +48,10 @@ class ForecastAdGroup extends \Google\Protobuf\Internal\Message
      *           The max cpc to use for the ad group when generating forecasted traffic.
      *           This value will override the max cpc value set in the bidding strategy.
      *           Only specify this field for bidding strategies that max cpc values.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\BiddableKeyword>|\Google\Protobuf\Internal\RepeatedField $biddable_keywords
+     *     @type \Google\Ads\GoogleAds\V22\Services\BiddableKeyword[] $biddable_keywords
      *           Required. The list of biddable keywords to be used in the ad group when
      *           doing the forecast. Requires at least one keyword.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\KeywordInfo>|\Google\Protobuf\Internal\RepeatedField $negative_keywords
+     *     @type \Google\Ads\GoogleAds\V22\Common\KeywordInfo[] $negative_keywords
      *           The details of the keyword. You should specify both the keyword text and
      *           match type.
      * }
@@ -106,7 +106,7 @@ class ForecastAdGroup extends \Google\Protobuf\Internal\Message
      * doing the forecast. Requires at least one keyword.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.BiddableKeyword biddable_keywords = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\BiddableKeyword>
      */
     public function getBiddableKeywords()
     {
@@ -118,7 +118,7 @@ class ForecastAdGroup extends \Google\Protobuf\Internal\Message
      * doing the forecast. Requires at least one keyword.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.BiddableKeyword biddable_keywords = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\BiddableKeyword>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\BiddableKeyword[] $var
      * @return $this
      */
     public function setBiddableKeywords($var)
@@ -134,7 +134,7 @@ class ForecastAdGroup extends \Google\Protobuf\Internal\Message
      * match type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.KeywordInfo negative_keywords = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\KeywordInfo>
      */
     public function getNegativeKeywords()
     {
@@ -146,7 +146,7 @@ class ForecastAdGroup extends \Google\Protobuf\Internal\Message
      * match type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.KeywordInfo negative_keywords = 3;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\KeywordInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\KeywordInfo[] $var
      * @return $this
      */
     public function setNegativeKeywords($var)

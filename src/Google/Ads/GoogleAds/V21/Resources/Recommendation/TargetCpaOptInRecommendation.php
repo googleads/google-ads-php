@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The Target CPA opt-in recommendation.
@@ -36,7 +36,7 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Resources\Recommendation\TargetCpaOptInRecommendation\TargetCpaOptInRecommendationOption>|\Google\Protobuf\Internal\RepeatedField $options
+     *     @type \Google\Ads\GoogleAds\V21\Resources\Recommendation\TargetCpaOptInRecommendation\TargetCpaOptInRecommendationOption[] $options
      *           Output only. The available goals and corresponding options for Target CPA
      *           strategy.
      *     @type int|string $recommended_target_cpa_micros
@@ -54,7 +54,7 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
      * strategy.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption options = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Resources\Recommendation\TargetCpaOptInRecommendation\TargetCpaOptInRecommendationOption>
      */
     public function getOptions()
     {
@@ -66,7 +66,7 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
      * strategy.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption options = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Resources\Recommendation\TargetCpaOptInRecommendation\TargetCpaOptInRecommendationOption>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Resources\Recommendation\TargetCpaOptInRecommendation\TargetCpaOptInRecommendationOption[] $var
      * @return $this
      */
     public function setOptions($var)
@@ -116,7 +116,4 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TargetCpaOptInRecommendation::class, \Google\Ads\GoogleAds\V21\Resources\Recommendation_TargetCpaOptInRecommendation::class);
 

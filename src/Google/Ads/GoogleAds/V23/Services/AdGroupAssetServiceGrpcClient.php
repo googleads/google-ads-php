@@ -53,7 +53,7 @@ class AdGroupAssetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\MutateAdGroupAssetsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateAdGroupAssetsResponse>
      */
     public function MutateAdGroupAssets(\Google\Ads\GoogleAds\V23\Services\MutateAdGroupAssetsRequest $argument,
       $metadata = [], $options = []) {

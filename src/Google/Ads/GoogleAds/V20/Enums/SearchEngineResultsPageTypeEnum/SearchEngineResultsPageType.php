@@ -74,6 +74,3 @@ class SearchEngineResultsPageType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SearchEngineResultsPageType::class, \Google\Ads\GoogleAds\V20\Enums\SearchEngineResultsPageTypeEnum_SearchEngineResultsPageType::class);
-

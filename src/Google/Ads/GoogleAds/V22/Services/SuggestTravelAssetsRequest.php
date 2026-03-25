@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -68,7 +68,7 @@ class SuggestTravelAssetsRequest extends \Google\Protobuf\Internal\Message
      *           Required. The language specifications in BCP 47 format (for example, en-US,
      *           zh-CN, etc.) for the asset suggestions. Text will be in this language.
      *           Usually matches one of the campaign target languages.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $place_ids
+     *     @type string[] $place_ids
      *           The Google Maps Place IDs of hotels for which assets are requested. See
      *           https://developers.google.com/places/web-service/place-id for more
      *           information.
@@ -141,7 +141,7 @@ class SuggestTravelAssetsRequest extends \Google\Protobuf\Internal\Message
      * information.
      *
      * Generated from protobuf field <code>repeated string place_ids = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getPlaceIds()
     {
@@ -154,7 +154,7 @@ class SuggestTravelAssetsRequest extends \Google\Protobuf\Internal\Message
      * information.
      *
      * Generated from protobuf field <code>repeated string place_ids = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setPlaceIds($var)

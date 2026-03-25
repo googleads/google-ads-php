@@ -171,6 +171,3 @@ class AdGroupAdPrimaryStatusReason
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdGroupAdPrimaryStatusReason::class, \Google\Ads\GoogleAds\V22\Enums\AdGroupAdPrimaryStatusReasonEnum_AdGroupAdPrimaryStatusReason::class);
-

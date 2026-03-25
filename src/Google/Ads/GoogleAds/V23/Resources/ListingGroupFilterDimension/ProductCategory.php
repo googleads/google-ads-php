@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\ListingGroupFilterDimension;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * One element of a category at a certain level. Top-level categories
@@ -120,7 +120,4 @@ class ProductCategory extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProductCategory::class, \Google\Ads\GoogleAds\V23\Resources\ListingGroupFilterDimension_ProductCategory::class);
 

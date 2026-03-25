@@ -82,6 +82,3 @@ class GeoTargetConstantSuggestionError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(GeoTargetConstantSuggestionError::class, \Google\Ads\GoogleAds\V20\Errors\GeoTargetConstantSuggestionErrorEnum_GeoTargetConstantSuggestionError::class);
-

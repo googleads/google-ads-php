@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Errors;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Container for enum describing possible shareable preview errors.

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -71,7 +71,7 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
      *     @type string $customer_id
      *           Required. ID of the customer whose ad group criterion labels are being
      *           modified.
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\AdGroupCriterionLabelOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V21\Services\AdGroupCriterionLabelOperation[] $operations
      *           Required. The list of operations to perform on ad group criterion labels.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -120,7 +120,7 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
      * Required. The list of operations to perform on ad group criterion labels.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.AdGroupCriterionLabelOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\AdGroupCriterionLabelOperation>
      */
     public function getOperations()
     {
@@ -131,7 +131,7 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
      * Required. The list of operations to perform on ad group criterion labels.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.AdGroupCriterionLabelOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\AdGroupCriterionLabelOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\AdGroupCriterionLabelOperation[] $var
      * @return $this
      */
     public function setOperations($var)

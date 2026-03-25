@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -38,7 +38,7 @@ class ListBatchJobResultsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\BatchJobResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V20\Services\BatchJobResult[] $results
      *           The list of rows that matched the query.
      *     @type string $next_page_token
      *           Pagination token used to retrieve the next page of results.
@@ -56,7 +56,7 @@ class ListBatchJobResultsResponse extends \Google\Protobuf\Internal\Message
      * The list of rows that matched the query.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.BatchJobResult results = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\BatchJobResult>
      */
     public function getResults()
     {
@@ -67,7 +67,7 @@ class ListBatchJobResultsResponse extends \Google\Protobuf\Internal\Message
      * The list of rows that matched the query.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.BatchJobResult results = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\BatchJobResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\BatchJobResult[] $var
      * @return $this
      */
     public function setResults($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A link between a Campaign and an Asset.
@@ -108,10 +108,10 @@ class CampaignAsset extends \Google\Protobuf\Internal\Message
      *           removed.  The primary status takes into account other signals (for assets
      *           its mainly policy and quality approvals) to come up with a more
      *           comprehensive status to indicate its serving state.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AssetLinkPrimaryStatusDetails>|\Google\Protobuf\Internal\RepeatedField $primary_status_details
+     *     @type \Google\Ads\GoogleAds\V23\Common\AssetLinkPrimaryStatusDetails[] $primary_status_details
      *           Output only. Provides the details of the primary status and its associated
      *           reasons.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $primary_status_reasons
+     *     @type int[] $primary_status_reasons
      *           Output only. Provides a list of reasons for why an asset is not serving or
      *           not serving at full capacity.
      * }
@@ -344,7 +344,7 @@ class CampaignAsset extends \Google\Protobuf\Internal\Message
      * reasons.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AssetLinkPrimaryStatusDetails primary_status_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AssetLinkPrimaryStatusDetails>
      */
     public function getPrimaryStatusDetails()
     {
@@ -356,7 +356,7 @@ class CampaignAsset extends \Google\Protobuf\Internal\Message
      * reasons.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AssetLinkPrimaryStatusDetails primary_status_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AssetLinkPrimaryStatusDetails>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AssetLinkPrimaryStatusDetails[] $var
      * @return $this
      */
     public function setPrimaryStatusDetails($var)
@@ -372,7 +372,7 @@ class CampaignAsset extends \Google\Protobuf\Internal\Message
      * not serving at full capacity.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.AssetLinkPrimaryStatusReasonEnum.AssetLinkPrimaryStatusReason primary_status_reasons = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getPrimaryStatusReasons()
     {
@@ -384,7 +384,7 @@ class CampaignAsset extends \Google\Protobuf\Internal\Message
      * not serving at full capacity.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.AssetLinkPrimaryStatusReasonEnum.AssetLinkPrimaryStatusReason primary_status_reasons = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setPrimaryStatusReasons($var)

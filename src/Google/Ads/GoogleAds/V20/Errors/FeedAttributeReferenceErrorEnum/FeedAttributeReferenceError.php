@@ -73,6 +73,3 @@ class FeedAttributeReferenceError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(FeedAttributeReferenceError::class, \Google\Ads\GoogleAds\V20\Errors\FeedAttributeReferenceErrorEnum_FeedAttributeReferenceError::class);
-

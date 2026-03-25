@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Google ads experiment for users to experiment changes on multiple
@@ -155,7 +155,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      *           the end of the specified date in the customer's time zone.
      *           Format: YYYY-MM-DD
      *           Example: 2019-04-18
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\MetricGoal>|\Google\Protobuf\Internal\RepeatedField $goals
+     *     @type \Google\Ads\GoogleAds\V21\Common\MetricGoal[] $goals
      *           The goals of this experiment.
      *     @type string $long_running_operation
      *           Output only. The resource name of the long-running operation that can be
@@ -474,7 +474,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * The goals of this experiment.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.MetricGoal goals = 17;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\MetricGoal>
      */
     public function getGoals()
     {
@@ -485,7 +485,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * The goals of this experiment.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.MetricGoal goals = 17;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\MetricGoal>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\MetricGoal[] $var
      * @return $this
      */
     public function setGoals($var)

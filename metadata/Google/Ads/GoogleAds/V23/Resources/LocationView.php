@@ -13,17 +13,10 @@ class LocationView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
-            '
-Ì
-6google/ads/googleads/v23/resources/location_view.proto"google.ads.googleads.v23.resourcesgoogle/api/resource.proto"Ä
-LocationViewD
-resource_name (	B-àAúA\'
-%googleads.googleapis.com/LocationView:nêAk
-%googleads.googleapis.com/LocationViewBcustomers/{customer_id}/locationViews/{campaign_id}~{criterion_id}Bƒ
-&com.google.ads.googleads.v23.resourcesBLocationViewProtoPZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources¢GAAª"Google.Ads.GoogleAds.V23.ResourcesÊ"Google\\Ads\\GoogleAds\\V23\\Resourcesê&Google::Ads::GoogleAds::V23::Resourcesbproto3'
+            "\x0A\xCC\x04\x0A6google/ads/googleads/v23/resources/location_view.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xC4\x01\x0A\x0CLocationView\x12D\x0A\x0Dresource_name\x18\x01 \x01(\x09B-\xE0A\x03\xFAA'\x0A%googleads.googleapis.com/LocationView:n\xEAAk\x0A%googleads.googleapis.com/LocationView\x12Bcustomers/{customer_id}/locationViews/{campaign_id}~{criterion_id}B\x83\x02\x0A&com.google.ads.googleads.v23.resourcesB\x11LocationViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

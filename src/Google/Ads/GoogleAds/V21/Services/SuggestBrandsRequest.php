@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -64,7 +64,7 @@ class SuggestBrandsRequest extends \Google\Protobuf\Internal\Message
      *           operation.
      *     @type string $brand_prefix
      *           Required. The prefix of a brand name.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $selected_brands
+     *     @type string[] $selected_brands
      *           Optional. Ids of the brands already selected by advertisers. They will be
      *           excluded in response. These are expected to be brand ids not brand names.
      * }
@@ -143,7 +143,7 @@ class SuggestBrandsRequest extends \Google\Protobuf\Internal\Message
      * excluded in response. These are expected to be brand ids not brand names.
      *
      * Generated from protobuf field <code>repeated string selected_brands = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSelectedBrands()
     {
@@ -155,7 +155,7 @@ class SuggestBrandsRequest extends \Google\Protobuf\Internal\Message
      * excluded in response. These are expected to be brand ids not brand names.
      *
      * Generated from protobuf field <code>repeated string selected_brands = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSelectedBrands($var)

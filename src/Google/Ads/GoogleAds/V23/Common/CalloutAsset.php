@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Callout asset.
@@ -60,7 +60,7 @@ class CalloutAsset extends \Google\Protobuf\Internal\Message
      *     @type string $end_date
      *           Last date of when this asset is effective and still serving, in yyyy-MM-dd
      *           format.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $ad_schedule_targets
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdScheduleInfo[] $ad_schedule_targets
      *           List of non-overlapping schedules specifying all time intervals for which
      *           the asset may serve. There can be a maximum of 6 schedules per day, 42 in
      *           total.
@@ -161,7 +161,7 @@ class CalloutAsset extends \Google\Protobuf\Internal\Message
      * total.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdScheduleInfo ad_schedule_targets = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdScheduleInfo>
      */
     public function getAdScheduleTargets()
     {
@@ -174,7 +174,7 @@ class CalloutAsset extends \Google\Protobuf\Internal\Message
      * total.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdScheduleInfo ad_schedule_targets = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdScheduleInfo[] $var
      * @return $this
      */
     public function setAdScheduleTargets($var)

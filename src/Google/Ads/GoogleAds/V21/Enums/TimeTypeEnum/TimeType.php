@@ -67,6 +67,3 @@ class TimeType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TimeType::class, \Google\Ads\GoogleAds\V21\Enums\TimeTypeEnum_TimeType::class);
-

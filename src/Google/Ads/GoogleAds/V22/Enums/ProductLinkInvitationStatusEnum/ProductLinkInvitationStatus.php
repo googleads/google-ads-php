@@ -98,6 +98,3 @@ class ProductLinkInvitationStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProductLinkInvitationStatus::class, \Google\Ads\GoogleAds\V22\Enums\ProductLinkInvitationStatusEnum_ProductLinkInvitationStatus::class);
-

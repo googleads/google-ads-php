@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * User data holding user identifiers and attributes.
@@ -49,7 +49,7 @@ class UserData extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $user_identifiers
+     *     @type \Google\Ads\GoogleAds\V20\Common\UserIdentifier[] $user_identifiers
      *           User identification info. Required.
      *     @type \Google\Ads\GoogleAds\V20\Common\TransactionAttribute $transaction_attribute
      *           Additional transactions/attributes associated with the user.
@@ -71,7 +71,7 @@ class UserData extends \Google\Protobuf\Internal\Message
      * User identification info. Required.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.UserIdentifier user_identifiers = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\UserIdentifier>
      */
     public function getUserIdentifiers()
     {
@@ -82,7 +82,7 @@ class UserData extends \Google\Protobuf\Internal\Message
      * User identification info. Required.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.UserIdentifier user_identifiers = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\UserIdentifier[] $var
      * @return $this
      */
     public function setUserIdentifiers($var)

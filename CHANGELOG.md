@@ -1,3 +1,8 @@
+## 32.3.0
+*   Support for Google Ads API v23.2.
+*   Incorporated generator updates (new 'actions' directory, Protobuf changes).
+*   Dependency updates.
+
 ## 32.2.0
 *   Added support for Google Ads API v23.1.
 *   Regenerated stubs for Google Ads API v20, v21, and v22 to incorporate changes for supporting European Union Political Ads Regulation in Google Ads API

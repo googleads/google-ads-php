@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services\SuggestKeywordThemesResponse;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Smart campaign keyword theme suggestion.
@@ -105,7 +105,4 @@ class KeywordTheme extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(KeywordTheme::class, \Google\Ads\GoogleAds\V20\Services\SuggestKeywordThemesResponse_KeywordTheme::class);
 

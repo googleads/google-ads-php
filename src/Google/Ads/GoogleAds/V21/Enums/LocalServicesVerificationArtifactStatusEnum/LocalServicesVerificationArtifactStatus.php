@@ -87,6 +87,3 @@ class LocalServicesVerificationArtifactStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LocalServicesVerificationArtifactStatus::class, \Google\Ads\GoogleAds\V21\Enums\LocalServicesVerificationArtifactStatusEnum_LocalServicesVerificationArtifactStatus::class);
-

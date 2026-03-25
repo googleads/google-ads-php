@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The shopping recommendation to add an attribute to offers that are demoted
@@ -181,7 +181,4 @@ class ShoppingOfferAttributeRecommendation extends \Google\Protobuf\Internal\Mes
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ShoppingOfferAttributeRecommendation::class, \Google\Ads\GoogleAds\V20\Resources\Recommendation_ShoppingOfferAttributeRecommendation::class);
 

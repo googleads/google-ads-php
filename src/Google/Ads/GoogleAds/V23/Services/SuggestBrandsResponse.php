@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class SuggestBrandsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\BrandSuggestion>|\Google\Protobuf\Internal\RepeatedField $brands
+     *     @type \Google\Ads\GoogleAds\V23\Services\BrandSuggestion[] $brands
      *           Generated brand suggestions of verified brands for the given prefix.
      * }
      */
@@ -42,7 +42,7 @@ class SuggestBrandsResponse extends \Google\Protobuf\Internal\Message
      * Generated brand suggestions of verified brands for the given prefix.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BrandSuggestion brands = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\BrandSuggestion>
      */
     public function getBrands()
     {
@@ -53,7 +53,7 @@ class SuggestBrandsResponse extends \Google\Protobuf\Internal\Message
      * Generated brand suggestions of verified brands for the given prefix.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BrandSuggestion brands = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\BrandSuggestion>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\BrandSuggestion[] $var
      * @return $this
      */
     public function setBrands($var)

@@ -61,7 +61,7 @@ class UserListServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\MutateUserListsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateUserListsResponse>
      */
     public function MutateUserLists(\Google\Ads\GoogleAds\V23\Services\MutateUserListsRequest $argument,
       $metadata = [], $options = []) {

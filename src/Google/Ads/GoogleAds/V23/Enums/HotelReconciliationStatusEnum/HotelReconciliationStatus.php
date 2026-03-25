@@ -86,6 +86,3 @@ class HotelReconciliationStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(HotelReconciliationStatus::class, \Google\Ads\GoogleAds\V23\Enums\HotelReconciliationStatusEnum_HotelReconciliationStatus::class);
-

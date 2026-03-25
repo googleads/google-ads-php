@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -71,7 +71,7 @@ class SearchGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\GoogleAdsRow>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V23\Services\GoogleAdsRow[] $results
      *           The list of rows that matched the query.
      *     @type string $next_page_token
      *           Pagination token used to retrieve the next page of results.
@@ -89,7 +89,7 @@ class SearchGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      *           here aggregation could be sum, average, rate, etc.
      *     @type int|string $query_resource_consumption
      *           The amount of resources consumed to serve the query.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\MetricAttributes>|\Google\Protobuf\Internal\RepeatedField $metric_attributes
+     *     @type \Google\Ads\GoogleAds\V23\Services\MetricAttributes[] $metric_attributes
      *           The metric attributes of the metrics in the results.
      * }
      */
@@ -102,7 +102,7 @@ class SearchGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      * The list of rows that matched the query.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.GoogleAdsRow results = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\GoogleAdsRow>
      */
     public function getResults()
     {
@@ -113,7 +113,7 @@ class SearchGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      * The list of rows that matched the query.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.GoogleAdsRow results = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\GoogleAdsRow>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\GoogleAdsRow[] $var
      * @return $this
      */
     public function setResults($var)
@@ -290,7 +290,7 @@ class SearchGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      * The metric attributes of the metrics in the results.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.MetricAttributes metric_attributes = 13;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\MetricAttributes>
      */
     public function getMetricAttributes()
     {
@@ -301,7 +301,7 @@ class SearchGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      * The metric attributes of the metrics in the results.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.MetricAttributes metric_attributes = 13;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\MetricAttributes>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\MetricAttributes[] $var
      * @return $this
      */
     public function setMetricAttributes($var)

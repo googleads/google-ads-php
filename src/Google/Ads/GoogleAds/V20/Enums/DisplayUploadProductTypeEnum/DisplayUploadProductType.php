@@ -141,6 +141,3 @@ class DisplayUploadProductType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DisplayUploadProductType::class, \Google\Ads\GoogleAds\V20\Enums\DisplayUploadProductTypeEnum_DisplayUploadProductType::class);
-

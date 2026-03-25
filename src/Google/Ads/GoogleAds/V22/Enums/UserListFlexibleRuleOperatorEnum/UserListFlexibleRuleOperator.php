@@ -70,6 +70,3 @@ class UserListFlexibleRuleOperator
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(UserListFlexibleRuleOperator::class, \Google\Ads\GoogleAds\V22\Enums\UserListFlexibleRuleOperatorEnum_UserListFlexibleRuleOperator::class);
-

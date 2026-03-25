@@ -66,6 +66,3 @@ class ConsentStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConsentStatus::class, \Google\Ads\GoogleAds\V22\Enums\ConsentStatusEnum_ConsentStatus::class);
-

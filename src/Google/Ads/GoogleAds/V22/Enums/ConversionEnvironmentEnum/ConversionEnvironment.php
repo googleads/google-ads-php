@@ -66,6 +66,3 @@ class ConversionEnvironment
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionEnvironment::class, \Google\Ads\GoogleAds\V22\Enums\ConversionEnvironmentEnum_ConversionEnvironment::class);
-

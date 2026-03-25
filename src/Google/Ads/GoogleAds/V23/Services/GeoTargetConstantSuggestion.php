@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A geo target constant suggestion.
@@ -70,7 +70,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      *           matched the geo target.
      *     @type \Google\Ads\GoogleAds\V23\Resources\GeoTargetConstant $geo_target_constant
      *           The GeoTargetConstant result.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\GeoTargetConstant>|\Google\Protobuf\Internal\RepeatedField $geo_target_constant_parents
+     *     @type \Google\Ads\GoogleAds\V23\Resources\GeoTargetConstant[] $geo_target_constant_parents
      *           The list of parents of the geo target constant.
      * }
      */
@@ -237,7 +237,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * The list of parents of the geo target constant.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.GeoTargetConstant geo_target_constant_parents = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\GeoTargetConstant>
      */
     public function getGeoTargetConstantParents()
     {
@@ -248,7 +248,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * The list of parents of the geo target constant.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.GeoTargetConstant geo_target_constant_parents = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\GeoTargetConstant>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\GeoTargetConstant[] $var
      * @return $this
      */
     public function setGeoTargetConstantParents($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A detailed demographic: a particular interest-based vertical to be targeted
@@ -77,7 +77,7 @@ class DetailedDemographic extends \Google\Protobuf\Internal\Message
      *     @type bool $launched_to_all
      *           Output only. True if the detailed demographic is launched to all channels
      *           and locales.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\CriterionCategoryAvailability>|\Google\Protobuf\Internal\RepeatedField $availabilities
+     *     @type \Google\Ads\GoogleAds\V20\Common\CriterionCategoryAvailability[] $availabilities
      *           Output only. Availability information of the detailed demographic.
      * }
      */
@@ -228,7 +228,7 @@ class DetailedDemographic extends \Google\Protobuf\Internal\Message
      * Output only. Availability information of the detailed demographic.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.CriterionCategoryAvailability availabilities = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\CriterionCategoryAvailability>
      */
     public function getAvailabilities()
     {
@@ -239,7 +239,7 @@ class DetailedDemographic extends \Google\Protobuf\Internal\Message
      * Output only. Availability information of the detailed demographic.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.CriterionCategoryAvailability availabilities = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\CriterionCategoryAvailability>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\CriterionCategoryAvailability[] $var
      * @return $this
      */
     public function setAvailabilities($var)

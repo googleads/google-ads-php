@@ -52,6 +52,3 @@ class CampaignCustomizerError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CampaignCustomizerError::class, \Google\Ads\GoogleAds\V23\Errors\CampaignCustomizerErrorEnum_CampaignCustomizerError::class);
-

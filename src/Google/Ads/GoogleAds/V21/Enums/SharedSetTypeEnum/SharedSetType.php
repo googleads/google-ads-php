@@ -88,6 +88,3 @@ class SharedSetType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SharedSetType::class, \Google\Ads\GoogleAds\V21\Enums\SharedSetTypeEnum_SharedSetType::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for an ad group ad labels mutate.
@@ -42,7 +42,7 @@ class MutateAdGroupAdLabelsResponse extends \Google\Protobuf\Internal\Message
      *           Returned only when partial_failure = true and all errors occur inside the
      *           operations. If any errors occur outside the operations (for example, auth
      *           errors), we return an RPC level error.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdLabelResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdLabelResult[] $results
      *           All results for the mutate.
      * }
      */
@@ -97,7 +97,7 @@ class MutateAdGroupAdLabelsResponse extends \Google\Protobuf\Internal\Message
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.MutateAdGroupAdLabelResult results = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdLabelResult>
      */
     public function getResults()
     {
@@ -108,7 +108,7 @@ class MutateAdGroupAdLabelsResponse extends \Google\Protobuf\Internal\Message
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.MutateAdGroupAdLabelResult results = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdLabelResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\MutateAdGroupAdLabelResult[] $var
      * @return $this
      */
     public function setResults($var)

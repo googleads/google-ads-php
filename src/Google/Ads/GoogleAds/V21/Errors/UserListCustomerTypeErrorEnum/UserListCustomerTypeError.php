@@ -34,7 +34,10 @@ class UserListCustomerTypeError
      * 4. Qualified Leads - Converted Leads
      * 5. Disengaged customers - Converted Leads
      * 6. Disengaged customers - Qualified Leads
-     * 7. Disengaged customers- Cart Abandoners
+     * 7. Disengaged customers - Cart Abandoners
+     * 8. Converted Leads - Loyalty Tier X Members (X = 1..7)
+     * 9. Qualified Leads - Loyalty Tier X Members (X = 1..7)
+     * 10. Loyalty Tier X Members - Loyalty Tier Y Members (X != Y)
      *
      * Generated from protobuf enum <code>CONFLICTING_CUSTOMER_TYPES = 2;</code>
      */
@@ -99,7 +102,4 @@ class UserListCustomerTypeError
         return constant($const);
     }
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(UserListCustomerTypeError::class, \Google\Ads\GoogleAds\V21\Errors\UserListCustomerTypeErrorEnum_UserListCustomerTypeError::class);
 

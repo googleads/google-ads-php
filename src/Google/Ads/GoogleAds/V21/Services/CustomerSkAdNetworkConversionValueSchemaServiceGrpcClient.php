@@ -46,7 +46,7 @@ class CustomerSkAdNetworkConversionValueSchemaServiceGrpcClient extends \Grpc\Ba
      * @param \Google\Ads\GoogleAds\V21\Services\MutateCustomerSkAdNetworkConversionValueSchemaRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\MutateCustomerSkAdNetworkConversionValueSchemaResponse>
      */
     public function MutateCustomerSkAdNetworkConversionValueSchema(\Google\Ads\GoogleAds\V21\Services\MutateCustomerSkAdNetworkConversionValueSchemaRequest $argument,
       $metadata = [], $options = []) {

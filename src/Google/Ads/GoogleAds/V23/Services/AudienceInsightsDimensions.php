@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A collection of dimensions to be used for generating insights.
@@ -28,7 +28,7 @@ class AudienceInsightsDimensions extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $dimensions
+     *     @type int[] $dimensions
      *           Required. A list of dimensions.
      * }
      */
@@ -41,7 +41,7 @@ class AudienceInsightsDimensions extends \Google\Protobuf\Internal\Message
      * Required. A list of dimensions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getDimensions()
     {
@@ -52,7 +52,7 @@ class AudienceInsightsDimensions extends \Google\Protobuf\Internal\Message
      * Required. A list of dimensions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setDimensions($var)

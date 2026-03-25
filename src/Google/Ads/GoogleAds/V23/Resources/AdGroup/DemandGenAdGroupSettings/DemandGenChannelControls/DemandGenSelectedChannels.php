@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\AdGroup\DemandGenAdGroupSettings\DemandGenChannelControls;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Explicitly selected channels for channel controls in Demand Gen ad
@@ -235,7 +235,4 @@ class DemandGenSelectedChannels extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DemandGenSelectedChannels::class, \Google\Ads\GoogleAds\V23\Resources\AdGroup_DemandGenAdGroupSettings_DemandGenChannelControls_DemandGenSelectedChannels::class);
 

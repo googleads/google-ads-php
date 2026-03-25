@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A set of users, defined by various characteristics, for which insights can
@@ -83,27 +83,27 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $country_locations
+     *     @type \Google\Ads\GoogleAds\V20\Common\LocationInfo[] $country_locations
      *           Required. The countries for the audience.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $sub_country_locations
+     *     @type \Google\Ads\GoogleAds\V20\Common\LocationInfo[] $sub_country_locations
      *           Sub-country geographic location attributes.  If present, each of these
      *           must be contained in one of the countries in this audience.  If absent, the
      *           audience is geographically to the country_locations and no further.
      *     @type \Google\Ads\GoogleAds\V20\Common\GenderInfo $gender
      *           Gender for the audience.  If absent, the audience does not restrict by
      *           gender.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AgeRangeInfo>|\Google\Protobuf\Internal\RepeatedField $age_ranges
+     *     @type \Google\Ads\GoogleAds\V20\Common\AgeRangeInfo[] $age_ranges
      *           Age ranges for the audience.  If absent, the audience represents all people
      *           over 18 that match the other attributes.
      *     @type \Google\Ads\GoogleAds\V20\Common\ParentalStatusInfo $parental_status
      *           Parental status for the audience.  If absent, the audience does not
      *           restrict by parental status.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\IncomeRangeInfo>|\Google\Protobuf\Internal\RepeatedField $income_ranges
+     *     @type \Google\Ads\GoogleAds\V20\Common\IncomeRangeInfo[] $income_ranges
      *           Household income percentile ranges for the audience.  If absent, the
      *           audience does not restrict by household income range.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsLineup>|\Google\Protobuf\Internal\RepeatedField $lineups
+     *     @type \Google\Ads\GoogleAds\V20\Common\AudienceInsightsLineup[] $lineups
      *           Lineups representing the YouTube content viewed by the audience.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\InsightsAudienceAttributeGroup>|\Google\Protobuf\Internal\RepeatedField $topic_audience_combinations
+     *     @type \Google\Ads\GoogleAds\V20\Services\InsightsAudienceAttributeGroup[] $topic_audience_combinations
      *           A combination of entity, category and user interest attributes defining the
      *           audience. The combination has a logical AND-of-ORs structure: Attributes
      *           within each InsightsAudienceAttributeGroup are combined with OR, and
@@ -122,7 +122,7 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * Required. The countries for the audience.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.LocationInfo country_locations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\LocationInfo>
      */
     public function getCountryLocations()
     {
@@ -133,7 +133,7 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * Required. The countries for the audience.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.LocationInfo country_locations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\LocationInfo[] $var
      * @return $this
      */
     public function setCountryLocations($var)
@@ -150,7 +150,7 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * audience is geographically to the country_locations and no further.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.LocationInfo sub_country_locations = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\LocationInfo>
      */
     public function getSubCountryLocations()
     {
@@ -163,7 +163,7 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * audience is geographically to the country_locations and no further.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.LocationInfo sub_country_locations = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\LocationInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\LocationInfo[] $var
      * @return $this
      */
     public function setSubCountryLocations($var)
@@ -217,7 +217,7 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * over 18 that match the other attributes.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AgeRangeInfo age_ranges = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AgeRangeInfo>
      */
     public function getAgeRanges()
     {
@@ -229,7 +229,7 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * over 18 that match the other attributes.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AgeRangeInfo age_ranges = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AgeRangeInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AgeRangeInfo[] $var
      * @return $this
      */
     public function setAgeRanges($var)
@@ -283,7 +283,7 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * audience does not restrict by household income range.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.IncomeRangeInfo income_ranges = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\IncomeRangeInfo>
      */
     public function getIncomeRanges()
     {
@@ -295,7 +295,7 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * audience does not restrict by household income range.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.IncomeRangeInfo income_ranges = 6;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\IncomeRangeInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\IncomeRangeInfo[] $var
      * @return $this
      */
     public function setIncomeRanges($var)
@@ -310,7 +310,7 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * Lineups representing the YouTube content viewed by the audience.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsLineup lineups = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsLineup>
      */
     public function getLineups()
     {
@@ -321,7 +321,7 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * Lineups representing the YouTube content viewed by the audience.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsLineup lineups = 10;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsLineup>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AudienceInsightsLineup[] $var
      * @return $this
      */
     public function setLineups($var)
@@ -342,7 +342,7 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * each.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.InsightsAudienceAttributeGroup topic_audience_combinations = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\InsightsAudienceAttributeGroup>
      */
     public function getTopicAudienceCombinations()
     {
@@ -359,7 +359,7 @@ class InsightsAudience extends \Google\Protobuf\Internal\Message
      * each.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.InsightsAudienceAttributeGroup topic_audience_combinations = 8;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\InsightsAudienceAttributeGroup>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\InsightsAudienceAttributeGroup[] $var
      * @return $this
      */
     public function setTopicAudienceCombinations($var)

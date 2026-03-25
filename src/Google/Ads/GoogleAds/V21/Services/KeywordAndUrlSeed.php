@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Keyword And Url Seed
@@ -36,7 +36,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
      *
      *     @type string $url
      *           The URL to crawl in order to generate keyword ideas.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keywords
+     *     @type string[] $keywords
      *           Requires at least one keyword and no more than 20 keywords.
      * }
      */
@@ -85,7 +85,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
      * Requires at least one keyword and no more than 20 keywords.
      *
      * Generated from protobuf field <code>repeated string keywords = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getKeywords()
     {
@@ -96,7 +96,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
      * Requires at least one keyword and no more than 20 keywords.
      *
      * Generated from protobuf field <code>repeated string keywords = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setKeywords($var)

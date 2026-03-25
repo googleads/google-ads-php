@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A collection of related attributes, with metadata and metrics, in an audience
@@ -50,7 +50,7 @@ class AudienceCompositionAttributeCluster extends \Google\Protobuf\Internal\Mess
      *           If the dimension associated with this cluster is YOUTUBE_CHANNEL, then
      *           cluster_metrics are metrics associated with the cluster as a whole.
      *           For other dimensions, this field is unset.
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttribute>|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type \Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttribute[] $attributes
      *           The individual attributes that make up this cluster, with metadata and
      *           metrics.
      * }
@@ -131,7 +131,7 @@ class AudienceCompositionAttributeCluster extends \Google\Protobuf\Internal\Mess
      * metrics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.AudienceCompositionAttribute attributes = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttribute>
      */
     public function getAttributes()
     {
@@ -143,7 +143,7 @@ class AudienceCompositionAttributeCluster extends \Google\Protobuf\Internal\Mess
      * metrics.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.AudienceCompositionAttribute attributes = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\AudienceCompositionAttribute[] $var
      * @return $this
      */
     public function setAttributes($var)

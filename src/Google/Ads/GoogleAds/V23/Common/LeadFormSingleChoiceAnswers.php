@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Defines possible answers for a single choice question, usually presented as
@@ -30,7 +30,7 @@ class LeadFormSingleChoiceAnswers extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $answers
+     *     @type string[] $answers
      *           List of choices for a single question field. The order of entries defines
      *           UI order. Minimum of 2 answers required and maximum of 12 allowed.
      * }
@@ -45,7 +45,7 @@ class LeadFormSingleChoiceAnswers extends \Google\Protobuf\Internal\Message
      * UI order. Minimum of 2 answers required and maximum of 12 allowed.
      *
      * Generated from protobuf field <code>repeated string answers = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getAnswers()
     {
@@ -57,7 +57,7 @@ class LeadFormSingleChoiceAnswers extends \Google\Protobuf\Internal\Message
      * UI order. Minimum of 2 answers required and maximum of 12 allowed.
      *
      * Generated from protobuf field <code>repeated string answers = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setAnswers($var)

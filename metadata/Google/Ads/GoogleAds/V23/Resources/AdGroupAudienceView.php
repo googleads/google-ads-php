@@ -13,17 +13,10 @@ class AdGroupAudienceView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
-            '
-ø
-?google/ads/googleads/v23/resources/ad_group_audience_view.proto"google.ads.googleads.v23.resourcesgoogle/api/resource.proto"à
-AdGroupAudienceViewK
-resource_name (	B4àAúA.
-,googleads.googleapis.com/AdGroupAudienceView:|êAy
-,googleads.googleapis.com/AdGroupAudienceViewIcustomers/{customer_id}/adGroupAudienceViews/{ad_group_id}~{criterion_id}BŠ
-&com.google.ads.googleads.v23.resourcesBAdGroupAudienceViewProtoPZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources¢GAAª"Google.Ads.GoogleAds.V23.ResourcesÊ"Google\\Ads\\GoogleAds\\V23\\Resourcesê&Google::Ads::GoogleAds::V23::Resourcesbproto3'
+            "\x0A\xF8\x04\x0A?google/ads/googleads/v23/resources/ad_group_audience_view.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xE0\x01\x0A\x13AdGroupAudienceView\x12K\x0A\x0Dresource_name\x18\x01 \x01(\x09B4\xE0A\x03\xFAA.\x0A,googleads.googleapis.com/AdGroupAudienceView:|\xEAAy\x0A,googleads.googleapis.com/AdGroupAudienceView\x12Icustomers/{customer_id}/adGroupAudienceViews/{ad_group_id}~{criterion_id}B\x8A\x02\x0A&com.google.ads.googleads.v23.resourcesB\x18AdGroupAudienceViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

@@ -66,6 +66,3 @@ class ParticipantType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ParticipantType::class, \Google\Ads\GoogleAds\V20\Enums\LocalServicesParticipantTypeEnum_ParticipantType::class);
-

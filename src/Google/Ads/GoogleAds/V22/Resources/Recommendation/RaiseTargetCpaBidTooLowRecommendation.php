@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The raise target CPA bid too low recommendation.
@@ -126,7 +126,4 @@ class RaiseTargetCpaBidTooLowRecommendation extends \Google\Protobuf\Internal\Me
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(RaiseTargetCpaBidTooLowRecommendation::class, \Google\Ads\GoogleAds\V22\Resources\Recommendation_RaiseTargetCpaBidTooLowRecommendation::class);
 

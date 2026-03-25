@@ -68,6 +68,3 @@ class ProductChannelExclusivity
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProductChannelExclusivity::class, \Google\Ads\GoogleAds\V20\Enums\ProductChannelExclusivityEnum_ProductChannelExclusivity::class);
-

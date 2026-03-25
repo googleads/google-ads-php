@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A dynamic real estate asset.
@@ -148,7 +148,7 @@ class DynamicRealEstateAsset extends \Google\Protobuf\Internal\Message
      *           Property type, for example, House.
      *     @type string $listing_type
      *           Listing type, for example, For sale.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
+     *     @type string[] $contextual_keywords
      *           Contextual keywords, for example, For sale; Houses for sale.
      *     @type string $formatted_price
      *           Formatted price which can be any characters. If set, this attribute will be
@@ -162,7 +162,7 @@ class DynamicRealEstateAsset extends \Google\Protobuf\Internal\Message
      *           iOS app store ID. This is used to check if the user has the app installed
      *           on their device before deep linking. If this field is set, then the
      *           ios_app_link field must also be present.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_listing_ids
+     *     @type string[] $similar_listing_ids
      *           Similar listing IDs.
      * }
      */
@@ -423,7 +423,7 @@ class DynamicRealEstateAsset extends \Google\Protobuf\Internal\Message
      * Contextual keywords, for example, For sale; Houses for sale.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getContextualKeywords()
     {
@@ -434,7 +434,7 @@ class DynamicRealEstateAsset extends \Google\Protobuf\Internal\Message
      * Contextual keywords, for example, For sale; Houses for sale.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 10;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setContextualKeywords($var)
@@ -561,7 +561,7 @@ class DynamicRealEstateAsset extends \Google\Protobuf\Internal\Message
      * Similar listing IDs.
      *
      * Generated from protobuf field <code>repeated string similar_listing_ids = 15;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSimilarListingIds()
     {
@@ -572,7 +572,7 @@ class DynamicRealEstateAsset extends \Google\Protobuf\Internal\Message
      * Similar listing IDs.
      *
      * Generated from protobuf field <code>repeated string similar_listing_ids = 15;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSimilarListingIds($var)

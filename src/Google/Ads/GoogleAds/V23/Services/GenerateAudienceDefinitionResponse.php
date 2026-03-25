@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -37,9 +37,9 @@ class GenerateAudienceDefinitionResponse extends \Google\Protobuf\Internal\Messa
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $high_relevance_attributes
+     *     @type \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata[] $high_relevance_attributes
      *           The attributes that make up the audience definition.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $medium_relevance_attributes
+     *     @type \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata[] $medium_relevance_attributes
      *           Additional attributes that are less relevant but still related to the
      *           audience description. Use these attributes to broaden the audience
      *           definition to reach more users.
@@ -54,7 +54,7 @@ class GenerateAudienceDefinitionResponse extends \Google\Protobuf\Internal\Messa
      * The attributes that make up the audience definition.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata high_relevance_attributes = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata>
      */
     public function getHighRelevanceAttributes()
     {
@@ -65,7 +65,7 @@ class GenerateAudienceDefinitionResponse extends \Google\Protobuf\Internal\Messa
      * The attributes that make up the audience definition.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata high_relevance_attributes = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata[] $var
      * @return $this
      */
     public function setHighRelevanceAttributes($var)
@@ -82,7 +82,7 @@ class GenerateAudienceDefinitionResponse extends \Google\Protobuf\Internal\Messa
      * definition to reach more users.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata medium_relevance_attributes = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata>
      */
     public function getMediumRelevanceAttributes()
     {
@@ -95,7 +95,7 @@ class GenerateAudienceDefinitionResponse extends \Google\Protobuf\Internal\Messa
      * definition to reach more users.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata medium_relevance_attributes = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AudienceInsightsAttributeMetadata[] $var
      * @return $this
      */
     public function setMediumRelevanceAttributes($var)

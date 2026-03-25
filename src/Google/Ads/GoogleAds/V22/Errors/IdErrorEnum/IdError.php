@@ -59,6 +59,3 @@ class IdError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(IdError::class, \Google\Ads\GoogleAds\V22\Errors\IdErrorEnum_IdError::class);
-

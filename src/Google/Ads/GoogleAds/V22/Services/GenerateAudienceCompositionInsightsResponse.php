@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -31,7 +31,7 @@ class GenerateAudienceCompositionInsightsResponse extends \Google\Protobuf\Inter
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\AudienceCompositionSection>|\Google\Protobuf\Internal\RepeatedField $sections
+     *     @type \Google\Ads\GoogleAds\V22\Services\AudienceCompositionSection[] $sections
      *           The contents of the insights report, organized into sections.
      *           Each section is associated with one of the AudienceInsightsDimension values
      *           in the request. There may be more than one section per dimension.
@@ -48,7 +48,7 @@ class GenerateAudienceCompositionInsightsResponse extends \Google\Protobuf\Inter
      * in the request. There may be more than one section per dimension.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.AudienceCompositionSection sections = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\AudienceCompositionSection>
      */
     public function getSections()
     {
@@ -61,7 +61,7 @@ class GenerateAudienceCompositionInsightsResponse extends \Google\Protobuf\Inter
      * in the request. There may be more than one section per dimension.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.AudienceCompositionSection sections = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\AudienceCompositionSection>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\AudienceCompositionSection[] $var
      * @return $this
      */
     public function setSections($var)

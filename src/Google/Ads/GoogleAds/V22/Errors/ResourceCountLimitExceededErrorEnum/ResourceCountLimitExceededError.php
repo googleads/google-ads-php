@@ -137,6 +137,3 @@ class ResourceCountLimitExceededError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ResourceCountLimitExceededError::class, \Google\Ads\GoogleAds\V22\Errors\ResourceCountLimitExceededErrorEnum_ResourceCountLimitExceededError::class);
-

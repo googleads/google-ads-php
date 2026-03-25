@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -45,7 +45,7 @@ class GenerateBenchmarksMetricsResponse extends \Google\Protobuf\Internal\Messag
      *           Metrics belonging to the customer.
      *     @type \Google\Ads\GoogleAds\V23\Services\Metrics $average_benchmarks_metrics
      *           Metrics for the selected benchmarks source.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\BreakdownMetrics>|\Google\Protobuf\Internal\RepeatedField $breakdown_metrics
+     *     @type \Google\Ads\GoogleAds\V23\Services\BreakdownMetrics[] $breakdown_metrics
      *           Breakdown metrics grouped by dimensions.
      * }
      */
@@ -130,7 +130,7 @@ class GenerateBenchmarksMetricsResponse extends \Google\Protobuf\Internal\Messag
      * Breakdown metrics grouped by dimensions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BreakdownMetrics breakdown_metrics = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\BreakdownMetrics>
      */
     public function getBreakdownMetrics()
     {
@@ -141,7 +141,7 @@ class GenerateBenchmarksMetricsResponse extends \Google\Protobuf\Internal\Messag
      * Breakdown metrics grouped by dimensions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BreakdownMetrics breakdown_metrics = 3;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\BreakdownMetrics>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\BreakdownMetrics[] $var
      * @return $this
      */
     public function setBreakdownMetrics($var)

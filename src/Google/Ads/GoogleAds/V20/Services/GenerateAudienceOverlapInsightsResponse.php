@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -38,7 +38,7 @@ class GenerateAudienceOverlapInsightsResponse extends \Google\Protobuf\Internal\
      *
      *     @type \Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata $primary_attribute_metadata
      *           Metadata for the primary attribute, including potential YouTube reach.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\DimensionOverlapResult>|\Google\Protobuf\Internal\RepeatedField $dimension_results
+     *     @type \Google\Ads\GoogleAds\V20\Services\DimensionOverlapResult[] $dimension_results
      *           Lists of attributes and their overlap with the primary attribute, one list
      *           per requested dimension.
      * }
@@ -89,7 +89,7 @@ class GenerateAudienceOverlapInsightsResponse extends \Google\Protobuf\Internal\
      * per requested dimension.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.DimensionOverlapResult dimension_results = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\DimensionOverlapResult>
      */
     public function getDimensionResults()
     {
@@ -101,7 +101,7 @@ class GenerateAudienceOverlapInsightsResponse extends \Google\Protobuf\Internal\
      * per requested dimension.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.DimensionOverlapResult dimension_results = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\DimensionOverlapResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\DimensionOverlapResult[] $var
      * @return $this
      */
     public function setDimensionResults($var)

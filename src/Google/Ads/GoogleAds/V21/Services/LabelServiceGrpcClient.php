@@ -62,7 +62,7 @@ class LabelServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\MutateLabelsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\MutateLabelsResponse>
      */
     public function MutateLabels(\Google\Ads\GoogleAds\V21\Services\MutateLabelsRequest $argument,
       $metadata = [], $options = []) {

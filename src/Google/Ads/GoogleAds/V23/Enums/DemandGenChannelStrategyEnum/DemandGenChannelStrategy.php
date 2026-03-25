@@ -68,6 +68,3 @@ class DemandGenChannelStrategy
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DemandGenChannelStrategy::class, \Google\Ads\GoogleAds\V23\Enums\DemandGenChannelStrategyEnum_DemandGenChannelStrategy::class);
-

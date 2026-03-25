@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -79,7 +79,7 @@ class AddOfflineUserDataJobOperationsRequest extends \Google\Protobuf\Internal\M
      *           True to enable warnings for the offline user data job. When enabled, a
      *           warning will not block the OfflineUserDataJobOperation, and will also
      *           return warning messages about malformed field values.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\OfflineUserDataJobOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V20\Services\OfflineUserDataJobOperation[] $operations
      *           Required. The list of operations to be done.
      *     @type bool $validate_only
      *           If true, the request is validated but not executed. Only errors are
@@ -197,7 +197,7 @@ class AddOfflineUserDataJobOperationsRequest extends \Google\Protobuf\Internal\M
      * Required. The list of operations to be done.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.OfflineUserDataJobOperation operations = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\OfflineUserDataJobOperation>
      */
     public function getOperations()
     {
@@ -208,7 +208,7 @@ class AddOfflineUserDataJobOperationsRequest extends \Google\Protobuf\Internal\M
      * Required. The list of operations to be done.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.OfflineUserDataJobOperation operations = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\OfflineUserDataJobOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\OfflineUserDataJobOperation[] $var
      * @return $this
      */
     public function setOperations($var)

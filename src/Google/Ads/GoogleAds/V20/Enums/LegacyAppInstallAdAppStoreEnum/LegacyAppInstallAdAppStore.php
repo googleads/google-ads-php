@@ -87,6 +87,3 @@ class LegacyAppInstallAdAppStore
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LegacyAppInstallAdAppStore::class, \Google\Ads\GoogleAds\V20\Enums\LegacyAppInstallAdAppStoreEnum_LegacyAppInstallAdAppStore::class);
-

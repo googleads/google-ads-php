@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A campaign.
@@ -485,7 +485,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           Provides insight into why a campaign is not serving or not serving
      *           optimally. Modification to the campaign and its related entities might take
      *           a while to be reflected in this status.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $primary_status_reasons
+     *     @type int[] $primary_status_reasons
      *           Output only. The primary status reasons of the campaign.
      *           Provides insight into why a campaign is not serving or not serving
      *           optimally. These reasons are aggregated to determine an overall
@@ -513,7 +513,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           After campaign is created, the field can not be changed.
      *     @type string $tracking_url_template
      *           The URL template for constructing a tracking URL.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *     @type \Google\Ads\GoogleAds\V20\Common\CustomParameter[] $url_custom_parameters
      *           The list of mappings used to substitute custom parameter tags in a
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type \Google\Ads\GoogleAds\V20\Resources\Campaign\LocalServicesCampaignSettings $local_services_campaign_settings
@@ -547,7 +547,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           The setting for local campaign.
      *     @type \Google\Ads\GoogleAds\V20\Resources\Campaign\AppCampaignSetting $app_campaign_setting
      *           The setting related to App Campaign.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type string[] $labels
      *           Output only. The resource names of labels attached to this campaign.
      *     @type int $experiment_type
      *           Output only. The type of campaign: normal, draft, or experiment.
@@ -585,7 +585,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type string $final_url_suffix
      *           Suffix used to append query parameters to landing pages that are served
      *           with parallel tracking.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\FrequencyCapEntry>|\Google\Protobuf\Internal\RepeatedField $frequency_caps
+     *     @type \Google\Ads\GoogleAds\V20\Common\FrequencyCapEntry[] $frequency_caps
      *           A list that limits how often each user will see this campaign's ads.
      *     @type int $video_brand_safety_suitability
      *           Brand Safety setting at the individual campaign level. Allows for selecting
@@ -615,11 +615,11 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           See "About optimization score" at
      *           https://support.google.com/google-ads/answer/9061546.
      *           This field is read-only.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $excluded_parent_asset_field_types
+     *     @type int[] $excluded_parent_asset_field_types
      *           The asset field types that should be excluded from this campaign. Asset
      *           links with these field types will not be inherited by this campaign from
      *           the upper level.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $excluded_parent_asset_set_types
+     *     @type int[] $excluded_parent_asset_set_types
      *           The asset set types that should be excluded from this campaign. Asset set
      *           links with these types will not be inherited by this campaign from
      *           the upper level.
@@ -645,7 +645,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type int $listing_type
      *           Immutable. Listing type of ads served for this campaign.
      *           Field is restricted for usage with Performance Max campaigns.
-     *     @type array<\Google\Ads\GoogleAds\V20\Resources\Campaign\AssetAutomationSetting>|\Google\Protobuf\Internal\RepeatedField $asset_automation_settings
+     *     @type \Google\Ads\GoogleAds\V20\Resources\Campaign\AssetAutomationSetting[] $asset_automation_settings
      *           Contains the opt-in/out status of each AssetAutomationType.
      *           See documentation of each asset automation type enum for default
      *           opt in/out behavior.
@@ -885,7 +885,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * CampaignPrimaryStatus.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.CampaignPrimaryStatusReasonEnum.CampaignPrimaryStatusReason primary_status_reasons = 82 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getPrimaryStatusReasons()
     {
@@ -899,7 +899,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * CampaignPrimaryStatus.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.CampaignPrimaryStatusReasonEnum.CampaignPrimaryStatusReason primary_status_reasons = 82 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setPrimaryStatusReasons($var)
@@ -1125,7 +1125,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.CustomParameter url_custom_parameters = 12;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\CustomParameter>
      */
     public function getUrlCustomParameters()
     {
@@ -1137,7 +1137,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.CustomParameter url_custom_parameters = 12;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\CustomParameter>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\CustomParameter[] $var
      * @return $this
      */
     public function setUrlCustomParameters($var)
@@ -1694,7 +1694,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Output only. The resource names of labels attached to this campaign.
      *
      * Generated from protobuf field <code>repeated string labels = 61 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLabels()
     {
@@ -1705,7 +1705,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Output only. The resource names of labels attached to this campaign.
      *
      * Generated from protobuf field <code>repeated string labels = 61 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLabels($var)
@@ -2050,7 +2050,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * A list that limits how often each user will see this campaign's ads.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.FrequencyCapEntry frequency_caps = 40;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\FrequencyCapEntry>
      */
     public function getFrequencyCaps()
     {
@@ -2061,7 +2061,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * A list that limits how often each user will see this campaign's ads.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.FrequencyCapEntry frequency_caps = 40;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\FrequencyCapEntry>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\FrequencyCapEntry[] $var
      * @return $this
      */
     public function setFrequencyCaps($var)
@@ -2338,7 +2338,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * the upper level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AssetFieldTypeEnum.AssetFieldType excluded_parent_asset_field_types = 69;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getExcludedParentAssetFieldTypes()
     {
@@ -2351,7 +2351,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * the upper level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AssetFieldTypeEnum.AssetFieldType excluded_parent_asset_field_types = 69;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setExcludedParentAssetFieldTypes($var)
@@ -2375,7 +2375,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Only LOCATION_SYNC is currently supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AssetSetTypeEnum.AssetSetType excluded_parent_asset_set_types = 80;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getExcludedParentAssetSetTypes()
     {
@@ -2395,7 +2395,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Only LOCATION_SYNC is currently supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AssetSetTypeEnum.AssetSetType excluded_parent_asset_set_types = 80;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setExcludedParentAssetSetTypes($var)
@@ -2570,7 +2570,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * opt in/out behavior.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.Campaign.AssetAutomationSetting asset_automation_settings = 88;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Resources\Campaign\AssetAutomationSetting>
      */
     public function getAssetAutomationSettings()
     {
@@ -2583,7 +2583,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * opt in/out behavior.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.Campaign.AssetAutomationSetting asset_automation_settings = 88;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Resources\Campaign\AssetAutomationSetting>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Resources\Campaign\AssetAutomationSetting[] $var
      * @return $this
      */
     public function setAssetAutomationSettings($var)

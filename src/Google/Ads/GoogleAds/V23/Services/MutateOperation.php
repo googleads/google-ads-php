@@ -5,11 +5,12 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
- * A single operation (create, update, remove) on a resource.
+ * A single operation (create, update, remove) on a resource, or execute an
+ * action.
  *
  * Generated from protobuf message <code>google.ads.googleads.v23.services.MutateOperation</code>
  */
@@ -69,6 +70,8 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      *           A bidding seasonality adjustment mutate operation.
      *     @type \Google\Ads\GoogleAds\V23\Services\BiddingStrategyOperation $bidding_strategy_operation
      *           A bidding strategy mutate operation.
+     *     @type \Google\Ads\GoogleAds\V23\Actions\BookCampaignsOperation $book_campaigns_operation
+     *           Request message for the BookCampaigns action.
      *     @type \Google\Ads\GoogleAds\V23\Services\CampaignAssetOperation $campaign_asset_operation
      *           A campaign asset mutate operation.
      *     @type \Google\Ads\GoogleAds\V23\Services\CampaignAssetSetOperation $campaign_asset_set_operation
@@ -135,6 +138,9 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      *           A keyword plan operation.
      *     @type \Google\Ads\GoogleAds\V23\Services\LabelOperation $label_operation
      *           A label mutate operation.
+     *     @type \Google\Ads\GoogleAds\V23\Actions\QuoteCampaignsOperation $quote_campaigns_operation
+     *           Request message for the QuoteCampaigns action. Requests using this
+     *           operation must set validate_only to true.
      *     @type \Google\Ads\GoogleAds\V23\Services\RecommendationSubscriptionOperation $recommendation_subscription_operation
      *           A recommendation subscription mutate operation.
      *     @type \Google\Ads\GoogleAds\V23\Services\RemarketingActionOperation $remarketing_action_operation
@@ -863,6 +869,37 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Services\BiddingStrategyOperation::class);
         $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Request message for the BookCampaigns action.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.actions.BookCampaignsOperation book_campaigns_operation = 89;</code>
+     * @return \Google\Ads\GoogleAds\V23\Actions\BookCampaignsOperation|null
+     */
+    public function getBookCampaignsOperation()
+    {
+        return $this->readOneof(89);
+    }
+
+    public function hasBookCampaignsOperation()
+    {
+        return $this->hasOneof(89);
+    }
+
+    /**
+     * Request message for the BookCampaigns action.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.actions.BookCampaignsOperation book_campaigns_operation = 89;</code>
+     * @param \Google\Ads\GoogleAds\V23\Actions\BookCampaignsOperation $var
+     * @return $this
+     */
+    public function setBookCampaignsOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Actions\BookCampaignsOperation::class);
+        $this->writeOneof(89, $var);
 
         return $this;
     }
@@ -1886,6 +1923,39 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Services\LabelOperation::class);
         $this->writeOneof(41, $var);
+
+        return $this;
+    }
+
+    /**
+     * Request message for the QuoteCampaigns action. Requests using this
+     * operation must set validate_only to true.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.actions.QuoteCampaignsOperation quote_campaigns_operation = 88;</code>
+     * @return \Google\Ads\GoogleAds\V23\Actions\QuoteCampaignsOperation|null
+     */
+    public function getQuoteCampaignsOperation()
+    {
+        return $this->readOneof(88);
+    }
+
+    public function hasQuoteCampaignsOperation()
+    {
+        return $this->hasOneof(88);
+    }
+
+    /**
+     * Request message for the QuoteCampaigns action. Requests using this
+     * operation must set validate_only to true.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.actions.QuoteCampaignsOperation quote_campaigns_operation = 88;</code>
+     * @param \Google\Ads\GoogleAds\V23\Actions\QuoteCampaignsOperation $var
+     * @return $this
+     */
+    public function setQuoteCampaignsOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Actions\QuoteCampaignsOperation::class);
+        $this->writeOneof(88, $var);
 
         return $this;
     }

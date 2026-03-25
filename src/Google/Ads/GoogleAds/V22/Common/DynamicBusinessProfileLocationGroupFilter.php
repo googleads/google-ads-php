@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents a filter on Business Profile locations in an asset set. If
@@ -43,13 +43,13 @@ class DynamicBusinessProfileLocationGroupFilter extends \Google\Protobuf\Interna
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $label_filters
+     *     @type string[] $label_filters
      *           Used to filter Business Profile locations by label. Only locations that
      *           have any of the listed labels will be in the asset set.
      *           Label filters are OR'ed together.
      *     @type \Google\Ads\GoogleAds\V22\Common\BusinessProfileBusinessNameFilter $business_name_filter
      *           Used to filter Business Profile locations by business name.
-     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $listing_id_filters
+     *     @type int[]|string[] $listing_id_filters
      *           Used to filter Business Profile locations by listing ids.
      * }
      */
@@ -64,7 +64,7 @@ class DynamicBusinessProfileLocationGroupFilter extends \Google\Protobuf\Interna
      * Label filters are OR'ed together.
      *
      * Generated from protobuf field <code>repeated string label_filters = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLabelFilters()
     {
@@ -77,7 +77,7 @@ class DynamicBusinessProfileLocationGroupFilter extends \Google\Protobuf\Interna
      * Label filters are OR'ed together.
      *
      * Generated from protobuf field <code>repeated string label_filters = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLabelFilters($var)
@@ -128,7 +128,7 @@ class DynamicBusinessProfileLocationGroupFilter extends \Google\Protobuf\Interna
      * Used to filter Business Profile locations by listing ids.
      *
      * Generated from protobuf field <code>repeated int64 listing_id_filters = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>|RepeatedField<string>
      */
     public function getListingIdFilters()
     {
@@ -139,7 +139,7 @@ class DynamicBusinessProfileLocationGroupFilter extends \Google\Protobuf\Interna
      * Used to filter Business Profile locations by listing ids.
      *
      * Generated from protobuf field <code>repeated int64 listing_id_filters = 3;</code>
-     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[]|string[] $var
      * @return $this
      */
     public function setListingIdFilters($var)

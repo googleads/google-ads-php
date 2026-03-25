@@ -5,11 +5,11 @@
 namespace Google\Ads\GoogleAds\V22\Errors;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
- * Container for enum describing possible CustomeClientLink errors.
+ * Container for enum describing possible CustomerClientLink errors.
  *
  * Generated from protobuf message <code>google.ads.googleads.v22.errors.CustomerClientLinkErrorEnum</code>
  */

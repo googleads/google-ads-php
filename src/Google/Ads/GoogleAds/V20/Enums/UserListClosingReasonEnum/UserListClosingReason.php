@@ -59,6 +59,3 @@ class UserListClosingReason
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(UserListClosingReason::class, \Google\Ads\GoogleAds\V20\Enums\UserListClosingReasonEnum_UserListClosingReason::class);
-

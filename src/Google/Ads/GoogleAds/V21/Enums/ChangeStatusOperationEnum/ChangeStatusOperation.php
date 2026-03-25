@@ -74,6 +74,3 @@ class ChangeStatusOperation
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ChangeStatusOperation::class, \Google\Ads\GoogleAds\V21\Enums\ChangeStatusOperationEnum_ChangeStatusOperation::class);
-

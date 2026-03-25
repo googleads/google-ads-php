@@ -53,7 +53,7 @@ class RecommendationSubscriptionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateRecommendationSubscriptionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateRecommendationSubscriptionResponse>
      */
     public function MutateRecommendationSubscription(\Google\Ads\GoogleAds\V22\Services\MutateRecommendationSubscriptionRequest $argument,
       $metadata = [], $options = []) {

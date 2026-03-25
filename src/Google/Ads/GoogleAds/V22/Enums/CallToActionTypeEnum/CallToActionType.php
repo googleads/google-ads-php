@@ -171,6 +171,3 @@ class CallToActionType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CallToActionType::class, \Google\Ads\GoogleAds\V22\Enums\CallToActionTypeEnum_CallToActionType::class);
-

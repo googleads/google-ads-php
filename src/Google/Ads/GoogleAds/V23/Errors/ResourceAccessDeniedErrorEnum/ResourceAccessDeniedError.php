@@ -59,6 +59,3 @@ class ResourceAccessDeniedError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ResourceAccessDeniedError::class, \Google\Ads\GoogleAds\V23\Errors\ResourceAccessDeniedErrorEnum_ResourceAccessDeniedError::class);
-

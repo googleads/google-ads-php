@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * User list targeting as a collection of conversions or remarketing actions.
@@ -28,7 +28,7 @@ class BasicUserListInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\UserListActionInfo>|\Google\Protobuf\Internal\RepeatedField $actions
+     *     @type \Google\Ads\GoogleAds\V22\Common\UserListActionInfo[] $actions
      *           Actions associated with this user list.
      * }
      */
@@ -41,7 +41,7 @@ class BasicUserListInfo extends \Google\Protobuf\Internal\Message
      * Actions associated with this user list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.UserListActionInfo actions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\UserListActionInfo>
      */
     public function getActions()
     {
@@ -52,7 +52,7 @@ class BasicUserListInfo extends \Google\Protobuf\Internal\Message
      * Actions associated with this user list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.UserListActionInfo actions = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\UserListActionInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\UserListActionInfo[] $var
      * @return $this
      */
     public function setActions($var)

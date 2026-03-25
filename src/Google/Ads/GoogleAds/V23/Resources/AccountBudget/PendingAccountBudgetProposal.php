@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\AccountBudget;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A pending proposal associated with the enclosing account-level budget,
@@ -505,7 +505,4 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PendingAccountBudgetProposal::class, \Google\Ads\GoogleAds\V23\Resources\AccountBudget_PendingAccountBudgetProposal::class);
 

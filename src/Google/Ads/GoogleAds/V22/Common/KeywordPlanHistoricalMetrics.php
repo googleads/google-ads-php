@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Historical metrics specific to the targeting options selected.
@@ -75,7 +75,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      *     @type int|string $avg_monthly_searches
      *           Approximate number of monthly searches on this query, averaged
      *           for the past 12 months.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\MonthlySearchVolume>|\Google\Protobuf\Internal\RepeatedField $monthly_search_volumes
+     *     @type \Google\Ads\GoogleAds\V22\Common\MonthlySearchVolume[] $monthly_search_volumes
      *           Approximate number of searches on this query for the past twelve months.
      *     @type int $competition
      *           The competition level for the query.
@@ -140,7 +140,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      * Approximate number of searches on this query for the past twelve months.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.MonthlySearchVolume monthly_search_volumes = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\MonthlySearchVolume>
      */
     public function getMonthlySearchVolumes()
     {
@@ -151,7 +151,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      * Approximate number of searches on this query for the past twelve months.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.MonthlySearchVolume monthly_search_volumes = 6;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\MonthlySearchVolume>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\MonthlySearchVolume[] $var
      * @return $this
      */
     public function setMonthlySearchVolumes($var)

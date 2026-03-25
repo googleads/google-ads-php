@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common\PolicyTopicEvidence;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Evidence details when the destination is returning an HTTP error
@@ -236,7 +236,4 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DestinationNotWorking::class, \Google\Ads\GoogleAds\V23\Common\PolicyTopicEvidence_DestinationNotWorking::class);
 

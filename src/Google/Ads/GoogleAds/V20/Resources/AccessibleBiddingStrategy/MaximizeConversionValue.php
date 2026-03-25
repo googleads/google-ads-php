@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\AccessibleBiddingStrategy;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An automated bidding strategy to help get the most conversion value for
@@ -81,7 +81,4 @@ class MaximizeConversionValue extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MaximizeConversionValue::class, \Google\Ads\GoogleAds\V20\Resources\AccessibleBiddingStrategy_MaximizeConversionValue::class);
 

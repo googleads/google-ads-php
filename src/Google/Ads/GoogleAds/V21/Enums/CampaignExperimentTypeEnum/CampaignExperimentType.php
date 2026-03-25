@@ -79,6 +79,3 @@ class CampaignExperimentType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CampaignExperimentType::class, \Google\Ads\GoogleAds\V21\Enums\CampaignExperimentTypeEnum_CampaignExperimentType::class);
-

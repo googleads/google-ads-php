@@ -101,6 +101,3 @@ class SearchTermMatchType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SearchTermMatchType::class, \Google\Ads\GoogleAds\V23\Enums\SearchTermMatchTypeEnum_SearchTermMatchType::class);
-

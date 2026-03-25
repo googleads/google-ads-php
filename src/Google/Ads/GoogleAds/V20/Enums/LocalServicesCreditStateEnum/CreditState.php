@@ -67,6 +67,3 @@ class CreditState
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CreditState::class, \Google\Ads\GoogleAds\V20\Enums\LocalServicesCreditStateEnum_CreditState::class);
-

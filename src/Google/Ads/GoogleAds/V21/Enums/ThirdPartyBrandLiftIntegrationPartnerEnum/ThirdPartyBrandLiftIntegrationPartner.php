@@ -81,6 +81,3 @@ class ThirdPartyBrandLiftIntegrationPartner
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ThirdPartyBrandLiftIntegrationPartner::class, \Google\Ads\GoogleAds\V21\Enums\ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner::class);
-

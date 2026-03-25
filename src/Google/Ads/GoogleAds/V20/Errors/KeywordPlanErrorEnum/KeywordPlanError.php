@@ -151,6 +151,3 @@ class KeywordPlanError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(KeywordPlanError::class, \Google\Ads\GoogleAds\V20\Errors\KeywordPlanErrorEnum_KeywordPlanError::class);
-

@@ -38,7 +38,7 @@ class BiddingSeasonalityAdjustmentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateBiddingSeasonalityAdjustmentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateBiddingSeasonalityAdjustmentsResponse>
      */
     public function MutateBiddingSeasonalityAdjustments(\Google\Ads\GoogleAds\V22\Services\MutateBiddingSeasonalityAdjustmentsRequest $argument,
       $metadata = [], $options = []) {

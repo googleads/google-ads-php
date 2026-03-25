@@ -84,6 +84,3 @@ class OfflineConversionDiagnosticStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(OfflineConversionDiagnosticStatus::class, \Google\Ads\GoogleAds\V22\Enums\OfflineConversionDiagnosticStatusEnum_OfflineConversionDiagnosticStatus::class);
-

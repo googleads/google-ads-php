@@ -124,6 +124,3 @@ class AudienceError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AudienceError::class, \Google\Ads\GoogleAds\V21\Errors\AudienceErrorEnum_AudienceError::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common\PolicyTopicEvidence;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A list of strings found in a destination page that caused a policy
@@ -29,7 +29,7 @@ class DestinationTextList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $destination_texts
+     *     @type string[] $destination_texts
      *           List of text found in the resource's destination page.
      * }
      */
@@ -42,7 +42,7 @@ class DestinationTextList extends \Google\Protobuf\Internal\Message
      * List of text found in the resource's destination page.
      *
      * Generated from protobuf field <code>repeated string destination_texts = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getDestinationTexts()
     {
@@ -53,7 +53,7 @@ class DestinationTextList extends \Google\Protobuf\Internal\Message
      * List of text found in the resource's destination page.
      *
      * Generated from protobuf field <code>repeated string destination_texts = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setDestinationTexts($var)
@@ -65,7 +65,4 @@ class DestinationTextList extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DestinationTextList::class, \Google\Ads\GoogleAds\V22\Common\PolicyTopicEvidence_DestinationTextList::class);
 

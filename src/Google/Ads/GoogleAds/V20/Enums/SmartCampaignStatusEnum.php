@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Enums;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A container for an enum that describes Smart campaign statuses.

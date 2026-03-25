@@ -87,6 +87,3 @@ class DateRangeError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DateRangeError::class, \Google\Ads\GoogleAds\V23\Errors\DateRangeErrorEnum_DateRangeError::class);
-

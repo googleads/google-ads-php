@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class ListBenchmarksLocationsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\BenchmarksLocation>|\Google\Protobuf\Internal\RepeatedField $benchmarks_locations
+     *     @type \Google\Ads\GoogleAds\V23\Services\BenchmarksLocation[] $benchmarks_locations
      *           The list of locations supported for benchmarks data.
      * }
      */
@@ -42,7 +42,7 @@ class ListBenchmarksLocationsResponse extends \Google\Protobuf\Internal\Message
      * The list of locations supported for benchmarks data.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BenchmarksLocation benchmarks_locations = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\BenchmarksLocation>
      */
     public function getBenchmarksLocations()
     {
@@ -53,7 +53,7 @@ class ListBenchmarksLocationsResponse extends \Google\Protobuf\Internal\Message
      * The list of locations supported for benchmarks data.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BenchmarksLocation benchmarks_locations = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\BenchmarksLocation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\BenchmarksLocation[] $var
      * @return $this
      */
     public function setBenchmarksLocations($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The result of generating keyword historical metrics.
@@ -53,7 +53,7 @@ class GenerateKeywordHistoricalMetricsResult extends \Google\Protobuf\Internal\M
      *           originally contained the keywords "car" and "cars", the returned search
      *           query will only contain "cars". The list of de-duped queries will be
      *           included in close_variants field.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $close_variants
+     *     @type string[] $close_variants
      *           The list of close variants from the requested keywords whose stats
      *           are combined into this GenerateKeywordHistoricalMetricsResult.
      *     @type \Google\Ads\GoogleAds\V22\Common\KeywordPlanHistoricalMetrics $keyword_metrics
@@ -116,7 +116,7 @@ class GenerateKeywordHistoricalMetricsResult extends \Google\Protobuf\Internal\M
      * are combined into this GenerateKeywordHistoricalMetricsResult.
      *
      * Generated from protobuf field <code>repeated string close_variants = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getCloseVariants()
     {
@@ -128,7 +128,7 @@ class GenerateKeywordHistoricalMetricsResult extends \Google\Protobuf\Internal\M
      * are combined into this GenerateKeywordHistoricalMetricsResult.
      *
      * Generated from protobuf field <code>repeated string close_variants = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setCloseVariants($var)

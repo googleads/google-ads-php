@@ -344,6 +344,3 @@ class OfflineUserDataJobError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(OfflineUserDataJobError::class, \Google\Ads\GoogleAds\V23\Errors\OfflineUserDataJobErrorEnum_OfflineUserDataJobError::class);
-

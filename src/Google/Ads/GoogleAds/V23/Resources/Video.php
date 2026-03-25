@@ -5,11 +5,14 @@
 namespace Google\Ads\GoogleAds\V23\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A video.
+ * If the video has any enhancements, the stats on all of them will be
+ * aggregated and displayed on this video resource. To get stats for a specific
+ * enhancement, use the VideoEnhancement resource instead.
  *
  * Generated from protobuf message <code>google.ads.googleads.v23.resources.Video</code>
  */

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -64,7 +64,7 @@ class MutateCustomerManagerLinkRequest extends \Google\Protobuf\Internal\Message
      *     @type string $customer_id
      *           Required. The ID of the customer whose customer manager links are being
      *           modified.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\CustomerManagerLinkOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V23\Services\CustomerManagerLinkOperation[] $operations
      *           Required. The list of operations to perform on individual customer manager
      *           links.
      *     @type bool $validate_only
@@ -110,7 +110,7 @@ class MutateCustomerManagerLinkRequest extends \Google\Protobuf\Internal\Message
      * links.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.CustomerManagerLinkOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\CustomerManagerLinkOperation>
      */
     public function getOperations()
     {
@@ -122,7 +122,7 @@ class MutateCustomerManagerLinkRequest extends \Google\Protobuf\Internal\Message
      * links.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.CustomerManagerLinkOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\CustomerManagerLinkOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\CustomerManagerLinkOperation[] $var
      * @return $this
      */
     public function setOperations($var)

@@ -82,6 +82,3 @@ class FieldMaskError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(FieldMaskError::class, \Google\Ads\GoogleAds\V21\Errors\FieldMaskErrorEnum_FieldMaskError::class);
-

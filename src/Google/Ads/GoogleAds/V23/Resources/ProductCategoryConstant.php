@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Product Category.
@@ -76,7 +76,7 @@ class ProductCategoryConstant extends \Google\Protobuf\Internal\Message
      *           Output only. Level of the product category.
      *     @type int $state
      *           Output only. State of the product category.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\ProductCategoryConstant\ProductCategoryLocalization>|\Google\Protobuf\Internal\RepeatedField $localizations
+     *     @type \Google\Ads\GoogleAds\V23\Resources\ProductCategoryConstant\ProductCategoryLocalization[] $localizations
      *           Output only. List of all available localizations of the product category.
      * }
      */
@@ -237,7 +237,7 @@ class ProductCategoryConstant extends \Google\Protobuf\Internal\Message
      * Output only. List of all available localizations of the product category.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.ProductCategoryConstant.ProductCategoryLocalization localizations = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\ProductCategoryConstant\ProductCategoryLocalization>
      */
     public function getLocalizations()
     {
@@ -248,7 +248,7 @@ class ProductCategoryConstant extends \Google\Protobuf\Internal\Message
      * Output only. List of all available localizations of the product category.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.ProductCategoryConstant.ProductCategoryLocalization localizations = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\ProductCategoryConstant\ProductCategoryLocalization>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\ProductCategoryConstant\ProductCategoryLocalization[] $var
      * @return $this
      */
     public function setLocalizations($var)

@@ -70,6 +70,3 @@ class VideoAdSequenceMinimumDuration
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(VideoAdSequenceMinimumDuration::class, \Google\Ads\GoogleAds\V22\Enums\VideoAdSequenceMinimumDurationEnum_VideoAdSequenceMinimumDuration::class);
-

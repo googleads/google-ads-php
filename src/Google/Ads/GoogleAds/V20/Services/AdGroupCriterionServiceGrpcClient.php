@@ -74,7 +74,7 @@ class AdGroupCriterionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\MutateAdGroupCriteriaRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\MutateAdGroupCriteriaResponse>
      */
     public function MutateAdGroupCriteria(\Google\Ads\GoogleAds\V20\Services\MutateAdGroupCriteriaRequest $argument,
       $metadata = [], $options = []) {

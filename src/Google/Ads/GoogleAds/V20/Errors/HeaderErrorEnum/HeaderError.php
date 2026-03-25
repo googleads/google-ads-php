@@ -66,6 +66,3 @@ class HeaderError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(HeaderError::class, \Google\Ads\GoogleAds\V20\Errors\HeaderErrorEnum_HeaderError::class);
-

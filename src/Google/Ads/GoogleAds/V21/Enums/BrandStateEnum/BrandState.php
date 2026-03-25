@@ -100,6 +100,3 @@ class BrandState
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BrandState::class, \Google\Ads\GoogleAds\V21\Enums\BrandStateEnum_BrandState::class);
-

@@ -67,6 +67,3 @@ class GeoTargetConstantStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(GeoTargetConstantStatus::class, \Google\Ads\GoogleAds\V21\Enums\GeoTargetConstantStatusEnum_GeoTargetConstantStatus::class);
-

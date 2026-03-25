@@ -76,6 +76,3 @@ class ConversionCustomVariableStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionCustomVariableStatus::class, \Google\Ads\GoogleAds\V20\Enums\ConversionCustomVariableStatusEnum_ConversionCustomVariableStatus::class);
-

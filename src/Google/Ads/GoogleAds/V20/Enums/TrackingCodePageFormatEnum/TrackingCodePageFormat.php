@@ -67,6 +67,3 @@ class TrackingCodePageFormat
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TrackingCodePageFormat::class, \Google\Ads\GoogleAds\V20\Enums\TrackingCodePageFormatEnum_TrackingCodePageFormat::class);
-

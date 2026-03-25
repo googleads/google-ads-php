@@ -38,7 +38,7 @@ class BiddingDataExclusionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\MutateBiddingDataExclusionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateBiddingDataExclusionsResponse>
      */
     public function MutateBiddingDataExclusions(\Google\Ads\GoogleAds\V23\Services\MutateBiddingDataExclusionsRequest $argument,
       $metadata = [], $options = []) {

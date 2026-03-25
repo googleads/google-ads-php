@@ -59,6 +59,3 @@ class AppPaymentModelType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AppPaymentModelType::class, \Google\Ads\GoogleAds\V21\Enums\AppPaymentModelTypeEnum_AppPaymentModelType::class);
-

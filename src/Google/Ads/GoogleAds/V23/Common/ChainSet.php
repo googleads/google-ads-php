@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Data used to configure a location set populated with the specified chains.
@@ -38,7 +38,7 @@ class ChainSet extends \Google\Protobuf\Internal\Message
      *     @type int $relationship_type
      *           Required. Immutable. Relationship type the specified chains have with this
      *           advertiser.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\ChainFilter>|\Google\Protobuf\Internal\RepeatedField $chains
+     *     @type \Google\Ads\GoogleAds\V23\Common\ChainFilter[] $chains
      *           Required. A list of chain level filters, all filters are OR'ed together.
      * }
      */
@@ -79,7 +79,7 @@ class ChainSet extends \Google\Protobuf\Internal\Message
      * Required. A list of chain level filters, all filters are OR'ed together.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.ChainFilter chains = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\ChainFilter>
      */
     public function getChains()
     {
@@ -90,7 +90,7 @@ class ChainSet extends \Google\Protobuf\Internal\Message
      * Required. A list of chain level filters, all filters are OR'ed together.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.ChainFilter chains = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\ChainFilter>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\ChainFilter[] $var
      * @return $this
      */
     public function setChains($var)

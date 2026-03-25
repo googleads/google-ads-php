@@ -81,6 +81,3 @@ class ProductLinkError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProductLinkError::class, \Google\Ads\GoogleAds\V20\Errors\ProductLinkErrorEnum_ProductLinkError::class);
-

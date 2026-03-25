@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -43,7 +43,7 @@ class MutateConversionCustomVariablesResponse extends \Google\Protobuf\Internal\
      *           Returned only when partial_failure = true and all errors occur inside the
      *           operations. If any errors occur outside the operations (for example, auth
      *           errors), we return an RPC level error.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\MutateConversionCustomVariableResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V20\Services\MutateConversionCustomVariableResult[] $results
      *           All results for the mutate.
      * }
      */
@@ -98,7 +98,7 @@ class MutateConversionCustomVariablesResponse extends \Google\Protobuf\Internal\
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.MutateConversionCustomVariableResult results = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\MutateConversionCustomVariableResult>
      */
     public function getResults()
     {
@@ -109,7 +109,7 @@ class MutateConversionCustomVariablesResponse extends \Google\Protobuf\Internal\
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.MutateConversionCustomVariableResult results = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\MutateConversionCustomVariableResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\MutateConversionCustomVariableResult[] $var
      * @return $this
      */
     public function setResults($var)

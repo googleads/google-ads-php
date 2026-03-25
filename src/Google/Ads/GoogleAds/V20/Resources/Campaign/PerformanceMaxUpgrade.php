@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\Campaign;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Information about a campaign being upgraded to Performance Max.
@@ -144,7 +144,4 @@ class PerformanceMaxUpgrade extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PerformanceMaxUpgrade::class, \Google\Ads\GoogleAds\V20\Resources\Campaign_PerformanceMaxUpgrade::class);
 

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Message to hold a shareable preview result.
@@ -16,7 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class ShareablePreviewResult extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The shareable preview URL.
+     * The shareable preview URL. Only populated if preview type is UI_PREVIEW
+     * or unset.
      *
      * Generated from protobuf field <code>string shareable_preview_url = 1;</code>
      */
@@ -27,6 +28,7 @@ class ShareablePreviewResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string expiration_date_time = 2;</code>
      */
     protected $expiration_date_time = '';
+    protected $result;
 
     /**
      * Constructor.
@@ -35,9 +37,13 @@ class ShareablePreviewResult extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $shareable_preview_url
-     *           The shareable preview URL.
+     *           The shareable preview URL. Only populated if preview type is UI_PREVIEW
+     *           or unset.
      *     @type string $expiration_date_time
      *           Expiration date time using the ISO-8601 format.
+     *     @type \Google\Ads\GoogleAds\V23\Services\YouTubeLivePreviewResult $youtube_live_preview_result
+     *           The result of a YouTube live preview. Only populated for preview type
+     *           YOUTUBE_LIVE_PREVIEW.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,7 +52,8 @@ class ShareablePreviewResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The shareable preview URL.
+     * The shareable preview URL. Only populated if preview type is UI_PREVIEW
+     * or unset.
      *
      * Generated from protobuf field <code>string shareable_preview_url = 1;</code>
      * @return string
@@ -57,7 +64,8 @@ class ShareablePreviewResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The shareable preview URL.
+     * The shareable preview URL. Only populated if preview type is UI_PREVIEW
+     * or unset.
      *
      * Generated from protobuf field <code>string shareable_preview_url = 1;</code>
      * @param string $var
@@ -95,6 +103,47 @@ class ShareablePreviewResult extends \Google\Protobuf\Internal\Message
         $this->expiration_date_time = $var;
 
         return $this;
+    }
+
+    /**
+     * The result of a YouTube live preview. Only populated for preview type
+     * YOUTUBE_LIVE_PREVIEW.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.services.YouTubeLivePreviewResult youtube_live_preview_result = 3;</code>
+     * @return \Google\Ads\GoogleAds\V23\Services\YouTubeLivePreviewResult|null
+     */
+    public function getYoutubeLivePreviewResult()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasYoutubeLivePreviewResult()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * The result of a YouTube live preview. Only populated for preview type
+     * YOUTUBE_LIVE_PREVIEW.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.services.YouTubeLivePreviewResult youtube_live_preview_result = 3;</code>
+     * @param \Google\Ads\GoogleAds\V23\Services\YouTubeLivePreviewResult $var
+     * @return $this
+     */
+    public function setYoutubeLivePreviewResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V23\Services\YouTubeLivePreviewResult::class);
+        $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getResult()
+    {
+        return $this->whichOneof("result");
     }
 
 }

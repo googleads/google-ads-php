@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A user interest: a particular interest-based vertical to be targeted.
@@ -82,7 +82,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
      *     @type bool $launched_to_all
      *           Output only. True if the user interest is launched to all channels and
      *           locales.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\CriterionCategoryAvailability>|\Google\Protobuf\Internal\RepeatedField $availabilities
+     *     @type \Google\Ads\GoogleAds\V22\Common\CriterionCategoryAvailability[] $availabilities
      *           Output only. Availability information of the user interest.
      * }
      */
@@ -297,7 +297,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
      * Output only. Availability information of the user interest.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.CriterionCategoryAvailability availabilities = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\CriterionCategoryAvailability>
      */
     public function getAvailabilities()
     {
@@ -308,7 +308,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
      * Output only. Availability information of the user interest.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.CriterionCategoryAvailability availabilities = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\CriterionCategoryAvailability>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\CriterionCategoryAvailability[] $var
      * @return $this
      */
     public function setAvailabilities($var)

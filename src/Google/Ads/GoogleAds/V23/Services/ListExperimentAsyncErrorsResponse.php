@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -38,7 +38,7 @@ class ListExperimentAsyncErrorsResponse extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Rpc\Status>|\Google\Protobuf\Internal\RepeatedField $errors
+     *     @type \Google\Rpc\Status[] $errors
      *           details of the errors when performing the asynchronous operation.
      *     @type string $next_page_token
      *           Pagination token used to retrieve the next page of results.
@@ -56,7 +56,7 @@ class ListExperimentAsyncErrorsResponse extends \Google\Protobuf\Internal\Messag
      * details of the errors when performing the asynchronous operation.
      *
      * Generated from protobuf field <code>repeated .google.rpc.Status errors = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Rpc\Status>
      */
     public function getErrors()
     {
@@ -67,7 +67,7 @@ class ListExperimentAsyncErrorsResponse extends \Google\Protobuf\Internal\Messag
      * details of the errors when performing the asynchronous operation.
      *
      * Generated from protobuf field <code>repeated .google.rpc.Status errors = 1;</code>
-     * @param array<\Google\Rpc\Status>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Rpc\Status[] $var
      * @return $this
      */
     public function setErrors($var)

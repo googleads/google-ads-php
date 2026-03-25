@@ -13,17 +13,10 @@ class WebpageView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
-            '
-Æ
-5google/ads/googleads/v20/resources/webpage_view.proto"google.ads.googleads.v20.resourcesgoogle/api/resource.proto"À
-WebpageViewC
-resource_name (	B,àAúA&
-$googleads.googleapis.com/WebpageView:lêAi
-$googleads.googleapis.com/WebpageViewAcustomers/{customer_id}/webpageViews/{ad_group_id}~{criterion_id}B‚
-&com.google.ads.googleads.v20.resourcesBWebpageViewProtoPZKgoogle.golang.org/genproto/googleapis/ads/googleads/v20/resources;resources¢GAAª"Google.Ads.GoogleAds.V20.ResourcesÊ"Google\\Ads\\GoogleAds\\V20\\Resourcesê&Google::Ads::GoogleAds::V20::Resourcesbproto3'
+            "\x0A\xC6\x04\x0A5google/ads/googleads/v20/resources/webpage_view.proto\x12\"google.ads.googleads.v20.resources\x1A\x19google/api/resource.proto\"\xC0\x01\x0A\x0BWebpageView\x12C\x0A\x0Dresource_name\x18\x01 \x01(\x09B,\xE0A\x03\xFAA&\x0A\$googleads.googleapis.com/WebpageView:l\xEAAi\x0A\$googleads.googleapis.com/WebpageView\x12Acustomers/{customer_id}/webpageViews/{ad_group_id}~{criterion_id}B\x82\x02\x0A&com.google.ads.googleads.v20.resourcesB\x10WebpageViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v20/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V20.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V20\\Resources\xEA\x02&Google::Ads::GoogleAds::V20::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

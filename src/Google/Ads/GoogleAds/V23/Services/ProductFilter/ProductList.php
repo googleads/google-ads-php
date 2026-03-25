@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services\ProductFilter;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The list of products to generate benchmarks metrics for.
@@ -28,7 +28,7 @@ class ProductList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $product_codes
+     *     @type string[] $product_codes
      *           Required. Products to generate benchmarks metrics for.
      * }
      */
@@ -41,7 +41,7 @@ class ProductList extends \Google\Protobuf\Internal\Message
      * Required. Products to generate benchmarks metrics for.
      *
      * Generated from protobuf field <code>repeated string product_codes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getProductCodes()
     {
@@ -52,7 +52,7 @@ class ProductList extends \Google\Protobuf\Internal\Message
      * Required. Products to generate benchmarks metrics for.
      *
      * Generated from protobuf field <code>repeated string product_codes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setProductCodes($var)
@@ -64,7 +64,4 @@ class ProductList extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProductList::class, \Google\Ads\GoogleAds\V23\Services\ProductFilter_ProductList::class);
 

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Settings for the targeting-related features, at the campaign and ad group
@@ -39,10 +39,10 @@ class TargetingSetting extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\TargetRestriction>|\Google\Protobuf\Internal\RepeatedField $target_restrictions
+     *     @type \Google\Ads\GoogleAds\V20\Common\TargetRestriction[] $target_restrictions
      *           The per-targeting-dimension setting to restrict the reach of your campaign
      *           or ad group.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\TargetRestrictionOperation>|\Google\Protobuf\Internal\RepeatedField $target_restriction_operations
+     *     @type \Google\Ads\GoogleAds\V20\Common\TargetRestrictionOperation[] $target_restriction_operations
      *           The list of operations changing the target restrictions.
      *           Adding a target restriction with a targeting dimension that already exists
      *           causes the existing target restriction to be replaced with the new value.
@@ -58,7 +58,7 @@ class TargetingSetting extends \Google\Protobuf\Internal\Message
      * or ad group.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.TargetRestriction target_restrictions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\TargetRestriction>
      */
     public function getTargetRestrictions()
     {
@@ -70,7 +70,7 @@ class TargetingSetting extends \Google\Protobuf\Internal\Message
      * or ad group.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.TargetRestriction target_restrictions = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\TargetRestriction>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\TargetRestriction[] $var
      * @return $this
      */
     public function setTargetRestrictions($var)
@@ -87,7 +87,7 @@ class TargetingSetting extends \Google\Protobuf\Internal\Message
      * causes the existing target restriction to be replaced with the new value.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.TargetRestrictionOperation target_restriction_operations = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\TargetRestrictionOperation>
      */
     public function getTargetRestrictionOperations()
     {
@@ -100,7 +100,7 @@ class TargetingSetting extends \Google\Protobuf\Internal\Message
      * causes the existing target restriction to be replaced with the new value.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.TargetRestrictionOperation target_restriction_operations = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\TargetRestrictionOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\TargetRestrictionOperation[] $var
      * @return $this
      */
     public function setTargetRestrictionOperations($var)

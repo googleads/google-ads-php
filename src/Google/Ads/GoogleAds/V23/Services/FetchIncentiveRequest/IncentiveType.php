@@ -59,6 +59,3 @@ class IncentiveType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(IncentiveType::class, \Google\Ads\GoogleAds\V23\Services\FetchIncentiveRequest_IncentiveType::class);
-

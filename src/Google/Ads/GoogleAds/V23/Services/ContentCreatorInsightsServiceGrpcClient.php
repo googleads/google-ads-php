@@ -51,7 +51,7 @@ class ContentCreatorInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\GenerateCreatorInsightsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateCreatorInsightsResponse>
      */
     public function GenerateCreatorInsights(\Google\Ads\GoogleAds\V23\Services\GenerateCreatorInsightsRequest $argument,
       $metadata = [], $options = []) {
@@ -76,7 +76,7 @@ class ContentCreatorInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\GenerateTrendingInsightsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateTrendingInsightsResponse>
      */
     public function GenerateTrendingInsights(\Google\Ads\GoogleAds\V23\Services\GenerateTrendingInsightsRequest $argument,
       $metadata = [], $options = []) {

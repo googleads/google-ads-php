@@ -249,6 +249,3 @@ class BiddingStrategySystemStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BiddingStrategySystemStatus::class, \Google\Ads\GoogleAds\V23\Enums\BiddingStrategySystemStatusEnum_BiddingStrategySystemStatus::class);
-

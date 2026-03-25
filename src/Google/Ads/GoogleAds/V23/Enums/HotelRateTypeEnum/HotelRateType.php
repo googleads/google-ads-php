@@ -86,6 +86,3 @@ class HotelRateType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(HotelRateType::class, \Google\Ads\GoogleAds\V23\Enums\HotelRateTypeEnum_HotelRateType::class);
-

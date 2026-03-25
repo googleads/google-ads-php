@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A dynamic local asset.
@@ -159,7 +159,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
      *           (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403.
      *     @type string $category
      *           Category, for example, Food.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
+     *     @type string[] $contextual_keywords
      *           Contextual keywords, for example, Save groceries coupons.
      *     @type string $formatted_price
      *           Formatted price which can be any characters. If set, this attribute will be
@@ -170,7 +170,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
      *     @type string $android_app_link
      *           Android deep link, for example,
      *           android-app://com.example.android/http/example.com/gizmos?1234.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_deal_ids
+     *     @type string[] $similar_deal_ids
      *           Similar deal IDs, for example, 1275.
      *     @type string $ios_app_link
      *           iOS deep link, for example, exampleApp://content/page.
@@ -441,7 +441,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
      * Contextual keywords, for example, Save groceries coupons.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getContextualKeywords()
     {
@@ -452,7 +452,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
      * Contextual keywords, for example, Save groceries coupons.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 10;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setContextualKeywords($var)
@@ -551,7 +551,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
      * Similar deal IDs, for example, 1275.
      *
      * Generated from protobuf field <code>repeated string similar_deal_ids = 14;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSimilarDealIds()
     {
@@ -562,7 +562,7 @@ class DynamicLocalAsset extends \Google\Protobuf\Internal\Message
      * Similar deal IDs, for example, 1275.
      *
      * Generated from protobuf field <code>repeated string similar_deal_ids = 14;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSimilarDealIds($var)

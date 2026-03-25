@@ -51,7 +51,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\GenerateInsightsFinderReportRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateInsightsFinderReportResponse>
      */
     public function GenerateInsightsFinderReport(\Google\Ads\GoogleAds\V23\Services\GenerateInsightsFinderReportRequest $argument,
       $metadata = [], $options = []) {
@@ -76,7 +76,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\ListAudienceInsightsAttributesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\ListAudienceInsightsAttributesResponse>
      */
     public function ListAudienceInsightsAttributes(\Google\Ads\GoogleAds\V23\Services\ListAudienceInsightsAttributesRequest $argument,
       $metadata = [], $options = []) {
@@ -101,7 +101,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\ListInsightsEligibleDatesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\ListInsightsEligibleDatesResponse>
      */
     public function ListInsightsEligibleDates(\Google\Ads\GoogleAds\V23\Services\ListInsightsEligibleDatesRequest $argument,
       $metadata = [], $options = []) {
@@ -129,7 +129,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\GenerateAudienceCompositionInsightsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateAudienceCompositionInsightsResponse>
      */
     public function GenerateAudienceCompositionInsights(\Google\Ads\GoogleAds\V23\Services\GenerateAudienceCompositionInsightsRequest $argument,
       $metadata = [], $options = []) {
@@ -155,7 +155,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\GenerateAudienceDefinitionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateAudienceDefinitionResponse>
      */
     public function GenerateAudienceDefinition(\Google\Ads\GoogleAds\V23\Services\GenerateAudienceDefinitionRequest $argument,
       $metadata = [], $options = []) {
@@ -182,7 +182,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\GenerateSuggestedTargetingInsightsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateSuggestedTargetingInsightsResponse>
      */
     public function GenerateSuggestedTargetingInsights(\Google\Ads\GoogleAds\V23\Services\GenerateSuggestedTargetingInsightsRequest $argument,
       $metadata = [], $options = []) {
@@ -210,7 +210,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\GenerateAudienceOverlapInsightsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateAudienceOverlapInsightsResponse>
      */
     public function GenerateAudienceOverlapInsights(\Google\Ads\GoogleAds\V23\Services\GenerateAudienceOverlapInsightsRequest $argument,
       $metadata = [], $options = []) {
@@ -239,7 +239,7 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\GenerateTargetingSuggestionMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateTargetingSuggestionMetricsResponse>
      */
     public function GenerateTargetingSuggestionMetrics(\Google\Ads\GoogleAds\V23\Services\GenerateTargetingSuggestionMetricsRequest $argument,
       $metadata = [], $options = []) {

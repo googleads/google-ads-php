@@ -13,17 +13,10 @@ class TravelActivityPerformanceView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
-            '
-—
-Igoogle/ads/googleads/v22/resources/travel_activity_performance_view.proto"google.ads.googleads.v22.resourcesgoogle/api/resource.proto"ë
-TravelActivityPerformanceViewU
-resource_name (	B>àAúA8
-6googleads.googleapis.com/TravelActivityPerformanceView:sêAp
-6googleads.googleapis.com/TravelActivityPerformanceView6customers/{customer_id}/travelActivityPerformanceViewsB”
-&com.google.ads.googleads.v22.resourcesB"TravelActivityPerformanceViewProtoPZKgoogle.golang.org/genproto/googleapis/ads/googleads/v22/resources;resources¢GAAª"Google.Ads.GoogleAds.V22.ResourcesÊ"Google\\Ads\\GoogleAds\\V22\\Resourcesê&Google::Ads::GoogleAds::V22::Resourcesbproto3'
+            "\x0A\x97\x05\x0AIgoogle/ads/googleads/v22/resources/travel_activity_performance_view.proto\x12\"google.ads.googleads.v22.resources\x1A\x19google/api/resource.proto\"\xEB\x01\x0A\x1DTravelActivityPerformanceView\x12U\x0A\x0Dresource_name\x18\x01 \x01(\x09B>\xE0A\x03\xFAA8\x0A6googleads.googleapis.com/TravelActivityPerformanceView:s\xEAAp\x0A6googleads.googleapis.com/TravelActivityPerformanceView\x126customers/{customer_id}/travelActivityPerformanceViewsB\x94\x02\x0A&com.google.ads.googleads.v22.resourcesB\"TravelActivityPerformanceViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v22/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V22.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V22\\Resources\xEA\x02&Google::Ads::GoogleAds::V22::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A point on reach curve.
@@ -45,7 +45,7 @@ class ReachForecast extends \Google\Protobuf\Internal\Message
      *           The cost in micros.
      *     @type \Google\Ads\GoogleAds\V23\Services\Forecast $forecast
      *           Forecasted traffic metrics for this point.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\PlannedProductReachForecast>|\Google\Protobuf\Internal\RepeatedField $planned_product_reach_forecasts
+     *     @type \Google\Ads\GoogleAds\V23\Services\PlannedProductReachForecast[] $planned_product_reach_forecasts
      *           The forecasted allocation and traffic metrics for each planned product
      *           at this point on the reach curve.
      * }
@@ -122,7 +122,7 @@ class ReachForecast extends \Google\Protobuf\Internal\Message
      * at this point on the reach curve.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.PlannedProductReachForecast planned_product_reach_forecasts = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\PlannedProductReachForecast>
      */
     public function getPlannedProductReachForecasts()
     {
@@ -134,7 +134,7 @@ class ReachForecast extends \Google\Protobuf\Internal\Message
      * at this point on the reach curve.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.PlannedProductReachForecast planned_product_reach_forecasts = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\PlannedProductReachForecast>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\PlannedProductReachForecast[] $var
      * @return $this
      */
     public function setPlannedProductReachForecasts($var)

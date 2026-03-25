@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -65,7 +65,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\GoogleAdsRow>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V23\Services\GoogleAdsRow[] $results
      *           The list of rows that matched the query.
      *     @type \Google\Protobuf\FieldMask $field_mask
      *           FieldMask that represents what fields were requested by the user.
@@ -81,7 +81,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      *           are returned separately in their respective rows.
      *           query_resource_consumption for non-Summary responses is returned in the
      *           final batch of results.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\MetricAttributes>|\Google\Protobuf\Internal\RepeatedField $metric_attributes
+     *     @type \Google\Ads\GoogleAds\V23\Services\MetricAttributes[] $metric_attributes
      *           The metric attributes of the metrics in the results.
      * }
      */
@@ -94,7 +94,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      * The list of rows that matched the query.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.GoogleAdsRow results = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\GoogleAdsRow>
      */
     public function getResults()
     {
@@ -105,7 +105,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      * The list of rows that matched the query.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.GoogleAdsRow results = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\GoogleAdsRow>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\GoogleAdsRow[] $var
      * @return $this
      */
     public function setResults($var)
@@ -256,7 +256,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      * The metric attributes of the metrics in the results.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.MetricAttributes metric_attributes = 11;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\MetricAttributes>
      */
     public function getMetricAttributes()
     {
@@ -267,7 +267,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      * The metric attributes of the metrics in the results.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.MetricAttributes metric_attributes = 11;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\MetricAttributes>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\MetricAttributes[] $var
      * @return $this
      */
     public function setMetricAttributes($var)

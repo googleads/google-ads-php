@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Metadata associated with a Lineup attribute.
@@ -60,7 +60,7 @@ class LineupAttributeMetadata extends \Google\Protobuf\Internal\Message
      *           The lower end of a range containing the number of channels in the lineup.
      *     @type int|string $channel_count_upper_bound
      *           The upper end of a range containing the number of channels in the lineup.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\LineupAttributeMetadata\SampleChannel>|\Google\Protobuf\Internal\RepeatedField $sample_channels
+     *     @type \Google\Ads\GoogleAds\V21\Common\LineupAttributeMetadata\SampleChannel[] $sample_channels
      *           Examples of channels that are included in the lineup.
      * }
      */
@@ -217,7 +217,7 @@ class LineupAttributeMetadata extends \Google\Protobuf\Internal\Message
      * Examples of channels that are included in the lineup.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.LineupAttributeMetadata.SampleChannel sample_channels = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\LineupAttributeMetadata\SampleChannel>
      */
     public function getSampleChannels()
     {
@@ -228,7 +228,7 @@ class LineupAttributeMetadata extends \Google\Protobuf\Internal\Message
      * Examples of channels that are included in the lineup.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.LineupAttributeMetadata.SampleChannel sample_channels = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\LineupAttributeMetadata\SampleChannel>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\LineupAttributeMetadata\SampleChannel[] $var
      * @return $this
      */
     public function setSampleChannels($var)

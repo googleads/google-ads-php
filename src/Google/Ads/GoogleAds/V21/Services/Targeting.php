@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The targeting for which traffic metrics will be reported.
@@ -91,7 +91,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      *           Requests must set either this field or `plannable_location_ids`.
      *           This field is deprecated as of V12 and will be removed in a future release.
      *           Use `plannable_location_ids` instead.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $plannable_location_ids
+     *     @type string[] $plannable_location_ids
      *           The list of plannable location IDs to target with this forecast.
      *           If more than one ID is provided, all IDs must have the same
      *           `parent_country_id`. Planning for more than `parent_county` is not
@@ -102,10 +102,10 @@ class Targeting extends \Google\Protobuf\Internal\Message
      *     @type int $age_range
      *           Targeted age range.
      *           An unset value is equivalent to targeting all ages.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\GenderInfo>|\Google\Protobuf\Internal\RepeatedField $genders
+     *     @type \Google\Ads\GoogleAds\V21\Common\GenderInfo[] $genders
      *           Targeted genders.
      *           An unset value is equivalent to targeting MALE and FEMALE.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\DeviceInfo>|\Google\Protobuf\Internal\RepeatedField $devices
+     *     @type \Google\Ads\GoogleAds\V21\Common\DeviceInfo[] $devices
      *           Targeted devices.
      *           If not specified, targets all applicable devices. Applicable devices vary
      *           by product and region and can be obtained from
@@ -181,7 +181,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * Requests must set either this field or `plannable_location_id`.
      *
      * Generated from protobuf field <code>repeated string plannable_location_ids = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getPlannableLocationIds()
     {
@@ -198,7 +198,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * Requests must set either this field or `plannable_location_id`.
      *
      * Generated from protobuf field <code>repeated string plannable_location_ids = 8;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setPlannableLocationIds($var)
@@ -242,7 +242,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * An unset value is equivalent to targeting MALE and FEMALE.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.GenderInfo genders = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\GenderInfo>
      */
     public function getGenders()
     {
@@ -254,7 +254,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * An unset value is equivalent to targeting MALE and FEMALE.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.GenderInfo genders = 3;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\GenderInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\GenderInfo[] $var
      * @return $this
      */
     public function setGenders($var)
@@ -272,7 +272,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v21.services.ReachPlanService.ListPlannableProducts].
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.DeviceInfo devices = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\DeviceInfo>
      */
     public function getDevices()
     {
@@ -286,7 +286,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v21.services.ReachPlanService.ListPlannableProducts].
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.DeviceInfo devices = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\DeviceInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\DeviceInfo[] $var
      * @return $this
      */
     public function setDevices($var)

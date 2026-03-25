@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Data from lead form submissions.
@@ -96,9 +96,9 @@ class LeadFormSubmissionData extends \Google\Protobuf\Internal\Message
      *           Output only. Asset associated with the submitted lead form.
      *     @type string $campaign
      *           Output only. Campaign associated with the submitted lead form.
-     *     @type array<\Google\Ads\GoogleAds\V22\Resources\LeadFormSubmissionField>|\Google\Protobuf\Internal\RepeatedField $lead_form_submission_fields
+     *     @type \Google\Ads\GoogleAds\V22\Resources\LeadFormSubmissionField[] $lead_form_submission_fields
      *           Output only. Submission data associated with a lead form.
-     *     @type array<\Google\Ads\GoogleAds\V22\Resources\CustomLeadFormSubmissionField>|\Google\Protobuf\Internal\RepeatedField $custom_lead_form_submission_fields
+     *     @type \Google\Ads\GoogleAds\V22\Resources\CustomLeadFormSubmissionField[] $custom_lead_form_submission_fields
      *           Output only. Submission data associated with a custom lead form.
      *     @type string $ad_group
      *           Output only. AdGroup associated with the submitted lead form.
@@ -229,7 +229,7 @@ class LeadFormSubmissionData extends \Google\Protobuf\Internal\Message
      * Output only. Submission data associated with a lead form.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.resources.LeadFormSubmissionField lead_form_submission_fields = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Resources\LeadFormSubmissionField>
      */
     public function getLeadFormSubmissionFields()
     {
@@ -240,7 +240,7 @@ class LeadFormSubmissionData extends \Google\Protobuf\Internal\Message
      * Output only. Submission data associated with a lead form.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.resources.LeadFormSubmissionField lead_form_submission_fields = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Resources\LeadFormSubmissionField>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Resources\LeadFormSubmissionField[] $var
      * @return $this
      */
     public function setLeadFormSubmissionFields($var)
@@ -255,7 +255,7 @@ class LeadFormSubmissionData extends \Google\Protobuf\Internal\Message
      * Output only. Submission data associated with a custom lead form.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.resources.CustomLeadFormSubmissionField custom_lead_form_submission_fields = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Resources\CustomLeadFormSubmissionField>
      */
     public function getCustomLeadFormSubmissionFields()
     {
@@ -266,7 +266,7 @@ class LeadFormSubmissionData extends \Google\Protobuf\Internal\Message
      * Output only. Submission data associated with a custom lead form.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.resources.CustomLeadFormSubmissionField custom_lead_form_submission_fields = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Resources\CustomLeadFormSubmissionField>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Resources\CustomLeadFormSubmissionField[] $var
      * @return $this
      */
     public function setCustomLeadFormSubmissionFields($var)

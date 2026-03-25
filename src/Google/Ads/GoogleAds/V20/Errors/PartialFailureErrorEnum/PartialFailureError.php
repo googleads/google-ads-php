@@ -60,6 +60,3 @@ class PartialFailureError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PartialFailureError::class, \Google\Ads\GoogleAds\V20\Errors\PartialFailureErrorEnum_PartialFailureError::class);
-

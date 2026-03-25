@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -59,7 +59,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\GoogleAdsRow>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V20\Services\GoogleAdsRow[] $results
      *           The list of rows that matched the query.
      *     @type \Google\Protobuf\FieldMask $field_mask
      *           FieldMask that represents what fields were requested by the user.
@@ -86,7 +86,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      * The list of rows that matched the query.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.GoogleAdsRow results = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\GoogleAdsRow>
      */
     public function getResults()
     {
@@ -97,7 +97,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      * The list of rows that matched the query.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.GoogleAdsRow results = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\GoogleAdsRow>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\GoogleAdsRow[] $var
      * @return $this
      */
     public function setResults($var)

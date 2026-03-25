@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A customer.
@@ -259,7 +259,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      *           Conversion tracking setting for a customer.
      *     @type \Google\Ads\GoogleAds\V23\Resources\RemarketingSetting $remarketing_setting
      *           Output only. Remarketing setting for a customer.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $pay_per_conversion_eligibility_failure_reasons
+     *     @type int[] $pay_per_conversion_eligibility_failure_reasons
      *           Output only. Reasons why the customer is not eligible to use
      *           PaymentMode.CONVERSIONS. If the list is empty, the customer is eligible.
      *           This field is read-only.
@@ -839,7 +839,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason pay_per_conversion_eligibility_failure_reasons = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getPayPerConversionEligibilityFailureReasons()
     {
@@ -852,7 +852,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason pay_per_conversion_eligibility_failure_reasons = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setPayPerConversionEligibilityFailureReasons($var)

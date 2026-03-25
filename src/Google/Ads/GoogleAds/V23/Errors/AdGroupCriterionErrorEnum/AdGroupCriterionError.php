@@ -257,6 +257,3 @@ class AdGroupCriterionError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdGroupCriterionError::class, \Google\Ads\GoogleAds\V23\Errors\AdGroupCriterionErrorEnum_AdGroupCriterionError::class);
-

@@ -88,6 +88,3 @@ class CustomerUserAccessError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomerUserAccessError::class, \Google\Ads\GoogleAds\V21\Errors\CustomerUserAccessErrorEnum_CustomerUserAccessError::class);
-

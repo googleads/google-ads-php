@@ -82,6 +82,3 @@ class InternalError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(InternalError::class, \Google\Ads\GoogleAds\V22\Errors\InternalErrorEnum_InternalError::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Parameter for controlling how policy exemption is done.
@@ -50,7 +50,7 @@ class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ignorable_policy_topics
+     *     @type string[] $ignorable_policy_topics
      *           The list of policy topics that should not cause a `PolicyFindingError` to
      *           be reported. This field is used for ad policy exemptions. It corresponds
      *           to the `PolicyTopicEntry.topic` field.
@@ -60,7 +60,7 @@ class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
      *           eligible to serve. They may begin serving at a later time due to a change
      *           in policies, re-review of the resource, or a change in advertiser
      *           certificates.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\PolicyViolationKey>|\Google\Protobuf\Internal\RepeatedField $exempt_policy_violation_keys
+     *     @type \Google\Ads\GoogleAds\V22\Common\PolicyViolationKey[] $exempt_policy_violation_keys
      *           The list of policy violation keys that should not cause a
      *           `PolicyViolationError` to be reported. Not all policy violations are
      *           exemptable. Refer to the `is_exemptible` field in the returned
@@ -89,7 +89,7 @@ class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
      * certificates.
      *
      * Generated from protobuf field <code>repeated string ignorable_policy_topics = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getIgnorablePolicyTopics()
     {
@@ -108,7 +108,7 @@ class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
      * certificates.
      *
      * Generated from protobuf field <code>repeated string ignorable_policy_topics = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setIgnorablePolicyTopics($var)
@@ -131,7 +131,7 @@ class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
      * certificates.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.PolicyViolationKey exempt_policy_violation_keys = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\PolicyViolationKey>
      */
     public function getExemptPolicyViolationKeys()
     {
@@ -150,7 +150,7 @@ class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
      * certificates.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.PolicyViolationKey exempt_policy_violation_keys = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\PolicyViolationKey>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\PolicyViolationKey[] $var
      * @return $this
      */
     public function setExemptPolicyViolationKeys($var)

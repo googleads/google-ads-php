@@ -49,7 +49,7 @@ class GoalServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\MutateGoalsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateGoalsResponse>
      */
     public function MutateGoals(\Google\Ads\GoogleAds\V23\Services\MutateGoalsRequest $argument,
       $metadata = [], $options = []) {

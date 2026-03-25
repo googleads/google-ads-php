@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -53,7 +53,7 @@ class RemoveYouTubeVideoUploadRequest extends \Google\Protobuf\Internal\Message
      *     @type string $customer_id
      *           Required. The customer ID requesting the YouTube video upload deletion.
      *           Required.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $resource_names
+     *     @type string[] $resource_names
      *           The resource names of the YouTube video uploads to be removed. Required.
      * }
      */
@@ -94,7 +94,7 @@ class RemoveYouTubeVideoUploadRequest extends \Google\Protobuf\Internal\Message
      * The resource names of the YouTube video uploads to be removed. Required.
      *
      * Generated from protobuf field <code>repeated string resource_names = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getResourceNames()
     {
@@ -105,7 +105,7 @@ class RemoveYouTubeVideoUploadRequest extends \Google\Protobuf\Internal\Message
      * The resource names of the YouTube video uploads to be removed. Required.
      *
      * Generated from protobuf field <code>repeated string resource_names = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setResourceNames($var)

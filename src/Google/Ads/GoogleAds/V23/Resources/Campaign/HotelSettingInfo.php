@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Campaign;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Campaign-level settings for hotel ads.
@@ -16,11 +16,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class HotelSettingInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Immutable. The linked Hotel Center account.
+     * The linked Hotel Center account.
      *
-     * Generated from protobuf field <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 hotel_center_id = 2;</code>
      */
     protected $hotel_center_id = null;
+    /**
+     * Disable the optional hotel setting. This field is currently supported
+     * only for Demand Gen campaigns.
+     *
+     * Generated from protobuf field <code>optional bool disable_hotel_setting = 3;</code>
+     */
+    protected $disable_hotel_setting = null;
 
     /**
      * Constructor.
@@ -29,7 +36,10 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $hotel_center_id
-     *           Immutable. The linked Hotel Center account.
+     *           The linked Hotel Center account.
+     *     @type bool $disable_hotel_setting
+     *           Disable the optional hotel setting. This field is currently supported
+     *           only for Demand Gen campaigns.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +48,9 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The linked Hotel Center account.
+     * The linked Hotel Center account.
      *
-     * Generated from protobuf field <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 hotel_center_id = 2;</code>
      * @return int|string
      */
     public function getHotelCenterId()
@@ -59,9 +69,9 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The linked Hotel Center account.
+     * The linked Hotel Center account.
      *
-     * Generated from protobuf field <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 hotel_center_id = 2;</code>
      * @param int|string $var
      * @return $this
      */
@@ -73,8 +83,43 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
-}
+    /**
+     * Disable the optional hotel setting. This field is currently supported
+     * only for Demand Gen campaigns.
+     *
+     * Generated from protobuf field <code>optional bool disable_hotel_setting = 3;</code>
+     * @return bool
+     */
+    public function getDisableHotelSetting()
+    {
+        return isset($this->disable_hotel_setting) ? $this->disable_hotel_setting : false;
+    }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(HotelSettingInfo::class, \Google\Ads\GoogleAds\V23\Resources\Campaign_HotelSettingInfo::class);
+    public function hasDisableHotelSetting()
+    {
+        return isset($this->disable_hotel_setting);
+    }
+
+    public function clearDisableHotelSetting()
+    {
+        unset($this->disable_hotel_setting);
+    }
+
+    /**
+     * Disable the optional hotel setting. This field is currently supported
+     * only for Demand Gen campaigns.
+     *
+     * Generated from protobuf field <code>optional bool disable_hotel_setting = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDisableHotelSetting($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->disable_hotel_setting = $var;
+
+        return $this;
+    }
+
+}
 

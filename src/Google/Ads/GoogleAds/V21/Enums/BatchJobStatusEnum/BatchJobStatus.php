@@ -73,6 +73,3 @@ class BatchJobStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BatchJobStatus::class, \Google\Ads\GoogleAds\V21\Enums\BatchJobStatusEnum_BatchJobStatus::class);
-

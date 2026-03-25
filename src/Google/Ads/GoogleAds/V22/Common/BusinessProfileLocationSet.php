@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Data used to configure a location set populated from Google Business Profile
@@ -84,13 +84,13 @@ class BusinessProfileLocationSet extends \Google\Protobuf\Internal\Message
      *           Used to filter Google Business Profile listings by business name. If
      *           businessNameFilter is set, only listings with a matching business name are
      *           candidates to be sync'd into Assets.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $label_filters
+     *     @type string[] $label_filters
      *           Used to filter Google Business Profile listings by labels. If entries exist
      *           in labelFilters, only listings that have any of the labels set are
      *           candidates to be synchronized into Assets. If no entries exist in
      *           labelFilters, then all listings are candidates for syncing.
      *           Label filters are OR'ed together.
-     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $listing_id_filters
+     *     @type int[]|string[] $listing_id_filters
      *           Used to filter Google Business Profile listings by listing id. If entries
      *           exist in listingIdFilters, only listings specified by the filters are
      *           candidates to be synchronized into Assets. If no entries exist in
@@ -201,7 +201,7 @@ class BusinessProfileLocationSet extends \Google\Protobuf\Internal\Message
      * Label filters are OR'ed together.
      *
      * Generated from protobuf field <code>repeated string label_filters = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLabelFilters()
     {
@@ -216,7 +216,7 @@ class BusinessProfileLocationSet extends \Google\Protobuf\Internal\Message
      * Label filters are OR'ed together.
      *
      * Generated from protobuf field <code>repeated string label_filters = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLabelFilters($var)
@@ -235,7 +235,7 @@ class BusinessProfileLocationSet extends \Google\Protobuf\Internal\Message
      * Listing ID filters are OR'ed together.
      *
      * Generated from protobuf field <code>repeated int64 listing_id_filters = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>|RepeatedField<string>
      */
     public function getListingIdFilters()
     {
@@ -250,7 +250,7 @@ class BusinessProfileLocationSet extends \Google\Protobuf\Internal\Message
      * Listing ID filters are OR'ed together.
      *
      * Generated from protobuf field <code>repeated int64 listing_id_filters = 5;</code>
-     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[]|string[] $var
      * @return $this
      */
     public function setListingIdFilters($var)

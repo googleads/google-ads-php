@@ -138,6 +138,3 @@ class ConversionActionError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionActionError::class, \Google\Ads\GoogleAds\V22\Errors\ConversionActionErrorEnum_ConversionActionError::class);
-

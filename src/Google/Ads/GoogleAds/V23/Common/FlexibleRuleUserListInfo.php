@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Flexible rule representation of visitors with one or multiple actions. The
@@ -52,11 +52,11 @@ class FlexibleRuleUserListInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type int $inclusive_rule_operator
      *           Operator that defines how the inclusive operands are combined.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\FlexibleRuleOperandInfo>|\Google\Protobuf\Internal\RepeatedField $inclusive_operands
+     *     @type \Google\Ads\GoogleAds\V23\Common\FlexibleRuleOperandInfo[] $inclusive_operands
      *           Rules representing users that should be included in the user list. These
      *           are located on the left side of the AND_NOT operator, and joined together
      *           by either AND/OR as specified by the inclusive_rule_operator.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\FlexibleRuleOperandInfo>|\Google\Protobuf\Internal\RepeatedField $exclusive_operands
+     *     @type \Google\Ads\GoogleAds\V23\Common\FlexibleRuleOperandInfo[] $exclusive_operands
      *           Rules representing users that should be excluded from the user list. These
      *           are located on the right side of the AND_NOT operator, and joined together
      *           by OR.
@@ -99,7 +99,7 @@ class FlexibleRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * by either AND/OR as specified by the inclusive_rule_operator.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.FlexibleRuleOperandInfo inclusive_operands = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\FlexibleRuleOperandInfo>
      */
     public function getInclusiveOperands()
     {
@@ -112,7 +112,7 @@ class FlexibleRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * by either AND/OR as specified by the inclusive_rule_operator.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.FlexibleRuleOperandInfo inclusive_operands = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\FlexibleRuleOperandInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\FlexibleRuleOperandInfo[] $var
      * @return $this
      */
     public function setInclusiveOperands($var)
@@ -129,7 +129,7 @@ class FlexibleRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * by OR.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.FlexibleRuleOperandInfo exclusive_operands = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\FlexibleRuleOperandInfo>
      */
     public function getExclusiveOperands()
     {
@@ -142,7 +142,7 @@ class FlexibleRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * by OR.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.FlexibleRuleOperandInfo exclusive_operands = 3;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\FlexibleRuleOperandInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\FlexibleRuleOperandInfo[] $var
      * @return $this
      */
     public function setExclusiveOperands($var)

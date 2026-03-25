@@ -40,7 +40,7 @@ class YouTubeVideoUploadServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\CreateYouTubeVideoUploadRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\CreateYouTubeVideoUploadResponse>
      */
     public function CreateYouTubeVideoUpload(\Google\Ads\GoogleAds\V23\Services\CreateYouTubeVideoUploadRequest $argument,
       $metadata = [], $options = []) {
@@ -56,7 +56,7 @@ class YouTubeVideoUploadServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\UpdateYouTubeVideoUploadRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\UpdateYouTubeVideoUploadResponse>
      */
     public function UpdateYouTubeVideoUpload(\Google\Ads\GoogleAds\V23\Services\UpdateYouTubeVideoUploadRequest $argument,
       $metadata = [], $options = []) {
@@ -71,7 +71,7 @@ class YouTubeVideoUploadServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\RemoveYouTubeVideoUploadRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\RemoveYouTubeVideoUploadResponse>
      */
     public function RemoveYouTubeVideoUpload(\Google\Ads\GoogleAds\V23\Services\RemoveYouTubeVideoUploadRequest $argument,
       $metadata = [], $options = []) {

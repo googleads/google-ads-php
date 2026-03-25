@@ -77,6 +77,3 @@ class SeasonalityEventScope
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SeasonalityEventScope::class, \Google\Ads\GoogleAds\V21\Enums\SeasonalityEventScopeEnum_SeasonalityEventScope::class);
-

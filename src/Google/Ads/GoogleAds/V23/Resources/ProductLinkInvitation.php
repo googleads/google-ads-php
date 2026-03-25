@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents an invitation for data sharing connection between a Google Ads
@@ -41,7 +41,7 @@ class ProductLinkInvitation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The type of the invited account.
      * This field is read only and can be used for filtering invitations with
-     * {&#64;code GoogleAdsService.SearchGoogleAdsRequest}.
+     * {\@code GoogleAdsService.SearchGoogleAdsRequest}.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.enums.LinkedProductTypeEnum.LinkedProductType type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -68,7 +68,7 @@ class ProductLinkInvitation extends \Google\Protobuf\Internal\Message
      *     @type int $type
      *           Output only. The type of the invited account.
      *           This field is read only and can be used for filtering invitations with
-     *           {&#64;code GoogleAdsService.SearchGoogleAdsRequest}.
+     *           {\@code GoogleAdsService.SearchGoogleAdsRequest}.
      *     @type \Google\Ads\GoogleAds\V23\Resources\HotelCenterLinkInvitationIdentifier $hotel_center
      *           Output only. Hotel link invitation.
      *     @type \Google\Ads\GoogleAds\V23\Resources\MerchantCenterLinkInvitationIdentifier $merchant_center
@@ -175,7 +175,7 @@ class ProductLinkInvitation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The type of the invited account.
      * This field is read only and can be used for filtering invitations with
-     * {&#64;code GoogleAdsService.SearchGoogleAdsRequest}.
+     * {\@code GoogleAdsService.SearchGoogleAdsRequest}.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.enums.LinkedProductTypeEnum.LinkedProductType type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
@@ -188,7 +188,7 @@ class ProductLinkInvitation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The type of the invited account.
      * This field is read only and can be used for filtering invitations with
-     * {&#64;code GoogleAdsService.SearchGoogleAdsRequest}.
+     * {\@code GoogleAdsService.SearchGoogleAdsRequest}.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.enums.LinkedProductTypeEnum.LinkedProductType type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var

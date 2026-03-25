@@ -13,17 +13,10 @@ class ProductGroupView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
-            '
-ä
-;google/ads/googleads/v21/resources/product_group_view.proto"google.ads.googleads.v21.resourcesgoogle/api/resource.proto"Ó
-ProductGroupViewH
-resource_name (	B1àAúA+
-)googleads.googleapis.com/ProductGroupView:uêAr
-)googleads.googleapis.com/ProductGroupViewEcustomers/{customer_id}/productGroupViews/{adgroup_id}~{criterion_id}B‡
-&com.google.ads.googleads.v21.resourcesBProductGroupViewProtoPZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources¢GAAª"Google.Ads.GoogleAds.V21.ResourcesÊ"Google\\Ads\\GoogleAds\\V21\\Resourcesê&Google::Ads::GoogleAds::V21::Resourcesbproto3'
+            "\x0A\xE4\x04\x0A;google/ads/googleads/v21/resources/product_group_view.proto\x12\"google.ads.googleads.v21.resources\x1A\x19google/api/resource.proto\"\xD3\x01\x0A\x10ProductGroupView\x12H\x0A\x0Dresource_name\x18\x01 \x01(\x09B1\xE0A\x03\xFAA+\x0A)googleads.googleapis.com/ProductGroupView:u\xEAAr\x0A)googleads.googleapis.com/ProductGroupView\x12Ecustomers/{customer_id}/productGroupViews/{adgroup_id}~{criterion_id}B\x87\x02\x0A&com.google.ads.googleads.v21.resourcesB\x15ProductGroupViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V21.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V21\\Resources\xEA\x02&Google::Ads::GoogleAds::V21::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

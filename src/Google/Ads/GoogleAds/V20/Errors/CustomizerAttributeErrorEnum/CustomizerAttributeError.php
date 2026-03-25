@@ -60,6 +60,3 @@ class CustomizerAttributeError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomizerAttributeError::class, \Google\Ads\GoogleAds\V20\Errors\CustomizerAttributeErrorEnum_CustomizerAttributeError::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class SuggestTravelAssetsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\HotelAssetSuggestion>|\Google\Protobuf\Internal\RepeatedField $hotel_asset_suggestions
+     *     @type \Google\Ads\GoogleAds\V21\Services\HotelAssetSuggestion[] $hotel_asset_suggestions
      *           Asset suggestions for each place ID submitted in the request.
      * }
      */
@@ -42,7 +42,7 @@ class SuggestTravelAssetsResponse extends \Google\Protobuf\Internal\Message
      * Asset suggestions for each place ID submitted in the request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.HotelAssetSuggestion hotel_asset_suggestions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\HotelAssetSuggestion>
      */
     public function getHotelAssetSuggestions()
     {
@@ -53,7 +53,7 @@ class SuggestTravelAssetsResponse extends \Google\Protobuf\Internal\Message
      * Asset suggestions for each place ID submitted in the request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.HotelAssetSuggestion hotel_asset_suggestions = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\HotelAssetSuggestion>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\HotelAssetSuggestion[] $var
      * @return $this
      */
     public function setHotelAssetSuggestions($var)

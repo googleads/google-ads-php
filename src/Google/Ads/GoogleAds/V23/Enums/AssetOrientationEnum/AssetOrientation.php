@@ -73,6 +73,3 @@ class AssetOrientation
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetOrientation::class, \Google\Ads\GoogleAds\V23\Enums\AssetOrientationEnum_AssetOrientation::class);
-

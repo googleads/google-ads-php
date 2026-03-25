@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Settings for Local Services customer.
@@ -34,9 +34,9 @@ class LocalServicesSettings extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Resources\GranularLicenseStatus>|\Google\Protobuf\Internal\RepeatedField $granular_license_statuses
+     *     @type \Google\Ads\GoogleAds\V21\Resources\GranularLicenseStatus[] $granular_license_statuses
      *           Output only. A read-only list of geo vertical level license statuses.
-     *     @type array<\Google\Ads\GoogleAds\V21\Resources\GranularInsuranceStatus>|\Google\Protobuf\Internal\RepeatedField $granular_insurance_statuses
+     *     @type \Google\Ads\GoogleAds\V21\Resources\GranularInsuranceStatus[] $granular_insurance_statuses
      *           Output only. A read-only list of geo vertical level insurance statuses.
      * }
      */
@@ -49,7 +49,7 @@ class LocalServicesSettings extends \Google\Protobuf\Internal\Message
      * Output only. A read-only list of geo vertical level license statuses.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.GranularLicenseStatus granular_license_statuses = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Resources\GranularLicenseStatus>
      */
     public function getGranularLicenseStatuses()
     {
@@ -60,7 +60,7 @@ class LocalServicesSettings extends \Google\Protobuf\Internal\Message
      * Output only. A read-only list of geo vertical level license statuses.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.GranularLicenseStatus granular_license_statuses = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Resources\GranularLicenseStatus>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Resources\GranularLicenseStatus[] $var
      * @return $this
      */
     public function setGranularLicenseStatuses($var)
@@ -75,7 +75,7 @@ class LocalServicesSettings extends \Google\Protobuf\Internal\Message
      * Output only. A read-only list of geo vertical level insurance statuses.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.GranularInsuranceStatus granular_insurance_statuses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Resources\GranularInsuranceStatus>
      */
     public function getGranularInsuranceStatuses()
     {
@@ -86,7 +86,7 @@ class LocalServicesSettings extends \Google\Protobuf\Internal\Message
      * Output only. A read-only list of geo vertical level insurance statuses.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.GranularInsuranceStatus granular_insurance_statuses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Resources\GranularInsuranceStatus>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Resources\GranularInsuranceStatus[] $var
      * @return $this
      */
     public function setGranularInsuranceStatuses($var)

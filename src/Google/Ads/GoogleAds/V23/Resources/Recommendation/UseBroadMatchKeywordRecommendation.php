@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The use broad match keyword recommendation.
@@ -54,7 +54,7 @@ class UseBroadMatchKeywordRecommendation extends \Google\Protobuf\Internal\Messa
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\KeywordInfo>|\Google\Protobuf\Internal\RepeatedField $keyword
+     *     @type \Google\Ads\GoogleAds\V23\Common\KeywordInfo[] $keyword
      *           Output only. Sample of keywords to be expanded to Broad Match.
      *     @type int|string $suggested_keywords_count
      *           Output only. Total number of keywords to be expanded to Broad Match in
@@ -77,7 +77,7 @@ class UseBroadMatchKeywordRecommendation extends \Google\Protobuf\Internal\Messa
      * Output only. Sample of keywords to be expanded to Broad Match.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\KeywordInfo>
      */
     public function getKeyword()
     {
@@ -88,7 +88,7 @@ class UseBroadMatchKeywordRecommendation extends \Google\Protobuf\Internal\Messa
      * Output only. Sample of keywords to be expanded to Broad Match.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\KeywordInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\KeywordInfo[] $var
      * @return $this
      */
     public function setKeyword($var)
@@ -208,7 +208,4 @@ class UseBroadMatchKeywordRecommendation extends \Google\Protobuf\Internal\Messa
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(UseBroadMatchKeywordRecommendation::class, \Google\Ads\GoogleAds\V23\Resources\Recommendation_UseBroadMatchKeywordRecommendation::class);
 

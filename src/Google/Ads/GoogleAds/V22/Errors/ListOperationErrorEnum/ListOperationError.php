@@ -66,6 +66,3 @@ class ListOperationError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListOperationError::class, \Google\Ads\GoogleAds\V22\Errors\ListOperationErrorEnum_ListOperationError::class);
-

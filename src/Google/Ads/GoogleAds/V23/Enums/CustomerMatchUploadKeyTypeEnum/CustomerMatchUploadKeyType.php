@@ -75,6 +75,3 @@ class CustomerMatchUploadKeyType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomerMatchUploadKeyType::class, \Google\Ads\GoogleAds\V23\Enums\CustomerMatchUploadKeyTypeEnum_CustomerMatchUploadKeyType::class);
-

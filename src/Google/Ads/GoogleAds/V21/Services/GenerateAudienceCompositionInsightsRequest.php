@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -105,7 +105,7 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      *           The one-month range of historical data to use for insights, in the format
      *           "yyyy-mm". If unset, insights will be returned for the last thirty days of
      *           data.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $dimensions
+     *     @type int[] $dimensions
      *           Required. The audience dimensions for which composition insights should be
      *           returned. Supported dimensions are KNOWLEDGE_GRAPH, GEO_TARGET_COUNTRY,
      *           SUB_COUNTRY_LOCATION, YOUTUBE_CHANNEL, YOUTUBE_LINEUP,
@@ -260,7 +260,7 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      * INCOME_RANGE, AGE_RANGE, and GENDER.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getDimensions()
     {
@@ -275,7 +275,7 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      * INCOME_RANGE, AGE_RANGE, and GENDER.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setDimensions($var)

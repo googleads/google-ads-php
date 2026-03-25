@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An app ad.
@@ -68,17 +68,17 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Ads\GoogleAds\V20\Common\AdTextAsset $mandatory_ad_text
      *           Mandatory ad text.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type \Google\Ads\GoogleAds\V20\Common\AdTextAsset[] $headlines
      *           List of text assets for headlines. When the ad serves the headlines will
      *           be selected from this list.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type \Google\Ads\GoogleAds\V20\Common\AdTextAsset[] $descriptions
      *           List of text assets for descriptions. When the ad serves the descriptions
      *           will be selected from this list.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $images
+     *     @type \Google\Ads\GoogleAds\V20\Common\AdImageAsset[] $images
      *           List of image assets that may be displayed with the ad.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $youtube_videos
+     *     @type \Google\Ads\GoogleAds\V20\Common\AdVideoAsset[] $youtube_videos
      *           List of YouTube video assets that may be displayed with the ad.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AdMediaBundleAsset>|\Google\Protobuf\Internal\RepeatedField $html5_media_bundles
+     *     @type \Google\Ads\GoogleAds\V20\Common\AdMediaBundleAsset[] $html5_media_bundles
      *           List of media bundle assets that may be used with the ad.
      *     @type \Google\Ads\GoogleAds\V20\Common\AdAppDeepLinkAsset $app_deep_link
      *           An app deep link asset that may be used with the ad.
@@ -130,7 +130,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      * be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AdTextAsset headlines = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AdTextAsset>
      */
     public function getHeadlines()
     {
@@ -142,7 +142,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      * be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AdTextAsset headlines = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -158,7 +158,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      * will be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AdTextAsset descriptions = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AdTextAsset>
      */
     public function getDescriptions()
     {
@@ -170,7 +170,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      * will be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AdTextAsset descriptions = 3;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setDescriptions($var)
@@ -185,7 +185,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      * List of image assets that may be displayed with the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AdImageAsset images = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AdImageAsset>
      */
     public function getImages()
     {
@@ -196,7 +196,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      * List of image assets that may be displayed with the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AdImageAsset images = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setImages($var)
@@ -211,7 +211,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      * List of YouTube video assets that may be displayed with the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AdVideoAsset youtube_videos = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AdVideoAsset>
      */
     public function getYoutubeVideos()
     {
@@ -222,7 +222,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      * List of YouTube video assets that may be displayed with the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AdVideoAsset youtube_videos = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AdVideoAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AdVideoAsset[] $var
      * @return $this
      */
     public function setYoutubeVideos($var)
@@ -237,7 +237,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      * List of media bundle assets that may be used with the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AdMediaBundleAsset html5_media_bundles = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AdMediaBundleAsset>
      */
     public function getHtml5MediaBundles()
     {
@@ -248,7 +248,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      * List of media bundle assets that may be used with the ad.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AdMediaBundleAsset html5_media_bundles = 6;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AdMediaBundleAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AdMediaBundleAsset[] $var
      * @return $this
      */
     public function setHtml5MediaBundles($var)

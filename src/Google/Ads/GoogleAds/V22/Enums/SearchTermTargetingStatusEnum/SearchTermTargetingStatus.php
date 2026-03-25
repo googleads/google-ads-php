@@ -81,6 +81,3 @@ class SearchTermTargetingStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SearchTermTargetingStatus::class, \Google\Ads\GoogleAds\V22\Enums\SearchTermTargetingStatusEnum_SearchTermTargetingStatus::class);
-

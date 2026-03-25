@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -32,7 +32,7 @@ class GenerateConversionRatesResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\ConversionRateSuggestion>|\Google\Protobuf\Internal\RepeatedField $conversion_rate_suggestions
+     *     @type \Google\Ads\GoogleAds\V20\Services\ConversionRateSuggestion[] $conversion_rate_suggestions
      *           A list containing conversion rate suggestions. Each repeated element will
      *           have an associated product code. Multiple suggestions may share the same
      *           product code.
@@ -49,7 +49,7 @@ class GenerateConversionRatesResponse extends \Google\Protobuf\Internal\Message
      * product code.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.ConversionRateSuggestion conversion_rate_suggestions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\ConversionRateSuggestion>
      */
     public function getConversionRateSuggestions()
     {
@@ -62,7 +62,7 @@ class GenerateConversionRatesResponse extends \Google\Protobuf\Internal\Message
      * product code.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.ConversionRateSuggestion conversion_rate_suggestions = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\ConversionRateSuggestion>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\ConversionRateSuggestion[] $var
      * @return $this
      */
     public function setConversionRateSuggestions($var)

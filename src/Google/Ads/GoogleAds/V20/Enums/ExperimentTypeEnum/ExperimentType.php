@@ -122,6 +122,3 @@ class ExperimentType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ExperimentType::class, \Google\Ads\GoogleAds\V20\Enums\ExperimentTypeEnum_ExperimentType::class);
-

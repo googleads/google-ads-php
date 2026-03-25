@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Defines a Google conversion event that the conversion value is mapped to.
@@ -252,7 +252,4 @@ class Event extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Event::class, \Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event::class);
 

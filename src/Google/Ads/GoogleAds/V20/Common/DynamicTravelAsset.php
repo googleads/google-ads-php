@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A dynamic travel asset.
@@ -170,9 +170,9 @@ class DynamicTravelAsset extends \Google\Protobuf\Internal\Message
      *           will be used instead of 'sale price', for example, On sale for $80.00.
      *     @type string $category
      *           Category, for example, Express.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
+     *     @type string[] $contextual_keywords
      *           Contextual keywords, for example, Paris trains.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_destination_ids
+     *     @type string[] $similar_destination_ids
      *           Similar destination IDs, for example, NYC.
      *     @type string $image_url
      *           Image URL, for example, http://www.example.com/image.png. The image will
@@ -503,7 +503,7 @@ class DynamicTravelAsset extends \Google\Protobuf\Internal\Message
      * Contextual keywords, for example, Paris trains.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 12;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getContextualKeywords()
     {
@@ -514,7 +514,7 @@ class DynamicTravelAsset extends \Google\Protobuf\Internal\Message
      * Contextual keywords, for example, Paris trains.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 12;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setContextualKeywords($var)
@@ -529,7 +529,7 @@ class DynamicTravelAsset extends \Google\Protobuf\Internal\Message
      * Similar destination IDs, for example, NYC.
      *
      * Generated from protobuf field <code>repeated string similar_destination_ids = 13;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSimilarDestinationIds()
     {
@@ -540,7 +540,7 @@ class DynamicTravelAsset extends \Google\Protobuf\Internal\Message
      * Similar destination IDs, for example, NYC.
      *
      * Generated from protobuf field <code>repeated string similar_destination_ids = 13;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSimilarDestinationIds($var)

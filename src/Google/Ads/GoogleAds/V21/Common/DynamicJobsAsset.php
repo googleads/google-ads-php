@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A dynamic jobs asset.
@@ -132,7 +132,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
      *           not be uploaded as image asset.
      *     @type string $job_category
      *           Job category, for example, Technical.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
+     *     @type string[] $contextual_keywords
      *           Contextual keywords, for example, Software engineering job.
      *     @type string $address
      *           Address which can be specified in one of the following formats.
@@ -144,7 +144,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
      *     @type string $android_app_link
      *           Android deep link, for example,
      *           android-app://com.example.android/http/example.com/gizmos?1234.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_job_ids
+     *     @type string[] $similar_job_ids
      *           Similar job IDs, for example, 1275.
      *     @type string $ios_app_link
      *           iOS deep link, for example, exampleApp://content/page.
@@ -351,7 +351,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
      * Contextual keywords, for example, Software engineering job.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getContextualKeywords()
     {
@@ -362,7 +362,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
      * Contextual keywords, for example, Software engineering job.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 8;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setContextualKeywords($var)
@@ -463,7 +463,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
      * Similar job IDs, for example, 1275.
      *
      * Generated from protobuf field <code>repeated string similar_job_ids = 12;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSimilarJobIds()
     {
@@ -474,7 +474,7 @@ class DynamicJobsAsset extends \Google\Protobuf\Internal\Message
      * Similar job IDs, for example, 1275.
      *
      * Generated from protobuf field <code>repeated string similar_job_ids = 12;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSimilarJobIds($var)

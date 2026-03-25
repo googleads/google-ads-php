@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Errors;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Describes how a GoogleAds API call failed. It's returned inside
@@ -35,7 +35,7 @@ class GoogleAdsFailure extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Errors\GoogleAdsError>|\Google\Protobuf\Internal\RepeatedField $errors
+     *     @type \Google\Ads\GoogleAds\V20\Errors\GoogleAdsError[] $errors
      *           The list of errors that occurred.
      *     @type string $request_id
      *           The unique ID of the request that is used for debugging purposes.
@@ -50,7 +50,7 @@ class GoogleAdsFailure extends \Google\Protobuf\Internal\Message
      * The list of errors that occurred.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.errors.GoogleAdsError errors = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Errors\GoogleAdsError>
      */
     public function getErrors()
     {
@@ -61,7 +61,7 @@ class GoogleAdsFailure extends \Google\Protobuf\Internal\Message
      * The list of errors that occurred.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.errors.GoogleAdsError errors = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Errors\GoogleAdsError>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Errors\GoogleAdsError[] $var
      * @return $this
      */
     public function setErrors($var)

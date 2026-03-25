@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The keyword match type recommendation.
@@ -112,7 +112,4 @@ class KeywordMatchTypeRecommendation extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(KeywordMatchTypeRecommendation::class, \Google\Ads\GoogleAds\V20\Resources\Recommendation_KeywordMatchTypeRecommendation::class);
 

@@ -56,7 +56,7 @@ class KeywordPlanCampaignKeywordServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateKeywordPlanCampaignKeywordsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateKeywordPlanCampaignKeywordsResponse>
      */
     public function MutateKeywordPlanCampaignKeywords(\Google\Ads\GoogleAds\V22\Services\MutateKeywordPlanCampaignKeywordsRequest $argument,
       $metadata = [], $options = []) {

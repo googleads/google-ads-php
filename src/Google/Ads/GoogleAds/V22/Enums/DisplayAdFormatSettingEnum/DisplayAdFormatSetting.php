@@ -74,6 +74,3 @@ class DisplayAdFormatSetting
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DisplayAdFormatSetting::class, \Google\Ads\GoogleAds\V22\Enums\DisplayAdFormatSettingEnum_DisplayAdFormatSetting::class);
-

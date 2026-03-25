@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A responsive search ad.
@@ -57,10 +57,10 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $headlines
      *           List of text assets for headlines. When the ad serves the headlines will
      *           be selected from this list.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $descriptions
      *           List of text assets for descriptions. When the ad serves the descriptions
      *           will be selected from this list.
      *     @type string $path1
@@ -80,7 +80,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset headlines = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>
      */
     public function getHeadlines()
     {
@@ -92,7 +92,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset headlines = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -108,7 +108,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * will be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset descriptions = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>
      */
     public function getDescriptions()
     {
@@ -120,7 +120,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * will be selected from this list.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset descriptions = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setDescriptions($var)

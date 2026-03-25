@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -61,7 +61,7 @@ class GenerateTextRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer to generate assets for. Required.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $asset_field_types
+     *     @type int[] $asset_field_types
      *           Required. Which field types text is being generated for. Supported values
      *           are: HEADLINE, LONG_HEADLINE, DESCRIPTION. Required.
      *     @type string $final_url
@@ -71,7 +71,7 @@ class GenerateTextRequest extends \Google\Protobuf\Internal\Message
      *     @type string $freeform_prompt
      *           Optional. A freeform description of what assets should be generated.
      *           The string length must be between 1 and 1500, inclusive.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keywords
+     *     @type string[] $keywords
      *           Optional. A freeform list of keywords that are relevant,
      *           used to inform asset generation.
      *     @type \Google\Ads\GoogleAds\V22\Services\AssetGenerationExistingContext $existing_generation_context
@@ -120,7 +120,7 @@ class GenerateTextRequest extends \Google\Protobuf\Internal\Message
      * are: HEADLINE, LONG_HEADLINE, DESCRIPTION. Required.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.AssetFieldTypeEnum.AssetFieldType asset_field_types = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getAssetFieldTypes()
     {
@@ -132,7 +132,7 @@ class GenerateTextRequest extends \Google\Protobuf\Internal\Message
      * are: HEADLINE, LONG_HEADLINE, DESCRIPTION. Required.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.AssetFieldTypeEnum.AssetFieldType asset_field_types = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setAssetFieldTypes($var)
@@ -206,7 +206,7 @@ class GenerateTextRequest extends \Google\Protobuf\Internal\Message
      * used to inform asset generation.
      *
      * Generated from protobuf field <code>repeated string keywords = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getKeywords()
     {
@@ -218,7 +218,7 @@ class GenerateTextRequest extends \Google\Protobuf\Internal\Message
      * used to inform asset generation.
      *
      * Generated from protobuf field <code>repeated string keywords = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setKeywords($var)

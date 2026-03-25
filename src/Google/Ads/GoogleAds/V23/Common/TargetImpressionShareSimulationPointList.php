@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A container for simulation points for simulations of type
@@ -29,7 +29,7 @@ class TargetImpressionShareSimulationPointList extends \Google\Protobuf\Internal
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\TargetImpressionShareSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $points
+     *     @type \Google\Ads\GoogleAds\V23\Common\TargetImpressionShareSimulationPoint[] $points
      *           Projected metrics for a specific target impression share value.
      * }
      */
@@ -42,7 +42,7 @@ class TargetImpressionShareSimulationPointList extends \Google\Protobuf\Internal
      * Projected metrics for a specific target impression share value.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.TargetImpressionShareSimulationPoint points = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\TargetImpressionShareSimulationPoint>
      */
     public function getPoints()
     {
@@ -53,7 +53,7 @@ class TargetImpressionShareSimulationPointList extends \Google\Protobuf\Internal
      * Projected metrics for a specific target impression share value.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.TargetImpressionShareSimulationPoint points = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\TargetImpressionShareSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\TargetImpressionShareSimulationPoint[] $var
      * @return $this
      */
     public function setPoints($var)

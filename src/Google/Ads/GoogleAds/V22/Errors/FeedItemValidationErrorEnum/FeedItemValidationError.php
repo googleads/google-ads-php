@@ -805,6 +805,3 @@ class FeedItemValidationError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(FeedItemValidationError::class, \Google\Ads\GoogleAds\V22\Errors\FeedItemValidationErrorEnum_FeedItemValidationError::class);
-

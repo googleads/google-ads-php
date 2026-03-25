@@ -74,6 +74,3 @@ class SkAdNetworkAdEventType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SkAdNetworkAdEventType::class, \Google\Ads\GoogleAds\V22\Enums\SkAdNetworkAdEventTypeEnum_SkAdNetworkAdEventType::class);
-

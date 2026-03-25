@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Asset group asset combination data
@@ -28,7 +28,7 @@ class AssetGroupAssetCombinationData extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AssetUsage>|\Google\Protobuf\Internal\RepeatedField $asset_combination_served_assets
+     *     @type \Google\Ads\GoogleAds\V21\Common\AssetUsage[] $asset_combination_served_assets
      *           Output only. Served assets.
      * }
      */
@@ -41,7 +41,7 @@ class AssetGroupAssetCombinationData extends \Google\Protobuf\Internal\Message
      * Output only. Served assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AssetUsage asset_combination_served_assets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AssetUsage>
      */
     public function getAssetCombinationServedAssets()
     {
@@ -52,7 +52,7 @@ class AssetGroupAssetCombinationData extends \Google\Protobuf\Internal\Message
      * Output only. Served assets.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AssetUsage asset_combination_served_assets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AssetUsage>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AssetUsage[] $var
      * @return $this
      */
     public function setAssetCombinationServedAssets($var)

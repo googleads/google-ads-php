@@ -59,6 +59,3 @@ class SharedCriterionError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SharedCriterionError::class, \Google\Ads\GoogleAds\V23\Errors\SharedCriterionErrorEnum_SharedCriterionError::class);
-

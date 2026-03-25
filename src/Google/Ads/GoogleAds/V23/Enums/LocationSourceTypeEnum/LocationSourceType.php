@@ -66,6 +66,3 @@ class LocationSourceType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LocationSourceType::class, \Google\Ads\GoogleAds\V23\Enums\LocationSourceTypeEnum_LocationSourceType::class);
-

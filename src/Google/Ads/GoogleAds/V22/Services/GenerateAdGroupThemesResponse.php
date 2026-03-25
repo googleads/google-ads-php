@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -35,9 +35,9 @@ class GenerateAdGroupThemesResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\AdGroupKeywordSuggestion>|\Google\Protobuf\Internal\RepeatedField $ad_group_keyword_suggestions
+     *     @type \Google\Ads\GoogleAds\V22\Services\AdGroupKeywordSuggestion[] $ad_group_keyword_suggestions
      *           A list of suggested AdGroup/keyword pairings.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\UnusableAdGroup>|\Google\Protobuf\Internal\RepeatedField $unusable_ad_groups
+     *     @type \Google\Ads\GoogleAds\V22\Services\UnusableAdGroup[] $unusable_ad_groups
      *           A list of provided AdGroups that could not be used as suggestions.
      * }
      */
@@ -50,7 +50,7 @@ class GenerateAdGroupThemesResponse extends \Google\Protobuf\Internal\Message
      * A list of suggested AdGroup/keyword pairings.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.AdGroupKeywordSuggestion ad_group_keyword_suggestions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\AdGroupKeywordSuggestion>
      */
     public function getAdGroupKeywordSuggestions()
     {
@@ -61,7 +61,7 @@ class GenerateAdGroupThemesResponse extends \Google\Protobuf\Internal\Message
      * A list of suggested AdGroup/keyword pairings.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.AdGroupKeywordSuggestion ad_group_keyword_suggestions = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\AdGroupKeywordSuggestion>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\AdGroupKeywordSuggestion[] $var
      * @return $this
      */
     public function setAdGroupKeywordSuggestions($var)
@@ -76,7 +76,7 @@ class GenerateAdGroupThemesResponse extends \Google\Protobuf\Internal\Message
      * A list of provided AdGroups that could not be used as suggestions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.UnusableAdGroup unusable_ad_groups = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\UnusableAdGroup>
      */
     public function getUnusableAdGroups()
     {
@@ -87,7 +87,7 @@ class GenerateAdGroupThemesResponse extends \Google\Protobuf\Internal\Message
      * A list of provided AdGroups that could not be used as suggestions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.UnusableAdGroup unusable_ad_groups = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\UnusableAdGroup>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\UnusableAdGroup[] $var
      * @return $this
      */
     public function setUnusableAdGroups($var)

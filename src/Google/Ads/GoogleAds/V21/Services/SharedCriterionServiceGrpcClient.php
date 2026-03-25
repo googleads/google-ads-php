@@ -61,7 +61,7 @@ class SharedCriterionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\MutateSharedCriteriaRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\MutateSharedCriteriaResponse>
      */
     public function MutateSharedCriteria(\Google\Ads\GoogleAds\V21\Services\MutateSharedCriteriaRequest $argument,
       $metadata = [], $options = []) {

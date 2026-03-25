@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A listing scope criterion.
@@ -28,7 +28,7 @@ class ListingScopeInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\ListingDimensionInfo>|\Google\Protobuf\Internal\RepeatedField $dimensions
+     *     @type \Google\Ads\GoogleAds\V23\Common\ListingDimensionInfo[] $dimensions
      *           Scope of the campaign criterion.
      * }
      */
@@ -41,7 +41,7 @@ class ListingScopeInfo extends \Google\Protobuf\Internal\Message
      * Scope of the campaign criterion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.ListingDimensionInfo dimensions = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\ListingDimensionInfo>
      */
     public function getDimensions()
     {
@@ -52,7 +52,7 @@ class ListingScopeInfo extends \Google\Protobuf\Internal\Message
      * Scope of the campaign criterion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.ListingDimensionInfo dimensions = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\ListingDimensionInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\ListingDimensionInfo[] $var
      * @return $this
      */
     public function setDimensions($var)

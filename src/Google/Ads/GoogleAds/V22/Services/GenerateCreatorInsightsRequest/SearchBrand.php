@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services\GenerateCreatorInsightsRequest;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The brand used to search for top creators.
@@ -39,7 +39,7 @@ class SearchBrand extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $brand_entities
+     *     @type \Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttribute[] $brand_entities
      *           Optional. One or more Knowledge Graph Entities that represent the brand
      *           for which to find insights.
      *     @type bool $include_related_topics
@@ -60,7 +60,7 @@ class SearchBrand extends \Google\Protobuf\Internal\Message
      * for which to find insights.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AudienceInsightsAttribute brand_entities = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttribute>
      */
     public function getBrandEntities()
     {
@@ -72,7 +72,7 @@ class SearchBrand extends \Google\Protobuf\Internal\Message
      * for which to find insights.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.AudienceInsightsAttribute brand_entities = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\AudienceInsightsAttribute[] $var
      * @return $this
      */
     public function setBrandEntities($var)
@@ -118,7 +118,4 @@ class SearchBrand extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SearchBrand::class, \Google\Ads\GoogleAds\V22\Services\GenerateCreatorInsightsRequest_SearchBrand::class);
 

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Audience targeting for reach forecast.
@@ -34,9 +34,9 @@ class AudienceTargeting extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\UserInterestInfo>|\Google\Protobuf\Internal\RepeatedField $user_interest
+     *     @type \Google\Ads\GoogleAds\V23\Common\UserInterestInfo[] $user_interest
      *           List of audiences based on user interests to be targeted.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\UserListInfo>|\Google\Protobuf\Internal\RepeatedField $user_lists
+     *     @type \Google\Ads\GoogleAds\V23\Common\UserListInfo[] $user_lists
      *           List of audiences based on user lists to be targeted.
      * }
      */
@@ -49,7 +49,7 @@ class AudienceTargeting extends \Google\Protobuf\Internal\Message
      * List of audiences based on user interests to be targeted.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.UserInterestInfo user_interest = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\UserInterestInfo>
      */
     public function getUserInterest()
     {
@@ -60,7 +60,7 @@ class AudienceTargeting extends \Google\Protobuf\Internal\Message
      * List of audiences based on user interests to be targeted.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.UserInterestInfo user_interest = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\UserInterestInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\UserInterestInfo[] $var
      * @return $this
      */
     public function setUserInterest($var)
@@ -75,7 +75,7 @@ class AudienceTargeting extends \Google\Protobuf\Internal\Message
      * List of audiences based on user lists to be targeted.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.UserListInfo user_lists = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\UserListInfo>
      */
     public function getUserLists()
     {
@@ -86,7 +86,7 @@ class AudienceTargeting extends \Google\Protobuf\Internal\Message
      * List of audiences based on user lists to be targeted.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.UserListInfo user_lists = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\UserListInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\UserListInfo[] $var
      * @return $this
      */
     public function setUserLists($var)

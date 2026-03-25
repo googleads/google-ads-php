@@ -172,6 +172,3 @@ class AdGroupType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdGroupType::class, \Google\Ads\GoogleAds\V23\Enums\AdGroupTypeEnum_AdGroupType::class);
-

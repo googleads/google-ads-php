@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A location asset.
@@ -55,7 +55,7 @@ class LocationAsset extends \Google\Protobuf\Internal\Message
      *           This field is unique for a given customer ID and asset type. See
      *           https://developers.google.com/places/web-service/place-id to learn more
      *           about Place ID.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\BusinessProfileLocation>|\Google\Protobuf\Internal\RepeatedField $business_profile_locations
+     *     @type \Google\Ads\GoogleAds\V21\Common\BusinessProfileLocation[] $business_profile_locations
      *           The list of business locations for the customer.
      *           This will only be returned if the Location Asset is syncing from the
      *           Business Profile account. It is possible to have multiple Business Profile
@@ -112,7 +112,7 @@ class LocationAsset extends \Google\Protobuf\Internal\Message
      * listings under the same account that point to the same Place ID.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.BusinessProfileLocation business_profile_locations = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\BusinessProfileLocation>
      */
     public function getBusinessProfileLocations()
     {
@@ -126,7 +126,7 @@ class LocationAsset extends \Google\Protobuf\Internal\Message
      * listings under the same account that point to the same Place ID.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.BusinessProfileLocation business_profile_locations = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\BusinessProfileLocation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\BusinessProfileLocation[] $var
      * @return $this
      */
     public function setBusinessProfileLocations($var)

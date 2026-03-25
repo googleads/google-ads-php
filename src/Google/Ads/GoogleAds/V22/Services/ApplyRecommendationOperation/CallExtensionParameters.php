@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services\ApplyRecommendationOperation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Parameters to use when applying call extension recommendation.
@@ -28,7 +28,7 @@ class CallExtensionParameters extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\CallFeedItem>|\Google\Protobuf\Internal\RepeatedField $call_extensions
+     *     @type \Google\Ads\GoogleAds\V22\Common\CallFeedItem[] $call_extensions
      *           Call extensions to be added. This is a required field.
      * }
      */
@@ -41,7 +41,7 @@ class CallExtensionParameters extends \Google\Protobuf\Internal\Message
      * Call extensions to be added. This is a required field.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.CallFeedItem call_extensions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\CallFeedItem>
      */
     public function getCallExtensions()
     {
@@ -52,7 +52,7 @@ class CallExtensionParameters extends \Google\Protobuf\Internal\Message
      * Call extensions to be added. This is a required field.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.CallFeedItem call_extensions = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\CallFeedItem>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\CallFeedItem[] $var
      * @return $this
      */
     public function setCallExtensions($var)
@@ -64,7 +64,4 @@ class CallExtensionParameters extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CallExtensionParameters::class, \Google\Ads\GoogleAds\V22\Services\ApplyRecommendationOperation_CallExtensionParameters::class);
 

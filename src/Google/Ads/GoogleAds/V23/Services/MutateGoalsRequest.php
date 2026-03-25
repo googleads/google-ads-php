@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -68,7 +68,7 @@ class MutateGoalsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer whose goals are being modified.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\GoalOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V23\Services\GoalOperation[] $operations
      *           Required. The list of operations to perform on the goals.
      *     @type bool $partial_failure
      *           Optional. If true, successful operations will be carried out and invalid
@@ -115,7 +115,7 @@ class MutateGoalsRequest extends \Google\Protobuf\Internal\Message
      * Required. The list of operations to perform on the goals.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.GoalOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\GoalOperation>
      */
     public function getOperations()
     {
@@ -126,7 +126,7 @@ class MutateGoalsRequest extends \Google\Protobuf\Internal\Message
      * Required. The list of operations to perform on the goals.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.GoalOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\GoalOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\GoalOperation[] $var
      * @return $this
      */
     public function setOperations($var)

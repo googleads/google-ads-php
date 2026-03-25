@@ -38,7 +38,7 @@ class LocalServicesLeadServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\AppendLeadConversationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\AppendLeadConversationResponse>
      */
     public function AppendLeadConversation(\Google\Ads\GoogleAds\V23\Services\AppendLeadConversationRequest $argument,
       $metadata = [], $options = []) {
@@ -53,7 +53,7 @@ class LocalServicesLeadServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\ProvideLeadFeedbackRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\ProvideLeadFeedbackResponse>
      */
     public function ProvideLeadFeedback(\Google\Ads\GoogleAds\V23\Services\ProvideLeadFeedbackRequest $argument,
       $metadata = [], $options = []) {

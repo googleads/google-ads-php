@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A suggested targetable audience relevant to the requested audience.
@@ -76,17 +76,17 @@ class TargetingSuggestionMetrics extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $locations
+     *     @type \Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata[] $locations
      *           Suggested location targeting.  These attributes all have dimension
      *           GEO_TARGET_COUNTRY or SUB_COUNTRY_LOCATION
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AgeRangeInfo>|\Google\Protobuf\Internal\RepeatedField $age_ranges
+     *     @type \Google\Ads\GoogleAds\V20\Common\AgeRangeInfo[] $age_ranges
      *           Suggested age targeting; may be empty indicating no age targeting.
      *     @type \Google\Ads\GoogleAds\V20\Common\GenderInfo $gender
      *           Suggested gender targeting.  If present, this attribute has dimension
      *           GENDER.
      *     @type \Google\Ads\GoogleAds\V20\Common\ParentalStatusInfo $parental_status
      *           A Parental Status value (parent, or not a parent).
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $user_interests
+     *     @type \Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata[] $user_interests
      *           Suggested audience segments to target.  These attributes all have dimension
      *           AFFINITY_USER_INTEREST or IN_MARKET_USER_INTEREST
      *     @type float $coverage
@@ -110,7 +110,7 @@ class TargetingSuggestionMetrics extends \Google\Protobuf\Internal\Message
      * GEO_TARGET_COUNTRY or SUB_COUNTRY_LOCATION
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttributeMetadata locations = 9;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>
      */
     public function getLocations()
     {
@@ -122,7 +122,7 @@ class TargetingSuggestionMetrics extends \Google\Protobuf\Internal\Message
      * GEO_TARGET_COUNTRY or SUB_COUNTRY_LOCATION
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttributeMetadata locations = 9;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata[] $var
      * @return $this
      */
     public function setLocations($var)
@@ -137,7 +137,7 @@ class TargetingSuggestionMetrics extends \Google\Protobuf\Internal\Message
      * Suggested age targeting; may be empty indicating no age targeting.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AgeRangeInfo age_ranges = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AgeRangeInfo>
      */
     public function getAgeRanges()
     {
@@ -148,7 +148,7 @@ class TargetingSuggestionMetrics extends \Google\Protobuf\Internal\Message
      * Suggested age targeting; may be empty indicating no age targeting.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AgeRangeInfo age_ranges = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AgeRangeInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AgeRangeInfo[] $var
      * @return $this
      */
     public function setAgeRanges($var)
@@ -238,7 +238,7 @@ class TargetingSuggestionMetrics extends \Google\Protobuf\Internal\Message
      * AFFINITY_USER_INTEREST or IN_MARKET_USER_INTEREST
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttributeMetadata user_interests = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>
      */
     public function getUserInterests()
     {
@@ -250,7 +250,7 @@ class TargetingSuggestionMetrics extends \Google\Protobuf\Internal\Message
      * AFFINITY_USER_INTEREST or IN_MARKET_USER_INTEREST
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.AudienceInsightsAttributeMetadata user_interests = 10;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\AudienceInsightsAttributeMetadata[] $var
      * @return $this
      */
     public function setUserInterests($var)

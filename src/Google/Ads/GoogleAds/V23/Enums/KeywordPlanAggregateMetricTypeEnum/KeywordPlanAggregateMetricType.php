@@ -59,6 +59,3 @@ class KeywordPlanAggregateMetricType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(KeywordPlanAggregateMetricType::class, \Google\Ads\GoogleAds\V23\Enums\KeywordPlanAggregateMetricTypeEnum_KeywordPlanAggregateMetricType::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for data exclusions mutate.
@@ -42,7 +42,7 @@ class MutateBiddingDataExclusionsResponse extends \Google\Protobuf\Internal\Mess
      *           Returned only when partial_failure = true and all errors occur inside the
      *           operations. If any errors occur outside the operations (for example, auth
      *           errors), we return an RPC level error.
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\MutateBiddingDataExclusionsResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V21\Services\MutateBiddingDataExclusionsResult[] $results
      *           All results for the mutate.
      * }
      */
@@ -97,7 +97,7 @@ class MutateBiddingDataExclusionsResponse extends \Google\Protobuf\Internal\Mess
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.MutateBiddingDataExclusionsResult results = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\MutateBiddingDataExclusionsResult>
      */
     public function getResults()
     {
@@ -108,7 +108,7 @@ class MutateBiddingDataExclusionsResponse extends \Google\Protobuf\Internal\Mess
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.MutateBiddingDataExclusionsResult results = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\MutateBiddingDataExclusionsResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\MutateBiddingDataExclusionsResult[] $var
      * @return $this
      */
     public function setResults($var)

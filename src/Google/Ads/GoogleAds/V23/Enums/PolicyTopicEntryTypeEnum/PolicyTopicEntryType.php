@@ -97,6 +97,3 @@ class PolicyTopicEntryType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PolicyTopicEntryType::class, \Google\Ads\GoogleAds\V23\Enums\PolicyTopicEntryTypeEnum_PolicyTopicEntryType::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A shareable preview with its identifier.
@@ -16,11 +16,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class ShareablePreview extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. Asset group of the shareable preview.
+     * Optional. Asset group of the shareable preview. Only supported for preview
+     * type UI_PREVIEW or unset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v23.services.AssetGroupIdentifier asset_group_identifier = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v23.services.AssetGroupIdentifier asset_group_identifier = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $asset_group_identifier = null;
+    /**
+     * Optional. The type of preview to generate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.enums.PreviewTypeEnum.PreviewType preview_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $preview_type = 0;
+    protected $identifier;
 
     /**
      * Constructor.
@@ -29,7 +37,14 @@ class ShareablePreview extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V23\Services\AssetGroupIdentifier $asset_group_identifier
-     *           Required. Asset group of the shareable preview.
+     *           Optional. Asset group of the shareable preview. Only supported for preview
+     *           type UI_PREVIEW or unset.
+     *     @type int $preview_type
+     *           Optional. The type of preview to generate.
+     *     @type string $ad_group_ad
+     *           Ad group ad of the shareable preview. Only supported for preview type
+     *           YOUTUBE_LIVE_PREVIEW.
+     *           Format: customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +53,10 @@ class ShareablePreview extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Asset group of the shareable preview.
+     * Optional. Asset group of the shareable preview. Only supported for preview
+     * type UI_PREVIEW or unset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v23.services.AssetGroupIdentifier asset_group_identifier = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v23.services.AssetGroupIdentifier asset_group_identifier = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Ads\GoogleAds\V23\Services\AssetGroupIdentifier|null
      */
     public function getAssetGroupIdentifier()
@@ -59,9 +75,10 @@ class ShareablePreview extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Asset group of the shareable preview.
+     * Optional. Asset group of the shareable preview. Only supported for preview
+     * type UI_PREVIEW or unset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v23.services.AssetGroupIdentifier asset_group_identifier = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v23.services.AssetGroupIdentifier asset_group_identifier = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Ads\GoogleAds\V23\Services\AssetGroupIdentifier $var
      * @return $this
      */
@@ -71,6 +88,75 @@ class ShareablePreview extends \Google\Protobuf\Internal\Message
         $this->asset_group_identifier = $var;
 
         return $this;
+    }
+
+    /**
+     * Optional. The type of preview to generate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.enums.PreviewTypeEnum.PreviewType preview_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return int
+     */
+    public function getPreviewType()
+    {
+        return $this->preview_type;
+    }
+
+    /**
+     * Optional. The type of preview to generate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.enums.PreviewTypeEnum.PreviewType preview_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPreviewType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V23\Enums\PreviewTypeEnum\PreviewType::class);
+        $this->preview_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Ad group ad of the shareable preview. Only supported for preview type
+     * YOUTUBE_LIVE_PREVIEW.
+     * Format: customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}
+     *
+     * Generated from protobuf field <code>string ad_group_ad = 2;</code>
+     * @return string
+     */
+    public function getAdGroupAd()
+    {
+        return $this->readOneof(2);
+    }
+
+    public function hasAdGroupAd()
+    {
+        return $this->hasOneof(2);
+    }
+
+    /**
+     * Ad group ad of the shareable preview. Only supported for preview type
+     * YOUTUBE_LIVE_PREVIEW.
+     * Format: customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}
+     *
+     * Generated from protobuf field <code>string ad_group_ad = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAdGroupAd($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIdentifier()
+    {
+        return $this->whichOneof("identifier");
     }
 
 }

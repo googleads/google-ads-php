@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A client defined rule based on custom parameters sent by web sites or
@@ -46,7 +46,7 @@ class UserListRuleInfo extends \Google\Protobuf\Internal\Message
      *           That is, rule items will be ANDed together within rule item groups and the
      *           groups themselves will be ORed together.
      *           OR of ANDs is the only supported type for FlexibleRuleUserList.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\UserListRuleItemGroupInfo>|\Google\Protobuf\Internal\RepeatedField $rule_item_groups
+     *     @type \Google\Ads\GoogleAds\V21\Common\UserListRuleItemGroupInfo[] $rule_item_groups
      *           List of rule item groups that defines this rule.
      *           Rule item groups are grouped together based on rule_type.
      * }
@@ -95,7 +95,7 @@ class UserListRuleInfo extends \Google\Protobuf\Internal\Message
      * Rule item groups are grouped together based on rule_type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.UserListRuleItemGroupInfo rule_item_groups = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\UserListRuleItemGroupInfo>
      */
     public function getRuleItemGroups()
     {
@@ -107,7 +107,7 @@ class UserListRuleInfo extends \Google\Protobuf\Internal\Message
      * Rule item groups are grouped together based on rule_type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.UserListRuleItemGroupInfo rule_item_groups = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\UserListRuleItemGroupInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\UserListRuleItemGroupInfo[] $var
      * @return $this
      */
     public function setRuleItemGroups($var)

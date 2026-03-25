@@ -214,6 +214,3 @@ class FeedError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(FeedError::class, \Google\Ads\GoogleAds\V21\Errors\FeedErrorEnum_FeedError::class);
-

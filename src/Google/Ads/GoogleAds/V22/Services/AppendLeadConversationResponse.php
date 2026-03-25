@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class AppendLeadConversationResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\ConversationOrError>|\Google\Protobuf\Internal\RepeatedField $responses
+     *     @type \Google\Ads\GoogleAds\V22\Services\ConversationOrError[] $responses
      *           Required. List of append conversation operation results.
      * }
      */
@@ -42,7 +42,7 @@ class AppendLeadConversationResponse extends \Google\Protobuf\Internal\Message
      * Required. List of append conversation operation results.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.ConversationOrError responses = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\ConversationOrError>
      */
     public function getResponses()
     {
@@ -53,7 +53,7 @@ class AppendLeadConversationResponse extends \Google\Protobuf\Internal\Message
      * Required. List of append conversation operation results.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.ConversationOrError responses = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\ConversationOrError>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\ConversationOrError[] $var
      * @return $this
      */
     public function setResponses($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common\CampaignGoalSettings;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Retention campaign goal settings.
@@ -116,7 +116,4 @@ class CampaignRetentionGoalSettings extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CampaignRetentionGoalSettings::class, \Google\Ads\GoogleAds\V23\Common\CampaignGoalSettings_CampaignRetentionGoalSettings::class);
 

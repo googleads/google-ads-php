@@ -124,6 +124,3 @@ class MutateError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MutateError::class, \Google\Ads\GoogleAds\V23\Errors\MutateErrorEnum_MutateError::class);
-

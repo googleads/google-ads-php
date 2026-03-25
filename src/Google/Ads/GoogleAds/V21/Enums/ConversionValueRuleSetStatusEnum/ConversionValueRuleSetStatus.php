@@ -74,6 +74,3 @@ class ConversionValueRuleSetStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionValueRuleSetStatus::class, \Google\Ads\GoogleAds\V21\Enums\ConversionValueRuleSetStatusEnum_ConversionValueRuleSetStatus::class);
-

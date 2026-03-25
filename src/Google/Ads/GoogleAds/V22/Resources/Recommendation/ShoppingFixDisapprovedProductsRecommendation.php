@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The shopping recommendation to fix disapproved products in a Shopping
@@ -181,7 +181,4 @@ class ShoppingFixDisapprovedProductsRecommendation extends \Google\Protobuf\Inte
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ShoppingFixDisapprovedProductsRecommendation::class, \Google\Ads\GoogleAds\V22\Resources\Recommendation_ShoppingFixDisapprovedProductsRecommendation::class);
 

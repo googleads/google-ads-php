@@ -1717,6 +1717,25 @@
                 }
             }
         },
+        "ReservationService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ReservationServiceGapicClient",
+                    "rpcs": {
+                        "BookCampaigns": {
+                            "methods": [
+                                "bookCampaigns"
+                            ]
+                        },
+                        "QuoteCampaigns": {
+                            "methods": [
+                                "quoteCampaigns"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
         "ShareablePreviewService": {
             "clients": {
                 "grpc": {

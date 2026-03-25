@@ -44,7 +44,7 @@ class AccessInvitationError
      */
     const INVALID_INVITATION_STATUS = 4;
     /**
-     * Email address cannot be like abc+foo&#64;google.com.
+     * Email address cannot be like abc+foo\@google.com.
      *
      * Generated from protobuf enum <code>GOOGLE_CONSUMER_ACCOUNT_NOT_ALLOWED = 5;</code>
      */
@@ -108,7 +108,4 @@ class AccessInvitationError
         return constant($const);
     }
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AccessInvitationError::class, \Google\Ads\GoogleAds\V20\Errors\AccessInvitationErrorEnum_AccessInvitationError::class);
 

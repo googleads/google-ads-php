@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Container for video ads sequencing definition.
@@ -35,7 +35,7 @@ class VideoAdSequence extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\VideoAdSequenceStep>|\Google\Protobuf\Internal\RepeatedField $steps
+     *     @type \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\VideoAdSequenceStep[] $steps
      *           The list of sequence steps and data associated with them.
      *     @type int $minimum_duration
      *           Users are eligible to repeat sequence after this period. Defaults to
@@ -51,7 +51,7 @@ class VideoAdSequence extends \Google\Protobuf\Internal\Message
      * The list of sequence steps and data associated with them.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Campaign.VideoCampaignSettings.VideoAdSequenceStep steps = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\VideoAdSequenceStep>
      */
     public function getSteps()
     {
@@ -62,7 +62,7 @@ class VideoAdSequence extends \Google\Protobuf\Internal\Message
      * The list of sequence steps and data associated with them.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.Campaign.VideoCampaignSettings.VideoAdSequenceStep steps = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\VideoAdSequenceStep>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings\VideoAdSequenceStep[] $var
      * @return $this
      */
     public function setSteps($var)
@@ -102,7 +102,4 @@ class VideoAdSequence extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(VideoAdSequence::class, \Google\Ads\GoogleAds\V23\Resources\Campaign_VideoCampaignSettings_VideoAdSequence::class);
 

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Details related to AssetLinkPrimaryStatusReasonPB.ASSET_DISAPPROVED
@@ -28,7 +28,7 @@ class AssetDisapproved extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $offline_evaluation_error_reasons
+     *     @type int[] $offline_evaluation_error_reasons
      *           Provides the quality evaluation disapproval reason of an asset.
      * }
      */
@@ -41,7 +41,7 @@ class AssetDisapproved extends \Google\Protobuf\Internal\Message
      * Provides the quality evaluation disapproval reason of an asset.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AssetOfflineEvaluationErrorReasonsEnum.AssetOfflineEvaluationErrorReasons offline_evaluation_error_reasons = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getOfflineEvaluationErrorReasons()
     {
@@ -52,7 +52,7 @@ class AssetDisapproved extends \Google\Protobuf\Internal\Message
      * Provides the quality evaluation disapproval reason of an asset.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.enums.AssetOfflineEvaluationErrorReasonsEnum.AssetOfflineEvaluationErrorReasons offline_evaluation_error_reasons = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setOfflineEvaluationErrorReasons($var)

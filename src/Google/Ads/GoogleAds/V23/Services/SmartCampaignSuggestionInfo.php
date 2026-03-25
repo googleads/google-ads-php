@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Information needed to get suggestion for Smart Campaign. More information
@@ -56,9 +56,9 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      *     @type string $language_code
      *           Optional. The two letter advertising language for the Smart campaign to be
      *           constructed, default to 'en' if not set.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $ad_schedules
+     *     @type \Google\Ads\GoogleAds\V23\Common\AdScheduleInfo[] $ad_schedules
      *           Optional. The business ad schedule.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\KeywordThemeInfo>|\Google\Protobuf\Internal\RepeatedField $keyword_themes
+     *     @type \Google\Ads\GoogleAds\V23\Common\KeywordThemeInfo[] $keyword_themes
      *           Optional. Smart campaign keyword themes. This field may greatly improve
      *           suggestion accuracy and we recommend always setting it if possible.
      *     @type \Google\Ads\GoogleAds\V23\Services\SmartCampaignSuggestionInfo\BusinessContext $business_context
@@ -140,7 +140,7 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      * Optional. The business ad schedule.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdScheduleInfo ad_schedules = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\AdScheduleInfo>
      */
     public function getAdSchedules()
     {
@@ -151,7 +151,7 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      * Optional. The business ad schedule.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.AdScheduleInfo ad_schedules = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\AdScheduleInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\AdScheduleInfo[] $var
      * @return $this
      */
     public function setAdSchedules($var)
@@ -167,7 +167,7 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      * suggestion accuracy and we recommend always setting it if possible.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.KeywordThemeInfo keyword_themes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\KeywordThemeInfo>
      */
     public function getKeywordThemes()
     {
@@ -179,7 +179,7 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      * suggestion accuracy and we recommend always setting it if possible.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.KeywordThemeInfo keyword_themes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\KeywordThemeInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\KeywordThemeInfo[] $var
      * @return $this
      */
     public function setKeywordThemes($var)

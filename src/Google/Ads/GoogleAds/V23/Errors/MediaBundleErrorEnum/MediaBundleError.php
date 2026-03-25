@@ -206,6 +206,3 @@ class MediaBundleError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MediaBundleError::class, \Google\Ads\GoogleAds\V23\Errors\MediaBundleErrorEnum_MediaBundleError::class);
-

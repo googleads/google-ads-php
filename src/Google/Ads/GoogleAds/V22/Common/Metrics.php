@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Metrics data.
@@ -2343,7 +2343,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The number of interactions.
      *           An interaction is the main user action associated with an ad format-clicks
      *           for text and shopping ads, views for video ads, and so on.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $interaction_event_types
+     *     @type int[] $interaction_event_types
      *           The types of payable and free interactions.
      *     @type float $invalid_click_rate
      *           The percentage of clicks filtered out of your total number of clicks
@@ -2823,32 +2823,32 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           Number of linked resources in which the asset is used.
      *           This metric can only be selected with ChannelAggregateAssetView and
      *           CampaignAggregateAssetView.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $linked_sample_entities
+     *     @type string[] $linked_sample_entities
      *           A list of up to 20 sample linked resources in which the asset is used.
      *           This metric can only be selected with ChannelAggregateAssetView and
      *           CampaignAggregateAssetView.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $sample_best_performance_entities
+     *     @type string[] $sample_best_performance_entities
      *           A list of up to 20 sample linked resources with impressions in the last 30
      *           days where the asset had the AssetPerformanceLabel.BEST performance label.
      *           This metric can only be selected with ChannelAggregateAssetView and
      *           CampaignAggregateAssetView.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $sample_good_performance_entities
+     *     @type string[] $sample_good_performance_entities
      *           A list of up to 20 sample linked resources with impressions in the last 30
      *           days where the asset had the AssetPerformanceLabel.GOOD performance label.
      *           This metric can only be selected with ChannelAggregateAssetView and
      *           CampaignAggregateAssetView.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $sample_low_performance_entities
+     *     @type string[] $sample_low_performance_entities
      *           A list of up to 20 sample linked resources with impressions in the last 30
      *           days where the asset had the AssetPerformanceLabel.LOW performance label.
      *           This metric can only be selected with ChannelAggregateAssetView and
      *           CampaignAggregateAssetView.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $sample_learning_performance_entities
+     *     @type string[] $sample_learning_performance_entities
      *           A list of up to 20 sample linked resources with impressions in the last 30
      *           days where the asset had the AssetPerformanceLabel.LEARNING performance
      *           label.
      *           This metric can only be selected with ChannelAggregateAssetView and
      *           CampaignAggregateAssetView.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $sample_unrated_performance_entities
+     *     @type string[] $sample_unrated_performance_entities
      *           A list of up to 20 sample linked resources with impressions in the last 30
      *           days where the assets had AssetPerformanceLabel performance label other
      *           than BEST, GOOD, LOW, and LEARNING.
@@ -6621,7 +6621,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The types of payable and free interactions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.InteractionEventTypeEnum.InteractionEventType interaction_event_types = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getInteractionEventTypes()
     {
@@ -6632,7 +6632,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The types of payable and free interactions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.InteractionEventTypeEnum.InteractionEventType interaction_event_types = 100;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setInteractionEventTypes($var)
@@ -10371,7 +10371,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string linked_sample_entities = 342;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLinkedSampleEntities()
     {
@@ -10384,7 +10384,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string linked_sample_entities = 342;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLinkedSampleEntities($var)
@@ -10402,7 +10402,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string sample_best_performance_entities = 343;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSampleBestPerformanceEntities()
     {
@@ -10416,7 +10416,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string sample_best_performance_entities = 343;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSampleBestPerformanceEntities($var)
@@ -10434,7 +10434,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string sample_good_performance_entities = 344;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSampleGoodPerformanceEntities()
     {
@@ -10448,7 +10448,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string sample_good_performance_entities = 344;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSampleGoodPerformanceEntities($var)
@@ -10466,7 +10466,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string sample_low_performance_entities = 345;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSampleLowPerformanceEntities()
     {
@@ -10480,7 +10480,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string sample_low_performance_entities = 345;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSampleLowPerformanceEntities($var)
@@ -10499,7 +10499,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string sample_learning_performance_entities = 346;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSampleLearningPerformanceEntities()
     {
@@ -10514,7 +10514,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string sample_learning_performance_entities = 346;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSampleLearningPerformanceEntities($var)
@@ -10533,7 +10533,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string sample_unrated_performance_entities = 347;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSampleUnratedPerformanceEntities()
     {
@@ -10548,7 +10548,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * CampaignAggregateAssetView.
      *
      * Generated from protobuf field <code>repeated string sample_unrated_performance_entities = 347;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSampleUnratedPerformanceEntities($var)

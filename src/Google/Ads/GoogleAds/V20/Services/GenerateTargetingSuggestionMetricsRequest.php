@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -65,7 +65,7 @@ class GenerateTargetingSuggestionMetricsRequest extends \Google\Protobuf\Interna
      *
      *     @type string $customer_id
      *           Required. The ID of the customer.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\BasicInsightsAudience>|\Google\Protobuf\Internal\RepeatedField $audiences
+     *     @type \Google\Ads\GoogleAds\V20\Services\BasicInsightsAudience[] $audiences
      *           Required. Audiences to request metrics for.
      *     @type string $customer_insights_group
      *           Optional. The name of the customer being planned for.  This is a
@@ -109,7 +109,7 @@ class GenerateTargetingSuggestionMetricsRequest extends \Google\Protobuf\Interna
      * Required. Audiences to request metrics for.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.BasicInsightsAudience audiences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\BasicInsightsAudience>
      */
     public function getAudiences()
     {
@@ -120,7 +120,7 @@ class GenerateTargetingSuggestionMetricsRequest extends \Google\Protobuf\Interna
      * Required. Audiences to request metrics for.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.BasicInsightsAudience audiences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\BasicInsightsAudience>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\BasicInsightsAudience[] $var
      * @return $this
      */
     public function setAudiences($var)

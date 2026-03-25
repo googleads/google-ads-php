@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Campaign;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The network settings for the campaign.
@@ -22,7 +22,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      */
     protected $target_google_search = null;
     /**
-     * Whether ads will be served on partner sites in the Google Search Network
+     * Whether ads will be served on sites in the Google Search Partners Network
      * (requires `target_google_search` to also be `true`).
      *
      * Generated from protobuf field <code>optional bool target_search_network = 6;</code>
@@ -36,8 +36,11 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      */
     protected $target_content_network = null;
     /**
-     * Whether ads will be served on the Google Partner Network.
-     * This is available only to some select Google partner accounts.
+     * Whether ads will be served on the partner network. This is available
+     * only to some select partner accounts. Unless you have been instructed to
+     * use this field, it likely does not apply to your account. This does not
+     * control whether ads will be served on Google Search Partners Network; use
+     * `target_search_network` for that instead.
      *
      * Generated from protobuf field <code>optional bool target_partner_search_network = 8;</code>
      */
@@ -64,14 +67,17 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      *     @type bool $target_google_search
      *           Whether ads will be served with google.com search results.
      *     @type bool $target_search_network
-     *           Whether ads will be served on partner sites in the Google Search Network
+     *           Whether ads will be served on sites in the Google Search Partners Network
      *           (requires `target_google_search` to also be `true`).
      *     @type bool $target_content_network
      *           Whether ads will be served on specified placements in the Google Display
      *           Network. Placements are specified using the Placement criterion.
      *     @type bool $target_partner_search_network
-     *           Whether ads will be served on the Google Partner Network.
-     *           This is available only to some select Google partner accounts.
+     *           Whether ads will be served on the partner network. This is available
+     *           only to some select partner accounts. Unless you have been instructed to
+     *           use this field, it likely does not apply to your account. This does not
+     *           control whether ads will be served on Google Search Partners Network; use
+     *           `target_search_network` for that instead.
      *     @type bool $target_youtube
      *           Whether ads will be served on YouTube.
      *     @type bool $target_google_tv_network
@@ -120,7 +126,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether ads will be served on partner sites in the Google Search Network
+     * Whether ads will be served on sites in the Google Search Partners Network
      * (requires `target_google_search` to also be `true`).
      *
      * Generated from protobuf field <code>optional bool target_search_network = 6;</code>
@@ -142,7 +148,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether ads will be served on partner sites in the Google Search Network
+     * Whether ads will be served on sites in the Google Search Partners Network
      * (requires `target_google_search` to also be `true`).
      *
      * Generated from protobuf field <code>optional bool target_search_network = 6;</code>
@@ -196,8 +202,11 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether ads will be served on the Google Partner Network.
-     * This is available only to some select Google partner accounts.
+     * Whether ads will be served on the partner network. This is available
+     * only to some select partner accounts. Unless you have been instructed to
+     * use this field, it likely does not apply to your account. This does not
+     * control whether ads will be served on Google Search Partners Network; use
+     * `target_search_network` for that instead.
      *
      * Generated from protobuf field <code>optional bool target_partner_search_network = 8;</code>
      * @return bool
@@ -218,8 +227,11 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether ads will be served on the Google Partner Network.
-     * This is available only to some select Google partner accounts.
+     * Whether ads will be served on the partner network. This is available
+     * only to some select partner accounts. Unless you have been instructed to
+     * use this field, it likely does not apply to your account. This does not
+     * control whether ads will be served on Google Search Partners Network; use
+     * `target_search_network` for that instead.
      *
      * Generated from protobuf field <code>optional bool target_partner_search_network = 8;</code>
      * @param bool $var
@@ -306,7 +318,4 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(NetworkSettings::class, \Google\Ads\GoogleAds\V23\Resources\Campaign_NetworkSettings::class);
 

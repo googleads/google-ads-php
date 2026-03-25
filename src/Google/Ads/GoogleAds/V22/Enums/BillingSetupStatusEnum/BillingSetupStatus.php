@@ -82,6 +82,3 @@ class BillingSetupStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BillingSetupStatus::class, \Google\Ads\GoogleAds\V22\Enums\BillingSetupStatusEnum_BillingSetupStatus::class);
-

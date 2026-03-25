@@ -40,7 +40,7 @@ class AdGroupCustomizerServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateAdGroupCustomizersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateAdGroupCustomizersResponse>
      */
     public function MutateAdGroupCustomizers(\Google\Ads\GoogleAds\V22\Services\MutateAdGroupCustomizersRequest $argument,
       $metadata = [], $options = []) {

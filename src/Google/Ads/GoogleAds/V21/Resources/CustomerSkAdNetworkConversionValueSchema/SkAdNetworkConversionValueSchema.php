@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The CustomerLink specific SkAdNetworkConversionValueSchema.
@@ -61,12 +61,12 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
      *           the App Attribution Partner or advertiser stops calling
      *           [updateConversionValue]
      *           (https://developer.apple.com/documentation/storekit/skadnetwork/3566697-updateconversionvalue).
-     *     @type array<\Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\FineGrainedConversionValueMappings>|\Google\Protobuf\Internal\RepeatedField $fine_grained_conversion_value_mappings
+     *     @type \Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\FineGrainedConversionValueMappings[] $fine_grained_conversion_value_mappings
      *           Output only. Fine grained conversion value mappings.
      *           For SkAdNetwork versions >= 4.0 that support multiple conversion
      *           windows, fine grained conversion value mappings are only applicable to
      *           the first postback.
-     *     @type array<\Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\PostbackMapping>|\Google\Protobuf\Internal\RepeatedField $postback_mappings
+     *     @type \Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\PostbackMapping[] $postback_mappings
      *           Output only. Per-postback conversion value mappings for postbacks in
      *           multiple conversion windows. Only applicable for SkAdNetwork versions
      *           >= 4.0.
@@ -142,7 +142,7 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
      * the first postback.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings fine_grained_conversion_value_mappings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\FineGrainedConversionValueMappings>
      */
     public function getFineGrainedConversionValueMappings()
     {
@@ -156,7 +156,7 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
      * the first postback.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings fine_grained_conversion_value_mappings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\FineGrainedConversionValueMappings>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\FineGrainedConversionValueMappings[] $var
      * @return $this
      */
     public function setFineGrainedConversionValueMappings($var)
@@ -173,7 +173,7 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
      * >= 4.0.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping postback_mappings = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\PostbackMapping>
      */
     public function getPostbackMappings()
     {
@@ -186,7 +186,7 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
      * >= 4.0.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping postback_mappings = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\PostbackMapping>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\PostbackMapping[] $var
      * @return $this
      */
     public function setPostbackMappings($var)
@@ -198,7 +198,4 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SkAdNetworkConversionValueSchema::class, \Google\Ads\GoogleAds\V21\Resources\CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema::class);
 

@@ -80,6 +80,3 @@ class SharedSetError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SharedSetError::class, \Google\Ads\GoogleAds\V23\Errors\SharedSetErrorEnum_SharedSetError::class);
-

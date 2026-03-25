@@ -132,6 +132,3 @@ class AdGroupAdError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdGroupAdError::class, \Google\Ads\GoogleAds\V21\Errors\AdGroupAdErrorEnum_AdGroupAdError::class);
-

@@ -81,6 +81,3 @@ class PerformanceMaxUpgradeStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PerformanceMaxUpgradeStatus::class, \Google\Ads\GoogleAds\V23\Enums\PerformanceMaxUpgradeStatusEnum_PerformanceMaxUpgradeStatus::class);
-

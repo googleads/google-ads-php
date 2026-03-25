@@ -66,6 +66,3 @@ class Operator
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Operator::class, \Google\Ads\GoogleAds\V22\Common\TargetRestrictionOperation_Operator::class);
-

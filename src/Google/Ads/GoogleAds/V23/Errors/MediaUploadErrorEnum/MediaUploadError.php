@@ -296,6 +296,3 @@ class MediaUploadError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MediaUploadError::class, \Google\Ads\GoogleAds\V23\Errors\MediaUploadErrorEnum_MediaUploadError::class);
-

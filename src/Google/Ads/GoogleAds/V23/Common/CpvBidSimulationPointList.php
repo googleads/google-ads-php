@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A container for simulation points for simulations of type CPV_BID.
@@ -28,7 +28,7 @@ class CpvBidSimulationPointList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\CpvBidSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $points
+     *     @type \Google\Ads\GoogleAds\V23\Common\CpvBidSimulationPoint[] $points
      *           Projected metrics for a series of CPV bid amounts.
      * }
      */
@@ -41,7 +41,7 @@ class CpvBidSimulationPointList extends \Google\Protobuf\Internal\Message
      * Projected metrics for a series of CPV bid amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.CpvBidSimulationPoint points = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\CpvBidSimulationPoint>
      */
     public function getPoints()
     {
@@ -52,7 +52,7 @@ class CpvBidSimulationPointList extends \Google\Protobuf\Internal\Message
      * Projected metrics for a series of CPV bid amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.CpvBidSimulationPoint points = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\CpvBidSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\CpvBidSimulationPoint[] $var
      * @return $this
      */
     public function setPoints($var)

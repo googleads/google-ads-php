@@ -53,7 +53,7 @@ class DataLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\CreateDataLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\CreateDataLinkResponse>
      */
     public function CreateDataLink(\Google\Ads\GoogleAds\V20\Services\CreateDataLinkRequest $argument,
       $metadata = [], $options = []) {
@@ -80,7 +80,7 @@ class DataLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\RemoveDataLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\RemoveDataLinkResponse>
      */
     public function RemoveDataLink(\Google\Ads\GoogleAds\V20\Services\RemoveDataLinkRequest $argument,
       $metadata = [], $options = []) {
@@ -107,7 +107,7 @@ class DataLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\UpdateDataLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\UpdateDataLinkResponse>
      */
     public function UpdateDataLink(\Google\Ads\GoogleAds\V20\Services\UpdateDataLinkRequest $argument,
       $metadata = [], $options = []) {

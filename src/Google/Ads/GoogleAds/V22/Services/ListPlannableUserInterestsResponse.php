@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class ListPlannableUserInterestsResponse extends \Google\Protobuf\Internal\Messa
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\PlannableUserInterest>|\Google\Protobuf\Internal\RepeatedField $plannable_user_interests
+     *     @type \Google\Ads\GoogleAds\V22\Services\PlannableUserInterest[] $plannable_user_interests
      *           The list of plannable user interests.
      * }
      */
@@ -42,7 +42,7 @@ class ListPlannableUserInterestsResponse extends \Google\Protobuf\Internal\Messa
      * The list of plannable user interests.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.PlannableUserInterest plannable_user_interests = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\PlannableUserInterest>
      */
     public function getPlannableUserInterests()
     {
@@ -53,7 +53,7 @@ class ListPlannableUserInterestsResponse extends \Google\Protobuf\Internal\Messa
      * The list of plannable user interests.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.PlannableUserInterest plannable_user_interests = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\PlannableUserInterest>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\PlannableUserInterest[] $var
      * @return $this
      */
     public function setPlannableUserInterests($var)

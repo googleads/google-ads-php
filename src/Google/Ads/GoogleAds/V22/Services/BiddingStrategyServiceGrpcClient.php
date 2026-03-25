@@ -68,7 +68,7 @@ class BiddingStrategyServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateBiddingStrategiesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateBiddingStrategiesResponse>
      */
     public function MutateBiddingStrategies(\Google\Ads\GoogleAds\V22\Services\MutateBiddingStrategiesRequest $argument,
       $metadata = [], $options = []) {

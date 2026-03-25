@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services\ApplyRecommendationOperation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Parameters to use when applying a responsive search ad asset
@@ -75,7 +75,4 @@ class ResponsiveSearchAdAssetParameters extends \Google\Protobuf\Internal\Messag
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ResponsiveSearchAdAssetParameters::class, \Google\Ads\GoogleAds\V23\Services\ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters::class);
 

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Container for ad category self-disclosure for campaigns with the
@@ -133,7 +133,4 @@ class ReservationAdCategorySelfDisclosure extends \Google\Protobuf\Internal\Mess
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ReservationAdCategorySelfDisclosure::class, \Google\Ads\GoogleAds\V23\Resources\Campaign_VideoCampaignSettings_ReservationAdCategorySelfDisclosure::class);
 

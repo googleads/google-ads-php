@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Forecasted traffic metrics for the planned products and targeting.
@@ -153,7 +153,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      *           See https://support.google.com/google-ads/answer/7029393 for
      *           more information about what makes an ad viewable and how
      *           viewability is measured.
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\EffectiveFrequencyBreakdown>|\Google\Protobuf\Internal\RepeatedField $effective_frequency_breakdowns
+     *     @type \Google\Ads\GoogleAds\V20\Services\EffectiveFrequencyBreakdown[] $effective_frequency_breakdowns
      *           A list of effective frequency forecasts. The list is ordered starting with
      *           1+ and ending with the value set in
      *           GenerateReachForecastRequest.effective_frequency_limit. If no
@@ -410,7 +410,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * effective_frequency_limit was set, this list will be empty.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.EffectiveFrequencyBreakdown effective_frequency_breakdowns = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\EffectiveFrequencyBreakdown>
      */
     public function getEffectiveFrequencyBreakdowns()
     {
@@ -424,7 +424,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * effective_frequency_limit was set, this list will be empty.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.EffectiveFrequencyBreakdown effective_frequency_breakdowns = 10;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\EffectiveFrequencyBreakdown>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\EffectiveFrequencyBreakdown[] $var
      * @return $this
      */
     public function setEffectiveFrequencyBreakdowns($var)

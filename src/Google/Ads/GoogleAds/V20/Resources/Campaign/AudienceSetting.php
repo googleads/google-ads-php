@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\Campaign;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Settings for the audience targeting.
@@ -82,7 +82,4 @@ class AudienceSetting extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AudienceSetting::class, \Google\Ads\GoogleAds\V20\Resources\Campaign_AudienceSetting::class);
 

@@ -67,6 +67,3 @@ class CombinedAudienceStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CombinedAudienceStatus::class, \Google\Ads\GoogleAds\V20\Enums\CombinedAudienceStatusEnum_CombinedAudienceStatus::class);
-

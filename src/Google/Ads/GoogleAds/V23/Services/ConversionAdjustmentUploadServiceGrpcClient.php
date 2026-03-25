@@ -46,7 +46,7 @@ class ConversionAdjustmentUploadServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\UploadConversionAdjustmentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\UploadConversionAdjustmentsResponse>
      */
     public function UploadConversionAdjustments(\Google\Ads\GoogleAds\V23\Services\UploadConversionAdjustmentsRequest $argument,
       $metadata = [], $options = []) {

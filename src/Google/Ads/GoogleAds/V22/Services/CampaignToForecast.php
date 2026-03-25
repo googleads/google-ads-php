@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A campaign to do a keyword campaign forecast.
@@ -71,16 +71,16 @@ class CampaignToForecast extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $language_constants
+     *     @type string[] $language_constants
      *           The list of resource names of languages to be targeted. The resource name
      *           is of the format "languageConstants/{criterion_id}". See
      *           https://developers.google.com/google-ads/api/data/codes-formats#languages
      *           for the list of language criterion codes.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\CriterionBidModifier>|\Google\Protobuf\Internal\RepeatedField $geo_modifiers
+     *     @type \Google\Ads\GoogleAds\V22\Services\CriterionBidModifier[] $geo_modifiers
      *           Locations to be targeted. Locations must be unique.
      *     @type int $keyword_plan_network
      *           Required. The network used for targeting.
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\KeywordInfo>|\Google\Protobuf\Internal\RepeatedField $negative_keywords
+     *     @type \Google\Ads\GoogleAds\V22\Common\KeywordInfo[] $negative_keywords
      *           The list of negative keywords to be used in the campaign when doing the
      *           forecast.
      *     @type \Google\Ads\GoogleAds\V22\Services\CampaignToForecast\CampaignBiddingStrategy $bidding_strategy
@@ -90,7 +90,7 @@ class CampaignToForecast extends \Google\Protobuf\Internal\Message
      *           total clicks) as defined by the user. This value is expressed as a decimal
      *           value, so an expected conversion rate of 2% should be entered as 0.02. If
      *           left empty, an estimated conversion rate will be used.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\ForecastAdGroup>|\Google\Protobuf\Internal\RepeatedField $ad_groups
+     *     @type \Google\Ads\GoogleAds\V22\Services\ForecastAdGroup[] $ad_groups
      *           The ad groups in the new campaign to forecast.
      * }
      */
@@ -106,7 +106,7 @@ class CampaignToForecast extends \Google\Protobuf\Internal\Message
      * for the list of language criterion codes.
      *
      * Generated from protobuf field <code>repeated string language_constants = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLanguageConstants()
     {
@@ -120,7 +120,7 @@ class CampaignToForecast extends \Google\Protobuf\Internal\Message
      * for the list of language criterion codes.
      *
      * Generated from protobuf field <code>repeated string language_constants = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLanguageConstants($var)
@@ -135,7 +135,7 @@ class CampaignToForecast extends \Google\Protobuf\Internal\Message
      * Locations to be targeted. Locations must be unique.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.CriterionBidModifier geo_modifiers = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\CriterionBidModifier>
      */
     public function getGeoModifiers()
     {
@@ -146,7 +146,7 @@ class CampaignToForecast extends \Google\Protobuf\Internal\Message
      * Locations to be targeted. Locations must be unique.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.CriterionBidModifier geo_modifiers = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\CriterionBidModifier>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\CriterionBidModifier[] $var
      * @return $this
      */
     public function setGeoModifiers($var)
@@ -188,7 +188,7 @@ class CampaignToForecast extends \Google\Protobuf\Internal\Message
      * forecast.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.KeywordInfo negative_keywords = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\KeywordInfo>
      */
     public function getNegativeKeywords()
     {
@@ -200,7 +200,7 @@ class CampaignToForecast extends \Google\Protobuf\Internal\Message
      * forecast.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.KeywordInfo negative_keywords = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\KeywordInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\KeywordInfo[] $var
      * @return $this
      */
     public function setNegativeKeywords($var)
@@ -293,7 +293,7 @@ class CampaignToForecast extends \Google\Protobuf\Internal\Message
      * The ad groups in the new campaign to forecast.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.ForecastAdGroup ad_groups = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\ForecastAdGroup>
      */
     public function getAdGroups()
     {
@@ -304,7 +304,7 @@ class CampaignToForecast extends \Google\Protobuf\Internal\Message
      * The ad groups in the new campaign to forecast.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.ForecastAdGroup ad_groups = 7;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\ForecastAdGroup>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\ForecastAdGroup[] $var
      * @return $this
      */
     public function setAdGroups($var)

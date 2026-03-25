@@ -138,6 +138,3 @@ class AdvertisingChannelType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AdvertisingChannelType::class, \Google\Ads\GoogleAds\V20\Enums\AdvertisingChannelTypeEnum_AdvertisingChannelType::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources\ConversionValueRule;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Condition on Itinerary dimension.
@@ -166,7 +166,4 @@ class ValueRuleItineraryCondition extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ValueRuleItineraryCondition::class, \Google\Ads\GoogleAds\V21\Resources\ConversionValueRule_ValueRuleItineraryCondition::class);
 

@@ -311,6 +311,3 @@ class PromotionExtensionOccasion
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PromotionExtensionOccasion::class, \Google\Ads\GoogleAds\V22\Enums\PromotionExtensionOccasionEnum_PromotionExtensionOccasion::class);
-

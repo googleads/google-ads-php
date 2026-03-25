@@ -73,6 +73,3 @@ class ListingGroupFilterType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListingGroupFilterType::class, \Google\Ads\GoogleAds\V23\Enums\ListingGroupFilterTypeEnum_ListingGroupFilterType::class);
-

@@ -54,7 +54,7 @@ class CampaignAssetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\MutateCampaignAssetsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\MutateCampaignAssetsResponse>
      */
     public function MutateCampaignAssets(\Google\Ads\GoogleAds\V20\Services\MutateCampaignAssetsRequest $argument,
       $metadata = [], $options = []) {

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class SuggestGeoTargetConstantsResponse extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Services\GeoTargetConstantSuggestion>|\Google\Protobuf\Internal\RepeatedField $geo_target_constant_suggestions
+     *     @type \Google\Ads\GoogleAds\V20\Services\GeoTargetConstantSuggestion[] $geo_target_constant_suggestions
      *           Geo target constant suggestions.
      * }
      */
@@ -42,7 +42,7 @@ class SuggestGeoTargetConstantsResponse extends \Google\Protobuf\Internal\Messag
      * Geo target constant suggestions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.GeoTargetConstantSuggestion geo_target_constant_suggestions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\GeoTargetConstantSuggestion>
      */
     public function getGeoTargetConstantSuggestions()
     {
@@ -53,7 +53,7 @@ class SuggestGeoTargetConstantsResponse extends \Google\Protobuf\Internal\Messag
      * Geo target constant suggestions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.GeoTargetConstantSuggestion geo_target_constant_suggestions = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Services\GeoTargetConstantSuggestion>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Services\GeoTargetConstantSuggestion[] $var
      * @return $this
      */
     public function setGeoTargetConstantSuggestions($var)

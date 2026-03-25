@@ -40,7 +40,7 @@ class ConversionGoalCampaignConfigServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V23\Services\MutateConversionGoalCampaignConfigsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateConversionGoalCampaignConfigsResponse>
      */
     public function MutateConversionGoalCampaignConfigs(\Google\Ads\GoogleAds\V23\Services\MutateConversionGoalCampaignConfigsRequest $argument,
       $metadata = [], $options = []) {

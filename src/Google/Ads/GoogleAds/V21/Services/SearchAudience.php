@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A collection of audience attributes that describe an audience of viewers.
@@ -18,7 +18,9 @@ class SearchAudience extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Audience attributes that describe an audience of viewers. This is
-     * used to search for topics trending for the defined audience.
+     * used to search for topics trending for the defined audience. Attributes
+     * age_range, gender, user_interest, entity, category, parental_status, and
+     * income_range are supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AudienceInsightsAttribute audience_attributes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -30,9 +32,11 @@ class SearchAudience extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $audience_attributes
+     *     @type \Google\Ads\GoogleAds\V21\Common\AudienceInsightsAttribute[] $audience_attributes
      *           Required. Audience attributes that describe an audience of viewers. This is
-     *           used to search for topics trending for the defined audience.
+     *           used to search for topics trending for the defined audience. Attributes
+     *           age_range, gender, user_interest, entity, category, parental_status, and
+     *           income_range are supported.
      * }
      */
     public function __construct($data = NULL) {
@@ -42,10 +46,12 @@ class SearchAudience extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Audience attributes that describe an audience of viewers. This is
-     * used to search for topics trending for the defined audience.
+     * used to search for topics trending for the defined audience. Attributes
+     * age_range, gender, user_interest, entity, category, parental_status, and
+     * income_range are supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AudienceInsightsAttribute audience_attributes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AudienceInsightsAttribute>
      */
     public function getAudienceAttributes()
     {
@@ -54,10 +60,12 @@ class SearchAudience extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Audience attributes that describe an audience of viewers. This is
-     * used to search for topics trending for the defined audience.
+     * used to search for topics trending for the defined audience. Attributes
+     * age_range, gender, user_interest, entity, category, parental_status, and
+     * income_range are supported.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AudienceInsightsAttribute audience_attributes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AudienceInsightsAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AudienceInsightsAttribute[] $var
      * @return $this
      */
     public function setAudienceAttributes($var)

@@ -168,6 +168,3 @@ class AssetSetType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetSetType::class, \Google\Ads\GoogleAds\V20\Enums\AssetSetTypeEnum_AssetSetType::class);
-

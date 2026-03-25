@@ -73,6 +73,3 @@ class KeywordPlanCompetitionLevel
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(KeywordPlanCompetitionLevel::class, \Google\Ads\GoogleAds\V22\Enums\KeywordPlanCompetitionLevelEnum_KeywordPlanCompetitionLevel::class);
-

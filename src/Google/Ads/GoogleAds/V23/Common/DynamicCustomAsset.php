@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A dynamic custom asset.
@@ -175,7 +175,7 @@ class DynamicCustomAsset extends \Google\Protobuf\Internal\Message
      *     @type string $image_url
      *           Image URL, for example, http://www.example.com/image.png. The image will
      *           not be uploaded as image asset.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
+     *     @type string[] $contextual_keywords
      *           Contextual keywords, for example, Sedans, 4 door sedans.
      *     @type string $android_app_link
      *           Android deep link, for example,
@@ -186,7 +186,7 @@ class DynamicCustomAsset extends \Google\Protobuf\Internal\Message
      *           iOS app store ID. This is used to check if the user has the app installed
      *           on their device before deep linking. If this field is set, then the
      *           ios_app_link field must also be present.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_ids
+     *     @type string[] $similar_ids
      *           Similar IDs.
      * }
      */
@@ -535,7 +535,7 @@ class DynamicCustomAsset extends \Google\Protobuf\Internal\Message
      * Contextual keywords, for example, Sedans, 4 door sedans.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 13;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getContextualKeywords()
     {
@@ -546,7 +546,7 @@ class DynamicCustomAsset extends \Google\Protobuf\Internal\Message
      * Contextual keywords, for example, Sedans, 4 door sedans.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 13;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setContextualKeywords($var)
@@ -645,7 +645,7 @@ class DynamicCustomAsset extends \Google\Protobuf\Internal\Message
      * Similar IDs.
      *
      * Generated from protobuf field <code>repeated string similar_ids = 15;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSimilarIds()
     {
@@ -656,7 +656,7 @@ class DynamicCustomAsset extends \Google\Protobuf\Internal\Message
      * Similar IDs.
      *
      * Generated from protobuf field <code>repeated string similar_ids = 15;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSimilarIds($var)

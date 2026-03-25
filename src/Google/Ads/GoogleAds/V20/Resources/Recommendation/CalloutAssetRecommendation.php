@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The callout asset recommendation.
@@ -36,10 +36,10 @@ class CalloutAssetRecommendation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V20\Resources\Asset>|\Google\Protobuf\Internal\RepeatedField $recommended_campaign_callout_assets
+     *     @type \Google\Ads\GoogleAds\V20\Resources\Asset[] $recommended_campaign_callout_assets
      *           Output only. New callout extension assets recommended at the campaign
      *           level.
-     *     @type array<\Google\Ads\GoogleAds\V20\Resources\Asset>|\Google\Protobuf\Internal\RepeatedField $recommended_customer_callout_assets
+     *     @type \Google\Ads\GoogleAds\V20\Resources\Asset[] $recommended_customer_callout_assets
      *           Output only. New callout extension assets recommended at the customer
      *           level.
      * }
@@ -54,7 +54,7 @@ class CalloutAssetRecommendation extends \Google\Protobuf\Internal\Message
      * level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.Asset recommended_campaign_callout_assets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Resources\Asset>
      */
     public function getRecommendedCampaignCalloutAssets()
     {
@@ -66,7 +66,7 @@ class CalloutAssetRecommendation extends \Google\Protobuf\Internal\Message
      * level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.Asset recommended_campaign_callout_assets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Resources\Asset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Resources\Asset[] $var
      * @return $this
      */
     public function setRecommendedCampaignCalloutAssets($var)
@@ -82,7 +82,7 @@ class CalloutAssetRecommendation extends \Google\Protobuf\Internal\Message
      * level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.Asset recommended_customer_callout_assets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Resources\Asset>
      */
     public function getRecommendedCustomerCalloutAssets()
     {
@@ -94,7 +94,7 @@ class CalloutAssetRecommendation extends \Google\Protobuf\Internal\Message
      * level.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.Asset recommended_customer_callout_assets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Resources\Asset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Resources\Asset[] $var
      * @return $this
      */
     public function setRecommendedCustomerCalloutAssets($var)
@@ -106,7 +106,4 @@ class CalloutAssetRecommendation extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CalloutAssetRecommendation::class, \Google\Ads\GoogleAds\V20\Resources\Recommendation_CalloutAssetRecommendation::class);
 

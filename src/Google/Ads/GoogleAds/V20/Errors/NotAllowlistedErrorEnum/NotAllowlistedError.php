@@ -59,6 +59,3 @@ class NotAllowlistedError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(NotAllowlistedError::class, \Google\Ads\GoogleAds\V20\Errors\NotAllowlistedErrorEnum_NotAllowlistedError::class);
-

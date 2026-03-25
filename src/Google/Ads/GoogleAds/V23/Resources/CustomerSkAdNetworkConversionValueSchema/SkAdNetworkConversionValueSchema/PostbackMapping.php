@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Mappings for each postback in multiple conversion windows.
@@ -230,7 +230,4 @@ class PostbackMapping extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PostbackMapping::class, \Google\Ads\GoogleAds\V23\Resources\CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping::class);
 

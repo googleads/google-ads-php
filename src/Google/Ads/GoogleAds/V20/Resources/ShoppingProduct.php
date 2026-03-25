@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A shopping product from Google Merchant Center that can be advertised by
@@ -330,7 +330,7 @@ class ShoppingProduct extends \Google\Protobuf\Internal\Message
      *           Output only. The condition of the product as provided by the merchant.
      *     @type int $availability
      *           Output only. The availability of the product as provided by the merchant.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $target_countries
+     *     @type string[] $target_countries
      *           Output only. Upper-case two-letter ISO 3166-1 code of the regions where the
      *           product is intended to be shown in ads.
      *     @type string $custom_attribute0
@@ -380,7 +380,7 @@ class ShoppingProduct extends \Google\Protobuf\Internal\Message
      *           The value of this field is restricted to the scope specified in the query,
      *           see the documentation of the resource.
      *           This field can take up to 24 hours to update.
-     *     @type array<\Google\Ads\GoogleAds\V20\Resources\ShoppingProduct\ProductIssue>|\Google\Protobuf\Internal\RepeatedField $issues
+     *     @type \Google\Ads\GoogleAds\V20\Resources\ShoppingProduct\ProductIssue[] $issues
      *           Output only. The list of issues affecting whether the product can show in
      *           ads. The value of this field is restricted to the scope specified in the
      *           query, see the documentation of the resource. This field can take up to 24
@@ -865,7 +865,7 @@ class ShoppingProduct extends \Google\Protobuf\Internal\Message
      * product is intended to be shown in ads.
      *
      * Generated from protobuf field <code>repeated string target_countries = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getTargetCountries()
     {
@@ -877,7 +877,7 @@ class ShoppingProduct extends \Google\Protobuf\Internal\Message
      * product is intended to be shown in ads.
      *
      * Generated from protobuf field <code>repeated string target_countries = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setTargetCountries($var)
@@ -1523,7 +1523,7 @@ class ShoppingProduct extends \Google\Protobuf\Internal\Message
      * hours to update.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.ShoppingProduct.ProductIssue issues = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Resources\ShoppingProduct\ProductIssue>
      */
     public function getIssues()
     {
@@ -1537,7 +1537,7 @@ class ShoppingProduct extends \Google\Protobuf\Internal\Message
      * hours to update.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.resources.ShoppingProduct.ProductIssue issues = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Resources\ShoppingProduct\ProductIssue>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Resources\ShoppingProduct\ProductIssue[] $var
      * @return $this
      */
     public function setIssues($var)

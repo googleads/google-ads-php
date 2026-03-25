@@ -73,6 +73,3 @@ class ShoppingProductError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ShoppingProductError::class, \Google\Ads\GoogleAds\V21\Errors\ShoppingProductErrorEnum_ShoppingProductError::class);
-

@@ -67,6 +67,3 @@ class ConversionActionCountingType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionActionCountingType::class, \Google\Ads\GoogleAds\V22\Enums\ConversionActionCountingTypeEnum_ConversionActionCountingType::class);
-

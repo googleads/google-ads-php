@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents a criterion for targeting webpages of an advertiser's website.
@@ -65,7 +65,7 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      *           of parameters.
      *           This field is required for CREATE operations and is prohibited on UPDATE
      *           operations.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\WebpageConditionInfo>|\Google\Protobuf\Internal\RepeatedField $conditions
+     *     @type \Google\Ads\GoogleAds\V20\Common\WebpageConditionInfo[] $conditions
      *           Conditions, or logical expressions, for webpage targeting. The list of
      *           webpage targeting conditions are and-ed together when evaluated
      *           for targeting. An empty list of conditions indicates all pages of the
@@ -140,7 +140,7 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      * operations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.WebpageConditionInfo conditions = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\WebpageConditionInfo>
      */
     public function getConditions()
     {
@@ -156,7 +156,7 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      * operations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.WebpageConditionInfo conditions = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\WebpageConditionInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\WebpageConditionInfo[] $var
      * @return $this
      */
     public function setConditions($var)

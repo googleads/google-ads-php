@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources\Campaign;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents a collection of settings related to ads geotargeting.
@@ -98,7 +98,4 @@ class GeoTargetTypeSetting extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(GeoTargetTypeSetting::class, \Google\Ads\GoogleAds\V21\Resources\Campaign_GeoTargetTypeSetting::class);
 

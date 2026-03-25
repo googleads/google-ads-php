@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The impact of making the change as described in the recommendation.
@@ -119,7 +119,4 @@ class RecommendationImpact extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(RecommendationImpact::class, \Google\Ads\GoogleAds\V21\Resources\Recommendation_RecommendationImpact::class);
 

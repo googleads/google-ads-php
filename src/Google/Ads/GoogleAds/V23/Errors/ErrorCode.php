@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Errors;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The error reason represented by type and enum.
@@ -55,6 +55,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           An error with a Video Campaign mutate.
      *     @type int $authentication_error
      *           Indicates failure to properly authenticate user.
+     *     @type int $action_error
+     *           An error with a Tangle Action.
      *     @type int $ad_group_criterion_customizer_error
      *           The reasons for the ad group criterion customizer error.
      *     @type int $ad_group_criterion_error
@@ -353,6 +355,10 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the Benchmarks error.
      *     @type int $incentive_error
      *           The reasons for the incentive error
+     *     @type int $content_creator_insights_error
+     *           The reasons for the Content Creator Insights error.
+     *     @type int $video_reservation_error
+     *           The reasons for the video reservation error.
      * }
      */
     public function __construct($data = NULL) {
@@ -852,6 +858,37 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V23\Errors\AuthenticationErrorEnum\AuthenticationError::class);
         $this->writeOneof(17, $var);
+
+        return $this;
+    }
+
+    /**
+     * An error with a Tangle Action.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.errors.ActionErrorEnum.ActionError action_error = 196;</code>
+     * @return int
+     */
+    public function getActionError()
+    {
+        return $this->readOneof(196);
+    }
+
+    public function hasActionError()
+    {
+        return $this->hasOneof(196);
+    }
+
+    /**
+     * An error with a Tangle Action.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.errors.ActionErrorEnum.ActionError action_error = 196;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setActionError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V23\Errors\ActionErrorEnum\ActionError::class);
+        $this->writeOneof(196, $var);
 
         return $this;
     }
@@ -5471,6 +5508,68 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V23\Errors\IncentiveErrorEnum\IncentiveError::class);
         $this->writeOneof(197, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the Content Creator Insights error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.errors.ContentCreatorInsightsErrorEnum.ContentCreatorInsightsError content_creator_insights_error = 198;</code>
+     * @return int
+     */
+    public function getContentCreatorInsightsError()
+    {
+        return $this->readOneof(198);
+    }
+
+    public function hasContentCreatorInsightsError()
+    {
+        return $this->hasOneof(198);
+    }
+
+    /**
+     * The reasons for the Content Creator Insights error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.errors.ContentCreatorInsightsErrorEnum.ContentCreatorInsightsError content_creator_insights_error = 198;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setContentCreatorInsightsError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V23\Errors\ContentCreatorInsightsErrorEnum\ContentCreatorInsightsError::class);
+        $this->writeOneof(198, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the video reservation error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.errors.VideoReservationErrorEnum.VideoReservationError video_reservation_error = 199;</code>
+     * @return int
+     */
+    public function getVideoReservationError()
+    {
+        return $this->readOneof(199);
+    }
+
+    public function hasVideoReservationError()
+    {
+        return $this->hasOneof(199);
+    }
+
+    /**
+     * The reasons for the video reservation error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v23.errors.VideoReservationErrorEnum.VideoReservationError video_reservation_error = 199;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVideoReservationError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V23\Errors\VideoReservationErrorEnum\VideoReservationError::class);
+        $this->writeOneof(199, $var);
 
         return $this;
     }

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources\Recommendation\KeywordRecommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Information about a search term as related to a keyword recommendation.
@@ -102,7 +102,4 @@ class SearchTerm extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SearchTerm::class, \Google\Ads\GoogleAds\V21\Resources\Recommendation_KeywordRecommendation_SearchTerm::class);
 

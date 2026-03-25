@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A click conversion.
@@ -169,11 +169,11 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      *           Additional data about externally attributed conversions. This field
      *           is required for conversions with an externally attributed conversion
      *           action, but should not be set otherwise.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\CustomVariable>|\Google\Protobuf\Internal\RepeatedField $custom_variables
+     *     @type \Google\Ads\GoogleAds\V23\Services\CustomVariable[] $custom_variables
      *           The custom variables associated with this conversion.
      *     @type \Google\Ads\GoogleAds\V23\Services\CartData $cart_data
      *           The cart data associated with this conversion.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $user_identifiers
+     *     @type \Google\Ads\GoogleAds\V23\Common\UserIdentifier[] $user_identifiers
      *           The user identifiers associated with this conversion. Only hashed_email and
      *           hashed_phone_number are supported for conversion uploads. The maximum
      *           number of user identifiers for each conversion is 5.
@@ -541,7 +541,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * The custom variables associated with this conversion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.CustomVariable custom_variables = 15;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\CustomVariable>
      */
     public function getCustomVariables()
     {
@@ -552,7 +552,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * The custom variables associated with this conversion.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.CustomVariable custom_variables = 15;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\CustomVariable>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\CustomVariable[] $var
      * @return $this
      */
     public function setCustomVariables($var)
@@ -605,7 +605,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * number of user identifiers for each conversion is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.UserIdentifier user_identifiers = 17;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\UserIdentifier>
      */
     public function getUserIdentifiers()
     {
@@ -618,7 +618,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * number of user identifiers for each conversion is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.UserIdentifier user_identifiers = 17;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\UserIdentifier[] $var
      * @return $this
      */
     public function setUserIdentifiers($var)

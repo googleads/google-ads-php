@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A container for simulation points for simulations of type BUDGET.
@@ -28,7 +28,7 @@ class BudgetSimulationPointList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\BudgetSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $points
+     *     @type \Google\Ads\GoogleAds\V21\Common\BudgetSimulationPoint[] $points
      *           Projected metrics for a series of budget amounts.
      * }
      */
@@ -41,7 +41,7 @@ class BudgetSimulationPointList extends \Google\Protobuf\Internal\Message
      * Projected metrics for a series of budget amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.BudgetSimulationPoint points = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\BudgetSimulationPoint>
      */
     public function getPoints()
     {
@@ -52,7 +52,7 @@ class BudgetSimulationPointList extends \Google\Protobuf\Internal\Message
      * Projected metrics for a series of budget amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.BudgetSimulationPoint points = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\BudgetSimulationPoint>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\BudgetSimulationPoint[] $var
      * @return $this
      */
     public function setPoints($var)

@@ -52,7 +52,7 @@ class RecommendationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\ApplyRecommendationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\ApplyRecommendationResponse>
      */
     public function ApplyRecommendation(\Google\Ads\GoogleAds\V21\Services\ApplyRecommendationRequest $argument,
       $metadata = [], $options = []) {
@@ -76,7 +76,7 @@ class RecommendationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\DismissRecommendationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\DismissRecommendationResponse>
      */
     public function DismissRecommendation(\Google\Ads\GoogleAds\V21\Services\DismissRecommendationRequest $argument,
       $metadata = [], $options = []) {
@@ -100,7 +100,7 @@ class RecommendationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V21\Services\GenerateRecommendationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V21\Services\GenerateRecommendationsResponse>
      */
     public function GenerateRecommendations(\Google\Ads\GoogleAds\V21\Services\GenerateRecommendationsRequest $argument,
       $metadata = [], $options = []) {

@@ -81,6 +81,3 @@ class VideoThumbnail
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(VideoThumbnail::class, \Google\Ads\GoogleAds\V23\Enums\VideoThumbnailEnum_VideoThumbnail::class);
-

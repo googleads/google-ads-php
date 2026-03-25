@@ -98,6 +98,3 @@ class AssetLinkPrimaryStatusReason
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetLinkPrimaryStatusReason::class, \Google\Ads\GoogleAds\V22\Enums\AssetLinkPrimaryStatusReasonEnum_AssetLinkPrimaryStatusReason::class);
-

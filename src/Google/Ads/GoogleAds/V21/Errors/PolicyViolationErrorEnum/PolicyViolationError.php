@@ -59,6 +59,3 @@ class PolicyViolationError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PolicyViolationError::class, \Google\Ads\GoogleAds\V21\Errors\PolicyViolationErrorEnum_PolicyViolationError::class);
-

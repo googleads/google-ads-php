@@ -72,6 +72,3 @@ class ConversionCustomerType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConversionCustomerType::class, \Google\Ads\GoogleAds\V20\Enums\ConversionCustomerTypeEnum_ConversionCustomerType::class);
-

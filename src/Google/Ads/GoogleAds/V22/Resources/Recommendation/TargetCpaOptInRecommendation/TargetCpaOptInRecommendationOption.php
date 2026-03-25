@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\Recommendation\TargetCpaOptInRecommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The Target CPA opt-in option with impact estimate.
@@ -204,7 +204,4 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TargetCpaOptInRecommendationOption::class, \Google\Ads\GoogleAds\V22\Resources\Recommendation_TargetCpaOptInRecommendation_TargetCpaOptInRecommendationOption::class);
 

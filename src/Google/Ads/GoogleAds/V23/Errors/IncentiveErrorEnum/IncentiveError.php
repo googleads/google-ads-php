@@ -75,6 +75,3 @@ class IncentiveError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(IncentiveError::class, \Google\Ads\GoogleAds\V23\Errors\IncentiveErrorEnum_IncentiveError::class);
-

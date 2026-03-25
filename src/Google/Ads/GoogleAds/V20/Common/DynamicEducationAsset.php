@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Dynamic Education asset.
@@ -136,13 +136,13 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
      *           (1) City, state, code, country, for example, Mountain View, CA, USA.
      *           (2) Full address, for example, 123 Boulevard St, Mountain View, CA 94043.
      *           (3) Latitude-longitude in the DDD format, for example, 41.40338, 2.17403
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contextual_keywords
+     *     @type string[] $contextual_keywords
      *           Contextual keywords, for example, Nursing certification, Health, Mountain
      *           View.
      *     @type string $android_app_link
      *           Android deep link, for example,
      *           android-app://com.example.android/http/example.com/gizmos?1234.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $similar_program_ids
+     *     @type string[] $similar_program_ids
      *           Similar program IDs.
      *     @type string $ios_app_link
      *           iOS deep link, for example, exampleApp://content/page.
@@ -360,7 +360,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
      * View.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getContextualKeywords()
     {
@@ -372,7 +372,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
      * View.
      *
      * Generated from protobuf field <code>repeated string contextual_keywords = 8;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setContextualKeywords($var)
@@ -415,7 +415,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
      * Similar program IDs.
      *
      * Generated from protobuf field <code>repeated string similar_program_ids = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSimilarProgramIds()
     {
@@ -426,7 +426,7 @@ class DynamicEducationAsset extends \Google\Protobuf\Internal\Message
      * Similar program IDs.
      *
      * Generated from protobuf field <code>repeated string similar_program_ids = 10;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSimilarProgramIds($var)

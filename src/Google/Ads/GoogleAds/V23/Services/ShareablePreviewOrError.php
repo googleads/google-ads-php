@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Result of the generate shareable preview.
@@ -22,6 +22,7 @@ class ShareablePreviewOrError extends \Google\Protobuf\Internal\Message
      */
     protected $asset_group_identifier = null;
     protected $generate_shareable_preview_response;
+    protected $identifier;
 
     /**
      * Constructor.
@@ -35,6 +36,9 @@ class ShareablePreviewOrError extends \Google\Protobuf\Internal\Message
      *           The shareable preview result.
      *     @type \Google\Rpc\Status $partial_failure_error
      *           The shareable preview partial failure error.
+     *     @type string $ad_group_ad
+     *           The ad group ad of the shareable preview.
+     *           Format: customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}
      * }
      */
     public function __construct($data = NULL) {
@@ -141,11 +145,52 @@ class ShareablePreviewOrError extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The ad group ad of the shareable preview.
+     * Format: customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}
+     *
+     * Generated from protobuf field <code>string ad_group_ad = 4;</code>
+     * @return string
+     */
+    public function getAdGroupAd()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasAdGroupAd()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * The ad group ad of the shareable preview.
+     * Format: customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}
+     *
+     * Generated from protobuf field <code>string ad_group_ad = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAdGroupAd($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getGenerateShareablePreviewResponse()
     {
         return $this->whichOneof("generate_shareable_preview_response");
+    }
+
+    /**
+     * @return string
+     */
+    public function getIdentifier()
+    {
+        return $this->whichOneof("identifier");
     }
 
 }

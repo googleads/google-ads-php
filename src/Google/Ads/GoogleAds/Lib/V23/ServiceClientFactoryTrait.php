@@ -122,6 +122,7 @@ use Google\Ads\GoogleAds\V23\Services\Client\ReachPlanServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\RecommendationServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\RecommendationSubscriptionServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\RemarketingActionServiceClient;
+use Google\Ads\GoogleAds\V23\Services\Client\ReservationServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\ShareablePreviewServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\SharedCriterionServiceClient;
 use Google\Ads\GoogleAds\V23\Services\Client\SharedSetServiceClient;
@@ -1034,6 +1035,14 @@ trait ServiceClientFactoryTrait
     public function getRemarketingActionServiceClient(): RemarketingActionServiceClient
     {
         return new RemarketingActionServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return ReservationServiceClient
+     */
+    public function getReservationServiceClient(): ReservationServiceClient
+    {
+        return new ReservationServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

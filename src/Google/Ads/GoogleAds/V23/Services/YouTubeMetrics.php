@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * YouTube Channel metrics.
@@ -116,6 +116,12 @@ class YouTubeMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_brand_connect_creator = 15;</code>
      */
     protected $is_brand_connect_creator = false;
+    /**
+     * Partnership opportunities available for this creator.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.PartnershipOpportunityEnum.PartnershipOpportunity partnership_opportunities = 17;</code>
+     */
+    private $partnership_opportunities;
 
     /**
      * Constructor.
@@ -160,6 +166,8 @@ class YouTubeMetrics extends \Google\Protobuf\Internal\Message
      *           content using the Google Ads creator partnership platform, BrandConnect.
      *           See https://support.google.com/google-ads/answer/13828964 for more
      *           information about BrandConnect.
+     *     @type int[] $partnership_opportunities
+     *           Partnership opportunities available for this creator.
      * }
      */
     public function __construct($data = NULL) {
@@ -589,6 +597,32 @@ class YouTubeMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_brand_connect_creator = $var;
+
+        return $this;
+    }
+
+    /**
+     * Partnership opportunities available for this creator.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.PartnershipOpportunityEnum.PartnershipOpportunity partnership_opportunities = 17;</code>
+     * @return RepeatedField<int>
+     */
+    public function getPartnershipOpportunities()
+    {
+        return $this->partnership_opportunities;
+    }
+
+    /**
+     * Partnership opportunities available for this creator.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.PartnershipOpportunityEnum.PartnershipOpportunity partnership_opportunities = 17;</code>
+     * @param int[] $var
+     * @return $this
+     */
+    public function setPartnershipOpportunities($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V23\Enums\PartnershipOpportunityEnum\PartnershipOpportunity::class);
+        $this->partnership_opportunities = $arr;
 
         return $this;
     }

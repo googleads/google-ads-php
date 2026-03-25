@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Demand Gen multi asset ad.
@@ -103,39 +103,39 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $marketing_images
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdImageAsset[] $marketing_images
      *           Marketing image assets to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 600x314 and the aspect ratio must
      *           be 1.91:1 (+-1%). Required if square_marketing_images is
      *           not present. Combined with
      *           `square_marketing_images`, `portrait_marketing_images`, and
      *           `tall_portrait_marketing_images` the maximum is 20.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $square_marketing_images
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdImageAsset[] $square_marketing_images
      *           Square marketing image assets to be used in the ad. Valid image types are
      *           GIF, JPEG, and PNG. The minimum size is 300x300 and the aspect ratio must
      *           be 1:1 (+-1%). Required if marketing_images is not present. Combined with
      *           `marketing_images`, `portrait_marketing_images`, and
      *           `tall_portrait_marketing_images` the maximum is 20.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $portrait_marketing_images
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdImageAsset[] $portrait_marketing_images
      *           Portrait marketing image assets to be used in the ad. Valid image types are
      *           GIF, JPEG, and PNG. The minimum size is 480x600 and the aspect ratio must
      *           be 4:5 (+-1%). Combined
      *           with `marketing_images`, `square_marketing_images`, and
      *           `tall_portrait_marketing_images` the maximum is 20.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $tall_portrait_marketing_images
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdImageAsset[] $tall_portrait_marketing_images
      *           Tall portrait marketing image assets to be used in the ad. Valid image
      *           types are GIF, JPEG, and PNG. The minimum size is 600x1067 and the aspect
      *           ratio must be 9:16 (+-1%). Combined with `marketing_images`,
      *           `square_marketing_images`, and `portrait_marketing_images`, the maximum
      *           is 20.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $logo_images
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdImageAsset[] $logo_images
      *           Logo image assets to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must be
      *           1:1 (+-1%). At least 1 and max 5 logo images can be specified.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $headlines
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $headlines
      *           Headline text asset of the ad. Maximum display width is 30. At least 1 and
      *           max 5 headlines can be specified.
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $descriptions
+     *     @type \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $descriptions
      *           The descriptive text of the ad. Maximum display width is 90. At least 1 and
      *           max 5 descriptions can be specified.
      *     @type string $business_name
@@ -160,7 +160,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * `tall_portrait_marketing_images` the maximum is 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdImageAsset marketing_images = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>
      */
     public function getMarketingImages()
     {
@@ -176,7 +176,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * `tall_portrait_marketing_images` the maximum is 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdImageAsset marketing_images = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setMarketingImages($var)
@@ -195,7 +195,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * `tall_portrait_marketing_images` the maximum is 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdImageAsset square_marketing_images = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>
      */
     public function getSquareMarketingImages()
     {
@@ -210,7 +210,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * `tall_portrait_marketing_images` the maximum is 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdImageAsset square_marketing_images = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setSquareMarketingImages($var)
@@ -229,7 +229,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * `tall_portrait_marketing_images` the maximum is 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdImageAsset portrait_marketing_images = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>
      */
     public function getPortraitMarketingImages()
     {
@@ -244,7 +244,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * `tall_portrait_marketing_images` the maximum is 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdImageAsset portrait_marketing_images = 3;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setPortraitMarketingImages($var)
@@ -263,7 +263,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * is 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdImageAsset tall_portrait_marketing_images = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>
      */
     public function getTallPortraitMarketingImages()
     {
@@ -278,7 +278,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * is 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdImageAsset tall_portrait_marketing_images = 10;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setTallPortraitMarketingImages($var)
@@ -295,7 +295,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * 1:1 (+-1%). At least 1 and max 5 logo images can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdImageAsset logo_images = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>
      */
     public function getLogoImages()
     {
@@ -308,7 +308,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * 1:1 (+-1%). At least 1 and max 5 logo images can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdImageAsset logo_images = 4;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdImageAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdImageAsset[] $var
      * @return $this
      */
     public function setLogoImages($var)
@@ -324,7 +324,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * max 5 headlines can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset headlines = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>
      */
     public function getHeadlines()
     {
@@ -336,7 +336,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * max 5 headlines can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset headlines = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setHeadlines($var)
@@ -352,7 +352,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * max 5 descriptions can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset descriptions = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>
      */
     public function getDescriptions()
     {
@@ -364,7 +364,7 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      * max 5 descriptions can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AdTextAsset descriptions = 6;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AdTextAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AdTextAsset[] $var
      * @return $this
      */
     public function setDescriptions($var)

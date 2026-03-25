@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources\Campaign;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Category bids in LocalServicesReportingCampaignSettings.
@@ -178,7 +178,4 @@ class CategoryBid extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CategoryBid::class, \Google\Ads\GoogleAds\V21\Resources\Campaign_CategoryBid::class);
 

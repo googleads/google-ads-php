@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\AssetSet;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * For Performance Max for travel goals campaigns with a Hotel
@@ -119,7 +119,4 @@ class HotelPropertyData extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(HotelPropertyData::class, \Google\Ads\GoogleAds\V20\Resources\AssetSet_HotelPropertyData::class);
 

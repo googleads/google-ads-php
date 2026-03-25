@@ -90,6 +90,3 @@ class AssetPerformanceLabel
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetPerformanceLabel::class, \Google\Ads\GoogleAds\V20\Enums\AssetPerformanceLabelEnum_AssetPerformanceLabel::class);
-

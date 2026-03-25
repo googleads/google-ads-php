@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common\LineupAttributeMetadata;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A YouTube channel returned as an example of the content in a lineup.
@@ -152,7 +152,4 @@ class SampleChannel extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SampleChannel::class, \Google\Ads\GoogleAds\V21\Common\LineupAttributeMetadata_SampleChannel::class);
 

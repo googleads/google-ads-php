@@ -68,6 +68,3 @@ class AudienceInsightsMarketingObjective
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AudienceInsightsMarketingObjective::class, \Google\Ads\GoogleAds\V22\Enums\AudienceInsightsMarketingObjectiveEnum_AudienceInsightsMarketingObjective::class);
-

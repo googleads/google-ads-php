@@ -61,6 +61,3 @@ class GoalType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(GoalType::class, \Google\Ads\GoogleAds\V22\Enums\GoalTypeEnum_GoalType::class);
-

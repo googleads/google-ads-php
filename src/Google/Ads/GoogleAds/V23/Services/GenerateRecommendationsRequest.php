@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -243,7 +243,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           Required. The ID of the customer generating recommendations.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $recommendation_types
+     *     @type int[] $recommendation_types
      *           Required. List of eligible recommendation_types to generate. If the
      *           uploaded criteria isn't sufficient to make a recommendation, or the
      *           campaign is already in the recommended state, no recommendation will be
@@ -277,7 +277,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      *           CAMPAIGN_BUDGET, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
      *           MAXIMIZE_CONVERSION_VALUE_OPT_IN, SET_TARGET_CPA, SET_TARGET_ROAS,
      *           TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\GenerateRecommendationsRequest\AdGroupInfo>|\Google\Protobuf\Internal\RepeatedField $ad_group_info
+     *     @type \Google\Ads\GoogleAds\V23\Services\GenerateRecommendationsRequest\AdGroupInfo[] $ad_group_info
      *           Optional. Current AdGroup Information.
      *           Supports information from a single AdGroup.
      *           This field is optional for the following recommendation_types:
@@ -300,23 +300,23 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      *           Optional. Current campaign call asset count.
      *           This field is optional for the following recommendation_types:
      *           CAMPAIGN_BUDGET
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $country_codes
+     *     @type string[] $country_codes
      *           Optional. Current campaign country codes.
      *           This field is required for the following recommendation_types:
      *           CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $language_codes
+     *     @type string[] $language_codes
      *           Optional. Current campaign language codes.
      *           This field is required for the following recommendation_types:
      *           CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
-     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $positive_locations_ids
+     *     @type int[]|string[] $positive_locations_ids
      *           Optional. Current campaign positive location ids.
      *           One of this field OR negative_location_ids is required for the following
      *           recommendation_types: CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
-     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $negative_locations_ids
+     *     @type int[]|string[] $negative_locations_ids
      *           Optional. Current campaign negative location ids.
      *           One of this field OR positive_location_ids is required for the following
      *           recommendation_types: CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\GenerateRecommendationsRequest\AssetGroupInfo>|\Google\Protobuf\Internal\RepeatedField $asset_group_info
+     *     @type \Google\Ads\GoogleAds\V23\Services\GenerateRecommendationsRequest\AssetGroupInfo[] $asset_group_info
      *           Optional. Current AssetGroup Information.
      *           This field is required for the following recommendation_types:
      *           CAMPAIGN_BUDGET
@@ -393,7 +393,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * TARGET_ROAS_OPT_IN
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.RecommendationTypeEnum.RecommendationType recommendation_types = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getRecommendationTypes()
     {
@@ -415,7 +415,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * TARGET_ROAS_OPT_IN
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.RecommendationTypeEnum.RecommendationType recommendation_types = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setRecommendationTypes($var)
@@ -595,7 +595,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.GenerateRecommendationsRequest.AdGroupInfo ad_group_info = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\GenerateRecommendationsRequest\AdGroupInfo>
      */
     public function getAdGroupInfo()
     {
@@ -611,7 +611,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.GenerateRecommendationsRequest.AdGroupInfo ad_group_info = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\GenerateRecommendationsRequest\AdGroupInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\GenerateRecommendationsRequest\AdGroupInfo[] $var
      * @return $this
      */
     public function setAdGroupInfo($var)
@@ -788,7 +788,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
      *
      * Generated from protobuf field <code>repeated string country_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getCountryCodes()
     {
@@ -801,7 +801,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
      *
      * Generated from protobuf field <code>repeated string country_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setCountryCodes($var)
@@ -818,7 +818,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
      *
      * Generated from protobuf field <code>repeated string language_codes = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLanguageCodes()
     {
@@ -831,7 +831,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
      *
      * Generated from protobuf field <code>repeated string language_codes = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLanguageCodes($var)
@@ -848,7 +848,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * recommendation_types: CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
      *
      * Generated from protobuf field <code>repeated int64 positive_locations_ids = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>|RepeatedField<string>
      */
     public function getPositiveLocationsIds()
     {
@@ -861,7 +861,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * recommendation_types: CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
      *
      * Generated from protobuf field <code>repeated int64 positive_locations_ids = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[]|string[] $var
      * @return $this
      */
     public function setPositiveLocationsIds($var)
@@ -878,7 +878,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * recommendation_types: CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
      *
      * Generated from protobuf field <code>repeated int64 negative_locations_ids = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>|RepeatedField<string>
      */
     public function getNegativeLocationsIds()
     {
@@ -891,7 +891,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * recommendation_types: CAMPAIGN_BUDGET if AdvertisingChannelType is SEARCH
      *
      * Generated from protobuf field <code>repeated int64 negative_locations_ids = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[]|string[] $var
      * @return $this
      */
     public function setNegativeLocationsIds($var)
@@ -908,7 +908,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.GenerateRecommendationsRequest.AssetGroupInfo asset_group_info = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\GenerateRecommendationsRequest\AssetGroupInfo>
      */
     public function getAssetGroupInfo()
     {
@@ -921,7 +921,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.GenerateRecommendationsRequest.AssetGroupInfo asset_group_info = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\GenerateRecommendationsRequest\AssetGroupInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\GenerateRecommendationsRequest\AssetGroupInfo[] $var
      * @return $this
      */
     public function setAssetGroupInfo($var)

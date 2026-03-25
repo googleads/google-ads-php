@@ -48,7 +48,7 @@ class GeoTargetConstantServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\SuggestGeoTargetConstantsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\SuggestGeoTargetConstantsResponse>
      */
     public function SuggestGeoTargetConstants(\Google\Ads\GoogleAds\V22\Services\SuggestGeoTargetConstantsRequest $argument,
       $metadata = [], $options = []) {

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * One chain level filter on location in a feed item set.
@@ -42,7 +42,7 @@ class ChainFilter extends \Google\Protobuf\Internal\Message
      *     @type int|string $chain_id
      *           Required. Used to filter chain locations by chain id. Only chain locations
      *           that belong to the specified chain will be in the asset set.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $location_attributes
+     *     @type string[] $location_attributes
      *           Used to filter chain locations by location attributes.
      *           Only chain locations that belong to all of the specified attribute(s) will
      *           be in the asset set. If this field is empty, it means no filtering on this
@@ -89,7 +89,7 @@ class ChainFilter extends \Google\Protobuf\Internal\Message
      * field.
      *
      * Generated from protobuf field <code>repeated string location_attributes = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLocationAttributes()
     {
@@ -103,7 +103,7 @@ class ChainFilter extends \Google\Protobuf\Internal\Message
      * field.
      *
      * Generated from protobuf field <code>repeated string location_attributes = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLocationAttributes($var)

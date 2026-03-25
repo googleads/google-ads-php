@@ -78,6 +78,3 @@ class KeywordPlanConceptGroupType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(KeywordPlanConceptGroupType::class, \Google\Ads\GoogleAds\V21\Enums\KeywordPlanConceptGroupTypeEnum_KeywordPlanConceptGroupType::class);
-

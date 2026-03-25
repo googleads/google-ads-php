@@ -26,7 +26,7 @@ class AssetError
      */
     const UNKNOWN = 1;
     /**
-     * The customer is not is not on the allow-list for this asset type.
+     * The customer is not on the allow-list for this asset type.
      *
      * Generated from protobuf enum <code>CUSTOMER_NOT_ON_ALLOWLIST_FOR_ASSET_TYPE = 13;</code>
      */
@@ -45,7 +45,7 @@ class AssetError
      */
     const DUPLICATE_ASSET_NAME = 4;
     /**
-     * The Asset.asset_data oneof is empty.
+     * The `Asset.asset_data` oneof is empty.
      *
      * Generated from protobuf enum <code>ASSET_DATA_IS_MISSING = 5;</code>
      */
@@ -121,15 +121,15 @@ class AssetError
      */
     const TOO_MANY_DECIMAL_PLACES_SPECIFIED = 17;
     /**
-     * Duplicate assets across operations, which have identical Asset.asset_data
-     * oneof, cannot have different asset level fields for asset types which are
-     * deduped.
+     * Duplicate assets across operations, which have identical
+     * `Asset.asset_data` oneof, cannot have different asset level fields for
+     * asset types which are deduped.
      *
      * Generated from protobuf enum <code>DUPLICATE_ASSETS_WITH_DIFFERENT_FIELD_VALUE = 18;</code>
      */
     const DUPLICATE_ASSETS_WITH_DIFFERENT_FIELD_VALUE = 18;
     /**
-     * Carrier specific short number is not allowed.
+     * Carrier-specific short number is not allowed.
      *
      * Generated from protobuf enum <code>CALL_CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED = 19;</code>
      */
@@ -147,9 +147,9 @@ class AssetError
      */
     const CALL_DISALLOWED_NUMBER_TYPE = 21;
     /**
-     * If the default call_conversion_action is not used, the customer must have
-     * a ConversionAction with the same id and the ConversionAction must be call
-     * conversion type.
+     * If the default `call_conversion_action` is not used, the customer must
+     * have a `ConversionAction` with the same id and the `ConversionAction`
+     * must be call conversion type.
      *
      * Generated from protobuf enum <code>CALL_INVALID_CONVERSION_ACTION = 22;</code>
      */
@@ -173,7 +173,7 @@ class AssetError
      */
     const CALL_INVALID_PHONE_NUMBER = 25;
     /**
-     * The phone number is not supported for country.
+     * The phone number is not supported for this country.
      *
      * Generated from protobuf enum <code>CALL_PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY = 26;</code>
      */
@@ -191,13 +191,13 @@ class AssetError
      */
     const CALL_VANITY_PHONE_NUMBER_NOT_ALLOWED = 28;
     /**
-     * PriceOffering cannot have the same value for header and description.
+     * `PriceOffering` cannot have the same value for header and description.
      *
      * Generated from protobuf enum <code>PRICE_HEADER_SAME_AS_DESCRIPTION = 29;</code>
      */
     const PRICE_HEADER_SAME_AS_DESCRIPTION = 29;
     /**
-     * AppId is invalid.
+     * `AppId` is invalid.
      *
      * Generated from protobuf enum <code>MOBILE_APP_INVALID_APP_ID = 30;</code>
      */
@@ -240,7 +240,7 @@ class AssetError
      */
     const CANNOT_MODIFY_AUTOMATICALLY_CREATED_ASSET = 36;
     /**
-     * Lead Form is disallowed to use "LOCATION" answer type.
+     * Lead Form is disallowed to use `LOCATION` answer type.
      *
      * Generated from protobuf enum <code>LEAD_FORM_LOCATION_ANSWER_TYPE_DISALLOWED = 37;</code>
      */
@@ -258,7 +258,7 @@ class AssetError
      */
     const CUSTOMER_NOT_ON_ALLOWLIST_FOR_WHATSAPP_MESSAGE_ASSETS = 39;
     /**
-     * Only customers on the allowlist can create AppDeepLinkAsset.
+     * Only customers on the allowlist can create `AppDeepLinkAsset`.
      *
      * Generated from protobuf enum <code>CUSTOMER_NOT_ON_ALLOWLIST_FOR_APP_DEEP_LINK_ASSETS = 40;</code>
      */
@@ -327,7 +327,4 @@ class AssetError
         return constant($const);
     }
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetError::class, \Google\Ads\GoogleAds\V20\Errors\AssetErrorEnum_AssetError::class);
 

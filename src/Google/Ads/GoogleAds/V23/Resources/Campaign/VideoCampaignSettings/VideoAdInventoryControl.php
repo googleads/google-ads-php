@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Campaign\VideoCampaignSettings;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * For campaigns using video responsive ads inventory controls determine on
@@ -220,7 +220,4 @@ class VideoAdInventoryControl extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(VideoAdInventoryControl::class, \Google\Ads\GoogleAds\V23\Resources\Campaign_VideoCampaignSettings_VideoAdInventoryControl::class);
 

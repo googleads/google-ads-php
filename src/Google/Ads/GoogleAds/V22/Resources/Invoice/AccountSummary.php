@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\Invoice;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents a summarized view at account level.
@@ -882,7 +882,4 @@ class AccountSummary extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AccountSummary::class, \Google\Ads\GoogleAds\V22\Resources\Invoice_AccountSummary::class);
 

@@ -71,6 +71,3 @@ class AiMaxBundlingRequired
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AiMaxBundlingRequired::class, \Google\Ads\GoogleAds\V21\Resources\Campaign_AiMaxSetting_AiMaxBundlingRequired::class);
-

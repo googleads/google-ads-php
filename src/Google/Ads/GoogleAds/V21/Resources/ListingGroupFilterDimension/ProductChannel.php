@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources\ListingGroupFilterDimension;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Locality of a product offer.
@@ -64,7 +64,4 @@ class ProductChannel extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ProductChannel::class, \Google\Ads\GoogleAds\V21\Resources\ListingGroupFilterDimension_ProductChannel::class);
 

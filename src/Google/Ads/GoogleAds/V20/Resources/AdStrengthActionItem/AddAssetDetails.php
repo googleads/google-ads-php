@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Resources\AdStrengthActionItem;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The details of the asset to add.
@@ -164,7 +164,4 @@ class AddAssetDetails extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AddAssetDetails::class, \Google\Ads\GoogleAds\V20\Resources\AdStrengthActionItem_AddAssetDetails::class);
 

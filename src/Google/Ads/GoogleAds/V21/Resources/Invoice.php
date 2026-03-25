@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An invoice. All invoice information is snapshotted to match the PDF invoice.
@@ -300,7 +300,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      *           set, `replaced_invoices` will not be set. Invoice resource names have the
      *           form:
      *           `customers/{customer_id}/invoices/{invoice_id}`
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $replaced_invoices
+     *     @type string[] $replaced_invoices
      *           Output only. The resource name of the original invoice(s) being rebilled or
      *           replaced by this invoice, if applicable. There might be multiple replaced
      *           invoices due to invoice consolidation. The replaced invoices may not belong
@@ -310,10 +310,10 @@ class Invoice extends \Google\Protobuf\Internal\Message
      *     @type string $pdf_url
      *           Output only. The URL to a PDF copy of the invoice. Users need to pass in
      *           their OAuth token to request the PDF with this URL.
-     *     @type array<\Google\Ads\GoogleAds\V21\Resources\Invoice\AccountBudgetSummary>|\Google\Protobuf\Internal\RepeatedField $account_budget_summaries
+     *     @type \Google\Ads\GoogleAds\V21\Resources\Invoice\AccountBudgetSummary[] $account_budget_summaries
      *           Output only. The list of summarized account budget information associated
      *           with this invoice.
-     *     @type array<\Google\Ads\GoogleAds\V21\Resources\Invoice\AccountSummary>|\Google\Protobuf\Internal\RepeatedField $account_summaries
+     *     @type \Google\Ads\GoogleAds\V21\Resources\Invoice\AccountSummary[] $account_summaries
      *           Output only. The list of summarized account information associated with
      *           this invoice.
      * }
@@ -1140,7 +1140,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/invoices/{invoice_id}`
      *
      * Generated from protobuf field <code>repeated string replaced_invoices = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getReplacedInvoices()
     {
@@ -1156,7 +1156,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/invoices/{invoice_id}`
      *
      * Generated from protobuf field <code>repeated string replaced_invoices = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setReplacedInvoices($var)
@@ -1210,7 +1210,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * with this invoice.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.Invoice.AccountBudgetSummary account_budget_summaries = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Resources\Invoice\AccountBudgetSummary>
      */
     public function getAccountBudgetSummaries()
     {
@@ -1222,7 +1222,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * with this invoice.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.Invoice.AccountBudgetSummary account_budget_summaries = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Resources\Invoice\AccountBudgetSummary>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Resources\Invoice\AccountBudgetSummary[] $var
      * @return $this
      */
     public function setAccountBudgetSummaries($var)
@@ -1238,7 +1238,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * this invoice.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.Invoice.AccountSummary account_summaries = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Resources\Invoice\AccountSummary>
      */
     public function getAccountSummaries()
     {
@@ -1250,7 +1250,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * this invoice.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.resources.Invoice.AccountSummary account_summaries = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Resources\Invoice\AccountSummary>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Resources\Invoice\AccountSummary[] $var
      * @return $this
      */
     public function setAccountSummaries($var)

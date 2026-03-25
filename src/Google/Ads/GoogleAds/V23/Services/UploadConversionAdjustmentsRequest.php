@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -89,7 +89,7 @@ class UploadConversionAdjustmentsRequest extends \Google\Protobuf\Internal\Messa
      *
      *     @type string $customer_id
      *           Required. The ID of the customer performing the upload.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\ConversionAdjustment>|\Google\Protobuf\Internal\RepeatedField $conversion_adjustments
+     *     @type \Google\Ads\GoogleAds\V23\Services\ConversionAdjustment[] $conversion_adjustments
      *           Required. The conversion adjustments that are being uploaded.
      *     @type bool $partial_failure
      *           Required. If true, successful operations will be carried out and invalid
@@ -145,7 +145,7 @@ class UploadConversionAdjustmentsRequest extends \Google\Protobuf\Internal\Messa
      * Required. The conversion adjustments that are being uploaded.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.ConversionAdjustment conversion_adjustments = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\ConversionAdjustment>
      */
     public function getConversionAdjustments()
     {
@@ -156,7 +156,7 @@ class UploadConversionAdjustmentsRequest extends \Google\Protobuf\Internal\Messa
      * Required. The conversion adjustments that are being uploaded.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.ConversionAdjustment conversion_adjustments = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\ConversionAdjustment>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\ConversionAdjustment[] $var
      * @return $this
      */
     public function setConversionAdjustments($var)

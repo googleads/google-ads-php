@@ -13,17 +13,10 @@ class AdScheduleView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
-            '
-Ù
-9google/ads/googleads/v20/resources/ad_schedule_view.proto"google.ads.googleads.v20.resourcesgoogle/api/resource.proto"Ì
-AdScheduleViewF
-resource_name (	B/àAúA)
-\'googleads.googleapis.com/AdScheduleView:rêAo
-\'googleads.googleapis.com/AdScheduleViewDcustomers/{customer_id}/adScheduleViews/{campaign_id}~{criterion_id}B…
-&com.google.ads.googleads.v20.resourcesBAdScheduleViewProtoPZKgoogle.golang.org/genproto/googleapis/ads/googleads/v20/resources;resources¢GAAª"Google.Ads.GoogleAds.V20.ResourcesÊ"Google\\Ads\\GoogleAds\\V20\\Resourcesê&Google::Ads::GoogleAds::V20::Resourcesbproto3'
+            "\x0A\xD9\x04\x0A9google/ads/googleads/v20/resources/ad_schedule_view.proto\x12\"google.ads.googleads.v20.resources\x1A\x19google/api/resource.proto\"\xCC\x01\x0A\x0EAdScheduleView\x12F\x0A\x0Dresource_name\x18\x01 \x01(\x09B/\xE0A\x03\xFAA)\x0A'googleads.googleapis.com/AdScheduleView:r\xEAAo\x0A'googleads.googleapis.com/AdScheduleView\x12Dcustomers/{customer_id}/adScheduleViews/{campaign_id}~{criterion_id}B\x85\x02\x0A&com.google.ads.googleads.v20.resourcesB\x13AdScheduleViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v20/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V20.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V20\\Resources\xEA\x02&Google::Ads::GoogleAds::V20::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

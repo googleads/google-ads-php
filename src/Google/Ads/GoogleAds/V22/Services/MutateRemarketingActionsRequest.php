@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -73,7 +73,7 @@ class MutateRemarketingActionsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $customer_id
      *           Required. The ID of the customer whose remarketing actions are being
      *           modified.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\RemarketingActionOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V22\Services\RemarketingActionOperation[] $operations
      *           Required. The list of operations to perform on individual remarketing
      *           actions.
      *     @type bool $partial_failure
@@ -124,7 +124,7 @@ class MutateRemarketingActionsRequest extends \Google\Protobuf\Internal\Message
      * actions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.RemarketingActionOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\RemarketingActionOperation>
      */
     public function getOperations()
     {
@@ -136,7 +136,7 @@ class MutateRemarketingActionsRequest extends \Google\Protobuf\Internal\Message
      * actions.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.RemarketingActionOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\RemarketingActionOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\RemarketingActionOperation[] $var
      * @return $this
      */
     public function setOperations($var)

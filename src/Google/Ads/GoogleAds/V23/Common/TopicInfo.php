@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A topic criterion. Use topics to target or exclude placements in the
@@ -41,7 +41,7 @@ class TopicInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type string $topic_constant
      *           The Topic Constant resource name.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $path
+     *     @type string[] $path
      *           The category to target or exclude. Each subsequent element in the array
      *           describes a more specific sub-category. For example,
      *           "Pets & Animals", "Pets", "Dogs" represents the "Pets & Animals/Pets/Dogs"
@@ -96,7 +96,7 @@ class TopicInfo extends \Google\Protobuf\Internal\Message
      * category.
      *
      * Generated from protobuf field <code>repeated string path = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getPath()
     {
@@ -110,7 +110,7 @@ class TopicInfo extends \Google\Protobuf\Internal\Message
      * category.
      *
      * Generated from protobuf field <code>repeated string path = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setPath($var)

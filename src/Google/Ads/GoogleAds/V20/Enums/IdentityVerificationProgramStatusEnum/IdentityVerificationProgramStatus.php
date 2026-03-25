@@ -80,6 +80,3 @@ class IdentityVerificationProgramStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(IdentityVerificationProgramStatus::class, \Google\Ads\GoogleAds\V20\Enums\IdentityVerificationProgramStatusEnum_IdentityVerificationProgramStatus::class);
-

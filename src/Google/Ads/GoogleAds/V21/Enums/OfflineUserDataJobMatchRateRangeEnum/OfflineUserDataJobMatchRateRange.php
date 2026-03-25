@@ -116,6 +116,3 @@ class OfflineUserDataJobMatchRateRange
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(OfflineUserDataJobMatchRateRange::class, \Google\Ads\GoogleAds\V21\Enums\OfflineUserDataJobMatchRateRangeEnum_OfflineUserDataJobMatchRateRange::class);
-

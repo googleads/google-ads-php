@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Dimension specifying users by their parental status.
@@ -34,7 +34,7 @@ class ParentalStatusDimension extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $parental_statuses
+     *     @type int[] $parental_statuses
      *           Included parental status demographic segments.
      *     @type bool $include_undetermined
      *           Include users whose parental status is undetermined.
@@ -49,7 +49,7 @@ class ParentalStatusDimension extends \Google\Protobuf\Internal\Message
      * Included parental status demographic segments.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.ParentalStatusTypeEnum.ParentalStatusType parental_statuses = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getParentalStatuses()
     {
@@ -60,7 +60,7 @@ class ParentalStatusDimension extends \Google\Protobuf\Internal\Message
      * Included parental status demographic segments.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.enums.ParentalStatusTypeEnum.ParentalStatusType parental_statuses = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setParentalStatuses($var)

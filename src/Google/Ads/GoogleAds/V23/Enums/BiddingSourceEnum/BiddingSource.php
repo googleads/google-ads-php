@@ -75,6 +75,3 @@ class BiddingSource
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BiddingSource::class, \Google\Ads\GoogleAds\V23\Enums\BiddingSourceEnum_BiddingSource::class);
-

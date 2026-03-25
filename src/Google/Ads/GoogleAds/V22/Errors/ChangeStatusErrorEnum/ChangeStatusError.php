@@ -91,6 +91,3 @@ class ChangeStatusError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ChangeStatusError::class, \Google\Ads\GoogleAds\V22\Errors\ChangeStatusErrorEnum_ChangeStatusError::class);
-

@@ -87,6 +87,3 @@ class ListingGroupFilterProductTypeLevel
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListingGroupFilterProductTypeLevel::class, \Google\Ads\GoogleAds\V21\Enums\ListingGroupFilterProductTypeLevelEnum_ListingGroupFilterProductTypeLevel::class);
-

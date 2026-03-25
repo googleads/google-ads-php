@@ -59,7 +59,7 @@ class CampaignBudgetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V22\Services\MutateCampaignBudgetsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateCampaignBudgetsResponse>
      */
     public function MutateCampaignBudgets(\Google\Ads\GoogleAds\V22\Services\MutateCampaignBudgetsRequest $argument,
       $metadata = [], $options = []) {

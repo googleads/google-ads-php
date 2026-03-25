@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources\Recommendation;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The add responsive search ad asset recommendation.
@@ -122,7 +122,4 @@ class ResponsiveSearchAdAssetRecommendation extends \Google\Protobuf\Internal\Me
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ResponsiveSearchAdAssetRecommendation::class, \Google\Ads\GoogleAds\V23\Resources\Recommendation_ResponsiveSearchAdAssetRecommendation::class);
 

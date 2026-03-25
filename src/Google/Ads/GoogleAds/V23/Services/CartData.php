@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Contains additional information about cart data.
@@ -64,7 +64,7 @@ class CartData extends \Google\Protobuf\Internal\Message
      *           Sum of all transaction level discounts, such as free shipping and
      *           coupon discounts for the whole cart. The currency code is the same
      *           as that in the ClickConversion message.
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\CartData\Item>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Google\Ads\GoogleAds\V23\Services\CartData\Item[] $items
      *           Data of the items purchased.
      * }
      */
@@ -185,7 +185,7 @@ class CartData extends \Google\Protobuf\Internal\Message
      * Data of the items purchased.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.CartData.Item items = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\CartData\Item>
      */
     public function getItems()
     {
@@ -196,7 +196,7 @@ class CartData extends \Google\Protobuf\Internal\Message
      * Data of the items purchased.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.CartData.Item items = 5;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\CartData\Item>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\CartData\Item[] $var
      * @return $this
      */
     public function setItems($var)

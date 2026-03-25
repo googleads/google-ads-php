@@ -49,7 +49,7 @@ class ExperimentArmServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V20\Services\MutateExperimentArmsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V20\Services\MutateExperimentArmsResponse>
      */
     public function MutateExperimentArms(\Google\Ads\GoogleAds\V20\Services\MutateExperimentArmsRequest $argument,
       $metadata = [], $options = []) {

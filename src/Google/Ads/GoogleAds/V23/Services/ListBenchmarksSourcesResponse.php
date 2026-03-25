@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class ListBenchmarksSourcesResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\BenchmarksSourceMetadata>|\Google\Protobuf\Internal\RepeatedField $benchmarks_sources
+     *     @type \Google\Ads\GoogleAds\V23\Services\BenchmarksSourceMetadata[] $benchmarks_sources
      *           The list of available source used to generate benchmarks data for.
      * }
      */
@@ -42,7 +42,7 @@ class ListBenchmarksSourcesResponse extends \Google\Protobuf\Internal\Message
      * The list of available source used to generate benchmarks data for.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BenchmarksSourceMetadata benchmarks_sources = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\BenchmarksSourceMetadata>
      */
     public function getBenchmarksSources()
     {
@@ -53,7 +53,7 @@ class ListBenchmarksSourcesResponse extends \Google\Protobuf\Internal\Message
      * The list of available source used to generate benchmarks data for.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BenchmarksSourceMetadata benchmarks_sources = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\BenchmarksSourceMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\BenchmarksSourceMetadata[] $var
      * @return $this
      */
     public function setBenchmarksSources($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -51,7 +51,7 @@ class ListBenchmarksSourcesRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $benchmarks_sources
+     *     @type int[] $benchmarks_sources
      *           Required. The types of benchmarks sources to be returned (for example,
      *           INDUSTRY_VERTICAL).
      *     @type \Google\Ads\GoogleAds\V23\Common\AdditionalApplicationInfo $application_info
@@ -68,7 +68,7 @@ class ListBenchmarksSourcesRequest extends \Google\Protobuf\Internal\Message
      * INDUSTRY_VERTICAL).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.BenchmarksSourceTypeEnum.BenchmarksSourceType benchmarks_sources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getBenchmarksSources()
     {
@@ -80,7 +80,7 @@ class ListBenchmarksSourcesRequest extends \Google\Protobuf\Internal\Message
      * INDUSTRY_VERTICAL).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.BenchmarksSourceTypeEnum.BenchmarksSourceType benchmarks_sources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setBenchmarksSources($var)

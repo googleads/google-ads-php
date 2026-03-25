@@ -76,6 +76,3 @@ class DatabaseError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DatabaseError::class, \Google\Ads\GoogleAds\V20\Errors\DatabaseErrorEnum_DatabaseError::class);
-

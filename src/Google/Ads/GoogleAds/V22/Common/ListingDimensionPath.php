@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The path of dimensions defining a listing group.
@@ -29,7 +29,7 @@ class ListingDimensionPath extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Common\ListingDimensionInfo>|\Google\Protobuf\Internal\RepeatedField $dimensions
+     *     @type \Google\Ads\GoogleAds\V22\Common\ListingDimensionInfo[] $dimensions
      *           The complete path of dimensions through the listing group hierarchy, from
      *           the root (excluding the root itself) to this listing group.
      * }
@@ -44,7 +44,7 @@ class ListingDimensionPath extends \Google\Protobuf\Internal\Message
      * the root (excluding the root itself) to this listing group.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.ListingDimensionInfo dimensions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Common\ListingDimensionInfo>
      */
     public function getDimensions()
     {
@@ -56,7 +56,7 @@ class ListingDimensionPath extends \Google\Protobuf\Internal\Message
      * the root (excluding the root itself) to this listing group.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.common.ListingDimensionInfo dimensions = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Common\ListingDimensionInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Common\ListingDimensionInfo[] $var
      * @return $this
      */
     public function setDimensions($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A conversion adjustment.
@@ -121,7 +121,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      *           value, it must have a new, more recent, adjustment occurrence time.
      *           Otherwise, it will be treated as a duplicate of the previous restatement
      *           and ignored.
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $user_identifiers
+     *     @type \Google\Ads\GoogleAds\V23\Common\UserIdentifier[] $user_identifiers
      *           The user identifiers to enhance the original conversion.
      *           ConversionAdjustmentUploadService only accepts user identifiers in
      *           enhancements. The maximum number of user identifiers for each
@@ -384,7 +384,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * enhancement is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.UserIdentifier user_identifiers = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\UserIdentifier>
      */
     public function getUserIdentifiers()
     {
@@ -398,7 +398,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * enhancement is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.UserIdentifier user_identifiers = 10;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\UserIdentifier[] $var
      * @return $this
      */
     public function setUserIdentifiers($var)

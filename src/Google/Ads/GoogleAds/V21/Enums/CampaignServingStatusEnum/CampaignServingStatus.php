@@ -88,6 +88,3 @@ class CampaignServingStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CampaignServingStatus::class, \Google\Ads\GoogleAds\V21\Enums\CampaignServingStatusEnum_CampaignServingStatus::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V20\Common\PolicyTopicConstraint;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A list of countries where a resource's serving is constrained.
@@ -36,7 +36,7 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
      *
      *     @type int $total_targeted_countries
      *           Total number of countries targeted by the resource.
-     *     @type array<\Google\Ads\GoogleAds\V20\Common\PolicyTopicConstraint\CountryConstraint>|\Google\Protobuf\Internal\RepeatedField $countries
+     *     @type \Google\Ads\GoogleAds\V20\Common\PolicyTopicConstraint\CountryConstraint[] $countries
      *           Countries in which serving is restricted.
      * }
      */
@@ -85,7 +85,7 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
      * Countries in which serving is restricted.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.PolicyTopicConstraint.CountryConstraint countries = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V20\Common\PolicyTopicConstraint\CountryConstraint>
      */
     public function getCountries()
     {
@@ -96,7 +96,7 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
      * Countries in which serving is restricted.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.common.PolicyTopicConstraint.CountryConstraint countries = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V20\Common\PolicyTopicConstraint\CountryConstraint>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V20\Common\PolicyTopicConstraint\CountryConstraint[] $var
      * @return $this
      */
     public function setCountries($var)
@@ -108,7 +108,4 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CountryConstraintList::class, \Google\Ads\GoogleAds\V20\Common\PolicyTopicConstraint_CountryConstraintList::class);
 

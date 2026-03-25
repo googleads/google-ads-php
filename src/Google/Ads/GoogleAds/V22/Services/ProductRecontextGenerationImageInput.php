@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Input for generating new images by recontextualizing existing product images.
@@ -39,7 +39,7 @@ class ProductRecontextGenerationImageInput extends \Google\Protobuf\Internal\Mes
      *     @type string $prompt
      *           Optional. A freeform description of the assets to be generated.
      *           Maximum character limit is 1500.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\SourceImage>|\Google\Protobuf\Internal\RepeatedField $source_images
+     *     @type \Google\Ads\GoogleAds\V22\Services\SourceImage[] $source_images
      *           Required. Product images to use for generating new images.
      *           1-3 images must be provided.
      * }
@@ -82,7 +82,7 @@ class ProductRecontextGenerationImageInput extends \Google\Protobuf\Internal\Mes
      * 1-3 images must be provided.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.SourceImage source_images = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\SourceImage>
      */
     public function getSourceImages()
     {
@@ -94,7 +94,7 @@ class ProductRecontextGenerationImageInput extends \Google\Protobuf\Internal\Mes
      * 1-3 images must be provided.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.SourceImage source_images = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\SourceImage>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\SourceImage[] $var
      * @return $this
      */
     public function setSourceImages($var)

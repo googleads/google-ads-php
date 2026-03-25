@@ -117,6 +117,3 @@ class LocalServicesBusinessRegistrationCheckRejectionReason
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LocalServicesBusinessRegistrationCheckRejectionReason::class, \Google\Ads\GoogleAds\V21\Enums\LocalServicesBusinessRegistrationCheckRejectionReasonEnum_LocalServicesBusinessRegistrationCheckRejectionReason::class);
-

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A YouTube creator and the insights for this creator.
@@ -36,7 +36,7 @@ class YouTubeCreatorInsights extends \Google\Protobuf\Internal\Message
      *
      *     @type string $creator_name
      *           The name of the creator.
-     *     @type array<\Google\Ads\GoogleAds\V21\Services\YouTubeChannelInsights>|\Google\Protobuf\Internal\RepeatedField $creator_channels
+     *     @type \Google\Ads\GoogleAds\V21\Services\YouTubeChannelInsights[] $creator_channels
      *           The list of YouTube Channels
      * }
      */
@@ -75,7 +75,7 @@ class YouTubeCreatorInsights extends \Google\Protobuf\Internal\Message
      * The list of YouTube Channels
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.YouTubeChannelInsights creator_channels = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Services\YouTubeChannelInsights>
      */
     public function getCreatorChannels()
     {
@@ -86,7 +86,7 @@ class YouTubeCreatorInsights extends \Google\Protobuf\Internal\Message
      * The list of YouTube Channels
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.services.YouTubeChannelInsights creator_channels = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Services\YouTubeChannelInsights>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Services\YouTubeChannelInsights[] $var
      * @return $this
      */
     public function setCreatorChannels($var)

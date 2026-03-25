@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Identifying information for a successfully processed ClickConversion.
@@ -72,7 +72,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      *     @type string $conversion_date_time
      *           The date time at which the conversion occurred. The format is
      *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", for example, "2019-01-01 12:32:45-08:00".
-     *     @type array<\Google\Ads\GoogleAds\V23\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $user_identifiers
+     *     @type \Google\Ads\GoogleAds\V23\Common\UserIdentifier[] $user_identifiers
      *           The user identifiers associated with this conversion. Only hashed_email and
      *           hashed_phone_number are supported for conversion uploads. The maximum
      *           number of user identifiers for each conversion is 5.
@@ -251,7 +251,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * number of user identifiers for each conversion is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.UserIdentifier user_identifiers = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Common\UserIdentifier>
      */
     public function getUserIdentifiers()
     {
@@ -264,7 +264,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * number of user identifiers for each conversion is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.common.UserIdentifier user_identifiers = 7;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Common\UserIdentifier>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Common\UserIdentifier[] $var
      * @return $this
      */
     public function setUserIdentifiers($var)

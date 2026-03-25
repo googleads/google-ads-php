@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Request message for
@@ -77,7 +77,7 @@ class MutateRecommendationSubscriptionRequest extends \Google\Protobuf\Internal\
      *
      *     @type string $customer_id
      *           Required. The ID of the subscribing customer.
-     *     @type array<\Google\Ads\GoogleAds\V22\Services\RecommendationSubscriptionOperation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Google\Ads\GoogleAds\V22\Services\RecommendationSubscriptionOperation[] $operations
      *           Required. The list of create or update operations.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -129,7 +129,7 @@ class MutateRecommendationSubscriptionRequest extends \Google\Protobuf\Internal\
      * Required. The list of create or update operations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.RecommendationSubscriptionOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Services\RecommendationSubscriptionOperation>
      */
     public function getOperations()
     {
@@ -140,7 +140,7 @@ class MutateRecommendationSubscriptionRequest extends \Google\Protobuf\Internal\
      * Required. The list of create or update operations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.services.RecommendationSubscriptionOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Services\RecommendationSubscriptionOperation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Services\RecommendationSubscriptionOperation[] $var
      * @return $this
      */
     public function setOperations($var)

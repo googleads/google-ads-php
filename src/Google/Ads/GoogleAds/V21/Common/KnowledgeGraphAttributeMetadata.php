@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Metadata associated with a Knowledge Graph Entity attribute.
@@ -35,10 +35,10 @@ class KnowledgeGraphAttributeMetadata extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $entity_capabilities
+     *     @type int[] $entity_capabilities
      *           The capabilities of the entity used in
      *           [ContentCreatorInsightsService][google.ads.googleads.v21.services.ContentCreatorInsightsService].
-     *     @type array<\Google\Ads\GoogleAds\V21\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $related_categories
+     *     @type \Google\Ads\GoogleAds\V21\Common\AudienceInsightsAttributeMetadata[] $related_categories
      *           A list of CATEGORY attributes related to this entity.
      * }
      */
@@ -52,7 +52,7 @@ class KnowledgeGraphAttributeMetadata extends \Google\Protobuf\Internal\Message
      * [ContentCreatorInsightsService][google.ads.googleads.v21.services.ContentCreatorInsightsService].
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities entity_capabilities = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getEntityCapabilities()
     {
@@ -64,7 +64,7 @@ class KnowledgeGraphAttributeMetadata extends \Google\Protobuf\Internal\Message
      * [ContentCreatorInsightsService][google.ads.googleads.v21.services.ContentCreatorInsightsService].
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities entity_capabilities = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setEntityCapabilities($var)
@@ -79,7 +79,7 @@ class KnowledgeGraphAttributeMetadata extends \Google\Protobuf\Internal\Message
      * A list of CATEGORY attributes related to this entity.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AudienceInsightsAttributeMetadata related_categories = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V21\Common\AudienceInsightsAttributeMetadata>
      */
     public function getRelatedCategories()
     {
@@ -90,7 +90,7 @@ class KnowledgeGraphAttributeMetadata extends \Google\Protobuf\Internal\Message
      * A list of CATEGORY attributes related to this entity.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v21.common.AudienceInsightsAttributeMetadata related_categories = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V21\Common\AudienceInsightsAttributeMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V21\Common\AudienceInsightsAttributeMetadata[] $var
      * @return $this
      */
     public function setRelatedCategories($var)

@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Resources;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * An ad group ad.
@@ -41,6 +41,24 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v23.resources.Ad ad = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $ad = null;
+    /**
+     * The date and time when ad group ad starts serving. This is added on top of
+     * the campaign's start date and time, if present, to further restrict the
+     * duration of an ad group ad. The timestamp is in the customer's time zone
+     * and in "yyyy-MM-dd HH:mm:ss" format. Only supported for some ad types.
+     *
+     * Generated from protobuf field <code>string start_date_time = 20;</code>
+     */
+    protected $start_date_time = '';
+    /**
+     * The last day and time when ad group ad serves. This is added on top of
+     * the campaign's end date and time, if present, to further restrict the
+     * duration of an ad group ad. The timestamp is in the customer's time zone
+     * and in "yyyy-MM-dd HH:mm:ss" format. Only supported for some ad types.
+     *
+     * Generated from protobuf field <code>string end_date_time = 21;</code>
+     */
+    protected $end_date_time = '';
     /**
      * Output only. Policy information for the ad.
      *
@@ -106,23 +124,33 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      *           Immutable. The ad group to which the ad belongs.
      *     @type \Google\Ads\GoogleAds\V23\Resources\Ad $ad
      *           Immutable. The ad.
+     *     @type string $start_date_time
+     *           The date and time when ad group ad starts serving. This is added on top of
+     *           the campaign's start date and time, if present, to further restrict the
+     *           duration of an ad group ad. The timestamp is in the customer's time zone
+     *           and in "yyyy-MM-dd HH:mm:ss" format. Only supported for some ad types.
+     *     @type string $end_date_time
+     *           The last day and time when ad group ad serves. This is added on top of
+     *           the campaign's end date and time, if present, to further restrict the
+     *           duration of an ad group ad. The timestamp is in the customer's time zone
+     *           and in "yyyy-MM-dd HH:mm:ss" format. Only supported for some ad types.
      *     @type \Google\Ads\GoogleAds\V23\Resources\AdGroupAdPolicySummary $policy_summary
      *           Output only. Policy information for the ad.
      *     @type int $ad_strength
      *           Output only. Overall ad strength for this ad group ad.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $action_items
+     *     @type string[] $action_items
      *           Output only. A list of recommendations to improve the ad strength. For
      *           example, a recommendation could be "Try adding a few more unique headlines
      *           or unpinning some assets.".
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type string[] $labels
      *           Output only. The resource names of labels attached to this ad group ad.
      *     @type int $primary_status
      *           Output only. Provides aggregated view into why an ad group ad is not
      *           serving or not serving optimally.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $primary_status_reasons
+     *     @type int[] $primary_status_reasons
      *           Output only. Provides reasons for why an ad group ad is not serving or not
      *           serving optimally.
-     *     @type array<\Google\Ads\GoogleAds\V23\Resources\AdGroupAdAssetAutomationSetting>|\Google\Protobuf\Internal\RepeatedField $ad_group_ad_asset_automation_settings
+     *     @type \Google\Ads\GoogleAds\V23\Resources\AdGroupAdAssetAutomationSetting[] $ad_group_ad_asset_automation_settings
      *           Settings that control the types of asset automation. See the
      *           AssetAutomationTypeEnum documentation for the default opt in/out behavior
      *           of each type.
@@ -262,6 +290,70 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The date and time when ad group ad starts serving. This is added on top of
+     * the campaign's start date and time, if present, to further restrict the
+     * duration of an ad group ad. The timestamp is in the customer's time zone
+     * and in "yyyy-MM-dd HH:mm:ss" format. Only supported for some ad types.
+     *
+     * Generated from protobuf field <code>string start_date_time = 20;</code>
+     * @return string
+     */
+    public function getStartDateTime()
+    {
+        return $this->start_date_time;
+    }
+
+    /**
+     * The date and time when ad group ad starts serving. This is added on top of
+     * the campaign's start date and time, if present, to further restrict the
+     * duration of an ad group ad. The timestamp is in the customer's time zone
+     * and in "yyyy-MM-dd HH:mm:ss" format. Only supported for some ad types.
+     *
+     * Generated from protobuf field <code>string start_date_time = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStartDateTime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->start_date_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * The last day and time when ad group ad serves. This is added on top of
+     * the campaign's end date and time, if present, to further restrict the
+     * duration of an ad group ad. The timestamp is in the customer's time zone
+     * and in "yyyy-MM-dd HH:mm:ss" format. Only supported for some ad types.
+     *
+     * Generated from protobuf field <code>string end_date_time = 21;</code>
+     * @return string
+     */
+    public function getEndDateTime()
+    {
+        return $this->end_date_time;
+    }
+
+    /**
+     * The last day and time when ad group ad serves. This is added on top of
+     * the campaign's end date and time, if present, to further restrict the
+     * duration of an ad group ad. The timestamp is in the customer's time zone
+     * and in "yyyy-MM-dd HH:mm:ss" format. Only supported for some ad types.
+     *
+     * Generated from protobuf field <code>string end_date_time = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEndDateTime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->end_date_time = $var;
+
+        return $this;
+    }
+
+    /**
      * Output only. Policy information for the ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.resources.AdGroupAdPolicySummary policy_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -329,7 +421,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * or unpinning some assets.".
      *
      * Generated from protobuf field <code>repeated string action_items = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getActionItems()
     {
@@ -342,7 +434,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * or unpinning some assets.".
      *
      * Generated from protobuf field <code>repeated string action_items = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setActionItems($var)
@@ -357,7 +449,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * Output only. The resource names of labels attached to this ad group ad.
      *
      * Generated from protobuf field <code>repeated string labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLabels()
     {
@@ -368,7 +460,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * Output only. The resource names of labels attached to this ad group ad.
      *
      * Generated from protobuf field <code>repeated string labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLabels($var)
@@ -412,7 +504,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * serving optimally.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.AdGroupAdPrimaryStatusReasonEnum.AdGroupAdPrimaryStatusReason primary_status_reasons = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getPrimaryStatusReasons()
     {
@@ -424,7 +516,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * serving optimally.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.enums.AdGroupAdPrimaryStatusReasonEnum.AdGroupAdPrimaryStatusReason primary_status_reasons = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setPrimaryStatusReasons($var)
@@ -441,7 +533,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * of each type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.AdGroupAdAssetAutomationSetting ad_group_ad_asset_automation_settings = 18;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Resources\AdGroupAdAssetAutomationSetting>
      */
     public function getAdGroupAdAssetAutomationSettings()
     {
@@ -454,7 +546,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * of each type.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.resources.AdGroupAdAssetAutomationSetting ad_group_ad_asset_automation_settings = 18;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Resources\AdGroupAdAssetAutomationSetting>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Resources\AdGroupAdAssetAutomationSetting[] $var
      * @return $this
      */
     public function setAdGroupAdAssetAutomationSettings($var)

@@ -66,6 +66,3 @@ class LocalServicesEmployeeType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LocalServicesEmployeeType::class, \Google\Ads\GoogleAds\V20\Enums\LocalServicesEmployeeTypeEnum_LocalServicesEmployeeType::class);
-

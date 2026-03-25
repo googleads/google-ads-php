@@ -78,7 +78,7 @@ class ServedAssetFieldType
     const LONG_HEADLINE = 9;
     /**
      * The asset was used in a description. Use this only if there is only one
-     * description in the ad. Otherwise, use the DESCRIPTION_1 or DESCRIPTION_&#64;
+     * description in the ad. Otherwise, use the DESCRIPTION_1 or DESCRIPTION_\@
      * enums
      *
      * Generated from protobuf enum <code>DESCRIPTION = 10;</code>
@@ -273,7 +273,4 @@ class ServedAssetFieldType
         return constant($const);
     }
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ServedAssetFieldType::class, \Google\Ads\GoogleAds\V21\Enums\ServedAssetFieldTypeEnum_ServedAssetFieldType::class);
 

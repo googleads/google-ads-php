@@ -84,6 +84,3 @@ class OfflineUserDataJobStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(OfflineUserDataJobStatus::class, \Google\Ads\GoogleAds\V22\Enums\OfflineUserDataJobStatusEnum_OfflineUserDataJobStatus::class);
-

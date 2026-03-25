@@ -116,6 +116,3 @@ class ThirdPartyReachIntegrationPartner
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ThirdPartyReachIntegrationPartner::class, \Google\Ads\GoogleAds\V23\Enums\ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner::class);
-

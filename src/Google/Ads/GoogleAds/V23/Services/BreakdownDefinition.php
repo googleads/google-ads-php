@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The set of dimensions to group metrics by.
@@ -16,12 +16,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class BreakdownDefinition extends \Google\Protobuf\Internal\Message
 {
     /**
-     * A date breakdown using the selected granularity. The effective date range
-     * is extended to include the full time periods that overlap with the selected
-     * start and end dates. For example, a monthly breakdown with a start date of
-     * 2025-06-15 will include a breakdown for June. Weeks start on Sunday and end
-     * on Saturday. This is different from the ISO 8601 standard, where weeks
-     * start on Monday.
+     * The granularity for segmenting metrics by date. When this field is set,
+     * a valid date_range in the GenerateBenchmarksMetricsRequest is required
+     * and must precisely align with the boundaries of the selected granularity.
+     * For example, a monthly breakdown must start on the first day of a month and
+     * end on the last day of a month. A quarterly breakdown must start on the
+     * first day of a quarter and end on the last day of a quarter. A weekly
+     * breakdown must start on a Sunday and end on a Saturday. This is different
+     * from the ISO 8601 standard, where weeks start on Monday.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.enums.BenchmarksTimeGranularityEnum.BenchmarksTimeGranularity date_breakdown = 1;</code>
      */
@@ -34,12 +36,14 @@ class BreakdownDefinition extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $date_breakdown
-     *           A date breakdown using the selected granularity. The effective date range
-     *           is extended to include the full time periods that overlap with the selected
-     *           start and end dates. For example, a monthly breakdown with a start date of
-     *           2025-06-15 will include a breakdown for June. Weeks start on Sunday and end
-     *           on Saturday. This is different from the ISO 8601 standard, where weeks
-     *           start on Monday.
+     *           The granularity for segmenting metrics by date. When this field is set,
+     *           a valid date_range in the GenerateBenchmarksMetricsRequest is required
+     *           and must precisely align with the boundaries of the selected granularity.
+     *           For example, a monthly breakdown must start on the first day of a month and
+     *           end on the last day of a month. A quarterly breakdown must start on the
+     *           first day of a quarter and end on the last day of a quarter. A weekly
+     *           breakdown must start on a Sunday and end on a Saturday. This is different
+     *           from the ISO 8601 standard, where weeks start on Monday.
      * }
      */
     public function __construct($data = NULL) {
@@ -48,12 +52,14 @@ class BreakdownDefinition extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A date breakdown using the selected granularity. The effective date range
-     * is extended to include the full time periods that overlap with the selected
-     * start and end dates. For example, a monthly breakdown with a start date of
-     * 2025-06-15 will include a breakdown for June. Weeks start on Sunday and end
-     * on Saturday. This is different from the ISO 8601 standard, where weeks
-     * start on Monday.
+     * The granularity for segmenting metrics by date. When this field is set,
+     * a valid date_range in the GenerateBenchmarksMetricsRequest is required
+     * and must precisely align with the boundaries of the selected granularity.
+     * For example, a monthly breakdown must start on the first day of a month and
+     * end on the last day of a month. A quarterly breakdown must start on the
+     * first day of a quarter and end on the last day of a quarter. A weekly
+     * breakdown must start on a Sunday and end on a Saturday. This is different
+     * from the ISO 8601 standard, where weeks start on Monday.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.enums.BenchmarksTimeGranularityEnum.BenchmarksTimeGranularity date_breakdown = 1;</code>
      * @return int
@@ -64,12 +70,14 @@ class BreakdownDefinition extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A date breakdown using the selected granularity. The effective date range
-     * is extended to include the full time periods that overlap with the selected
-     * start and end dates. For example, a monthly breakdown with a start date of
-     * 2025-06-15 will include a breakdown for June. Weeks start on Sunday and end
-     * on Saturday. This is different from the ISO 8601 standard, where weeks
-     * start on Monday.
+     * The granularity for segmenting metrics by date. When this field is set,
+     * a valid date_range in the GenerateBenchmarksMetricsRequest is required
+     * and must precisely align with the boundaries of the selected granularity.
+     * For example, a monthly breakdown must start on the first day of a month and
+     * end on the last day of a month. A quarterly breakdown must start on the
+     * first day of a quarter and end on the last day of a quarter. A weekly
+     * breakdown must start on a Sunday and end on a Saturday. This is different
+     * from the ISO 8601 standard, where weeks start on Monday.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.enums.BenchmarksTimeGranularityEnum.BenchmarksTimeGranularity date_breakdown = 1;</code>
      * @param int $var

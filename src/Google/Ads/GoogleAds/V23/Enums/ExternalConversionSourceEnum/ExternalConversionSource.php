@@ -276,6 +276,3 @@ class ExternalConversionSource
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ExternalConversionSource::class, \Google\Ads\GoogleAds\V23\Enums\ExternalConversionSourceEnum_ExternalConversionSource::class);
-

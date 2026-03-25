@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class ListBenchmarksProductsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\BenchmarksProductMetadata>|\Google\Protobuf\Internal\RepeatedField $benchmarks_products
+     *     @type \Google\Ads\GoogleAds\V23\Services\BenchmarksProductMetadata[] $benchmarks_products
      *           The list of products available for benchmarks data.
      * }
      */
@@ -42,7 +42,7 @@ class ListBenchmarksProductsResponse extends \Google\Protobuf\Internal\Message
      * The list of products available for benchmarks data.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BenchmarksProductMetadata benchmarks_products = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\BenchmarksProductMetadata>
      */
     public function getBenchmarksProducts()
     {
@@ -53,7 +53,7 @@ class ListBenchmarksProductsResponse extends \Google\Protobuf\Internal\Message
      * The list of products available for benchmarks data.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.BenchmarksProductMetadata benchmarks_products = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\BenchmarksProductMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\BenchmarksProductMetadata[] $var
      * @return $this
      */
     public function setBenchmarksProducts($var)

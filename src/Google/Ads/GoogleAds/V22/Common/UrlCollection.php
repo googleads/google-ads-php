@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Common;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Collection of urls that is tagged with a unique identifier.
@@ -48,9 +48,9 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
      *
      *     @type string $url_collection_id
      *           Unique identifier for this UrlCollection instance.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_urls
+     *     @type string[] $final_urls
      *           A list of possible final URLs.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
+     *     @type string[] $final_mobile_urls
      *           A list of possible final mobile URLs.
      *     @type string $tracking_url_template
      *           URL template for constructing a tracking URL.
@@ -101,7 +101,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
      * A list of possible final URLs.
      *
      * Generated from protobuf field <code>repeated string final_urls = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getFinalUrls()
     {
@@ -112,7 +112,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
      * A list of possible final URLs.
      *
      * Generated from protobuf field <code>repeated string final_urls = 6;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setFinalUrls($var)
@@ -127,7 +127,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
      * A list of possible final mobile URLs.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getFinalMobileUrls()
     {
@@ -138,7 +138,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
      * A list of possible final mobile URLs.
      *
      * Generated from protobuf field <code>repeated string final_mobile_urls = 7;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setFinalMobileUrls($var)

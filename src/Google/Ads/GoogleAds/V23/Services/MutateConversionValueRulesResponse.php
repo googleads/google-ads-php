@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V23\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -38,7 +38,7 @@ class MutateConversionValueRulesResponse extends \Google\Protobuf\Internal\Messa
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V23\Services\MutateConversionValueRuleResult>|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type \Google\Ads\GoogleAds\V23\Services\MutateConversionValueRuleResult[] $results
      *           All results for the mutate.
      *     @type \Google\Rpc\Status $partial_failure_error
      *           Errors that pertain to operation failures in the partial failure mode.
@@ -56,7 +56,7 @@ class MutateConversionValueRulesResponse extends \Google\Protobuf\Internal\Messa
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.MutateConversionValueRuleResult results = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V23\Services\MutateConversionValueRuleResult>
      */
     public function getResults()
     {
@@ -67,7 +67,7 @@ class MutateConversionValueRulesResponse extends \Google\Protobuf\Internal\Messa
      * All results for the mutate.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v23.services.MutateConversionValueRuleResult results = 2;</code>
-     * @param array<\Google\Ads\GoogleAds\V23\Services\MutateConversionValueRuleResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V23\Services\MutateConversionValueRuleResult[] $var
      * @return $this
      */
     public function setResults($var)

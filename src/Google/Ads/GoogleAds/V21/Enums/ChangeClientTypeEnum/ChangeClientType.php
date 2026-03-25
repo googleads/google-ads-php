@@ -149,6 +149,3 @@ class ChangeClientType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ChangeClientType::class, \Google\Ads\GoogleAds\V21\Enums\ChangeClientTypeEnum_ChangeClientType::class);
-

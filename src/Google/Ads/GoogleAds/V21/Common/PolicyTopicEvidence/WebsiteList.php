@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V21\Common\PolicyTopicEvidence;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A list of websites that caused a policy finding. Used for
@@ -31,7 +31,7 @@ class WebsiteList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $websites
+     *     @type string[] $websites
      *           Websites that caused the policy finding.
      * }
      */
@@ -44,7 +44,7 @@ class WebsiteList extends \Google\Protobuf\Internal\Message
      * Websites that caused the policy finding.
      *
      * Generated from protobuf field <code>repeated string websites = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getWebsites()
     {
@@ -55,7 +55,7 @@ class WebsiteList extends \Google\Protobuf\Internal\Message
      * Websites that caused the policy finding.
      *
      * Generated from protobuf field <code>repeated string websites = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setWebsites($var)
@@ -67,7 +67,4 @@ class WebsiteList extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(WebsiteList::class, \Google\Ads\GoogleAds\V21\Common\PolicyTopicEvidence_WebsiteList::class);
 

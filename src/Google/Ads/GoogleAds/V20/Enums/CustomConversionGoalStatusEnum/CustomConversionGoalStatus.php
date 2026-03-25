@@ -66,6 +66,3 @@ class CustomConversionGoalStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CustomConversionGoalStatus::class, \Google\Ads\GoogleAds\V20\Enums\CustomConversionGoalStatusEnum_CustomConversionGoalStatus::class);
-

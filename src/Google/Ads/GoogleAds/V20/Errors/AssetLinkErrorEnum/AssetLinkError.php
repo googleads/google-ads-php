@@ -247,6 +247,3 @@ class AssetLinkError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AssetLinkError::class, \Google\Ads\GoogleAds\V20\Errors\AssetLinkErrorEnum_AssetLinkError::class);
-

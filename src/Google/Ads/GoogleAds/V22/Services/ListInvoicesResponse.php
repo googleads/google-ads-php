@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Services;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Response message for
@@ -29,7 +29,7 @@ class ListInvoicesResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Resources\Invoice>|\Google\Protobuf\Internal\RepeatedField $invoices
+     *     @type \Google\Ads\GoogleAds\V22\Resources\Invoice[] $invoices
      *           The list of invoices that match the billing setup and time period.
      * }
      */
@@ -42,7 +42,7 @@ class ListInvoicesResponse extends \Google\Protobuf\Internal\Message
      * The list of invoices that match the billing setup and time period.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.resources.Invoice invoices = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Resources\Invoice>
      */
     public function getInvoices()
     {
@@ -53,7 +53,7 @@ class ListInvoicesResponse extends \Google\Protobuf\Internal\Message
      * The list of invoices that match the billing setup and time period.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.resources.Invoice invoices = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Resources\Invoice>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Resources\Invoice[] $var
      * @return $this
      */
     public function setInvoices($var)

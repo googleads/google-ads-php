@@ -110,6 +110,3 @@ class CampaignFeedError
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CampaignFeedError::class, \Google\Ads\GoogleAds\V20\Errors\CampaignFeedErrorEnum_CampaignFeedError::class);
-

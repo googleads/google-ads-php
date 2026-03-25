@@ -5,8 +5,8 @@
 namespace Google\Ads\GoogleAds\V22\Resources\Campaign;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Settings for LocalServicesCampaign subresource.
@@ -28,7 +28,7 @@ class LocalServicesCampaignSettings extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Ads\GoogleAds\V22\Resources\Campaign\CategoryBid>|\Google\Protobuf\Internal\RepeatedField $category_bids
+     *     @type \Google\Ads\GoogleAds\V22\Resources\Campaign\CategoryBid[] $category_bids
      *           Categorical level bids associated with MANUAL_CPA bidding strategy.
      * }
      */
@@ -41,7 +41,7 @@ class LocalServicesCampaignSettings extends \Google\Protobuf\Internal\Message
      * Categorical level bids associated with MANUAL_CPA bidding strategy.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.resources.Campaign.CategoryBid category_bids = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Ads\GoogleAds\V22\Resources\Campaign\CategoryBid>
      */
     public function getCategoryBids()
     {
@@ -52,7 +52,7 @@ class LocalServicesCampaignSettings extends \Google\Protobuf\Internal\Message
      * Categorical level bids associated with MANUAL_CPA bidding strategy.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v22.resources.Campaign.CategoryBid category_bids = 1;</code>
-     * @param array<\Google\Ads\GoogleAds\V22\Resources\Campaign\CategoryBid>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V22\Resources\Campaign\CategoryBid[] $var
      * @return $this
      */
     public function setCategoryBids($var)
@@ -64,7 +64,4 @@ class LocalServicesCampaignSettings extends \Google\Protobuf\Internal\Message
     }
 
 }
-
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LocalServicesCampaignSettings::class, \Google\Ads\GoogleAds\V22\Resources\Campaign_LocalServicesCampaignSettings::class);
 

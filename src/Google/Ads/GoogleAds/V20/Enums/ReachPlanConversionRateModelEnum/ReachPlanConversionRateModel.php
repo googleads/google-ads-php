@@ -84,6 +84,3 @@ class ReachPlanConversionRateModel
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ReachPlanConversionRateModel::class, \Google\Ads\GoogleAds\V20\Enums\ReachPlanConversionRateModelEnum_ReachPlanConversionRateModel::class);
-
