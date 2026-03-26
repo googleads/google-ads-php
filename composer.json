@@ -5,7 +5,7 @@
   "require": {
     "php": ">=8.1",
     "google/gax": "^1.36.1",
-    "grpc/grpc": "^1.80.0",
+    "grpc/grpc": "^1.36.0",
     "google/protobuf": "^3.21.5 || ^4.26.1 || ^5.34",
     "monolog/monolog": "^1.26 || ^2.0 || ^3.0",
     "google/auth": "^1.30 || ^2.0"
