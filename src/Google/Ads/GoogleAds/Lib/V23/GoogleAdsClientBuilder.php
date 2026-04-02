@@ -70,8 +70,8 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $adsAssistant;
 
     public function __construct(
-        ConfigurationLoader $configurationLoader = null,
-        EnvironmentalVariables $environmentalVariables = null
+        ?ConfigurationLoader $configurationLoader = null,
+        ?EnvironmentalVariables $environmentalVariables = null
     ) {
         parent::__construct($configurationLoader, $environmentalVariables);
         $this->loggerFactory = new LoggerFactory();
