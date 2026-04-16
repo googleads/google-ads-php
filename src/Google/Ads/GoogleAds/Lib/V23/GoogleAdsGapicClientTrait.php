@@ -38,7 +38,6 @@ trait GoogleAdsGapicClientTrait
     private static $UNARY_MIDDLEWARES = 'unary-middlewares';
     private static $STREAMING_MIDDLEWARES = 'streaming-middlewares';
     private static $USE_CLOUD_ORG_FOR_API_ACCESS_KEY = 'use-cloud-org-for-api-access';
-    private static $ADS_ASSISTANT_HEADER_NAME = 'google-ads-api-assistant';
 
     private $developerToken = null;
     private $loginCustomerId = null;
@@ -82,9 +81,6 @@ trait GoogleAdsGapicClientTrait
 
     /**
      * Adds a FixedHeaderMiddleware to a callable.
-     *
-     * @param callable $callable the callable to add to
-     * @return callable the modified callable
      */
     private function addFixedHeaderMiddleware(callable &$callable)
     {
@@ -100,9 +96,7 @@ trait GoogleAdsGapicClientTrait
             if (!is_null($this->linkedCustomerId)) {
                 $headers[self::$LINKED_CUSTOMER_ID] = [$this->linkedCustomerId];
             }
-            if (!is_null($this->adsAssistant)) {
-                $headers[self::$ADS_ASSISTANT_HEADER_NAME] = [$this->adsAssistant];
-            }
+
             $callable = new FixedHeaderMiddleware($callable, $headers);
         }
         return $callable;
@@ -120,6 +114,11 @@ trait GoogleAdsGapicClientTrait
             /** @var GoogleAdsMiddlewareAbstract $unaryMiddleware */
             $callable = $unaryMiddleware->withNextHandler($callable);
         }
+
+        // Prepend the AdsAssistantHeaderMiddleware
+        if (!is_null($this->adsAssistant)) {
+            $callable = new AdsAssistantHeaderMiddleware($callable, $this->adsAssistant);
+        }
     }
 
     /**
@@ -133,6 +132,11 @@ trait GoogleAdsGapicClientTrait
         foreach ($this->streamingMiddlewares as $streamingMiddleware) {
             /** @var GoogleAdsMiddlewareAbstract $streamingMiddleware */
             $callable = $streamingMiddleware->withNextHandler($callable);
+        }
+
+        // Prepend the AdsAssistantHeaderMiddleware
+        if (!is_null($this->adsAssistant)) {
+            $callable = new AdsAssistantHeaderMiddleware($callable, $this->adsAssistant);
         }
     }
 
