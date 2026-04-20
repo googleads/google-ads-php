@@ -96,6 +96,9 @@ trait GoogleAdsGapicClientTrait
             if (!is_null($this->linkedCustomerId)) {
                 $headers[self::$LINKED_CUSTOMER_ID] = [$this->linkedCustomerId];
             }
+            if (!is_null($this->adsAssistant)) {
+                $headers[self::$ADS_ASSISTANT_HEADER_NAME] = [$this->adsAssistant];
+            }
 
             $callable = new FixedHeaderMiddleware($callable, $headers);
         }
