@@ -13,8 +13,8 @@ class ShoppingPerformanceView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xF1\x04\x0ABgoogle/ads/googleads/v22/resources/shopping_performance_view.proto\x12\"google.ads.googleads.v22.resources\x1A\x19google/api/resource.proto\"\xD2\x01\x0A\x17ShoppingPerformanceView\x12O\x0A\x0Dresource_name\x18\x01 \x01(\x09B8\xE0A\x03\xFAA2\x0A0googleads.googleapis.com/ShoppingPerformanceView:f\xEAAc\x0A0googleads.googleapis.com/ShoppingPerformanceView\x12/customers/{customer_id}/shoppingPerformanceViewB\x8E\x02\x0A&com.google.ads.googleads.v22.resourcesB\x1CShoppingPerformanceViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v22/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V22.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V22\\Resources\xEA\x02&Google::Ads::GoogleAds::V22::Resourcesb\x06proto3"
         , true);

@@ -13,8 +13,8 @@ class SmartCampaignSearchTermView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xFB\x05\x0AHgoogle/ads/googleads/v23/resources/smart_campaign_search_term_view.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xD2\x02\x0A\x1BSmartCampaignSearchTermView\x12S\x0A\x0Dresource_name\x18\x01 \x01(\x09B<\xE0A\x03\xFAA6\x0A4googleads.googleapis.com/SmartCampaignSearchTermView\x12\x18\x0A\x0Bsearch_term\x18\x02 \x01(\x09B\x03\xE0A\x03\x12;\x0A\x08campaign\x18\x03 \x01(\x09B)\xE0A\x03\xFAA#\x0A!googleads.googleapis.com/Campaign:\x86\x01\xEAA\x82\x01\x0A4googleads.googleapis.com/SmartCampaignSearchTermView\x12Jcustomers/{customer_id}/smartCampaignSearchTermViews/{campaign_id}~{query}B\x92\x02\x0A&com.google.ads.googleads.v23.resourcesB SmartCampaignSearchTermViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);

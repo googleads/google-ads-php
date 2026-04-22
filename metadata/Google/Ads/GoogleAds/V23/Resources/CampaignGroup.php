@@ -13,8 +13,8 @@ class CampaignGroup
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xC3\x03\x0A:google/ads/googleads/v23/enums/campaign_group_status.proto\x12\x1Egoogle.ads.googleads.v23.enums\"h\x0A\x17CampaignGroupStatusEnum\"M\x0A\x13CampaignGroupStatus\x12\x0F\x0A\x0BUNSPECIFIED\x10\x00\x12\x0B\x0A\x07UNKNOWN\x10\x01\x12\x0B\x0A\x07ENABLED\x10\x02\x12\x0B\x0A\x07REMOVED\x10\x03B\xF2\x01\x0A\"com.google.ads.googleads.v23.enumsB\x18CampaignGroupStatusProtoP\x01ZCgoogle.golang.org/genproto/googleapis/ads/googleads/v23/enums;enums\xA2\x02\x03GAA\xAA\x02\x1EGoogle.Ads.GoogleAds.V23.Enums\xCA\x02\x1EGoogle\\Ads\\GoogleAds\\V23\\Enums\xEA\x02\"Google::Ads::GoogleAds::V23::Enumsb\x06proto3\x0A\xE6\x05\x0A7google/ads/googleads/v23/resources/campaign_group.proto\x12\"google.ads.googleads.v23.resources\x1A\x1Fgoogle/api/field_behavior.proto\x1A\x19google/api/resource.proto\"\xBB\x02\x0A\x0DCampaignGroup\x12E\x0A\x0Dresource_name\x18\x01 \x01(\x09B.\xE0A\x05\xFAA(\x0A&googleads.googleapis.com/CampaignGroup\x12\x0F\x0A\x02id\x18\x03 \x01(\x03B\x03\xE0A\x03\x12\x0C\x0A\x04name\x18\x04 \x01(\x09\x12[\x0A\x06status\x18\x05 \x01(\x0E2K.google.ads.googleads.v23.enums.CampaignGroupStatusEnum.CampaignGroupStatus:g\xEAAd\x0A&googleads.googleapis.com/CampaignGroup\x12:customers/{customer_id}/campaignGroups/{campaign_group_id}B\x84\x02\x0A&com.google.ads.googleads.v23.resourcesB\x12CampaignGroupProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);

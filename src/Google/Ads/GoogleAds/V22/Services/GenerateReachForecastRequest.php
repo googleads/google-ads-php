@@ -41,7 +41,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
      * If not specified, no cap is applied.
-     * This field is deprecated in v4 and will eventually be removed.
+     * This field is deprecated and will eventually be removed.
      * Use cookie_frequency_cap_setting instead.
      *
      * Generated from protobuf field <code>optional int32 cookie_frequency_cap = 10;</code>
@@ -53,7 +53,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
      * If not specified, a default of 0 (no cap) is applied.
-     * This field replaces the deprecated cookie_frequency_cap field.
+     * This field replaces the deprecated `cookie_frequency_cap` field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v22.services.FrequencyCap cookie_frequency_cap_setting = 8;</code>
      */
@@ -153,7 +153,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user.
      *           If not specified, no cap is applied.
-     *           This field is deprecated in v4 and will eventually be removed.
+     *           This field is deprecated and will eventually be removed.
      *           Use cookie_frequency_cap_setting instead.
      *     @type \Google\Ads\GoogleAds\V22\Services\FrequencyCap $cookie_frequency_cap_setting
      *           Chosen cookie frequency cap to be applied to each planned product.
@@ -161,7 +161,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user during a specified time interval.
      *           If not specified, a default of 0 (no cap) is applied.
-     *           This field replaces the deprecated cookie_frequency_cap field.
+     *           This field replaces the deprecated `cookie_frequency_cap` field.
      *     @type int $min_effective_frequency
      *           Chosen minimum effective frequency (the number of times a person was
      *           exposed to the ad) for the reported reach metrics [1-10].
@@ -304,7 +304,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
      * If not specified, no cap is applied.
-     * This field is deprecated in v4 and will eventually be removed.
+     * This field is deprecated and will eventually be removed.
      * Use cookie_frequency_cap_setting instead.
      *
      * Generated from protobuf field <code>optional int32 cookie_frequency_cap = 10;</code>
@@ -331,7 +331,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
      * If not specified, no cap is applied.
-     * This field is deprecated in v4 and will eventually be removed.
+     * This field is deprecated and will eventually be removed.
      * Use cookie_frequency_cap_setting instead.
      *
      * Generated from protobuf field <code>optional int32 cookie_frequency_cap = 10;</code>
@@ -352,7 +352,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
      * If not specified, a default of 0 (no cap) is applied.
-     * This field replaces the deprecated cookie_frequency_cap field.
+     * This field replaces the deprecated `cookie_frequency_cap` field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v22.services.FrequencyCap cookie_frequency_cap_setting = 8;</code>
      * @return \Google\Ads\GoogleAds\V22\Services\FrequencyCap|null
@@ -378,7 +378,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
      * If not specified, a default of 0 (no cap) is applied.
-     * This field replaces the deprecated cookie_frequency_cap field.
+     * This field replaces the deprecated `cookie_frequency_cap` field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v22.services.FrequencyCap cookie_frequency_cap_setting = 8;</code>
      * @param \Google\Ads\GoogleAds\V22\Services\FrequencyCap $var

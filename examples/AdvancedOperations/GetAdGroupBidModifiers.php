@@ -24,15 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V23\GoogleAdsException;
-use Google\Ads\GoogleAds\V23\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V23\Enums\DeviceEnum\Device;
-use Google\Ads\GoogleAds\V23\Enums\HotelDateSelectionTypeEnum\HotelDateSelectionType;
-use Google\Ads\GoogleAds\V23\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V23\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V23\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Lib\V24\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V24\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V24\GoogleAdsException;
+use Google\Ads\GoogleAds\V24\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V24\Enums\DeviceEnum\Device;
+use Google\Ads\GoogleAds\V24\Enums\HotelDateSelectionTypeEnum\HotelDateSelectionType;
+use Google\Ads\GoogleAds\V24\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V24\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V24\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example gets ad group bid modifiers. */

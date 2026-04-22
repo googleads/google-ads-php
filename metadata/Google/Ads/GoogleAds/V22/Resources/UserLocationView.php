@@ -13,8 +13,8 @@ class UserLocationView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xF7\x05\x0A;google/ads/googleads/v22/resources/user_location_view.proto\x12\"google.ads.googleads.v22.resources\x1A\x19google/api/resource.proto\"\xE6\x02\x0A\x10UserLocationView\x12H\x0A\x0Dresource_name\x18\x01 \x01(\x09B1\xE0A\x03\xFAA+\x0A)googleads.googleapis.com/UserLocationView\x12&\x0A\x14country_criterion_id\x18\x04 \x01(\x03B\x03\xE0A\x03H\x00\x88\x01\x01\x12\$\x0A\x12targeting_location\x18\x05 \x01(\x08B\x03\xE0A\x03H\x01\x88\x01\x01:\x89\x01\xEAA\x85\x01\x0A)googleads.googleapis.com/UserLocationView\x12Xcustomers/{customer_id}/userLocationViews/{country_criterion_id}~{is_targeting_location}B\x17\x0A\x15_country_criterion_idB\x15\x0A\x13_targeting_locationB\x87\x02\x0A&com.google.ads.googleads.v22.resourcesB\x15UserLocationViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v22/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V22.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V22\\Resources\xEA\x02&Google::Ads::GoogleAds::V22::Resourcesb\x06proto3"
         , true);

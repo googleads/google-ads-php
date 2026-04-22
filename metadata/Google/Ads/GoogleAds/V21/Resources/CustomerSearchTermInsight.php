@@ -13,8 +13,8 @@ class CustomerSearchTermInsight
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xDE\x05\x0AEgoogle/ads/googleads/v21/resources/customer_search_term_insight.proto\x12\"google.ads.googleads.v21.resources\x1A\x19google/api/resource.proto\"\xBA\x02\x0A\x19CustomerSearchTermInsight\x12Q\x0A\x0Dresource_name\x18\x01 \x01(\x09B:\xE0A\x03\xFAA4\x0A2googleads.googleapis.com/CustomerSearchTermInsight\x12 \x0A\x0Ecategory_label\x18\x02 \x01(\x09B\x03\xE0A\x03H\x00\x88\x01\x01\x12\x14\x0A\x02id\x18\x03 \x01(\x03B\x03\xE0A\x03H\x01\x88\x01\x01:x\xEAAu\x0A2googleads.googleapis.com/CustomerSearchTermInsight\x12?customers/{customer_id}/customerSearchTermInsights/{cluster_id}B\x11\x0A\x0F_category_labelB\x05\x0A\x03_idB\x90\x02\x0A&com.google.ads.googleads.v21.resourcesB\x1ECustomerSearchTermInsightProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V21.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V21\\Resources\xEA\x02&Google::Ads::GoogleAds::V21::Resourcesb\x06proto3"
         , true);

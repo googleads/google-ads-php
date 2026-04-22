@@ -13,8 +13,8 @@ class LanguageConstant
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xCA\x05\x0A:google/ads/googleads/v23/resources/language_constant.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xBA\x02\x0A\x10LanguageConstant\x12H\x0A\x0Dresource_name\x18\x01 \x01(\x09B1\xE0A\x03\xFAA+\x0A)googleads.googleapis.com/LanguageConstant\x12\x14\x0A\x02id\x18\x06 \x01(\x03B\x03\xE0A\x03H\x00\x88\x01\x01\x12\x16\x0A\x04code\x18\x07 \x01(\x09B\x03\xE0A\x03H\x01\x88\x01\x01\x12\x16\x0A\x04name\x18\x08 \x01(\x09B\x03\xE0A\x03H\x02\x88\x01\x01\x12\x1C\x0A\x0Atargetable\x18\x09 \x01(\x08B\x03\xE0A\x03H\x03\x88\x01\x01:P\xEAAM\x0A)googleads.googleapis.com/LanguageConstant\x12 languageConstants/{criterion_id}B\x05\x0A\x03_idB\x07\x0A\x05_codeB\x07\x0A\x05_nameB\x0D\x0A\x0B_targetableB\x87\x02\x0A&com.google.ads.googleads.v23.resourcesB\x15LanguageConstantProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);

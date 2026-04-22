@@ -13,8 +13,8 @@ class CustomerLabel
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xD5\x05\x0A7google/ads/googleads/v22/resources/customer_label.proto\x12\"google.ads.googleads.v22.resources\x1A\x19google/api/resource.proto\"\xCB\x02\x0A\x0DCustomerLabel\x12E\x0A\x0Dresource_name\x18\x01 \x01(\x09B.\xE0A\x05\xFAA(\x0A&googleads.googleapis.com/CustomerLabel\x12@\x0A\x08customer\x18\x04 \x01(\x09B)\xE0A\x03\xFAA#\x0A!googleads.googleapis.com/CustomerH\x00\x88\x01\x01\x12:\x0A\x05label\x18\x05 \x01(\x09B&\xE0A\x03\xFAA \x0A\x1Egoogleads.googleapis.com/LabelH\x01\x88\x01\x01:^\xEAA[\x0A&googleads.googleapis.com/CustomerLabel\x121customers/{customer_id}/customerLabels/{label_id}B\x0B\x0A\x09_customerB\x08\x0A\x06_labelB\x84\x02\x0A&com.google.ads.googleads.v22.resourcesB\x12CustomerLabelProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v22/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V22.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V22\\Resources\xEA\x02&Google::Ads::GoogleAds::V22::Resourcesb\x06proto3"
         , true);

@@ -13,8 +13,8 @@ class CampaignSearchTermInsight
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\x9D\x06\x0AEgoogle/ads/googleads/v23/resources/campaign_search_term_insight.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xF9\x02\x0A\x19CampaignSearchTermInsight\x12Q\x0A\x0Dresource_name\x18\x01 \x01(\x09B:\xE0A\x03\xFAA4\x0A2googleads.googleapis.com/CampaignSearchTermInsight\x12 \x0A\x0Ecategory_label\x18\x02 \x01(\x09B\x03\xE0A\x03H\x00\x88\x01\x01\x12\x14\x0A\x02id\x18\x03 \x01(\x03B\x03\xE0A\x03H\x01\x88\x01\x01\x12\x1D\x0A\x0Bcampaign_id\x18\x04 \x01(\x03B\x03\xE0A\x03H\x02\x88\x01\x01:\x87\x01\xEAA\x83\x01\x0A2googleads.googleapis.com/CampaignSearchTermInsight\x12Mcustomers/{customer_id}/campaignSearchTermInsights/{campaign_id}~{cluster_id}B\x11\x0A\x0F_category_labelB\x05\x0A\x03_idB\x0E\x0A\x0C_campaign_idB\x90\x02\x0A&com.google.ads.googleads.v23.resourcesB\x1ECampaignSearchTermInsightProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);

@@ -13,8 +13,8 @@ class QualifyingQuestion
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xA1\x05\x0A<google/ads/googleads/v22/resources/qualifying_question.proto\x12\"google.ads.googleads.v22.resources\x1A\x19google/api/resource.proto\"\x8D\x02\x0A\x12QualifyingQuestion\x12J\x0A\x0Dresource_name\x18\x01 \x01(\x09B3\xE0A\x03\xFAA-\x0A+googleads.googleapis.com/QualifyingQuestion\x12#\x0A\x16qualifying_question_id\x18\x02 \x01(\x03B\x03\xE0A\x03\x12\x13\x0A\x06locale\x18\x03 \x01(\x09B\x03\xE0A\x03\x12\x11\x0A\x04text\x18\x04 \x01(\x09B\x03\xE0A\x03:^\xEAA[\x0A+googleads.googleapis.com/QualifyingQuestion\x12,qualifyingQuestions/{qualifying_question_id}B\x89\x02\x0A&com.google.ads.googleads.v22.resourcesB\x17QualifyingQuestionProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v22/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V22.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V22\\Resources\xEA\x02&Google::Ads::GoogleAds::V22::Resourcesb\x06proto3"
         , true);

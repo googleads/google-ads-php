@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * An expanded text ad.
+ * An expanded text ad. Expanded text ads are deprecated.
  *
  * Generated from protobuf message <code>google.ads.googleads.v20.common.ExpandedTextAdInfo</code>
  */

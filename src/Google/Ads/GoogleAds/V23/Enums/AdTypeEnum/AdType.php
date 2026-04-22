@@ -33,7 +33,7 @@ class AdType
      */
     const TEXT_AD = 2;
     /**
-     * The ad is an expanded text ad.
+     * The ad is an expanded text ad. Expanded text ads are deprecated.
      *
      * Generated from protobuf enum <code>EXPANDED_TEXT_AD = 3;</code>
      */

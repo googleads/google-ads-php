@@ -24,16 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V23\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V23\GoogleAdsException;
-use Google\Ads\GoogleAds\V23\Common\ImageAsset;
-use Google\Ads\GoogleAds\V23\Enums\AssetTypeEnum\AssetType;
-use Google\Ads\GoogleAds\V23\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V23\Resources\Asset;
-use Google\Ads\GoogleAds\V23\Services\AssetOperation;
-use Google\Ads\GoogleAds\V23\Services\MutateAssetResult;
-use Google\Ads\GoogleAds\V23\Services\MutateAssetsRequest;
+use Google\Ads\GoogleAds\Lib\V24\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V24\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V24\GoogleAdsException;
+use Google\Ads\GoogleAds\V24\Common\ImageAsset;
+use Google\Ads\GoogleAds\V24\Enums\AssetTypeEnum\AssetType;
+use Google\Ads\GoogleAds\V24\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V24\Resources\Asset;
+use Google\Ads\GoogleAds\V24\Services\AssetOperation;
+use Google\Ads\GoogleAds\V24\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\V24\Services\MutateAssetsRequest;
 use Google\ApiCore\ApiException;
 
 /** This example uploads an image asset. To get image assets, run GetAllImageAssets.php. */

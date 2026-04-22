@@ -40,7 +40,11 @@ use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Log\LoggerInterface;
 
 /**
- * Service Description: Service to manage labels on customers.
+ * Service Description: Service to manage labels on Google Ads customers.
+ *
+ * This service is commonly used by manager accounts to apply their own labels
+ * to their client accounts. The label entity must exist under the manager
+ * account.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods.

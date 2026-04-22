@@ -13,15 +13,15 @@ class OfflineUserDataJobService
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\Google\Protobuf\Any::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
-        \GPBMetadata\Google\Api\Http::initOnce();
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\LaunchStage::initOnce();
         \GPBMetadata\Google\Protobuf\Duration::initOnce();
-        \GPBMetadata\Google\Api\Client::initOnce();
-        \GPBMetadata\Google\Protobuf\Any::initOnce();
-        \GPBMetadata\Google\Rpc\Status::initOnce();
+        \GPBMetadata\Google\Api\Http::initOnce();
+        \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
+        \GPBMetadata\Google\Rpc\Status::initOnce();
+        \GPBMetadata\Google\Api\Client::initOnce();
         \GPBMetadata\Google\Longrunning\Operations::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(

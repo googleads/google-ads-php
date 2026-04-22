@@ -13,8 +13,8 @@ class ExperimentArm
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xCE\x06\x0A7google/ads/googleads/v23/resources/experiment_arm.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xC4\x03\x0A\x0DExperimentArm\x12E\x0A\x0Dresource_name\x18\x01 \x01(\x09B.\xE0A\x05\xFAA(\x0A&googleads.googleapis.com/ExperimentArm\x12?\x0A\x0Aexperiment\x18\x08 \x01(\x09B+\xE0A\x05\xFAA%\x0A#googleads.googleapis.com/Experiment\x12\x11\x0A\x04name\x18\x03 \x01(\x09B\x03\xE0A\x02\x12\x0F\x0A\x07control\x18\x04 \x01(\x08\x12\x15\x0A\x0Dtraffic_split\x18\x05 \x01(\x03\x129\x0A\x09campaigns\x18\x06 \x03(\x09B&\xFAA#\x0A!googleads.googleapis.com/Campaign\x12F\x0A\x13in_design_campaigns\x18\x07 \x03(\x09B)\xE0A\x03\xFAA#\x0A!googleads.googleapis.com/Campaign:m\xEAAj\x0A&googleads.googleapis.com/ExperimentArm\x12@customers/{customer_id}/experimentArms/{trial_id}~{trial_arm_id}B\x84\x02\x0A&com.google.ads.googleads.v23.resourcesB\x12ExperimentArmProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);

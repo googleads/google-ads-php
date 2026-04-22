@@ -13,8 +13,8 @@ class AssetGroupProductGroupView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xDE\x06\x0AGgoogle/ads/googleads/v22/resources/asset_group_product_group_view.proto\x12\"google.ads.googleads.v22.resources\x1A\x19google/api/resource.proto\"\xB7\x03\x0A\x1AAssetGroupProductGroupView\x12R\x0A\x0Dresource_name\x18\x01 \x01(\x09B;\xE0A\x03\xFAA5\x0A3googleads.googleapis.com/AssetGroupProductGroupView\x12@\x0A\x0Basset_group\x18\x02 \x01(\x09B+\xE0A\x03\xFAA%\x0A#googleads.googleapis.com/AssetGroup\x12g\x0A asset_group_listing_group_filter\x18\x04 \x01(\x09B=\xE0A\x03\xFAA7\x0A5googleads.googleapis.com/AssetGroupListingGroupFilter:\x99\x01\xEAA\x95\x01\x0A3googleads.googleapis.com/AssetGroupProductGroupView\x12^customers/{customer_id}/assetGroupProductGroupViews/{asset_group_id}~{listing_group_filter_id}B\x91\x02\x0A&com.google.ads.googleads.v22.resourcesB\x1FAssetGroupProductGroupViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v22/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V22.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V22\\Resources\xEA\x02&Google::Ads::GoogleAds::V22::Resourcesb\x06proto3"
         , true);

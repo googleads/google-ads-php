@@ -13,8 +13,8 @@ class KeywordPlanAdGroup
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xCA\x06\x0A>google/ads/googleads/v23/resources/keyword_plan_ad_group.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xB4\x03\x0A\x12KeywordPlanAdGroup\x12J\x0A\x0Dresource_name\x18\x01 \x01(\x09B3\xE0A\x05\xFAA-\x0A+googleads.googleapis.com/KeywordPlanAdGroup\x12U\x0A\x15keyword_plan_campaign\x18\x06 \x01(\x09B1\xFAA.\x0A,googleads.googleapis.com/KeywordPlanCampaignH\x00\x88\x01\x01\x12\x14\x0A\x02id\x18\x07 \x01(\x03B\x03\xE0A\x03H\x01\x88\x01\x01\x12\x11\x0A\x04name\x18\x08 \x01(\x09H\x02\x88\x01\x01\x12\x1B\x0A\x0Ecpc_bid_micros\x18\x09 \x01(\x03H\x03\x88\x01\x01:x\xEAAu\x0A+googleads.googleapis.com/KeywordPlanAdGroup\x12Fcustomers/{customer_id}/keywordPlanAdGroups/{keyword_plan_ad_group_id}B\x18\x0A\x16_keyword_plan_campaignB\x05\x0A\x03_idB\x07\x0A\x05_nameB\x11\x0A\x0F_cpc_bid_microsB\x89\x02\x0A&com.google.ads.googleads.v23.resourcesB\x17KeywordPlanAdGroupProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);
