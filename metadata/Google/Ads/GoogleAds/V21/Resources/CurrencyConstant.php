@@ -13,8 +13,8 @@ class CurrencyConstant
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xDE\x05\x0A:google/ads/googleads/v21/resources/currency_constant.proto\x12\"google.ads.googleads.v21.resources\x1A\x19google/api/resource.proto\"\xCE\x02\x0A\x10CurrencyConstant\x12H\x0A\x0Dresource_name\x18\x01 \x01(\x09B1\xE0A\x03\xFAA+\x0A)googleads.googleapis.com/CurrencyConstant\x12\x16\x0A\x04code\x18\x06 \x01(\x09B\x03\xE0A\x03H\x00\x88\x01\x01\x12\x16\x0A\x04name\x18\x07 \x01(\x09B\x03\xE0A\x03H\x01\x88\x01\x01\x12\x18\x0A\x06symbol\x18\x08 \x01(\x09B\x03\xE0A\x03H\x02\x88\x01\x01\x12&\x0A\x14billable_unit_micros\x18\x09 \x01(\x03B\x03\xE0A\x03H\x03\x88\x01\x01:H\xEAAE\x0A)googleads.googleapis.com/CurrencyConstant\x12\x18currencyConstants/{code}B\x07\x0A\x05_codeB\x07\x0A\x05_nameB\x09\x0A\x07_symbolB\x17\x0A\x15_billable_unit_microsB\x87\x02\x0A&com.google.ads.googleads.v21.resourcesB\x15CurrencyConstantProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V21.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V21\\Resources\xEA\x02&Google::Ads::GoogleAds::V21::Resourcesb\x06proto3"
         , true);

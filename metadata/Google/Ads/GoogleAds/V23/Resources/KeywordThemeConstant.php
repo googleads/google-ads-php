@@ -13,8 +13,8 @@ class KeywordThemeConstant
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\x8D\x06\x0A?google/ads/googleads/v23/resources/keyword_theme_constant.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xF4\x02\x0A\x14KeywordThemeConstant\x12L\x0A\x0Dresource_name\x18\x01 \x01(\x09B5\xE0A\x03\xFAA/\x0A-googleads.googleapis.com/KeywordThemeConstant\x12\x1E\x0A\x0Ccountry_code\x18\x02 \x01(\x09B\x03\xE0A\x03H\x00\x88\x01\x01\x12\x1F\x0A\x0Dlanguage_code\x18\x03 \x01(\x09B\x03\xE0A\x03H\x01\x88\x01\x01\x12\x1E\x0A\x0Cdisplay_name\x18\x04 \x01(\x09B\x03\xE0A\x03H\x02\x88\x01\x01:y\xEAAv\x0A-googleads.googleapis.com/KeywordThemeConstant\x12EkeywordThemeConstants/{express_category_id}~{express_sub_category_id}B\x0F\x0A\x0D_country_codeB\x10\x0A\x0E_language_codeB\x0F\x0A\x0D_display_nameB\x8B\x02\x0A&com.google.ads.googleads.v23.resourcesB\x19KeywordThemeConstantProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);

@@ -13,8 +13,8 @@ class GenderView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xC0\x04\x0A4google/ads/googleads/v21/resources/gender_view.proto\x12\"google.ads.googleads.v21.resources\x1A\x19google/api/resource.proto\"\xBC\x01\x0A\x0AGenderView\x12B\x0A\x0Dresource_name\x18\x01 \x01(\x09B+\xE0A\x03\xFAA%\x0A#googleads.googleapis.com/GenderView:j\xEAAg\x0A#googleads.googleapis.com/GenderView\x12@customers/{customer_id}/genderViews/{ad_group_id}~{criterion_id}B\x81\x02\x0A&com.google.ads.googleads.v21.resourcesB\x0FGenderViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V21.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V21\\Resources\xEA\x02&Google::Ads::GoogleAds::V21::Resourcesb\x06proto3"
         , true);

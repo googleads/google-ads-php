@@ -13,6 +13,8 @@ use Google\Protobuf\RepeatedField;
  * client accounts only, and cannot be used in manager accounts.
  * See "About data exclusions" at
  * https://support.google.com/google-ads/answer/10370710.
+ * Note: A customer account can have a maximum of 500 active bidding data
+ * exclusions.
  *
  * Generated from protobuf message <code>google.ads.googleads.v22.resources.BiddingDataExclusion</code>
  */

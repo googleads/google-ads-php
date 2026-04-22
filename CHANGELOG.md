@@ -1,3 +1,9 @@
+## 33.3.0
+*   Added support for Google Ads API v24
+*   Dependency updayes
+*   Resolved Laravel sample app security vulnerabilities
+*   Removed grpc/grpc maximum version constraint
+
 ## 32.3.0
 *   Support for Google Ads API v23.2.
 *   Incorporated generator updates (new 'actions' directory, Protobuf changes).

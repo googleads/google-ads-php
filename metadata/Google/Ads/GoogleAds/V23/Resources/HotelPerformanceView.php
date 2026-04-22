@@ -13,8 +13,8 @@ class HotelPerformanceView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xDF\x04\x0A?google/ads/googleads/v23/resources/hotel_performance_view.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xC6\x01\x0A\x14HotelPerformanceView\x12L\x0A\x0Dresource_name\x18\x01 \x01(\x09B5\xE0A\x03\xFAA/\x0A-googleads.googleapis.com/HotelPerformanceView:`\xEAA]\x0A-googleads.googleapis.com/HotelPerformanceView\x12,customers/{customer_id}/hotelPerformanceViewB\x8B\x02\x0A&com.google.ads.googleads.v23.resourcesB\x19HotelPerformanceViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);

@@ -13,8 +13,8 @@ class PaymentsAccount
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xE9\x07\x0A9google/ads/googleads/v21/resources/payments_account.proto\x12\"google.ads.googleads.v21.resources\x1A\x19google/api/resource.proto\"\xDB\x04\x0A\x0FPaymentsAccount\x12G\x0A\x0Dresource_name\x18\x01 \x01(\x09B0\xE0A\x03\xFAA*\x0A(googleads.googleapis.com/PaymentsAccount\x12%\x0A\x13payments_account_id\x18\x08 \x01(\x09B\x03\xE0A\x03H\x00\x88\x01\x01\x12\x16\x0A\x04name\x18\x09 \x01(\x09B\x03\xE0A\x03H\x01\x88\x01\x01\x12\x1F\x0A\x0Dcurrency_code\x18\x0A \x01(\x09B\x03\xE0A\x03H\x02\x88\x01\x01\x12%\x0A\x13payments_profile_id\x18\x0B \x01(\x09B\x03\xE0A\x03H\x03\x88\x01\x01\x12/\x0A\x1Dsecondary_payments_profile_id\x18\x0C \x01(\x09B\x03\xE0A\x03H\x04\x88\x01\x01\x12O\x0A\x17paying_manager_customer\x18\x0D \x01(\x09B)\xE0A\x03\xFAA#\x0A!googleads.googleapis.com/CustomerH\x05\x88\x01\x01:m\xEAAj\x0A(googleads.googleapis.com/PaymentsAccount\x12>customers/{customer_id}/paymentsAccounts/{payments_account_id}B\x16\x0A\x14_payments_account_idB\x07\x0A\x05_nameB\x10\x0A\x0E_currency_codeB\x16\x0A\x14_payments_profile_idB \x0A\x1E_secondary_payments_profile_idB\x1A\x0A\x18_paying_manager_customerB\x86\x02\x0A&com.google.ads.googleads.v21.resourcesB\x14PaymentsAccountProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V21.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V21\\Resources\xEA\x02&Google::Ads::GoogleAds::V21::Resourcesb\x06proto3"
         , true);

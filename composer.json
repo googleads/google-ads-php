@@ -5,7 +5,7 @@
   "require": {
     "php": ">=8.1",
     "google/gax": "^1.36.1",
-    "grpc/grpc": "^1.36.0",
+    "grpc/grpc": ">=1.57.0",
     "google/protobuf": "^3.21.5 || ^4.26.1 || ^5.34",
     "monolog/monolog": "^1.26 || ^2.0 || ^3.0",
     "google/auth": "^1.30 || ^2.0"
@@ -14,7 +14,7 @@
     "phpunit/phpunit": "^9.5",
     "squizlabs/php_codesniffer": "^3.5",
     "ext-bcmath": "*",
-    "ext-grpc": ">=1.57.0 <=1.66.0",
+    "ext-grpc": ">=1.57.0",
     "ext-protobuf": "^3.21.5 || ^4.26",
     "ulrichsg/getopt-php": "^3.4",
     "react/http": "^1.2.0",

@@ -13,8 +13,8 @@ class AdGroupAdLabel
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xFA\x05\x0A:google/ads/googleads/v22/resources/ad_group_ad_label.proto\x12\"google.ads.googleads.v22.resources\x1A\x19google/api/resource.proto\"\xEC\x02\x0A\x0EAdGroupAdLabel\x12F\x0A\x0Dresource_name\x18\x01 \x01(\x09B/\xE0A\x05\xFAA)\x0A'googleads.googleapis.com/AdGroupAdLabel\x12D\x0A\x0Bad_group_ad\x18\x04 \x01(\x09B*\xE0A\x05\xFAA\$\x0A\"googleads.googleapis.com/AdGroupAdH\x00\x88\x01\x01\x12:\x0A\x05label\x18\x05 \x01(\x09B&\xE0A\x05\xFAA \x0A\x1Egoogleads.googleapis.com/LabelH\x01\x88\x01\x01:v\xEAAs\x0A'googleads.googleapis.com/AdGroupAdLabel\x12Hcustomers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}~{label_id}B\x0E\x0A\x0C_ad_group_adB\x08\x0A\x06_labelB\x85\x02\x0A&com.google.ads.googleads.v22.resourcesB\x13AdGroupAdLabelProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v22/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V22.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V22\\Resources\xEA\x02&Google::Ads::GoogleAds::V22::Resourcesb\x06proto3"
         , true);

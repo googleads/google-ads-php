@@ -188,7 +188,8 @@ class Ad extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V21\Common\TextAdInfo $text_ad
      *           Immutable. Details pertaining to a text ad.
      *     @type \Google\Ads\GoogleAds\V21\Common\ExpandedTextAdInfo $expanded_text_ad
-     *           Details pertaining to an expanded text ad.
+     *           Details pertaining to an expanded text ad. Expanded text ads are
+     *           deprecated. Use `ResponsiveSearchAd` instead.
      *     @type \Google\Ads\GoogleAds\V21\Common\CallAdInfo $call_ad
      *           Details pertaining to a call ad.
      *     @type \Google\Ads\GoogleAds\V21\Common\ExpandedDynamicSearchAdInfo $expanded_dynamic_search_ad
@@ -772,7 +773,8 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Details pertaining to an expanded text ad.
+     * Details pertaining to an expanded text ad. Expanded text ads are
+     * deprecated. Use `ResponsiveSearchAd` instead.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v21.common.ExpandedTextAdInfo expanded_text_ad = 7;</code>
      * @return \Google\Ads\GoogleAds\V21\Common\ExpandedTextAdInfo|null
@@ -788,7 +790,8 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Details pertaining to an expanded text ad.
+     * Details pertaining to an expanded text ad. Expanded text ads are
+     * deprecated. Use `ResponsiveSearchAd` instead.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v21.common.ExpandedTextAdInfo expanded_text_ad = 7;</code>
      * @param \Google\Ads\GoogleAds\V21\Common\ExpandedTextAdInfo $var
