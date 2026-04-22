@@ -13,15 +13,15 @@ class AdGroupAdLabelService
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\LaunchStage::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Http::initOnce();
         \GPBMetadata\Google\Api\Annotations::initOnce();
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Protobuf\Duration::initOnce();
-        \GPBMetadata\Google\Api\Client::initOnce();
         \GPBMetadata\Google\Protobuf\Any::initOnce();
         \GPBMetadata\Google\Rpc\Status::initOnce();
+        \GPBMetadata\Google\Api\LaunchStage::initOnce();
+        \GPBMetadata\Google\Api\Client::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xFA\x05\x0A:google/ads/googleads/v23/resources/ad_group_ad_label.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xEC\x02\x0A\x0EAdGroupAdLabel\x12F\x0A\x0Dresource_name\x18\x01 \x01(\x09B/\xE0A\x05\xFAA)\x0A'googleads.googleapis.com/AdGroupAdLabel\x12D\x0A\x0Bad_group_ad\x18\x04 \x01(\x09B*\xE0A\x05\xFAA\$\x0A\"googleads.googleapis.com/AdGroupAdH\x00\x88\x01\x01\x12:\x0A\x05label\x18\x05 \x01(\x09B&\xE0A\x05\xFAA \x0A\x1Egoogleads.googleapis.com/LabelH\x01\x88\x01\x01:v\xEAAs\x0A'googleads.googleapis.com/AdGroupAdLabel\x12Hcustomers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}~{label_id}B\x0E\x0A\x0C_ad_group_adB\x08\x0A\x06_labelB\x85\x02\x0A&com.google.ads.googleads.v23.resourcesB\x13AdGroupAdLabelProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3\x0A\xD3\x0B\x0AAgoogle/ads/googleads/v23/services/ad_group_ad_label_service.proto\x12!google.ads.googleads.v23.services\x1A\x1Cgoogle/api/annotations.proto\x1A\x17google/api/client.proto\x1A\x1Fgoogle/api/field_behavior.proto\x1A\x19google/api/resource.proto\x1A\x17google/rpc/status.proto\"\xBD\x01\x0A\x1CMutateAdGroupAdLabelsRequest\x12\x18\x0A\x0Bcustomer_id\x18\x01 \x01(\x09B\x03\xE0A\x02\x12S\x0A\x0Aoperations\x18\x02 \x03(\x0B2:.google.ads.googleads.v23.services.AdGroupAdLabelOperationB\x03\xE0A\x02\x12\x17\x0A\x0Fpartial_failure\x18\x03 \x01(\x08\x12\x15\x0A\x0Dvalidate_only\x18\x04 \x01(\x08\"\xAC\x01\x0A\x17AdGroupAdLabelOperation\x12D\x0A\x06create\x18\x01 \x01(\x0B22.google.ads.googleads.v23.resources.AdGroupAdLabelH\x00\x12>\x0A\x06remove\x18\x02 \x01(\x09B,\xFAA)\x0A'googleads.googleapis.com/AdGroupAdLabelH\x00B\x0B\x0A\x09operation\"\xA2\x01\x0A\x1DMutateAdGroupAdLabelsResponse\x121\x0A\x15partial_failure_error\x18\x03 \x01(\x0B2\x12.google.rpc.Status\x12N\x0A\x07results\x18\x02 \x03(\x0B2=.google.ads.googleads.v23.services.MutateAdGroupAdLabelResult\"a\x0A\x1AMutateAdGroupAdLabelResult\x12C\x0A\x0Dresource_name\x18\x01 \x01(\x09B,\xFAA)\x0A'googleads.googleapis.com/AdGroupAdLabel2\xD6\x02\x0A\x15AdGroupAdLabelService\x12\xF5\x01\x0A\x15MutateAdGroupAdLabels\x12?.google.ads.googleads.v23.services.MutateAdGroupAdLabelsRequest\x1A@.google.ads.googleads.v23.services.MutateAdGroupAdLabelsResponse\"Y\xDAA\x16customer_id,operations\x82\xD3\xE4\x93\x02:\"5/v23/customers/{customer_id=*}/adGroupAdLabels:mutate:\x01*\x1AE\xCAA\x18googleads.googleapis.com\xD2A'https://www.googleapis.com/auth/adwordsB\x86\x02\x0A%com.google.ads.googleads.v23.servicesB\x1AAdGroupAdLabelServiceProtoP\x01ZIgoogle.golang.org/genproto/googleapis/ads/googleads/v23/services;services\xA2\x02\x03GAA\xAA\x02!Google.Ads.GoogleAds.V23.Services\xCA\x02!Google\\Ads\\GoogleAds\\V23\\Services\xEA\x02%Google::Ads::GoogleAds::V23::Servicesb\x06proto3"
         , true);

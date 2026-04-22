@@ -75,12 +75,9 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Number of days a user's cookie stays on your list since its most recent
      * addition to the list. This field must be between 0 and 540 inclusive.
-     * However, for CRM based userlists, this field can be set to 10000 which
-     * means no expiration. Beginning on April 7, 2025, using a value of 10000 to
-     * indicate no expiration will no longer be supported.
-     * This field is ignored for logical_user_list and rule_based_user_list types.
-     * Membership to lists of these types depends on the rules defined by the
-     * lists.
+     * This field is ignored for `logical_user_list` and `rule_based_user_list`
+     * types. Membership to lists of these types depends on the rules defined by
+     * the lists.
      *
      * Generated from protobuf field <code>optional int64 membership_life_span = 30;</code>
      */
@@ -209,12 +206,9 @@ class UserList extends \Google\Protobuf\Internal\Message
      *     @type int|string $membership_life_span
      *           Number of days a user's cookie stays on your list since its most recent
      *           addition to the list. This field must be between 0 and 540 inclusive.
-     *           However, for CRM based userlists, this field can be set to 10000 which
-     *           means no expiration. Beginning on April 7, 2025, using a value of 10000 to
-     *           indicate no expiration will no longer be supported.
-     *           This field is ignored for logical_user_list and rule_based_user_list types.
-     *           Membership to lists of these types depends on the rules defined by the
-     *           lists.
+     *           This field is ignored for `logical_user_list` and `rule_based_user_list`
+     *           types. Membership to lists of these types depends on the rules defined by
+     *           the lists.
      *     @type int|string $size_for_display
      *           Output only. Estimated number of users in this user list, on the Google
      *           Display Network. This value is null if the number of users has not yet been
@@ -535,12 +529,9 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Number of days a user's cookie stays on your list since its most recent
      * addition to the list. This field must be between 0 and 540 inclusive.
-     * However, for CRM based userlists, this field can be set to 10000 which
-     * means no expiration. Beginning on April 7, 2025, using a value of 10000 to
-     * indicate no expiration will no longer be supported.
-     * This field is ignored for logical_user_list and rule_based_user_list types.
-     * Membership to lists of these types depends on the rules defined by the
-     * lists.
+     * This field is ignored for `logical_user_list` and `rule_based_user_list`
+     * types. Membership to lists of these types depends on the rules defined by
+     * the lists.
      *
      * Generated from protobuf field <code>optional int64 membership_life_span = 30;</code>
      * @return int|string
@@ -563,12 +554,9 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Number of days a user's cookie stays on your list since its most recent
      * addition to the list. This field must be between 0 and 540 inclusive.
-     * However, for CRM based userlists, this field can be set to 10000 which
-     * means no expiration. Beginning on April 7, 2025, using a value of 10000 to
-     * indicate no expiration will no longer be supported.
-     * This field is ignored for logical_user_list and rule_based_user_list types.
-     * Membership to lists of these types depends on the rules defined by the
-     * lists.
+     * This field is ignored for `logical_user_list` and `rule_based_user_list`
+     * types. Membership to lists of these types depends on the rules defined by
+     * the lists.
      *
      * Generated from protobuf field <code>optional int64 membership_life_span = 30;</code>
      * @param int|string $var

@@ -242,8 +242,7 @@ class DataLinkServiceClient
     /**
      * Creates a data link. The requesting Google Ads account name and account ID
      * will be shared with the third party (such as YouTube creators for video
-     * links) to whom you are creating the link with. Only customers on the
-     * allow-list can create data links.
+     * links) to whom you are creating the link with.
      *
      * List of thrown errors:
      * [AuthenticationError]()

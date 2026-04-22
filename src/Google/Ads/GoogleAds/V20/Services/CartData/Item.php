@@ -31,7 +31,7 @@ class Item extends \Google\Protobuf\Internal\Message
     /**
      * Unit price excluding tax, shipping, and any transaction
      * level discounts. The currency code is the same as that in the
-     * ClickConversion message.
+     * `ClickConversion` message.
      *
      * Generated from protobuf field <code>double unit_price = 3;</code>
      */
@@ -51,7 +51,7 @@ class Item extends \Google\Protobuf\Internal\Message
      *     @type float $unit_price
      *           Unit price excluding tax, shipping, and any transaction
      *           level discounts. The currency code is the same as that in the
-     *           ClickConversion message.
+     *           `ClickConversion` message.
      * }
      */
     public function __construct($data = NULL) {
@@ -116,7 +116,7 @@ class Item extends \Google\Protobuf\Internal\Message
     /**
      * Unit price excluding tax, shipping, and any transaction
      * level discounts. The currency code is the same as that in the
-     * ClickConversion message.
+     * `ClickConversion` message.
      *
      * Generated from protobuf field <code>double unit_price = 3;</code>
      * @return float
@@ -129,7 +129,7 @@ class Item extends \Google\Protobuf\Internal\Message
     /**
      * Unit price excluding tax, shipping, and any transaction
      * level discounts. The currency code is the same as that in the
-     * ClickConversion message.
+     * `ClickConversion` message.
      *
      * Generated from protobuf field <code>double unit_price = 3;</code>
      * @param float $var

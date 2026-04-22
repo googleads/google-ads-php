@@ -14,8 +14,8 @@ class CustomerUserAccessService
           return;
         }
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\LaunchStage::initOnce();
         \GPBMetadata\Google\Protobuf\Duration::initOnce();
         \GPBMetadata\Google\Api\Client::initOnce();

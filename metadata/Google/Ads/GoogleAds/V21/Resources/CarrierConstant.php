@@ -13,8 +13,8 @@ class CarrierConstant
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xA7\x05\x0A9google/ads/googleads/v21/resources/carrier_constant.proto\x12\"google.ads.googleads.v21.resources\x1A\x19google/api/resource.proto\"\x99\x02\x0A\x0FCarrierConstant\x12G\x0A\x0Dresource_name\x18\x01 \x01(\x09B0\xE0A\x03\xFAA*\x0A(googleads.googleapis.com/CarrierConstant\x12\x14\x0A\x02id\x18\x05 \x01(\x03B\x03\xE0A\x03H\x00\x88\x01\x01\x12\x16\x0A\x04name\x18\x06 \x01(\x09B\x03\xE0A\x03H\x01\x88\x01\x01\x12\x1E\x0A\x0Ccountry_code\x18\x07 \x01(\x09B\x03\xE0A\x03H\x02\x88\x01\x01:N\xEAAK\x0A(googleads.googleapis.com/CarrierConstant\x12\x1FcarrierConstants/{criterion_id}B\x05\x0A\x03_idB\x07\x0A\x05_nameB\x0F\x0A\x0D_country_codeB\x86\x02\x0A&com.google.ads.googleads.v21.resourcesB\x14CarrierConstantProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V21.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V21\\Resources\xEA\x02&Google::Ads::GoogleAds::V21::Resourcesb\x06proto3"
         , true);

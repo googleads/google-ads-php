@@ -36,7 +36,7 @@ class CartData extends \Google\Protobuf\Internal\Message
     /**
      * Sum of all transaction level discounts, such as free shipping and
      * coupon discounts for the whole cart. The currency code is the same
-     * as that in the ClickConversion message.
+     * as that in the `ClickConversion` message.
      *
      * Generated from protobuf field <code>double local_transaction_cost = 4;</code>
      */
@@ -63,7 +63,7 @@ class CartData extends \Google\Protobuf\Internal\Message
      *     @type float $local_transaction_cost
      *           Sum of all transaction level discounts, such as free shipping and
      *           coupon discounts for the whole cart. The currency code is the same
-     *           as that in the ClickConversion message.
+     *           as that in the `ClickConversion` message.
      *     @type \Google\Ads\GoogleAds\V23\Services\CartData\Item[] $items
      *           Data of the items purchased.
      * }
@@ -154,7 +154,7 @@ class CartData extends \Google\Protobuf\Internal\Message
     /**
      * Sum of all transaction level discounts, such as free shipping and
      * coupon discounts for the whole cart. The currency code is the same
-     * as that in the ClickConversion message.
+     * as that in the `ClickConversion` message.
      *
      * Generated from protobuf field <code>double local_transaction_cost = 4;</code>
      * @return float
@@ -167,7 +167,7 @@ class CartData extends \Google\Protobuf\Internal\Message
     /**
      * Sum of all transaction level discounts, such as free shipping and
      * coupon discounts for the whole cart. The currency code is the same
-     * as that in the ClickConversion message.
+     * as that in the `ClickConversion` message.
      *
      * Generated from protobuf field <code>double local_transaction_cost = 4;</code>
      * @param float $var

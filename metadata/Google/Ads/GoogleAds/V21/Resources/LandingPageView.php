@@ -13,8 +13,8 @@ class LandingPageView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xA6\x05\x0A:google/ads/googleads/v21/resources/landing_page_view.proto\x12\"google.ads.googleads.v21.resources\x1A\x19google/api/resource.proto\"\x97\x02\x0A\x0FLandingPageView\x12G\x0A\x0Dresource_name\x18\x01 \x01(\x09B0\xE0A\x03\xFAA*\x0A(googleads.googleapis.com/LandingPageView\x12&\x0A\x14unexpanded_final_url\x18\x03 \x01(\x09B\x03\xE0A\x03H\x00\x88\x01\x01:z\xEAAw\x0A(googleads.googleapis.com/LandingPageView\x12Kcustomers/{customer_id}/landingPageViews/{unexpanded_final_url_fingerprint}B\x17\x0A\x15_unexpanded_final_urlB\x86\x02\x0A&com.google.ads.googleads.v21.resourcesB\x14LandingPageViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V21.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V21\\Resources\xEA\x02&Google::Ads::GoogleAds::V21::Resourcesb\x06proto3"
         , true);

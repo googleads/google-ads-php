@@ -13,8 +13,8 @@ class MatchedLocationInterestView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xDF\x05\x0AGgoogle/ads/googleads/v23/resources/matched_location_interest_view.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xB7\x02\x0A\x1BMatchedLocationInterestView\x12S\x0A\x0Dresource_name\x18\x01 \x01(\x09B<\xE0A\x03\xFAA6\x0A4googleads.googleapis.com/MatchedLocationInterestView:\xC2\x01\xEAA\xBE\x01\x0A4googleads.googleapis.com/MatchedLocationInterestView\x12Kcustomers/{customer_id}/matchedLocationInterestViews/{country_criterion_id}*\x1CmatchedLocationInterestViews2\x1BmatchedLocationInterestViewB\x92\x02\x0A&com.google.ads.googleads.v23.resourcesB MatchedLocationInterestViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);

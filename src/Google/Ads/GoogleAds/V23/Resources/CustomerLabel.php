@@ -27,15 +27,16 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
     protected $resource_name = '';
     /**
      * Output only. The resource name of the customer to which the label is
-     * attached. Read only.
+     * attached. This field should not be set when creating a new `CustomerLabel`.
      *
      * Generated from protobuf field <code>optional string customer = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $customer = null;
     /**
      * Output only. The resource name of the label assigned to the customer.
+     * This field should not be set when creating a new `CustomerLabel`.
      * Note: the Customer ID portion of the label resource name is not
-     * validated when creating a new CustomerLabel.
+     * validated when creating a new `CustomerLabel`.
      *
      * Generated from protobuf field <code>optional string label = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
@@ -53,11 +54,12 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      *           `customers/{customer_id}/customerLabels/{label_id}`
      *     @type string $customer
      *           Output only. The resource name of the customer to which the label is
-     *           attached. Read only.
+     *           attached. This field should not be set when creating a new `CustomerLabel`.
      *     @type string $label
      *           Output only. The resource name of the label assigned to the customer.
+     *           This field should not be set when creating a new `CustomerLabel`.
      *           Note: the Customer ID portion of the label resource name is not
-     *           validated when creating a new CustomerLabel.
+     *           validated when creating a new `CustomerLabel`.
      * }
      */
     public function __construct($data = NULL) {
@@ -97,7 +99,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the customer to which the label is
-     * attached. Read only.
+     * attached. This field should not be set when creating a new `CustomerLabel`.
      *
      * Generated from protobuf field <code>optional string customer = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
@@ -119,7 +121,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the customer to which the label is
-     * attached. Read only.
+     * attached. This field should not be set when creating a new `CustomerLabel`.
      *
      * Generated from protobuf field <code>optional string customer = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -135,8 +137,9 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the label assigned to the customer.
+     * This field should not be set when creating a new `CustomerLabel`.
      * Note: the Customer ID portion of the label resource name is not
-     * validated when creating a new CustomerLabel.
+     * validated when creating a new `CustomerLabel`.
      *
      * Generated from protobuf field <code>optional string label = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
@@ -158,8 +161,9 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the label assigned to the customer.
+     * This field should not be set when creating a new `CustomerLabel`.
      * Note: the Customer ID portion of the label resource name is not
-     * validated when creating a new CustomerLabel.
+     * validated when creating a new `CustomerLabel`.
      *
      * Generated from protobuf field <code>optional string label = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var

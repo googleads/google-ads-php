@@ -13,8 +13,8 @@ class CampaignAudienceView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xFD\x04\x0A?google/ads/googleads/v23/resources/campaign_audience_view.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xE4\x01\x0A\x14CampaignAudienceView\x12L\x0A\x0Dresource_name\x18\x01 \x01(\x09B5\xE0A\x03\xFAA/\x0A-googleads.googleapis.com/CampaignAudienceView:~\xEAA{\x0A-googleads.googleapis.com/CampaignAudienceView\x12Jcustomers/{customer_id}/campaignAudienceViews/{campaign_id}~{criterion_id}B\x8B\x02\x0A&com.google.ads.googleads.v23.resourcesB\x19CampaignAudienceViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);

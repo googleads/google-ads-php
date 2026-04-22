@@ -54,7 +54,7 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
     private $youtube_select_lineups;
     /**
      * Targetable YouTube Select Lineups for the ad product.
-     * This field replaces the deprecated youtube_select_lineups field.
+     * This field replaces the deprecated `youtube_select_lineups` field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.services.YouTubeSelectLineUpTargeting youtube_select_lineup_targeting = 7;</code>
      */
@@ -91,7 +91,7 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      *           youtube_select_lineup_targeting instead.
      *     @type \Google\Ads\GoogleAds\V23\Services\YouTubeSelectLineUpTargeting $youtube_select_lineup_targeting
      *           Targetable YouTube Select Lineups for the ad product.
-     *           This field replaces the deprecated youtube_select_lineups field.
+     *           This field replaces the deprecated `youtube_select_lineups` field.
      *     @type \Google\Ads\GoogleAds\V23\Services\SurfaceTargetingCombinations $surface_targeting
      *           Targetable surface combinations for the ad product.
      * }
@@ -247,7 +247,7 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
 
     /**
      * Targetable YouTube Select Lineups for the ad product.
-     * This field replaces the deprecated youtube_select_lineups field.
+     * This field replaces the deprecated `youtube_select_lineups` field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.services.YouTubeSelectLineUpTargeting youtube_select_lineup_targeting = 7;</code>
      * @return \Google\Ads\GoogleAds\V23\Services\YouTubeSelectLineUpTargeting|null
@@ -269,7 +269,7 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
 
     /**
      * Targetable YouTube Select Lineups for the ad product.
-     * This field replaces the deprecated youtube_select_lineups field.
+     * This field replaces the deprecated `youtube_select_lineups` field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v23.services.YouTubeSelectLineUpTargeting youtube_select_lineup_targeting = 7;</code>
      * @param \Google\Ads\GoogleAds\V23\Services\YouTubeSelectLineUpTargeting $var

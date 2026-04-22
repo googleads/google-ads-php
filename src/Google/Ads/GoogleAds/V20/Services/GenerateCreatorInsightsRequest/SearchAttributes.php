@@ -11,7 +11,9 @@ use Google\Protobuf\RepeatedField;
 /**
  * The audience attributes (such as Age, Gender, Affinity, and In-Market) and
  * creator attributes (such as creator's content topics) used to search
- * for top creators.
+ * for top creators. The returned creators are sorted based on likelihood that
+ * your audience watches the creator, relative to the general population (most
+ * likely is returned first).
  *
  * Generated from protobuf message <code>google.ads.googleads.v20.services.GenerateCreatorInsightsRequest.SearchAttributes</code>
  */

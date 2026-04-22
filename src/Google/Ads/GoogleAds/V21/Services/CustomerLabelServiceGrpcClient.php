@@ -21,7 +21,11 @@ namespace Google\Ads\GoogleAds\V21\Services;
 /**
  * Proto file describing the Customer Label service.
  *
- * Service to manage labels on customers.
+ * Service to manage labels on Google Ads customers.
+ *
+ * This service is commonly used by manager accounts to apply their own labels
+ * to their client accounts. The label entity must exist under the manager
+ * account.
  */
 class CustomerLabelServiceGrpcClient extends \Grpc\BaseStub {
 

@@ -16,8 +16,8 @@ use Google\Protobuf\RepeatedField;
 class ProductMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The code associated with the ad product (for example: BUMPER,
-     * TRUEVIEW_IN_STREAM).
+     * The code associated with the ad product.
+     * For example: "VIDEO_VIEW_CAMPAIGN".
      * To list the available plannable product codes use
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v20.services.ReachPlanService.ListPlannableProducts].
      *
@@ -26,6 +26,7 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
     protected $plannable_product_code = null;
     /**
      * The name associated with the ad product.
+     * For example: "Video View Campaign".
      *
      * Generated from protobuf field <code>string plannable_product_name = 3;</code>
      */
@@ -44,12 +45,13 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $plannable_product_code
-     *           The code associated with the ad product (for example: BUMPER,
-     *           TRUEVIEW_IN_STREAM).
+     *           The code associated with the ad product.
+     *           For example: "VIDEO_VIEW_CAMPAIGN".
      *           To list the available plannable product codes use
      *           [ReachPlanService.ListPlannableProducts][google.ads.googleads.v20.services.ReachPlanService.ListPlannableProducts].
      *     @type string $plannable_product_name
      *           The name associated with the ad product.
+     *           For example: "Video View Campaign".
      *     @type \Google\Ads\GoogleAds\V20\Services\PlannableTargeting $plannable_targeting
      *           The allowed plannable targeting for this product.
      * }
@@ -60,8 +62,8 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The code associated with the ad product (for example: BUMPER,
-     * TRUEVIEW_IN_STREAM).
+     * The code associated with the ad product.
+     * For example: "VIDEO_VIEW_CAMPAIGN".
      * To list the available plannable product codes use
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v20.services.ReachPlanService.ListPlannableProducts].
      *
@@ -84,8 +86,8 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The code associated with the ad product (for example: BUMPER,
-     * TRUEVIEW_IN_STREAM).
+     * The code associated with the ad product.
+     * For example: "VIDEO_VIEW_CAMPAIGN".
      * To list the available plannable product codes use
      * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v20.services.ReachPlanService.ListPlannableProducts].
      *
@@ -103,6 +105,7 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * The name associated with the ad product.
+     * For example: "Video View Campaign".
      *
      * Generated from protobuf field <code>string plannable_product_name = 3;</code>
      * @return string
@@ -114,6 +117,7 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * The name associated with the ad product.
+     * For example: "Video View Campaign".
      *
      * Generated from protobuf field <code>string plannable_product_name = 3;</code>
      * @param string $var

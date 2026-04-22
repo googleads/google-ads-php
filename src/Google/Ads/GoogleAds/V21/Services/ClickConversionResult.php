@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Identifying information for a successfully processed ClickConversion.
+ * Identifying information for a successfully processed `ClickConversion`.
  *
  * Generated from protobuf message <code>google.ads.googleads.v21.services.ClickConversionResult</code>
  */

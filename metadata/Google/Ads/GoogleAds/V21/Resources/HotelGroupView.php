@@ -13,8 +13,8 @@ class HotelGroupView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xD9\x04\x0A9google/ads/googleads/v21/resources/hotel_group_view.proto\x12\"google.ads.googleads.v21.resources\x1A\x19google/api/resource.proto\"\xCC\x01\x0A\x0EHotelGroupView\x12F\x0A\x0Dresource_name\x18\x01 \x01(\x09B/\xE0A\x03\xFAA)\x0A'googleads.googleapis.com/HotelGroupView:r\xEAAo\x0A'googleads.googleapis.com/HotelGroupView\x12Dcustomers/{customer_id}/hotelGroupViews/{ad_group_id}~{criterion_id}B\x85\x02\x0A&com.google.ads.googleads.v21.resourcesB\x13HotelGroupViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V21.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V21\\Resources\xEA\x02&Google::Ads::GoogleAds::V21::Resourcesb\x06proto3"
         , true);

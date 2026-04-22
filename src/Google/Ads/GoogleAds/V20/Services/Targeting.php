@@ -20,7 +20,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * obtained from
      * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v20.services.ReachPlanService.ListPlannableLocations].
      * Requests must set either this field or `plannable_location_ids`.
-     * This field is deprecated as of V12 and will be removed in a future release.
+     * This field is deprecated and will be removed in a future release.
      * Use `plannable_location_ids` instead.
      *
      * Generated from protobuf field <code>optional string plannable_location_id = 6;</code>
@@ -89,7 +89,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      *           obtained from
      *           [ReachPlanService.ListPlannableLocations][google.ads.googleads.v20.services.ReachPlanService.ListPlannableLocations].
      *           Requests must set either this field or `plannable_location_ids`.
-     *           This field is deprecated as of V12 and will be removed in a future release.
+     *           This field is deprecated and will be removed in a future release.
      *           Use `plannable_location_ids` instead.
      *     @type string[] $plannable_location_ids
      *           The list of plannable location IDs to target with this forecast.
@@ -130,7 +130,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * obtained from
      * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v20.services.ReachPlanService.ListPlannableLocations].
      * Requests must set either this field or `plannable_location_ids`.
-     * This field is deprecated as of V12 and will be removed in a future release.
+     * This field is deprecated and will be removed in a future release.
      * Use `plannable_location_ids` instead.
      *
      * Generated from protobuf field <code>optional string plannable_location_id = 6;</code>
@@ -156,7 +156,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * obtained from
      * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v20.services.ReachPlanService.ListPlannableLocations].
      * Requests must set either this field or `plannable_location_ids`.
-     * This field is deprecated as of V12 and will be removed in a future release.
+     * This field is deprecated and will be removed in a future release.
      * Use `plannable_location_ids` instead.
      *
      * Generated from protobuf field <code>optional string plannable_location_id = 6;</code>

@@ -112,7 +112,6 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
     protected $consent = null;
     /**
      * Type of the customer associated with the conversion (new or returning).
-     * Accessible only to customers on the allow-list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v21.enums.ConversionCustomerTypeEnum.ConversionCustomerType customer_type = 26;</code>
      */
@@ -126,8 +125,10 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * exclude sharing IP addresses from users from these regions and ensure that
      * you provide users with clear and comprehensive information about the data
      * you collect on your sites, apps, and other properties and get consent where
-     * required by law or any applicable Google policies. See the
-     * https://support.google.com/google-ads/answer/2998031 page for more details.
+     * required by law or any applicable Google policies. See
+     * [About offline conversion
+     * imports](//support.google.com/google-ads/answer/2998031) page for more
+     * details.
      * This field is only available to allowlisted users. To include this field in
      * conversion imports, upgrade to the Data Manager API.
      *
@@ -183,7 +184,6 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      *           The consent setting for the event.
      *     @type int $customer_type
      *           Type of the customer associated with the conversion (new or returning).
-     *           Accessible only to customers on the allow-list.
      *     @type string $user_ip_address
      *           The IP address of the customer when they arrived on the landing page after
      *           an ad click but before a conversion event. This is the IP address of the
@@ -193,8 +193,10 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      *           exclude sharing IP addresses from users from these regions and ensure that
      *           you provide users with clear and comprehensive information about the data
      *           you collect on your sites, apps, and other properties and get consent where
-     *           required by law or any applicable Google policies. See the
-     *           https://support.google.com/google-ads/answer/2998031 page for more details.
+     *           required by law or any applicable Google policies. See
+     *           [About offline conversion
+     *           imports](//support.google.com/google-ads/answer/2998031) page for more
+     *           details.
      *           This field is only available to allowlisted users. To include this field in
      *           conversion imports, upgrade to the Data Manager API.
      *     @type string $session_attributes_encoded
@@ -693,7 +695,6 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
 
     /**
      * Type of the customer associated with the conversion (new or returning).
-     * Accessible only to customers on the allow-list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v21.enums.ConversionCustomerTypeEnum.ConversionCustomerType customer_type = 26;</code>
      * @return int
@@ -705,7 +706,6 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
 
     /**
      * Type of the customer associated with the conversion (new or returning).
-     * Accessible only to customers on the allow-list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v21.enums.ConversionCustomerTypeEnum.ConversionCustomerType customer_type = 26;</code>
      * @param int $var
@@ -728,8 +728,10 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * exclude sharing IP addresses from users from these regions and ensure that
      * you provide users with clear and comprehensive information about the data
      * you collect on your sites, apps, and other properties and get consent where
-     * required by law or any applicable Google policies. See the
-     * https://support.google.com/google-ads/answer/2998031 page for more details.
+     * required by law or any applicable Google policies. See
+     * [About offline conversion
+     * imports](//support.google.com/google-ads/answer/2998031) page for more
+     * details.
      * This field is only available to allowlisted users. To include this field in
      * conversion imports, upgrade to the Data Manager API.
      *
@@ -760,8 +762,10 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * exclude sharing IP addresses from users from these regions and ensure that
      * you provide users with clear and comprehensive information about the data
      * you collect on your sites, apps, and other properties and get consent where
-     * required by law or any applicable Google policies. See the
-     * https://support.google.com/google-ads/answer/2998031 page for more details.
+     * required by law or any applicable Google policies. See
+     * [About offline conversion
+     * imports](//support.google.com/google-ads/answer/2998031) page for more
+     * details.
      * This field is only available to allowlisted users. To include this field in
      * conversion imports, upgrade to the Data Manager API.
      *

@@ -13,8 +13,8 @@ class TopicConstant
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xC6\x05\x0A7google/ads/googleads/v23/resources/topic_constant.proto\x12\"google.ads.googleads.v23.resources\x1A\x19google/api/resource.proto\"\xBC\x02\x0A\x0DTopicConstant\x12E\x0A\x0Dresource_name\x18\x01 \x01(\x09B.\xE0A\x03\xFAA(\x0A&googleads.googleapis.com/TopicConstant\x12\x14\x0A\x02id\x18\x05 \x01(\x03B\x03\xE0A\x03H\x00\x88\x01\x01\x12R\x0A\x15topic_constant_parent\x18\x06 \x01(\x09B.\xE0A\x03\xFAA(\x0A&googleads.googleapis.com/TopicConstantH\x01\x88\x01\x01\x12\x11\x0A\x04path\x18\x07 \x03(\x09B\x03\xE0A\x03:F\xEAAC\x0A&googleads.googleapis.com/TopicConstant\x12\x19topicConstants/{topic_id}B\x05\x0A\x03_idB\x18\x0A\x16_topic_constant_parentB\x84\x02\x0A&com.google.ads.googleads.v23.resourcesB\x12TopicConstantProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v23/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V23.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V23\\Resources\xEA\x02&Google::Ads::GoogleAds::V23::Resourcesb\x06proto3"
         , true);

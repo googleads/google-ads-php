@@ -13,8 +13,8 @@ class AdGroupCriterionLabel
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xC2\x06\x0AAgoogle/ads/googleads/v21/resources/ad_group_criterion_label.proto\x12\"google.ads.googleads.v21.resources\x1A\x19google/api/resource.proto\"\xA6\x03\x0A\x15AdGroupCriterionLabel\x12M\x0A\x0Dresource_name\x18\x01 \x01(\x09B6\xE0A\x05\xFAA0\x0A.googleads.googleapis.com/AdGroupCriterionLabel\x12R\x0A\x12ad_group_criterion\x18\x04 \x01(\x09B1\xE0A\x05\xFAA+\x0A)googleads.googleapis.com/AdGroupCriterionH\x00\x88\x01\x01\x12:\x0A\x05label\x18\x05 \x01(\x09B&\xE0A\x05\xFAA \x0A\x1Egoogleads.googleapis.com/LabelH\x01\x88\x01\x01:\x8C\x01\xEAA\x88\x01\x0A.googleads.googleapis.com/AdGroupCriterionLabel\x12Vcustomers/{customer_id}/adGroupCriterionLabels/{ad_group_id}~{criterion_id}~{label_id}B\x15\x0A\x13_ad_group_criterionB\x08\x0A\x06_labelB\x8C\x02\x0A&com.google.ads.googleads.v21.resourcesB\x1AAdGroupCriterionLabelProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V21.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V21\\Resources\xEA\x02&Google::Ads::GoogleAds::V21::Resourcesb\x06proto3"
         , true);

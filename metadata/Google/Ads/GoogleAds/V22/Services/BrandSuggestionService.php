@@ -13,11 +13,11 @@ class BrandSuggestionService
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
-        \GPBMetadata\Google\Api\LaunchStage::initOnce();
+        \GPBMetadata\Google\Protobuf\Duration::initOnce();
         \GPBMetadata\Google\Api\Http::initOnce();
         \GPBMetadata\Google\Api\Annotations::initOnce();
-        \GPBMetadata\Google\Protobuf\Duration::initOnce();
+        \GPBMetadata\Google\Api\LaunchStage::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Client::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xDE\x03\x0A0google/ads/googleads/v22/enums/brand_state.proto\x12\x1Egoogle.ads.googleads.v22.enums\"\x95\x01\x0A\x0EBrandStateEnum\"\x82\x01\x0A\x0ABrandState\x12\x0F\x0A\x0BUNSPECIFIED\x10\x00\x12\x0B\x0A\x07UNKNOWN\x10\x01\x12\x0B\x0A\x07ENABLED\x10\x02\x12\x0E\x0A\x0ADEPRECATED\x10\x03\x12\x0E\x0A\x0AUNVERIFIED\x10\x04\x12\x0C\x0A\x08APPROVED\x10\x05\x12\x0D\x0A\x09CANCELLED\x10\x06\x12\x0C\x0A\x08REJECTED\x10\x07B\xE9\x01\x0A\"com.google.ads.googleads.v22.enumsB\x0FBrandStateProtoP\x01ZCgoogle.golang.org/genproto/googleapis/ads/googleads/v22/enums;enums\xA2\x02\x03GAA\xAA\x02\x1EGoogle.Ads.GoogleAds.V22.Enums\xCA\x02\x1EGoogle\\Ads\\GoogleAds\\V22\\Enums\xEA\x02\"Google::Ads::GoogleAds::V22::Enumsb\x06proto3\x0A\xEE\x08\x0A@google/ads/googleads/v22/services/brand_suggestion_service.proto\x12!google.ads.googleads.v22.services\x1A\x1Cgoogle/api/annotations.proto\x1A\x17google/api/client.proto\x1A\x1Fgoogle/api/field_behavior.proto\"\x7F\x0A\x14SuggestBrandsRequest\x12\x18\x0A\x0Bcustomer_id\x18\x01 \x01(\x09B\x03\xE0A\x02\x12\x1E\x0A\x0Cbrand_prefix\x18\x02 \x01(\x09B\x03\xE0A\x02H\x00\x88\x01\x01\x12\x1C\x0A\x0Fselected_brands\x18\x03 \x03(\x09B\x03\xE0A\x01B\x0F\x0A\x0D_brand_prefix\"[\x0A\x15SuggestBrandsResponse\x12B\x0A\x06brands\x18\x01 \x03(\x0B22.google.ads.googleads.v22.services.BrandSuggestion\"\x83\x01\x0A\x0FBrandSuggestion\x12\x0A\x0A\x02id\x18\x01 \x01(\x09\x12\x0C\x0A\x04name\x18\x02 \x01(\x09\x12\x0C\x0A\x04urls\x18\x03 \x03(\x09\x12H\x0A\x05state\x18\x04 \x01(\x0E29.google.ads.googleads.v22.enums.BrandStateEnum.BrandState2\xB8\x02\x0A\x16BrandSuggestionService\x12\xD6\x01\x0A\x0DSuggestBrands\x127.google.ads.googleads.v22.services.SuggestBrandsRequest\x1A8.google.ads.googleads.v22.services.SuggestBrandsResponse\"R\xDAA\x18customer_id,brand_prefix\x82\xD3\xE4\x93\x021\",/v22/customers/{customer_id=*}:suggestBrands:\x01*\x1AE\xCAA\x18googleads.googleapis.com\xD2A'https://www.googleapis.com/auth/adwordsB\x87\x02\x0A%com.google.ads.googleads.v22.servicesB\x1BBrandSuggestionServiceProtoP\x01ZIgoogle.golang.org/genproto/googleapis/ads/googleads/v22/services;services\xA2\x02\x03GAA\xAA\x02!Google.Ads.GoogleAds.V22.Services\xCA\x02!Google\\Ads\\GoogleAds\\V22\\Services\xEA\x02%Google::Ads::GoogleAds::V22::Servicesb\x06proto3"

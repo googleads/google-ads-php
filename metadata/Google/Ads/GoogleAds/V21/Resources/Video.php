@@ -13,8 +13,8 @@ class Video
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xB3\x05\x0A.google/ads/googleads/v21/resources/video.proto\x12\"google.ads.googleads.v21.resources\x1A\x19google/api/resource.proto\"\xBA\x02\x0A\x05Video\x12=\x0A\x0Dresource_name\x18\x01 \x01(\x09B&\xE0A\x03\xFAA \x0A\x1Egoogleads.googleapis.com/Video\x12\x14\x0A\x02id\x18\x06 \x01(\x09B\x03\xE0A\x03H\x00\x88\x01\x01\x12\x1C\x0A\x0Achannel_id\x18\x07 \x01(\x09B\x03\xE0A\x03H\x01\x88\x01\x01\x12!\x0A\x0Fduration_millis\x18\x08 \x01(\x03B\x03\xE0A\x03H\x02\x88\x01\x01\x12\x17\x0A\x05title\x18\x09 \x01(\x09B\x03\xE0A\x03H\x03\x88\x01\x01:N\xEAAK\x0A\x1Egoogleads.googleapis.com/Video\x12)customers/{customer_id}/videos/{video_id}B\x05\x0A\x03_idB\x0D\x0A\x0B_channel_idB\x12\x0A\x10_duration_millisB\x08\x0A\x06_titleB\xFC\x01\x0A&com.google.ads.googleads.v21.resourcesB\x0AVideoProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v21/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V21.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V21\\Resources\xEA\x02&Google::Ads::GoogleAds::V21::Resourcesb\x06proto3"
         , true);

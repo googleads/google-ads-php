@@ -20,17 +20,18 @@ class UploadCallConversionsResponse extends \Google\Protobuf\Internal\Message
      * Errors that pertain to conversion failures in the partial failure mode.
      * Returned when all errors occur inside the conversions. If any errors occur
      * outside the conversions (for example, auth errors), we return an RPC level
-     * error. See
-     * https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
-     * for more information about partial failure.
+     * error.
+     * See
+     * [Best practices for partial
+     * failures](/google-ads/api/docs/best-practices/partial-failures).
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
      */
     protected $partial_failure_error = null;
     /**
      * Returned for successfully processed conversions. Proto will be empty for
-     * rows that received an error. Results are not returned when validate_only is
-     * true.
+     * rows that received an error. Results are not returned when `validate_only`
+     * is `true`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.CallConversionResult results = 2;</code>
      */
@@ -46,13 +47,14 @@ class UploadCallConversionsResponse extends \Google\Protobuf\Internal\Message
      *           Errors that pertain to conversion failures in the partial failure mode.
      *           Returned when all errors occur inside the conversions. If any errors occur
      *           outside the conversions (for example, auth errors), we return an RPC level
-     *           error. See
-     *           https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
-     *           for more information about partial failure.
+     *           error.
+     *           See
+     *           [Best practices for partial
+     *           failures](/google-ads/api/docs/best-practices/partial-failures).
      *     @type \Google\Ads\GoogleAds\V20\Services\CallConversionResult[] $results
      *           Returned for successfully processed conversions. Proto will be empty for
-     *           rows that received an error. Results are not returned when validate_only is
-     *           true.
+     *           rows that received an error. Results are not returned when `validate_only`
+     *           is `true`.
      * }
      */
     public function __construct($data = NULL) {
@@ -64,9 +66,10 @@ class UploadCallConversionsResponse extends \Google\Protobuf\Internal\Message
      * Errors that pertain to conversion failures in the partial failure mode.
      * Returned when all errors occur inside the conversions. If any errors occur
      * outside the conversions (for example, auth errors), we return an RPC level
-     * error. See
-     * https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
-     * for more information about partial failure.
+     * error.
+     * See
+     * [Best practices for partial
+     * failures](/google-ads/api/docs/best-practices/partial-failures).
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
      * @return \Google\Rpc\Status|null
@@ -90,9 +93,10 @@ class UploadCallConversionsResponse extends \Google\Protobuf\Internal\Message
      * Errors that pertain to conversion failures in the partial failure mode.
      * Returned when all errors occur inside the conversions. If any errors occur
      * outside the conversions (for example, auth errors), we return an RPC level
-     * error. See
-     * https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
-     * for more information about partial failure.
+     * error.
+     * See
+     * [Best practices for partial
+     * failures](/google-ads/api/docs/best-practices/partial-failures).
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
      * @param \Google\Rpc\Status $var
@@ -108,8 +112,8 @@ class UploadCallConversionsResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Returned for successfully processed conversions. Proto will be empty for
-     * rows that received an error. Results are not returned when validate_only is
-     * true.
+     * rows that received an error. Results are not returned when `validate_only`
+     * is `true`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.CallConversionResult results = 2;</code>
      * @return RepeatedField<\Google\Ads\GoogleAds\V20\Services\CallConversionResult>
@@ -121,8 +125,8 @@ class UploadCallConversionsResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Returned for successfully processed conversions. Proto will be empty for
-     * rows that received an error. Results are not returned when validate_only is
-     * true.
+     * rows that received an error. Results are not returned when `validate_only`
+     * is `true`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v20.services.CallConversionResult results = 2;</code>
      * @param \Google\Ads\GoogleAds\V20\Services\CallConversionResult[] $var

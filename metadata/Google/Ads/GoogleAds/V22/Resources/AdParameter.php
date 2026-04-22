@@ -13,8 +13,8 @@ class AdParameter
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xAA\x06\x0A5google/ads/googleads/v22/resources/ad_parameter.proto\x12\"google.ads.googleads.v22.resources\x1A\x19google/api/resource.proto\"\xA4\x03\x0A\x0BAdParameter\x12C\x0A\x0Dresource_name\x18\x01 \x01(\x09B,\xE0A\x05\xFAA&\x0A\$googleads.googleapis.com/AdParameter\x12R\x0A\x12ad_group_criterion\x18\x05 \x01(\x09B1\xE0A\x05\xFAA+\x0A)googleads.googleapis.com/AdGroupCriterionH\x00\x88\x01\x01\x12!\x0A\x0Fparameter_index\x18\x06 \x01(\x03B\x03\xE0A\x05H\x01\x88\x01\x01\x12\x1B\x0A\x0Einsertion_text\x18\x07 \x01(\x09H\x02\x88\x01\x01:~\xEAA{\x0A\$googleads.googleapis.com/AdParameter\x12Scustomers/{customer_id}/adParameters/{ad_group_id}~{criterion_id}~{parameter_index}B\x15\x0A\x13_ad_group_criterionB\x12\x0A\x10_parameter_indexB\x11\x0A\x0F_insertion_textB\x82\x02\x0A&com.google.ads.googleads.v22.resourcesB\x10AdParameterProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v22/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V22.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V22\\Resources\xEA\x02&Google::Ads::GoogleAds::V22::Resourcesb\x06proto3"
         , true);

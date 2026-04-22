@@ -13,8 +13,8 @@ class PaidOrganicSearchTermView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xE2\x05\x0AFgoogle/ads/googleads/v22/resources/paid_organic_search_term_view.proto\x12\"google.ads.googleads.v22.resources\x1A\x19google/api/resource.proto\"\xBD\x02\x0A\x19PaidOrganicSearchTermView\x12Q\x0A\x0Dresource_name\x18\x01 \x01(\x09B:\xE0A\x03\xFAA4\x0A2googleads.googleapis.com/PaidOrganicSearchTermView\x12\x1D\x0A\x0Bsearch_term\x18\x03 \x01(\x09B\x03\xE0A\x03H\x00\x88\x01\x01:\x9D\x01\xEAA\x99\x01\x0A2googleads.googleapis.com/PaidOrganicSearchTermView\x12ccustomers/{customer_id}/paidOrganicSearchTermViews/{campaign_id}~{ad_group_id}~{base64_search_term}B\x0E\x0A\x0C_search_termB\x90\x02\x0A&com.google.ads.googleads.v22.resourcesB\x1EPaidOrganicSearchTermViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v22/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V22.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V22\\Resources\xEA\x02&Google::Ads::GoogleAds::V22::Resourcesb\x06proto3"
         , true);
