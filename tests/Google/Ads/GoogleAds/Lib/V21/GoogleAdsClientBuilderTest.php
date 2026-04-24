@@ -674,4 +674,19 @@ class GoogleAdsClientBuilderTest extends TestCase
             $googleAdsClient->getAdsAssistant()
         );
     }
+
+    public function testBuildWithAdsAssistantSetsOption()
+    {
+        $adsAssistant = 'my-assistant';
+        $builder = new GoogleAdsClientBuilder();
+    
+        // Set minimal requirements to build
+        $builder->withDeveloperToken('token')
+                ->withAdsAssistant($adsAssistant);
+    
+        // We can't easily test the private trait properties, but we can verify
+        // that the builder's configuration includes the key.
+        $config = $builder->buildConfiguration();
+        $this->assertEquals($adsAssistant, $config['ads_assistant']);
+    }
 }
