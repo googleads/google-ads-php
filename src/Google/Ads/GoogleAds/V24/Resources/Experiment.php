@@ -114,6 +114,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional bool sync_enabled = 20 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $sync_enabled = null;
+    protected $experiment_info;
 
     /**
      * Constructor.
@@ -167,6 +168,12 @@ class Experiment extends \Google\Protobuf\Internal\Message
      *           Immutable. Set to true if changes to base campaigns should be synced to the
      *           trial campaigns. Any changes made directly to trial campaigns will be
      *           preserved. This field can only be set when the experiment is being created.
+     *     @type \Google\Ads\GoogleAds\V24\Common\VideoExperimentInfo $video_experiment
+     *           Immutable. Details of the video experiment. Applies for experiment types:
+     *           YOUTUBE_CUSTOM.
+     *     @type \Google\Ads\GoogleAds\V24\Common\OptimizeAssetsExperimentInfo $optimize_assets_experiment
+     *           Immutable. Details of the optimize assets experiment. Applies for
+     *           experiment types: OPTIMIZE_ASSETS.
      * }
      */
     public function __construct($data = NULL) {
@@ -600,6 +607,80 @@ class Experiment extends \Google\Protobuf\Internal\Message
         $this->sync_enabled = $var;
 
         return $this;
+    }
+
+    /**
+     * Immutable. Details of the video experiment. Applies for experiment types:
+     * YOUTUBE_CUSTOM.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.VideoExperimentInfo video_experiment = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Ads\GoogleAds\V24\Common\VideoExperimentInfo|null
+     */
+    public function getVideoExperiment()
+    {
+        return $this->readOneof(21);
+    }
+
+    public function hasVideoExperiment()
+    {
+        return $this->hasOneof(21);
+    }
+
+    /**
+     * Immutable. Details of the video experiment. Applies for experiment types:
+     * YOUTUBE_CUSTOM.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.VideoExperimentInfo video_experiment = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Ads\GoogleAds\V24\Common\VideoExperimentInfo $var
+     * @return $this
+     */
+    public function setVideoExperiment($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Common\VideoExperimentInfo::class);
+        $this->writeOneof(21, $var);
+
+        return $this;
+    }
+
+    /**
+     * Immutable. Details of the optimize assets experiment. Applies for
+     * experiment types: OPTIMIZE_ASSETS.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.OptimizeAssetsExperimentInfo optimize_assets_experiment = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Ads\GoogleAds\V24\Common\OptimizeAssetsExperimentInfo|null
+     */
+    public function getOptimizeAssetsExperiment()
+    {
+        return $this->readOneof(22);
+    }
+
+    public function hasOptimizeAssetsExperiment()
+    {
+        return $this->hasOneof(22);
+    }
+
+    /**
+     * Immutable. Details of the optimize assets experiment. Applies for
+     * experiment types: OPTIMIZE_ASSETS.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.OptimizeAssetsExperimentInfo optimize_assets_experiment = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Ads\GoogleAds\V24\Common\OptimizeAssetsExperimentInfo $var
+     * @return $this
+     */
+    public function setOptimizeAssetsExperiment($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Common\OptimizeAssetsExperimentInfo::class);
+        $this->writeOneof(22, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExperimentInfo()
+    {
+        return $this->whichOneof("experiment_info");
     }
 
 }

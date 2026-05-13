@@ -1082,6 +1082,12 @@ class CriterionError
      * Generated from protobuf enum <code>RETAIL_FILTER_TAGS_REFERRING_TO_EXPRESSION = 185;</code>
      */
     const RETAIL_FILTER_TAGS_REFERRING_TO_EXPRESSION = 185;
+    /**
+     * Cannot exclude all demographic targets.
+     *
+     * Generated from protobuf enum <code>CANNOT_EXCLUDE_ALL_TARGETS = 186;</code>
+     */
+    const CANNOT_EXCLUDE_ALL_TARGETS = 186;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -1253,6 +1259,7 @@ class CriterionError
         self::VERTICAL_ADS_ITEM_GROUP_RULE_NOT_SUPPORTED_FOR_THE_VERTICAL_TYPE => 'VERTICAL_ADS_ITEM_GROUP_RULE_NOT_SUPPORTED_FOR_THE_VERTICAL_TYPE',
         self::RETAIL_FILTER_EXPRESSION_DOES_NOT_EXIST => 'RETAIL_FILTER_EXPRESSION_DOES_NOT_EXIST',
         self::RETAIL_FILTER_TAGS_REFERRING_TO_EXPRESSION => 'RETAIL_FILTER_TAGS_REFERRING_TO_EXPRESSION',
+        self::CANNOT_EXCLUDE_ALL_TARGETS => 'CANNOT_EXCLUDE_ALL_TARGETS',
     ];
 
     public static function name($value)

@@ -1,6 +1,11 @@
+## 33.4.0
+* Added support for Google Ads API v24.1
+* Resolved Laravel sample app security vulnerabilities
+
+
 ## 33.3.0
 *   Added support for Google Ads API v24
-*   Dependency updayes
+*   Dependency updates
 *   Resolved Laravel sample app security vulnerabilities
 *   Removed grpc/grpc maximum version constraint
 

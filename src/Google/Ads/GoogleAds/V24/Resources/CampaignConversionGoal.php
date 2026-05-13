@@ -45,6 +45,13 @@ class CampaignConversionGoal extends \Google\Protobuf\Internal\Message
     protected $origin = 0;
     /**
      * The biddability of the campaign conversion goal.
+     * If left unspecified during campaign creation or update operations, this
+     * value will inherit the account-level default biddability for the
+     * corresponding conversion category and origin.
+     * Note: The account-level default may be set to `true` for newly created
+     * conversion goals. To explicitly prevent a campaign from bidding on this
+     * goal, you must explicitly set `biddable` to `false` and include "biddable"
+     * in your mutate operation's `update_mask`.
      *
      * Generated from protobuf field <code>bool biddable = 5;</code>
      */
@@ -69,6 +76,13 @@ class CampaignConversionGoal extends \Google\Protobuf\Internal\Message
      *           The conversion origin of this campaign conversion goal.
      *     @type bool $biddable
      *           The biddability of the campaign conversion goal.
+     *           If left unspecified during campaign creation or update operations, this
+     *           value will inherit the account-level default biddability for the
+     *           corresponding conversion category and origin.
+     *           Note: The account-level default may be set to `true` for newly created
+     *           conversion goals. To explicitly prevent a campaign from bidding on this
+     *           goal, you must explicitly set `biddable` to `false` and include "biddable"
+     *           in your mutate operation's `update_mask`.
      * }
      */
     public function __construct($data = NULL) {
@@ -188,6 +202,13 @@ class CampaignConversionGoal extends \Google\Protobuf\Internal\Message
 
     /**
      * The biddability of the campaign conversion goal.
+     * If left unspecified during campaign creation or update operations, this
+     * value will inherit the account-level default biddability for the
+     * corresponding conversion category and origin.
+     * Note: The account-level default may be set to `true` for newly created
+     * conversion goals. To explicitly prevent a campaign from bidding on this
+     * goal, you must explicitly set `biddable` to `false` and include "biddable"
+     * in your mutate operation's `update_mask`.
      *
      * Generated from protobuf field <code>bool biddable = 5;</code>
      * @return bool
@@ -199,6 +220,13 @@ class CampaignConversionGoal extends \Google\Protobuf\Internal\Message
 
     /**
      * The biddability of the campaign conversion goal.
+     * If left unspecified during campaign creation or update operations, this
+     * value will inherit the account-level default biddability for the
+     * corresponding conversion category and origin.
+     * Note: The account-level default may be set to `true` for newly created
+     * conversion goals. To explicitly prevent a campaign from bidding on this
+     * goal, you must explicitly set `biddable` to `false` and include "biddable"
+     * in your mutate operation's `update_mask`.
      *
      * Generated from protobuf field <code>bool biddable = 5;</code>
      * @param bool $var

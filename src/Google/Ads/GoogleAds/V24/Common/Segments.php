@@ -181,6 +181,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $device = 0;
     /**
+     * Mobile device platform to which metrics apply.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.enums.MobileDevicePlatformEnum.MobileDevicePlatform mobile_device_platform = 219;</code>
+     */
+    protected $mobile_device_platform = 0;
+    /**
      * External conversion source.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v24.enums.ExternalConversionSourceEnum.ExternalConversionSource external_conversion_source = 55;</code>
@@ -732,6 +738,21 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $vertical_ads_listing_region = null;
     /**
+     * Integer value specifying the user rating of the vertical ads listing
+     * as a number from 1 to 5, where 5 is the best. The value will always be
+     * within this range.
+     *
+     * Generated from protobuf field <code>optional int64 vertical_ads_listing_user_rating = 220;</code>
+     */
+    protected $vertical_ads_listing_user_rating = null;
+    /**
+     * The name of the venue for the vertical ads listing, for example, the
+     * venue for a concert event.
+     *
+     * Generated from protobuf field <code>optional string vertical_ads_listing_venue = 221;</code>
+     */
+    protected $vertical_ads_listing_venue = null;
+    /**
      * A specific partner account within a Partner Center (for example, Hotel
      * Center) that supplies inventory feed data for Vertical Ads.
      *
@@ -1050,6 +1071,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Day of the week, for example, MONDAY.
      *     @type int $device
      *           Device to which metrics apply.
+     *     @type int $mobile_device_platform
+     *           Mobile device platform to which metrics apply.
      *     @type int $external_conversion_source
      *           External conversion source.
      *     @type string $geo_target_airport
@@ -1241,6 +1264,13 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           The country where the vertical ads listing is located.
      *     @type string $vertical_ads_listing_region
      *           The region where the vertical ads listing is located.
+     *     @type int|string $vertical_ads_listing_user_rating
+     *           Integer value specifying the user rating of the vertical ads listing
+     *           as a number from 1 to 5, where 5 is the best. The value will always be
+     *           within this range.
+     *     @type string $vertical_ads_listing_venue
+     *           The name of the venue for the vertical ads listing, for example, the
+     *           venue for a concert event.
      *     @type int|string $vertical_ads_partner_account
      *           A specific partner account within a Partner Center (for example, Hotel
      *           Center) that supplies inventory feed data for Vertical Ads.
@@ -2211,6 +2241,32 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V24\Enums\DeviceEnum\Device::class);
         $this->device = $var;
+
+        return $this;
+    }
+
+    /**
+     * Mobile device platform to which metrics apply.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.enums.MobileDevicePlatformEnum.MobileDevicePlatform mobile_device_platform = 219;</code>
+     * @return int
+     */
+    public function getMobileDevicePlatform()
+    {
+        return $this->mobile_device_platform;
+    }
+
+    /**
+     * Mobile device platform to which metrics apply.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.enums.MobileDevicePlatformEnum.MobileDevicePlatform mobile_device_platform = 219;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMobileDevicePlatform($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V24\Enums\MobileDevicePlatformEnum\MobileDevicePlatform::class);
+        $this->mobile_device_platform = $var;
 
         return $this;
     }
@@ -5363,6 +5419,84 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->vertical_ads_listing_region = $var;
+
+        return $this;
+    }
+
+    /**
+     * Integer value specifying the user rating of the vertical ads listing
+     * as a number from 1 to 5, where 5 is the best. The value will always be
+     * within this range.
+     *
+     * Generated from protobuf field <code>optional int64 vertical_ads_listing_user_rating = 220;</code>
+     * @return int|string
+     */
+    public function getVerticalAdsListingUserRating()
+    {
+        return isset($this->vertical_ads_listing_user_rating) ? $this->vertical_ads_listing_user_rating : 0;
+    }
+
+    public function hasVerticalAdsListingUserRating()
+    {
+        return isset($this->vertical_ads_listing_user_rating);
+    }
+
+    public function clearVerticalAdsListingUserRating()
+    {
+        unset($this->vertical_ads_listing_user_rating);
+    }
+
+    /**
+     * Integer value specifying the user rating of the vertical ads listing
+     * as a number from 1 to 5, where 5 is the best. The value will always be
+     * within this range.
+     *
+     * Generated from protobuf field <code>optional int64 vertical_ads_listing_user_rating = 220;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setVerticalAdsListingUserRating($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->vertical_ads_listing_user_rating = $var;
+
+        return $this;
+    }
+
+    /**
+     * The name of the venue for the vertical ads listing, for example, the
+     * venue for a concert event.
+     *
+     * Generated from protobuf field <code>optional string vertical_ads_listing_venue = 221;</code>
+     * @return string
+     */
+    public function getVerticalAdsListingVenue()
+    {
+        return isset($this->vertical_ads_listing_venue) ? $this->vertical_ads_listing_venue : '';
+    }
+
+    public function hasVerticalAdsListingVenue()
+    {
+        return isset($this->vertical_ads_listing_venue);
+    }
+
+    public function clearVerticalAdsListingVenue()
+    {
+        unset($this->vertical_ads_listing_venue);
+    }
+
+    /**
+     * The name of the venue for the vertical ads listing, for example, the
+     * venue for a concert event.
+     *
+     * Generated from protobuf field <code>optional string vertical_ads_listing_venue = 221;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVerticalAdsListingVenue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->vertical_ads_listing_venue = $var;
 
         return $this;
     }

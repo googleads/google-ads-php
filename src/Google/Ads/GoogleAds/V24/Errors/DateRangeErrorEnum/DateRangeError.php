@@ -55,6 +55,14 @@ class DateRangeError
      * Generated from protobuf enum <code>CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED = 6;</code>
      */
     const CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED = 6;
+    /**
+     * The requested time granularity is not supported for the date range in the
+     * query. Metrics with daily, hourly, or weekly segmentation are only
+     * available for the last 37 months.
+     *
+     * Generated from protobuf enum <code>REQUESTED_DATE_GRANULARITY_NOT_SUPPORTED = 7;</code>
+     */
+    const REQUESTED_DATE_GRANULARITY_NOT_SUPPORTED = 7;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -64,6 +72,7 @@ class DateRangeError
         self::CANNOT_SET_DATE_TO_PAST => 'CANNOT_SET_DATE_TO_PAST',
         self::AFTER_MAXIMUM_ALLOWABLE_DATE => 'AFTER_MAXIMUM_ALLOWABLE_DATE',
         self::CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED => 'CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED',
+        self::REQUESTED_DATE_GRANULARITY_NOT_SUPPORTED => 'REQUESTED_DATE_GRANULARITY_NOT_SUPPORTED',
     ];
 
     public static function name($value)

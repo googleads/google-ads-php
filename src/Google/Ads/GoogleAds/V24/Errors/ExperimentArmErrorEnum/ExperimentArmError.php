@@ -111,6 +111,61 @@ class ExperimentArmError
      * Generated from protobuf enum <code>TRAFFIC_SPLIT_NOT_SUPPORTED_FOR_CHANNEL_TYPE = 15;</code>
      */
     const TRAFFIC_SPLIT_NOT_SUPPORTED_FOR_CHANNEL_TYPE = 15;
+    /**
+     * Shared budgets are not allowed in experiments.
+     *
+     * Generated from protobuf enum <code>BUDGET_MUST_NOT_BE_SHARED = 16;</code>
+     */
+    const BUDGET_MUST_NOT_BE_SHARED = 16;
+    /**
+     * Campaign must enable performance search setting for ADOPT_AI_MAX
+     * experiments.
+     *
+     * Generated from protobuf enum <code>ADOPT_AI_MAX_CAMPAIGN_MISSING_PERFORMANCE_SEARCH_ENABLED = 17;</code>
+     */
+    const ADOPT_AI_MAX_CAMPAIGN_MISSING_PERFORMANCE_SEARCH_ENABLED = 17;
+    /**
+     * Number of campaigns in the experiment arm is above limit.
+     *
+     * Generated from protobuf enum <code>TOO_MANY_CAMPAIGNS_IN_EXPERIMENT_ARM = 18;</code>
+     */
+    const TOO_MANY_CAMPAIGNS_IN_EXPERIMENT_ARM = 18;
+    /**
+     * AI Max experiments do not support campaigns with a target ROAS tolerance
+     * (see
+     * campaign.maximize_conversion_value.target_roas_tolerance_percent_millis).
+     *
+     * Generated from protobuf enum <code>CANNOT_ADD_CAMPAIGN_WITH_TARGET_ROAS_TOLERANCE_PERCENT_MILLIS = 19;</code>
+     */
+    const CANNOT_ADD_CAMPAIGN_WITH_TARGET_ROAS_TOLERANCE_PERCENT_MILLIS = 19;
+    /**
+     * A campaign cannot be added to multiple arms in one experiment. Use
+     * different campaigns in each arm of the experiment.
+     *
+     * Generated from protobuf enum <code>CANNOT_HAVE_SAME_CAMPAIGN_CROSS_ARMS_IN_ONE_EXPERIMENT = 20;</code>
+     */
+    const CANNOT_HAVE_SAME_CAMPAIGN_CROSS_ARMS_IN_ONE_EXPERIMENT = 20;
+    /**
+     * Campaigns in the ADOPT_BROAD_MATCH_KEYWORD experiment cannot target the
+     * Google Display Network.
+     *
+     * Generated from protobuf enum <code>SEARCH_PLUS_CAMPAIGN_NOT_ALLOWED = 21;</code>
+     */
+    const SEARCH_PLUS_CAMPAIGN_NOT_ALLOWED = 21;
+    /**
+     * An asset group asset cannot be added to multiple arms in one experiment.
+     * Use different asset group assets in each arm of the experiment.
+     *
+     * Generated from protobuf enum <code>DUPLICATE_ASSET_GROUP_ASSETS_BETWEEN_ARMS = 22;</code>
+     */
+    const DUPLICATE_ASSET_GROUP_ASSETS_BETWEEN_ARMS = 22;
+    /**
+     * An asset group asset cannot be used multiple times in one arm.
+     * Use different asset group assets in one arm of the experiment.
+     *
+     * Generated from protobuf enum <code>DUPLICATE_ASSET_GROUP_ASSETS_IN_ONE_ARM = 23;</code>
+     */
+    const DUPLICATE_ASSET_GROUP_ASSETS_IN_ONE_ARM = 23;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -129,6 +184,14 @@ class ExperimentArmError
         self::CANNOT_ADD_BASE_CAMPAIGN_WITH_DATE_RANGE => 'CANNOT_ADD_BASE_CAMPAIGN_WITH_DATE_RANGE',
         self::BIDDING_STRATEGY_NOT_SUPPORTED_IN_EXPERIMENTS => 'BIDDING_STRATEGY_NOT_SUPPORTED_IN_EXPERIMENTS',
         self::TRAFFIC_SPLIT_NOT_SUPPORTED_FOR_CHANNEL_TYPE => 'TRAFFIC_SPLIT_NOT_SUPPORTED_FOR_CHANNEL_TYPE',
+        self::BUDGET_MUST_NOT_BE_SHARED => 'BUDGET_MUST_NOT_BE_SHARED',
+        self::ADOPT_AI_MAX_CAMPAIGN_MISSING_PERFORMANCE_SEARCH_ENABLED => 'ADOPT_AI_MAX_CAMPAIGN_MISSING_PERFORMANCE_SEARCH_ENABLED',
+        self::TOO_MANY_CAMPAIGNS_IN_EXPERIMENT_ARM => 'TOO_MANY_CAMPAIGNS_IN_EXPERIMENT_ARM',
+        self::CANNOT_ADD_CAMPAIGN_WITH_TARGET_ROAS_TOLERANCE_PERCENT_MILLIS => 'CANNOT_ADD_CAMPAIGN_WITH_TARGET_ROAS_TOLERANCE_PERCENT_MILLIS',
+        self::CANNOT_HAVE_SAME_CAMPAIGN_CROSS_ARMS_IN_ONE_EXPERIMENT => 'CANNOT_HAVE_SAME_CAMPAIGN_CROSS_ARMS_IN_ONE_EXPERIMENT',
+        self::SEARCH_PLUS_CAMPAIGN_NOT_ALLOWED => 'SEARCH_PLUS_CAMPAIGN_NOT_ALLOWED',
+        self::DUPLICATE_ASSET_GROUP_ASSETS_BETWEEN_ARMS => 'DUPLICATE_ASSET_GROUP_ASSETS_BETWEEN_ARMS',
+        self::DUPLICATE_ASSET_GROUP_ASSETS_IN_ONE_ARM => 'DUPLICATE_ASSET_GROUP_ASSETS_IN_ONE_ARM',
     ];
 
     public static function name($value)

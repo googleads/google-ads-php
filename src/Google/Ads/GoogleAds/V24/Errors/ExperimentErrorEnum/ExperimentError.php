@@ -215,6 +215,18 @@ class ExperimentError
      * Generated from protobuf enum <code>MISSING_EU_POLITICAL_ADVERTISING_SELF_DECLARATION = 31;</code>
      */
     const MISSING_EU_POLITICAL_ADVERTISING_SELF_DECLARATION = 31;
+    /**
+     * Cannot create an experiment with no arms.
+     *
+     * Generated from protobuf enum <code>MISSING_EXPERIMENT_ARMS = 32;</code>
+     */
+    const MISSING_EXPERIMENT_ARMS = 32;
+    /**
+     * The video experiment subtype is missing.
+     *
+     * Generated from protobuf enum <code>MISSING_VIDEO_EXPERIMENT_SUBTYPE = 34;</code>
+     */
+    const MISSING_VIDEO_EXPERIMENT_SUBTYPE = 34;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -249,6 +261,8 @@ class ExperimentError
         self::CANNOT_ENABLE_SYNC_FOR_UNSUPPORTED_EXPERIMENT_TYPE => 'CANNOT_ENABLE_SYNC_FOR_UNSUPPORTED_EXPERIMENT_TYPE',
         self::INVALID_DURATION_FOR_AN_EXPERIMENT => 'INVALID_DURATION_FOR_AN_EXPERIMENT',
         self::MISSING_EU_POLITICAL_ADVERTISING_SELF_DECLARATION => 'MISSING_EU_POLITICAL_ADVERTISING_SELF_DECLARATION',
+        self::MISSING_EXPERIMENT_ARMS => 'MISSING_EXPERIMENT_ARMS',
+        self::MISSING_VIDEO_EXPERIMENT_SUBTYPE => 'MISSING_VIDEO_EXPERIMENT_SUBTYPE',
     ];
 
     public static function name($value)

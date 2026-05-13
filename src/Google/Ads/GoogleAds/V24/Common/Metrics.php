@@ -346,6 +346,13 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $clicks = null;
     /**
+     * The number of clicks on the control arm of an experiment.
+     * The treatment clicks value can be selected by using `clicks`.
+     *
+     * Generated from protobuf field <code>optional int64 control_clicks = 443;</code>
+     */
+    protected $control_clicks = null;
+    /**
      * The number of times your ad or your site's listing in the unpaid
      * results was clicked. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
@@ -2196,6 +2203,306 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional double all_units_sold = 442;</code>
      */
     protected $all_units_sold = null;
+    /**
+     * The cost per conversion metric on the control arm of the
+     * experiment. The treatment cost per conversion value can be
+     * selected by using `cost_per_conversion`.
+     *
+     * Generated from protobuf field <code>optional double control_cost_per_conversion = 446;</code>
+     */
+    protected $control_cost_per_conversion = null;
+    /**
+     * The margin of error when estimating the experiment's effect on cost per
+     * conversion.
+     * Together with `cost_per_conversion_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `cost_per_conversion_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double cost_per_conversion_margin_of_error = 447;</code>
+     */
+    protected $cost_per_conversion_margin_of_error = null;
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * cost per conversion. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on cost per conversion, is 3%.
+     *
+     * Generated from protobuf field <code>optional double cost_per_conversion_p_value = 448;</code>
+     */
+    protected $cost_per_conversion_p_value = null;
+    /**
+     * The point estimate when estimating the experiment's effect on cost per
+     * conversion change.
+     * Together with `cost_per_conversion_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(cost_per_conversion_change_point_estimate -
+     * cost_per_conversion_margin_of_error,
+     *  cost_per_conversion_change_point_estimate +
+     *  cost_per_conversion_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double cost_per_conversion_change_point_estimate = 449;</code>
+     */
+    protected $cost_per_conversion_change_point_estimate = null;
+    /**
+     * The conversions metric on the control arm of the experiment.
+     * The treatment conversions value can be selected by using
+     * `conversions`.
+     *
+     * Generated from protobuf field <code>optional double control_conversions = 450;</code>
+     */
+    protected $control_conversions = null;
+    /**
+     * The margin of error when estimating the experiment's effect on conversions
+     * absolute change.
+     * Together with `conversions_absolute_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment - control). This field specifies the radius of the confidence
+     * interval, which is centered at
+     * `conversions_absolute_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double conversions_absolute_change_margin_of_error = 451;</code>
+     */
+    protected $conversions_absolute_change_margin_of_error = null;
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * conversions absolute change. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on conversions absolute change, is
+     * 3%.
+     *
+     * Generated from protobuf field <code>optional double conversions_absolute_change_p_value = 452;</code>
+     */
+    protected $conversions_absolute_change_p_value = null;
+    /**
+     * The point estimate when estimating the experiment's effect on conversions
+     * absolute change.
+     * Together with `conversions_absolute_change_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment - control). This field specifies the point estimate, which is
+     * the center of the confidence interval:
+     * `(conversions_absolute_change_point_estimate -
+     * conversions_absolute_change_margin_of_error,
+     *  conversions_absolute_change_point_estimate +
+     *  conversions_absolute_change_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double conversions_absolute_change_point_estimate = 453;</code>
+     */
+    protected $conversions_absolute_change_point_estimate = null;
+    /**
+     * The conversion value per cost metric on the control arm of the
+     * experiment. The treatment conversion value per cost value can be
+     * selected by using `conversions_value_per_cost`.
+     *
+     * Generated from protobuf field <code>optional double control_conversion_value_per_cost = 454;</code>
+     */
+    protected $control_conversion_value_per_cost = null;
+    /**
+     * The margin of error when estimating the experiment's effect on
+     * conversion value per cost.
+     * Together with `conversion_value_per_cost_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `conversion_value_per_cost_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_per_cost_margin_of_error = 455;</code>
+     */
+    protected $conversion_value_per_cost_margin_of_error = null;
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * conversion value per cost. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on conversion value per cost, is 3%.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_per_cost_p_value = 456;</code>
+     */
+    protected $conversion_value_per_cost_p_value = null;
+    /**
+     * The point estimate when estimating the experiment's effect on
+     * conversion value per cost change.
+     * Together with `conversion_value_per_cost_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(conversion_value_per_cost_change_point_estimate -
+     * conversion_value_per_cost_margin_of_error,
+     *  conversion_value_per_cost_change_point_estimate +
+     *  conversion_value_per_cost_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_per_cost_change_point_estimate = 457;</code>
+     */
+    protected $conversion_value_per_cost_change_point_estimate = null;
+    /**
+     * The cost metric on the control arm of the experiment.
+     * The treatment cost value can be selected by using `cost_micros`.
+     *
+     * Generated from protobuf field <code>optional int64 control_cost_micros = 458;</code>
+     */
+    protected $control_cost_micros = null;
+    /**
+     * The margin of error when estimating the experiment's effect on cost.
+     * Together with `cost_micros_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `cost_micros_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double cost_micros_margin_of_error = 459;</code>
+     */
+    protected $cost_micros_margin_of_error = null;
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * cost. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on cost, is 3%.
+     *
+     * Generated from protobuf field <code>optional double cost_micros_p_value = 460;</code>
+     */
+    protected $cost_micros_p_value = null;
+    /**
+     * The point estimate when estimating the experiment's effect on cost change.
+     * Together with `cost_micros_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(cost_micros_change_point_estimate - cost_micros_margin_of_error,
+     *  cost_micros_change_point_estimate + cost_micros_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double cost_micros_change_point_estimate = 461;</code>
+     */
+    protected $cost_micros_change_point_estimate = null;
+    /**
+     * The impressions metric on the control arm of the experiment.
+     * The treatment impressions value can be selected by using `impressions`.
+     *
+     * Generated from protobuf field <code>optional int64 control_impressions = 462;</code>
+     */
+    protected $control_impressions = null;
+    /**
+     * The margin of error when estimating the experiment's effect on impressions.
+     * Together with `impressions_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `impressions_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double impressions_margin_of_error = 463;</code>
+     */
+    protected $impressions_margin_of_error = null;
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * impressions. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on impressions, is 3%.
+     *
+     * Generated from protobuf field <code>optional double impressions_p_value = 464;</code>
+     */
+    protected $impressions_p_value = null;
+    /**
+     * The point estimate when estimating the experiment's effect on impressions.
+     * Together with `impressions_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(impressions_point_estimate - impressions_margin_of_error,
+     *  impressions_point_estimate + impressions_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double impressions_point_estimate = 465;</code>
+     */
+    protected $impressions_point_estimate = null;
+    /**
+     * The margin of error when estimating the experiment's effect on clicks.
+     * Together with `clicks_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at `clicks_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double clicks_margin_of_error = 466;</code>
+     */
+    protected $clicks_margin_of_error = null;
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * clicks. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on clicks, is 3%.
+     *
+     * Generated from protobuf field <code>optional double clicks_p_value = 467;</code>
+     */
+    protected $clicks_p_value = null;
+    /**
+     * The point estimate when estimating the experiment's effect on clicks.
+     * Together with `clicks_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval: `(clicks_point_estimate -
+     * clicks_margin_of_error,
+     *  clicks_point_estimate + clicks_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double clicks_point_estimate = 468;</code>
+     */
+    protected $clicks_point_estimate = null;
+    /**
+     * The conversion value metric on the control arm of the experiment.
+     * The treatment conversion value can be selected by using
+     * `conversions_value`.
+     *
+     * Generated from protobuf field <code>optional double control_conversion_value = 469;</code>
+     */
+    protected $control_conversion_value = null;
+    /**
+     * The margin of error when estimating the experiment's effect on
+     * conversion value.
+     * Together with `conversion_value_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `conversion_value_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_margin_of_error = 470;</code>
+     */
+    protected $conversion_value_margin_of_error = null;
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * conversion value. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on conversion value, is 3%.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_p_value = 471;</code>
+     */
+    protected $conversion_value_p_value = null;
+    /**
+     * The point estimate when estimating the experiment's effect on
+     * conversion value change.
+     * Together with `conversion_value_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(conversion_value_change_point_estimate -
+     * conversion_value_margin_of_error,
+     *  conversion_value_change_point_estimate +
+     *  conversion_value_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_change_point_estimate = 472;</code>
+     */
+    protected $conversion_value_change_point_estimate = null;
 
     /**
      * Constructor.
@@ -2361,6 +2668,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           site. Imported from Google Analytics.
      *     @type int|string $clicks
      *           The number of clicks.
+     *     @type int|string $control_clicks
+     *           The number of clicks on the control arm of an experiment.
+     *           The treatment clicks value can be selected by using `clicks`.
      *     @type int|string $combined_clicks
      *           The number of times your ad or your site's listing in the unpaid
      *           results was clicked. See the help page at
@@ -3384,6 +3694,198 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           actively optimizing towards them.
      *           It's calculated using product info from cart data to give more detail than
      *           conversion value alone.
+     *     @type float $control_cost_per_conversion
+     *           The cost per conversion metric on the control arm of the
+     *           experiment. The treatment cost per conversion value can be
+     *           selected by using `cost_per_conversion`.
+     *     @type float $cost_per_conversion_margin_of_error
+     *           The margin of error when estimating the experiment's effect on cost per
+     *           conversion.
+     *           Together with `cost_per_conversion_change_point_estimate`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment / control - 1). This field specifies the radius of the
+     *           confidence interval, which is centered at
+     *           `cost_per_conversion_change_point_estimate`.
+     *     @type float $cost_per_conversion_p_value
+     *           The p-value for the null hypothesis that the experiment has no effect on
+     *           cost per conversion. Ranges from 0 to 1.
+     *           Say if the p-value is 0.03, that means the probability of observing the
+     *           data, if the experiment has no effect on cost per conversion, is 3%.
+     *     @type float $cost_per_conversion_change_point_estimate
+     *           The point estimate when estimating the experiment's effect on cost per
+     *           conversion change.
+     *           Together with `cost_per_conversion_margin_of_error`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment / control - 1). This field specifies the point estimate, which
+     *           is the center of the confidence interval:
+     *           `(cost_per_conversion_change_point_estimate -
+     *           cost_per_conversion_margin_of_error,
+     *            cost_per_conversion_change_point_estimate +
+     *            cost_per_conversion_margin_of_error)`.
+     *     @type float $control_conversions
+     *           The conversions metric on the control arm of the experiment.
+     *           The treatment conversions value can be selected by using
+     *           `conversions`.
+     *     @type float $conversions_absolute_change_margin_of_error
+     *           The margin of error when estimating the experiment's effect on conversions
+     *           absolute change.
+     *           Together with `conversions_absolute_change_point_estimate`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment - control). This field specifies the radius of the confidence
+     *           interval, which is centered at
+     *           `conversions_absolute_change_point_estimate`.
+     *     @type float $conversions_absolute_change_p_value
+     *           The p-value for the null hypothesis that the experiment has no effect on
+     *           conversions absolute change. Ranges from 0 to 1.
+     *           Say if the p-value is 0.03, that means the probability of observing the
+     *           data, if the experiment has no effect on conversions absolute change, is
+     *           3%.
+     *     @type float $conversions_absolute_change_point_estimate
+     *           The point estimate when estimating the experiment's effect on conversions
+     *           absolute change.
+     *           Together with `conversions_absolute_change_margin_of_error`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment - control). This field specifies the point estimate, which is
+     *           the center of the confidence interval:
+     *           `(conversions_absolute_change_point_estimate -
+     *           conversions_absolute_change_margin_of_error,
+     *            conversions_absolute_change_point_estimate +
+     *            conversions_absolute_change_margin_of_error)`.
+     *     @type float $control_conversion_value_per_cost
+     *           The conversion value per cost metric on the control arm of the
+     *           experiment. The treatment conversion value per cost value can be
+     *           selected by using `conversions_value_per_cost`.
+     *     @type float $conversion_value_per_cost_margin_of_error
+     *           The margin of error when estimating the experiment's effect on
+     *           conversion value per cost.
+     *           Together with `conversion_value_per_cost_change_point_estimate`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment / control - 1). This field specifies the radius of the
+     *           confidence interval, which is centered at
+     *           `conversion_value_per_cost_change_point_estimate`.
+     *     @type float $conversion_value_per_cost_p_value
+     *           The p-value for the null hypothesis that the experiment has no effect on
+     *           conversion value per cost. Ranges from 0 to 1.
+     *           Say if the p-value is 0.03, that means the probability of observing the
+     *           data, if the experiment has no effect on conversion value per cost, is 3%.
+     *     @type float $conversion_value_per_cost_change_point_estimate
+     *           The point estimate when estimating the experiment's effect on
+     *           conversion value per cost change.
+     *           Together with `conversion_value_per_cost_margin_of_error`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment / control - 1). This field specifies the point estimate, which
+     *           is the center of the confidence interval:
+     *           `(conversion_value_per_cost_change_point_estimate -
+     *           conversion_value_per_cost_margin_of_error,
+     *            conversion_value_per_cost_change_point_estimate +
+     *            conversion_value_per_cost_margin_of_error)`.
+     *     @type int|string $control_cost_micros
+     *           The cost metric on the control arm of the experiment.
+     *           The treatment cost value can be selected by using `cost_micros`.
+     *     @type float $cost_micros_margin_of_error
+     *           The margin of error when estimating the experiment's effect on cost.
+     *           Together with `cost_micros_change_point_estimate`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment / control - 1). This field specifies the radius of the
+     *           confidence interval, which is centered at
+     *           `cost_micros_change_point_estimate`.
+     *     @type float $cost_micros_p_value
+     *           The p-value for the null hypothesis that the experiment has no effect on
+     *           cost. Ranges from 0 to 1.
+     *           Say if the p-value is 0.03, that means the probability of observing the
+     *           data, if the experiment has no effect on cost, is 3%.
+     *     @type float $cost_micros_change_point_estimate
+     *           The point estimate when estimating the experiment's effect on cost change.
+     *           Together with `cost_micros_margin_of_error`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment / control - 1). This field specifies the point estimate, which
+     *           is the center of the confidence interval:
+     *           `(cost_micros_change_point_estimate - cost_micros_margin_of_error,
+     *            cost_micros_change_point_estimate + cost_micros_margin_of_error)`.
+     *     @type int|string $control_impressions
+     *           The impressions metric on the control arm of the experiment.
+     *           The treatment impressions value can be selected by using `impressions`.
+     *     @type float $impressions_margin_of_error
+     *           The margin of error when estimating the experiment's effect on impressions.
+     *           Together with `impressions_point_estimate`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment / control - 1). This field specifies the radius of the
+     *           confidence interval, which is centered at
+     *           `impressions_point_estimate`.
+     *     @type float $impressions_p_value
+     *           The p-value for the null hypothesis that the experiment has no effect on
+     *           impressions. Ranges from 0 to 1.
+     *           Say if the p-value is 0.03, that means the probability of observing the
+     *           data, if the experiment has no effect on impressions, is 3%.
+     *     @type float $impressions_point_estimate
+     *           The point estimate when estimating the experiment's effect on impressions.
+     *           Together with `impressions_margin_of_error`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment / control - 1). This field specifies the point estimate, which
+     *           is the center of the confidence interval:
+     *           `(impressions_point_estimate - impressions_margin_of_error,
+     *            impressions_point_estimate + impressions_margin_of_error)`.
+     *     @type float $clicks_margin_of_error
+     *           The margin of error when estimating the experiment's effect on clicks.
+     *           Together with `clicks_point_estimate`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment / control - 1). This field specifies the radius of the
+     *           confidence interval, which is centered at `clicks_point_estimate`.
+     *     @type float $clicks_p_value
+     *           The p-value for the null hypothesis that the experiment has no effect on
+     *           clicks. Ranges from 0 to 1.
+     *           Say if the p-value is 0.03, that means the probability of observing the
+     *           data, if the experiment has no effect on clicks, is 3%.
+     *     @type float $clicks_point_estimate
+     *           The point estimate when estimating the experiment's effect on clicks.
+     *           Together with `clicks_margin_of_error`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment / control - 1). This field specifies the point estimate, which
+     *           is the center of the confidence interval: `(clicks_point_estimate -
+     *           clicks_margin_of_error,
+     *            clicks_point_estimate + clicks_margin_of_error)`.
+     *     @type float $control_conversion_value
+     *           The conversion value metric on the control arm of the experiment.
+     *           The treatment conversion value can be selected by using
+     *           `conversions_value`.
+     *     @type float $conversion_value_margin_of_error
+     *           The margin of error when estimating the experiment's effect on
+     *           conversion value.
+     *           Together with `conversion_value_change_point_estimate`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment / control - 1). This field specifies the radius of the
+     *           confidence interval, which is centered at
+     *           `conversion_value_change_point_estimate`.
+     *     @type float $conversion_value_p_value
+     *           The p-value for the null hypothesis that the experiment has no effect on
+     *           conversion value. Ranges from 0 to 1.
+     *           Say if the p-value is 0.03, that means the probability of observing the
+     *           data, if the experiment has no effect on conversion value, is 3%.
+     *     @type float $conversion_value_change_point_estimate
+     *           The point estimate when estimating the experiment's effect on
+     *           conversion value change.
+     *           Together with `conversion_value_margin_of_error`,
+     *           they describe a confidence interval with a prescribed confidence level
+     *           for the difference being estimated. The quantity being estimated is
+     *           (treatment / control - 1). This field specifies the point estimate, which
+     *           is the center of the confidence interval:
+     *           `(conversion_value_change_point_estimate -
+     *           conversion_value_margin_of_error,
+     *            conversion_value_change_point_estimate +
+     *            conversion_value_margin_of_error)`.
      * }
      */
     public function __construct($data = NULL) {
@@ -5079,6 +5581,44 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->clicks = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of clicks on the control arm of an experiment.
+     * The treatment clicks value can be selected by using `clicks`.
+     *
+     * Generated from protobuf field <code>optional int64 control_clicks = 443;</code>
+     * @return int|string
+     */
+    public function getControlClicks()
+    {
+        return isset($this->control_clicks) ? $this->control_clicks : 0;
+    }
+
+    public function hasControlClicks()
+    {
+        return isset($this->control_clicks);
+    }
+
+    public function clearControlClicks()
+    {
+        unset($this->control_clicks);
+    }
+
+    /**
+     * The number of clicks on the control arm of an experiment.
+     * The treatment clicks value can be selected by using `clicks`.
+     *
+     * Generated from protobuf field <code>optional int64 control_clicks = 443;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setControlClicks($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->control_clicks = $var;
 
         return $this;
     }
@@ -13649,6 +14189,1254 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->all_units_sold = $var;
+
+        return $this;
+    }
+
+    /**
+     * The cost per conversion metric on the control arm of the
+     * experiment. The treatment cost per conversion value can be
+     * selected by using `cost_per_conversion`.
+     *
+     * Generated from protobuf field <code>optional double control_cost_per_conversion = 446;</code>
+     * @return float
+     */
+    public function getControlCostPerConversion()
+    {
+        return isset($this->control_cost_per_conversion) ? $this->control_cost_per_conversion : 0.0;
+    }
+
+    public function hasControlCostPerConversion()
+    {
+        return isset($this->control_cost_per_conversion);
+    }
+
+    public function clearControlCostPerConversion()
+    {
+        unset($this->control_cost_per_conversion);
+    }
+
+    /**
+     * The cost per conversion metric on the control arm of the
+     * experiment. The treatment cost per conversion value can be
+     * selected by using `cost_per_conversion`.
+     *
+     * Generated from protobuf field <code>optional double control_cost_per_conversion = 446;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setControlCostPerConversion($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->control_cost_per_conversion = $var;
+
+        return $this;
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on cost per
+     * conversion.
+     * Together with `cost_per_conversion_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `cost_per_conversion_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double cost_per_conversion_margin_of_error = 447;</code>
+     * @return float
+     */
+    public function getCostPerConversionMarginOfError()
+    {
+        return isset($this->cost_per_conversion_margin_of_error) ? $this->cost_per_conversion_margin_of_error : 0.0;
+    }
+
+    public function hasCostPerConversionMarginOfError()
+    {
+        return isset($this->cost_per_conversion_margin_of_error);
+    }
+
+    public function clearCostPerConversionMarginOfError()
+    {
+        unset($this->cost_per_conversion_margin_of_error);
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on cost per
+     * conversion.
+     * Together with `cost_per_conversion_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `cost_per_conversion_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double cost_per_conversion_margin_of_error = 447;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setCostPerConversionMarginOfError($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->cost_per_conversion_margin_of_error = $var;
+
+        return $this;
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * cost per conversion. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on cost per conversion, is 3%.
+     *
+     * Generated from protobuf field <code>optional double cost_per_conversion_p_value = 448;</code>
+     * @return float
+     */
+    public function getCostPerConversionPValue()
+    {
+        return isset($this->cost_per_conversion_p_value) ? $this->cost_per_conversion_p_value : 0.0;
+    }
+
+    public function hasCostPerConversionPValue()
+    {
+        return isset($this->cost_per_conversion_p_value);
+    }
+
+    public function clearCostPerConversionPValue()
+    {
+        unset($this->cost_per_conversion_p_value);
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * cost per conversion. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on cost per conversion, is 3%.
+     *
+     * Generated from protobuf field <code>optional double cost_per_conversion_p_value = 448;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setCostPerConversionPValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->cost_per_conversion_p_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on cost per
+     * conversion change.
+     * Together with `cost_per_conversion_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(cost_per_conversion_change_point_estimate -
+     * cost_per_conversion_margin_of_error,
+     *  cost_per_conversion_change_point_estimate +
+     *  cost_per_conversion_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double cost_per_conversion_change_point_estimate = 449;</code>
+     * @return float
+     */
+    public function getCostPerConversionChangePointEstimate()
+    {
+        return isset($this->cost_per_conversion_change_point_estimate) ? $this->cost_per_conversion_change_point_estimate : 0.0;
+    }
+
+    public function hasCostPerConversionChangePointEstimate()
+    {
+        return isset($this->cost_per_conversion_change_point_estimate);
+    }
+
+    public function clearCostPerConversionChangePointEstimate()
+    {
+        unset($this->cost_per_conversion_change_point_estimate);
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on cost per
+     * conversion change.
+     * Together with `cost_per_conversion_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(cost_per_conversion_change_point_estimate -
+     * cost_per_conversion_margin_of_error,
+     *  cost_per_conversion_change_point_estimate +
+     *  cost_per_conversion_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double cost_per_conversion_change_point_estimate = 449;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setCostPerConversionChangePointEstimate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->cost_per_conversion_change_point_estimate = $var;
+
+        return $this;
+    }
+
+    /**
+     * The conversions metric on the control arm of the experiment.
+     * The treatment conversions value can be selected by using
+     * `conversions`.
+     *
+     * Generated from protobuf field <code>optional double control_conversions = 450;</code>
+     * @return float
+     */
+    public function getControlConversions()
+    {
+        return isset($this->control_conversions) ? $this->control_conversions : 0.0;
+    }
+
+    public function hasControlConversions()
+    {
+        return isset($this->control_conversions);
+    }
+
+    public function clearControlConversions()
+    {
+        unset($this->control_conversions);
+    }
+
+    /**
+     * The conversions metric on the control arm of the experiment.
+     * The treatment conversions value can be selected by using
+     * `conversions`.
+     *
+     * Generated from protobuf field <code>optional double control_conversions = 450;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setControlConversions($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->control_conversions = $var;
+
+        return $this;
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on conversions
+     * absolute change.
+     * Together with `conversions_absolute_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment - control). This field specifies the radius of the confidence
+     * interval, which is centered at
+     * `conversions_absolute_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double conversions_absolute_change_margin_of_error = 451;</code>
+     * @return float
+     */
+    public function getConversionsAbsoluteChangeMarginOfError()
+    {
+        return isset($this->conversions_absolute_change_margin_of_error) ? $this->conversions_absolute_change_margin_of_error : 0.0;
+    }
+
+    public function hasConversionsAbsoluteChangeMarginOfError()
+    {
+        return isset($this->conversions_absolute_change_margin_of_error);
+    }
+
+    public function clearConversionsAbsoluteChangeMarginOfError()
+    {
+        unset($this->conversions_absolute_change_margin_of_error);
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on conversions
+     * absolute change.
+     * Together with `conversions_absolute_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment - control). This field specifies the radius of the confidence
+     * interval, which is centered at
+     * `conversions_absolute_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double conversions_absolute_change_margin_of_error = 451;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversionsAbsoluteChangeMarginOfError($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversions_absolute_change_margin_of_error = $var;
+
+        return $this;
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * conversions absolute change. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on conversions absolute change, is
+     * 3%.
+     *
+     * Generated from protobuf field <code>optional double conversions_absolute_change_p_value = 452;</code>
+     * @return float
+     */
+    public function getConversionsAbsoluteChangePValue()
+    {
+        return isset($this->conversions_absolute_change_p_value) ? $this->conversions_absolute_change_p_value : 0.0;
+    }
+
+    public function hasConversionsAbsoluteChangePValue()
+    {
+        return isset($this->conversions_absolute_change_p_value);
+    }
+
+    public function clearConversionsAbsoluteChangePValue()
+    {
+        unset($this->conversions_absolute_change_p_value);
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * conversions absolute change. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on conversions absolute change, is
+     * 3%.
+     *
+     * Generated from protobuf field <code>optional double conversions_absolute_change_p_value = 452;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversionsAbsoluteChangePValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversions_absolute_change_p_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on conversions
+     * absolute change.
+     * Together with `conversions_absolute_change_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment - control). This field specifies the point estimate, which is
+     * the center of the confidence interval:
+     * `(conversions_absolute_change_point_estimate -
+     * conversions_absolute_change_margin_of_error,
+     *  conversions_absolute_change_point_estimate +
+     *  conversions_absolute_change_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double conversions_absolute_change_point_estimate = 453;</code>
+     * @return float
+     */
+    public function getConversionsAbsoluteChangePointEstimate()
+    {
+        return isset($this->conversions_absolute_change_point_estimate) ? $this->conversions_absolute_change_point_estimate : 0.0;
+    }
+
+    public function hasConversionsAbsoluteChangePointEstimate()
+    {
+        return isset($this->conversions_absolute_change_point_estimate);
+    }
+
+    public function clearConversionsAbsoluteChangePointEstimate()
+    {
+        unset($this->conversions_absolute_change_point_estimate);
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on conversions
+     * absolute change.
+     * Together with `conversions_absolute_change_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment - control). This field specifies the point estimate, which is
+     * the center of the confidence interval:
+     * `(conversions_absolute_change_point_estimate -
+     * conversions_absolute_change_margin_of_error,
+     *  conversions_absolute_change_point_estimate +
+     *  conversions_absolute_change_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double conversions_absolute_change_point_estimate = 453;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversionsAbsoluteChangePointEstimate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversions_absolute_change_point_estimate = $var;
+
+        return $this;
+    }
+
+    /**
+     * The conversion value per cost metric on the control arm of the
+     * experiment. The treatment conversion value per cost value can be
+     * selected by using `conversions_value_per_cost`.
+     *
+     * Generated from protobuf field <code>optional double control_conversion_value_per_cost = 454;</code>
+     * @return float
+     */
+    public function getControlConversionValuePerCost()
+    {
+        return isset($this->control_conversion_value_per_cost) ? $this->control_conversion_value_per_cost : 0.0;
+    }
+
+    public function hasControlConversionValuePerCost()
+    {
+        return isset($this->control_conversion_value_per_cost);
+    }
+
+    public function clearControlConversionValuePerCost()
+    {
+        unset($this->control_conversion_value_per_cost);
+    }
+
+    /**
+     * The conversion value per cost metric on the control arm of the
+     * experiment. The treatment conversion value per cost value can be
+     * selected by using `conversions_value_per_cost`.
+     *
+     * Generated from protobuf field <code>optional double control_conversion_value_per_cost = 454;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setControlConversionValuePerCost($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->control_conversion_value_per_cost = $var;
+
+        return $this;
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on
+     * conversion value per cost.
+     * Together with `conversion_value_per_cost_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `conversion_value_per_cost_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_per_cost_margin_of_error = 455;</code>
+     * @return float
+     */
+    public function getConversionValuePerCostMarginOfError()
+    {
+        return isset($this->conversion_value_per_cost_margin_of_error) ? $this->conversion_value_per_cost_margin_of_error : 0.0;
+    }
+
+    public function hasConversionValuePerCostMarginOfError()
+    {
+        return isset($this->conversion_value_per_cost_margin_of_error);
+    }
+
+    public function clearConversionValuePerCostMarginOfError()
+    {
+        unset($this->conversion_value_per_cost_margin_of_error);
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on
+     * conversion value per cost.
+     * Together with `conversion_value_per_cost_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `conversion_value_per_cost_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_per_cost_margin_of_error = 455;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversionValuePerCostMarginOfError($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversion_value_per_cost_margin_of_error = $var;
+
+        return $this;
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * conversion value per cost. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on conversion value per cost, is 3%.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_per_cost_p_value = 456;</code>
+     * @return float
+     */
+    public function getConversionValuePerCostPValue()
+    {
+        return isset($this->conversion_value_per_cost_p_value) ? $this->conversion_value_per_cost_p_value : 0.0;
+    }
+
+    public function hasConversionValuePerCostPValue()
+    {
+        return isset($this->conversion_value_per_cost_p_value);
+    }
+
+    public function clearConversionValuePerCostPValue()
+    {
+        unset($this->conversion_value_per_cost_p_value);
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * conversion value per cost. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on conversion value per cost, is 3%.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_per_cost_p_value = 456;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversionValuePerCostPValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversion_value_per_cost_p_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on
+     * conversion value per cost change.
+     * Together with `conversion_value_per_cost_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(conversion_value_per_cost_change_point_estimate -
+     * conversion_value_per_cost_margin_of_error,
+     *  conversion_value_per_cost_change_point_estimate +
+     *  conversion_value_per_cost_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_per_cost_change_point_estimate = 457;</code>
+     * @return float
+     */
+    public function getConversionValuePerCostChangePointEstimate()
+    {
+        return isset($this->conversion_value_per_cost_change_point_estimate) ? $this->conversion_value_per_cost_change_point_estimate : 0.0;
+    }
+
+    public function hasConversionValuePerCostChangePointEstimate()
+    {
+        return isset($this->conversion_value_per_cost_change_point_estimate);
+    }
+
+    public function clearConversionValuePerCostChangePointEstimate()
+    {
+        unset($this->conversion_value_per_cost_change_point_estimate);
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on
+     * conversion value per cost change.
+     * Together with `conversion_value_per_cost_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(conversion_value_per_cost_change_point_estimate -
+     * conversion_value_per_cost_margin_of_error,
+     *  conversion_value_per_cost_change_point_estimate +
+     *  conversion_value_per_cost_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_per_cost_change_point_estimate = 457;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversionValuePerCostChangePointEstimate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversion_value_per_cost_change_point_estimate = $var;
+
+        return $this;
+    }
+
+    /**
+     * The cost metric on the control arm of the experiment.
+     * The treatment cost value can be selected by using `cost_micros`.
+     *
+     * Generated from protobuf field <code>optional int64 control_cost_micros = 458;</code>
+     * @return int|string
+     */
+    public function getControlCostMicros()
+    {
+        return isset($this->control_cost_micros) ? $this->control_cost_micros : 0;
+    }
+
+    public function hasControlCostMicros()
+    {
+        return isset($this->control_cost_micros);
+    }
+
+    public function clearControlCostMicros()
+    {
+        unset($this->control_cost_micros);
+    }
+
+    /**
+     * The cost metric on the control arm of the experiment.
+     * The treatment cost value can be selected by using `cost_micros`.
+     *
+     * Generated from protobuf field <code>optional int64 control_cost_micros = 458;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setControlCostMicros($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->control_cost_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on cost.
+     * Together with `cost_micros_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `cost_micros_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double cost_micros_margin_of_error = 459;</code>
+     * @return float
+     */
+    public function getCostMicrosMarginOfError()
+    {
+        return isset($this->cost_micros_margin_of_error) ? $this->cost_micros_margin_of_error : 0.0;
+    }
+
+    public function hasCostMicrosMarginOfError()
+    {
+        return isset($this->cost_micros_margin_of_error);
+    }
+
+    public function clearCostMicrosMarginOfError()
+    {
+        unset($this->cost_micros_margin_of_error);
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on cost.
+     * Together with `cost_micros_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `cost_micros_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double cost_micros_margin_of_error = 459;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setCostMicrosMarginOfError($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->cost_micros_margin_of_error = $var;
+
+        return $this;
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * cost. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on cost, is 3%.
+     *
+     * Generated from protobuf field <code>optional double cost_micros_p_value = 460;</code>
+     * @return float
+     */
+    public function getCostMicrosPValue()
+    {
+        return isset($this->cost_micros_p_value) ? $this->cost_micros_p_value : 0.0;
+    }
+
+    public function hasCostMicrosPValue()
+    {
+        return isset($this->cost_micros_p_value);
+    }
+
+    public function clearCostMicrosPValue()
+    {
+        unset($this->cost_micros_p_value);
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * cost. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on cost, is 3%.
+     *
+     * Generated from protobuf field <code>optional double cost_micros_p_value = 460;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setCostMicrosPValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->cost_micros_p_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on cost change.
+     * Together with `cost_micros_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(cost_micros_change_point_estimate - cost_micros_margin_of_error,
+     *  cost_micros_change_point_estimate + cost_micros_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double cost_micros_change_point_estimate = 461;</code>
+     * @return float
+     */
+    public function getCostMicrosChangePointEstimate()
+    {
+        return isset($this->cost_micros_change_point_estimate) ? $this->cost_micros_change_point_estimate : 0.0;
+    }
+
+    public function hasCostMicrosChangePointEstimate()
+    {
+        return isset($this->cost_micros_change_point_estimate);
+    }
+
+    public function clearCostMicrosChangePointEstimate()
+    {
+        unset($this->cost_micros_change_point_estimate);
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on cost change.
+     * Together with `cost_micros_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(cost_micros_change_point_estimate - cost_micros_margin_of_error,
+     *  cost_micros_change_point_estimate + cost_micros_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double cost_micros_change_point_estimate = 461;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setCostMicrosChangePointEstimate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->cost_micros_change_point_estimate = $var;
+
+        return $this;
+    }
+
+    /**
+     * The impressions metric on the control arm of the experiment.
+     * The treatment impressions value can be selected by using `impressions`.
+     *
+     * Generated from protobuf field <code>optional int64 control_impressions = 462;</code>
+     * @return int|string
+     */
+    public function getControlImpressions()
+    {
+        return isset($this->control_impressions) ? $this->control_impressions : 0;
+    }
+
+    public function hasControlImpressions()
+    {
+        return isset($this->control_impressions);
+    }
+
+    public function clearControlImpressions()
+    {
+        unset($this->control_impressions);
+    }
+
+    /**
+     * The impressions metric on the control arm of the experiment.
+     * The treatment impressions value can be selected by using `impressions`.
+     *
+     * Generated from protobuf field <code>optional int64 control_impressions = 462;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setControlImpressions($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->control_impressions = $var;
+
+        return $this;
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on impressions.
+     * Together with `impressions_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `impressions_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double impressions_margin_of_error = 463;</code>
+     * @return float
+     */
+    public function getImpressionsMarginOfError()
+    {
+        return isset($this->impressions_margin_of_error) ? $this->impressions_margin_of_error : 0.0;
+    }
+
+    public function hasImpressionsMarginOfError()
+    {
+        return isset($this->impressions_margin_of_error);
+    }
+
+    public function clearImpressionsMarginOfError()
+    {
+        unset($this->impressions_margin_of_error);
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on impressions.
+     * Together with `impressions_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `impressions_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double impressions_margin_of_error = 463;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setImpressionsMarginOfError($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->impressions_margin_of_error = $var;
+
+        return $this;
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * impressions. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on impressions, is 3%.
+     *
+     * Generated from protobuf field <code>optional double impressions_p_value = 464;</code>
+     * @return float
+     */
+    public function getImpressionsPValue()
+    {
+        return isset($this->impressions_p_value) ? $this->impressions_p_value : 0.0;
+    }
+
+    public function hasImpressionsPValue()
+    {
+        return isset($this->impressions_p_value);
+    }
+
+    public function clearImpressionsPValue()
+    {
+        unset($this->impressions_p_value);
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * impressions. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on impressions, is 3%.
+     *
+     * Generated from protobuf field <code>optional double impressions_p_value = 464;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setImpressionsPValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->impressions_p_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on impressions.
+     * Together with `impressions_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(impressions_point_estimate - impressions_margin_of_error,
+     *  impressions_point_estimate + impressions_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double impressions_point_estimate = 465;</code>
+     * @return float
+     */
+    public function getImpressionsPointEstimate()
+    {
+        return isset($this->impressions_point_estimate) ? $this->impressions_point_estimate : 0.0;
+    }
+
+    public function hasImpressionsPointEstimate()
+    {
+        return isset($this->impressions_point_estimate);
+    }
+
+    public function clearImpressionsPointEstimate()
+    {
+        unset($this->impressions_point_estimate);
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on impressions.
+     * Together with `impressions_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(impressions_point_estimate - impressions_margin_of_error,
+     *  impressions_point_estimate + impressions_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double impressions_point_estimate = 465;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setImpressionsPointEstimate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->impressions_point_estimate = $var;
+
+        return $this;
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on clicks.
+     * Together with `clicks_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at `clicks_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double clicks_margin_of_error = 466;</code>
+     * @return float
+     */
+    public function getClicksMarginOfError()
+    {
+        return isset($this->clicks_margin_of_error) ? $this->clicks_margin_of_error : 0.0;
+    }
+
+    public function hasClicksMarginOfError()
+    {
+        return isset($this->clicks_margin_of_error);
+    }
+
+    public function clearClicksMarginOfError()
+    {
+        unset($this->clicks_margin_of_error);
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on clicks.
+     * Together with `clicks_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at `clicks_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double clicks_margin_of_error = 466;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setClicksMarginOfError($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->clicks_margin_of_error = $var;
+
+        return $this;
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * clicks. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on clicks, is 3%.
+     *
+     * Generated from protobuf field <code>optional double clicks_p_value = 467;</code>
+     * @return float
+     */
+    public function getClicksPValue()
+    {
+        return isset($this->clicks_p_value) ? $this->clicks_p_value : 0.0;
+    }
+
+    public function hasClicksPValue()
+    {
+        return isset($this->clicks_p_value);
+    }
+
+    public function clearClicksPValue()
+    {
+        unset($this->clicks_p_value);
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * clicks. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on clicks, is 3%.
+     *
+     * Generated from protobuf field <code>optional double clicks_p_value = 467;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setClicksPValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->clicks_p_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on clicks.
+     * Together with `clicks_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval: `(clicks_point_estimate -
+     * clicks_margin_of_error,
+     *  clicks_point_estimate + clicks_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double clicks_point_estimate = 468;</code>
+     * @return float
+     */
+    public function getClicksPointEstimate()
+    {
+        return isset($this->clicks_point_estimate) ? $this->clicks_point_estimate : 0.0;
+    }
+
+    public function hasClicksPointEstimate()
+    {
+        return isset($this->clicks_point_estimate);
+    }
+
+    public function clearClicksPointEstimate()
+    {
+        unset($this->clicks_point_estimate);
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on clicks.
+     * Together with `clicks_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval: `(clicks_point_estimate -
+     * clicks_margin_of_error,
+     *  clicks_point_estimate + clicks_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double clicks_point_estimate = 468;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setClicksPointEstimate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->clicks_point_estimate = $var;
+
+        return $this;
+    }
+
+    /**
+     * The conversion value metric on the control arm of the experiment.
+     * The treatment conversion value can be selected by using
+     * `conversions_value`.
+     *
+     * Generated from protobuf field <code>optional double control_conversion_value = 469;</code>
+     * @return float
+     */
+    public function getControlConversionValue()
+    {
+        return isset($this->control_conversion_value) ? $this->control_conversion_value : 0.0;
+    }
+
+    public function hasControlConversionValue()
+    {
+        return isset($this->control_conversion_value);
+    }
+
+    public function clearControlConversionValue()
+    {
+        unset($this->control_conversion_value);
+    }
+
+    /**
+     * The conversion value metric on the control arm of the experiment.
+     * The treatment conversion value can be selected by using
+     * `conversions_value`.
+     *
+     * Generated from protobuf field <code>optional double control_conversion_value = 469;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setControlConversionValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->control_conversion_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on
+     * conversion value.
+     * Together with `conversion_value_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `conversion_value_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_margin_of_error = 470;</code>
+     * @return float
+     */
+    public function getConversionValueMarginOfError()
+    {
+        return isset($this->conversion_value_margin_of_error) ? $this->conversion_value_margin_of_error : 0.0;
+    }
+
+    public function hasConversionValueMarginOfError()
+    {
+        return isset($this->conversion_value_margin_of_error);
+    }
+
+    public function clearConversionValueMarginOfError()
+    {
+        unset($this->conversion_value_margin_of_error);
+    }
+
+    /**
+     * The margin of error when estimating the experiment's effect on
+     * conversion value.
+     * Together with `conversion_value_change_point_estimate`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the radius of the
+     * confidence interval, which is centered at
+     * `conversion_value_change_point_estimate`.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_margin_of_error = 470;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversionValueMarginOfError($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversion_value_margin_of_error = $var;
+
+        return $this;
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * conversion value. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on conversion value, is 3%.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_p_value = 471;</code>
+     * @return float
+     */
+    public function getConversionValuePValue()
+    {
+        return isset($this->conversion_value_p_value) ? $this->conversion_value_p_value : 0.0;
+    }
+
+    public function hasConversionValuePValue()
+    {
+        return isset($this->conversion_value_p_value);
+    }
+
+    public function clearConversionValuePValue()
+    {
+        unset($this->conversion_value_p_value);
+    }
+
+    /**
+     * The p-value for the null hypothesis that the experiment has no effect on
+     * conversion value. Ranges from 0 to 1.
+     * Say if the p-value is 0.03, that means the probability of observing the
+     * data, if the experiment has no effect on conversion value, is 3%.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_p_value = 471;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversionValuePValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversion_value_p_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on
+     * conversion value change.
+     * Together with `conversion_value_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(conversion_value_change_point_estimate -
+     * conversion_value_margin_of_error,
+     *  conversion_value_change_point_estimate +
+     *  conversion_value_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_change_point_estimate = 472;</code>
+     * @return float
+     */
+    public function getConversionValueChangePointEstimate()
+    {
+        return isset($this->conversion_value_change_point_estimate) ? $this->conversion_value_change_point_estimate : 0.0;
+    }
+
+    public function hasConversionValueChangePointEstimate()
+    {
+        return isset($this->conversion_value_change_point_estimate);
+    }
+
+    public function clearConversionValueChangePointEstimate()
+    {
+        unset($this->conversion_value_change_point_estimate);
+    }
+
+    /**
+     * The point estimate when estimating the experiment's effect on
+     * conversion value change.
+     * Together with `conversion_value_margin_of_error`,
+     * they describe a confidence interval with a prescribed confidence level
+     * for the difference being estimated. The quantity being estimated is
+     * (treatment / control - 1). This field specifies the point estimate, which
+     * is the center of the confidence interval:
+     * `(conversion_value_change_point_estimate -
+     * conversion_value_margin_of_error,
+     *  conversion_value_change_point_estimate +
+     *  conversion_value_margin_of_error)`.
+     *
+     * Generated from protobuf field <code>optional double conversion_value_change_point_estimate = 472;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversionValueChangePointEstimate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversion_value_change_point_estimate = $var;
 
         return $this;
     }

@@ -38,12 +38,19 @@ class ThirdPartyViewabilityIntegrationPartner
      * Generated from protobuf enum <code>INTEGRAL_AD_SCIENCE = 3;</code>
      */
     const INTEGRAL_AD_SCIENCE = 3;
+    /**
+     * Zefr.
+     *
+     * Generated from protobuf enum <code>ZEFR = 4;</code>
+     */
+    const ZEFR = 4;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::DOUBLE_VERIFY => 'DOUBLE_VERIFY',
         self::INTEGRAL_AD_SCIENCE => 'INTEGRAL_AD_SCIENCE',
+        self::ZEFR => 'ZEFR',
     ];
 
     public static function name($value)

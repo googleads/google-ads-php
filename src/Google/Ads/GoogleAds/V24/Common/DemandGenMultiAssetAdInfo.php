@@ -65,6 +65,14 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      */
     private $logo_images;
     /**
+     * Classic display image assets to be used in the ad. Valid image types are
+     * GIF, JPEG, and PNG. At most 20 classic display images can be specified per
+     * ad.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.common.AdImageAsset classic_display_images = 11;</code>
+     */
+    private $classic_display_images;
+    /**
      * Headline text asset of the ad. Maximum display width is 30. At least 1 and
      * max 5 headlines can be specified.
      *
@@ -126,6 +134,10 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
      *           Logo image assets to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must be
      *           1:1 (+-1%). At least 1 and max 5 logo images can be specified.
+     *     @type \Google\Ads\GoogleAds\V24\Common\AdImageAsset[] $classic_display_images
+     *           Classic display image assets to be used in the ad. Valid image types are
+     *           GIF, JPEG, and PNG. At most 20 classic display images can be specified per
+     *           ad.
      *     @type \Google\Ads\GoogleAds\V24\Common\AdTextAsset[] $headlines
      *           Headline text asset of the ad. Maximum display width is 30. At least 1 and
      *           max 5 headlines can be specified.
@@ -307,6 +319,36 @@ class DemandGenMultiAssetAdInfo extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V24\Common\AdImageAsset::class);
         $this->logo_images = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Classic display image assets to be used in the ad. Valid image types are
+     * GIF, JPEG, and PNG. At most 20 classic display images can be specified per
+     * ad.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.common.AdImageAsset classic_display_images = 11;</code>
+     * @return RepeatedField<\Google\Ads\GoogleAds\V24\Common\AdImageAsset>
+     */
+    public function getClassicDisplayImages()
+    {
+        return $this->classic_display_images;
+    }
+
+    /**
+     * Classic display image assets to be used in the ad. Valid image types are
+     * GIF, JPEG, and PNG. At most 20 classic display images can be specified per
+     * ad.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.common.AdImageAsset classic_display_images = 11;</code>
+     * @param \Google\Ads\GoogleAds\V24\Common\AdImageAsset[] $var
+     * @return $this
+     */
+    public function setClassicDisplayImages($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V24\Common\AdImageAsset::class);
+        $this->classic_display_images = $arr;
 
         return $this;
     }

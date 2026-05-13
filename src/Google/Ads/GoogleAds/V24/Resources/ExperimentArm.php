@@ -63,6 +63,29 @@ class ExperimentArm extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string in_design_campaigns = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     private $in_design_campaigns;
+    /**
+     * Details of assets under experiment.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.ExperimentArm.AssetTestingInfo asset_testing_info = 9;</code>
+     */
+    protected $asset_testing_info = null;
+    /**
+     * List of asset groups in the experiment arm.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.resources.ExperimentArm.AssetGroupInfo asset_groups = 10;</code>
+     */
+    private $asset_groups;
+    /**
+     * Immutable. Information specific to the control or treatment campaign of a
+     * Performance Max experiment.
+     * This field is specific to experiments of type PMAX_REPLACEMENT_SHOPPING.
+     * For example, the treatment experiment arm contains the
+     * information of treatment Performance Max campaign settings for
+     * PMAX_REPLACEMENT_SHOPPING experiments.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.ExperimentArm.PerformanceMaxExperimentArmInfo performance_max_experiment_arm_info = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    protected $performance_max_experiment_arm_info = null;
 
     /**
      * Constructor.
@@ -89,6 +112,17 @@ class ExperimentArm extends \Google\Protobuf\Internal\Message
      *           List of campaigns in the trial arm. The max length is one.
      *     @type string[] $in_design_campaigns
      *           Output only. The in design campaigns in the treatment experiment arm.
+     *     @type \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\AssetTestingInfo $asset_testing_info
+     *           Details of assets under experiment.
+     *     @type \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\AssetGroupInfo[] $asset_groups
+     *           List of asset groups in the experiment arm.
+     *     @type \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\PerformanceMaxExperimentArmInfo $performance_max_experiment_arm_info
+     *           Immutable. Information specific to the control or treatment campaign of a
+     *           Performance Max experiment.
+     *           This field is specific to experiments of type PMAX_REPLACEMENT_SHOPPING.
+     *           For example, the treatment experiment arm contains the
+     *           information of treatment Performance Max campaign settings for
+     *           PMAX_REPLACEMENT_SHOPPING experiments.
      * }
      */
     public function __construct($data = NULL) {
@@ -284,6 +318,114 @@ class ExperimentArm extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->in_design_campaigns = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Details of assets under experiment.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.ExperimentArm.AssetTestingInfo asset_testing_info = 9;</code>
+     * @return \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\AssetTestingInfo|null
+     */
+    public function getAssetTestingInfo()
+    {
+        return $this->asset_testing_info;
+    }
+
+    public function hasAssetTestingInfo()
+    {
+        return isset($this->asset_testing_info);
+    }
+
+    public function clearAssetTestingInfo()
+    {
+        unset($this->asset_testing_info);
+    }
+
+    /**
+     * Details of assets under experiment.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.ExperimentArm.AssetTestingInfo asset_testing_info = 9;</code>
+     * @param \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\AssetTestingInfo $var
+     * @return $this
+     */
+    public function setAssetTestingInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\AssetTestingInfo::class);
+        $this->asset_testing_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * List of asset groups in the experiment arm.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.resources.ExperimentArm.AssetGroupInfo asset_groups = 10;</code>
+     * @return RepeatedField<\Google\Ads\GoogleAds\V24\Resources\ExperimentArm\AssetGroupInfo>
+     */
+    public function getAssetGroups()
+    {
+        return $this->asset_groups;
+    }
+
+    /**
+     * List of asset groups in the experiment arm.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.resources.ExperimentArm.AssetGroupInfo asset_groups = 10;</code>
+     * @param \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\AssetGroupInfo[] $var
+     * @return $this
+     */
+    public function setAssetGroups($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\AssetGroupInfo::class);
+        $this->asset_groups = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Immutable. Information specific to the control or treatment campaign of a
+     * Performance Max experiment.
+     * This field is specific to experiments of type PMAX_REPLACEMENT_SHOPPING.
+     * For example, the treatment experiment arm contains the
+     * information of treatment Performance Max campaign settings for
+     * PMAX_REPLACEMENT_SHOPPING experiments.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.ExperimentArm.PerformanceMaxExperimentArmInfo performance_max_experiment_arm_info = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\PerformanceMaxExperimentArmInfo|null
+     */
+    public function getPerformanceMaxExperimentArmInfo()
+    {
+        return $this->performance_max_experiment_arm_info;
+    }
+
+    public function hasPerformanceMaxExperimentArmInfo()
+    {
+        return isset($this->performance_max_experiment_arm_info);
+    }
+
+    public function clearPerformanceMaxExperimentArmInfo()
+    {
+        unset($this->performance_max_experiment_arm_info);
+    }
+
+    /**
+     * Immutable. Information specific to the control or treatment campaign of a
+     * Performance Max experiment.
+     * This field is specific to experiments of type PMAX_REPLACEMENT_SHOPPING.
+     * For example, the treatment experiment arm contains the
+     * information of treatment Performance Max campaign settings for
+     * PMAX_REPLACEMENT_SHOPPING experiments.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.ExperimentArm.PerformanceMaxExperimentArmInfo performance_max_experiment_arm_info = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\PerformanceMaxExperimentArmInfo $var
+     * @return $this
+     */
+    public function setPerformanceMaxExperimentArmInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\PerformanceMaxExperimentArmInfo::class);
+        $this->performance_max_experiment_arm_info = $var;
 
         return $this;
     }

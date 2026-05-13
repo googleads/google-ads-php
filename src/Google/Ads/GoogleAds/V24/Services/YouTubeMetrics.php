@@ -52,9 +52,9 @@ class YouTubeMetrics extends \Google\Protobuf\Internal\Message
      */
     protected $comments_count = 0;
     /**
-     * The lifetime engagement rate of this channel. The value is computed as the
-     * total number of likes, shares, and comments across all videos divided by
-     * the total number of video views.
+     * The lifetime engagement rate of this channel. A measurement of how often
+     * people engage with the creator's content. The value, between 0 and 1, is
+     * calculated as total engagement divided by total views.
      *
      * Generated from protobuf field <code>double engagement_rate = 8;</code>
      */
@@ -133,9 +133,9 @@ class YouTubeMetrics extends \Google\Protobuf\Internal\Message
      *     @type int|string $comments_count
      *           The total number of comments across all videos of this channel.
      *     @type float $engagement_rate
-     *           The lifetime engagement rate of this channel. The value is computed as the
-     *           total number of likes, shares, and comments across all videos divided by
-     *           the total number of video views.
+     *           The lifetime engagement rate of this channel. A measurement of how often
+     *           people engage with the creator's content. The value, between 0 and 1, is
+     *           calculated as total engagement divided by total views.
      *     @type float $average_views_per_video
      *           The average number of views per video in the last 28 days.
      *     @type float $average_likes_per_video
@@ -318,9 +318,9 @@ class YouTubeMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The lifetime engagement rate of this channel. The value is computed as the
-     * total number of likes, shares, and comments across all videos divided by
-     * the total number of video views.
+     * The lifetime engagement rate of this channel. A measurement of how often
+     * people engage with the creator's content. The value, between 0 and 1, is
+     * calculated as total engagement divided by total views.
      *
      * Generated from protobuf field <code>double engagement_rate = 8;</code>
      * @return float
@@ -331,9 +331,9 @@ class YouTubeMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The lifetime engagement rate of this channel. The value is computed as the
-     * total number of likes, shares, and comments across all videos divided by
-     * the total number of video views.
+     * The lifetime engagement rate of this channel. A measurement of how often
+     * people engage with the creator's content. The value, between 0 and 1, is
+     * calculated as total engagement divided by total views.
      *
      * Generated from protobuf field <code>double engagement_rate = 8;</code>
      * @param float $var
