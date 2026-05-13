@@ -167,7 +167,7 @@ class AutomaticallyCreatedAssetRemovalServiceClient
      *
      * @throws ValidationException
      */
-    public function __construct(array|ClientOptions $options = [])
+    public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
