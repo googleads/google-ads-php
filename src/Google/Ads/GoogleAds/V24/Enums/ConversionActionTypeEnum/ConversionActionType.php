@@ -215,9 +215,10 @@ class ConversionActionType
      */
     const LEAD_FORM_SUBMIT = 29;
     /**
-     * Deprecated: The Salesforce integration will be going away and
-     * replaced with an improved way to import your conversions from Salesforce.
-     * - see https://support.google.com/google-ads/answer/14728349
+     * Deprecated: The Salesforce integration ended on May 31, 2025.
+     * See
+     * [Legacy Salesforce integration for conversions upgrade
+     * FAQ](//support.google.com/google-ads/answer/14728349).
      *
      * Generated from protobuf enum <code>SALESFORCE = 30 [deprecated = true];</code>
      */
@@ -271,47 +272,49 @@ class ConversionActionType
      */
     const WEBPAGE_CODELESS = 37;
     /**
-     * Conversions that come from linked Universal Analytics goals.
+     * Conversions that come from linked Universal Analytics goals. Universal
+     * Analytics is sunset, and has been replaced by Google Analytics.
      *
      * Generated from protobuf enum <code>UNIVERSAL_ANALYTICS_GOAL = 38;</code>
      */
     const UNIVERSAL_ANALYTICS_GOAL = 38;
     /**
      * Conversions that come from linked Universal Analytics transactions.
+     * Universal Analytics is sunset, and has been replaced by Google Analytics.
      *
      * Generated from protobuf enum <code>UNIVERSAL_ANALYTICS_TRANSACTION = 39;</code>
      */
     const UNIVERSAL_ANALYTICS_TRANSACTION = 39;
     /**
-     * Conversions that come from linked Google Analytics 4 custom event
+     * Conversions that come from linked Google Analytics custom event
      * conversions.
      *
      * Generated from protobuf enum <code>GOOGLE_ANALYTICS_4_CUSTOM = 40;</code>
      */
     const GOOGLE_ANALYTICS_4_CUSTOM = 40;
     /**
-     * Conversions that come from linked Google Analytics 4 purchase
+     * Conversions that come from linked Google Analytics purchase
      * conversions.
      *
      * Generated from protobuf enum <code>GOOGLE_ANALYTICS_4_PURCHASE = 41;</code>
      */
     const GOOGLE_ANALYTICS_4_PURCHASE = 41;
     /**
-     * Conversions that come from linked Google Analytics 4 generate lead
+     * Conversions that come from linked Google Analytics generate lead
      * conversions.
      *
      * Generated from protobuf enum <code>GOOGLE_ANALYTICS_4_GENERATE_LEAD = 42;</code>
      */
     const GOOGLE_ANALYTICS_4_GENERATE_LEAD = 42;
     /**
-     * Conversions that come from linked Google Analytics 4 qualify lead
+     * Conversions that come from linked Google Analytics qualify lead
      * conversions.
      *
      * Generated from protobuf enum <code>GOOGLE_ANALYTICS_4_QUALIFY_LEAD = 43;</code>
      */
     const GOOGLE_ANALYTICS_4_QUALIFY_LEAD = 43;
     /**
-     * Conversions that come from linked Google Analytics 4 close convert lead
+     * Conversions that come from linked Google Analytics close convert lead
      * conversions.
      *
      * Generated from protobuf enum <code>GOOGLE_ANALYTICS_4_CLOSE_CONVERT_LEAD = 44;</code>

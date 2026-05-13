@@ -85,6 +85,33 @@ class ExperimentType
      * Generated from protobuf enum <code>HOTEL_CUSTOM = 12;</code>
      */
     const HOTEL_CUSTOM = 12;
+    /**
+     * A custom experiment for optimizing assets.
+     *
+     * Generated from protobuf enum <code>OPTIMIZE_ASSETS = 13;</code>
+     */
+    const OPTIMIZE_ASSETS = 13;
+    /**
+     * An experiment that tests how AI Max can help you engage more customers
+     * with Google AI and broad match keywords.
+     *
+     * Generated from protobuf enum <code>ADOPT_AI_MAX = 14;</code>
+     */
+    const ADOPT_AI_MAX = 14;
+    /**
+     * An experiment that tests how broad match keywords can impact the number
+     * of searches your ads appear in.
+     *
+     * Generated from protobuf enum <code>ADOPT_BROAD_MATCH_KEYWORDS = 15;</code>
+     */
+    const ADOPT_BROAD_MATCH_KEYWORDS = 15;
+    /**
+     * An experiment that tests how your Shopping campaigns perform compared to
+     * Performance Max.
+     *
+     * Generated from protobuf enum <code>PMAX_REPLACEMENT_SHOPPING = 16;</code>
+     */
+    const PMAX_REPLACEMENT_SHOPPING = 16;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -99,6 +126,10 @@ class ExperimentType
         self::SHOPPING_AUTOMATED_BIDDING_STRATEGY => 'SHOPPING_AUTOMATED_BIDDING_STRATEGY',
         self::SMART_MATCHING => 'SMART_MATCHING',
         self::HOTEL_CUSTOM => 'HOTEL_CUSTOM',
+        self::OPTIMIZE_ASSETS => 'OPTIMIZE_ASSETS',
+        self::ADOPT_AI_MAX => 'ADOPT_AI_MAX',
+        self::ADOPT_BROAD_MATCH_KEYWORDS => 'ADOPT_BROAD_MATCH_KEYWORDS',
+        self::PMAX_REPLACEMENT_SHOPPING => 'PMAX_REPLACEMENT_SHOPPING',
     ];
 
     public static function name($value)

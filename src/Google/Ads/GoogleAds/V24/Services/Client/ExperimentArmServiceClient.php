@@ -105,6 +105,73 @@ class ExperimentArmServiceClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a ad resource.
+     *
+     * @param string $customerId
+     * @param string $adId
+     *
+     * @return string The formatted ad resource.
+     */
+    public static function adName(string $customerId, string $adId): string
+    {
+        return self::getPathTemplate('ad')->render([
+            'customer_id' => $customerId,
+            'ad_id' => $adId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a ad_group
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $adGroupId
+     *
+     * @return string The formatted ad_group resource.
+     */
+    public static function adGroupName(string $customerId, string $adGroupId): string
+    {
+        return self::getPathTemplate('adGroup')->render([
+            'customer_id' => $customerId,
+            'ad_group_id' => $adGroupId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetId
+     *
+     * @return string The formatted asset resource.
+     */
+    public static function assetName(string $customerId, string $assetId): string
+    {
+        return self::getPathTemplate('asset')->render([
+            'customer_id' => $customerId,
+            'asset_id' => $assetId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a asset_group
+     * resource.
+     *
+     * @param string $customerId
+     * @param string $assetGroupId
+     *
+     * @return string The formatted asset_group resource.
+     */
+    public static function assetGroupName(string $customerId, string $assetGroupId): string
+    {
+        return self::getPathTemplate('assetGroup')->render([
+            'customer_id' => $customerId,
+            'asset_group_id' => $assetGroupId,
+        ]);
+    }
+
+    /**
      * Formats a string containing the fully-qualified path to represent a campaign
      * resource.
      *
@@ -161,6 +228,10 @@ class ExperimentArmServiceClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - ad: customers/{customer_id}/ads/{ad_id}
+     * - adGroup: customers/{customer_id}/adGroups/{ad_group_id}
+     * - asset: customers/{customer_id}/assets/{asset_id}
+     * - assetGroup: customers/{customer_id}/assetGroups/{asset_group_id}
      * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - experiment: customers/{customer_id}/experiments/{trial_id}
      * - experimentArm: customers/{customer_id}/experimentArms/{trial_id}~{trial_arm_id}

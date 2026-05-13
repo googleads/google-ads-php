@@ -36,6 +36,10 @@ return [
                 ],
             ],
             'templateMap' => [
+                'ad' => 'customers/{customer_id}/ads/{ad_id}',
+                'adGroup' => 'customers/{customer_id}/adGroups/{ad_group_id}',
+                'asset' => 'customers/{customer_id}/assets/{asset_id}',
+                'assetGroup' => 'customers/{customer_id}/assetGroups/{asset_group_id}',
                 'campaign' => 'customers/{customer_id}/campaigns/{campaign_id}',
                 'experiment' => 'customers/{customer_id}/experiments/{trial_id}',
                 'experimentArm' => 'customers/{customer_id}/experimentArms/{trial_id}~{trial_arm_id}',

@@ -34,6 +34,14 @@ class VerticalAdsItemGroupRuleInfo extends \Google\Protobuf\Internal\Message
      *     @type int|string $hotel_class
      *           Integer value specifying the class rating for a hotel. Ranges from 1 to 5
      *           stars.
+     *     @type int|string $user_rating
+     *           Integer value specifying the user rating for a Vertical Ad listing.
+     *           Ranges from 1 to 5, where 5 is the best.
+     *     @type string $venue
+     *           A name for a specific location, like the venue for a concert event.
+     *     @type string $event_participant_display_name
+     *           The name of an associated participant for a given event. For example,
+     *           headliner for a concert event.
      * }
      */
     public function __construct($data = NULL) {
@@ -194,6 +202,103 @@ class VerticalAdsItemGroupRuleInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Integer value specifying the user rating for a Vertical Ad listing.
+     * Ranges from 1 to 5, where 5 is the best.
+     *
+     * Generated from protobuf field <code>int64 user_rating = 7;</code>
+     * @return int|string
+     */
+    public function getUserRating()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasUserRating()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Integer value specifying the user rating for a Vertical Ad listing.
+     * Ranges from 1 to 5, where 5 is the best.
+     *
+     * Generated from protobuf field <code>int64 user_rating = 7;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserRating($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * A name for a specific location, like the venue for a concert event.
+     *
+     * Generated from protobuf field <code>string venue = 8;</code>
+     * @return string
+     */
+    public function getVenue()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasVenue()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * A name for a specific location, like the venue for a concert event.
+     *
+     * Generated from protobuf field <code>string venue = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVenue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * The name of an associated participant for a given event. For example,
+     * headliner for a concert event.
+     *
+     * Generated from protobuf field <code>string event_participant_display_name = 9;</code>
+     * @return string
+     */
+    public function getEventParticipantDisplayName()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasEventParticipantDisplayName()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * The name of an associated participant for a given event. For example,
+     * headliner for a concert event.
+     *
+     * Generated from protobuf field <code>string event_participant_display_name = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEventParticipantDisplayName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(9, $var);
 
         return $this;
     }

@@ -231,6 +231,12 @@ class AssetFieldType
      * Generated from protobuf enum <code>CALL_TO_ACTION = 40;</code>
      */
     const CALL_TO_ACTION = 40;
+    /**
+     * The asset is linked for use as a classic display image.
+     *
+     * Generated from protobuf enum <code>CLASSIC_DISPLAY_IMAGE = 47;</code>
+     */
+    const CLASSIC_DISPLAY_IMAGE = 47;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -269,6 +275,7 @@ class AssetFieldType
         self::LANDING_PAGE_PREVIEW => 'LANDING_PAGE_PREVIEW',
         self::LONG_DESCRIPTION => 'LONG_DESCRIPTION',
         self::CALL_TO_ACTION => 'CALL_TO_ACTION',
+        self::CLASSIC_DISPLAY_IMAGE => 'CLASSIC_DISPLAY_IMAGE',
     ];
 
     public static function name($value)

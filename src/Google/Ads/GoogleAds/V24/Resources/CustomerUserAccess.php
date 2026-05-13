@@ -59,6 +59,13 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional string inviter_user_email_address = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $inviter_user_email_address = null;
+    /**
+     * Output only. Whether the user has passkey enabled.
+     * Read only field
+     *
+     * Generated from protobuf field <code>optional bool passkey_enabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $passkey_enabled = null;
 
     /**
      * Constructor.
@@ -85,6 +92,9 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
      *           Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *     @type string $inviter_user_email_address
      *           Output only. The email address of the inviter user.
+     *           Read only field
+     *     @type bool $passkey_enabled
+     *           Output only. Whether the user has passkey enabled.
      *           Read only field
      * }
      */
@@ -291,6 +301,44 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->inviter_user_email_address = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Whether the user has passkey enabled.
+     * Read only field
+     *
+     * Generated from protobuf field <code>optional bool passkey_enabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return bool
+     */
+    public function getPasskeyEnabled()
+    {
+        return isset($this->passkey_enabled) ? $this->passkey_enabled : false;
+    }
+
+    public function hasPasskeyEnabled()
+    {
+        return isset($this->passkey_enabled);
+    }
+
+    public function clearPasskeyEnabled()
+    {
+        unset($this->passkey_enabled);
+    }
+
+    /**
+     * Output only. Whether the user has passkey enabled.
+     * Read only field
+     *
+     * Generated from protobuf field <code>optional bool passkey_enabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPasskeyEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->passkey_enabled = $var;
 
         return $this;
     }
