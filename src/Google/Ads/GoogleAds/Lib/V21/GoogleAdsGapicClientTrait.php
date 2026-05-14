@@ -37,6 +37,7 @@ trait GoogleAdsGapicClientTrait
     private static $LINKED_CUSTOMER_ID = 'linked-customer-id';
     private static $UNARY_MIDDLEWARES = 'unary-middlewares';
     private static $STREAMING_MIDDLEWARES = 'streaming-middlewares';
+    private static $ADS_ASSISTANT_HEADER_NAME = 'google-ads-api-assistant';
 
     private $developerToken = null;
     private $loginCustomerId = null;

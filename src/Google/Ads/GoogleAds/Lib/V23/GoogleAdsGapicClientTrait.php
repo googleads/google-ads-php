@@ -38,6 +38,7 @@ trait GoogleAdsGapicClientTrait
     private static $UNARY_MIDDLEWARES = 'unary-middlewares';
     private static $STREAMING_MIDDLEWARES = 'streaming-middlewares';
     private static $USE_CLOUD_ORG_FOR_API_ACCESS_KEY = 'use-cloud-org-for-api-access';
+    private static $ADS_ASSISTANT_HEADER_NAME = 'google-ads-api-assistant';
 
     private $developerToken = null;
     private $loginCustomerId = null;
