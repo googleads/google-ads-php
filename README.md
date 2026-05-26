@@ -186,7 +186,7 @@ See the [Proxy guide](https://developers.google.com/google-ads/api/docs/client-l
 
 See the [Performance guide](https://developers.google.com/google-ads/api/docs/client-libs/php/performance).
 
-## Miscellaneous
+## Misc
 
 ### Wiki
 
