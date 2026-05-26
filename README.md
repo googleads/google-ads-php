@@ -196,7 +196,7 @@ See the [Performance guide](https://developers.google.com/google-ads/api/docs/cl
 
 -   https://github.com/googleads/google-ads-php/issues
 
-### API Documentation:
+### API documentation:
 
 -   https://developers.google.com/google-ads/api/docs
 
