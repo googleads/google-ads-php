@@ -1,8 +1,8 @@
 version: '2'
 services:
   web:
-    build: .
+    image: us-central1-docker.pkg.dev/your-google-project/kokoro-bakery/google-ads-php-base:${PHP_VERSION:-8.1}
     volumes:
-    - ./:/google-ads-php
-    - ~/:/root
-      
+      - ./:/google-ads-php
+      - ~/:/root
+
