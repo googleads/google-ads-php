@@ -82,9 +82,6 @@ trait GoogleAdsGapicClientTrait
 
     /**
      * Adds a FixedHeaderMiddleware to a callable.
-     *
-     * @param callable $callable the callable to add to
-     * @return callable the modified callable
      */
     private function addFixedHeaderMiddleware(callable &$callable)
     {
@@ -103,6 +100,7 @@ trait GoogleAdsGapicClientTrait
             if (!is_null($this->adsAssistant)) {
                 $headers[self::$ADS_ASSISTANT_HEADER_NAME] = [$this->adsAssistant];
             }
+
             $callable = new FixedHeaderMiddleware($callable, $headers);
         }
         return $callable;
@@ -120,6 +118,11 @@ trait GoogleAdsGapicClientTrait
             /** @var GoogleAdsMiddlewareAbstract $unaryMiddleware */
             $callable = $unaryMiddleware->withNextHandler($callable);
         }
+
+        // Prepend the AdsAssistantHeaderMiddleware
+        if (!is_null($this->adsAssistant)) {
+            $callable = new AdsAssistantHeaderMiddleware($callable, $this->adsAssistant);
+        }
     }
 
     /**
@@ -133,6 +136,11 @@ trait GoogleAdsGapicClientTrait
         foreach ($this->streamingMiddlewares as $streamingMiddleware) {
             /** @var GoogleAdsMiddlewareAbstract $streamingMiddleware */
             $callable = $streamingMiddleware->withNextHandler($callable);
+        }
+
+        // Prepend the AdsAssistantHeaderMiddleware
+        if (!is_null($this->adsAssistant)) {
+            $callable = new AdsAssistantHeaderMiddleware($callable, $this->adsAssistant);
         }
     }
 
