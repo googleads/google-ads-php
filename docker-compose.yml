@@ -1,8 +1,8 @@
 version: '2'
 services:
   web:
-    build: .
+    # Points to the official, secure KTCB-managed Artifact Registry paths
+    image: us-central1-docker.pkg.dev/kokoro-container-bakery/google-ads-php/php${PHP_VERSION:-81}-base:manual
     volumes:
-    - ./:/google-ads-php
-    - ~/:/root
-      
+      - ./:/google-ads-php
+      - ~/:/root
