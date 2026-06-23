@@ -92,7 +92,7 @@ class CreateCustomer
     }
 
     /**
-     * Runs the example.
+     * This runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $managerCustomerId the manager customer ID
