@@ -1,3 +1,8 @@
+## 33.5.0
+* Added support for Google Ads API v24.2
+* Resolved ongoing Laravel security vulnerabilities
+* Updated Docker build images
+
 ## 33.4.0
 * Added support for Google Ads API v24.1
 * Resolved Laravel sample app security vulnerabilities
