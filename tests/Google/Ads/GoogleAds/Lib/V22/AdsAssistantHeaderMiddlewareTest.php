@@ -1,6 +1,6 @@
 <?php
 
-namespace Google\Ads\GoogleAds\Lib\V21;
+namespace Google\Ads\GoogleAds\Lib\V22;
 
 use Google\ApiCore\Call;
 use Google\ApiCore\AgentHeader;
