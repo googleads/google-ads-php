@@ -341,8 +341,8 @@ class AddShoppingProductListingGroupTree
     private static function createListingGroupSubdivision(
         int $customerId,
         int $adGroupId,
-        string $parentAdGroupCriterionResourceName = null,
-        ListingDimensionInfo $listingDimensionInfo = null
+        ?string $parentAdGroupCriterionResourceName = null,
+        ?ListingDimensionInfo $listingDimensionInfo = null
     ) {
         static $tempId = 0;
         $listingGroupInfo = new ListingGroupInfo([

@@ -93,7 +93,7 @@ class InfoRedactor
      */
     public function redactHeaders(
         array $headers,
-        array $headerKeysToRedactedValues = null
+        ?array $headerKeysToRedactedValues = null
     ) {
         $headerKeysToRedactedValues =
             $headerKeysToRedactedValues ?: self::getDefaultHeaderKeysToRedactedValues();

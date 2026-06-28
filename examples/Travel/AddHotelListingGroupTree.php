@@ -365,8 +365,8 @@ class AddHotelListingGroupTree
      */
     private static function createListingGroupInfo(
         int $listingGroupType,
-        string $parentCriterionResourceName = null,
-        ListingDimensionInfo $caseValue = null
+        ?string $parentCriterionResourceName = null,
+        ?ListingDimensionInfo $caseValue = null
     ) {
         $listingGroupInfo = new ListingGroupInfo([
             'type' => $listingGroupType
