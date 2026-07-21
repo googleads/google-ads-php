@@ -45,7 +45,7 @@ use Google\ApiCore\ApiException;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  * @link     https://github.com/googleads/google-ads-php
  */
-class GetExperimentReporting
+class EvaluateAndUpdateExperiment
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const EXPERIMENT_ID = 'INSERT_EXPERIMENT_ID_OPTIONAL_HERE';
@@ -183,4 +183,4 @@ class GetExperimentReporting
     }
 }
 
-GetExperimentReporting::main();
+EvaluateAndUpdateExperiment::main();

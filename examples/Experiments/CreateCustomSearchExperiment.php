@@ -53,7 +53,7 @@ use Google\Ads\GoogleAds\V24\Services\MutateExperimentsRequest;
 use Google\ApiCore\ApiException;
 
 /**
- * Creates a new experiment, arms, and modifies the draft campaign.
+ * Creates a new custom search experiment, arms, and modifies the draft campaign.
  *
  * @category GoogleAds
  * @package  Google\Ads\GoogleAds\Examples\Experiments
@@ -61,7 +61,7 @@ use Google\ApiCore\ApiException;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  * @link     https://github.com/googleads/google-ads-php
  */
-class CreateExperiment
+class CreateCustomSearchExperiment
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const BASE_CAMPAIGN_ID = 'INSERT_BASE_CAMPAIGN_ID_HERE';
@@ -140,17 +140,17 @@ class CreateExperiment
         $experimentServiceClient
             = $googleAdsClient->getExperimentServiceClient();
 
-        $experimentResourceName = self::_createExperimentResource(
+        $experimentResourceName = self::createExperimentResource(
             $experimentServiceClient,
             $customerId
         );
-        $draftCampaignResourceName = self::_createExperimentArms(
+        $draftCampaignResourceName = self::createExperimentArms(
             $googleAdsClient,
             $customerId,
             $campaignId,
             $experimentResourceName
         );
-        self::_modifyDraftCampaign(
+        self::modifyDraftCampaign(
             $googleAdsClient,
             $customerId,
             $draftCampaignResourceName
@@ -167,11 +167,11 @@ class CreateExperiment
      *
      * @return string the created experiment's resource name
      */
-    private static function _createExperimentResource(
+    private static function createExperimentResource(
         ExperimentServiceClient $experimentServiceClient,
         int $customerId
     ): string {
-        // [START create_experiment_1]
+        // [START create_custom_search_experiment_1]
         $experiment = new Experiment(
             [
             'name' => 'Example Experiment #' . Helper::getPrintableDatetime(),
@@ -195,7 +195,7 @@ class CreateExperiment
             . PHP_EOL;
 
         return $experimentResourceName;
-        // [END create_experiment_1]
+        // [END create_custom_search_experiment_1]
     }
 
     /**
@@ -208,13 +208,13 @@ class CreateExperiment
      *
      * @return string the treatment arm's resource name
      */
-    private static function _createExperimentArms(
+    private static function createExperimentArms(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $campaignId,
         string $experimentResourceName
     ): string {
-        // [START create_experiment_2]
+        // [START create_custom_search_experiment_2]
         $operations = [];
         $experimentArm1 = new ExperimentArm(
             [
@@ -256,7 +256,7 @@ class CreateExperiment
             . $treatmentArm->getResourceName() . "'" . PHP_EOL;
 
         return $treatmentArm->getExperimentArm()->getCampaigns()[0];
-        // [END create_experiment_2]
+        // [END create_custom_search_experiment_2]
     }
 
     /**
@@ -268,7 +268,7 @@ class CreateExperiment
      *
      * @return void
      */
-    private static function _modifyDraftCampaign(
+    private static function modifyDraftCampaign(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         string $draftCampaignResourceName
@@ -296,4 +296,4 @@ class CreateExperiment
     }
 }
 
-CreateExperiment::main();
+CreateCustomSearchExperiment::main();
