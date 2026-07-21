@@ -23,6 +23,7 @@ use Google\Ads\GoogleAds\V24\Resources\CustomerUserAccess;
 use Google\Ads\GoogleAds\V24\Resources\CustomerUserAccessInvitation;
 use Google\Ads\GoogleAds\V24\Resources\LocalServicesLead;
 use Google\Ads\GoogleAds\V24\Resources\LocalServicesLeadConversation;
+use Google\Ads\GoogleAds\V24\Resources\MultiPartyAuthReview;
 use Google\Ads\GoogleAds\V24\Services\CreateCustomerClientRequest;
 use Google\Ads\GoogleAds\V24\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V24\Services\MutateCustomerUserAccessInvitationRequest;
@@ -64,6 +65,8 @@ class InfoRedactor
      *     containing email addresses.
      */
     private static $LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT;
+    /** @var array the list of multi-party auth review's fields containing email addresses. */
+    private static $MULTI_PARTY_AUTH_REVIEW_EMAIL_FIELDS;
     /** @var array the map of header keys to redacted values. */
     private static $HEADER_KEYS_TO_REDACTED_VALUES;
 
@@ -81,6 +84,10 @@ class InfoRedactor
             ['local_services_lead.contact_details.email'];
         self::$LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT =
             ['local_services_lead_conversation.message_details.text'];
+        self::$MULTI_PARTY_AUTH_REVIEW_EMAIL_FIELDS = [
+            'multi_party_auth_review.request_user_email',
+            'multi_party_auth_review.customer_user_access_invitation_review.new_customer_user_access_invitation.email_address'
+        ];
     }
 
     /**
@@ -185,6 +192,11 @@ class InfoRedactor
             $clone = self::cloneBody($body);
             self::redactCreateCustomerClientRequest($clone);
             return $clone;
+        } elseif ($body instanceof MultiPartyAuthReview) {
+            // Handle masking for `MultiPartyAuthReview`.
+            $clone = self::cloneBody($body);
+            self::redactMultiPartyAuthReview($clone);
+            return $clone;
         }
         return $body;
     }
@@ -218,7 +230,8 @@ class InfoRedactor
                 self::$CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS,
                 self::$CHANGE_EVENT_EMAIL_FIELDS,
                 self::$LOCAL_SERVICES_LEAD_CONTACT_DETAILS_EMAIL,
-                self::$LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT
+                self::$LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT,
+                self::$MULTI_PARTY_AUTH_REVIEW_EMAIL_FIELDS
             ) as $field
         ) {
             $redactedQuery = preg_replace(
@@ -269,6 +282,10 @@ class InfoRedactor
                 ) {
                     self::redactLocalServicesLeadConversationMessageDetailsText(
                         $result->getLocalServicesLeadConversation()
+                    );
+                } elseif (in_array($path, self::$MULTI_PARTY_AUTH_REVIEW_EMAIL_FIELDS)) {
+                    self::redactMultiPartyAuthReview(
+                        $result->getMultiPartyAuthReview()
                     );
                 }
             }
@@ -365,5 +382,32 @@ class InfoRedactor
         ) {
             $localServicesLeadConversation->getMessageDetails()->setText(self::REDACTED_STRING);
         }
+    }
+
+    /**
+     * Redacts sensitive information of the provided multi-party auth review.
+     *
+     * @param MultiPartyAuthReview $multiPartyAuthReview
+     * @return MultiPartyAuthReview the multi-party auth review with sensitive information redacted
+     */
+    private static function redactMultiPartyAuthReview(
+        MultiPartyAuthReview $multiPartyAuthReview
+    ) {
+        if (!empty($multiPartyAuthReview->getRequestUserEmail())) {
+            $multiPartyAuthReview->setRequestUserEmail(self::REDACTED_STRING);
+        }
+        if (
+            !is_null($multiPartyAuthReview->getCustomerUserAccessInvitationReview())
+            && !is_null(
+                $multiPartyAuthReview->getCustomerUserAccessInvitationReview()
+                    ->getNewCustomerUserAccessInvitation()
+            )
+        ) {
+            self::redactCustomerUserAccessInvitation(
+                $multiPartyAuthReview->getCustomerUserAccessInvitationReview()
+                    ->getNewCustomerUserAccessInvitation()
+            );
+        }
+        return $multiPartyAuthReview;
     }
 }
