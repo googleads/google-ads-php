@@ -14,9 +14,15 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * @category GoogleAds
+ * @package  Google\Ads\GoogleAds\Examples\Experiments
+ * @author   Google Ads API Team <googleads-api@googlegroups.com>
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ * @link     https://github.com/googleads/google-ads-php
  */
 
-namespace Google\Ads\GoogleAds\Examples\CampaignManagement;
+namespace Google\Ads\GoogleAds\Examples\Experiments;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
@@ -47,28 +53,35 @@ use Google\Ads\GoogleAds\V24\Services\MutateExperimentsRequest;
 use Google\ApiCore\ApiException;
 
 /**
- * This example creates a new experiment, experiment arms, and demonstrates how to modify the draft
- * campaign as well as begin the experiment.
+ * Creates a new custom search experiment, arms, and modifies the draft campaign.
+ *
+ * @category GoogleAds
+ * @package  Google\Ads\GoogleAds\Examples\Experiments
+ * @author   Google Ads API Team <googleads-api@googlegroups.com>
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ * @link     https://github.com/googleads/google-ads-php
  */
-class CreateExperiment
+class CreateCustomSearchExperiment
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const BASE_CAMPAIGN_ID = 'INSERT_BASE_CAMPAIGN_ID_HERE';
 
+    /**
+     * Main entry point for running this example from the CLI or browser.
+     *
+     * @return void
+     */
     public static function main()
     {
-        // Either pass the required parameters for this example on the command line, or insert them
-        // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
-            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::BASE_CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
+                ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
+                ArgumentNames::BASE_CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
+            ]
+        );
 
-        // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
 
-        // Construct a Google Ads client configured from a properties file and the
-        // OAuth2 credentials above.
         $googleAdsClient = (new GoogleAdsClientBuilder())
             ->fromFile()
             ->withOAuth2Credential($oAuth2Credential)
@@ -87,8 +100,11 @@ class CreateExperiment
                 PHP_EOL,
                 PHP_EOL
             );
-            foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+            foreach (
+                $googleAdsException->getGoogleAdsFailure()->getErrors()
+                as $error
+            ) {
+                /* @var GoogleAdsError $error */
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -111,155 +127,173 @@ class CreateExperiment
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param int $campaignId the campaign ID
+     * @param int             $customerId      the client customer ID
+     * @param int             $campaignId      the campaign ID
+     *
+     * @return void
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $campaignId
     ) {
-        $experimentServiceClient = $googleAdsClient->getExperimentServiceClient();
+        $experimentServiceClient
+            = $googleAdsClient->getExperimentServiceClient();
 
-        $experimentResourceName =
-            self::createExperimentResource($experimentServiceClient, $customerId);
+        $experimentResourceName = self::createExperimentResource(
+            $experimentServiceClient,
+            $customerId
+        );
         $draftCampaignResourceName = self::createExperimentArms(
             $googleAdsClient,
             $customerId,
             $campaignId,
             $experimentResourceName
         );
-        self::modifyDraftCampaign($googleAdsClient, $customerId, $draftCampaignResourceName);
+        self::modifyDraftCampaign(
+            $googleAdsClient,
+            $customerId,
+            $draftCampaignResourceName
+        );
 
-        // When you're done setting up the experiment and arms and modifying the draft campaign,
-        // this will begin the experiment.
         $experimentServiceClient->scheduleExperiment($experimentResourceName);
     }
 
     /**
      * Creates an experiment resource.
      *
-     * @param ExperimentServiceClient $experimentServiceClient the experiment service client
-     * @param int $customerId the customer ID
+     * @param ExperimentServiceClient $experimentServiceClient the experiment client
+     * @param int                     $customerId              the customer ID
+     *
      * @return string the created experiment's resource name
      */
-    // [START create_experiment_1]
     private static function createExperimentResource(
         ExperimentServiceClient $experimentServiceClient,
         int $customerId
     ): string {
-        // Creates an experiment and its operation.
-        $experiment = new Experiment([
-            // Name must be unique.
+        // [START create_custom_search_experiment_1]
+        $experiment = new Experiment(
+            [
             'name' => 'Example Experiment #' . Helper::getPrintableDatetime(),
             'type' => ExperimentType::SEARCH_CUSTOM,
             'suffix' => '[experiment]',
             'status' => ExperimentStatus::SETUP
-        ]);
-        $experimentOperation = new ExperimentOperation(['create' => $experiment]);
-
-        // Issues a request to create the experiment.
-        $response = $experimentServiceClient->mutateExperiments(
-            MutateExperimentsRequest::build($customerId, [$experimentOperation])
+            ]
         );
-        $experimentResourceName = $response->getResults()[0]->getResourceName();
-        print "Created experiment with resource name '$experimentResourceName'" . PHP_EOL;
+        $experimentOperation
+            = new ExperimentOperation(['create' => $experiment]);
+
+        $response = $experimentServiceClient->mutateExperiments(
+            MutateExperimentsRequest::build(
+                $customerId,
+                [$experimentOperation]
+            )
+        );
+        $experimentResourceName
+            = $response->getResults()[0]->getResourceName();
+        print "Created experiment with resource name '$experimentResourceName'"
+            . PHP_EOL;
 
         return $experimentResourceName;
+        // [END create_custom_search_experiment_1]
     }
-    // [END create_experiment_1]
 
     /**
-     * Creates experiment arms and returns the treatment arm resource name, which will be used in
-     * the next step.
+     * Creates experiment arms and returns the treatment arm resource name.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $campaignId the campaign ID
-     * @param string $experimentResourceName the experiment's resource name
+     * @param GoogleAdsClient $googleAdsClient        the Google Ads API client
+     * @param int             $customerId             the customer ID
+     * @param int             $campaignId             the campaign ID
+     * @param string          $experimentResourceName the experiment's resource name
+     *
      * @return string the treatment arm's resource name
      */
-    // [START create_experiment_2]
     private static function createExperimentArms(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $campaignId,
         string $experimentResourceName
     ): string {
+        // [START create_custom_search_experiment_2]
         $operations = [];
-        $experimentArm1 = new ExperimentArm([
-            // The "control" arm references an already-existing campaign.
+        $experimentArm1 = new ExperimentArm(
+            [
             'control' => true,
-            'campaigns' => [ResourceNames::forCampaign($customerId, $campaignId)],
+            'campaigns' => [
+                ResourceNames::forCampaign($customerId, $campaignId)
+            ],
             'experiment' => $experimentResourceName,
             'name' => 'control arm',
             'traffic_split' => 40
-        ]);
-        $operations[] = new ExperimentArmOperation(['create' => $experimentArm1]);
-        $experimentArm2 = new ExperimentArm([
-            // The non-"control" arm, also called a "treatment" arm, will automatically
-            // generate draft campaigns that you can modify before starting the
-            // experiment.
+            ]
+        );
+        $operations[]
+            = new ExperimentArmOperation(['create' => $experimentArm1]);
+        $experimentArm2 = new ExperimentArm(
+            [
             'control' => false,
             'experiment' => $experimentResourceName,
             'name' => 'experiment arm',
             'traffic_split' => 60
-        ]);
-        $operations[] = new ExperimentArmOperation(['create' => $experimentArm2]);
+            ]
+        );
+        $operations[]
+            = new ExperimentArmOperation(['create' => $experimentArm2]);
 
-        // Issues a request to create the experiment arms.
-        $experimentArmServiceClient = $googleAdsClient->getExperimentArmServiceClient();
+        $experimentArmServiceClient
+            = $googleAdsClient->getExperimentArmServiceClient();
         $response = $experimentArmServiceClient->mutateExperimentArms(
             MutateExperimentArmsRequest::build($customerId, $operations)
-                // We want to fetch the draft campaign IDs from the treatment arm, so the easiest
-                // way to do that is to have the response return the newly created entities.
                 ->setResponseContentType(ResponseContentType::MUTABLE_RESOURCE)
         );
-        // Results always return in the order that you specify them in the request.
-        // Since we created the treatment arm last, it will be the last result.
-        $controlArmResourceName = $response->getResults()[0]->getResourceName();
+
+        $controlArmResourceName
+            = $response->getResults()[0]->getResourceName();
         $treatmentArm = $response->getResults()[count($operations) - 1];
-        print "Created control arm with resource name '$controlArmResourceName'" . PHP_EOL;
-        print "Created treatment arm with resource name '{$treatmentArm->getResourceName()}'"
-            . PHP_EOL;
+        print "Created control arm with resource name "
+            . "'$controlArmResourceName'" . PHP_EOL;
+        print "Created treatment arm with resource name '"
+            . $treatmentArm->getResourceName() . "'" . PHP_EOL;
 
-        return $treatmentArm->getExperimentArm()->getInDesignCampaigns()[0];
+        return $treatmentArm->getExperimentArm()->getCampaigns()[0];
+        // [END create_custom_search_experiment_2]
     }
-    // [END create_experiment_2]
-
 
     /**
-     * Modifies the draft campaign to simulate the experiment where you're testing changing
-     * attributes of the campaign.
+     * Modifies the draft campaign to simulate experiment testing.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $draftCampaignResourceName the draft campaign's resource name
+     * @param GoogleAdsClient $googleAdsClient           the Google Ads client
+     * @param int             $customerId                the customer ID
+     * @param string          $draftCampaignResourceName the draft campaign
+     *
+     * @return void
      */
     private static function modifyDraftCampaign(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         string $draftCampaignResourceName
     ): void {
-        // You can change anything you like about the campaign. These are the changes you're testing
-        // by doing this experiment. Here we just change the name for illustrative purposes, but
-        // generally you may want to change more meaningful parts of the campaign.
-        $updatedCampaign = new Campaign([
+        $updatedCampaign = new Campaign(
+            [
             'resource_name' => $draftCampaignResourceName,
-            'name' => 'Modified Campaign Name ' . Helper::getShortPrintableDatetime()
-        ]);
+            'name' => 'Modified Campaign Name '
+                . Helper::getShortPrintableDatetime()
+            ]
+        );
         $campaignOperation = new CampaignOperation();
         $campaignOperation->setUpdate($updatedCampaign);
-        $campaignOperation->setUpdateMask(FieldMasks::allSetFieldsOf($updatedCampaign));
+        $campaignOperation->setUpdateMask(
+            FieldMasks::allSetFieldsOf($updatedCampaign)
+        );
 
-        // Issues a request to update the campaign.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
         $campaignServiceClient->mutateCampaigns(
             MutateCampaignsRequest::build($customerId, [$campaignOperation])
         );
 
-        print "Updated the name for the campaign '$draftCampaignResourceName'" . PHP_EOL;
+        print "Updated the name for the campaign '$draftCampaignResourceName'"
+            . PHP_EOL;
     }
 }
 
-CreateExperiment::main();
+CreateCustomSearchExperiment::main();
