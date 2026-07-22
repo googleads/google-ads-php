@@ -203,6 +203,13 @@ class CampaignCriterionError
      * Generated from protobuf enum <code>INVALID_VIDEO_LINEUP_ID = 28;</code>
      */
     const INVALID_VIDEO_LINEUP_ID = 28;
+    /**
+     * For Local Services PMax campaigns, at least one positive location
+     * criterion must remain.
+     *
+     * Generated from protobuf enum <code>CANNOT_REMOVE_ALL_LOCATIONS_FROM_LOCAL_SERVICES_PMAX_CAMPAIGN = 29;</code>
+     */
+    const CANNOT_REMOVE_ALL_LOCATIONS_FROM_LOCAL_SERVICES_PMAX_CAMPAIGN = 29;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -234,6 +241,7 @@ class CampaignCriterionError
         self::CANNOT_ATTACH_BRAND_LIST_TO_NON_QUALIFIED_SEARCH_CAMPAIGN => 'CANNOT_ATTACH_BRAND_LIST_TO_NON_QUALIFIED_SEARCH_CAMPAIGN',
         self::CANNOT_REMOVE_ALL_LOCATIONS_DUE_TO_TOO_MANY_COUNTRY_EXCLUSIONS => 'CANNOT_REMOVE_ALL_LOCATIONS_DUE_TO_TOO_MANY_COUNTRY_EXCLUSIONS',
         self::INVALID_VIDEO_LINEUP_ID => 'INVALID_VIDEO_LINEUP_ID',
+        self::CANNOT_REMOVE_ALL_LOCATIONS_FROM_LOCAL_SERVICES_PMAX_CAMPAIGN => 'CANNOT_REMOVE_ALL_LOCATIONS_FROM_LOCAL_SERVICES_PMAX_CAMPAIGN',
     ];
 
     public static function name($value)

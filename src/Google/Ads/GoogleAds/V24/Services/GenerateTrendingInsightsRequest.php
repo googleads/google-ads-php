@@ -41,6 +41,21 @@ class GenerateTrendingInsightsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v24.common.LocationInfo country_location = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $country_location = null;
+    /**
+     * Optional. The sub-country geographic locations to search that apply to the
+     * criteria. Only supported for `search_audience` criteria.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.common.LocationInfo sub_country_locations = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $sub_country_locations;
+    /**
+     * Optional. Optional features to include in the response. By default, only
+     * core insight data is returned. Including supplemental data here will
+     * populate additional fields in the response.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData supplemental_data = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $supplemental_data;
     protected $criteria;
 
     /**
@@ -58,8 +73,19 @@ class GenerateTrendingInsightsRequest extends \Google\Protobuf\Internal\Message
      *           Optional. Additional information on the application issuing the request.
      *     @type \Google\Ads\GoogleAds\V24\Common\LocationInfo $country_location
      *           Required. The country to find trends in.
+     *     @type \Google\Ads\GoogleAds\V24\Common\LocationInfo[] $sub_country_locations
+     *           Optional. The sub-country geographic locations to search that apply to the
+     *           criteria. Only supported for `search_audience` criteria.
+     *     @type int[] $supplemental_data
+     *           Optional. Optional features to include in the response. By default, only
+     *           core insight data is returned. Including supplemental data here will
+     *           populate additional fields in the response.
      *     @type \Google\Ads\GoogleAds\V24\Services\SearchAudience $search_audience
-     *           An audience to search for trending content in.
+     *           An audience to search for trending content in. Data fetched is based on
+     *           the country or sub-country locations specified in
+     *           [country_location][google.ads.googleads.v24.services.GenerateTrendingInsightsRequest.country_location]
+     *           or
+     *           [sub_country_locations][google.ads.googleads.v24.services.GenerateTrendingInsightsRequest.sub_country_locations].
      *     @type \Google\Ads\GoogleAds\V24\Services\SearchTopics $search_topics
      *           Content topics to return trend information for.
      * }
@@ -196,7 +222,69 @@ class GenerateTrendingInsightsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An audience to search for trending content in.
+     * Optional. The sub-country geographic locations to search that apply to the
+     * criteria. Only supported for `search_audience` criteria.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.common.LocationInfo sub_country_locations = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return RepeatedField<\Google\Ads\GoogleAds\V24\Common\LocationInfo>
+     */
+    public function getSubCountryLocations()
+    {
+        return $this->sub_country_locations;
+    }
+
+    /**
+     * Optional. The sub-country geographic locations to search that apply to the
+     * criteria. Only supported for `search_audience` criteria.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.common.LocationInfo sub_country_locations = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Ads\GoogleAds\V24\Common\LocationInfo[] $var
+     * @return $this
+     */
+    public function setSubCountryLocations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V24\Common\LocationInfo::class);
+        $this->sub_country_locations = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Optional features to include in the response. By default, only
+     * core insight data is returned. Including supplemental data here will
+     * populate additional fields in the response.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData supplemental_data = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return RepeatedField<int>
+     */
+    public function getSupplementalData()
+    {
+        return $this->supplemental_data;
+    }
+
+    /**
+     * Optional. Optional features to include in the response. By default, only
+     * core insight data is returned. Including supplemental data here will
+     * populate additional fields in the response.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData supplemental_data = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param int[] $var
+     * @return $this
+     */
+    public function setSupplementalData($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V24\Enums\ContentCreatorInsightsSupplementalDataEnum\ContentCreatorInsightsSupplementalData::class);
+        $this->supplemental_data = $arr;
+
+        return $this;
+    }
+
+    /**
+     * An audience to search for trending content in. Data fetched is based on
+     * the country or sub-country locations specified in
+     * [country_location][google.ads.googleads.v24.services.GenerateTrendingInsightsRequest.country_location]
+     * or
+     * [sub_country_locations][google.ads.googleads.v24.services.GenerateTrendingInsightsRequest.sub_country_locations].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v24.services.SearchAudience search_audience = 4;</code>
      * @return \Google\Ads\GoogleAds\V24\Services\SearchAudience|null
@@ -212,7 +300,11 @@ class GenerateTrendingInsightsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An audience to search for trending content in.
+     * An audience to search for trending content in. Data fetched is based on
+     * the country or sub-country locations specified in
+     * [country_location][google.ads.googleads.v24.services.GenerateTrendingInsightsRequest.country_location]
+     * or
+     * [sub_country_locations][google.ads.googleads.v24.services.GenerateTrendingInsightsRequest.sub_country_locations].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v24.services.SearchAudience search_audience = 4;</code>
      * @param \Google\Ads\GoogleAds\V24\Services\SearchAudience $var

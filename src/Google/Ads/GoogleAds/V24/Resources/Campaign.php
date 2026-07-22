@@ -442,7 +442,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $third_party_integration_partners = null;
     /**
-     * Settings for AI Max in search campaigns.
+     * Settings for AI Max in Search and Shopping campaigns.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v24.resources.Campaign.AiMaxSetting ai_max_setting = 101;</code>
      */
@@ -688,7 +688,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V24\Common\CampaignThirdPartyIntegrationPartners $third_party_integration_partners
      *           Third-Party integration partners.
      *     @type \Google\Ads\GoogleAds\V24\Resources\Campaign\AiMaxSetting $ai_max_setting
-     *           Settings for AI Max in search campaigns.
+     *           Settings for AI Max in Search and Shopping campaigns.
      *     @type int $contains_eu_political_advertising
      *           The advertiser should self-declare whether this campaign contains
      *           political advertising content targeted towards the European Union.
@@ -2758,7 +2758,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Settings for AI Max in search campaigns.
+     * Settings for AI Max in Search and Shopping campaigns.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v24.resources.Campaign.AiMaxSetting ai_max_setting = 101;</code>
      * @return \Google\Ads\GoogleAds\V24\Resources\Campaign\AiMaxSetting|null
@@ -2779,7 +2779,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Settings for AI Max in search campaigns.
+     * Settings for AI Max in Search and Shopping campaigns.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v24.resources.Campaign.AiMaxSetting ai_max_setting = 101;</code>
      * @param \Google\Ads\GoogleAds\V24\Resources\Campaign\AiMaxSetting $var

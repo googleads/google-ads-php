@@ -89,7 +89,6 @@ use Google\Ads\GoogleAds\V24\Services\Client\ExperimentArmServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\ExperimentServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\GoalServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\GoogleAdsFieldServiceClient;
-use Google\Ads\GoogleAds\V24\Services\Client\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\KeywordPlanAdGroupKeywordServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\KeywordPlanAdGroupServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\KeywordPlanCampaignKeywordServiceClient;
@@ -97,6 +96,7 @@ use Google\Ads\GoogleAds\V24\Services\Client\KeywordPlanCampaignServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\LabelServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\LocalServicesLeadServiceClient;
+use Google\Ads\GoogleAds\V24\Services\Client\MultiPartyAuthReviewServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\OfflineUserDataJobServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\ProductLinkInvitationServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\ProductLinkServiceClient;
@@ -106,7 +106,6 @@ use Google\Ads\GoogleAds\V24\Services\Client\RemarketingActionServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\SharedCriterionServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\SharedSetServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\SmartCampaignSettingServiceClient;
-use Google\Ads\GoogleAds\V24\Services\Client\SmartCampaignSuggestServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\ThirdPartyAppAnalyticsLinkServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\UserListCustomerTypeServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\UserListServiceClient;
@@ -141,7 +140,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = CampaignServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($biddingStrategyId, $names['bidding_strategy_id']);
     }
@@ -1370,7 +1369,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
@@ -1394,7 +1393,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($combinedAudienceId, $names['combined_audience_id']);
     }
@@ -2006,7 +2005,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($detailedDemographicId, $names['detailed_demographic_id']);
     }
@@ -2082,7 +2081,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = ConversionValueRuleServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
@@ -2277,7 +2276,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = SmartCampaignSuggestServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($expressCategoryId, $names['express_category_id']);
         $this->assertEquals($expressSubCategoryId, $names['express_sub_category_id']);
     }
@@ -2324,7 +2323,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = KeywordPlanCampaignServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
@@ -2348,7 +2347,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($lifeEventId, $names['life_event_id']);
     }
@@ -2395,7 +2394,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = CustomerNegativeCriterionServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($mobileAppCategoryId, $names['mobile_app_category_id']);
     }
 
@@ -2416,8 +2415,33 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($criterionId, $names['criterion_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V24\ResourceNames::forMultiPartyAuthReview()
+     */
+    public function testGetNameForMultiPartyAuthReview()
+    {
+        $customerId = '111111';
+        $customerInvitationId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/multiPartyAuthReviews/%s",
+            $customerId,
+            $customerInvitationId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forMultiPartyAuthReview(
+                $customerId,
+                $customerInvitationId
+            )
+        );
+
+        $names = MultiPartyAuthReviewServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($customerInvitationId, $names['customer_invitation_id']);
     }
 
     /**
@@ -2462,7 +2486,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
@@ -2737,7 +2761,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($topicId, $names['topic_id']);
     }
 
@@ -2761,7 +2785,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = ConversionValueRuleServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($userInterestId, $names['user_interest_id']);
     }

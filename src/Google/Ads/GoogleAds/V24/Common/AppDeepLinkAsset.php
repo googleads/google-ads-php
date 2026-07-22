@@ -16,9 +16,9 @@ use Google\Protobuf\RepeatedField;
 class AppDeepLinkAsset extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The uri for the app deep link, The uri can be either a
-     * custom scheme uri (e.g. mystore://shoes) or universal uri (e.g.
-     * http://www.mystore.com/shoes).
+     * The uri for the app deep link. The uri can be either a
+     * custom scheme uri (e.g., `mystore://shoes`) or universal uri (e.g.,
+     * `http://www.mystore.com/shoes`).
      *
      * Generated from protobuf field <code>string app_deep_link_uri = 1;</code>
      */
@@ -31,9 +31,9 @@ class AppDeepLinkAsset extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $app_deep_link_uri
-     *           The uri for the app deep link, The uri can be either a
-     *           custom scheme uri (e.g. mystore://shoes) or universal uri (e.g.
-     *           http://www.mystore.com/shoes).
+     *           The uri for the app deep link. The uri can be either a
+     *           custom scheme uri (e.g., `mystore://shoes`) or universal uri (e.g.,
+     *           `http://www.mystore.com/shoes`).
      * }
      */
     public function __construct($data = NULL) {
@@ -42,9 +42,9 @@ class AppDeepLinkAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The uri for the app deep link, The uri can be either a
-     * custom scheme uri (e.g. mystore://shoes) or universal uri (e.g.
-     * http://www.mystore.com/shoes).
+     * The uri for the app deep link. The uri can be either a
+     * custom scheme uri (e.g., `mystore://shoes`) or universal uri (e.g.,
+     * `http://www.mystore.com/shoes`).
      *
      * Generated from protobuf field <code>string app_deep_link_uri = 1;</code>
      * @return string
@@ -55,9 +55,9 @@ class AppDeepLinkAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The uri for the app deep link, The uri can be either a
-     * custom scheme uri (e.g. mystore://shoes) or universal uri (e.g.
-     * http://www.mystore.com/shoes).
+     * The uri for the app deep link. The uri can be either a
+     * custom scheme uri (e.g., `mystore://shoes`) or universal uri (e.g.,
+     * `http://www.mystore.com/shoes`).
      *
      * Generated from protobuf field <code>string app_deep_link_uri = 1;</code>
      * @param string $var

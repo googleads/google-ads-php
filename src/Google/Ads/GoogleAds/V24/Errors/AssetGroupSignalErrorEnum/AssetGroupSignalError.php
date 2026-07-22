@@ -48,6 +48,13 @@ class AssetGroupSignalError
      * Generated from protobuf enum <code>AUDIENCE_WITH_WRONG_ASSET_GROUP_ID = 4;</code>
      */
     const AUDIENCE_WITH_WRONG_ASSET_GROUP_ID = 4;
+    /**
+     * The asset group signal cannot be removed because it is the last one in
+     * the Local Services Ads PMax asset group.
+     *
+     * Generated from protobuf enum <code>CANNOT_REMOVE_ALL_SIGNALS = 5;</code>
+     */
+    const CANNOT_REMOVE_ALL_SIGNALS = 5;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -55,6 +62,7 @@ class AssetGroupSignalError
         self::TOO_MANY_WORDS => 'TOO_MANY_WORDS',
         self::SEARCH_THEME_POLICY_VIOLATION => 'SEARCH_THEME_POLICY_VIOLATION',
         self::AUDIENCE_WITH_WRONG_ASSET_GROUP_ID => 'AUDIENCE_WITH_WRONG_ASSET_GROUP_ID',
+        self::CANNOT_REMOVE_ALL_SIGNALS => 'CANNOT_REMOVE_ALL_SIGNALS',
     ];
 
     public static function name($value)

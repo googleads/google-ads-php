@@ -23,7 +23,7 @@ class RemoveProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
      */
     protected $customer_id = '';
     /**
-     * Required. The resource name of the product link invitation being removed.
+     * Required. The resource name of the product link invitation being removed is
      * expected, in this format:
      * `customers/{customer_id}/productLinkInvitations/{product_link_invitation_id}
      * `
@@ -34,7 +34,7 @@ class RemoveProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
 
     /**
      * @param string $customerId   Required. The ID of the product link invitation being removed.
-     * @param string $resourceName Required. The resource name of the product link invitation being removed.
+     * @param string $resourceName Required. The resource name of the product link invitation being removed is
      *                             expected, in this format:
      *
      *                             `customers/{customer_id}/productLinkInvitations/{product_link_invitation_id}
@@ -60,7 +60,7 @@ class RemoveProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
      *     @type string $customer_id
      *           Required. The ID of the product link invitation being removed.
      *     @type string $resource_name
-     *           Required. The resource name of the product link invitation being removed.
+     *           Required. The resource name of the product link invitation being removed is
      *           expected, in this format:
      *           `customers/{customer_id}/productLinkInvitations/{product_link_invitation_id}
      *           `
@@ -98,7 +98,7 @@ class RemoveProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Required. The resource name of the product link invitation being removed.
+     * Required. The resource name of the product link invitation being removed is
      * expected, in this format:
      * `customers/{customer_id}/productLinkInvitations/{product_link_invitation_id}
      * `
@@ -112,7 +112,7 @@ class RemoveProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Required. The resource name of the product link invitation being removed.
+     * Required. The resource name of the product link invitation being removed is
      * expected, in this format:
      * `customers/{customer_id}/productLinkInvitations/{product_link_invitation_id}
      * `

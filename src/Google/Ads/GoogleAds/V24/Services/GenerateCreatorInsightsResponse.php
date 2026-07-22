@@ -23,6 +23,22 @@ class GenerateCreatorInsightsResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v24.services.YouTubeCreatorInsights creator_insights = 1;</code>
      */
     private $creator_insights;
+    /**
+     * Local creators for this topic who have consented to share their location
+     * data. Local creators refers to creators that are based in or post from the
+     * chosen country and are viewed in the chosen country.
+     * Only populated when all of the following are true:
+     *   - The creator request uses search_topics.
+     *   - The Knowledge Graph entity topic has the
+     *   [CREATOR_TOPIC_INSIGHTS][google.ads.googleads.v24.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_TOPIC_INSIGHTS]
+     *   capability.
+     *   - Supplemental data
+     *   [LOCAL_CREATOR_DATA][google.ads.googleads.v24.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData.LOCAL_CREATOR_DATA]
+     *   is requested.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.services.YouTubeCreatorInsights local_creator_insights = 2;</code>
+     */
+    private $local_creator_insights;
 
     /**
      * Constructor.
@@ -33,6 +49,18 @@ class GenerateCreatorInsightsResponse extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V24\Services\YouTubeCreatorInsights[] $creator_insights
      *           A collection of YouTube Creators, each containing a collection of YouTube
      *           Channels maintained by the YouTube Creator.
+     *     @type \Google\Ads\GoogleAds\V24\Services\YouTubeCreatorInsights[] $local_creator_insights
+     *           Local creators for this topic who have consented to share their location
+     *           data. Local creators refers to creators that are based in or post from the
+     *           chosen country and are viewed in the chosen country.
+     *           Only populated when all of the following are true:
+     *             - The creator request uses search_topics.
+     *             - The Knowledge Graph entity topic has the
+     *             [CREATOR_TOPIC_INSIGHTS][google.ads.googleads.v24.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_TOPIC_INSIGHTS]
+     *             capability.
+     *             - Supplemental data
+     *             [LOCAL_CREATOR_DATA][google.ads.googleads.v24.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData.LOCAL_CREATOR_DATA]
+     *             is requested.
      * }
      */
     public function __construct($data = NULL) {
@@ -64,6 +92,52 @@ class GenerateCreatorInsightsResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V24\Services\YouTubeCreatorInsights::class);
         $this->creator_insights = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Local creators for this topic who have consented to share their location
+     * data. Local creators refers to creators that are based in or post from the
+     * chosen country and are viewed in the chosen country.
+     * Only populated when all of the following are true:
+     *   - The creator request uses search_topics.
+     *   - The Knowledge Graph entity topic has the
+     *   [CREATOR_TOPIC_INSIGHTS][google.ads.googleads.v24.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_TOPIC_INSIGHTS]
+     *   capability.
+     *   - Supplemental data
+     *   [LOCAL_CREATOR_DATA][google.ads.googleads.v24.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData.LOCAL_CREATOR_DATA]
+     *   is requested.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.services.YouTubeCreatorInsights local_creator_insights = 2;</code>
+     * @return RepeatedField<\Google\Ads\GoogleAds\V24\Services\YouTubeCreatorInsights>
+     */
+    public function getLocalCreatorInsights()
+    {
+        return $this->local_creator_insights;
+    }
+
+    /**
+     * Local creators for this topic who have consented to share their location
+     * data. Local creators refers to creators that are based in or post from the
+     * chosen country and are viewed in the chosen country.
+     * Only populated when all of the following are true:
+     *   - The creator request uses search_topics.
+     *   - The Knowledge Graph entity topic has the
+     *   [CREATOR_TOPIC_INSIGHTS][google.ads.googleads.v24.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_TOPIC_INSIGHTS]
+     *   capability.
+     *   - Supplemental data
+     *   [LOCAL_CREATOR_DATA][google.ads.googleads.v24.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData.LOCAL_CREATOR_DATA]
+     *   is requested.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.services.YouTubeCreatorInsights local_creator_insights = 2;</code>
+     * @param \Google\Ads\GoogleAds\V24\Services\YouTubeCreatorInsights[] $var
+     * @return $this
+     */
+    public function setLocalCreatorInsights($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V24\Services\YouTubeCreatorInsights::class);
+        $this->local_creator_insights = $arr;
 
         return $this;
     }

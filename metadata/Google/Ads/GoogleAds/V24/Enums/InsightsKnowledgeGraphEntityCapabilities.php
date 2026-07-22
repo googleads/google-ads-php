@@ -14,7 +14,7 @@ class InsightsKnowledgeGraphEntityCapabilities
           return;
         }
         $pool->internalAddGeneratedFile(
-            "\x0A\xB6\x04\x0AQgoogle/ads/googleads/v24/enums/insights_knowledge_graph_entity_capabilities.proto\x12\x1Egoogle.ads.googleads.v24.enums\"\xAE\x01\x0A,InsightsKnowledgeGraphEntityCapabilitiesEnum\"~\x0A(InsightsKnowledgeGraphEntityCapabilities\x12\x0F\x0A\x0BUNSPECIFIED\x10\x00\x12\x0B\x0A\x07UNKNOWN\x10\x01\x12\x1D\x0A\x19CONTENT_TRENDING_INSIGHTS\x10\x02\x12\x15\x0A\x11CREATOR_ATTRIBUTE\x10\x03B\x87\x02\x0A\"com.google.ads.googleads.v24.enumsB-InsightsKnowledgeGraphEntityCapabilitiesProtoP\x01ZCgoogle.golang.org/genproto/googleapis/ads/googleads/v24/enums;enums\xA2\x02\x03GAA\xAA\x02\x1EGoogle.Ads.GoogleAds.V24.Enums\xCA\x02\x1EGoogle\\Ads\\GoogleAds\\V24\\Enums\xEA\x02\"Google::Ads::GoogleAds::V24::Enumsb\x06proto3"
+            "\x0A\xD3\x04\x0AQgoogle/ads/googleads/v24/enums/insights_knowledge_graph_entity_capabilities.proto\x12\x1Egoogle.ads.googleads.v24.enums\"\xCB\x01\x0A,InsightsKnowledgeGraphEntityCapabilitiesEnum\"\x9A\x01\x0A(InsightsKnowledgeGraphEntityCapabilities\x12\x0F\x0A\x0BUNSPECIFIED\x10\x00\x12\x0B\x0A\x07UNKNOWN\x10\x01\x12\x1D\x0A\x19CONTENT_TRENDING_INSIGHTS\x10\x02\x12\x15\x0A\x11CREATOR_ATTRIBUTE\x10\x03\x12\x1A\x0A\x16CREATOR_TOPIC_INSIGHTS\x10\x05B\x87\x02\x0A\"com.google.ads.googleads.v24.enumsB-InsightsKnowledgeGraphEntityCapabilitiesProtoP\x01ZCgoogle.golang.org/genproto/googleapis/ads/googleads/v24/enums;enums\xA2\x02\x03GAA\xAA\x02\x1EGoogle.Ads.GoogleAds.V24.Enums\xCA\x02\x1EGoogle\\Ads\\GoogleAds\\V24\\Enums\xEA\x02\"Google::Ads::GoogleAds::V24::Enumsb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

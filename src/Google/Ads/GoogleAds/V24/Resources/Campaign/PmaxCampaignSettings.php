@@ -21,6 +21,20 @@ class PmaxCampaignSettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v24.resources.Campaign.PmaxCampaignSettings.BrandTargetingOverrides brand_targeting_overrides = 1;</code>
      */
     protected $brand_targeting_overrides = null;
+    /**
+     * The Local Services Campaign related settings. Only updates are available
+     * for existing Local Services Pmax campaigns.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.Campaign.LocalServicesPmaxCampaignSettings local_services_pmax_campaign_settings = 2;</code>
+     */
+    protected $local_services_pmax_campaign_settings = null;
+    /**
+     * Output only. Indicates whether the Performance Max campaign is a Local
+     * Services campaign.
+     *
+     * Generated from protobuf field <code>optional bool local_services_enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $local_services_enabled = null;
 
     /**
      * Constructor.
@@ -30,6 +44,12 @@ class PmaxCampaignSettings extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Ads\GoogleAds\V24\Resources\Campaign\PmaxCampaignSettings\BrandTargetingOverrides $brand_targeting_overrides
      *           Overrides of brand targeting for various ad types.
+     *     @type \Google\Ads\GoogleAds\V24\Resources\Campaign\LocalServicesPmaxCampaignSettings $local_services_pmax_campaign_settings
+     *           The Local Services Campaign related settings. Only updates are available
+     *           for existing Local Services Pmax campaigns.
+     *     @type bool $local_services_enabled
+     *           Output only. Indicates whether the Performance Max campaign is a Local
+     *           Services campaign.
      * }
      */
     public function __construct($data = NULL) {
@@ -69,6 +89,82 @@ class PmaxCampaignSettings extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Resources\Campaign\PmaxCampaignSettings\BrandTargetingOverrides::class);
         $this->brand_targeting_overrides = $var;
+
+        return $this;
+    }
+
+    /**
+     * The Local Services Campaign related settings. Only updates are available
+     * for existing Local Services Pmax campaigns.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.Campaign.LocalServicesPmaxCampaignSettings local_services_pmax_campaign_settings = 2;</code>
+     * @return \Google\Ads\GoogleAds\V24\Resources\Campaign\LocalServicesPmaxCampaignSettings|null
+     */
+    public function getLocalServicesPmaxCampaignSettings()
+    {
+        return $this->local_services_pmax_campaign_settings;
+    }
+
+    public function hasLocalServicesPmaxCampaignSettings()
+    {
+        return isset($this->local_services_pmax_campaign_settings);
+    }
+
+    public function clearLocalServicesPmaxCampaignSettings()
+    {
+        unset($this->local_services_pmax_campaign_settings);
+    }
+
+    /**
+     * The Local Services Campaign related settings. Only updates are available
+     * for existing Local Services Pmax campaigns.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.Campaign.LocalServicesPmaxCampaignSettings local_services_pmax_campaign_settings = 2;</code>
+     * @param \Google\Ads\GoogleAds\V24\Resources\Campaign\LocalServicesPmaxCampaignSettings $var
+     * @return $this
+     */
+    public function setLocalServicesPmaxCampaignSettings($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Resources\Campaign\LocalServicesPmaxCampaignSettings::class);
+        $this->local_services_pmax_campaign_settings = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Indicates whether the Performance Max campaign is a Local
+     * Services campaign.
+     *
+     * Generated from protobuf field <code>optional bool local_services_enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return bool
+     */
+    public function getLocalServicesEnabled()
+    {
+        return isset($this->local_services_enabled) ? $this->local_services_enabled : false;
+    }
+
+    public function hasLocalServicesEnabled()
+    {
+        return isset($this->local_services_enabled);
+    }
+
+    public function clearLocalServicesEnabled()
+    {
+        unset($this->local_services_enabled);
+    }
+
+    /**
+     * Output only. Indicates whether the Performance Max campaign is a Local
+     * Services campaign.
+     *
+     * Generated from protobuf field <code>optional bool local_services_enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setLocalServicesEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->local_services_enabled = $var;
 
         return $this;
     }

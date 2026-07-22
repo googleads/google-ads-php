@@ -86,8 +86,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of all conversions. When this column is selected with date, the
      * values in date column means the conversion date. Details for the
-     * by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * `by_conversion_date` columns are available at [Understand conversions by
+     * time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double all_conversions_value_by_conversion_date = 240;</code>
      */
@@ -98,8 +99,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * will include the additional conversion value from new customers for both
      * biddable and non-biddable conversions. If your campaign has adopted the
      * customer acquisition goal and selected "bid higher for new customers",
-     * these values will be included in "all_conversions_value". See
-     * https://support.google.com/google-ads/answer/12080169 for more details.
+     * these values will be included in `all_conversions_value`. See
+     * [About customer lifecycle
+     * goals](https://support.google.com/google-ads/answer/12080169) for more
+     * details.
      *
      * Generated from protobuf field <code>optional double all_new_customer_lifetime_value = 294;</code>
      */
@@ -115,8 +118,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The total number of conversions. This includes all conversions regardless
      * of the value of include_in_conversions_metric. When this column is selected
      * with date, the values in date column means the conversion date. Details for
-     * the by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * the `by_conversion_date` columns are available at [Understand conversions
+     * by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double all_conversions_by_conversion_date = 241;</code>
      */
@@ -354,25 +358,27 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $control_clicks = null;
     /**
      * The number of times your ad or your site's listing in the unpaid
-     * results was clicked. See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * results was clicked. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional int64 combined_clicks = 156;</code>
      */
     protected $combined_clicks = null;
     /**
      * The number of times your ad or your site's listing in the unpaid
-     * results was clicked (combined_clicks) divided by combined_queries. See the
-     * help page at https://support.google.com/google-ads/answer/3097241 for
-     * details.
+     * results was clicked (combined_clicks) divided by combined_queries. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241) for details.
      *
      * Generated from protobuf field <code>optional double combined_clicks_per_query = 157;</code>
      */
     protected $combined_clicks_per_query = null;
     /**
      * The number of searches that returned pages from your site in the unpaid
-     * results or showed one of your text ads. See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * results or showed one of your text ads. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241) for details.
      *
      * Generated from protobuf field <code>optional int64 combined_queries = 158;</code>
      */
@@ -424,8 +430,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Conversions from interactions divided by the number of ad interactions
      * (such as clicks for text ads or views for video ads). This only includes
-     * conversion actions which include_in_conversions_metric attribute is set to
-     * true. If you use conversion-based bidding, your bid strategies will
+     * conversion actions which `include_in_conversions_metric` attribute is set
+     * to `true`. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
      * Generated from protobuf field <code>optional double conversions_from_interactions_rate = 164;</code>
@@ -433,7 +439,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $conversions_from_interactions_rate = null;
     /**
      * The value of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -442,12 +448,12 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $conversions_value = null;
     /**
      * The value of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions. When this column is selected with date, the values in date
-     * column means the conversion date. Details for the by_conversion_date
-     * columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * column means the conversion date. Details for the `by_conversion_date`
+     * columns are available at [Understand conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double conversions_value_by_conversion_date = 242;</code>
      */
@@ -459,7 +465,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * biddable conversions. If your campaign has adopted the customer
      * acquisition goal and selected "bid higher for new customers", these values
      * will be included in "conversions_value" for optimization. See
-     * https://support.google.com/google-ads/answer/12080169 for more details.
+     * [About customer lifecycle
+     * goals](https://support.google.com/google-ads/answer/12080169) for more
+     * details.
      *
      * Generated from protobuf field <code>optional double new_customer_lifetime_value = 293;</code>
      */
@@ -476,7 +484,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of conversions from interactions divided by the number of ad
      * interactions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -485,7 +493,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $conversions_from_interactions_value_per_interaction = null;
     /**
      * The number of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -497,9 +505,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * include_in_conversions_metric attribute is set to true. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions. When this column is selected with date, the values in date
-     * column means the conversion date. Details for the by_conversion_date
-     * columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * column means the conversion date. Details for the `by_conversion_date`
+     * columns are available at [Understand conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double conversions_by_conversion_date = 243;</code>
      */
@@ -519,8 +527,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $cost_per_all_conversions = null;
     /**
      * The cost of ad interactions divided by conversions. This only includes
-     * conversion actions which include_in_conversions_metric attribute is set to
-     * true. If you use conversion-based bidding, your bid strategies will
+     * conversion actions which `include_in_conversions_metric` attribute is set
+     * to `true`. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
      * Generated from protobuf field <code>optional double cost_per_conversion = 171;</code>
@@ -529,7 +537,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The cost of ad interactions divided by current model attributed
      * conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -539,15 +547,16 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Conversions from when a customer clicks on a Google Ads ad on one device,
      * then converts on a different device or browser.
-     * Cross-device conversions are already included in all_conversions.
+     * Cross-device conversions are already included in `all_conversions`.
      *
      * Generated from protobuf field <code>optional double cross_device_conversions = 173;</code>
      */
     protected $cross_device_conversions = null;
     /**
      * The number of cross-device conversions by conversion date.
-     * Details for the by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * Details for the `by_conversion_date` columns are available at [Understand
+     * conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009)
      *
      * Generated from protobuf field <code>optional double cross_device_conversions_by_conversion_date = 372;</code>
      */
@@ -566,8 +575,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $cross_device_conversions_value_micros = null;
     /**
      * The sum of cross-device conversions value by conversion date.
-     * Details for the by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * Details for the `by_conversion_date` columns are available at [Understand
+     * conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009)
      *
      * Generated from protobuf field <code>optional double cross_device_conversions_value_by_conversion_date = 373;</code>
      */
@@ -778,9 +788,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * through routine means of filtration (that is, known invalid data-center
      * traffic, bots and spiders or other crawlers, irregular patterns, etc).
      * You're not charged for them, and they don't affect your account statistics.
-     * See the help page at
-     * https://support.google.com/campaignmanager/answer/6076504 for
-     * details.
+     * See
+     * [Filtering invalid traffic to ensure
+     * quality](https://support.google.com/campaignmanager/answer/6076504).
      *
      * Generated from protobuf field <code>optional double general_invalid_click_rate = 370;</code>
      */
@@ -790,9 +800,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * that are detected through routine means of filtration (such as known
      * invalid data-center traffic, bots and spiders or other crawlers, irregular
      * patterns, etc.). You're not charged for them, and they don't affect your
-     * account statistics. See the help page at
-     * https://support.google.com/campaignmanager/answer/6076504 for
-     * details.
+     * account statistics. See
+     * [Filtering invalid traffic to ensure
+     * quality](https://support.google.com/campaignmanager/answer/6076504).
      *
      * Generated from protobuf field <code>optional int64 general_invalid_clicks = 371;</code>
      */
@@ -835,18 +845,19 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * URL for the optimization score page in the Google Ads web interface.
      * This metric can be selected from `customer` or `campaign`, and can be
-     * segmented by `segments.recommendation_type`. For example, `SELECT
-     * metrics.optimization_score_url, segments.recommendation_type FROM
-     * customer` will return a URL for each unique (customer, recommendation_type)
-     * combination.
+     * segmented by `segments.recommendation_type`.
+     * For example, `SELECT metrics.optimization_score_url,
+     * segments.recommendation_type FROM customer` will return a URL for each
+     * unique (customer, recommendation_type) combination.
      *
      * Generated from protobuf field <code>optional string optimization_score_url = 248;</code>
      */
     protected $optimization_score_url = null;
     /**
      * The number of times someone clicked your site's listing in the unpaid
-     * results for a particular query. See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * results for a particular query. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional int64 organic_clicks = 230;</code>
      */
@@ -854,33 +865,36 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The number of times someone clicked your site's listing in the unpaid
      * results (organic_clicks) divided by the total number of searches that
-     * returned pages from your site (organic_queries). See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * returned pages from your site (organic_queries). See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional double organic_clicks_per_query = 231;</code>
      */
     protected $organic_clicks_per_query = null;
     /**
-     * The number of listings for your site in the unpaid search results. See the
-     * help page at https://support.google.com/google-ads/answer/3097241 for
-     * details.
+     * The number of listings for your site in the unpaid search results. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional int64 organic_impressions = 232;</code>
      */
     protected $organic_impressions = null;
     /**
      * The number of times a page from your site was listed in the unpaid search
-     * results (organic_impressions) divided by the number of searches returning
-     * your site's listing in the unpaid results (organic_queries). See the help
-     * page at https://support.google.com/google-ads/answer/3097241 for details.
+     * results (`organic_impressions`) divided by the number of searches returning
+     * your site's listing in the unpaid results (`organic_queries`). See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional double organic_impressions_per_query = 233;</code>
      */
     protected $organic_impressions_per_query = null;
     /**
      * The total number of searches that returned your site's listing in the
-     * unpaid results. See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * unpaid results. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241) for details.
      *
      * Generated from protobuf field <code>optional int64 organic_queries = 234;</code>
      */
@@ -905,8 +919,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $phone_impressions = null;
     /**
-     * Number of phone calls received (phone_calls) divided by the number of
-     * times your phone number is shown (phone_impressions).
+     * Number of phone calls received (`phone_calls`) divided by the number of
+     * times your phone number is shown (`phone_impressions`).
      *
      * Generated from protobuf field <code>optional double phone_through_rate = 238;</code>
      */
@@ -922,7 +936,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * https://support.google.com/google-ads/answer/7501826
+     * [About top and
+     * absolute top metrics](https://support.google.com/google-ads/answer/7501826)
      * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>optional double search_absolute_top_impression_share = 136;</code>
@@ -930,16 +945,17 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $search_absolute_top_impression_share = null;
     /**
      * The number estimating how often your ad wasn't the very first ad among the
-     * top ads in the search results due to a low budget. Note: Search
-     * budget lost absolute top impression share is reported in the range of 0 to
-     * 0.9. Any value above 0.9 is reported as 0.9001.
+     * top ads in the search results due to a low budget.
+     * Note: Search budget lost absolute top impression share is reported in the
+     * range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
      *
      * Generated from protobuf field <code>optional double search_budget_lost_absolute_top_impression_share = 137;</code>
      */
     protected $search_budget_lost_absolute_top_impression_share = null;
     /**
      * The estimated percent of times that your ad was eligible to show on the
-     * Search Network but didn't because your budget was too low. Note: Search
+     * Search Network but didn't because your budget was too low.
+     * Note: Search
      * budget lost impression share is reported in the range of 0 to 0.9. Any
      * value above 0.9 is reported as 0.9001.
      *
@@ -947,10 +963,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $search_budget_lost_impression_share = null;
     /**
-     * The number estimating how often your ad didn't show adjacent to the top
-     * organic search results due to a low budget. Note: Search
-     * budget lost top impression share is reported in the range of 0 to 0.9. Any
-     * value above 0.9 is reported as 0.9001.
+     * The estimated percent of times that your ad didn't show adjacent to the top
+     * organic search results due to a low budget.
+     * Note: Search budget lost top impression share is reported in the range of 0
+     * to 0.9. Any value above 0.9 is reported as 0.9001.
      *
      * Generated from protobuf field <code>optional double search_budget_lost_top_impression_share = 139;</code>
      */
@@ -968,9 +984,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The impressions you've received divided by the estimated number of
      * impressions you were eligible to receive on the Search Network for search
      * terms that matched your keywords exactly (or were close variants of your
-     * keyword), regardless of your keyword match types. Note: Search exact match
-     * impression share is reported in the range of 0.1 to 1. Any value below 0.1
-     * is reported as 0.0999.
+     * keyword), regardless of your keyword match types.
+     * Note: Search exact match impression share is reported in the range of 0.1
+     * to 1. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>optional double search_exact_match_impression_share = 141;</code>
      */
@@ -1072,37 +1088,39 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of all conversions divided by the number of all conversions. When
      * this column is selected with date, the values in date column means the
-     * conversion date. Details for the by_conversion_date columns are available
-     * at https://support.google.com/google-ads/answer/9549009.
+     * conversion date. Details for the `by_conversion_date` columns are available
+     * at [Understand conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double value_per_all_conversions_by_conversion_date = 244;</code>
      */
     protected $value_per_all_conversions_by_conversion_date = null;
     /**
      * The value of conversions divided by the number of conversions. This only
-     * includes conversion actions which include_in_conversions_metric attribute
-     * is set to true. If you use conversion-based bidding, your bid strategies
-     * will optimize for these conversions.
+     * includes conversion actions for which the `include_in_conversions_metric`
+     * attribute is set to `true`. If you use conversion-based bidding, your bid
+     * strategies will optimize for these conversions.
      *
      * Generated from protobuf field <code>optional double value_per_conversion = 151;</code>
      */
     protected $value_per_conversion = null;
     /**
      * The value of conversions divided by the number of conversions. This only
-     * includes conversion actions which include_in_conversions_metric attribute
-     * is set to true. If you use conversion-based bidding, your bid strategies
-     * will optimize for these conversions. When this column is selected with
-     * date, the values in date column means the conversion date. Details for the
-     * by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * includes conversion actions for which the `include_in_conversions_metric`
+     * attribute is set to `true`. If you use conversion-based bidding, your bid
+     * strategies will optimize for these conversions. When this column is
+     * selected with date, the values in date column means the conversion date.
+     * Details for the `by_conversion_date` columns are available at [Understand
+     * conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double value_per_conversions_by_conversion_date = 245;</code>
      */
     protected $value_per_conversions_by_conversion_date = null;
     /**
      * The value of current model attributed conversions divided by the number of
-     * the conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * the conversions. This only includes conversion actions for which the
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -1582,24 +1600,24 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $average_impression_frequency_per_user = null;
     /**
      * Number of linked resources in which the asset is used.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      *
      * Generated from protobuf field <code>optional int64 linked_entities_count = 341;</code>
      */
     protected $linked_entities_count = null;
     /**
      * A list of up to 20 sample linked resources in which the asset is used.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      *
      * Generated from protobuf field <code>repeated string linked_sample_entities = 342;</code>
      */
     private $linked_sample_entities;
     /**
      * Number of total usages in which the asset is pinned.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_total_count = 348;</code>
@@ -1607,8 +1625,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $asset_pinned_total_count = null;
     /**
      * Number of entities in which the asset is pinned to headline 1.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_headline_position_one_count = 349;</code>
@@ -1616,8 +1634,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $asset_pinned_as_headline_position_one_count = null;
     /**
      * Number of entities in which the asset is pinned to headline 2.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_headline_position_two_count = 350;</code>
@@ -1625,8 +1643,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $asset_pinned_as_headline_position_two_count = null;
     /**
      * Number of entities in which the asset is pinned to headline 3.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_headline_position_three_count = 351;</code>
@@ -1634,8 +1652,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $asset_pinned_as_headline_position_three_count = null;
     /**
      * Number of entities in which the asset is pinned to description 1.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_description_position_one_count = 352;</code>
@@ -1643,8 +1661,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     protected $asset_pinned_as_description_position_one_count = null;
     /**
      * Number of entities in which the asset is pinned to description 2.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_description_position_two_count = 353;</code>
@@ -2541,16 +2559,19 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type float $all_conversions_value_by_conversion_date
      *           The value of all conversions. When this column is selected with date, the
      *           values in date column means the conversion date. Details for the
-     *           by_conversion_date columns are available at
-     *           https://support.google.com/google-ads/answer/9549009.
+     *           `by_conversion_date` columns are available at [Understand conversions by
+     *           time with new
+     *           columns](https://support.google.com/google-ads/answer/9549009).
      *     @type float $all_new_customer_lifetime_value
      *           All of new customers' lifetime conversion value. If you have set up
      *           customer acquisition goal at either account level or campaign level, this
      *           will include the additional conversion value from new customers for both
      *           biddable and non-biddable conversions. If your campaign has adopted the
      *           customer acquisition goal and selected "bid higher for new customers",
-     *           these values will be included in "all_conversions_value". See
-     *           https://support.google.com/google-ads/answer/12080169 for more details.
+     *           these values will be included in `all_conversions_value`. See
+     *           [About customer lifecycle
+     *           goals](https://support.google.com/google-ads/answer/12080169) for more
+     *           details.
      *     @type float $all_conversions
      *           The total number of conversions. This includes all conversions regardless
      *           of the value of include_in_conversions_metric.
@@ -2558,8 +2579,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The total number of conversions. This includes all conversions regardless
      *           of the value of include_in_conversions_metric. When this column is selected
      *           with date, the values in date column means the conversion date. Details for
-     *           the by_conversion_date columns are available at
-     *           https://support.google.com/google-ads/answer/9549009.
+     *           the `by_conversion_date` columns are available at [Understand conversions
+     *           by time with new
+     *           columns](https://support.google.com/google-ads/answer/9549009).
      *     @type float $all_conversions_value_per_cost
      *           The value of all conversions divided by the total cost of ad interactions
      *           (such as clicks for text ads or views for video ads).
@@ -2673,17 +2695,19 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The treatment clicks value can be selected by using `clicks`.
      *     @type int|string $combined_clicks
      *           The number of times your ad or your site's listing in the unpaid
-     *           results was clicked. See the help page at
-     *           https://support.google.com/google-ads/answer/3097241 for details.
+     *           results was clicked. See
+     *           [About measuring paid and organic search
+     *           results](https://support.google.com/google-ads/answer/3097241).
      *     @type float $combined_clicks_per_query
      *           The number of times your ad or your site's listing in the unpaid
-     *           results was clicked (combined_clicks) divided by combined_queries. See the
-     *           help page at https://support.google.com/google-ads/answer/3097241 for
-     *           details.
+     *           results was clicked (combined_clicks) divided by combined_queries. See
+     *           [About measuring paid and organic search
+     *           results](https://support.google.com/google-ads/answer/3097241) for details.
      *     @type int|string $combined_queries
      *           The number of searches that returned pages from your site in the unpaid
-     *           results or showed one of your text ads. See the help page at
-     *           https://support.google.com/google-ads/answer/3097241 for details.
+     *           results or showed one of your text ads. See
+     *           [About measuring paid and organic search
+     *           results](https://support.google.com/google-ads/answer/3097241) for details.
      *     @type float $content_budget_lost_impression_share
      *           The estimated percent of times that your ad was eligible to show
      *           on the Display Network but didn't because your budget was too low.
@@ -2711,22 +2735,22 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type float $conversions_from_interactions_rate
      *           Conversions from interactions divided by the number of ad interactions
      *           (such as clicks for text ads or views for video ads). This only includes
-     *           conversion actions which include_in_conversions_metric attribute is set to
-     *           true. If you use conversion-based bidding, your bid strategies will
+     *           conversion actions which `include_in_conversions_metric` attribute is set
+     *           to `true`. If you use conversion-based bidding, your bid strategies will
      *           optimize for these conversions.
      *     @type float $conversions_value
      *           The value of conversions. This only includes conversion actions which
-     *           include_in_conversions_metric attribute is set to true. If you use
+     *           `include_in_conversions_metric` attribute is set to `true`. If you use
      *           conversion-based bidding, your bid strategies will optimize for these
      *           conversions.
      *     @type float $conversions_value_by_conversion_date
      *           The value of conversions. This only includes conversion actions which
-     *           include_in_conversions_metric attribute is set to true. If you use
+     *           `include_in_conversions_metric` attribute is set to `true`. If you use
      *           conversion-based bidding, your bid strategies will optimize for these
      *           conversions. When this column is selected with date, the values in date
-     *           column means the conversion date. Details for the by_conversion_date
-     *           columns are available at
-     *           https://support.google.com/google-ads/answer/9549009.
+     *           column means the conversion date. Details for the `by_conversion_date`
+     *           columns are available at [Understand conversions by time with new
+     *           columns](https://support.google.com/google-ads/answer/9549009).
      *     @type float $new_customer_lifetime_value
      *           New customers' lifetime conversion value. If you have set up
      *           customer acquisition goal at either account level or campaign level, this
@@ -2734,7 +2758,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           biddable conversions. If your campaign has adopted the customer
      *           acquisition goal and selected "bid higher for new customers", these values
      *           will be included in "conversions_value" for optimization. See
-     *           https://support.google.com/google-ads/answer/12080169 for more details.
+     *           [About customer lifecycle
+     *           goals](https://support.google.com/google-ads/answer/12080169) for more
+     *           details.
      *     @type float $conversions_value_per_cost
      *           The value of conversions divided by the cost of ad interactions. This only
      *           includes conversion actions which include_in_conversions_metric attribute
@@ -2743,12 +2769,12 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type float $conversions_from_interactions_value_per_interaction
      *           The value of conversions from interactions divided by the number of ad
      *           interactions. This only includes conversion actions which
-     *           include_in_conversions_metric attribute is set to true. If you use
+     *           `include_in_conversions_metric` attribute is set to `true`. If you use
      *           conversion-based bidding, your bid strategies will optimize for these
      *           conversions.
      *     @type float $conversions
      *           The number of conversions. This only includes conversion actions which
-     *           include_in_conversions_metric attribute is set to true. If you use
+     *           `include_in_conversions_metric` attribute is set to `true`. If you use
      *           conversion-based bidding, your bid strategies will optimize for these
      *           conversions.
      *     @type float $conversions_by_conversion_date
@@ -2756,9 +2782,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           include_in_conversions_metric attribute is set to true. If you use
      *           conversion-based bidding, your bid strategies will optimize for these
      *           conversions. When this column is selected with date, the values in date
-     *           column means the conversion date. Details for the by_conversion_date
-     *           columns are available at
-     *           https://support.google.com/google-ads/answer/9549009.
+     *           column means the conversion date. Details for the `by_conversion_date`
+     *           columns are available at [Understand conversions by time with new
+     *           columns](https://support.google.com/google-ads/answer/9549009).
      *     @type int|string $cost_micros
      *           The sum of your cost-per-click (CPC) and cost-per-thousand impressions
      *           (CPM) costs during this period.
@@ -2766,31 +2792,33 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The cost of ad interactions divided by all conversions.
      *     @type float $cost_per_conversion
      *           The cost of ad interactions divided by conversions. This only includes
-     *           conversion actions which include_in_conversions_metric attribute is set to
-     *           true. If you use conversion-based bidding, your bid strategies will
+     *           conversion actions which `include_in_conversions_metric` attribute is set
+     *           to `true`. If you use conversion-based bidding, your bid strategies will
      *           optimize for these conversions.
      *     @type float $cost_per_current_model_attributed_conversion
      *           The cost of ad interactions divided by current model attributed
      *           conversions. This only includes conversion actions which
-     *           include_in_conversions_metric attribute is set to true. If you use
+     *           `include_in_conversions_metric` attribute is set to `true`. If you use
      *           conversion-based bidding, your bid strategies will optimize for these
      *           conversions.
      *     @type float $cross_device_conversions
      *           Conversions from when a customer clicks on a Google Ads ad on one device,
      *           then converts on a different device or browser.
-     *           Cross-device conversions are already included in all_conversions.
+     *           Cross-device conversions are already included in `all_conversions`.
      *     @type float $cross_device_conversions_by_conversion_date
      *           The number of cross-device conversions by conversion date.
-     *           Details for the by_conversion_date columns are available at
-     *           https://support.google.com/google-ads/answer/9549009.
+     *           Details for the `by_conversion_date` columns are available at [Understand
+     *           conversions by time with new
+     *           columns](https://support.google.com/google-ads/answer/9549009)
      *     @type float $cross_device_conversions_value
      *           The sum of the value of cross-device conversions.
      *     @type int|string $cross_device_conversions_value_micros
      *           The sum of the value of cross-device conversions, in micros.
      *     @type float $cross_device_conversions_value_by_conversion_date
      *           The sum of cross-device conversions value by conversion date.
-     *           Details for the by_conversion_date columns are available at
-     *           https://support.google.com/google-ads/answer/9549009.
+     *           Details for the `by_conversion_date` columns are available at [Understand
+     *           conversions by time with new
+     *           columns](https://support.google.com/google-ads/answer/9549009)
      *     @type float $ctr
      *           The number of clicks your ad receives (Clicks) divided by the number
      *           of times your ad is shown (Impressions).
@@ -2889,17 +2917,17 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           through routine means of filtration (that is, known invalid data-center
      *           traffic, bots and spiders or other crawlers, irregular patterns, etc).
      *           You're not charged for them, and they don't affect your account statistics.
-     *           See the help page at
-     *           https://support.google.com/campaignmanager/answer/6076504 for
-     *           details.
+     *           See
+     *           [Filtering invalid traffic to ensure
+     *           quality](https://support.google.com/campaignmanager/answer/6076504).
      *     @type int|string $general_invalid_clicks
      *           Number of general invalid clicks. These are a subset of your invalid clicks
      *           that are detected through routine means of filtration (such as known
      *           invalid data-center traffic, bots and spiders or other crawlers, irregular
      *           patterns, etc.). You're not charged for them, and they don't affect your
-     *           account statistics. See the help page at
-     *           https://support.google.com/campaignmanager/answer/6076504 for
-     *           details.
+     *           account statistics. See
+     *           [Filtering invalid traffic to ensure
+     *           quality](https://support.google.com/campaignmanager/answer/6076504).
      *     @type int|string $message_chats
      *           Number of message chats initiated for Click To Message impressions that
      *           were message tracking eligible.
@@ -2918,32 +2946,36 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type string $optimization_score_url
      *           URL for the optimization score page in the Google Ads web interface.
      *           This metric can be selected from `customer` or `campaign`, and can be
-     *           segmented by `segments.recommendation_type`. For example, `SELECT
-     *           metrics.optimization_score_url, segments.recommendation_type FROM
-     *           customer` will return a URL for each unique (customer, recommendation_type)
-     *           combination.
+     *           segmented by `segments.recommendation_type`.
+     *           For example, `SELECT metrics.optimization_score_url,
+     *           segments.recommendation_type FROM customer` will return a URL for each
+     *           unique (customer, recommendation_type) combination.
      *     @type int|string $organic_clicks
      *           The number of times someone clicked your site's listing in the unpaid
-     *           results for a particular query. See the help page at
-     *           https://support.google.com/google-ads/answer/3097241 for details.
+     *           results for a particular query. See
+     *           [About measuring paid and organic search
+     *           results](https://support.google.com/google-ads/answer/3097241).
      *     @type float $organic_clicks_per_query
      *           The number of times someone clicked your site's listing in the unpaid
      *           results (organic_clicks) divided by the total number of searches that
-     *           returned pages from your site (organic_queries). See the help page at
-     *           https://support.google.com/google-ads/answer/3097241 for details.
+     *           returned pages from your site (organic_queries). See
+     *           [About measuring paid and organic search
+     *           results](https://support.google.com/google-ads/answer/3097241).
      *     @type int|string $organic_impressions
-     *           The number of listings for your site in the unpaid search results. See the
-     *           help page at https://support.google.com/google-ads/answer/3097241 for
-     *           details.
+     *           The number of listings for your site in the unpaid search results. See
+     *           [About measuring paid and organic search
+     *           results](https://support.google.com/google-ads/answer/3097241).
      *     @type float $organic_impressions_per_query
      *           The number of times a page from your site was listed in the unpaid search
-     *           results (organic_impressions) divided by the number of searches returning
-     *           your site's listing in the unpaid results (organic_queries). See the help
-     *           page at https://support.google.com/google-ads/answer/3097241 for details.
+     *           results (`organic_impressions`) divided by the number of searches returning
+     *           your site's listing in the unpaid results (`organic_queries`). See
+     *           [About measuring paid and organic search
+     *           results](https://support.google.com/google-ads/answer/3097241).
      *     @type int|string $organic_queries
      *           The total number of searches that returned your site's listing in the
-     *           unpaid results. See the help page at
-     *           https://support.google.com/google-ads/answer/3097241 for details.
+     *           unpaid results. See
+     *           [About measuring paid and organic search
+     *           results](https://support.google.com/google-ads/answer/3097241) for details.
      *     @type float $percent_new_visitors
      *           Percentage of first-time sessions (from people who had never visited your
      *           site before). Imported from Google Analytics.
@@ -2952,8 +2984,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type int|string $phone_impressions
      *           Number of offline phone impressions.
      *     @type float $phone_through_rate
-     *           Number of phone calls received (phone_calls) divided by the number of
-     *           times your phone number is shown (phone_impressions).
+     *           Number of phone calls received (`phone_calls`) divided by the number of
+     *           times your phone number is shown (`phone_impressions`).
      *     @type float $relative_ctr
      *           Your clickthrough rate (Ctr) divided by the average clickthrough rate of
      *           all advertisers on the websites that show your ads. Measures how your ads
@@ -2961,23 +2993,25 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type float $search_absolute_top_impression_share
      *           The percentage of the customer's Shopping or Search ad impressions that are
      *           shown in the most prominent Shopping position. See
-     *           https://support.google.com/google-ads/answer/7501826
+     *           [About top and
+     *           absolute top metrics](https://support.google.com/google-ads/answer/7501826)
      *           for details. Any value below 0.1 is reported as 0.0999.
      *     @type float $search_budget_lost_absolute_top_impression_share
      *           The number estimating how often your ad wasn't the very first ad among the
-     *           top ads in the search results due to a low budget. Note: Search
-     *           budget lost absolute top impression share is reported in the range of 0 to
-     *           0.9. Any value above 0.9 is reported as 0.9001.
+     *           top ads in the search results due to a low budget.
+     *           Note: Search budget lost absolute top impression share is reported in the
+     *           range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
      *     @type float $search_budget_lost_impression_share
      *           The estimated percent of times that your ad was eligible to show on the
-     *           Search Network but didn't because your budget was too low. Note: Search
+     *           Search Network but didn't because your budget was too low.
+     *           Note: Search
      *           budget lost impression share is reported in the range of 0 to 0.9. Any
      *           value above 0.9 is reported as 0.9001.
      *     @type float $search_budget_lost_top_impression_share
-     *           The number estimating how often your ad didn't show adjacent to the top
-     *           organic search results due to a low budget. Note: Search
-     *           budget lost top impression share is reported in the range of 0 to 0.9. Any
-     *           value above 0.9 is reported as 0.9001.
+     *           The estimated percent of times that your ad didn't show adjacent to the top
+     *           organic search results due to a low budget.
+     *           Note: Search budget lost top impression share is reported in the range of 0
+     *           to 0.9. Any value above 0.9 is reported as 0.9001.
      *     @type float $search_click_share
      *           The number of clicks you've received on the Search Network
      *           divided by the estimated number of clicks you were eligible to receive.
@@ -2987,9 +3021,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The impressions you've received divided by the estimated number of
      *           impressions you were eligible to receive on the Search Network for search
      *           terms that matched your keywords exactly (or were close variants of your
-     *           keyword), regardless of your keyword match types. Note: Search exact match
-     *           impression share is reported in the range of 0.1 to 1. Any value below 0.1
-     *           is reported as 0.0999.
+     *           keyword), regardless of your keyword match types.
+     *           Note: Search exact match impression share is reported in the range of 0.1
+     *           to 1. Any value below 0.1 is reported as 0.0999.
      *     @type float $search_impression_share
      *           The impressions you've received on the Search Network divided
      *           by the estimated number of impressions you were eligible to receive.
@@ -3039,25 +3073,27 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type float $value_per_all_conversions_by_conversion_date
      *           The value of all conversions divided by the number of all conversions. When
      *           this column is selected with date, the values in date column means the
-     *           conversion date. Details for the by_conversion_date columns are available
-     *           at https://support.google.com/google-ads/answer/9549009.
+     *           conversion date. Details for the `by_conversion_date` columns are available
+     *           at [Understand conversions by time with new
+     *           columns](https://support.google.com/google-ads/answer/9549009).
      *     @type float $value_per_conversion
      *           The value of conversions divided by the number of conversions. This only
-     *           includes conversion actions which include_in_conversions_metric attribute
-     *           is set to true. If you use conversion-based bidding, your bid strategies
-     *           will optimize for these conversions.
+     *           includes conversion actions for which the `include_in_conversions_metric`
+     *           attribute is set to `true`. If you use conversion-based bidding, your bid
+     *           strategies will optimize for these conversions.
      *     @type float $value_per_conversions_by_conversion_date
      *           The value of conversions divided by the number of conversions. This only
-     *           includes conversion actions which include_in_conversions_metric attribute
-     *           is set to true. If you use conversion-based bidding, your bid strategies
-     *           will optimize for these conversions. When this column is selected with
-     *           date, the values in date column means the conversion date. Details for the
-     *           by_conversion_date columns are available at
-     *           https://support.google.com/google-ads/answer/9549009.
+     *           includes conversion actions for which the `include_in_conversions_metric`
+     *           attribute is set to `true`. If you use conversion-based bidding, your bid
+     *           strategies will optimize for these conversions. When this column is
+     *           selected with date, the values in date column means the conversion date.
+     *           Details for the `by_conversion_date` columns are available at [Understand
+     *           conversions by time with new
+     *           columns](https://support.google.com/google-ads/answer/9549009).
      *     @type float $value_per_current_model_attributed_conversion
      *           The value of current model attributed conversions divided by the number of
-     *           the conversions. This only includes conversion actions which
-     *           include_in_conversions_metric attribute is set to true. If you use
+     *           the conversions. This only includes conversion actions for which the
+     *           `include_in_conversions_metric` attribute is set to `true`. If you use
      *           conversion-based bidding, your bid strategies will optimize for these
      *           conversions.
      *     @type float $video_quartile_p100_rate
@@ -3353,41 +3389,41 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           campaign types - Display, Video, Discovery and App.
      *     @type int|string $linked_entities_count
      *           Number of linked resources in which the asset is used.
-     *           This metric can only be selected with ChannelAggregateAssetView and
-     *           CampaignAggregateAssetView.
+     *           This metric can only be selected with `ChannelAggregateAssetView` and
+     *           `CampaignAggregateAssetView`.
      *     @type string[] $linked_sample_entities
      *           A list of up to 20 sample linked resources in which the asset is used.
-     *           This metric can only be selected with ChannelAggregateAssetView and
-     *           CampaignAggregateAssetView.
+     *           This metric can only be selected with `ChannelAggregateAssetView` and
+     *           `CampaignAggregateAssetView`.
      *     @type int|string $asset_pinned_total_count
      *           Number of total usages in which the asset is pinned.
-     *           This metric can only be selected with ChannelAggregateAssetView and
-     *           CampaignAggregateAssetView.
+     *           This metric can only be selected with `ChannelAggregateAssetView` and
+     *           `CampaignAggregateAssetView`.
      *           This metric is only supported in Search channel.
      *     @type int|string $asset_pinned_as_headline_position_one_count
      *           Number of entities in which the asset is pinned to headline 1.
-     *           This metric can only be selected with ChannelAggregateAssetView and
-     *           CampaignAggregateAssetView.
+     *           This metric can only be selected with `ChannelAggregateAssetView` and
+     *           `CampaignAggregateAssetView`.
      *           This metric is only supported in Search channel.
      *     @type int|string $asset_pinned_as_headline_position_two_count
      *           Number of entities in which the asset is pinned to headline 2.
-     *           This metric can only be selected with ChannelAggregateAssetView and
-     *           CampaignAggregateAssetView.
+     *           This metric can only be selected with `ChannelAggregateAssetView` and
+     *           `CampaignAggregateAssetView`.
      *           This metric is only supported in Search channel.
      *     @type int|string $asset_pinned_as_headline_position_three_count
      *           Number of entities in which the asset is pinned to headline 3.
-     *           This metric can only be selected with ChannelAggregateAssetView and
-     *           CampaignAggregateAssetView.
+     *           This metric can only be selected with `ChannelAggregateAssetView` and
+     *           `CampaignAggregateAssetView`.
      *           This metric is only supported in Search channel.
      *     @type int|string $asset_pinned_as_description_position_one_count
      *           Number of entities in which the asset is pinned to description 1.
-     *           This metric can only be selected with ChannelAggregateAssetView and
-     *           CampaignAggregateAssetView.
+     *           This metric can only be selected with `ChannelAggregateAssetView` and
+     *           `CampaignAggregateAssetView`.
      *           This metric is only supported in Search channel.
      *     @type int|string $asset_pinned_as_description_position_two_count
      *           Number of entities in which the asset is pinned to description 2.
-     *           This metric can only be selected with ChannelAggregateAssetView and
-     *           CampaignAggregateAssetView.
+     *           This metric can only be selected with `ChannelAggregateAssetView` and
+     *           `CampaignAggregateAssetView`.
      *           This metric is only supported in Search channel.
      *     @type float $store_visits_last_click_model_attributed_conversions
      *           The amount of business visits attributed by the last click model.
@@ -4272,8 +4308,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of all conversions. When this column is selected with date, the
      * values in date column means the conversion date. Details for the
-     * by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * `by_conversion_date` columns are available at [Understand conversions by
+     * time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double all_conversions_value_by_conversion_date = 240;</code>
      * @return float
@@ -4296,8 +4333,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of all conversions. When this column is selected with date, the
      * values in date column means the conversion date. Details for the
-     * by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * `by_conversion_date` columns are available at [Understand conversions by
+     * time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double all_conversions_value_by_conversion_date = 240;</code>
      * @param float $var
@@ -4317,8 +4355,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * will include the additional conversion value from new customers for both
      * biddable and non-biddable conversions. If your campaign has adopted the
      * customer acquisition goal and selected "bid higher for new customers",
-     * these values will be included in "all_conversions_value". See
-     * https://support.google.com/google-ads/answer/12080169 for more details.
+     * these values will be included in `all_conversions_value`. See
+     * [About customer lifecycle
+     * goals](https://support.google.com/google-ads/answer/12080169) for more
+     * details.
      *
      * Generated from protobuf field <code>optional double all_new_customer_lifetime_value = 294;</code>
      * @return float
@@ -4344,8 +4384,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * will include the additional conversion value from new customers for both
      * biddable and non-biddable conversions. If your campaign has adopted the
      * customer acquisition goal and selected "bid higher for new customers",
-     * these values will be included in "all_conversions_value". See
-     * https://support.google.com/google-ads/answer/12080169 for more details.
+     * these values will be included in `all_conversions_value`. See
+     * [About customer lifecycle
+     * goals](https://support.google.com/google-ads/answer/12080169) for more
+     * details.
      *
      * Generated from protobuf field <code>optional double all_new_customer_lifetime_value = 294;</code>
      * @param float $var
@@ -4401,8 +4443,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The total number of conversions. This includes all conversions regardless
      * of the value of include_in_conversions_metric. When this column is selected
      * with date, the values in date column means the conversion date. Details for
-     * the by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * the `by_conversion_date` columns are available at [Understand conversions
+     * by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double all_conversions_by_conversion_date = 241;</code>
      * @return float
@@ -4426,8 +4469,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The total number of conversions. This includes all conversions regardless
      * of the value of include_in_conversions_metric. When this column is selected
      * with date, the values in date column means the conversion date. Details for
-     * the by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * the `by_conversion_date` columns are available at [Understand conversions
+     * by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double all_conversions_by_conversion_date = 241;</code>
      * @param float $var
@@ -5625,8 +5669,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of times your ad or your site's listing in the unpaid
-     * results was clicked. See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * results was clicked. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional int64 combined_clicks = 156;</code>
      * @return int|string
@@ -5648,8 +5693,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of times your ad or your site's listing in the unpaid
-     * results was clicked. See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * results was clicked. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional int64 combined_clicks = 156;</code>
      * @param int|string $var
@@ -5665,9 +5711,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of times your ad or your site's listing in the unpaid
-     * results was clicked (combined_clicks) divided by combined_queries. See the
-     * help page at https://support.google.com/google-ads/answer/3097241 for
-     * details.
+     * results was clicked (combined_clicks) divided by combined_queries. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241) for details.
      *
      * Generated from protobuf field <code>optional double combined_clicks_per_query = 157;</code>
      * @return float
@@ -5689,9 +5735,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of times your ad or your site's listing in the unpaid
-     * results was clicked (combined_clicks) divided by combined_queries. See the
-     * help page at https://support.google.com/google-ads/answer/3097241 for
-     * details.
+     * results was clicked (combined_clicks) divided by combined_queries. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241) for details.
      *
      * Generated from protobuf field <code>optional double combined_clicks_per_query = 157;</code>
      * @param float $var
@@ -5707,8 +5753,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of searches that returned pages from your site in the unpaid
-     * results or showed one of your text ads. See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * results or showed one of your text ads. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241) for details.
      *
      * Generated from protobuf field <code>optional int64 combined_queries = 158;</code>
      * @return int|string
@@ -5730,8 +5777,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of searches that returned pages from your site in the unpaid
-     * results or showed one of your text ads. See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * results or showed one of your text ads. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241) for details.
      *
      * Generated from protobuf field <code>optional int64 combined_queries = 158;</code>
      * @param int|string $var
@@ -5956,8 +6004,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Conversions from interactions divided by the number of ad interactions
      * (such as clicks for text ads or views for video ads). This only includes
-     * conversion actions which include_in_conversions_metric attribute is set to
-     * true. If you use conversion-based bidding, your bid strategies will
+     * conversion actions which `include_in_conversions_metric` attribute is set
+     * to `true`. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
      * Generated from protobuf field <code>optional double conversions_from_interactions_rate = 164;</code>
@@ -5981,8 +6029,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Conversions from interactions divided by the number of ad interactions
      * (such as clicks for text ads or views for video ads). This only includes
-     * conversion actions which include_in_conversions_metric attribute is set to
-     * true. If you use conversion-based bidding, your bid strategies will
+     * conversion actions which `include_in_conversions_metric` attribute is set
+     * to `true`. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
      * Generated from protobuf field <code>optional double conversions_from_interactions_rate = 164;</code>
@@ -5999,7 +6047,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The value of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -6023,7 +6071,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The value of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -6041,12 +6089,12 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The value of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions. When this column is selected with date, the values in date
-     * column means the conversion date. Details for the by_conversion_date
-     * columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * column means the conversion date. Details for the `by_conversion_date`
+     * columns are available at [Understand conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double conversions_value_by_conversion_date = 242;</code>
      * @return float
@@ -6068,12 +6116,12 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The value of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions. When this column is selected with date, the values in date
-     * column means the conversion date. Details for the by_conversion_date
-     * columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * column means the conversion date. Details for the `by_conversion_date`
+     * columns are available at [Understand conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double conversions_value_by_conversion_date = 242;</code>
      * @param float $var
@@ -6094,7 +6142,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * biddable conversions. If your campaign has adopted the customer
      * acquisition goal and selected "bid higher for new customers", these values
      * will be included in "conversions_value" for optimization. See
-     * https://support.google.com/google-ads/answer/12080169 for more details.
+     * [About customer lifecycle
+     * goals](https://support.google.com/google-ads/answer/12080169) for more
+     * details.
      *
      * Generated from protobuf field <code>optional double new_customer_lifetime_value = 293;</code>
      * @return float
@@ -6121,7 +6171,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * biddable conversions. If your campaign has adopted the customer
      * acquisition goal and selected "bid higher for new customers", these values
      * will be included in "conversions_value" for optimization. See
-     * https://support.google.com/google-ads/answer/12080169 for more details.
+     * [About customer lifecycle
+     * goals](https://support.google.com/google-ads/answer/12080169) for more
+     * details.
      *
      * Generated from protobuf field <code>optional double new_customer_lifetime_value = 293;</code>
      * @param float $var
@@ -6180,7 +6232,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of conversions from interactions divided by the number of ad
      * interactions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -6205,7 +6257,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of conversions from interactions divided by the number of ad
      * interactions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -6223,7 +6275,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -6247,7 +6299,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -6268,9 +6320,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * include_in_conversions_metric attribute is set to true. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions. When this column is selected with date, the values in date
-     * column means the conversion date. Details for the by_conversion_date
-     * columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * column means the conversion date. Details for the `by_conversion_date`
+     * columns are available at [Understand conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double conversions_by_conversion_date = 243;</code>
      * @return float
@@ -6295,9 +6347,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * include_in_conversions_metric attribute is set to true. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions. When this column is selected with date, the values in date
-     * column means the conversion date. Details for the by_conversion_date
-     * columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * column means the conversion date. Details for the `by_conversion_date`
+     * columns are available at [Understand conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double conversions_by_conversion_date = 243;</code>
      * @param float $var
@@ -6387,8 +6439,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The cost of ad interactions divided by conversions. This only includes
-     * conversion actions which include_in_conversions_metric attribute is set to
-     * true. If you use conversion-based bidding, your bid strategies will
+     * conversion actions which `include_in_conversions_metric` attribute is set
+     * to `true`. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
      * Generated from protobuf field <code>optional double cost_per_conversion = 171;</code>
@@ -6411,8 +6463,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The cost of ad interactions divided by conversions. This only includes
-     * conversion actions which include_in_conversions_metric attribute is set to
-     * true. If you use conversion-based bidding, your bid strategies will
+     * conversion actions which `include_in_conversions_metric` attribute is set
+     * to `true`. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
      * Generated from protobuf field <code>optional double cost_per_conversion = 171;</code>
@@ -6430,7 +6482,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The cost of ad interactions divided by current model attributed
      * conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -6455,7 +6507,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The cost of ad interactions divided by current model attributed
      * conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -6474,7 +6526,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Conversions from when a customer clicks on a Google Ads ad on one device,
      * then converts on a different device or browser.
-     * Cross-device conversions are already included in all_conversions.
+     * Cross-device conversions are already included in `all_conversions`.
      *
      * Generated from protobuf field <code>optional double cross_device_conversions = 173;</code>
      * @return float
@@ -6497,7 +6549,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Conversions from when a customer clicks on a Google Ads ad on one device,
      * then converts on a different device or browser.
-     * Cross-device conversions are already included in all_conversions.
+     * Cross-device conversions are already included in `all_conversions`.
      *
      * Generated from protobuf field <code>optional double cross_device_conversions = 173;</code>
      * @param float $var
@@ -6513,8 +6565,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of cross-device conversions by conversion date.
-     * Details for the by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * Details for the `by_conversion_date` columns are available at [Understand
+     * conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009)
      *
      * Generated from protobuf field <code>optional double cross_device_conversions_by_conversion_date = 372;</code>
      * @return float
@@ -6536,8 +6589,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of cross-device conversions by conversion date.
-     * Details for the by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * Details for the `by_conversion_date` columns are available at [Understand
+     * conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009)
      *
      * Generated from protobuf field <code>optional double cross_device_conversions_by_conversion_date = 372;</code>
      * @param float $var
@@ -6625,8 +6679,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The sum of cross-device conversions value by conversion date.
-     * Details for the by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * Details for the `by_conversion_date` columns are available at [Understand
+     * conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009)
      *
      * Generated from protobuf field <code>optional double cross_device_conversions_value_by_conversion_date = 373;</code>
      * @return float
@@ -6648,8 +6703,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The sum of cross-device conversions value by conversion date.
-     * Details for the by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * Details for the `by_conversion_date` columns are available at [Understand
+     * conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009)
      *
      * Generated from protobuf field <code>optional double cross_device_conversions_value_by_conversion_date = 373;</code>
      * @param float $var
@@ -7676,9 +7732,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * through routine means of filtration (that is, known invalid data-center
      * traffic, bots and spiders or other crawlers, irregular patterns, etc).
      * You're not charged for them, and they don't affect your account statistics.
-     * See the help page at
-     * https://support.google.com/campaignmanager/answer/6076504 for
-     * details.
+     * See
+     * [Filtering invalid traffic to ensure
+     * quality](https://support.google.com/campaignmanager/answer/6076504).
      *
      * Generated from protobuf field <code>optional double general_invalid_click_rate = 370;</code>
      * @return float
@@ -7705,9 +7761,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * through routine means of filtration (that is, known invalid data-center
      * traffic, bots and spiders or other crawlers, irregular patterns, etc).
      * You're not charged for them, and they don't affect your account statistics.
-     * See the help page at
-     * https://support.google.com/campaignmanager/answer/6076504 for
-     * details.
+     * See
+     * [Filtering invalid traffic to ensure
+     * quality](https://support.google.com/campaignmanager/answer/6076504).
      *
      * Generated from protobuf field <code>optional double general_invalid_click_rate = 370;</code>
      * @param float $var
@@ -7726,9 +7782,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * that are detected through routine means of filtration (such as known
      * invalid data-center traffic, bots and spiders or other crawlers, irregular
      * patterns, etc.). You're not charged for them, and they don't affect your
-     * account statistics. See the help page at
-     * https://support.google.com/campaignmanager/answer/6076504 for
-     * details.
+     * account statistics. See
+     * [Filtering invalid traffic to ensure
+     * quality](https://support.google.com/campaignmanager/answer/6076504).
      *
      * Generated from protobuf field <code>optional int64 general_invalid_clicks = 371;</code>
      * @return int|string
@@ -7753,9 +7809,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * that are detected through routine means of filtration (such as known
      * invalid data-center traffic, bots and spiders or other crawlers, irregular
      * patterns, etc.). You're not charged for them, and they don't affect your
-     * account statistics. See the help page at
-     * https://support.google.com/campaignmanager/answer/6076504 for
-     * details.
+     * account statistics. See
+     * [Filtering invalid traffic to ensure
+     * quality](https://support.google.com/campaignmanager/answer/6076504).
      *
      * Generated from protobuf field <code>optional int64 general_invalid_clicks = 371;</code>
      * @param int|string $var
@@ -7962,10 +8018,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * URL for the optimization score page in the Google Ads web interface.
      * This metric can be selected from `customer` or `campaign`, and can be
-     * segmented by `segments.recommendation_type`. For example, `SELECT
-     * metrics.optimization_score_url, segments.recommendation_type FROM
-     * customer` will return a URL for each unique (customer, recommendation_type)
-     * combination.
+     * segmented by `segments.recommendation_type`.
+     * For example, `SELECT metrics.optimization_score_url,
+     * segments.recommendation_type FROM customer` will return a URL for each
+     * unique (customer, recommendation_type) combination.
      *
      * Generated from protobuf field <code>optional string optimization_score_url = 248;</code>
      * @return string
@@ -7988,10 +8044,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * URL for the optimization score page in the Google Ads web interface.
      * This metric can be selected from `customer` or `campaign`, and can be
-     * segmented by `segments.recommendation_type`. For example, `SELECT
-     * metrics.optimization_score_url, segments.recommendation_type FROM
-     * customer` will return a URL for each unique (customer, recommendation_type)
-     * combination.
+     * segmented by `segments.recommendation_type`.
+     * For example, `SELECT metrics.optimization_score_url,
+     * segments.recommendation_type FROM customer` will return a URL for each
+     * unique (customer, recommendation_type) combination.
      *
      * Generated from protobuf field <code>optional string optimization_score_url = 248;</code>
      * @param string $var
@@ -8007,8 +8063,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of times someone clicked your site's listing in the unpaid
-     * results for a particular query. See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * results for a particular query. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional int64 organic_clicks = 230;</code>
      * @return int|string
@@ -8030,8 +8087,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of times someone clicked your site's listing in the unpaid
-     * results for a particular query. See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * results for a particular query. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional int64 organic_clicks = 230;</code>
      * @param int|string $var
@@ -8048,8 +8106,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The number of times someone clicked your site's listing in the unpaid
      * results (organic_clicks) divided by the total number of searches that
-     * returned pages from your site (organic_queries). See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * returned pages from your site (organic_queries). See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional double organic_clicks_per_query = 231;</code>
      * @return float
@@ -8072,8 +8131,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The number of times someone clicked your site's listing in the unpaid
      * results (organic_clicks) divided by the total number of searches that
-     * returned pages from your site (organic_queries). See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * returned pages from your site (organic_queries). See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional double organic_clicks_per_query = 231;</code>
      * @param float $var
@@ -8088,9 +8148,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of listings for your site in the unpaid search results. See the
-     * help page at https://support.google.com/google-ads/answer/3097241 for
-     * details.
+     * The number of listings for your site in the unpaid search results. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional int64 organic_impressions = 232;</code>
      * @return int|string
@@ -8111,9 +8171,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of listings for your site in the unpaid search results. See the
-     * help page at https://support.google.com/google-ads/answer/3097241 for
-     * details.
+     * The number of listings for your site in the unpaid search results. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional int64 organic_impressions = 232;</code>
      * @param int|string $var
@@ -8129,9 +8189,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of times a page from your site was listed in the unpaid search
-     * results (organic_impressions) divided by the number of searches returning
-     * your site's listing in the unpaid results (organic_queries). See the help
-     * page at https://support.google.com/google-ads/answer/3097241 for details.
+     * results (`organic_impressions`) divided by the number of searches returning
+     * your site's listing in the unpaid results (`organic_queries`). See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional double organic_impressions_per_query = 233;</code>
      * @return float
@@ -8153,9 +8214,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of times a page from your site was listed in the unpaid search
-     * results (organic_impressions) divided by the number of searches returning
-     * your site's listing in the unpaid results (organic_queries). See the help
-     * page at https://support.google.com/google-ads/answer/3097241 for details.
+     * results (`organic_impressions`) divided by the number of searches returning
+     * your site's listing in the unpaid results (`organic_queries`). See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241).
      *
      * Generated from protobuf field <code>optional double organic_impressions_per_query = 233;</code>
      * @param float $var
@@ -8171,8 +8233,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The total number of searches that returned your site's listing in the
-     * unpaid results. See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * unpaid results. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241) for details.
      *
      * Generated from protobuf field <code>optional int64 organic_queries = 234;</code>
      * @return int|string
@@ -8194,8 +8257,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The total number of searches that returned your site's listing in the
-     * unpaid results. See the help page at
-     * https://support.google.com/google-ads/answer/3097241 for details.
+     * unpaid results. See
+     * [About measuring paid and organic search
+     * results](https://support.google.com/google-ads/answer/3097241) for details.
      *
      * Generated from protobuf field <code>optional int64 organic_queries = 234;</code>
      * @param int|string $var
@@ -8320,8 +8384,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of phone calls received (phone_calls) divided by the number of
-     * times your phone number is shown (phone_impressions).
+     * Number of phone calls received (`phone_calls`) divided by the number of
+     * times your phone number is shown (`phone_impressions`).
      *
      * Generated from protobuf field <code>optional double phone_through_rate = 238;</code>
      * @return float
@@ -8342,8 +8406,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of phone calls received (phone_calls) divided by the number of
-     * times your phone number is shown (phone_impressions).
+     * Number of phone calls received (`phone_calls`) divided by the number of
+     * times your phone number is shown (`phone_impressions`).
      *
      * Generated from protobuf field <code>optional double phone_through_rate = 238;</code>
      * @param float $var
@@ -8400,7 +8464,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * https://support.google.com/google-ads/answer/7501826
+     * [About top and
+     * absolute top metrics](https://support.google.com/google-ads/answer/7501826)
      * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>optional double search_absolute_top_impression_share = 136;</code>
@@ -8424,7 +8489,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * https://support.google.com/google-ads/answer/7501826
+     * [About top and
+     * absolute top metrics](https://support.google.com/google-ads/answer/7501826)
      * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>optional double search_absolute_top_impression_share = 136;</code>
@@ -8441,9 +8507,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number estimating how often your ad wasn't the very first ad among the
-     * top ads in the search results due to a low budget. Note: Search
-     * budget lost absolute top impression share is reported in the range of 0 to
-     * 0.9. Any value above 0.9 is reported as 0.9001.
+     * top ads in the search results due to a low budget.
+     * Note: Search budget lost absolute top impression share is reported in the
+     * range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
      *
      * Generated from protobuf field <code>optional double search_budget_lost_absolute_top_impression_share = 137;</code>
      * @return float
@@ -8465,9 +8531,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The number estimating how often your ad wasn't the very first ad among the
-     * top ads in the search results due to a low budget. Note: Search
-     * budget lost absolute top impression share is reported in the range of 0 to
-     * 0.9. Any value above 0.9 is reported as 0.9001.
+     * top ads in the search results due to a low budget.
+     * Note: Search budget lost absolute top impression share is reported in the
+     * range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
      *
      * Generated from protobuf field <code>optional double search_budget_lost_absolute_top_impression_share = 137;</code>
      * @param float $var
@@ -8483,7 +8549,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The estimated percent of times that your ad was eligible to show on the
-     * Search Network but didn't because your budget was too low. Note: Search
+     * Search Network but didn't because your budget was too low.
+     * Note: Search
      * budget lost impression share is reported in the range of 0 to 0.9. Any
      * value above 0.9 is reported as 0.9001.
      *
@@ -8507,7 +8574,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The estimated percent of times that your ad was eligible to show on the
-     * Search Network but didn't because your budget was too low. Note: Search
+     * Search Network but didn't because your budget was too low.
+     * Note: Search
      * budget lost impression share is reported in the range of 0 to 0.9. Any
      * value above 0.9 is reported as 0.9001.
      *
@@ -8524,10 +8592,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number estimating how often your ad didn't show adjacent to the top
-     * organic search results due to a low budget. Note: Search
-     * budget lost top impression share is reported in the range of 0 to 0.9. Any
-     * value above 0.9 is reported as 0.9001.
+     * The estimated percent of times that your ad didn't show adjacent to the top
+     * organic search results due to a low budget.
+     * Note: Search budget lost top impression share is reported in the range of 0
+     * to 0.9. Any value above 0.9 is reported as 0.9001.
      *
      * Generated from protobuf field <code>optional double search_budget_lost_top_impression_share = 139;</code>
      * @return float
@@ -8548,10 +8616,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number estimating how often your ad didn't show adjacent to the top
-     * organic search results due to a low budget. Note: Search
-     * budget lost top impression share is reported in the range of 0 to 0.9. Any
-     * value above 0.9 is reported as 0.9001.
+     * The estimated percent of times that your ad didn't show adjacent to the top
+     * organic search results due to a low budget.
+     * Note: Search budget lost top impression share is reported in the range of 0
+     * to 0.9. Any value above 0.9 is reported as 0.9001.
      *
      * Generated from protobuf field <code>optional double search_budget_lost_top_impression_share = 139;</code>
      * @param float $var
@@ -8611,9 +8679,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The impressions you've received divided by the estimated number of
      * impressions you were eligible to receive on the Search Network for search
      * terms that matched your keywords exactly (or were close variants of your
-     * keyword), regardless of your keyword match types. Note: Search exact match
-     * impression share is reported in the range of 0.1 to 1. Any value below 0.1
-     * is reported as 0.0999.
+     * keyword), regardless of your keyword match types.
+     * Note: Search exact match impression share is reported in the range of 0.1
+     * to 1. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>optional double search_exact_match_impression_share = 141;</code>
      * @return float
@@ -8637,9 +8705,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The impressions you've received divided by the estimated number of
      * impressions you were eligible to receive on the Search Network for search
      * terms that matched your keywords exactly (or were close variants of your
-     * keyword), regardless of your keyword match types. Note: Search exact match
-     * impression share is reported in the range of 0.1 to 1. Any value below 0.1
-     * is reported as 0.0999.
+     * keyword), regardless of your keyword match types.
+     * Note: Search exact match impression share is reported in the range of 0.1
+     * to 1. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>optional double search_exact_match_impression_share = 141;</code>
      * @param float $var
@@ -9132,8 +9200,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of all conversions divided by the number of all conversions. When
      * this column is selected with date, the values in date column means the
-     * conversion date. Details for the by_conversion_date columns are available
-     * at https://support.google.com/google-ads/answer/9549009.
+     * conversion date. Details for the `by_conversion_date` columns are available
+     * at [Understand conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double value_per_all_conversions_by_conversion_date = 244;</code>
      * @return float
@@ -9156,8 +9225,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of all conversions divided by the number of all conversions. When
      * this column is selected with date, the values in date column means the
-     * conversion date. Details for the by_conversion_date columns are available
-     * at https://support.google.com/google-ads/answer/9549009.
+     * conversion date. Details for the `by_conversion_date` columns are available
+     * at [Understand conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double value_per_all_conversions_by_conversion_date = 244;</code>
      * @param float $var
@@ -9173,9 +9243,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The value of conversions divided by the number of conversions. This only
-     * includes conversion actions which include_in_conversions_metric attribute
-     * is set to true. If you use conversion-based bidding, your bid strategies
-     * will optimize for these conversions.
+     * includes conversion actions for which the `include_in_conversions_metric`
+     * attribute is set to `true`. If you use conversion-based bidding, your bid
+     * strategies will optimize for these conversions.
      *
      * Generated from protobuf field <code>optional double value_per_conversion = 151;</code>
      * @return float
@@ -9197,9 +9267,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The value of conversions divided by the number of conversions. This only
-     * includes conversion actions which include_in_conversions_metric attribute
-     * is set to true. If you use conversion-based bidding, your bid strategies
-     * will optimize for these conversions.
+     * includes conversion actions for which the `include_in_conversions_metric`
+     * attribute is set to `true`. If you use conversion-based bidding, your bid
+     * strategies will optimize for these conversions.
      *
      * Generated from protobuf field <code>optional double value_per_conversion = 151;</code>
      * @param float $var
@@ -9215,12 +9285,13 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The value of conversions divided by the number of conversions. This only
-     * includes conversion actions which include_in_conversions_metric attribute
-     * is set to true. If you use conversion-based bidding, your bid strategies
-     * will optimize for these conversions. When this column is selected with
-     * date, the values in date column means the conversion date. Details for the
-     * by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * includes conversion actions for which the `include_in_conversions_metric`
+     * attribute is set to `true`. If you use conversion-based bidding, your bid
+     * strategies will optimize for these conversions. When this column is
+     * selected with date, the values in date column means the conversion date.
+     * Details for the `by_conversion_date` columns are available at [Understand
+     * conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double value_per_conversions_by_conversion_date = 245;</code>
      * @return float
@@ -9242,12 +9313,13 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The value of conversions divided by the number of conversions. This only
-     * includes conversion actions which include_in_conversions_metric attribute
-     * is set to true. If you use conversion-based bidding, your bid strategies
-     * will optimize for these conversions. When this column is selected with
-     * date, the values in date column means the conversion date. Details for the
-     * by_conversion_date columns are available at
-     * https://support.google.com/google-ads/answer/9549009.
+     * includes conversion actions for which the `include_in_conversions_metric`
+     * attribute is set to `true`. If you use conversion-based bidding, your bid
+     * strategies will optimize for these conversions. When this column is
+     * selected with date, the values in date column means the conversion date.
+     * Details for the `by_conversion_date` columns are available at [Understand
+     * conversions by time with new
+     * columns](https://support.google.com/google-ads/answer/9549009).
      *
      * Generated from protobuf field <code>optional double value_per_conversions_by_conversion_date = 245;</code>
      * @param float $var
@@ -9263,8 +9335,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The value of current model attributed conversions divided by the number of
-     * the conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * the conversions. This only includes conversion actions for which the
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -9288,8 +9360,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The value of current model attributed conversions divided by the number of
-     * the conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true. If you use
+     * the conversions. This only includes conversion actions for which the
+     * `include_in_conversions_metric` attribute is set to `true`. If you use
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
@@ -11279,8 +11351,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of linked resources in which the asset is used.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      *
      * Generated from protobuf field <code>optional int64 linked_entities_count = 341;</code>
      * @return int|string
@@ -11302,8 +11374,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of linked resources in which the asset is used.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      *
      * Generated from protobuf field <code>optional int64 linked_entities_count = 341;</code>
      * @param int|string $var
@@ -11319,8 +11391,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * A list of up to 20 sample linked resources in which the asset is used.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      *
      * Generated from protobuf field <code>repeated string linked_sample_entities = 342;</code>
      * @return RepeatedField<string>
@@ -11332,8 +11404,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * A list of up to 20 sample linked resources in which the asset is used.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      *
      * Generated from protobuf field <code>repeated string linked_sample_entities = 342;</code>
      * @param string[] $var
@@ -11349,8 +11421,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of total usages in which the asset is pinned.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_total_count = 348;</code>
@@ -11373,8 +11445,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of total usages in which the asset is pinned.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_total_count = 348;</code>
@@ -11391,8 +11463,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of entities in which the asset is pinned to headline 1.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_headline_position_one_count = 349;</code>
@@ -11415,8 +11487,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of entities in which the asset is pinned to headline 1.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_headline_position_one_count = 349;</code>
@@ -11433,8 +11505,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of entities in which the asset is pinned to headline 2.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_headline_position_two_count = 350;</code>
@@ -11457,8 +11529,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of entities in which the asset is pinned to headline 2.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_headline_position_two_count = 350;</code>
@@ -11475,8 +11547,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of entities in which the asset is pinned to headline 3.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_headline_position_three_count = 351;</code>
@@ -11499,8 +11571,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of entities in which the asset is pinned to headline 3.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_headline_position_three_count = 351;</code>
@@ -11517,8 +11589,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of entities in which the asset is pinned to description 1.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_description_position_one_count = 352;</code>
@@ -11541,8 +11613,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of entities in which the asset is pinned to description 1.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_description_position_one_count = 352;</code>
@@ -11559,8 +11631,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of entities in which the asset is pinned to description 2.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_description_position_two_count = 353;</code>
@@ -11583,8 +11655,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of entities in which the asset is pinned to description 2.
-     * This metric can only be selected with ChannelAggregateAssetView and
-     * CampaignAggregateAssetView.
+     * This metric can only be selected with `ChannelAggregateAssetView` and
+     * `CampaignAggregateAssetView`.
      * This metric is only supported in Search channel.
      *
      * Generated from protobuf field <code>optional int64 asset_pinned_as_description_position_two_count = 353;</code>

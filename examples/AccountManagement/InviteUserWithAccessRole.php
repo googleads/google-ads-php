@@ -24,14 +24,14 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V24\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V24\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V24\GoogleAdsException;
-use Google\Ads\GoogleAds\V24\Enums\AccessRoleEnum\AccessRole;
-use Google\Ads\GoogleAds\V24\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V24\Resources\CustomerUserAccessInvitation;
-use Google\Ads\GoogleAds\V24\Services\CustomerUserAccessInvitationOperation;
-use Google\Ads\GoogleAds\V24\Services\MutateCustomerUserAccessInvitationRequest;
+use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V25\GoogleAdsException;
+use Google\Ads\GoogleAds\V25\Enums\AccessRoleEnum\AccessRole;
+use Google\Ads\GoogleAds\V25\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V25\Resources\CustomerUserAccessInvitation;
+use Google\Ads\GoogleAds\V25\Services\CustomerUserAccessInvitationOperation;
+use Google\Ads\GoogleAds\V25\Services\MutateCustomerUserAccessInvitationRequest;
 use Google\ApiCore\ApiException;
 
 /**

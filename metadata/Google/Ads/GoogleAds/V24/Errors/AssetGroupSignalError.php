@@ -14,7 +14,7 @@ class AssetGroupSignalError
           return;
         }
         $pool->internalAddGeneratedFile(
-            "\x0A\x9B\x04\x0A>google/ads/googleads/v24/errors/asset_group_signal_error.proto\x12\x1Fgoogle.ads.googleads.v24.errors\"\xB2\x01\x0A\x19AssetGroupSignalErrorEnum\"\x94\x01\x0A\x15AssetGroupSignalError\x12\x0F\x0A\x0BUNSPECIFIED\x10\x00\x12\x0B\x0A\x07UNKNOWN\x10\x01\x12\x12\x0A\x0ETOO_MANY_WORDS\x10\x02\x12!\x0A\x1DSEARCH_THEME_POLICY_VIOLATION\x10\x03\x12&\x0A\"AUDIENCE_WITH_WRONG_ASSET_GROUP_ID\x10\x04B\xFA\x01\x0A#com.google.ads.googleads.v24.errorsB\x1AAssetGroupSignalErrorProtoP\x01ZEgoogle.golang.org/genproto/googleapis/ads/googleads/v24/errors;errors\xA2\x02\x03GAA\xAA\x02\x1FGoogle.Ads.GoogleAds.V24.Errors\xCA\x02\x1FGoogle\\Ads\\GoogleAds\\V24\\Errors\xEA\x02#Google::Ads::GoogleAds::V24::Errorsb\x06proto3"
+            "\x0A\xBA\x04\x0A>google/ads/googleads/v24/errors/asset_group_signal_error.proto\x12\x1Fgoogle.ads.googleads.v24.errors\"\xD1\x01\x0A\x19AssetGroupSignalErrorEnum\"\xB3\x01\x0A\x15AssetGroupSignalError\x12\x0F\x0A\x0BUNSPECIFIED\x10\x00\x12\x0B\x0A\x07UNKNOWN\x10\x01\x12\x12\x0A\x0ETOO_MANY_WORDS\x10\x02\x12!\x0A\x1DSEARCH_THEME_POLICY_VIOLATION\x10\x03\x12&\x0A\"AUDIENCE_WITH_WRONG_ASSET_GROUP_ID\x10\x04\x12\x1D\x0A\x19CANNOT_REMOVE_ALL_SIGNALS\x10\x05B\xFA\x01\x0A#com.google.ads.googleads.v24.errorsB\x1AAssetGroupSignalErrorProtoP\x01ZEgoogle.golang.org/genproto/googleapis/ads/googleads/v24/errors;errors\xA2\x02\x03GAA\xAA\x02\x1FGoogle.Ads.GoogleAds.V24.Errors\xCA\x02\x1FGoogle\\Ads\\GoogleAds\\V24\\Errors\xEA\x02#Google::Ads::GoogleAds::V24::Errorsb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

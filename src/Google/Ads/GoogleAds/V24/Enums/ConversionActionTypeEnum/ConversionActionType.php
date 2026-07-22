@@ -362,6 +362,14 @@ class ConversionActionType
      * Generated from protobuf enum <code>FIREBASE_IOS_CLOSE_CONVERT_LEAD = 50;</code>
      */
     const FIREBASE_IOS_CLOSE_CONVERT_LEAD = 50;
+    /**
+     * Conversions that occur when a user clicks on local services ads unit and
+     * reaches out to advertiser through phone call, message, or booking options
+     * on the ad.
+     *
+     * Generated from protobuf enum <code>LOCAL_SERVICES_ADS = 51;</code>
+     */
+    const LOCAL_SERVICES_ADS = 51;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -415,6 +423,7 @@ class ConversionActionType
         self::FIREBASE_IOS_GENERATE_LEAD => 'FIREBASE_IOS_GENERATE_LEAD',
         self::FIREBASE_IOS_QUALIFY_LEAD => 'FIREBASE_IOS_QUALIFY_LEAD',
         self::FIREBASE_IOS_CLOSE_CONVERT_LEAD => 'FIREBASE_IOS_CLOSE_CONVERT_LEAD',
+        self::LOCAL_SERVICES_ADS => 'LOCAL_SERVICES_ADS',
     ];
 
     public static function name($value)

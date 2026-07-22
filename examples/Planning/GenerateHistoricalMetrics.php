@@ -24,17 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V24\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V24\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V24\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V24\ResourceNames;
-use Google\Ads\GoogleAds\V24\Common\MonthlySearchVolume;
-use Google\Ads\GoogleAds\V24\Enums\KeywordPlanCompetitionLevelEnum\KeywordPlanCompetitionLevel;
-use Google\Ads\GoogleAds\V24\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
-use Google\Ads\GoogleAds\V24\Enums\MonthOfYearEnum\MonthOfYear;
-use Google\Ads\GoogleAds\V24\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V24\Services\GenerateKeywordHistoricalMetricsRequest;
-use Google\Ads\GoogleAds\V24\Services\GenerateKeywordHistoricalMetricsResult;
+use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V25\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V25\ResourceNames;
+use Google\Ads\GoogleAds\V25\Common\MonthlySearchVolume;
+use Google\Ads\GoogleAds\V25\Enums\KeywordPlanCompetitionLevelEnum\KeywordPlanCompetitionLevel;
+use Google\Ads\GoogleAds\V25\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
+use Google\Ads\GoogleAds\V25\Enums\MonthOfYearEnum\MonthOfYear;
+use Google\Ads\GoogleAds\V25\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V25\Services\GenerateKeywordHistoricalMetricsRequest;
+use Google\Ads\GoogleAds\V25\Services\GenerateKeywordHistoricalMetricsResult;
 use Google\ApiCore\ApiException;
 
 /**

@@ -126,6 +126,12 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v24.enums.SystemManagedResourceSourceEnum.SystemManagedResourceSource system_managed_resource_source = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $system_managed_resource_source = 0;
+    /**
+     * Synthetic content info for the ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.SyntheticContentInfo synthetic_content_info = 65;</code>
+     */
+    protected $synthetic_content_info = null;
     protected $ad_data;
 
     /**
@@ -185,6 +191,8 @@ class Ad extends \Google\Protobuf\Internal\Message
      *     @type int $system_managed_resource_source
      *           Output only. If this ad is system managed, then this field will indicate
      *           the source. This field is read-only.
+     *     @type \Google\Ads\GoogleAds\V24\Common\SyntheticContentInfo $synthetic_content_info
+     *           Synthetic content info for the ad.
      *     @type \Google\Ads\GoogleAds\V24\Common\TextAdInfo $text_ad
      *           Immutable. Details pertaining to a text ad.
      *     @type \Google\Ads\GoogleAds\V24\Common\ExpandedTextAdInfo $expanded_text_ad
@@ -735,6 +743,42 @@ class Ad extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V24\Enums\SystemManagedResourceSourceEnum\SystemManagedResourceSource::class);
         $this->system_managed_resource_source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Synthetic content info for the ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.SyntheticContentInfo synthetic_content_info = 65;</code>
+     * @return \Google\Ads\GoogleAds\V24\Common\SyntheticContentInfo|null
+     */
+    public function getSyntheticContentInfo()
+    {
+        return $this->synthetic_content_info;
+    }
+
+    public function hasSyntheticContentInfo()
+    {
+        return isset($this->synthetic_content_info);
+    }
+
+    public function clearSyntheticContentInfo()
+    {
+        unset($this->synthetic_content_info);
+    }
+
+    /**
+     * Synthetic content info for the ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.SyntheticContentInfo synthetic_content_info = 65;</code>
+     * @param \Google\Ads\GoogleAds\V24\Common\SyntheticContentInfo $var
+     * @return $this
+     */
+    public function setSyntheticContentInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Common\SyntheticContentInfo::class);
+        $this->synthetic_content_info = $var;
 
         return $this;
     }

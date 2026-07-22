@@ -257,7 +257,6 @@ class GoalServiceClient
      * [QuotaError]()
      * [RequestError]()
      * [GoalError]()
-     * [GoalServicesError]()
      *
      * The async variant is {@see GoalServiceClient::mutateGoalsAsync()} .
      *

@@ -52,6 +52,12 @@ class DemandGenSelectedChannels extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool display = 6;</code>
      */
     protected $display = false;
+    /**
+     * Whether to enable ads on the Maps channel.
+     *
+     * Generated from protobuf field <code>bool maps = 7;</code>
+     */
+    protected $maps = false;
 
     /**
      * Constructor.
@@ -71,6 +77,8 @@ class DemandGenSelectedChannels extends \Google\Protobuf\Internal\Message
      *           Whether to enable ads on the Gmail channel.
      *     @type bool $display
      *           Whether to enable ads on the Display channel.
+     *     @type bool $maps
+     *           Whether to enable ads on the Maps channel.
      * }
      */
     public function __construct($data = NULL) {
@@ -230,6 +238,32 @@ class DemandGenSelectedChannels extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->display = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether to enable ads on the Maps channel.
+     *
+     * Generated from protobuf field <code>bool maps = 7;</code>
+     * @return bool
+     */
+    public function getMaps()
+    {
+        return $this->maps;
+    }
+
+    /**
+     * Whether to enable ads on the Maps channel.
+     *
+     * Generated from protobuf field <code>bool maps = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setMaps($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->maps = $var;
 
         return $this;
     }

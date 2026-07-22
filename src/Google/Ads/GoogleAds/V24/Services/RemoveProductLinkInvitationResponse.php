@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Response message for product link invitation removeal.
+ * Response message for product link invitation removal.
  *
  * Generated from protobuf message <code>google.ads.googleads.v24.services.RemoveProductLinkInvitationResponse</code>
  */

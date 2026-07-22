@@ -38,7 +38,7 @@ class CustomerLifecycleGoalServiceGrpcClient extends \Grpc\BaseStub {
      * List of thrown errors:
      *   [AuthenticationError]()
      *   [AuthorizationError]()
-     *   [CustomerLifecycleGoalConfigError]()
+     *   [CustomerLifecycleGoalError]()
      *   [HeaderError]()
      *   [InternalError]()
      *   [QuotaError]()

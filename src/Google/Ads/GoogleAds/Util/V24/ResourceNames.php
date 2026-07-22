@@ -89,7 +89,6 @@ use Google\Ads\GoogleAds\V24\Services\Client\ExperimentArmServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\ExperimentServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\GoalServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\GoogleAdsFieldServiceClient;
-use Google\Ads\GoogleAds\V24\Services\Client\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\KeywordPlanAdGroupKeywordServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\KeywordPlanAdGroupServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\KeywordPlanCampaignKeywordServiceClient;
@@ -97,6 +96,7 @@ use Google\Ads\GoogleAds\V24\Services\Client\KeywordPlanCampaignServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\LabelServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\LocalServicesLeadServiceClient;
+use Google\Ads\GoogleAds\V24\Services\Client\MultiPartyAuthReviewServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\OfflineUserDataJobServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\ProductLinkInvitationServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\ProductLinkServiceClient;
@@ -106,7 +106,6 @@ use Google\Ads\GoogleAds\V24\Services\Client\RemarketingActionServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\SharedCriterionServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\SharedSetServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\SmartCampaignSettingServiceClient;
-use Google\Ads\GoogleAds\V24\Services\Client\SmartCampaignSuggestServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\ThirdPartyAppAnalyticsLinkServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\UserListCustomerTypeServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\UserListServiceClient;
@@ -128,7 +127,7 @@ final class ResourceNames
         $customerId,
         $biddingStrategyId
     ): string {
-        return CampaignServiceClient::accessibleBiddingStrategyName(
+        return BatchJobServiceClient::accessibleBiddingStrategyName(
             $customerId,
             $biddingStrategyId
         );
@@ -973,7 +972,7 @@ final class ResourceNames
     public static function forCarrierConstant(
         $criterionId
     ): string {
-        return GoogleAdsServiceClient::carrierConstantName(
+        return BatchJobServiceClient::carrierConstantName(
             $criterionId
         );
     }
@@ -989,7 +988,7 @@ final class ResourceNames
         $customerId,
         $combinedAudienceId
     ): string {
-        return GoogleAdsServiceClient::combinedAudienceName(
+        return BatchJobServiceClient::combinedAudienceName(
             $customerId,
             $combinedAudienceId
         );
@@ -1406,7 +1405,7 @@ final class ResourceNames
         $customerId,
         $detailedDemographicId
     ): string {
-        return GoogleAdsServiceClient::detailedDemographicName(
+        return BatchJobServiceClient::detailedDemographicName(
             $customerId,
             $detailedDemographicId
         );
@@ -1458,7 +1457,7 @@ final class ResourceNames
     public static function forGeoTargetConstant(
         $criterionId
     ): string {
-        return ConversionValueRuleServiceClient::geoTargetConstantName(
+        return BatchJobServiceClient::geoTargetConstantName(
             $criterionId
         );
     }
@@ -1590,7 +1589,7 @@ final class ResourceNames
         $expressCategoryId,
         $expressSubCategoryId
     ): string {
-        return SmartCampaignSuggestServiceClient::keywordThemeConstantName(
+        return BatchJobServiceClient::keywordThemeConstantName(
             $expressCategoryId,
             $expressSubCategoryId
         );
@@ -1622,7 +1621,7 @@ final class ResourceNames
     public static function forLanguageConstant(
         $criterionId
     ): string {
-        return KeywordPlanCampaignServiceClient::languageConstantName(
+        return BatchJobServiceClient::languageConstantName(
             $criterionId
         );
     }
@@ -1638,7 +1637,7 @@ final class ResourceNames
         $customerId,
         $lifeEventId
     ): string {
-        return GoogleAdsServiceClient::lifeEventName(
+        return BatchJobServiceClient::lifeEventName(
             $customerId,
             $lifeEventId
         );
@@ -1670,7 +1669,7 @@ final class ResourceNames
     public static function forMobileAppCategoryConstant(
         $mobileAppCategoryId
     ): string {
-        return CustomerNegativeCriterionServiceClient::mobileAppCategoryConstantName(
+        return BatchJobServiceClient::mobileAppCategoryConstantName(
             $mobileAppCategoryId
         );
     }
@@ -1684,8 +1683,25 @@ final class ResourceNames
     public static function forMobileDeviceConstant(
         $criterionId
     ): string {
-        return GoogleAdsServiceClient::mobileDeviceConstantName(
+        return BatchJobServiceClient::mobileDeviceConstantName(
             $criterionId
+        );
+    }
+
+    /**
+     * Generates a resource name of multi party auth review type.
+     *
+     * @param string $customerId
+     * @param string $customerInvitationId
+     * @return string the multi party auth review resource name
+     */
+    public static function forMultiPartyAuthReview(
+        $customerId,
+        $customerInvitationId
+    ): string {
+        return MultiPartyAuthReviewServiceClient::multiPartyAuthReviewName(
+            $customerId,
+            $customerInvitationId
         );
     }
 
@@ -1715,7 +1731,7 @@ final class ResourceNames
     public static function forOperatingSystemVersionConstant(
         $criterionId
     ): string {
-        return GoogleAdsServiceClient::operatingSystemVersionConstantName(
+        return BatchJobServiceClient::operatingSystemVersionConstantName(
             $criterionId
         );
     }
@@ -1902,7 +1918,7 @@ final class ResourceNames
     public static function forTopicConstant(
         $topicId
     ): string {
-        return GoogleAdsServiceClient::topicConstantName(
+        return BatchJobServiceClient::topicConstantName(
             $topicId
         );
     }
@@ -1918,7 +1934,7 @@ final class ResourceNames
         $customerId,
         $userInterestId
     ): string {
-        return ConversionValueRuleServiceClient::userInterestName(
+        return BatchJobServiceClient::userInterestName(
             $customerId,
             $userInterestId
         );

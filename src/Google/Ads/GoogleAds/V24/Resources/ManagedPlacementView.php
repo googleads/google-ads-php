@@ -9,7 +9,9 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * A managed placement view.
+ * A view providing performance data for placements explicitly targeted in your
+ * ad groups. This view
+ * corresponds to the "Placements" section in the Google Ads UI.
  *
  * Generated from protobuf message <code>google.ads.googleads.v24.resources.ManagedPlacementView</code>
  */

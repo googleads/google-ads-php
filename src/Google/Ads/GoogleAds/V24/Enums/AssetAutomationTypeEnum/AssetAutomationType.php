@@ -26,9 +26,14 @@ class AssetAutomationType
      */
     const UNKNOWN = 1;
     /**
-     * Text asset automation includes headlines and descriptions.
-     * By default, advertisers are opted-in for Performance Max and
+     * Text asset automation (text customization) includes headlines and
+     * descriptions, allowing Google to create customized text assets using your
+     * existing ads, landing page copy, and generative AI across your campaign's
+     * ads. By default, advertisers are opted-in for Performance Max and
      * opted-out for Search.
+     * Contrast this with `FINAL_URL_EXPANSION_TEXT_ASSET_AUTOMATION`, which
+     * dynamically generates text assets to match the content of dynamically
+     * selected landing pages when final URL expansion is active.
      *
      * Generated from protobuf enum <code>TEXT_ASSET_AUTOMATION = 2;</code>
      */
@@ -36,7 +41,7 @@ class AssetAutomationType
     /**
      * Converts horizontal video assets to vertical orientation using
      * content-aware technology. By default, advertisers are opted in for
-     * DemandGenVideoResponsiveAd.
+     * DemandGenVideoResponsiveAdInfo.
      *
      * Generated from protobuf enum <code>GENERATE_VERTICAL_YOUTUBE_VIDEOS = 3;</code>
      */
@@ -44,7 +49,7 @@ class AssetAutomationType
     /**
      * Shortens video assets to better capture user attention using
      * content-aware technology. By default, advertisers are opted in for
-     * DemandGenVideoResponsiveAd.
+     * DemandGenVideoResponsiveAdInfo.
      *
      * Generated from protobuf enum <code>GENERATE_SHORTER_YOUTUBE_VIDEOS = 4;</code>
      */
@@ -59,6 +64,13 @@ class AssetAutomationType
      * Generated from protobuf enum <code>GENERATE_LANDING_PAGE_PREVIEW = 5;</code>
      */
     const GENERATE_LANDING_PAGE_PREVIEW = 5;
+    /**
+     * Generates text information from the landing page to be shown in the
+     * engagement panel. Opted in by default for DemandGenVideoResponsiveAdInfo.
+     *
+     * Generated from protobuf enum <code>GENERATE_LANDING_PAGE_TEXT = 14;</code>
+     */
+    const GENERATE_LANDING_PAGE_TEXT = 14;
     /**
      * Generates video enhancements (vertical and shorter videos) for PMax
      * campaigns. Opted in by default.
@@ -94,6 +106,12 @@ class AssetAutomationType
      * and generating text assets from the content of those landing pages. This
      * setting is turned OFF by default for Search campaigns, but it is turned
      * ON by default for Performance Max campaigns.
+     * Enabling final URL expansion also enables text asset automation. There is
+     * no way to opt out of text asset automation and still use final URL
+     * expansion.
+     * Contrast this with standard `TEXT_ASSET_AUTOMATION` (text customization),
+     * which customizes copy across all ads in the campaign even when final URL
+     * expansion does not occur.
      *
      * Generated from protobuf enum <code>FINAL_URL_EXPANSION_TEXT_ASSET_AUTOMATION = 11;</code>
      */
@@ -113,6 +131,7 @@ class AssetAutomationType
         self::GENERATE_VERTICAL_YOUTUBE_VIDEOS => 'GENERATE_VERTICAL_YOUTUBE_VIDEOS',
         self::GENERATE_SHORTER_YOUTUBE_VIDEOS => 'GENERATE_SHORTER_YOUTUBE_VIDEOS',
         self::GENERATE_LANDING_PAGE_PREVIEW => 'GENERATE_LANDING_PAGE_PREVIEW',
+        self::GENERATE_LANDING_PAGE_TEXT => 'GENERATE_LANDING_PAGE_TEXT',
         self::GENERATE_ENHANCED_YOUTUBE_VIDEOS => 'GENERATE_ENHANCED_YOUTUBE_VIDEOS',
         self::GENERATE_IMAGE_ENHANCEMENT => 'GENERATE_IMAGE_ENHANCEMENT',
         self::GENERATE_IMAGE_EXTRACTION => 'GENERATE_IMAGE_EXTRACTION',

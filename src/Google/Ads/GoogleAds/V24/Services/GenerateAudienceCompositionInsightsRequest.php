@@ -48,7 +48,7 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      * returned. Supported dimensions are KNOWLEDGE_GRAPH, GEO_TARGET_COUNTRY,
      * SUB_COUNTRY_LOCATION, YOUTUBE_CHANNEL, YOUTUBE_LINEUP,
      * AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
-     *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, and GENDER.
+     *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v24.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -73,7 +73,7 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      *                                                                        returned. Supported dimensions are KNOWLEDGE_GRAPH, GEO_TARGET_COUNTRY,
      *                                                                        SUB_COUNTRY_LOCATION, YOUTUBE_CHANNEL, YOUTUBE_LINEUP,
      *                                                                        AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
-     *                                                                        PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, and GENDER.
+     *                                                                        PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
      *                                                                        For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V24\Enums\AudienceInsightsDimensionEnum\AudienceInsightsDimension}
      *
      * @return \Google\Ads\GoogleAds\V24\Services\GenerateAudienceCompositionInsightsRequest
@@ -110,7 +110,7 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      *           returned. Supported dimensions are KNOWLEDGE_GRAPH, GEO_TARGET_COUNTRY,
      *           SUB_COUNTRY_LOCATION, YOUTUBE_CHANNEL, YOUTUBE_LINEUP,
      *           AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
-     *            PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, and GENDER.
+     *            PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
      *     @type string $customer_insights_group
      *           The name of the customer being planned for.  This is a user-defined value.
      *     @type \Google\Ads\GoogleAds\V24\Common\AdditionalApplicationInfo $insights_application_info
@@ -257,7 +257,7 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      * returned. Supported dimensions are KNOWLEDGE_GRAPH, GEO_TARGET_COUNTRY,
      * SUB_COUNTRY_LOCATION, YOUTUBE_CHANNEL, YOUTUBE_LINEUP,
      * AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
-     *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, and GENDER.
+     *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v24.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return RepeatedField<int>
@@ -272,7 +272,7 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      * returned. Supported dimensions are KNOWLEDGE_GRAPH, GEO_TARGET_COUNTRY,
      * SUB_COUNTRY_LOCATION, YOUTUBE_CHANNEL, YOUTUBE_LINEUP,
      * AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
-     *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, and GENDER.
+     *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v24.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int[] $var

@@ -24,17 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V24\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V24\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V24\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V25\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V24\ResourceNames;
-use Google\Ads\GoogleAds\V24\Enums\AccessRoleEnum\AccessRole;
-use Google\Ads\GoogleAds\V24\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V24\Resources\CustomerUserAccess;
-use Google\Ads\GoogleAds\V24\Services\CustomerUserAccessOperation;
-use Google\Ads\GoogleAds\V24\Services\MutateCustomerUserAccessRequest;
-use Google\Ads\GoogleAds\V24\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\Util\V25\ResourceNames;
+use Google\Ads\GoogleAds\V25\Enums\AccessRoleEnum\AccessRole;
+use Google\Ads\GoogleAds\V25\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V25\Resources\CustomerUserAccess;
+use Google\Ads\GoogleAds\V25\Services\CustomerUserAccessOperation;
+use Google\Ads\GoogleAds\V25\Services\MutateCustomerUserAccessRequest;
+use Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**

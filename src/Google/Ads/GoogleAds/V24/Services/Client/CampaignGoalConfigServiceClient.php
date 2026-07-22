@@ -279,7 +279,6 @@ class CampaignGoalConfigServiceClient
      * [QuotaError]()
      * [RequestError]()
      * [CampaignGoalConfigError]()
-     * [GoalServicesError]()
      *
      * The async variant is
      * {@see CampaignGoalConfigServiceClient::mutateCampaignGoalConfigsAsync()} .

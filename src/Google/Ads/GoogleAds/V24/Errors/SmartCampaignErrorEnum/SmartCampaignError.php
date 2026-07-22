@@ -68,6 +68,12 @@ class SmartCampaignError
      * Generated from protobuf enum <code>FINAL_URL_NOT_CRAWLABLE = 8;</code>
      */
     const FINAL_URL_NOT_CRAWLABLE = 8;
+    /**
+     * New Smart campaigns cannot be created.
+     *
+     * Generated from protobuf enum <code>CREATION_FAILED = 9;</code>
+     */
+    const CREATION_FAILED = 9;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -79,6 +85,7 @@ class SmartCampaignError
         self::GEO_TARGETS_REQUIRED => 'GEO_TARGETS_REQUIRED',
         self::CANNOT_DETERMINE_SUGGESTION_LOCALE => 'CANNOT_DETERMINE_SUGGESTION_LOCALE',
         self::FINAL_URL_NOT_CRAWLABLE => 'FINAL_URL_NOT_CRAWLABLE',
+        self::CREATION_FAILED => 'CREATION_FAILED',
     ];
 
     public static function name($value)

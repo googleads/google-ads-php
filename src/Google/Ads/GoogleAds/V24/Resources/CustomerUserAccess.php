@@ -66,6 +66,13 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional bool passkey_enabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $passkey_enabled = null;
+    /**
+     * Output only. The resource name of the pending Multi-Party Authorization
+     * review. Read only field
+     *
+     * Generated from protobuf field <code>optional string pending_multi_party_auth_review = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $pending_multi_party_auth_review = null;
 
     /**
      * Constructor.
@@ -96,6 +103,9 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
      *     @type bool $passkey_enabled
      *           Output only. Whether the user has passkey enabled.
      *           Read only field
+     *     @type string $pending_multi_party_auth_review
+     *           Output only. The resource name of the pending Multi-Party Authorization
+     *           review. Read only field
      * }
      */
     public function __construct($data = NULL) {
@@ -339,6 +349,44 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->passkey_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The resource name of the pending Multi-Party Authorization
+     * review. Read only field
+     *
+     * Generated from protobuf field <code>optional string pending_multi_party_auth_review = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getPendingMultiPartyAuthReview()
+    {
+        return isset($this->pending_multi_party_auth_review) ? $this->pending_multi_party_auth_review : '';
+    }
+
+    public function hasPendingMultiPartyAuthReview()
+    {
+        return isset($this->pending_multi_party_auth_review);
+    }
+
+    public function clearPendingMultiPartyAuthReview()
+    {
+        unset($this->pending_multi_party_auth_review);
+    }
+
+    /**
+     * Output only. The resource name of the pending Multi-Party Authorization
+     * review. Read only field
+     *
+     * Generated from protobuf field <code>optional string pending_multi_party_auth_review = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPendingMultiPartyAuthReview($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->pending_multi_party_auth_review = $var;
 
         return $this;
     }

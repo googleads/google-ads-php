@@ -40,7 +40,7 @@ class CampaignBidModifierOperation extends \Google\Protobuf\Internal\Message
      *     @type string $remove
      *           Remove operation: A resource name for the removed campaign bid modifier
      *           is expected, in this format:
-     *           `customers/{customer_id}/CampaignBidModifiers/{campaign_id}~{criterion_id}`
+     *           `customers/{customer_id}/campaignBidModifiers/{campaign_id}~{criterion_id}`
      * }
      */
     public function __construct($data = NULL) {
@@ -153,7 +153,7 @@ class CampaignBidModifierOperation extends \Google\Protobuf\Internal\Message
     /**
      * Remove operation: A resource name for the removed campaign bid modifier
      * is expected, in this format:
-     * `customers/{customer_id}/CampaignBidModifiers/{campaign_id}~{criterion_id}`
+     * `customers/{customer_id}/campaignBidModifiers/{campaign_id}~{criterion_id}`
      *
      * Generated from protobuf field <code>string remove = 3 [(.google.api.resource_reference) = {</code>
      * @return string
@@ -171,7 +171,7 @@ class CampaignBidModifierOperation extends \Google\Protobuf\Internal\Message
     /**
      * Remove operation: A resource name for the removed campaign bid modifier
      * is expected, in this format:
-     * `customers/{customer_id}/CampaignBidModifiers/{campaign_id}~{criterion_id}`
+     * `customers/{customer_id}/campaignBidModifiers/{campaign_id}~{criterion_id}`
      *
      * Generated from protobuf field <code>string remove = 3 [(.google.api.resource_reference) = {</code>
      * @param string $var

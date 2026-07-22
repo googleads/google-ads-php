@@ -37,6 +37,7 @@ return [
             ],
             'templateMap' => [
                 'customerUserAccess' => 'customers/{customer_id}/customerUserAccesses/{user_id}',
+                'multiPartyAuthReview' => 'customers/{customer_id}/multiPartyAuthReviews/{customer_invitation_id}',
             ],
         ],
     ],

@@ -83,6 +83,13 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional bool disable_product_feed = 12;</code>
      */
     protected $disable_product_feed = null;
+    /**
+     * If true, brand exclusions are ignored for Shopping ads.
+     * Only supported for Shopping campaigns.
+     *
+     * Generated from protobuf field <code>optional bool ignore_brand_exclusion_in_shopping_ads = 13;</code>
+     */
+    protected $ignore_brand_exclusion_in_shopping_ads = null;
 
     /**
      * Constructor.
@@ -128,6 +135,9 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *           only for Demand Gen campaigns. See
      *           https://support.google.com/google-ads/answer/13721750 to learn more about
      *           this feature.
+     *     @type bool $ignore_brand_exclusion_in_shopping_ads
+     *           If true, brand exclusions are ignored for Shopping ads.
+     *           Only supported for Shopping campaigns.
      * }
      */
     public function __construct($data = NULL) {
@@ -401,6 +411,44 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->disable_product_feed = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, brand exclusions are ignored for Shopping ads.
+     * Only supported for Shopping campaigns.
+     *
+     * Generated from protobuf field <code>optional bool ignore_brand_exclusion_in_shopping_ads = 13;</code>
+     * @return bool
+     */
+    public function getIgnoreBrandExclusionInShoppingAds()
+    {
+        return isset($this->ignore_brand_exclusion_in_shopping_ads) ? $this->ignore_brand_exclusion_in_shopping_ads : false;
+    }
+
+    public function hasIgnoreBrandExclusionInShoppingAds()
+    {
+        return isset($this->ignore_brand_exclusion_in_shopping_ads);
+    }
+
+    public function clearIgnoreBrandExclusionInShoppingAds()
+    {
+        unset($this->ignore_brand_exclusion_in_shopping_ads);
+    }
+
+    /**
+     * If true, brand exclusions are ignored for Shopping ads.
+     * Only supported for Shopping campaigns.
+     *
+     * Generated from protobuf field <code>optional bool ignore_brand_exclusion_in_shopping_ads = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIgnoreBrandExclusionInShoppingAds($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->ignore_brand_exclusion_in_shopping_ads = $var;
 
         return $this;
     }

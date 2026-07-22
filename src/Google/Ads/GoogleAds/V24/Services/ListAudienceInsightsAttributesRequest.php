@@ -27,7 +27,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * dimensions are CATEGORY, KNOWLEDGE_GRAPH, DEVICE,
      * GEO_TARGET_COUNTRY, SUB_COUNTRY_LOCATION, YOUTUBE_LINEUP,
      * AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
-     *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, and GENDER.
+     *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v24.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -37,7 +37,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * Attributes CATEGORY or KNOWLEDGE_GRAPH, then the attributes returned for
      * those dimensions will match or be related to this string.  For other
      * dimensions, this field is ignored and all available attributes are
-     * returned.
+     * returned. Example: "Millennials interested in the World Cup and soccer."
      *
      * Generated from protobuf field <code>string query_text = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -74,6 +74,12 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * Generated from protobuf field <code>.google.ads.googleads.v24.common.LocationInfo youtube_reach_location = 6;</code>
      */
     protected $youtube_reach_location = null;
+    /**
+     * Optional. Additional search options for Knowledge Graph Entities.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.services.KnowledgeGraphEntitySearchOptions knowledge_graph_entity_search_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $knowledge_graph_entity_search_options = null;
 
     /**
      * @param string $customerId Required. The ID of the customer.
@@ -81,13 +87,13 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      *                           dimensions are CATEGORY, KNOWLEDGE_GRAPH, DEVICE,
      *                           GEO_TARGET_COUNTRY, SUB_COUNTRY_LOCATION, YOUTUBE_LINEUP,
      *                           AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
-     *                           PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, and GENDER.
+     *                           PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
      *                           For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V24\Enums\AudienceInsightsDimensionEnum\AudienceInsightsDimension}
      * @param string $queryText  Required. A free text query.  If the requested dimensions include
      *                           Attributes CATEGORY or KNOWLEDGE_GRAPH, then the attributes returned for
      *                           those dimensions will match or be related to this string.  For other
      *                           dimensions, this field is ignored and all available attributes are
-     *                           returned.
+     *                           returned. Example: "Millennials interested in the World Cup and soccer."
      *
      * @return \Google\Ads\GoogleAds\V24\Services\ListAudienceInsightsAttributesRequest
      *
@@ -114,13 +120,13 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      *           dimensions are CATEGORY, KNOWLEDGE_GRAPH, DEVICE,
      *           GEO_TARGET_COUNTRY, SUB_COUNTRY_LOCATION, YOUTUBE_LINEUP,
      *           AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
-     *            PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, and GENDER.
+     *            PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
      *     @type string $query_text
      *           Required. A free text query.  If the requested dimensions include
      *           Attributes CATEGORY or KNOWLEDGE_GRAPH, then the attributes returned for
      *           those dimensions will match or be related to this string.  For other
      *           dimensions, this field is ignored and all available attributes are
-     *           returned.
+     *           returned. Example: "Millennials interested in the World Cup and soccer."
      *     @type string $customer_insights_group
      *           The name of the customer being planned for.  This is a user-defined value.
      *     @type \Google\Ads\GoogleAds\V24\Common\AdditionalApplicationInfo $insights_application_info
@@ -137,6 +143,8 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      *           only available for the AGE_RANGE, GENDER, AFFINITY_USER_INTEREST and
      *           IN_MARKET_USER_INTEREST dimensions, and may not be available for every
      *           attribute of those dimensions in every market.
+     *     @type \Google\Ads\GoogleAds\V24\Services\KnowledgeGraphEntitySearchOptions $knowledge_graph_entity_search_options
+     *           Optional. Additional search options for Knowledge Graph Entities.
      * }
      */
     public function __construct($data = NULL) {
@@ -175,7 +183,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * dimensions are CATEGORY, KNOWLEDGE_GRAPH, DEVICE,
      * GEO_TARGET_COUNTRY, SUB_COUNTRY_LOCATION, YOUTUBE_LINEUP,
      * AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
-     *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, and GENDER.
+     *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v24.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return RepeatedField<int>
@@ -190,7 +198,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * dimensions are CATEGORY, KNOWLEDGE_GRAPH, DEVICE,
      * GEO_TARGET_COUNTRY, SUB_COUNTRY_LOCATION, YOUTUBE_LINEUP,
      * AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
-     *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, and GENDER.
+     *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v24.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int[] $var
@@ -209,7 +217,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * Attributes CATEGORY or KNOWLEDGE_GRAPH, then the attributes returned for
      * those dimensions will match or be related to this string.  For other
      * dimensions, this field is ignored and all available attributes are
-     * returned.
+     * returned. Example: "Millennials interested in the World Cup and soccer."
      *
      * Generated from protobuf field <code>string query_text = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -224,7 +232,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      * Attributes CATEGORY or KNOWLEDGE_GRAPH, then the attributes returned for
      * those dimensions will match or be related to this string.  For other
      * dimensions, this field is ignored and all available attributes are
-     * returned.
+     * returned. Example: "Millennials interested in the World Cup and soccer."
      *
      * Generated from protobuf field <code>string query_text = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -374,6 +382,42 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Common\LocationInfo::class);
         $this->youtube_reach_location = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Additional search options for Knowledge Graph Entities.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.services.KnowledgeGraphEntitySearchOptions knowledge_graph_entity_search_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Ads\GoogleAds\V24\Services\KnowledgeGraphEntitySearchOptions|null
+     */
+    public function getKnowledgeGraphEntitySearchOptions()
+    {
+        return $this->knowledge_graph_entity_search_options;
+    }
+
+    public function hasKnowledgeGraphEntitySearchOptions()
+    {
+        return isset($this->knowledge_graph_entity_search_options);
+    }
+
+    public function clearKnowledgeGraphEntitySearchOptions()
+    {
+        unset($this->knowledge_graph_entity_search_options);
+    }
+
+    /**
+     * Optional. Additional search options for Knowledge Graph Entities.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.services.KnowledgeGraphEntitySearchOptions knowledge_graph_entity_search_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Ads\GoogleAds\V24\Services\KnowledgeGraphEntitySearchOptions $var
+     * @return $this
+     */
+    public function setKnowledgeGraphEntitySearchOptions($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Services\KnowledgeGraphEntitySearchOptions::class);
+        $this->knowledge_graph_entity_search_options = $var;
 
         return $this;
     }

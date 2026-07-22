@@ -66,6 +66,14 @@ class ConversionOrigin
      * Generated from protobuf enum <code>YOUTUBE_HOSTED = 7;</code>
      */
     const YOUTUBE_HOSTED = 7;
+    /**
+     * Conversion that occurs when a user clicks on local services ads unit and
+     * reaches out to advertiser through phone call, message, or booking options
+     * on the ad.
+     *
+     * Generated from protobuf enum <code>LOCAL_SERVICES_ADS = 8;</code>
+     */
+    const LOCAL_SERVICES_ADS = 8;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -76,6 +84,7 @@ class ConversionOrigin
         self::CALL_FROM_ADS => 'CALL_FROM_ADS',
         self::STORE => 'STORE',
         self::YOUTUBE_HOSTED => 'YOUTUBE_HOSTED',
+        self::LOCAL_SERVICES_ADS => 'LOCAL_SERVICES_ADS',
     ];
 
     public static function name($value)

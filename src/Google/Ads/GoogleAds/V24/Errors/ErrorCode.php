@@ -359,6 +359,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the Content Creator Insights error.
      *     @type int $video_reservation_error
      *           The reasons for the video reservation error.
+     *     @type int $multi_party_auth_review_error
+     *           The reasons for the multi party auth review error
      * }
      */
     public function __construct($data = NULL) {
@@ -5570,6 +5572,37 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V24\Errors\VideoReservationErrorEnum\VideoReservationError::class);
         $this->writeOneof(199, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the multi party auth review error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.errors.MultiPartyAuthReviewErrorEnum.MultiPartyAuthReviewError multi_party_auth_review_error = 200;</code>
+     * @return int
+     */
+    public function getMultiPartyAuthReviewError()
+    {
+        return $this->readOneof(200);
+    }
+
+    public function hasMultiPartyAuthReviewError()
+    {
+        return $this->hasOneof(200);
+    }
+
+    /**
+     * The reasons for the multi party auth review error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.errors.MultiPartyAuthReviewErrorEnum.MultiPartyAuthReviewError multi_party_auth_review_error = 200;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMultiPartyAuthReviewError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V24\Errors\MultiPartyAuthReviewErrorEnum\MultiPartyAuthReviewError::class);
+        $this->writeOneof(200, $var);
 
         return $this;
     }

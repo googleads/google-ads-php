@@ -826,6 +826,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $mobile_device_constant = null;
     /**
+     * The multi party auth review referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.MultiPartyAuthReview multi_party_auth_review = 265;</code>
+     */
+    protected $multi_party_auth_review = null;
+    /**
      * Offline conversion upload summary at customer level.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v24.resources.OfflineConversionUploadClientSummary offline_conversion_upload_client_summary = 216;</code>
@@ -1396,6 +1402,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The mobile app category constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V24\Resources\MobileDeviceConstant $mobile_device_constant
      *           The mobile device constant referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V24\Resources\MultiPartyAuthReview $multi_party_auth_review
+     *           The multi party auth review referenced in the query.
      *     @type \Google\Ads\GoogleAds\V24\Resources\OfflineConversionUploadClientSummary $offline_conversion_upload_client_summary
      *           Offline conversion upload summary at customer level.
      *     @type \Google\Ads\GoogleAds\V24\Resources\OfflineConversionUploadConversionActionSummary $offline_conversion_upload_conversion_action_summary
@@ -6357,6 +6365,42 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Resources\MobileDeviceConstant::class);
         $this->mobile_device_constant = $var;
+
+        return $this;
+    }
+
+    /**
+     * The multi party auth review referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.MultiPartyAuthReview multi_party_auth_review = 265;</code>
+     * @return \Google\Ads\GoogleAds\V24\Resources\MultiPartyAuthReview|null
+     */
+    public function getMultiPartyAuthReview()
+    {
+        return $this->multi_party_auth_review;
+    }
+
+    public function hasMultiPartyAuthReview()
+    {
+        return isset($this->multi_party_auth_review);
+    }
+
+    public function clearMultiPartyAuthReview()
+    {
+        unset($this->multi_party_auth_review);
+    }
+
+    /**
+     * The multi party auth review referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.MultiPartyAuthReview multi_party_auth_review = 265;</code>
+     * @param \Google\Ads\GoogleAds\V24\Resources\MultiPartyAuthReview $var
+     * @return $this
+     */
+    public function setMultiPartyAuthReview($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Resources\MultiPartyAuthReview::class);
+        $this->multi_party_auth_review = $var;
 
         return $this;
     }

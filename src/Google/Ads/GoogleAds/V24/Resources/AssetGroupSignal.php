@@ -83,6 +83,18 @@ class AssetGroupSignal extends \Google\Protobuf\Internal\Message
      *           StringFormatError.ILLEGAL_CHARS
      *           StringLengthError.TOO_LONG
      *           ResourceCountLimitExceededError.RESOURCE_LIMIT
+     *     @type \Google\Ads\GoogleAds\V24\Common\LocalServiceIdInfo $local_services_id
+     *           Immutable. The local services signal to be used by the performance max
+     *           campaign.
+     *     @type \Google\Ads\GoogleAds\V24\Common\VerticalAdsItemGroupRuleListInfo $vertical_ads_item_group_rule_list
+     *           Immutable. The list of vertical ads item group rules used to select items
+     *           from the attached vertical feed.
+     *           This field links to a SharedSet of type
+     *           VERTICAL_ADS_ITEM_GROUP_RULE_LIST. The rules within the linked SharedSet
+     *           define which items from the TRAVEL_FEED AssetSet are eligible to be
+     *           served. Items that do not match the rules will be excluded. This behavior
+     *           is different from other signal types, which provide guidance to the
+     *           optimization engine rather than determining item eligibility.
      * }
      */
     public function __construct($data = NULL) {
@@ -284,6 +296,84 @@ class AssetGroupSignal extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Common\SearchThemeInfo::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Immutable. The local services signal to be used by the performance max
+     * campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.LocalServiceIdInfo local_services_id = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Ads\GoogleAds\V24\Common\LocalServiceIdInfo|null
+     */
+    public function getLocalServicesId()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasLocalServicesId()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * Immutable. The local services signal to be used by the performance max
+     * campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.LocalServiceIdInfo local_services_id = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Ads\GoogleAds\V24\Common\LocalServiceIdInfo $var
+     * @return $this
+     */
+    public function setLocalServicesId($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Common\LocalServiceIdInfo::class);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Immutable. The list of vertical ads item group rules used to select items
+     * from the attached vertical feed.
+     * This field links to a SharedSet of type
+     * VERTICAL_ADS_ITEM_GROUP_RULE_LIST. The rules within the linked SharedSet
+     * define which items from the TRAVEL_FEED AssetSet are eligible to be
+     * served. Items that do not match the rules will be excluded. This behavior
+     * is different from other signal types, which provide guidance to the
+     * optimization engine rather than determining item eligibility.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.VerticalAdsItemGroupRuleListInfo vertical_ads_item_group_rule_list = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Ads\GoogleAds\V24\Common\VerticalAdsItemGroupRuleListInfo|null
+     */
+    public function getVerticalAdsItemGroupRuleList()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasVerticalAdsItemGroupRuleList()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * Immutable. The list of vertical ads item group rules used to select items
+     * from the attached vertical feed.
+     * This field links to a SharedSet of type
+     * VERTICAL_ADS_ITEM_GROUP_RULE_LIST. The rules within the linked SharedSet
+     * define which items from the TRAVEL_FEED AssetSet are eligible to be
+     * served. Items that do not match the rules will be excluded. This behavior
+     * is different from other signal types, which provide guidance to the
+     * optimization engine rather than determining item eligibility.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.VerticalAdsItemGroupRuleListInfo vertical_ads_item_group_rule_list = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Ads\GoogleAds\V24\Common\VerticalAdsItemGroupRuleListInfo $var
+     * @return $this
+     */
+    public function setVerticalAdsItemGroupRuleList($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Common\VerticalAdsItemGroupRuleListInfo::class);
+        $this->writeOneof(9, $var);
 
         return $this;
     }

@@ -70,7 +70,9 @@ class ExperimentArm extends \Google\Protobuf\Internal\Message
      */
     protected $asset_testing_info = null;
     /**
-     * List of asset groups in the experiment arm.
+     * List of asset groups in the experiment arm. The max length is one. In the
+     * Optimize Assets experiment construction, the control arm and treatment arm
+     * should both contain the same asset group ID.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v24.resources.ExperimentArm.AssetGroupInfo asset_groups = 10;</code>
      */
@@ -115,7 +117,9 @@ class ExperimentArm extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\AssetTestingInfo $asset_testing_info
      *           Details of assets under experiment.
      *     @type \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\AssetGroupInfo[] $asset_groups
-     *           List of asset groups in the experiment arm.
+     *           List of asset groups in the experiment arm. The max length is one. In the
+     *           Optimize Assets experiment construction, the control arm and treatment arm
+     *           should both contain the same asset group ID.
      *     @type \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\PerformanceMaxExperimentArmInfo $performance_max_experiment_arm_info
      *           Immutable. Information specific to the control or treatment campaign of a
      *           Performance Max experiment.
@@ -359,7 +363,9 @@ class ExperimentArm extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of asset groups in the experiment arm.
+     * List of asset groups in the experiment arm. The max length is one. In the
+     * Optimize Assets experiment construction, the control arm and treatment arm
+     * should both contain the same asset group ID.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v24.resources.ExperimentArm.AssetGroupInfo asset_groups = 10;</code>
      * @return RepeatedField<\Google\Ads\GoogleAds\V24\Resources\ExperimentArm\AssetGroupInfo>
@@ -370,7 +376,9 @@ class ExperimentArm extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of asset groups in the experiment arm.
+     * List of asset groups in the experiment arm. The max length is one. In the
+     * Optimize Assets experiment construction, the control arm and treatment arm
+     * should both contain the same asset group ID.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v24.resources.ExperimentArm.AssetGroupInfo asset_groups = 10;</code>
      * @param \Google\Ads\GoogleAds\V24\Resources\ExperimentArm\AssetGroupInfo[] $var

@@ -121,6 +121,13 @@ class AssetGroupError
      * Generated from protobuf enum <code>CANNOT_MUTATE_ASSET_GROUP_FOR_REMOVED_CAMPAIGN = 17;</code>
      */
     const CANNOT_MUTATE_ASSET_GROUP_FOR_REMOVED_CAMPAIGN = 17;
+    /**
+     * The asset group cannot be removed because it's the last one in the
+     * campaign.
+     *
+     * Generated from protobuf enum <code>CANNOT_REMOVE_ALL_ASSET_GROUPS_FROM_CAMPAIGN = 18;</code>
+     */
+    const CANNOT_REMOVE_ALL_ASSET_GROUPS_FROM_CAMPAIGN = 18;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -141,6 +148,7 @@ class AssetGroupError
         self::FINAL_URL_CONTAINS_INVALID_DOMAIN_NAME => 'FINAL_URL_CONTAINS_INVALID_DOMAIN_NAME',
         self::AD_CUSTOMIZER_NOT_SUPPORTED => 'AD_CUSTOMIZER_NOT_SUPPORTED',
         self::CANNOT_MUTATE_ASSET_GROUP_FOR_REMOVED_CAMPAIGN => 'CANNOT_MUTATE_ASSET_GROUP_FOR_REMOVED_CAMPAIGN',
+        self::CANNOT_REMOVE_ALL_ASSET_GROUPS_FROM_CAMPAIGN => 'CANNOT_REMOVE_ALL_ASSET_GROUPS_FROM_CAMPAIGN',
     ];
 
     public static function name($value)

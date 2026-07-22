@@ -50,6 +50,14 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v24.common.LocationInfo sub_country_locations = 7;</code>
      */
     private $sub_country_locations;
+    /**
+     * Optional. Optional features to include in the response. By default, only
+     * core insight data is returned. Including supplemental data here will
+     * populate additional fields in the response.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData supplemental_data = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $supplemental_data;
     protected $criteria;
 
     /**
@@ -72,6 +80,10 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
      *           Only supported for
      *           [SearchAttributes][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.SearchAttributes]
      *           criteria.
+     *     @type int[] $supplemental_data
+     *           Optional. Optional features to include in the response. By default, only
+     *           core insight data is returned. Including supplemental data here will
+     *           populate additional fields in the response.
      *     @type \Google\Ads\GoogleAds\V24\Services\GenerateCreatorInsightsRequest\SearchAttributes $search_attributes
      *           The attributes used to identify top creators. Data fetched is based on
      *           the list of countries or sub-country locations specified in
@@ -81,11 +93,18 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V24\Services\GenerateCreatorInsightsRequest\SearchBrand $search_brand
      *           A brand used to search for top creators. Data fetched is based on the
      *           list of countries specified in
-     *           [country_locations][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.country_locations].
+     *           [country_locations][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.country_locations].This
+     *           option is deprecated and will be removed in the V25 release. Use
+     *           search_topics instead.
      *     @type \Google\Ads\GoogleAds\V24\Services\GenerateCreatorInsightsRequest\YouTubeChannels $search_channels
      *           YouTube Channel IDs for Creator Insights. Data fetched for channels is
      *           based on the list of countries specified in
      *           [country_locations][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.country_locations].
+     *     @type \Google\Ads\GoogleAds\V24\Services\SearchTopics $search_topics
+     *           Search for relevant creators who make content about the specified topics.
+     *           Data fetched is based on the country specified in
+     *           [country_locations][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.country_locations].
+     *           Note: This option allows searching for one country only.
      * }
      */
     public function __construct($data = NULL) {
@@ -242,6 +261,36 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Optional. Optional features to include in the response. By default, only
+     * core insight data is returned. Including supplemental data here will
+     * populate additional fields in the response.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData supplemental_data = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return RepeatedField<int>
+     */
+    public function getSupplementalData()
+    {
+        return $this->supplemental_data;
+    }
+
+    /**
+     * Optional. Optional features to include in the response. By default, only
+     * core insight data is returned. Including supplemental data here will
+     * populate additional fields in the response.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v24.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData supplemental_data = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param int[] $var
+     * @return $this
+     */
+    public function setSupplementalData($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V24\Enums\ContentCreatorInsightsSupplementalDataEnum\ContentCreatorInsightsSupplementalData::class);
+        $this->supplemental_data = $arr;
+
+        return $this;
+    }
+
+    /**
      * The attributes used to identify top creators. Data fetched is based on
      * the list of countries or sub-country locations specified in
      * [country_locations][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.country_locations]
@@ -283,7 +332,9 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
     /**
      * A brand used to search for top creators. Data fetched is based on the
      * list of countries specified in
-     * [country_locations][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.country_locations].
+     * [country_locations][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.country_locations].This
+     * option is deprecated and will be removed in the V25 release. Use
+     * search_topics instead.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.SearchBrand search_brand = 5;</code>
      * @return \Google\Ads\GoogleAds\V24\Services\GenerateCreatorInsightsRequest\SearchBrand|null
@@ -301,7 +352,9 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
     /**
      * A brand used to search for top creators. Data fetched is based on the
      * list of countries specified in
-     * [country_locations][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.country_locations].
+     * [country_locations][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.country_locations].This
+     * option is deprecated and will be removed in the V25 release. Use
+     * search_topics instead.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.SearchBrand search_brand = 5;</code>
      * @param \Google\Ads\GoogleAds\V24\Services\GenerateCreatorInsightsRequest\SearchBrand $var
@@ -346,6 +399,43 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Services\GenerateCreatorInsightsRequest\YouTubeChannels::class);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * Search for relevant creators who make content about the specified topics.
+     * Data fetched is based on the country specified in
+     * [country_locations][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.country_locations].
+     * Note: This option allows searching for one country only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.services.SearchTopics search_topics = 9;</code>
+     * @return \Google\Ads\GoogleAds\V24\Services\SearchTopics|null
+     */
+    public function getSearchTopics()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasSearchTopics()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * Search for relevant creators who make content about the specified topics.
+     * Data fetched is based on the country specified in
+     * [country_locations][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.country_locations].
+     * Note: This option allows searching for one country only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.services.SearchTopics search_topics = 9;</code>
+     * @param \Google\Ads\GoogleAds\V24\Services\SearchTopics $var
+     * @return $this
+     */
+    public function setSearchTopics($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Services\SearchTopics::class);
+        $this->writeOneof(9, $var);
 
         return $this;
     }

@@ -114,6 +114,7 @@ use Google\Ads\GoogleAds\V24\Services\Client\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\KeywordThemeConstantServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\LabelServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\LocalServicesLeadServiceClient;
+use Google\Ads\GoogleAds\V24\Services\Client\MultiPartyAuthReviewServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\OfflineUserDataJobServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\PaymentsAccountServiceClient;
 use Google\Ads\GoogleAds\V24\Services\Client\ProductLinkInvitationServiceClient;
@@ -965,6 +966,14 @@ trait ServiceClientFactoryTrait
     public function getLocalServicesLeadServiceClient(): LocalServicesLeadServiceClient
     {
         return new LocalServicesLeadServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return MultiPartyAuthReviewServiceClient
+     */
+    public function getMultiPartyAuthReviewServiceClient(): MultiPartyAuthReviewServiceClient
+    {
+        return new MultiPartyAuthReviewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

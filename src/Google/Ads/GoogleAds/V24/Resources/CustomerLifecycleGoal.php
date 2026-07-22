@@ -18,7 +18,7 @@ class CustomerLifecycleGoal extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The resource name of the customer lifecycle goal.
      * Customer lifecycle resource names have the form:
-     * `customers/{customer_id}/customerLifecycleGoal`
+     * `customers/{customer_id}/customerLifecycleGoals`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
@@ -46,7 +46,7 @@ class CustomerLifecycleGoal extends \Google\Protobuf\Internal\Message
      *     @type string $resource_name
      *           Immutable. The resource name of the customer lifecycle goal.
      *           Customer lifecycle resource names have the form:
-     *           `customers/{customer_id}/customerLifecycleGoal`
+     *           `customers/{customer_id}/customerLifecycleGoals`
      *     @type \Google\Ads\GoogleAds\V24\Common\LifecycleGoalValueSettings $customer_acquisition_goal_value_settings
      *           Output only. Customer acquisition goal customer level value settings.
      *     @type string $owner_customer
@@ -62,7 +62,7 @@ class CustomerLifecycleGoal extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The resource name of the customer lifecycle goal.
      * Customer lifecycle resource names have the form:
-     * `customers/{customer_id}/customerLifecycleGoal`
+     * `customers/{customer_id}/customerLifecycleGoals`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
@@ -75,7 +75,7 @@ class CustomerLifecycleGoal extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The resource name of the customer lifecycle goal.
      * Customer lifecycle resource names have the form:
-     * `customers/{customer_id}/customerLifecycleGoal`
+     * `customers/{customer_id}/customerLifecycleGoals`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var

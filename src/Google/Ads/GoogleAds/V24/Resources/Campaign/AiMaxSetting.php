@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Settings for AI Max in search campaigns.
+ * Settings for AI Max in Search and Shopping campaigns.
  *
  * Generated from protobuf message <code>google.ads.googleads.v24.resources.Campaign.AiMaxSetting</code>
  */
@@ -21,16 +21,20 @@ class AiMaxSetting extends \Google\Protobuf\Internal\Message
      * settings. But if enable_ai_max is set to false or cleared, then no AI
      * Max features will serve for this campaign, regardless of the other
      * settings.
-     * Search Term Matching is enabled by default when AI Max is enabled, and
-     * can be disabled at the ad group level.
+     * Supported in Search and Shopping campaigns.
+     * For Search campaigns, Search Term Matching is enabled by default when
+     * AI Max is enabled, and can be disabled at the ad group level.
+     * For Shopping campaigns, Text customization is always enabled when AI Max
+     * is enabled.
      *
      * Generated from protobuf field <code>optional bool enable_ai_max = 1;</code>
      */
     protected $enable_ai_max = null;
     /**
-     * Output only. Indicates whether a search campaign has adopted AI Max
-     * before, and is required to have AI Max enabled to adopt campaign-level
-     * text asset automation and brand list targeting in all API versions.
+     * Output only. Search campaigns only. Indicates whether a campaign has
+     * adopted AI Max before, and is required to have AI Max enabled to adopt
+     * campaign-level text asset automation and brand list targeting in all API
+     * versions.
      *
      * Generated from protobuf field <code>optional .google.ads.googleads.v24.resources.Campaign.AiMaxSetting.AiMaxBundlingRequired bundling_required = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -48,12 +52,16 @@ class AiMaxSetting extends \Google\Protobuf\Internal\Message
      *           settings. But if enable_ai_max is set to false or cleared, then no AI
      *           Max features will serve for this campaign, regardless of the other
      *           settings.
-     *           Search Term Matching is enabled by default when AI Max is enabled, and
-     *           can be disabled at the ad group level.
+     *           Supported in Search and Shopping campaigns.
+     *           For Search campaigns, Search Term Matching is enabled by default when
+     *           AI Max is enabled, and can be disabled at the ad group level.
+     *           For Shopping campaigns, Text customization is always enabled when AI Max
+     *           is enabled.
      *     @type int $bundling_required
-     *           Output only. Indicates whether a search campaign has adopted AI Max
-     *           before, and is required to have AI Max enabled to adopt campaign-level
-     *           text asset automation and brand list targeting in all API versions.
+     *           Output only. Search campaigns only. Indicates whether a campaign has
+     *           adopted AI Max before, and is required to have AI Max enabled to adopt
+     *           campaign-level text asset automation and brand list targeting in all API
+     *           versions.
      * }
      */
     public function __construct($data = NULL) {
@@ -67,8 +75,11 @@ class AiMaxSetting extends \Google\Protobuf\Internal\Message
      * settings. But if enable_ai_max is set to false or cleared, then no AI
      * Max features will serve for this campaign, regardless of the other
      * settings.
-     * Search Term Matching is enabled by default when AI Max is enabled, and
-     * can be disabled at the ad group level.
+     * Supported in Search and Shopping campaigns.
+     * For Search campaigns, Search Term Matching is enabled by default when
+     * AI Max is enabled, and can be disabled at the ad group level.
+     * For Shopping campaigns, Text customization is always enabled when AI Max
+     * is enabled.
      *
      * Generated from protobuf field <code>optional bool enable_ai_max = 1;</code>
      * @return bool
@@ -94,8 +105,11 @@ class AiMaxSetting extends \Google\Protobuf\Internal\Message
      * settings. But if enable_ai_max is set to false or cleared, then no AI
      * Max features will serve for this campaign, regardless of the other
      * settings.
-     * Search Term Matching is enabled by default when AI Max is enabled, and
-     * can be disabled at the ad group level.
+     * Supported in Search and Shopping campaigns.
+     * For Search campaigns, Search Term Matching is enabled by default when
+     * AI Max is enabled, and can be disabled at the ad group level.
+     * For Shopping campaigns, Text customization is always enabled when AI Max
+     * is enabled.
      *
      * Generated from protobuf field <code>optional bool enable_ai_max = 1;</code>
      * @param bool $var
@@ -110,9 +124,10 @@ class AiMaxSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Indicates whether a search campaign has adopted AI Max
-     * before, and is required to have AI Max enabled to adopt campaign-level
-     * text asset automation and brand list targeting in all API versions.
+     * Output only. Search campaigns only. Indicates whether a campaign has
+     * adopted AI Max before, and is required to have AI Max enabled to adopt
+     * campaign-level text asset automation and brand list targeting in all API
+     * versions.
      *
      * Generated from protobuf field <code>optional .google.ads.googleads.v24.resources.Campaign.AiMaxSetting.AiMaxBundlingRequired bundling_required = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
@@ -133,9 +148,10 @@ class AiMaxSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Indicates whether a search campaign has adopted AI Max
-     * before, and is required to have AI Max enabled to adopt campaign-level
-     * text asset automation and brand list targeting in all API versions.
+     * Output only. Search campaigns only. Indicates whether a campaign has
+     * adopted AI Max before, and is required to have AI Max enabled to adopt
+     * campaign-level text asset automation and brand list targeting in all API
+     * versions.
      *
      * Generated from protobuf field <code>optional .google.ads.googleads.v24.resources.Campaign.AiMaxSetting.AiMaxBundlingRequired bundling_required = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var

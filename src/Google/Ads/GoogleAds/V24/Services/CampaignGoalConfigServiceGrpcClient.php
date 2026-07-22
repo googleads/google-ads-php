@@ -45,7 +45,6 @@ class CampaignGoalConfigServiceGrpcClient extends \Grpc\BaseStub {
      *   [QuotaError]()
      *   [RequestError]()
      *   [CampaignGoalConfigError]()
-     *   [GoalServicesError]()
      * @param \Google\Ads\GoogleAds\V24\Services\MutateCampaignGoalConfigsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

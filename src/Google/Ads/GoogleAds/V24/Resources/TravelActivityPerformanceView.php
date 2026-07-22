@@ -18,7 +18,7 @@ class TravelActivityPerformanceView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The resource name of the travel activity performance view.
      * Travel Activity performance view resource names have the form:
-     * `customers/{customer_id}/travelActivityPerformanceView`
+     * `customers/{customer_id}/travelActivityPerformanceViews`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
@@ -33,7 +33,7 @@ class TravelActivityPerformanceView extends \Google\Protobuf\Internal\Message
      *     @type string $resource_name
      *           Output only. The resource name of the travel activity performance view.
      *           Travel Activity performance view resource names have the form:
-     *           `customers/{customer_id}/travelActivityPerformanceView`
+     *           `customers/{customer_id}/travelActivityPerformanceViews`
      * }
      */
     public function __construct($data = NULL) {
@@ -44,7 +44,7 @@ class TravelActivityPerformanceView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The resource name of the travel activity performance view.
      * Travel Activity performance view resource names have the form:
-     * `customers/{customer_id}/travelActivityPerformanceView`
+     * `customers/{customer_id}/travelActivityPerformanceViews`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
@@ -57,7 +57,7 @@ class TravelActivityPerformanceView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The resource name of the travel activity performance view.
      * Travel Activity performance view resource names have the form:
-     * `customers/{customer_id}/travelActivityPerformanceView`
+     * `customers/{customer_id}/travelActivityPerformanceViews`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var

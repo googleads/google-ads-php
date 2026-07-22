@@ -38,7 +38,7 @@ class CampaignLifecycleGoalServiceGrpcClient extends \Grpc\BaseStub {
      * List of thrown errors:
      *   [AuthenticationError]()
      *   [AuthorizationError]()
-     *   [CampaignLifecycleGoalConfigError]()
+     *   [CampaignLifecycleGoalError]()
      *   [HeaderError]()
      *   [InternalError]()
      *   [QuotaError]()

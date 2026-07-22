@@ -101,6 +101,12 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional .google.ads.googleads.v24.enums.AssetOrientationEnum.AssetOrientation orientation = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $orientation = null;
+    /**
+     * Synthetic content info for the asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.SyntheticContentInfo synthetic_content_info = 55;</code>
+     */
+    protected $synthetic_content_info = null;
     protected $asset_data;
 
     /**
@@ -140,6 +146,8 @@ class Asset extends \Google\Protobuf\Internal\Message
      *     @type int $orientation
      *           Output only. Orientation of the asset. This is only supported for image and
      *           video assets.
+     *     @type \Google\Ads\GoogleAds\V24\Common\SyntheticContentInfo $synthetic_content_info
+     *           Synthetic content info for the asset.
      *     @type \Google\Ads\GoogleAds\V24\Common\YoutubeVideoAsset $youtube_video_asset
      *           Immutable. A YouTube video asset.
      *     @type \Google\Ads\GoogleAds\V24\Common\MediaBundleAsset $media_bundle_asset
@@ -611,6 +619,42 @@ class Asset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V24\Enums\AssetOrientationEnum\AssetOrientation::class);
         $this->orientation = $var;
+
+        return $this;
+    }
+
+    /**
+     * Synthetic content info for the asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.SyntheticContentInfo synthetic_content_info = 55;</code>
+     * @return \Google\Ads\GoogleAds\V24\Common\SyntheticContentInfo|null
+     */
+    public function getSyntheticContentInfo()
+    {
+        return $this->synthetic_content_info;
+    }
+
+    public function hasSyntheticContentInfo()
+    {
+        return isset($this->synthetic_content_info);
+    }
+
+    public function clearSyntheticContentInfo()
+    {
+        unset($this->synthetic_content_info);
+    }
+
+    /**
+     * Synthetic content info for the asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.common.SyntheticContentInfo synthetic_content_info = 55;</code>
+     * @param \Google\Ads\GoogleAds\V24\Common\SyntheticContentInfo $var
+     * @return $this
+     */
+    public function setSyntheticContentInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Common\SyntheticContentInfo::class);
+        $this->synthetic_content_info = $var;
 
         return $this;
     }

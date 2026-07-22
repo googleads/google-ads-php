@@ -122,10 +122,28 @@ class CustomerUserAccessServiceClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * multi_party_auth_review resource.
+     *
+     * @param string $customerId
+     * @param string $customerInvitationId
+     *
+     * @return string The formatted multi_party_auth_review resource.
+     */
+    public static function multiPartyAuthReviewName(string $customerId, string $customerInvitationId): string
+    {
+        return self::getPathTemplate('multiPartyAuthReview')->render([
+            'customer_id' => $customerId,
+            'customer_invitation_id' => $customerInvitationId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - customerUserAccess: customers/{customer_id}/customerUserAccesses/{user_id}
+     * - multiPartyAuthReview: customers/{customer_id}/multiPartyAuthReviews/{customer_invitation_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

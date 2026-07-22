@@ -17,7 +17,7 @@ class CampaignLifecycleGoal extends \Google\Protobuf\Internal\Message
 {
     /**
      * Immutable. The resource name of the customer lifecycle goal of a campaign.
-     * `customers/{customer_id}/campaignLifecycleGoal/{campaign_id}`
+     * `customers/{customer_id}/campaignLifecycleGoals/{campaign_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
@@ -45,7 +45,7 @@ class CampaignLifecycleGoal extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource_name
      *           Immutable. The resource name of the customer lifecycle goal of a campaign.
-     *           `customers/{customer_id}/campaignLifecycleGoal/{campaign_id}`
+     *           `customers/{customer_id}/campaignLifecycleGoals/{campaign_id}`
      *     @type string $campaign
      *           Output only. The campaign where the goal is attached.
      *     @type \Google\Ads\GoogleAds\V24\Resources\CustomerAcquisitionGoalSettings $customer_acquisition_goal_settings
@@ -61,7 +61,7 @@ class CampaignLifecycleGoal extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The resource name of the customer lifecycle goal of a campaign.
-     * `customers/{customer_id}/campaignLifecycleGoal/{campaign_id}`
+     * `customers/{customer_id}/campaignLifecycleGoals/{campaign_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
@@ -73,7 +73,7 @@ class CampaignLifecycleGoal extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The resource name of the customer lifecycle goal of a campaign.
-     * `customers/{customer_id}/campaignLifecycleGoal/{campaign_id}`
+     * `customers/{customer_id}/campaignLifecycleGoals/{campaign_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var

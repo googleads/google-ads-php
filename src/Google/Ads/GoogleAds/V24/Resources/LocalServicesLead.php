@@ -20,8 +20,8 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
 {
     /**
      * Immutable. The resource name of the local services lead data.
-     * Local Services Lead resource name have the form
-     * `customers/{customer_id}/localServicesLead/{local_services_lead_id}`
+     * Local Services Lead resource names have the form
+     * `customers/{customer_id}/localServicesLeads/{local_services_lead_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
@@ -116,8 +116,8 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource_name
      *           Immutable. The resource name of the local services lead data.
-     *           Local Services Lead resource name have the form
-     *           `customers/{customer_id}/localServicesLead/{local_services_lead_id}`
+     *           Local Services Lead resource names have the form
+     *           `customers/{customer_id}/localServicesLeads/{local_services_lead_id}`
      *     @type int|string $id
      *           Output only. ID of this Lead.
      *     @type string $category_id
@@ -160,8 +160,8 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The resource name of the local services lead data.
-     * Local Services Lead resource name have the form
-     * `customers/{customer_id}/localServicesLead/{local_services_lead_id}`
+     * Local Services Lead resource names have the form
+     * `customers/{customer_id}/localServicesLeads/{local_services_lead_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
@@ -173,8 +173,8 @@ class LocalServicesLead extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The resource name of the local services lead data.
-     * Local Services Lead resource name have the form
-     * `customers/{customer_id}/localServicesLead/{local_services_lead_id}`
+     * Local Services Lead resource names have the form
+     * `customers/{customer_id}/localServicesLeads/{local_services_lead_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var

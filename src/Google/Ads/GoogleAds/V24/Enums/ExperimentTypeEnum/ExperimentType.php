@@ -112,6 +112,21 @@ class ExperimentType
      * Generated from protobuf enum <code>PMAX_REPLACEMENT_SHOPPING = 16;</code>
      */
     const PMAX_REPLACEMENT_SHOPPING = 16;
+    /**
+     * An experiment that compares multiple variables across one or more
+     * campaigns, tests a mix of campaign types, and more.
+     *
+     * Generated from protobuf enum <code>COMPARE_CAMPAIGNS = 17;</code>
+     */
+    const COMPARE_CAMPAIGNS = 17;
+    /**
+     * An experiment that tests automatically created assets and lets Google AI
+     * send traffic to relevant landing pages and generate text assets to better
+     * match search queries.
+     *
+     * Generated from protobuf enum <code>PMAX_TEXT_CUSTOMIZATION_FINAL_URL_EXPANSION = 18;</code>
+     */
+    const PMAX_TEXT_CUSTOMIZATION_FINAL_URL_EXPANSION = 18;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -130,6 +145,8 @@ class ExperimentType
         self::ADOPT_AI_MAX => 'ADOPT_AI_MAX',
         self::ADOPT_BROAD_MATCH_KEYWORDS => 'ADOPT_BROAD_MATCH_KEYWORDS',
         self::PMAX_REPLACEMENT_SHOPPING => 'PMAX_REPLACEMENT_SHOPPING',
+        self::COMPARE_CAMPAIGNS => 'COMPARE_CAMPAIGNS',
+        self::PMAX_TEXT_CUSTOMIZATION_FINAL_URL_EXPANSION => 'PMAX_TEXT_CUSTOMIZATION_FINAL_URL_EXPANSION',
     ];
 
     public static function name($value)

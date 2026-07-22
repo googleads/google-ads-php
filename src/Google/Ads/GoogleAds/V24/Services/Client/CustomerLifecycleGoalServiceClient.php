@@ -250,7 +250,7 @@ class CustomerLifecycleGoalServiceClient
      * List of thrown errors:
      * [AuthenticationError]()
      * [AuthorizationError]()
-     * [CustomerLifecycleGoalConfigError]()
+     * [CustomerLifecycleGoalError]()
      * [HeaderError]()
      * [InternalError]()
      * [QuotaError]()

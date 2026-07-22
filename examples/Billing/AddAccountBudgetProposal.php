@@ -24,16 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V24\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V24\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V24\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V24\ResourceNames;
-use Google\Ads\GoogleAds\V24\Enums\AccountBudgetProposalTypeEnum\AccountBudgetProposalType;
-use Google\Ads\GoogleAds\V24\Enums\TimeTypeEnum\TimeType;
-use Google\Ads\GoogleAds\V24\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V24\Resources\AccountBudgetProposal;
-use Google\Ads\GoogleAds\V24\Services\AccountBudgetProposalOperation;
-use Google\Ads\GoogleAds\V24\Services\MutateAccountBudgetProposalRequest;
+use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V25\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V25\ResourceNames;
+use Google\Ads\GoogleAds\V25\Enums\AccountBudgetProposalTypeEnum\AccountBudgetProposalType;
+use Google\Ads\GoogleAds\V25\Enums\TimeTypeEnum\TimeType;
+use Google\Ads\GoogleAds\V25\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V25\Resources\AccountBudgetProposal;
+use Google\Ads\GoogleAds\V25\Services\AccountBudgetProposalOperation;
+use Google\Ads\GoogleAds\V25\Services\MutateAccountBudgetProposalRequest;
 use Google\ApiCore\ApiException;
 
 /**

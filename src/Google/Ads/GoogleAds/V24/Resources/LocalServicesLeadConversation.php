@@ -20,8 +20,8 @@ class LocalServicesLeadConversation extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The resource name of the local services lead conversation
-     * data. Local Services Lead Conversation resource name have the form
-     * `customers/{customer_id}/localServicesLeadConversation/{local_services_lead_conversation_id}`
+     * data. Local Services Lead Conversation resource names have the form
+     * `customers/{customer_id}/localServicesLeadConversations/{local_services_lead_conversation_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
@@ -83,8 +83,8 @@ class LocalServicesLeadConversation extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource_name
      *           Output only. The resource name of the local services lead conversation
-     *           data. Local Services Lead Conversation resource name have the form
-     *           `customers/{customer_id}/localServicesLeadConversation/{local_services_lead_conversation_id}`
+     *           data. Local Services Lead Conversation resource names have the form
+     *           `customers/{customer_id}/localServicesLeadConversations/{local_services_lead_conversation_id}`
      *     @type int|string $id
      *           Output only. ID of this Lead Conversation.
      *     @type int $conversation_channel
@@ -114,8 +114,8 @@ class LocalServicesLeadConversation extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the local services lead conversation
-     * data. Local Services Lead Conversation resource name have the form
-     * `customers/{customer_id}/localServicesLeadConversation/{local_services_lead_conversation_id}`
+     * data. Local Services Lead Conversation resource names have the form
+     * `customers/{customer_id}/localServicesLeadConversations/{local_services_lead_conversation_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
@@ -127,8 +127,8 @@ class LocalServicesLeadConversation extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the local services lead conversation
-     * data. Local Services Lead Conversation resource name have the form
-     * `customers/{customer_id}/localServicesLeadConversation/{local_services_lead_conversation_id}`
+     * data. Local Services Lead Conversation resource names have the form
+     * `customers/{customer_id}/localServicesLeadConversations/{local_services_lead_conversation_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var

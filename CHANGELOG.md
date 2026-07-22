@@ -1,3 +1,8 @@
+## 33.6.0
+* Added support for Google Ads API v25.0
+* Regenerated support for Google Ads API v24.2 to add some fields that were
+  missing from the previous release.
+
 ## 33.5.0
 * Added support for Google Ads API v24.2
 * Resolved ongoing Laravel security vulnerabilities

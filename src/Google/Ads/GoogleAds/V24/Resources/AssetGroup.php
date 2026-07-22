@@ -107,6 +107,12 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v24.resources.AssetCoverage asset_coverage = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $asset_coverage = null;
+    /**
+     * Local services info of the asset group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.GoogleLocalServicesInfo google_local_services_info = 14;</code>
+     */
+    protected $google_local_services_info = null;
 
     /**
      * Constructor.
@@ -152,6 +158,8 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      *           Output only. Overall ad strength of this asset group.
      *     @type \Google\Ads\GoogleAds\V24\Resources\AssetCoverage $asset_coverage
      *           Output only. The asset coverage of this asset group.
+     *     @type \Google\Ads\GoogleAds\V24\Resources\GoogleLocalServicesInfo $google_local_services_info
+     *           Local services info of the asset group.
      * }
      */
     public function __construct($data = NULL) {
@@ -527,6 +535,42 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Resources\AssetCoverage::class);
         $this->asset_coverage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Local services info of the asset group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.GoogleLocalServicesInfo google_local_services_info = 14;</code>
+     * @return \Google\Ads\GoogleAds\V24\Resources\GoogleLocalServicesInfo|null
+     */
+    public function getGoogleLocalServicesInfo()
+    {
+        return $this->google_local_services_info;
+    }
+
+    public function hasGoogleLocalServicesInfo()
+    {
+        return isset($this->google_local_services_info);
+    }
+
+    public function clearGoogleLocalServicesInfo()
+    {
+        unset($this->google_local_services_info);
+    }
+
+    /**
+     * Local services info of the asset group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.GoogleLocalServicesInfo google_local_services_info = 14;</code>
+     * @param \Google\Ads\GoogleAds\V24\Resources\GoogleLocalServicesInfo $var
+     * @return $this
+     */
+    public function setGoogleLocalServicesInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Resources\GoogleLocalServicesInfo::class);
+        $this->google_local_services_info = $var;
 
         return $this;
     }

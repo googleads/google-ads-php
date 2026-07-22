@@ -41,6 +41,13 @@ use Psr\Log\LoggerInterface;
 /**
  * Service Description: Service to generate Shareable Previews.
  *
+ * Only Performance Max asset groups and certain YouTube video/audio ad formats
+ * are supported. Other ad types, such as Responsive Search Ads or Responsive
+ * Display Ads, are not supported and return an `UNSUPPORTED_AD_TYPE` error.
+ *
+ * The generated preview URLs cannot be embedded in an iframe because the
+ * response headers include `X-Frame-Options: deny`.
+ *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods.
  *

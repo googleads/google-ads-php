@@ -9,7 +9,13 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * A group placement view.
+ * A view showing performance data for where your ads actually served on the
+ * Display Network and YouTube, including both targeted (managed) and automatic
+ * placements.
+ * Data for low-traffic placements may be aggregated. The scope
+ * of placements shown is influenced by the ad group's `TargetingSetting` for
+ * the `PLACEMENT` dimension. This view corresponds to the "Where ads showed"
+ * section in the Google Ads UI.
  *
  * Generated from protobuf message <code>google.ads.googleads.v24.resources.GroupPlacementView</code>
  */

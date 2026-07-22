@@ -42,7 +42,7 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      * the array describes a more specific sub-category. For example,
      * {"Pets & Animals", "Pets", "Dogs"} represents the
      * "Pets & Animals/Pets/Dogs" category. List of available topic categories at
-     * https://developers.google.com/google-ads/api/reference/data/verticals
+     * https://developers.google.com/google-ads/api/data/topics
      *
      * Generated from protobuf field <code>repeated string path = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -67,7 +67,7 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      *           the array describes a more specific sub-category. For example,
      *           {"Pets & Animals", "Pets", "Dogs"} represents the
      *           "Pets & Animals/Pets/Dogs" category. List of available topic categories at
-     *           https://developers.google.com/google-ads/api/reference/data/verticals
+     *           https://developers.google.com/google-ads/api/data/topics
      * }
      */
     public function __construct($data = NULL) {
@@ -182,7 +182,7 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      * the array describes a more specific sub-category. For example,
      * {"Pets & Animals", "Pets", "Dogs"} represents the
      * "Pets & Animals/Pets/Dogs" category. List of available topic categories at
-     * https://developers.google.com/google-ads/api/reference/data/verticals
+     * https://developers.google.com/google-ads/api/data/topics
      *
      * Generated from protobuf field <code>repeated string path = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return RepeatedField<string>
@@ -197,7 +197,7 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      * the array describes a more specific sub-category. For example,
      * {"Pets & Animals", "Pets", "Dogs"} represents the
      * "Pets & Animals/Pets/Dogs" category. List of available topic categories at
-     * https://developers.google.com/google-ads/api/reference/data/verticals
+     * https://developers.google.com/google-ads/api/data/topics
      *
      * Generated from protobuf field <code>repeated string path = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string[] $var

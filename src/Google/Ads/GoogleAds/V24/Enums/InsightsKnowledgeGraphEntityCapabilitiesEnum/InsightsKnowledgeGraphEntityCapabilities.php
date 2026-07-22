@@ -34,17 +34,30 @@ class InsightsKnowledgeGraphEntityCapabilities
     const CONTENT_TRENDING_INSIGHTS = 2;
     /**
      * An entity that is supported to use as a creator attribute in
-     * [ContentCreatorInsightsService.GenerateCreatorInsights][google.ads.googleads.v24.services.ContentCreatorInsightsService.GenerateCreatorInsights].
+     * [ContentCreatorInsightsService.GenerateCreatorInsights][google.ads.googleads.v24.services.ContentCreatorInsightsService.GenerateCreatorInsights]
+     * in field
+     * [GenerateCreatorInsightsRequest.search_attributes.creator_attributes][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.SearchAttributes.creator_attributes].
      *
      * Generated from protobuf enum <code>CREATOR_ATTRIBUTE = 3;</code>
      */
     const CREATOR_ATTRIBUTE = 3;
+    /**
+     * An entity that is supported to use as a topic in
+     * [ContentCreatorInsightsService.GenerateCreatorInsights]
+     * [google.ads.googleads.v24.services.ContentCreatorInsightsService.GenerateCreatorInsights]
+     * in field
+     * [GenerateCreatorInsightsRequest.search_topics][google.ads.googleads.v24.services.GenerateCreatorInsightsRequest.search_topics].
+     *
+     * Generated from protobuf enum <code>CREATOR_TOPIC_INSIGHTS = 5;</code>
+     */
+    const CREATOR_TOPIC_INSIGHTS = 5;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::CONTENT_TRENDING_INSIGHTS => 'CONTENT_TRENDING_INSIGHTS',
         self::CREATOR_ATTRIBUTE => 'CREATOR_ATTRIBUTE',
+        self::CREATOR_TOPIC_INSIGHTS => 'CREATOR_TOPIC_INSIGHTS',
     ];
 
     public static function name($value)

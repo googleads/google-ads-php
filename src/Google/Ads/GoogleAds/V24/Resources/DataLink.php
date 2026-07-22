@@ -19,7 +19,7 @@ class DataLink extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Resource name of the product data link.
      * DataLink resource names have the form:
-     * `customers/{customer_id}/datalinks/{product_link_id}~{data_link_id}}
+     * `customers/{customer_id}/dataLinks/{product_link_id}~{data_link_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
@@ -51,6 +51,7 @@ class DataLink extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     protected $data_link_entity;
+    protected $data_link_metadata;
 
     /**
      * Constructor.
@@ -61,7 +62,7 @@ class DataLink extends \Google\Protobuf\Internal\Message
      *     @type string $resource_name
      *           Immutable. Resource name of the product data link.
      *           DataLink resource names have the form:
-     *           `customers/{customer_id}/datalinks/{product_link_id}~{data_link_id}}
+     *           `customers/{customer_id}/dataLinks/{product_link_id}~{data_link_id}`
      *     @type int|string $product_link_id
      *           Output only. The ID of the link.
      *           This field is read only.
@@ -74,6 +75,8 @@ class DataLink extends \Google\Protobuf\Internal\Message
      *           Output only. The status of the data link.
      *     @type \Google\Ads\GoogleAds\V24\Resources\YoutubeVideoIdentifier $youtube_video
      *           Immutable. A data link to YouTube video.
+     *     @type \Google\Ads\GoogleAds\V24\Resources\YoutubeLinkMetadata $youtube_link_metadata
+     *           Immutable. Metadata for a YouTube link.
      * }
      */
     public function __construct($data = NULL) {
@@ -84,7 +87,7 @@ class DataLink extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Resource name of the product data link.
      * DataLink resource names have the form:
-     * `customers/{customer_id}/datalinks/{product_link_id}~{data_link_id}}
+     * `customers/{customer_id}/dataLinks/{product_link_id}~{data_link_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
@@ -97,7 +100,7 @@ class DataLink extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Resource name of the product data link.
      * DataLink resource names have the form:
-     * `customers/{customer_id}/datalinks/{product_link_id}~{data_link_id}}
+     * `customers/{customer_id}/dataLinks/{product_link_id}~{data_link_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -271,11 +274,50 @@ class DataLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Immutable. Metadata for a YouTube link.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.YoutubeLinkMetadata youtube_link_metadata = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Ads\GoogleAds\V24\Resources\YoutubeLinkMetadata|null
+     */
+    public function getYoutubeLinkMetadata()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasYoutubeLinkMetadata()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Immutable. Metadata for a YouTube link.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v24.resources.YoutubeLinkMetadata youtube_link_metadata = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Ads\GoogleAds\V24\Resources\YoutubeLinkMetadata $var
+     * @return $this
+     */
+    public function setYoutubeLinkMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V24\Resources\YoutubeLinkMetadata::class);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getDataLinkEntity()
     {
         return $this->whichOneof("data_link_entity");
+    }
+
+    /**
+     * @return string
+     */
+    public function getDataLinkMetadata()
+    {
+        return $this->whichOneof("data_link_metadata");
     }
 
 }

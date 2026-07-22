@@ -1088,6 +1088,12 @@ class CriterionError
      * Generated from protobuf enum <code>CANNOT_EXCLUDE_ALL_TARGETS = 186;</code>
      */
     const CANNOT_EXCLUDE_ALL_TARGETS = 186;
+    /**
+     * The criterion is not allowed to be targeted for the language.
+     *
+     * Generated from protobuf enum <code>CANNOT_TARGET_LANGUAGE = 187;</code>
+     */
+    const CANNOT_TARGET_LANGUAGE = 187;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -1260,6 +1266,7 @@ class CriterionError
         self::RETAIL_FILTER_EXPRESSION_DOES_NOT_EXIST => 'RETAIL_FILTER_EXPRESSION_DOES_NOT_EXIST',
         self::RETAIL_FILTER_TAGS_REFERRING_TO_EXPRESSION => 'RETAIL_FILTER_TAGS_REFERRING_TO_EXPRESSION',
         self::CANNOT_EXCLUDE_ALL_TARGETS => 'CANNOT_EXCLUDE_ALL_TARGETS',
+        self::CANNOT_TARGET_LANGUAGE => 'CANNOT_TARGET_LANGUAGE',
     ];
 
     public static function name($value)

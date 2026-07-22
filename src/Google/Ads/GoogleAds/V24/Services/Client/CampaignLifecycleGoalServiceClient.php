@@ -254,7 +254,7 @@ class CampaignLifecycleGoalServiceClient
      * List of thrown errors:
      * [AuthenticationError]()
      * [AuthorizationError]()
-     * [CampaignLifecycleGoalConfigError]()
+     * [CampaignLifecycleGoalError]()
      * [HeaderError]()
      * [InternalError]()
      * [QuotaError]()

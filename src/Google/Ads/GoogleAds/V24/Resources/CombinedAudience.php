@@ -19,7 +19,7 @@ class CombinedAudience extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The resource name of the combined audience.
      * Combined audience names have the form:
-     * `customers/{customer_id}/combinedAudience/{combined_audience_id}`
+     * `customers/{customer_id}/combinedAudiences/{combined_audience_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
@@ -60,7 +60,7 @@ class CombinedAudience extends \Google\Protobuf\Internal\Message
      *     @type string $resource_name
      *           Immutable. The resource name of the combined audience.
      *           Combined audience names have the form:
-     *           `customers/{customer_id}/combinedAudience/{combined_audience_id}`
+     *           `customers/{customer_id}/combinedAudiences/{combined_audience_id}`
      *     @type int|string $id
      *           Output only. ID of the combined audience.
      *     @type int $status
@@ -81,7 +81,7 @@ class CombinedAudience extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The resource name of the combined audience.
      * Combined audience names have the form:
-     * `customers/{customer_id}/combinedAudience/{combined_audience_id}`
+     * `customers/{customer_id}/combinedAudiences/{combined_audience_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
@@ -94,7 +94,7 @@ class CombinedAudience extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The resource name of the combined audience.
      * Combined audience names have the form:
-     * `customers/{customer_id}/combinedAudience/{combined_audience_id}`
+     * `customers/{customer_id}/combinedAudiences/{combined_audience_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
