@@ -136,15 +136,27 @@ class InviteUserWithAccessRole
                 $customerUserAccessInvitationOperation
             )
         );
-        printf(
-            "Customer user access invitation with resource name '%s' was sent from customer "
-            . "ID %d to email address '%s' with access role '%s'.%s",
-            $response->getResult()->getResourceName(),
-            $customerId,
-            $emailAddress,
-            $accessRole,
-            PHP_EOL
-        );
+
+        if (!empty($response->getResult()->getMultiPartyAuthReview())) {
+            printf(
+                "A multi-party auth review was triggered. The MPA review resource name is '%s'. " .
+                "Ask a second administrator to approve this request to send user access invitation. " .
+                "See AdvancedOperations/FetchAndApprovePendingMultiPartyAuthReviews.php " .
+                "for an example on how to approve an MPA auth review using the API.%s",
+                $response->getResult()->getMultiPartyAuthReview(),
+                PHP_EOL
+            );
+        } else {
+            printf(
+                "Customer user access invitation with resource name '%s' was sent from customer "
+                . "ID %d to email address '%s' with access role '%s'.%s",
+                $response->getResult()->getResourceName(),
+                $customerId,
+                $emailAddress,
+                $accessRole,
+                PHP_EOL
+            );
+        }
         // [END invite_user_with_access_role]
     }
 }

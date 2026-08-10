@@ -206,12 +206,24 @@ class UpdateUserAccess
             MutateCustomerUserAccessRequest::build($customerId, $customerUserAccessOperation)
         );
 
-        // Prints the resource name of the updated customer user access.
-        printf(
-            "Successfully modified customer user access with resource name: '%s'%s",
-            $response->getResult()->getResourceName(),
-            PHP_EOL
-        );
+        if (!empty($response->getResult()->getMultiPartyAuthReview())) {
+            printf(
+                "A multi-party auth review was triggered. The MPA review resource " .
+                "name is '%s'. Ask a second administrator to approve this request to " .
+                "make the requested user access changes. See " .
+                "advanced_operations/fetch_and_approve_pending_multi_party_auth_reviews.php " .
+                "for an example on how to approve an MPA auth review using the API.%s",
+                $response->getResult()->getMultiPartyAuthReview(),
+                PHP_EOL
+            );
+        } else {
+            // Prints the resource name of the updated customer user access.
+            printf(
+                "Successfully modified customer user access with resource name: '%s'%s",
+                $response->getResult()->getResourceName(),
+                PHP_EOL
+            );
+        }
     }
 }
 
