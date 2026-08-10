@@ -188,7 +188,7 @@ See the [Performance guide](https://developers.google.com/google-ads/api/docs/cl
 
 ## Miscellaneous
 
-### Wiki
+### Wiki:
 
 -   https://github.com/googleads/google-ads-php/wiki
 
