@@ -162,7 +162,7 @@ There are different types of transport that can be used. See the
 [Transport guide](https://developers.google.com/google-ads/api/docs/client-libs/php/transport)
 for more information.
 
-## Protobuf
+## Protobuf:
 
 [Protobuf](https://developers.google.com/protocol-buffers/docs/overview) is used regardless of the
 transport used to request the Google Ads API.
