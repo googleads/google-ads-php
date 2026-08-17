@@ -174,7 +174,7 @@ for more information.
 
 See the [Running in a Docker container guide](https://developers.google.com/google-ads/api/docs/client-libs/php/docker).
 
-## Logging
+## Logging:
 
 See the [Logging guide](https://developers.google.com/google-ads/api/docs/client-libs/php/logging).
 
