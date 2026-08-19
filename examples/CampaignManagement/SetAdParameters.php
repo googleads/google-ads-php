@@ -35,7 +35,7 @@ use Google\Ads\GoogleAds\V25\Services\MutateAdParametersRequest;
 use Google\ApiCore\ApiException;
 
 /**
- * This example sets ad parameters for an ad group criterion. 
+ * This example sets ad parameters for an ad group criterion.
  */
 class SetAdParameters
 {
@@ -81,7 +81,7 @@ class SetAdParameters
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -160,7 +160,7 @@ class SetAdParameters
 
         foreach ($response->getResults() as $setParameter) {
             /**
- * @var AdParameter $setParameter 
+ * @var AdParameter $setParameter
 */
             printf(
                 "Set ad parameter with resource name: '%s'.%s",

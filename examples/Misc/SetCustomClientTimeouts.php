@@ -82,7 +82,7 @@ class SetCustomClientTimeouts
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -133,7 +133,7 @@ class SetCustomClientTimeouts
         try {
             // Issues a search stream request by setting a custom client timeout.
             /**
- * @var GoogleAdsServerStreamDecorator $stream 
+ * @var GoogleAdsServerStreamDecorator $stream
 */
             $stream = $googleAdsServiceClient->searchStream(
                 SearchGoogleAdsStreamRequest::build($customerId, $query),
@@ -150,7 +150,7 @@ class SetCustomClientTimeouts
             // Iterates over all rows in all messages and collects the campaign IDs.
             foreach ($stream->iterateAllElements() as $googleAdsRow) {
                 /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
                 $output .= ' ' . $googleAdsRow->getCampaign()->getId();
             }
@@ -215,7 +215,7 @@ class SetCustomClientTimeouts
             // Iterates over all rows in all messages and collects the campaign IDs.
             foreach ($response->iterateAllElements() as $googleAdsRow) {
                 /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
                 $output .= ' ' . $googleAdsRow->getCampaign()->getId();
             }

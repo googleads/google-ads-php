@@ -147,7 +147,7 @@ class ServiceClientFactoryTraitTest extends TestCase
     private static $TRANSPORT = 'grpc';
 
     /**
-     * @var GoogleAdsClient $googleAdsClient 
+     * @var GoogleAdsClient $googleAdsClient
      */
     private $googleAdsClient;
 

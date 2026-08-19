@@ -118,7 +118,7 @@ class SetUpRemarketing
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -259,7 +259,7 @@ class SetUpRemarketing
         // Issues a mutate request to add a user list.
         $userListServiceClient = $googleAdsClient->getUserListServiceClient();
         /**
- * @var MutateUserListsResponse $userListResponse 
+ * @var MutateUserListsResponse $userListResponse
 */
         $userListResponse = $userListServiceClient->mutateUserLists(
             MutateUserListsRequest::build($customerId, [$operation])
@@ -303,7 +303,7 @@ class SetUpRemarketing
         // Issues a mutate request to add an ad group criterion.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         /**
- * @var MutateAdGroupCriteriaResponse $adGroupCriterionResponse 
+ * @var MutateAdGroupCriteriaResponse $adGroupCriterionResponse
 */
         $adGroupCriterionResponse = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
             MutateAdGroupCriteriaRequest::build($customerId, [$operation])
@@ -357,7 +357,7 @@ class SetUpRemarketing
         // Issues a mutate request to update an ad group criterion.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         /**
- * @var MutateAdGroupCriteriaResponse $adGroupCriteriaResponse 
+ * @var MutateAdGroupCriteriaResponse $adGroupCriteriaResponse
 */
         $adGroupCriteriaResponse = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
             MutateAdGroupCriteriaRequest::build($customerId, [$operation])
@@ -402,7 +402,7 @@ class SetUpRemarketing
         // Issues a mutate request to remove the ad group criteria.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         /**
- * @var MutateAdGroupCriteriaResponse $adGroupCriteriaResponse 
+ * @var MutateAdGroupCriteriaResponse $adGroupCriteriaResponse
 */
         $adGroupCriteriaResponse = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
             MutateAdGroupCriteriaRequest::build($customerId, $removeOperations)
@@ -453,7 +453,7 @@ class SetUpRemarketing
         // criteria resource names to the list.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
             $adGroupCriterionResourceName = $googleAdsRow->getAdGroupCriterion()->getResourceName();
 
@@ -501,7 +501,7 @@ class SetUpRemarketing
         // Issues a mutate request to create a campaign criterion.
         $campaignCriterionServiceClient = $googleAdsClient->getCampaignCriterionServiceClient();
         /**
- * @var MutateCampaignCriteriaResponse $campaignCriteriaResponse 
+ * @var MutateCampaignCriteriaResponse $campaignCriteriaResponse
 */
         $campaignCriteriaResponse = $campaignCriterionServiceClient->mutateCampaignCriteria(
             MutateCampaignCriteriaRequest::build($customerId, [$operation])
@@ -554,7 +554,7 @@ class SetUpRemarketing
         // Issues a request to update a campaign criterion.
         $campaignCriterionServiceClient = $googleAdsClient->getCampaignCriterionServiceClient();
         /**
- * @var MutateCampaignCriteriaResponse $campaignCriteriaResponse 
+ * @var MutateCampaignCriteriaResponse $campaignCriteriaResponse
 */
         $campaignCriteriaResponse = $campaignCriterionServiceClient->mutateCampaignCriteria(
             MutateCampaignCriteriaRequest::build($customerId, [$operation])

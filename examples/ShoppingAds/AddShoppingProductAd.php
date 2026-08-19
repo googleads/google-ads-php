@@ -112,7 +112,7 @@ class AddShoppingProductAd
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -208,7 +208,7 @@ class AddShoppingProductAd
         );
 
         /**
- * @var CampaignBudget $addedBudget 
+ * @var CampaignBudget $addedBudget
 */
         $addedBudget = $response->getResults()[0];
         printf(
@@ -283,7 +283,7 @@ class AddShoppingProductAd
         );
 
         /**
- * @var Campaign $addedCampaign 
+ * @var Campaign $addedCampaign
 */
         $addedCampaign = $response->getResults()[0];
         printf(
@@ -336,7 +336,7 @@ class AddShoppingProductAd
         );
 
         /**
- * @var AdGroup $addedAdGroup 
+ * @var AdGroup $addedAdGroup
 */
         $addedAdGroup = $response->getResults()[0];
         printf(
@@ -387,7 +387,7 @@ class AddShoppingProductAd
         );
 
         /**
- * @var AdGroupAd $addedAdGroupAd 
+ * @var AdGroupAd $addedAdGroupAd
 */
         $addedAdGroupAd = $response->getResults()[0];
         printf(
@@ -440,7 +440,7 @@ class AddShoppingProductAd
         );
 
         /**
- * @var AdGroupCriterion $addedAdGroupCriterion 
+ * @var AdGroupCriterion $addedAdGroupCriterion
 */
         $addedAdGroupCriterion = $response->getResults()[0];
         printf(

@@ -84,7 +84,7 @@ class AddSitelinks
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -193,7 +193,8 @@ class AddSitelinks
         $assetOperations = array_map(
             function (Asset $asset) {
                 return new AssetOperation(['create' => $asset]);
-            }, $assets
+            },
+            $assets
         );
 
         // Issues a mutate request to add the assets and print its information.
@@ -204,7 +205,7 @@ class AddSitelinks
         $createdAssetResourceNames = [];
         foreach ($response->getResults() as $result) {
             /**
- * @var MutateAssetResult $result 
+ * @var MutateAssetResult $result
 */
             printf(
                 "Created a sitelink asset with resource name: '%s'.%s",
@@ -256,7 +257,7 @@ class AddSitelinks
         );
         foreach ($response->getResults() as $result) {
             /**
- * @var MutateCampaignAssetResult $result 
+ * @var MutateCampaignAssetResult $result
 */
             printf(
                 "Created a campaign asset with resource name: '%s'.%s",

@@ -86,7 +86,7 @@ class AddHotelCallout
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -154,7 +154,8 @@ class AddHotelCallout
                     'create' => new Asset(['hotel_callout_asset' => $hotelCalloutAsset])
                     ]
                 );
-            }, $hotelCalloutAssets
+            },
+            $hotelCalloutAssets
         );
 
         // Issues a mutate request to add the assets and print its information.
@@ -165,7 +166,7 @@ class AddHotelCallout
         $createdAssetResourceNames = [];
         foreach ($response->getResults() as $result) {
             /**
- * @var MutateAssetResult $result 
+ * @var MutateAssetResult $result
 */
             printf(
                 "Created a hotel callout asset with resource name: '%s'.%s",
@@ -202,7 +203,8 @@ class AddHotelCallout
                         ]
                     )]
                 );
-            }, $assetResourceNames
+            },
+            $assetResourceNames
         );
 
         // Issues a mutate request to add the customer assets and prints its information.
@@ -212,7 +214,7 @@ class AddHotelCallout
         );
         foreach ($response->getResults() as $result) {
             /**
- * @var MutateCustomerAssetResult $result 
+ * @var MutateCustomerAssetResult $result
 */
             printf(
                 "Created a customer asset with resource name: '%s'.%s",

@@ -100,7 +100,7 @@ class UploadEnhancedConversionsForWeb
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -334,7 +334,7 @@ class UploadEnhancedConversionsForWeb
         } else {
             // Prints the result if exists.
             /**
- * @var ConversionAdjustmentResult $uploadedConversionAdjustment 
+ * @var ConversionAdjustmentResult $uploadedConversionAdjustment
 */
             $uploadedConversionAdjustment = $response->getResults()[0];
             printf(
@@ -390,7 +390,8 @@ class UploadEnhancedConversionsForWeb
     ): string {
         $normalizedEmail = strtolower($emailAddress);
         $emailParts = explode("@", $normalizedEmail);
-        if (count($emailParts) > 1
+        if (
+            count($emailParts) > 1
             && preg_match('/^(gmail|googlemail)\.com\s*/', $emailParts[1])
         ) {
             // Removes any '.' characters from the portion of the email address before the domain

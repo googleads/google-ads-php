@@ -88,7 +88,7 @@ class HandleResponsiveSearchAdPolicyViolations
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -198,7 +198,7 @@ class HandleResponsiveSearchAdPolicyViolations
         printf("Google Ads failure details:%s", PHP_EOL);
         foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
             /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
             if ($error->getErrorCode()->getErrorCode() !== 'policy_finding_error') {
                 // This example supports sending exemption request for the policy finding error
@@ -212,7 +212,8 @@ class HandleResponsiveSearchAdPolicyViolations
                 $error->getMessage(),
                 PHP_EOL
             );
-            if (!is_null($error->getDetails())
+            if (
+                !is_null($error->getDetails())
                 && !is_null($error->getDetails()->getPolicyFindingDetails())
             ) {
                 $policyFindingDetails = $error->getDetails()->getPolicyFindingDetails();
@@ -220,7 +221,7 @@ class HandleResponsiveSearchAdPolicyViolations
 
                 foreach ($policyFindingDetails->getPolicyTopicEntries() as $policyTopicEntry) {
                     /**
- * @var PolicyTopicEntry $policyTopicEntry 
+ * @var PolicyTopicEntry $policyTopicEntry
 */
                     $ignorablePolicyTopics[] = $policyTopicEntry->getTopic();
                     printf(

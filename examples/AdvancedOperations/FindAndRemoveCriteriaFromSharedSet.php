@@ -81,7 +81,7 @@ class FindAndRemoveCriteriaFromSharedSet
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -129,7 +129,7 @@ class FindAndRemoveCriteriaFromSharedSet
         // the shared set in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
             printf(
                 "Campaign shared set with ID %d and name '%s' was found.%s",
@@ -145,7 +145,8 @@ class FindAndRemoveCriteriaFromSharedSet
             "SELECT shared_criterion.type, shared_criterion.keyword.text, "
               . "shared_criterion.keyword.match_type, shared_set.id "
               . "FROM shared_criterion "
-            . "WHERE shared_set.id IN (%s)", implode(',', $sharedSetIds)
+            . "WHERE shared_set.id IN (%s)",
+            implode(',', $sharedSetIds)
         );
 
         // Issues a search request.
@@ -156,7 +157,7 @@ class FindAndRemoveCriteriaFromSharedSet
         // the shared criterion in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
             $sharedCriterionResourceName = $googleAdsRow->getSharedCriterion()->getResourceName();
             if ($googleAdsRow->getSharedCriterion()->getType() === CriterionType::KEYWORD) {
@@ -197,7 +198,7 @@ class FindAndRemoveCriteriaFromSharedSet
         // Prints the resource name of each removed shared criterion.
         foreach ($response->getResults() as $removedSharedCriterion) {
             /**
- * @var SharedCriterion $removedSharedCriterion 
+ * @var SharedCriterion $removedSharedCriterion
 */
             printf(
                 "Removed shared criterion with resource name: '%s'.%s",

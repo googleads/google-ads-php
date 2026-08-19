@@ -96,7 +96,7 @@ class AddListingScope
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -197,7 +197,7 @@ class AddListingScope
             MutateCampaignCriteriaRequest::build($customerId, [$campaignCriterionOperation])
         );
         /**
- * @var CampaignCriterion $addedCampaignCriterion 
+ * @var CampaignCriterion $addedCampaignCriterion
 */
         $addedCampaignCriterion = $response->getResults()[0];
         printf(

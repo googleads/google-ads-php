@@ -142,7 +142,7 @@ class AddPerformanceMaxForTravelGoalsCampaign
     // There are also entities that will be created in the same request but do not need to be fixed
     // temporary IDs because they are referenced only once.
     /**
-     * @var int the negative temporary ID used in bulk mutates. 
+     * @var int the negative temporary ID used in bulk mutates.
      */
     private static $nextTempId = self::ASSET_GROUP_TEMPORARY_ID - 1;
 
@@ -182,7 +182,7 @@ class AddPerformanceMaxForTravelGoalsCampaign
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -270,7 +270,8 @@ class AddPerformanceMaxForTravelGoalsCampaign
         $operations[] =
             self::createCampaignOperation($customerId, $hotelPropertyAssetSetResourceName);
         $operations = array_merge(
-            $operations, self::createAssetGroupOperations(
+            $operations,
+            self::createAssetGroupOperations(
                 $customerId,
                 $hotelPropertyAssetResourceName,
                 $headlineAssetResourceNames,
@@ -343,7 +344,7 @@ class AddPerformanceMaxForTravelGoalsCampaign
         if ($hotelAssetSuggestion->getStatus() === HotelAssetSuggestionStatus::SUCCESS) {
             foreach ($hotelAssetSuggestion->getTextAssets() as $textAsset) {
                 /**
- * @var HotelTextAsset $textAsset 
+ * @var HotelTextAsset $textAsset
 */
                 if ($textAsset->getAssetFieldType() !== $assetFieldType) {
                     continue;
@@ -396,7 +397,7 @@ class AddPerformanceMaxForTravelGoalsCampaign
         // Issues a mutate request to add all assets.
         $googleAdsService = $googleAdsClient->getGoogleAdsServiceClient();
         /**
- * @var MutateGoogleAdsResponse $mutateGoogleAdsResponse 
+ * @var MutateGoogleAdsResponse $mutateGoogleAdsResponse
 */
         $mutateGoogleAdsResponse =
             $googleAdsService->mutate(MutateGoogleAdsRequest::build($customerId, $operations));
@@ -404,7 +405,7 @@ class AddPerformanceMaxForTravelGoalsCampaign
         $assetResourceNames = [];
         foreach ($mutateGoogleAdsResponse->getMutateOperationResponses() as $response) {
             /**
- * @var MutateOperationResponse $response 
+ * @var MutateOperationResponse $response
 */
             $assetResourceNames[] = $response->getAssetResult()->getResourceName();
         }
@@ -515,7 +516,7 @@ class AddPerformanceMaxForTravelGoalsCampaign
         // Issues a mutate request to create all entities.
         $googleAdsService = $googleAdsClient->getGoogleAdsServiceClient();
         /**
- * @var MutateGoogleAdsResponse $mutateGoogleAdsResponse 
+ * @var MutateGoogleAdsResponse $mutateGoogleAdsResponse
 */
         $mutateGoogleAdsResponse =
             $googleAdsService->mutate(MutateGoogleAdsRequest::build($customerId, $operations));
@@ -846,9 +847,10 @@ class AddPerformanceMaxForTravelGoalsCampaign
         if ($hotelAssetSuggestion->getStatus() === HotelAssetSuggestionStatus::SUCCESS) {
             foreach ($hotelAssetSuggestion->getTextAssets() as $textAsset) {
                 /**
- * @var HotelTextAsset $textAsset 
+ * @var HotelTextAsset $textAsset
 */
-                if ($textAsset->getAssetFieldType() === AssetFieldType::HEADLINE
+                if (
+                    $textAsset->getAssetFieldType() === AssetFieldType::HEADLINE
                     || $textAsset->getAssetFieldType() === AssetFieldType::DESCRIPTION
                 ) {
                     // Headlines and descriptions were already created at the first step of this
@@ -874,7 +876,8 @@ class AddPerformanceMaxForTravelGoalsCampaign
         }
         // Adds more text assets to fulfill the requirements.
         foreach (self::MIN_REQUIRED_TEXT_ASSET_COUNTS as $assetFieldType => $minCount) {
-            if ($assetFieldType === AssetFieldType::HEADLINE
+            if (
+                $assetFieldType === AssetFieldType::HEADLINE
                 || $assetFieldType === AssetFieldType::DESCRIPTION
             ) {
                 // Headlines and descriptions were already created at the first step of this
@@ -922,7 +925,7 @@ class AddPerformanceMaxForTravelGoalsCampaign
             array_fill_keys(array_keys(self::MIN_REQUIRED_IMAGE_ASSET_COUNTS), 0);
         foreach ($hotelAssetSuggestion->getImageAssets() as $imageAsset) {
             /**
- * @var HotelImageAsset $imageAsset 
+ * @var HotelImageAsset $imageAsset
 */
             printf(
                 "An image asset with URL '%s' is suggested for the asset field type '%s'.%s",
@@ -1096,7 +1099,7 @@ class AddPerformanceMaxForTravelGoalsCampaign
     ): void {
         foreach ($mutateGoogleAdsResponse->getMutateOperationResponses() as $response) {
             /**
- * @var MutateOperationResponse $response 
+ * @var MutateOperationResponse $response
 */
             $getter = Serializer::getGetter($response->getResponse());
             printf(

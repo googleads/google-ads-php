@@ -38,7 +38,7 @@ use Google\Ads\GoogleAds\V25\Services\SearchSettings;
 use Google\ApiCore\ApiException;
 
 /**
- * This example retrieves all the disapproved ads in a given campaign. 
+ * This example retrieves all the disapproved ads in a given campaign.
  */
 class GetAllDisapprovedAds
 {
@@ -81,7 +81,7 @@ class GetAllDisapprovedAds
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -133,7 +133,7 @@ class GetAllDisapprovedAds
         // Iterates over all rows in all pages and counts disapproved ads.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
             $adGroupAd = $googleAdsRow->getAdGroupAd();
             $policySummary = $adGroupAd->getPolicySummary();
@@ -148,7 +148,7 @@ class GetAllDisapprovedAds
             );
             foreach ($policySummary->getPolicyTopicEntries() as $policyTopicEntry) {
                 /**
- * @var PolicyTopicEntry $policyTopicEntry 
+ * @var PolicyTopicEntry $policyTopicEntry
 */
                 printf(
                     "  topic: '%s', type: '%s'%s",
@@ -158,7 +158,7 @@ class GetAllDisapprovedAds
                 );
                 foreach ($policyTopicEntry->getEvidences() as $evidence) {
                     /**
- * @var PolicyTopicEvidence $evidence 
+ * @var PolicyTopicEvidence $evidence
 */
                     $textList = $evidence->getTextList();
                     if (!empty($textList)) {

@@ -178,7 +178,7 @@ class AddSmartCampaign
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -262,7 +262,8 @@ class AddSmartCampaign
                         'A malformed KeywordTheme was encountered: ' . $keywordTheme->getKeywordTheme()
                     );
                 }
-            }, $keywordThemes
+            },
+            $keywordThemes
         );
 
         // [START add_smart_campaign_13]
@@ -417,7 +418,8 @@ class AddSmartCampaign
                     'keyword_theme_constant' => $keywordThemeConstant
                     ]
                 );
-            }, iterator_to_array($response->getKeywordThemeConstants()->getIterator())
+            },
+            iterator_to_array($response->getKeywordThemeConstants()->getIterator())
         );
     }
     // [END add_smart_campaign]
@@ -996,7 +998,7 @@ class AddSmartCampaign
         // Parses the Mutate response to print details about the entities that were created by the
         // request.
         /**
- * @var MutateOperationResponse $result 
+ * @var MutateOperationResponse $result
 */
         foreach ($response->getMutateOperationResponses() as $result) {
             $resourceType = "unrecognized";

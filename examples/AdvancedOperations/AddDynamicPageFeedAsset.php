@@ -54,7 +54,7 @@ use Google\Ads\GoogleAds\V25\Services\MutateCampaignAssetSetsRequest;
 use Google\ApiCore\ApiException;
 
 /**
- * Adds a page feed with URLs for a Dynamic Search Ads campaign. 
+ * Adds a page feed with URLs for a Dynamic Search Ads campaign.
  */
 class AddDynamicPageFeedAsset
 {
@@ -99,7 +99,7 @@ class AddDynamicPageFeedAsset
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -217,7 +217,7 @@ class AddDynamicPageFeedAsset
         printf("Added %d assets:%s", $response->getResults()->count(), PHP_EOL);
         foreach ($response->getResults() as $addedAsset) {
             /**
- * @var Asset $addedAsset 
+ * @var Asset $addedAsset
 */
             $assetResourceName = $addedAsset->getResourceName();
             printf(
@@ -314,7 +314,7 @@ class AddDynamicPageFeedAsset
         printf("Added %d asset set assets:%s", $response->getResults()->count(), PHP_EOL);
         foreach ($response->getResults() as $addedAssetSetAsset) {
             /**
- * @var AssetSetAsset $addedAssetSetAsset 
+ * @var AssetSetAsset $addedAssetSetAsset
 */
             printf(
                 "Created an asset set asset link with resource name: '%s'.%s",

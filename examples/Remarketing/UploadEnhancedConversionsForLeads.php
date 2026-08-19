@@ -99,7 +99,8 @@ class UploadEnhancedConversionsForLeads
             }
         }
 
-        if (!empty($options[ArgumentNames::SESSION_ATTRIBUTES_ENCODED]) 
+        if (
+            !empty($options[ArgumentNames::SESSION_ATTRIBUTES_ENCODED])
             && !empty($options[ArgumentNames::SESSION_ATTRIBUTES_DICT])
         ) {
             throw new \InvalidArgumentException(
@@ -144,7 +145,7 @@ class UploadEnhancedConversionsForLeads
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -362,7 +363,7 @@ class UploadEnhancedConversionsForLeads
             );
         } else {
             /**
- * @var ClickConversionResult $clickConversionResult 
+ * @var ClickConversionResult $clickConversionResult
 */
             $clickConversionResult = $response->getResults()[0];
             // Only prints valid results.
@@ -410,7 +411,8 @@ class UploadEnhancedConversionsForLeads
     ): string {
         $normalizedEmail = strtolower($emailAddress);
         $emailParts = explode("@", $normalizedEmail);
-        if (count($emailParts) > 1
+        if (
+            count($emailParts) > 1
             && preg_match('/^(gmail|googlemail)\.com\s*/', $emailParts[1])
         ) {
             // Removes any '.' characters from the portion of the email address before the domain

@@ -97,7 +97,7 @@ class HandleRateExceededError
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -154,7 +154,8 @@ class HandleRateExceededError
                         ) {
                             // Checks if any of the errors are QuotaError.RESOURCE_EXHAUSTED or
                             // QuotaError.RESOURCE_TEMPORARILY_EXHAUSTED.
-                            if ($googleAdsError->getErrorCode()->getQuotaError()                                == QuotaError::RESOURCE_EXHAUSTED
+                            if (
+                                $googleAdsError->getErrorCode()->getQuotaError()                                == QuotaError::RESOURCE_EXHAUSTED
                                 || $googleAdsError->getErrorCode()->getQuotaError()                                == QuotaError::RESOURCE_TEMPORARILY_EXHAUSTED
                             ) {
                                 printf(
@@ -266,7 +267,7 @@ class HandleRateExceededError
         );
         foreach ($response->getResults() as $result) {
             /**
- * @var GoogleAdsRow $result 
+ * @var GoogleAdsRow $result
 */
             print $result->getAdGroupCriterion()->getResourceName() . PHP_EOL;
         }

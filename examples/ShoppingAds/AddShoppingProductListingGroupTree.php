@@ -102,7 +102,7 @@ class AddShoppingProductListingGroupTree
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -284,7 +284,7 @@ class AddShoppingProductListingGroupTree
         );
         foreach ($response->getResults() as $addedAdGroupCriterion) {
             /**
- * @var AdGroupCriterion $addedAdGroupCriterion 
+ * @var AdGroupCriterion $addedAdGroupCriterion
 */
             print $addedAdGroupCriterion->getResourceName() . PHP_EOL;
         }
@@ -322,7 +322,7 @@ class AddShoppingProductListingGroupTree
         // the listing group tree in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
             $adGroupCriterion = $googleAdsRow->getAdGroupCriterion();
             printf(

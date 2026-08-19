@@ -106,7 +106,7 @@ class AddDynamicSearchAds
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -177,7 +177,7 @@ class AddDynamicSearchAds
         // Issues a mutate request to add campaign budgets.
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         /**
- * @var MutateCampaignBudgetsResponse $campaignBudgetResponse 
+ * @var MutateCampaignBudgetsResponse $campaignBudgetResponse
 */
         $campaignBudgetResponse = $campaignBudgetServiceClient->mutateCampaignBudgets(
             MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
@@ -234,7 +234,7 @@ class AddDynamicSearchAds
         // Issues a mutate request to add campaigns.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
         /**
- * @var MutateCampaignsResponse $campaignResponse 
+ * @var MutateCampaignsResponse $campaignResponse
 */
         $campaignResponse = $campaignServiceClient->mutateCampaigns(
             MutateCampaignsRequest::build($customerId, [$campaignOperation])
@@ -280,7 +280,7 @@ class AddDynamicSearchAds
         // Issues a mutate request to add the ad groups.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
         /**
- * @var MutateAdGroupsResponse $adGroupResponse 
+ * @var MutateAdGroupsResponse $adGroupResponse
 */
         $adGroupResponse = $adGroupServiceClient->mutateAdGroups(
             MutateAdGroupsRequest::build($customerId, [$adGroupOperation])
@@ -328,7 +328,7 @@ class AddDynamicSearchAds
         // Issues a mutate request to add the ad group ads.
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
         /**
- * @var MutateAdGroupAdsResponse $adGroupAdResponse 
+ * @var MutateAdGroupAdsResponse $adGroupAdResponse
 */
         $adGroupAdResponse = $adGroupAdServiceClient->mutateAdGroupAds(
             MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
@@ -387,7 +387,7 @@ class AddDynamicSearchAds
         // Issues a mutate request to add the ad group criterion.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         /**
- * @var MutateAdGroupCriteriaResponse $adGroupCriterionResponse 
+ * @var MutateAdGroupCriteriaResponse $adGroupCriterionResponse
 */
         $adGroupCriterionResponse = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
             MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])

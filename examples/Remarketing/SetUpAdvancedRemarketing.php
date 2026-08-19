@@ -92,7 +92,7 @@ class SetUpAdvancedRemarketing
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -275,7 +275,7 @@ class SetUpAdvancedRemarketing
         // Issues a mutate request to add a user list.
         $userListServiceClient = $googleAdsClient->getUserListServiceClient();
         /**
- * @var MutateUserListsResponse $userListResponse 
+ * @var MutateUserListsResponse $userListResponse
 */
         $userListResponse = $userListServiceClient->mutateUserLists(
             MutateUserListsRequest::build($customerId, [$operation])

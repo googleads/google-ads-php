@@ -88,7 +88,7 @@ class CreateAndAttachSharedKeywordSet
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -172,7 +172,7 @@ class CreateAndAttachSharedKeywordSet
         printf("Added %d shared criteria:%s", $response->getResults()->count(), PHP_EOL);
         foreach ($response->getResults() as $addedSharedCriterion) {
             /**
- * @var SharedCriterion $addedSharedCriterion 
+ * @var SharedCriterion $addedSharedCriterion
 */
             print "\t" . $addedSharedCriterion->getResourceName() . PHP_EOL;
         }

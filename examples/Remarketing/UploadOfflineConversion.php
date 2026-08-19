@@ -126,7 +126,7 @@ class UploadOfflineConversion
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -250,7 +250,7 @@ class UploadOfflineConversion
         // Issues a request to upload the click conversion.
         $conversionUploadServiceClient = $googleAdsClient->getConversionUploadServiceClient();
         /**
- * @var UploadClickConversionsResponse $response 
+ * @var UploadClickConversionsResponse $response
 */
         // NOTE: This request contains a single conversion as a demonstration.  However, if you have
         // multiple conversions to upload, it's best to upload multiple conversions per request
@@ -274,7 +274,7 @@ class UploadOfflineConversion
         } else {
             // Prints the result if exists.
             /**
- * @var ClickConversionResult $uploadedClickConversion 
+ * @var ClickConversionResult $uploadedClickConversion
 */
             $uploadedClickConversion = $response->getResults()[0];
             printf(

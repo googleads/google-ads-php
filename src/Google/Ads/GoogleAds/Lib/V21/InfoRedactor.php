@@ -146,13 +146,15 @@ class InfoRedactor
     {
         // Note: It is important to clone the object first, or we will rewrite the response
         // returned to the user.
-        if ($body instanceof SearchGoogleAdsRequest
+        if (
+            $body instanceof SearchGoogleAdsRequest
             || $body instanceof SearchGoogleAdsStreamRequest
         ) {
             $clone = self::cloneBody($body);
             self::redactSearchRequest($clone);
             return $clone;
-        } elseif ($body instanceof SearchGoogleAdsResponse
+        } elseif (
+            $body instanceof SearchGoogleAdsResponse
             || $body instanceof SearchGoogleAdsStreamResponse
         ) {
             $clone = self::cloneBody($body);
@@ -267,10 +269,11 @@ class InfoRedactor
                     self::redactLocalServicesLeadContactDetailsEmail(
                         $result->getLocalServicesLead()
                     );
-                } elseif (in_array(
-                    $path,
-                    self::$LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT
-                )
+                } elseif (
+                    in_array(
+                        $path,
+                        self::$LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT
+                    )
                 ) {
                     self::redactLocalServicesLeadConversationMessageDetailsText(
                         $result->getLocalServicesLeadConversation()
@@ -347,7 +350,8 @@ class InfoRedactor
     private static function redactLocalServicesLeadContactDetailsEmail(
         LocalServicesLead $localServicesLead
     ) {
-        if (!is_null($localServicesLead->getContactDetails())
+        if (
+            !is_null($localServicesLead->getContactDetails())
             && !is_null($localServicesLead->getContactDetails()->getEmail())
         ) {
             $localServicesLead->getContactDetails()->setEmail(self::REDACTED_STRING);
@@ -363,7 +367,8 @@ class InfoRedactor
     private static function redactLocalServicesLeadConversationMessageDetailsText(
         LocalServicesLeadConversation $localServicesLeadConversation
     ) {
-        if (!is_null($localServicesLeadConversation->getMessageDetails())
+        if (
+            !is_null($localServicesLeadConversation->getMessageDetails())
             && !is_null($localServicesLeadConversation->getMessageDetails()->getText())
         ) {
             $localServicesLeadConversation->getMessageDetails()->setText(self::REDACTED_STRING);

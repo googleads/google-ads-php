@@ -84,7 +84,7 @@ class AddAdGroupBidModifier
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -143,7 +143,7 @@ class AddAdGroupBidModifier
 
         foreach ($response->getResults() as $addedAdGroupBidModifier) {
             /**
- * @var AdGroupBidModifier $addedAdGroupBidModifier 
+ * @var AdGroupBidModifier $addedAdGroupBidModifier
 */
             print $addedAdGroupBidModifier->getResourceName() . PHP_EOL;
         }

@@ -35,7 +35,7 @@ use Google\Ads\GoogleAds\V25\Services\MutateCampaignLabelsRequest;
 use Google\ApiCore\ApiException;
 
 /**
- * This example adds a campaign label to a list of campaigns. 
+ * This example adds a campaign label to a list of campaigns.
  */
 class AddCampaignLabels
 {
@@ -83,7 +83,7 @@ class AddCampaignLabels
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -146,7 +146,7 @@ class AddCampaignLabels
 
         foreach ($response->getResults() as $addedCampaignLabel) {
             /**
- * @var CampaignLabel $addedCampaignLabel 
+ * @var CampaignLabel $addedCampaignLabel
 */
             printf(
                 "New campaign label added with resource name: '%s'.%s",

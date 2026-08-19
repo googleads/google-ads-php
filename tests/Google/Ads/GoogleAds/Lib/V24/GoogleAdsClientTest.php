@@ -57,7 +57,7 @@ class GoogleAdsClientTest extends TestCase
     ];
 
     /**
-     * @var GoogleAdsClientBuilder $googleAdsClientBuilder 
+     * @var GoogleAdsClientBuilder $googleAdsClientBuilder
      */
     private $googleAdsClientBuilder;
     private $fetchAuthTokenInterfaceMock;

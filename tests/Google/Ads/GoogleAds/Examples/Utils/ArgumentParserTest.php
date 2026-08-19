@@ -32,7 +32,7 @@ use PHPUnit\Framework\TestCase;
 class ArgumentParserTest extends TestCase
 {
     /**
-     * @var ArgumentParser $argumentParser 
+     * @var ArgumentParser $argumentParser
      */
     private $argumentParser;
 

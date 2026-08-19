@@ -32,17 +32,17 @@ use Psr\Log\LogLevel;
 class ConfigurationTraitTest extends TestCase
 {
     /**
-     * @var ConfigurationTraitInserted $configurationTraitInserted 
+     * @var ConfigurationTraitInserted $configurationTraitInserted
      */
     private $configurationTraitInserted;
 
     /**
-     * @var LoggerInterface $loggerMock 
+     * @var LoggerInterface $loggerMock
      */
     private $loggerMock;
 
     /**
-     * @var FetchAuthTokenInterface $fetchAuthTokenInterfaceMock 
+     * @var FetchAuthTokenInterface $fetchAuthTokenInterfaceMock
      */
     private $fetchAuthTokenInterfaceMock;
 

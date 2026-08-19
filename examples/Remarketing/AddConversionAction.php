@@ -39,7 +39,7 @@ use Google\Ads\GoogleAds\V25\Services\MutateConversionActionsRequest;
 use Google\ApiCore\ApiException;
 
 /**
- * This example illustrates adding a conversion action. 
+ * This example illustrates adding a conversion action.
  */
 class AddConversionAction
 {
@@ -79,7 +79,7 @@ class AddConversionAction
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -142,7 +142,7 @@ class AddConversionAction
 
         foreach ($response->getResults() as $addedConversionAction) {
             /**
- * @var ConversionAction $addedConversionAction 
+ * @var ConversionAction $addedConversionAction
 */
             printf(
                 "New conversion action added with resource name: '%s'%s",

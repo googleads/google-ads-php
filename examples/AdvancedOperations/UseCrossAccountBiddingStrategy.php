@@ -91,7 +91,7 @@ class UseCrossAccountBiddingStrategy
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -174,7 +174,7 @@ class UseCrossAccountBiddingStrategy
             MutateBiddingStrategiesRequest::build($managerCustomerId, [$biddingStrategyOperation])
         );
         /**
- * @var BiddingStrategy $addedBiddingStrategy 
+ * @var BiddingStrategy $addedBiddingStrategy
 */
         $addedBiddingStrategy = $response->getResults()[0];
 
@@ -207,7 +207,7 @@ class UseCrossAccountBiddingStrategy
             . 'FROM bidding_strategy';
         // Issues a search stream request.
         /**
- * @var GoogleAdsServerStreamDecorator $stream 
+ * @var GoogleAdsServerStreamDecorator $stream
 */
         $stream = $googleAdsServiceClient->searchStream(
             SearchGoogleAdsStreamRequest::build($managerCustomerId, $query)
@@ -222,7 +222,7 @@ class UseCrossAccountBiddingStrategy
         );
         foreach ($stream->iterateAllElements() as $googleAdsRow) {
             /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
             printf(
                 '  ID: %1$d%2$s  Name: "%3$s"%2$s  Strategy type: "%4$s"%2$s'
@@ -265,7 +265,7 @@ class UseCrossAccountBiddingStrategy
         ;
         // Issues a search stream request.
         /**
- * @var GoogleAdsServerStreamDecorator $stream 
+ * @var GoogleAdsServerStreamDecorator $stream
 */
         $stream = $googleAdsServiceClient->searchStream(
             SearchGoogleAdsStreamRequest::build($clientCustomerId, $query)
@@ -280,7 +280,7 @@ class UseCrossAccountBiddingStrategy
         );
         foreach ($stream->iterateAllElements() as $googleAdsRow) {
             /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
             printf(
                 '  ID: %1$d%2$s  Name: "%3$s"%2$s  Strategy type: "%4$s"%2$s'

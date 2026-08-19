@@ -104,7 +104,7 @@ class AddPerformanceMaxCampaign
     // There are also entities that will be created in the same request but do not need to be fixed
     // temporary IDs because they are referenced only once.
     /**
-     * @var int the negative temporary ID used in bulk mutates. 
+     * @var int the negative temporary ID used in bulk mutates.
      */
     private static $nextTempId = self::ASSET_GROUP_TEMPORARY_ID - 1;
 
@@ -150,7 +150,7 @@ class AddPerformanceMaxCampaign
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -221,7 +221,8 @@ class AddPerformanceMaxCampaign
         $operations =
             array_merge($operations, self::createCampaignCriterionOperations($customerId));
         $operations = array_merge(
-            $operations, self::createAssetGroupOperations(
+            $operations,
+            self::createAssetGroupOperations(
                 $customerId,
                 $headlineAssetResourceNames,
                 $descriptionAssetResourceNames,
@@ -229,7 +230,8 @@ class AddPerformanceMaxCampaign
             )
         );
         $operations = array_merge(
-            $operations, self::createAssetGroupSignalOperations(
+            $operations,
+            self::createAssetGroupSignalOperations(
                 $customerId,
                 ResourceNames::forAssetGroup($customerId, self::ASSET_GROUP_TEMPORARY_ID),
                 $audienceId
@@ -517,7 +519,7 @@ class AddPerformanceMaxCampaign
         // Issues a mutate request to add all assets.
         $googleAdsService = $googleAdsClient->getGoogleAdsServiceClient();
         /**
- * @var MutateGoogleAdsResponse $mutateGoogleAdsResponse 
+ * @var MutateGoogleAdsResponse $mutateGoogleAdsResponse
 */
         $mutateGoogleAdsResponse =
             $googleAdsService->mutate(MutateGoogleAdsRequest::build($customerId, $operations));
@@ -525,7 +527,7 @@ class AddPerformanceMaxCampaign
         $assetResourceNames = [];
         foreach ($mutateGoogleAdsResponse->getMutateOperationResponses() as $response) {
             /**
- * @var MutateOperationResponse $response 
+ * @var MutateOperationResponse $response
 */
             $assetResourceNames[] = $response->getAssetResult()->getResourceName();
         }
@@ -641,7 +643,8 @@ class AddPerformanceMaxCampaign
 
         // Creates and links the long headline text asset.
         $operations = array_merge(
-            $operations, self::createAndLinkTextAsset(
+            $operations,
+            self::createAndLinkTextAsset(
                 $customerId,
                 'Travel the World',
                 AssetFieldType::LONG_HEADLINE
@@ -649,7 +652,8 @@ class AddPerformanceMaxCampaign
         );
         // Creates and links the business name text asset.
         $operations = array_merge(
-            $operations, self::createAndLinkBrandAssets(
+            $operations,
+            self::createAndLinkBrandAssets(
                 $customerId,
                 $brandGuidelinesEnabled,
                 'Interplanetary Cruises',
@@ -662,7 +666,8 @@ class AddPerformanceMaxCampaign
 
         // Creates and links the Marketing Image Asset.
         $operations = array_merge(
-            $operations, self::createAndLinkImageAsset(
+            $operations,
+            self::createAndLinkImageAsset(
                 $customerId,
                 'https://gaagl.page.link/Eit5',
                 AssetFieldType::MARKETING_IMAGE,
@@ -671,7 +676,8 @@ class AddPerformanceMaxCampaign
         );
         // Creates and links the Square Marketing Image Asset.
         $operations = array_merge(
-            $operations, self::createAndLinkImageAsset(
+            $operations,
+            self::createAndLinkImageAsset(
                 $customerId,
                 'https://gaagl.page.link/bjYi',
                 AssetFieldType::SQUARE_MARKETING_IMAGE,
@@ -999,7 +1005,7 @@ class AddPerformanceMaxCampaign
     ): void {
         foreach ($mutateGoogleAdsResponse->getMutateOperationResponses() as $response) {
             /**
- * @var MutateOperationResponse $response 
+ * @var MutateOperationResponse $response
 */
             $getter = Serializer::getGetter($response->getResponse());
             printf(

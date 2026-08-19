@@ -101,7 +101,7 @@ class UploadConversionAdjustment
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -168,7 +168,8 @@ class UploadConversionAdjustment
         );
 
         // Sets adjusted value for adjustment type RESTATEMENT.
-        if ($restatementValue !== null
+        if (
+            $restatementValue !== null
             && $conversionAdjustmentType === ConversionAdjustmentType::RESTATEMENT
         ) {
             $conversionAdjustment->setRestatementValue(
@@ -200,7 +201,7 @@ class UploadConversionAdjustment
         } else {
             // Prints the result if exists.
             /**
- * @var ConversionAdjustmentResult $uploadedConversionAdjustment 
+ * @var ConversionAdjustmentResult $uploadedConversionAdjustment
 */
             $uploadedConversionAdjustment = $response->getResults()[0];
             printf(

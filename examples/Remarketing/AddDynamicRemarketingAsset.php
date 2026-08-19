@@ -47,7 +47,7 @@ use Google\Ads\GoogleAds\V25\Services\MutateCampaignAssetSetsRequest;
 use Google\ApiCore\ApiException;
 
 /**
- * Adds an asset for use in dynamic remarketing. 
+ * Adds an asset for use in dynamic remarketing.
  */
 class AddDynamicRemarketingAsset
 {
@@ -90,7 +90,7 @@ class AddDynamicRemarketingAsset
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",

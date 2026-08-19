@@ -36,7 +36,7 @@ use Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
- * This example gets ad group bid modifiers. 
+ * This example gets ad group bid modifiers.
  */
 class GetAdGroupBidModifiers
 {
@@ -79,7 +79,7 @@ class GetAdGroupBidModifiers
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -140,7 +140,7 @@ class GetAdGroupBidModifiers
         // the ad group bid modifier in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
             $adGroupBidModifier = $googleAdsRow->getAdGroupBidModifier();
             printf(
@@ -172,38 +172,38 @@ class GetAdGroupBidModifiers
 
             $criterionDetails = ' - Criterion type: ' . $adGroupBidModifier->getCriterion() . ', ';
             switch ($adGroupBidModifier->getCriterion()) {
-            case 'device':
-                $criterionDetails .= 'Type: ' .
+                case 'device':
+                    $criterionDetails .= 'Type: ' .
                     Device::name($adGroupBidModifier->getDevice()->getType());
-                break;
-            case 'hotel_advance_booking_window':
-                $criterionDetails .= 'Min Days: ' .
+                    break;
+                case 'hotel_advance_booking_window':
+                    $criterionDetails .= 'Min Days: ' .
                     $adGroupBidModifier->getHotelAdvanceBookingWindow()->getMinDays() . ', ';
-                $criterionDetails .= 'Max Days: ' .
+                    $criterionDetails .= 'Max Days: ' .
                     $adGroupBidModifier->getHotelAdvanceBookingWindow()->getMaxDays();
-                break;
-            case 'hotel_check_in_day':
-                $criterionDetails .= 'Day of the week: ' .
+                    break;
+                case 'hotel_check_in_day':
+                    $criterionDetails .= 'Day of the week: ' .
                     DayOfWeek::name($adGroupBidModifier->getHotelCheckInDay()->getDayOfWeek());
-                break;
-            case 'hotel_date_selection_type':
-                $criterionDetails .= 'Date selection type: ' .
+                    break;
+                case 'hotel_date_selection_type':
+                    $criterionDetails .= 'Date selection type: ' .
                     HotelDateSelectionType::name(
                         $adGroupBidModifier->getHotelDateSelectionType()->getType()
                     );
-                break;
-            case 'hotel_length_of_stay':
-                $criterionDetails .= 'Min Nights: ' .
+                    break;
+                case 'hotel_length_of_stay':
+                    $criterionDetails .= 'Min Nights: ' .
                     $adGroupBidModifier->getHotelLengthOfStay()->getMinNights() . ', ';
-                $criterionDetails .= 'Max Nights: ' .
+                    $criterionDetails .= 'Max Nights: ' .
                     $adGroupBidModifier->getHotelLengthOfStay()->getMaxNights();
-                break;
-            case 'hotel_check_in_date_range':
-                $criterionDetails .= 'Start Date: ' .
+                    break;
+                case 'hotel_check_in_date_range':
+                    $criterionDetails .= 'Start Date: ' .
                     $adGroupBidModifier->getHotelCheckInDateRange()->getStartDate() . ', ';
-                $criterionDetails .= 'End Date: ' .
+                    $criterionDetails .= 'End Date: ' .
                     $adGroupBidModifier->getHotelCheckInDateRange()->getEndDate();
-                break;
+                    break;
             }
             print $criterionDetails . PHP_EOL;
         }

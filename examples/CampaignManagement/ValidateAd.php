@@ -87,7 +87,7 @@ class ValidateAd
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -181,13 +181,13 @@ class ValidateAd
             // https://developers.google.com/google-ads/api/docs/policy-exemption/overview
             // for additional details.
             /**
- * @var GoogleAdsError $googleAdsError 
+ * @var GoogleAdsError $googleAdsError
 */
             $filteredGoogleAdsErrors = array_filter(
                 iterator_to_array($googleAdsException->getGoogleAdsFailure()->getErrors()),
                 function ($googleAdsError) {
                     /**
-                * @var GoogleAdsError $googleAdsError 
+                * @var GoogleAdsError $googleAdsError
                 */
                     return $googleAdsError->getErrorCode()->getPolicyFindingError()
                         == PolicyFindingError::POLICY_FINDING;
@@ -196,13 +196,14 @@ class ValidateAd
             if (!empty($filteredGoogleAdsErrors)) {
                 $count = 1;
                 foreach ($filteredGoogleAdsErrors as $googleAdsError) {
-                    if ($googleAdsError->getErrorCode()->getPolicyFindingError()== PolicyFindingError::POLICY_FINDING
+                    if (
+                        $googleAdsError->getErrorCode()->getPolicyFindingError() == PolicyFindingError::POLICY_FINDING
                     ) {
                         $details = $googleAdsError->getDetails()->getPolicyFindingDetails();
                         if ($details) {
                             foreach ($details->getPolicyTopicEntries() as $entry) {
                                 /**
- * @var PolicyTopicEntry $entry 
+ * @var PolicyTopicEntry $entry
 */
                                 printf(
                                     "%d) Policy topic entry with topic '%s' and type '%s'"

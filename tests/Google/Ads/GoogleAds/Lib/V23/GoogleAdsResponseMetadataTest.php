@@ -29,12 +29,12 @@ use PHPUnit\Framework\TestCase;
 class GoogleAdsResponseMetadataTest extends TestCase
 {
     /**
-     * @var GoogleAdsResponseMetadata $googleAdsResponseMetadata 
+     * @var GoogleAdsResponseMetadata $googleAdsResponseMetadata
      */
     private $googleAdsResponseMetadata;
 
     /**
-     * @var array $metadata 
+     * @var array $metadata
      */
     private $metadata;
 

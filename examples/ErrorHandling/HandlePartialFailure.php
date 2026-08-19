@@ -90,7 +90,7 @@ class HandlePartialFailure
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -223,7 +223,7 @@ class HandlePartialFailure
         $operationIndex = 0;
         foreach ($response->getResults() as $result) {
             /**
- * @var AdGroup $result 
+ * @var AdGroup $result
 */
             if (PartialFailures::isPartialFailure($result)) {
                 $errors = GoogleAdsErrors::fromStatus(

@@ -34,12 +34,12 @@ use PHPUnit\Framework\TestCase;
 class StatusMetadataExtractorTest extends TestCase
 {
     /**
-     * @var StatusMetadataExtractor $statusMetadataExtractor 
+     * @var StatusMetadataExtractor $statusMetadataExtractor
      */
     private $statusMetadataExtractor;
 
     /**
-     * @var array $defaultStatusMetadata 
+     * @var array $defaultStatusMetadata
      */
     private $defaultStatusMetadata;
 

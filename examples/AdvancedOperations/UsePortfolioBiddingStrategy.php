@@ -92,7 +92,7 @@ class UsePortfolioBiddingStrategy
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -172,7 +172,7 @@ class UsePortfolioBiddingStrategy
             MutateBiddingStrategiesRequest::build($customerId, [$biddingStrategyOperation])
         );
         /**
- * @var BiddingStrategy $addedBiddingStrategy 
+ * @var BiddingStrategy $addedBiddingStrategy
 */
         $addedBiddingStrategy = $response->getResults()[0];
 
@@ -222,7 +222,7 @@ class UsePortfolioBiddingStrategy
         );
 
         /**
- * @var CampaignBudget $addedBudget 
+ * @var CampaignBudget $addedBudget
 */
         $addedBudget = $response->getResults()[0];
         printf(
@@ -288,7 +288,7 @@ class UsePortfolioBiddingStrategy
         );
 
         /**
- * @var Campaign $addedCampaign 
+ * @var Campaign $addedCampaign
 */
         $addedCampaign = $response->getResults()[0];
         printf(

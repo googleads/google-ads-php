@@ -195,7 +195,8 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                     "Both 'jsonKeyFilePath' and 'scopes' must be set when using service account flow."
                 );
             }
-            if (!is_null($this->clientId)
+            if (
+                !is_null($this->clientId)
                 || !is_null($this->clientSecret)
                 || !is_null($this->refreshToken)
             ) {
@@ -257,7 +258,8 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      */
     public function validate()
     {
-        if ((!is_null($this->jsonKeyFilePath) || !is_null($this->scopes))
+        if (
+            (!is_null($this->jsonKeyFilePath) || !is_null($this->scopes))
             && (!is_null($this->clientId) || !is_null($this->clientSecret)
             || !is_null($this->refreshToken))
         ) {
@@ -274,7 +276,8 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                 );
             }
             // Triggers validation if any part of the Installed/Web flow is set; otherwise, allows the ADC fallback.
-        } elseif (!is_null($this->clientId)
+        } elseif (
+            !is_null($this->clientId)
             || !is_null($this->clientSecret)
             || !is_null($this->refreshToken)
         ) {

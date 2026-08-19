@@ -113,7 +113,7 @@ final class GoogleAdsErrors
             $pathElements = $error->getLocation()->getFieldPathElements();
             if (count($pathElements) > 0) {
                 /**
- * @var FieldPathElement $element 
+ * @var FieldPathElement $element
 */
                 $element = $pathElements[0];
                 $fieldName = $element->getFieldName();

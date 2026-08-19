@@ -83,7 +83,7 @@ class AddCompleteCampaignsUsingBatchJob
     private const PAGE_SIZE = 1000;
 
     /**
-     * @var int the negative temporary ID used in batch job operations. 
+     * @var int the negative temporary ID used in batch job operations.
      */
     private static $temporaryId = -1;
 
@@ -121,7 +121,7 @@ class AddCompleteCampaignsUsingBatchJob
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -291,7 +291,7 @@ class AddCompleteCampaignsUsingBatchJob
         );
         foreach ($batchJobResults->iterateAllElements() as $batchJobResult) {
             /**
- * @var BatchJobResult $batchJobResult 
+ * @var BatchJobResult $batchJobResult
 */
             printf(
                 "Batch job #%d has a status '%s' and response of type '%s'.%s",
@@ -329,7 +329,8 @@ class AddCompleteCampaignsUsingBatchJob
             $campaignBudgetOperation->getCreate()->getResourceName()
         );
         $mutateOperations = array_merge(
-            $mutateOperations, array_map(
+            $mutateOperations,
+            array_map(
                 function (CampaignOperation $campaignOperation) {
                     return new MutateOperation(['campaign_operation' => $campaignOperation]);
                 },
@@ -340,7 +341,8 @@ class AddCompleteCampaignsUsingBatchJob
         // Creates new campaign criterion operations and adds them to the array of mutate
         // operations.
         $mutateOperations = array_merge(
-            $mutateOperations, array_map(
+            $mutateOperations,
+            array_map(
                 function (CampaignCriterionOperation $campaignCriterionOperation) {
                     return new MutateOperation(
                         ['campaign_criterion_operation' => $campaignCriterionOperation]
@@ -353,7 +355,8 @@ class AddCompleteCampaignsUsingBatchJob
         // Creates new ad group operations and adds them to the array of mutate operations.
         $adGroupOperations = self::buildAdGroupOperations($customerId, $campaignOperations);
         $mutateOperations = array_merge(
-            $mutateOperations, array_map(
+            $mutateOperations,
+            array_map(
                 function (AdGroupOperation $adGroupOperation) {
                     return new MutateOperation(['ad_group_operation' => $adGroupOperation]);
                 },
@@ -364,7 +367,8 @@ class AddCompleteCampaignsUsingBatchJob
         // Creates new ad group criterion operations and adds them to the array of mutate
         // operations.
         $mutateOperations = array_merge(
-            $mutateOperations, array_map(
+            $mutateOperations,
+            array_map(
                 function (AdGroupCriterionOperation $adGroupCriterionOperation) {
                     return new MutateOperation(
                         ['ad_group_criterion_operation' => $adGroupCriterionOperation]
@@ -376,7 +380,8 @@ class AddCompleteCampaignsUsingBatchJob
 
         // Creates new ad group ad operations and adds them to the array of mutate operations.
         $mutateOperations = array_merge(
-            $mutateOperations, array_map(
+            $mutateOperations,
+            array_map(
                 function (AdGroupAdOperation $adGroupAdOperation) {
                     return new MutateOperation(['ad_group_ad_operation' => $adGroupAdOperation]);
                 },

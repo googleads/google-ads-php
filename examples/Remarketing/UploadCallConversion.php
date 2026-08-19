@@ -110,7 +110,7 @@ class UploadCallConversion
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -219,7 +219,7 @@ class UploadCallConversion
         } else {
             // Prints the result if exists.
             /**
- * @var CallConversionResult $uploadedCallConversion 
+ * @var CallConversionResult $uploadedCallConversion
 */
             $uploadedCallConversion = $response->getResults()[0];
             printf(

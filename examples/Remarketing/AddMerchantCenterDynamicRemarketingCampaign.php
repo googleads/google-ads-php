@@ -115,7 +115,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -223,7 +223,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
         );
 
         /**
- * @var Campaign $addedCampaign 
+ * @var Campaign $addedCampaign
 */
         $addedCampaign = $response->getResults()[0];
         $addedCampaignResourceName = $addedCampaign->getResourceName();
@@ -268,7 +268,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
         );
 
         /**
- * @var AdGroup $addedAdGroup 
+ * @var AdGroup $addedAdGroup
 */
         $addedAdGroup = $response->getResults()[0];
         $addedAdGroupResourceName = $addedAdGroup->getResourceName();
@@ -363,7 +363,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
         );
 
         /**
- * @var AdGroupAd $addedAdGroupAd 
+ * @var AdGroupAd $addedAdGroupAd
 */
         $addedAdGroupAd = $response->getResults()[0];
         printf(
@@ -410,7 +410,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         // Prints the resource name of the added image asset.
         /**
- * @var MutateAssetResult $addedImageAsset 
+ * @var MutateAssetResult $addedImageAsset
 */
         $addedImageAsset = $response->getResults()[0];
         $addedImageAssetResourceName = $addedImageAsset->getResourceName();
@@ -462,7 +462,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
         );
 
         /**
- * @var AdGroupCriterion $addedAdGroupCriterion 
+ * @var AdGroupCriterion $addedAdGroupCriterion
 */
         $addedAdGroupCriterion = $response->getResults()[0];
         printf(

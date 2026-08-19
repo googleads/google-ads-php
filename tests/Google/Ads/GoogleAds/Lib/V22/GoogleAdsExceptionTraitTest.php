@@ -31,12 +31,12 @@ use PHPUnit\Framework\TestCase;
 class GoogleAdsExceptionTraitTest extends TestCase
 {
     /**
-     * @var GoogleAdsExceptionTraitInserted $googleAdsExceptionTraitInserted 
+     * @var GoogleAdsExceptionTraitInserted $googleAdsExceptionTraitInserted
      */
     private $googleAdsExceptionTraitInserted;
 
     /**
-     * @var StatusMetadataExtractor $statusMetadataExtractor 
+     * @var StatusMetadataExtractor $statusMetadataExtractor
      */
     private $statusMetadataExtractor;
 

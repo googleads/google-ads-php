@@ -54,7 +54,7 @@ final class GoogleAdsFailures
         $errors = [];
         foreach ($anys as $any) {
             /**
- * @var Any $any 
+ * @var Any $any
 */
             $ret = self::fromAny($any);
             $errors = array_merge($errors, iterator_to_array($ret->getErrors()->getIterator()));
@@ -84,11 +84,12 @@ final class GoogleAdsFailures
     {
         // This initialization is needed to populate the descriptor pool with the GoogleAdsFailure
         // class and prevent exceptions from being thrown.
-        if (is_null(
-            DescriptorPool::getGeneratedPool()->getDescriptorByClassName(
-                GoogleAdsFailure::class
+        if (
+            is_null(
+                DescriptorPool::getGeneratedPool()->getDescriptorByClassName(
+                    GoogleAdsFailure::class
+                )
             )
-        )
         ) {
             new GoogleAdsFailure();
         }

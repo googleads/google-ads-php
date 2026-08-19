@@ -111,7 +111,7 @@ class AddAppCampaign
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -375,7 +375,7 @@ class AddAppCampaign
 
         foreach ($response->getResults() as $createdCampaignCriterion) {
             /**
- * @var CampaignCriterion $createdCampaignCriterion 
+ * @var CampaignCriterion $createdCampaignCriterion
 */
             printf("\t%s%s", $createdCampaignCriterion->getResourceName(), PHP_EOL);
         }

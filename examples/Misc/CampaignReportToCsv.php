@@ -79,7 +79,7 @@ class CampaignReportToCsv
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -134,7 +134,7 @@ class CampaignReportToCsv
         $csvRows = [];
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
             $csvRows[] = [
                 'campaign.id' => $googleAdsRow->getCampaign()->getId(),

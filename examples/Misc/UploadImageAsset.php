@@ -37,7 +37,7 @@ use Google\Ads\GoogleAds\V25\Services\MutateAssetsRequest;
 use Google\ApiCore\ApiException;
 
 /**
- * This example uploads an image asset. To get image assets, run GetAllImageAssets.php. 
+ * This example uploads an image asset. To get image assets, run GetAllImageAssets.php.
  */
 class UploadImageAsset
 {
@@ -78,7 +78,7 @@ class UploadImageAsset
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -138,7 +138,7 @@ class UploadImageAsset
         if (!empty($response->getResults())) {
             // Prints the resource name of the added image asset.
             /**
- * @var MutateAssetResult $addedImageAsset 
+ * @var MutateAssetResult $addedImageAsset
 */
             $addedImageAsset = $response->getResults()[0];
             printf(

@@ -114,7 +114,7 @@ class AddPerformanceMaxProductListingGroupTree
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -313,7 +313,7 @@ class AddPerformanceMaxProductListingGroupTree
         // Iterates over all rows in all pages to get an asset group listing group filter.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
             $assetGroupListingGroupFilters[] = $googleAdsRow->getAssetGroupListingGroupFilter();
         }
@@ -607,9 +607,10 @@ class AddPerformanceMaxProductListingGroupTree
             $mutateGoogleAdsResponse->getMutateOperationResponses() as $i => $operationResponse
         ) {
             /**
- * @var MutateOperationResponse $operationResponse 
+ * @var MutateOperationResponse $operationResponse
 */
-            if ($operationResponse->getResponse()                !== 'asset_group_listing_group_filter_result'
+            if (
+                $operationResponse->getResponse()                !== 'asset_group_listing_group_filter_result'
             ) {
                 // Trims the substring "_result" from the end of the entity name.
                 printf(
@@ -623,28 +624,28 @@ class AddPerformanceMaxProductListingGroupTree
             $operation = $mutateOperations[$i]->getAssetGroupListingGroupFilterOperation();
             $getter = Serializer::getGetter($operationResponse->getResponse());
             switch ($operation->getOperation()) {
-            case 'create':
-                printf(
-                    "Created an asset group listing group filter with resource name: "
-                     . " '%s'.%s",
-                    $operationResponse->$getter()->getResourceName(),
-                    PHP_EOL
-                );
-                break;
-            case 'remove':
-                printf(
-                    "Removed an asset group listing group filter with resource name: "
-                    . " '%s'.%s",
-                    $operationResponse->$getter()->getResourceName(),
-                    PHP_EOL
-                );
-                break;
-            default:
-                printf(
-                    "Unsupported operation type: '%s'.%s",
-                    $operation->getOperation(),
-                    PHP_EOL
-                );
+                case 'create':
+                    printf(
+                        "Created an asset group listing group filter with resource name: "
+                        . " '%s'.%s",
+                        $operationResponse->$getter()->getResourceName(),
+                        PHP_EOL
+                    );
+                    break;
+                case 'remove':
+                    printf(
+                        "Removed an asset group listing group filter with resource name: "
+                        . " '%s'.%s",
+                        $operationResponse->$getter()->getResourceName(),
+                        PHP_EOL
+                    );
+                    break;
+                default:
+                    printf(
+                        "Unsupported operation type: '%s'.%s",
+                        $operation->getOperation(),
+                        PHP_EOL
+                    );
             }
         }
     }

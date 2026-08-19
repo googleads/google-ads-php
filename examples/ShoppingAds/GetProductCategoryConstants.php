@@ -35,7 +35,7 @@ use Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
 /**
- * Fetches the set of all ProductCategoryConstants. 
+ * Fetches the set of all ProductCategoryConstants.
  */
 class GetProductCategoryConstants
 {
@@ -75,7 +75,7 @@ class GetProductCategoryConstants
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -130,7 +130,7 @@ class GetProductCategoryConstants
 
             // Finds the US-en localized name in the localizations list.
             /**
- * @var ProductCategoryLocalization[] $filteredLocalizations 
+ * @var ProductCategoryLocalization[] $filteredLocalizations
 */
             $filteredLocalizations = array_filter(
                 iterator_to_array($productBiddingCategory->getLocalizations()->getIterator()),

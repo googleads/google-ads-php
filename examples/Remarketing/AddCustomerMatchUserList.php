@@ -145,7 +145,7 @@ class AddCustomerMatchUserList
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -318,7 +318,7 @@ class AddCustomerMatchUserList
 
             // Issues a request to create the offline user data job.
             /**
- * @var CreateOfflineUserDataJobResponse $createOfflineUserDataJobResponse 
+ * @var CreateOfflineUserDataJobResponse $createOfflineUserDataJobResponse
 */
             $createOfflineUserDataJobResponse =
                 $offlineUserDataJobServiceClient->createOfflineUserDataJob(
@@ -344,7 +344,7 @@ class AddCustomerMatchUserList
         // and https://developers.google.com/google-ads/api/docs/best-practices/quotas#user_data
         // for more information on the per-request limits.
         /**
- * @var AddOfflineUserDataJobOperationsResponse $operationResponse 
+ * @var AddOfflineUserDataJobOperationsResponse $operationResponse
 */
         $response = $offlineUserDataJobServiceClient->addOfflineUserDataJobOperations(
             AddOfflineUserDataJobOperationsRequest::build(
@@ -573,7 +573,7 @@ class AddCustomerMatchUserList
 
         // Issues a search request to get the GoogleAdsRow containing the job from the response.
         /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
         $googleAdsRow =
             $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query))
@@ -600,7 +600,8 @@ class AddCustomerMatchUserList
             );
         } elseif ($offlineUserDataJobStatus === OfflineUserDataJobStatus::FAILED) {
             printf("  Failure reason: %s.%s", $offlineUserDataJob->getFailureReason(), PHP_EOL);
-        } elseif ($offlineUserDataJobStatus === OfflineUserDataJobStatus::PENDING
+        } elseif (
+            $offlineUserDataJobStatus === OfflineUserDataJobStatus::PENDING
             || $offlineUserDataJobStatus === OfflineUserDataJobStatus::RUNNING
         ) {
             printf(
@@ -637,7 +638,7 @@ class AddCustomerMatchUserList
 
         // Issues a search stream request.
         /**
- * @var GoogleAdsServerStreamDecorator $stream 
+ * @var GoogleAdsServerStreamDecorator $stream
 */
         $stream = $googleAdsServiceClient->searchStream(
             SearchGoogleAdsStreamRequest::build($customerId, $query)
@@ -646,7 +647,7 @@ class AddCustomerMatchUserList
 
         // Prints out some information about the user list.
         /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
         $googleAdsRow = $stream->iterateAllElements()->current();
         printf(

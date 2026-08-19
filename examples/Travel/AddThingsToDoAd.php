@@ -104,7 +104,7 @@ class AddThingsToDoAd
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -185,7 +185,7 @@ class AddThingsToDoAd
         );
 
         /**
- * @var CampaignBudget $addedBudget 
+ * @var CampaignBudget $addedBudget
 */
         $addedBudget = $response->getResults()[0];
         printf(
@@ -254,7 +254,7 @@ class AddThingsToDoAd
         );
 
         /**
- * @var Campaign $addedCampaign 
+ * @var Campaign $addedCampaign
 */
         $addedCampaign = $response->getResults()[0];
         printf(
@@ -305,7 +305,7 @@ class AddThingsToDoAd
         );
 
         /**
- * @var AdGroup $addedAdGroup 
+ * @var AdGroup $addedAdGroup
 */
         $addedAdGroup = $response->getResults()[0];
         printf(
@@ -355,7 +355,7 @@ class AddThingsToDoAd
         );
 
         /**
- * @var AdGroupAd $addedAdGroupAd 
+ * @var AdGroupAd $addedAdGroupAd
 */
         $addedAdGroupAd = $response->getResults()[0];
         printf(

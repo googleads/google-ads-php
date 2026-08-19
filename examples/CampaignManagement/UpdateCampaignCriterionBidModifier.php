@@ -85,7 +85,7 @@ class UpdateCampaignCriterionBidModifier
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -147,7 +147,7 @@ class UpdateCampaignCriterionBidModifier
 
         // Prints the resource name of the updated campaign criterion.
         /**
- * @var CampaignCriterion $updatedCampaignCriterion 
+ * @var CampaignCriterion $updatedCampaignCriterion
 */
         $updatedCampaignCriterion = $response->getResults()[0];
         printf(

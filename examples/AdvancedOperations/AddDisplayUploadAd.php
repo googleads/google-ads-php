@@ -89,7 +89,7 @@ class AddDisplayUploadAd
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -229,7 +229,7 @@ class AddDisplayUploadAd
         // Issues a mutate request to add the ad group ad.
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
         /**
- * @var MutateAdGroupAdsResponse $adGroupAdResponse 
+ * @var MutateAdGroupAdsResponse $adGroupAdResponse
 */
         $adGroupAdResponse = $adGroupAdServiceClient->mutateAdGroupAds(
             MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])

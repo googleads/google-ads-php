@@ -94,7 +94,7 @@ class HandleKeywordPolicyViolations
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -188,7 +188,7 @@ class HandleKeywordPolicyViolations
         printf("Google Ads failure details:%s", PHP_EOL);
         foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
             /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
             printf(
                 "\t%s: %s%s",
@@ -196,7 +196,8 @@ class HandleKeywordPolicyViolations
                 $error->getMessage(),
                 PHP_EOL
             );
-            if (!is_null($error->getDetails())
+            if (
+                !is_null($error->getDetails())
                 && !is_null($error->getDetails()->getPolicyViolationDetails())
             ) {
                 $policyViolationDetails = $error->getDetails()->getPolicyViolationDetails();
@@ -217,7 +218,8 @@ class HandleKeywordPolicyViolations
                     PHP_EOL
                 );
 
-                if ($policyViolationDetails->getIsExemptible() 
+                if (
+                    $policyViolationDetails->getIsExemptible()
                     && !is_null($policyViolationDetails->getKey())
                 ) {
                     $policyViolationDetailsKey = $policyViolationDetails->getKey();

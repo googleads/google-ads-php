@@ -84,7 +84,7 @@ class UpdateAudienceTargetRestriction
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -137,7 +137,7 @@ class UpdateAudienceTargetRestriction
         $targetRestrictions = [];
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
             $adGroup = $googleAdsRow->getAdGroup();
             // Prints the results.

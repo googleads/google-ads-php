@@ -31,17 +31,17 @@ use PHPUnit\Framework\TestCase;
 class GoogleAdsExceptionTest extends TestCase
 {
     /**
-     * @var GoogleAdsException $googleAdsException 
+     * @var GoogleAdsException $googleAdsException
      */
     private $googleAdsException;
 
     /**
-     * @var GoogleAdSsFailure $googleAdsFailure 
+     * @var GoogleAdSsFailure $googleAdsFailure
      */
     private $googleAdsFailure;
 
     /**
-     * @var ApiException $apiExceptionMock 
+     * @var ApiException $apiExceptionMock
      */
     private $apiExceptionMock;
 

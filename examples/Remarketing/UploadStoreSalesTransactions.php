@@ -73,7 +73,7 @@ class UploadStoreSalesTransactions
      */
     private const OFFLINE_USER_DATA_JOB_TYPE = 'STORE_SALES_UPLOAD_FIRST_PARTY';
     /**
-     * The ID of a store sales conversion action. 
+     * The ID of a store sales conversion action.
      */
     private const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
     /**
@@ -95,11 +95,11 @@ class UploadStoreSalesTransactions
      */
     private const ADVERTISER_UPLOAD_DATE_TIME = null;
     /**
-     * The version of partner IDs to be used for uploads. 
+     * The version of partner IDs to be used for uploads.
      */
     private const BRIDGE_MAP_VERSION_ID = null;
     /**
-     * The ID of the third party partner. 
+     * The ID of the third party partner.
      */
     private const PARTNER_ID = null;
     // Optional: The consent status for ad personalization.
@@ -205,7 +205,7 @@ class UploadStoreSalesTransactions
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                 /**
- * @var GoogleAdsError $error 
+ * @var GoogleAdsError $error
 */
                 printf(
                     "\t%s: %s%s",
@@ -384,7 +384,8 @@ class UploadStoreSalesTransactions
         if (!is_null($customKey)) {
             $storeSalesMetadata->setCustomKey($customKey);
         }
-        if (OfflineUserDataJobType::value($offlineUserDataJobType)            === OfflineUserDataJobType::STORE_SALES_UPLOAD_THIRD_PARTY
+        if (
+            OfflineUserDataJobType::value($offlineUserDataJobType)            === OfflineUserDataJobType::STORE_SALES_UPLOAD_THIRD_PARTY
         ) {
             // Creates additional metadata required for uploading third party data.
             $storeSalesThirdPartyMetadata = new StoreSalesThirdPartyMetadata(
@@ -434,7 +435,7 @@ class UploadStoreSalesTransactions
 
         // Issues a request to create the offline user data job.
         /**
- * @var CreateOfflineUserDataJobResponse $createOfflineUserDataJobResponse 
+ * @var CreateOfflineUserDataJobResponse $createOfflineUserDataJobResponse
 */
         $createOfflineUserDataJobResponse =
             $offlineUserDataJobServiceClient->createOfflineUserDataJob(
@@ -500,7 +501,7 @@ class UploadStoreSalesTransactions
         // [START enable_warnings_1]
         // Issues a request to add the operations to the offline user data job.
         /**
- * @var AddOfflineUserDataJobOperationsResponse $operationResponse 
+ * @var AddOfflineUserDataJobOperationsResponse $operationResponse
 */
         $request = AddOfflineUserDataJobOperationsRequest::build(
             $offlineUserDataJobResourceName,
@@ -731,7 +732,7 @@ class UploadStoreSalesTransactions
 
         // Issues a search stream request.
         /**
- * @var GoogleAdsServerStreamDecorator $stream 
+ * @var GoogleAdsServerStreamDecorator $stream
 */
         $stream = $googleAdsServiceClient->searchStream(
             SearchGoogleAdsStreamRequest::build($customerId, $query)
@@ -739,7 +740,7 @@ class UploadStoreSalesTransactions
 
         // Prints out some information about the offline user data.
         /**
- * @var GoogleAdsRow $googleAdsRow 
+ * @var GoogleAdsRow $googleAdsRow
 */
         $googleAdsRow = $stream->iterateAllElements()->current();
         $offlineUserDataJob = $googleAdsRow->getOfflineUserDataJob();
@@ -757,7 +758,8 @@ class UploadStoreSalesTransactions
                 OfflineUserDataJobFailureReason::name($offlineUserDataJob->getFailureReason()),
                 PHP_EOL
             );
-        } elseif (OfflineUserDataJobStatus::PENDING === $offlineUserDataJob->getStatus()
+        } elseif (
+            OfflineUserDataJobStatus::PENDING === $offlineUserDataJob->getStatus()
             || OfflineUserDataJobStatus::RUNNING === $offlineUserDataJob->getStatus()
         ) {
             printf(
