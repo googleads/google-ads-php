@@ -53,7 +53,9 @@ use Google\Ads\GoogleAds\V25\Services\MutateAssetsRequest;
 use Google\Ads\GoogleAds\V25\Services\MutateCampaignAssetSetsRequest;
 use Google\ApiCore\ApiException;
 
-/** Adds a page feed with URLs for a Dynamic Search Ads campaign. */
+/**
+ * Adds a page feed with URLs for a Dynamic Search Ads campaign. 
+ */
 class AddDynamicPageFeedAsset
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
@@ -64,11 +66,13 @@ class AddDynamicPageFeedAsset
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -94,7 +98,9 @@ class AddDynamicPageFeedAsset
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -117,9 +123,9 @@ class AddDynamicPageFeedAsset
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param int $campaignId the campaign ID
-     * @param int $adGroupId the ad group ID
+     * @param int             $customerId      the client customer ID
+     * @param int             $campaignId      the campaign ID
+     * @param int             $adGroupId       the ad group ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -162,9 +168,9 @@ class AddDynamicPageFeedAsset
     /**
      * Creates assets to be used in a DSA page feed.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param string $dsaPageUrlLabel the DSA page URL label
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the client customer ID
+     * @param  string          $dsaPageUrlLabel the DSA page URL label
      * @return string[] the created assets' resource names
      */
     private static function createAssets(
@@ -181,12 +187,14 @@ class AddDynamicPageFeedAsset
         $operations = [];
         // Creates one asset per URL.
         foreach ($urls as $url) {
-            $pageFeedAsset = new PageFeedAsset([
+            $pageFeedAsset = new PageFeedAsset(
+                [
                 'page_url' => $url,
                 // Recommended: adds labels to the asset. These labels can be used later in ad group
                 // targeting to restrict the set of pages that can serve.
                 'labels' => [$dsaPageUrlLabel]
-            ]);
+                ]
+            );
 
             // Wraps the page feed asset in an asset.
             $asset = new Asset(['page_feed_asset' => $pageFeedAsset]);
@@ -199,14 +207,18 @@ class AddDynamicPageFeedAsset
 
         // Issues a mutate request to add the assets and prints its information.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
-        $response = $assetServiceClient->mutateAssets(MutateAssetsRequest::build(
-            $customerId,
-            $operations
-        ));
+        $response = $assetServiceClient->mutateAssets(
+            MutateAssetsRequest::build(
+                $customerId,
+                $operations
+            )
+        );
         $assetResourceNames = [];
         printf("Added %d assets:%s", $response->getResults()->count(), PHP_EOL);
         foreach ($response->getResults() as $addedAsset) {
-            /** @var Asset $addedAsset */
+            /**
+ * @var Asset $addedAsset 
+*/
             $assetResourceName = $addedAsset->getResourceName();
             printf(
                 "Created an asset with resource name: '%s'.%s",
@@ -222,8 +234,8 @@ class AddDynamicPageFeedAsset
     /**
      * Creates an asset set.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the client customer ID
      * @return string the created asset set's resource name
      */
     private static function createAssetSet(
@@ -233,10 +245,12 @@ class AddDynamicPageFeedAsset
         // [START add_asset_set]
         // Creates an asset set which will be used to link the dynamic page feed assets to a
         // campaign.
-        $assetSet = new AssetSet([
+        $assetSet = new AssetSet(
+            [
             'name' => 'My dynamic page feed ' . Helper::getPrintableDatetime(),
             'type' => AssetSetType::PAGE_FEED
-        ]);
+            ]
+        );
 
         // Creates an asset set operation.
         $assetSetOperation = new AssetSetOperation();
@@ -244,10 +258,12 @@ class AddDynamicPageFeedAsset
 
         // Issues a mutate request to add the asset set and prints its information.
         $assetSetServiceClient = $googleAdsClient->getAssetSetServiceClient();
-        $response = $assetSetServiceClient->mutateAssetSets(MutateAssetSetsRequest::build(
-            $customerId,
-            [$assetSetOperation]
-        ));
+        $response = $assetSetServiceClient->mutateAssetSets(
+            MutateAssetSetsRequest::build(
+                $customerId,
+                [$assetSetOperation]
+            )
+        );
         $assetSetResourceName = $response->getResults()[0]->getResourceName();
         printf(
             "Created an asset set with resource name: '%s'.%s",
@@ -262,10 +278,10 @@ class AddDynamicPageFeedAsset
     /**
      * Adds assets to an asset set by creating an asset set asset link.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param string[] $assetResourceNames the asset resource names
-     * @param string $assetSetResourceName the asset set resource name
+     * @param GoogleAdsClient $googleAdsClient      the Google Ads API client
+     * @param int             $customerId           the client customer ID
+     * @param string[]        $assetResourceNames   the asset resource names
+     * @param string          $assetSetResourceName the asset set resource name
      */
     private static function addAssetsToAssetSet(
         GoogleAdsClient $googleAdsClient,
@@ -277,10 +293,12 @@ class AddDynamicPageFeedAsset
         $operations = [];
         foreach ($assetResourceNames as $assetResourceName) {
             // Creates an asset set asset.
-            $assetSetAsset = new AssetSetAsset([
+            $assetSetAsset = new AssetSetAsset(
+                [
                 'asset' => $assetResourceName,
                 'asset_set' => $assetSetResourceName
-            ]);
+                ]
+            );
 
             // Creates an asset set asset operation and adds it to the list of operations.
             $assetSetAssetOperation = new AssetSetAssetOperation();
@@ -295,7 +313,9 @@ class AddDynamicPageFeedAsset
         );
         printf("Added %d asset set assets:%s", $response->getResults()->count(), PHP_EOL);
         foreach ($response->getResults() as $addedAssetSetAsset) {
-            /** @var AssetSetAsset $addedAssetSetAsset */
+            /**
+ * @var AssetSetAsset $addedAssetSetAsset 
+*/
             printf(
                 "Created an asset set asset link with resource name: '%s'.%s",
                 $addedAssetSetAsset->getResourceName(),
@@ -308,10 +328,10 @@ class AddDynamicPageFeedAsset
     /**
      * Links the specified asset set to the specified campaign by creating a campaign asset set.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $assetSetResourceName the asset set's resource name to link
-     * @param int $customerId the customer ID
-     * @param int $campaignId the campaign ID to link the asset set to
+     * @param GoogleAdsClient $googleAdsClient      the Google Ads API client
+     * @param string          $assetSetResourceName the asset set's resource name to link
+     * @param int             $customerId           the customer ID
+     * @param int             $campaignId           the campaign ID to link the asset set to
      */
     private static function linkAssetSetToCampaign(
         GoogleAdsClient $googleAdsClient,
@@ -321,10 +341,12 @@ class AddDynamicPageFeedAsset
     ): void {
         // [START add_campaign_asset_set]
         // Creates a campaign asset set representing the link between an asset set and a campaign.
-        $campaignAssetSet = new CampaignAssetSet([
+        $campaignAssetSet = new CampaignAssetSet(
+            [
             'asset_set' => $assetSetResourceName,
             'campaign' => ResourceNames::forCampaign($customerId, $campaignId)
-        ]);
+            ]
+        );
 
         // Creates a campaign asset set operation.
         $campaignAssetSetOperation = new CampaignAssetSetOperation();
@@ -347,9 +369,9 @@ class AddDynamicPageFeedAsset
      * Creates an ad group criterion targeting the DSA label.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID
-     * @param string $dsaPageUrlLabel the label for the DSA page URLs
+     * @param int             $customerId      the customer ID
+     * @param int             $adGroupId       the ad group ID
+     * @param string          $dsaPageUrlLabel the label for the DSA page URLs
      */
     public static function addDsaTarget(
         GoogleAdsClient $googleAdsClient,
@@ -360,23 +382,29 @@ class AddDynamicPageFeedAsset
         // [START add_dsa_target]
         // Creates the webpage condition info that targets an advertiser's webpages based on the
         // custom label specified by the DSA page URL label (e.g. "discounts").
-        $webpageConditionInfo = new WebpageConditionInfo([
+        $webpageConditionInfo = new WebpageConditionInfo(
+            [
             'operand' => WebpageConditionOperand::CUSTOM_LABEL,
             'argument' => $dsaPageUrlLabel
-        ]);
+            ]
+        );
 
         // Creates the webpage info, or criterion for targeting webpages of an advertiser's website.
-        $webpageInfo = new WebpageInfo([
+        $webpageInfo = new WebpageInfo(
+            [
             'criterion_name' => 'Test Criterion',
             'conditions' => [$webpageConditionInfo]
-        ]);
+            ]
+        );
 
         // Creates the ad group criterion.
-        $adGroupCriterion = new AdGroupCriterion([
+        $adGroupCriterion = new AdGroupCriterion(
+            [
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'webpage' => $webpageInfo,
             'cpc_bid_micros' => 1_500_000
-        ]);
+            ]
+        );
 
         // Creates the ad group criterion operation.
         $adGroupCriterionOperation = new AdGroupCriterionOperation();

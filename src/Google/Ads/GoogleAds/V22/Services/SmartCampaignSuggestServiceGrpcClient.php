@@ -21,61 +21,75 @@ namespace Google\Ads\GoogleAds\V22\Services;
 /**
  * Service to get suggestions for Smart Campaigns.
  */
-class SmartCampaignSuggestServiceGrpcClient extends \Grpc\BaseStub {
+class SmartCampaignSuggestServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
     /**
      * Returns BudgetOption suggestions.
-     * @param \Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignBudgetOptionsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignBudgetOptionsRequest $argument input argument
+     * @param  array                                                                       $metadata metadata
+     * @param  array                                                                       $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignBudgetOptionsResponse>
      */
     public function SuggestSmartCampaignBudgetOptions(\Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignBudgetOptionsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.SmartCampaignSuggestService/SuggestSmartCampaignBudgetOptions',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignBudgetOptionsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.SmartCampaignSuggestService/SuggestSmartCampaignBudgetOptions',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignBudgetOptionsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
      * Suggests a Smart campaign ad compatible with the Ad family of resources,
      * based on data points such as targeting and the business to advertise.
-     * @param \Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignAdRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignAdRequest $argument input argument
+     * @param  array                                                            $metadata metadata
+     * @param  array                                                            $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignAdResponse>
      */
     public function SuggestSmartCampaignAd(\Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignAdRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.SmartCampaignSuggestService/SuggestSmartCampaignAd',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignAdResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.SmartCampaignSuggestService/SuggestSmartCampaignAd',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\SuggestSmartCampaignAdResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
      * Suggests keyword themes to advertise on.
-     * @param \Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesRequest $argument input argument
+     * @param  array                                                          $metadata metadata
+     * @param  array                                                          $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesResponse>
      */
     public function SuggestKeywordThemes(\Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.SmartCampaignSuggestService/SuggestKeywordThemes',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.SmartCampaignSuggestService/SuggestKeywordThemes',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\SuggestKeywordThemesResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

@@ -72,7 +72,8 @@ class UploadOfflineConversion
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::GCLID => GetOpt::OPTIONAL_ARGUMENT,
@@ -84,7 +85,8 @@ class UploadOfflineConversion
             ArgumentNames::CONVERSION_CUSTOM_VARIABLE_ID => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::CONVERSION_CUSTOM_VARIABLE_VALUE => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::AD_USER_DATA_CONSENT => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -123,7 +125,9 @@ class UploadOfflineConversion
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -200,13 +204,15 @@ class UploadOfflineConversion
         }
 
         // Creates a click conversion by specifying currency as USD.
-        $clickConversion = new ClickConversion([
+        $clickConversion = new ClickConversion(
+            [
             'conversion_action' =>
                 ResourceNames::forConversionAction($customerId, $conversionActionId),
             'conversion_value' => $conversionValue,
             'conversion_date_time' => $conversionDateTime,
             'currency_code' => 'USD'
-        ]);
+            ]
+        );
         // Sets the single specified ID field.
         if (!is_null($gclid)) {
             $clickConversion->setGclid($gclid);
@@ -217,13 +223,17 @@ class UploadOfflineConversion
         }
 
         if (!is_null($conversionCustomVariableId) && !is_null($conversionCustomVariableValue)) {
-            $clickConversion->setCustomVariables([new CustomVariable([
-                'conversion_custom_variable' => ResourceNames::forConversionCustomVariable(
-                    $customerId,
-                    $conversionCustomVariableId
-                ),
-                'value' => $conversionCustomVariableValue
-            ])]);
+            $clickConversion->setCustomVariables(
+                [new CustomVariable(
+                    [
+                    'conversion_custom_variable' => ResourceNames::forConversionCustomVariable(
+                        $customerId,
+                        $conversionCustomVariableId
+                    ),
+                    'value' => $conversionCustomVariableValue
+                    ]
+                )]
+            );
         }
         // Sets the consent information, if provided.
         if (!empty($adUserDataConsent)) {
@@ -239,7 +249,9 @@ class UploadOfflineConversion
 
         // Issues a request to upload the click conversion.
         $conversionUploadServiceClient = $googleAdsClient->getConversionUploadServiceClient();
-        /** @var UploadClickConversionsResponse $response */
+        /**
+ * @var UploadClickConversionsResponse $response 
+*/
         // NOTE: This request contains a single conversion as a demonstration.  However, if you have
         // multiple conversions to upload, it's best to upload multiple conversions per request
         // instead of sending a separate request per conversion. See the following for per-request
@@ -261,7 +273,9 @@ class UploadOfflineConversion
             );
         } else {
             // Prints the result if exists.
-            /** @var ClickConversionResult $uploadedClickConversion */
+            /**
+ * @var ClickConversionResult $uploadedClickConversion 
+*/
             $uploadedClickConversion = $response->getResults()[0];
             printf(
                 "Uploaded click conversion that occurred at '%s' from Google Click ID '%s' " .

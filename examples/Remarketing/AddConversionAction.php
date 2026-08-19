@@ -38,7 +38,9 @@ use Google\Ads\GoogleAds\V25\Services\ConversionActionOperation;
 use Google\Ads\GoogleAds\V25\Services\MutateConversionActionsRequest;
 use Google\ApiCore\ApiException;
 
-/** This example illustrates adding a conversion action. */
+/**
+ * This example illustrates adding a conversion action. 
+ */
 class AddConversionAction
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
@@ -47,9 +49,11 @@ class AddConversionAction
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -74,7 +78,9 @@ class AddConversionAction
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -103,7 +109,8 @@ class AddConversionAction
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a conversion action.
-        $conversionAction = new ConversionAction([
+        $conversionAction = new ConversionAction(
+            [
             // Note that conversion action names must be unique.
             // If a conversion action already exists with the specified conversion_action_name
             // the create operation will fail with a ConversionActionError.DUPLICATE_NAME error.
@@ -112,11 +119,14 @@ class AddConversionAction
             'type' => ConversionActionType::WEBPAGE,
             'status' => ConversionActionStatus::ENABLED,
             'view_through_lookback_window_days' => 15,
-            'value_settings' => new ValueSettings([
+            'value_settings' => new ValueSettings(
+                [
                 'default_value' => 23.41,
                 'always_use_default_value' => true
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         // Creates a conversion action operation.
         $conversionActionOperation = new ConversionActionOperation();
@@ -131,7 +141,9 @@ class AddConversionAction
         printf("Added %d conversion actions:%s", $response->getResults()->count(), PHP_EOL);
 
         foreach ($response->getResults() as $addedConversionAction) {
-            /** @var ConversionAction $addedConversionAction */
+            /**
+ * @var ConversionAction $addedConversionAction 
+*/
             printf(
                 "New conversion action added with resource name: '%s'%s",
                 $addedConversionAction->getResourceName(),

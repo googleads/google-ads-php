@@ -21,14 +21,16 @@ namespace Google\Ads\GoogleAds\V24\Services;
 /**
  * Service to retrieve Travel asset suggestions.
  */
-class TravelAssetSuggestionServiceGrpcClient extends \Grpc\BaseStub {
+class TravelAssetSuggestionServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -37,17 +39,21 @@ class TravelAssetSuggestionServiceGrpcClient extends \Grpc\BaseStub {
      * suggestions are returned on a best-effort basis. There are no guarantees
      * that all possible asset types will be returned for any given hotel
      * property.
-     * @param \Google\Ads\GoogleAds\V24\Services\SuggestTravelAssetsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\SuggestTravelAssetsRequest $argument input argument
+     * @param  array                                                         $metadata metadata
+     * @param  array                                                         $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\SuggestTravelAssetsResponse>
      */
     public function SuggestTravelAssets(\Google\Ads\GoogleAds\V24\Services\SuggestTravelAssetsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.TravelAssetSuggestionService/SuggestTravelAssets',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\SuggestTravelAssetsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.TravelAssetSuggestionService/SuggestTravelAssets',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\SuggestTravelAssetsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

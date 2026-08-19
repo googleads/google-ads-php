@@ -22,60 +22,74 @@ namespace Google\Ads\GoogleAds\V25\Services;
  * This service allows management of product link invitations from Google Ads
  * accounts to other accounts.
  */
-class ProductLinkInvitationServiceGrpcClient extends \Grpc\BaseStub {
+class ProductLinkInvitationServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
     /**
      * Creates a product link invitation.
-     * @param \Google\Ads\GoogleAds\V25\Services\CreateProductLinkInvitationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\CreateProductLinkInvitationRequest $argument input argument
+     * @param  array                                                                 $metadata metadata
+     * @param  array                                                                 $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\CreateProductLinkInvitationResponse>
      */
     public function CreateProductLinkInvitation(\Google\Ads\GoogleAds\V25\Services\CreateProductLinkInvitationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.ProductLinkInvitationService/CreateProductLinkInvitation',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\CreateProductLinkInvitationResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.ProductLinkInvitationService/CreateProductLinkInvitation',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\CreateProductLinkInvitationResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
      * Update a product link invitation.
-     * @param \Google\Ads\GoogleAds\V25\Services\UpdateProductLinkInvitationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\UpdateProductLinkInvitationRequest $argument input argument
+     * @param  array                                                                 $metadata metadata
+     * @param  array                                                                 $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\UpdateProductLinkInvitationResponse>
      */
     public function UpdateProductLinkInvitation(\Google\Ads\GoogleAds\V25\Services\UpdateProductLinkInvitationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.ProductLinkInvitationService/UpdateProductLinkInvitation',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\UpdateProductLinkInvitationResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.ProductLinkInvitationService/UpdateProductLinkInvitation',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\UpdateProductLinkInvitationResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
      * Remove a product link invitation.
-     * @param \Google\Ads\GoogleAds\V25\Services\RemoveProductLinkInvitationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\RemoveProductLinkInvitationRequest $argument input argument
+     * @param  array                                                                 $metadata metadata
+     * @param  array                                                                 $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\RemoveProductLinkInvitationResponse>
      */
     public function RemoveProductLinkInvitation(\Google\Ads\GoogleAds\V25\Services\RemoveProductLinkInvitationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.ProductLinkInvitationService/RemoveProductLinkInvitation',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\RemoveProductLinkInvitationResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.ProductLinkInvitationService/RemoveProductLinkInvitation',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\RemoveProductLinkInvitationResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

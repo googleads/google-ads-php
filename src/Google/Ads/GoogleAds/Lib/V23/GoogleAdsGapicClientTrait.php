@@ -70,11 +70,14 @@ trait GoogleAdsGapicClientTrait
         ) {
             $operationOptions = $options;
             // Use all the options except for those related to this service instance.
-            $this->pluckArray([
+            $this->pluckArray(
+                [
                 'serviceName',
                 'clientConfig',
                 'descriptorsConfigPath',
-            ], $operationOptions);
+                ],
+                $operationOptions
+            );
             // Sets the options for handling long running operations.
             $options['operationsClient'] = new GoogleAdsOperationClient($operationOptions);
         }
@@ -115,7 +118,9 @@ trait GoogleAdsGapicClientTrait
         $callable = new UnaryGoogleAdsExceptionMiddleware($callable);
         $callable = new UnaryGoogleAdsResponseMetadataCallable($callable, $this);
         foreach ($this->unaryMiddlewares as $unaryMiddleware) {
-            /** @var GoogleAdsMiddlewareAbstract $unaryMiddleware */
+            /**
+ * @var GoogleAdsMiddlewareAbstract $unaryMiddleware
+*/
             $callable = $unaryMiddleware->withNextHandler($callable);
         }
 
@@ -134,7 +139,9 @@ trait GoogleAdsGapicClientTrait
         $callable = new ServerStreamingGoogleAdsExceptionMiddleware($callable);
         $callable = new ServerStreamingGoogleAdsResponseMetadataCallable($callable);
         foreach ($this->streamingMiddlewares as $streamingMiddleware) {
-            /** @var GoogleAdsMiddlewareAbstract $streamingMiddleware */
+            /**
+ * @var GoogleAdsMiddlewareAbstract $streamingMiddleware
+*/
             $callable = $streamingMiddleware->withNextHandler($callable);
         }
 

@@ -65,10 +65,12 @@ class AddListingScope
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -93,7 +95,9 @@ class AddListingScope
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -116,8 +120,8 @@ class AddListingScope
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $campaignId the campaign ID
+     * @param int             $customerId      the customer ID
+     * @param int             $campaignId      the campaign ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -130,41 +134,59 @@ class AddListingScope
         // product to be included in a campaign.
         // A typical listing scope might only have a few dimensions. This example demonstrates a
         // range of different dimensions you could use.
-        $listingScopeInfo = new ListingScopeInfo([
+        $listingScopeInfo = new ListingScopeInfo(
+            [
             'dimensions' => [
                 // Creates a product brand info set to "google".
-                new ListingDimensionInfo([
+                new ListingDimensionInfo(
+                    [
                     'product_brand' => new ProductBrandInfo(['value' => 'google'])
-                ]),
+                    ]
+                ),
                 // Creates a product custom attribute info for INDEX0 set to "top_selling_products".
-                new ListingDimensionInfo([
-                    'product_custom_attribute' => new ProductCustomAttributeInfo([
+                new ListingDimensionInfo(
+                    [
+                    'product_custom_attribute' => new ProductCustomAttributeInfo(
+                        [
                         'index' => ProductCustomAttributeIndex::INDEX0,
                         'value' => 'top_selling_products'
-                    ])
-                ]),
+                        ]
+                    )
+                    ]
+                ),
                 // Creates a product type info for LEVEL1 set to "electronics".
-                new ListingDimensionInfo([
-                    'product_type' => new ProductTypeInfo([
+                new ListingDimensionInfo(
+                    [
+                    'product_type' => new ProductTypeInfo(
+                        [
                         'level' => ProductTypeLevel::LEVEL1,
                         'value' => 'electronics'
-                    ])
-                ]),
+                        ]
+                    )
+                    ]
+                ),
                 // Creates a product type info for LEVEL2 set to "smartphones".
-                new ListingDimensionInfo([
-                    'product_type' => new ProductTypeInfo([
+                new ListingDimensionInfo(
+                    [
+                    'product_type' => new ProductTypeInfo(
+                        [
                         'level' => ProductTypeLevel::LEVEL2,
                         'value' => 'smartphones'
-                    ])
-                ])
+                        ]
+                    )
+                    ]
+                )
             ]
-        ]);
+            ]
+        );
 
         // Creates a campaign criterion to store the listing scope.
-        $campaignCriterion = new CampaignCriterion([
+        $campaignCriterion = new CampaignCriterion(
+            [
             'campaign' => ResourceNames::forCampaign($customerId, $campaignId),
             'listing_scope' => $listingScopeInfo
-        ]);
+            ]
+        );
         // Creates a campaign criterion operation.
         $campaignCriterionOperation = new CampaignCriterionOperation();
         $campaignCriterionOperation->setCreate($campaignCriterion);
@@ -174,7 +196,9 @@ class AddListingScope
         $response = $campaignCriterionServiceClient->mutateCampaignCriteria(
             MutateCampaignCriteriaRequest::build($customerId, [$campaignCriterionOperation])
         );
-        /** @var CampaignCriterion $addedCampaignCriterion */
+        /**
+ * @var CampaignCriterion $addedCampaignCriterion 
+*/
         $addedCampaignCriterion = $response->getResults()[0];
         printf(
             "Added a campaign criterion with resource name '%s'.%s",

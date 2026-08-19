@@ -21,14 +21,16 @@ namespace Google\Ads\GoogleAds\V22\Services;
 /**
  * Service to configure customer lifecycle goals.
  */
-class CustomerLifecycleGoalServiceGrpcClient extends \Grpc\BaseStub {
+class CustomerLifecycleGoalServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -43,17 +45,21 @@ class CustomerLifecycleGoalServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\ConfigureCustomerLifecycleGoalsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\ConfigureCustomerLifecycleGoalsRequest $argument input argument
+     * @param  array                                                                     $metadata metadata
+     * @param  array                                                                     $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\ConfigureCustomerLifecycleGoalsResponse>
      */
     public function ConfigureCustomerLifecycleGoals(\Google\Ads\GoogleAds\V22\Services\ConfigureCustomerLifecycleGoalsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.CustomerLifecycleGoalService/ConfigureCustomerLifecycleGoals',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\ConfigureCustomerLifecycleGoalsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.CustomerLifecycleGoalService/ConfigureCustomerLifecycleGoals',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\ConfigureCustomerLifecycleGoalsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

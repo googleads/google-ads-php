@@ -51,10 +51,12 @@ class AddConversionBasedUserList
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_IDS => GetOpt::MULTIPLE_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -81,7 +83,9 @@ class AddConversionBasedUserList
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -118,25 +122,29 @@ class AddConversionBasedUserList
             // Creates the UserListActionInfo object for a given conversion action. This specifies
             // the conversion action that, when triggered, will cause a user to be added to a
             // UserList.
-            $userListActionInfoList[] = new UserListActionInfo([
+            $userListActionInfoList[] = new UserListActionInfo(
+                [
                 'conversion_action' => ResourceNames::forConversionAction(
                     $customerId,
                     $conversionActionId
                 )
-            ]);
+                ]
+            );
         }
 
         // Creates a basic user list info object with all of the conversion actions.
         $basicUserListInfo = new BasicUserListInfo(['actions' => $userListActionInfoList]);
 
         // Creates the basic user list.
-        $basicUserList = new UserList([
+        $basicUserList = new UserList(
+            [
             'name' => 'Example BasicUserList #' . Helper::getPrintableDatetime(),
             'description' => 'A list of people who have triggered one or more conversion actions',
             'membership_status' => UserListMembershipStatus::OPEN,
             'membership_life_span' => 365,
             'basic_user_list' => $basicUserListInfo
-        ]);
+            ]
+        );
 
         // Creates the operation.
         $operation = new UserListOperation();

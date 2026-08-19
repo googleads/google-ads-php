@@ -24,14 +24,16 @@ namespace Google\Ads\GoogleAds\V24\Services;
  * This service manages the access invitation extended to users for a given
  * customer.
  */
-class CustomerUserAccessInvitationServiceGrpcClient extends \Grpc\BaseStub {
+class CustomerUserAccessInvitationServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -46,17 +48,21 @@ class CustomerUserAccessInvitationServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\MutateCustomerUserAccessInvitationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\MutateCustomerUserAccessInvitationRequest $argument input argument
+     * @param  array                                                                        $metadata metadata
+     * @param  array                                                                        $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\MutateCustomerUserAccessInvitationResponse>
      */
     public function MutateCustomerUserAccessInvitation(\Google\Ads\GoogleAds\V24\Services\MutateCustomerUserAccessInvitationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.CustomerUserAccessInvitationService/MutateCustomerUserAccessInvitation',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\MutateCustomerUserAccessInvitationResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.CustomerUserAccessInvitationService/MutateCustomerUserAccessInvitation',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\MutateCustomerUserAccessInvitationResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

@@ -28,14 +28,16 @@ namespace Google\Ads\GoogleAds\V25\Services;
  * made through this service will not be visible under the 'Segment members'
  * section for the Customer Match List in the Google Ads UI.
  */
-class UserDataServiceGrpcClient extends \Grpc\BaseStub {
+class UserDataServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -54,17 +56,21 @@ class UserDataServiceGrpcClient extends \Grpc\BaseStub {
      *   [QuotaError]()
      *   [RequestError]()
      *   [UserDataError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\UploadUserDataRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\UploadUserDataRequest $argument input argument
+     * @param  array                                                    $metadata metadata
+     * @param  array                                                    $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\UploadUserDataResponse>
      */
     public function UploadUserData(\Google\Ads\GoogleAds\V25\Services\UploadUserDataRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.UserDataService/UploadUserData',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\UploadUserDataResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.UserDataService/UploadUserData',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\UploadUserDataResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

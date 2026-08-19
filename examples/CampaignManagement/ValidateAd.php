@@ -56,10 +56,12 @@ class ValidateAd
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -84,7 +86,9 @@ class ValidateAd
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -107,8 +111,8 @@ class ValidateAd
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID to validate the ad against
+     * @param int             $customerId      the customer ID
+     * @param int             $adGroupId       the ad group ID to validate the ad against
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -116,12 +120,15 @@ class ValidateAd
         int $adGroupId
     ) {
         // Creates the responsive search ad info.
-        $responsiveSearchAdInfo = new ResponsiveSearchAdInfo([
+        $responsiveSearchAdInfo = new ResponsiveSearchAdInfo(
+            [
             'headlines' => [
-                new AdTextAsset([
+                new AdTextAsset(
+                    [
                     'text' => 'Visit the Red Planet in style.',
                     'pinned_field' => ServedAssetFieldType::HEADLINE_1
-                ]),
+                    ]
+                ),
                 // Adds a headline that will trigger a policy violation to demonstrate error
                 // handling.
                 new AdTextAsset(['text' => 'Low-gravity fun for everyone!!']),
@@ -131,21 +138,26 @@ class ValidateAd
                 new AdTextAsset(['text' => 'Luxury Cruise to Mars']),
                 new AdTextAsset(['text' => 'Book your ticket now'])
             ]
-        ]);
+            ]
+        );
 
         // Sets the responsive search ad info on an ad.
-        $ad = new Ad([
+        $ad = new Ad(
+            [
             'responsive_search_ad' => $responsiveSearchAdInfo,
             'final_urls' => ['https://www.example.com']
-        ]);
+            ]
+        );
 
         // Creates an ad group ad to hold the above ad.
-        $adGroupAd = new AdGroupAd([
+        $adGroupAd = new AdGroupAd(
+            [
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             // Optional: Set the status.
             'status' => AdGroupAdStatus::PAUSED,
             'ad' => $ad
-        ]);
+            ]
+        );
 
         // Creates the ad group ad operation.
         $adGroupAdOperation = new AdGroupAdOperation();
@@ -168,11 +180,15 @@ class ValidateAd
             // Note: Policy violation errors are returned as PolicyFindingErrors. See
             // https://developers.google.com/google-ads/api/docs/policy-exemption/overview
             // for additional details.
-            /** @var GoogleAdsError $googleAdsError */
+            /**
+ * @var GoogleAdsError $googleAdsError 
+*/
             $filteredGoogleAdsErrors = array_filter(
                 iterator_to_array($googleAdsException->getGoogleAdsFailure()->getErrors()),
                 function ($googleAdsError) {
-                    /** @var GoogleAdsError $googleAdsError */
+                    /**
+                * @var GoogleAdsError $googleAdsError 
+                */
                     return $googleAdsError->getErrorCode()->getPolicyFindingError()
                         == PolicyFindingError::POLICY_FINDING;
                 }
@@ -180,14 +196,14 @@ class ValidateAd
             if (!empty($filteredGoogleAdsErrors)) {
                 $count = 1;
                 foreach ($filteredGoogleAdsErrors as $googleAdsError) {
-                    if (
-                        $googleAdsError->getErrorCode()->getPolicyFindingError()
-                        == PolicyFindingError::POLICY_FINDING
+                    if ($googleAdsError->getErrorCode()->getPolicyFindingError()== PolicyFindingError::POLICY_FINDING
                     ) {
                         $details = $googleAdsError->getDetails()->getPolicyFindingDetails();
                         if ($details) {
                             foreach ($details->getPolicyTopicEntries() as $entry) {
-                                /** @var PolicyTopicEntry $entry */
+                                /**
+ * @var PolicyTopicEntry $entry 
+*/
                                 printf(
                                     "%d) Policy topic entry with topic '%s' and type '%s'"
                                     . " was found.%s",

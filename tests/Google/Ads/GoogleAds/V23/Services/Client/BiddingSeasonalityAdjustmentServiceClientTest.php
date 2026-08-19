@@ -39,19 +39,25 @@ use stdClass;
  */
 class BiddingSeasonalityAdjustmentServiceClientTest extends GeneratedTest
 {
-    /** @return TransportInterface */
+    /**
+     * @return TransportInterface 
+     */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /** @return CredentialsWrapper */
+    /**
+     * @return CredentialsWrapper 
+     */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /** @return BiddingSeasonalityAdjustmentServiceClient */
+    /**
+     * @return BiddingSeasonalityAdjustmentServiceClient 
+     */
     private function createClient(array $options = [])
     {
         $options += [
@@ -60,13 +66,17 @@ class BiddingSeasonalityAdjustmentServiceClientTest extends GeneratedTest
         return new BiddingSeasonalityAdjustmentServiceClient($options);
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function mutateBiddingSeasonalityAdjustmentsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new MutateBiddingSeasonalityAdjustmentsResponse();
@@ -91,23 +101,29 @@ class BiddingSeasonalityAdjustmentServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function mutateBiddingSeasonalityAdjustmentsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -128,13 +144,17 @@ class BiddingSeasonalityAdjustmentServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function mutateBiddingSeasonalityAdjustmentsAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new MutateBiddingSeasonalityAdjustmentsResponse();

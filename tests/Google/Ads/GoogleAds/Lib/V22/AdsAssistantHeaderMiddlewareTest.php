@@ -40,7 +40,7 @@ class AdsAssistantHeaderMiddlewareTest extends TestCase
         // 5. Assertions
         $this->assertTrue($nextHandlerCalled, 'The next handler was not called.');
         $this->assertEquals("final-result", $result);
-        
+
         $actualHeader = $capturedOptions['headers'][AgentHeader::AGENT_HEADER_KEY][0];
         $this->assertEquals($expectedHeader, $actualHeader);
         $this->assertStringContainsString('gaada/test-assistant-123', $actualHeader);

@@ -36,7 +36,9 @@ use Google\Ads\GoogleAds\V25\Services\MutateAssetResult;
 use Google\Ads\GoogleAds\V25\Services\MutateAssetsRequest;
 use Google\ApiCore\ApiException;
 
-/** This example uploads an image asset. To get image assets, run GetAllImageAssets.php. */
+/**
+ * This example uploads an image asset. To get image assets, run GetAllImageAssets.php. 
+ */
 class UploadImageAsset
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
@@ -46,9 +48,11 @@ class UploadImageAsset
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -73,7 +77,9 @@ class UploadImageAsset
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -105,14 +111,16 @@ class UploadImageAsset
         $imageContent = file_get_contents(self::IMAGE_URL);
 
         // Creates an asset.
-        $asset = new Asset([
+        $asset = new Asset(
+            [
             // Provide a unique friendly name to identify your asset.
             // When there is an existing image asset with the same content but a different
             // name, the new name will be dropped silently.
             'name' => 'Marketing Image',
             'type' => AssetType::IMAGE,
             'image_asset' => new ImageAsset(['data' => $imageContent])
-        ]);
+            ]
+        );
 
         // Creates an asset operation.
         $assetOperation = new AssetOperation();
@@ -120,14 +128,18 @@ class UploadImageAsset
 
         // Issues a mutate request to add the asset.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
-        $response = $assetServiceClient->mutateAssets(MutateAssetsRequest::build(
-            $customerId,
-            [$assetOperation]
-        ));
+        $response = $assetServiceClient->mutateAssets(
+            MutateAssetsRequest::build(
+                $customerId,
+                [$assetOperation]
+            )
+        );
 
         if (!empty($response->getResults())) {
             // Prints the resource name of the added image asset.
-            /** @var MutateAssetResult $addedImageAsset */
+            /**
+ * @var MutateAssetResult $addedImageAsset 
+*/
             $addedImageAsset = $response->getResults()[0];
             printf(
                 "The image asset with resource name '%s' was created.%s",

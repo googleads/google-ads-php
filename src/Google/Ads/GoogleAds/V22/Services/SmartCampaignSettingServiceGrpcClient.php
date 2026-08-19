@@ -23,45 +23,55 @@ namespace Google\Ads\GoogleAds\V22\Services;
  *
  * Service to manage Smart campaign settings.
  */
-class SmartCampaignSettingServiceGrpcClient extends \Grpc\BaseStub {
+class SmartCampaignSettingServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
     /**
      * Returns the status of the requested Smart campaign.
-     * @param \Google\Ads\GoogleAds\V22\Services\GetSmartCampaignStatusRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\GetSmartCampaignStatusRequest $argument input argument
+     * @param  array                                                            $metadata metadata
+     * @param  array                                                            $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\GetSmartCampaignStatusResponse>
      */
     public function GetSmartCampaignStatus(\Google\Ads\GoogleAds\V22\Services\GetSmartCampaignStatusRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.SmartCampaignSettingService/GetSmartCampaignStatus',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\GetSmartCampaignStatusResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.SmartCampaignSettingService/GetSmartCampaignStatus',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\GetSmartCampaignStatusResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
      * Updates Smart campaign settings for campaigns.
-     * @param \Google\Ads\GoogleAds\V22\Services\MutateSmartCampaignSettingsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\MutateSmartCampaignSettingsRequest $argument input argument
+     * @param  array                                                                 $metadata metadata
+     * @param  array                                                                 $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateSmartCampaignSettingsResponse>
      */
     public function MutateSmartCampaignSettings(\Google\Ads\GoogleAds\V22\Services\MutateSmartCampaignSettingsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.SmartCampaignSettingService/MutateSmartCampaignSettings',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\MutateSmartCampaignSettingsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.SmartCampaignSettingService/MutateSmartCampaignSettings',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\MutateSmartCampaignSettingsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

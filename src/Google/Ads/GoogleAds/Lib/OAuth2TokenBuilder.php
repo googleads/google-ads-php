@@ -91,7 +91,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      * Includes an OAuth2 client ID. Required when using installed application or
      * web application flow.
      *
-     * @param string $clientId
+     * @param  string $clientId
      * @return self this builder
      */
     public function withClientId($clientId)
@@ -104,7 +104,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      * Includes an OAuth2 client secret. Required when using installed application
      * or web application flow.
      *
-     * @param string $clientSecret
+     * @param  string $clientSecret
      * @return self this builder
      */
     public function withClientSecret($clientSecret)
@@ -117,7 +117,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      * Includes an OAuth2 refresh token. Required when using installed application
      * or web application flow.
      *
-     * @param string $refreshToken
+     * @param  string $refreshToken
      * @return self this builder
      */
     public function withRefreshToken($refreshToken)
@@ -130,7 +130,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      * Includes an absolute path to an OAuth2 JSON key file when using service
      * account flow. Required and only applicable when using service account flow.
      *
-     * @param string $jsonKeyFilePath
+     * @param  string $jsonKeyFilePath
      * @return OAuth2TokenBuilder this builder
      */
     public function withJsonKeyFilePath(string $jsonKeyFilePath): self
@@ -143,7 +143,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      * Includes OAuth2 scopes. Required and only applicable when using service
      * account flow.
      *
-     * @param string $scopes a space-delimited list of scopes
+     * @param  string $scopes a space-delimited list of scopes
      * @return OAuth2TokenBuilder this builder
      */
     public function withScopes($scopes): self
@@ -156,7 +156,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      * Includes an email of account to impersonate when using service account
      * flow. Optional and only applicable when using service account flow.
      *
-     * @param string|null $impersonatedEmail
+     * @param  string|null $impersonatedEmail
      * @return OAuth2TokenBuilder this builder
      */
     public function withImpersonatedEmail(?string $impersonatedEmail): self
@@ -167,7 +167,8 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
 
     /**
      * Overrides the internal Application Default Credentials fetcher for testing purposes.
-     * @param callable $adcFetcher The mock or custom callable.
+     *
+     * @param  callable $adcFetcher The mock or custom callable.
      * @return self
      */
     protected function withAdcFetcher(callable $adcFetcher): self
@@ -194,8 +195,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                     "Both 'jsonKeyFilePath' and 'scopes' must be set when using service account flow."
                 );
             }
-            if (
-                !is_null($this->clientId)
+            if (!is_null($this->clientId)
                 || !is_null($this->clientSecret)
                 || !is_null($this->refreshToken)
             ) {
@@ -257,8 +257,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
      */
     public function validate()
     {
-        if (
-            (!is_null($this->jsonKeyFilePath) || !is_null($this->scopes))
+        if ((!is_null($this->jsonKeyFilePath) || !is_null($this->scopes))
             && (!is_null($this->clientId) || !is_null($this->clientSecret)
             || !is_null($this->refreshToken))
         ) {
@@ -274,9 +273,8 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
                     . "'scopes' must be set when using service account flow."
                 );
             }
-        // Triggers validation if any part of the Installed/Web flow is set; otherwise, allows the ADC fallback.
-        } elseif (
-            !is_null($this->clientId)
+            // Triggers validation if any part of the Installed/Web flow is set; otherwise, allows the ADC fallback.
+        } elseif (!is_null($this->clientId)
             || !is_null($this->clientSecret)
             || !is_null($this->refreshToken)
         ) {

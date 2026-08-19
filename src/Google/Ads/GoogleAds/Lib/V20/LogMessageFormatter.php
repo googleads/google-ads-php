@@ -43,7 +43,7 @@ final class LogMessageFormatter
     /**
      * Extracts the customer ID, if present, from the provided request.
      *
-     * @param Message $request the request to get its customer ID
+     * @param  Message $request the request to get its customer ID
      * @return string the customer ID if present or the message saying that the customer ID is not
      *     available
      */
@@ -67,9 +67,9 @@ final class LogMessageFormatter
     /**
      * Formats the request and response data for summary logging.
      *
-     * @param array $requestData the request data
-     * @param array $responseData the response data
-     * @param string $endpoint the API endpoint that the request has been sent to
+     * @param  array  $requestData  the request data
+     * @param  array  $responseData the response data
+     * @param  string $endpoint     the API endpoint that the request has been sent to
      * @return string the formatted logging message
      */
     public function formatSummary(
@@ -102,9 +102,9 @@ final class LogMessageFormatter
     /**
      * Formats the request and response data for detailed logging.
      *
-     * @param array $requestData the request data
-     * @param array $responseData the response data
-     * @param string $endpoint the API endpoint that the request has been sent to
+     * @param  array  $requestData  the request data
+     * @param  array  $responseData the response data
+     * @param  string $endpoint     the API endpoint that the request has been sent to
      * @return string the formatted logging message
      */
     public function formatDetail(
@@ -158,7 +158,7 @@ final class LogMessageFormatter
     }
 
     /**
-     * @param array $array
+     * @param  array $array
      * @return array the joined array after plucking
      */
     private function joinPluckedArrays(array $array)

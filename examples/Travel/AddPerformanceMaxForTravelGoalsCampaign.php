@@ -141,17 +141,21 @@ class AddPerformanceMaxForTravelGoalsCampaign
 
     // There are also entities that will be created in the same request but do not need to be fixed
     // temporary IDs because they are referenced only once.
-    /** @var int the negative temporary ID used in bulk mutates. */
+    /**
+     * @var int the negative temporary ID used in bulk mutates. 
+     */
     private static $nextTempId = self::ASSET_GROUP_TEMPORARY_ID - 1;
 
     public static function main()
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::PLACE_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -177,7 +181,9 @@ class AddPerformanceMaxForTravelGoalsCampaign
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -200,8 +206,8 @@ class AddPerformanceMaxForTravelGoalsCampaign
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $placeId the place ID for a hotel property asset
+     * @param int             $customerId      the customer ID
+     * @param string          $placeId         the place ID for a hotel property asset
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -263,13 +269,15 @@ class AddPerformanceMaxForTravelGoalsCampaign
         $operations[] = self::createCampaignBudgetOperation($customerId);
         $operations[] =
             self::createCampaignOperation($customerId, $hotelPropertyAssetSetResourceName);
-        $operations = array_merge($operations, self::createAssetGroupOperations(
-            $customerId,
-            $hotelPropertyAssetResourceName,
-            $headlineAssetResourceNames,
-            $descriptionAssetResourceNames,
-            $hotelAssetSuggestion
-        ));
+        $operations = array_merge(
+            $operations, self::createAssetGroupOperations(
+                $customerId,
+                $hotelPropertyAssetResourceName,
+                $headlineAssetResourceNames,
+                $descriptionAssetResourceNames,
+                $hotelAssetSuggestion
+            )
+        );
 
         // Issues a mutate request to create everything and prints the results.
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -284,9 +292,9 @@ class AddPerformanceMaxForTravelGoalsCampaign
     /**
      * Returns hotel asset suggestion obtained from TravelAssetsSuggestionService.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $placeId the place ID of the hotel property you want to get its suggested
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $placeId the place ID of the hotel property you want to get its suggested
      *     assets
      * @return HotelAssetSuggestion a hotel asset suggestion
      */
@@ -316,10 +324,10 @@ class AddPerformanceMaxForTravelGoalsCampaign
      * still fewer than the minimum required number of assets of the specified asset field type,
      * adds more text assets to fulfill the requirement.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $assetFieldType the asset field type that this text assets will be created for
-     * @param HotelAssetSuggestion $hotelAssetSuggestion the hotel asset suggestion
+     * @param  GoogleAdsClient      $googleAdsClient      the Google Ads API client
+     * @param  int                  $customerId           the customer ID
+     * @param  int                  $assetFieldType       the asset field type that this text assets will be created for
+     * @param  HotelAssetSuggestion $hotelAssetSuggestion the hotel asset suggestion
      * @return string[] a list of asset resource names
      */
     private static function createMultipleTextAssets(
@@ -334,17 +342,25 @@ class AddPerformanceMaxForTravelGoalsCampaign
         $numOperationsAdded = 0;
         if ($hotelAssetSuggestion->getStatus() === HotelAssetSuggestionStatus::SUCCESS) {
             foreach ($hotelAssetSuggestion->getTextAssets() as $textAsset) {
-                /** @var HotelTextAsset $textAsset */
+                /**
+ * @var HotelTextAsset $textAsset 
+*/
                 if ($textAsset->getAssetFieldType() !== $assetFieldType) {
                     continue;
                 }
-                $operations[] = new MutateOperation([
-                    'asset_operation' => new AssetOperation([
-                        'create' => new Asset([
+                $operations[] = new MutateOperation(
+                    [
+                    'asset_operation' => new AssetOperation(
+                        [
+                        'create' => new Asset(
+                            [
                             'text_asset' => new TextAsset(['text' => $textAsset->getText()])
-                        ])
-                    ])
-                ]);
+                            ]
+                        )
+                        ]
+                    )
+                    ]
+                );
                 $numOperationsAdded++;
             }
         }
@@ -357,27 +373,39 @@ class AddPerformanceMaxForTravelGoalsCampaign
                 $i++
             ) {
                 // Creates a mutate operation for a text asset.
-                $operations[] = new MutateOperation([
-                    'asset_operation' => new AssetOperation([
-                        'create' => new Asset([
-                            'text_asset' => new TextAsset([
+                $operations[] = new MutateOperation(
+                    [
+                    'asset_operation' => new AssetOperation(
+                        [
+                        'create' => new Asset(
+                            [
+                            'text_asset' => new TextAsset(
+                                [
                                 'text' => self::DEFAULT_TEXT_ASSETS_INFO[$assetFieldType][$i]
-                            ])
-                        ])
-                    ])
-                ]);
+                                ]
+                            )
+                            ]
+                        )
+                        ]
+                    )
+                    ]
+                );
             }
         }
 
         // Issues a mutate request to add all assets.
         $googleAdsService = $googleAdsClient->getGoogleAdsServiceClient();
-        /** @var MutateGoogleAdsResponse $mutateGoogleAdsResponse */
+        /**
+ * @var MutateGoogleAdsResponse $mutateGoogleAdsResponse 
+*/
         $mutateGoogleAdsResponse =
             $googleAdsService->mutate(MutateGoogleAdsRequest::build($customerId, $operations));
 
         $assetResourceNames = [];
         foreach ($mutateGoogleAdsResponse->getMutateOperationResponses() as $response) {
-            /** @var MutateOperationResponse $response */
+            /**
+ * @var MutateOperationResponse $response 
+*/
             $assetResourceNames[] = $response->getAssetResult()->getResourceName();
         }
         printf(
@@ -393,8 +421,8 @@ class AddPerformanceMaxForTravelGoalsCampaign
     /**
      * Creates a hotel property asset set.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
      * @return string the created hotel property asset set resource name
      */
     // [START create_hotel_asset_set]
@@ -403,13 +431,17 @@ class AddPerformanceMaxForTravelGoalsCampaign
         int $customerId
     ): string {
         // Creates an asset set operation for a hotel property asset set.
-        $assetSetOperation = new AssetSetOperation([
+        $assetSetOperation = new AssetSetOperation(
+            [
             // Creates a hotel property asset set.
-            'create' => new AssetSet([
+            'create' => new AssetSet(
+                [
                 'name' => 'My Hotel propery asset set #' . Helper::getPrintableDatetime(),
                 'type' => AssetSetType::HOTEL_PROPERTY
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         // Issues a mutate request to add a hotel asset set and prints its information.
         $assetSetServiceClient = $googleAdsClient->getAssetSetServiceClient();
@@ -428,10 +460,10 @@ class AddPerformanceMaxForTravelGoalsCampaign
      *
      * See https://developers.google.com/places/web-service/place-id to search for a hotel place ID.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $placeId the place ID for a hotel
-     * @param string $assetSetResourceName the asset set resource name
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $placeId the place ID for a hotel
+     * @param  string $assetSetResourceName the asset set resource name
      * @return string the created hotel property asset resource name
      */
     // [START create_hotel_asset]
@@ -447,30 +479,44 @@ class AddPerformanceMaxForTravelGoalsCampaign
         $assetResourceName =
             ResourceNames::forAsset($customerId, self::ASSET_TEMPORARY_ID);
         // Creates a mutate operation for a hotel property asset.
-        $operations[] = new MutateOperation([
-            'asset_operation' => new AssetOperation([
+        $operations[] = new MutateOperation(
+            [
+            'asset_operation' => new AssetOperation(
+                [
                 // Creates a hotel property asset.
-                'create' => new Asset([
+                'create' => new Asset(
+                    [
                     'resource_name' => $assetResourceName,
                     // Creates a hotel property asset for the place ID.
                     'hotel_property_asset' => new HotelPropertyAsset(['place_id' => $placeId]),
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
         // Creates a mutate operation for an asset set asset.
-        $operations[] = new MutateOperation([
-            'asset_set_asset_operation' => new AssetSetAssetOperation([
+        $operations[] = new MutateOperation(
+            [
+            'asset_set_asset_operation' => new AssetSetAssetOperation(
+                [
                 // Creates an asset set asset.
-                'create' => new AssetSetAsset([
+                'create' => new AssetSetAsset(
+                    [
                     'asset' => $assetResourceName,
                     'asset_set' => $assetSetResourceName
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         // Issues a mutate request to create all entities.
         $googleAdsService = $googleAdsClient->getGoogleAdsServiceClient();
-        /** @var MutateGoogleAdsResponse $mutateGoogleAdsResponse */
+        /**
+ * @var MutateGoogleAdsResponse $mutateGoogleAdsResponse 
+*/
         $mutateGoogleAdsResponse =
             $googleAdsService->mutate(MutateGoogleAdsRequest::build($customerId, $operations));
         print "Created the following entities for the hotel asset:" . PHP_EOL;
@@ -489,15 +535,18 @@ class AddPerformanceMaxForTravelGoalsCampaign
      * A temporary ID will be assigned to this campaign budget so that it can be
      * referenced by other objects being created in the same mutate request.
      *
-     * @param int $customerId the customer ID
+     * @param  int $customerId the customer ID
      * @return MutateOperation the mutate operation that creates a campaign budget
      */
     private static function createCampaignBudgetOperation(int $customerId): MutateOperation
     {
         // Creates a mutate operation that creates a campaign budget.
-        return new MutateOperation([
-            'campaign_budget_operation' => new CampaignBudgetOperation([
-                'create' => new CampaignBudget([
+        return new MutateOperation(
+            [
+            'campaign_budget_operation' => new CampaignBudgetOperation(
+                [
+                'create' => new CampaignBudget(
+                    [
                     // Sets a temporary ID in the budget's resource name so it can be referenced
                     // by the campaign in later steps.
                     'resource_name' => ResourceNames::forCampaignBudget(
@@ -511,9 +560,12 @@ class AddPerformanceMaxForTravelGoalsCampaign
                     'delivery_method' => BudgetDeliveryMethod::STANDARD,
                     // A Performance Max campaign cannot use a shared campaign budget.
                     'explicitly_shared' => false
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
     }
 
     /**
@@ -523,8 +575,8 @@ class AddPerformanceMaxForTravelGoalsCampaign
      * A temporary ID will be assigned to this campaign so that it can be referenced by other
      * objects being created in the same mutate request.
      *
-     * @param int $customerId the customer ID
-     * @param string $hotelPropertyAssetSetResourceName the asset set resource name
+     * @param  int $customerId the customer ID
+     * @param  string $hotelPropertyAssetSetResourceName the asset set resource name
      * @return MutateOperation the mutate operation that creates the campaign
      */
     // [START create_campaign]
@@ -533,9 +585,12 @@ class AddPerformanceMaxForTravelGoalsCampaign
         string $hotelPropertyAssetSetResourceName
     ): MutateOperation {
         // Creates a mutate operation that creates a campaign.
-        return new MutateOperation([
-            'campaign_operation' => new CampaignOperation([
-                'create' => new Campaign([
+        return new MutateOperation(
+            [
+            'campaign_operation' => new CampaignOperation(
+                [
+                'create' => new Campaign(
+                    [
                     'name' => 'Performance Max for travel goals campaign #'
                         . Helper::getPrintableDatetime(),
                     // Assigns the resource name with a temporary ID.
@@ -575,12 +630,17 @@ class AddPerformanceMaxForTravelGoalsCampaign
                     // For more information on Maximize Conversion Value, see the support
                     // article: https://support.google.com/google-ads/answer/7684216.
                     // A target_roas of 3.5 corresponds to a 350% return on ad spend.
-                    'maximize_conversion_value' => new MaximizeConversionValue([
+                    'maximize_conversion_value' => new MaximizeConversionValue(
+                        [
                         'target_roas' => 3.5
-                    ])
-                ])
-            ])
-        ]);
+                        ]
+                    )
+                    ]
+                )
+                ]
+            )
+            ]
+        );
     }
     // [END create_campaign]
 
@@ -592,12 +652,12 @@ class AddPerformanceMaxForTravelGoalsCampaign
      * For the list of required assets for a Performance Max campaign, see
      * https://developers.google.com/google-ads/api/docs/performance-max/assets.
      *
-     * @param int $customerId the customer ID
-     * @param string $hotelPropertyAssetResourceName the hotel property asset resource name that
-     *     will be used to create an asset group
-     * @param string[] $headlineAssetResourceNames a list of headline resource names
-     * @param string[] $descriptionAssetResourceNames a list of description resource names
-     * @param HotelAssetSuggestion $hotelAssetSuggestion the hotel asset suggestion
+     * @param  int                  $customerId                     the customer ID
+     * @param  string               $hotelPropertyAssetResourceName the hotel property asset resource name that
+     *                                                              will be used to create an asset group
+     * @param  string[]             $headlineAssetResourceNames     a list of headline resource names
+     * @param  string[]             $descriptionAssetResourceNames  a list of description resource names
+     * @param  HotelAssetSuggestion $hotelAssetSuggestion           the hotel asset suggestion
      * @return MutateOperation[] a list of mutate operations that create the asset group
      */
     private static function createAssetGroupOperations(
@@ -619,9 +679,12 @@ class AddPerformanceMaxForTravelGoalsCampaign
                 ? [$hotelAssetSuggestion->getFinalUrl()] : ['http://www.example.com'];
         $assetGroupResourceName =
             ResourceNames::forAssetGroup($customerId, self::ASSET_GROUP_TEMPORARY_ID);
-        $operations[] = new MutateOperation([
-            'asset_group_operation' => new AssetGroupOperation([
-                'create' => new AssetGroup([
+        $operations[] = new MutateOperation(
+            [
+            'asset_group_operation' => new AssetGroupOperation(
+                [
+                'create' => new AssetGroup(
+                    [
                     'resource_name' => $assetGroupResourceName,
                     'name' => $assetGroupName,
                     'campaign' => ResourceNames::forCampaign(
@@ -630,9 +693,12 @@ class AddPerformanceMaxForTravelGoalsCampaign
                     ),
                     'final_urls' => $assetGroupFinalUrls,
                     'status' => AssetGroupStatus::PAUSED
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         // An asset group is linked to an asset by creating a new asset group asset
         // and providing:
@@ -648,41 +714,59 @@ class AddPerformanceMaxForTravelGoalsCampaign
 
         // Links the headline assets to the asset group.
         foreach ($headlineAssetResourceNames as $resourceName) {
-            $operations[] = new MutateOperation([
-                'asset_group_asset_operation' => new AssetGroupAssetOperation([
-                    'create' => new AssetGroupAsset([
+            $operations[] = new MutateOperation(
+                [
+                'asset_group_asset_operation' => new AssetGroupAssetOperation(
+                    [
+                    'create' => new AssetGroupAsset(
+                        [
                         'asset' => $resourceName,
                         'asset_group' => $assetGroupResourceName,
                         'field_type' => AssetFieldType::HEADLINE
-                    ])
-                ])
-            ]);
+                        ]
+                    )
+                    ]
+                )
+                ]
+            );
         }
         // Links the description assets to the asset group.
         foreach ($descriptionAssetResourceNames as $resourceName) {
-            $operations[] = new MutateOperation([
-                'asset_group_asset_operation' => new AssetGroupAssetOperation([
-                    'create' => new AssetGroupAsset([
+            $operations[] = new MutateOperation(
+                [
+                'asset_group_asset_operation' => new AssetGroupAssetOperation(
+                    [
+                    'create' => new AssetGroupAsset(
+                        [
                         'asset' => $resourceName,
                         'asset_group' => $assetGroupResourceName,
                         'field_type' => AssetFieldType::DESCRIPTION
-                    ])
-                ])
-            ]);
+                        ]
+                    )
+                    ]
+                )
+                ]
+            );
         }
 
         // [START link_hotel_asset]
         // Link the previously created hotel property asset to the asset group. In the real-world
         // scenario, you'd need to do this step several times for each hotel property asset.
-        $operations[] = new MutateOperation([
-            'asset_group_asset_operation' => new AssetGroupAssetOperation([
-                'create' => new AssetGroupAsset([
+        $operations[] = new MutateOperation(
+            [
+            'asset_group_asset_operation' => new AssetGroupAssetOperation(
+                [
+                'create' => new AssetGroupAsset(
+                    [
                     'asset' => $hotelPropertyAssetResourceName,
                     'asset_group' => $assetGroupResourceName,
                     'field_type' => AssetFieldType::HOTEL_PROPERTY
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
         // [END link_hotel_asset]
 
         // Creates the rest of required text assets and link them to the asset group.
@@ -700,27 +784,41 @@ class AddPerformanceMaxForTravelGoalsCampaign
         if ($hotelAssetSuggestion->getStatus() === HotelAssetSuggestionStatus::SUCCESS) {
             // Creates a new mutate operation for a suggested call-to-action asset and link it
             // to the asset group.
-            $operations[] = new MutateOperation([
-                'asset_operation' => new AssetOperation([
-                    'create' => new Asset([
+            $operations[] = new MutateOperation(
+                [
+                'asset_operation' => new AssetOperation(
+                    [
+                    'create' => new Asset(
+                        [
                         'resource_name' => ResourceNames::forAsset($customerId, self::$nextTempId),
                         'name' => 'Suggested call-to-action asset #'
                             . Helper::getShortPrintableDatetime(),
-                        'call_to_action_asset' => new CallToActionAsset([
+                        'call_to_action_asset' => new CallToActionAsset(
+                            [
                             'call_to_action' => $hotelAssetSuggestion->getCallToAction()
-                        ])
-                    ])
-                ])
-            ]);
-            $operations[] = new MutateOperation([
-                'asset_group_asset_operation' => new AssetGroupAssetOperation([
-                    'create' => new AssetGroupAsset([
+                            ]
+                        )
+                        ]
+                    )
+                    ]
+                )
+                ]
+            );
+            $operations[] = new MutateOperation(
+                [
+                'asset_group_asset_operation' => new AssetGroupAssetOperation(
+                    [
+                    'create' => new AssetGroupAsset(
+                        [
                         'asset' => ResourceNames::forAsset($customerId, self::$nextTempId),
                         'asset_group' => $assetGroupResourceName,
                         'field_type' => AssetFieldType::CALL_TO_ACTION_SELECTION
-                    ])
-                ])
-            ]);
+                        ]
+                    )
+                    ]
+                )
+                ]
+            );
             self::$nextTempId--;
         }
 
@@ -732,8 +830,8 @@ class AddPerformanceMaxForTravelGoalsCampaign
      * adds more text assets to fulfill the requirements if the suggested hotel text assets are not
      * enough.
      *
-     * @param int $customerId the customer ID
-     * @param HotelAssetSuggestion $hotelAssetSuggestion the hotel asset suggestion
+     * @param  int                  $customerId           the customer ID
+     * @param  HotelAssetSuggestion $hotelAssetSuggestion the hotel asset suggestion
      * @return MutateOperation[] a list of mutate operations that create text assets
      */
     private static function createTextAssetsForAssetGroup(
@@ -747,9 +845,10 @@ class AddPerformanceMaxForTravelGoalsCampaign
             array_fill_keys(array_keys(self::MIN_REQUIRED_TEXT_ASSET_COUNTS), 0);
         if ($hotelAssetSuggestion->getStatus() === HotelAssetSuggestionStatus::SUCCESS) {
             foreach ($hotelAssetSuggestion->getTextAssets() as $textAsset) {
-                /** @var HotelTextAsset $textAsset */
-                if (
-                    $textAsset->getAssetFieldType() === AssetFieldType::HEADLINE
+                /**
+ * @var HotelTextAsset $textAsset 
+*/
+                if ($textAsset->getAssetFieldType() === AssetFieldType::HEADLINE
                     || $textAsset->getAssetFieldType() === AssetFieldType::DESCRIPTION
                 ) {
                     // Headlines and descriptions were already created at the first step of this
@@ -775,8 +874,7 @@ class AddPerformanceMaxForTravelGoalsCampaign
         }
         // Adds more text assets to fulfill the requirements.
         foreach (self::MIN_REQUIRED_TEXT_ASSET_COUNTS as $assetFieldType => $minCount) {
-            if (
-                $assetFieldType === AssetFieldType::HEADLINE
+            if ($assetFieldType === AssetFieldType::HEADLINE
                 || $assetFieldType === AssetFieldType::DESCRIPTION
             ) {
                 // Headlines and descriptions were already created at the first step of this
@@ -810,8 +908,8 @@ class AddPerformanceMaxForTravelGoalsCampaign
      * adds more image assets to fulfill the requirements if the suggested hotel image assets are
      * not enough.
      *
-     * @param int $customerId the customer ID
-     * @param HotelAssetSuggestion $hotelAssetSuggestion the hotel asset suggestion
+     * @param  int                  $customerId           the customer ID
+     * @param  HotelAssetSuggestion $hotelAssetSuggestion the hotel asset suggestion
      * @return MutateOperation[] a list of mutate operations that create image assets
      */
     private static function createImageAssetsForAssetGroup(
@@ -823,7 +921,9 @@ class AddPerformanceMaxForTravelGoalsCampaign
         $requiredImageAssetCounts =
             array_fill_keys(array_keys(self::MIN_REQUIRED_IMAGE_ASSET_COUNTS), 0);
         foreach ($hotelAssetSuggestion->getImageAssets() as $imageAsset) {
-            /** @var HotelImageAsset $imageAsset */
+            /**
+ * @var HotelImageAsset $imageAsset 
+*/
             printf(
                 "An image asset with URL '%s' is suggested for the asset field type '%s'.%s",
                 $imageAsset->getUri(),
@@ -874,9 +974,9 @@ class AddPerformanceMaxForTravelGoalsCampaign
     /**
      * Creates a list of mutate operations that create a new linked text asset.
      *
-     * @param int $customerId the customer ID
-     * @param string $text the text of the asset to be created
-     * @param int $fieldType the field type of the new asset in the asset group asset
+     * @param  int    $customerId the customer ID
+     * @param  string $text       the text of the asset to be created
+     * @param  int    $fieldType  the field type of the new asset in the asset group asset
      * @return MutateOperation[] a list of mutate operations that create a new linked text asset
      */
     private static function createTextAssetAndAssetGroupAssetOperations(
@@ -886,28 +986,40 @@ class AddPerformanceMaxForTravelGoalsCampaign
     ): array {
         $operations = [];
         // Creates a new mutate operation that creates a text asset.
-        $operations[] = new MutateOperation([
-            'asset_operation' => new AssetOperation([
-                'create' => new Asset([
+        $operations[] = new MutateOperation(
+            [
+            'asset_operation' => new AssetOperation(
+                [
+                'create' => new Asset(
+                    [
                     'resource_name' => ResourceNames::forAsset($customerId, self::$nextTempId),
                     'text_asset' => new TextAsset(['text' => $text])
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         // Creates an asset group asset to link the asset to the asset group.
-        $operations[] = new MutateOperation([
-            'asset_group_asset_operation' => new AssetGroupAssetOperation([
-                'create' => new AssetGroupAsset([
+        $operations[] = new MutateOperation(
+            [
+            'asset_group_asset_operation' => new AssetGroupAssetOperation(
+                [
+                'create' => new AssetGroupAsset(
+                    [
                     'asset' => ResourceNames::forAsset($customerId, self::$nextTempId),
                     'asset_group' => ResourceNames::forAssetGroup(
                         $customerId,
                         self::ASSET_GROUP_TEMPORARY_ID
                     ),
                     'field_type' => $fieldType
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
         self::$nextTempId--;
 
         return $operations;
@@ -916,10 +1028,10 @@ class AddPerformanceMaxForTravelGoalsCampaign
     /**
      * Creates a list of mutate operations that create a new linked image asset.
      *
-     * @param int $customerId the customer ID
-     * @param string $url the URL of the image to be retrieved and put into an asset
-     * @param int $fieldType the field type of the new asset in the asset group asset
-     * @param string $assetName the asset name
+     * @param  int    $customerId the customer ID
+     * @param  string $url        the URL of the image to be retrieved and put into an asset
+     * @param  int    $fieldType  the field type of the new asset in the asset group asset
+     * @param  string $assetName  the asset name
      * @return MutateOperation[] a list of mutate operations that create a new linked image asset
      */
     private static function createImageAssetAndAssetGroupAssetOperations(
@@ -930,32 +1042,44 @@ class AddPerformanceMaxForTravelGoalsCampaign
     ): array {
         $operations = [];
         // Creates a new mutate operation that creates an image asset.
-        $operations[] = new MutateOperation([
-            'asset_operation' => new AssetOperation([
-                'create' => new Asset([
+        $operations[] = new MutateOperation(
+            [
+            'asset_operation' => new AssetOperation(
+                [
+                'create' => new Asset(
+                    [
                     'resource_name' => ResourceNames::forAsset($customerId, self::$nextTempId),
                     // Provide a unique friendly name to identify your asset.
                     // When there is an existing image asset with the same content but a different
                     // name, the new name will be dropped silently.
                     'name' => $assetName,
                     'image_asset' => new ImageAsset(['data' => file_get_contents($url)])
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         // Creates an asset group asset to link the asset to the asset group.
-        $operations[] = new MutateOperation([
-            'asset_group_asset_operation' => new AssetGroupAssetOperation([
-                'create' => new AssetGroupAsset([
+        $operations[] = new MutateOperation(
+            [
+            'asset_group_asset_operation' => new AssetGroupAssetOperation(
+                [
+                'create' => new AssetGroupAsset(
+                    [
                     'asset' => ResourceNames::forAsset($customerId, self::$nextTempId),
                     'asset_group' => ResourceNames::forAssetGroup(
                         $customerId,
                         self::ASSET_GROUP_TEMPORARY_ID
                     ),
                     'field_type' => $fieldType
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
         self::$nextTempId--;
 
         return $operations;
@@ -971,7 +1095,9 @@ class AddPerformanceMaxForTravelGoalsCampaign
         MutateGoogleAdsResponse $mutateGoogleAdsResponse
     ): void {
         foreach ($mutateGoogleAdsResponse->getMutateOperationResponses() as $response) {
-            /** @var MutateOperationResponse $response */
+            /**
+ * @var MutateOperationResponse $response 
+*/
             $getter = Serializer::getGetter($response->getResponse());
             printf(
                 "Created a(n) %s with '%s'.%s",

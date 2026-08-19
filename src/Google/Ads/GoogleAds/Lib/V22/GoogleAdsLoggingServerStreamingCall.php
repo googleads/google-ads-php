@@ -34,8 +34,8 @@ class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
      * Constructs the LoggingSeverStreamingCall using the inner call and logging intercepter.
      *
      * @param ServerStreamingCall|ForwardingServerStreamingCall $innerCall
-     * @param array $lastRequestData
-     * @param GoogleAdsCallLogger $googleAdsCallLogger
+     * @param array                                             $lastRequestData
+     * @param GoogleAdsCallLogger                               $googleAdsCallLogger
      */
     public function __construct(
         $innerCall,

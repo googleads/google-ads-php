@@ -25,7 +25,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Unit tests for `PartialFailures`.
  *
- * @see PartialFailures
+ * @see   PartialFailures
  * @small
  */
 class PartialFailuresTest extends TestCase

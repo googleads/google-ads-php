@@ -34,7 +34,9 @@ use Google\Ads\GoogleAds\V25\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
-/** Fetches the set of all ProductCategoryConstants. */
+/**
+ * Fetches the set of all ProductCategoryConstants. 
+ */
 class GetProductCategoryConstants
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
@@ -43,9 +45,11 @@ class GetProductCategoryConstants
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -70,7 +74,9 @@ class GetProductCategoryConstants
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -93,7 +99,7 @@ class GetProductCategoryConstants
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param int             $customerId      the customer ID
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
@@ -123,7 +129,9 @@ class GetProductCategoryConstants
             $productBiddingCategory = $googleAdsRow->getProductCategoryConstant();
 
             // Finds the US-en localized name in the localizations list.
-            /** @var ProductCategoryLocalization[] $filteredLocalizations */
+            /**
+ * @var ProductCategoryLocalization[] $filteredLocalizations 
+*/
             $filteredLocalizations = array_filter(
                 iterator_to_array($productBiddingCategory->getLocalizations()->getIterator()),
                 function (ProductCategoryLocalization $productCategoryLocalization) {
@@ -171,8 +179,8 @@ class GetProductCategoryConstants
     /**
      * Recursively prints out each category and its children.
      *
-     * @param array $categories the map of categories to print
-     * @param string $prefix the string to print at the beginning of each line of output
+     * @param array  $categories the map of categories to print
+     * @param string $prefix     the string to print at the beginning of each line of output
      */
     private static function displayCategories(
         array $categories,

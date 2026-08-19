@@ -33,10 +33,14 @@ use PHPUnit\Framework\TestCase;
  */
 class StatusMetadataExtractorTest extends TestCase
 {
-    /** @var StatusMetadataExtractor $statusMetadataExtractor */
+    /**
+     * @var StatusMetadataExtractor $statusMetadataExtractor 
+     */
     private $statusMetadataExtractor;
 
-    /** @var array $defaultStatusMetadata */
+    /**
+     * @var array $defaultStatusMetadata 
+     */
     private $defaultStatusMetadata;
 
     /**
@@ -46,20 +50,30 @@ class StatusMetadataExtractorTest extends TestCase
     {
         $this->statusMetadataExtractor = new StatusMetadataExtractor();
         $defaultGoogleAdsFailure = new GoogleAdsFailure();
-        $defaultGoogleAdsFailure->setErrors([
-            new GoogleAdsError([
+        $defaultGoogleAdsFailure->setErrors(
+            [
+            new GoogleAdsError(
+                [
                 'message' => 'failure 1',
-                'error_code' => new ErrorCode([
+                'error_code' => new ErrorCode(
+                    [
                     'campaign_error' => CampaignError::BUDGET_CANNOT_BE_SHARED
-                ])
-            ]),
-            new GoogleAdsError([
+                    ]
+                )
+                ]
+            ),
+            new GoogleAdsError(
+                [
                 'message' => 'failure 2',
-                'error_code' => new ErrorCode([
+                'error_code' => new ErrorCode(
+                    [
                     'ad_group_error' => AdGroupError::BID_TOO_BIG
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
         $this->defaultStatusMetadata = [
             'google.ads.googleads.v24.errors.googleadsfailure-bin' => [
                 $defaultGoogleAdsFailure->serializeToString()
@@ -109,18 +123,28 @@ class StatusMetadataExtractorTest extends TestCase
     public function testExtractErrorMessageListNoMessages()
     {
         $expected = new GoogleAdsFailure();
-        $expected->setErrors([
-            new GoogleAdsError([
-                'error_code' => new ErrorCode([
+        $expected->setErrors(
+            [
+            new GoogleAdsError(
+                [
+                'error_code' => new ErrorCode(
+                    [
                     'campaign_error' => CampaignError::BUDGET_CANNOT_BE_SHARED
-                ])
-            ]),
-            new GoogleAdsError([
-                'error_code' => new ErrorCode([
+                    ]
+                )
+                ]
+            ),
+            new GoogleAdsError(
+                [
+                'error_code' => new ErrorCode(
+                    [
                     'ad_group_error' => AdGroupError::BID_TOO_BIG
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
         $statusMetadata = [
             'google.ads.googleads.v24.errors.googleadsfailure-bin' => [
                 $expected->serializeToString()

@@ -21,14 +21,16 @@ namespace Google\Ads\GoogleAds\V22\Services;
 /**
  * Service to remove automatically created assets.
  */
-class AutomaticallyCreatedAssetRemovalServiceGrpcClient extends \Grpc\BaseStub {
+class AutomaticallyCreatedAssetRemovalServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -45,17 +47,21 @@ class AutomaticallyCreatedAssetRemovalServiceGrpcClient extends \Grpc\BaseStub {
      *   [PartialFailureError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetRequest $argument input argument
+     * @param  array                                                                             $metadata metadata
+     * @param  array                                                                             $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetResponse>
      */
     public function RemoveCampaignAutomaticallyCreatedAsset(\Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.AutomaticallyCreatedAssetRemovalService/RemoveCampaignAutomaticallyCreatedAsset',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.AutomaticallyCreatedAssetRemovalService/RemoveCampaignAutomaticallyCreatedAsset',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\RemoveCampaignAutomaticallyCreatedAssetResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

@@ -30,8 +30,8 @@ class InsecureCredentialsWrapper extends CredentialsWrapper
     /**
      * See CredentialsWrapper::__construct()
      *
-     * @param FetchAuthTokenInterface $credentialsFetcher
-     * @param callable $authHttpHandler
+     * @param  FetchAuthTokenInterface $credentialsFetcher
+     * @param  callable                $authHttpHandler
      * @throws ValidationException
      */
     public function __construct(
@@ -51,7 +51,7 @@ class InsecureCredentialsWrapper extends CredentialsWrapper
      * Insecure credentials do not need to support the generation of authorization headers so null
      * can be returned instead to avoid any errors.
      *
-     * @param $audience
+     * @param  $audience
      * @return callable
      */
     public function getAuthorizationHeaderCallback($audience = null): ?callable

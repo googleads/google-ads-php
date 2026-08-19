@@ -27,12 +27,15 @@ use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use UnexpectedValueException;
 
-
 class OAuth2TokenBuilderTest extends TestCase
 {
-    /** @var OAuth2TokenBuilder $oAuth2TokenBuilder */
+    /**
+     * @var OAuth2TokenBuilder $oAuth2TokenBuilder
+     */
     private $oAuth2TokenBuilder;
-    /** @var string $jsonKeyFilePath */
+    /**
+     * @var string $jsonKeyFilePath
+     */
     private $jsonKeyFilePath;
 
     /**
@@ -64,7 +67,7 @@ class OAuth2TokenBuilderTest extends TestCase
     {
         // Mock the EnvironmentalVariables to control the path.
         $environmentalVariablesMock = $this->createMock(EnvironmentalVariables::class);
-        
+
         // --- FIX: Use a UNIQUE temp directory instead of the shared fakeHome ---
         $tempDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . uniqid('google_ads_test_', true);
         mkdir($tempDir, 0777, true);
@@ -102,7 +105,7 @@ class OAuth2TokenBuilderTest extends TestCase
 
         // --- TEARDOWN: Clean up ONLY our private temp file and directory ---
         unlink($fakeIniPath);
-        rmdir($tempDir); 
+        rmdir($tempDir);
         // -------------------------------------------------------------------
     }
 
@@ -112,7 +115,7 @@ class OAuth2TokenBuilderTest extends TestCase
 
         // --- FIX: Use a unique temporary file instead of the shared Provider path ---
         $tempIniPath = tempnam(sys_get_temp_dir(), 'google_ads_custom_ini_');
-        
+
         $environmentalVariablesMock
             ->method('get')
             ->with(GoogleAdsBuilder::DEFAULT_CONFIGURATION_FILENAME_ENVIRONMENT_VARIABLE_NAME)
@@ -132,7 +135,7 @@ class OAuth2TokenBuilderTest extends TestCase
             $configurationLoader,
             $environmentalVariablesMock
         );
-        
+
         $tokenFetcher = $oAuth2TokenBuilder
             ->fromFile()
             ->build();
@@ -239,8 +242,10 @@ class OAuth2TokenBuilderTest extends TestCase
     public function testBuildFailsWhenSettingValuesForMultipleFlows()
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Cannot have both service account flow and installed/web ' .
-            'application flow credential values set.');
+        $this->expectExceptionMessage(
+            'Cannot have both service account flow and installed/web ' .
+            'application flow credential values set.'
+        );
         $this->oAuth2TokenBuilder
             ->withJsonKeyFilePath($this->jsonKeyFilePath)
             ->withScopes('https://www.googleapis.com/auth/adwords')
@@ -277,8 +282,10 @@ class OAuth2TokenBuilderTest extends TestCase
         $builder->defaultOptionals();
 
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage("Both 'jsonKeyFilePath' and 'scopes' must be set when" .
-            " using service account flow.");
+        $this->expectExceptionMessage(
+            "Both 'jsonKeyFilePath' and 'scopes' must be set when" .
+            " using service account flow."
+        );
 
         $builder->validate();
     }
@@ -303,14 +310,14 @@ class OAuth2TokenBuilderTest extends TestCase
         $credentials = $builder->build();
         $this->assertSame($mockAdcCreds, $credentials);
     }
-    
+
     public function testBuildWithAdcFailure()
     {
         $adcFetcher = function ($scopes) {
             // We throw a standard RuntimeException because CredentialsLoaderException is gone
             throw new \RuntimeException('Mocked ADC failure');
         };
-        
+
         $builder = new OAuth2TokenBuilder();
 
         $method = new \ReflectionMethod(OAuth2TokenBuilder::class, 'withAdcFetcher');

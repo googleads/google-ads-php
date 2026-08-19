@@ -23,31 +23,37 @@ namespace Google\Ads\GoogleAds\V23\Services;
  *
  * This service will suggest brands based on a prefix.
  */
-class BrandSuggestionServiceGrpcClient extends \Grpc\BaseStub {
+class BrandSuggestionServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
     /**
      * Rpc to return a list of matching brands based on a prefix for this
      * customer.
-     * @param \Google\Ads\GoogleAds\V23\Services\SuggestBrandsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\SuggestBrandsRequest $argument input argument
+     * @param  array                                                   $metadata metadata
+     * @param  array                                                   $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\SuggestBrandsResponse>
      */
     public function SuggestBrands(\Google\Ads\GoogleAds\V23\Services\SuggestBrandsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.BrandSuggestionService/SuggestBrands',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\SuggestBrandsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.BrandSuggestionService/SuggestBrands',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\SuggestBrandsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

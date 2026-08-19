@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V24\Services;
  *
  * Service to manage bidding strategies.
  */
-class BiddingStrategyServiceGrpcClient extends \Grpc\BaseStub {
+class BiddingStrategyServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -65,17 +67,21 @@ class BiddingStrategyServiceGrpcClient extends \Grpc\BaseStub {
      *   [SizeLimitError]()
      *   [StringFormatError]()
      *   [StringLengthError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\MutateBiddingStrategiesRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\MutateBiddingStrategiesRequest $argument input argument
+     * @param  array                                                             $metadata metadata
+     * @param  array                                                             $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\MutateBiddingStrategiesResponse>
      */
     public function MutateBiddingStrategies(\Google\Ads\GoogleAds\V24\Services\MutateBiddingStrategiesRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.BiddingStrategyService/MutateBiddingStrategies',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\MutateBiddingStrategiesResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.BiddingStrategyService/MutateBiddingStrategies',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\MutateBiddingStrategiesResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

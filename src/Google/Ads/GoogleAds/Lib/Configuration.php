@@ -38,9 +38,9 @@ class Configuration
     /**
      * Gets the value for the specified setting name.
      *
-     * @param string $name the setting name
-     * @param string $section optional, the name of the section containing the
-     *     setting
+     * @param  string $name    the setting name
+     * @param  string $section optional, the name of the section containing the
+     *                         setting
      * @return string|null the value of the setting, or null if it doesn't exist
      */
     public function getConfiguration($name, $section = null)

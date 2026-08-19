@@ -51,9 +51,11 @@ class AddCustomAudience
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -78,7 +80,9 @@ class AddCustomAudience
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -101,12 +105,13 @@ class AddCustomAudience
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param int             $customerId      the customer ID
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a CustomAudience object to represent the new audience.
-        $customAudience = new CustomAudience([
+        $customAudience = new CustomAudience(
+            [
             'name' => 'Example CustomAudience #' . Helper::getPrintableDatetime(),
             'description' => 'Custom audiences who have searched specific terms on Google Search',
             // Matches customers by what they searched on Google Search.
@@ -140,7 +145,8 @@ class AddCustomAudience
                     "com.google.android.apps.adwords"
                 )
             ]
-        ]);
+            ]
+        );
 
         // Creates the operation.
         $operation = new CustomAudienceOperation();
@@ -162,8 +168,8 @@ class AddCustomAudience
      * Constructs a custom audience member object for a given customer audience member type and
      * value.
      *
-     * @param int $memberType the custom audience member type
-     * @param string $value the custom audience member value
+     * @param  int    $memberType the custom audience member type
+     * @param  string $value      the custom audience member value
      * @return CustomAudienceMember the newly constructed customer audience member object
      */
     private static function createCustomAudienceMember(

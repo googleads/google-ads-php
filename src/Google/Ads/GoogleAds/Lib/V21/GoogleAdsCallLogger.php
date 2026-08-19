@@ -53,11 +53,11 @@ final class GoogleAdsCallLogger
     /**
      * Constructs the Google Ads call logger with the specified PSR-3 logger interface.
      *
-     * @param LoggerInterface $logger the PSR-3 logger
-     * @param string $filterLevel the PSR-3 minimum log level to log
-     * @param string $endpoint the API endpoint for the gRPC call
+     * @param LoggerInterface          $logger              the PSR-3 logger
+     * @param string                   $filterLevel         the PSR-3 minimum log level to log
+     * @param string                   $endpoint            the API endpoint for the gRPC call
      * @param null|LogMessageFormatter $logMessageFormatter the log message formatter
-     * @param array $context the context for logging
+     * @param array                    $context             the context for logging
      */
     public function __construct(
         LoggerInterface $logger,
@@ -76,10 +76,10 @@ final class GoogleAdsCallLogger
     /**
      * Logs summary and the details of the given status, request data and response.
      *
-     * @param ForwardingCall $call the forwarding call whose details will be logged
-     * @param object $status the status to be logged
-     * @param array $requestData the request data
-     * @param object|null $response the response to be logged
+     * @param ForwardingCall $call        the forwarding call whose details will be logged
+     * @param object         $status      the status to be logged
+     * @param array          $requestData the request data
+     * @param object|null    $response    the response to be logged
      */
     public function log(
         ForwardingCall $forwardingCall,
@@ -100,7 +100,7 @@ final class GoogleAdsCallLogger
     /**
      * Logs the summary of the request and response.
      *
-     * @param array $requestData the request data to log
+     * @param array $requestData  the request data to log
      * @param array $responseData the response data to log
      */
     public function logSummary(
@@ -127,7 +127,7 @@ final class GoogleAdsCallLogger
     /**
      * Logs the details of the request, response, and errors if there are any.
      *
-     * @param array $requestData the request data to log
+     * @param array $requestData  the request data to log
      * @param array $responseData the response data to log
      */
     public function logDetails(
@@ -165,6 +165,7 @@ final class GoogleAdsCallLogger
     /**
      * Returns the appropriate log level depending on the response code.
      * For successful requests, use INFO. For failed requests, use WARNING.
+     *
      * @return string the log level to use
      */
     private function getAppropriateLogLevel($code): string
@@ -175,6 +176,7 @@ final class GoogleAdsCallLogger
     /**
      * Returns true if $level is enabled, i.e. if the log level that this logger supports is
      * less than or equal to $level.
+     *
      * @return bool true if $level is enabled, false otherwise
      */
     private function isEnabled(string $level): bool
@@ -186,7 +188,7 @@ final class GoogleAdsCallLogger
     /**
      * Returns the next finer PSR-3 log level for the specified log level.
      *
-     * @param string $level the current log level
+     * @param  string $level the current log level
      * @return string the level name
      */
     private static function getNextFinerLogLevel($level)

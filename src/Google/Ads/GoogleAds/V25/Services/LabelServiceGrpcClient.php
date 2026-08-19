@@ -21,14 +21,16 @@ namespace Google\Ads\GoogleAds\V25\Services;
 /**
  * Service to manage labels.
  */
-class LabelServiceGrpcClient extends \Grpc\BaseStub {
+class LabelServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -59,17 +61,21 @@ class LabelServiceGrpcClient extends \Grpc\BaseStub {
      *   [SizeLimitError]()
      *   [StringFormatError]()
      *   [StringLengthError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\MutateLabelsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\MutateLabelsRequest $argument input argument
+     * @param  array                                                  $metadata metadata
+     * @param  array                                                  $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateLabelsResponse>
      */
     public function MutateLabels(\Google\Ads\GoogleAds\V25\Services\MutateLabelsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.LabelService/MutateLabels',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\MutateLabelsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.LabelService/MutateLabels',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\MutateLabelsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

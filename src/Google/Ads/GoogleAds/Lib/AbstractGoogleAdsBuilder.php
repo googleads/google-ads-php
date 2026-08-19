@@ -43,7 +43,7 @@ abstract class AbstractGoogleAdsBuilder implements GoogleAdsBuilder
      *
      * @see GoogleAdsBuilder::DEFAULT_CONFIGURATION_FILENAME_ENVIRONMENT_VARIABLE_NAME
      *
-     * @param string $path the file path
+     * @param  string $path the file path
      * @return self this builder populated from the configuration
      * @throws InvalidArgumentException if the configuration file could not be found
      */

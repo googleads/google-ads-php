@@ -27,7 +27,9 @@ use Google\ApiCore\Call;
  */
 abstract class GoogleAdsMiddlewareAbstract
 {
-    /** @var callable */
+    /**
+     * @var callable
+     */
     private $nextHandler;
 
     /**
@@ -43,7 +45,7 @@ abstract class GoogleAdsMiddlewareAbstract
     /**
      * Sets the next handler.
      *
-     * @param callable $nextHandler the next handler
+     * @param  callable $nextHandler the next handler
      * @return self
      */
     final public function withNextHandler(callable $nextHandler)
@@ -68,8 +70,8 @@ abstract class GoogleAdsMiddlewareAbstract
      * If unable to produce the response itself, it may delegate to the provided
      * request handler to do so.
      *
-     * @param Call $call the current request
-     * @param array $options the optional parameters
+     * @param  Call  $call    the current request
+     * @param  array $options the optional parameters
      * @return mixed the response
      */
     abstract public function __invoke(Call $call, array $options);

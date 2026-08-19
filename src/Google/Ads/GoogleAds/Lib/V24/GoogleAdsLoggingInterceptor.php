@@ -40,12 +40,12 @@ class GoogleAdsLoggingInterceptor extends Interceptor
     /**
      * @see Interceptor::interceptUnaryUnary()
      *
-     * @param mixed $method
-     * @param mixed $argument
-     * @param callable $deserialize
-     * @param callable $continuation
-     * @param array $metadata
-     * @param array $options
+     * @param  mixed    $method
+     * @param  mixed    $argument
+     * @param  callable $deserialize
+     * @param  callable $continuation
+     * @param  array    $metadata
+     * @param  array    $options
      * @return GoogleAdsLoggingUnaryCall
      */
     public function interceptUnaryUnary(
@@ -66,12 +66,12 @@ class GoogleAdsLoggingInterceptor extends Interceptor
     /**
      * @see Interceptor::interceptUnaryStream()
      *
-     * @param mixed $method
-     * @param mixed $argument
-     * @param callable $deserialize
-     * @param callable $continuation
-     * @param array $metadata
-     * @param array $options
+     * @param  mixed    $method
+     * @param  mixed    $argument
+     * @param  callable $deserialize
+     * @param  callable $continuation
+     * @param  array    $metadata
+     * @param  array    $options
      * @return GoogleAdsLoggingServerStreamingCall
      */
     public function interceptUnaryStream(

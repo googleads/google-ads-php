@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage goals.
  */
-class GoalServiceGrpcClient extends \Grpc\BaseStub {
+class GoalServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -45,17 +47,21 @@ class GoalServiceGrpcClient extends \Grpc\BaseStub {
      *   [QuotaError]()
      *   [RequestError]()
      *   [GoalError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\MutateGoalsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\MutateGoalsRequest $argument input argument
+     * @param  array                                                 $metadata metadata
+     * @param  array                                                 $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateGoalsResponse>
      */
     public function MutateGoals(\Google\Ads\GoogleAds\V25\Services\MutateGoalsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.GoalService/MutateGoals',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\MutateGoalsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.GoalService/MutateGoals',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\MutateGoalsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

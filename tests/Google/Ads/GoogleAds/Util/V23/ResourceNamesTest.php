@@ -116,7 +116,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Unit tests for `ResourceNames`.
  *
- * @see ResourceNames
+ * @see   ResourceNames
  * @small
  */
 class ResourceNamesTest extends TestCase

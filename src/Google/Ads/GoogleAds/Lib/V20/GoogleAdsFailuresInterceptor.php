@@ -28,12 +28,12 @@ class GoogleAdsFailuresInterceptor extends Interceptor
     /**
      * @see Interceptor::interceptUnaryUnary()
      *
-     * @param mixed $method
-     * @param mixed $argument
-     * @param callable $deserialize
-     * @param callable $continuation
-     * @param array $metadata
-     * @param array $options
+     * @param  mixed    $method
+     * @param  mixed    $argument
+     * @param  callable $deserialize
+     * @param  callable $continuation
+     * @param  array    $metadata
+     * @param  array    $options
      * @return GoogleAdsFailuresUnaryCall
      */
     public function interceptUnaryUnary(

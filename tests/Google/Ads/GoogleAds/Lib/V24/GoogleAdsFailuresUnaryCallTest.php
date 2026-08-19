@@ -34,9 +34,9 @@ use PHPUnit\Framework\TestCase;
 class GoogleAdsFailuresUnaryCallTest extends TestCase
 {
     /**
-     * @param mixed $expectedResponse the expected response
-     * @param bool $isInitializationExpected whether the lazy initialization of GoogleAdsFailures
-     *     is expected to be triggered or not
+     * @param        mixed $expectedResponse         the expected response
+     * @param        bool  $isInitializationExpected whether the lazy initialization of GoogleAdsFailures
+     *                                               is expected to be triggered or not
      * @dataProvider provideTestCases
      */
     public function test($expectedResponse, bool $isInitializationExpected)

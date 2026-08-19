@@ -364,9 +364,11 @@ class LogMessageFormatterTest extends TestCase
                 . 'change_event.user_email = "test1@example.com"',
                 '"query":"SELECT change_event.user_email FROM change_event WHERE '
                 . 'change_event.user_email = \"REDACTED\""',
-                new GoogleAdsRow([
+                new GoogleAdsRow(
+                    [
                     'change_event' => new ChangeEvent(['user_email' => 'test1@example.com'])
-                ]),
+                    ]
+                ),
                 ['change_event.user_email'],
                 '{"results":[{"changeEvent":{"userEmail":"REDACTED"}}],"fieldMask":'
                 . '"changeEvent.userEmail"}'
@@ -378,12 +380,16 @@ class LogMessageFormatterTest extends TestCase
                 '"query":"SELECT customer_user_access.email_address FROM customer_user_access '
                 . 'WHERE customer_user_access.email_address = \'REDACTED\' '
                 . 'AND customer_user_access.inviter_user_email_address LIKE \'REDACTED\'"',
-                new GoogleAdsRow([
-                    'customer_user_access' => new CustomerUserAccess([
+                new GoogleAdsRow(
+                    [
+                    'customer_user_access' => new CustomerUserAccess(
+                        [
                         'email_address' => 'test1@example.com',
                         'inviter_user_email_address' => 'test2@example.com'
-                    ])
-                ]),
+                        ]
+                    )
+                    ]
+                ),
                 [
                     'customer_user_access.email_address',
                     'customer_user_access.inviter_user_email_address'
@@ -397,11 +403,15 @@ class LogMessageFormatterTest extends TestCase
                 . 'local_services_lead.contact_details.email = "test1@example.com"',
                 '"query":"SELECT local_services_lead.contact_details.email FROM local_services_lead'
                 . ' WHERE local_services_lead.contact_details.email = \"REDACTED\""',
-                new GoogleAdsRow([
-                    'local_services_lead' => new LocalServicesLead([
+                new GoogleAdsRow(
+                    [
+                    'local_services_lead' => new LocalServicesLead(
+                        [
                         'contact_details' => new ContactDetails(['email' => 'test1@example.com'])
-                    ])
-                ]),
+                        ]
+                    )
+                    ]
+                ),
                 ['local_services_lead.contact_details.email'],
                 '{"results":[{"localServicesLead":{"contactDetails":{"email":"REDACTED"}}}],'
                 . '"fieldMask":"localServicesLead.contactDetails.email"}'
@@ -413,11 +423,15 @@ class LogMessageFormatterTest extends TestCase
                 '"query":"SELECT local_services_lead_conversation.message_details.text FROM '
                 . 'local_services_lead_conversation WHERE '
                 . 'local_services_lead_conversation.message_details.text = \"REDACTED\""',
-                new GoogleAdsRow([
-                    'local_services_lead_conversation' => new LocalServicesLeadConversation([
+                new GoogleAdsRow(
+                    [
+                    'local_services_lead_conversation' => new LocalServicesLeadConversation(
+                        [
                         'message_details' => new MessageDetails(['text' => 'test1@example.com'])
-                    ])
-                ]),
+                        ]
+                    )
+                    ]
+                ),
                 ['local_services_lead_conversation.message_details.text'],
                 '{"results":[{"localServicesLeadConversation":{"messageDetails":{"text":'
                 . '"REDACTED"}}}]'
@@ -452,15 +466,25 @@ class LogMessageFormatterTest extends TestCase
         $method = 'CampaignService/MutateCampaigns';
         $argument = new MutateCampaignsRequest();
         $argument->setCustomerId(1234567890);
-        $argument->setOperations([new CampaignOperation(['update' => new Campaign([
-            'resource_name' => ResourceNames::forCampaign(1234567890, 9876543210)
-        ])])]);
+        $argument->setOperations(
+            [new CampaignOperation(
+                ['update' => new Campaign(
+                    [
+                    'resource_name' => ResourceNames::forCampaign(1234567890, 9876543210)
+                    ]
+                )]
+            )]
+        );
         $metadata = ['developer-token' => ['a1b2c3']];
         $status = self::createSuccessfulStatus();
 
-        $response = new MutateCampaignsResponse(['results' => [new MutateCampaignResult([
-            'resource_name' => ResourceNames::forCampaign(1234567890, 9876543210)
-        ])]]);
+        $response = new MutateCampaignsResponse(
+            ['results' => [new MutateCampaignResult(
+                [
+                'resource_name' => ResourceNames::forCampaign(1234567890, 9876543210)
+                ]
+            )]]
+        );
         $call = self::createUnaryCallMock();
 
         $this->resourceNameAvailableRequest = compact('method', 'argument', 'metadata');
@@ -470,19 +494,23 @@ class LogMessageFormatterTest extends TestCase
     private function createRequestWithNoCustomerId()
     {
         $method = 'GeoTargetConstantService/SuggestGeoTargetConstants';
-        $argument = new SuggestGeoTargetConstantsRequest([
+        $argument = new SuggestGeoTargetConstantsRequest(
+            [
             'location_names' => new LocationNames(['names' => ['Paris']])
-        ]);
+            ]
+        );
         $metadata = ['developer-token' => ['a1b2c3']];
         $status = self::createSuccessfulStatus();
 
         $geoTargetConstantSuggestions = [
-            new GeoTargetConstantSuggestion([
+            new GeoTargetConstantSuggestion(
+                [
                 'locale' => 'US',
                 'reach' => 30000,
                 'search_term' => 'Paris',
                 'geo_target_constant' => new GeoTargetConstant(['id' => 1006094])
-            ]),
+                ]
+            ),
         ];
         $response = new SuggestGeoTargetConstantsResponse(
             ['geo_target_constant_suggestions' => $geoTargetConstantSuggestions]
@@ -520,31 +548,41 @@ class LogMessageFormatterTest extends TestCase
     private function createRequestResponseWithCustomerUserAccess()
     {
         $method = 'GoogleAdsService/Search';
-        $argument = new SearchGoogleAdsRequest([
+        $argument = new SearchGoogleAdsRequest(
+            [
             'customer_id' => 1234567890,
             'query' => 'SELECT customer_user_access.email_address,'
                 . 'customer_user_access.inviter_user_email_address FROM customer_user_access'
-        ]);
+            ]
+        );
         $metadata = ['developer-token' => ['a1b2c3']];
         $status = self::createSuccessfulStatus();
 
         $googleAdsRows = [
-            new GoogleAdsRow([
-                'customer_user_access' => new CustomerUserAccess([
+            new GoogleAdsRow(
+                [
+                'customer_user_access' => new CustomerUserAccess(
+                    [
                     'email_address' => 'test1@example.com',
                     'inviter_user_email_address' => 'test2@example.com'
-                ])
-            ])
+                    ]
+                )
+                ]
+            )
         ];
-        $response = new SearchGoogleAdsResponse([
+        $response = new SearchGoogleAdsResponse(
+            [
             'results' => $googleAdsRows,
-            'field_mask' => new FieldMask([
+            'field_mask' => new FieldMask(
+                [
                 'paths' => [
                     'customer_user_access.inviter_user_email_address',
                     'customer_user_access.email_address'
                 ]
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         $call = self::createUnaryCallMock();
         $call->method('getMetadata')->willReturn(
@@ -558,10 +596,12 @@ class LogMessageFormatterTest extends TestCase
     private function createRequestResponseWithChangeEvent()
     {
         $method = 'GoogleAdsService/Search';
-        $argument = new SearchGoogleAdsRequest([
+        $argument = new SearchGoogleAdsRequest(
+            [
             'customer_id' => 1234567890,
             'query' => 'SELECT change_event.user_email FROM change_event'
-        ]);
+            ]
+        );
         $metadata = ['developer-token' => ['a1b2c3']];
         $status = self::createSuccessfulStatus();
 
@@ -570,10 +610,12 @@ class LogMessageFormatterTest extends TestCase
                 ['change_event' => new ChangeEvent(['user_email' => 'test1@example.com'])]
             )
         ];
-        $response = new SearchGoogleAdsResponse([
+        $response = new SearchGoogleAdsResponse(
+            [
             'results' => $googleAdsRows,
             'field_mask' => new FieldMask(['paths' => ['change_event.user_email']])
-        ]);
+            ]
+        );
 
         $call = self::createUnaryCallMock();
         $call->method('getMetadata')->willReturn(
@@ -587,26 +629,36 @@ class LogMessageFormatterTest extends TestCase
     private function createRequestResponseWithLocalServicesLeadConversation()
     {
         $method = 'GoogleAdsService/SearchStream';
-        $argument = new SearchGoogleAdsStreamRequest([
+        $argument = new SearchGoogleAdsStreamRequest(
+            [
             'customer_id' => 1234567890,
             'query' => 'SELECT local_services_lead_conversation.message_details.text '
                 . 'FROM local_services_lead_conversation'
-        ]);
+            ]
+        );
         $metadata = ['developer-token' => ['a1b2c3']];
         $status = self::createSuccessfulStatus();
 
         $googleAdsRows = [
-            new GoogleAdsRow([
-                'local_services_lead_conversation' => new LocalServicesLeadConversation([
+            new GoogleAdsRow(
+                [
+                'local_services_lead_conversation' => new LocalServicesLeadConversation(
+                    [
                     'message_details' => new MessageDetails(['text' => 'test1@example.com'])
-                ])
-            ])
+                    ]
+                )
+                ]
+            )
         ];
-        $response = new SearchGoogleAdsStreamResponse([
+        $response = new SearchGoogleAdsStreamResponse(
+            [
             'results' => $googleAdsRows,
-            'field_mask' => new FieldMask([
-                'paths' => ['local_services_lead_conversation.message_details.text']])
-        ]);
+            'field_mask' => new FieldMask(
+                [
+                'paths' => ['local_services_lead_conversation.message_details.text']]
+            )
+            ]
+        );
 
         $call = self::createUnaryCallMock();
         $call->method('getMetadata')->willReturn(
@@ -620,10 +672,12 @@ class LogMessageFormatterTest extends TestCase
     private function createCreateCustomerClientRequestAndResponse()
     {
         $method = 'CustomerService/CreateCustomer';
-        $argument = new CreateCustomerClientRequest([
+        $argument = new CreateCustomerClientRequest(
+            [
             'customer_id' => 1234567890,
             'email_address' => 'test1@example.com'
-        ]);
+            ]
+        );
         $metadata = ['developer-token' => ['a1b2c3']];
         $status = self::createSuccessfulStatus();
 

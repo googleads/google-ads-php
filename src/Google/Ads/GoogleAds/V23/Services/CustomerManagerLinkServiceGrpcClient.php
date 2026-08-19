@@ -21,14 +21,16 @@ namespace Google\Ads\GoogleAds\V23\Services;
 /**
  * Service to manage customer-manager links.
  */
-class CustomerManagerLinkServiceGrpcClient extends \Grpc\BaseStub {
+class CustomerManagerLinkServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -47,17 +49,21 @@ class CustomerManagerLinkServiceGrpcClient extends \Grpc\BaseStub {
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V23\Services\MutateCustomerManagerLinkRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\MutateCustomerManagerLinkRequest $argument input argument
+     * @param  array                                                               $metadata metadata
+     * @param  array                                                               $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateCustomerManagerLinkResponse>
      */
     public function MutateCustomerManagerLink(\Google\Ads\GoogleAds\V23\Services\MutateCustomerManagerLinkRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.CustomerManagerLinkService/MutateCustomerManagerLink',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\MutateCustomerManagerLinkResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.CustomerManagerLinkService/MutateCustomerManagerLink',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\MutateCustomerManagerLinkResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -77,17 +83,21 @@ class CustomerManagerLinkServiceGrpcClient extends \Grpc\BaseStub {
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V23\Services\MoveManagerLinkRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\MoveManagerLinkRequest $argument input argument
+     * @param  array                                                     $metadata metadata
+     * @param  array                                                     $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MoveManagerLinkResponse>
      */
     public function MoveManagerLink(\Google\Ads\GoogleAds\V23\Services\MoveManagerLinkRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.CustomerManagerLinkService/MoveManagerLink',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\MoveManagerLinkResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.CustomerManagerLinkService/MoveManagerLink',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\MoveManagerLinkResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

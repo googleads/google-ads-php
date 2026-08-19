@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage ads in an ad group.
  */
-class AdGroupAdServiceGrpcClient extends \Grpc\BaseStub {
+class AdGroupAdServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -81,17 +83,21 @@ class AdGroupAdServiceGrpcClient extends \Grpc\BaseStub {
      *   [StringFormatError]()
      *   [StringLengthError]()
      *   [UrlFieldError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\MutateAdGroupAdsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\MutateAdGroupAdsRequest $argument input argument
+     * @param  array                                                      $metadata metadata
+     * @param  array                                                      $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateAdGroupAdsResponse>
      */
     public function MutateAdGroupAds(\Google\Ads\GoogleAds\V25\Services\MutateAdGroupAdsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.AdGroupAdService/MutateAdGroupAds',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\MutateAdGroupAdsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.AdGroupAdService/MutateAdGroupAds',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\MutateAdGroupAdsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -107,17 +113,21 @@ class AdGroupAdServiceGrpcClient extends \Grpc\BaseStub {
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\RemoveAutomaticallyCreatedAssetsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\RemoveAutomaticallyCreatedAssetsRequest $argument input argument
+     * @param  array                                                                      $metadata metadata
+     * @param  array                                                                      $options  call options
      * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function RemoveAutomaticallyCreatedAssets(\Google\Ads\GoogleAds\V25\Services\RemoveAutomaticallyCreatedAssetsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.AdGroupAdService/RemoveAutomaticallyCreatedAssets',
-        $argument,
-        ['\Google\Protobuf\GPBEmpty', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.AdGroupAdService/RemoveAutomaticallyCreatedAssets',
+            $argument,
+            ['\Google\Protobuf\GPBEmpty', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

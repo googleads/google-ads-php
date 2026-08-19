@@ -45,7 +45,7 @@ class AdsAssistantHeaderMiddleware implements MiddlewareInterface
                 $this->adsAssistant
             );
         }
-        
+
         $next = $this->nextHandler;
         return $next($call, $options);
     }

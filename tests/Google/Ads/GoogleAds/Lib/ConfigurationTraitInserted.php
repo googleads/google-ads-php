@@ -37,15 +37,15 @@ class ConfigurationTraitInserted
      * this is for testing purpose only, we use the constructor's parameters directly, for the sake
      * of brevity.
      *
-     * @param string $developerToken
-     * @param int $loginCustomerId
-     * @param int $linkedCustomerId
-     * @param string $endpoint
+     * @param string                  $developerToken
+     * @param int                     $loginCustomerId
+     * @param int                     $linkedCustomerId
+     * @param string                  $endpoint
      * @param FetchAuthTokenInterface $oAuth2Credential
-     * @param LoggerInterface $logger
-     * @param string $logLevel
-     * @param string $proxy
-     * @param string $transport
+     * @param LoggerInterface         $logger
+     * @param string                  $logLevel
+     * @param string                  $proxy
+     * @param string                  $transport
      */
     public function __construct(
         string $developerToken,

@@ -46,7 +46,9 @@ use Google\Ads\GoogleAds\V25\Services\MutateAssetsRequest;
 use Google\Ads\GoogleAds\V25\Services\MutateCampaignAssetSetsRequest;
 use Google\ApiCore\ApiException;
 
-/** Adds an asset for use in dynamic remarketing. */
+/**
+ * Adds an asset for use in dynamic remarketing. 
+ */
 class AddDynamicRemarketingAsset
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
@@ -57,10 +59,12 @@ class AddDynamicRemarketingAsset
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -85,7 +89,9 @@ class AddDynamicRemarketingAsset
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -108,8 +114,8 @@ class AddDynamicRemarketingAsset
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param int $campaignId the campaign ID
+     * @param int             $customerId      the client customer ID
+     * @param int             $campaignId      the campaign ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -142,8 +148,8 @@ class AddDynamicRemarketingAsset
     /**
      * Creates an asset to use in dynamic remarketing.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the client customer ID
      * @return string the created asset's resource name
      */
     private static function createAsset(GoogleAdsClient $googleAdsClient, int $customerId)
@@ -152,7 +158,8 @@ class AddDynamicRemarketingAsset
         // Creates a dynamic education asset.
         // See https://support.google.com/google-ads/answer/6053288?#zippy=%2Ceducation for a
         // detailed explanation of the field format.
-        $dynamicEducationAsset = new DynamicEducationAsset([
+        $dynamicEducationAsset = new DynamicEducationAsset(
+            [
             // Defines meta-information about the school and program.
             'school_name' => 'The University of Unknown',
             'address' => 'Building 1, New York, 12345, USA',
@@ -168,13 +175,16 @@ class AddDynamicRemarketingAsset
             'android_app_link' => 'android-app://com.example.android/http/example.com/gizmos?1234',
             'ios_app_link' => 'exampleApp://content/page',
             'ios_app_store_id' => 123
-        ]);
+            ]
+        );
 
         // Wraps the dynamic education asset in an asset.
-        $asset = new Asset([
+        $asset = new Asset(
+            [
             'dynamic_education_asset' => $dynamicEducationAsset,
             'final_urls' => ['https://www.example.com']
-        ]);
+            ]
+        );
 
         // Creates an asset operation.
         $assetOperation = new AssetOperation();
@@ -199,8 +209,8 @@ class AddDynamicRemarketingAsset
     /**
      * Creates an asset set.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the client customer ID
      * @return string the created asset set's resource name
      */
     private static function createAssetSet(GoogleAdsClient $googleAdsClient, int $customerId)
@@ -208,10 +218,12 @@ class AddDynamicRemarketingAsset
         // [START add_asset_set]
         // Creates an asset set which will be used to link the dynamic remarketing assets to a
         // campaign.
-        $assetSet = new AssetSet([
+        $assetSet = new AssetSet(
+            [
             'name' => 'My dynamic remarketing assets ' . Helper::getPrintableDatetime(),
             'type' => AssetSetType::DYNAMIC_EDUCATION
-        ]);
+            ]
+        );
 
         // Creates an asset set operation.
         $assetSetOperation = new AssetSetOperation();
@@ -236,10 +248,10 @@ class AddDynamicRemarketingAsset
     /**
      * Adds an asset to an asset set by creating an asset set asset link.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param string $assetResourceName the asset resource name
-     * @param string $assetSetResourceName the asset set resource name
+     * @param GoogleAdsClient $googleAdsClient      the Google Ads API client
+     * @param int             $customerId           the client customer ID
+     * @param string          $assetResourceName    the asset resource name
+     * @param string          $assetSetResourceName the asset set resource name
      */
     private static function addAssetsToAssetSet(
         GoogleAdsClient $googleAdsClient,
@@ -249,10 +261,12 @@ class AddDynamicRemarketingAsset
     ) {
         // [START add_asset_set_asset]
         // Creates an asset set asset.
-        $assetSetAsset = new AssetSetAsset([
+        $assetSetAsset = new AssetSetAsset(
+            [
             'asset' => $assetResourceName,
             'asset_set' => $assetSetResourceName
-        ]);
+            ]
+        );
 
         // Creates an asset set asset operation.
         $assetSetAssetOperation = new AssetSetAssetOperation();
@@ -277,10 +291,10 @@ class AddDynamicRemarketingAsset
     /**
      * Links the specified asset set to the specified campaign by creating a campaign asset set.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $assetSetResourceName the  asset set's resource name to link
-     * @param int $customerId the customer ID
-     * @param int $campaignId the campaign ID to link the asset set to
+     * @param GoogleAdsClient $googleAdsClient      the Google Ads API client
+     * @param string          $assetSetResourceName the  asset set's resource name to link
+     * @param int             $customerId           the customer ID
+     * @param int             $campaignId           the campaign ID to link the asset set to
      */
     private static function linkAssetSetToCampaign(
         GoogleAdsClient $googleAdsClient,
@@ -290,10 +304,12 @@ class AddDynamicRemarketingAsset
     ) {
         // [START add_campaign_asset_set]
         // Creates a campaign asset set representing the link between an asset set and a campaign.
-        $campaignAssetSet = new CampaignAssetSet([
+        $campaignAssetSet = new CampaignAssetSet(
+            [
             'asset_set' => $assetSetResourceName,
             'campaign' => ResourceNames::forCampaign($customerId, $campaignId)
-        ]);
+            ]
+        );
 
         // Creates a campaign asset set operation.
         $campaignAssetSetOperation = new CampaignAssetSetOperation();

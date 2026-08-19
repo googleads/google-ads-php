@@ -34,7 +34,9 @@ use Google\Ads\GoogleAds\V25\Services\AdParameterOperation;
 use Google\Ads\GoogleAds\V25\Services\MutateAdParametersRequest;
 use Google\ApiCore\ApiException;
 
-/** This example sets ad parameters for an ad group criterion. */
+/**
+ * This example sets ad parameters for an ad group criterion. 
+ */
 class SetAdParameters
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
@@ -45,11 +47,13 @@ class SetAdParameters
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CRITERION_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -76,7 +80,9 @@ class SetAdParameters
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -99,9 +105,9 @@ class SetAdParameters
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID
-     * @param int $criterionId the criterion ID
+     * @param int             $customerId      the customer ID
+     * @param int             $adGroupId       the ad group ID
+     * @param int             $criterionId     the criterion ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -116,19 +122,23 @@ class SetAdParameters
         // Creates ad parameters.
         // There can be a maximum of two ad parameters per ad group criterion.
         // (One with parameter_index = 1 and one with parameter_index = 2.)
-        $adParameter1 = new AdParameter([
+        $adParameter1 = new AdParameter(
+            [
             'ad_group_criterion' => $adGroupCriterionResourceName,
             'parameter_index' => 1,
             // Restrictions apply to the value of the insertion text.
             // For more information, see the field documentation in the AdParameter class.
             'insertion_text' => '100'
-        ]);
+            ]
+        );
 
-        $adParameter2 = new AdParameter([
+        $adParameter2 = new AdParameter(
+            [
             'ad_group_criterion' => $adGroupCriterionResourceName,
             'parameter_index' => 2,
             'insertion_text' => '$40'
-        ]);
+            ]
+        );
 
         // Creates ad parameter operations.
         $adParameterOperation1 = new AdParameterOperation();
@@ -139,15 +149,19 @@ class SetAdParameters
 
         // Issues a mutate request to set the ad parameters.
         $adParameterServiceClient = $googleAdsClient->getAdParameterServiceClient();
-        $response = $adParameterServiceClient->mutateAdParameters(MutateAdParametersRequest::build(
-            $customerId,
-            [$adParameterOperation1, $adParameterOperation2]
-        ));
+        $response = $adParameterServiceClient->mutateAdParameters(
+            MutateAdParametersRequest::build(
+                $customerId,
+                [$adParameterOperation1, $adParameterOperation2]
+            )
+        );
 
         printf("Set %d ad parameters:%s", $response->getResults()->count(), PHP_EOL);
 
         foreach ($response->getResults() as $setParameter) {
-            /** @var AdParameter $setParameter */
+            /**
+ * @var AdParameter $setParameter 
+*/
             printf(
                 "Set ad parameter with resource name: '%s'.%s",
                 $setParameter->getResourceName(),

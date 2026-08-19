@@ -37,13 +37,10 @@ class GoogleAdsFailuresUnaryCall extends ForwardingUnaryCall
         // Partial failures and batch job results can return objects that contain GoogleAdsFailure.
         // We need to make sure that the pool is aware of this class, in order to serialize the
         // response correctly.
-        if (
-            $response instanceof ListBatchJobResultsResponse
-            || (
-                !is_null($response)
-                && method_exists($response, 'getPartialFailureError')
-                && !is_null($response->getPartialFailureError())
-            )
+        if ($response instanceof ListBatchJobResultsResponse
+            || (            !is_null($response)
+            && method_exists($response, 'getPartialFailureError')
+            && !is_null($response->getPartialFailureError()))
         ) {
             $this->initGoogleAdsFailures();
         }

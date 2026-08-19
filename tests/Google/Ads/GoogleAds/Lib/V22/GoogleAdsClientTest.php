@@ -56,7 +56,9 @@ class GoogleAdsClientTest extends TestCase
         GoogleAdsFailuresInterceptor::class
     ];
 
-    /** @var GoogleAdsClientBuilder $googleAdsClientBuilder */
+    /**
+     * @var GoogleAdsClientBuilder $googleAdsClientBuilder 
+     */
     private $googleAdsClientBuilder;
     private $fetchAuthTokenInterfaceMock;
 
@@ -167,9 +169,9 @@ class GoogleAdsClientTest extends TestCase
     {
         $googleAdsClient =
             $this->googleAdsClientBuilder->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
-                ->withDeveloperToken(self::$DEVELOPER_TOKEN)
-                ->withLoginCustomerId(null)
-                ->build();
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withLoginCustomerId(null)
+            ->build();
 
         $this->assertArrayNotHasKey(
             self::$LOGIN_CUSTOMER_ID_KEY,
@@ -181,9 +183,9 @@ class GoogleAdsClientTest extends TestCase
     {
         $googleAdsClient =
             $this->googleAdsClientBuilder->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
-                ->withDeveloperToken(self::$DEVELOPER_TOKEN)
-                ->withLinkedCustomerId(null)
-                ->build();
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withLinkedCustomerId(null)
+            ->build();
 
         $this->assertArrayNotHasKey(
             self::$LINKED_CUSTOMER_ID_KEY,
@@ -195,9 +197,9 @@ class GoogleAdsClientTest extends TestCase
     {
         $googleAdsClient =
             $this->googleAdsClientBuilder->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
-                ->withDeveloperToken(self::$DEVELOPER_TOKEN)
-                ->withGrpcChannelIsSecure(false)
-                ->build();
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withGrpcChannelIsSecure(false)
+            ->build();
         $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
 
         $this->assertInstanceOf(

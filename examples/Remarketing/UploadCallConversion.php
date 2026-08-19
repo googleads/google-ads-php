@@ -60,7 +60,8 @@ class UploadCallConversion
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CALLER_ID => GetOpt::REQUIRED_ARGUMENT,
@@ -70,7 +71,8 @@ class UploadCallConversion
             ArgumentNames::CONVERSION_CUSTOM_VARIABLE_ID => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::CONVERSION_CUSTOM_VARIABLE_VALUE => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::AD_USER_DATA_CONSENT => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -107,7 +109,9 @@ class UploadCallConversion
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -160,7 +164,8 @@ class UploadCallConversion
         ?int $adUserDataConsent
     ) {
         // Creates a call conversion by specifying currency as USD.
-        $callConversion = new CallConversion([
+        $callConversion = new CallConversion(
+            [
             'conversion_action' =>
                 ResourceNames::forConversionAction($customerId, $conversionActionId),
             'caller_id' => $callerId,
@@ -168,15 +173,20 @@ class UploadCallConversion
             'conversion_date_time' => $conversionDateTime,
             'conversion_value' => $conversionValue,
             'currency_code' => 'USD'
-        ]);
+            ]
+        );
         if (!is_null($conversionCustomVariableId) && !is_null($conversionCustomVariableValue)) {
-            $callConversion->setCustomVariables([new CustomVariable([
-                'conversion_custom_variable' => ResourceNames::forConversionCustomVariable(
-                    $customerId,
-                    $conversionCustomVariableId
-                ),
-                'value' => $conversionCustomVariableValue
-            ])]);
+            $callConversion->setCustomVariables(
+                [new CustomVariable(
+                    [
+                    'conversion_custom_variable' => ResourceNames::forConversionCustomVariable(
+                        $customerId,
+                        $conversionCustomVariableId
+                    ),
+                    'value' => $conversionCustomVariableValue
+                    ]
+                )]
+            );
         }
         // Sets the consent information, if provided.
         if (!empty($adUserDataConsent)) {
@@ -208,7 +218,9 @@ class UploadCallConversion
             );
         } else {
             // Prints the result if exists.
-            /** @var CallConversionResult $uploadedCallConversion */
+            /**
+ * @var CallConversionResult $uploadedCallConversion 
+*/
             $uploadedCallConversion = $response->getResults()[0];
             printf(
                 "Uploaded call conversion that occurred at '%s' for caller ID '%s' to the "

@@ -64,9 +64,13 @@ class GoogleAdsFailuresTest extends TestCase
         $any = new Any();
         $any->pack(new GoogleAdsFailure(['errors' => [new GoogleAdsError()]]));
         $any2 = new Any();
-        $any2->pack(new GoogleAdsFailure(['errors' => [
-            new GoogleAdsError(), new GoogleAdsError(), new GoogleAdsError()
-        ]]));
+        $any2->pack(
+            new GoogleAdsFailure(
+                ['errors' => [
+                new GoogleAdsError(), new GoogleAdsError(), new GoogleAdsError()
+                ]]
+            )
+        );
 
         $actualGoogleAdsFailure = GoogleAdsFailures::fromAnys([$any, $any2]);
         $this->assertInstanceOf(GoogleAdsFailure::class, $actualGoogleAdsFailure);

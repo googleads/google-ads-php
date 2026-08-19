@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V24\Services;
  *
  * Service to manage CustomerSkAdNetworkConversionValueSchema.
  */
-class CustomerSkAdNetworkConversionValueSchemaServiceGrpcClient extends \Grpc\BaseStub {
+class CustomerSkAdNetworkConversionValueSchemaServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -43,17 +45,21 @@ class CustomerSkAdNetworkConversionValueSchemaServiceGrpcClient extends \Grpc\Ba
      *   [FieldError]()
      *   [InternalError]()
      *   [MutateError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\MutateCustomerSkAdNetworkConversionValueSchemaRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\MutateCustomerSkAdNetworkConversionValueSchemaRequest $argument input argument
+     * @param  array                                                                                    $metadata metadata
+     * @param  array                                                                                    $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\MutateCustomerSkAdNetworkConversionValueSchemaResponse>
      */
     public function MutateCustomerSkAdNetworkConversionValueSchema(\Google\Ads\GoogleAds\V24\Services\MutateCustomerSkAdNetworkConversionValueSchemaRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.CustomerSkAdNetworkConversionValueSchemaService/MutateCustomerSkAdNetworkConversionValueSchema',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\MutateCustomerSkAdNetworkConversionValueSchemaResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.CustomerSkAdNetworkConversionValueSchemaService/MutateCustomerSkAdNetworkConversionValueSchema',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\MutateCustomerSkAdNetworkConversionValueSchemaResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

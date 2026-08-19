@@ -28,14 +28,16 @@ use Google\ApiCore\ServerStream;
 class ServerStreamingGoogleAdsResponseMetadataCallable extends GoogleAdsMiddlewareAbstract
 {
     /**
-     * @param Call $call the current request
-     * @param array $options the optional parameters
+     * @param  Call  $call    the current request
+     * @param  array $options the optional parameters
      * @return ServerStream the `ServerStream` customized to expose trailing metadata
      */
     public function __invoke(Call $call, array $options)
     {
         $next = $this->getNextHandler();
-        /** @var ServerStream $stream */
+        /**
+ * @var ServerStream $stream
+*/
         $stream = $next(
             $call,
             $options

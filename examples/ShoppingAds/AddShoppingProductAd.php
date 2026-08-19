@@ -77,11 +77,13 @@ class AddShoppingProductAd
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CREATE_DEFAULT_LISTING_GROUP => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -109,7 +111,9 @@ class AddShoppingProductAd
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -131,12 +135,15 @@ class AddShoppingProductAd
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $merchantCenterAccountId the Merchant Center account ID
-     * @param bool $createDefaultListingGroup true if a default listing group should be
-     *     created for the ad group. Set to false if the listing group will be constructed
-     *     elsewhere. See AddShoppingProductListingGroupTree for a more comprehensive example
+     * @param GoogleAdsClient $googleAdsClient           the Google Ads API client
+     * @param int             $customerId                the customer ID
+     * @param int             $merchantCenterAccountId   the Merchant Center account ID
+     * @param bool            $createDefaultListingGroup true if a default listing group should be
+     *                                                   created for the ad group. Set to false if
+     *                                                   the listing group will be constructed
+     *                                                   elsewhere. See
+     *                                                   AddShoppingProductListingGroupTree for a
+     *                                                   more comprehensive example
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -174,19 +181,21 @@ class AddShoppingProductAd
     /**
      * Creates a new campaign budget in the specified client account.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the customer ID
      * @return string the resource name of the newly created budget
      */
     private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a campaign budget.
-        $budget = new CampaignBudget([
+        $budget = new CampaignBudget(
+            [
             'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             // Sets the amount of budget.
             'amount_micros' => 50000000
-        ]);
+            ]
+        );
 
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
@@ -198,7 +207,9 @@ class AddShoppingProductAd
             MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
 
-        /** @var CampaignBudget $addedBudget */
+        /**
+ * @var CampaignBudget $addedBudget 
+*/
         $addedBudget = $response->getResults()[0];
         printf(
             "Added a budget with resource name '%s'.%s",
@@ -212,10 +223,10 @@ class AddShoppingProductAd
     /**
      * Creates a new shopping product campaign in the specified client account.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $budgetResourceName the resource name of budget for a new campaign
-     * @param int $merchantCenterAccountId the Merchant Center account ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $budgetResourceName the resource name of budget for a new campaign
+     * @param  int $merchantCenterAccountId the Merchant Center account ID
      * @return string the resource name of the newly created campaign
      */
     // [START add_shopping_product_ad_2]
@@ -226,13 +237,15 @@ class AddShoppingProductAd
         int $merchantCenterAccountId
     ) {
         // Creates a standard shopping campaign.
-        $campaign = new Campaign([
+        $campaign = new Campaign(
+            [
             'name' => 'Interplanetary Cruise Campaign #' . Helper::getPrintableDatetime(),
             // Configures settings related to shopping campaigns including advertising channel type
             // and shopping setting.
             'advertising_channel_type' => AdvertisingChannelType::SHOPPING,
             // Configures the shopping settings.
-            'shopping_setting' => new ShoppingSetting([
+            'shopping_setting' => new ShoppingSetting(
+                [
                 // Sets the priority of the campaign. Higher numbers take priority over lower
                 // numbers. For Shopping product ad campaigns, allowed values are between 0 and 2,
                 // inclusive.
@@ -240,7 +253,8 @@ class AddShoppingProductAd
                 'merchant_id' => $merchantCenterAccountId,
                 // Enables local inventory ads for this campaign
                 'enable_local' => true
-            ]),
+                ]
+            ),
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
             // the ads from immediately serving. Set to ENABLED once you've added
             // targeting and the ads are ready to serve.
@@ -255,7 +269,8 @@ class AddShoppingProductAd
             // Declare whether or not this campaign serves political ads targeting the EU.
             'contains_eu_political_advertising' =>
                 EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
-        ]);
+            ]
+        );
 
         // Creates a campaign operation.
         $campaignOperation = new CampaignOperation();
@@ -267,7 +282,9 @@ class AddShoppingProductAd
             MutateCampaignsRequest::build($customerId, [$campaignOperation])
         );
 
-        /** @var Campaign $addedCampaign */
+        /**
+ * @var Campaign $addedCampaign 
+*/
         $addedCampaign = $response->getResults()[0];
         printf(
             "Added a standard shopping campaign with resource name '%s'.%s",
@@ -282,9 +299,9 @@ class AddShoppingProductAd
     /**
      * Creates a new shopping product ad group in the specified campaign.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $campaignResourceName the resource name of campaign that a new ad group will
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $campaignResourceName the resource name of campaign that a new ad group will
      *     belong to
      * @return string the resource name of the newly created ad group
      */
@@ -295,7 +312,8 @@ class AddShoppingProductAd
         string $campaignResourceName
     ) {
         // Creates an ad group.
-        $adGroup = new AdGroup([
+        $adGroup = new AdGroup(
+            [
             'name' => 'Earth to Mars Cruise #' . Helper::getPrintableDatetime(),
             // Sets the campaign.
             'campaign' => $campaignResourceName,
@@ -304,7 +322,8 @@ class AddShoppingProductAd
             'type' => AdGroupType::SHOPPING_PRODUCT_ADS,
             'cpc_bid_micros' => 10000000,
             'status' => AdGroupStatus::ENABLED
-        ]);
+            ]
+        );
 
         // Creates an ad group operation.
         $adGroupOperation = new AdGroupOperation();
@@ -316,7 +335,9 @@ class AddShoppingProductAd
             MutateAdGroupsRequest::build($customerId, [$adGroupOperation])
         );
 
-        /** @var AdGroup $addedAdGroup */
+        /**
+ * @var AdGroup $addedAdGroup 
+*/
         $addedAdGroup = $response->getResults()[0];
         printf(
             "Added a shopping product ad group with resource name '%s'.%s",
@@ -346,12 +367,14 @@ class AddShoppingProductAd
         $ad = new Ad(['shopping_product_ad' => new ShoppingProductAdInfo()]);
 
         // Creates a new ad group ad and sets the shopping product ad to it.
-        $adGroupAd = new AdGroupAd([
+        $adGroupAd = new AdGroupAd(
+            [
             'ad' => $ad,
             'status' => AdGroupAdStatus::PAUSED,
             // Sets the ad group.
             'ad_group' => $adGroupResourceName
-        ]);
+            ]
+        );
 
         // Creates an ad group ad operation.
         $adGroupAdOperation = new AdGroupAdOperation();
@@ -363,7 +386,9 @@ class AddShoppingProductAd
             MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
         );
 
-        /** @var AdGroupAd $addedAdGroupAd */
+        /**
+ * @var AdGroupAd $addedAdGroupAd 
+*/
         $addedAdGroupAd = $response->getResults()[0];
         printf(
             "Added a shopping product ad group ad with resource name '%s'.%s",
@@ -392,7 +417,8 @@ class AddShoppingProductAd
     ) {
         // Creates a new ad group criterion. This will contain the "default" listing group (All
         // products).
-        $adGroupCriterion = new AdGroupCriterion([
+        $adGroupCriterion = new AdGroupCriterion(
+            [
             'ad_group' => $adGroupResourceName,
             'status' => AdGroupAdStatus::ENABLED,
             // Creates a new listing group. This will be the top-level "root" node.
@@ -400,7 +426,8 @@ class AddShoppingProductAd
             'listing_group' => new ListingGroupInfo(['type' => ListingGroupType::UNIT]),
             // Set the bid for products in this listing group unit.
             'cpc_bid_micros' => 500000
-        ]);
+            ]
+        );
 
         // Creates an ad group criterion operation.
         $adGroupCriterionOperation = new AdGroupCriterionOperation();
@@ -412,7 +439,9 @@ class AddShoppingProductAd
             MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])
         );
 
-        /** @var AdGroupCriterion $addedAdGroupCriterion */
+        /**
+ * @var AdGroupCriterion $addedAdGroupCriterion 
+*/
         $addedAdGroupCriterion = $response->getResults()[0];
         printf(
             "Added an ad group criterion containing a listing group with resource name: '%s'.%s",

@@ -23,31 +23,37 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage customer asset set
  */
-class CustomerAssetSetServiceGrpcClient extends \Grpc\BaseStub {
+class CustomerAssetSetServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
     /**
      * Creates, or removes customer asset sets. Operation statuses are
      * returned.
-     * @param \Google\Ads\GoogleAds\V25\Services\MutateCustomerAssetSetsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\MutateCustomerAssetSetsRequest $argument input argument
+     * @param  array                                                             $metadata metadata
+     * @param  array                                                             $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateCustomerAssetSetsResponse>
      */
     public function MutateCustomerAssetSets(\Google\Ads\GoogleAds\V25\Services\MutateCustomerAssetSetsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.CustomerAssetSetService/MutateCustomerAssetSets',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\MutateCustomerAssetSetsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.CustomerAssetSetService/MutateCustomerAssetSets',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\MutateCustomerAssetSetsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

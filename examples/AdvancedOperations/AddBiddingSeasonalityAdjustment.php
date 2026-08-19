@@ -54,12 +54,14 @@ class AddBiddingSeasonalityAdjustment
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::START_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::END_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_RATE_MODIFIER => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -87,7 +89,9 @@ class AddBiddingSeasonalityAdjustment
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -110,14 +114,17 @@ class AddBiddingSeasonalityAdjustment
      * Runs the example. Adds a "CUSTOMER" scoped seasonality adjustment for the client customer
      * ID, dates, and conversion modifier rate specified.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $startDateTime the start time of the seasonality adjustment (in
-     *     yyyy-MM-dd HH:mm:ss format) in the account's timezone
-     * @param string $endDateTime the end time of the seasonality adjustment (in
-     *     yyyy-MM-dd HH:mm:ss format) in the account's timezone
-     * @param float $conversionRateModifier the conversion rate adjustment (an increase or a
-     *     decrease), which accounts for estimated changes in conversion rate due to a future event
+     * @param GoogleAdsClient $googleAdsClient        the Google Ads API client
+     * @param int             $customerId             the customer ID
+     * @param string          $startDateTime          the start time of the seasonality adjustment (in
+     *                                                yyyy-MM-dd HH:mm:ss format) in the account's
+     *                                                timezone
+     * @param string          $endDateTime            the end time of the seasonality adjustment (in
+     *                                                yyyy-MM-dd HH:mm:ss format) in the account's
+     *                                                timezone
+     * @param float           $conversionRateModifier the conversion rate adjustment (an increase or a
+     *                                                decrease), which accounts for estimated changes
+     *                                                in conversion rate due to a future event
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -128,7 +135,8 @@ class AddBiddingSeasonalityAdjustment
     ) {
         // [START add_bidding_seasonality_adjustment]
         // Creates a bidding seasonality adjustment.
-        $seasonalityAdjustment = new BiddingSeasonalityAdjustment([
+        $seasonalityAdjustment = new BiddingSeasonalityAdjustment(
+            [
             // A unique name is required for every seasonality adjustment.
             'name' => 'Seasonality adjustment #' . Helper::getPrintableDatetime(),
             // The CHANNEL scope applies the conversionRateModifier to all campaigns of specific
@@ -146,7 +154,8 @@ class AddBiddingSeasonalityAdjustment
             // field is unset or set to 1.0, no adjustment will be applied to traffic. The allowed
             // range is 0.1 to 10.0.
             'conversion_rate_modifier' => $conversionRateModifier
-        ]);
+            ]
+        );
 
         // Creates a bidding seasonality adjustment operation.
         $biddingSeasonalityAdjustmentOperation = new BiddingSeasonalityAdjustmentOperation();

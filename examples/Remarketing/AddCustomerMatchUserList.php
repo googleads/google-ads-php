@@ -98,14 +98,16 @@ class AddCustomerMatchUserList
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::RUN_JOB => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::USER_LIST_ID => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::OFFLINE_USER_DATA_JOB_ID => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::AD_PERSONALIZATION_CONSENT => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::AD_USER_DATA_CONSENT => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -142,7 +144,9 @@ class AddCustomerMatchUserList
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -164,18 +168,18 @@ class AddCustomerMatchUserList
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param bool $runJob if true, run the offline user data job after adding operations.
-     *     Otherwise, only adds operations to the job
-     * @param int|null $userListId optional ID of an existing user list. If `null`, creates a new
-     *     user list
-     * @param int|null $offlineUserDataJobId optional ID of an existing OfflineUserDataJob in the
-     *     PENDING state. If `null`, create a new job
-     * @param int|null $adPersonalizationConsent consent status for ad personalization for all
-     *     members in the job
-     * @param int|null $adUserDataConsent the consent status for ad user data for all members in
-     *     the job
+     * @param GoogleAdsClient $googleAdsClient          the Google Ads API client
+     * @param int             $customerId               the customer ID
+     * @param bool            $runJob                   if true, run the offline user data job after adding operations.
+     *                                                  Otherwise, only adds operations to the job
+     * @param int|null        $userListId               optional ID of an existing user list. If `null`, creates a new
+     *                                                  user list
+     * @param int|null        $offlineUserDataJobId     optional ID of an existing OfflineUserDataJob in the
+     *                                                  PENDING state. If `null`, create a new job
+     * @param int|null        $adPersonalizationConsent consent status for ad personalization for all
+     *                                                  members in the job
+     * @param int|null        $adUserDataConsent        the consent status for ad user data for all members in
+     *                                                  the job
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -211,8 +215,8 @@ class AddCustomerMatchUserList
     /**
      * Creates a Customer Match user list.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
      * @return string the resource name of the newly created user list
      */
     // [START add_customer_match_user_list_3]
@@ -221,7 +225,8 @@ class AddCustomerMatchUserList
         int $customerId
     ): string {
         // Creates the user list.
-        $userList = new UserList([
+        $userList = new UserList(
+            [
             'name' => 'Customer Match list #' . Helper::getPrintableDatetime(),
             'description' => 'A list of customers that originated from email '
                 . 'and physical addresses',
@@ -229,13 +234,16 @@ class AddCustomerMatchUserList
             // https://developers.google.com/google-ads/api/reference/rpc/latest/UserList#membership_life_span
             // Sets the membership life span to 30 days.
             'membership_life_span' => 30,
-            'crm_based_user_list' => new CrmBasedUserListInfo([
+            'crm_based_user_list' => new CrmBasedUserListInfo(
+                [
                 // Sets the upload key type to indicate the type of identifier that will be used to
                 // add users to the list. This field is immutable and required for a CREATE
                 // operation.
                 'upload_key_type' => CustomerMatchUploadKeyType::CONTACT_INFO
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         // Creates the user list operation.
         $operation = new UserListOperation();
@@ -284,12 +292,16 @@ class AddCustomerMatchUserList
 
         if (is_null($offlineUserDataJobId)) {
             // Creates a new offline user data job.
-            $offlineUserDataJob = new OfflineUserDataJob([
+            $offlineUserDataJob = new OfflineUserDataJob(
+                [
                 'type' => OfflineUserDataJobType::CUSTOMER_MATCH_USER_LIST,
-                'customer_match_user_list_metadata' => new CustomerMatchUserListMetadata([
+                'customer_match_user_list_metadata' => new CustomerMatchUserListMetadata(
+                    [
                     'user_list' => $userListResourceName
-                ])
-            ]);
+                    ]
+                )
+                ]
+            );
             // Adds consent information to the job if specified.
             if (!empty($adPersonalizationConsent) || !empty($adUserDataConsent)) {
                 $consent = new Consent();
@@ -305,7 +317,9 @@ class AddCustomerMatchUserList
             }
 
             // Issues a request to create the offline user data job.
-            /** @var CreateOfflineUserDataJobResponse $createOfflineUserDataJobResponse */
+            /**
+ * @var CreateOfflineUserDataJobResponse $createOfflineUserDataJobResponse 
+*/
             $createOfflineUserDataJobResponse =
                 $offlineUserDataJobServiceClient->createOfflineUserDataJob(
                     CreateOfflineUserDataJobRequest::build($customerId, $offlineUserDataJob)
@@ -329,7 +343,9 @@ class AddCustomerMatchUserList
         // https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_considerations
         // and https://developers.google.com/google-ads/api/docs/best-practices/quotas#user_data
         // for more information on the per-request limits.
-        /** @var AddOfflineUserDataJobOperationsResponse $operationResponse */
+        /**
+ * @var AddOfflineUserDataJobOperationsResponse $operationResponse 
+*/
         $response = $offlineUserDataJobServiceClient->addOfflineUserDataJobOperations(
             AddOfflineUserDataJobOperationsRequest::build(
                 $offlineUserDataJobResourceName,
@@ -449,18 +465,22 @@ class AddCustomerMatchUserList
             $userIdentifiers = [];
             // Checks if the record has an email address, and if so, adds a UserIdentifier for it.
             if (array_key_exists('email', $rawRecord)) {
-                $hashedEmailIdentifier = new UserIdentifier([
+                $hashedEmailIdentifier = new UserIdentifier(
+                    [
                     'hashed_email' => self::normalizeAndHash($rawRecord['email'], true)
-                ]);
+                    ]
+                );
                 // Adds the hashed email identifier to the user identifiers list.
                 $userIdentifiers[] = $hashedEmailIdentifier;
             }
 
             // Checks if the record has a phone number, and if so, adds a UserIdentifier for it.
             if (array_key_exists('phone', $rawRecord)) {
-                $hashedPhoneNumberIdentifier = new UserIdentifier([
+                $hashedPhoneNumberIdentifier = new UserIdentifier(
+                    [
                     'hashed_phone_number' => self::normalizeAndHash($rawRecord['phone'], true)
-                ]);
+                    ]
+                );
                 // Adds the hashed email identifier to the user identifiers list.
                 $userIdentifiers[] = $hashedPhoneNumberIdentifier;
             }
@@ -486,20 +506,24 @@ class AddCustomerMatchUserList
                 } else {
                     // Creates an OfflineUserAddressInfo object that contains all the required
                     // elements of a mailing address.
-                    $addressIdentifier = new UserIdentifier([
-                       'address_info' => new OfflineUserAddressInfo([
-                           'hashed_first_name' => self::normalizeAndHash(
-                               $rawRecord['firstName'],
-                               false
-                           ),
-                           'hashed_last_name' => self::normalizeAndHash(
-                               $rawRecord['lastName'],
-                               false
-                           ),
-                           'country_code' => $rawRecord['countryCode'],
-                           'postal_code' => $rawRecord['postalCode']
-                       ])
-                    ]);
+                    $addressIdentifier = new UserIdentifier(
+                        [
+                        'address_info' => new OfflineUserAddressInfo(
+                            [
+                            'hashed_first_name' => self::normalizeAndHash(
+                                $rawRecord['firstName'],
+                                false
+                            ),
+                            'hashed_last_name' => self::normalizeAndHash(
+                                $rawRecord['lastName'],
+                                false
+                            ),
+                            'country_code' => $rawRecord['countryCode'],
+                            'postal_code' => $rawRecord['postalCode']
+                            ]
+                        )
+                        ]
+                    );
                     // Adds the address identifier to the user identifiers list.
                     $userIdentifiers[] = $addressIdentifier;
                 }
@@ -548,11 +572,13 @@ class AddCustomerMatchUserList
               . "WHERE offline_user_data_job.resource_name = '$offlineUserDataJobResourceName'";
 
         // Issues a search request to get the GoogleAdsRow containing the job from the response.
-        /** @var GoogleAdsRow $googleAdsRow */
+        /**
+ * @var GoogleAdsRow $googleAdsRow 
+*/
         $googleAdsRow =
             $googleAdsServiceClient->search(SearchGoogleAdsRequest::build($customerId, $query))
-                ->getIterator()
-                ->current();
+            ->getIterator()
+            ->current();
         $offlineUserDataJob = $googleAdsRow->getOfflineUserDataJob();
 
         // Prints out some information about the offline user data job.
@@ -574,8 +600,7 @@ class AddCustomerMatchUserList
             );
         } elseif ($offlineUserDataJobStatus === OfflineUserDataJobStatus::FAILED) {
             printf("  Failure reason: %s.%s", $offlineUserDataJob->getFailureReason(), PHP_EOL);
-        } elseif (
-            $offlineUserDataJobStatus === OfflineUserDataJobStatus::PENDING
+        } elseif ($offlineUserDataJobStatus === OfflineUserDataJobStatus::PENDING
             || $offlineUserDataJobStatus === OfflineUserDataJobStatus::RUNNING
         ) {
             printf(
@@ -591,10 +616,10 @@ class AddCustomerMatchUserList
     /**
      * Prints information about the Customer Match user list.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $userListResourceName the resource name of the Customer Match user list to
-     *     print information about
+     * @param GoogleAdsClient $googleAdsClient      the Google Ads API client
+     * @param int             $customerId           the customer ID
+     * @param string          $userListResourceName the resource name of the Customer Match user list to
+     *                                              print information about
      */
     private static function printCustomerMatchUserListInfo(
         GoogleAdsClient $googleAdsClient,
@@ -611,14 +636,18 @@ class AddCustomerMatchUserList
             "WHERE user_list.resource_name = '$userListResourceName'";
 
         // Issues a search stream request.
-        /** @var GoogleAdsServerStreamDecorator $stream */
+        /**
+ * @var GoogleAdsServerStreamDecorator $stream 
+*/
         $stream = $googleAdsServiceClient->searchStream(
             SearchGoogleAdsStreamRequest::build($customerId, $query)
         );
         // [END add_customer_match_user_list_5]
 
         // Prints out some information about the user list.
-        /** @var GoogleAdsRow $googleAdsRow */
+        /**
+ * @var GoogleAdsRow $googleAdsRow 
+*/
         $googleAdsRow = $stream->iterateAllElements()->current();
         printf(
             "The estimated number of users that the user list '%s' has is %d for Display " .
@@ -635,10 +664,11 @@ class AddCustomerMatchUserList
     /**
      * Normalizes and hashes a string value.
      *
-     * @param string $value the value to normalize and hash
-     * @param bool $trimIntermediateSpaces if true, removes leading, trailing, and intermediate
-     *     spaces from the string before hashing. If false, only removes leading and trailing
-     *     spaces from the string before hashing.
+     * @param  string $value                  the value to normalize and hash
+     * @param  bool   $trimIntermediateSpaces if true, removes leading, trailing, and intermediate
+     *                                        spaces from the string before hashing. If false,
+     *                                        only removes leading and trailing spaces from the
+     *                                        string before hashing.
      * @return string the normalized and hashed value
      */
     private static function normalizeAndHash(string $value, bool $trimIntermediateSpaces): string

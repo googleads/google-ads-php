@@ -73,7 +73,9 @@ class BatchJobServiceClient
     }
     use ResourceHelperTrait;
 
-    /** The name of the service. */
+    /**
+     * The name of the service. 
+     */
     private const SERVICE_NAME = 'google.ads.googleads.v24.services.BatchJobService';
 
     /**
@@ -83,16 +85,24 @@ class BatchJobServiceClient
      */
     private const SERVICE_ADDRESS = 'googleads.googleapis.com';
 
-    /** The address template of the service. */
+    /**
+     * The address template of the service. 
+     */
     private const SERVICE_ADDRESS_TEMPLATE = 'googleads.UNIVERSE_DOMAIN';
 
-    /** The default port of the service. */
+    /**
+     * The default port of the service. 
+     */
     private const DEFAULT_SERVICE_PORT = 443;
 
-    /** The name of the code generator, to be included in the agent header. */
+    /**
+     * The name of the code generator, to be included in the agent header. 
+     */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service. 
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -177,10 +187,12 @@ class BatchJobServiceClient
      */
     public static function accessibleBiddingStrategyName(string $customerId, string $biddingStrategyId): string
     {
-        return self::getPathTemplate('accessibleBiddingStrategy')->render([
+        return self::getPathTemplate('accessibleBiddingStrategy')->render(
+            [
             'customer_id' => $customerId,
             'bidding_strategy_id' => $biddingStrategyId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -193,10 +205,12 @@ class BatchJobServiceClient
      */
     public static function adName(string $customerId, string $adId): string
     {
-        return self::getPathTemplate('ad')->render([
+        return self::getPathTemplate('ad')->render(
+            [
             'customer_id' => $customerId,
             'ad_id' => $adId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -210,10 +224,12 @@ class BatchJobServiceClient
      */
     public static function adGroupName(string $customerId, string $adGroupId): string
     {
-        return self::getPathTemplate('adGroup')->render([
+        return self::getPathTemplate('adGroup')->render(
+            [
             'customer_id' => $customerId,
             'ad_group_id' => $adGroupId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -228,11 +244,13 @@ class BatchJobServiceClient
      */
     public static function adGroupAdName(string $customerId, string $adGroupId, string $adId): string
     {
-        return self::getPathTemplate('adGroupAd')->render([
+        return self::getPathTemplate('adGroupAd')->render(
+            [
             'customer_id' => $customerId,
             'ad_group_id' => $adGroupId,
             'ad_id' => $adId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -248,12 +266,14 @@ class BatchJobServiceClient
      */
     public static function adGroupAdLabelName(string $customerId, string $adGroupId, string $adId, string $labelId): string
     {
-        return self::getPathTemplate('adGroupAdLabel')->render([
+        return self::getPathTemplate('adGroupAdLabel')->render(
+            [
             'customer_id' => $customerId,
             'ad_group_id' => $adGroupId,
             'ad_id' => $adId,
             'label_id' => $labelId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -269,12 +289,14 @@ class BatchJobServiceClient
      */
     public static function adGroupAssetName(string $customerId, string $adGroupId, string $assetId, string $fieldType): string
     {
-        return self::getPathTemplate('adGroupAsset')->render([
+        return self::getPathTemplate('adGroupAsset')->render(
+            [
             'customer_id' => $customerId,
             'ad_group_id' => $adGroupId,
             'asset_id' => $assetId,
             'field_type' => $fieldType,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -289,11 +311,13 @@ class BatchJobServiceClient
      */
     public static function adGroupBidModifierName(string $customerId, string $adGroupId, string $criterionId): string
     {
-        return self::getPathTemplate('adGroupBidModifier')->render([
+        return self::getPathTemplate('adGroupBidModifier')->render(
+            [
             'customer_id' => $customerId,
             'ad_group_id' => $adGroupId,
             'criterion_id' => $criterionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -308,11 +332,13 @@ class BatchJobServiceClient
      */
     public static function adGroupCriterionName(string $customerId, string $adGroupId, string $criterionId): string
     {
-        return self::getPathTemplate('adGroupCriterion')->render([
+        return self::getPathTemplate('adGroupCriterion')->render(
+            [
             'customer_id' => $customerId,
             'ad_group_id' => $adGroupId,
             'criterion_id' => $criterionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -328,12 +354,14 @@ class BatchJobServiceClient
      */
     public static function adGroupCriterionCustomizerName(string $customerId, string $adGroupId, string $criterionId, string $customizerAttributeId): string
     {
-        return self::getPathTemplate('adGroupCriterionCustomizer')->render([
+        return self::getPathTemplate('adGroupCriterionCustomizer')->render(
+            [
             'customer_id' => $customerId,
             'ad_group_id' => $adGroupId,
             'criterion_id' => $criterionId,
             'customizer_attribute_id' => $customizerAttributeId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -349,12 +377,14 @@ class BatchJobServiceClient
      */
     public static function adGroupCriterionLabelName(string $customerId, string $adGroupId, string $criterionId, string $labelId): string
     {
-        return self::getPathTemplate('adGroupCriterionLabel')->render([
+        return self::getPathTemplate('adGroupCriterionLabel')->render(
+            [
             'customer_id' => $customerId,
             'ad_group_id' => $adGroupId,
             'criterion_id' => $criterionId,
             'label_id' => $labelId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -369,11 +399,13 @@ class BatchJobServiceClient
      */
     public static function adGroupCustomizerName(string $customerId, string $adGroupId, string $customizerAttributeId): string
     {
-        return self::getPathTemplate('adGroupCustomizer')->render([
+        return self::getPathTemplate('adGroupCustomizer')->render(
+            [
             'customer_id' => $customerId,
             'ad_group_id' => $adGroupId,
             'customizer_attribute_id' => $customizerAttributeId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -388,11 +420,13 @@ class BatchJobServiceClient
      */
     public static function adGroupLabelName(string $customerId, string $adGroupId, string $labelId): string
     {
-        return self::getPathTemplate('adGroupLabel')->render([
+        return self::getPathTemplate('adGroupLabel')->render(
+            [
             'customer_id' => $customerId,
             'ad_group_id' => $adGroupId,
             'label_id' => $labelId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -408,12 +442,14 @@ class BatchJobServiceClient
      */
     public static function adParameterName(string $customerId, string $adGroupId, string $criterionId, string $parameterIndex): string
     {
-        return self::getPathTemplate('adParameter')->render([
+        return self::getPathTemplate('adParameter')->render(
+            [
             'customer_id' => $customerId,
             'ad_group_id' => $adGroupId,
             'criterion_id' => $criterionId,
             'parameter_index' => $parameterIndex,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -427,10 +463,12 @@ class BatchJobServiceClient
      */
     public static function assetName(string $customerId, string $assetId): string
     {
-        return self::getPathTemplate('asset')->render([
+        return self::getPathTemplate('asset')->render(
+            [
             'customer_id' => $customerId,
             'asset_id' => $assetId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -444,10 +482,12 @@ class BatchJobServiceClient
      */
     public static function assetGroupName(string $customerId, string $assetGroupId): string
     {
-        return self::getPathTemplate('assetGroup')->render([
+        return self::getPathTemplate('assetGroup')->render(
+            [
             'customer_id' => $customerId,
             'asset_group_id' => $assetGroupId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -463,12 +503,14 @@ class BatchJobServiceClient
      */
     public static function assetGroupAssetName(string $customerId, string $assetGroupId, string $assetId, string $fieldType): string
     {
-        return self::getPathTemplate('assetGroupAsset')->render([
+        return self::getPathTemplate('assetGroupAsset')->render(
+            [
             'customer_id' => $customerId,
             'asset_group_id' => $assetGroupId,
             'asset_id' => $assetId,
             'field_type' => $fieldType,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -483,11 +525,13 @@ class BatchJobServiceClient
      */
     public static function assetGroupListingGroupFilterName(string $customerId, string $assetGroupId, string $listingGroupFilterId): string
     {
-        return self::getPathTemplate('assetGroupListingGroupFilter')->render([
+        return self::getPathTemplate('assetGroupListingGroupFilter')->render(
+            [
             'customer_id' => $customerId,
             'asset_group_id' => $assetGroupId,
             'listing_group_filter_id' => $listingGroupFilterId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -502,11 +546,13 @@ class BatchJobServiceClient
      */
     public static function assetGroupSignalName(string $customerId, string $assetGroupId, string $criterionId): string
     {
-        return self::getPathTemplate('assetGroupSignal')->render([
+        return self::getPathTemplate('assetGroupSignal')->render(
+            [
             'customer_id' => $customerId,
             'asset_group_id' => $assetGroupId,
             'criterion_id' => $criterionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -520,10 +566,12 @@ class BatchJobServiceClient
      */
     public static function assetSetName(string $customerId, string $assetSetId): string
     {
-        return self::getPathTemplate('assetSet')->render([
+        return self::getPathTemplate('assetSet')->render(
+            [
             'customer_id' => $customerId,
             'asset_set_id' => $assetSetId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -538,11 +586,13 @@ class BatchJobServiceClient
      */
     public static function assetSetAssetName(string $customerId, string $assetSetId, string $assetId): string
     {
-        return self::getPathTemplate('assetSetAsset')->render([
+        return self::getPathTemplate('assetSetAsset')->render(
+            [
             'customer_id' => $customerId,
             'asset_set_id' => $assetSetId,
             'asset_id' => $assetId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -556,10 +606,12 @@ class BatchJobServiceClient
      */
     public static function audienceName(string $customerId, string $audienceId): string
     {
-        return self::getPathTemplate('audience')->render([
+        return self::getPathTemplate('audience')->render(
+            [
             'customer_id' => $customerId,
             'audience_id' => $audienceId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -573,10 +625,12 @@ class BatchJobServiceClient
      */
     public static function batchJobName(string $customerId, string $batchJobId): string
     {
-        return self::getPathTemplate('batchJob')->render([
+        return self::getPathTemplate('batchJob')->render(
+            [
             'customer_id' => $customerId,
             'batch_job_id' => $batchJobId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -590,10 +644,12 @@ class BatchJobServiceClient
      */
     public static function biddingDataExclusionName(string $customerId, string $seasonalityEventId): string
     {
-        return self::getPathTemplate('biddingDataExclusion')->render([
+        return self::getPathTemplate('biddingDataExclusion')->render(
+            [
             'customer_id' => $customerId,
             'seasonality_event_id' => $seasonalityEventId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -607,10 +663,12 @@ class BatchJobServiceClient
      */
     public static function biddingSeasonalityAdjustmentName(string $customerId, string $seasonalityEventId): string
     {
-        return self::getPathTemplate('biddingSeasonalityAdjustment')->render([
+        return self::getPathTemplate('biddingSeasonalityAdjustment')->render(
+            [
             'customer_id' => $customerId,
             'seasonality_event_id' => $seasonalityEventId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -624,10 +682,12 @@ class BatchJobServiceClient
      */
     public static function biddingStrategyName(string $customerId, string $biddingStrategyId): string
     {
-        return self::getPathTemplate('biddingStrategy')->render([
+        return self::getPathTemplate('biddingStrategy')->render(
+            [
             'customer_id' => $customerId,
             'bidding_strategy_id' => $biddingStrategyId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -641,10 +701,12 @@ class BatchJobServiceClient
      */
     public static function campaignName(string $customerId, string $campaignId): string
     {
-        return self::getPathTemplate('campaign')->render([
+        return self::getPathTemplate('campaign')->render(
+            [
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -660,12 +722,14 @@ class BatchJobServiceClient
      */
     public static function campaignAssetName(string $customerId, string $campaignId, string $assetId, string $fieldType): string
     {
-        return self::getPathTemplate('campaignAsset')->render([
+        return self::getPathTemplate('campaignAsset')->render(
+            [
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
             'asset_id' => $assetId,
             'field_type' => $fieldType,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -680,11 +744,13 @@ class BatchJobServiceClient
      */
     public static function campaignAssetSetName(string $customerId, string $campaignId, string $assetSetId): string
     {
-        return self::getPathTemplate('campaignAssetSet')->render([
+        return self::getPathTemplate('campaignAssetSet')->render(
+            [
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
             'asset_set_id' => $assetSetId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -699,11 +765,13 @@ class BatchJobServiceClient
      */
     public static function campaignBidModifierName(string $customerId, string $campaignId, string $criterionId): string
     {
-        return self::getPathTemplate('campaignBidModifier')->render([
+        return self::getPathTemplate('campaignBidModifier')->render(
+            [
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
             'criterion_id' => $criterionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -717,10 +785,12 @@ class BatchJobServiceClient
      */
     public static function campaignBudgetName(string $customerId, string $campaignBudgetId): string
     {
-        return self::getPathTemplate('campaignBudget')->render([
+        return self::getPathTemplate('campaignBudget')->render(
+            [
             'customer_id' => $customerId,
             'campaign_budget_id' => $campaignBudgetId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -736,12 +806,14 @@ class BatchJobServiceClient
      */
     public static function campaignConversionGoalName(string $customerId, string $campaignId, string $category, string $source): string
     {
-        return self::getPathTemplate('campaignConversionGoal')->render([
+        return self::getPathTemplate('campaignConversionGoal')->render(
+            [
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
             'category' => $category,
             'source' => $source,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -756,11 +828,13 @@ class BatchJobServiceClient
      */
     public static function campaignCriterionName(string $customerId, string $campaignId, string $criterionId): string
     {
-        return self::getPathTemplate('campaignCriterion')->render([
+        return self::getPathTemplate('campaignCriterion')->render(
+            [
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
             'criterion_id' => $criterionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -775,11 +849,13 @@ class BatchJobServiceClient
      */
     public static function campaignCustomizerName(string $customerId, string $campaignId, string $customizerAttributeId): string
     {
-        return self::getPathTemplate('campaignCustomizer')->render([
+        return self::getPathTemplate('campaignCustomizer')->render(
+            [
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
             'customizer_attribute_id' => $customizerAttributeId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -794,11 +870,13 @@ class BatchJobServiceClient
      */
     public static function campaignDraftName(string $customerId, string $baseCampaignId, string $draftId): string
     {
-        return self::getPathTemplate('campaignDraft')->render([
+        return self::getPathTemplate('campaignDraft')->render(
+            [
             'customer_id' => $customerId,
             'base_campaign_id' => $baseCampaignId,
             'draft_id' => $draftId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -812,10 +890,12 @@ class BatchJobServiceClient
      */
     public static function campaignGroupName(string $customerId, string $campaignGroupId): string
     {
-        return self::getPathTemplate('campaignGroup')->render([
+        return self::getPathTemplate('campaignGroup')->render(
+            [
             'customer_id' => $customerId,
             'campaign_group_id' => $campaignGroupId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -830,11 +910,13 @@ class BatchJobServiceClient
      */
     public static function campaignLabelName(string $customerId, string $campaignId, string $labelId): string
     {
-        return self::getPathTemplate('campaignLabel')->render([
+        return self::getPathTemplate('campaignLabel')->render(
+            [
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
             'label_id' => $labelId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -849,11 +931,13 @@ class BatchJobServiceClient
      */
     public static function campaignSharedSetName(string $customerId, string $campaignId, string $sharedSetId): string
     {
-        return self::getPathTemplate('campaignSharedSet')->render([
+        return self::getPathTemplate('campaignSharedSet')->render(
+            [
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
             'shared_set_id' => $sharedSetId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -866,9 +950,11 @@ class BatchJobServiceClient
      */
     public static function carrierConstantName(string $criterionId): string
     {
-        return self::getPathTemplate('carrierConstant')->render([
+        return self::getPathTemplate('carrierConstant')->render(
+            [
             'criterion_id' => $criterionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -882,10 +968,12 @@ class BatchJobServiceClient
      */
     public static function combinedAudienceName(string $customerId, string $combinedAudienceId): string
     {
-        return self::getPathTemplate('combinedAudience')->render([
+        return self::getPathTemplate('combinedAudience')->render(
+            [
             'customer_id' => $customerId,
             'combined_audience_id' => $combinedAudienceId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -899,10 +987,12 @@ class BatchJobServiceClient
      */
     public static function conversionActionName(string $customerId, string $conversionActionId): string
     {
-        return self::getPathTemplate('conversionAction')->render([
+        return self::getPathTemplate('conversionAction')->render(
+            [
             'customer_id' => $customerId,
             'conversion_action_id' => $conversionActionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -916,10 +1006,12 @@ class BatchJobServiceClient
      */
     public static function conversionCustomVariableName(string $customerId, string $conversionCustomVariableId): string
     {
-        return self::getPathTemplate('conversionCustomVariable')->render([
+        return self::getPathTemplate('conversionCustomVariable')->render(
+            [
             'customer_id' => $customerId,
             'conversion_custom_variable_id' => $conversionCustomVariableId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -933,10 +1025,12 @@ class BatchJobServiceClient
      */
     public static function conversionGoalCampaignConfigName(string $customerId, string $campaignId): string
     {
-        return self::getPathTemplate('conversionGoalCampaignConfig')->render([
+        return self::getPathTemplate('conversionGoalCampaignConfig')->render(
+            [
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -950,10 +1044,12 @@ class BatchJobServiceClient
      */
     public static function conversionValueRuleName(string $customerId, string $conversionValueRuleId): string
     {
-        return self::getPathTemplate('conversionValueRule')->render([
+        return self::getPathTemplate('conversionValueRule')->render(
+            [
             'customer_id' => $customerId,
             'conversion_value_rule_id' => $conversionValueRuleId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -967,10 +1063,12 @@ class BatchJobServiceClient
      */
     public static function conversionValueRuleSetName(string $customerId, string $conversionValueRuleSetId): string
     {
-        return self::getPathTemplate('conversionValueRuleSet')->render([
+        return self::getPathTemplate('conversionValueRuleSet')->render(
+            [
             'customer_id' => $customerId,
             'conversion_value_rule_set_id' => $conversionValueRuleSetId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -984,10 +1082,12 @@ class BatchJobServiceClient
      */
     public static function customConversionGoalName(string $customerId, string $goalId): string
     {
-        return self::getPathTemplate('customConversionGoal')->render([
+        return self::getPathTemplate('customConversionGoal')->render(
+            [
             'customer_id' => $customerId,
             'goal_id' => $goalId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1000,9 +1100,11 @@ class BatchJobServiceClient
      */
     public static function customerName(string $customerId): string
     {
-        return self::getPathTemplate('customer')->render([
+        return self::getPathTemplate('customer')->render(
+            [
             'customer_id' => $customerId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1017,11 +1119,13 @@ class BatchJobServiceClient
      */
     public static function customerAssetName(string $customerId, string $assetId, string $fieldType): string
     {
-        return self::getPathTemplate('customerAsset')->render([
+        return self::getPathTemplate('customerAsset')->render(
+            [
             'customer_id' => $customerId,
             'asset_id' => $assetId,
             'field_type' => $fieldType,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1036,11 +1140,13 @@ class BatchJobServiceClient
      */
     public static function customerConversionGoalName(string $customerId, string $category, string $source): string
     {
-        return self::getPathTemplate('customerConversionGoal')->render([
+        return self::getPathTemplate('customerConversionGoal')->render(
+            [
             'customer_id' => $customerId,
             'category' => $category,
             'source' => $source,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1054,10 +1160,12 @@ class BatchJobServiceClient
      */
     public static function customerCustomizerName(string $customerId, string $customizerAttributeId): string
     {
-        return self::getPathTemplate('customerCustomizer')->render([
+        return self::getPathTemplate('customerCustomizer')->render(
+            [
             'customer_id' => $customerId,
             'customizer_attribute_id' => $customizerAttributeId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1071,10 +1179,12 @@ class BatchJobServiceClient
      */
     public static function customerLabelName(string $customerId, string $labelId): string
     {
-        return self::getPathTemplate('customerLabel')->render([
+        return self::getPathTemplate('customerLabel')->render(
+            [
             'customer_id' => $customerId,
             'label_id' => $labelId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1088,10 +1198,12 @@ class BatchJobServiceClient
      */
     public static function customerNegativeCriterionName(string $customerId, string $criterionId): string
     {
-        return self::getPathTemplate('customerNegativeCriterion')->render([
+        return self::getPathTemplate('customerNegativeCriterion')->render(
+            [
             'customer_id' => $customerId,
             'criterion_id' => $criterionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1105,10 +1217,12 @@ class BatchJobServiceClient
      */
     public static function customizerAttributeName(string $customerId, string $customizerAttributeId): string
     {
-        return self::getPathTemplate('customizerAttribute')->render([
+        return self::getPathTemplate('customizerAttribute')->render(
+            [
             'customer_id' => $customerId,
             'customizer_attribute_id' => $customizerAttributeId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1122,10 +1236,12 @@ class BatchJobServiceClient
      */
     public static function detailedDemographicName(string $customerId, string $detailedDemographicId): string
     {
-        return self::getPathTemplate('detailedDemographic')->render([
+        return self::getPathTemplate('detailedDemographic')->render(
+            [
             'customer_id' => $customerId,
             'detailed_demographic_id' => $detailedDemographicId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1139,10 +1255,12 @@ class BatchJobServiceClient
      */
     public static function experimentName(string $customerId, string $trialId): string
     {
-        return self::getPathTemplate('experiment')->render([
+        return self::getPathTemplate('experiment')->render(
+            [
             'customer_id' => $customerId,
             'trial_id' => $trialId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1157,11 +1275,13 @@ class BatchJobServiceClient
      */
     public static function experimentArmName(string $customerId, string $trialId, string $trialArmId): string
     {
-        return self::getPathTemplate('experimentArm')->render([
+        return self::getPathTemplate('experimentArm')->render(
+            [
             'customer_id' => $customerId,
             'trial_id' => $trialId,
             'trial_arm_id' => $trialArmId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1174,9 +1294,11 @@ class BatchJobServiceClient
      */
     public static function geoTargetConstantName(string $criterionId): string
     {
-        return self::getPathTemplate('geoTargetConstant')->render([
+        return self::getPathTemplate('geoTargetConstant')->render(
+            [
             'criterion_id' => $criterionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1190,10 +1312,12 @@ class BatchJobServiceClient
      */
     public static function keywordPlanName(string $customerId, string $keywordPlanId): string
     {
-        return self::getPathTemplate('keywordPlan')->render([
+        return self::getPathTemplate('keywordPlan')->render(
+            [
             'customer_id' => $customerId,
             'keyword_plan_id' => $keywordPlanId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1207,10 +1331,12 @@ class BatchJobServiceClient
      */
     public static function keywordPlanAdGroupName(string $customerId, string $keywordPlanAdGroupId): string
     {
-        return self::getPathTemplate('keywordPlanAdGroup')->render([
+        return self::getPathTemplate('keywordPlanAdGroup')->render(
+            [
             'customer_id' => $customerId,
             'keyword_plan_ad_group_id' => $keywordPlanAdGroupId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1224,10 +1350,12 @@ class BatchJobServiceClient
      */
     public static function keywordPlanAdGroupKeywordName(string $customerId, string $keywordPlanAdGroupKeywordId): string
     {
-        return self::getPathTemplate('keywordPlanAdGroupKeyword')->render([
+        return self::getPathTemplate('keywordPlanAdGroupKeyword')->render(
+            [
             'customer_id' => $customerId,
             'keyword_plan_ad_group_keyword_id' => $keywordPlanAdGroupKeywordId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1241,10 +1369,12 @@ class BatchJobServiceClient
      */
     public static function keywordPlanCampaignName(string $customerId, string $keywordPlanCampaignId): string
     {
-        return self::getPathTemplate('keywordPlanCampaign')->render([
+        return self::getPathTemplate('keywordPlanCampaign')->render(
+            [
             'customer_id' => $customerId,
             'keyword_plan_campaign_id' => $keywordPlanCampaignId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1258,10 +1388,12 @@ class BatchJobServiceClient
      */
     public static function keywordPlanCampaignKeywordName(string $customerId, string $keywordPlanCampaignKeywordId): string
     {
-        return self::getPathTemplate('keywordPlanCampaignKeyword')->render([
+        return self::getPathTemplate('keywordPlanCampaignKeyword')->render(
+            [
             'customer_id' => $customerId,
             'keyword_plan_campaign_keyword_id' => $keywordPlanCampaignKeywordId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1275,10 +1407,12 @@ class BatchJobServiceClient
      */
     public static function keywordThemeConstantName(string $expressCategoryId, string $expressSubCategoryId): string
     {
-        return self::getPathTemplate('keywordThemeConstant')->render([
+        return self::getPathTemplate('keywordThemeConstant')->render(
+            [
             'express_category_id' => $expressCategoryId,
             'express_sub_category_id' => $expressSubCategoryId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1292,10 +1426,12 @@ class BatchJobServiceClient
      */
     public static function labelName(string $customerId, string $labelId): string
     {
-        return self::getPathTemplate('label')->render([
+        return self::getPathTemplate('label')->render(
+            [
             'customer_id' => $customerId,
             'label_id' => $labelId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1308,9 +1444,11 @@ class BatchJobServiceClient
      */
     public static function languageConstantName(string $criterionId): string
     {
-        return self::getPathTemplate('languageConstant')->render([
+        return self::getPathTemplate('languageConstant')->render(
+            [
             'criterion_id' => $criterionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1324,10 +1462,12 @@ class BatchJobServiceClient
      */
     public static function lifeEventName(string $customerId, string $lifeEventId): string
     {
-        return self::getPathTemplate('lifeEvent')->render([
+        return self::getPathTemplate('lifeEvent')->render(
+            [
             'customer_id' => $customerId,
             'life_event_id' => $lifeEventId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1340,9 +1480,11 @@ class BatchJobServiceClient
      */
     public static function mobileAppCategoryConstantName(string $mobileAppCategoryId): string
     {
-        return self::getPathTemplate('mobileAppCategoryConstant')->render([
+        return self::getPathTemplate('mobileAppCategoryConstant')->render(
+            [
             'mobile_app_category_id' => $mobileAppCategoryId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1355,9 +1497,11 @@ class BatchJobServiceClient
      */
     public static function mobileDeviceConstantName(string $criterionId): string
     {
-        return self::getPathTemplate('mobileDeviceConstant')->render([
+        return self::getPathTemplate('mobileDeviceConstant')->render(
+            [
             'criterion_id' => $criterionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1370,9 +1514,11 @@ class BatchJobServiceClient
      */
     public static function operatingSystemVersionConstantName(string $criterionId): string
     {
-        return self::getPathTemplate('operatingSystemVersionConstant')->render([
+        return self::getPathTemplate('operatingSystemVersionConstant')->render(
+            [
             'criterion_id' => $criterionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1386,10 +1532,12 @@ class BatchJobServiceClient
      */
     public static function recommendationSubscriptionName(string $customerId, string $recommendationType): string
     {
-        return self::getPathTemplate('recommendationSubscription')->render([
+        return self::getPathTemplate('recommendationSubscription')->render(
+            [
             'customer_id' => $customerId,
             'recommendation_type' => $recommendationType,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1403,10 +1551,12 @@ class BatchJobServiceClient
      */
     public static function remarketingActionName(string $customerId, string $remarketingActionId): string
     {
-        return self::getPathTemplate('remarketingAction')->render([
+        return self::getPathTemplate('remarketingAction')->render(
+            [
             'customer_id' => $customerId,
             'remarketing_action_id' => $remarketingActionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1421,11 +1571,13 @@ class BatchJobServiceClient
      */
     public static function sharedCriterionName(string $customerId, string $sharedSetId, string $criterionId): string
     {
-        return self::getPathTemplate('sharedCriterion')->render([
+        return self::getPathTemplate('sharedCriterion')->render(
+            [
             'customer_id' => $customerId,
             'shared_set_id' => $sharedSetId,
             'criterion_id' => $criterionId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1439,10 +1591,12 @@ class BatchJobServiceClient
      */
     public static function sharedSetName(string $customerId, string $sharedSetId): string
     {
-        return self::getPathTemplate('sharedSet')->render([
+        return self::getPathTemplate('sharedSet')->render(
+            [
             'customer_id' => $customerId,
             'shared_set_id' => $sharedSetId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1456,10 +1610,12 @@ class BatchJobServiceClient
      */
     public static function smartCampaignSettingName(string $customerId, string $campaignId): string
     {
-        return self::getPathTemplate('smartCampaignSetting')->render([
+        return self::getPathTemplate('smartCampaignSetting')->render(
+            [
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1472,9 +1628,11 @@ class BatchJobServiceClient
      */
     public static function topicConstantName(string $topicId): string
     {
-        return self::getPathTemplate('topicConstant')->render([
+        return self::getPathTemplate('topicConstant')->render(
+            [
             'topic_id' => $topicId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1488,10 +1646,12 @@ class BatchJobServiceClient
      */
     public static function userInterestName(string $customerId, string $userInterestId): string
     {
-        return self::getPathTemplate('userInterest')->render([
+        return self::getPathTemplate('userInterest')->render(
+            [
             'customer_id' => $customerId,
             'user_interest_id' => $userInterestId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1505,10 +1665,12 @@ class BatchJobServiceClient
      */
     public static function userListName(string $customerId, string $userListId): string
     {
-        return self::getPathTemplate('userList')->render([
+        return self::getPathTemplate('userList')->render(
+            [
             'customer_id' => $customerId,
             'user_list_id' => $userListId,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -1614,12 +1776,12 @@ class BatchJobServiceClient
      * Constructor.
      *
      * @param array|ClientOptions $options {
-     *     Optional. Options for configuring the service API wrapper.
+     *                                     Optional. Options for configuring the service API wrapper.
      *
-     *     @type string $apiEndpoint
+     * @type string $apiEndpoint
      *           The address of the API remote host. May optionally include the port, formatted
      *           as "<uri>:<port>". Default 'googleads.googleapis.com:443'.
-     *     @type FetchAuthTokenInterface|CredentialsWrapper $credentials
+     * @type FetchAuthTokenInterface|CredentialsWrapper $credentials
      *           This option should only be used with a pre-constructed
      *           {@see FetchAuthTokenInterface} or {@see CredentialsWrapper} object. Note that
      *           when one of these objects are provided, any settings in $credentialsConfig will
@@ -1636,26 +1798,26 @@ class BatchJobServiceClient
      *           ```
      *           {@see
      *           https://cloud.google.com/docs/authentication/external/externally-sourced-credentials}
-     *     @type array $credentialsConfig
+     * @type array $credentialsConfig
      *           Options used to configure credentials, including auth token caching, for the
      *           client. For a full list of supporting configuration options, see
      *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
-     *     @type bool $disableRetries
+     * @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
-     *     @type string|array $clientConfig
+     * @type string|array $clientConfig
      *           Client method configuration, including retry settings. This option can be either
      *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
      *           default this settings points to the default client config file, which is
      *           provided in the resources folder.
-     *     @type string|TransportInterface $transport
+     * @type string|TransportInterface $transport
      *           The transport used for executing network requests. May be either the string
      *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
      *           *Advanced usage*: Additionally, it is possible to pass in an already
      *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
      *           that when this object is provided, any settings in $transportConfig, and any
      *           $apiEndpoint setting, will be ignored.
-     *     @type array $transportConfig
+     * @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
@@ -1666,13 +1828,13 @@ class BatchJobServiceClient
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
      *           supported options.
-     *     @type callable $clientCertSource
+     * @type callable $clientCertSource
      *           A callable which returns the client cert as a string. This can be used to
      *           provide a certificate and private key to the transport layer for mTLS.
-     *     @type false|LoggerInterface $logger
+     * @type false|LoggerInterface $logger
      *           A PSR-3 compliant logger. If set to false, logging is disabled, ignoring the
      *           'GOOGLE_SDK_PHP_LOGGING' environment flag
-     *     @type string $universeDomain
+     * @type string $universeDomain
      *           The service domain for the client. Defaults to 'googleapis.com'.
      * }
      *
@@ -1685,7 +1847,9 @@ class BatchJobServiceClient
         $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
-    /** Handles execution of the async variants for each documented method. */
+    /**
+     * Handles execution of the async variants for each documented method. 
+     */
     public function __call($method, $args)
     {
         if (substr($method, -5) !== 'Async') {
@@ -1714,9 +1878,9 @@ class BatchJobServiceClient
      *
      * @param AddBatchJobOperationsRequest $request     A request to house fields associated with the call.
      * @param array                        $callOptions {
-     *     Optional.
+     *                                                  Optional.
      *
-     *     @type RetrySettings|array $retrySettings
+     * @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on
      *           {@see RetrySettings} for example usage.
@@ -1748,9 +1912,9 @@ class BatchJobServiceClient
      *
      * @param ListBatchJobResultsRequest $request     A request to house fields associated with the call.
      * @param array                      $callOptions {
-     *     Optional.
+     *                                                Optional.
      *
-     *     @type RetrySettings|array $retrySettings
+     * @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on
      *           {@see RetrySettings} for example usage.
@@ -1781,9 +1945,9 @@ class BatchJobServiceClient
      *
      * @param MutateBatchJobRequest $request     A request to house fields associated with the call.
      * @param array                 $callOptions {
-     *     Optional.
+     *                                           Optional.
      *
-     *     @type RetrySettings|array $retrySettings
+     * @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on
      *           {@see RetrySettings} for example usage.
@@ -1818,9 +1982,9 @@ class BatchJobServiceClient
      *
      * @param RunBatchJobRequest $request     A request to house fields associated with the call.
      * @param array              $callOptions {
-     *     Optional.
+     *                                        Optional.
      *
-     *     @type RetrySettings|array $retrySettings
+     * @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on
      *           {@see RetrySettings} for example usage.

@@ -31,8 +31,8 @@ class StatusMetadataExtractor
      * Extract failures from the specified metadata and constructs a Google Ads failure object from
      * them.
      *
-     * @param array $statusMetadata the status metadata array
-     * @param null|string $headerKey the header key to extract error messages from
+     * @param  array       $statusMetadata the status metadata array
+     * @param  null|string $headerKey      the header key to extract error messages from
      * @return GoogleAdsFailure the Google Ads failure
      */
     public function extractGoogleAdsFailure(
@@ -56,8 +56,8 @@ class StatusMetadataExtractor
     /**
      * Extract failures from the specified metadata and constructs a list of their error messages.
      *
-     * @param array $statusMetadata the status metadata array
-     * @param null|string $headerKey the header key to extract error messages from
+     * @param  array       $statusMetadata the status metadata array
+     * @param  null|string $headerKey      the header key to extract error messages from
      * @return array the error message list
      */
     public function extractErrorMessageList(

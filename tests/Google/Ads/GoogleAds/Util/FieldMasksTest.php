@@ -37,7 +37,7 @@ use UnexpectedValueException;
 /**
  * Unit tests for `FieldMasks`.
  *
- * @see FieldMasks
+ * @see   FieldMasks
  * @small
  */
 class FieldMasksTest extends TestCase
@@ -147,11 +147,13 @@ class FieldMasksTest extends TestCase
 
     public function testGetFieldValue()
     {
-        $campaign = new Campaign([
+        $campaign = new Campaign(
+            [
             'name' => 'test',
             'percent_cpc' => new PercentCpc(['cpc_bid_ceiling_micros' => 1000000]),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH
-        ]);
+            ]
+        );
         // A value of a field of simple type can be obtained.
         $this->assertEquals('test', FieldMasks::getFieldValue('name', $campaign));
         // A value of a field of a nested message can be obtained.
@@ -164,11 +166,15 @@ class FieldMasksTest extends TestCase
             AdvertisingChannelType::SEARCH,
             FieldMasks::getFieldValue('advertising_channel_type', $campaign)
         );
-        $adGroupAd = new AdGroupAd([
-            'ad' => new Ad([
+        $adGroupAd = new AdGroupAd(
+            [
+            'ad' => new Ad(
+                [
                 'expanded_text_ad' => new ExpandedTextAdInfo(['headline_part1' => 'test'])
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
         $this->assertEquals(
             'test',
             FieldMasks::getFieldValue('ad.expanded_text_ad.headline_part1', $adGroupAd)
@@ -190,11 +196,15 @@ class FieldMasksTest extends TestCase
 
     public function getFieldValueFailureProvider()
     {
-        $adGroupAd = new AdGroupAd([
-            'ad' => new Ad([
+        $adGroupAd = new AdGroupAd(
+            [
+            'ad' => new Ad(
+                [
                 'expanded_text_ad' => new ExpandedTextAdInfo(['headline_part1' => 'test'])
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
         return [
             ['ad.test_field1.headline_part1', $adGroupAd],
             ['ad_1.expanded_text_ad.headline_part1', $adGroupAd]

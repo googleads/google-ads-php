@@ -65,7 +65,9 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $streamingMiddlewares = [];
     private $grpcInterceptors = [];
     private $httpHandler =  null;
-    /** @var Dependencies $dependencies */
+    /**
+     * @var Dependencies $dependencies
+     */
     private $dependencies;
     private $adsAssistant;
 
@@ -81,7 +83,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Populates this builder from the specified configuration object.
      *
-     * @param Configuration $configuration the configuration
+     * @param  Configuration $configuration the configuration
      * @return self this builder populated from the configuration
      */
     public function from(Configuration $configuration)
@@ -104,7 +106,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
         $this->loginCustomerId = $configuration->getConfiguration('loginCustomerId', 'GOOGLE_ADS');
         $this->linkedCustomerId =
             $configuration->getConfiguration('linkedCustomerId', 'GOOGLE_ADS');
-        $this->adsAssistant = 
+        $this->adsAssistant =
             $configuration->getConfiguration('ads_assistant', 'GOOGLE_ADS');
         $this->endpoint =
             $configuration->getConfiguration('endpoint', 'GOOGLE_ADS');
@@ -137,7 +139,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Populates this builder from the specified configuration object.
      *
-     * @param Configuration $configuration the configuration
+     * @param  Configuration $configuration the configuration
      * @return self this builder populated from the configuration
      */
     public function fromEnvironmentVariablesConfiguration(Configuration $configuration)
@@ -148,9 +150,9 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
             $this->loginCustomerId;
         $this->linkedCustomerId = $configuration->getConfiguration('LINKED_CUSTOMER_ID') ??
             $this->linkedCustomerId;
-        $this->endpoint = $configuration->getConfiguration('ENDPOINT') ?? 
+        $this->endpoint = $configuration->getConfiguration('ENDPOINT') ??
             $this->endpoint;
-        $this->adsAssistant = $configuration->getConfiguration('ADS_ASSISTANT') ?? 
+        $this->adsAssistant = $configuration->getConfiguration('ADS_ASSISTANT') ??
             $this->adsAssistant;
 
         return $this;
@@ -159,7 +161,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Includes a developer token. This is required.
      *
-     * @param string $developerToken
+     * @param  string $developerToken
      * @return self this builder
      */
     public function withDeveloperToken(string $developerToken)
@@ -171,7 +173,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Sets whether this library should use Google Cloud organization for API access.
      *
-     * @param bool $useCloudOrgForApiAccess
+     * @param  bool $useCloudOrgForApiAccess
      * @return self this builder
      */
     public function usingCloudOrgForApiAccess(bool $useCloudOrgForApiAccess)
@@ -189,7 +191,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
      * create a separate GoogleAdsClient instance for each manager account. Use this method to
      * set each login customer ID and call build() to create a separate instance.
      *
-     * @param int|null $loginCustomerId the login customer ID
+     * @param  int|null $loginCustomerId the login customer ID
      * @return self this builder
      */
     public function withLoginCustomerId(?int $loginCustomerId)
@@ -208,7 +210,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
      * of 123-456-7890. Read https://support.google.com/google-ads/answer/7365001 to learn more
      * about Linked Accounts.
      *
-     * @param int|null $linkedCustomerId the linked customer ID
+     * @param  int|null $linkedCustomerId the linked customer ID
      * @return self this builder
      */
     public function withLinkedCustomerId(?int $linkedCustomerId)
@@ -220,7 +222,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Includes the Google Ads API server's base endpoint. This is optional.
      *
-     * @param string|null $endpoint
+     * @param  string|null $endpoint
      * @return self this builder
      */
     public function withEndpoint($endpoint)
@@ -233,7 +235,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
      * Includes the OAuth2 credential to be used for authentication. This is
      * required.
      *
-     * @param FetchAuthTokenInterface $oAuth2Credential
+     * @param  FetchAuthTokenInterface $oAuth2Credential
      * @return self this builder
      */
     public function withOAuth2Credential(FetchAuthTokenInterface $oAuth2Credential)
@@ -245,7 +247,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Includes a logger to log requests and responses.
      *
-     * @param LoggerInterface $logger
+     * @param  LoggerInterface $logger
      * @return self this builder
      */
     public function withLogger(LoggerInterface $logger)
@@ -257,7 +259,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Sets the log level for Google Ads API requests and responses.
      *
-     * @param string $logLevel the PSR-3 log level name, e.g., INFO
+     * @param  string $logLevel the PSR-3 log level name, e.g., INFO
      * @return self this builder
      */
     public function withLogLevel(string $logLevel)
@@ -269,7 +271,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Sets the proxy URI for Google Ads API requests in the format protocol://user:pass@host:port.
      *
-     * @param string $proxy the proxy URI, e.g., http://user:password@localhost:8080
+     * @param  string $proxy the proxy URI, e.g., http://user:password@localhost:8080
      * @return self this builder
      */
     public function withProxy(string $proxy)
@@ -281,7 +283,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Sets the transport for Google Ads API requests.
      *
-     * @param string $transport the transport type to use, supported values are `grpc` and `rest`
+     * @param  string $transport the transport type to use, supported values are `grpc` and `rest`
      * @return self this builder
      */
     public function withTransport(string $transport)
@@ -293,7 +295,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Sets whether the gRPC channel for Google Ads API requests is secure or not.
      *
-     * @param bool $grpcChannelIsSecure
+     * @param  bool $grpcChannelIsSecure
      * @return self this builder
      */
     public function withGrpcChannelIsSecure(bool $grpcChannelIsSecure)
@@ -305,7 +307,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Sets the gRPC channel credential for Google Ads API requests.
      *
-     * @param ChannelCredentials $grpcChannelCredential
+     * @param  ChannelCredentials $grpcChannelCredential
      * @return self this builder
      */
     public function withGrpcChannelCredential(ChannelCredentials $grpcChannelCredential)
@@ -318,7 +320,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
      * Sets the unary middlewares for Google Ads API requests. They execute in order after the ones
      * defined by the library.
      *
-     * @param GoogleAdsMiddlewareAbstract ...$unaryMiddlewares the Google Ads unary middlewares
+     * @param  GoogleAdsMiddlewareAbstract ...$unaryMiddlewares the Google Ads unary middlewares
      * @return self this builder
      */
     public function withUnaryMiddlewares(GoogleAdsMiddlewareAbstract ...$unaryMiddlewares)
@@ -331,7 +333,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
      * Sets the streaming middlewares for Google Ads API requests. They execute in order after the ones
      * defined by the library.
      *
-     * @param GoogleAdsMiddlewareAbstract ...$streamingMiddlewares the Google Ads streaming middlewares
+     * @param  GoogleAdsMiddlewareAbstract ...$streamingMiddlewares the Google Ads streaming middlewares
      * @return self this builder
      */
     public function withStreamingMiddlewares(GoogleAdsMiddlewareAbstract ...$streamingMiddlewares)
@@ -344,7 +346,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
      * Sets the gRPC interceptors for Google Ads API requests. They execute in order after the ones
      * defined by the library.
      *
-     * @param Interceptor ...$grpcInterceptors the gRPC interceptors
+     * @param  Interceptor ...$grpcInterceptors the gRPC interceptors
      * @return self this builder
      */
     public function withGrpcInterceptors(Interceptor ...$grpcInterceptors)
@@ -356,7 +358,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Sets the REST HTTP handler for Google Ads API requests.
      *
-     * @param callable $httpHandler the HTTP handler
+     * @param  callable $httpHandler the HTTP handler
      * @return self this builder
      */
     public function withHttpHandler(callable $httpHandler)
@@ -368,7 +370,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Sets the Dependencies utilities for this Google Ads client builder.
      *
-     * @param Dependencies $dependencies
+     * @param  Dependencies $dependencies
      * @return self this builder
      */
     public function withDependencies(Dependencies $dependencies)
@@ -663,7 +665,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     /**
      * Sets the Google Ads API assistant metadata.
      *
-     * @param string|null $googleAdsApiAssistant
+     * @param  string|null $googleAdsApiAssistant
      * @return self this builder
      */
     public function withAdsAssistant(?string $adsAssistant)

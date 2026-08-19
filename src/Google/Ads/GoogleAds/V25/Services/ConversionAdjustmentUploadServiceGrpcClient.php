@@ -21,14 +21,16 @@ namespace Google\Ads\GoogleAds\V25\Services;
 /**
  * Service to upload conversion adjustments.
  */
-class ConversionAdjustmentUploadServiceGrpcClient extends \Grpc\BaseStub {
+class ConversionAdjustmentUploadServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -43,17 +45,21 @@ class ConversionAdjustmentUploadServiceGrpcClient extends \Grpc\BaseStub {
      *   [PartialFailureError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\UploadConversionAdjustmentsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\UploadConversionAdjustmentsRequest $argument input argument
+     * @param  array                                                                 $metadata metadata
+     * @param  array                                                                 $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\UploadConversionAdjustmentsResponse>
      */
     public function UploadConversionAdjustments(\Google\Ads\GoogleAds\V25\Services\UploadConversionAdjustmentsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.ConversionAdjustmentUploadService/UploadConversionAdjustments',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\UploadConversionAdjustmentsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.ConversionAdjustmentUploadService/UploadConversionAdjustments',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\UploadConversionAdjustmentsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

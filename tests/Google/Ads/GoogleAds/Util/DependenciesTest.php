@@ -28,11 +28,17 @@ use PHPUnit\Framework\TestCase;
  */
 class DependenciesTest extends TestCase
 {
-    /** @var Dependencies $dependencies */
+    /**
+     * @var Dependencies $dependencies 
+     */
     private $dependencies;
-    /** @var string $composerLockFilePath */
+    /**
+     * @var string $composerLockFilePath 
+     */
     private $composerLockFilePath;
-    /** @var string $composerLockWithoutGrpcFilePath */
+    /**
+     * @var string $composerLockWithoutGrpcFilePath 
+     */
     private $composerLockWithoutGrpcFilePath;
 
     /**

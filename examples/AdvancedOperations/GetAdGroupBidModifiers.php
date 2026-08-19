@@ -35,7 +35,9 @@ use Google\Ads\GoogleAds\V25\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsRequest;
 use Google\ApiCore\ApiException;
 
-/** This example gets ad group bid modifiers. */
+/**
+ * This example gets ad group bid modifiers. 
+ */
 class GetAdGroupBidModifiers
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
@@ -46,10 +48,12 @@ class GetAdGroupBidModifiers
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -74,7 +78,9 @@ class GetAdGroupBidModifiers
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -97,9 +103,9 @@ class GetAdGroupBidModifiers
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int|null $adGroupId the ad group ID for which ad group bid modifiers will be
-     *     retrieved. If `null`, returns from all ad groups
+     * @param int             $customerId      the customer ID
+     * @param int|null        $adGroupId       the ad group ID for which ad group bid modifiers will be
+     *                                         retrieved. If `null`, returns from all ad groups
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -133,7 +139,9 @@ class GetAdGroupBidModifiers
         // Iterates over all rows in all pages and prints the requested field values for
         // the ad group bid modifier in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
-            /** @var GoogleAdsRow $googleAdsRow */
+            /**
+ * @var GoogleAdsRow $googleAdsRow 
+*/
             $adGroupBidModifier = $googleAdsRow->getAdGroupBidModifier();
             printf(
                 "Ad group bid modifier with criterion ID %d in ad group ID %d of campaign ID %d ",
@@ -164,38 +172,38 @@ class GetAdGroupBidModifiers
 
             $criterionDetails = ' - Criterion type: ' . $adGroupBidModifier->getCriterion() . ', ';
             switch ($adGroupBidModifier->getCriterion()) {
-                case 'device':
-                    $criterionDetails .= 'Type: ' .
-                        Device::name($adGroupBidModifier->getDevice()->getType());
-                    break;
-                case 'hotel_advance_booking_window':
-                    $criterionDetails .= 'Min Days: ' .
-                        $adGroupBidModifier->getHotelAdvanceBookingWindow()->getMinDays() . ', ';
-                    $criterionDetails .= 'Max Days: ' .
-                        $adGroupBidModifier->getHotelAdvanceBookingWindow()->getMaxDays();
-                    break;
-                case 'hotel_check_in_day':
-                    $criterionDetails .= 'Day of the week: ' .
-                        DayOfWeek::name($adGroupBidModifier->getHotelCheckInDay()->getDayOfWeek());
-                    break;
-                case 'hotel_date_selection_type':
-                    $criterionDetails .= 'Date selection type: ' .
-                        HotelDateSelectionType::name(
-                            $adGroupBidModifier->getHotelDateSelectionType()->getType()
-                        );
-                    break;
-                case 'hotel_length_of_stay':
-                    $criterionDetails .= 'Min Nights: ' .
-                        $adGroupBidModifier->getHotelLengthOfStay()->getMinNights() . ', ';
-                    $criterionDetails .= 'Max Nights: ' .
-                        $adGroupBidModifier->getHotelLengthOfStay()->getMaxNights();
-                    break;
-                case 'hotel_check_in_date_range':
-                    $criterionDetails .= 'Start Date: ' .
-                        $adGroupBidModifier->getHotelCheckInDateRange()->getStartDate() . ', ';
-                    $criterionDetails .= 'End Date: ' .
-                        $adGroupBidModifier->getHotelCheckInDateRange()->getEndDate();
-                    break;
+            case 'device':
+                $criterionDetails .= 'Type: ' .
+                    Device::name($adGroupBidModifier->getDevice()->getType());
+                break;
+            case 'hotel_advance_booking_window':
+                $criterionDetails .= 'Min Days: ' .
+                    $adGroupBidModifier->getHotelAdvanceBookingWindow()->getMinDays() . ', ';
+                $criterionDetails .= 'Max Days: ' .
+                    $adGroupBidModifier->getHotelAdvanceBookingWindow()->getMaxDays();
+                break;
+            case 'hotel_check_in_day':
+                $criterionDetails .= 'Day of the week: ' .
+                    DayOfWeek::name($adGroupBidModifier->getHotelCheckInDay()->getDayOfWeek());
+                break;
+            case 'hotel_date_selection_type':
+                $criterionDetails .= 'Date selection type: ' .
+                    HotelDateSelectionType::name(
+                        $adGroupBidModifier->getHotelDateSelectionType()->getType()
+                    );
+                break;
+            case 'hotel_length_of_stay':
+                $criterionDetails .= 'Min Nights: ' .
+                    $adGroupBidModifier->getHotelLengthOfStay()->getMinNights() . ', ';
+                $criterionDetails .= 'Max Nights: ' .
+                    $adGroupBidModifier->getHotelLengthOfStay()->getMaxNights();
+                break;
+            case 'hotel_check_in_date_range':
+                $criterionDetails .= 'Start Date: ' .
+                    $adGroupBidModifier->getHotelCheckInDateRange()->getStartDate() . ', ';
+                $criterionDetails .= 'End Date: ' .
+                    $adGroupBidModifier->getHotelCheckInDateRange()->getEndDate();
+                break;
             }
             print $criterionDetails . PHP_EOL;
         }

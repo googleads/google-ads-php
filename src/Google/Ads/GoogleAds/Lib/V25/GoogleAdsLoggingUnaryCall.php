@@ -33,8 +33,8 @@ class GoogleAdsLoggingUnaryCall extends ForwardingUnaryCall
      * Constructs the LoggingUnaryCall using the inner call and logging intercepter.
      *
      * @param UnaryCall|ForwardingUnaryCall $innerCall
-     * @param array $lastRequestData
-     * @param GoogleAdsCallLogger $googleAdsCallLogger
+     * @param array                         $lastRequestData
+     * @param GoogleAdsCallLogger           $googleAdsCallLogger
      */
     public function __construct(
         $innerCall,

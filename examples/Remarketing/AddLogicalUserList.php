@@ -53,10 +53,12 @@ class AddLogicalUserList
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::USER_LIST_IDS => GetOpt::MULTIPLE_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -83,7 +85,9 @@ class AddLogicalUserList
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -119,29 +123,37 @@ class AddLogicalUserList
         // operator should target.
         $logicalUserListOperandInfoList = [];
         foreach ($userListIds as $userListId) {
-            $logicalUserListOperandInfoList[] = new LogicalUserListOperandInfo([
+            $logicalUserListOperandInfoList[] = new LogicalUserListOperandInfo(
+                [
                 'user_list' => ResourceNames::forUserList($customerId, $userListId)
-            ]);
+                ]
+            );
         }
 
         // Creates the UserListLogicalRuleInfo specifying that a user should be added to the new
         // list if they are present in any of the provided lists.
-        $userListLogicalRuleInfo = new UserListLogicalRuleInfo([
+        $userListLogicalRuleInfo = new UserListLogicalRuleInfo(
+            [
             // Using ANY means that a user should be added to the combined list if they are present
             // on any of the lists targeted in the LogicalUserListOperandInfo. Use ALL to add users
             // present on all of the provided lists or NONE to add users that aren't present on any
             // of the targeted lists.
             'operator' => UserListLogicalRuleOperator::ANY,
             'rule_operands' => $logicalUserListOperandInfoList
-        ]);
+            ]
+        );
 
         // Creates the new combination user list.
-        $userList = new UserList([
+        $userList = new UserList(
+            [
             'name' => 'My combination list of other user lists #' . Helper::getPrintableDatetime(),
-            'logical_user_list' => new LogicalUserListInfo([
+            'logical_user_list' => new LogicalUserListInfo(
+                [
                 'rules' => [$userListLogicalRuleInfo]
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         // Creates the operation.
         $operation = new UserListOperation();

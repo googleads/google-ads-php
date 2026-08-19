@@ -31,14 +31,16 @@ namespace Google\Ads\GoogleAds\V23\Services;
  * The REMOVE operation cancels a pending billing setup.
  * The CREATE operation creates a new billing setup.
  */
-class BillingSetupServiceGrpcClient extends \Grpc\BaseStub {
+class BillingSetupServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -56,17 +58,21 @@ class BillingSetupServiceGrpcClient extends \Grpc\BaseStub {
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V23\Services\MutateBillingSetupRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\MutateBillingSetupRequest $argument input argument
+     * @param  array                                                        $metadata metadata
+     * @param  array                                                        $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateBillingSetupResponse>
      */
     public function MutateBillingSetup(\Google\Ads\GoogleAds\V23\Services\MutateBillingSetupRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.BillingSetupService/MutateBillingSetup',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\MutateBillingSetupResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.BillingSetupService/MutateBillingSetup',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\MutateBillingSetupResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

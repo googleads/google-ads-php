@@ -58,10 +58,12 @@ class AddDisplayUploadAd
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -86,7 +88,9 @@ class AddDisplayUploadAd
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -109,8 +113,8 @@ class AddDisplayUploadAd
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID to add a display upload ad to
+     * @param int             $customerId      the customer ID
+     * @param int             $adGroupId       the ad group ID to add a display upload ad to
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -137,8 +141,8 @@ class AddDisplayUploadAd
      * Creates a media bundle from the assets in a zip file. The zip file contains the HTML5
      * components.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the customer ID
      * @return string the resource name of the newly uploaded media bundle asset
      */
     private static function createMediaBundleAsset(
@@ -151,11 +155,13 @@ class AddDisplayUploadAd
         $html5Zip = file_get_contents('https://gaagl.page.link/ib87');
 
         // Creates the media bundle asset.
-        $asset = new Asset([
+        $asset = new Asset(
+            [
             'name' => 'Ad Media Bundle',
             'type' => AssetType::MEDIA_BUNDLE,
             'media_bundle_asset' => new MediaBundleAsset(['data' => $html5Zip])
-        ]);
+            ]
+        );
 
         // Creates an asset operation.
         $assetOperation = new AssetOperation();
@@ -181,11 +187,11 @@ class AddDisplayUploadAd
     /**
      * Creates a new HTML5 display upload ad and adds it to the specified ad group.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID where the new ad will be added to
-     * @param string $adAssetResourceName the resource name of the media bundle containing the
-     *     HTML5 components
+     * @param GoogleAdsClient $googleAdsClient     the Google Ads API client
+     * @param int             $customerId          the customer ID
+     * @param int             $adGroupId           the ad group ID where the new ad will be added to
+     * @param string          $adAssetResourceName the resource name of the media bundle containing the
+     *                                             HTML5 components
      */
     private static function createDisplayUploadAdGroupAd(
         GoogleAdsClient $googleAdsClient,
@@ -194,21 +200,27 @@ class AddDisplayUploadAd
         string $adAssetResourceName
     ) {
         // Creates an ad group ad for the new ad.
-        $adGroupAd = new AdGroupAd([
-            'ad' => new Ad([
+        $adGroupAd = new AdGroupAd(
+            [
+            'ad' => new Ad(
+                [
                 'name' => 'Ad for HTML5',
                 'final_urls' => ['http://example.com/html5'],
                 // Exactly one ad data field must be included to specify the ad type. See
                 // https://developers.google.com/google-ads/api/reference/rpc/latest/Ad for the full
                 // list of available types.
-                'display_upload_ad' => new DisplayUploadAdInfo([
+                'display_upload_ad' => new DisplayUploadAdInfo(
+                    [
                     'display_upload_product_type' => DisplayUploadProductType::HTML5_UPLOAD_AD,
                     'media_bundle' => new AdMediaBundleAsset(['asset' => $adAssetResourceName])
-                ])
-            ]),
+                    ]
+                )
+                ]
+            ),
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'status' => AdGroupAdStatus::PAUSED
-        ]);
+            ]
+        );
 
         // Creates an ad group ad operation.
         $adGroupAdOperation = new AdGroupAdOperation();
@@ -216,7 +228,9 @@ class AddDisplayUploadAd
 
         // Issues a mutate request to add the ad group ad.
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
-        /** @var MutateAdGroupAdsResponse $adGroupAdResponse */
+        /**
+ * @var MutateAdGroupAdsResponse $adGroupAdResponse 
+*/
         $adGroupAdResponse = $adGroupAdServiceClient->mutateAdGroupAds(
             MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
         );

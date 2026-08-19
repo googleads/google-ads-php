@@ -23,14 +23,14 @@ use PHPUnit\Framework\TestCase;
 /**
  * Unit tests for `Helper`.
  *
- * @see Helper
+ * @see   Helper
  * @small
  */
 class HelperTest extends TestCase
 {
     /**
      * @dataProvider microToBaseCases
-     * @covers \Google\Ads\GoogleAds\Examples\Utils\Helper::microToBase()
+     * @covers       \Google\Ads\GoogleAds\Examples\Utils\Helper::microToBase()
      */
     public function testMicroToBase($amount, float $expectedResult)
     {
@@ -52,7 +52,7 @@ class HelperTest extends TestCase
 
     /**
      * @dataProvider baseToMicroCases
-     * @covers \Google\Ads\GoogleAds\Examples\Utils\Helper::baseToMicro()
+     * @covers       \Google\Ads\GoogleAds\Examples\Utils\Helper::baseToMicro()
      */
     public function testBaseToMicro($amount, int $expectedResult)
     {

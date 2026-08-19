@@ -33,8 +33,8 @@ trait GoogleAdsMetadataTrait
     /**
      * Returns the first value of the provided key of the provided metadata.
      *
-     * @param string $key the key to get its value
-     * @param array $metadata the metadata to get the value
+     * @param  string $key      the key to get its value
+     * @param  array  $metadata the metadata to get the value
      * @return string|null the value of the provided key if exists.
      */
     private function getFirstHeaderValue($key, $metadata)

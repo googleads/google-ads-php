@@ -60,10 +60,12 @@ class AddAdCustomizer
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -88,7 +90,9 @@ class AddAdCustomizer
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -111,8 +115,8 @@ class AddAdCustomizer
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID
+     * @param int             $customerId      the customer ID
+     * @param int             $adGroupId       the ad group ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -153,14 +157,14 @@ class AddAdCustomizer
         );
     }
 
-   /**
-    * Creates a text customizer attribute and returns its resource name.
-    *
-    * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-    * @param int $customerId the customer ID
-    * @param string $customizerName the name of the customizer to create
-    * @return string the resource name of the newly created text customizer attribute
-    */
+    /**
+     * Creates a text customizer attribute and returns its resource name.
+     *
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $customizerName the name of the customizer to create
+     * @return string the resource name of the newly created text customizer attribute
+     */
     // [START add_ad_customizer]
     private static function createTextCustomizerAttribute(
         GoogleAdsClient $googleAdsClient,
@@ -169,10 +173,12 @@ class AddAdCustomizer
     ) {
         // Creates a text customizer attribute. The customizer attribute name is
         // arbitrary and will be used as a placeholder in the ad text fields.
-        $textAttribute = new CustomizerAttribute([
+        $textAttribute = new CustomizerAttribute(
+            [
             'name' => $customizerName,
             'type' => CustomizerAttributeType::TEXT
-        ]);
+            ]
+        );
 
         // Creates a customizer attribute operation for creating a customizer attribute.
         $customizerAttributeOperation = new CustomizerAttributeOperation();
@@ -198,9 +204,9 @@ class AddAdCustomizer
     /**
      * Creates a price customizer attribute and returns its resource name.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $customizerName the name of the customizer to create
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $customizerName the name of the customizer to create
      * @return string the resource name of the newly created price customizer attribute
      */
     // [START add_ad_customizer_1]
@@ -211,10 +217,12 @@ class AddAdCustomizer
     ) {
         // Creates a price customizer attribute. The customizer attribute name is
         // arbitrary and will be used as a placeholder in the ad text fields.
-        $priceAttribute = new CustomizerAttribute([
+        $priceAttribute = new CustomizerAttribute(
+            [
             'name' => $customizerName,
             'type' => CustomizerAttributeType::PRICE
-        ]);
+            ]
+        );
 
         // Creates a customizer attribute operation for creating a customizer attribute.
         $customizerAttributeOperation = new CustomizerAttributeOperation();
@@ -263,14 +271,18 @@ class AddAdCustomizer
         // Binds the text attribute customizer to a specific ad group to
         // make sure it will only be used to customize ads inside that ad
         // group.
-        $textAdGroupCustomizer = new AdGroupCustomizer([
+        $textAdGroupCustomizer = new AdGroupCustomizer(
+            [
             'customizer_attribute' => $textCustomizerAttributeResourceName,
-            'value' => new CustomizerValue([
+            'value' => new CustomizerValue(
+                [
                 'type' => CustomizerAttributeType::TEXT,
                 'string_value' => 'Mars'
-            ]),
+                ]
+            ),
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId)
-        ]);
+            ]
+        );
 
         // Creates an operation for the text attribute ad group customizer.
         $textAdGroupCustomizerOperation = new AdGroupCustomizerOperation();
@@ -280,14 +292,18 @@ class AddAdCustomizer
         // Binds the price attribute customizer to a specific ad group to
         // make sure it will only be used to customize ads inside that ad
         // group.
-        $priceAdGroupCustomizer = new AdGroupCustomizer([
+        $priceAdGroupCustomizer = new AdGroupCustomizer(
+            [
             'customizer_attribute' => $priceCustomizerAttributeResourceName,
-            'value' => new CustomizerValue([
+            'value' => new CustomizerValue(
+                [
                 'type' => CustomizerAttributeType::PRICE,
                 'string_value' => '100.0€'
-            ]),
+                ]
+            ),
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId)
-        ]);
+            ]
+        );
 
         // Creates an operation for the price attribute ad group customizer.
         $priceAdGroupCustomizerOperation = new AdGroupCustomizerOperation();
@@ -332,34 +348,48 @@ class AddAdCustomizer
         // Creates a responsive search ad using the attribute customizer names as
         // placeholders and default values to be used in case there are no attribute
         // customizer values.
-        $responsiveSearchAdInfo = new ResponsiveSearchAdInfo([
+        $responsiveSearchAdInfo = new ResponsiveSearchAdInfo(
+            [
             'headlines' => [
-                new AdTextAsset([
+                new AdTextAsset(
+                    [
                     'text' => "Luxury cruise to {CUSTOMIZER.$stringCustomizerName:Venus}",
                     'pinned_field' => ServedAssetFieldType::HEADLINE_1
-                ]),
+                    ]
+                ),
                 new AdTextAsset(['text' => "Only {CUSTOMIZER.$priceCustomizerName:10.0€}"]),
-                new AdTextAsset([
+                new AdTextAsset(
+                    [
                     'text' => "Cruise to {CUSTOMIZER.$stringCustomizerName:Venus} for "
                         . "{CUSTOMIZER.$priceCustomizerName:10.0€}"
-                ])
+                    ]
+                )
             ],
             'descriptions' => [
-                new AdTextAsset([
-                    'text' => "Tickets are only {CUSTOMIZER.$priceCustomizerName:10.0€}!"]),
-                new AdTextAsset([
-                    'text' => "Buy your tickets to {CUSTOMIZER.$stringCustomizerName:Venus} now!"])
+                new AdTextAsset(
+                    [
+                    'text' => "Tickets are only {CUSTOMIZER.$priceCustomizerName:10.0€}!"]
+                ),
+                new AdTextAsset(
+                    [
+                    'text' => "Buy your tickets to {CUSTOMIZER.$stringCustomizerName:Venus} now!"]
+                )
             ]
-        ]);
+            ]
+        );
 
         // Creates an ad group ad and its operation.
-        $adGroupAd = new AdGroupAd([
-            'ad' => new Ad([
+        $adGroupAd = new AdGroupAd(
+            [
+            'ad' => new Ad(
+                [
                 'responsive_search_ad' => $responsiveSearchAdInfo,
                 'final_urls' => ['https://www.example.com']
-            ]),
+                ]
+            ),
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId)
-        ]);
+            ]
+        );
         $adGroupAdOperation = new AdGroupAdOperation();
         $adGroupAdOperation->setCreate($adGroupAd);
 

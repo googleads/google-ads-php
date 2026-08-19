@@ -45,7 +45,7 @@ interface GoogleAdsBuilder
     /**
      * Populates this builder from the specified configuration object.
      *
-     * @param Configuration $configuration the configuration
+     * @param  Configuration $configuration the configuration
      * @return self this builder populated from the configuration
      */
     public function from(Configuration $configuration);
@@ -53,7 +53,7 @@ interface GoogleAdsBuilder
     /**
      * Populates this builder from the specified configuration object.
      *
-     * @param Configuration $configuration the configuration
+     * @param  Configuration $configuration the configuration
      * @return self this builder populated from the configuration
      */
     public function fromEnvironmentVariablesConfiguration(Configuration $configuration);
@@ -61,7 +61,7 @@ interface GoogleAdsBuilder
     /**
      * Populates this builder from the specified file path.
      *
-     * @param string $path the file path
+     * @param  string $path the file path
      * @return self this builder populated from the configuration
      */
     public function fromFile(string $path);

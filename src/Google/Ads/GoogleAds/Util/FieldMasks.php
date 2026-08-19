@@ -30,7 +30,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use InvalidArgumentException;
 use UnexpectedValueException;
 
-/** Utility methods for working with field masks.*/
+/**
+ * Utility methods for working with field masks.
+ */
 class FieldMasks
 {
     private static $descriptorPool = null;
@@ -48,20 +50,22 @@ class FieldMasks
      * $client->updateFoo($updatedFoo, $fieldMask);
      * ```
      *
-     * @param Message $original the original protobuf message object.
-     * @param Message $modified the modified protobuf message object.
+     * @param  Message $original the original protobuf message object.
+     * @param  Message $modified the modified protobuf message object.
      * @return FieldMask a FieldMask reflecting the changes between the original and modified
      *     objects.
      */
     public static function compare(Message $original, Message $modified)
     {
         if (get_class($original) !== get_class($modified)) {
-            throw new InvalidArgumentException(sprintf(
-                'Both input messages must be of the same type, got '
+            throw new InvalidArgumentException(
+                sprintf(
+                    'Both input messages must be of the same type, got '
                     . 'original: %s, modified: %s',
-                get_class($original),
-                get_class($modified)
-            ));
+                    get_class($original),
+                    get_class($modified)
+                )
+            );
         }
         $paths = [];
         self::buildPaths($paths, '', $original, $modified);
@@ -75,7 +79,7 @@ class FieldMasks
      * For a message object `Foo`, FieldMasks::allSetFieldsOf($foo) is equivalent to
      * FieldMasks::compare(new Foo(), $foo)
      *
-     * @param Message $message a protobuf message object.
+     * @param  Message $message a protobuf message object.
      * @return FieldMask a FieldMask reflecting all fields set in $message.
      */
     public static function allSetFieldsOf(Message $message)
@@ -89,7 +93,7 @@ class FieldMasks
     /**
      * Returns true if the provided repeated field is null or doesn't have any members.
      *
-     * @param RepeatedField|null $field the repeated field to check
+     * @param  RepeatedField|null $field the repeated field to check
      * @return bool true if the field is empty
      */
     private static function isEmpty(?RepeatedField $field): bool
@@ -100,10 +104,10 @@ class FieldMasks
     /**
      * Builds the paths to the fields that are different between original and modified message.
      *
-     * @param array $paths the resulting paths from the computation
-     * @param string $currentField the current field name
-     * @param Message|null $original the original message
-     * @param Message|null $modified the modified message
+     * @param array        $paths        the resulting paths from the computation
+     * @param string       $currentField the current field name
+     * @param Message|null $original     the original message
+     * @param Message|null $modified     the modified message
      */
     private static function buildPaths(
         array &$paths,
@@ -127,7 +131,7 @@ class FieldMasks
                 // will not add their field name to the path, because nothing has changed.
                 if (
                     !((self::isEmpty($originalValue) && self::isEmpty($modifiedValue))
-                        || $originalValue == $modifiedValue)
+                    || $originalValue == $modifiedValue)
                 ) {
                     $paths[] = $fieldName;
                 }
@@ -197,8 +201,10 @@ class FieldMasks
                         }
                         break;
                     default:
-                        throw new InvalidArgumentException("Unexpected type "
-                            . $fieldDescriptor->getType() . " encountered for field $fieldName");
+                        throw new InvalidArgumentException(
+                            "Unexpected type "
+                            . $fieldDescriptor->getType() . " encountered for field $fieldName"
+                        );
                 }
             }
         }
@@ -267,10 +273,11 @@ class FieldMasks
      * When a field being traversed upon is a nested message but is set to null, this method will
      * just return null in this case.
      *
-     * @param string $fieldMaskPath the field mask path
-     * @param Message $object the object whose field value to be get
-     * @param bool $returnEnumValueName whether to return the enum value name instead of the
-     *     index value returned by default when the field value is an enum value
+     * @param  string  $fieldMaskPath       the field mask path
+     * @param  Message $object              the object whose field value to be get
+     * @param  bool    $returnEnumValueName whether to return the enum value name instead of the
+     *                                      index value returned by default when the field value
+     *                                      is an enum value
      * @return mixed the value of the specified field of the specified object
      */
     public static function getFieldValue(
@@ -315,15 +322,17 @@ class FieldMasks
             }
         }
         if (!isset($fieldValue)) {
-            throw new UnexpectedValueException('The field value cannot be obtained because the '
-                . 'given field mask path is unrecognized.');
+            throw new UnexpectedValueException(
+                'The field value cannot be obtained because the '
+                . 'given field mask path is unrecognized.'
+            );
         }
         return $fieldValue;
     }
 
     /**
-     * @param string $currentField the current field name
-     * @param FieldDescriptor $fieldDescriptor the field descriptor to get the field name
+     * @param  string          $currentField    the current field name
+     * @param  FieldDescriptor $fieldDescriptor the field descriptor to get the field name
      * @return string the field name based on the current field name and provided field descriptor
      */
     private static function getFieldName($currentField, FieldDescriptor $fieldDescriptor)
@@ -336,7 +345,7 @@ class FieldMasks
     }
 
     /**
-     * @param Message $message the message to get its descriptor
+     * @param  Message $message the message to get its descriptor
      * @return Descriptor the descriptor of the message
      */
     private static function getDescriptorForMessage(Message $message)
@@ -348,7 +357,7 @@ class FieldMasks
     }
 
     /**
-     * @param FieldDescriptor $fieldDescriptor the field descriptor to check if it's repeated
+     * @param  FieldDescriptor $fieldDescriptor the field descriptor to check if it's repeated
      * @return bool true if the field descriptor is repeated
      */
     private static function isFieldRepeated(FieldDescriptor $fieldDescriptor)
@@ -360,9 +369,9 @@ class FieldMasks
         }
         // Secondary check: Use getLabel only if it actually exists.
         if (method_exists($fieldDescriptor, 'getLabel')) {
-         return $fieldDescriptor->getLabel() === GPBLabel::REPEATED;
+            return $fieldDescriptor->getLabel() === GPBLabel::REPEATED;
         }
-        // Last Resort: Default to false (or throw an exception). 
+        // Last Resort: Default to false (or throw an exception).
         // If neither exists, we're in an unknown state, but returning false is better than a Fatal Error.
         return false;
     }
@@ -370,7 +379,7 @@ class FieldMasks
     // TODO: We can remove this function when it's supported in google/gax-php:
     // https://github.com/googleapis/gax-php/issues/285
     /**
-     * @param string $name
+     * @param  string $name
      * @return string the name of hasser function
      */
     private static function getHasser(string $name)

@@ -25,14 +25,16 @@ namespace Google\Ads\GoogleAds\V23\Services;
  * Creators and their content and how these creators and their audiences can be
  * reached with Google Ads. Accessible to allowlisted customers only.
  */
-class ContentCreatorInsightsServiceGrpcClient extends \Grpc\BaseStub {
+class ContentCreatorInsightsServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -48,17 +50,21 @@ class ContentCreatorInsightsServiceGrpcClient extends \Grpc\BaseStub {
      *   [QuotaError]()
      *   [RangeError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V23\Services\GenerateCreatorInsightsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\GenerateCreatorInsightsRequest $argument input argument
+     * @param  array                                                             $metadata metadata
+     * @param  array                                                             $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateCreatorInsightsResponse>
      */
     public function GenerateCreatorInsights(\Google\Ads\GoogleAds\V23\Services\GenerateCreatorInsightsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.ContentCreatorInsightsService/GenerateCreatorInsights',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\GenerateCreatorInsightsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.ContentCreatorInsightsService/GenerateCreatorInsights',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\GenerateCreatorInsightsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -73,17 +79,21 @@ class ContentCreatorInsightsServiceGrpcClient extends \Grpc\BaseStub {
      *   [QuotaError]()
      *   [RangeError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V23\Services\GenerateTrendingInsightsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\GenerateTrendingInsightsRequest $argument input argument
+     * @param  array                                                              $metadata metadata
+     * @param  array                                                              $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\GenerateTrendingInsightsResponse>
      */
     public function GenerateTrendingInsights(\Google\Ads\GoogleAds\V23\Services\GenerateTrendingInsightsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.ContentCreatorInsightsService/GenerateTrendingInsights',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\GenerateTrendingInsightsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.ContentCreatorInsightsService/GenerateTrendingInsights',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\GenerateTrendingInsightsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

@@ -46,7 +46,7 @@ final class ConfigurationLoader
      * E.g., If you specified the path "/config/googleads/google_ads_php.ini" and it
      * doesn't exist, we will try to find "google_ads_php.ini" in your home directory.
      *
-     * @param string $configIniFilePath the file path to the *.ini file
+     * @param  string $configIniFilePath the file path to the *.ini file
      * @throws InvalidArgumentException if the config file could not be found
      * @return Configuration the created configuration
      */
@@ -85,7 +85,7 @@ final class ConfigurationLoader
     /**
      * Creates a configuration from an *.ini string.
      *
-     * @param string $iniString
+     * @param  string $iniString
      * @return Configuration the created configuration
      */
     public function fromString($iniString)
@@ -96,7 +96,7 @@ final class ConfigurationLoader
     /**
      * Creates a configuration from environment variables with a given prefix.
      *
-     * @param string|null $prefix the prefix
+     * @param  string|null $prefix the prefix
      * @return Configuration the created configuration
      */
     public function fromEnvironmentVariables(?string $prefix)

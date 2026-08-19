@@ -81,9 +81,11 @@ class AddAppCampaign
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -108,7 +110,9 @@ class AddAppCampaign
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -131,7 +135,7 @@ class AddAppCampaign
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param int             $customerId      the customer ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -164,8 +168,8 @@ class AddAppCampaign
     /**
      * Creates a budget under the given customer ID.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the customer ID
      * @return string the resource name of the newly created budget
      */
     private static function createBudget(
@@ -173,14 +177,16 @@ class AddAppCampaign
         int $customerId
     ) {
         // Creates a campaign budget.
-        $campaignBudget = new CampaignBudget([
+        $campaignBudget = new CampaignBudget(
+            [
             'name' => 'Interplanetary Cruise #' . Helper::getPrintableDatetime(),
             'amount_micros' => 50000000,
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             // An App campaign cannot use a shared campaign budget.
             // explicitly_shared must be set to false.
             'explicitly_shared' => false
-        ]);
+            ]
+        );
 
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
@@ -205,10 +211,10 @@ class AddAppCampaign
     /**
      * Creates an App campaign under the given customer ID.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $budgetResourceName the resource name of the budget to associate with the
-     *      campaign
+     * @param  GoogleAdsClient $googleAdsClient    the Google Ads API client
+     * @param  int             $customerId         the customer ID
+     * @param  string          $budgetResourceName the resource name of the budget to associate with the
+     *                                             campaign
      * @return string the resource name of the newly created App campaign
      */
     private static function createCampaign(
@@ -217,7 +223,8 @@ class AddAppCampaign
         string $budgetResourceName
     ) {
         // Creates a campaign.
-        $campaign = new Campaign([
+        $campaign = new Campaign(
+            [
             'name' => 'Interplanetary Cruise App #' . Helper::getPrintableDatetime(),
             'campaign_budget' => $budgetResourceName,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
@@ -238,13 +245,15 @@ class AddAppCampaign
             // under current version / resources / Campaign.
             'target_cpa' => new TargetCpa(['target_cpa_micros' => 1000000]),
             // Sets the App campaign settings.
-            'app_campaign_setting' => new AppCampaignSetting([
+            'app_campaign_setting' => new AppCampaignSetting(
+                [
                 'app_id' => 'com.google.android.apps.adwords',
                 'app_store' => AppCampaignAppStore::GOOGLE_APP_STORE,
                 // Optional: Optimize this campaign for getting new users for your app.
                 'bidding_strategy_goal_type' =>
                     AppCampaignBiddingStrategyGoalType::OPTIMIZE_INSTALLS_TARGET_INSTALL_COST
-            ]),
+                ]
+            ),
             // Declare whether or not this campaign serves political ads targeting the EU.
             'contains_eu_political_advertising' =>
                 EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING,
@@ -259,7 +268,8 @@ class AddAppCampaign
             // 'selective_optimization' => new SelectiveOptimization([
             //     'conversion_actions' => ['INSERT_CONVERSION_TYPE_ID_HERE']
             // ])
-        ]);
+            ]
+        );
 
         // Creates a campaign operation.
         $campaignOperation = new CampaignOperation();
@@ -286,9 +296,9 @@ class AddAppCampaign
      *
      * Both location and language targeting are illustrated.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $campaignResourceName the resource name of the campaign to apply targeting to
+     * @param GoogleAdsClient $googleAdsClient      the Google Ads API client
+     * @param int             $customerId           the customer ID
+     * @param string          $campaignResourceName the resource name of the campaign to apply targeting to
      */
     private static function setCampaignTargetingCriteria(
         GoogleAdsClient $googleAdsClient,
@@ -308,12 +318,16 @@ class AddAppCampaign
         ];
         foreach ($locationIds as $locationId) {
             // Creates a campaign criterion.
-            $campaignCriterion = new CampaignCriterion([
+            $campaignCriterion = new CampaignCriterion(
+                [
                 'campaign' => $campaignResourceName,
-                'location' => new LocationInfo([
+                'location' => new LocationInfo(
+                    [
                     'geo_target_constant' => ResourceNames::forGeoTargetConstant($locationId)
-                ])
-            ]);
+                    ]
+                )
+                ]
+            );
 
             // Creates a campaign criterion operation.
             $campaignCriterionOperation = new CampaignCriterionOperation();
@@ -329,12 +343,16 @@ class AddAppCampaign
         ];
         foreach ($languageIds as $languageId) {
             // Creates a campaign criterion.
-            $campaignCriterion = new CampaignCriterion([
+            $campaignCriterion = new CampaignCriterion(
+                [
                 'campaign' => $campaignResourceName,
-                'language' => new LanguageInfo([
+                'language' => new LanguageInfo(
+                    [
                     'language_constant' => ResourceNames::forLanguageConstant($languageId)
-                ])
-            ]);
+                    ]
+                )
+                ]
+            );
 
             // Creates a campaign criterion operation.
             $campaignCriterionOperation = new CampaignCriterionOperation();
@@ -356,7 +374,9 @@ class AddAppCampaign
         );
 
         foreach ($response->getResults() as $createdCampaignCriterion) {
-            /** @var CampaignCriterion $createdCampaignCriterion */
+            /**
+ * @var CampaignCriterion $createdCampaignCriterion 
+*/
             printf("\t%s%s", $createdCampaignCriterion->getResourceName(), PHP_EOL);
         }
     }
@@ -364,9 +384,9 @@ class AddAppCampaign
     /**
      * Creates an ad group for a given campaign.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $campaignResourceName the resource name of the campaign to add the ad group to
+     * @param  GoogleAdsClient $googleAdsClient      the Google Ads API client
+     * @param  int             $customerId           the customer ID
+     * @param  string          $campaignResourceName the resource name of the campaign to add the ad group to
      * @return string the resource name of the newly created ad group
      */
     private static function createAdGroup(
@@ -379,11 +399,13 @@ class AddAppCampaign
         // Since the advertising_channel_sub_type is APP_CAMPAIGN,
         //   1. you cannot override bid settings at the ad group level.
         //   2. you cannot add ad group criteria.
-        $adGroup = new AdGroup([
+        $adGroup = new AdGroup(
+            [
             'name' => 'Earth to Mars cruises ' . Helper::getPrintableDatetime(),
             'status' => AdGroupStatus::ENABLED,
             'campaign' => $campaignResourceName
-        ]);
+            ]
+        );
 
         // Creates an ad group operation.
         $adGroupOperation = new AdGroupOperation();
@@ -408,9 +430,9 @@ class AddAppCampaign
     /**
      * Creates an App ad for a given ad group.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $adGroupResourceName the resource name of the ad group to add the App ad to
+     * @param GoogleAdsClient $googleAdsClient     the Google Ads API client
+     * @param int             $customerId          the customer ID
+     * @param string          $adGroupResourceName the resource name of the ad group to add the App ad to
      */
     private static function createAppAd(
         GoogleAdsClient $googleAdsClient,
@@ -418,14 +440,17 @@ class AddAppCampaign
         string $adGroupResourceName
     ) {
         // Creates an ad group ad.
-        $adGroupAd = new AdGroupAd([
+        $adGroupAd = new AdGroupAd(
+            [
             'status' => AdGroupAdStatus::ENABLED,
             'ad_group' => $adGroupResourceName,
-            'ad' => new Ad([
+            'ad' => new Ad(
+                [
                 // ad_data is a 'oneof' message so setting app_ad
                 // is mutually exclusive with ad data fields such as
                 // text_ad, gmail_ad, etc.
-                'app_ad' => new AppAdInfo([
+                'app_ad' => new AppAdInfo(
+                    [
                     'headlines' => [
                         new AdTextAsset(['text' => 'A cool puzzle game']),
                         new AdTextAsset(['text' => 'Remove connected blocks'])
@@ -440,9 +465,12 @@ class AddAppCampaign
                     //         'asset' => INSERT_AD_IMAGE_ASSET_RESOURCE_NAME_HERE
                     //     ])
                     // ]
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         // Creates an ad group ad operation.
         $adGroupAdOperation = new AdGroupAdOperation();

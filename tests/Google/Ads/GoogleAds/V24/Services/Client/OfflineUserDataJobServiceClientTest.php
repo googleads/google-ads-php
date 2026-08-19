@@ -48,19 +48,25 @@ use stdClass;
  */
 class OfflineUserDataJobServiceClientTest extends GeneratedTest
 {
-    /** @return TransportInterface */
+    /**
+     * @return TransportInterface 
+     */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /** @return CredentialsWrapper */
+    /**
+     * @return CredentialsWrapper 
+     */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /** @return OfflineUserDataJobServiceClient */
+    /**
+     * @return OfflineUserDataJobServiceClient 
+     */
     private function createClient(array $options = [])
     {
         $options += [
@@ -69,13 +75,17 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         return new OfflineUserDataJobServiceClient($options);
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function addOfflineUserDataJobOperationsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new AddOfflineUserDataJobOperationsResponse();
@@ -100,23 +110,29 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function addOfflineUserDataJobOperationsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $formattedResourceName = $gapicClient->offlineUserDataJobName('[CUSTOMER_ID]', '[OFFLINE_USER_DATA_UPDATE_ID]');
@@ -137,13 +153,17 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function createOfflineUserDataJobTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $resourceName = 'resourceName979421212';
@@ -170,23 +190,29 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function createOfflineUserDataJobExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -207,20 +233,26 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function runOfflineUserDataJobTest()
     {
         $operationsTransport = $this->createTransport();
-        $operationsClient = new OperationsClient([
+        $operationsClient = new OperationsClient(
+            [
             'apiEndpoint' => '',
             'transport' => $operationsTransport,
             'credentials' => $this->createCredentials(),
-        ]);
+            ]
+        );
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
             'operationsClient' => $operationsClient,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
         // Mock response
@@ -254,9 +286,11 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/runOfflineUserDataJobTest');
-        $response->pollUntilComplete([
+        $response->pollUntilComplete(
+            [
             'initialPollDelayMillis' => 1,
-        ]);
+            ]
+        );
         $this->assertTrue($response->isDone());
         $this->assertEquals($expectedResponse, $response->getResult());
         $apiRequestsEmpty = $transport->popReceivedCalls();
@@ -271,20 +305,26 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $this->assertTrue($operationsTransport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function runOfflineUserDataJobExceptionTest()
     {
         $operationsTransport = $this->createTransport();
-        $operationsClient = new OperationsClient([
+        $operationsClient = new OperationsClient(
+            [
             'apiEndpoint' => '',
             'transport' => $operationsTransport,
             'credentials' => $this->createCredentials(),
-        ]);
+            ]
+        );
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
             'operationsClient' => $operationsClient,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
         // Mock response
@@ -295,12 +335,14 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage = json_encode([
+        $expectedExceptionMessage = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $operationsTransport->addResponse(null, $status);
         // Mock request
         $formattedResourceName = $gapicClient->offlineUserDataJobName('[CUSTOMER_ID]', '[OFFLINE_USER_DATA_UPDATE_ID]');
@@ -312,9 +354,11 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/runOfflineUserDataJobTest');
         try {
-            $response->pollUntilComplete([
+            $response->pollUntilComplete(
+                [
                 'initialPollDelayMillis' => 1,
-            ]);
+                ]
+            );
             // If the pollUntilComplete() method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -328,13 +372,17 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $this->assertTrue($operationsTransport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function addOfflineUserDataJobOperationsAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new AddOfflineUserDataJobOperationsResponse();

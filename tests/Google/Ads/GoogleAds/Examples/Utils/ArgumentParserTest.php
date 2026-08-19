@@ -26,12 +26,14 @@ use PHPUnit\Framework\TestCase;
 /**
  * Unit tests for `ArgumentParser`.
  *
- * @see ArgumentParser
+ * @see   ArgumentParser
  * @small
  */
 class ArgumentParserTest extends TestCase
 {
-    /** @var ArgumentParser $argumentParser */
+    /**
+     * @var ArgumentParser $argumentParser 
+     */
     private $argumentParser;
 
     public function setUp(): void

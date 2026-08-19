@@ -67,11 +67,13 @@ class AddResponsiveSearchAdWithAdCustomizer
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CUSTOMIZER_ATTRIBUTE_NAME => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -98,7 +100,9 @@ class AddResponsiveSearchAdWithAdCustomizer
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -120,10 +124,10 @@ class AddResponsiveSearchAdWithAdCustomizer
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID
-     * @param string $customizerAttributeName the customizer attribute name
+     * @param GoogleAdsClient $googleAdsClient         the Google Ads API client
+     * @param int             $customerId              the customer ID
+     * @param int             $adGroupId               the ad group ID
+     * @param string          $customizerAttributeName the customizer attribute name
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -152,9 +156,9 @@ class AddResponsiveSearchAdWithAdCustomizer
     /**
      * Creates a customizer attribute with the specified customizer attribute name.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $customizerAttributeName the name of the customizer attribute
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $customizerAttributeName the name of the customizer attribute
      * @return string the created customizer attribute resource name
      */
     // [START add_responsive_search_ad_with_ad_customizer_1]
@@ -164,12 +168,14 @@ class AddResponsiveSearchAdWithAdCustomizer
         string $customizerAttributeName
     ) {
         // Creates a customizer attribute with the specified name.
-        $customizerAttribute = new CustomizerAttribute([
+        $customizerAttribute = new CustomizerAttribute(
+            [
             'name' => $customizerAttributeName,
             // Specifies the type to be 'PRICE' so that we can dynamically customize the part of
             // the ad's description that is a price of a product/service we advertise.
             'type' => CustomizerAttributeType::PRICE
-        ]);
+            ]
+        );
 
         // Creates a customizer attribute operation for creating a customizer attribute.
         $operation = new CustomizerAttributeOperation();
@@ -206,15 +212,19 @@ class AddResponsiveSearchAdWithAdCustomizer
         string $customizerAttributeResourceName
     ) {
         // Creates a customer customizer with the value to be used in the responsive search ad.
-        $customerCustomizer = new CustomerCustomizer([
+        $customerCustomizer = new CustomerCustomizer(
+            [
             'customizer_attribute' => $customizerAttributeResourceName,
             // Specify '100USD' as a text value. The ad customizer will dynamically replace the
             // placeholder with this value when the ad serves.
-            'value' => new CustomizerValue([
+            'value' => new CustomizerValue(
+                [
                 'type' => CustomizerAttributeType::PRICE,
                 'string_value' => '100USD'
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         // Creates a customer customizer operation.
         $operation = new CustomerCustomizerOperation();
@@ -249,8 +259,10 @@ class AddResponsiveSearchAdWithAdCustomizer
         string $customizerAttributeName
     ) {
         // Creates an ad and sets responsive search ad info.
-        $ad = new Ad([
-            'responsive_search_ad' => new ResponsiveSearchAdInfo([
+        $ad = new Ad(
+            [
+            'responsive_search_ad' => new ResponsiveSearchAdInfo(
+                [
                 'headlines' => [
                     new AdTextAsset(['text' => 'Cruise to Mars']),
                     new AdTextAsset(['text' => 'Best Space Cruise Line']),
@@ -267,16 +279,20 @@ class AddResponsiveSearchAdWithAdCustomizer
                 ],
                 'path1' => 'all-inclusive',
                 'path2' => 'deals'
-            ]),
+                ]
+            ),
             'final_urls' => ['http://www.example.com']
-        ]);
+            ]
+        );
 
         // Creates an ad group ad to hold the above ad.
-        $adGroupAd = new AdGroupAd([
+        $adGroupAd = new AdGroupAd(
+            [
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'status' => AdGroupAdStatus::PAUSED,
             'ad' => $ad
-        ]);
+            ]
+        );
 
         // Creates an ad group ad operation.
         $adGroupAdOperation = new AdGroupAdOperation();

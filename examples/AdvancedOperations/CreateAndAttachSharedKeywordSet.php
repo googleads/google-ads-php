@@ -57,10 +57,12 @@ class CreateAndAttachSharedKeywordSet
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -85,7 +87,9 @@ class CreateAndAttachSharedKeywordSet
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -108,8 +112,8 @@ class CreateAndAttachSharedKeywordSet
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $campaignId the ID of the campaign
+     * @param int             $customerId      the customer ID
+     * @param int             $campaignId      the ID of the campaign
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -117,19 +121,23 @@ class CreateAndAttachSharedKeywordSet
         int $campaignId
     ) {
         // Create shared negative keyword set.
-        $sharedSet = new SharedSet([
+        $sharedSet = new SharedSet(
+            [
             'name' => 'API Negative keyword list - ' . Helper::getPrintableDatetime(),
             'type' => SharedSetType::NEGATIVE_KEYWORDS,
-        ]);
+            ]
+        );
 
         $sharedSetOperation = new SharedSetOperation();
         $sharedSetOperation->setCreate($sharedSet);
 
         $sharedSetServiceClient = $googleAdsClient->getSharedSetServiceClient();
-        $response = $sharedSetServiceClient->mutateSharedSets(MutateSharedSetsRequest::build(
-            $customerId,
-            [$sharedSetOperation]
-        ));
+        $response = $sharedSetServiceClient->mutateSharedSets(
+            MutateSharedSetsRequest::build(
+                $customerId,
+                [$sharedSetOperation]
+            )
+        );
 
         $sharedSetResourceName = $response->getResults()[0]->getResourceName();
         print 'Created shared set ' . $sharedSetResourceName . PHP_EOL;
@@ -139,13 +147,17 @@ class CreateAndAttachSharedKeywordSet
         // Keywords to create a shared set of.
         $keywords = ['mars cruise', 'mars hotels'];
         foreach ($keywords as $keyword) {
-            $sharedCriterion = new SharedCriterion([
-                'keyword' => new KeywordInfo([
+            $sharedCriterion = new SharedCriterion(
+                [
+                'keyword' => new KeywordInfo(
+                    [
                     'text' => $keyword,
                     'match_type' => KeywordMatchType::BROAD
-                ]),
+                    ]
+                ),
                 'shared_set' => $sharedSetResourceName
-            ]);
+                ]
+            );
 
             $sharedCriterionOperation = new SharedCriterionOperation();
             $sharedCriterionOperation->setCreate($sharedCriterion);
@@ -159,15 +171,19 @@ class CreateAndAttachSharedKeywordSet
 
         printf("Added %d shared criteria:%s", $response->getResults()->count(), PHP_EOL);
         foreach ($response->getResults() as $addedSharedCriterion) {
-            /** @var SharedCriterion $addedSharedCriterion */
+            /**
+ * @var SharedCriterion $addedSharedCriterion 
+*/
             print "\t" . $addedSharedCriterion->getResourceName() . PHP_EOL;
         }
 
         // Creates campaign shared set.
-        $campaignSharedSet = new CampaignSharedSet([
+        $campaignSharedSet = new CampaignSharedSet(
+            [
             'campaign' => ResourceNames::forCampaign($customerId, $campaignId),
             'shared_set' => $sharedSetResourceName
-        ]);
+            ]
+        );
 
         $campaignSharedSetOperation = new CampaignSharedSetOperation();
         $campaignSharedSetOperation->setCreate($campaignSharedSet);

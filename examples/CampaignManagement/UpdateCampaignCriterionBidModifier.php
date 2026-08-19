@@ -50,12 +50,14 @@ class UpdateCampaignCriterionBidModifier
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CRITERION_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::BID_MODIFIER_VALUE => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -82,7 +84,9 @@ class UpdateCampaignCriterionBidModifier
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error 
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -104,11 +108,11 @@ class UpdateCampaignCriterionBidModifier
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $campaignId the ID of the campaign for which the bid modifier will be updated
-     * @param int $criterionId the ID of the criterion to update
-     * @param float $bidModifierValue the bid modifier value to set
+     * @param GoogleAdsClient $googleAdsClient  the Google Ads API client
+     * @param int             $customerId       the customer ID
+     * @param int             $campaignId       the ID of the campaign for which the bid modifier will be updated
+     * @param int             $criterionId      the ID of the criterion to update
+     * @param float           $bidModifierValue the bid modifier value to set
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -119,14 +123,16 @@ class UpdateCampaignCriterionBidModifier
     ) {
         // Creates a campaign criterion with the specified resource name and updated bid modifier
         // value.
-        $campaignCriterion = new CampaignCriterion([
+        $campaignCriterion = new CampaignCriterion(
+            [
             'resource_name' => ResourceNames::forCampaignCriterion(
                 $customerId,
                 $campaignId,
                 $criterionId
             ),
             'bid_modifier' => $bidModifierValue
-        ]);
+            ]
+        );
 
         // Creates the campaign criterion operation.
         $campaignCriterionOperation = new CampaignCriterionOperation();
@@ -140,7 +146,9 @@ class UpdateCampaignCriterionBidModifier
         );
 
         // Prints the resource name of the updated campaign criterion.
-        /** @var CampaignCriterion $updatedCampaignCriterion */
+        /**
+ * @var CampaignCriterion $updatedCampaignCriterion 
+*/
         $updatedCampaignCriterion = $response->getResults()[0];
         printf(
             "Campaign criterion with resource name '%s' was modified.%s",

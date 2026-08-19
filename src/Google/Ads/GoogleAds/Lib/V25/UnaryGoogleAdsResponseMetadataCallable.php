@@ -39,8 +39,8 @@ class UnaryGoogleAdsResponseMetadataCallable extends GoogleAdsMiddlewareAbstract
         parent::__construct($nextHandler);
     }
     /**
-     * @param Call $call the current request
-     * @param array $options the optional parameters
+     * @param  Call  $call    the current request
+     * @param  array $options the optional parameters
      * @return array|PromiseInterface the two-member array of
      *     response and metadata if `withResponseMetadata` is specified as an option;
      *     Or else, the `Promise` interface of the next handler

@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V22\Services;
  *
  * Service to manage ad group assets.
  */
-class AdGroupAssetServiceGrpcClient extends \Grpc\BaseStub {
+class AdGroupAssetServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -50,17 +52,21 @@ class AdGroupAssetServiceGrpcClient extends \Grpc\BaseStub {
      *   [NotAllowlistedError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\MutateAdGroupAssetsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\MutateAdGroupAssetsRequest $argument input argument
+     * @param  array                                                         $metadata metadata
+     * @param  array                                                         $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateAdGroupAssetsResponse>
      */
     public function MutateAdGroupAssets(\Google\Ads\GoogleAds\V22\Services\MutateAdGroupAssetsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.AdGroupAssetService/MutateAdGroupAssets',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\MutateAdGroupAssetsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.AdGroupAssetService/MutateAdGroupAssets',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\MutateAdGroupAssetsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

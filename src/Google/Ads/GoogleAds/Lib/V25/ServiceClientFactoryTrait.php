@@ -219,8 +219,7 @@ trait ServiceClientFactoryTrait
         if (!empty($this->getHttpHandler())) {
             $clientOptions['transportConfig']['rest']['httpHandler'] = $this->getHttpHandler();
         }
-        if (
-            self::getGrpcDependencyStatus()
+        if (self::getGrpcDependencyStatus()
             && (!$this->getGrpcChannelIsSecure() || !empty($this->getGrpcChannelCredential()))
         ) {
             $channelCredentials = $this->getGrpcChannelIsSecure()
