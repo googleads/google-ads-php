@@ -135,6 +135,7 @@ return [
                 'label' => 'customers/{customer_id}/labels/{label_id}',
                 'languageConstant' => 'languageConstants/{criterion_id}',
                 'lifeEvent' => 'customers/{customer_id}/lifeEvents/{life_event_id}',
+                'liftMeasurementConfig' => 'customers/{customer_id}/liftMeasurementConfigs/{lift_measurement_configuration_id}',
                 'mobileAppCategoryConstant' => 'mobileAppCategoryConstants/{mobile_app_category_id}',
                 'mobileDeviceConstant' => 'mobileDeviceConstants/{criterion_id}',
                 'operatingSystemVersionConstant' => 'operatingSystemVersionConstants/{criterion_id}',

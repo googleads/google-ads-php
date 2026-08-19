@@ -49,6 +49,13 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      * SUB_COUNTRY_LOCATION, YOUTUBE_CHANNEL, YOUTUBE_LINEUP,
      * AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
      *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
+     * Note that when an
+     * [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     * is requested:
+     *   - Only the following dimensions are supported: AFFINITY_USER_INTEREST,
+     *   AGE_RANGE, GENDER, IN_MARKET_USER_INTEREST
+     *   - The score field is omitted from AudienceCompositionMetrics of the
+     *   GenerateAudienceCompositionInsightsResponse.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -74,6 +81,14 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      *                                                                        SUB_COUNTRY_LOCATION, YOUTUBE_CHANNEL, YOUTUBE_LINEUP,
      *                                                                        AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
      *                                                                        PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
+     *
+     *                                                                        Note that when an
+     *                                                                        [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     *                                                                        is requested:
+     *                                                                        - Only the following dimensions are supported: AFFINITY_USER_INTEREST,
+     *                                                                        AGE_RANGE, GENDER, IN_MARKET_USER_INTEREST
+     *                                                                        - The score field is omitted from AudienceCompositionMetrics of the
+     *                                                                        GenerateAudienceCompositionInsightsResponse.
      *                                                                        For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V25\Enums\AudienceInsightsDimensionEnum\AudienceInsightsDimension}
      *
      * @return \Google\Ads\GoogleAds\V25\Services\GenerateAudienceCompositionInsightsRequest
@@ -111,6 +126,13 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      *           SUB_COUNTRY_LOCATION, YOUTUBE_CHANNEL, YOUTUBE_LINEUP,
      *           AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
      *            PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
+     *           Note that when an
+     *           [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     *           is requested:
+     *             - Only the following dimensions are supported: AFFINITY_USER_INTEREST,
+     *             AGE_RANGE, GENDER, IN_MARKET_USER_INTEREST
+     *             - The score field is omitted from AudienceCompositionMetrics of the
+     *             GenerateAudienceCompositionInsightsResponse.
      *     @type string $customer_insights_group
      *           The name of the customer being planned for.  This is a user-defined value.
      *     @type \Google\Ads\GoogleAds\V25\Common\AdditionalApplicationInfo $insights_application_info
@@ -258,6 +280,13 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      * SUB_COUNTRY_LOCATION, YOUTUBE_CHANNEL, YOUTUBE_LINEUP,
      * AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
      *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
+     * Note that when an
+     * [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     * is requested:
+     *   - Only the following dimensions are supported: AFFINITY_USER_INTEREST,
+     *   AGE_RANGE, GENDER, IN_MARKET_USER_INTEREST
+     *   - The score field is omitted from AudienceCompositionMetrics of the
+     *   GenerateAudienceCompositionInsightsResponse.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return RepeatedField<int>
@@ -273,6 +302,13 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      * SUB_COUNTRY_LOCATION, YOUTUBE_CHANNEL, YOUTUBE_LINEUP,
      * AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
      *  PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
+     * Note that when an
+     * [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     * is requested:
+     *   - Only the following dimensions are supported: AFFINITY_USER_INTEREST,
+     *   AGE_RANGE, GENDER, IN_MARKET_USER_INTEREST
+     *   - The score field is omitted from AudienceCompositionMetrics of the
+     *   GenerateAudienceCompositionInsightsResponse.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimensions = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int[] $var

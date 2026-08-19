@@ -87,7 +87,11 @@ class ProductLinkInvitationServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -259,6 +263,8 @@ class ProductLinkInvitationServiceClient
      * The async variant is
      * {@see ProductLinkInvitationServiceClient::createProductLinkInvitationAsync()} .
      *
+     * @example samples/V25/Services/ProductLinkInvitationServiceClient/create_product_link_invitation.php
+     *
      * @param CreateProductLinkInvitationRequest $request     A request to house fields associated with the call.
      * @param array                              $callOptions {
      *     Optional.
@@ -284,6 +290,8 @@ class ProductLinkInvitationServiceClient
      * The async variant is
      * {@see ProductLinkInvitationServiceClient::removeProductLinkInvitationAsync()} .
      *
+     * @example samples/V25/Services/ProductLinkInvitationServiceClient/remove_product_link_invitation.php
+     *
      * @param RemoveProductLinkInvitationRequest $request     A request to house fields associated with the call.
      * @param array                              $callOptions {
      *     Optional.
@@ -308,6 +316,8 @@ class ProductLinkInvitationServiceClient
      *
      * The async variant is
      * {@see ProductLinkInvitationServiceClient::updateProductLinkInvitationAsync()} .
+     *
+     * @example samples/V25/Services/ProductLinkInvitationServiceClient/update_product_link_invitation.php
      *
      * @param UpdateProductLinkInvitationRequest $request     A request to house fields associated with the call.
      * @param array                              $callOptions {

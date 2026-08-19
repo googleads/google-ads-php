@@ -42,6 +42,13 @@ class InsightsKnowledgeGraphEntityCapabilities
      */
     const CREATOR_ATTRIBUTE = 3;
     /**
+     * An entity that represents a brand. This entity supports brand
+     * capabilities, such as brand sentiment.
+     *
+     * Generated from protobuf enum <code>BRAND = 4;</code>
+     */
+    const BRAND = 4;
+    /**
      * An entity that is supported to use as a topic in
      * [ContentCreatorInsightsService.GenerateCreatorInsights]
      * [google.ads.googleads.v25.services.ContentCreatorInsightsService.GenerateCreatorInsights]
@@ -57,6 +64,7 @@ class InsightsKnowledgeGraphEntityCapabilities
         self::UNKNOWN => 'UNKNOWN',
         self::CONTENT_TRENDING_INSIGHTS => 'CONTENT_TRENDING_INSIGHTS',
         self::CREATOR_ATTRIBUTE => 'CREATOR_ATTRIBUTE',
+        self::BRAND => 'BRAND',
         self::CREATOR_TOPIC_INSIGHTS => 'CREATOR_TOPIC_INSIGHTS',
     ];
 

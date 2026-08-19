@@ -17,7 +17,9 @@ use Google\Protobuf\RepeatedField;
 class ListBenchmarksSourcesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The types of benchmarks sources to be returned
+     * Required. The types of benchmarks sources to be returned. Supported sources
+     * include INDUSTRY_VERTICAL and CATEGORY. Categories are used as filters for
+     * scoping the benchmarks analysis when benchmarking against all advertisers.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.enums.BenchmarksSourceTypeEnum.BenchmarksSourceType benchmarks_sources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -30,7 +32,9 @@ class ListBenchmarksSourcesRequest extends \Google\Protobuf\Internal\Message
     protected $application_info = null;
 
     /**
-     * @param int[] $benchmarksSources Required. The types of benchmarks sources to be returned
+     * @param int[] $benchmarksSources Required. The types of benchmarks sources to be returned. Supported sources
+     *                                 include INDUSTRY_VERTICAL and CATEGORY. Categories are used as filters for
+     *                                 scoping the benchmarks analysis when benchmarking against all advertisers.
      *                                 For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V25\Enums\BenchmarksSourceTypeEnum\BenchmarksSourceType}
      *
      * @return \Google\Ads\GoogleAds\V25\Services\ListBenchmarksSourcesRequest
@@ -50,7 +54,9 @@ class ListBenchmarksSourcesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int[] $benchmarks_sources
-     *           Required. The types of benchmarks sources to be returned
+     *           Required. The types of benchmarks sources to be returned. Supported sources
+     *           include INDUSTRY_VERTICAL and CATEGORY. Categories are used as filters for
+     *           scoping the benchmarks analysis when benchmarking against all advertisers.
      *     @type \Google\Ads\GoogleAds\V25\Common\AdditionalApplicationInfo $application_info
      *           Additional information on the application issuing the request.
      * }
@@ -61,7 +67,9 @@ class ListBenchmarksSourcesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The types of benchmarks sources to be returned
+     * Required. The types of benchmarks sources to be returned. Supported sources
+     * include INDUSTRY_VERTICAL and CATEGORY. Categories are used as filters for
+     * scoping the benchmarks analysis when benchmarking against all advertisers.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.enums.BenchmarksSourceTypeEnum.BenchmarksSourceType benchmarks_sources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return RepeatedField<int>
@@ -72,7 +80,9 @@ class ListBenchmarksSourcesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The types of benchmarks sources to be returned
+     * Required. The types of benchmarks sources to be returned. Supported sources
+     * include INDUSTRY_VERTICAL and CATEGORY. Categories are used as filters for
+     * scoping the benchmarks analysis when benchmarking against all advertisers.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.enums.BenchmarksSourceTypeEnum.BenchmarksSourceType benchmarks_sources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int[] $var

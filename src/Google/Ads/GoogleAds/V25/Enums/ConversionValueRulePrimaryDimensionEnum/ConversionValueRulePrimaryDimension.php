@@ -74,6 +74,12 @@ class ConversionValueRulePrimaryDimension
      * Generated from protobuf enum <code>ITINERARY = 9;</code>
      */
     const ITINERARY = 9;
+    /**
+     * When a loyalty membership condition is satisfied.
+     *
+     * Generated from protobuf enum <code>LOYALTY_MEMBERSHIP = 10;</code>
+     */
+    const LOYALTY_MEMBERSHIP = 10;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -86,6 +92,7 @@ class ConversionValueRulePrimaryDimension
         self::AUDIENCE => 'AUDIENCE',
         self::MULTIPLE => 'MULTIPLE',
         self::ITINERARY => 'ITINERARY',
+        self::LOYALTY_MEMBERSHIP => 'LOYALTY_MEMBERSHIP',
     ];
 
     public static function name($value)

@@ -81,7 +81,11 @@ class ContentCreatorInsightsServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -206,6 +210,8 @@ class ContentCreatorInsightsServiceClient
      * The async variant is
      * {@see ContentCreatorInsightsServiceClient::generateCreatorInsightsAsync()} .
      *
+     * @example samples/V25/Services/ContentCreatorInsightsServiceClient/generate_creator_insights.php
+     *
      * @param GenerateCreatorInsightsRequest $request     A request to house fields associated with the call.
      * @param array                          $callOptions {
      *     Optional.
@@ -240,6 +246,8 @@ class ContentCreatorInsightsServiceClient
      *
      * The async variant is
      * {@see ContentCreatorInsightsServiceClient::generateTrendingInsightsAsync()} .
+     *
+     * @example samples/V25/Services/ContentCreatorInsightsServiceClient/generate_trending_insights.php
      *
      * @param GenerateTrendingInsightsRequest $request     A request to house fields associated with the call.
      * @param array                           $callOptions {

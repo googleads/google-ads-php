@@ -83,7 +83,11 @@ class SmartCampaignSettingServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -257,6 +261,8 @@ class SmartCampaignSettingServiceClient
      * The async variant is
      * {@see SmartCampaignSettingServiceClient::getSmartCampaignStatusAsync()} .
      *
+     * @example samples/V25/Services/SmartCampaignSettingServiceClient/get_smart_campaign_status.php
+     *
      * @param GetSmartCampaignStatusRequest $request     A request to house fields associated with the call.
      * @param array                         $callOptions {
      *     Optional.
@@ -281,6 +287,8 @@ class SmartCampaignSettingServiceClient
      *
      * The async variant is
      * {@see SmartCampaignSettingServiceClient::mutateSmartCampaignSettingsAsync()} .
+     *
+     * @example samples/V25/Services/SmartCampaignSettingServiceClient/mutate_smart_campaign_settings.php
      *
      * @param MutateSmartCampaignSettingsRequest $request     A request to house fields associated with the call.
      * @param array                              $callOptions {

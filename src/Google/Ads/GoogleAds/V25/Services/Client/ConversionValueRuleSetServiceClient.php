@@ -80,7 +80,11 @@ class ConversionValueRuleSetServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -289,6 +293,8 @@ class ConversionValueRuleSetServiceClient
      * The async variant is
      * {@see ConversionValueRuleSetServiceClient::mutateConversionValueRuleSetsAsync()}
      * .
+     *
+     * @example samples/V25/Services/ConversionValueRuleSetServiceClient/mutate_conversion_value_rule_sets.php
      *
      * @param MutateConversionValueRuleSetsRequest $request     A request to house fields associated with the call.
      * @param array                                $callOptions {

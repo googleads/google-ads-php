@@ -1613,6 +1613,23 @@ final class ResourceNames
     }
 
     /**
+     * Generates a resource name of lift measurement config type.
+     *
+     * @param string $customerId
+     * @param string $liftMeasurementConfigurationId
+     * @return string the lift measurement config resource name
+     */
+    public static function forLiftMeasurementConfig(
+        $customerId,
+        $liftMeasurementConfigurationId
+    ): string {
+        return GoogleAdsServiceClient::liftMeasurementConfigName(
+            $customerId,
+            $liftMeasurementConfigurationId
+        );
+    }
+
+    /**
      * Generates a resource name of local services lead type.
      *
      * @param string $customerId

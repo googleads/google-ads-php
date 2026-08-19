@@ -94,6 +94,14 @@ class AuthorizationError
      */
     const DEVELOPER_TOKEN_NOT_APPROVED = 10;
     /**
+     * The Google Cloud project is only approved for use with test accounts.
+     * To access non-test accounts, apply for Explorer, Basic or Standard
+     * access.
+     *
+     * Generated from protobuf enum <code>CLOUD_PROJECT_NOT_APPROVED_FOR_PRODUCTION = 32;</code>
+     */
+    const CLOUD_PROJECT_NOT_APPROVED_FOR_PRODUCTION = 32;
+    /**
      * The login customer specified does not have access to the account
      * specified, so the request is invalid.
      *
@@ -146,6 +154,7 @@ class AuthorizationError
         self::CUSTOMER_NOT_ENABLED => 'CUSTOMER_NOT_ENABLED',
         self::MISSING_TOS => 'MISSING_TOS',
         self::DEVELOPER_TOKEN_NOT_APPROVED => 'DEVELOPER_TOKEN_NOT_APPROVED',
+        self::CLOUD_PROJECT_NOT_APPROVED_FOR_PRODUCTION => 'CLOUD_PROJECT_NOT_APPROVED_FOR_PRODUCTION',
         self::INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION => 'INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION',
         self::SERVICE_ACCESS_DENIED => 'SERVICE_ACCESS_DENIED',
         self::ACCESS_DENIED_FOR_ACCOUNT_TYPE => 'ACCESS_DENIED_FOR_ACCOUNT_TYPE',

@@ -86,7 +86,11 @@ class YouTubeVideoUploadServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -243,6 +247,8 @@ class YouTubeVideoUploadServiceClient
      * The async variant is
      * {@see YouTubeVideoUploadServiceClient::createYouTubeVideoUploadAsync()} .
      *
+     * @example samples/V25/Services/YouTubeVideoUploadServiceClient/create_you_tube_video_upload.php
+     *
      * @param CreateYouTubeVideoUploadRequest $request     A request to house fields associated with the call.
      * @param array                           $callOptions {
      *     Optional.
@@ -267,6 +273,8 @@ class YouTubeVideoUploadServiceClient
      *
      * The async variant is
      * {@see YouTubeVideoUploadServiceClient::removeYouTubeVideoUploadAsync()} .
+     *
+     * @example samples/V25/Services/YouTubeVideoUploadServiceClient/remove_you_tube_video_upload.php
      *
      * @param RemoveYouTubeVideoUploadRequest $request     A request to house fields associated with the call.
      * @param array                           $callOptions {
@@ -293,6 +301,8 @@ class YouTubeVideoUploadServiceClient
      *
      * The async variant is
      * {@see YouTubeVideoUploadServiceClient::updateYouTubeVideoUploadAsync()} .
+     *
+     * @example samples/V25/Services/YouTubeVideoUploadServiceClient/update_you_tube_video_upload.php
      *
      * @param UpdateYouTubeVideoUploadRequest $request     A request to house fields associated with the call.
      * @param array                           $callOptions {

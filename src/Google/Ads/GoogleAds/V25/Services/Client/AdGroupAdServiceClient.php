@@ -82,7 +82,11 @@ class AdGroupAdServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -359,6 +363,8 @@ class AdGroupAdServiceClient
      *
      * The async variant is {@see AdGroupAdServiceClient::mutateAdGroupAdsAsync()} .
      *
+     * @example samples/V25/Services/AdGroupAdServiceClient/mutate_ad_group_ads.php
+     *
      * @param MutateAdGroupAdsRequest $request     A request to house fields associated with the call.
      * @param array                   $callOptions {
      *     Optional.
@@ -394,6 +400,8 @@ class AdGroupAdServiceClient
      *
      * The async variant is
      * {@see AdGroupAdServiceClient::removeAutomaticallyCreatedAssetsAsync()} .
+     *
+     * @example samples/V25/Services/AdGroupAdServiceClient/remove_automatically_created_assets.php
      *
      * @param RemoveAutomaticallyCreatedAssetsRequest $request     A request to house fields associated with the call.
      * @param array                                   $callOptions {

@@ -296,6 +296,12 @@ class CriterionType
      */
     const VERTICAL_ADS_ITEM_GROUP_RULE = 46;
     /**
+     * A bid for a Vertical Ads item.
+     *
+     * Generated from protobuf enum <code>VERTICAL_ADS_ITEM_BID = 47;</code>
+     */
+    const VERTICAL_ADS_ITEM_BID = 47;
+    /**
      * Retail Filter Bundle for linking a retail filter shared set to an ad
      * group.
      *
@@ -358,6 +364,7 @@ class CriterionType
         self::PLACEMENT_LIST => 'PLACEMENT_LIST',
         self::VERTICAL_ADS_ITEM_GROUP_RULE_LIST => 'VERTICAL_ADS_ITEM_GROUP_RULE_LIST',
         self::VERTICAL_ADS_ITEM_GROUP_RULE => 'VERTICAL_ADS_ITEM_GROUP_RULE',
+        self::VERTICAL_ADS_ITEM_BID => 'VERTICAL_ADS_ITEM_BID',
         self::RETAIL_FILTER_BUNDLE => 'RETAIL_FILTER_BUNDLE',
         self::RETAIL_FILTER => 'RETAIL_FILTER',
     ];

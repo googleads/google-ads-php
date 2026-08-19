@@ -296,39 +296,6 @@ class LogMessageFormatterTest extends TestCase
         );
     }
 
-    public function testFormatDetailWithResponseContainingLocalServicesLead()
-    {
-        $this->createRequestResponseWithLocalServicesLead();
-        $logMessageFormatter = new LogMessageFormatter();
-
-        $actualOutput = $logMessageFormatter->formatDetail(
-            $this->emailAddressRequest,
-            $this->emailAddressResponse,
-            'googleads.api.com'
-        );
-
-        $this->assertStringContainsString('"request-id": "AbCdEfGhIJk"', $actualOutput);
-        $this->assertStringContainsString('"developer-token": "REDACTED"', $actualOutput);
-        $this->assertStringContainsString(
-            'Method Name: GoogleAdsService/SearchStream',
-            $actualOutput
-        );
-        $this->assertStringContainsString(
-            'Request: ' . "\n"
-            . '{"customerId":"1234567890",'
-            . '"query":"SELECT local_services_lead.contact_details.email FROM local_services_lead"'
-            . '}',
-            $actualOutput
-        );
-        $this->assertStringContainsString('Host: googleads.api.com', $actualOutput);
-        $this->assertStringContainsString(
-            'Response: ' . "\n"
-            . '{"results":[{"localServicesLead":{"contactDetails":{"email":"REDACTED"}}}],'
-            . '"fieldMask":"localServicesLead.contactDetails.email"}',
-            $actualOutput
-        );
-    }
-
     public function testFormatDetailWithResponseContainingLocalServicesLeadConversation()
     {
         $this->createRequestResponseWithLocalServicesLeadConversation();
@@ -386,36 +353,6 @@ class LogMessageFormatterTest extends TestCase
             'Response: ' . "\n" . '{"invitationLink":"http://example.com"}',
             $actualOutput
         );
-    }
-
-    /**
-     * @dataProvider queryWithGoogleAdsRowProvider
-     */
-    public function testFormatDetailWithRequestWhoseGaqlQueryContainsEmails(
-        string $query,
-        string $loggedQuery,
-        GoogleAdsRow $resultGoogleAdsRow,
-        array $fieldMaskPaths,
-        string $loggedResult
-    ) {
-        $this->createRequestResponseWithEmailsInGaql($query, $resultGoogleAdsRow, $fieldMaskPaths);
-        $logMessageFormatter = new LogMessageFormatter();
-
-        $actualOutput = $logMessageFormatter->formatDetail(
-            $this->emailAddressRequest,
-            $this->emailAddressResponse,
-            'googleads.api.com'
-        );
-
-        $this->assertStringContainsString('"request-id": "AbCdEfGhIJk"', $actualOutput);
-        $this->assertStringContainsString('"developer-token": "REDACTED"', $actualOutput);
-        $this->assertStringContainsString('Method Name: GoogleAdsService/Search', $actualOutput);
-        $this->assertStringContainsString(
-            'Request: ' . "\n" . '{"customerId":"1234567890",' . $loggedQuery . '}',
-            $actualOutput
-        );
-        $this->assertStringContainsString('Host: googleads.api.com', $actualOutput);
-        $this->assertStringContainsString('Response: ' . "\n" . $loggedResult, $actualOutput);
     }
 
     public function queryWithGoogleAdsRowProvider()
@@ -647,38 +584,6 @@ class LogMessageFormatterTest extends TestCase
         $this->emailAddressResponse = compact('status', 'response', 'call');
     }
 
-    private function createRequestResponseWithLocalServicesLead()
-    {
-        $method = 'GoogleAdsService/SearchStream';
-        $argument = new SearchGoogleAdsStreamRequest([
-            'customer_id' => 1234567890,
-            'query' => 'SELECT local_services_lead.contact_details.email FROM local_services_lead'
-        ]);
-        $metadata = ['developer-token' => ['a1b2c3']];
-        $status = self::createSuccessfulStatus();
-
-        $googleAdsRows = [
-            new GoogleAdsRow([
-                'local_services_lead' => new LocalServicesLead([
-                    'contact_details' => new ContactDetails(['email' => 'test1@example.com'])
-                ])
-            ])
-        ];
-        $response = new SearchGoogleAdsStreamResponse([
-            'results' => $googleAdsRows,
-            'field_mask' => new FieldMask([
-                'paths' => ['local_services_lead.contact_details.email']])
-        ]);
-
-        $call = self::createUnaryCallMock();
-        $call->method('getMetadata')->willReturn(
-            ['request-id' => ['AbCdEfGh'], 'x-google-session-info' => ['1234abcd']]
-        );
-
-        $this->emailAddressRequest = compact('method', 'argument', 'metadata');
-        $this->emailAddressResponse = compact('status', 'response', 'call');
-    }
-
     private function createRequestResponseWithLocalServicesLeadConversation()
     {
         $method = 'GoogleAdsService/SearchStream';
@@ -723,31 +628,6 @@ class LogMessageFormatterTest extends TestCase
         $status = self::createSuccessfulStatus();
 
         $response = new CreateCustomerClientResponse(['invitation_link' => 'http://example.com']);
-
-        $call = self::createUnaryCallMock();
-        $call->method('getMetadata')->willReturn(
-            ['request-id' => ['AbCdEfGh'], 'x-google-session-info' => ['1234abcd']]
-        );
-
-        $this->emailAddressRequest = compact('method', 'argument', 'metadata');
-        $this->emailAddressResponse = compact('status', 'response', 'call');
-    }
-
-    private function createRequestResponseWithEmailsInGaql(
-        string $query,
-        GoogleAdsRow $googleAdsRow,
-        array $fieldMaskPaths
-    ) {
-        $method = 'GoogleAdsService/Search';
-        $argument = new SearchGoogleAdsRequest(['customer_id' => 1234567890, 'query' => $query]);
-        $metadata = ['developer-token' => ['a1b2c3']];
-        $status = self::createSuccessfulStatus();
-
-        $googleAdsRows = [$googleAdsRow];
-        $response = new SearchGoogleAdsResponse([
-            'results' => $googleAdsRows,
-            'field_mask' => new FieldMask(['paths' => $fieldMaskPaths])
-        ]);
 
         $call = self::createUnaryCallMock();
         $call->method('getMetadata')->willReturn(

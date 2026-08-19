@@ -27,8 +27,8 @@ class GoalType
     const UNKNOWN = 1;
     /**
      * Retention goal, which allows advertisers to optimize campaigns to win
-     * back lapsed customers.
-     * (https://support.google.com/google-ads/answer/14792043?hl=en)
+     * back lapsed customers. See
+     * https://support.google.com/google-ads/answer/14792043 to learn more.
      *
      * Generated from protobuf enum <code>CUSTOMER_RETENTION = 3;</code>
      */

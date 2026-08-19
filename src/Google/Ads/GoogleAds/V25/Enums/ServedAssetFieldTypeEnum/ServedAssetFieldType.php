@@ -240,6 +240,12 @@ class ServedAssetFieldType
      * Generated from protobuf enum <code>DESCRIPTION_LINE_HEADLINE_AS_SITELINK_POSITION_TWO = 42;</code>
      */
     const DESCRIPTION_LINE_HEADLINE_AS_SITELINK_POSITION_TWO = 42;
+    /**
+     * The asset is used as a text disclaimer.
+     *
+     * Generated from protobuf enum <code>TEXT_DISCLAIMER = 43;</code>
+     */
+    const TEXT_DISCLAIMER = 43;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -279,6 +285,7 @@ class ServedAssetFieldType
         self::HEADLINE_AS_SITELINK_POSITION_TWO => 'HEADLINE_AS_SITELINK_POSITION_TWO',
         self::DESCRIPTION_LINE_HEADLINE_AS_SITELINK_POSITION_ONE => 'DESCRIPTION_LINE_HEADLINE_AS_SITELINK_POSITION_ONE',
         self::DESCRIPTION_LINE_HEADLINE_AS_SITELINK_POSITION_TWO => 'DESCRIPTION_LINE_HEADLINE_AS_SITELINK_POSITION_TWO',
+        self::TEXT_DISCLAIMER => 'TEXT_DISCLAIMER',
     ];
 
     public static function name($value)

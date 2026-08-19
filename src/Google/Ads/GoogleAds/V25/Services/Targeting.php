@@ -59,6 +59,14 @@ class Targeting extends \Google\Protobuf\Internal\Message
      */
     protected $network = 0;
     /**
+     * Targeted parental statuses.
+     * If not specified, targets all parental statuses (PARENT, NOT_A_PARENT, and
+     * UNDETERMINED).
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.common.ParentalStatusInfo parental_statuses = 9;</code>
+     */
+    private $parental_statuses;
+    /**
      * Targeted audiences.
      * If not specified, does not target any specific audience.
      *
@@ -95,6 +103,10 @@ class Targeting extends \Google\Protobuf\Internal\Message
      *           If not specified, targets all applicable networks. Applicable networks vary
      *           by product and region and can be obtained from
      *           [ReachPlanService.ListPlannableProducts][google.ads.googleads.v25.services.ReachPlanService.ListPlannableProducts].
+     *     @type \Google\Ads\GoogleAds\V25\Common\ParentalStatusInfo[] $parental_statuses
+     *           Targeted parental statuses.
+     *           If not specified, targets all parental statuses (PARENT, NOT_A_PARENT, and
+     *           UNDETERMINED).
      *     @type \Google\Ads\GoogleAds\V25\Services\AudienceTargeting $audience_targeting
      *           Targeted audiences.
      *           If not specified, does not target any specific audience.
@@ -257,6 +269,36 @@ class Targeting extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\ReachPlanNetworkEnum\ReachPlanNetwork::class);
         $this->network = $var;
+
+        return $this;
+    }
+
+    /**
+     * Targeted parental statuses.
+     * If not specified, targets all parental statuses (PARENT, NOT_A_PARENT, and
+     * UNDETERMINED).
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.common.ParentalStatusInfo parental_statuses = 9;</code>
+     * @return RepeatedField<\Google\Ads\GoogleAds\V25\Common\ParentalStatusInfo>
+     */
+    public function getParentalStatuses()
+    {
+        return $this->parental_statuses;
+    }
+
+    /**
+     * Targeted parental statuses.
+     * If not specified, targets all parental statuses (PARENT, NOT_A_PARENT, and
+     * UNDETERMINED).
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.common.ParentalStatusInfo parental_statuses = 9;</code>
+     * @param \Google\Ads\GoogleAds\V25\Common\ParentalStatusInfo[] $var
+     * @return $this
+     */
+    public function setParentalStatuses($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V25\Common\ParentalStatusInfo::class);
+        $this->parental_statuses = $arr;
 
         return $this;
     }

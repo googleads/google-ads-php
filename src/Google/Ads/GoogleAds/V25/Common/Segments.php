@@ -91,6 +91,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $ad_sub_network_type = 0;
     /**
+     * Age range
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.AgeRangeTypeEnum.AgeRangeType age_range = 225;</code>
+     */
+    protected $age_range = 0;
+    /**
      * Resource name of the asset group.
      *
      * Generated from protobuf field <code>optional string asset_group = 159;</code>
@@ -108,6 +114,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.BudgetCampaignAssociationStatus budget_campaign_association_status = 134;</code>
      */
     protected $budget_campaign_association_status = null;
+    /**
+     * The brand lift measurement type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.BrandLiftMeasurementTypeEnum.BrandLiftMeasurementType brand_lift_measurement_type = 230;</code>
+     */
+    protected $brand_lift_measurement_type = 0;
     /**
      * Resource name of the campaign.
      *
@@ -162,12 +174,51 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $conversion_lag_bucket = 0;
     /**
+     * Conversion Category for Conversion Lift.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.ConversionActionCategoryEnum.ConversionActionCategory conversion_lift_conversion_category = 229;</code>
+     */
+    protected $conversion_lift_conversion_category = 0;
+    /**
+     * The end date of the period for which these Conversion Lift results are
+     * calculated. This can differ from the overall Study End Time.
+     *
+     * Generated from protobuf field <code>int64 conversion_lift_end_date = 223;</code>
+     */
+    protected $conversion_lift_end_date = 0;
+    /**
+     * The specific conversion types that were included in the Conversion Lift
+     * measurement for this reporting period.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.ConversionLiftIncludedConversionActionTypesEnum.ConversionLiftIncludedConversionActionTypes conversion_lift_included_conversion_action_types = 224;</code>
+     */
+    protected $conversion_lift_included_conversion_action_types = 0;
+    /**
+     * The start date of the period for which these Conversion Lift results are
+     * calculated. This can differ from the overall Study Start Time.
+     *
+     * Generated from protobuf field <code>int64 conversion_lift_start_date = 222;</code>
+     */
+    protected $conversion_lift_start_date = 0;
+    /**
      * An enum value representing the number of days between the impression and
      * the conversion or between the impression and adjustments to the conversion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.enums.ConversionOrAdjustmentLagBucketEnum.ConversionOrAdjustmentLagBucket conversion_or_adjustment_lag_bucket = 51;</code>
      */
     protected $conversion_or_adjustment_lag_bucket = 0;
+    /**
+     * Resource name of the country
+     *
+     * Generated from protobuf field <code>optional string country = 227 [(.google.api.resource_reference) = {</code>
+     */
+    protected $country = null;
+    /**
+     * Localized name of the country.
+     *
+     * Generated from protobuf field <code>optional string country_localized_name = 228;</code>
+     */
+    protected $country_localized_name = null;
     /**
      * Date to which metrics apply.
      * yyyy-MM-dd format, for example, 2018-04-17.
@@ -194,11 +245,23 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $mobile_device_platform = 0;
     /**
+     * Experiment arm.
+     *
+     * Generated from protobuf field <code>optional string experiment_arm = 231;</code>
+     */
+    protected $experiment_arm = null;
+    /**
      * External conversion source.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.enums.ExternalConversionSourceEnum.ExternalConversionSource external_conversion_source = 55;</code>
      */
     protected $external_conversion_source = 0;
+    /**
+     * Gender
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.GenderTypeEnum.GenderType gender = 226;</code>
+     */
+    protected $gender = 0;
     /**
      * Resource name of the geo target constant that represents an airport.
      *
@@ -376,6 +439,13 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v25.enums.LandingPageSourceEnum.LandingPageSource landing_page_source = 200;</code>
      */
     protected $landing_page_source = 0;
+    /**
+     * The user loyalty membership tier, based on the user belonging to a loyalty
+     * program.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.LoyaltyMembershipEnum.LoyaltyMembership loyalty_membership = 233;</code>
+     */
+    protected $loyalty_membership = 0;
     /**
      * Month as represented by the date of the first day of a month. Formatted as
      * yyyy-MM-dd.
@@ -1044,12 +1114,16 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Ad sub network type. Currently only available for ads running as part of
      *           DemandGen campaigns on YouTube and has to always be selected together with
      *           ad_network_type.
+     *     @type int $age_range
+     *           Age range
      *     @type string $asset_group
      *           Resource name of the asset group.
      *     @type string $auction_insight_domain
      *           Domain (visible URL) of a participant in the Auction Insights report.
      *     @type \Google\Ads\GoogleAds\V25\Common\BudgetCampaignAssociationStatus $budget_campaign_association_status
      *           Budget campaign association status.
+     *     @type int $brand_lift_measurement_type
+     *           The brand lift measurement type.
      *     @type string $campaign
      *           Resource name of the campaign.
      *     @type int $click_type
@@ -1071,9 +1145,24 @@ class Segments extends \Google\Protobuf\Internal\Message
      *     @type int $conversion_lag_bucket
      *           An enum value representing the number of days between the impression and
      *           the conversion.
+     *     @type int $conversion_lift_conversion_category
+     *           Conversion Category for Conversion Lift.
+     *     @type int|string $conversion_lift_end_date
+     *           The end date of the period for which these Conversion Lift results are
+     *           calculated. This can differ from the overall Study End Time.
+     *     @type int $conversion_lift_included_conversion_action_types
+     *           The specific conversion types that were included in the Conversion Lift
+     *           measurement for this reporting period.
+     *     @type int|string $conversion_lift_start_date
+     *           The start date of the period for which these Conversion Lift results are
+     *           calculated. This can differ from the overall Study Start Time.
      *     @type int $conversion_or_adjustment_lag_bucket
      *           An enum value representing the number of days between the impression and
      *           the conversion or between the impression and adjustments to the conversion.
+     *     @type string $country
+     *           Resource name of the country
+     *     @type string $country_localized_name
+     *           Localized name of the country.
      *     @type string $date
      *           Date to which metrics apply.
      *           yyyy-MM-dd format, for example, 2018-04-17.
@@ -1083,8 +1172,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Device to which metrics apply.
      *     @type int $mobile_device_platform
      *           Mobile device platform to which metrics apply.
+     *     @type string $experiment_arm
+     *           Experiment arm.
      *     @type int $external_conversion_source
      *           External conversion source.
+     *     @type int $gender
+     *           Gender
      *     @type string $geo_target_airport
      *           Resource name of the geo target constant that represents an airport.
      *     @type string $geo_target_canton
@@ -1146,6 +1239,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Keyword criterion.
      *     @type int $landing_page_source
      *           The source of a landing page in the landing page report.
+     *     @type int $loyalty_membership
+     *           The user loyalty membership tier, based on the user belonging to a loyalty
+     *           program.
      *     @type string $month
      *           Month as represented by the date of the first day of a month. Formatted as
      *           yyyy-MM-dd.
@@ -1800,6 +1896,32 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Age range
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.AgeRangeTypeEnum.AgeRangeType age_range = 225;</code>
+     * @return int
+     */
+    public function getAgeRange()
+    {
+        return $this->age_range;
+    }
+
+    /**
+     * Age range
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.AgeRangeTypeEnum.AgeRangeType age_range = 225;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAgeRange($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\AgeRangeTypeEnum\AgeRangeType::class);
+        $this->age_range = $var;
+
+        return $this;
+    }
+
+    /**
      * Resource name of the asset group.
      *
      * Generated from protobuf field <code>optional string asset_group = 159;</code>
@@ -1903,6 +2025,32 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Common\BudgetCampaignAssociationStatus::class);
         $this->budget_campaign_association_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * The brand lift measurement type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.BrandLiftMeasurementTypeEnum.BrandLiftMeasurementType brand_lift_measurement_type = 230;</code>
+     * @return int
+     */
+    public function getBrandLiftMeasurementType()
+    {
+        return $this->brand_lift_measurement_type;
+    }
+
+    /**
+     * The brand lift measurement type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.BrandLiftMeasurementTypeEnum.BrandLiftMeasurementType brand_lift_measurement_type = 230;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setBrandLiftMeasurementType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\BrandLiftMeasurementTypeEnum\BrandLiftMeasurementType::class);
+        $this->brand_lift_measurement_type = $var;
 
         return $this;
     }
@@ -2166,6 +2314,116 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Conversion Category for Conversion Lift.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.ConversionActionCategoryEnum.ConversionActionCategory conversion_lift_conversion_category = 229;</code>
+     * @return int
+     */
+    public function getConversionLiftConversionCategory()
+    {
+        return $this->conversion_lift_conversion_category;
+    }
+
+    /**
+     * Conversion Category for Conversion Lift.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.ConversionActionCategoryEnum.ConversionActionCategory conversion_lift_conversion_category = 229;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setConversionLiftConversionCategory($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\ConversionActionCategoryEnum\ConversionActionCategory::class);
+        $this->conversion_lift_conversion_category = $var;
+
+        return $this;
+    }
+
+    /**
+     * The end date of the period for which these Conversion Lift results are
+     * calculated. This can differ from the overall Study End Time.
+     *
+     * Generated from protobuf field <code>int64 conversion_lift_end_date = 223;</code>
+     * @return int|string
+     */
+    public function getConversionLiftEndDate()
+    {
+        return $this->conversion_lift_end_date;
+    }
+
+    /**
+     * The end date of the period for which these Conversion Lift results are
+     * calculated. This can differ from the overall Study End Time.
+     *
+     * Generated from protobuf field <code>int64 conversion_lift_end_date = 223;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setConversionLiftEndDate($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->conversion_lift_end_date = $var;
+
+        return $this;
+    }
+
+    /**
+     * The specific conversion types that were included in the Conversion Lift
+     * measurement for this reporting period.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.ConversionLiftIncludedConversionActionTypesEnum.ConversionLiftIncludedConversionActionTypes conversion_lift_included_conversion_action_types = 224;</code>
+     * @return int
+     */
+    public function getConversionLiftIncludedConversionActionTypes()
+    {
+        return $this->conversion_lift_included_conversion_action_types;
+    }
+
+    /**
+     * The specific conversion types that were included in the Conversion Lift
+     * measurement for this reporting period.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.ConversionLiftIncludedConversionActionTypesEnum.ConversionLiftIncludedConversionActionTypes conversion_lift_included_conversion_action_types = 224;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setConversionLiftIncludedConversionActionTypes($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\ConversionLiftIncludedConversionActionTypesEnum\ConversionLiftIncludedConversionActionTypes::class);
+        $this->conversion_lift_included_conversion_action_types = $var;
+
+        return $this;
+    }
+
+    /**
+     * The start date of the period for which these Conversion Lift results are
+     * calculated. This can differ from the overall Study Start Time.
+     *
+     * Generated from protobuf field <code>int64 conversion_lift_start_date = 222;</code>
+     * @return int|string
+     */
+    public function getConversionLiftStartDate()
+    {
+        return $this->conversion_lift_start_date;
+    }
+
+    /**
+     * The start date of the period for which these Conversion Lift results are
+     * calculated. This can differ from the overall Study Start Time.
+     *
+     * Generated from protobuf field <code>int64 conversion_lift_start_date = 222;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setConversionLiftStartDate($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->conversion_lift_start_date = $var;
+
+        return $this;
+    }
+
+    /**
      * An enum value representing the number of days between the impression and
      * the conversion or between the impression and adjustments to the conversion.
      *
@@ -2189,6 +2447,78 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\ConversionOrAdjustmentLagBucketEnum\ConversionOrAdjustmentLagBucket::class);
         $this->conversion_or_adjustment_lag_bucket = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource name of the country
+     *
+     * Generated from protobuf field <code>optional string country = 227 [(.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getCountry()
+    {
+        return isset($this->country) ? $this->country : '';
+    }
+
+    public function hasCountry()
+    {
+        return isset($this->country);
+    }
+
+    public function clearCountry()
+    {
+        unset($this->country);
+    }
+
+    /**
+     * Resource name of the country
+     *
+     * Generated from protobuf field <code>optional string country = 227 [(.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCountry($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->country = $var;
+
+        return $this;
+    }
+
+    /**
+     * Localized name of the country.
+     *
+     * Generated from protobuf field <code>optional string country_localized_name = 228;</code>
+     * @return string
+     */
+    public function getCountryLocalizedName()
+    {
+        return isset($this->country_localized_name) ? $this->country_localized_name : '';
+    }
+
+    public function hasCountryLocalizedName()
+    {
+        return isset($this->country_localized_name);
+    }
+
+    public function clearCountryLocalizedName()
+    {
+        unset($this->country_localized_name);
+    }
+
+    /**
+     * Localized name of the country.
+     *
+     * Generated from protobuf field <code>optional string country_localized_name = 228;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCountryLocalizedName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->country_localized_name = $var;
 
         return $this;
     }
@@ -2310,6 +2640,42 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Experiment arm.
+     *
+     * Generated from protobuf field <code>optional string experiment_arm = 231;</code>
+     * @return string
+     */
+    public function getExperimentArm()
+    {
+        return isset($this->experiment_arm) ? $this->experiment_arm : '';
+    }
+
+    public function hasExperimentArm()
+    {
+        return isset($this->experiment_arm);
+    }
+
+    public function clearExperimentArm()
+    {
+        unset($this->experiment_arm);
+    }
+
+    /**
+     * Experiment arm.
+     *
+     * Generated from protobuf field <code>optional string experiment_arm = 231;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExperimentArm($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->experiment_arm = $var;
+
+        return $this;
+    }
+
+    /**
      * External conversion source.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.enums.ExternalConversionSourceEnum.ExternalConversionSource external_conversion_source = 55;</code>
@@ -2331,6 +2697,32 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\ExternalConversionSourceEnum\ExternalConversionSource::class);
         $this->external_conversion_source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Gender
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.GenderTypeEnum.GenderType gender = 226;</code>
+     * @return int
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * Gender
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.GenderTypeEnum.GenderType gender = 226;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGender($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\GenderTypeEnum\GenderType::class);
+        $this->gender = $var;
 
         return $this;
     }
@@ -3331,6 +3723,34 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\LandingPageSourceEnum\LandingPageSource::class);
         $this->landing_page_source = $var;
+
+        return $this;
+    }
+
+    /**
+     * The user loyalty membership tier, based on the user belonging to a loyalty
+     * program.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.LoyaltyMembershipEnum.LoyaltyMembership loyalty_membership = 233;</code>
+     * @return int
+     */
+    public function getLoyaltyMembership()
+    {
+        return $this->loyalty_membership;
+    }
+
+    /**
+     * The user loyalty membership tier, based on the user belonging to a loyalty
+     * program.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.LoyaltyMembershipEnum.LoyaltyMembership loyalty_membership = 233;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLoyaltyMembership($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\LoyaltyMembershipEnum\LoyaltyMembership::class);
+        $this->loyalty_membership = $var;
 
         return $this;
     }

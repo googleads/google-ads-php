@@ -86,7 +86,11 @@ class RecommendationServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -308,6 +312,8 @@ class RecommendationServiceClient
      * The async variant is
      * {@see RecommendationServiceClient::applyRecommendationAsync()} .
      *
+     * @example samples/V25/Services/RecommendationServiceClient/apply_recommendation.php
+     *
      * @param ApplyRecommendationRequest $request     A request to house fields associated with the call.
      * @param array                      $callOptions {
      *     Optional.
@@ -342,6 +348,8 @@ class RecommendationServiceClient
      * The async variant is
      * {@see RecommendationServiceClient::dismissRecommendationAsync()} .
      *
+     * @example samples/V25/Services/RecommendationServiceClient/dismiss_recommendation.php
+     *
      * @param DismissRecommendationRequest $request     A request to house fields associated with the call.
      * @param array                        $callOptions {
      *     Optional.
@@ -375,6 +383,8 @@ class RecommendationServiceClient
      *
      * The async variant is
      * {@see RecommendationServiceClient::generateRecommendationsAsync()} .
+     *
+     * @example samples/V25/Services/RecommendationServiceClient/generate_recommendations.php
      *
      * @param GenerateRecommendationsRequest $request     A request to house fields associated with the call.
      * @param array                          $callOptions {

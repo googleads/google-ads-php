@@ -14,7 +14,7 @@ class ContentCreatorInsightsSupplementalData
           return;
         }
         $pool->internalAddGeneratedFile(
-            "\x0A\x90\x04\x0AOgoogle/ads/googleads/v25/enums/content_creator_insights_supplemental_data.proto\x12\x1Egoogle.ads.googleads.v25.enums\"\x8C\x01\x0A*ContentCreatorInsightsSupplementalDataEnum\"^\x0A&ContentCreatorInsightsSupplementalData\x12\x0F\x0A\x0BUNSPECIFIED\x10\x00\x12\x0B\x0A\x07UNKNOWN\x10\x01\x12\x16\x0A\x12LOCAL_CREATOR_DATA\x10\x03B\x85\x02\x0A\"com.google.ads.googleads.v25.enumsB+ContentCreatorInsightsSupplementalDataProtoP\x01ZCgoogle.golang.org/genproto/googleapis/ads/googleads/v25/enums;enums\xA2\x02\x03GAA\xAA\x02\x1EGoogle.Ads.GoogleAds.V25.Enums\xCA\x02\x1EGoogle\\Ads\\GoogleAds\\V25\\Enums\xEA\x02\"Google::Ads::GoogleAds::V25::Enumsb\x06proto3"
+            "\x0A\xAA\x04\x0AOgoogle/ads/googleads/v25/enums/content_creator_insights_supplemental_data.proto\x12\x1Egoogle.ads.googleads.v25.enums\"\xA6\x01\x0A*ContentCreatorInsightsSupplementalDataEnum\"x\x0A&ContentCreatorInsightsSupplementalData\x12\x0F\x0A\x0BUNSPECIFIED\x10\x00\x12\x0B\x0A\x07UNKNOWN\x10\x01\x12\x18\x0A\x14BRAND_SENTIMENT_DATA\x10\x02\x12\x16\x0A\x12LOCAL_CREATOR_DATA\x10\x03B\x85\x02\x0A\"com.google.ads.googleads.v25.enumsB+ContentCreatorInsightsSupplementalDataProtoP\x01ZCgoogle.golang.org/genproto/googleapis/ads/googleads/v25/enums;enums\xA2\x02\x03GAA\xAA\x02\x1EGoogle.Ads.GoogleAds.V25.Enums\xCA\x02\x1EGoogle\\Ads\\GoogleAds\\V25\\Enums\xEA\x02\"Google::Ads::GoogleAds::V25::Enumsb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

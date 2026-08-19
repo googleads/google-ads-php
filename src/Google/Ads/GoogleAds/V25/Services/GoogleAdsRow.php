@@ -1072,6 +1072,48 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $local_services_lead_conversation = null;
     /**
+     * The lift measurement config referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementConfig lift_measurement_config = 251;</code>
+     */
+    protected $lift_measurement_config = null;
+    /**
+     * The brand lift measurement by age range referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementAgeRange lift_measurement_age_range = 260;</code>
+     */
+    protected $lift_measurement_age_range = null;
+    /**
+     * The brand lift measurement by gender referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementGender lift_measurement_gender = 261;</code>
+     */
+    protected $lift_measurement_gender = null;
+    /**
+     * The brand lift measurement by device referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementDevice lift_measurement_device = 262;</code>
+     */
+    protected $lift_measurement_device = null;
+    /**
+     * The brand lift measurement by campaign referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementCampaign lift_measurement_campaign = 263;</code>
+     */
+    protected $lift_measurement_campaign = null;
+    /**
+     * The brand lift measurement by video referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementVideo lift_measurement_video = 264;</code>
+     */
+    protected $lift_measurement_video = null;
+    /**
+     * The lift measurement flight referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementFlight lift_measurement_flight = 266;</code>
+     */
+    protected $lift_measurement_flight = null;
+    /**
      * The android privacy shared key google ad group referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.resources.AndroidPrivacySharedKeyGoogleAdGroup android_privacy_shared_key_google_ad_group = 217;</code>
@@ -1472,6 +1514,20 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The local services lead referenced in the query.
      *     @type \Google\Ads\GoogleAds\V25\Resources\LocalServicesLeadConversation $local_services_lead_conversation
      *           The local services lead conversationreferenced in the query.
+     *     @type \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementConfig $lift_measurement_config
+     *           The lift measurement config referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementAgeRange $lift_measurement_age_range
+     *           The brand lift measurement by age range referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementGender $lift_measurement_gender
+     *           The brand lift measurement by gender referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementDevice $lift_measurement_device
+     *           The brand lift measurement by device referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementCampaign $lift_measurement_campaign
+     *           The brand lift measurement by campaign referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementVideo $lift_measurement_video
+     *           The brand lift measurement by video referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementFlight $lift_measurement_flight
+     *           The lift measurement flight referenced in the query.
      *     @type \Google\Ads\GoogleAds\V25\Resources\AndroidPrivacySharedKeyGoogleAdGroup $android_privacy_shared_key_google_ad_group
      *           The android privacy shared key google ad group referenced in the query.
      *     @type \Google\Ads\GoogleAds\V25\Resources\AndroidPrivacySharedKeyGoogleCampaign $android_privacy_shared_key_google_campaign
@@ -7825,6 +7881,258 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\LocalServicesLeadConversation::class);
         $this->local_services_lead_conversation = $var;
+
+        return $this;
+    }
+
+    /**
+     * The lift measurement config referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementConfig lift_measurement_config = 251;</code>
+     * @return \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementConfig|null
+     */
+    public function getLiftMeasurementConfig()
+    {
+        return $this->lift_measurement_config;
+    }
+
+    public function hasLiftMeasurementConfig()
+    {
+        return isset($this->lift_measurement_config);
+    }
+
+    public function clearLiftMeasurementConfig()
+    {
+        unset($this->lift_measurement_config);
+    }
+
+    /**
+     * The lift measurement config referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementConfig lift_measurement_config = 251;</code>
+     * @param \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementConfig $var
+     * @return $this
+     */
+    public function setLiftMeasurementConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementConfig::class);
+        $this->lift_measurement_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * The brand lift measurement by age range referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementAgeRange lift_measurement_age_range = 260;</code>
+     * @return \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementAgeRange|null
+     */
+    public function getLiftMeasurementAgeRange()
+    {
+        return $this->lift_measurement_age_range;
+    }
+
+    public function hasLiftMeasurementAgeRange()
+    {
+        return isset($this->lift_measurement_age_range);
+    }
+
+    public function clearLiftMeasurementAgeRange()
+    {
+        unset($this->lift_measurement_age_range);
+    }
+
+    /**
+     * The brand lift measurement by age range referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementAgeRange lift_measurement_age_range = 260;</code>
+     * @param \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementAgeRange $var
+     * @return $this
+     */
+    public function setLiftMeasurementAgeRange($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementAgeRange::class);
+        $this->lift_measurement_age_range = $var;
+
+        return $this;
+    }
+
+    /**
+     * The brand lift measurement by gender referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementGender lift_measurement_gender = 261;</code>
+     * @return \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementGender|null
+     */
+    public function getLiftMeasurementGender()
+    {
+        return $this->lift_measurement_gender;
+    }
+
+    public function hasLiftMeasurementGender()
+    {
+        return isset($this->lift_measurement_gender);
+    }
+
+    public function clearLiftMeasurementGender()
+    {
+        unset($this->lift_measurement_gender);
+    }
+
+    /**
+     * The brand lift measurement by gender referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementGender lift_measurement_gender = 261;</code>
+     * @param \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementGender $var
+     * @return $this
+     */
+    public function setLiftMeasurementGender($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementGender::class);
+        $this->lift_measurement_gender = $var;
+
+        return $this;
+    }
+
+    /**
+     * The brand lift measurement by device referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementDevice lift_measurement_device = 262;</code>
+     * @return \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementDevice|null
+     */
+    public function getLiftMeasurementDevice()
+    {
+        return $this->lift_measurement_device;
+    }
+
+    public function hasLiftMeasurementDevice()
+    {
+        return isset($this->lift_measurement_device);
+    }
+
+    public function clearLiftMeasurementDevice()
+    {
+        unset($this->lift_measurement_device);
+    }
+
+    /**
+     * The brand lift measurement by device referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementDevice lift_measurement_device = 262;</code>
+     * @param \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementDevice $var
+     * @return $this
+     */
+    public function setLiftMeasurementDevice($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementDevice::class);
+        $this->lift_measurement_device = $var;
+
+        return $this;
+    }
+
+    /**
+     * The brand lift measurement by campaign referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementCampaign lift_measurement_campaign = 263;</code>
+     * @return \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementCampaign|null
+     */
+    public function getLiftMeasurementCampaign()
+    {
+        return $this->lift_measurement_campaign;
+    }
+
+    public function hasLiftMeasurementCampaign()
+    {
+        return isset($this->lift_measurement_campaign);
+    }
+
+    public function clearLiftMeasurementCampaign()
+    {
+        unset($this->lift_measurement_campaign);
+    }
+
+    /**
+     * The brand lift measurement by campaign referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementCampaign lift_measurement_campaign = 263;</code>
+     * @param \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementCampaign $var
+     * @return $this
+     */
+    public function setLiftMeasurementCampaign($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementCampaign::class);
+        $this->lift_measurement_campaign = $var;
+
+        return $this;
+    }
+
+    /**
+     * The brand lift measurement by video referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementVideo lift_measurement_video = 264;</code>
+     * @return \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementVideo|null
+     */
+    public function getLiftMeasurementVideo()
+    {
+        return $this->lift_measurement_video;
+    }
+
+    public function hasLiftMeasurementVideo()
+    {
+        return isset($this->lift_measurement_video);
+    }
+
+    public function clearLiftMeasurementVideo()
+    {
+        unset($this->lift_measurement_video);
+    }
+
+    /**
+     * The brand lift measurement by video referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementVideo lift_measurement_video = 264;</code>
+     * @param \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementVideo $var
+     * @return $this
+     */
+    public function setLiftMeasurementVideo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementVideo::class);
+        $this->lift_measurement_video = $var;
+
+        return $this;
+    }
+
+    /**
+     * The lift measurement flight referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementFlight lift_measurement_flight = 266;</code>
+     * @return \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementFlight|null
+     */
+    public function getLiftMeasurementFlight()
+    {
+        return $this->lift_measurement_flight;
+    }
+
+    public function hasLiftMeasurementFlight()
+    {
+        return isset($this->lift_measurement_flight);
+    }
+
+    public function clearLiftMeasurementFlight()
+    {
+        unset($this->lift_measurement_flight);
+    }
+
+    /**
+     * The lift measurement flight referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.LiftMeasurementFlight lift_measurement_flight = 266;</code>
+     * @param \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementFlight $var
+     * @return $this
+     */
+    public function setLiftMeasurementFlight($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\LiftMeasurementFlight::class);
+        $this->lift_measurement_flight = $var;
 
         return $this;
     }

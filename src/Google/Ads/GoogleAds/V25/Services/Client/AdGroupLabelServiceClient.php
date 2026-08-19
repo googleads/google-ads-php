@@ -80,7 +80,11 @@ class AdGroupLabelServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -287,6 +291,8 @@ class AdGroupLabelServiceClient
      *
      * The async variant is
      * {@see AdGroupLabelServiceClient::mutateAdGroupLabelsAsync()} .
+     *
+     * @example samples/V25/Services/AdGroupLabelServiceClient/mutate_ad_group_labels.php
      *
      * @param MutateAdGroupLabelsRequest $request     A request to house fields associated with the call.
      * @param array                      $callOptions {

@@ -88,7 +88,11 @@ class CampaignDraftServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -137,7 +141,7 @@ class CampaignDraftServiceClient
      */
     public function resumeOperation($operationName, $methodName = null)
     {
-        $options = $this->descriptors[$methodName]['longRunning'] ?? [];
+        $options = $methodName && isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
         $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
         $operation->reload();
         return $operation;
@@ -325,6 +329,8 @@ class CampaignDraftServiceClient
      * The async variant is
      * {@see CampaignDraftServiceClient::listCampaignDraftAsyncErrorsAsync()} .
      *
+     * @example samples/V25/Services/CampaignDraftServiceClient/list_campaign_draft_async_errors.php
+     *
      * @param ListCampaignDraftAsyncErrorsRequest $request     A request to house fields associated with the call.
      * @param array                               $callOptions {
      *     Optional.
@@ -362,6 +368,8 @@ class CampaignDraftServiceClient
      *
      * The async variant is
      * {@see CampaignDraftServiceClient::mutateCampaignDraftsAsync()} .
+     *
+     * @example samples/V25/Services/CampaignDraftServiceClient/mutate_campaign_drafts.php
      *
      * @param MutateCampaignDraftsRequest $request     A request to house fields associated with the call.
      * @param array                       $callOptions {
@@ -405,6 +413,8 @@ class CampaignDraftServiceClient
      *
      * The async variant is
      * {@see CampaignDraftServiceClient::promoteCampaignDraftAsync()} .
+     *
+     * @example samples/V25/Services/CampaignDraftServiceClient/promote_campaign_draft.php
      *
      * @param PromoteCampaignDraftRequest $request     A request to house fields associated with the call.
      * @param array                       $callOptions {

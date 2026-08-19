@@ -84,7 +84,11 @@ class AccountLinkServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -251,6 +255,8 @@ class AccountLinkServiceClient
      *
      * The async variant is {@see AccountLinkServiceClient::createAccountLinkAsync()} .
      *
+     * @example samples/V25/Services/AccountLinkServiceClient/create_account_link.php
+     *
      * @param CreateAccountLinkRequest $request     A request to house fields associated with the call.
      * @param array                    $callOptions {
      *     Optional.
@@ -288,6 +294,8 @@ class AccountLinkServiceClient
      * [RequestError]()
      *
      * The async variant is {@see AccountLinkServiceClient::mutateAccountLinkAsync()} .
+     *
+     * @example samples/V25/Services/AccountLinkServiceClient/mutate_account_link.php
      *
      * @param MutateAccountLinkRequest $request     A request to house fields associated with the call.
      * @param array                    $callOptions {

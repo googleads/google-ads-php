@@ -83,7 +83,11 @@ class GoogleAdsFieldServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -245,6 +249,8 @@ class GoogleAdsFieldServiceClient
      * The async variant is
      * {@see GoogleAdsFieldServiceClient::getGoogleAdsFieldAsync()} .
      *
+     * @example samples/V25/Services/GoogleAdsFieldServiceClient/get_google_ads_field.php
+     *
      * @param GetGoogleAdsFieldRequest $request     A request to house fields associated with the call.
      * @param array                    $callOptions {
      *     Optional.
@@ -278,6 +284,8 @@ class GoogleAdsFieldServiceClient
      *
      * The async variant is
      * {@see GoogleAdsFieldServiceClient::searchGoogleAdsFieldsAsync()} .
+     *
+     * @example samples/V25/Services/GoogleAdsFieldServiceClient/search_google_ads_fields.php
      *
      * @param SearchGoogleAdsFieldsRequest $request     A request to house fields associated with the call.
      * @param array                        $callOptions {

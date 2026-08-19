@@ -92,7 +92,11 @@ class BatchJobServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -141,7 +145,7 @@ class BatchJobServiceClient
      */
     public function resumeOperation($operationName, $methodName = null)
     {
-        $options = $this->descriptors[$methodName]['longRunning'] ?? [];
+        $options = $methodName && isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
         $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
         $operation->reload();
         return $operation;
@@ -1332,6 +1336,23 @@ class BatchJobServiceClient
 
     /**
      * Formats a string containing the fully-qualified path to represent a
+     * lift_measurement_config resource.
+     *
+     * @param string $customerId
+     * @param string $liftMeasurementConfigurationId
+     *
+     * @return string The formatted lift_measurement_config resource.
+     */
+    public static function liftMeasurementConfigName(string $customerId, string $liftMeasurementConfigurationId): string
+    {
+        return self::getPathTemplate('liftMeasurementConfig')->render([
+            'customer_id' => $customerId,
+            'lift_measurement_configuration_id' => $liftMeasurementConfigurationId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
      * mobile_app_category_constant resource.
      *
      * @param string $mobileAppCategoryId
@@ -1580,6 +1601,7 @@ class BatchJobServiceClient
      * - label: customers/{customer_id}/labels/{label_id}
      * - languageConstant: languageConstants/{criterion_id}
      * - lifeEvent: customers/{customer_id}/lifeEvents/{life_event_id}
+     * - liftMeasurementConfig: customers/{customer_id}/liftMeasurementConfigs/{lift_measurement_configuration_id}
      * - mobileAppCategoryConstant: mobileAppCategoryConstants/{mobile_app_category_id}
      * - mobileDeviceConstant: mobileDeviceConstants/{criterion_id}
      * - operatingSystemVersionConstant: operatingSystemVersionConstants/{criterion_id}
@@ -1712,6 +1734,8 @@ class BatchJobServiceClient
      * The async variant is {@see BatchJobServiceClient::addBatchJobOperationsAsync()}
      * .
      *
+     * @example samples/V25/Services/BatchJobServiceClient/add_batch_job_operations.php
+     *
      * @param AddBatchJobOperationsRequest $request     A request to house fields associated with the call.
      * @param array                        $callOptions {
      *     Optional.
@@ -1746,6 +1770,8 @@ class BatchJobServiceClient
      *
      * The async variant is {@see BatchJobServiceClient::listBatchJobResultsAsync()} .
      *
+     * @example samples/V25/Services/BatchJobServiceClient/list_batch_job_results.php
+     *
      * @param ListBatchJobResultsRequest $request     A request to house fields associated with the call.
      * @param array                      $callOptions {
      *     Optional.
@@ -1778,6 +1804,8 @@ class BatchJobServiceClient
      * [ResourceCountLimitExceededError]()
      *
      * The async variant is {@see BatchJobServiceClient::mutateBatchJobAsync()} .
+     *
+     * @example samples/V25/Services/BatchJobServiceClient/mutate_batch_job.php
      *
      * @param MutateBatchJobRequest $request     A request to house fields associated with the call.
      * @param array                 $callOptions {
@@ -1815,6 +1843,8 @@ class BatchJobServiceClient
      * [RequestError]()
      *
      * The async variant is {@see BatchJobServiceClient::runBatchJobAsync()} .
+     *
+     * @example samples/V25/Services/BatchJobServiceClient/run_batch_job.php
      *
      * @param RunBatchJobRequest $request     A request to house fields associated with the call.
      * @param array              $callOptions {

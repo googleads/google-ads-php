@@ -86,7 +86,11 @@ class BenchmarksServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -213,6 +217,8 @@ class BenchmarksServiceClient
      * The async variant is
      * {@see BenchmarksServiceClient::generateBenchmarksMetricsAsync()} .
      *
+     * @example samples/V25/Services/BenchmarksServiceClient/generate_benchmarks_metrics.php
+     *
      * @param GenerateBenchmarksMetricsRequest $request     A request to house fields associated with the call.
      * @param array                            $callOptions {
      *     Optional.
@@ -246,6 +252,8 @@ class BenchmarksServiceClient
      *
      * The async variant is
      * {@see BenchmarksServiceClient::listBenchmarksAvailableDatesAsync()} .
+     *
+     * @example samples/V25/Services/BenchmarksServiceClient/list_benchmarks_available_dates.php
      *
      * @param ListBenchmarksAvailableDatesRequest $request     A request to house fields associated with the call.
      * @param array                               $callOptions {
@@ -282,6 +290,8 @@ class BenchmarksServiceClient
      * The async variant is
      * {@see BenchmarksServiceClient::listBenchmarksLocationsAsync()} .
      *
+     * @example samples/V25/Services/BenchmarksServiceClient/list_benchmarks_locations.php
+     *
      * @param ListBenchmarksLocationsRequest $request     A request to house fields associated with the call.
      * @param array                          $callOptions {
      *     Optional.
@@ -316,6 +326,8 @@ class BenchmarksServiceClient
      * The async variant is
      * {@see BenchmarksServiceClient::listBenchmarksProductsAsync()} .
      *
+     * @example samples/V25/Services/BenchmarksServiceClient/list_benchmarks_products.php
+     *
      * @param ListBenchmarksProductsRequest $request     A request to house fields associated with the call.
      * @param array                         $callOptions {
      *     Optional.
@@ -349,6 +361,8 @@ class BenchmarksServiceClient
      *
      * The async variant is
      * {@see BenchmarksServiceClient::listBenchmarksSourcesAsync()} .
+     *
+     * @example samples/V25/Services/BenchmarksServiceClient/list_benchmarks_sources.php
      *
      * @param ListBenchmarksSourcesRequest $request     A request to house fields associated with the call.
      * @param array                        $callOptions {

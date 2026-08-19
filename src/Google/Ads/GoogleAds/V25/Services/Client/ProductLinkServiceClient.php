@@ -84,7 +84,11 @@ class ProductLinkServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -266,6 +270,8 @@ class ProductLinkServiceClient
      *
      * The async variant is {@see ProductLinkServiceClient::createProductLinkAsync()} .
      *
+     * @example samples/V25/Services/ProductLinkServiceClient/create_product_link.php
+     *
      * @param CreateProductLinkRequest $request     A request to house fields associated with the call.
      * @param array                    $callOptions {
      *     Optional.
@@ -299,6 +305,8 @@ class ProductLinkServiceClient
      * [RequestError]()
      *
      * The async variant is {@see ProductLinkServiceClient::removeProductLinkAsync()} .
+     *
+     * @example samples/V25/Services/ProductLinkServiceClient/remove_product_link.php
      *
      * @param RemoveProductLinkRequest $request     A request to house fields associated with the call.
      * @param array                    $callOptions {

@@ -102,7 +102,12 @@ class Asset extends \Google\Protobuf\Internal\Message
      */
     protected $orientation = null;
     /**
-     * Synthetic content info for the asset.
+     * Synthetic content info for the asset. Only assets with specific asset
+     * types are eligible for updates using the `synthetic_content_info` field.
+     * Allowed `AssetType` values:
+     * * `IMAGE`
+     * * `MEDIA_BUNDLE`
+     * * `YOUTUBE_VIDEO`
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.SyntheticContentInfo synthetic_content_info = 55;</code>
      */
@@ -147,7 +152,12 @@ class Asset extends \Google\Protobuf\Internal\Message
      *           Output only. Orientation of the asset. This is only supported for image and
      *           video assets.
      *     @type \Google\Ads\GoogleAds\V25\Common\SyntheticContentInfo $synthetic_content_info
-     *           Synthetic content info for the asset.
+     *           Synthetic content info for the asset. Only assets with specific asset
+     *           types are eligible for updates using the `synthetic_content_info` field.
+     *           Allowed `AssetType` values:
+     *           * `IMAGE`
+     *           * `MEDIA_BUNDLE`
+     *           * `YOUTUBE_VIDEO`
      *     @type \Google\Ads\GoogleAds\V25\Common\YoutubeVideoAsset $youtube_video_asset
      *           Immutable. A YouTube video asset.
      *     @type \Google\Ads\GoogleAds\V25\Common\MediaBundleAsset $media_bundle_asset
@@ -624,7 +634,12 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Synthetic content info for the asset.
+     * Synthetic content info for the asset. Only assets with specific asset
+     * types are eligible for updates using the `synthetic_content_info` field.
+     * Allowed `AssetType` values:
+     * * `IMAGE`
+     * * `MEDIA_BUNDLE`
+     * * `YOUTUBE_VIDEO`
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.SyntheticContentInfo synthetic_content_info = 55;</code>
      * @return \Google\Ads\GoogleAds\V25\Common\SyntheticContentInfo|null
@@ -645,7 +660,12 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Synthetic content info for the asset.
+     * Synthetic content info for the asset. Only assets with specific asset
+     * types are eligible for updates using the `synthetic_content_info` field.
+     * Allowed `AssetType` values:
+     * * `IMAGE`
+     * * `MEDIA_BUNDLE`
+     * * `YOUTUBE_VIDEO`
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.SyntheticContentInfo synthetic_content_info = 55;</code>
      * @param \Google\Ads\GoogleAds\V25\Common\SyntheticContentInfo $var

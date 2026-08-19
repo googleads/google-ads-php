@@ -80,7 +80,11 @@ class CustomerAssetServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -267,6 +271,8 @@ class CustomerAssetServiceClient
      *
      * The async variant is
      * {@see CustomerAssetServiceClient::mutateCustomerAssetsAsync()} .
+     *
+     * @example samples/V25/Services/CustomerAssetServiceClient/mutate_customer_assets.php
      *
      * @param MutateCustomerAssetsRequest $request     A request to house fields associated with the call.
      * @param array                       $callOptions {

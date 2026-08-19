@@ -21,6 +21,22 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.RateMetrics average_rate_metrics = 1;</code>
      */
     protected $average_rate_metrics = null;
+    /**
+     * Metrics calculated by dividing the metric of the customer by that of the
+     * selected benchmarks source. These metrics are only returned when:
+     * 1. `all_advertisers` is used as the `benchmarks_source`. Note that the
+     * request `category_filter` must be set when using `all_advertisers`.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.ShareMetrics share_metrics = 2;</code>
+     */
+    protected $share_metrics = null;
+    /**
+     * Metrics calculated by aggregating values of a single metric for the
+     * customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.AggregateMetrics aggregate_metrics = 3;</code>
+     */
+    protected $aggregate_metrics = null;
 
     /**
      * Constructor.
@@ -30,6 +46,14 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Ads\GoogleAds\V25\Services\RateMetrics $average_rate_metrics
      *           Average rate metrics calculated by dividing one metric by another.
+     *     @type \Google\Ads\GoogleAds\V25\Services\ShareMetrics $share_metrics
+     *           Metrics calculated by dividing the metric of the customer by that of the
+     *           selected benchmarks source. These metrics are only returned when:
+     *           1. `all_advertisers` is used as the `benchmarks_source`. Note that the
+     *           request `category_filter` must be set when using `all_advertisers`.
+     *     @type \Google\Ads\GoogleAds\V25\Services\AggregateMetrics $aggregate_metrics
+     *           Metrics calculated by aggregating values of a single metric for the
+     *           customer.
      * }
      */
     public function __construct($data = NULL) {
@@ -69,6 +93,86 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Services\RateMetrics::class);
         $this->average_rate_metrics = $var;
+
+        return $this;
+    }
+
+    /**
+     * Metrics calculated by dividing the metric of the customer by that of the
+     * selected benchmarks source. These metrics are only returned when:
+     * 1. `all_advertisers` is used as the `benchmarks_source`. Note that the
+     * request `category_filter` must be set when using `all_advertisers`.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.ShareMetrics share_metrics = 2;</code>
+     * @return \Google\Ads\GoogleAds\V25\Services\ShareMetrics|null
+     */
+    public function getShareMetrics()
+    {
+        return $this->share_metrics;
+    }
+
+    public function hasShareMetrics()
+    {
+        return isset($this->share_metrics);
+    }
+
+    public function clearShareMetrics()
+    {
+        unset($this->share_metrics);
+    }
+
+    /**
+     * Metrics calculated by dividing the metric of the customer by that of the
+     * selected benchmarks source. These metrics are only returned when:
+     * 1. `all_advertisers` is used as the `benchmarks_source`. Note that the
+     * request `category_filter` must be set when using `all_advertisers`.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.ShareMetrics share_metrics = 2;</code>
+     * @param \Google\Ads\GoogleAds\V25\Services\ShareMetrics $var
+     * @return $this
+     */
+    public function setShareMetrics($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Services\ShareMetrics::class);
+        $this->share_metrics = $var;
+
+        return $this;
+    }
+
+    /**
+     * Metrics calculated by aggregating values of a single metric for the
+     * customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.AggregateMetrics aggregate_metrics = 3;</code>
+     * @return \Google\Ads\GoogleAds\V25\Services\AggregateMetrics|null
+     */
+    public function getAggregateMetrics()
+    {
+        return $this->aggregate_metrics;
+    }
+
+    public function hasAggregateMetrics()
+    {
+        return isset($this->aggregate_metrics);
+    }
+
+    public function clearAggregateMetrics()
+    {
+        unset($this->aggregate_metrics);
+    }
+
+    /**
+     * Metrics calculated by aggregating values of a single metric for the
+     * customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.AggregateMetrics aggregate_metrics = 3;</code>
+     * @param \Google\Ads\GoogleAds\V25\Services\AggregateMetrics $var
+     * @return $this
+     */
+    public function setAggregateMetrics($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Services\AggregateMetrics::class);
+        $this->aggregate_metrics = $var;
 
         return $this;
     }

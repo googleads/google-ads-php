@@ -391,6 +391,12 @@ class RecommendationType
      * Generated from protobuf enum <code>IMPROVE_DEMAND_GEN_AD_STRENGTH = 58;</code>
      */
     const IMPROVE_DEMAND_GEN_AD_STRENGTH = 58;
+    /**
+     * Recommendation to add a campaign-specific app conversion goal.
+     *
+     * Generated from protobuf enum <code>CAMPAIGN_SPECIFIC_APP_GOAL = 59;</code>
+     */
+    const CAMPAIGN_SPECIFIC_APP_GOAL = 59;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -449,6 +455,7 @@ class RecommendationType
         self::CUSTOM_AUDIENCE_OPT_IN => 'CUSTOM_AUDIENCE_OPT_IN',
         self::LEAD_FORM_ASSET => 'LEAD_FORM_ASSET',
         self::IMPROVE_DEMAND_GEN_AD_STRENGTH => 'IMPROVE_DEMAND_GEN_AD_STRENGTH',
+        self::CAMPAIGN_SPECIFIC_APP_GOAL => 'CAMPAIGN_SPECIFIC_APP_GOAL',
     ];
 
     public static function name($value)

@@ -80,7 +80,11 @@ class KeywordPlanCampaignServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -303,6 +307,8 @@ class KeywordPlanCampaignServiceClient
      *
      * The async variant is
      * {@see KeywordPlanCampaignServiceClient::mutateKeywordPlanCampaignsAsync()} .
+     *
+     * @example samples/V25/Services/KeywordPlanCampaignServiceClient/mutate_keyword_plan_campaigns.php
      *
      * @param MutateKeywordPlanCampaignsRequest $request     A request to house fields associated with the call.
      * @param array                             $callOptions {

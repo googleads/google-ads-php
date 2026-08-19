@@ -20,6 +20,11 @@ class GenerateAudienceCompositionInsightsResponse extends \Google\Protobuf\Inter
      * The contents of the insights report, organized into sections.
      * Each section is associated with one of the AudienceInsightsDimension values
      * in the request. There may be more than one section per dimension.
+     * Note: When an
+     * [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     * is requested in GenerateAudienceCompositionInsightsRequest, score is
+     * omitted from AudienceCompositionMetrics of the
+     * GenerateAudienceCompositionInsightsResponse.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.services.AudienceCompositionSection sections = 1;</code>
      */
@@ -35,6 +40,11 @@ class GenerateAudienceCompositionInsightsResponse extends \Google\Protobuf\Inter
      *           The contents of the insights report, organized into sections.
      *           Each section is associated with one of the AudienceInsightsDimension values
      *           in the request. There may be more than one section per dimension.
+     *           Note: When an
+     *           [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     *           is requested in GenerateAudienceCompositionInsightsRequest, score is
+     *           omitted from AudienceCompositionMetrics of the
+     *           GenerateAudienceCompositionInsightsResponse.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,6 +56,11 @@ class GenerateAudienceCompositionInsightsResponse extends \Google\Protobuf\Inter
      * The contents of the insights report, organized into sections.
      * Each section is associated with one of the AudienceInsightsDimension values
      * in the request. There may be more than one section per dimension.
+     * Note: When an
+     * [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     * is requested in GenerateAudienceCompositionInsightsRequest, score is
+     * omitted from AudienceCompositionMetrics of the
+     * GenerateAudienceCompositionInsightsResponse.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.services.AudienceCompositionSection sections = 1;</code>
      * @return RepeatedField<\Google\Ads\GoogleAds\V25\Services\AudienceCompositionSection>
@@ -59,6 +74,11 @@ class GenerateAudienceCompositionInsightsResponse extends \Google\Protobuf\Inter
      * The contents of the insights report, organized into sections.
      * Each section is associated with one of the AudienceInsightsDimension values
      * in the request. There may be more than one section per dimension.
+     * Note: When an
+     * [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     * is requested in GenerateAudienceCompositionInsightsRequest, score is
+     * omitted from AudienceCompositionMetrics of the
+     * GenerateAudienceCompositionInsightsResponse.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.services.AudienceCompositionSection sections = 1;</code>
      * @param \Google\Ads\GoogleAds\V25\Services\AudienceCompositionSection[] $var
