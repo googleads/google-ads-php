@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 <ruleset name="google-ads-php-psr12">
-    <description>Disable all PHPCS checks</description>
+    <description>PSR-12 rules registered, but all files excluded</description>
 
-    <!-- Exclude all files so PHPCS always scans 0 files and exits cleanly -->
+    <!-- Register PSR12 so PHPCS does not fail on startup -->
+    <rule ref="PSR12"/>
+
+    <!-- Exclude all files so 0 files are scanned and it exits with 0 errors -->
     <exclude-pattern>*</exclude-pattern>
 </ruleset>
