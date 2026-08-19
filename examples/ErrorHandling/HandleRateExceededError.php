@@ -66,10 +66,12 @@ class HandleRateExceededError
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -94,7 +96,9 @@ class HandleRateExceededError
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -117,8 +121,8 @@ class HandleRateExceededError
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID to validate keywords from
+     * @param int             $customerId      the customer ID
+     * @param int             $adGroupId       the ad group ID to validate keywords from
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -151,10 +155,8 @@ class HandleRateExceededError
                             // Checks if any of the errors are QuotaError.RESOURCE_EXHAUSTED or
                             // QuotaError.RESOURCE_TEMPORARILY_EXHAUSTED.
                             if (
-                                $googleAdsError->getErrorCode()->getQuotaError()
-                                    == QuotaError::RESOURCE_EXHAUSTED
-                                || $googleAdsError->getErrorCode()->getQuotaError()
-                                    == QuotaError::RESOURCE_TEMPORARILY_EXHAUSTED
+                                $googleAdsError->getErrorCode()->getQuotaError()                                == QuotaError::RESOURCE_EXHAUSTED
+                                || $googleAdsError->getErrorCode()->getQuotaError()                                == QuotaError::RESOURCE_TEMPORARILY_EXHAUSTED
                             ) {
                                 printf(
                                     'Received rate exceeded error, retry after %d seconds.%s',
@@ -176,11 +178,13 @@ class HandleRateExceededError
                     } finally {
                         // Bubbles up when the number of retries has already been reached.
                         if ($retryCount == self::NUM_RETRIES) {
-                            throw new Exception(sprintf(
-                                'Could not recover after making %d attempts.%s',
-                                $retryCount,
-                                PHP_EOL
-                            ));
+                            throw new Exception(
+                                sprintf(
+                                    'Could not recover after making %d attempts.%s',
+                                    $retryCount,
+                                    PHP_EOL
+                                )
+                            );
                         }
                     }
                 }
@@ -199,9 +203,9 @@ class HandleRateExceededError
     /**
      * Creates ad group criterion operations.
      *
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID to link the ad group criteria to
-     * @param int $reqIndex the request index
+     * @param  int $customerId the customer ID
+     * @param  int $adGroupId  the ad group ID to link the ad group criteria to
+     * @param  int $reqIndex   the request index
      * @return array the created ad group criterion operations
      */
     private static function createAdGroupCriterionOperations(
@@ -212,17 +216,21 @@ class HandleRateExceededError
         $operations = [];
         for ($i = 0; $i < self::NUM_KEYWORDS; $i++) {
             // Creates a keyword info.
-            $keywordInfo = new KeywordInfo([
+            $keywordInfo = new KeywordInfo(
+                [
                 'text' => 'mars cruise req ' . $reqIndex . ' seed ' . $i,
                 'match_type' => KeywordMatchType::EXACT
-            ]);
+                ]
+            );
 
             // Constructs an ad group criterion using the keyword text info above.
-            $adGroupCriterion = new AdGroupCriterion([
+            $adGroupCriterion = new AdGroupCriterion(
+                [
                 'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
                 'status' => AdGroupCriterionStatus::ENABLED,
                 'keyword' => $keywordInfo
-            ]);
+                ]
+            );
 
             // Creates an ad group criterion operation.
             $adGroupCriterionOperation = new AdGroupCriterionOperation();
@@ -236,8 +244,8 @@ class HandleRateExceededError
      * Requests a mutate of ad group criterion operations and displays the results.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param array $operations the ad group criterion operations
+     * @param int             $customerId      the customer ID
+     * @param array           $operations      the ad group criterion operations
      */
     private static function requestMutateAndDisplayResult(
         GoogleAdsClient $googleAdsClient,
@@ -258,7 +266,9 @@ class HandleRateExceededError
             PHP_EOL
         );
         foreach ($response->getResults() as $result) {
-            /** @var GoogleAdsRow $result */
+            /**
+ * @var GoogleAdsRow $result
+*/
             print $result->getAdGroupCriterion()->getResourceName() . PHP_EOL;
         }
     }

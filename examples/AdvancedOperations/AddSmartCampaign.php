@@ -125,13 +125,15 @@ class AddSmartCampaign
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::KEYWORD_TEXT => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::FREE_FORM_KEYWORD_TEXT => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::BUSINESS_PROFILE_LOCATION => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::BUSINESS_NAME => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
         $businessProfileLocation =
             $options[ArgumentNames::BUSINESS_PROFILE_LOCATION] ?: self::BUSINESS_PROFILE_LOCATION;
         $businessName = $options[ArgumentNames::BUSINESS_NAME] ?: self::BUSINESS_NAME;
@@ -175,7 +177,9 @@ class AddSmartCampaign
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -197,13 +201,13 @@ class AddSmartCampaign
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string|null $keywordText a keyword text used for generating keyword themes
-     * @param string|null $freeFormKeywordText a keyword used to create a free-form keyword theme
-     * @param string|null $businessProfileLocationResourceName the resource name of a Business
-     *     Profile location
-     * @param string|null $businessName the name of a Business Profile
+     * @param GoogleAdsClient $googleAdsClient                     the Google Ads API client
+     * @param int             $customerId                          the customer ID
+     * @param string|null     $keywordText                         a keyword text used for generating keyword themes
+     * @param string|null     $freeFormKeywordText                 a keyword used to create a free-form keyword theme
+     * @param string|null     $businessProfileLocationResourceName the resource name of a Business
+     *                                                             Profile location
+     * @param string|null     $businessName                        the name of a Business Profile
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -238,22 +242,29 @@ class AddSmartCampaign
         }
 
         // Maps the list of KeywordThemes to KeywordThemeInfos.
-        $keywordThemeInfos = array_map(function (KeywordTheme $keywordTheme) {
-            if ($keywordTheme->getKeywordThemeConstant()) {
-                return new KeywordThemeInfo([
-                    'keyword_theme_constant' => $keywordTheme->getKeywordThemeConstant()
-                        ->getResourceName()
-                ]);
-            } elseif ($keywordTheme->getFreeFormKeywordTheme()) {
-                return new KeywordThemeInfo([
-                    'free_form_keyword_theme' => $keywordTheme->getFreeFormKeywordTheme()
-                ]);
-            } else {
-                throw new \UnexpectedValueException(
-                    'A malformed KeywordTheme was encountered: ' . $keywordTheme->getKeywordTheme()
-                );
-            }
-        }, $keywordThemes);
+        $keywordThemeInfos = array_map(
+            function (KeywordTheme $keywordTheme) {
+                if ($keywordTheme->getKeywordThemeConstant()) {
+                    return new KeywordThemeInfo(
+                        [
+                        'keyword_theme_constant' => $keywordTheme->getKeywordThemeConstant()
+                            ->getResourceName()
+                        ]
+                    );
+                } elseif ($keywordTheme->getFreeFormKeywordTheme()) {
+                    return new KeywordThemeInfo(
+                        [
+                        'free_form_keyword_theme' => $keywordTheme->getFreeFormKeywordTheme()
+                        ]
+                    );
+                } else {
+                    throw new \UnexpectedValueException(
+                        'A malformed KeywordTheme was encountered: ' . $keywordTheme->getKeywordTheme()
+                    );
+                }
+            },
+            $keywordThemes
+        );
 
         // [START add_smart_campaign_13]
         // Optionally includes any free-form keywords in verbatim.
@@ -300,24 +311,26 @@ class AddSmartCampaign
 
         // Issues a single mutate request to add the entities.
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        $response = $googleAdsServiceClient->mutate(MutateGoogleAdsRequest::build(
-            $customerId,
-            // It's important to create these entities in this order because they depend on
-            // each other, for example the SmartCampaignSetting and ad group depend on the
-            // campaign, and the ad group ad depends on the ad group.
-            array_merge(
-                [
+        $response = $googleAdsServiceClient->mutate(
+            MutateGoogleAdsRequest::build(
+                $customerId,
+                // It's important to create these entities in this order because they depend on
+                // each other, for example the SmartCampaignSetting and ad group depend on the
+                // campaign, and the ad group ad depends on the ad group.
+                array_merge(
+                    [
                     $campaignBudgetOperation,
                     $smartCampaignOperation,
                     $smartCampaignSettingOperation,
-                ],
-                $campaignCriterionOperations,
-                [
+                    ],
+                    $campaignCriterionOperations,
+                    [
                     $adGroupOperation,
                     $adGroupAdOperation
-                ]
+                    ]
+                )
             )
-        ));
+        );
 
         self::printResponseDetails($response);
     }
@@ -331,9 +344,9 @@ class AddSmartCampaign
      * is the recommended way to generate keyword themes because it uses detailed information about
      * your business, its location, and website content to generate keyword themes.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param SmartCampaignSuggestionInfo $suggestionInfo instance with details
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  SmartCampaignSuggestionInfo $suggestionInfo instance with details
      *     about the business being advertised
      * @return KeywordTheme[] a list of KeywordThemes
      */
@@ -370,8 +383,8 @@ class AddSmartCampaign
      * These KeywordThemeConstants are derived from autocomplete data for the
      * given keyword text. They are mapped to KeywordThemes before being returned.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $keywordText a keyword text used for generating keyword themes
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  string $keywordText a keyword text used for generating keyword themes
      * @return KeywordTheme[] a list of KeywordThemes
      */
     // [START add_smart_campaign]
@@ -398,11 +411,16 @@ class AddSmartCampaign
 
         // Maps the keyword theme constants to KeywordTheme instances for consistency with the
         // response from SmartCampaignSuggestService.SuggestKeywordThemes.
-        return array_map(function (KeywordThemeConstant $keywordThemeConstant) {
-            return new KeywordTheme([
-                'keyword_theme_constant' => $keywordThemeConstant
-            ]);
-        }, iterator_to_array($response->getKeywordThemeConstants()->getIterator()));
+        return array_map(
+            function (KeywordThemeConstant $keywordThemeConstant) {
+                return new KeywordTheme(
+                    [
+                    'keyword_theme_constant' => $keywordThemeConstant
+                    ]
+                );
+            },
+            iterator_to_array($response->getKeywordThemeConstants()->getIterator())
+        );
     }
     // [END add_smart_campaign]
 
@@ -416,9 +434,9 @@ class AddSmartCampaign
      * "language_code" and "keyword_themes" fields are set on the SmartCampaignSuggestionInfo
      * instance.
      *
-     * @param string|null $businessProfileLocationResourceName the resource name of a Business
+     * @param  string|null $businessProfileLocationResourceName the resource name of a Business
      *     Profile location
-     * @param string|null $businessName the name of a Business Profile
+     * @param  string|null $businessName the name of a Business Profile
      * @return SmartCampaignSuggestionInfo a SmartCampaignSuggestionInfo instance
      */
     // [START add_smart_campaign_9]
@@ -426,7 +444,8 @@ class AddSmartCampaign
         ?string $businessProfileLocationResourceName,
         ?string $businessName
     ): SmartCampaignSuggestionInfo {
-        $suggestionInfo = new SmartCampaignSuggestionInfo([
+        $suggestionInfo = new SmartCampaignSuggestionInfo(
+            [
             // Adds the URL of the campaign's landing page.
             'final_url' => self::LANDING_PAGE_URL,
 
@@ -456,19 +475,24 @@ class AddSmartCampaign
 
             // Adds LocationInfo objects to the list of locations. You have the option of
             // providing multiple locations when using location-based suggestions.
-            'location_list' => new LocationList([
+            'location_list' => new LocationList(
+                [
                 // Sets one location to the resource name of the given geo target constant.
-                'locations' => [new LocationInfo([
+                'locations' => [new LocationInfo(
+                    [
                     'geo_target_constant' => ResourceNames::forGeoTargetConstant(
                         self::GEO_TARGET_CONSTANT
                     )
-                ])]
-            ]),
+                    ]
+                )]
+                ]
+            ),
 
             // Adds a schedule detailing which days of the week the business is open.
             // This schedule describes a schedule in which the business is open on
             // Mondays from 9am to 5pm.
-            'ad_schedules' => [new AdScheduleInfo([
+            'ad_schedules' => [new AdScheduleInfo(
+                [
                 // Sets the day of this schedule as Monday.
                 'day_of_week' => DayOfWeek::MONDAY,
                 // Sets the start hour to 9am.
@@ -478,17 +502,23 @@ class AddSmartCampaign
                 // Sets the start and end minute of zero, for example: 9:00 and 5:00.
                 'start_minute' => MinuteOfHour::ZERO,
                 'end_minute' => MinuteOfHour::ZERO
-            ])]
-        ]);
+                ]
+            )]
+            ]
+        );
 
         // Sets either of the business_profile_location or business_name, depending on whichever is
         // provided.
         if ($businessProfileLocationResourceName) {
             $suggestionInfo->setBusinessProfileLocation($businessProfileLocationResourceName);
         } else {
-            $suggestionInfo->setBusinessContext(new BusinessContext([
-                'business_name' => $businessName
-            ]));
+            $suggestionInfo->setBusinessContext(
+                new BusinessContext(
+                    [
+                    'business_name' => $businessName
+                    ]
+                )
+            );
         }
         return $suggestionInfo;
     }
@@ -501,9 +531,9 @@ class AddSmartCampaign
      * Smart campaigns is highly recommended because it helps the campaigns achieve optimal
      * performance.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param SmartCampaignSuggestionInfo $suggestionInfo a SmartCampaignSuggestionInfo instance
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  SmartCampaignSuggestionInfo $suggestionInfo a SmartCampaignSuggestionInfo instance
      *      with details about the business being advertised
      * @return int a daily budget amount in micros
      */
@@ -552,9 +582,9 @@ class AddSmartCampaign
      * Using the SmartCampaignSuggestService to suggest creatives for new and existing Smart
      * campaigns is highly recommended because it helps the campaigns achieve optimal performance.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param SmartCampaignSuggestionInfo $suggestionInfo a SmartCampaignSuggestionInfo instance
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  SmartCampaignSuggestionInfo $suggestionInfo a SmartCampaignSuggestionInfo instance
      *      with details about the business being advertised
      * @return SmartCampaignAdInfo|null a SmartCampaignAdInfo instance with suggested headlines and
      *      descriptions
@@ -601,8 +631,8 @@ class AddSmartCampaign
      * A temporary ID will be assigned to this campaign budget so that it can be referenced by
      * other objects being created in the same Mutate request.
      *
-     * @param int $customerId the customer ID
-     * @param int $suggestedBudgetAmount a daily budget amount in micros
+     * @param  int $customerId the customer ID
+     * @param  int $suggestedBudgetAmount a daily budget amount in micros
      * @return MutateOperation a MutateOperation that creates a CampaignBudget
      */
     // [START add_smart_campaign_2]
@@ -611,7 +641,8 @@ class AddSmartCampaign
         int $suggestedBudgetAmount
     ): MutateOperation {
         // Creates the campaign budget object.
-        $campaignBudget = new CampaignBudget([
+        $campaignBudget = new CampaignBudget(
+            [
             'name' => "Smart campaign budget #" . Helper::getPrintableDatetime(),
             // A budget used for Smart campaigns must have the type SMART_CAMPAIGN.
             'type' => BudgetType::SMART_CAMPAIGN,
@@ -623,14 +654,19 @@ class AddSmartCampaign
             // campaign in later steps.
             'resource_name' =>
                 ResourceNames::forCampaignBudget($customerId, self::BUDGET_TEMPORARY_ID)
-        ]);
+            ]
+        );
 
         // Creates the MutateOperation that creates the campaign budget.
-        return new MutateOperation([
-            'campaign_budget_operation' => new CampaignBudgetOperation([
+        return new MutateOperation(
+            [
+            'campaign_budget_operation' => new CampaignBudgetOperation(
+                [
                 'create' => $campaignBudget
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
     }
     // [END add_smart_campaign_2]
 
@@ -640,14 +676,15 @@ class AddSmartCampaign
      * A temporary ID will be assigned to this campaign so that it can be referenced by other
      * objects being created in the same Mutate request.
      *
-     * @param int $customerId the customer ID
+     * @param  int $customerId the customer ID
      * @return MutateOperation a MutateOperation that creates a campaign
      */
     // [START add_smart_campaign_3]
     private static function createSmartCampaignOperation(int $customerId): MutateOperation
     {
         // Creates the campaign object.
-        $campaign = new Campaign([
+        $campaign = new Campaign(
+            [
             'name' => "Smart campaign #" . Helper::getPrintableDatetime(),
             // Sets the campaign status as PAUSED. The campaign is the only entity in the mutate
             // request that should have its' status set.
@@ -665,12 +702,15 @@ class AddSmartCampaign
             // Declare whether or not this campaign serves political ads targeting the EU.
             'contains_eu_political_advertising' =>
                 EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
-        ]);
+            ]
+        );
 
         // Creates the MutateOperation that creates the campaign.
-        return new MutateOperation([
+        return new MutateOperation(
+            [
             'campaign_operation' => new CampaignOperation(['create' => $campaign])
-        ]);
+            ]
+        );
     }
     // [END add_smart_campaign_3]
 
@@ -681,10 +721,10 @@ class AddSmartCampaign
      * used to update and create them. Below we will use a temporary ID in the resource name to
      * associate it with the campaign created in the previous step.
      *
-     * @param int $customerId the customer ID
-     * @param string|null $businessProfileLocationResourceName the resource name of a Business
+     * @param  int $customerId the customer ID
+     * @param  string|null $businessProfileLocationResourceName the resource name of a Business
      *     Profile location
-     * @param string|null $businessName the name of a Business Profile
+     * @param  string|null $businessName the name of a Business Profile
      * @return MutateOperation a MutateOperation that creates a SmartCampaignSetting
      */
     // [START add_smart_campaign_4]
@@ -694,7 +734,8 @@ class AddSmartCampaign
         ?string $businessName
     ): MutateOperation {
         // Creates the smart campaign setting object.
-        $smartCampaignSetting = new SmartCampaignSetting([
+        $smartCampaignSetting = new SmartCampaignSetting(
+            [
             // Sets a temporary ID in the campaign setting's resource name to associate it with
             // the campaign created in the previous step.
             'resource_name' => ResourceNames::forSmartCampaignSetting(
@@ -703,13 +744,16 @@ class AddSmartCampaign
             ),
             // Below we configure the SmartCampaignSetting using many of the same details used to
             // generate a budget suggestion.
-            'phone_number' => new PhoneNumber([
+            'phone_number' => new PhoneNumber(
+                [
                 'country_code' => self::COUNTRY_CODE,
                 'phone_number' => self::PHONE_NUMBER
-            ]),
+                ]
+            ),
             'final_url' => self::LANDING_PAGE_URL,
             'advertising_language_code' => self::LANGUAGE_CODE,
-        ]);
+            ]
+        );
 
         // It's required that either a business profile location resource name or a business name is
         // added to the SmartCampaignSetting.
@@ -720,24 +764,28 @@ class AddSmartCampaign
         }
 
         // Creates the MutateOperation that creates the smart campaign setting with an update.
-        return new MutateOperation([
-            'smart_campaign_setting_operation' => new SmartCampaignSettingOperation([
+        return new MutateOperation(
+            [
+            'smart_campaign_setting_operation' => new SmartCampaignSettingOperation(
+                [
                 'update' => $smartCampaignSetting,
                 // Sets the update mask on the operation. This is required since the smart campaign
                 // setting is created in an UPDATE operation. Here the update mask will be a list
                 // of all the fields that were set on the SmartCampaignSetting.
                 'update_mask' => FieldMasks::allSetFieldsOf($smartCampaignSetting)
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
     }
     // [END add_smart_campaign_4]
 
     /**
      * Creates a list of MutateOperations that create new campaign criteria.
      *
-     * @param int $customerId the customer ID
-     * @param KeywordThemeInfo[] $keywordThemeInfos a list of KeywordThemeInfos
-     * @param SmartCampaignSuggestionInfo $smartCampaignSuggestionInfo a SmartCampaignSuggestionInfo
+     * @param  int $customerId the customer ID
+     * @param  KeywordThemeInfo[] $keywordThemeInfos a list of KeywordThemeInfos
+     * @param  SmartCampaignSuggestionInfo $smartCampaignSuggestionInfo a SmartCampaignSuggestionInfo
      *     instance
      * @return MutateOperation[] a list of MutateOperations that create new campaign criteria
      */
@@ -750,42 +798,54 @@ class AddSmartCampaign
         $operations = [];
         foreach ($keywordThemeInfos as $info) {
             // Creates the campaign criterion object.
-            $campaignCriterion = new CampaignCriterion([
+            $campaignCriterion = new CampaignCriterion(
+                [
                 // Sets the campaign ID to a temporary ID.
                 'campaign' =>
                     ResourceNames::forCampaign($customerId, self::SMART_CAMPAIGN_TEMPORARY_ID),
                 // Sets the keyword theme to the given KeywordThemeInfo.
                 'keyword_theme' => $info
-            ]);
+                ]
+            );
 
             // Creates the MutateOperation that creates the campaign criterion and adds it to the
             // list of operations.
-            $operations[] = new MutateOperation([
-                'campaign_criterion_operation' => new CampaignCriterionOperation([
+            $operations[] = new MutateOperation(
+                [
+                'campaign_criterion_operation' => new CampaignCriterionOperation(
+                    [
                     'create' => $campaignCriterion
-                ])
-            ]);
+                    ]
+                )
+                ]
+            );
         }
 
         // Create a location criterion for each location in the suggestion info object to add
         // corresponding location targeting to the Smart campaign.
         foreach ($smartCampaignSuggestionInfo->getLocationList()->getLocations() as $location) {
             // Creates the campaign criterion object.
-            $campaignCriterion = new CampaignCriterion([
+            $campaignCriterion = new CampaignCriterion(
+                [
                 // Sets the campaign ID to a temporary ID.
                 'campaign' =>
                     ResourceNames::forCampaign($customerId, self::SMART_CAMPAIGN_TEMPORARY_ID),
                 // Set the location to the given location.
                 'location' => $location
-            ]);
+                ]
+            );
 
             // Creates the MutateOperation that creates the campaign criterion and adds it to the
             // list of operations.
-            $operations[] = new MutateOperation([
-                'campaign_criterion_operation' => new CampaignCriterionOperation([
+            $operations[] = new MutateOperation(
+                [
+                'campaign_criterion_operation' => new CampaignCriterionOperation(
+                    [
                     'create' => $campaignCriterion
-                ])
-            ]);
+                    ]
+                )
+                ]
+            );
         }
 
         return $operations;
@@ -801,14 +861,15 @@ class AddSmartCampaign
      *
      * Only one ad group can be created for a given Smart campaign.
      *
-     * @param int $customerId the customer ID
+     * @param  int $customerId the customer ID
      * @return MutateOperation a MutateOperation that creates a new ad group
      */
     // [START add_smart_campaign_5]
     private static function createAdGroupOperation(int $customerId): MutateOperation
     {
         // Creates the ad group object.
-        $adGroup = new AdGroup([
+        $adGroup = new AdGroup(
+            [
             // Sets the ad group ID to a temporary ID.
             'resource_name' => ResourceNames::forAdGroup($customerId, self::AD_GROUP_TEMPORARY_ID),
             'name' => "Smart campaign ad group #" . Helper::getPrintableDatetime(),
@@ -817,12 +878,15 @@ class AddSmartCampaign
                 ResourceNames::forCampaign($customerId, self::SMART_CAMPAIGN_TEMPORARY_ID),
             // The ad group type must be set to SMART_CAMPAIGN_ADS.
             'type' => AdGroupType::SMART_CAMPAIGN_ADS
-        ]);
+            ]
+        );
 
         // Creates the MutateOperation that creates the ad group.
-        return new MutateOperation([
+        return new MutateOperation(
+            [
             'ad_group_operation' => new AdGroupOperation(['create' => $adGroup])
-        ]);
+            ]
+        );
     }
     // [END add_smart_campaign_5]
 
@@ -832,8 +896,8 @@ class AddSmartCampaign
      * A temporary ID will be used in the ad group resource name for this ad group ad to associate
      * it with the ad group created in earlier steps.
      *
-     * @param int $customerId the customer ID
-     * @param SmartCampaignAdInfo|null $adSuggestions a SmartCampaignAdInfo object with ad creative
+     * @param  int $customerId the customer ID
+     * @param  SmartCampaignAdInfo|null $adSuggestions a SmartCampaignAdInfo object with ad creative
      *      suggestions
      * @return MutateOperation a MutateOperation that creates a new ad group ad
      */
@@ -853,7 +917,8 @@ class AddSmartCampaign
             // replaced with meaningful texts from the user. Below we just accept the creatives
             // that were suggested while filtering out empty assets, but individual workflows
             // will vary here.
-            $smartCampaignAdInfo = new SmartCampaignAdInfo([
+            $smartCampaignAdInfo = new SmartCampaignAdInfo(
+                [
                 'headlines' => array_filter(
                     iterator_to_array($adSuggestions->getHeadlines()->getIterator()),
                     function ($value) {
@@ -866,18 +931,23 @@ class AddSmartCampaign
                         return $value->getText();
                     }
                 )
-            ]);
+                ]
+            );
         }
         // Creates the ad group ad object.
-        $adGroupAd = new AdGroupAd([
+        $adGroupAd = new AdGroupAd(
+            [
             // Sets the ad group ID to a temporary ID.
             'ad_group' => ResourceNames::forAdGroup($customerId, self::AD_GROUP_TEMPORARY_ID),
-            'ad' => new Ad([
+            'ad' => new Ad(
+                [
                 // Sets the type to SMART_CAMPAIGN_AD.
                 'type' => AdType::SMART_CAMPAIGN_AD,
                 'smart_campaign_ad' => $smartCampaignAdInfo
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         // The SmartCampaignAdInfo object includes headlines and descriptions retrieved from the
         // SmartCampaignSuggestService.SuggestSmartCampaignAd method. It's recommended that users
@@ -908,9 +978,11 @@ class AddSmartCampaign
         }
 
         // Creates the MutateOperation that creates the ad group ad.
-        return new MutateOperation([
+        return new MutateOperation(
+            [
             'ad_group_ad_operation' => new AdGroupAdOperation(['create' => $adGroupAd])
-        ]);
+            ]
+        );
     }
     // [END add_smart_campaign_6]
 
@@ -925,7 +997,9 @@ class AddSmartCampaign
     {
         // Parses the Mutate response to print details about the entities that were created by the
         // request.
-        /** @var MutateOperationResponse $result */
+        /**
+ * @var MutateOperationResponse $result
+*/
         foreach ($response->getMutateOperationResponses() as $result) {
             $resourceType = "unrecognized";
             $resourceName = "not found";

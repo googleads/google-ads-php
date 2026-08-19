@@ -78,12 +78,14 @@ class AddMerchantCenterDynamicRemarketingCampaign
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_BUDGET_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::USER_LIST_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -112,7 +114,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -134,11 +138,11 @@ class AddMerchantCenterDynamicRemarketingCampaign
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $merchantCenterAccountId the Merchant Center account ID
-     * @param int $campaignBudgetId the campaign budget ID
-     * @param int $userListId the user list ID
+     * @param GoogleAdsClient $googleAdsClient         the Google Ads API client
+     * @param int             $customerId              the customer ID
+     * @param int             $merchantCenterAccountId the Merchant Center account ID
+     * @param int             $campaignBudgetId        the campaign budget ID
+     * @param int             $userListId              the user list ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -169,10 +173,10 @@ class AddMerchantCenterDynamicRemarketingCampaign
     /**
      * Creates a campaign linked to a Merchant Center product feed.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $merchantCenterAccountId the Merchant Center account ID
-     * @param int $campaignBudgetId the campaign budget ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  int $merchantCenterAccountId the Merchant Center account ID
+     * @param  int $campaignBudgetId the campaign budget ID
      * @return string the resource name of the newly created campaign
      */
     // [START add_merchant_center_dynamic_remarketing_campaign_2]
@@ -183,14 +187,17 @@ class AddMerchantCenterDynamicRemarketingCampaign
         int $campaignBudgetId
     ): string {
         // Configures the settings for the shopping campaign.
-        $shoppingSettings = new ShoppingSetting([
+        $shoppingSettings = new ShoppingSetting(
+            [
             'campaign_priority' => 0,
             'merchant_id' => $merchantCenterAccountId,
             'enable_local' => true
-        ]);
+            ]
+        );
 
         // Creates the campaign.
-        $campaign = new Campaign([
+        $campaign = new Campaign(
+            [
             'name' => 'Shopping campaign #' . Helper::getPrintableDatetime(),
             // Dynamic remarketing campaigns are only available on the Google Display Network.
             'advertising_channel_type' => AdvertisingChannelType::DISPLAY,
@@ -202,7 +209,8 @@ class AddMerchantCenterDynamicRemarketingCampaign
                 EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
             // This connects the campaign to the merchant center account.
             'shopping_setting' => $shoppingSettings
-        ]);
+            ]
+        );
 
         // Creates a campaign operation.
         $campaignOperation = new CampaignOperation();
@@ -214,7 +222,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
             MutateCampaignsRequest::build($customerId, [$campaignOperation])
         );
 
-        /** @var Campaign $addedCampaign */
+        /**
+ * @var Campaign $addedCampaign
+*/
         $addedCampaign = $response->getResults()[0];
         $addedCampaignResourceName = $addedCampaign->getResourceName();
         printf("Created campaign with resource name '%s'.%s", $addedCampaignResourceName, PHP_EOL);
@@ -226,9 +236,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
     /**
      * Creates an ad group for the remarketing campaign.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $campaignResourceName the resource name of the campaign that
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $campaignResourceName the resource name of the campaign that
      *     the new ad group will belong to
      * @return string the resource name of the newly created ad group
      */
@@ -239,11 +249,13 @@ class AddMerchantCenterDynamicRemarketingCampaign
         string $campaignResourceName
     ): string {
         // Creates the ad group.
-        $adGroup = new AdGroup([
+        $adGroup = new AdGroup(
+            [
             'name' => 'Dynamic remarketing ad group',
             'campaign' => $campaignResourceName,
             'status' => AdGroupStatus::ENABLED
-        ]);
+            ]
+        );
 
         // Creates an ad group operation.
         $adGroupOperation = new AdGroupOperation();
@@ -255,7 +267,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
             MutateAdGroupsRequest::build($customerId, [$adGroupOperation])
         );
 
-        /** @var AdGroup $addedAdGroup */
+        /**
+ * @var AdGroup $addedAdGroup
+*/
         $addedAdGroup = $response->getResults()[0];
         $addedAdGroupResourceName = $addedAdGroup->getResourceName();
         printf("Created ad group with resource name '%s'.%s", $addedAdGroupResourceName, PHP_EOL);
@@ -292,11 +306,14 @@ class AddMerchantCenterDynamicRemarketingCampaign
         );
 
         // Creates the responsive display ad info object.
-        $responsiveDisplayAdInfo = new ResponsiveDisplayAdInfo([
+        $responsiveDisplayAdInfo = new ResponsiveDisplayAdInfo(
+            [
             'marketing_images' => [new AdImageAsset(['asset' => $marketingImageResourceName])],
-            'square_marketing_images' => [new AdImageAsset([
+            'square_marketing_images' => [new AdImageAsset(
+                [
                 'asset' => $squareMarketingImageResourceName
-            ])],
+                ]
+            )],
             'headlines' => [new AdTextAsset(['text' => 'Travel'])],
             'long_headline' => new AdTextAsset(['text' => 'Travel the World']),
             'descriptions' => [new AdTextAsset(['text' => 'Take to the air!'])],
@@ -319,16 +336,21 @@ class AddMerchantCenterDynamicRemarketingCampaign
             // 'square_logo_images' => [new AdImageAsset([
             //     'asset' => 'INSERT_SQUARE_LOGO_IMAGE_RESOURCE_NAME_HERE'
             // ])]
-        ]);
+            ]
+        );
 
         // Creates a new ad group ad.
-        $adGroupAd = new AdGroupAd([
-            'ad' => new Ad([
+        $adGroupAd = new AdGroupAd(
+            [
+            'ad' => new Ad(
+                [
                 'responsive_display_ad' => $responsiveDisplayAdInfo,
                 'final_urls' => ['http://www.example.com/']
-            ]),
+                ]
+            ),
             'ad_group' => $adGroupResourceName
-        ]);
+            ]
+        );
 
         // Creates an ad group ad operation.
         $adGroupAdOperation = new AdGroupAdOperation();
@@ -340,7 +362,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
             MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
         );
 
-        /** @var AdGroupAd $addedAdGroupAd */
+        /**
+ * @var AdGroupAd $addedAdGroupAd
+*/
         $addedAdGroupAd = $response->getResults()[0];
         printf(
             "Created ad group ad with resource name '%s'.%s",
@@ -353,10 +377,10 @@ class AddMerchantCenterDynamicRemarketingCampaign
     /**
      * Adds an image asset to the Google Ads account.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $imageUrl the image URL
-     * @param string $assetName the asset name
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the customer ID
+     * @param  string          $imageUrl        the image URL
+     * @param  string          $assetName       the asset name
      * @return string the resource name of the newly added asset
      */
     private static function uploadAsset(
@@ -366,11 +390,13 @@ class AddMerchantCenterDynamicRemarketingCampaign
         string $assetName
     ): string {
         // Creates an asset.
-        $asset = new Asset([
+        $asset = new Asset(
+            [
             'name' => $assetName,
             'type' => AssetType::IMAGE,
             'image_asset' => new ImageAsset(['data' => file_get_contents($imageUrl)])
-        ]);
+            ]
+        );
 
         // Creates an asset operation.
         $assetOperation = new AssetOperation();
@@ -383,7 +409,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
         );
 
         // Prints the resource name of the added image asset.
-        /** @var MutateAssetResult $addedImageAsset */
+        /**
+ * @var MutateAssetResult $addedImageAsset
+*/
         $addedImageAsset = $response->getResults()[0];
         $addedImageAssetResourceName = $addedImageAsset->getResourceName();
         printf(
@@ -412,12 +440,16 @@ class AddMerchantCenterDynamicRemarketingCampaign
         int $userListId
     ) {
         // Creates the ad group criterion that targets the user list.
-        $adGroupCriterion = new AdGroupCriterion([
+        $adGroupCriterion = new AdGroupCriterion(
+            [
             'ad_group' => $adGroupResourceName,
-            'user_list' => new UserListInfo([
+            'user_list' => new UserListInfo(
+                [
                 'user_list' => ResourceNames::forUserList($customerId, $userListId)
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         // Creates an ad group criterion operation.
         $adGroupCriterionOperation = new AdGroupCriterionOperation();
@@ -429,7 +461,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
             MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])
         );
 
-        /** @var AdGroupCriterion $addedAdGroupCriterion */
+        /**
+ * @var AdGroupCriterion $addedAdGroupCriterion
+*/
         $addedAdGroupCriterion = $response->getResults()[0];
         printf(
             "Created ad group criterion with resource name '%s'.%s",

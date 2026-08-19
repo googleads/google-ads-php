@@ -22,47 +22,57 @@ namespace Google\Ads\GoogleAds\V23\Services;
  * Service for reservation related operations.
  * This service is not publicly available.
  */
-class ReservationServiceGrpcClient extends \Grpc\BaseStub {
+class ReservationServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
     /**
      * Proposes quotes for booking campaigns.
      * This request can have a latency of 30 seconds.
-     * @param \Google\Ads\GoogleAds\V23\Services\QuoteCampaignsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\QuoteCampaignsRequest $argument input argument
+     * @param  array                                                    $metadata metadata
+     * @param  array                                                    $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\QuoteCampaignsResponse>
      */
     public function QuoteCampaigns(\Google\Ads\GoogleAds\V23\Services\QuoteCampaignsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.ReservationService/QuoteCampaigns',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\QuoteCampaignsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.ReservationService/QuoteCampaigns',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\QuoteCampaignsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
      * Books the requested campaigns.
      * This request can have a latency of 30 seconds.
-     * @param \Google\Ads\GoogleAds\V23\Services\BookCampaignsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\BookCampaignsRequest $argument input argument
+     * @param  array                                                   $metadata metadata
+     * @param  array                                                   $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\BookCampaignsResponse>
      */
     public function BookCampaigns(\Google\Ads\GoogleAds\V23\Services\BookCampaignsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.ReservationService/BookCampaigns',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\BookCampaignsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.ReservationService/BookCampaigns',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\BookCampaignsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

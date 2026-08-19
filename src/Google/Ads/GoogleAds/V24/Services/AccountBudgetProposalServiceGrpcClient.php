@@ -31,14 +31,16 @@ namespace Google\Ads\GoogleAds\V24\Services;
  * UPDATE operations aren't supported.
  * The REMOVE operation cancels a pending proposal.
  */
-class AccountBudgetProposalServiceGrpcClient extends \Grpc\BaseStub {
+class AccountBudgetProposalServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -60,17 +62,21 @@ class AccountBudgetProposalServiceGrpcClient extends \Grpc\BaseStub {
      *   [QuotaError]()
      *   [RequestError]()
      *   [StringLengthError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\MutateAccountBudgetProposalRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\MutateAccountBudgetProposalRequest $argument input argument
+     * @param  array                                                                 $metadata metadata
+     * @param  array                                                                 $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\MutateAccountBudgetProposalResponse>
      */
     public function MutateAccountBudgetProposal(\Google\Ads\GoogleAds\V24\Services\MutateAccountBudgetProposalRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.AccountBudgetProposalService/MutateAccountBudgetProposal',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\MutateAccountBudgetProposalResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.AccountBudgetProposalService/MutateAccountBudgetProposal',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\MutateAccountBudgetProposalResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

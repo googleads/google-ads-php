@@ -30,13 +30,13 @@ final class LoggerFactory
     /**
      * Creates a Monolog logger with a stream handler configured for this library.
      *
-     * @param string $channel a description of what is being logged
-     * @param string|resource|null $stream the stream the logger will log to; if
-     *     `null`, will log to STDERR
-     * @param string|int|null $level the log level; can be a PSR-3 log level
-     *     string, or a Monolog log level int
+     * @param  string               $channel a description of what is being logged
+     * @param  string|resource|null $stream  the stream the logger will log to; if
+     *                                       `null`, will log to STDERR
+     * @param  string|int|null      $level   the log level; can be a PSR-3 log level
+     *                                       string, or a Monolog log level int
      * @return LoggerInterface
-     * @see Logger
+     * @see    Logger
      */
     public function createLogger($channel, $stream = null, $level = null)
     {

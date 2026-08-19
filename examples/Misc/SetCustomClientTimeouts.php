@@ -52,9 +52,11 @@ class SetCustomClientTimeouts
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -79,7 +81,9 @@ class SetCustomClientTimeouts
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -102,7 +106,7 @@ class SetCustomClientTimeouts
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param int             $customerId      the customer ID
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
@@ -128,7 +132,9 @@ class SetCustomClientTimeouts
         $output = '';
         try {
             // Issues a search stream request by setting a custom client timeout.
-            /** @var GoogleAdsServerStreamDecorator $stream */
+            /**
+ * @var GoogleAdsServerStreamDecorator $stream
+*/
             $stream = $googleAdsServiceClient->searchStream(
                 SearchGoogleAdsStreamRequest::build($customerId, $query),
                 [
@@ -143,7 +149,9 @@ class SetCustomClientTimeouts
             );
             // Iterates over all rows in all messages and collects the campaign IDs.
             foreach ($stream->iterateAllElements() as $googleAdsRow) {
-                /** @var GoogleAdsRow $googleAdsRow */
+                /**
+ * @var GoogleAdsRow $googleAdsRow
+*/
                 $output .= ' ' . $googleAdsRow->getCampaign()->getId();
             }
             print 'The server streaming call completed before the timeout.' . PHP_EOL;
@@ -206,7 +214,9 @@ class SetCustomClientTimeouts
             );
             // Iterates over all rows in all messages and collects the campaign IDs.
             foreach ($response->iterateAllElements() as $googleAdsRow) {
-                /** @var GoogleAdsRow $googleAdsRow */
+                /**
+ * @var GoogleAdsRow $googleAdsRow
+*/
                 $output .= ' ' . $googleAdsRow->getCampaign()->getId();
             }
             print 'The unary call completed before the timeout.' . PHP_EOL;

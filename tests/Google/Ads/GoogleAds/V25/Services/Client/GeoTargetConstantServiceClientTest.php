@@ -39,19 +39,25 @@ use stdClass;
  */
 class GeoTargetConstantServiceClientTest extends GeneratedTest
 {
-    /** @return TransportInterface */
+    /**
+     * @return TransportInterface 
+     */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /** @return CredentialsWrapper */
+    /**
+     * @return CredentialsWrapper 
+     */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /** @return GeoTargetConstantServiceClient */
+    /**
+     * @return GeoTargetConstantServiceClient 
+     */
     private function createClient(array $options = [])
     {
         $options += [
@@ -60,13 +66,17 @@ class GeoTargetConstantServiceClientTest extends GeneratedTest
         return new GeoTargetConstantServiceClient($options);
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function suggestGeoTargetConstantsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new SuggestGeoTargetConstantsResponse();
@@ -82,23 +92,29 @@ class GeoTargetConstantServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function suggestGeoTargetConstantsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         $request = new SuggestGeoTargetConstantsRequest();
         try {
@@ -114,13 +130,17 @@ class GeoTargetConstantServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function suggestGeoTargetConstantsAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new SuggestGeoTargetConstantsResponse();

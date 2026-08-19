@@ -50,11 +50,13 @@ class AddHotelAdGroupBidModifiers
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CHECK_IN_DAY_CRITERION_ID => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -79,7 +81,9 @@ class AddHotelAdGroupBidModifiers
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -114,15 +118,19 @@ class AddHotelAdGroupBidModifiers
         $operations = [];
 
         // 1) Creates an ad group bid modifier based on the hotel check-in day.
-        $checkInDayAdGroupBidModifier = new AdGroupBidModifier([
+        $checkInDayAdGroupBidModifier = new AdGroupBidModifier(
+            [
             // Sets the ad group.
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
-            'hotel_check_in_day' => new HotelCheckInDayInfo([
+            'hotel_check_in_day' => new HotelCheckInDayInfo(
+                [
                 'day_of_week' => DayOfWeek::MONDAY
-            ]),
+                ]
+            ),
             // Sets the bid modifier value to 150%.
             'bid_modifier' => 1.5
-        ]);
+            ]
+        );
 
         // Creates an ad group bid modifier operation.
         $checkInDayAdGroupBidModifierOperation = new AdGroupBidModifierOperation();
@@ -130,17 +138,21 @@ class AddHotelAdGroupBidModifiers
         $operations[] = $checkInDayAdGroupBidModifierOperation;
 
         // 2) Creates an ad group bid modifier based on the hotel length of stay.
-        $lengthOfStayAdGroupBidModifier = new AdGroupBidModifier([
+        $lengthOfStayAdGroupBidModifier = new AdGroupBidModifier(
+            [
             // Sets the ad group.
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             // Creates the hotel length of stay info.
-            'hotel_length_of_stay' => new HotelLengthOfStayInfo([
+            'hotel_length_of_stay' => new HotelLengthOfStayInfo(
+                [
                 'min_nights' => 3,
                 'max_nights' => 7,
-            ]),
+                ]
+            ),
             // Sets the bid modifier value to 170%.
             'bid_modifier' => 1.7
-        ]);
+            ]
+        );
 
         // Creates an ad group bid modifier operation.
         $lengthOfStayAdGroupBidModifierOperation = new AdGroupBidModifierOperation();
@@ -162,7 +174,9 @@ class AddHotelAdGroupBidModifiers
             PHP_EOL
         );
         foreach ($response->getResults() as $addedAdGroupBidModifier) {
-            /** @var AdGroupBidModifier $addedAdGroupBidModifier */
+            /**
+ * @var AdGroupBidModifier $addedAdGroupBidModifier
+*/
             print $addedAdGroupBidModifier->getResourceName() . PHP_EOL;
         }
     }

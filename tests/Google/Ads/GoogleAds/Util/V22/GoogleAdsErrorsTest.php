@@ -29,7 +29,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Unit tests for `GoogleAdsErrors`.
  *
- * @see GoogleAdsErrors
+ * @see   GoogleAdsErrors
  * @small
  */
 class GoogleAdsErrorsTest extends TestCase
@@ -41,9 +41,11 @@ class GoogleAdsErrorsTest extends TestCase
         $this->failure = $this->createGoogleAdsFailure();
         $any = new Any();
         $any->pack($this->failure);
-        $this->status = new Status([
+        $this->status = new Status(
+            [
             'details' => [$any]
-        ]);
+            ]
+        );
     }
 
     public function testFromStatusWithNoErrors()
@@ -122,20 +124,28 @@ class GoogleAdsErrorsTest extends TestCase
 
     private function createGoogleAdsFailure($fieldName = "operations")
     {
-        return new GoogleAdsFailure([
+        return new GoogleAdsFailure(
+            [
             "errors" => [
-                new GoogleAdsError([
+                new GoogleAdsError(
+                    [
                     "message" => "A test message.",
-                    "location" => new ErrorLocation([
+                    "location" => new ErrorLocation(
+                        [
                         "field_path_elements" => [
-                            new FieldPathElement([
+                            new FieldPathElement(
+                                [
                                 "index" => 0,
                                 "field_name" => $fieldName
-                            ])
+                                ]
+                            )
                         ]
-                    ])
-                ])
+                        ]
+                    )
+                    ]
+                )
             ]
-        ]);
+            ]
+        );
     }
 }

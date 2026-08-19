@@ -31,7 +31,9 @@ use UnexpectedValueException;
  */
 class ConfigurationLoaderTest extends TestCase
 {
-    /** @var ConfigurationLoader $configurationLoader */
+    /**
+     * @var ConfigurationLoader $configurationLoader
+     */
     private $configurationLoader;
 
     /**
@@ -48,10 +50,12 @@ class ConfigurationLoaderTest extends TestCase
         $environmentalVariablesMock
             ->method('getStartingWith')
             ->with(GoogleAdsBuilder::CONFIGURATION_ENVIRONMENT_VARIABLES_PREFIX)
-            ->willReturn([
+            ->willReturn(
+                [
                 GoogleAdsBuilder::DEFAULT_CONFIGURATION_FILENAME_ENVIRONMENT_VARIABLE_NAME =>
                     ConfigurationLoaderTestProvider::getFakeHomeFilePathForTestIniFile()
-            ]);
+                ]
+            );
         $this->configurationLoader =
             new ConfigurationLoader($environmentalVariablesMock);
     }

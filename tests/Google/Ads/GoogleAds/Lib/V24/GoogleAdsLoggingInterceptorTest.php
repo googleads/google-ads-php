@@ -32,10 +32,14 @@ use Psr\Log\LogLevel;
  */
 class GoogleAdsLoggingInterceptorTest extends TestCase
 {
-    /** @var GoogleAdsLoggingInterceptor $googleAdsLoggingInterceptor */
+    /**
+     * @var GoogleAdsLoggingInterceptor $googleAdsLoggingInterceptor
+     */
     private $googleAdsLoggingInterceptor;
 
-    /** @var GoogleAdsCallLogger $callLogger */
+    /**
+     * @var GoogleAdsCallLogger $callLogger
+     */
     private $callLogger;
 
     /**

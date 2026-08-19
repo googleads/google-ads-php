@@ -49,11 +49,17 @@ class GoogleAdsClientBuilderTest extends TestCase
     private static $INVALID_BOOLEAN_STRING = 'invalid_boolean_string';
     private static $DEFAULT_GRPC_CHANNEL_CREDENTIAL;
 
-    /** @var GoogleAdsClientBuilder $googleAdsClientBuilder */
+    /**
+     * @var GoogleAdsClientBuilder $googleAdsClientBuilder
+     */
     private $googleAdsClientBuilder;
-    /** @var FetchAuthTokenInterface $fetchAuthTokenInterfaceMock */
+    /**
+     * @var FetchAuthTokenInterface $fetchAuthTokenInterfaceMock
+     */
     private $fetchAuthTokenInterfaceMock;
-    /** @var LoggerInterface $loggerMock */
+    /**
+     * @var LoggerInterface $loggerMock
+     */
     private $loggerMock;
 
     /**
@@ -572,7 +578,9 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->getMock();
         $dependenciesMock->method('getGrpcComposerVersion')->willReturn('1.1');
         $dependenciesMock->method('getGrpcSystemPackageVersion')->willReturn('1.1.5');
-        /** @var Dependencies $dependenciesMock */
+        /**
+ * @var Dependencies $dependenciesMock
+*/
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
@@ -589,7 +597,9 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->getMock();
         $dependenciesMock->method('getGrpcComposerVersion')->willReturn('1.1');
         $dependenciesMock->method('getGrpcSystemPackageVersion')->willReturn(null);
-        /** @var Dependencies $dependenciesMock */
+        /**
+ * @var Dependencies $dependenciesMock
+*/
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
@@ -606,7 +616,9 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->getMock();
         $dependenciesMock->method('getGrpcComposerVersion')->willReturn(null);
         $dependenciesMock->method('getGrpcSystemPackageVersion')->willReturn('2.3');
-        /** @var Dependencies $dependenciesMock */
+        /**
+ * @var Dependencies $dependenciesMock
+*/
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
@@ -623,7 +635,9 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->getMock();
         $dependenciesMock->method('getGrpcComposerVersion')->willReturn(null);
         $dependenciesMock->method('getGrpcSystemPackageVersion')->willReturn(null);
-        /** @var Dependencies $dependenciesMock */
+        /**
+ * @var Dependencies $dependenciesMock
+*/
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
@@ -641,7 +655,9 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->getMock();
         $dependenciesMock->method('getGrpcComposerVersion')->willReturn('2');
         $dependenciesMock->method('getGrpcSystemPackageVersion')->willReturn('1.1.5');
-        /** @var Dependencies $dependenciesMock */
+        /**
+ * @var Dependencies $dependenciesMock
+*/
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
@@ -663,10 +679,10 @@ class GoogleAdsClientBuilderTest extends TestCase
     {
         $assistantValue = 'test-assistant-v1';
         $this->googleAdsClientBuilder
-            ->withDeveloperToken('dummy-token') 
-            ->withOAuth2Credential($this->getMockBuilder(FetchAuthTokenInterface::class)->getMock()) 
+            ->withDeveloperToken('dummy-token')
+            ->withOAuth2Credential($this->getMockBuilder(FetchAuthTokenInterface::class)->getMock())
             ->withAdsAssistant($assistantValue);
-    
+
         $googleAdsClient = $this->googleAdsClientBuilder->build();
 
         $this->assertEquals(

@@ -50,19 +50,25 @@ use stdClass;
  */
 class ReachPlanServiceClientTest extends GeneratedTest
 {
-    /** @return TransportInterface */
+    /**
+     * @return TransportInterface 
+     */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /** @return CredentialsWrapper */
+    /**
+     * @return CredentialsWrapper 
+     */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /** @return ReachPlanServiceClient */
+    /**
+     * @return ReachPlanServiceClient 
+     */
     private function createClient(array $options = [])
     {
         $options += [
@@ -71,13 +77,17 @@ class ReachPlanServiceClientTest extends GeneratedTest
         return new ReachPlanServiceClient($options);
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateConversionRatesTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateConversionRatesResponse();
@@ -98,23 +108,29 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateConversionRatesExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -133,13 +149,17 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateReachForecastTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateReachForecastResponse();
@@ -168,23 +188,29 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateReachForecastExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -207,13 +233,17 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function listPlannableLocationsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new ListPlannableLocationsResponse();
@@ -229,23 +259,29 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function listPlannableLocationsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         $request = new ListPlannableLocationsRequest();
         try {
@@ -261,13 +297,17 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function listPlannableProductsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new ListPlannableProductsResponse();
@@ -288,23 +328,29 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function listPlannableProductsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $plannableLocationId = 'plannableLocationId-2050234651';
@@ -323,13 +369,17 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function listPlannableUserInterestsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new ListPlannableUserInterestsResponse();
@@ -350,23 +400,29 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function listPlannableUserInterestsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -385,13 +441,17 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function listPlannableUserListsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new ListPlannableUserListsResponse();
@@ -412,23 +472,29 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function listPlannableUserListsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -447,13 +513,17 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateConversionRatesAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateConversionRatesResponse();

@@ -28,30 +28,36 @@ namespace Google\Ads\GoogleAds\V25\Services;
  * The generated preview URLs cannot be embedded in an iframe because the
  * response headers include `X-Frame-Options: deny`.
  */
-class ShareablePreviewServiceGrpcClient extends \Grpc\BaseStub {
+class ShareablePreviewServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
     /**
      * Returns the requested Shareable Preview.
-     * @param \Google\Ads\GoogleAds\V25\Services\GenerateShareablePreviewsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateShareablePreviewsRequest $argument input argument
+     * @param  array                                                               $metadata metadata
+     * @param  array                                                               $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateShareablePreviewsResponse>
      */
     public function GenerateShareablePreviews(\Google\Ads\GoogleAds\V25\Services\GenerateShareablePreviewsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.ShareablePreviewService/GenerateShareablePreviews',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\GenerateShareablePreviewsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.ShareablePreviewService/GenerateShareablePreviews',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\GenerateShareablePreviewsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

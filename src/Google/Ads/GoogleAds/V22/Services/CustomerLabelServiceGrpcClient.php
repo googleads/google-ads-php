@@ -27,14 +27,16 @@ namespace Google\Ads\GoogleAds\V22\Services;
  * to their client accounts. The label entity must exist under the manager
  * account.
  */
-class CustomerLabelServiceGrpcClient extends \Grpc\BaseStub {
+class CustomerLabelServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -52,17 +54,21 @@ class CustomerLabelServiceGrpcClient extends \Grpc\BaseStub {
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\MutateCustomerLabelsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\MutateCustomerLabelsRequest $argument input argument
+     * @param  array                                                          $metadata metadata
+     * @param  array                                                          $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateCustomerLabelsResponse>
      */
     public function MutateCustomerLabels(\Google\Ads\GoogleAds\V22\Services\MutateCustomerLabelsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.CustomerLabelService/MutateCustomerLabels',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\MutateCustomerLabelsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.CustomerLabelService/MutateCustomerLabels',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\MutateCustomerLabelsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

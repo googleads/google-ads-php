@@ -62,13 +62,15 @@ class UploadEnhancedConversionsForWeb
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::ORDER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_DATE_TIME => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::USER_AGENT => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -97,7 +99,9 @@ class UploadEnhancedConversionsForWeb
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -190,7 +194,8 @@ class UploadEnhancedConversionsForWeb
 
         // Creates a user identifier using the hashed email address, using the normalize and hash
         // method specifically for email addresses.
-        $emailIdentifier = new UserIdentifier([
+        $emailIdentifier = new UserIdentifier(
+            [
             // Uses the normalize and hash method specifically for email addresses.
             'hashed_email' => self::normalizeAndHashEmailAddress(
                 $hashAlgorithm,
@@ -198,18 +203,21 @@ class UploadEnhancedConversionsForWeb
             ),
             // Optional: Specifies the user identifier source.
             'user_identifier_source' => UserIdentifierSource::FIRST_PARTY
-        ]);
+            ]
+        );
         $userIdentifiers[] = $emailIdentifier;
 
         // Checks if the record has a phone number, and if so, adds a UserIdentifier for it.
         if (array_key_exists('phone', $rawRecord)) {
-            $hashedPhoneNumberIdentifier = new UserIdentifier([
+            $hashedPhoneNumberIdentifier = new UserIdentifier(
+                [
                 'hashed_phone_number' => self::normalizeAndHash(
                     $hashAlgorithm,
                     $rawRecord['phone'],
                     true
                 )
-            ]);
+                ]
+            );
             // Adds the hashed email identifier to the user identifiers list.
             $userIdentifiers[] = $hashedPhoneNumberIdentifier;
         }
@@ -235,8 +243,10 @@ class UploadEnhancedConversionsForWeb
             } else {
                 // Creates an OfflineUserAddressInfo object that contains all the required
                 // elements of a mailing address.
-                $addressIdentifier = new UserIdentifier([
-                    'address_info' => new OfflineUserAddressInfo([
+                $addressIdentifier = new UserIdentifier(
+                    [
+                    'address_info' => new OfflineUserAddressInfo(
+                        [
                         'hashed_first_name' => self::normalizeAndHash(
                             $hashAlgorithm,
                             $rawRecord['firstName'],
@@ -249,8 +259,10 @@ class UploadEnhancedConversionsForWeb
                         ),
                         'country_code' => $rawRecord['countryCode'],
                         'postal_code' => $rawRecord['postalCode']
-                    ])
-                ]);
+                        ]
+                    )
+                    ]
+                );
                 // Adds the address identifier to the user identifiers list.
                 $userIdentifiers[] = $addressIdentifier;
             }
@@ -276,9 +288,13 @@ class UploadEnhancedConversionsForWeb
         if (!empty($rawRecord['conversionDateTime'])) {
             // Sets the conversion date and time if provided. Providing this value is optional but
             // recommended.
-            $enhancement->setGclidDateTimePair(new GclidDateTimePair([
-                'conversion_date_time' => $rawRecord['conversionDateTime']
-            ]));
+            $enhancement->setGclidDateTimePair(
+                new GclidDateTimePair(
+                    [
+                    'conversion_date_time' => $rawRecord['conversionDateTime']
+                    ]
+                )
+            );
         }
 
         // Sets the user agent if provided. This should match the user agent of the request that
@@ -317,7 +333,9 @@ class UploadEnhancedConversionsForWeb
             );
         } else {
             // Prints the result if exists.
-            /** @var ConversionAdjustmentResult $uploadedConversionAdjustment */
+            /**
+ * @var ConversionAdjustmentResult $uploadedConversionAdjustment
+*/
             $uploadedConversionAdjustment = $response->getResults()[0];
             printf(
                 "Uploaded conversion adjustment of '%s' for order ID '%s'.%s",
@@ -333,9 +351,9 @@ class UploadEnhancedConversionsForWeb
      * algorithm. Private customer data must be hashed during upload, as described at
      * https://support.google.com/google-ads/answer/7474263.
      *
-     * @param string $hashAlgorithm the hash algorithm to use
-     * @param string $value the value to normalize and hash
-     * @param bool $trimIntermediateSpaces if true, removes leading, trailing, and intermediate
+     * @param  string $hashAlgorithm the hash algorithm to use
+     * @param  string $value the value to normalize and hash
+     * @param  bool $trimIntermediateSpaces if true, removes leading, trailing, and intermediate
      *     spaces from the string before hashing. If false, only removes leading and trailing
      *     spaces from the string before hashing.
      * @return string the normalized and hashed value
@@ -362,8 +380,8 @@ class UploadEnhancedConversionsForWeb
      * Returns the result of normalizing and hashing an email address. For this use case, Google
      * Ads requires removal of any '.' characters preceding "gmail.com" or "googlemail.com".
      *
-     * @param string $hashAlgorithm the hash algorithm to use
-     * @param string $emailAddress the email address to normalize and hash
+     * @param  string $hashAlgorithm the hash algorithm to use
+     * @param  string $emailAddress  the email address to normalize and hash
      * @return string the normalized and hashed email address
      */
     private static function normalizeAndHashEmailAddress(

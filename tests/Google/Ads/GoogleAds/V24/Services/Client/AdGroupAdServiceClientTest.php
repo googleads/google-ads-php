@@ -41,19 +41,25 @@ use stdClass;
  */
 class AdGroupAdServiceClientTest extends GeneratedTest
 {
-    /** @return TransportInterface */
+    /**
+     * @return TransportInterface 
+     */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /** @return CredentialsWrapper */
+    /**
+     * @return CredentialsWrapper 
+     */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /** @return AdGroupAdServiceClient */
+    /**
+     * @return AdGroupAdServiceClient 
+     */
     private function createClient(array $options = [])
     {
         $options += [
@@ -62,13 +68,17 @@ class AdGroupAdServiceClientTest extends GeneratedTest
         return new AdGroupAdServiceClient($options);
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function mutateAdGroupAdsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new MutateAdGroupAdsResponse();
@@ -93,23 +103,29 @@ class AdGroupAdServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function mutateAdGroupAdsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -130,13 +146,17 @@ class AdGroupAdServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function removeAutomaticallyCreatedAssetsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GPBEmpty();
@@ -160,23 +180,29 @@ class AdGroupAdServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function removeAutomaticallyCreatedAssetsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $formattedAdGroupAd = $gapicClient->adGroupAdName('[CUSTOMER_ID]', '[AD_GROUP_ID]', '[AD_ID]');
@@ -197,13 +223,17 @@ class AdGroupAdServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function mutateAdGroupAdsAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new MutateAdGroupAdsResponse();

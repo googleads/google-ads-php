@@ -34,7 +34,9 @@ use Google\Ads\GoogleAds\V25\Services\CampaignLabelOperation;
 use Google\Ads\GoogleAds\V25\Services\MutateCampaignLabelsRequest;
 use Google\ApiCore\ApiException;
 
-/** This example adds a campaign label to a list of campaigns. */
+/**
+ * This example adds a campaign label to a list of campaigns.
+ */
 class AddCampaignLabels
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
@@ -46,11 +48,13 @@ class AddCampaignLabels
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_IDS => GetOpt::MULTIPLE_ARGUMENT,
             ArgumentNames::LABEL_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -78,7 +82,9 @@ class AddCampaignLabels
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -119,10 +125,12 @@ class AddCampaignLabels
         $operations = [];
         foreach ($campaignIds as $campaignId) {
             // Creates the campaign label.
-            $campaignLabel = new CampaignLabel([
+            $campaignLabel = new CampaignLabel(
+                [
                 'campaign' => ResourceNames::forCampaign($customerId, $campaignId),
                 'label' => $labelResourceName
-            ]);
+                ]
+            );
             $campaignLabelOperation = new CampaignLabelOperation();
             $campaignLabelOperation->setCreate($campaignLabel);
             $operations[] = $campaignLabelOperation;
@@ -137,7 +145,9 @@ class AddCampaignLabels
         printf("Added %d campaign labels:%s", $response->getResults()->count(), PHP_EOL);
 
         foreach ($response->getResults() as $addedCampaignLabel) {
-            /** @var CampaignLabel $addedCampaignLabel */
+            /**
+ * @var CampaignLabel $addedCampaignLabel
+*/
             printf(
                 "New campaign label added with resource name: '%s'.%s",
                 $addedCampaignLabel->getResourceName(),

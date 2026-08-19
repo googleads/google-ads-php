@@ -33,9 +33,9 @@ class GoogleAdsException extends ApiException
     /**
      * Creates a `GoogleAdsException` instance with the specified parameters.
      *
-     * @param ApiException $original the original exception
+     * @param ApiException     $original         the original exception
      * @param GoogleAdsFailure $googleAdsFailure the reason of failure
-     * @param array $optionalArgs optional arguments
+     * @param array            $optionalArgs     optional arguments
      */
     public function __construct(
         ApiException $original,

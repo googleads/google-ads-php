@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V24\Services;
  *
  * A service for managing Identity Verification Service.
  */
-class IdentityVerificationServiceGrpcClient extends \Grpc\BaseStub {
+class IdentityVerificationServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -45,17 +47,21 @@ class IdentityVerificationServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\StartIdentityVerificationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\StartIdentityVerificationRequest $argument input argument
+     * @param  array                                                               $metadata metadata
+     * @param  array                                                               $options  call options
      * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function StartIdentityVerification(\Google\Ads\GoogleAds\V24\Services\StartIdentityVerificationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.IdentityVerificationService/StartIdentityVerification',
-        $argument,
-        ['\Google\Protobuf\GPBEmpty', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.IdentityVerificationService/StartIdentityVerification',
+            $argument,
+            ['\Google\Protobuf\GPBEmpty', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -68,17 +74,21 @@ class IdentityVerificationServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\GetIdentityVerificationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\GetIdentityVerificationRequest $argument input argument
+     * @param  array                                                             $metadata metadata
+     * @param  array                                                             $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\GetIdentityVerificationResponse>
      */
     public function GetIdentityVerification(\Google\Ads\GoogleAds\V24\Services\GetIdentityVerificationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.IdentityVerificationService/GetIdentityVerification',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\GetIdentityVerificationResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.IdentityVerificationService/GetIdentityVerification',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\GetIdentityVerificationResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

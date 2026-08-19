@@ -21,14 +21,16 @@ namespace Google\Ads\GoogleAds\V24\Services;
 /**
  * Service to configure campaign lifecycle goals.
  */
-class CampaignLifecycleGoalServiceGrpcClient extends \Grpc\BaseStub {
+class CampaignLifecycleGoalServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -43,17 +45,21 @@ class CampaignLifecycleGoalServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\ConfigureCampaignLifecycleGoalsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\ConfigureCampaignLifecycleGoalsRequest $argument input argument
+     * @param  array                                                                     $metadata metadata
+     * @param  array                                                                     $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\ConfigureCampaignLifecycleGoalsResponse>
      */
     public function ConfigureCampaignLifecycleGoals(\Google\Ads\GoogleAds\V24\Services\ConfigureCampaignLifecycleGoalsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.CampaignLifecycleGoalService/ConfigureCampaignLifecycleGoals',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\ConfigureCampaignLifecycleGoalsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.CampaignLifecycleGoalService/ConfigureCampaignLifecycleGoals',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\ConfigureCampaignLifecycleGoalsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

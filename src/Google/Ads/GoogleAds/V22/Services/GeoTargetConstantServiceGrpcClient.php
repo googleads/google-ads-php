@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V22\Services;
  *
  * Service to fetch geo target constants.
  */
-class GeoTargetConstantServiceGrpcClient extends \Grpc\BaseStub {
+class GeoTargetConstantServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -45,17 +47,21 @@ class GeoTargetConstantServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\SuggestGeoTargetConstantsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\SuggestGeoTargetConstantsRequest $argument input argument
+     * @param  array                                                               $metadata metadata
+     * @param  array                                                               $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\SuggestGeoTargetConstantsResponse>
      */
     public function SuggestGeoTargetConstants(\Google\Ads\GoogleAds\V22\Services\SuggestGeoTargetConstantsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.GeoTargetConstantService/SuggestGeoTargetConstants',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\SuggestGeoTargetConstantsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.GeoTargetConstantService/SuggestGeoTargetConstants',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\SuggestGeoTargetConstantsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

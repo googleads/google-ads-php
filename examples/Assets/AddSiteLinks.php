@@ -53,10 +53,12 @@ class AddSitelinks
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -81,7 +83,9 @@ class AddSitelinks
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -102,8 +106,8 @@ class AddSitelinks
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param int $campaignId the campaign ID
+     * @param int             $customerId      the client customer ID
+     * @param int             $campaignId      the campaign ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -126,8 +130,8 @@ class AddSitelinks
     /**
      * Creates sitelinks that will be then added to campaigns.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the customer ID
      * @return string[] $assetResourceNames the resource names of the sitelink assets
      */
     private static function createSitelinkAssets(
@@ -135,48 +139,63 @@ class AddSitelinks
         int $customerId
     ): array {
         // Creates some sitelink assets.
-        $storeLocatorAsset = new SitelinkAsset([
+        $storeLocatorAsset = new SitelinkAsset(
+            [
             'description1' => 'Get in touch',
             'description2' => 'Find your local store',
             'link_text' => 'Store locator'
-        ]);
-        $storeAsset = new SitelinkAsset([
+            ]
+        );
+        $storeAsset = new SitelinkAsset(
+            [
             'description1' => 'Buy some stuff',
             'description2' => 'It\'s really good',
             'link_text' => 'Store'
-        ]);
-        $storeAdditionalAsset = new SitelinkAsset([
+            ]
+        );
+        $storeAdditionalAsset = new SitelinkAsset(
+            [
             'description1' => 'Even more stuff',
             'description2' => 'There\'s never enough',
             'link_text' => 'Store for more'
-        ]);
+            ]
+        );
 
         // Wraps the sitelinks in an Asset and sets the URLs.
         $assets = [
-            new Asset([
+            new Asset(
+                [
                 'sitelink_asset' => $storeLocatorAsset,
                 'final_urls' => ['http://example.com/contact/store-finder'],
                 // Optionally sets a different URL for mobile.
                 'final_mobile_urls' => ['http://example.com/mobile/contact/store-finder']
-            ]),
-            new Asset([
+                ]
+            ),
+            new Asset(
+                [
                 'sitelink_asset' => $storeAsset,
                 'final_urls' => ['http://example.com/store'],
                 // Optionally sets a different URL for mobile.
                 'final_mobile_urls' => ['http://example.com/mobile/store']
-            ]),
-            new Asset([
+                ]
+            ),
+            new Asset(
+                [
                 'sitelink_asset' => $storeAdditionalAsset,
                 'final_urls' => ['http://example.com/store/more'],
                 // Optionally sets a different URL for mobile.
                 'final_mobile_urls' => ['http://example.com/mobile/store/more']
-            ])
+                ]
+            )
         ];
 
         // Creates an operation to add each asset.
-        $assetOperations = array_map(function (Asset $asset) {
-            return new AssetOperation(['create' => $asset]);
-        }, $assets);
+        $assetOperations = array_map(
+            function (Asset $asset) {
+                return new AssetOperation(['create' => $asset]);
+            },
+            $assets
+        );
 
         // Issues a mutate request to add the assets and print its information.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
@@ -185,7 +204,9 @@ class AddSitelinks
         );
         $createdAssetResourceNames = [];
         foreach ($response->getResults() as $result) {
-            /** @var MutateAssetResult $result */
+            /**
+ * @var MutateAssetResult $result
+*/
             printf(
                 "Created a sitelink asset with resource name: '%s'.%s",
                 $result->getResourceName(),
@@ -201,10 +222,10 @@ class AddSitelinks
     /**
      * Links the assets to a campaign.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $campaignId the campaign ID to link the assets
-     * @param string[] $assetResourceNames the resource names of the sitelink assets
+     * @param GoogleAdsClient $googleAdsClient    the Google Ads API client
+     * @param int             $customerId         the customer ID
+     * @param int             $campaignId         the campaign ID to link the assets
+     * @param string[]        $assetResourceNames the resource names of the sitelink assets
      */
     private static function linkSitelinksToCampaign(
         GoogleAdsClient $googleAdsClient,
@@ -216,11 +237,15 @@ class AddSitelinks
         // created CampaignAsset.
         $campaignAssetOperations = array_map(
             function (string $assetResourceName) use ($customerId, $campaignId) {
-                return new CampaignAssetOperation(['create' => new CampaignAsset([
-                    'asset' => $assetResourceName,
-                    'campaign' => ResourceNames::forCampaign($customerId, $campaignId),
-                    'field_type' => AssetFieldType::SITELINK
-                ])]);
+                return new CampaignAssetOperation(
+                    ['create' => new CampaignAsset(
+                        [
+                        'asset' => $assetResourceName,
+                        'campaign' => ResourceNames::forCampaign($customerId, $campaignId),
+                        'field_type' => AssetFieldType::SITELINK
+                        ]
+                    )]
+                );
             },
             $assetResourceNames
         );
@@ -231,7 +256,9 @@ class AddSitelinks
             MutateCampaignAssetsRequest::build($customerId, $campaignAssetOperations)
         );
         foreach ($response->getResults() as $result) {
-            /** @var MutateCampaignAssetResult $result */
+            /**
+ * @var MutateCampaignAssetResult $result
+*/
             printf(
                 "Created a campaign asset with resource name: '%s'.%s",
                 $result->getResourceName(),

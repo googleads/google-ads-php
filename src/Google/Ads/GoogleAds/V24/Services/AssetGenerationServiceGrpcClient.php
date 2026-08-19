@@ -21,14 +21,16 @@ namespace Google\Ads\GoogleAds\V24\Services;
 /**
  * Service for generating new assets with generative AI.
  */
-class AssetGenerationServiceGrpcClient extends \Grpc\BaseStub {
+class AssetGenerationServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -44,17 +46,21 @@ class AssetGenerationServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\GenerateTextRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\GenerateTextRequest $argument input argument
+     * @param  array                                                  $metadata metadata
+     * @param  array                                                  $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\GenerateTextResponse>
      */
     public function GenerateText(\Google\Ads\GoogleAds\V24\Services\GenerateTextRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.AssetGenerationService/GenerateText',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\GenerateTextResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.AssetGenerationService/GenerateText',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\GenerateTextResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -69,17 +75,21 @@ class AssetGenerationServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\GenerateImagesRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\GenerateImagesRequest $argument input argument
+     * @param  array                                                    $metadata metadata
+     * @param  array                                                    $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\GenerateImagesResponse>
      */
     public function GenerateImages(\Google\Ads\GoogleAds\V24\Services\GenerateImagesRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.AssetGenerationService/GenerateImages',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\GenerateImagesResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.AssetGenerationService/GenerateImages',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\GenerateImagesResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

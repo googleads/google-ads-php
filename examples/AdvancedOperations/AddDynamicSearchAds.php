@@ -77,9 +77,11 @@ class AddDynamicSearchAds
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -103,7 +105,9 @@ class AddDynamicSearchAds
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -126,7 +130,7 @@ class AddDynamicSearchAds
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param int             $customerId      the customer ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -150,19 +154,21 @@ class AddDynamicSearchAds
     /**
      * Creates a campaign budget.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the customer ID
      * @return string the campaign budget resource name
      */
     private static function createCampaignBudget(
         GoogleAdsClient $googleAdsClient,
         int $customerId
     ) {
-        $campaignBudget = new CampaignBudget([
+        $campaignBudget = new CampaignBudget(
+            [
             'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             'amount_micros' => 500000
-        ]);
+            ]
+        );
 
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
@@ -170,7 +176,9 @@ class AddDynamicSearchAds
 
         // Issues a mutate request to add campaign budgets.
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
-        /** @var MutateCampaignBudgetsResponse $campaignBudgetResponse */
+        /**
+ * @var MutateCampaignBudgetsResponse $campaignBudgetResponse
+*/
         $campaignBudgetResponse = $campaignBudgetServiceClient->mutateCampaignBudgets(
             MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
@@ -184,9 +192,9 @@ class AddDynamicSearchAds
     /**
      * Creates a campaign.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $campaignBudgetResourceName the resource name of the campaign budget
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $campaignBudgetResourceName the resource name of the campaign budget
      * @return string the resource name of the newly created campaign
      */
     // [START add_dynamic_search_ads]
@@ -195,17 +203,20 @@ class AddDynamicSearchAds
         int $customerId,
         string $campaignBudgetResourceName
     ) {
-        $campaign = new Campaign([
+        $campaign = new Campaign(
+            [
             'name' => 'Interplanetary Cruise #' . Helper::getPrintableDatetime(),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             'status' => CampaignStatus::PAUSED,
             'manual_cpc' => new ManualCpc(),
             'campaign_budget' => $campaignBudgetResourceName,
             // Enables the campaign for DSAs.
-            'dynamic_search_ads_setting' => new DynamicSearchAdsSetting([
+            'dynamic_search_ads_setting' => new DynamicSearchAdsSetting(
+                [
                 'domain_name' => 'example.com',
                 'language_code' => 'en'
-            ]),
+                ]
+            ),
             // Declare whether or not this campaign serves political ads targeting the EU.
             'contains_eu_political_advertising' =>
                 EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING,
@@ -213,7 +224,8 @@ class AddDynamicSearchAds
             // now and ending a month from now.
             'start_date_time' => date('Y-m-d 00:00:00', strtotime('+1 day')),
             'end_date_time' => date('Y-m-d 23:59:59', strtotime('+1 month'))
-        ]);
+            ]
+        );
 
         // Creates a campaign operation.
         $campaignOperation = new CampaignOperation();
@@ -221,7 +233,9 @@ class AddDynamicSearchAds
 
         // Issues a mutate request to add campaigns.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
-        /** @var MutateCampaignsResponse $campaignResponse */
+        /**
+ * @var MutateCampaignsResponse $campaignResponse
+*/
         $campaignResponse = $campaignServiceClient->mutateCampaigns(
             MutateCampaignsRequest::build($customerId, [$campaignOperation])
         );
@@ -236,9 +250,9 @@ class AddDynamicSearchAds
     /**
      * Creates an ad group.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $campaignResourceName the resource name of the campaign
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $campaignResourceName the resource name of the campaign
      * @return string the resource name of the newly created ad group
      */
     // [START add_dynamic_search_ads_1]
@@ -248,14 +262,16 @@ class AddDynamicSearchAds
         string $campaignResourceName
     ) {
         // Constructs an ad group and sets an optional CPC value.
-        $adGroup = new AdGroup([
+        $adGroup = new AdGroup(
+            [
             'name' => 'Earth to Mars Cruises #' . Helper::getPrintableDatetime(),
             'campaign' => $campaignResourceName,
             'status' => AdGroupStatus::PAUSED,
             'type' => AdGroupType::SEARCH_DYNAMIC_ADS,
             'tracking_url_template' => 'http://tracker.examples.com/traveltracker/{escapedlpurl}',
             'cpc_bid_micros' => 10000000
-        ]);
+            ]
+        );
 
         // Creates an ad group operation.
         $adGroupOperation = new AdGroupOperation();
@@ -263,7 +279,9 @@ class AddDynamicSearchAds
 
         // Issues a mutate request to add the ad groups.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
-        /** @var MutateAdGroupsResponse $adGroupResponse */
+        /**
+ * @var MutateAdGroupsResponse $adGroupResponse
+*/
         $adGroupResponse = $adGroupServiceClient->mutateAdGroups(
             MutateAdGroupsRequest::build($customerId, [$adGroupOperation])
         );
@@ -288,22 +306,30 @@ class AddDynamicSearchAds
         int $customerId,
         string $adGroupResourceName
     ) {
-        $adGroupAd = new AdGroupAd([
+        $adGroupAd = new AdGroupAd(
+            [
             'ad_group' => $adGroupResourceName,
             'status' => AdGroupAdStatus::PAUSED,
-            'ad' => new Ad([
-                'expanded_dynamic_search_ad' => new ExpandedDynamicSearchAdInfo([
+            'ad' => new Ad(
+                [
+                'expanded_dynamic_search_ad' => new ExpandedDynamicSearchAdInfo(
+                    [
                     'description' => 'Buy tickets now!'
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         $adGroupAdOperation = new AdGroupAdOperation();
         $adGroupAdOperation->setCreate($adGroupAd);
 
         // Issues a mutate request to add the ad group ads.
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
-        /** @var MutateAdGroupAdsResponse $adGroupAdResponse */
+        /**
+ * @var MutateAdGroupAdsResponse $adGroupAdResponse
+*/
         $adGroupAdResponse = $adGroupAdServiceClient->mutateAdGroupAds(
             MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
         );
@@ -318,41 +344,51 @@ class AddDynamicSearchAds
     /**
      * Creates a webpage targeting criterion for the DSA.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $adGroupResourceName the resource name of the ad group
+     * @param GoogleAdsClient $googleAdsClient     the Google Ads API client
+     * @param int             $customerId          the customer ID
+     * @param string          $adGroupResourceName the resource name of the ad group
      */
     private static function createWebPageCriterion(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         string $adGroupResourceName
     ) {
-        $adGroupCriterion = new AdGroupCriterion([
+        $adGroupCriterion = new AdGroupCriterion(
+            [
             'ad_group' => $adGroupResourceName,
             'status' => AdGroupCriterionStatus::PAUSED,
             'cpc_bid_micros' => 10000000,
             // Sets the criterion to match a specific page URL and title.
-            'webpage' => new WebpageInfo([
+            'webpage' => new WebpageInfo(
+                [
                 'criterion_name' => 'Special Offers',
                 'conditions' => [
-                    new WebpageConditionInfo([
+                    new WebpageConditionInfo(
+                        [
                         'operand' => WebpageConditionOperand::URL,
                         'argument' => '/specialoffers'
-                    ]),
-                    new WebpageConditionInfo([
+                        ]
+                    ),
+                    new WebpageConditionInfo(
+                        [
                         'operand' => WebpageConditionOperand::PAGE_TITLE,
                         'argument' => 'Special Offers'
-                    ])
+                        ]
+                    )
                 ]
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         $adGroupCriterionOperation = new AdGroupCriterionOperation();
         $adGroupCriterionOperation->setCreate($adGroupCriterion);
 
         // Issues a mutate request to add the ad group criterion.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
-        /** @var MutateAdGroupCriteriaResponse $adGroupCriterionResponse */
+        /**
+ * @var MutateAdGroupCriteriaResponse $adGroupCriterionResponse
+*/
         $adGroupCriterionResponse = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
             MutateAdGroupCriteriaRequest::build($customerId, [$adGroupCriterionOperation])
         );

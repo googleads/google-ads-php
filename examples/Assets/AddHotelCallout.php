@@ -55,10 +55,12 @@ class AddHotelCallout
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::LANGUAGE_CODE => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -83,7 +85,9 @@ class AddHotelCallout
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -106,8 +110,8 @@ class AddHotelCallout
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param string $languageCode the language code
+     * @param int             $customerId      the client customer ID
+     * @param string          $languageCode    the language code
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -125,9 +129,9 @@ class AddHotelCallout
     /**
      * Creates new assets for the callout.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param string $languageCode the language code for the callout text
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the client customer ID
+     * @param  string          $languageCode    the language code for the callout text
      * @return string[] the resource names of created hotel callout assets
      */
     private static function addHotelCalloutAsset(
@@ -143,11 +147,16 @@ class AddHotelCallout
 
         // For each HotelCalloutAsset, wraps it in an Asset and creates an AssetOperation to add the
         // Asset.
-        $assetOperations = array_map(function (HotelCalloutAsset $hotelCalloutAsset) {
-            return new AssetOperation([
-                'create' => new Asset(['hotel_callout_asset' => $hotelCalloutAsset])
-            ]);
-        }, $hotelCalloutAssets);
+        $assetOperations = array_map(
+            function (HotelCalloutAsset $hotelCalloutAsset) {
+                return new AssetOperation(
+                    [
+                    'create' => new Asset(['hotel_callout_asset' => $hotelCalloutAsset])
+                    ]
+                );
+            },
+            $hotelCalloutAssets
+        );
 
         // Issues a mutate request to add the assets and print its information.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
@@ -156,7 +165,9 @@ class AddHotelCallout
         );
         $createdAssetResourceNames = [];
         foreach ($response->getResults() as $result) {
-            /** @var MutateAssetResult $result */
+            /**
+ * @var MutateAssetResult $result
+*/
             printf(
                 "Created a hotel callout asset with resource name: '%s'.%s",
                 $result->getResourceName(),
@@ -171,9 +182,9 @@ class AddHotelCallout
     /**
      * Links the hotel callout assets at the account level to serve in all eligible campaigns.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param string[] $assetResourceNames the resource names of the hotel callout assets
+     * @param GoogleAdsClient $googleAdsClient    the Google Ads API client
+     * @param int             $customerId         the client customer ID
+     * @param string[]        $assetResourceNames the resource names of the hotel callout assets
      */
     private static function linkAssetsToAccount(
         GoogleAdsClient $googleAdsClient,
@@ -182,12 +193,19 @@ class AddHotelCallout
     ): void {
         // Creates a CustomerAssetOperation for each asset resource name by linking it to a newly
         // created CustomerAsset.
-        $customerAssetOperations = array_map(function (string $assetResourceName) {
-            return new CustomerAssetOperation(['create' => new CustomerAsset([
-                'asset' => $assetResourceName,
-                'field_type' => AssetFieldType::HOTEL_CALLOUT
-            ])]);
-        }, $assetResourceNames);
+        $customerAssetOperations = array_map(
+            function (string $assetResourceName) {
+                return new CustomerAssetOperation(
+                    ['create' => new CustomerAsset(
+                        [
+                        'asset' => $assetResourceName,
+                        'field_type' => AssetFieldType::HOTEL_CALLOUT
+                        ]
+                    )]
+                );
+            },
+            $assetResourceNames
+        );
 
         // Issues a mutate request to add the customer assets and prints its information.
         $customerAssetServiceClient = $googleAdsClient->getCustomerAssetServiceClient();
@@ -195,7 +213,9 @@ class AddHotelCallout
             MutateCustomerAssetsRequest::build($customerId, $customerAssetOperations)
         );
         foreach ($response->getResults() as $result) {
-            /** @var MutateCustomerAssetResult $result */
+            /**
+ * @var MutateCustomerAssetResult $result
+*/
             printf(
                 "Created a customer asset with resource name: '%s'.%s",
                 $result->getResourceName(),

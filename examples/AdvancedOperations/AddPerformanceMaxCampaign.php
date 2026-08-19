@@ -103,18 +103,22 @@ class AddPerformanceMaxCampaign
 
     // There are also entities that will be created in the same request but do not need to be fixed
     // temporary IDs because they are referenced only once.
-    /** @var int the negative temporary ID used in bulk mutates. */
+    /**
+     * @var int the negative temporary ID used in bulk mutates.
+     */
     private static $nextTempId = self::ASSET_GROUP_TEMPORARY_ID - 1;
 
     public static function main()
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AUDIENCE_ID => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::BRAND_GUIDELINES_ENABLED => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -145,7 +149,9 @@ class AddPerformanceMaxCampaign
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -214,24 +220,32 @@ class AddPerformanceMaxCampaign
             self::createPerformanceMaxCampaignOperation($customerId, $brandGuidelinesEnabled);
         $operations =
             array_merge($operations, self::createCampaignCriterionOperations($customerId));
-        $operations = array_merge($operations, self::createAssetGroupOperations(
-            $customerId,
-            $headlineAssetResourceNames,
-            $descriptionAssetResourceNames,
-            $brandGuidelinesEnabled
-        ));
-        $operations = array_merge($operations, self::createAssetGroupSignalOperations(
-            $customerId,
-            ResourceNames::forAssetGroup($customerId, self::ASSET_GROUP_TEMPORARY_ID),
-            $audienceId
-        ));
+        $operations = array_merge(
+            $operations,
+            self::createAssetGroupOperations(
+                $customerId,
+                $headlineAssetResourceNames,
+                $descriptionAssetResourceNames,
+                $brandGuidelinesEnabled
+            )
+        );
+        $operations = array_merge(
+            $operations,
+            self::createAssetGroupSignalOperations(
+                $customerId,
+                ResourceNames::forAssetGroup($customerId, self::ASSET_GROUP_TEMPORARY_ID),
+                $audienceId
+            )
+        );
 
         // Issues a mutate request to create everything and prints its information.
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        $response = $googleAdsServiceClient->mutate(MutateGoogleAdsRequest::build(
-            $customerId,
-            $operations
-        ));
+        $response = $googleAdsServiceClient->mutate(
+            MutateGoogleAdsRequest::build(
+                $customerId,
+                $operations
+            )
+        );
 
         self::printResponseDetails($response);
         // [END add_performance_max_campaign_1]
@@ -243,16 +257,19 @@ class AddPerformanceMaxCampaign
      * A temporary ID will be assigned to this campaign budget so that it can be
      * referenced by other objects being created in the same Mutate request.
      *
-     * @param int $customerId the customer ID
+     * @param  int $customerId the customer ID
      * @return MutateOperation the mutate operation that creates a campaign budget
      */
     // [START add_performance_max_campaign_2]
     private static function createCampaignBudgetOperation(int $customerId): MutateOperation
     {
         // Creates a mutate operation that creates a campaign budget operation.
-        return new MutateOperation([
-            'campaign_budget_operation' => new CampaignBudgetOperation([
-                'create' => new CampaignBudget([
+        return new MutateOperation(
+            [
+            'campaign_budget_operation' => new CampaignBudgetOperation(
+                [
+                'create' => new CampaignBudget(
+                    [
                     // Sets a temporary ID in the budget's resource name so it can be referenced
                     // by the campaign in later steps.
                     'resource_name' => ResourceNames::forCampaignBudget(
@@ -265,9 +282,12 @@ class AddPerformanceMaxCampaign
                     'delivery_method' => BudgetDeliveryMethod::STANDARD,
                     // A Performance Max campaign cannot use a shared campaign budget.
                     'explicitly_shared' => false
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
     }
     // [END add_performance_max_campaign_2]
 
@@ -277,8 +297,8 @@ class AddPerformanceMaxCampaign
      * A temporary ID will be assigned to this campaign so that it can
      * be referenced by other objects being created in the same Mutate request.
      *
-     * @param int $customerId the customer ID
-     * @param bool $brandGuidelinesEnabled whether the created campaign will be enabled for brand
+     * @param  int $customerId the customer ID
+     * @param  bool $brandGuidelinesEnabled whether the created campaign will be enabled for brand
      *     guidelines
      * @return MutateOperation the mutate operation that creates the campaign
      */
@@ -288,9 +308,12 @@ class AddPerformanceMaxCampaign
         bool $brandGuidelinesEnabled
     ): MutateOperation {
         // Creates a mutate operation that creates a campaign operation.
-        return new MutateOperation([
-            'campaign_operation' => new CampaignOperation([
-                'create' => new Campaign([
+        return new MutateOperation(
+            [
+            'campaign_operation' => new CampaignOperation(
+                [
+                'create' => new Campaign(
+                    [
                     'name' => 'Performance Max campaign #' . Helper::getPrintableDatetime(),
                     // Assigns the resource name with a temporary ID.
                     'resource_name' => ResourceNames::forCampaign(
@@ -321,20 +344,26 @@ class AddPerformanceMaxCampaign
                     // For more information on Maximize Conversion Value, see the support
                     // article: http://support.google.com/google-ads/answer/7684216.
                     // A target_roas of 3.5 corresponds to a 350% return on ad spend.
-                    'maximize_conversion_value' => new MaximizeConversionValue([
+                    'maximize_conversion_value' => new MaximizeConversionValue(
+                        [
                         'target_roas' => 3.5
-                    ]),
+                        ]
+                    ),
 
                     // [START add_pmax_asset_automation_settings]
                     'asset_automation_settings' => [
-                        new AssetAutomationSetting([
+                        new AssetAutomationSetting(
+                            [
                             'asset_automation_type' => AssetAutomationType::TEXT_ASSET_AUTOMATION,
                             'asset_automation_status' => AssetAutomationStatus::OPTED_IN
-                        ]),
-                        new AssetAutomationSetting([
+                            ]
+                        ),
+                        new AssetAutomationSetting(
+                            [
                             'asset_automation_type' => AssetAutomationType::URL_EXPANSION,
                             'asset_automation_status' => AssetAutomationStatus::OPTED_IN
-                        ])
+                            ]
+                        )
                     ],
                     // [END add_pmax_asset_automation_settings]
 
@@ -351,16 +380,19 @@ class AddPerformanceMaxCampaign
                     // Optional fields.
                     'start_date_time' => date('Y-m-d 00:00:00', strtotime('+1 day')),
                     'end_date_time' => date('Y-m-d 23:59:59', strtotime('+365 days'))
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
     }
     // [END add_performance_max_campaign_3]
 
     /**
      * Creates a list of MutateOperations that create new campaign criteria.
      *
-     * @param int $customerId the customer ID
+     * @param  int $customerId the customer ID
      * @return MutateOperation[] a list of MutateOperations that create the new campaign criteria
      */
     // [START add_performance_max_campaign_4]
@@ -377,41 +409,60 @@ class AddPerformanceMaxCampaign
         // We will add one positive location target for New York City (ID=1023191)
         // and one negative location target for Brooklyn (ID=1022762).
         // First, adds the positive (negative = false) for New York City.
-        $operations[] = new MutateOperation([
-            'campaign_criterion_operation' => new CampaignCriterionOperation([
-                'create' => new CampaignCriterion([
+        $operations[] = new MutateOperation(
+            [
+            'campaign_criterion_operation' => new CampaignCriterionOperation(
+                [
+                'create' => new CampaignCriterion(
+                    [
                     'campaign' => ResourceNames::forCampaign(
                         $customerId,
                         self::PERFORMANCE_MAX_CAMPAIGN_TEMPORARY_ID
                     ),
-                    'location' => new LocationInfo([
+                    'location' => new LocationInfo(
+                        [
                         'geo_target_constant' => ResourceNames::forGeoTargetConstant(1023191)
-                    ]),
+                        ]
+                    ),
                     'negative' => false
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         // Next adds the negative target for Brooklyn.
-        $operations[] = new MutateOperation([
-            'campaign_criterion_operation' => new CampaignCriterionOperation([
-                'create' => new CampaignCriterion([
+        $operations[] = new MutateOperation(
+            [
+            'campaign_criterion_operation' => new CampaignCriterionOperation(
+                [
+                'create' => new CampaignCriterion(
+                    [
                     'campaign' => ResourceNames::forCampaign(
                         $customerId,
                         self::PERFORMANCE_MAX_CAMPAIGN_TEMPORARY_ID
                     ),
-                    'location' => new LocationInfo([
+                    'location' => new LocationInfo(
+                        [
                         'geo_target_constant' => ResourceNames::forGeoTargetConstant(1022762)
-                    ]),
+                        ]
+                    ),
                     'negative' => true
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         // Sets the LANGUAGE campaign criterion.
-        $operations[] = new MutateOperation([
-            'campaign_criterion_operation' => new CampaignCriterionOperation([
-                'create' => new CampaignCriterion([
+        $operations[] = new MutateOperation(
+            [
+            'campaign_criterion_operation' => new CampaignCriterionOperation(
+                [
+                'create' => new CampaignCriterion(
+                    [
                     'campaign' => ResourceNames::forCampaign(
                         $customerId,
                         self::PERFORMANCE_MAX_CAMPAIGN_TEMPORARY_ID
@@ -419,12 +470,17 @@ class AddPerformanceMaxCampaign
                     // Set the language.
                     // For a list of all language codes, see:
                     // https://developers.google.com/google-ads/api/reference/data/codes-formats#expandable-7
-                    'language' => new LanguageInfo([
+                    'language' => new LanguageInfo(
+                        [
                         'language_constant' => ResourceNames::forLanguageConstant(1000)  // English
-                    ])
-                ])
-            ])
-        ]);
+                        ]
+                    )
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         return $operations;
     }
@@ -433,9 +489,9 @@ class AddPerformanceMaxCampaign
     /**
      * Creates multiple text assets and returns the list of resource names.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string[] $texts a list of strings, each of which will be used to create a text asset
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string[] $texts a list of strings, each of which will be used to create a text asset
      * @return string[] a list of asset resource names
      */
     // [START add_performance_max_campaign_5]
@@ -449,22 +505,30 @@ class AddPerformanceMaxCampaign
         $operations = [];
         foreach ($texts as $text) {
             // Creates a mutate operation for a text asset.
-            $operations[] = new MutateOperation([
-                'asset_operation' => new AssetOperation([
+            $operations[] = new MutateOperation(
+                [
+                'asset_operation' => new AssetOperation(
+                    [
                     'create' => new Asset(['text_asset' => new TextAsset(['text' => $text])])
-                ])
-            ]);
+                    ]
+                )
+                ]
+            );
         }
 
         // Issues a mutate request to add all assets.
         $googleAdsService = $googleAdsClient->getGoogleAdsServiceClient();
-        /** @var MutateGoogleAdsResponse $mutateGoogleAdsResponse */
+        /**
+ * @var MutateGoogleAdsResponse $mutateGoogleAdsResponse
+*/
         $mutateGoogleAdsResponse =
             $googleAdsService->mutate(MutateGoogleAdsRequest::build($customerId, $operations));
 
         $assetResourceNames = [];
         foreach ($mutateGoogleAdsResponse->getMutateOperationResponses() as $response) {
-            /** @var MutateOperationResponse $response */
+            /**
+ * @var MutateOperationResponse $response
+*/
             $assetResourceNames[] = $response->getAssetResult()->getResourceName();
         }
         self::printResponseDetails($mutateGoogleAdsResponse);
@@ -479,10 +543,10 @@ class AddPerformanceMaxCampaign
      * A temporary ID will be assigned to this asset group so that it can
      * be referenced by other objects being created in the same Mutate request.
      *
-     * @param int $customerId the customer ID
-     * @param string[] $headlineAssetResourceNames a list of headline resource names
-     * @param string[] $descriptionAssetResourceNames a list of description resource names
-     * @param bool $brandGuidelinesEnabled whether the created campaign will be enabled for brand
+     * @param  int $customerId the customer ID
+     * @param  string[] $headlineAssetResourceNames a list of headline resource names
+     * @param  string[] $descriptionAssetResourceNames a list of description resource names
+     * @param  bool $brandGuidelinesEnabled whether the created campaign will be enabled for brand
      *     guidelines
      * @return MutateOperation[] a list of MutateOperations that create new asset group
      */
@@ -495,9 +559,12 @@ class AddPerformanceMaxCampaign
     ): array {
         $operations = [];
         // Creates a new mutate operation that creates an asset group operation.
-        $operations[] = new MutateOperation([
-            'asset_group_operation' => new AssetGroupOperation([
-                'create' => new AssetGroup([
+        $operations[] = new MutateOperation(
+            [
+            'asset_group_operation' => new AssetGroupOperation(
+                [
+                'create' => new AssetGroup(
+                    [
                     'resource_name' => ResourceNames::forAssetGroup(
                         $customerId,
                         self::ASSET_GROUP_TEMPORARY_ID
@@ -510,9 +577,12 @@ class AddPerformanceMaxCampaign
                     'final_urls' => ['http://www.example.com'],
                     'final_mobile_urls' => ['http://www.example.com'],
                     'status' => AssetGroupStatus::PAUSED
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         // For the list of required assets for a Performance Max campaign, see
         // https://developers.google.com/google-ads/api/docs/performance-max/assets
@@ -530,66 +600,90 @@ class AddPerformanceMaxCampaign
 
         // Links the headline assets.
         foreach ($headlineAssetResourceNames as $resourceName) {
-            $operations[] = new MutateOperation([
-                'asset_group_asset_operation' => new AssetGroupAssetOperation([
-                    'create' => new AssetGroupAsset([
+            $operations[] = new MutateOperation(
+                [
+                'asset_group_asset_operation' => new AssetGroupAssetOperation(
+                    [
+                    'create' => new AssetGroupAsset(
+                        [
                         'asset' => $resourceName,
                         'asset_group' => ResourceNames::forAssetGroup(
                             $customerId,
                             self::ASSET_GROUP_TEMPORARY_ID
                         ),
                         'field_type' => AssetFieldType::HEADLINE
-                    ])
-                ])
-            ]);
+                        ]
+                    )
+                    ]
+                )
+                ]
+            );
         }
         // Links the description assets.
         foreach ($descriptionAssetResourceNames as $resourceName) {
-            $operations[] = new MutateOperation([
-                'asset_group_asset_operation' => new AssetGroupAssetOperation([
-                    'create' => new AssetGroupAsset([
+            $operations[] = new MutateOperation(
+                [
+                'asset_group_asset_operation' => new AssetGroupAssetOperation(
+                    [
+                    'create' => new AssetGroupAsset(
+                        [
                         'asset' => $resourceName,
                         'asset_group' => ResourceNames::forAssetGroup(
                             $customerId,
                             self::ASSET_GROUP_TEMPORARY_ID
                         ),
                         'field_type' => AssetFieldType::DESCRIPTION
-                    ])
-                ])
-            ]);
+                        ]
+                    )
+                    ]
+                )
+                ]
+            );
         }
 
         // Creates and links the long headline text asset.
-        $operations = array_merge($operations, self::createAndLinkTextAsset(
-            $customerId,
-            'Travel the World',
-            AssetFieldType::LONG_HEADLINE
-        ));
+        $operations = array_merge(
+            $operations,
+            self::createAndLinkTextAsset(
+                $customerId,
+                'Travel the World',
+                AssetFieldType::LONG_HEADLINE
+            )
+        );
         // Creates and links the business name text asset.
-        $operations = array_merge($operations, self::createAndLinkBrandAssets(
-            $customerId,
-            $brandGuidelinesEnabled,
-            'Interplanetary Cruises',
-            'https://gaagl.page.link/bjYi',
-            'Marketing Logo'
-        ));
+        $operations = array_merge(
+            $operations,
+            self::createAndLinkBrandAssets(
+                $customerId,
+                $brandGuidelinesEnabled,
+                'Interplanetary Cruises',
+                'https://gaagl.page.link/bjYi',
+                'Marketing Logo'
+            )
+        );
 
         // Creates and links the image assets.
 
         // Creates and links the Marketing Image Asset.
-        $operations = array_merge($operations, self::createAndLinkImageAsset(
-            $customerId,
-            'https://gaagl.page.link/Eit5',
-            AssetFieldType::MARKETING_IMAGE,
-            'Marketing Image'
-        ));
+        $operations = array_merge(
+            $operations,
+            self::createAndLinkImageAsset(
+                $customerId,
+                'https://gaagl.page.link/Eit5',
+                AssetFieldType::MARKETING_IMAGE,
+                'Marketing Image'
+            )
+        );
         // Creates and links the Square Marketing Image Asset.
-        $operations = array_merge($operations, self::createAndLinkImageAsset(
-            $customerId,
-            'https://gaagl.page.link/bjYi',
-            AssetFieldType::SQUARE_MARKETING_IMAGE,
-            'Square Marketing Image'
-        ));
+        $operations = array_merge(
+            $operations,
+            self::createAndLinkImageAsset(
+                $customerId,
+                'https://gaagl.page.link/bjYi',
+                AssetFieldType::SQUARE_MARKETING_IMAGE,
+                'Square Marketing Image'
+            )
+        );
 
         return $operations;
     }
@@ -598,9 +692,9 @@ class AddPerformanceMaxCampaign
     /**
      * Creates a list of MutateOperations that create a new linked text asset.
      *
-     * @param int $customerId the customer ID
-     * @param string $text the text of the asset to be created
-     * @param int $fieldType the field type of the new asset in the AssetGroupAsset
+     * @param  int $customerId the customer ID
+     * @param  string $text the text of the asset to be created
+     * @param  int $fieldType the field type of the new asset in the AssetGroupAsset
      * @return MutateOperation[] a list of MutateOperations that create a new linked text asset
      */
     // [START add_performance_max_campaign_7]
@@ -611,28 +705,40 @@ class AddPerformanceMaxCampaign
     ): array {
         $operations = [];
         // Creates a new mutate operation that creates a text asset.
-        $operations[] = new MutateOperation([
-            'asset_operation' => new AssetOperation([
-                'create' => new Asset([
+        $operations[] = new MutateOperation(
+            [
+            'asset_operation' => new AssetOperation(
+                [
+                'create' => new Asset(
+                    [
                     'resource_name' => ResourceNames::forAsset($customerId, self::$nextTempId),
                     'text_asset' => new TextAsset(['text' => $text])
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         // Creates an asset group asset to link the asset to the asset group.
-        $operations[] = new MutateOperation([
-            'asset_group_asset_operation' => new AssetGroupAssetOperation([
-                'create' => new AssetGroupAsset([
+        $operations[] = new MutateOperation(
+            [
+            'asset_group_asset_operation' => new AssetGroupAssetOperation(
+                [
+                'create' => new AssetGroupAsset(
+                    [
                     'asset' => ResourceNames::forAsset($customerId, self::$nextTempId),
                     'asset_group' => ResourceNames::forAssetGroup(
                         $customerId,
                         self::ASSET_GROUP_TEMPORARY_ID
                     ),
                     'field_type' => $fieldType
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
         self::$nextTempId--;
 
         return $operations;
@@ -642,10 +748,10 @@ class AddPerformanceMaxCampaign
     /**
      * Creates a list of MutateOperations that create a new linked image asset.
      *
-     * @param int $customerId the customer ID
-     * @param string $url the URL of the image to be retrieved and put into an asset
-     * @param int $fieldType the field type of the new asset in the AssetGroupAsset
-     * @param string $assetName the asset name
+     * @param  int $customerId the customer ID
+     * @param  string $url the URL of the image to be retrieved and put into an asset
+     * @param  int $fieldType the field type of the new asset in the AssetGroupAsset
+     * @param  string $assetName the asset name
      * @return MutateOperation[] a list of MutateOperations that create a new linked image asset
      */
     // [START add_performance_max_campaign_8]
@@ -657,32 +763,44 @@ class AddPerformanceMaxCampaign
     ): array {
         $operations = [];
         // Creates a new mutate operation that creates an image asset.
-        $operations[] = new MutateOperation([
-            'asset_operation' => new AssetOperation([
-                'create' => new Asset([
+        $operations[] = new MutateOperation(
+            [
+            'asset_operation' => new AssetOperation(
+                [
+                'create' => new Asset(
+                    [
                     'resource_name' => ResourceNames::forAsset($customerId, self::$nextTempId),
                     // Provide a unique friendly name to identify your asset.
                     // When there is an existing image asset with the same content but a different
                     // name, the new name will be dropped silently.
                     'name' => $assetName,
                     'image_asset' => new ImageAsset(['data' => file_get_contents($url)])
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         // Creates an asset group asset to link the asset to the asset group.
-        $operations[] = new MutateOperation([
-            'asset_group_asset_operation' => new AssetGroupAssetOperation([
-                'create' => new AssetGroupAsset([
+        $operations[] = new MutateOperation(
+            [
+            'asset_group_asset_operation' => new AssetGroupAssetOperation(
+                [
+                'create' => new AssetGroupAsset(
+                    [
                     'asset' => ResourceNames::forAsset($customerId, self::$nextTempId),
                     'asset_group' => ResourceNames::forAssetGroup(
                         $customerId,
                         self::ASSET_GROUP_TEMPORARY_ID
                     ),
                     'field_type' => $fieldType
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
         self::$nextTempId--;
 
         return $operations;
@@ -694,12 +812,12 @@ class AddPerformanceMaxCampaign
     /**
      * Creates a list of MutateOperations that create linked brand assets.
      *
-     * @param int $customerId the customer ID
-     * @param bool $brandGuidelinesEnabled whether the created campaign will be enabled for brand
-     *     guidelines
-     * @param string $businessName the business name text to be put into an asset
-     * @param string $logoUrl the URL of the logo to be retrieved and put into an asset
-     * @param string $logoName the asset name of the logo
+     * @param  int    $customerId             the customer ID
+     * @param  bool   $brandGuidelinesEnabled whether the created campaign will be enabled for brand
+     *                                        guidelines
+     * @param  string $businessName           the business name text to be put into an asset
+     * @param  string $logoUrl                the URL of the logo to be retrieved and put into an asset
+     * @param  string $logoName               the asset name of the logo
      * @return MutateOperation[] a list of MutateOperations that create a new linked text asset
      */
     private static function createAndLinkBrandAssets(
@@ -712,83 +830,119 @@ class AddPerformanceMaxCampaign
         $operations = [];
         // Creates a new mutate operation that creates a text asset.
         $businessNameTempId = self::$nextTempId--;
-        $operations[] = new MutateOperation([
-            'asset_operation' => new AssetOperation([
-                'create' => new Asset([
+        $operations[] = new MutateOperation(
+            [
+            'asset_operation' => new AssetOperation(
+                [
+                'create' => new Asset(
+                    [
                     'resource_name' => ResourceNames::forAsset($customerId, $businessNameTempId),
                     'text_asset' => new TextAsset(['text' => $businessName])
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         $logoTempId = self::$nextTempId--;
         // Creates a new mutate operation that creates an image asset.
-        $operations[] = new MutateOperation([
-            'asset_operation' => new AssetOperation([
-                'create' => new Asset([
+        $operations[] = new MutateOperation(
+            [
+            'asset_operation' => new AssetOperation(
+                [
+                'create' => new Asset(
+                    [
                     'resource_name' => ResourceNames::forAsset($customerId, $logoTempId),
                     // Provide a unique friendly name to identify your asset.
                     // When there is an existing image asset with the same content but a different
                     // name, the new name will be dropped silently.
                     'name' => $logoName,
                     'image_asset' => new ImageAsset(['data' => file_get_contents($logoUrl)])
-                ])
-            ])
-        ]);
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         if ($brandGuidelinesEnabled) {
             // Creates a campaign asset to link the business name and logo assets to the campaign.
-            $operations[] = new MutateOperation([
-                'campaign_asset_operation' => new CampaignAssetOperation([
-                    'create' => new CampaignAsset([
+            $operations[] = new MutateOperation(
+                [
+                'campaign_asset_operation' => new CampaignAssetOperation(
+                    [
+                    'create' => new CampaignAsset(
+                        [
                         'asset' => ResourceNames::forAsset($customerId, $businessNameTempId),
                         'campaign' => ResourceNames::forCampaign(
                             $customerId,
                             self::PERFORMANCE_MAX_CAMPAIGN_TEMPORARY_ID
                         ),
                         'field_type' => AssetFieldType::BUSINESS_NAME
-                    ])
-                ])
-            ]);
-            $operations[] = new MutateOperation([
-                'campaign_asset_operation' => new CampaignAssetOperation([
-                    'create' => new CampaignAsset([
+                        ]
+                    )
+                    ]
+                )
+                ]
+            );
+            $operations[] = new MutateOperation(
+                [
+                'campaign_asset_operation' => new CampaignAssetOperation(
+                    [
+                    'create' => new CampaignAsset(
+                        [
                         'asset' => ResourceNames::forAsset($customerId, $logoTempId),
                         'campaign' => ResourceNames::forCampaign(
                             $customerId,
                             self::PERFORMANCE_MAX_CAMPAIGN_TEMPORARY_ID
                         ),
                         'field_type' => AssetFieldType::LOGO
-                    ])
-                ])
-            ]);
+                        ]
+                    )
+                    ]
+                )
+                ]
+            );
         } else {
             // Creates an asset group asset to link the business name and logo assets to the asset
             // group.
-            $operations[] = new MutateOperation([
-                'asset_group_asset_operation' => new AssetGroupAssetOperation([
-                    'create' => new AssetGroupAsset([
+            $operations[] = new MutateOperation(
+                [
+                'asset_group_asset_operation' => new AssetGroupAssetOperation(
+                    [
+                    'create' => new AssetGroupAsset(
+                        [
                         'asset' => ResourceNames::forAsset($customerId, $businessNameTempId),
                         'asset_group' => ResourceNames::forAssetGroup(
                             $customerId,
                             self::ASSET_GROUP_TEMPORARY_ID
                         ),
                         'field_type' => AssetFieldType::BUSINESS_NAME
-                    ])
-                ])
-            ]);
-            $operations[] = new MutateOperation([
-                'asset_group_asset_operation' => new AssetGroupAssetOperation([
-                    'create' => new AssetGroupAsset([
+                        ]
+                    )
+                    ]
+                )
+                ]
+            );
+            $operations[] = new MutateOperation(
+                [
+                'asset_group_asset_operation' => new AssetGroupAssetOperation(
+                    [
+                    'create' => new AssetGroupAsset(
+                        [
                         'asset' => ResourceNames::forAsset($customerId, $logoTempId),
                         'asset_group' => ResourceNames::forAssetGroup(
                             $customerId,
                             self::ASSET_GROUP_TEMPORARY_ID
                         ),
                         'field_type' => AssetFieldType::LOGO
-                    ])
-                ])
-            ]);
+                        ]
+                    )
+                    ]
+                )
+                ]
+            );
         }
 
         return $operations;
@@ -799,9 +953,9 @@ class AddPerformanceMaxCampaign
     /**
      * Creates a list of MutateOperations that may create asset group signals.
      *
-     * @param int $customerId the customer ID
-     * @param string $assetGroupResourceName the resource name of the asset group
-     * @param int|null $audienceId the audience ID
+     * @param  int $customerId the customer ID
+     * @param  string $assetGroupResourceName the resource name of the asset group
+     * @param  int|null $audienceId the audience ID
      * @return MutateOperation[] a list of MutateOperations that may create asset group signals
      */
     // [START add_performance_max_campaign_9]
@@ -815,18 +969,26 @@ class AddPerformanceMaxCampaign
             return $operations;
         }
 
-        $operations[] = new MutateOperation([
-            'asset_group_signal_operation' => new AssetGroupSignalOperation([
+        $operations[] = new MutateOperation(
+            [
+            'asset_group_signal_operation' => new AssetGroupSignalOperation(
+                [
                 // To learn more about Audience Signals, see
                 // https://developers.google.com/google-ads/api/docs/performance-max/asset-groups#audience_signals.
-                'create' => new AssetGroupSignal([
+                'create' => new AssetGroupSignal(
+                    [
                     'asset_group' => $assetGroupResourceName,
-                    'audience' => new AudienceInfo([
+                    'audience' => new AudienceInfo(
+                        [
                         'audience' => ResourceNames::forAudience($customerId, $audienceId)
-                    ])
-                ])
-            ])
-        ]);
+                        ]
+                    )
+                    ]
+                )
+                ]
+            )
+            ]
+        );
 
         return $operations;
     }
@@ -842,7 +1004,9 @@ class AddPerformanceMaxCampaign
         MutateGoogleAdsResponse $mutateGoogleAdsResponse
     ): void {
         foreach ($mutateGoogleAdsResponse->getMutateOperationResponses() as $response) {
-            /** @var MutateOperationResponse $response */
+            /**
+ * @var MutateOperationResponse $response
+*/
             $getter = Serializer::getGetter($response->getResponse());
             printf(
                 "Created a(n) %s with '%s'.%s",

@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage custom audiences.
  */
-class CustomAudienceServiceGrpcClient extends \Grpc\BaseStub {
+class CustomAudienceServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -51,17 +53,21 @@ class CustomAudienceServiceGrpcClient extends \Grpc\BaseStub {
      *   [PolicyViolationError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\MutateCustomAudiencesRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\MutateCustomAudiencesRequest $argument input argument
+     * @param  array                                                           $metadata metadata
+     * @param  array                                                           $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateCustomAudiencesResponse>
      */
     public function MutateCustomAudiences(\Google\Ads\GoogleAds\V25\Services\MutateCustomAudiencesRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.CustomAudienceService/MutateCustomAudiences',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\MutateCustomAudiencesResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.CustomAudienceService/MutateCustomAudiences',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\MutateCustomAudiencesResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

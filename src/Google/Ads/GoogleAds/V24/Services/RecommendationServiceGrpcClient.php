@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V24\Services;
  *
  * Service to manage recommendations.
  */
-class RecommendationServiceGrpcClient extends \Grpc\BaseStub {
+class RecommendationServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -49,17 +51,21 @@ class RecommendationServiceGrpcClient extends \Grpc\BaseStub {
      *   [RecommendationError]()
      *   [RequestError]()
      *   [UrlFieldError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\ApplyRecommendationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\ApplyRecommendationRequest $argument input argument
+     * @param  array                                                         $metadata metadata
+     * @param  array                                                         $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\ApplyRecommendationResponse>
      */
     public function ApplyRecommendation(\Google\Ads\GoogleAds\V24\Services\ApplyRecommendationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.RecommendationService/ApplyRecommendation',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\ApplyRecommendationResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.RecommendationService/ApplyRecommendation',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\ApplyRecommendationResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -73,17 +79,21 @@ class RecommendationServiceGrpcClient extends \Grpc\BaseStub {
      *   [QuotaError]()
      *   [RecommendationError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\DismissRecommendationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\DismissRecommendationRequest $argument input argument
+     * @param  array                                                           $metadata metadata
+     * @param  array                                                           $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\DismissRecommendationResponse>
      */
     public function DismissRecommendation(\Google\Ads\GoogleAds\V24\Services\DismissRecommendationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.RecommendationService/DismissRecommendation',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\DismissRecommendationResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.RecommendationService/DismissRecommendation',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\DismissRecommendationResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -97,17 +107,21 @@ class RecommendationServiceGrpcClient extends \Grpc\BaseStub {
      *   [QuotaError]()
      *   [RecommendationError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\GenerateRecommendationsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\GenerateRecommendationsRequest $argument input argument
+     * @param  array                                                             $metadata metadata
+     * @param  array                                                             $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\GenerateRecommendationsResponse>
      */
     public function GenerateRecommendations(\Google\Ads\GoogleAds\V24\Services\GenerateRecommendationsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.RecommendationService/GenerateRecommendations',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\GenerateRecommendationsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.RecommendationService/GenerateRecommendations',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\GenerateRecommendationsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

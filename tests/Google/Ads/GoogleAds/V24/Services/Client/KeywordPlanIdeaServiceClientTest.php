@@ -48,19 +48,25 @@ use stdClass;
  */
 class KeywordPlanIdeaServiceClientTest extends GeneratedTest
 {
-    /** @return TransportInterface */
+    /**
+     * @return TransportInterface 
+     */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /** @return CredentialsWrapper */
+    /**
+     * @return CredentialsWrapper 
+     */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /** @return KeywordPlanIdeaServiceClient */
+    /**
+     * @return KeywordPlanIdeaServiceClient 
+     */
     private function createClient(array $options = [])
     {
         $options += [
@@ -69,13 +75,17 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         return new KeywordPlanIdeaServiceClient($options);
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateAdGroupThemesTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateAdGroupThemesResponse();
@@ -104,23 +114,29 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateAdGroupThemesExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -143,13 +159,17 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateKeywordForecastMetricsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateKeywordForecastMetricsResponse();
@@ -172,23 +192,29 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateKeywordForecastMetricsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $campaign = new CampaignToForecast();
@@ -209,13 +235,17 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateKeywordHistoricalMetricsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateKeywordHistoricalMetricsResponse();
@@ -231,23 +261,29 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateKeywordHistoricalMetricsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         $request = new GenerateKeywordHistoricalMetricsRequest();
         try {
@@ -263,13 +299,17 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateKeywordIdeasTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $nextPageToken = '';
@@ -297,23 +337,29 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateKeywordIdeasExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         $request = new GenerateKeywordIdeasRequest();
         try {
@@ -329,13 +375,17 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function generateAdGroupThemesAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateAdGroupThemesResponse();

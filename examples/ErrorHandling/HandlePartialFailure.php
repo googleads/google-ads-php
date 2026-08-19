@@ -58,10 +58,12 @@ class HandlePartialFailure
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -87,7 +89,9 @@ class HandlePartialFailure
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -110,8 +114,8 @@ class HandlePartialFailure
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $campaignId a campaign ID
+     * @param int             $customerId      the customer ID
+     * @param int             $campaignId      a campaign ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -126,9 +130,9 @@ class HandlePartialFailure
     /**
      * Create ad groups by enabling partial failure mode.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $campaignId a campaign ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  int $campaignId a campaign ID
      * @return MutateAdGroupsResponse
      */
     // [START handle_partial_failure]
@@ -141,22 +145,28 @@ class HandlePartialFailure
 
         // This ad group should be created successfully - assuming the campaign in the params
         // exists.
-        $adGroup1 = new AdGroup([
+        $adGroup1 = new AdGroup(
+            [
             'name' => 'Valid AdGroup #' . Helper::getPrintableDatetime(),
             'campaign' => $campaignResourceName
-        ]);
+            ]
+        );
 
         // This ad group will always fail - campaign ID 0 in the resource name is never valid.
-        $adGroup2 = new AdGroup([
+        $adGroup2 = new AdGroup(
+            [
             'name' => 'Broken AdGroup #' . Helper::getPrintableDatetime(),
             'campaign' => ResourceNames::forCampaign($customerId, 0)
-        ]);
+            ]
+        );
 
         // This ad group will always fail - duplicate ad group names are not allowed.
-        $adGroup3 = new AdGroup([
+        $adGroup3 = new AdGroup(
+            [
             'name' => $adGroup1->getName(),
             'campaign' => $campaignResourceName
-        ]);
+            ]
+        );
 
         $operations = [];
 
@@ -212,7 +222,9 @@ class HandlePartialFailure
         // Finds the failed operations by looping through the results.
         $operationIndex = 0;
         foreach ($response->getResults() as $result) {
-            /** @var AdGroup $result */
+            /**
+ * @var AdGroup $result
+*/
             if (PartialFailures::isPartialFailure($result)) {
                 $errors = GoogleAdsErrors::fromStatus(
                     $operationIndex,

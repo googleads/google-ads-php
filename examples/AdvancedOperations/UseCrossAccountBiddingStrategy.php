@@ -90,7 +90,9 @@ class UseCrossAccountBiddingStrategy
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -112,10 +114,10 @@ class UseCrossAccountBiddingStrategy
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $managerCustomerId the manager customer ID
-     * @param int $clientCustomerId the client customer ID
-     * @param int $campaignId the ID of an existing campaign in the client customer's account
+     * @param GoogleAdsClient $googleAdsClient   the Google Ads API client
+     * @param int             $managerCustomerId the manager customer ID
+     * @param int             $clientCustomerId  the client customer ID
+     * @param int             $campaignId        the ID of an existing campaign in the client customer's account
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -139,8 +141,8 @@ class UseCrossAccountBiddingStrategy
      * Creates a new TargetSpend (Maximize Clicks) cross-account bidding strategy in the manager
      * account.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $managerCustomerId the manager account's customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $managerCustomerId the manager account's customer ID
      * @return string the resource name of the newly created bidding strategy
      */
     // [START create_cross_account_strategy]
@@ -150,14 +152,16 @@ class UseCrossAccountBiddingStrategy
     ): string {
         // Creates a portfolio bidding strategy.
         // [START set_currency_code]
-        $portfolioBiddingStrategy = new BiddingStrategy([
+        $portfolioBiddingStrategy = new BiddingStrategy(
+            [
             'name' => 'Maximize Clicks #' . Helper::getPrintableDatetime(),
             'target_spend' => new TargetSpend(),
             // Optional: Sets the currency of the new bidding strategy to match the currency of the
             // client account with which this bidding strategy is shared.
             // If not provided, the bidding strategy uses the manager account's default currency.
             'currency_code' => 'USD'
-        ]);
+            ]
+        );
         // [END set_currency_code]
 
         // Constructs an operation that will create a portfolio bidding strategy.
@@ -169,7 +173,9 @@ class UseCrossAccountBiddingStrategy
         $response = $biddingStrategyServiceClient->mutateBiddingStrategies(
             MutateBiddingStrategiesRequest::build($managerCustomerId, [$biddingStrategyOperation])
         );
-        /** @var BiddingStrategy $addedBiddingStrategy */
+        /**
+ * @var BiddingStrategy $addedBiddingStrategy
+*/
         $addedBiddingStrategy = $response->getResults()[0];
 
         // Prints out the resource name of the created bidding strategy.
@@ -200,7 +206,9 @@ class UseCrossAccountBiddingStrategy
             . 'bidding_strategy.type, bidding_strategy.currency_code '
             . 'FROM bidding_strategy';
         // Issues a search stream request.
-        /** @var GoogleAdsServerStreamDecorator $stream */
+        /**
+ * @var GoogleAdsServerStreamDecorator $stream
+*/
         $stream = $googleAdsServiceClient->searchStream(
             SearchGoogleAdsStreamRequest::build($managerCustomerId, $query)
         );
@@ -213,7 +221,9 @@ class UseCrossAccountBiddingStrategy
             PHP_EOL
         );
         foreach ($stream->iterateAllElements() as $googleAdsRow) {
-            /** @var GoogleAdsRow $googleAdsRow */
+            /**
+ * @var GoogleAdsRow $googleAdsRow
+*/
             printf(
                 '  ID: %1$d%2$s  Name: "%3$s"%2$s  Strategy type: "%4$s"%2$s'
                 . '  Currency: "%5$s"%2$s%2$s',
@@ -254,7 +264,9 @@ class UseCrossAccountBiddingStrategy
             // . 'WHERE accessible_bidding_strategy.owner_customer_id != ' . $clientCustomerId
         ;
         // Issues a search stream request.
-        /** @var GoogleAdsServerStreamDecorator $stream */
+        /**
+ * @var GoogleAdsServerStreamDecorator $stream
+*/
         $stream = $googleAdsServiceClient->searchStream(
             SearchGoogleAdsStreamRequest::build($clientCustomerId, $query)
         );
@@ -267,7 +279,9 @@ class UseCrossAccountBiddingStrategy
             PHP_EOL
         );
         foreach ($stream->iterateAllElements() as $googleAdsRow) {
-            /** @var GoogleAdsRow $googleAdsRow */
+            /**
+ * @var GoogleAdsRow $googleAdsRow
+*/
             printf(
                 '  ID: %1$d%2$s  Name: "%3$s"%2$s  Strategy type: "%4$s"%2$s'
                 . '  Owner customer ID: %5$d%2$s  Owner customer description: "%6$s"%2$s%2$s',
@@ -302,10 +316,12 @@ class UseCrossAccountBiddingStrategy
         // Note that a cross-account bidding strategy's resource name should use the
         // client's customer ID when attaching it to a campaign, not that of the manager that owns
         // the strategy.
-        $campaign = new Campaign([
+        $campaign = new Campaign(
+            [
             'resource_name' => ResourceNames::forCampaign($clientCustomerId, $campaignId),
             'bidding_strategy' => $biddingStrategyResourceName
-        ]);
+            ]
+        );
 
         // Constructs an operation that will update the campaign with the specified resource name,
         // using the FieldMasks utility to derive the update mask. This mask tells the Google Ads

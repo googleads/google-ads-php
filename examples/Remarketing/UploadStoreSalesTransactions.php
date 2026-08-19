@@ -72,7 +72,9 @@ class UploadStoreSalesTransactions
      * Otherwise, use STORE_SALES_UPLOAD_FIRST_PARTY or omit this parameter.
      */
     private const OFFLINE_USER_DATA_JOB_TYPE = 'STORE_SALES_UPLOAD_FIRST_PARTY';
-    /** The ID of a store sales conversion action. */
+    /**
+     * The ID of a store sales conversion action.
+     */
     private const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
     /**
      * Optional (but recommended) external ID to identify the offline user data job.
@@ -92,9 +94,13 @@ class UploadStoreSalesTransactions
      * The date/time must be in the format "yyyy-MM-dd hh:mm:ss".
      */
     private const ADVERTISER_UPLOAD_DATE_TIME = null;
-    /** The version of partner IDs to be used for uploads. */
+    /**
+     * The version of partner IDs to be used for uploads.
+     */
     private const BRIDGE_MAP_VERSION_ID = null;
-    /** The ID of the third party partner. */
+    /**
+     * The ID of the third party partner.
+     */
     private const PARTNER_ID = null;
     // Optional: The consent status for ad personalization.
     private const AD_PERSONALIZATION_CONSENT = null;
@@ -134,7 +140,8 @@ class UploadStoreSalesTransactions
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::OFFLINE_USER_DATA_JOB_TYPE => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
@@ -150,7 +157,8 @@ class UploadStoreSalesTransactions
             ArgumentNames::COUNTRY_CODE => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::LANGUAGE_CODE => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::QUANTITY => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -196,7 +204,9 @@ class UploadStoreSalesTransactions
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -218,33 +228,37 @@ class UploadStoreSalesTransactions
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string|null $offlineUserDataJobType the type of offline user data in the job (first
-     *     party or third party). If you have an official store sales partnership with Google, use
-     *     `STORE_SALES_UPLOAD_THIRD_PARTY`. Otherwise, use `STORE_SALES_UPLOAD_FIRST_PARTY`
-     * @param int $conversionActionId the ID of a store sales conversion action
-     * @param int|null $adPersonalizationConsent the ad personalization consent status
-     * @param int|null $adUserDataConsent the ad user data consent status
-     * @param int|null $externalId optional (but recommended) external ID for the offline user data
-     *     job
-     * @param string|null $customKey the custom key to segment store sales conversions. Only
-     *     required after creating a custom key and custom values in the account.
-     * @param string|null $advertiserUploadDateTime date and time the advertiser uploaded data to
-     *     the partner. Only required for third party uploads
-     * @param string|null $bridgeMapVersionId version of partner IDs to be used for uploads. Only
-     *     required for third party uploads
-     * @param int|null $partnerId ID of the third party partner. Only required for third party
-     *     uploads
-     * @param string|null $itemId a unique identifier of a product, either the Merchant Center Item
-     *     ID or Global Trade Item Number (GTIN)
-     * @param int|null $merchantCenterAccountId a Merchant Center Account ID
-     * @param string|null $countryCode a two-letter country code of the location associated with the
-     *     feed where your items are uploaded
-     * @param string|null $languageCode a two-letter language code of the language associated with
-     *     the feed where your items are uploaded
-     * @param int|null $quantity the number of items sold. Can only be set when at least one other
-     *     item attribute has been provided
+     * @param GoogleAdsClient $googleAdsClient          the Google Ads API client
+     * @param int             $customerId               the customer ID
+     * @param string|null     $offlineUserDataJobType   the type of offline user data in the job (first
+     *                                                  party or third party). If you have an official
+     *                                                  store sales partnership with Google, use
+     *                                                  `STORE_SALES_UPLOAD_THIRD_PARTY`. Otherwise,
+     *                                                  use `STORE_SALES_UPLOAD_FIRST_PARTY`
+     * @param int             $conversionActionId       the ID of a store sales conversion action
+     * @param int|null        $adPersonalizationConsent the ad personalization consent status
+     * @param int|null        $adUserDataConsent        the ad user data consent status
+     * @param int|null        $externalId               optional (but recommended) external ID for the offline user data
+     *                                                  job
+     * @param string|null     $customKey                the custom key to segment store sales conversions. Only
+     *                                                  required after creating a custom key and custom values
+     *                                                  in the account.
+     * @param string|null     $advertiserUploadDateTime date and time the advertiser uploaded data to
+     *                                                  the partner. Only required for third party
+     *                                                  uploads
+     * @param string|null     $bridgeMapVersionId       version of partner IDs to be used for uploads. Only
+     *                                                  required for third party uploads
+     * @param int|null        $partnerId                ID of the third party partner. Only required for third party
+     *                                                  uploads
+     * @param string|null     $itemId                   a unique identifier of a product, either the Merchant Center Item
+     *                                                  ID or Global Trade Item Number (GTIN)
+     * @param int|null        $merchantCenterAccountId  a Merchant Center Account ID
+     * @param string|null     $countryCode              a two-letter country code of the location associated with the
+     *                                                  feed where your items are uploaded
+     * @param string|null     $languageCode             a two-letter language code of the language associated with
+     *                                                  the feed where your items are uploaded
+     * @param int|null        $quantity                 the number of items sold. Can only be set when at least one other
+     *                                                  item attribute has been provided
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -313,22 +327,26 @@ class UploadStoreSalesTransactions
     /**
      * Creates an offline user data job for uploading store sales transactions.
      *
-     * @param OfflineUserDataJobServiceClient $offlineUserDataJobServiceClient the offline user
-     *     data job service client
-     * @param int $customerId the customer ID
-     * @param string|null $offlineUserDataJobType the type of offline user data in the job (first
-     *     party or third party). If you have an official store sales partnership with Google, use
-     *     `STORE_SALES_UPLOAD_THIRD_PARTY`. Otherwise, use `STORE_SALES_UPLOAD_FIRST_PARTY`
-     * @param int|null $externalId optional (but recommended) external ID for the offline user data
-     *     job
-     * @param string|null $customKey the custom key to segment store sales conversions. Only
-     *     required after creating a custom key and custom values in the account.
-     * @param string|null $advertiserUploadDateTime date and time the advertiser uploaded data to
-     *     the partner. Only required for third party uploads
-     * @param string|null $bridgeMapVersionId version of partner IDs to be used for uploads. Only
-     *     required for third party uploads
-     * @param int|null $partnerId ID of the third party partner. Only required for third party
-     *     uploads
+     * @param  OfflineUserDataJobServiceClient $offlineUserDataJobServiceClient the offline user
+     *                                                                          data job service client
+     * @param  int                             $customerId                      the customer ID
+     * @param  string|null                     $offlineUserDataJobType          the type of offline user data in the job (first
+     *                                                                          party or third party). If you have an official
+     *                                                                          store sales partnership with Google, use
+     *                                                                          `STORE_SALES_UPLOAD_THIRD_PARTY`. Otherwise,
+     *                                                                          use `STORE_SALES_UPLOAD_FIRST_PARTY`
+     * @param  int|null                        $externalId                      optional (but recommended) external ID for the offline user data
+     *                                                                          job
+     * @param  string|null                     $customKey                       the custom key to segment store sales conversions. Only
+     *                                                                          required after creating a custom key and custom values
+     *                                                                          in the account.
+     * @param  string|null                     $advertiserUploadDateTime        date and time the advertiser uploaded data to
+     *                                                                          the partner. Only required for third party
+     *                                                                          uploads
+     * @param  string|null                     $bridgeMapVersionId              version of partner IDs to be used for uploads. Only
+     *                                                                          required for third party uploads
+     * @param  int|null                        $partnerId                       ID of the third party partner. Only required for third party
+     *                                                                          uploads
      * @return string the resource name of the created job
      */
     private static function createOfflineUserDataJob(
@@ -346,7 +364,8 @@ class UploadStoreSalesTransactions
         // loyaltyFraction in the Google Ads API.
         // Please refer to https://support.google.com/google-ads/answer/7506124 for additional
         // details.
-        $storeSalesMetadata = new StoreSalesMetadata([
+        $storeSalesMetadata = new StoreSalesMetadata(
+            [
             // Sets the fraction of your overall sales that you (or the advertiser, in the third
             // party case) can associate with a customer (email, phone number, address, etc.) in
             // your database or loyalty program.
@@ -360,16 +379,17 @@ class UploadStoreSalesTransactions
             // you are uploading all 70 of the transactions that can be identified by an email
             // address or phone number.
             'transaction_upload_fraction' => 1.0,
-        ]);
+            ]
+        );
         if (!is_null($customKey)) {
             $storeSalesMetadata->setCustomKey($customKey);
         }
         if (
-            OfflineUserDataJobType::value($offlineUserDataJobType)
-                === OfflineUserDataJobType::STORE_SALES_UPLOAD_THIRD_PARTY
+            OfflineUserDataJobType::value($offlineUserDataJobType)            === OfflineUserDataJobType::STORE_SALES_UPLOAD_THIRD_PARTY
         ) {
             // Creates additional metadata required for uploading third party data.
-            $storeSalesThirdPartyMetadata = new StoreSalesThirdPartyMetadata([
+            $storeSalesThirdPartyMetadata = new StoreSalesThirdPartyMetadata(
+                [
                 // The date/time must be in the format "yyyy-MM-dd hh:mm:ss".
                 'advertiser_upload_date_time' => $advertiserUploadDateTime,
                 // Sets the fraction of transactions you received from the advertiser that have
@@ -398,20 +418,25 @@ class UploadStoreSalesTransactions
                 'bridge_map_version_id' => $bridgeMapVersionId,
                 // Sets the third party partner ID uploading the transactions.
                 'partner_id' => $partnerId,
-            ]);
+                ]
+            );
             $storeSalesMetadata->setThirdPartyMetadata($storeSalesThirdPartyMetadata);
         }
         // Creates a new offline user data job.
-        $offlineUserDataJob = new OfflineUserDataJob([
+        $offlineUserDataJob = new OfflineUserDataJob(
+            [
             'type' => OfflineUserDataJobType::value($offlineUserDataJobType),
             'store_sales_metadata' => $storeSalesMetadata
-        ]);
+            ]
+        );
         if (!is_null($externalId)) {
             $offlineUserDataJob->setExternalId($externalId);
         }
 
         // Issues a request to create the offline user data job.
-        /** @var CreateOfflineUserDataJobResponse $createOfflineUserDataJobResponse */
+        /**
+ * @var CreateOfflineUserDataJobResponse $createOfflineUserDataJobResponse
+*/
         $createOfflineUserDataJobResponse =
             $offlineUserDataJobServiceClient->createOfflineUserDataJob(
                 CreateOfflineUserDataJobRequest::build($customerId, $offlineUserDataJob)
@@ -430,22 +455,22 @@ class UploadStoreSalesTransactions
      * Adds operations to the job for a set of sample transactions.
      *
      * @param OfflineUserDataJobServiceClient $offlineUserDataJobServiceClient the offline user
-     *     data job service client
-     * @param int $customerId the customer ID
-     * @param string $offlineUserDataJobResourceName the resource name of the created offline user
-     *     data job
-     * @param int $conversionActionId the ID of a store sales conversion action
-     * @param int|null $adPersonalizationConsent the ad personalization consent status
-     * @param int|null $adUserDataConsent the ad user data consent status
-     * @param string|null $itemId a unique identifier of a product, either the Merchant Center Item
-     *     ID or Global Trade Item Number (GTIN)
-     * @param int|null $merchantCenterAccountId a Merchant Center Account ID
-     * @param string|null $countryCode a two-letter country code of the location associated with the
-     *     feed where your items are uploaded
-     * @param string|null $languageCode a two-letter language code of the language associated with
-     *     the feed where your items are uploaded
-     * @param int|null $quantity the number of items sold. Can only be set when at least one other
-     *     item attribute has been provided
+     *                                                                         data job service client
+     * @param int                             $customerId                      the customer ID
+     * @param string                          $offlineUserDataJobResourceName  the resource name of the created offline user
+     *                                                                         data job
+     * @param int                             $conversionActionId              the ID of a store sales conversion action
+     * @param int|null                        $adPersonalizationConsent        the ad personalization consent status
+     * @param int|null                        $adUserDataConsent               the ad user data consent status
+     * @param string|null                     $itemId                          a unique identifier of a product, either the Merchant Center Item
+     *                                                                         ID or Global Trade Item Number (GTIN)
+     * @param int|null                        $merchantCenterAccountId         a Merchant Center Account ID
+     * @param string|null                     $countryCode                     a two-letter country code of the location associated with the
+     *                                                                         feed where your items are uploaded
+     * @param string|null                     $languageCode                    a two-letter language code of the language associated with
+     *                                                                         the feed where your items are uploaded
+     * @param int|null                        $quantity                        the number of items sold. Can only be set when at least one other
+     *                                                                         item attribute has been provided
      */
     private static function addTransactionsToOfflineUserDataJob(
         OfflineUserDataJobServiceClient $offlineUserDataJobServiceClient,
@@ -475,7 +500,9 @@ class UploadStoreSalesTransactions
 
         // [START enable_warnings_1]
         // Issues a request to add the operations to the offline user data job.
-        /** @var AddOfflineUserDataJobOperationsResponse $operationResponse */
+        /**
+ * @var AddOfflineUserDataJobOperationsResponse $operationResponse
+*/
         $request = AddOfflineUserDataJobOperationsRequest::build(
             $offlineUserDataJobResourceName,
             $userDataJobOperations
@@ -527,20 +554,20 @@ class UploadStoreSalesTransactions
     /**
      * Creates a list of offline user data job operations for sample transactions.
      *
-     * @param int $customerId the customer ID
-     * @param int $conversionActionId the ID of a store sales conversion action
-     * @param int|null $adPersonalizationConsent the ad personalization consent status
-     * @param int|null $adUserDataConsent the ad user data consent status
+     * @param  int         $customerId               the customer ID
+     * @param  int         $conversionActionId       the ID of a store sales conversion action
+     * @param  int|null    $adPersonalizationConsent the ad personalization consent status
+     * @param  int|null    $adUserDataConsent        the ad user data consent status
      * @return OfflineUserDataJobOperation[] an array with the operations
-     * @param string|null $itemId a unique identifier of a product, either the Merchant Center Item
-     *     ID or Global Trade Item Number (GTIN)
-     * @param int|null $merchantCenterAccountId a Merchant Center Account ID
-     * @param string|null $countryCode a two-letter country code of the location associated with the
-     *     feed where your items are uploaded
-     * @param string|null $languageCode a two-letter language code of the language associated with
-     *     the feed where your items are uploaded
-     * @param int|null $quantity the number of items sold. Can only be set when at least one other
-     *     item attribute has been provided
+     * @param  string|null $itemId                   a unique identifier of a product, either the Merchant Center Item
+     *                                               ID or Global Trade Item Number (GTIN)
+     * @param  int|null    $merchantCenterAccountId  a Merchant Center Account ID
+     * @param  string|null $countryCode              a two-letter country code of the location associated with the
+     *                                               feed where your items are uploaded
+     * @param  string|null $languageCode             a two-letter language code of the language associated with
+     *                                               the feed where your items are uploaded
+     * @param  int|null    $quantity                 the number of items sold. Can only be set when at least one other
+     *                                               item attribute has been provided
      */
     private static function buildOfflineUserDataJobOperations(
         $customerId,
@@ -554,17 +581,23 @@ class UploadStoreSalesTransactions
         ?int $quantity
     ): array {
         // Creates the first transaction for upload based on an email address and state.
-        $userDataWithEmailAddress = new UserData([
+        $userDataWithEmailAddress = new UserData(
+            [
             'user_identifiers' => [
-                new UserIdentifier([
+                new UserIdentifier(
+                    [
                     // Email addresses must be normalized and hashed.
                     'hashed_email' => self::normalizeAndHash('dana@example.com')
-                ]),
-                new UserIdentifier([
+                    ]
+                ),
+                new UserIdentifier(
+                    [
                     'address_info' => new OfflineUserAddressInfo(['state' => 'NY'])
-                ])
+                    ]
+                )
             ],
-            'transaction_attribute' => new TransactionAttribute([
+            'transaction_attribute' => new TransactionAttribute(
+                [
                 'conversion_action'
                     => ResourceNames::forConversionAction($customerId, $conversionActionId),
                 'currency_code' => 'USD',
@@ -579,8 +612,10 @@ class UploadStoreSalesTransactions
                 // OPTIONAL: If uploading data with custom key and values, also specify the
                 // following value:
                 // 'custom_value' => 'INSERT_CUSTOM_VALUE_HERE'
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         // Adds consent information if specified.
         if (!empty($adPersonalizationConsent) || !empty($adUserDataConsent)) {
@@ -597,20 +632,26 @@ class UploadStoreSalesTransactions
         }
 
         // Creates the second transaction for upload based on a physical address.
-        $userDataWithPhysicalAddress = new UserData([
+        $userDataWithPhysicalAddress = new UserData(
+            [
             'user_identifiers' => [
-                new UserIdentifier([
-                    'address_info' => new OfflineUserAddressInfo([
+                new UserIdentifier(
+                    [
+                    'address_info' => new OfflineUserAddressInfo(
+                        [
                         // First and last name must be normalized and hashed.
                         'hashed_first_name' => self::normalizeAndHash('Dana'),
                         'hashed_last_name' => self::normalizeAndHash('Quinn'),
                         // Country code and zip code are sent in plain text.
                         'country_code' => 'US',
                         'postal_code' => '10011'
-                    ])
-                ])
+                        ]
+                    )
+                    ]
+                )
             ],
-            'transaction_attribute' => new TransactionAttribute([
+            'transaction_attribute' => new TransactionAttribute(
+                [
                 'conversion_action'
                     => ResourceNames::forConversionAction($customerId, $conversionActionId),
                 'currency_code' => 'EUR',
@@ -620,14 +661,17 @@ class UploadStoreSalesTransactions
                 // interpreted by the API using the Google Ads customer's time zone.
                 // The date/time must be in the format "yyyy-MM-dd hh:mm:ss".
                 'transaction_date_time' => '2020-05-14 19:07:02'
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         // Optional: If uploading data with item attributes, also assign these values
         // in the transaction attribute.
         if (!empty($itemId)) {
             $userDataWithPhysicalAddress->getTransactionAttribute()->setItemAttribute(
-                new ItemAttribute([
+                new ItemAttribute(
+                    [
                     'item_id' => $itemId,
                     'merchant_id' => $merchantCenterAccountId,
                     'country_code' => $countryCode,
@@ -635,7 +679,8 @@ class UploadStoreSalesTransactions
                     // Quantity field should only be set when at least one of the other item
                     // attribute fields is present.
                     'quantity' => $quantity
-                ])
+                    ]
+                )
             );
         }
 
@@ -653,7 +698,7 @@ class UploadStoreSalesTransactions
      * Private customer data must be hashed during upload, as described at
      * https://support.google.com/google-ads/answer/7506124.
      *
-     * @param string $value the value to normalize and hash
+     * @param  string $value the value to normalize and hash
      * @return string the normalized and hashed value
      */
     private static function normalizeAndHash(string $value): string
@@ -664,10 +709,10 @@ class UploadStoreSalesTransactions
     /**
      * Retrieves, checks, and prints the status of the offline user data job.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $offlineUserDataJobResourceName the resource name of the created offline user
-     *     data job
+     * @param GoogleAdsClient $googleAdsClient                the Google Ads API client
+     * @param int             $customerId                     the customer ID
+     * @param string          $offlineUserDataJobResourceName the resource name of the created offline user
+     *                                                        data job
      */
     private static function checkJobStatus(
         GoogleAdsClient $googleAdsClient,
@@ -686,13 +731,17 @@ class UploadStoreSalesTransactions
             . "WHERE offline_user_data_job.resource_name = '$offlineUserDataJobResourceName'";
 
         // Issues a search stream request.
-        /** @var GoogleAdsServerStreamDecorator $stream */
+        /**
+ * @var GoogleAdsServerStreamDecorator $stream
+*/
         $stream = $googleAdsServiceClient->searchStream(
             SearchGoogleAdsStreamRequest::build($customerId, $query)
         );
 
         // Prints out some information about the offline user data.
-        /** @var GoogleAdsRow $googleAdsRow */
+        /**
+ * @var GoogleAdsRow $googleAdsRow
+*/
         $googleAdsRow = $stream->iterateAllElements()->current();
         $offlineUserDataJob = $googleAdsRow->getOfflineUserDataJob();
         printf(

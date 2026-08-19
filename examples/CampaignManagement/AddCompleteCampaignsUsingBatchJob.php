@@ -82,16 +82,20 @@ class AddCompleteCampaignsUsingBatchJob
 
     private const PAGE_SIZE = 1000;
 
-    /** @var int the negative temporary ID used in batch job operations. */
+    /**
+     * @var int the negative temporary ID used in batch job operations.
+     */
     private static $temporaryId = -1;
 
     public static function main()
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -116,7 +120,9 @@ class AddCompleteCampaignsUsingBatchJob
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -139,7 +145,7 @@ class AddCompleteCampaignsUsingBatchJob
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param int             $customerId      the customer ID
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
@@ -159,8 +165,8 @@ class AddCompleteCampaignsUsingBatchJob
     /**
      * Creates a new batch job for the specified customer ID.
      *
-     * @param BatchJobServiceClient $batchJobServiceClient the batch job service client
-     * @param int $customerId the customer ID
+     * @param  BatchJobServiceClient $batchJobServiceClient the batch job service client
+     * @param  int $customerId the customer ID
      * @return string the resource name of the created batch job
      */
     // [START add_complete_campaigns_using_batch_job]
@@ -225,8 +231,8 @@ class AddCompleteCampaignsUsingBatchJob
     /**
      * Requests the API to run the batch job for executing all uploaded batch job operations.
      *
-     * @param BatchJobServiceClient $batchJobServiceClient the batch job service client
-     * @param string $batchJobResourceName the resource name of batch job to be run
+     * @param  BatchJobServiceClient $batchJobServiceClient the batch job service client
+     * @param  string $batchJobResourceName the resource name of batch job to be run
      * @return OperationResponse the operation response from running batch job
      */
     // [START add_complete_campaigns_using_batch_job_2]
@@ -254,10 +260,12 @@ class AddCompleteCampaignsUsingBatchJob
     // [START add_complete_campaigns_using_batch_job_3]
     private static function pollBatchJob(OperationResponse $operationResponse): void
     {
-        $operationResponse->pollUntilComplete([
+        $operationResponse->pollUntilComplete(
+            [
             'initialPollDelayMillis' => self::POLL_FREQUENCY_SECONDS * 1000,
             'totalPollTimeoutMillis' => self::MAX_TOTAL_POLL_INTERVAL_SECONDS * 1000
-        ]);
+            ]
+        );
     }
     // [END add_complete_campaigns_using_batch_job_3]
 
@@ -282,7 +290,9 @@ class AddCompleteCampaignsUsingBatchJob
             ListBatchJobResultsRequest::build($batchJobResourceName)->setPageSize(self::PAGE_SIZE)
         );
         foreach ($batchJobResults->iterateAllElements() as $batchJobResult) {
-            /** @var BatchJobResult $batchJobResult */
+            /**
+ * @var BatchJobResult $batchJobResult
+*/
             printf(
                 "Batch job #%d has a status '%s' and response of type '%s'.%s",
                 $batchJobResult->getOperationIndex(),
@@ -301,7 +311,7 @@ class AddCompleteCampaignsUsingBatchJob
      * Builds all operations for creating a complete campaign and return an array of their
      * corresponding mutate operations.
      *
-     * @param int $customerId the customer ID
+     * @param  int $customerId the customer ID
      * @return MutateOperation[] the mutate operations to be added to a batch job
      */
     private static function buildAllOperations(int $customerId): array
@@ -318,51 +328,66 @@ class AddCompleteCampaignsUsingBatchJob
             $customerId,
             $campaignBudgetOperation->getCreate()->getResourceName()
         );
-        $mutateOperations = array_merge($mutateOperations, array_map(
-            function (CampaignOperation $campaignOperation) {
-                return new MutateOperation(['campaign_operation' => $campaignOperation]);
-            },
-            $campaignOperations
-        ));
+        $mutateOperations = array_merge(
+            $mutateOperations,
+            array_map(
+                function (CampaignOperation $campaignOperation) {
+                    return new MutateOperation(['campaign_operation' => $campaignOperation]);
+                },
+                $campaignOperations
+            )
+        );
 
         // Creates new campaign criterion operations and adds them to the array of mutate
         // operations.
-        $mutateOperations = array_merge($mutateOperations, array_map(
-            function (CampaignCriterionOperation $campaignCriterionOperation) {
-                return new MutateOperation(
-                    ['campaign_criterion_operation' => $campaignCriterionOperation]
-                );
-            },
-            self::buildCampaignCriterionOperations($campaignOperations)
-        ));
+        $mutateOperations = array_merge(
+            $mutateOperations,
+            array_map(
+                function (CampaignCriterionOperation $campaignCriterionOperation) {
+                    return new MutateOperation(
+                        ['campaign_criterion_operation' => $campaignCriterionOperation]
+                    );
+                },
+                self::buildCampaignCriterionOperations($campaignOperations)
+            )
+        );
 
         // Creates new ad group operations and adds them to the array of mutate operations.
         $adGroupOperations = self::buildAdGroupOperations($customerId, $campaignOperations);
-        $mutateOperations = array_merge($mutateOperations, array_map(
-            function (AdGroupOperation $adGroupOperation) {
-                return new MutateOperation(['ad_group_operation' => $adGroupOperation]);
-            },
-            $adGroupOperations
-        ));
+        $mutateOperations = array_merge(
+            $mutateOperations,
+            array_map(
+                function (AdGroupOperation $adGroupOperation) {
+                    return new MutateOperation(['ad_group_operation' => $adGroupOperation]);
+                },
+                $adGroupOperations
+            )
+        );
 
         // Creates new ad group criterion operations and adds them to the array of mutate
         // operations.
-        $mutateOperations = array_merge($mutateOperations, array_map(
-            function (AdGroupCriterionOperation $adGroupCriterionOperation) {
-                return new MutateOperation(
-                    ['ad_group_criterion_operation' => $adGroupCriterionOperation]
-                );
-            },
-            self::buildAdGroupCriterionOperations($adGroupOperations)
-        ));
+        $mutateOperations = array_merge(
+            $mutateOperations,
+            array_map(
+                function (AdGroupCriterionOperation $adGroupCriterionOperation) {
+                    return new MutateOperation(
+                        ['ad_group_criterion_operation' => $adGroupCriterionOperation]
+                    );
+                },
+                self::buildAdGroupCriterionOperations($adGroupOperations)
+            )
+        );
 
         // Creates new ad group ad operations and adds them to the array of mutate operations.
-        $mutateOperations = array_merge($mutateOperations, array_map(
-            function (AdGroupAdOperation $adGroupAdOperation) {
-                return new MutateOperation(['ad_group_ad_operation' => $adGroupAdOperation]);
-            },
-            self::buildAdGroupAdOperations($adGroupOperations)
-        ));
+        $mutateOperations = array_merge(
+            $mutateOperations,
+            array_map(
+                function (AdGroupAdOperation $adGroupAdOperation) {
+                    return new MutateOperation(['ad_group_ad_operation' => $adGroupAdOperation]);
+                },
+                self::buildAdGroupAdOperations($adGroupOperations)
+            )
+        );
 
         return $mutateOperations;
     }
@@ -370,14 +395,16 @@ class AddCompleteCampaignsUsingBatchJob
     /**
      * Builds a new campaign budget operation for the specified customer ID.
      *
-     * @param int $customerId the customer ID
+     * @param  int $customerId the customer ID
      * @return CampaignBudgetOperation the campaign budget operation
      */
     private static function buildCampaignBudgetOperation(int $customerId): CampaignBudgetOperation
     {
         // Creates a campaign budget operation.
-        return new CampaignBudgetOperation([
-            'create' => new CampaignBudget([
+        return new CampaignBudgetOperation(
+            [
+            'create' => new CampaignBudget(
+                [
                 // Creates a resource name using the temporary ID.
                 'resource_name' => ResourceNames::forCampaignBudget(
                     $customerId,
@@ -386,16 +413,18 @@ class AddCompleteCampaignsUsingBatchJob
                 'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
                 'delivery_method' => BudgetDeliveryMethod::STANDARD,
                 'amount_micros' => 5000000
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
     }
 
     /**
      * Builds new campaign operations for the specified customer ID.
      *
-     * @param int $customerId the customer ID
-     * @param string $campaignBudgetResourceName the resource name of campaign budget to be used
-     *     to create campaigns
+     * @param  int    $customerId                 the customer ID
+     * @param  string $campaignBudgetResourceName the resource name of campaign budget to be used
+     *                                            to create campaigns
      * @return CampaignOperation[] the campaign operations
      */
     private static function buildCampaignOperations(
@@ -406,7 +435,8 @@ class AddCompleteCampaignsUsingBatchJob
         for ($i = 0; $i < self::NUMBER_OF_CAMPAIGNS_TO_ADD; $i++) {
             // Creates a campaign.
             $campaignId = self::getNextTemporaryId();
-            $campaign = new Campaign([
+            $campaign = new Campaign(
+                [
                 // Creates a resource name using the temporary ID.
                 'resource_name' => ResourceNames::forCampaign($customerId, $campaignId),
                 'name' => sprintf(
@@ -425,7 +455,8 @@ class AddCompleteCampaignsUsingBatchJob
                 // Declare whether or not this campaign serves political ads targeting the EU.
                 'contains_eu_political_advertising' =>
                     EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
-            ]);
+                ]
+            );
 
             // Creates a campaign operation and add it to the operations list.
             $operations[] = new CampaignOperation(['create' => $campaign]);
@@ -438,8 +469,8 @@ class AddCompleteCampaignsUsingBatchJob
      * Builds new campaign criterion operations for creating negative campaign criteria
      * (as keywords).
      *
-     * @param CampaignOperation[] $campaignOperations the campaign operations to be used to create
-     *     campaign criteria
+     * @param  CampaignOperation[] $campaignOperations the campaign operations to be used to create
+     *                                                 campaign criteria
      * @return CampaignCriterionOperation[] the campaign criterion operations
      */
     private static function buildCampaignCriterionOperations(array $campaignOperations): array
@@ -447,15 +478,19 @@ class AddCompleteCampaignsUsingBatchJob
         $operations = [];
         foreach ($campaignOperations as $campaignOperation) {
             // Creates a campaign criterion.
-            $campaignCriterion = new CampaignCriterion([
-                'keyword' => new KeywordInfo([
+            $campaignCriterion = new CampaignCriterion(
+                [
+                'keyword' => new KeywordInfo(
+                    [
                     'text' => 'venus',
                     'match_type' => KeywordMatchType::BROAD
-                ]),
+                    ]
+                ),
                 // Sets the campaign criterion as a negative criterion.
                 'negative' => true,
                 'campaign' => $campaignOperation->getCreate()->getResourceName()
-            ]);
+                ]
+            );
 
             // Creates a campaign criterion operation and add it to the operations list.
             $operations[] = new CampaignCriterionOperation(['create' => $campaignCriterion]);
@@ -466,9 +501,9 @@ class AddCompleteCampaignsUsingBatchJob
     /**
      * Builds new ad group operations for the specified customer ID.
      *
-     * @param int $customerId the customer ID
-     * @param CampaignOperation[] $campaignOperations the campaign operations to be used to create
-     *     ad groups
+     * @param  int                 $customerId         the customer ID
+     * @param  CampaignOperation[] $campaignOperations the campaign operations to be used to create
+     *                                                 ad groups
      * @return AdGroupOperation[] the ad group operations
      */
     private static function buildAdGroupOperations(
@@ -480,7 +515,8 @@ class AddCompleteCampaignsUsingBatchJob
             for ($i = 0; $i < self::NUMBER_OF_AD_GROUPS_TO_ADD; $i++) {
                 // Creates an ad group.
                 $adGroupId = self::getNextTemporaryId();
-                $adGroup = new AdGroup([
+                $adGroup = new AdGroup(
+                    [
                     // Creates a resource name using the temporary ID.
                     'resource_name' => ResourceNames::forAdGroup($customerId, $adGroupId),
                     'name' => sprintf(
@@ -491,7 +527,8 @@ class AddCompleteCampaignsUsingBatchJob
                     'campaign' => $campaignOperation->getCreate()->getResourceName(),
                     'type' => AdGroupType::SEARCH_STANDARD,
                     'cpc_bid_micros' => 10000000
-                ]);
+                    ]
+                );
 
                 // Creates an ad group operation and add it to the operations list.
                 $operations[] = new AdGroupOperation(['create' => $adGroup]);
@@ -505,8 +542,8 @@ class AddCompleteCampaignsUsingBatchJob
      * with some invalid characters to demonstrate how BatchJobService returns information about
      * such errors.
      *
-     * @param AdGroupOperation[] $adGroupOperations the ad group operations to be used to create
-     *     ad group criteria
+     * @param  AdGroupOperation[] $adGroupOperations the ad group operations to be used to create
+     *                                               ad group criteria
      * @return AdGroupCriterionOperation[] the ad group criterion operations
      */
     private static function buildAdGroupCriterionOperations(array $adGroupOperations): array
@@ -521,14 +558,18 @@ class AddCompleteCampaignsUsingBatchJob
                     $keywordText = $keywordText . '!!!';
                 }
                 // Creates an ad group criterion using the created keyword text.
-                $adGroupCriterion = new AdGroupCriterion([
-                    'keyword' => new KeywordInfo([
+                $adGroupCriterion = new AdGroupCriterion(
+                    [
+                    'keyword' => new KeywordInfo(
+                        [
                         'text' => $keywordText,
                         'match_type' => KeywordMatchType::BROAD
-                    ]),
+                        ]
+                    ),
                     'ad_group' => $adGroupOperation->getCreate()->getResourceName(),
                     'status' => AdGroupCriterionStatus::ENABLED,
-                ]);
+                    ]
+                );
 
                 // Creates an ad group criterion operation and add it to the operations list.
                 $operations[] = new AdGroupCriterionOperation(['create' => $adGroupCriterion]);
@@ -540,8 +581,8 @@ class AddCompleteCampaignsUsingBatchJob
     /**
      * Builds new ad group ad operations.
      *
-     * @param AdGroupOperation[] $adGroupOperations the ad group operations to be used to create
-     *     ad group ads
+     * @param  AdGroupOperation[] $adGroupOperations the ad group operations to be used to create
+     *                                               ad group ads
      * @return AdGroupAdOperation[] the ad group ad operations
      */
     private static function buildAdGroupAdOperations(array $adGroupOperations): array
@@ -549,20 +590,26 @@ class AddCompleteCampaignsUsingBatchJob
         $operations = [];
         foreach ($adGroupOperations as $adGroupOperation) {
             // Creates an ad group ad.
-            $adGroupAd = new AdGroupAd([
+            $adGroupAd = new AdGroupAd(
+                [
                 // Creates the expanded text ad info.
-                'ad' => new Ad([
+                'ad' => new Ad(
+                    [
                     // Sets the expanded text ad info on an ad.
-                    'expanded_text_ad' => new ExpandedTextAdInfo([
+                    'expanded_text_ad' => new ExpandedTextAdInfo(
+                        [
                         'headline_part1' => 'Cruise to Mars #' . Helper::getPrintableDatetime(),
                         'headline_part2' => 'Best Space Cruise Line',
                         'description' => 'Buy your tickets now!'
-                    ]),
+                        ]
+                    ),
                     'final_urls' => ['http://www.example.com']
-                ]),
+                    ]
+                ),
                 'ad_group' => $adGroupOperation->getCreate()->getResourceName(),
                 'status' => AdGroupAdStatus::PAUSED,
-            ]);
+                ]
+            );
 
             // Creates an ad group ad operation and add it to the operations list.
             $operations[] = new AdGroupAdOperation(['create' => $adGroupAd]);

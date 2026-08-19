@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V23\Services;
  *
  * Service to manage Keyword Plan ad groups.
  */
-class KeywordPlanAdGroupServiceGrpcClient extends \Grpc\BaseStub {
+class KeywordPlanAdGroupServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -53,17 +55,21 @@ class KeywordPlanAdGroupServiceGrpcClient extends \Grpc\BaseStub {
      *   [QuotaError]()
      *   [RequestError]()
      *   [ResourceCountLimitExceededError]()
-     * @param \Google\Ads\GoogleAds\V23\Services\MutateKeywordPlanAdGroupsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\MutateKeywordPlanAdGroupsRequest $argument input argument
+     * @param  array                                                               $metadata metadata
+     * @param  array                                                               $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateKeywordPlanAdGroupsResponse>
      */
     public function MutateKeywordPlanAdGroups(\Google\Ads\GoogleAds\V23\Services\MutateKeywordPlanAdGroupsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.KeywordPlanAdGroupService/MutateKeywordPlanAdGroups',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\MutateKeywordPlanAdGroupsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.KeywordPlanAdGroupService/MutateKeywordPlanAdGroups',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\MutateKeywordPlanAdGroupsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

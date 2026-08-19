@@ -75,7 +75,8 @@ class UploadEnhancedConversionsForLeads
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
@@ -85,7 +86,8 @@ class UploadEnhancedConversionsForLeads
             ArgumentNames::AD_USER_DATA_CONSENT => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::SESSION_ATTRIBUTES_ENCODED => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::SESSION_ATTRIBUTES_DICT => GetOpt::OPTIONAL_ARGUMENT // e.g. "foo=bar, bcd=xyz"
-        ]);
+            ]
+        );
 
         // Parse SESSION_ATTRIBUTES_DICT into an associative array if provided
         $sessionAttributesDict = [];
@@ -98,8 +100,8 @@ class UploadEnhancedConversionsForLeads
         }
 
         if (
-            !empty($options[ArgumentNames::SESSION_ATTRIBUTES_ENCODED]) &&
-            !empty($options[ArgumentNames::SESSION_ATTRIBUTES_DICT])
+            !empty($options[ArgumentNames::SESSION_ATTRIBUTES_ENCODED])
+            && !empty($options[ArgumentNames::SESSION_ATTRIBUTES_DICT])
         ) {
             throw new \InvalidArgumentException(
                 "Only one of 'session_attributes_encoded' or " .
@@ -142,7 +144,9 @@ class UploadEnhancedConversionsForLeads
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -164,18 +168,20 @@ class UploadEnhancedConversionsForLeads
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $conversionActionId the ID of the conversion action associated with this
-     *      conversion
-     * @param string $conversionDateTime the date and time of the conversion
-     *      The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”
-     * @param float $conversionValue the value of the conversion
-     * @param string|null $orderId the unique order ID (transaction ID) of the conversion
-     * @param string|null $gclid the Google click ID of the conversion
-     * @param int|null $adUserDataConsent the ad user data consent for the click
-     * @param string|null $sessionAttributesEncoded the str token of encoded session atttributes
-     * @param array<string,string>|null $sessionAttributesDict An associative array of str session attributes tokens
+     * @param GoogleAdsClient           $googleAdsClient          the Google Ads API client
+     * @param int                       $customerId               the customer ID
+     * @param int                       $conversionActionId       the ID of the conversion action associated with this
+     *                                                            conversion
+     * @param string                    $conversionDateTime       the date and time of the conversion
+     *                                                            The format is "yyyy-mm-dd
+     *                                                            hh:mm:ss+|-hh:mm", e.g.
+     *                                                            “2019-01-01 12:32:45-08:00”
+     * @param float                     $conversionValue          the value of the conversion
+     * @param string|null               $orderId                  the unique order ID (transaction ID) of the conversion
+     * @param string|null               $gclid                    the Google click ID of the conversion
+     * @param int|null                  $adUserDataConsent        the ad user data consent for the click
+     * @param string|null               $sessionAttributesEncoded the str token of encoded session atttributes
+     * @param array<string,string>|null $sessionAttributesDict    An associative array of str session attributes tokens
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -243,7 +249,8 @@ class UploadEnhancedConversionsForLeads
 
         // Creates a user identifier using the hashed email address, using the normalize and hash
         // method specifically for email addresses.
-        $emailIdentifier = new UserIdentifier([
+        $emailIdentifier = new UserIdentifier(
+            [
             // Uses the normalize and hash method specifically for email addresses.
             'hashed_email' => self::normalizeAndHashEmailAddress(
                 $hashAlgorithm,
@@ -251,18 +258,21 @@ class UploadEnhancedConversionsForLeads
             ),
             // Optional: Specifies the user identifier source.
             'user_identifier_source' => UserIdentifierSource::FIRST_PARTY
-        ]);
+            ]
+        );
         $userIdentifiers[] = $emailIdentifier;
 
         // Checks if the record has a phone number, and if so, adds a UserIdentifier for it.
         if (array_key_exists('phone', $rawRecord)) {
-            $hashedPhoneNumberIdentifier = new UserIdentifier([
+            $hashedPhoneNumberIdentifier = new UserIdentifier(
+                [
                 'hashed_phone_number' => self::normalizeAndHash(
                     $hashAlgorithm,
                     $rawRecord['phone'],
                     true
                 )
-            ]);
+                ]
+            );
             // Adds the hashed email identifier to the user identifiers list.
             $userIdentifiers[] = $hashedPhoneNumberIdentifier;
         }
@@ -352,7 +362,9 @@ class UploadEnhancedConversionsForLeads
                 PHP_EOL
             );
         } else {
-            /** @var ClickConversionResult $clickConversionResult */
+            /**
+ * @var ClickConversionResult $clickConversionResult
+*/
             $clickConversionResult = $response->getResults()[0];
             // Only prints valid results.
             if ($clickConversionResult->hasConversionDateTime()) {
@@ -371,8 +383,8 @@ class UploadEnhancedConversionsForLeads
      * algorithm. Private customer data must be hashed during upload, as described at
      * https://support.google.com/google-ads/answer/7474263.
      *
-     * @param string $hashAlgorithm the hash algorithm to use
-     * @param string $value the value to normalize and hash
+     * @param  string $hashAlgorithm the hash algorithm to use
+     * @param  string $value the value to normalize and hash
      * @return string the normalized and hashed value
      */
     // [START normalize_and_hash]
@@ -389,8 +401,8 @@ class UploadEnhancedConversionsForLeads
      * Returns the result of normalizing and hashing an email address. For this use case, Google
      * Ads requires removal of any '.' characters preceding "gmail.com" or "googlemail.com".
      *
-     * @param string $hashAlgorithm the hash algorithm to use
-     * @param string $emailAddress the email address to normalize and hash
+     * @param  string $hashAlgorithm the hash algorithm to use
+     * @param  string $emailAddress  the email address to normalize and hash
      * @return string the normalized and hashed email address
      */
     private static function normalizeAndHashEmailAddress(

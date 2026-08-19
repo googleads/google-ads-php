@@ -62,12 +62,14 @@ class AddCall
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::PHONE_COUNTRY => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::PHONE_NUMBER => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -94,7 +96,9 @@ class AddCall
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -116,11 +120,11 @@ class AddCall
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param string $phoneCountry the phone country (2-letter code)
-     * @param string $phoneNumber the raw phone number, e.g. '(800) 555-0100'
-     * @param int|null $conversionActionId the conversion action ID to attribute conversions to
+     * @param GoogleAdsClient $googleAdsClient    the Google Ads API client
+     * @param int             $customerId         the client customer ID
+     * @param string          $phoneCountry       the phone country (2-letter code)
+     * @param string          $phoneNumber        the raw phone number, e.g. '(800) 555-0100'
+     * @param int|null        $conversionActionId the conversion action ID to attribute conversions to
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -145,11 +149,11 @@ class AddCall
     /**
      * Creates a new asset for the call.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param string $phoneCountry the phone country (2-letter code)
-     * @param string $phoneNumber the raw phone number, e.g. '(800) 555-0100'
-     * @param int|null $conversionActionId the conversion action ID to attribute conversions to
+     * @param  GoogleAdsClient $googleAdsClient    the Google Ads API client
+     * @param  int             $customerId         the client customer ID
+     * @param  string          $phoneCountry       the phone country (2-letter code)
+     * @param  string          $phoneNumber        the raw phone number, e.g. '(800) 555-0100'
+     * @param  int|null        $conversionActionId the conversion action ID to attribute conversions to
      * @return string the resource name of the created call asset
      */
     private static function addCallAsset(
@@ -160,12 +164,14 @@ class AddCall
         ?int $conversionActionId
     ): string {
         // Creates the call asset.
-        $callAsset = new CallAsset([
+        $callAsset = new CallAsset(
+            [
             // Sets the country code and phone number of the business to call.
             'country_code' => $phoneCountry,
             'phone_number' => $phoneNumber,
             // Optional: Specifies all day and time intervals for which the asset may serve.
-            'ad_schedule_targets' => [new AdScheduleInfo([
+            'ad_schedule_targets' => [new AdScheduleInfo(
+                [
                 // Sets the day of this schedule as Monday.
                 'day_of_week' => DayOfWeek::MONDAY,
                 // Sets the start hour to 9am.
@@ -175,8 +181,10 @@ class AddCall
                 // Sets the start and end minute of zero, for example: 9:00 and 5:00.
                 'start_minute' => MinuteOfHour::ZERO,
                 'end_minute' => MinuteOfHour::ZERO
-            ])]
-        ]);
+                ]
+            )]
+            ]
+        );
 
         // Sets the conversion action ID to the one provided if any.
         if (!is_null($conversionActionId)) {
@@ -210,9 +218,9 @@ class AddCall
     /**
      * Links the call asset at the account level to serve in all eligible campaigns.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param string $assetResourceName the resource name of the call asset
+     * @param GoogleAdsClient $googleAdsClient   the Google Ads API client
+     * @param int             $customerId        the client customer ID
+     * @param string          $assetResourceName the resource name of the call asset
      */
     private static function linkAssetToAccount(
         GoogleAdsClient $googleAdsClient,
@@ -221,10 +229,14 @@ class AddCall
     ): void {
         // Creates a customer asset operation wrapping the call asset in a customer asset.
         $customerAssetOperation = new CustomerAssetOperation();
-        $customerAssetOperation->setCreate(new CustomerAsset([
-            'asset' => $assetResourceName,
-            'field_type' => AssetFieldType::CALL
-        ]));
+        $customerAssetOperation->setCreate(
+            new CustomerAsset(
+                [
+                'asset' => $assetResourceName,
+                'field_type' => AssetFieldType::CALL
+                ]
+            )
+        );
 
         // Issues a mutate request to add the customer asset and prints its information.
         $customerAssetServiceClient = $googleAdsClient->getCustomerAssetServiceClient();

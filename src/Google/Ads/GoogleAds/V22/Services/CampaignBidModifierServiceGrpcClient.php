@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V22\Services;
  *
  * Service to manage campaign bid modifiers.
  */
-class CampaignBidModifierServiceGrpcClient extends \Grpc\BaseStub {
+class CampaignBidModifierServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -61,17 +63,21 @@ class CampaignBidModifierServiceGrpcClient extends \Grpc\BaseStub {
      *   [SizeLimitError]()
      *   [StringFormatError]()
      *   [StringLengthError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\MutateCampaignBidModifiersRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\MutateCampaignBidModifiersRequest $argument input argument
+     * @param  array                                                                $metadata metadata
+     * @param  array                                                                $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateCampaignBidModifiersResponse>
      */
     public function MutateCampaignBidModifiers(\Google\Ads\GoogleAds\V22\Services\MutateCampaignBidModifiersRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.CampaignBidModifierService/MutateCampaignBidModifiers',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\MutateCampaignBidModifiersResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.CampaignBidModifierService/MutateCampaignBidModifiers',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\MutateCampaignBidModifiersResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

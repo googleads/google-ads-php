@@ -22,14 +22,16 @@ namespace Google\Ads\GoogleAds\V22\Services;
  * This service allows management of data links between  a Google
  * Ads customer and another data entity.
  */
-class DataLinkServiceGrpcClient extends \Grpc\BaseStub {
+class DataLinkServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -49,17 +51,21 @@ class DataLinkServiceGrpcClient extends \Grpc\BaseStub {
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\CreateDataLinkRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\CreateDataLinkRequest $argument input argument
+     * @param  array                                                    $metadata metadata
+     * @param  array                                                    $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\CreateDataLinkResponse>
      */
     public function CreateDataLink(\Google\Ads\GoogleAds\V22\Services\CreateDataLinkRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.DataLinkService/CreateDataLink',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\CreateDataLinkResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.DataLinkService/CreateDataLink',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\CreateDataLinkResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -76,17 +82,21 @@ class DataLinkServiceGrpcClient extends \Grpc\BaseStub {
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\RemoveDataLinkRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\RemoveDataLinkRequest $argument input argument
+     * @param  array                                                    $metadata metadata
+     * @param  array                                                    $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\RemoveDataLinkResponse>
      */
     public function RemoveDataLink(\Google\Ads\GoogleAds\V22\Services\RemoveDataLinkRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.DataLinkService/RemoveDataLink',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\RemoveDataLinkResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.DataLinkService/RemoveDataLink',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\RemoveDataLinkResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -103,17 +113,21 @@ class DataLinkServiceGrpcClient extends \Grpc\BaseStub {
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\UpdateDataLinkRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\UpdateDataLinkRequest $argument input argument
+     * @param  array                                                    $metadata metadata
+     * @param  array                                                    $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\UpdateDataLinkResponse>
      */
     public function UpdateDataLink(\Google\Ads\GoogleAds\V22\Services\UpdateDataLinkRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.DataLinkService/UpdateDataLink',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\UpdateDataLinkResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.DataLinkService/UpdateDataLink',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\UpdateDataLinkResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

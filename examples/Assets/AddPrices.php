@@ -54,9 +54,11 @@ class AddPrices
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -80,7 +82,9 @@ class AddPrices
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -103,7 +107,7 @@ class AddPrices
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int             $customerId      the client customer ID
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
@@ -119,21 +123,24 @@ class AddPrices
     /**
      * Creates a PriceAsset.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the client customer ID
      * @return string the created PriceAsset's resource name
      */
     private static function createPriceAsset(GoogleAdsClient $googleAdsClient, int $customerId)
     {
-        $priceAsset = new PriceAsset([
+        $priceAsset = new PriceAsset(
+            [
             'type' => PriceExtensionType::SERVICES,
             // Optional: Sets price qualifier.
             'price_qualifier' => PriceExtensionPriceQualifier::FROM,
             'language_code' => 'en'
-        ]);
+            ]
+        );
 
         // To create a price asset, at least three price offerings are needed.
-        $priceAsset->setPriceOfferings([
+        $priceAsset->setPriceOfferings(
+            [
             self::createPriceOffering(
                 'Scrubs',
                 'Body Scrub, Salt Scrub',
@@ -160,13 +167,16 @@ class AddPrices
                 PriceExtensionPriceUnit::PER_MONTH,
                 'http://www.example.com/skincarepackage'
             )
-        ]);
+            ]
+        );
 
         // Wraps the PriceAsset in an Asset.
-        $asset = new Asset([
+        $asset = new Asset(
+            [
             'price_asset' => $priceAsset,
             'tracking_url_template' => 'http://tracker.example.com/?u={lpurl}'
-        ]);
+            ]
+        );
 
         // Creates an asset operation.
         $assetOperation = new AssetOperation();
@@ -190,9 +200,9 @@ class AddPrices
     /**
      * Links an asset to customer, allowing it to serve in all campaigns under the customer.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $priceAssetResourceName the price asset's resource name to link
-     * @param int $customerId the customer ID to link the price asset to
+     * @param GoogleAdsClient $googleAdsClient        the Google Ads API client
+     * @param string          $priceAssetResourceName the price asset's resource name to link
+     * @param int             $customerId             the customer ID to link the price asset to
      */
     private static function linkPriceAssetToCustomer(
         GoogleAdsClient $googleAdsClient,
@@ -200,10 +210,12 @@ class AddPrices
         int $customerId
     ) {
         // Creates the CustomerAsset.
-        $customerAsset = new CustomerAsset([
+        $customerAsset = new CustomerAsset(
+            [
             'asset' => $priceAssetResourceName,
             'field_type' => AssetFieldType::PRICE
-        ]);
+            ]
+        );
 
         // Creates a customer asset operation.
         $customerAssetOperation = new CustomerAssetOperation();
@@ -224,13 +236,13 @@ class AddPrices
     /**
      * Creates a price offering with the specified parameters.
      *
-     * @param string $header the header
-     * @param string $description the description
-     * @param int $priceInMicros the price in micros
-     * @param string $currencyCode the currency code
-     * @param int $unit the enum value of unit
-     * @param string $finalUrl the final URL
-     * @param null|string $finalMobileUrl the final mobile URL
+     * @param  string      $header         the header
+     * @param  string      $description    the description
+     * @param  int         $priceInMicros  the price in micros
+     * @param  string      $currencyCode   the currency code
+     * @param  int         $unit           the enum value of unit
+     * @param  string      $finalUrl       the final URL
+     * @param  null|string $finalMobileUrl the final mobile URL
      * @return PriceOffering the created price offering
      */
     private static function createPriceOffering(
@@ -242,16 +254,20 @@ class AddPrices
         string $finalUrl,
         string $finalMobileUrl = null
     ) {
-        $priceOffering = new PriceOffering([
+        $priceOffering = new PriceOffering(
+            [
             'header' => $header,
             'description' => $description,
             'final_url' => $finalUrl,
-            'price' => new Money([
+            'price' => new Money(
+                [
                 'amount_micros' => $priceInMicros,
                 'currency_code' => $currencyCode
-            ]),
+                ]
+            ),
             'unit' => $unit
-        ]);
+            ]
+        );
 
         if (!is_null($finalMobileUrl)) {
             $priceOffering->setFinalMobileUrl($finalMobileUrl);

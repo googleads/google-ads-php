@@ -56,7 +56,6 @@ class GoogleAdsServerStreamDecorator extends ServerStream
     }
 
     /**
-     *
      * Returns an iterator over the full list of elements of the stream.
      *
      * @experimental: This is specific to SearchGoogleAdsStreamResponse but works just fine because

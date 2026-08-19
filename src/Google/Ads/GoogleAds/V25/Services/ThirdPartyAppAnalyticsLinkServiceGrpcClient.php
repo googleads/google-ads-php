@@ -22,14 +22,16 @@ namespace Google\Ads\GoogleAds\V25\Services;
  * This service allows management of links between Google Ads and third party
  * app analytics.
  */
-class ThirdPartyAppAnalyticsLinkServiceGrpcClient extends \Grpc\BaseStub {
+class ThirdPartyAppAnalyticsLinkServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -44,17 +46,21 @@ class ThirdPartyAppAnalyticsLinkServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\RegenerateShareableLinkIdRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\RegenerateShareableLinkIdRequest $argument input argument
+     * @param  array                                                               $metadata metadata
+     * @param  array                                                               $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\RegenerateShareableLinkIdResponse>
      */
     public function RegenerateShareableLinkId(\Google\Ads\GoogleAds\V25\Services\RegenerateShareableLinkIdRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.ThirdPartyAppAnalyticsLinkService/RegenerateShareableLinkId',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\RegenerateShareableLinkIdResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.ThirdPartyAppAnalyticsLinkService/RegenerateShareableLinkId',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\RegenerateShareableLinkIdResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

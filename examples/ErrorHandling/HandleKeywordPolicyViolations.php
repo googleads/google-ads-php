@@ -61,11 +61,13 @@ class HandleKeywordPolicyViolations
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::KEYWORD_TEXT => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -91,7 +93,9 @@ class HandleKeywordPolicyViolations
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -114,9 +118,9 @@ class HandleKeywordPolicyViolations
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID to add a keyword to
-     * @param string $keywordText the keyword text to add
+     * @param int             $customerId      the customer ID
+     * @param int             $adGroupId       the ad group ID to add a keyword to
+     * @param string          $keywordText     the keyword text to add
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -125,17 +129,21 @@ class HandleKeywordPolicyViolations
         string $keywordText
     ) {
         // Configures the keyword text and match type settings.
-        $keywordInfo = new KeywordInfo([
+        $keywordInfo = new KeywordInfo(
+            [
             'text' => $keywordText,
             'match_type' => KeywordMatchType::EXACT
-        ]);
+            ]
+        );
 
         // Constructs an ad group criterion using the keyword text info above.
-        $adGroupCriterion = new AdGroupCriterion([
+        $adGroupCriterion = new AdGroupCriterion(
+            [
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'status' => AdGroupCriterionStatus::ENABLED,
             'keyword' => $keywordInfo
-        ]);
+            ]
+        );
 
         $adGroupCriterionOperation = new AdGroupCriterionOperation();
         $adGroupCriterionOperation->setCreate($adGroupCriterion);
@@ -169,7 +177,7 @@ class HandleKeywordPolicyViolations
      * Collects all policy violation keys that can be exempted for sending a exemption request
      * later.
      *
-     * @param GoogleAdsException $googleAdsException the Google Ads exception
+     * @param  GoogleAdsException $googleAdsException the Google Ads exception
      * @return PolicyViolationKey[] the exemptible policy violation keys
      */
     // [START handle_keyword_policy_violations]
@@ -179,7 +187,9 @@ class HandleKeywordPolicyViolations
 
         printf("Google Ads failure details:%s", PHP_EOL);
         foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-            /** @var GoogleAdsError $error */
+            /**
+ * @var GoogleAdsError $error
+*/
             printf(
                 "\t%s: %s%s",
                 $error->getErrorCode()->getErrorCode(),
@@ -209,8 +219,8 @@ class HandleKeywordPolicyViolations
                 );
 
                 if (
-                    $policyViolationDetails->getIsExemptible() &&
-                    !is_null($policyViolationDetails->getKey())
+                    $policyViolationDetails->getIsExemptible()
+                    && !is_null($policyViolationDetails->getKey())
                 ) {
                     $policyViolationDetailsKey = $policyViolationDetails->getKey();
                     $exemptPolicyViolationKeys[] = $policyViolationDetailsKey;

@@ -31,8 +31,8 @@ trait GoogleAdsExceptionTrait
     /**
      * Throws a `GoogleAdsException` based on the content of the given `ApiException`.
      *
-     * @param ApiException $exception
-     * @param StatusMetadataExtractor $statusMetadataExtractor
+     * @param  ApiException            $exception
+     * @param  StatusMetadataExtractor $statusMetadataExtractor
      * @throws GoogleAdsException
      */
     public function throwGoogleAdsException(

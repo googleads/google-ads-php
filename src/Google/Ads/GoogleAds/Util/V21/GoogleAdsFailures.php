@@ -29,7 +29,7 @@ final class GoogleAdsFailures
     /**
      * Unpacks a single GoogleAdsFailure from an Any instance.
      *
-     * @param Any $any an Any instance to unpack
+     * @param  Any $any an Any instance to unpack
      * @return GoogleAdsFailure
      */
     public static function fromAny(Any $any)
@@ -46,14 +46,16 @@ final class GoogleAdsFailures
     /**
      * Gets a single GoogleAdsFailure by combining all errors from a list of Any objects.
      *
-     * @param Any[]|RepeatedField $anys a list of Any instances to unpack
+     * @param  Any[]|RepeatedField $anys a list of Any instances to unpack
      * @return GoogleAdsFailure
      */
     public static function fromAnys($anys)
     {
         $errors = [];
         foreach ($anys as $any) {
-            /** @var Any $any */
+            /**
+ * @var Any $any
+*/
             $ret = self::fromAny($any);
             $errors = array_merge($errors, iterator_to_array($ret->getErrors()->getIterator()));
         }
@@ -63,7 +65,7 @@ final class GoogleAdsFailures
     /**
      * Unpacks GoogleAdsFailure from the partial failure Status.
      *
-     * @param Status $status
+     * @param  Status $status
      * @return GoogleAdsFailure[]
      */
     public static function fromStatus(Status $status)

@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V23\Services;
  *
  * Service to manage recommendation subscriptions.
  */
-class RecommendationSubscriptionServiceGrpcClient extends \Grpc\BaseStub {
+class RecommendationSubscriptionServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -50,17 +52,21 @@ class RecommendationSubscriptionServiceGrpcClient extends \Grpc\BaseStub {
      *   [RecommendationSubscriptionError]()
      *   [RequestError]()
      *   [UrlFieldError]()
-     * @param \Google\Ads\GoogleAds\V23\Services\MutateRecommendationSubscriptionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\MutateRecommendationSubscriptionRequest $argument input argument
+     * @param  array                                                                      $metadata metadata
+     * @param  array                                                                      $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateRecommendationSubscriptionResponse>
      */
     public function MutateRecommendationSubscription(\Google\Ads\GoogleAds\V23\Services\MutateRecommendationSubscriptionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.RecommendationSubscriptionService/MutateRecommendationSubscription',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\MutateRecommendationSubscriptionResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.RecommendationSubscriptionService/MutateRecommendationSubscription',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\MutateRecommendationSubscriptionResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

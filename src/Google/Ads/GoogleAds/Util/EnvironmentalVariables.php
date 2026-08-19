@@ -62,7 +62,7 @@ class EnvironmentalVariables
     /**
      * Retrieves the environment variable value of a given name.
      *
-     * @param string $name the name
+     * @param  string $name the name
      * @return string|null the value if any, null otherwise
      */
     public function get(string $name): ?string
@@ -81,7 +81,7 @@ class EnvironmentalVariables
     /**
      * Retrieves the environment variables that start with a given prefix.
      *
-     * @param string|null $prefix the prefix
+     * @param  string|null $prefix the prefix
      * @return array an associative array with matching environment variable names and values
      */
     public function getStartingWith(?string $prefix): array

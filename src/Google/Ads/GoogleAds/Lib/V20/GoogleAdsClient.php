@@ -64,7 +64,7 @@ class GoogleAdsClient
             GoogleAdsFailures::init();
         }
     }
-    
+
     /**
      * Gets the Google Ads API assistant metadata.
      *

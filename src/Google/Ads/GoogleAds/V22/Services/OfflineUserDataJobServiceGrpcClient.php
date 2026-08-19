@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V22\Services;
  *
  * Service to manage offline user data jobs.
  */
-class OfflineUserDataJobServiceGrpcClient extends \Grpc\BaseStub {
+class OfflineUserDataJobServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -48,17 +50,21 @@ class OfflineUserDataJobServiceGrpcClient extends \Grpc\BaseStub {
      *   [OfflineUserDataJobError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\CreateOfflineUserDataJobRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\CreateOfflineUserDataJobRequest $argument input argument
+     * @param  array                                                              $metadata metadata
+     * @param  array                                                              $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\CreateOfflineUserDataJobResponse>
      */
     public function CreateOfflineUserDataJob(\Google\Ads\GoogleAds\V22\Services\CreateOfflineUserDataJobRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.OfflineUserDataJobService/CreateOfflineUserDataJob',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\CreateOfflineUserDataJobResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.OfflineUserDataJobService/CreateOfflineUserDataJob',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\CreateOfflineUserDataJobResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -75,17 +81,21 @@ class OfflineUserDataJobServiceGrpcClient extends \Grpc\BaseStub {
      *   [OfflineUserDataJobError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\AddOfflineUserDataJobOperationsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\AddOfflineUserDataJobOperationsRequest $argument input argument
+     * @param  array                                                                     $metadata metadata
+     * @param  array                                                                     $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\AddOfflineUserDataJobOperationsResponse>
      */
     public function AddOfflineUserDataJobOperations(\Google\Ads\GoogleAds\V22\Services\AddOfflineUserDataJobOperationsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\AddOfflineUserDataJobOperationsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\AddOfflineUserDataJobOperationsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -103,17 +113,21 @@ class OfflineUserDataJobServiceGrpcClient extends \Grpc\BaseStub {
      *   [OfflineUserDataJobError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\RunOfflineUserDataJobRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\RunOfflineUserDataJobRequest $argument input argument
+     * @param  array                                                           $metadata metadata
+     * @param  array                                                           $options  call options
      * @return \Grpc\UnaryCall<\Google\LongRunning\Operation>
      */
     public function RunOfflineUserDataJob(\Google\Ads\GoogleAds\V22\Services\RunOfflineUserDataJobRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.OfflineUserDataJobService/RunOfflineUserDataJob',
-        $argument,
-        ['\Google\LongRunning\Operation', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.OfflineUserDataJobService/RunOfflineUserDataJob',
+            $argument,
+            ['\Google\LongRunning\Operation', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

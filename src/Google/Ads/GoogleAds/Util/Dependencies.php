@@ -27,7 +27,7 @@ class Dependencies
      * Gets the grpc version installed by Composer from the specified file (default to
      *  `composer.lock`. Returns null if that information cannot be found by any causes.
      *
-     * @param string $fileName the file name to extract the grpc version from
+     * @param  string $fileName the file name to extract the grpc version from
      * @return null|string the grpc version installed by Composer
      */
     public function getGrpcComposerVersion(string $fileName = 'composer.lock'): ?string

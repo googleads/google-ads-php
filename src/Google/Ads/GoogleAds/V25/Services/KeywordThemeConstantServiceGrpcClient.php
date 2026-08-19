@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to fetch Smart Campaign keyword themes.
  */
-class KeywordThemeConstantServiceGrpcClient extends \Grpc\BaseStub {
+class KeywordThemeConstantServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -44,17 +46,21 @@ class KeywordThemeConstantServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\SuggestKeywordThemeConstantsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\SuggestKeywordThemeConstantsRequest $argument input argument
+     * @param  array                                                                  $metadata metadata
+     * @param  array                                                                  $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\SuggestKeywordThemeConstantsResponse>
      */
     public function SuggestKeywordThemeConstants(\Google\Ads\GoogleAds\V25\Services\SuggestKeywordThemeConstantsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.KeywordThemeConstantService/SuggestKeywordThemeConstants',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\SuggestKeywordThemeConstantsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.KeywordThemeConstantService/SuggestKeywordThemeConstants',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\SuggestKeywordThemeConstantsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

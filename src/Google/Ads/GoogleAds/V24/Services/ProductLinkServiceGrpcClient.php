@@ -22,14 +22,16 @@ namespace Google\Ads\GoogleAds\V24\Services;
  * This service allows management of links between  a Google
  * Ads customer and another product.
  */
-class ProductLinkServiceGrpcClient extends \Grpc\BaseStub {
+class ProductLinkServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -46,17 +48,21 @@ class ProductLinkServiceGrpcClient extends \Grpc\BaseStub {
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\CreateProductLinkRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\CreateProductLinkRequest $argument input argument
+     * @param  array                                                       $metadata metadata
+     * @param  array                                                       $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\CreateProductLinkResponse>
      */
     public function CreateProductLink(\Google\Ads\GoogleAds\V24\Services\CreateProductLinkRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.ProductLinkService/CreateProductLink',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\CreateProductLinkResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.ProductLinkService/CreateProductLink',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\CreateProductLinkResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -71,17 +77,21 @@ class ProductLinkServiceGrpcClient extends \Grpc\BaseStub {
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V24\Services\RemoveProductLinkRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\RemoveProductLinkRequest $argument input argument
+     * @param  array                                                       $metadata metadata
+     * @param  array                                                       $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\RemoveProductLinkResponse>
      */
     public function RemoveProductLink(\Google\Ads\GoogleAds\V24\Services\RemoveProductLinkRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.ProductLinkService/RemoveProductLink',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\RemoveProductLinkResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.ProductLinkService/RemoveProductLink',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\RemoveProductLinkResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

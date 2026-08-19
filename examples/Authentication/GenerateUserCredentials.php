@@ -113,8 +113,7 @@ class GenerateUserCredentials
                 // so the parse_url method can function correctly, since it cannot detect the URI
                 // without '/' at the end, which is the case for the value of getRedirectUri().
                 if (
-                    $request->getUri()->getPath()
-                    !== parse_url($oauth2->getRedirectUri() . '/', PHP_URL_PATH)
+                    $request->getUri()->getPath() !== parse_url($oauth2->getRedirectUri() . '/', PHP_URL_PATH)
                 ) {
                     return new Response(
                         404,

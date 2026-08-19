@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage customer negative criteria.
  */
-class CustomerNegativeCriterionServiceGrpcClient extends \Grpc\BaseStub {
+class CustomerNegativeCriterionServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -48,17 +50,21 @@ class CustomerNegativeCriterionServiceGrpcClient extends \Grpc\BaseStub {
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\MutateCustomerNegativeCriteriaRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\MutateCustomerNegativeCriteriaRequest $argument input argument
+     * @param  array                                                                    $metadata metadata
+     * @param  array                                                                    $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateCustomerNegativeCriteriaResponse>
      */
     public function MutateCustomerNegativeCriteria(\Google\Ads\GoogleAds\V25\Services\MutateCustomerNegativeCriteriaRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.CustomerNegativeCriterionService/MutateCustomerNegativeCriteria',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\MutateCustomerNegativeCriteriaResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.CustomerNegativeCriterionService/MutateCustomerNegativeCriteria',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\MutateCustomerNegativeCriteriaResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

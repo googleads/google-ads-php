@@ -59,10 +59,12 @@ class CreateExperiment
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::BASE_CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -88,7 +90,9 @@ class CreateExperiment
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -111,8 +115,8 @@ class CreateExperiment
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param int $campaignId the campaign ID
+     * @param int             $customerId      the client customer ID
+     * @param int             $campaignId      the campaign ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -139,8 +143,8 @@ class CreateExperiment
     /**
      * Creates an experiment resource.
      *
-     * @param ExperimentServiceClient $experimentServiceClient the experiment service client
-     * @param int $customerId the customer ID
+     * @param  ExperimentServiceClient $experimentServiceClient the experiment service client
+     * @param  int $customerId the customer ID
      * @return string the created experiment's resource name
      */
     // [START create_experiment_1]
@@ -149,13 +153,15 @@ class CreateExperiment
         int $customerId
     ): string {
         // Creates an experiment and its operation.
-        $experiment = new Experiment([
+        $experiment = new Experiment(
+            [
             // Name must be unique.
             'name' => 'Example Experiment #' . Helper::getPrintableDatetime(),
             'type' => ExperimentType::SEARCH_CUSTOM,
             'suffix' => '[experiment]',
             'status' => ExperimentStatus::SETUP
-        ]);
+            ]
+        );
         $experimentOperation = new ExperimentOperation(['create' => $experiment]);
 
         // Issues a request to create the experiment.
@@ -173,10 +179,10 @@ class CreateExperiment
      * Creates experiment arms and returns the treatment arm resource name, which will be used in
      * the next step.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $campaignId the campaign ID
-     * @param string $experimentResourceName the experiment's resource name
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  int $campaignId the campaign ID
+     * @param  string $experimentResourceName the experiment's resource name
      * @return string the treatment arm's resource name
      */
     // [START create_experiment_2]
@@ -187,16 +193,19 @@ class CreateExperiment
         string $experimentResourceName
     ): string {
         $operations = [];
-        $experimentArm1 = new ExperimentArm([
+        $experimentArm1 = new ExperimentArm(
+            [
             // The "control" arm references an already-existing campaign.
             'control' => true,
             'campaigns' => [ResourceNames::forCampaign($customerId, $campaignId)],
             'experiment' => $experimentResourceName,
             'name' => 'control arm',
             'traffic_split' => 40
-        ]);
+            ]
+        );
         $operations[] = new ExperimentArmOperation(['create' => $experimentArm1]);
-        $experimentArm2 = new ExperimentArm([
+        $experimentArm2 = new ExperimentArm(
+            [
             // The non-"control" arm, also called a "treatment" arm, will automatically
             // generate draft campaigns that you can modify before starting the
             // experiment.
@@ -204,7 +213,8 @@ class CreateExperiment
             'experiment' => $experimentResourceName,
             'name' => 'experiment arm',
             'traffic_split' => 60
-        ]);
+            ]
+        );
         $operations[] = new ExperimentArmOperation(['create' => $experimentArm2]);
 
         // Issues a request to create the experiment arms.
@@ -232,9 +242,9 @@ class CreateExperiment
      * Modifies the draft campaign to simulate the experiment where you're testing changing
      * attributes of the campaign.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $draftCampaignResourceName the draft campaign's resource name
+     * @param GoogleAdsClient $googleAdsClient           the Google Ads API client
+     * @param int             $customerId                the customer ID
+     * @param string          $draftCampaignResourceName the draft campaign's resource name
      */
     private static function modifyDraftCampaign(
         GoogleAdsClient $googleAdsClient,
@@ -244,10 +254,12 @@ class CreateExperiment
         // You can change anything you like about the campaign. These are the changes you're testing
         // by doing this experiment. Here we just change the name for illustrative purposes, but
         // generally you may want to change more meaningful parts of the campaign.
-        $updatedCampaign = new Campaign([
+        $updatedCampaign = new Campaign(
+            [
             'resource_name' => $draftCampaignResourceName,
             'name' => 'Modified Campaign Name ' . Helper::getShortPrintableDatetime()
-        ]);
+            ]
+        );
         $campaignOperation = new CampaignOperation();
         $campaignOperation->setUpdate($updatedCampaign);
         $campaignOperation->setUpdateMask(FieldMasks::allSetFieldsOf($updatedCampaign));

@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V22\Services;
  *
  * Service to fetch data and metrics across resources.
  */
-class GoogleAdsServiceGrpcClient extends \Grpc\BaseStub {
+class GoogleAdsServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -48,17 +50,21 @@ class GoogleAdsServiceGrpcClient extends \Grpc\BaseStub {
      *   [QueryError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest $argument input argument
+     * @param  array                                                     $metadata metadata
+     * @param  array                                                     $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsResponse>
      */
     public function Search(\Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.GoogleAdsService/Search',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.GoogleAdsService/Search',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -75,17 +81,21 @@ class GoogleAdsServiceGrpcClient extends \Grpc\BaseStub {
      *   [QueryError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsStreamRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsStreamRequest $argument input argument
+     * @param  array                                                           $metadata metadata
+     * @param  array                                                           $options  call options
      * @return \Grpc\ServerStreamingCall
      */
     public function SearchStream(\Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsStreamRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_serverStreamRequest('/google.ads.googleads.v22.services.GoogleAdsService/SearchStream',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsStreamResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_serverStreamRequest(
+            '/google.ads.googleads.v22.services.GoogleAdsService/SearchStream',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\SearchGoogleAdsStreamResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -201,17 +211,21 @@ class GoogleAdsServiceGrpcClient extends \Grpc\BaseStub {
      *   [UrlFieldError]()
      *   [UserListError]()
      *   [YoutubeVideoRegistrationError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsRequest $argument input argument
+     * @param  array                                                     $metadata metadata
+     * @param  array                                                     $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsResponse>
      */
     public function Mutate(\Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.GoogleAdsService/Mutate',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.GoogleAdsService/Mutate',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\MutateGoogleAdsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

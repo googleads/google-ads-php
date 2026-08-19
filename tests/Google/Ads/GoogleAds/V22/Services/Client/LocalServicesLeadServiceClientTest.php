@@ -42,19 +42,25 @@ use stdClass;
  */
 class LocalServicesLeadServiceClientTest extends GeneratedTest
 {
-    /** @return TransportInterface */
+    /**
+     * @return TransportInterface 
+     */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /** @return CredentialsWrapper */
+    /**
+     * @return CredentialsWrapper 
+     */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /** @return LocalServicesLeadServiceClient */
+    /**
+     * @return LocalServicesLeadServiceClient 
+     */
     private function createClient(array $options = [])
     {
         $options += [
@@ -63,13 +69,17 @@ class LocalServicesLeadServiceClientTest extends GeneratedTest
         return new LocalServicesLeadServiceClient($options);
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function appendLeadConversationTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new AppendLeadConversationResponse();
@@ -94,23 +104,29 @@ class LocalServicesLeadServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function appendLeadConversationExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -131,13 +147,17 @@ class LocalServicesLeadServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function provideLeadFeedbackTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new ProvideLeadFeedbackResponse();
@@ -162,23 +182,29 @@ class LocalServicesLeadServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function provideLeadFeedbackExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
+        $expectedExceptionMessage  = json_encode(
+            [
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-        ], JSON_PRETTY_PRINT);
+            ], JSON_PRETTY_PRINT
+        );
         $transport->addResponse(null, $status);
         // Mock request
         $formattedResourceName = $gapicClient->localServicesLeadName('[CUSTOMER_ID]', '[LOCAL_SERVICES_LEAD_ID]');
@@ -199,13 +225,17 @@ class LocalServicesLeadServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /** @test */
+    /**
+     * @test 
+     */
     public function appendLeadConversationAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient([
+        $gapicClient = $this->createClient(
+            [
             'transport' => $transport,
-        ]);
+            ]
+        );
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new AppendLeadConversationResponse();

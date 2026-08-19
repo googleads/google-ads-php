@@ -117,8 +117,8 @@ final class ResourceNames
     /**
      * Generates a resource name of accessible bidding strategy type.
      *
-     * @param string $customerId
-     * @param string $biddingStrategyId
+     * @param  string $customerId
+     * @param  string $biddingStrategyId
      * @return string the accessible bidding strategy resource name
      */
     public static function forAccessibleBiddingStrategy(
@@ -134,8 +134,8 @@ final class ResourceNames
     /**
      * Generates a resource name of account budget type.
      *
-     * @param string $customerId
-     * @param string $accountBudgetId
+     * @param  string $customerId
+     * @param  string $accountBudgetId
      * @return string the account budget resource name
      */
     public static function forAccountBudget(
@@ -151,8 +151,8 @@ final class ResourceNames
     /**
      * Generates a resource name of account budget proposal type.
      *
-     * @param string $customerId
-     * @param string $accountBudgetProposalId
+     * @param  string $customerId
+     * @param  string $accountBudgetProposalId
      * @return string the account budget proposal resource name
      */
     public static function forAccountBudgetProposal(
@@ -168,8 +168,8 @@ final class ResourceNames
     /**
      * Generates a resource name of account link type.
      *
-     * @param string $customerId
-     * @param string $accountLinkId
+     * @param  string $customerId
+     * @param  string $accountLinkId
      * @return string the account link resource name
      */
     public static function forAccountLink(
@@ -185,8 +185,8 @@ final class ResourceNames
     /**
      * Generates a resource name of ad type.
      *
-     * @param string $customerId
-     * @param string $adId
+     * @param  string $customerId
+     * @param  string $adId
      * @return string the ad resource name
      */
     public static function forAd(
@@ -202,8 +202,8 @@ final class ResourceNames
     /**
      * Generates a resource name of ad group type.
      *
-     * @param string $customerId
-     * @param string $adGroupId
+     * @param  string $customerId
+     * @param  string $adGroupId
      * @return string the ad group resource name
      */
     public static function forAdGroup(
@@ -219,9 +219,9 @@ final class ResourceNames
     /**
      * Generates a resource name of ad group ad type.
      *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $adId
+     * @param  string $customerId
+     * @param  string $adGroupId
+     * @param  string $adId
      * @return string the ad group ad resource name
      */
     public static function forAdGroupAd(
@@ -239,10 +239,10 @@ final class ResourceNames
     /**
      * Generates a resource name of ad group ad label type.
      *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $adId
-     * @param string $labelId
+     * @param  string $customerId
+     * @param  string $adGroupId
+     * @param  string $adId
+     * @param  string $labelId
      * @return string the ad group ad label resource name
      */
     public static function forAdGroupAdLabel(
@@ -262,10 +262,10 @@ final class ResourceNames
     /**
      * Generates a resource name of ad group asset type.
      *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $assetId
-     * @param string $fieldType
+     * @param  string $customerId
+     * @param  string $adGroupId
+     * @param  string $assetId
+     * @param  string $fieldType
      * @return string the ad group asset resource name
      */
     public static function forAdGroupAsset(
@@ -285,9 +285,9 @@ final class ResourceNames
     /**
      * Generates a resource name of ad group asset set type.
      *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $assetSetId
+     * @param  string $customerId
+     * @param  string $adGroupId
+     * @param  string $assetSetId
      * @return string the ad group asset set resource name
      */
     public static function forAdGroupAssetSet(
@@ -305,9 +305,9 @@ final class ResourceNames
     /**
      * Generates a resource name of ad group bid modifier type.
      *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
+     * @param  string $customerId
+     * @param  string $adGroupId
+     * @param  string $criterionId
      * @return string the ad group bid modifier resource name
      */
     public static function forAdGroupBidModifier(
@@ -325,9 +325,9 @@ final class ResourceNames
     /**
      * Generates a resource name of ad group criterion type.
      *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
+     * @param  string $customerId
+     * @param  string $adGroupId
+     * @param  string $criterionId
      * @return string the ad group criterion resource name
      */
     public static function forAdGroupCriterion(
@@ -345,10 +345,10 @@ final class ResourceNames
     /**
      * Generates a resource name of ad group criterion customizer type.
      *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @param string $customizerAttributeId
+     * @param  string $customerId
+     * @param  string $adGroupId
+     * @param  string $criterionId
+     * @param  string $customizerAttributeId
      * @return string the ad group criterion customizer resource name
      */
     public static function forAdGroupCriterionCustomizer(
@@ -368,10 +368,10 @@ final class ResourceNames
     /**
      * Generates a resource name of ad group criterion label type.
      *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @param string $labelId
+     * @param  string $customerId
+     * @param  string $adGroupId
+     * @param  string $criterionId
+     * @param  string $labelId
      * @return string the ad group criterion label resource name
      */
     public static function forAdGroupCriterionLabel(
@@ -391,9 +391,9 @@ final class ResourceNames
     /**
      * Generates a resource name of ad group customizer type.
      *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $customizerAttributeId
+     * @param  string $customerId
+     * @param  string $adGroupId
+     * @param  string $customizerAttributeId
      * @return string the ad group customizer resource name
      */
     public static function forAdGroupCustomizer(
@@ -411,9 +411,9 @@ final class ResourceNames
     /**
      * Generates a resource name of ad group label type.
      *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $labelId
+     * @param  string $customerId
+     * @param  string $adGroupId
+     * @param  string $labelId
      * @return string the ad group label resource name
      */
     public static function forAdGroupLabel(
@@ -431,10 +431,10 @@ final class ResourceNames
     /**
      * Generates a resource name of ad parameter type.
      *
-     * @param string $customerId
-     * @param string $adGroupId
-     * @param string $criterionId
-     * @param string $parameterIndex
+     * @param  string $customerId
+     * @param  string $adGroupId
+     * @param  string $criterionId
+     * @param  string $parameterIndex
      * @return string the ad parameter resource name
      */
     public static function forAdParameter(
@@ -454,8 +454,8 @@ final class ResourceNames
     /**
      * Generates a resource name of asset type.
      *
-     * @param string $customerId
-     * @param string $assetId
+     * @param  string $customerId
+     * @param  string $assetId
      * @return string the asset resource name
      */
     public static function forAsset(
@@ -471,8 +471,8 @@ final class ResourceNames
     /**
      * Generates a resource name of asset group type.
      *
-     * @param string $customerId
-     * @param string $assetGroupId
+     * @param  string $customerId
+     * @param  string $assetGroupId
      * @return string the asset group resource name
      */
     public static function forAssetGroup(
@@ -488,10 +488,10 @@ final class ResourceNames
     /**
      * Generates a resource name of asset group asset type.
      *
-     * @param string $customerId
-     * @param string $assetGroupId
-     * @param string $assetId
-     * @param string $fieldType
+     * @param  string $customerId
+     * @param  string $assetGroupId
+     * @param  string $assetId
+     * @param  string $fieldType
      * @return string the asset group asset resource name
      */
     public static function forAssetGroupAsset(
@@ -511,9 +511,9 @@ final class ResourceNames
     /**
      * Generates a resource name of asset group listing group filter type.
      *
-     * @param string $customerId
-     * @param string $assetGroupId
-     * @param string $listingGroupFilterId
+     * @param  string $customerId
+     * @param  string $assetGroupId
+     * @param  string $listingGroupFilterId
      * @return string the asset group listing group filter resource name
      */
     public static function forAssetGroupListingGroupFilter(
@@ -531,9 +531,9 @@ final class ResourceNames
     /**
      * Generates a resource name of asset group signal type.
      *
-     * @param string $customerId
-     * @param string $assetGroupId
-     * @param string $criterionId
+     * @param  string $customerId
+     * @param  string $assetGroupId
+     * @param  string $criterionId
      * @return string the asset group signal resource name
      */
     public static function forAssetGroupSignal(
@@ -551,8 +551,8 @@ final class ResourceNames
     /**
      * Generates a resource name of asset set type.
      *
-     * @param string $customerId
-     * @param string $assetSetId
+     * @param  string $customerId
+     * @param  string $assetSetId
      * @return string the asset set resource name
      */
     public static function forAssetSet(
@@ -568,9 +568,9 @@ final class ResourceNames
     /**
      * Generates a resource name of asset set asset type.
      *
-     * @param string $customerId
-     * @param string $assetSetId
-     * @param string $assetId
+     * @param  string $customerId
+     * @param  string $assetSetId
+     * @param  string $assetId
      * @return string the asset set asset resource name
      */
     public static function forAssetSetAsset(
@@ -588,8 +588,8 @@ final class ResourceNames
     /**
      * Generates a resource name of audience type.
      *
-     * @param string $customerId
-     * @param string $audienceId
+     * @param  string $customerId
+     * @param  string $audienceId
      * @return string the audience resource name
      */
     public static function forAudience(
@@ -605,8 +605,8 @@ final class ResourceNames
     /**
      * Generates a resource name of batch job type.
      *
-     * @param string $customerId
-     * @param string $batchJobId
+     * @param  string $customerId
+     * @param  string $batchJobId
      * @return string the batch job resource name
      */
     public static function forBatchJob(
@@ -622,8 +622,8 @@ final class ResourceNames
     /**
      * Generates a resource name of bidding data exclusion type.
      *
-     * @param string $customerId
-     * @param string $seasonalityEventId
+     * @param  string $customerId
+     * @param  string $seasonalityEventId
      * @return string the bidding data exclusion resource name
      */
     public static function forBiddingDataExclusion(
@@ -639,8 +639,8 @@ final class ResourceNames
     /**
      * Generates a resource name of bidding seasonality adjustment type.
      *
-     * @param string $customerId
-     * @param string $seasonalityEventId
+     * @param  string $customerId
+     * @param  string $seasonalityEventId
      * @return string the bidding seasonality adjustment resource name
      */
     public static function forBiddingSeasonalityAdjustment(
@@ -656,8 +656,8 @@ final class ResourceNames
     /**
      * Generates a resource name of bidding strategy type.
      *
-     * @param string $customerId
-     * @param string $biddingStrategyId
+     * @param  string $customerId
+     * @param  string $biddingStrategyId
      * @return string the bidding strategy resource name
      */
     public static function forBiddingStrategy(
@@ -673,8 +673,8 @@ final class ResourceNames
     /**
      * Generates a resource name of billing setup type.
      *
-     * @param string $customerId
-     * @param string $billingSetupId
+     * @param  string $customerId
+     * @param  string $billingSetupId
      * @return string the billing setup resource name
      */
     public static function forBillingSetup(
@@ -690,8 +690,8 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign type.
      *
-     * @param string $customerId
-     * @param string $campaignId
+     * @param  string $customerId
+     * @param  string $campaignId
      * @return string the campaign resource name
      */
     public static function forCampaign(
@@ -707,10 +707,10 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign asset type.
      *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $assetId
-     * @param string $fieldType
+     * @param  string $customerId
+     * @param  string $campaignId
+     * @param  string $assetId
+     * @param  string $fieldType
      * @return string the campaign asset resource name
      */
     public static function forCampaignAsset(
@@ -730,9 +730,9 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign asset set type.
      *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $assetSetId
+     * @param  string $customerId
+     * @param  string $campaignId
+     * @param  string $assetSetId
      * @return string the campaign asset set resource name
      */
     public static function forCampaignAssetSet(
@@ -750,9 +750,9 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign bid modifier type.
      *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $criterionId
+     * @param  string $customerId
+     * @param  string $campaignId
+     * @param  string $criterionId
      * @return string the campaign bid modifier resource name
      */
     public static function forCampaignBidModifier(
@@ -770,8 +770,8 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign budget type.
      *
-     * @param string $customerId
-     * @param string $campaignBudgetId
+     * @param  string $customerId
+     * @param  string $campaignBudgetId
      * @return string the campaign budget resource name
      */
     public static function forCampaignBudget(
@@ -787,10 +787,10 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign conversion goal type.
      *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $category
-     * @param string $source
+     * @param  string $customerId
+     * @param  string $campaignId
+     * @param  string $category
+     * @param  string $source
      * @return string the campaign conversion goal resource name
      */
     public static function forCampaignConversionGoal(
@@ -810,9 +810,9 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign criterion type.
      *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $criterionId
+     * @param  string $customerId
+     * @param  string $campaignId
+     * @param  string $criterionId
      * @return string the campaign criterion resource name
      */
     public static function forCampaignCriterion(
@@ -830,9 +830,9 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign customizer type.
      *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $customizerAttributeId
+     * @param  string $customerId
+     * @param  string $campaignId
+     * @param  string $customizerAttributeId
      * @return string the campaign customizer resource name
      */
     public static function forCampaignCustomizer(
@@ -850,9 +850,9 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign draft type.
      *
-     * @param string $customerId
-     * @param string $baseCampaignId
-     * @param string $draftId
+     * @param  string $customerId
+     * @param  string $baseCampaignId
+     * @param  string $draftId
      * @return string the campaign draft resource name
      */
     public static function forCampaignDraft(
@@ -870,8 +870,8 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign group type.
      *
-     * @param string $customerId
-     * @param string $campaignGroupId
+     * @param  string $customerId
+     * @param  string $campaignGroupId
      * @return string the campaign group resource name
      */
     public static function forCampaignGroup(
@@ -887,9 +887,9 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign label type.
      *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $labelId
+     * @param  string $customerId
+     * @param  string $campaignId
+     * @param  string $labelId
      * @return string the campaign label resource name
      */
     public static function forCampaignLabel(
@@ -907,8 +907,8 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign lifecycle goal type.
      *
-     * @param string $customerId
-     * @param string $campaignId
+     * @param  string $customerId
+     * @param  string $campaignId
      * @return string the campaign lifecycle goal resource name
      */
     public static function forCampaignLifecycleGoal(
@@ -924,9 +924,9 @@ final class ResourceNames
     /**
      * Generates a resource name of campaign shared set type.
      *
-     * @param string $customerId
-     * @param string $campaignId
-     * @param string $sharedSetId
+     * @param  string $customerId
+     * @param  string $campaignId
+     * @param  string $sharedSetId
      * @return string the campaign shared set resource name
      */
     public static function forCampaignSharedSet(
@@ -944,7 +944,7 @@ final class ResourceNames
     /**
      * Generates a resource name of carrier constant type.
      *
-     * @param string $criterionId
+     * @param  string $criterionId
      * @return string the carrier constant resource name
      */
     public static function forCarrierConstant(
@@ -958,8 +958,8 @@ final class ResourceNames
     /**
      * Generates a resource name of combined audience type.
      *
-     * @param string $customerId
-     * @param string $combinedAudienceId
+     * @param  string $customerId
+     * @param  string $combinedAudienceId
      * @return string the combined audience resource name
      */
     public static function forCombinedAudience(
@@ -975,8 +975,8 @@ final class ResourceNames
     /**
      * Generates a resource name of conversion action type.
      *
-     * @param string $customerId
-     * @param string $conversionActionId
+     * @param  string $customerId
+     * @param  string $conversionActionId
      * @return string the conversion action resource name
      */
     public static function forConversionAction(
@@ -992,8 +992,8 @@ final class ResourceNames
     /**
      * Generates a resource name of conversion custom variable type.
      *
-     * @param string $customerId
-     * @param string $conversionCustomVariableId
+     * @param  string $customerId
+     * @param  string $conversionCustomVariableId
      * @return string the conversion custom variable resource name
      */
     public static function forConversionCustomVariable(
@@ -1009,8 +1009,8 @@ final class ResourceNames
     /**
      * Generates a resource name of conversion goal campaign config type.
      *
-     * @param string $customerId
-     * @param string $campaignId
+     * @param  string $customerId
+     * @param  string $campaignId
      * @return string the conversion goal campaign config resource name
      */
     public static function forConversionGoalCampaignConfig(
@@ -1026,8 +1026,8 @@ final class ResourceNames
     /**
      * Generates a resource name of conversion value rule type.
      *
-     * @param string $customerId
-     * @param string $conversionValueRuleId
+     * @param  string $customerId
+     * @param  string $conversionValueRuleId
      * @return string the conversion value rule resource name
      */
     public static function forConversionValueRule(
@@ -1043,8 +1043,8 @@ final class ResourceNames
     /**
      * Generates a resource name of conversion value rule set type.
      *
-     * @param string $customerId
-     * @param string $conversionValueRuleSetId
+     * @param  string $customerId
+     * @param  string $conversionValueRuleSetId
      * @return string the conversion value rule set resource name
      */
     public static function forConversionValueRuleSet(
@@ -1060,8 +1060,8 @@ final class ResourceNames
     /**
      * Generates a resource name of custom audience type.
      *
-     * @param string $customerId
-     * @param string $customAudienceId
+     * @param  string $customerId
+     * @param  string $customAudienceId
      * @return string the custom audience resource name
      */
     public static function forCustomAudience(
@@ -1077,8 +1077,8 @@ final class ResourceNames
     /**
      * Generates a resource name of custom conversion goal type.
      *
-     * @param string $customerId
-     * @param string $goalId
+     * @param  string $customerId
+     * @param  string $goalId
      * @return string the custom conversion goal resource name
      */
     public static function forCustomConversionGoal(
@@ -1094,7 +1094,7 @@ final class ResourceNames
     /**
      * Generates a resource name of customer type.
      *
-     * @param string $customerId
+     * @param  string $customerId
      * @return string the customer resource name
      */
     public static function forCustomer(
@@ -1108,9 +1108,9 @@ final class ResourceNames
     /**
      * Generates a resource name of customer asset type.
      *
-     * @param string $customerId
-     * @param string $assetId
-     * @param string $fieldType
+     * @param  string $customerId
+     * @param  string $assetId
+     * @param  string $fieldType
      * @return string the customer asset resource name
      */
     public static function forCustomerAsset(
@@ -1128,8 +1128,8 @@ final class ResourceNames
     /**
      * Generates a resource name of customer asset set type.
      *
-     * @param string $customerId
-     * @param string $assetSetId
+     * @param  string $customerId
+     * @param  string $assetSetId
      * @return string the customer asset set resource name
      */
     public static function forCustomerAssetSet(
@@ -1145,9 +1145,9 @@ final class ResourceNames
     /**
      * Generates a resource name of customer client link type.
      *
-     * @param string $customerId
-     * @param string $clientCustomerId
-     * @param string $managerLinkId
+     * @param  string $customerId
+     * @param  string $clientCustomerId
+     * @param  string $managerLinkId
      * @return string the customer client link resource name
      */
     public static function forCustomerClientLink(
@@ -1165,9 +1165,9 @@ final class ResourceNames
     /**
      * Generates a resource name of customer conversion goal type.
      *
-     * @param string $customerId
-     * @param string $category
-     * @param string $source
+     * @param  string $customerId
+     * @param  string $category
+     * @param  string $source
      * @return string the customer conversion goal resource name
      */
     public static function forCustomerConversionGoal(
@@ -1185,8 +1185,8 @@ final class ResourceNames
     /**
      * Generates a resource name of customer customizer type.
      *
-     * @param string $customerId
-     * @param string $customizerAttributeId
+     * @param  string $customerId
+     * @param  string $customizerAttributeId
      * @return string the customer customizer resource name
      */
     public static function forCustomerCustomizer(
@@ -1202,8 +1202,8 @@ final class ResourceNames
     /**
      * Generates a resource name of customer label type.
      *
-     * @param string $customerId
-     * @param string $labelId
+     * @param  string $customerId
+     * @param  string $labelId
      * @return string the customer label resource name
      */
     public static function forCustomerLabel(
@@ -1219,7 +1219,7 @@ final class ResourceNames
     /**
      * Generates a resource name of customer lifecycle goal type.
      *
-     * @param string $customerId
+     * @param  string $customerId
      * @return string the customer lifecycle goal resource name
      */
     public static function forCustomerLifecycleGoal(
@@ -1233,9 +1233,9 @@ final class ResourceNames
     /**
      * Generates a resource name of customer manager link type.
      *
-     * @param string $customerId
-     * @param string $managerCustomerId
-     * @param string $managerLinkId
+     * @param  string $customerId
+     * @param  string $managerCustomerId
+     * @param  string $managerLinkId
      * @return string the customer manager link resource name
      */
     public static function forCustomerManagerLink(
@@ -1253,8 +1253,8 @@ final class ResourceNames
     /**
      * Generates a resource name of customer negative criterion type.
      *
-     * @param string $customerId
-     * @param string $criterionId
+     * @param  string $customerId
+     * @param  string $criterionId
      * @return string the customer negative criterion resource name
      */
     public static function forCustomerNegativeCriterion(
@@ -1270,8 +1270,8 @@ final class ResourceNames
     /**
      * Generates a resource name of customer sk ad network conversion value schema type.
      *
-     * @param string $customerId
-     * @param string $accountLinkId
+     * @param  string $customerId
+     * @param  string $accountLinkId
      * @return string the customer sk ad network conversion value schema resource name
      */
     public static function forCustomerSkAdNetworkConversionValueSchema(
@@ -1287,8 +1287,8 @@ final class ResourceNames
     /**
      * Generates a resource name of customer user access type.
      *
-     * @param string $customerId
-     * @param string $userId
+     * @param  string $customerId
+     * @param  string $userId
      * @return string the customer user access resource name
      */
     public static function forCustomerUserAccess(
@@ -1304,8 +1304,8 @@ final class ResourceNames
     /**
      * Generates a resource name of customer user access invitation type.
      *
-     * @param string $customerId
-     * @param string $invitationId
+     * @param  string $customerId
+     * @param  string $invitationId
      * @return string the customer user access invitation resource name
      */
     public static function forCustomerUserAccessInvitation(
@@ -1321,8 +1321,8 @@ final class ResourceNames
     /**
      * Generates a resource name of custom interest type.
      *
-     * @param string $customerId
-     * @param string $customInterestId
+     * @param  string $customerId
+     * @param  string $customInterestId
      * @return string the custom interest resource name
      */
     public static function forCustomInterest(
@@ -1338,8 +1338,8 @@ final class ResourceNames
     /**
      * Generates a resource name of customizer attribute type.
      *
-     * @param string $customerId
-     * @param string $customizerAttributeId
+     * @param  string $customerId
+     * @param  string $customizerAttributeId
      * @return string the customizer attribute resource name
      */
     public static function forCustomizerAttribute(
@@ -1355,9 +1355,9 @@ final class ResourceNames
     /**
      * Generates a resource name of data link type.
      *
-     * @param string $customerId
-     * @param string $productLinkId
-     * @param string $dataLinkId
+     * @param  string $customerId
+     * @param  string $productLinkId
+     * @param  string $dataLinkId
      * @return string the data link resource name
      */
     public static function forDataLink(
@@ -1375,8 +1375,8 @@ final class ResourceNames
     /**
      * Generates a resource name of detailed demographic type.
      *
-     * @param string $customerId
-     * @param string $detailedDemographicId
+     * @param  string $customerId
+     * @param  string $detailedDemographicId
      * @return string the detailed demographic resource name
      */
     public static function forDetailedDemographic(
@@ -1392,8 +1392,8 @@ final class ResourceNames
     /**
      * Generates a resource name of experiment type.
      *
-     * @param string $customerId
-     * @param string $trialId
+     * @param  string $customerId
+     * @param  string $trialId
      * @return string the experiment resource name
      */
     public static function forExperiment(
@@ -1409,9 +1409,9 @@ final class ResourceNames
     /**
      * Generates a resource name of experiment arm type.
      *
-     * @param string $customerId
-     * @param string $trialId
-     * @param string $trialArmId
+     * @param  string $customerId
+     * @param  string $trialId
+     * @param  string $trialArmId
      * @return string the experiment arm resource name
      */
     public static function forExperimentArm(
@@ -1429,7 +1429,7 @@ final class ResourceNames
     /**
      * Generates a resource name of geo target constant type.
      *
-     * @param string $criterionId
+     * @param  string $criterionId
      * @return string the geo target constant resource name
      */
     public static function forGeoTargetConstant(
@@ -1443,7 +1443,7 @@ final class ResourceNames
     /**
      * Generates a resource name of google ads field type.
      *
-     * @param string $googleAdsField
+     * @param  string $googleAdsField
      * @return string the google ads field resource name
      */
     public static function forGoogleAdsField(
@@ -1457,8 +1457,8 @@ final class ResourceNames
     /**
      * Generates a resource name of keyword plan type.
      *
-     * @param string $customerId
-     * @param string $keywordPlanId
+     * @param  string $customerId
+     * @param  string $keywordPlanId
      * @return string the keyword plan resource name
      */
     public static function forKeywordPlan(
@@ -1474,8 +1474,8 @@ final class ResourceNames
     /**
      * Generates a resource name of keyword plan ad group type.
      *
-     * @param string $customerId
-     * @param string $keywordPlanAdGroupId
+     * @param  string $customerId
+     * @param  string $keywordPlanAdGroupId
      * @return string the keyword plan ad group resource name
      */
     public static function forKeywordPlanAdGroup(
@@ -1491,8 +1491,8 @@ final class ResourceNames
     /**
      * Generates a resource name of keyword plan ad group keyword type.
      *
-     * @param string $customerId
-     * @param string $keywordPlanAdGroupKeywordId
+     * @param  string $customerId
+     * @param  string $keywordPlanAdGroupKeywordId
      * @return string the keyword plan ad group keyword resource name
      */
     public static function forKeywordPlanAdGroupKeyword(
@@ -1508,8 +1508,8 @@ final class ResourceNames
     /**
      * Generates a resource name of keyword plan campaign type.
      *
-     * @param string $customerId
-     * @param string $keywordPlanCampaignId
+     * @param  string $customerId
+     * @param  string $keywordPlanCampaignId
      * @return string the keyword plan campaign resource name
      */
     public static function forKeywordPlanCampaign(
@@ -1525,8 +1525,8 @@ final class ResourceNames
     /**
      * Generates a resource name of keyword plan campaign keyword type.
      *
-     * @param string $customerId
-     * @param string $keywordPlanCampaignKeywordId
+     * @param  string $customerId
+     * @param  string $keywordPlanCampaignKeywordId
      * @return string the keyword plan campaign keyword resource name
      */
     public static function forKeywordPlanCampaignKeyword(
@@ -1542,8 +1542,8 @@ final class ResourceNames
     /**
      * Generates a resource name of keyword theme constant type.
      *
-     * @param string $expressCategoryId
-     * @param string $expressSubCategoryId
+     * @param  string $expressCategoryId
+     * @param  string $expressSubCategoryId
      * @return string the keyword theme constant resource name
      */
     public static function forKeywordThemeConstant(
@@ -1559,8 +1559,8 @@ final class ResourceNames
     /**
      * Generates a resource name of label type.
      *
-     * @param string $customerId
-     * @param string $labelId
+     * @param  string $customerId
+     * @param  string $labelId
      * @return string the label resource name
      */
     public static function forLabel(
@@ -1576,7 +1576,7 @@ final class ResourceNames
     /**
      * Generates a resource name of language constant type.
      *
-     * @param string $criterionId
+     * @param  string $criterionId
      * @return string the language constant resource name
      */
     public static function forLanguageConstant(
@@ -1590,8 +1590,8 @@ final class ResourceNames
     /**
      * Generates a resource name of life event type.
      *
-     * @param string $customerId
-     * @param string $lifeEventId
+     * @param  string $customerId
+     * @param  string $lifeEventId
      * @return string the life event resource name
      */
     public static function forLifeEvent(
@@ -1607,8 +1607,8 @@ final class ResourceNames
     /**
      * Generates a resource name of local services lead type.
      *
-     * @param string $customerId
-     * @param string $localServicesLeadId
+     * @param  string $customerId
+     * @param  string $localServicesLeadId
      * @return string the local services lead resource name
      */
     public static function forLocalServicesLead(
@@ -1624,7 +1624,7 @@ final class ResourceNames
     /**
      * Generates a resource name of mobile app category constant type.
      *
-     * @param string $mobileAppCategoryId
+     * @param  string $mobileAppCategoryId
      * @return string the mobile app category constant resource name
      */
     public static function forMobileAppCategoryConstant(
@@ -1638,7 +1638,7 @@ final class ResourceNames
     /**
      * Generates a resource name of mobile device constant type.
      *
-     * @param string $criterionId
+     * @param  string $criterionId
      * @return string the mobile device constant resource name
      */
     public static function forMobileDeviceConstant(
@@ -1652,8 +1652,8 @@ final class ResourceNames
     /**
      * Generates a resource name of offline user data job type.
      *
-     * @param string $customerId
-     * @param string $offlineUserDataUpdateId
+     * @param  string $customerId
+     * @param  string $offlineUserDataUpdateId
      * @return string the offline user data job resource name
      */
     public static function forOfflineUserDataJob(
@@ -1669,7 +1669,7 @@ final class ResourceNames
     /**
      * Generates a resource name of operating system version constant type.
      *
-     * @param string $criterionId
+     * @param  string $criterionId
      * @return string the operating system version constant resource name
      */
     public static function forOperatingSystemVersionConstant(
@@ -1683,8 +1683,8 @@ final class ResourceNames
     /**
      * Generates a resource name of payments account type.
      *
-     * @param string $customerId
-     * @param string $paymentsAccountId
+     * @param  string $customerId
+     * @param  string $paymentsAccountId
      * @return string the payments account resource name
      */
     public static function forPaymentsAccount(
@@ -1700,8 +1700,8 @@ final class ResourceNames
     /**
      * Generates a resource name of product link type.
      *
-     * @param string $customerId
-     * @param string $productLinkId
+     * @param  string $customerId
+     * @param  string $productLinkId
      * @return string the product link resource name
      */
     public static function forProductLink(
@@ -1717,8 +1717,8 @@ final class ResourceNames
     /**
      * Generates a resource name of product link invitation type.
      *
-     * @param string $customerId
-     * @param string $customerInvitationId
+     * @param  string $customerId
+     * @param  string $customerInvitationId
      * @return string the product link invitation resource name
      */
     public static function forProductLinkInvitation(
@@ -1734,8 +1734,8 @@ final class ResourceNames
     /**
      * Generates a resource name of recommendation type.
      *
-     * @param string $customerId
-     * @param string $recommendationId
+     * @param  string $customerId
+     * @param  string $recommendationId
      * @return string the recommendation resource name
      */
     public static function forRecommendation(
@@ -1751,8 +1751,8 @@ final class ResourceNames
     /**
      * Generates a resource name of recommendation subscription type.
      *
-     * @param string $customerId
-     * @param string $recommendationType
+     * @param  string $customerId
+     * @param  string $recommendationType
      * @return string the recommendation subscription resource name
      */
     public static function forRecommendationSubscription(
@@ -1768,8 +1768,8 @@ final class ResourceNames
     /**
      * Generates a resource name of remarketing action type.
      *
-     * @param string $customerId
-     * @param string $remarketingActionId
+     * @param  string $customerId
+     * @param  string $remarketingActionId
      * @return string the remarketing action resource name
      */
     public static function forRemarketingAction(
@@ -1785,9 +1785,9 @@ final class ResourceNames
     /**
      * Generates a resource name of shared criterion type.
      *
-     * @param string $customerId
-     * @param string $sharedSetId
-     * @param string $criterionId
+     * @param  string $customerId
+     * @param  string $sharedSetId
+     * @param  string $criterionId
      * @return string the shared criterion resource name
      */
     public static function forSharedCriterion(
@@ -1805,8 +1805,8 @@ final class ResourceNames
     /**
      * Generates a resource name of shared set type.
      *
-     * @param string $customerId
-     * @param string $sharedSetId
+     * @param  string $customerId
+     * @param  string $sharedSetId
      * @return string the shared set resource name
      */
     public static function forSharedSet(
@@ -1822,8 +1822,8 @@ final class ResourceNames
     /**
      * Generates a resource name of smart campaign setting type.
      *
-     * @param string $customerId
-     * @param string $campaignId
+     * @param  string $customerId
+     * @param  string $campaignId
      * @return string the smart campaign setting resource name
      */
     public static function forSmartCampaignSetting(
@@ -1839,8 +1839,8 @@ final class ResourceNames
     /**
      * Generates a resource name of third party app analytics link type.
      *
-     * @param string $customerId
-     * @param string $customerLinkId
+     * @param  string $customerId
+     * @param  string $customerLinkId
      * @return string the third party app analytics link resource name
      */
     public static function forThirdPartyAppAnalyticsLink(
@@ -1856,7 +1856,7 @@ final class ResourceNames
     /**
      * Generates a resource name of topic constant type.
      *
-     * @param string $topicId
+     * @param  string $topicId
      * @return string the topic constant resource name
      */
     public static function forTopicConstant(
@@ -1870,8 +1870,8 @@ final class ResourceNames
     /**
      * Generates a resource name of user interest type.
      *
-     * @param string $customerId
-     * @param string $userInterestId
+     * @param  string $customerId
+     * @param  string $userInterestId
      * @return string the user interest resource name
      */
     public static function forUserInterest(
@@ -1887,8 +1887,8 @@ final class ResourceNames
     /**
      * Generates a resource name of user list type.
      *
-     * @param string $customerId
-     * @param string $userListId
+     * @param  string $customerId
+     * @param  string $userListId
      * @return string the user list resource name
      */
     public static function forUserList(
@@ -1904,9 +1904,9 @@ final class ResourceNames
     /**
      * Generates a resource name of user list customer type type.
      *
-     * @param string $customerId
-     * @param string $userListId
-     * @param string $semanticLabel
+     * @param  string $customerId
+     * @param  string $userListId
+     * @param  string $semanticLabel
      * @return string the user list customer type resource name
      */
     public static function forUserListCustomerType(

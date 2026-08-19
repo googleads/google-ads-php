@@ -25,7 +25,7 @@ final class PartialFailures
     /**
      * Checks if a result in a mutate response is a partial failure.
      *
-     * @param Message $message
+     * @param  Message $message
      * @return bool
      */
     public static function isPartialFailure(Message $message)

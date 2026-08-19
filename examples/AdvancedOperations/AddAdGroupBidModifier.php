@@ -51,11 +51,13 @@ class AddAdGroupBidModifier
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::BID_MODIFIER_VALUE => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -81,7 +83,9 @@ class AddAdGroupBidModifier
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -117,11 +121,13 @@ class AddAdGroupBidModifier
     ) {
         // Creates an ad group bid modifier for mobile devices with the specified ad group ID and
         // bid modifier value.
-        $adGroupBidModifier = new AdGroupBidModifier([
+        $adGroupBidModifier = new AdGroupBidModifier(
+            [
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'bid_modifier' => $bidModifierValue,
             'device' => new DeviceInfo(['type' => Device::MOBILE])
-        ]);
+            ]
+        );
 
         // Creates an ad group bid modifier operation for creating an ad group bid modifier.
         $adGroupBidModifierOperation = new AdGroupBidModifierOperation();
@@ -136,7 +142,9 @@ class AddAdGroupBidModifier
         printf("Added %d ad group bid modifier:%s", $response->getResults()->count(), PHP_EOL);
 
         foreach ($response->getResults() as $addedAdGroupBidModifier) {
-            /** @var AdGroupBidModifier $addedAdGroupBidModifier */
+            /**
+ * @var AdGroupBidModifier $addedAdGroupBidModifier
+*/
             print $addedAdGroupBidModifier->getResourceName() . PHP_EOL;
         }
     }

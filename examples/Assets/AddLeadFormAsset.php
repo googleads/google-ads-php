@@ -60,10 +60,12 @@ class AddLeadFormAsset
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -88,7 +90,9 @@ class AddLeadFormAsset
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -111,8 +115,8 @@ class AddLeadFormAsset
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param int $campaignId the campaign ID
+     * @param int             $customerId      the client customer ID
+     * @param int             $campaignId      the campaign ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -134,8 +138,8 @@ class AddLeadFormAsset
     /**
      * Creates the lead form asset.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
      * @return string the resource name of the newly created lead form asset
      */
     // [START add_lead_form_asset]
@@ -144,9 +148,11 @@ class AddLeadFormAsset
         int $customerId
     ): string {
         // Creates the lead form asset.
-        $leadFormAsset = new Asset([
+        $leadFormAsset = new Asset(
+            [
             'name' => 'Interplanetary Cruise #' . Helper::getPrintableDatetime() . ' Lead Form',
-            'lead_form_asset' => new LeadFormAsset([
+            'lead_form_asset' => new LeadFormAsset(
+                [
                 // Specifies the details of the asset that the users will see.
                 'call_to_action_type' => LeadFormCallToActionType::BOOK_NOW,
                 'call_to_action_description' => 'Latest trip to Jupiter!',
@@ -160,12 +166,16 @@ class AddLeadFormAsset
                     new LeadFormField(['input_type' => LeadFormFieldUserInputType::FULL_NAME]),
                     new LeadFormField(['input_type' => LeadFormFieldUserInputType::EMAIL]),
                     new LeadFormField(['input_type' => LeadFormFieldUserInputType::PHONE_NUMBER]),
-                    new LeadFormField([
+                    new LeadFormField(
+                        [
                         'input_type' => LeadFormFieldUserInputType::PREFERRED_CONTACT_TIME,
-                        'single_choice_answers' => new LeadFormSingleChoiceAnswers([
+                        'single_choice_answers' => new LeadFormSingleChoiceAnswers(
+                            [
                             'answers' => ['Before 9 AM', 'Any time', 'After 5 PM']
-                        ])
-                    ]),
+                            ]
+                        )
+                        ]
+                    ),
                     new LeadFormField(['input_type' => LeadFormFieldUserInputType::TRAVEL_BUDGET])
                 ],
                 // Optional: You can also specify a background image asset.
@@ -183,16 +193,22 @@ class AddLeadFormAsset
                 // Optional: Defines a delivery method for form response. See
                 // https://developers.google.com/google-ads/webhook/docs/overview for more
                 // details on how to define a webhook.
-                'delivery_methods' => [new LeadFormDeliveryMethod([
-                    'webhook' => new WebhookDelivery([
+                'delivery_methods' => [new LeadFormDeliveryMethod(
+                    [
+                    'webhook' => new WebhookDelivery(
+                        [
                         'advertiser_webhook_url' => 'http://example.com/webhook',
                         'google_secret' => 'interplanetary google secret',
                         'payload_schema_version' => 3
-                    ])
-                ])]
-            ]),
+                        ]
+                    )
+                    ]
+                )]
+                ]
+            ),
             'final_urls' => ['http://example.com/jupiter']
-        ]);
+            ]
+        );
 
         // Creates an operation to add the asset.
         $assetOperation = new AssetOperation();
@@ -226,11 +242,13 @@ class AddLeadFormAsset
         string $leadFormAssetResourceName
     ) {
         // Creates the campaign asset for the lead form.
-        $campaignAsset = new CampaignAsset([
+        $campaignAsset = new CampaignAsset(
+            [
             'asset' => $leadFormAssetResourceName,
             'field_type' => AssetFieldType::LEAD_FORM,
             'campaign' => ResourceNames::forCampaign($customerId, $campaignId)
-        ]);
+            ]
+        );
 
         // Creates an operation to add the campaign asset.
         $campaignAssetOperation = new CampaignAssetOperation();

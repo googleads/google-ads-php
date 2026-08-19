@@ -91,7 +91,9 @@ class UsePortfolioBiddingStrategy
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -113,9 +115,9 @@ class UsePortfolioBiddingStrategy
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int|null $campaignBudgetId the ID of the campaign budget to use if any
+     * @param GoogleAdsClient $googleAdsClient  the Google Ads API client
+     * @param int             $customerId       the customer ID
+     * @param int|null        $campaignBudgetId the ID of the campaign budget to use if any
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -141,20 +143,24 @@ class UsePortfolioBiddingStrategy
     /**
      * Creates the portfolio bidding strategy.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
      * @return string the resource name of created bidding strategy
      */
     // [START use_portfolio_bidding_strategy_1]
     private static function createBiddingStrategy(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a portfolio bidding strategy.
-        $portfolioBiddingStrategy = new BiddingStrategy([
+        $portfolioBiddingStrategy = new BiddingStrategy(
+            [
             'name' => 'Maximize Clicks #' . Helper::getPrintableDatetime(),
-            'target_spend' => new TargetSpend([
+            'target_spend' => new TargetSpend(
+                [
                 'cpc_bid_ceiling_micros' => 2000000
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         // Constructs an operation that will create a portfolio bidding strategy.
         $biddingStrategyOperation = new BiddingStrategyOperation();
@@ -165,7 +171,9 @@ class UsePortfolioBiddingStrategy
         $response = $biddingStrategyServiceClient->mutateBiddingStrategies(
             MutateBiddingStrategiesRequest::build($customerId, [$biddingStrategyOperation])
         );
-        /** @var BiddingStrategy $addedBiddingStrategy */
+        /**
+ * @var BiddingStrategy $addedBiddingStrategy
+*/
         $addedBiddingStrategy = $response->getResults()[0];
 
         // Prints out the resource name of the created bidding strategy.
@@ -182,8 +190,8 @@ class UsePortfolioBiddingStrategy
     /**
      * Creates an explicitly shared budget to be used to create the campaign.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
      * @return string the resource name of created shared budget
      */
     // [START use_portfolio_bidding_strategy]
@@ -192,14 +200,16 @@ class UsePortfolioBiddingStrategy
         int $customerId
     ) {
         // Creates a shared budget.
-        $budget = new CampaignBudget([
+        $budget = new CampaignBudget(
+            [
             'name' => 'Shared Interplanetary Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             // Sets the amount of budget.
             'amount_micros' => 50000000,
             // Makes the budget explicitly shared.
             'explicitly_shared' => true
-        ]);
+            ]
+        );
 
         // Constructs a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
@@ -211,7 +221,9 @@ class UsePortfolioBiddingStrategy
             MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
 
-        /** @var CampaignBudget $addedBudget */
+        /**
+ * @var CampaignBudget $addedBudget
+*/
         $addedBudget = $response->getResults()[0];
         printf(
             "Created a shared budget with resource name '%s'.%s",
@@ -226,10 +238,10 @@ class UsePortfolioBiddingStrategy
     /**
      * Creates a campaign with the created portfolio bidding strategy.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $biddingStrategyResourceName the bidding strategy resource name to use
-     * @param string $campaignBudgetResourceName the shared budget resource name to use
+     * @param GoogleAdsClient $googleAdsClient             the Google Ads API client
+     * @param int             $customerId                  the customer ID
+     * @param string          $biddingStrategyResourceName the bidding strategy resource name to use
+     * @param string          $campaignBudgetResourceName  the shared budget resource name to use
      */
     private static function createCampaignWithBiddingStrategy(
         GoogleAdsClient $googleAdsClient,
@@ -239,7 +251,8 @@ class UsePortfolioBiddingStrategy
     ) {
         // [START use_portfolio_bidding_strategy_2]
         // Creates a Search campaign.
-        $campaign = new Campaign([
+        $campaign = new Campaign(
+            [
             'name' => 'Interplanetary Cruise #' . Helper::getPrintableDatetime(),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
@@ -247,18 +260,21 @@ class UsePortfolioBiddingStrategy
             // targeting and the ads are ready to serve.
             'status' => CampaignStatus::PAUSED,
             // Configures the campaign network options.
-            'network_settings' => new NetworkSettings([
+            'network_settings' => new NetworkSettings(
+                [
                 'target_google_search' => true,
                 'target_search_network' => true,
                 'target_content_network' => true,
-            ]),
+                ]
+            ),
             // Sets the bidding strategy and budget.
             'bidding_strategy' => $biddingStrategyResourceName,
             'campaign_budget' => $campaignBudgetResourceName,
             // Declare whether or not this campaign serves political ads targeting the EU.
             'contains_eu_political_advertising' =>
                 EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
-        ]);
+            ]
+        );
         // [END use_portfolio_bidding_strategy_2]
 
         // Constructs a campaign operation.
@@ -271,7 +287,9 @@ class UsePortfolioBiddingStrategy
             MutateCampaignsRequest::build($customerId, [$campaignOperation])
         );
 
-        /** @var Campaign $addedCampaign */
+        /**
+ * @var Campaign $addedCampaign
+*/
         $addedCampaign = $response->getResults()[0];
         printf(
             "Created a campaign with resource name: '%s'.%s",

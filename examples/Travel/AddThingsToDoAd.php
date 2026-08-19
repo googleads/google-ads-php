@@ -72,10 +72,12 @@ class AddThingsToDoAd
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::THINGS_TO_DO_CENTER_ACCOUNT_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -101,7 +103,9 @@ class AddThingsToDoAd
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -123,9 +127,9 @@ class AddThingsToDoAd
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $thingsToDoCenterAccountId the Things to Do Center account ID
+     * @param GoogleAdsClient $googleAdsClient           the Google Ads API client
+     * @param int             $customerId                the customer ID
+     * @param int             $thingsToDoCenterAccountId the Things to Do Center account ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -151,14 +155,15 @@ class AddThingsToDoAd
     /**
      * Creates a new campaign budget in the specified customer account.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the customer ID
      * @return string the resource name of the newly created budget
      */
     private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a campaign budget.
-        $budget = new CampaignBudget([
+        $budget = new CampaignBudget(
+            [
             'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             // Sets the amount of budget.
@@ -166,7 +171,8 @@ class AddThingsToDoAd
             // Makes the budget explicitly shared. You cannot set it to `false` for Things to do
             // campaigns.
             'explicitly_shared' => true
-        ]);
+            ]
+        );
 
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
@@ -178,7 +184,9 @@ class AddThingsToDoAd
             MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
 
-        /** @var CampaignBudget $addedBudget */
+        /**
+ * @var CampaignBudget $addedBudget
+*/
         $addedBudget = $response->getResults()[0];
         printf(
             "Added a budget with resource name '%s'.%s",
@@ -192,10 +200,10 @@ class AddThingsToDoAd
     /**
      * Creates a new Things to do campaign in the specified customer account.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $budgetResourceName the resource name of budget for a new campaign
-     * @param int $thingsToDoCenterAccountId the Things to Do Center account ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $budgetResourceName the resource name of budget for a new campaign
+     * @param  int $thingsToDoCenterAccountId the Things to Do Center account ID
      * @return string the resource name of the newly created campaign
      */
     // [START add_things_to_do_ad]
@@ -207,7 +215,8 @@ class AddThingsToDoAd
     ) {
         // [START add_things_to_do_ad_1]
         // Creates a campaign.
-        $campaign = new Campaign([
+        $campaign = new Campaign(
+            [
             'name' => 'Interplanetary Cruise Campaign #' . Helper::getPrintableDatetime(),
             // Configures settings related to Things to do campaigns including advertising channel
             // type, advertising channel sub type and travel campaign settings.
@@ -230,7 +239,8 @@ class AddThingsToDoAd
             // Declare whether or not this campaign serves political ads targeting the EU.
             'contains_eu_political_advertising' =>
                 EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
-        ]);
+            ]
+        );
         // [END add_things_to_do_ad_1]
 
         // Creates a campaign operation.
@@ -243,7 +253,9 @@ class AddThingsToDoAd
             MutateCampaignsRequest::build($customerId, [$campaignOperation])
         );
 
-        /** @var Campaign $addedCampaign */
+        /**
+ * @var Campaign $addedCampaign
+*/
         $addedCampaign = $response->getResults()[0];
         printf(
             "Added a Things to do campaign with resource name '%s'.%s",
@@ -258,9 +270,9 @@ class AddThingsToDoAd
     /**
      * Creates a new ad group in the specified Things to do campaign.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $campaignResourceName the resource name of campaign that a new ad group will
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $campaignResourceName the resource name of campaign that a new ad group will
      *     belong to
      * @return string the resource name of the newly created ad group
      */
@@ -271,14 +283,16 @@ class AddThingsToDoAd
         string $campaignResourceName
     ) {
         // Creates an ad group.
-        $adGroup = new AdGroup([
+        $adGroup = new AdGroup(
+            [
             'name' => 'Earth to Mars Cruise #' . Helper::getPrintableDatetime(),
             // Sets the campaign.
             'campaign' => $campaignResourceName,
             // Sets the ad group type to TRAVEL_ADS. This cannot be set to other types.
             'type' => AdGroupType::TRAVEL_ADS,
             'status' => AdGroupStatus::ENABLED,
-        ]);
+            ]
+        );
 
         // Creates an ad group operation.
         $adGroupOperation = new AdGroupOperation();
@@ -290,7 +304,9 @@ class AddThingsToDoAd
             MutateAdGroupsRequest::build($customerId, [$adGroupOperation])
         );
 
-        /** @var AdGroup $addedAdGroup */
+        /**
+ * @var AdGroup $addedAdGroup
+*/
         $addedAdGroup = $response->getResults()[0];
         printf(
             "Added an ad group with resource name '%s'.%s",
@@ -317,14 +333,16 @@ class AddThingsToDoAd
         string $adGroupResourceName
     ) {
         // Creates a new ad group ad and sets a travel ad info.
-        $adGroupAd = new AdGroupAd([
+        $adGroupAd = new AdGroupAd(
+            [
             'ad' => new Ad(['travel_ad' => new TravelAdInfo()]),
             // Set the ad group ad to enabled. Setting this to paused will cause an error for Things
             // to do campaigns. Pausing should happen at either the ad group or campaign level.
             'status' => AdGroupAdStatus::ENABLED,
             // Sets the ad group.
             'ad_group' => $adGroupResourceName
-        ]);
+            ]
+        );
 
         // Creates an ad group ad operation.
         $adGroupAdOperation = new AdGroupAdOperation();
@@ -336,7 +354,9 @@ class AddThingsToDoAd
             MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
         );
 
-        /** @var AdGroupAd $addedAdGroupAd */
+        /**
+ * @var AdGroupAd $addedAdGroupAd
+*/
         $addedAdGroupAd = $response->getResults()[0];
         printf(
             "Added an ad group ad with resource name '%s'.%s",

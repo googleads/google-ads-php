@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage campaign drafts.
  */
-class CampaignDraftServiceGrpcClient extends \Grpc\BaseStub {
+class CampaignDraftServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -49,17 +51,21 @@ class CampaignDraftServiceGrpcClient extends \Grpc\BaseStub {
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\MutateCampaignDraftsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\MutateCampaignDraftsRequest $argument input argument
+     * @param  array                                                          $metadata metadata
+     * @param  array                                                          $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateCampaignDraftsResponse>
      */
     public function MutateCampaignDrafts(\Google\Ads\GoogleAds\V25\Services\MutateCampaignDraftsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.CampaignDraftService/MutateCampaignDrafts',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\MutateCampaignDraftsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.CampaignDraftService/MutateCampaignDrafts',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\MutateCampaignDraftsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -82,17 +88,21 @@ class CampaignDraftServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\PromoteCampaignDraftRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\PromoteCampaignDraftRequest $argument input argument
+     * @param  array                                                          $metadata metadata
+     * @param  array                                                          $options  call options
      * @return \Grpc\UnaryCall<\Google\LongRunning\Operation>
      */
     public function PromoteCampaignDraft(\Google\Ads\GoogleAds\V25\Services\PromoteCampaignDraftRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.CampaignDraftService/PromoteCampaignDraft',
-        $argument,
-        ['\Google\LongRunning\Operation', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.CampaignDraftService/PromoteCampaignDraft',
+            $argument,
+            ['\Google\LongRunning\Operation', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -107,17 +117,21 @@ class CampaignDraftServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\ListCampaignDraftAsyncErrorsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\ListCampaignDraftAsyncErrorsRequest $argument input argument
+     * @param  array                                                                  $metadata metadata
+     * @param  array                                                                  $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListCampaignDraftAsyncErrorsResponse>
      */
     public function ListCampaignDraftAsyncErrors(\Google\Ads\GoogleAds\V25\Services\ListCampaignDraftAsyncErrorsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.CampaignDraftService/ListCampaignDraftAsyncErrors',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\ListCampaignDraftAsyncErrorsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.CampaignDraftService/ListCampaignDraftAsyncErrors',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\ListCampaignDraftAsyncErrorsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

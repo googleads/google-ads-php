@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V23\Services;
  *
  * Service to manage shared sets.
  */
-class SharedSetServiceGrpcClient extends \Grpc\BaseStub {
+class SharedSetServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -61,17 +63,21 @@ class SharedSetServiceGrpcClient extends \Grpc\BaseStub {
      *   [SizeLimitError]()
      *   [StringFormatError]()
      *   [StringLengthError]()
-     * @param \Google\Ads\GoogleAds\V23\Services\MutateSharedSetsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\MutateSharedSetsRequest $argument input argument
+     * @param  array                                                      $metadata metadata
+     * @param  array                                                      $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\MutateSharedSetsResponse>
      */
     public function MutateSharedSets(\Google\Ads\GoogleAds\V23\Services\MutateSharedSetsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.SharedSetService/MutateSharedSets',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\MutateSharedSetsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.SharedSetService/MutateSharedSets',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\MutateSharedSetsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

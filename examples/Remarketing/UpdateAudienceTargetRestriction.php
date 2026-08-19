@@ -53,10 +53,12 @@ class UpdateAudienceTargetRestriction
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -81,7 +83,9 @@ class UpdateAudienceTargetRestriction
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -104,8 +108,8 @@ class UpdateAudienceTargetRestriction
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ID of the ad group to update
+     * @param int             $customerId      the customer ID
+     * @param int             $adGroupId       the ID of the ad group to update
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -132,7 +136,9 @@ class UpdateAudienceTargetRestriction
         $shouldUpdateTargetingSetting = false;
         $targetRestrictions = [];
         foreach ($response->iterateAllElements() as $googleAdsRow) {
-            /** @var GoogleAdsRow $googleAdsRow */
+            /**
+ * @var GoogleAdsRow $googleAdsRow
+*/
             $adGroup = $googleAdsRow->getAdGroup();
             // Prints the results.
             printf(
@@ -174,10 +180,12 @@ class UpdateAudienceTargetRestriction
                     // target restriction to "Observation".
                     // For more details about the targeting setting, visit
                     // https://support.google.com/google-ads/answer/7365594.
-                    $targetRestrictions[] = new TargetRestriction([
+                    $targetRestrictions[] = new TargetRestriction(
+                        [
                         'targeting_dimension' => TargetingDimension::AUDIENCE,
                         'bid_only' => true
-                    ]);
+                        ]
+                    );
                 }
             }
             // [END update_audience_target_restriction_1]
@@ -190,9 +198,11 @@ class UpdateAudienceTargetRestriction
                 $googleAdsClient,
                 $customerId,
                 $adGroupId,
-                new TargetingSetting([
+                new TargetingSetting(
+                    [
                     'target_restrictions' => $targetRestrictions
-                ])
+                    ]
+                )
             );
         } else {
             print "No target restrictions to update." . PHP_EOL;
@@ -215,10 +225,12 @@ class UpdateAudienceTargetRestriction
         TargetingSetting $targetingSetting
     ) {
         // Creates an ad group object with the proper resource name and updated targeting setting.
-        $adGroup = new AdGroup([
+        $adGroup = new AdGroup(
+            [
             'resource_name' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'targeting_setting' => $targetingSetting
-        ]);
+            ]
+        );
 
         // Constructs an operation that will update the ad group with the specified resource name,
         // using the FieldMasks utility to derive the update mask. This mask tells the Google Ads

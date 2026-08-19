@@ -24,14 +24,16 @@ namespace Google\Ads\GoogleAds\V22\Services;
  * Service to provide payments accounts that can be used to set up consolidated
  * billing.
  */
-class PaymentsAccountServiceGrpcClient extends \Grpc\BaseStub {
+class PaymentsAccountServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -48,17 +50,21 @@ class PaymentsAccountServiceGrpcClient extends \Grpc\BaseStub {
      *   [PaymentsAccountError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\ListPaymentsAccountsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\ListPaymentsAccountsRequest $argument input argument
+     * @param  array                                                          $metadata metadata
+     * @param  array                                                          $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\ListPaymentsAccountsResponse>
      */
     public function ListPaymentsAccounts(\Google\Ads\GoogleAds\V22\Services\ListPaymentsAccountsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.PaymentsAccountService/ListPaymentsAccounts',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\ListPaymentsAccountsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.PaymentsAccountService/ListPaymentsAccounts',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\ListPaymentsAccountsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

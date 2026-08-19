@@ -50,10 +50,12 @@ class FindAndRemoveCriteriaFromSharedSet
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -78,7 +80,9 @@ class FindAndRemoveCriteriaFromSharedSet
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -101,8 +105,8 @@ class FindAndRemoveCriteriaFromSharedSet
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $campaignId the ID of the campaign
+     * @param int             $customerId      the customer ID
+     * @param int             $campaignId      the ID of the campaign
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -124,7 +128,9 @@ class FindAndRemoveCriteriaFromSharedSet
         // Iterates over all rows in all pages and prints the requested field values for
         // the shared set in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
-            /** @var GoogleAdsRow $googleAdsRow */
+            /**
+ * @var GoogleAdsRow $googleAdsRow
+*/
             printf(
                 "Campaign shared set with ID %d and name '%s' was found.%s",
                 $googleAdsRow->getSharedSet()->getId(),
@@ -135,10 +141,13 @@ class FindAndRemoveCriteriaFromSharedSet
         }
 
         // Next, retrieves shared criteria for all found shared sets.
-        $query = sprintf("SELECT shared_criterion.type, shared_criterion.keyword.text, "
+        $query = sprintf(
+            "SELECT shared_criterion.type, shared_criterion.keyword.text, "
               . "shared_criterion.keyword.match_type, shared_set.id "
               . "FROM shared_criterion "
-              . "WHERE shared_set.id IN (%s)", implode(',', $sharedSetIds));
+            . "WHERE shared_set.id IN (%s)",
+            implode(',', $sharedSetIds)
+        );
 
         // Issues a search request.
         $response =
@@ -147,7 +156,9 @@ class FindAndRemoveCriteriaFromSharedSet
         // Iterates over all rows in all pages and prints the requested field values for
         // the shared criterion in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
-            /** @var GoogleAdsRow $googleAdsRow */
+            /**
+ * @var GoogleAdsRow $googleAdsRow
+*/
             $sharedCriterionResourceName = $googleAdsRow->getSharedCriterion()->getResourceName();
             if ($googleAdsRow->getSharedCriterion()->getType() === CriterionType::KEYWORD) {
                 printf(
@@ -186,7 +197,9 @@ class FindAndRemoveCriteriaFromSharedSet
 
         // Prints the resource name of each removed shared criterion.
         foreach ($response->getResults() as $removedSharedCriterion) {
-            /** @var SharedCriterion $removedSharedCriterion */
+            /**
+ * @var SharedCriterion $removedSharedCriterion
+*/
             printf(
                 "Removed shared criterion with resource name: '%s'.%s",
                 $removedSharedCriterion->getResourceName(),

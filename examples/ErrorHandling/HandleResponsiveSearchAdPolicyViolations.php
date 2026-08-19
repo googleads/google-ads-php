@@ -57,10 +57,12 @@ class HandleResponsiveSearchAdPolicyViolations
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -85,7 +87,9 @@ class HandleResponsiveSearchAdPolicyViolations
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -108,8 +112,8 @@ class HandleResponsiveSearchAdPolicyViolations
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID to add a responsive search ad to
+     * @param int             $customerId      the customer ID
+     * @param int             $adGroupId       the ad group ID to add a responsive search ad to
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -117,11 +121,14 @@ class HandleResponsiveSearchAdPolicyViolations
         int $adGroupId
     ) {
         // Creates a responsive search ad info object.
-        $responsiveSearchAdInfo = new ResponsiveSearchAdInfo([
+        $responsiveSearchAdInfo = new ResponsiveSearchAdInfo(
+            [
             'headlines' => [
-                new AdTextAsset([
+                new AdTextAsset(
+                    [
                     'text' => 'Cruise to Mars #' . Helper::getShortPrintableDatetime()
-                ]),
+                    ]
+                ),
                 new AdTextAsset(['text' => 'Best Space Cruise Line']),
                 new AdTextAsset(['text' => 'Experience the Stars'])
             ],
@@ -131,20 +138,25 @@ class HandleResponsiveSearchAdPolicyViolations
                 new AdTextAsset(['text' => 'Buy your tickets now!!!!!!!']),
                 new AdTextAsset(['text' => 'Visit the Red Planet'])
             ]
-        ]);
+            ]
+        );
 
         // Creates an ad group ad to hold the above ad.
-        $adGroupAd = new AdGroupAd([
+        $adGroupAd = new AdGroupAd(
+            [
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             // Set the ad group ad to PAUSED to prevent it from immediately serving.
             // Set to ENABLED once you've added targeting and the ad are ready to serve.
             'status' => AdGroupAdStatus::PAUSED,
             // Sets the responsive search ad info on an Ad.
-            'ad' => new Ad([
+            'ad' => new Ad(
+                [
                 'responsive_search_ad' => $responsiveSearchAdInfo,
                 'final_urls' => ['https://www.example.com']
-            ])
-        ]);
+                ]
+            )
+            ]
+        );
 
         // Creates an ad group ad operation.
         $adGroupAdOperation = new AdGroupAdOperation();
@@ -175,7 +187,7 @@ class HandleResponsiveSearchAdPolicyViolations
     /**
      * Collects all ignorable policy topics that will be sent for exemption request later.
      *
-     * @param GoogleAdsException $googleAdsException the Google Ads exception
+     * @param  GoogleAdsException $googleAdsException the Google Ads exception
      * @return string[] the ignorable policy topics
      */
     // [START handle_responsive_search_ad_policy_violations]
@@ -185,7 +197,9 @@ class HandleResponsiveSearchAdPolicyViolations
 
         printf("Google Ads failure details:%s", PHP_EOL);
         foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-            /** @var GoogleAdsError $error */
+            /**
+ * @var GoogleAdsError $error
+*/
             if ($error->getErrorCode()->getErrorCode() !== 'policy_finding_error') {
                 // This example supports sending exemption request for the policy finding error
                 // only.
@@ -206,7 +220,9 @@ class HandleResponsiveSearchAdPolicyViolations
                 printf("\tPolicy finding details:%s", PHP_EOL);
 
                 foreach ($policyFindingDetails->getPolicyTopicEntries() as $policyTopicEntry) {
-                    /** @var PolicyTopicEntry $policyTopicEntry */
+                    /**
+ * @var PolicyTopicEntry $policyTopicEntry
+*/
                     $ignorablePolicyTopics[] = $policyTopicEntry->getTopic();
                     printf(
                         "\t\tPolicy topic name: '%s'%s",
@@ -249,10 +265,12 @@ class HandleResponsiveSearchAdPolicyViolations
         $adGroupAdOperation->setPolicyValidationParameter(
             new PolicyValidationParameter(['ignorable_policy_topics' => $ignorablePolicyTopics])
         );
-        $response = $adGroupAdServiceClient->mutateAdGroupAds(MutateAdGroupAdsRequest::build(
-            $customerId,
-            [$adGroupAdOperation]
-        ));
+        $response = $adGroupAdServiceClient->mutateAdGroupAds(
+            MutateAdGroupAdsRequest::build(
+                $customerId,
+                [$adGroupAdOperation]
+            )
+        );
         printf(
             "Successfully added a responsive search ad with resource name '%s' by requesting"
             . " for policy violation exemption.%s",

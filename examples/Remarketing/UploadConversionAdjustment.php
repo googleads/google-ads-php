@@ -61,14 +61,16 @@ class UploadConversionAdjustment
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::ORDER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::ADJUSTMENT_TYPE => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::ADJUSTMENT_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::RESTATEMENT_VALUE => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -98,7 +100,9 @@ class UploadConversionAdjustment
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -143,7 +147,8 @@ class UploadConversionAdjustment
         $conversionAdjustmentType = ConversionAdjustmentType::value($adjustmentType);
 
         // Applies the conversion adjustment to the existing conversion.
-        $conversionAdjustment = new ConversionAdjustment([
+        $conversionAdjustment = new ConversionAdjustment(
+            [
             'conversion_action' =>
                 ResourceNames::forConversionAction($customerId, $conversionActionId),
             'adjustment_type' => $conversionAdjustmentType,
@@ -159,16 +164,21 @@ class UploadConversionAdjustment
             ]),
             */
             'adjustment_date_time' => $adjustmentDateTime
-        ]);
+            ]
+        );
 
         // Sets adjusted value for adjustment type RESTATEMENT.
         if (
             $restatementValue !== null
             && $conversionAdjustmentType === ConversionAdjustmentType::RESTATEMENT
         ) {
-            $conversionAdjustment->setRestatementValue(new RestatementValue([
-                'adjusted_value' => $restatementValue
-            ]));
+            $conversionAdjustment->setRestatementValue(
+                new RestatementValue(
+                    [
+                    'adjusted_value' => $restatementValue
+                    ]
+                )
+            );
         }
 
         // Issues a request to upload the conversion adjustment.
@@ -190,7 +200,9 @@ class UploadConversionAdjustment
             );
         } else {
             // Prints the result if exists.
-            /** @var ConversionAdjustmentResult $uploadedConversionAdjustment */
+            /**
+ * @var ConversionAdjustmentResult $uploadedConversionAdjustment
+*/
             $uploadedConversionAdjustment = $response->getResults()[0];
             printf(
                 "Uploaded conversion adjustment of '%s' for order ID '%s'.%s",

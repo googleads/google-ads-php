@@ -53,11 +53,13 @@ class AddBiddingDataExclusion
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::START_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::END_DATE_TIME => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -84,7 +86,9 @@ class AddBiddingDataExclusion
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -108,11 +112,11 @@ class AddBiddingDataExclusion
      * dates specified.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $startDateTime the start time of the data exclusion (in yyyy-MM-dd HH:mm:ss
-     *     format) in the account's timezone
-     * @param string $endDateTime the end time of the data exclusion (in yyyy-MM-dd HH:mm:ss
-     *     format) in the account's timezone
+     * @param int             $customerId      the customer ID
+     * @param string          $startDateTime   the start time of the data exclusion (in yyyy-MM-dd HH:mm:ss
+     *                                         format) in the account's timezone
+     * @param string          $endDateTime     the end time of the data exclusion (in yyyy-MM-dd HH:mm:ss
+     *                                         format) in the account's timezone
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -122,7 +126,8 @@ class AddBiddingDataExclusion
     ) {
         // [START add_bidding_data_exclusion]
         // Creates a bidding data exclusion.
-        $dataExclusion = new BiddingDataExclusion([
+        $dataExclusion = new BiddingDataExclusion(
+            [
             // A unique name is required for every data exclusion.
             'name' => 'Data exclusion #' . Helper::getPrintableDatetime(),
             // The CHANNEL scope applies the data exclusion to all campaigns of specific
@@ -136,7 +141,8 @@ class AddBiddingDataExclusion
             // 'campaigns' => ['INSERT_CAMPAIGN_RESOURCE_NAME_HERE'],
             'start_date_time' => $startDateTime,
             'end_date_time' => $endDateTime
-        ]);
+            ]
+        );
 
         // Creates a bidding data exclusion operation.
         $biddingDataExclusionOperation = new BiddingDataExclusionOperation();

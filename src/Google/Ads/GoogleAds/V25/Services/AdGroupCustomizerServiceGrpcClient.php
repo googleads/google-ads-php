@@ -23,31 +23,37 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage ad group customizer
  */
-class AdGroupCustomizerServiceGrpcClient extends \Grpc\BaseStub {
+class AdGroupCustomizerServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
     /**
      * Creates, updates or removes ad group customizers. Operation statuses are
      * returned.
-     * @param \Google\Ads\GoogleAds\V25\Services\MutateAdGroupCustomizersRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\MutateAdGroupCustomizersRequest $argument input argument
+     * @param  array                                                              $metadata metadata
+     * @param  array                                                              $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateAdGroupCustomizersResponse>
      */
     public function MutateAdGroupCustomizers(\Google\Ads\GoogleAds\V25\Services\MutateAdGroupCustomizersRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.AdGroupCustomizerService/MutateAdGroupCustomizers',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\MutateAdGroupCustomizersResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.AdGroupCustomizerService/MutateAdGroupCustomizers',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\MutateAdGroupCustomizersResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

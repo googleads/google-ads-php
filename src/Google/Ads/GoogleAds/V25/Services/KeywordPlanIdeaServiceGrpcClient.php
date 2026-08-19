@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to generate keyword ideas.
  */
-class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub {
+class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -46,17 +48,21 @@ class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub {
      *   [KeywordPlanIdeaError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\GenerateKeywordIdeasRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateKeywordIdeasRequest $argument input argument
+     * @param  array                                                          $metadata metadata
+     * @param  array                                                          $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateKeywordIdeaResponse>
      */
     public function GenerateKeywordIdeas(\Google\Ads\GoogleAds\V25\Services\GenerateKeywordIdeasRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.KeywordPlanIdeaService/GenerateKeywordIdeas',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\GenerateKeywordIdeaResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.KeywordPlanIdeaService/GenerateKeywordIdeas',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\GenerateKeywordIdeaResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -70,17 +76,21 @@ class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\GenerateKeywordHistoricalMetricsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateKeywordHistoricalMetricsRequest $argument input argument
+     * @param  array                                                                      $metadata metadata
+     * @param  array                                                                      $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateKeywordHistoricalMetricsResponse>
      */
     public function GenerateKeywordHistoricalMetrics(\Google\Ads\GoogleAds\V25\Services\GenerateKeywordHistoricalMetricsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.KeywordPlanIdeaService/GenerateKeywordHistoricalMetrics',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\GenerateKeywordHistoricalMetricsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.KeywordPlanIdeaService/GenerateKeywordHistoricalMetrics',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\GenerateKeywordHistoricalMetricsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -95,17 +105,21 @@ class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\GenerateAdGroupThemesRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateAdGroupThemesRequest $argument input argument
+     * @param  array                                                           $metadata metadata
+     * @param  array                                                           $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateAdGroupThemesResponse>
      */
     public function GenerateAdGroupThemes(\Google\Ads\GoogleAds\V25\Services\GenerateAdGroupThemesRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.KeywordPlanIdeaService/GenerateAdGroupThemes',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\GenerateAdGroupThemesResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.KeywordPlanIdeaService/GenerateAdGroupThemes',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\GenerateAdGroupThemesResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
@@ -120,17 +134,21 @@ class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub {
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V25\Services\GenerateKeywordForecastMetricsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateKeywordForecastMetricsRequest $argument input argument
+     * @param  array                                                                    $metadata metadata
+     * @param  array                                                                    $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateKeywordForecastMetricsResponse>
      */
     public function GenerateKeywordForecastMetrics(\Google\Ads\GoogleAds\V25\Services\GenerateKeywordForecastMetricsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v25.services.KeywordPlanIdeaService/GenerateKeywordForecastMetrics',
-        $argument,
-        ['\Google\Ads\GoogleAds\V25\Services\GenerateKeywordForecastMetricsResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v25.services.KeywordPlanIdeaService/GenerateKeywordForecastMetrics',
+            $argument,
+            ['\Google\Ads\GoogleAds\V25\Services\GenerateKeywordForecastMetricsResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

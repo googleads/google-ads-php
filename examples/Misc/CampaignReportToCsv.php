@@ -48,10 +48,12 @@ class CampaignReportToCsv
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::OUTPUT_FILE_PATH => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -76,7 +78,9 @@ class CampaignReportToCsv
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -99,8 +103,8 @@ class CampaignReportToCsv
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string|null $outputFilePath the path of the file to write the CSV content to
+     * @param int             $customerId      the customer ID
+     * @param string|null     $outputFilePath  the path of the file to write the CSV content to
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -129,7 +133,9 @@ class CampaignReportToCsv
         // Iterates over all rows in all pages and extracts the information.
         $csvRows = [];
         foreach ($response->iterateAllElements() as $googleAdsRow) {
-            /** @var GoogleAdsRow $googleAdsRow */
+            /**
+ * @var GoogleAdsRow $googleAdsRow
+*/
             $csvRows[] = [
                 'campaign.id' => $googleAdsRow->getCampaign()->getId(),
                 'campaign.name' => $googleAdsRow->getCampaign()->getName(),

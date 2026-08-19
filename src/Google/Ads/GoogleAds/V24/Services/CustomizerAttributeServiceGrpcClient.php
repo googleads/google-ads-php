@@ -23,31 +23,37 @@ namespace Google\Ads\GoogleAds\V24\Services;
  *
  * Service to manage customizer attribute
  */
-class CustomizerAttributeServiceGrpcClient extends \Grpc\BaseStub {
+class CustomizerAttributeServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
     /**
      * Creates, updates or removes customizer attributes. Operation statuses are
      * returned.
-     * @param \Google\Ads\GoogleAds\V24\Services\MutateCustomizerAttributesRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V24\Services\MutateCustomizerAttributesRequest $argument input argument
+     * @param  array                                                                $metadata metadata
+     * @param  array                                                                $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V24\Services\MutateCustomizerAttributesResponse>
      */
     public function MutateCustomizerAttributes(\Google\Ads\GoogleAds\V24\Services\MutateCustomizerAttributesRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v24.services.CustomizerAttributeService/MutateCustomizerAttributes',
-        $argument,
-        ['\Google\Ads\GoogleAds\V24\Services\MutateCustomizerAttributesResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v24.services.CustomizerAttributeService/MutateCustomizerAttributes',
+            $argument,
+            ['\Google\Ads\GoogleAds\V24\Services\MutateCustomizerAttributesResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

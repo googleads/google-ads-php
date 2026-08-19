@@ -23,14 +23,16 @@ namespace Google\Ads\GoogleAds\V22\Services;
  *
  * A service to fetch invoices issued for a billing setup during a given month.
  */
-class InvoiceServiceGrpcClient extends \Grpc\BaseStub {
+class InvoiceServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -46,17 +48,21 @@ class InvoiceServiceGrpcClient extends \Grpc\BaseStub {
      *   [InvoiceError]()
      *   [QuotaError]()
      *   [RequestError]()
-     * @param \Google\Ads\GoogleAds\V22\Services\ListInvoicesRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V22\Services\ListInvoicesRequest $argument input argument
+     * @param  array                                                  $metadata metadata
+     * @param  array                                                  $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V22\Services\ListInvoicesResponse>
      */
     public function ListInvoices(\Google\Ads\GoogleAds\V22\Services\ListInvoicesRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v22.services.InvoiceService/ListInvoices',
-        $argument,
-        ['\Google\Ads\GoogleAds\V22\Services\ListInvoicesResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v22.services.InvoiceService/ListInvoices',
+            $argument,
+            ['\Google\Ads\GoogleAds\V22\Services\ListInvoicesResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

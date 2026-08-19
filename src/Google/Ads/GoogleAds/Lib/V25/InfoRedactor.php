@@ -46,13 +46,17 @@ class InfoRedactor
     private const SENSITIVE_TEXT_SEARCH_FORMAT = '/(SELECT.+WHERE.+%s.+?[\'"])\S+?([\'"])/i';
     private const SENSITIVE_TEXT_REPLACEMENT_FORMAT = '$1%s$2';
 
-    /** @var array the list of customer user access' fields containing email addresses. */
+    /**
+     * @var array the list of customer user access' fields containing email addresses.
+     */
     private static $CUSTOMER_USER_ACCESS_EMAIL_FIELDS;
     /**
      * @var array the list of customer user access invitation' fields containing email addresses.
      */
     private static $CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS;
-    /** @var array the list of change event's fields containing email addresses. */
+    /**
+     * @var array the list of change event's fields containing email addresses.
+     */
     private static $CHANGE_EVENT_EMAIL_FIELDS;
     /**
      * @var array the list of local services lead contact details' fields containing email
@@ -64,7 +68,9 @@ class InfoRedactor
      *     containing email addresses.
      */
     private static $LOCAL_SERVICES_LEAD_CONVERSATION_MESSAGE_DETAIL_TEXT;
-    /** @var array the map of header keys to redacted values. */
+    /**
+     * @var array the map of header keys to redacted values.
+     */
     private static $HEADER_KEYS_TO_REDACTED_VALUES;
 
     public function __construct()
@@ -86,9 +92,9 @@ class InfoRedactor
     /**
      * Redacts the specified headers with the provided redacted values.
      *
-     * @param array $headers the headers to be redacted
-     * @param array|null $headerKeysToRedactedValues the mapping from keys to values needing
-     *     redaction
+     * @param  array      $headers                    the headers to be redacted
+     * @param  array|null $headerKeysToRedactedValues the mapping from keys to values needing
+     *                                                redaction
      * @return array the headers with values redacted
      */
     public function redactHeaders(
@@ -122,7 +128,7 @@ class InfoRedactor
     /**
      * Redacts sensitive information of the provided request or response body.
      *
-     * @param Message $body a request or response body
+     * @param  Message $body a request or response body
      * @return Message the body whose relevant fields are redacted
      */
     public function redactBody(Message $body)
@@ -133,7 +139,7 @@ class InfoRedactor
     /**
      * Masks email addresses existing in relevant fields of a request or response body.
      *
-     * @param Message $body a request or response body
+     * @param  Message $body a request or response body
      * @return Message the body that have emails in their relevant fields masked
      */
     private function maskEmails(Message $body)
@@ -190,7 +196,7 @@ class InfoRedactor
     }
 
     /**
-     * @param Message $body a body to be cloned
+     * @param  Message $body a body to be cloned
      * @return mixed the cloned body
      */
     private static function cloneBody(Message $body)
@@ -206,7 +212,7 @@ class InfoRedactor
      * or `SearchGoogleAdsStreamRequest`.
      *
      * @param SearchGoogleAdsRequest|SearchGoogleAdsStreamRequest $request the request whose GAQL
-     *     query will be redacted
+     *                                                                     query will be redacted
      */
     private static function redactSearchRequest($request)
     {
@@ -235,7 +241,7 @@ class InfoRedactor
      * `SearchGoogleAdsStreamResponse`.
      *
      * @param SearchGoogleAdsResponse|SearchGoogleAdsStreamResponse $response the response to be
-     *     redacted
+     *                                                                        redacted
      */
     private static function redactSearchResponse($response)
     {
@@ -248,7 +254,9 @@ class InfoRedactor
         }
         foreach ($response->getFieldMask()->getPaths() as $path) {
             foreach ($response->getResults() as $result) {
-                /** @var GoogleAdsRow $result */
+                /**
+ * @var GoogleAdsRow $result
+*/
                 if (in_array($path, self::$CUSTOMER_USER_ACCESS_EMAIL_FIELDS)) {
                     self::redactCustomerUserAccess($result->getCustomerUserAccess());
                 } elseif (in_array($path, self::$CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS)) {
@@ -278,7 +286,7 @@ class InfoRedactor
     /**
      * Redacts sensitive information of the provided customer user access.
      *
-     * @param CustomerUserAccess $customerUserAccess
+     * @param  CustomerUserAccess $customerUserAccess
      * @return CustomerUserAccess the customer user access with sensitive information redacted
      */
     private static function redactCustomerUserAccess(CustomerUserAccess $customerUserAccess)
@@ -295,7 +303,7 @@ class InfoRedactor
     /**
      * Redacts sensitive information of the provided customer user access invitation.
      *
-     * @param CustomerUserAccessInvitation $customerUserAccessInvitation
+     * @param  CustomerUserAccessInvitation $customerUserAccessInvitation
      * @return CustomerUserAccessInvitation the customer user access invitation with sensitive
      *     information redacted
      */
@@ -311,7 +319,7 @@ class InfoRedactor
     /**
      * Redacts sensitive information of the provided `CreateCustomerClientRequest`.
      *
-     * @param CreateCustomerClientRequest $createCustomerClientRequest
+     * @param  CreateCustomerClientRequest $createCustomerClientRequest
      * @return CreateCustomerClientRequest the `CreateCustomerClientRequest` object with sensitive
      *     information redacted
      */

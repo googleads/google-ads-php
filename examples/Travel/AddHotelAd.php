@@ -78,11 +78,13 @@ class AddHotelAd
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::HOTEL_CENTER_ACCOUNT_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CPC_BID_CEILING_MICRO_AMOUNT => GetOpt::OPTIONAL_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -109,7 +111,9 @@ class AddHotelAd
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -131,10 +135,10 @@ class AddHotelAd
     /**
      * Runs the example.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $hotelCenterAccountId the Hotel Center account ID
-     * @param int $cpcBidCeilingMicroAmount the CPC bid ceiling micro amount
+     * @param GoogleAdsClient $googleAdsClient          the Google Ads API client
+     * @param int             $customerId               the customer ID
+     * @param int             $hotelCenterAccountId     the Hotel Center account ID
+     * @param int             $cpcBidCeilingMicroAmount the CPC bid ceiling micro amount
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -162,21 +166,23 @@ class AddHotelAd
     /**
      * Creates a new campaign budget in the specified client account.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int             $customerId      the customer ID
      * @return string the resource name of the newly created budget
      */
     private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a campaign budget.
-        $budget = new CampaignBudget([
+        $budget = new CampaignBudget(
+            [
             'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             // Sets the amount of budget.
             'amount_micros' => 50000000,
             // Makes the budget explicitly shared.
             'explicitly_shared' => true
-        ]);
+            ]
+        );
 
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
@@ -188,7 +194,9 @@ class AddHotelAd
             MutateCampaignBudgetsRequest::build($customerId, [$campaignBudgetOperation])
         );
 
-        /** @var CampaignBudget $addedBudget */
+        /**
+ * @var CampaignBudget $addedBudget
+*/
         $addedBudget = $response->getResults()[0];
         printf(
             "Added a budget with resource name '%s'.%s",
@@ -202,11 +210,11 @@ class AddHotelAd
     /**
      * Creates a new hotel campaign in the specified client account.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $budgetResourceName the resource name of budget for a new campaign
-     * @param int $hotelCenterAccountId the Hotel Center account ID
-     * @param int $cpcBidCeilingMicroAmount the CPC bid ceiling micro amount
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $budgetResourceName the resource name of budget for a new campaign
+     * @param  int $hotelCenterAccountId the Hotel Center account ID
+     * @param  int $cpcBidCeilingMicroAmount the CPC bid ceiling micro amount
      * @return string the resource name of the newly created campaign
      */
     // [START add_hotel_ad]
@@ -219,7 +227,8 @@ class AddHotelAd
     ) {
         // [START add_hotel_ad_1]
         // Creates a campaign.
-        $campaign = new Campaign([
+        $campaign = new Campaign(
+            [
             'name' => 'Interplanetary Cruise Campaign #' . Helper::getPrintableDatetime(),
             // Configures settings related to hotel campaigns including advertising channel type
             // and hotel setting info.
@@ -231,20 +240,25 @@ class AddHotelAd
             'status' => CampaignStatus::PAUSED,
             // Sets the bidding strategy to PercentCpc. Only Manual CPC and Percent CPC can be used
             // for hotel campaigns.
-            'percent_cpc' => new PercentCpc([
+            'percent_cpc' => new PercentCpc(
+                [
                 'cpc_bid_ceiling_micros' => $cpcBidCeilingMicroAmount
-            ]),
+                ]
+            ),
             // Sets the budget.
             'campaign_budget' => $budgetResourceName,
             // Configures the campaign network options. Only Google Search is allowed for
             // hotel campaigns.
-            'network_settings' => new NetworkSettings([
+            'network_settings' => new NetworkSettings(
+                [
                 'target_google_search' => true,
-            ]),
+                ]
+            ),
             // Declare whether or not this campaign serves political ads targeting the EU.
             'contains_eu_political_advertising' =>
                 EuPoliticalAdvertisingStatus::DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING
-        ]);
+            ]
+        );
         // [END add_hotel_ad_1]
 
         // Creates a campaign operation.
@@ -257,7 +271,9 @@ class AddHotelAd
             MutateCampaignsRequest::build($customerId, [$campaignOperation])
         );
 
-        /** @var Campaign $addedCampaign */
+        /**
+ * @var Campaign $addedCampaign
+*/
         $addedCampaign = $response->getResults()[0];
         printf(
             "Added a hotel campaign with resource name '%s'.%s",
@@ -272,9 +288,9 @@ class AddHotelAd
     /**
      * Creates a new hotel ad group in the specified campaign.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $campaignResourceName the resource name of campaign that a new ad group will
+     * @param  GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param  int $customerId the customer ID
+     * @param  string $campaignResourceName the resource name of campaign that a new ad group will
      *     belong to
      * @return string the resource name of the newly created ad group
      */
@@ -285,7 +301,8 @@ class AddHotelAd
         string $campaignResourceName
     ) {
         // Creates an ad group.
-        $adGroup = new AdGroup([
+        $adGroup = new AdGroup(
+            [
             'name' => 'Earth to Mars Cruise #' . Helper::getPrintableDatetime(),
             // Sets the campaign.
             'campaign' => $campaignResourceName,
@@ -294,7 +311,8 @@ class AddHotelAd
             'type' => AdGroupType::HOTEL_ADS,
             'cpc_bid_micros' => 10000000,
             'status' => AdGroupStatus::ENABLED,
-        ]);
+            ]
+        );
 
         // Creates an ad group operation.
         $adGroupOperation = new AdGroupOperation();
@@ -306,7 +324,9 @@ class AddHotelAd
             MutateAdGroupsRequest::build($customerId, [$adGroupOperation])
         );
 
-        /** @var AdGroup $addedAdGroup */
+        /**
+ * @var AdGroup $addedAdGroup
+*/
         $addedAdGroup = $response->getResults()[0];
         printf(
             "Added a hotel ad group with resource name '%s'.%s",
@@ -333,12 +353,15 @@ class AddHotelAd
         string $adGroupResourceName
     ) {
         // Creates a new hotel ad.
-        $ad = new Ad([
+        $ad = new Ad(
+            [
             'hotel_ad' => new HotelAdInfo(),
-        ]);
+            ]
+        );
 
         // Creates a new ad group ad and sets the hotel ad to it.
-        $adGroupAd = new AdGroupAd([
+        $adGroupAd = new AdGroupAd(
+            [
             'ad' => $ad,
             // Set the ad group ad to enabled.  Setting this to paused will cause an error
             // for hotel campaigns.  For hotels pausing should happen at either the ad group or
@@ -346,7 +369,8 @@ class AddHotelAd
             'status' => AdGroupAdStatus::ENABLED,
             // Sets the ad group.
             'ad_group' => $adGroupResourceName
-        ]);
+            ]
+        );
 
         // Creates an ad group ad operation.
         $adGroupAdOperation = new AdGroupAdOperation();
@@ -358,7 +382,9 @@ class AddHotelAd
             MutateAdGroupAdsRequest::build($customerId, [$adGroupAdOperation])
         );
 
-        /** @var AdGroupAd $addedAdGroupAd */
+        /**
+ * @var AdGroupAd $addedAdGroupAd
+*/
         $addedAdGroupAd = $response->getResults()[0];
         printf(
             "Added a hotel ad group ad with resource name '%s'.%s",

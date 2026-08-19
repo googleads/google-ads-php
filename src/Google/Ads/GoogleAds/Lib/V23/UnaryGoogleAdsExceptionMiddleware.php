@@ -35,7 +35,7 @@ class UnaryGoogleAdsExceptionMiddleware extends GoogleAdsMiddlewareAbstract
     /**
      * Creates the `GoogleAdsException` middleware.
      *
-     * @param callable|null $nextHandler
+     * @param callable|null                $nextHandler
      * @param StatusMetadataExtractor|null $statusMetadataExtractor
      */
     public function __construct(
@@ -49,15 +49,17 @@ class UnaryGoogleAdsExceptionMiddleware extends GoogleAdsMiddlewareAbstract
     /**
      * Throws a `GoogleAdsException` when calls to the Google Ads API server fail.
      *
-     * @param Call $call the current request
-     * @param array $options the optional parameters
+     * @param  Call  $call    the current request
+     * @param  array $options the optional parameters
      * @return \GuzzleHttp\Promise\PromiseInterface the `Promise` interface
      *     customized to throw `GoogleAdsException`
      */
     public function __invoke(Call $call, array $options)
     {
         $next = $this->getNextHandler();
-        /** @var Promise $promise */
+        /**
+ * @var Promise $promise
+*/
         $promise = $next(
             $call,
             $options

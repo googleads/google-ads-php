@@ -36,7 +36,7 @@ class ApiVersionSupport
      * Constructor.
      *
      * @param string|null $rootPath the root path of the library, the one that contains this class
-     *     file is used by default
+     *                              file is used by default
      */
     public function __construct(string $rootPath = null)
     {
@@ -49,7 +49,7 @@ class ApiVersionSupport
      * speed up execution.
      *
      * @param Event $event the event context provided by Composer which contains the arguments
-     *     passed to the Composer script
+     *                     passed to the Composer script
      */
     public static function remove(Event $event)
     {
@@ -58,10 +58,12 @@ class ApiVersionSupport
         foreach ($event->getArguments() as $apiVersionToRemove) {
             if (is_numeric($apiVersionToRemove)) {
                 $apiVersion = intval($apiVersionToRemove);
-                $event->getIO()->write(sprintf(
-                    'Removing support for the version %d of Google Ads API...',
-                    $apiVersion
-                ));
+                $event->getIO()->write(
+                    sprintf(
+                        'Removing support for the version %d of Google Ads API...',
+                        $apiVersion
+                    )
+                );
                 $apiVersionSupport->removeDirectories(
                     $apiVersionSupport->getDirectoryPathsForApiVersion($apiVersion)
                 );
@@ -73,7 +75,7 @@ class ApiVersionSupport
     /**
      * Gets the directory paths that are specific to a given Google Ads API version.
      *
-     * @param int $version the Google Ads API version to get the directory paths of
+     * @param  int $version the Google Ads API version to get the directory paths of
      * @return string[] the paths
      */
     public function getDirectoryPathsForApiVersion(int $version): array

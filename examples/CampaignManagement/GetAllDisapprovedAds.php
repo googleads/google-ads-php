@@ -37,7 +37,9 @@ use Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsRequest;
 use Google\Ads\GoogleAds\V25\Services\SearchSettings;
 use Google\ApiCore\ApiException;
 
-/** This example retrieves all the disapproved ads in a given campaign. */
+/**
+ * This example retrieves all the disapproved ads in a given campaign.
+ */
 class GetAllDisapprovedAds
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
@@ -47,10 +49,12 @@ class GetAllDisapprovedAds
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -76,7 +80,9 @@ class GetAllDisapprovedAds
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -99,8 +105,8 @@ class GetAllDisapprovedAds
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $campaignId the campaign ID for which campaign ads will be retrieved
+     * @param int             $customerId      the customer ID
+     * @param int             $campaignId      the campaign ID for which campaign ads will be retrieved
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -126,7 +132,9 @@ class GetAllDisapprovedAds
 
         // Iterates over all rows in all pages and counts disapproved ads.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
-            /** @var GoogleAdsRow $googleAdsRow */
+            /**
+ * @var GoogleAdsRow $googleAdsRow
+*/
             $adGroupAd = $googleAdsRow->getAdGroupAd();
             $policySummary = $adGroupAd->getPolicySummary();
             $ad = $adGroupAd->getAd();
@@ -139,7 +147,9 @@ class GetAllDisapprovedAds
                 PHP_EOL
             );
             foreach ($policySummary->getPolicyTopicEntries() as $policyTopicEntry) {
-                /** @var PolicyTopicEntry $policyTopicEntry */
+                /**
+ * @var PolicyTopicEntry $policyTopicEntry
+*/
                 printf(
                     "  topic: '%s', type: '%s'%s",
                     $policyTopicEntry->getTopic(),
@@ -147,7 +157,9 @@ class GetAllDisapprovedAds
                     PHP_EOL
                 );
                 foreach ($policyTopicEntry->getEvidences() as $evidence) {
-                    /** @var PolicyTopicEvidence $evidence */
+                    /**
+ * @var PolicyTopicEvidence $evidence
+*/
                     $textList = $evidence->getTextList();
                     if (!empty($textList)) {
                         for ($i = 0; $i < $textList->getTexts()->count(); $i++) {

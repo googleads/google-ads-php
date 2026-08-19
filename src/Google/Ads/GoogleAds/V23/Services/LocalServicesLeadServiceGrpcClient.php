@@ -21,46 +21,56 @@ namespace Google\Ads\GoogleAds\V23\Services;
 /**
  * This service allows management of LocalServicesLead resources.
  */
-class LocalServicesLeadServiceGrpcClient extends \Grpc\BaseStub {
+class LocalServicesLeadServiceGrpcClient extends \Grpc\BaseStub
+{
 
     /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
+     * @param string        $hostname hostname
+     * @param array         $opts     channel options
+     * @param \Grpc\Channel $channel  (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
+    public function __construct($hostname, $opts, $channel = null)
+    {
         parent::__construct($hostname, $opts, $channel);
     }
 
     /**
      * RPC to append Local Services Lead Conversation resources to Local Services
      * Lead resources.
-     * @param \Google\Ads\GoogleAds\V23\Services\AppendLeadConversationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\AppendLeadConversationRequest $argument input argument
+     * @param  array                                                            $metadata metadata
+     * @param  array                                                            $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\AppendLeadConversationResponse>
      */
     public function AppendLeadConversation(\Google\Ads\GoogleAds\V23\Services\AppendLeadConversationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.LocalServicesLeadService/AppendLeadConversation',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\AppendLeadConversationResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.LocalServicesLeadService/AppendLeadConversation',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\AppendLeadConversationResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
     /**
      * RPC to provide feedback on Local Services Lead resources.
-     * @param \Google\Ads\GoogleAds\V23\Services\ProvideLeadFeedbackRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
+     *
+     * @param  \Google\Ads\GoogleAds\V23\Services\ProvideLeadFeedbackRequest $argument input argument
+     * @param  array                                                         $metadata metadata
+     * @param  array                                                         $options  call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V23\Services\ProvideLeadFeedbackResponse>
      */
     public function ProvideLeadFeedback(\Google\Ads\GoogleAds\V23\Services\ProvideLeadFeedbackRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.ads.googleads.v23.services.LocalServicesLeadService/ProvideLeadFeedback',
-        $argument,
-        ['\Google\Ads\GoogleAds\V23\Services\ProvideLeadFeedbackResponse', 'decode'],
-        $metadata, $options);
+        $metadata = [], $options = []
+    ) {
+        return $this->_simpleRequest(
+            '/google.ads.googleads.v23.services.LocalServicesLeadService/ProvideLeadFeedback',
+            $argument,
+            ['\Google\Ads\GoogleAds\V23\Services\ProvideLeadFeedbackResponse', 'decode'],
+            $metadata, $options
+        );
     }
 
 }

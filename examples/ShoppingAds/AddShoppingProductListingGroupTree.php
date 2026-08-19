@@ -67,11 +67,13 @@ class AddShoppingProductListingGroupTree
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments(
+            [
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::REPLACE_EXISTING_TREE => GetOpt::REQUIRED_ARGUMENT
-        ]);
+            ]
+        );
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -99,7 +101,9 @@ class AddShoppingProductListingGroupTree
                 PHP_EOL
             );
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
+                /**
+ * @var GoogleAdsError $error
+*/
                 printf(
                     "\t%s: %s%s",
                     $error->getErrorCode()->getErrorCode(),
@@ -163,11 +167,13 @@ class AddShoppingProductListingGroupTree
             $customerId,
             $adGroupId,
             $adGroupCriterionResourceNameRoot,
-            new ListingDimensionInfo([
+            new ListingDimensionInfo(
+                [
                 'product_condition' => new ProductConditionInfo(
                     ['condition' => ProductCondition::PBNEW]
                 )
-            ]),
+                ]
+            ),
             200000
         );
         $operations[] = new AdGroupCriterionOperation(['create' => $adGroupCriterionConditionNew]);
@@ -179,11 +185,13 @@ class AddShoppingProductListingGroupTree
             $customerId,
             $adGroupId,
             $adGroupCriterionResourceNameRoot,
-            new ListingDimensionInfo([
+            new ListingDimensionInfo(
+                [
                 'product_condition' => new ProductConditionInfo(
                     ['condition' => ProductCondition::USED]
                 )
-            ]),
+                ]
+            ),
             100000
         );
         $operations[] = new AdGroupCriterionOperation(['create' => $adGroupCriterionConditionUsed]);
@@ -194,11 +202,13 @@ class AddShoppingProductListingGroupTree
             $customerId,
             $adGroupId,
             $adGroupCriterionResourceNameRoot,
-            new ListingDimensionInfo([
+            new ListingDimensionInfo(
+                [
                 // All sibling nodes must have the same dimension type, even if they don't contain a
                 // bid.
                 'product_condition' => new ProductConditionInfo()
-            ])
+                ]
+            )
         );
         $operations[] =
             new AdGroupCriterionOperation(['create' => $adGroupCriterionConditionOther]);
@@ -218,9 +228,11 @@ class AddShoppingProductListingGroupTree
             $customerId,
             $adGroupId,
             $adGroupCriterionResourceNameConditionOther,
-            new ListingDimensionInfo([
+            new ListingDimensionInfo(
+                [
                 'product_brand' => new ProductBrandInfo(['value' => 'CoolBrand'])
-            ]),
+                ]
+            ),
             900000
         );
         $operations[] =
@@ -233,9 +245,11 @@ class AddShoppingProductListingGroupTree
             $customerId,
             $adGroupId,
             $adGroupCriterionResourceNameConditionOther,
-            new ListingDimensionInfo([
+            new ListingDimensionInfo(
+                [
                 'product_brand' => new ProductBrandInfo(['value' => 'CheapBrand'])
-            ]),
+                ]
+            ),
             10000
         );
         $operations[] =
@@ -247,9 +261,11 @@ class AddShoppingProductListingGroupTree
             $customerId,
             $adGroupId,
             $adGroupCriterionResourceNameConditionOther,
-            new ListingDimensionInfo([
+            new ListingDimensionInfo(
+                [
                 'product_brand' => new ProductBrandInfo()
-            ]),
+                ]
+            ),
             50000
         );
         $operations[] =
@@ -267,7 +283,9 @@ class AddShoppingProductListingGroupTree
             PHP_EOL
         );
         foreach ($response->getResults() as $addedAdGroupCriterion) {
-            /** @var AdGroupCriterion $addedAdGroupCriterion */
+            /**
+ * @var AdGroupCriterion $addedAdGroupCriterion
+*/
             print $addedAdGroupCriterion->getResourceName() . PHP_EOL;
         }
     }
@@ -278,9 +296,9 @@ class AddShoppingProductListingGroupTree
      * group.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ID of ad group that the existing listing group tree will be
-     *     removed from
+     * @param int             $customerId      the customer ID
+     * @param int             $adGroupId       the ID of ad group that the existing listing group tree will be
+     *                                         removed from
      */
     private static function removeListingGroupTree(
         GoogleAdsClient $googleAdsClient,
@@ -303,7 +321,9 @@ class AddShoppingProductListingGroupTree
         // Iterates over all rows in all pages and prints the requested field values for
         // the listing group tree in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
-            /** @var GoogleAdsRow $googleAdsRow */
+            /**
+ * @var GoogleAdsRow $googleAdsRow
+*/
             $adGroupCriterion = $googleAdsRow->getAdGroupCriterion();
             printf(
                 "Found an ad group criterion with the resource name: '%s'.%s",
@@ -330,12 +350,15 @@ class AddShoppingProductListingGroupTree
      * Creates a new criterion containing a subdivision listing group node. If the parent ad group
      * criterion resource name is not specified, this method creates a root node.
      *
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID
-     * @param string|null $parentAdGroupCriterionResourceName the resource name of the parent of
-     *     this criterion. If null, this method will create a root of the tree
-     * @param ListingDimensionInfo|null $listingDimensionInfo the listing dimension info to be set
-     *     for this listing group. This is required for non-root subdivisions
+     * @param  int                       $customerId                         the customer ID
+     * @param  int                       $adGroupId                          the ad group ID
+     * @param  string|null               $parentAdGroupCriterionResourceName the resource name of the parent of
+     *                                                                       this criterion. If null, this
+     *                                                                       method will create a root of the
+     *                                                                       tree
+     * @param  ListingDimensionInfo|null $listingDimensionInfo               the listing dimension info to be set
+     *                                                                       for this listing group. This is
+     *                                                                       required for non-root subdivisions
      * @return AdGroupCriterion the ad group criterion that contains the listing group root node
      */
     private static function createListingGroupSubdivision(
@@ -345,11 +368,13 @@ class AddShoppingProductListingGroupTree
         ListingDimensionInfo $listingDimensionInfo = null
     ) {
         static $tempId = 0;
-        $listingGroupInfo = new ListingGroupInfo([
+        $listingGroupInfo = new ListingGroupInfo(
+            [
             // Set the type as a SUBDIVISION, which will allow the node to be the parent of
             // another sub-tree.
             'type' => ListingGroupType::SUBDIVISION
-        ]);
+            ]
+        );
         // If $parentAdGroupCriterionResourceName and $listingDimensionInfo are not null, create
         // a non-root division by setting its parent and case value.
         if (!is_null($parentAdGroupCriterionResourceName) && !is_null($listingDimensionInfo)) {
@@ -360,7 +385,8 @@ class AddShoppingProductListingGroupTree
             $listingGroupInfo->setCaseValue($listingDimensionInfo);
         }
 
-        $adGroupCriterion = new AdGroupCriterion([
+        $adGroupCriterion = new AdGroupCriterion(
+            [
             // The resource name the criterion will be created with. This will define the ID for the
             // ad group criterion.
             'resource_name' => ResourceNames::forAdGroupCriterion(
@@ -372,7 +398,8 @@ class AddShoppingProductListingGroupTree
             ),
             'status' => AdGroupCriterionStatus::ENABLED,
             'listing_group' => $listingGroupInfo
-        ]);
+            ]
+        );
 
         return $adGroupCriterion;
     }
@@ -380,14 +407,14 @@ class AddShoppingProductListingGroupTree
     /**
      * Creates a new criterion containing a biddable unit listing group node.
      *
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID
-     * @param string $parentAdGroupCriterionResourceName the resource name of the parent of this
-     *     criterion
-     * @param ListingDimensionInfo $listingDimensionInfo the listing dimension info to be set for
-     *     this listing group
-     * @param int $cpcBidMicros the CPC bid for items in this listing group. This value should be
-     *     specified
+     * @param  int                  $customerId                         the customer ID
+     * @param  int                  $adGroupId                          the ad group ID
+     * @param  string               $parentAdGroupCriterionResourceName the resource name of the parent of this
+     *                                                                  criterion
+     * @param  ListingDimensionInfo $listingDimensionInfo               the listing dimension info to be set for
+     *                                                                  this listing group
+     * @param  int                  $cpcBidMicros                       the CPC bid for items in this listing group. This value should be
+     *                                                                  specified
      * @return AdGroupCriterion the ad group criterion that contains the biddable unit listing
      *     group node
      */
@@ -405,11 +432,13 @@ class AddShoppingProductListingGroupTree
         // In both cases you must set the parentAdGroupCriterionResourceName on the listing
         // group for non-root nodes.
         // This example demonstrates method (1).
-        $adGroupCriterion = new AdGroupCriterion([
+        $adGroupCriterion = new AdGroupCriterion(
+            [
             // The ad group the listing group will be attached to.
             'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'status' => AdGroupCriterionStatus::ENABLED,
-            'listing_group' => new ListingGroupInfo([
+            'listing_group' => new ListingGroupInfo(
+                [
                 // Set the type as a UNIT, which will allow the group to be biddable.
                 'type' => ListingGroupType::UNIT,
                 // Set the ad group criterion resource name for the parent listing group.
@@ -417,11 +446,13 @@ class AddShoppingProductListingGroupTree
                 'parent_ad_group_criterion' => $parentAdGroupCriterionResourceName,
                 // Case values contain the listing dimension used for the node.
                 'case_value' => $listingDimensionInfo
-            ]),
+                ]
+            ),
             // Set the bid for this listing group unit.
             // This will be used as the CPC bid for items that are included in this listing group.
             'cpc_bid_micros' => $cpcBidMicros
-        ]);
+            ]
+        );
 
         return $adGroupCriterion;
     }
