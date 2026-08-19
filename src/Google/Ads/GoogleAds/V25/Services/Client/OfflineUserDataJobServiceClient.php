@@ -88,7 +88,11 @@ class OfflineUserDataJobServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -137,7 +141,7 @@ class OfflineUserDataJobServiceClient
      */
     public function resumeOperation($operationName, $methodName = null)
     {
-        $options = $this->descriptors[$methodName]['longRunning'] ?? [];
+        $options = $methodName && isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
         $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
         $operation->reload();
         return $operation;
@@ -307,6 +311,8 @@ class OfflineUserDataJobServiceClient
      * The async variant is
      * {@see OfflineUserDataJobServiceClient::addOfflineUserDataJobOperationsAsync()} .
      *
+     * @example samples/V25/Services/OfflineUserDataJobServiceClient/add_offline_user_data_job_operations.php
+     *
      * @param AddOfflineUserDataJobOperationsRequest $request     A request to house fields associated with the call.
      * @param array                                  $callOptions {
      *     Optional.
@@ -343,6 +349,8 @@ class OfflineUserDataJobServiceClient
      *
      * The async variant is
      * {@see OfflineUserDataJobServiceClient::createOfflineUserDataJobAsync()} .
+     *
+     * @example samples/V25/Services/OfflineUserDataJobServiceClient/create_offline_user_data_job.php
      *
      * @param CreateOfflineUserDataJobRequest $request     A request to house fields associated with the call.
      * @param array                           $callOptions {
@@ -381,6 +389,8 @@ class OfflineUserDataJobServiceClient
      *
      * The async variant is
      * {@see OfflineUserDataJobServiceClient::runOfflineUserDataJobAsync()} .
+     *
+     * @example samples/V25/Services/OfflineUserDataJobServiceClient/run_offline_user_data_job.php
      *
      * @param RunOfflineUserDataJobRequest $request     A request to house fields associated with the call.
      * @param array                        $callOptions {

@@ -74,7 +74,11 @@ class PaymentsAccountServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -199,6 +203,8 @@ class PaymentsAccountServiceClient
      *
      * The async variant is
      * {@see PaymentsAccountServiceClient::listPaymentsAccountsAsync()} .
+     *
+     * @example samples/V25/Services/PaymentsAccountServiceClient/list_payments_accounts.php
      *
      * @param ListPaymentsAccountsRequest $request     A request to house fields associated with the call.
      * @param array                       $callOptions {

@@ -86,7 +86,11 @@ class GoogleAdsServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -1259,6 +1263,23 @@ class GoogleAdsServiceClient
 
     /**
      * Formats a string containing the fully-qualified path to represent a
+     * lift_measurement_config resource.
+     *
+     * @param string $customerId
+     * @param string $liftMeasurementConfigurationId
+     *
+     * @return string The formatted lift_measurement_config resource.
+     */
+    public static function liftMeasurementConfigName(string $customerId, string $liftMeasurementConfigurationId): string
+    {
+        return self::getPathTemplate('liftMeasurementConfig')->render([
+            'customer_id' => $customerId,
+            'lift_measurement_configuration_id' => $liftMeasurementConfigurationId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
      * mobile_app_category_constant resource.
      *
      * @param string $mobileAppCategoryId
@@ -1506,6 +1527,7 @@ class GoogleAdsServiceClient
      * - label: customers/{customer_id}/labels/{label_id}
      * - languageConstant: languageConstants/{criterion_id}
      * - lifeEvent: customers/{customer_id}/lifeEvents/{life_event_id}
+     * - liftMeasurementConfig: customers/{customer_id}/liftMeasurementConfigs/{lift_measurement_configuration_id}
      * - mobileAppCategoryConstant: mobileAppCategoryConstants/{mobile_app_category_id}
      * - mobileDeviceConstant: mobileDeviceConstants/{criterion_id}
      * - operatingSystemVersionConstant: operatingSystemVersionConstants/{criterion_id}
@@ -1738,6 +1760,8 @@ class GoogleAdsServiceClient
      *
      * The async variant is {@see GoogleAdsServiceClient::mutateAsync()} .
      *
+     * @example samples/V25/Services/GoogleAdsServiceClient/mutate.php
+     *
      * @param MutateGoogleAdsRequest $request     A request to house fields associated with the call.
      * @param array                  $callOptions {
      *     Optional.
@@ -1774,6 +1798,8 @@ class GoogleAdsServiceClient
      *
      * The async variant is {@see GoogleAdsServiceClient::searchAsync()} .
      *
+     * @example samples/V25/Services/GoogleAdsServiceClient/search.php
+     *
      * @param SearchGoogleAdsRequest $request     A request to house fields associated with the call.
      * @param array                  $callOptions {
      *     Optional.
@@ -1807,6 +1833,8 @@ class GoogleAdsServiceClient
      * [QueryError]()
      * [QuotaError]()
      * [RequestError]()
+     *
+     * @example samples/V25/Services/GoogleAdsServiceClient/search_stream.php
      *
      * @param SearchGoogleAdsStreamRequest $request     A request to house fields associated with the call.
      * @param array                        $callOptions {

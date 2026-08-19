@@ -121,6 +121,7 @@ return [
                 'campaign' => 'customers/{customer_id}/campaigns/{campaign_id}',
                 'campaignBudget' => 'customers/{customer_id}/campaignBudgets/{campaign_budget_id}',
                 'experiment' => 'customers/{customer_id}/experiments/{trial_id}',
+                'liftMeasurementConfig' => 'customers/{customer_id}/liftMeasurementConfigs/{lift_measurement_configuration_id}',
             ],
         ],
     ],

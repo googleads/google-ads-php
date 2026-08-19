@@ -86,7 +86,11 @@ class CustomerServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -270,6 +274,8 @@ class CustomerServiceClient
      *
      * The async variant is {@see CustomerServiceClient::createCustomerClientAsync()} .
      *
+     * @example samples/V25/Services/CustomerServiceClient/create_customer_client.php
+     *
      * @param CreateCustomerClientRequest $request     A request to house fields associated with the call.
      * @param array                       $callOptions {
      *     Optional.
@@ -303,6 +309,8 @@ class CustomerServiceClient
      *
      * The async variant is
      * {@see CustomerServiceClient::listAccessibleCustomersAsync()} .
+     *
+     * @example samples/V25/Services/CustomerServiceClient/list_accessible_customers.php
      *
      * @param ListAccessibleCustomersRequest $request     A request to house fields associated with the call.
      * @param array                          $callOptions {
@@ -338,6 +346,8 @@ class CustomerServiceClient
      * [UrlFieldError]()
      *
      * The async variant is {@see CustomerServiceClient::mutateCustomerAsync()} .
+     *
+     * @example samples/V25/Services/CustomerServiceClient/mutate_customer.php
      *
      * @param MutateCustomerRequest $request     A request to house fields associated with the call.
      * @param array                 $callOptions {

@@ -395,6 +395,8 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           Immutable. Vertical ads item group rule list criterion.
      *     @type \Google\Ads\GoogleAds\V25\Common\RetailFilterBundle $retail_filter_bundle
      *           Immutable. Retail Filter Bundle.
+     *     @type \Google\Ads\GoogleAds\V25\Common\EntityBid $entity_bid
+     *           Immutable. Entity bid criterion.
      * }
      */
     public function __construct($data = NULL) {
@@ -2373,6 +2375,37 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Common\RetailFilterBundle::class);
         $this->writeOneof(180, $var);
+
+        return $this;
+    }
+
+    /**
+     * Immutable. Entity bid criterion.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.common.EntityBid entity_bid = 92 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Ads\GoogleAds\V25\Common\EntityBid|null
+     */
+    public function getEntityBid()
+    {
+        return $this->readOneof(92);
+    }
+
+    public function hasEntityBid()
+    {
+        return $this->hasOneof(92);
+    }
+
+    /**
+     * Immutable. Entity bid criterion.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.common.EntityBid entity_bid = 92 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Ads\GoogleAds\V25\Common\EntityBid $var
+     * @return $this
+     */
+    public function setEntityBid($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Common\EntityBid::class);
+        $this->writeOneof(92, $var);
 
         return $this;
     }

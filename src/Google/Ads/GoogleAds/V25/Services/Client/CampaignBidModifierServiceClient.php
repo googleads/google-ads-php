@@ -80,7 +80,11 @@ class CampaignBidModifierServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -280,6 +284,8 @@ class CampaignBidModifierServiceClient
      *
      * The async variant is
      * {@see CampaignBidModifierServiceClient::mutateCampaignBidModifiersAsync()} .
+     *
+     * @example samples/V25/Services/CampaignBidModifierServiceClient/mutate_campaign_bid_modifiers.php
      *
      * @param MutateCampaignBidModifiersRequest $request     A request to house fields associated with the call.
      * @param array                             $callOptions {

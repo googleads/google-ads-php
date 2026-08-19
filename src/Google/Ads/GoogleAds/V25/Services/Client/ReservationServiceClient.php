@@ -77,7 +77,11 @@ class ReservationServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -192,6 +196,8 @@ class ReservationServiceClient
      *
      * The async variant is {@see ReservationServiceClient::bookCampaignsAsync()} .
      *
+     * @example samples/V25/Services/ReservationServiceClient/book_campaigns.php
+     *
      * @param BookCampaignsRequest $request     A request to house fields associated with the call.
      * @param array                $callOptions {
      *     Optional.
@@ -216,6 +222,8 @@ class ReservationServiceClient
      * This request can have a latency of 30 seconds.
      *
      * The async variant is {@see ReservationServiceClient::quoteCampaignsAsync()} .
+     *
+     * @example samples/V25/Services/ReservationServiceClient/quote_campaigns.php
      *
      * @param QuoteCampaignsRequest $request     A request to house fields associated with the call.
      * @param array                 $callOptions {

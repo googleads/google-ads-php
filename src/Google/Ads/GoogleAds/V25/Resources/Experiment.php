@@ -114,6 +114,12 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional bool sync_enabled = 20 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $sync_enabled = null;
+    /**
+     * Output only. The lift measurement configuration.
+     *
+     * Generated from protobuf field <code>optional string lift_measurement_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $lift_measurement_config = null;
     protected $experiment_info;
 
     /**
@@ -168,6 +174,8 @@ class Experiment extends \Google\Protobuf\Internal\Message
      *           Immutable. Set to true if changes to base campaigns should be synced to the
      *           trial campaigns. Any changes made directly to trial campaigns will be
      *           preserved. This field can only be set when the experiment is being created.
+     *     @type string $lift_measurement_config
+     *           Output only. The lift measurement configuration.
      *     @type \Google\Ads\GoogleAds\V25\Common\VideoExperimentInfo $video_experiment
      *           Immutable. Details of the video experiment. Applies for experiment types:
      *           YOUTUBE_CUSTOM.
@@ -605,6 +613,42 @@ class Experiment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->sync_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The lift measurement configuration.
+     *
+     * Generated from protobuf field <code>optional string lift_measurement_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getLiftMeasurementConfig()
+    {
+        return isset($this->lift_measurement_config) ? $this->lift_measurement_config : '';
+    }
+
+    public function hasLiftMeasurementConfig()
+    {
+        return isset($this->lift_measurement_config);
+    }
+
+    public function clearLiftMeasurementConfig()
+    {
+        unset($this->lift_measurement_config);
+    }
+
+    /**
+     * Output only. The lift measurement configuration.
+     *
+     * Generated from protobuf field <code>optional string lift_measurement_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLiftMeasurementConfig($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->lift_measurement_config = $var;
 
         return $this;
     }

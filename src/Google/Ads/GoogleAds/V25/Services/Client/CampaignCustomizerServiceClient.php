@@ -80,7 +80,11 @@ class CampaignCustomizerServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -274,6 +278,8 @@ class CampaignCustomizerServiceClient
      *
      * The async variant is
      * {@see CampaignCustomizerServiceClient::mutateCampaignCustomizersAsync()} .
+     *
+     * @example samples/V25/Services/CampaignCustomizerServiceClient/mutate_campaign_customizers.php
      *
      * @param MutateCampaignCustomizersRequest $request     A request to house fields associated with the call.
      * @param array                            $callOptions {

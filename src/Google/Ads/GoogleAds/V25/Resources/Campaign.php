@@ -477,6 +477,22 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool missing_eu_political_advertising_declaration = 108 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $missing_eu_political_advertising_declaration = false;
+    /**
+     * Output only. The timestamp when the ACA campaign was migrated to AI Max.
+     * The timestamp is in the customer's timezone and in "yyyy-MM-dd HH:mm:ss"
+     * format.
+     *
+     * Generated from protobuf field <code>optional string aca_migration_date_time = 112 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $aca_migration_date_time = null;
+    /**
+     * Output only. The timestamp when the Broad Match campaign was migrated to AI
+     * Max. The timestamp is in the customer's timezone and in "yyyy-MM-dd
+     * HH:mm:ss" format.
+     *
+     * Generated from protobuf field <code>optional string broad_match_migration_date_time = 113 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $broad_match_migration_date_time = null;
     protected $campaign_bidding_strategy;
 
     /**
@@ -703,6 +719,14 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           ineligible for any exemptions. If this field is true, use the
      *           contains_eu_political_advertising field to add the required declaration.
      *           This field is read-only.
+     *     @type string $aca_migration_date_time
+     *           Output only. The timestamp when the ACA campaign was migrated to AI Max.
+     *           The timestamp is in the customer's timezone and in "yyyy-MM-dd HH:mm:ss"
+     *           format.
+     *     @type string $broad_match_migration_date_time
+     *           Output only. The timestamp when the Broad Match campaign was migrated to AI
+     *           Max. The timestamp is in the customer's timezone and in "yyyy-MM-dd
+     *           HH:mm:ss" format.
      *     @type string $bidding_strategy
      *           The resource name of the portfolio bidding strategy used by the campaign.
      *     @type \Google\Ads\GoogleAds\V25\Common\Commission $commission
@@ -2915,6 +2939,86 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->missing_eu_political_advertising_declaration = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The timestamp when the ACA campaign was migrated to AI Max.
+     * The timestamp is in the customer's timezone and in "yyyy-MM-dd HH:mm:ss"
+     * format.
+     *
+     * Generated from protobuf field <code>optional string aca_migration_date_time = 112 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getAcaMigrationDateTime()
+    {
+        return isset($this->aca_migration_date_time) ? $this->aca_migration_date_time : '';
+    }
+
+    public function hasAcaMigrationDateTime()
+    {
+        return isset($this->aca_migration_date_time);
+    }
+
+    public function clearAcaMigrationDateTime()
+    {
+        unset($this->aca_migration_date_time);
+    }
+
+    /**
+     * Output only. The timestamp when the ACA campaign was migrated to AI Max.
+     * The timestamp is in the customer's timezone and in "yyyy-MM-dd HH:mm:ss"
+     * format.
+     *
+     * Generated from protobuf field <code>optional string aca_migration_date_time = 112 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAcaMigrationDateTime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->aca_migration_date_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The timestamp when the Broad Match campaign was migrated to AI
+     * Max. The timestamp is in the customer's timezone and in "yyyy-MM-dd
+     * HH:mm:ss" format.
+     *
+     * Generated from protobuf field <code>optional string broad_match_migration_date_time = 113 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getBroadMatchMigrationDateTime()
+    {
+        return isset($this->broad_match_migration_date_time) ? $this->broad_match_migration_date_time : '';
+    }
+
+    public function hasBroadMatchMigrationDateTime()
+    {
+        return isset($this->broad_match_migration_date_time);
+    }
+
+    public function clearBroadMatchMigrationDateTime()
+    {
+        unset($this->broad_match_migration_date_time);
+    }
+
+    /**
+     * Output only. The timestamp when the Broad Match campaign was migrated to AI
+     * Max. The timestamp is in the customer's timezone and in "yyyy-MM-dd
+     * HH:mm:ss" format.
+     *
+     * Generated from protobuf field <code>optional string broad_match_migration_date_time = 113 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBroadMatchMigrationDateTime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->broad_match_migration_date_time = $var;
 
         return $this;
     }

@@ -39,6 +39,10 @@ class AudienceCompositionMetrics extends \Google\Protobuf\Internal\Message
     protected $index = 0.0;
     /**
      * A relevance score from 0 to 1 inclusive.
+     * Note: When an
+     * [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     * is requested in GenerateAudienceCompositionInsightsRequest, score is
+     * omitted.
      *
      * Generated from protobuf field <code>double score = 4;</code>
      */
@@ -61,6 +65,10 @@ class AudienceCompositionMetrics extends \Google\Protobuf\Internal\Message
      *           ratio is undefined or is not meaningful.
      *     @type float $score
      *           A relevance score from 0 to 1 inclusive.
+     *           Note: When an
+     *           [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     *           is requested in GenerateAudienceCompositionInsightsRequest, score is
+     *           omitted.
      * }
      */
     public function __construct($data = NULL) {
@@ -154,6 +162,10 @@ class AudienceCompositionMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * A relevance score from 0 to 1 inclusive.
+     * Note: When an
+     * [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     * is requested in GenerateAudienceCompositionInsightsRequest, score is
+     * omitted.
      *
      * Generated from protobuf field <code>double score = 4;</code>
      * @return float
@@ -165,6 +177,10 @@ class AudienceCompositionMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * A relevance score from 0 to 1 inclusive.
+     * Note: When an
+     * [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+     * is requested in GenerateAudienceCompositionInsightsRequest, score is
+     * omitted.
      *
      * Generated from protobuf field <code>double score = 4;</code>
      * @param float $var

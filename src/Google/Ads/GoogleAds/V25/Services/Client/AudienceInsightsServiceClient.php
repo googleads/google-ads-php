@@ -96,7 +96,11 @@ class AudienceInsightsServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -225,6 +229,8 @@ class AudienceInsightsServiceClient
      * {@see AudienceInsightsServiceClient::generateAudienceCompositionInsightsAsync()}
      * .
      *
+     * @example samples/V25/Services/AudienceInsightsServiceClient/generate_audience_composition_insights.php
+     *
      * @param GenerateAudienceCompositionInsightsRequest $request     A request to house fields associated with the call.
      * @param array                                      $callOptions {
      *     Optional.
@@ -260,6 +266,8 @@ class AudienceInsightsServiceClient
      *
      * The async variant is
      * {@see AudienceInsightsServiceClient::generateAudienceDefinitionAsync()} .
+     *
+     * @example samples/V25/Services/AudienceInsightsServiceClient/generate_audience_definition.php
      *
      * @param GenerateAudienceDefinitionRequest $request     A request to house fields associated with the call.
      * @param array                             $callOptions {
@@ -299,6 +307,8 @@ class AudienceInsightsServiceClient
      * The async variant is
      * {@see AudienceInsightsServiceClient::generateAudienceOverlapInsightsAsync()} .
      *
+     * @example samples/V25/Services/AudienceInsightsServiceClient/generate_audience_overlap_insights.php
+     *
      * @param GenerateAudienceOverlapInsightsRequest $request     A request to house fields associated with the call.
      * @param array                                  $callOptions {
      *     Optional.
@@ -333,6 +343,8 @@ class AudienceInsightsServiceClient
      *
      * The async variant is
      * {@see AudienceInsightsServiceClient::generateInsightsFinderReportAsync()} .
+     *
+     * @example samples/V25/Services/AudienceInsightsServiceClient/generate_insights_finder_report.php
      *
      * @param GenerateInsightsFinderReportRequest $request     A request to house fields associated with the call.
      * @param array                               $callOptions {
@@ -371,6 +383,8 @@ class AudienceInsightsServiceClient
      * The async variant is
      * {@see AudienceInsightsServiceClient::generateSuggestedTargetingInsightsAsync()}
      * .
+     *
+     * @example samples/V25/Services/AudienceInsightsServiceClient/generate_suggested_targeting_insights.php
      *
      * @param GenerateSuggestedTargetingInsightsRequest $request     A request to house fields associated with the call.
      * @param array                                     $callOptions {
@@ -412,6 +426,8 @@ class AudienceInsightsServiceClient
      * {@see AudienceInsightsServiceClient::generateTargetingSuggestionMetricsAsync()}
      * .
      *
+     * @example samples/V25/Services/AudienceInsightsServiceClient/generate_targeting_suggestion_metrics.php
+     *
      * @param GenerateTargetingSuggestionMetricsRequest $request     A request to house fields associated with the call.
      * @param array                                     $callOptions {
      *     Optional.
@@ -447,6 +463,8 @@ class AudienceInsightsServiceClient
      * The async variant is
      * {@see AudienceInsightsServiceClient::listAudienceInsightsAttributesAsync()} .
      *
+     * @example samples/V25/Services/AudienceInsightsServiceClient/list_audience_insights_attributes.php
+     *
      * @param ListAudienceInsightsAttributesRequest $request     A request to house fields associated with the call.
      * @param array                                 $callOptions {
      *     Optional.
@@ -481,6 +499,8 @@ class AudienceInsightsServiceClient
      *
      * The async variant is
      * {@see AudienceInsightsServiceClient::listInsightsEligibleDatesAsync()} .
+     *
+     * @example samples/V25/Services/AudienceInsightsServiceClient/list_insights_eligible_dates.php
      *
      * @param ListInsightsEligibleDatesRequest $request     A request to house fields associated with the call.
      * @param array                            $callOptions {

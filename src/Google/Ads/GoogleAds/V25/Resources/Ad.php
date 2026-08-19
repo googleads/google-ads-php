@@ -127,7 +127,12 @@ class Ad extends \Google\Protobuf\Internal\Message
      */
     protected $system_managed_resource_source = 0;
     /**
-     * Synthetic content info for the ad.
+     * Synthetic content info for the ad. Only ads with specific ad types are
+     * eligible for updates using the `synthetic_content_info` field.
+     * Allowed `AdType` values:
+     * * `HTML5_UPLOAD_AD`
+     * * `DYNAMIC_HTML5_AD`
+     * * `IMAGE_AD`
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.SyntheticContentInfo synthetic_content_info = 65;</code>
      */
@@ -192,7 +197,12 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           Output only. If this ad is system managed, then this field will indicate
      *           the source. This field is read-only.
      *     @type \Google\Ads\GoogleAds\V25\Common\SyntheticContentInfo $synthetic_content_info
-     *           Synthetic content info for the ad.
+     *           Synthetic content info for the ad. Only ads with specific ad types are
+     *           eligible for updates using the `synthetic_content_info` field.
+     *           Allowed `AdType` values:
+     *           * `HTML5_UPLOAD_AD`
+     *           * `DYNAMIC_HTML5_AD`
+     *           * `IMAGE_AD`
      *     @type \Google\Ads\GoogleAds\V25\Common\TextAdInfo $text_ad
      *           Immutable. Details pertaining to a text ad.
      *     @type \Google\Ads\GoogleAds\V25\Common\ExpandedTextAdInfo $expanded_text_ad
@@ -748,7 +758,12 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Synthetic content info for the ad.
+     * Synthetic content info for the ad. Only ads with specific ad types are
+     * eligible for updates using the `synthetic_content_info` field.
+     * Allowed `AdType` values:
+     * * `HTML5_UPLOAD_AD`
+     * * `DYNAMIC_HTML5_AD`
+     * * `IMAGE_AD`
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.SyntheticContentInfo synthetic_content_info = 65;</code>
      * @return \Google\Ads\GoogleAds\V25\Common\SyntheticContentInfo|null
@@ -769,7 +784,12 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Synthetic content info for the ad.
+     * Synthetic content info for the ad. Only ads with specific ad types are
+     * eligible for updates using the `synthetic_content_info` field.
+     * Allowed `AdType` values:
+     * * `HTML5_UPLOAD_AD`
+     * * `DYNAMIC_HTML5_AD`
+     * * `IMAGE_AD`
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.SyntheticContentInfo synthetic_content_info = 65;</code>
      * @param \Google\Ads\GoogleAds\V25\Common\SyntheticContentInfo $var

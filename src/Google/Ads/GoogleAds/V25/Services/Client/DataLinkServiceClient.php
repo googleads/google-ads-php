@@ -87,7 +87,11 @@ class DataLinkServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -258,6 +262,8 @@ class DataLinkServiceClient
      *
      * The async variant is {@see DataLinkServiceClient::createDataLinkAsync()} .
      *
+     * @example samples/V25/Services/DataLinkServiceClient/create_data_link.php
+     *
      * @param CreateDataLinkRequest $request     A request to house fields associated with the call.
      * @param array                 $callOptions {
      *     Optional.
@@ -294,6 +300,8 @@ class DataLinkServiceClient
      *
      * The async variant is {@see DataLinkServiceClient::removeDataLinkAsync()} .
      *
+     * @example samples/V25/Services/DataLinkServiceClient/remove_data_link.php
+     *
      * @param RemoveDataLinkRequest $request     A request to house fields associated with the call.
      * @param array                 $callOptions {
      *     Optional.
@@ -329,6 +337,8 @@ class DataLinkServiceClient
      * [RequestError]()
      *
      * The async variant is {@see DataLinkServiceClient::updateDataLinkAsync()} .
+     *
+     * @example samples/V25/Services/DataLinkServiceClient/update_data_link.php
      *
      * @param UpdateDataLinkRequest $request     A request to house fields associated with the call.
      * @param array                 $callOptions {

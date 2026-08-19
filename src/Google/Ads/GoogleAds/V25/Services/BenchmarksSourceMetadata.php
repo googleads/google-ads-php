@@ -33,6 +33,8 @@ class BenchmarksSourceMetadata extends \Google\Protobuf\Internal\Message
      *           The type of benchmarks source.
      *     @type \Google\Ads\GoogleAds\V25\Services\IndustryVerticalInfo $industry_vertical_info
      *           Information on the Industry Vertical.
+     *     @type \Google\Ads\GoogleAds\V25\Services\CategoryInfo $category_info
+     *           Information on the Product & Service Category.
      * }
      */
     public function __construct($data = NULL) {
@@ -93,6 +95,37 @@ class BenchmarksSourceMetadata extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Services\IndustryVerticalInfo::class);
         $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * Information on the Product & Service Category.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.CategoryInfo category_info = 3;</code>
+     * @return \Google\Ads\GoogleAds\V25\Services\CategoryInfo|null
+     */
+    public function getCategoryInfo()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasCategoryInfo()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * Information on the Product & Service Category.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.CategoryInfo category_info = 3;</code>
+     * @param \Google\Ads\GoogleAds\V25\Services\CategoryInfo $var
+     * @return $this
+     */
+    public function setCategoryInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Services\CategoryInfo::class);
+        $this->writeOneof(3, $var);
 
         return $this;
     }

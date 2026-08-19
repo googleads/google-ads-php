@@ -73,7 +73,11 @@ class InvoiceServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -196,6 +200,8 @@ class InvoiceServiceClient
      * [RequestError]()
      *
      * The async variant is {@see InvoiceServiceClient::listInvoicesAsync()} .
+     *
+     * @example samples/V25/Services/InvoiceServiceClient/list_invoices.php
      *
      * @param ListInvoicesRequest $request     A request to house fields associated with the call.
      * @param array               $callOptions {

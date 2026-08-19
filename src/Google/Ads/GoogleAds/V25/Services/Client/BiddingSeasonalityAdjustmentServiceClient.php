@@ -80,7 +80,11 @@ class BiddingSeasonalityAdjustmentServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -256,6 +260,8 @@ class BiddingSeasonalityAdjustmentServiceClient
      * The async variant is
      * {@see BiddingSeasonalityAdjustmentServiceClient::mutateBiddingSeasonalityAdjustmentsAsync()}
      * .
+     *
+     * @example samples/V25/Services/BiddingSeasonalityAdjustmentServiceClient/mutate_bidding_seasonality_adjustments.php
      *
      * @param MutateBiddingSeasonalityAdjustmentsRequest $request     A request to house fields associated with the call.
      * @param array                                      $callOptions {

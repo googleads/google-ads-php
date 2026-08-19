@@ -86,7 +86,11 @@ class SmartCampaignSuggestServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -260,6 +264,8 @@ class SmartCampaignSuggestServiceClient
      * The async variant is
      * {@see SmartCampaignSuggestServiceClient::suggestKeywordThemesAsync()} .
      *
+     * @example samples/V25/Services/SmartCampaignSuggestServiceClient/suggest_keyword_themes.php
+     *
      * @param SuggestKeywordThemesRequest $request     A request to house fields associated with the call.
      * @param array                       $callOptions {
      *     Optional.
@@ -286,6 +292,8 @@ class SmartCampaignSuggestServiceClient
      * The async variant is
      * {@see SmartCampaignSuggestServiceClient::suggestSmartCampaignAdAsync()} .
      *
+     * @example samples/V25/Services/SmartCampaignSuggestServiceClient/suggest_smart_campaign_ad.php
+     *
      * @param SuggestSmartCampaignAdRequest $request     A request to house fields associated with the call.
      * @param array                         $callOptions {
      *     Optional.
@@ -311,6 +319,8 @@ class SmartCampaignSuggestServiceClient
      * The async variant is
      * {@see SmartCampaignSuggestServiceClient::suggestSmartCampaignBudgetOptionsAsync()}
      * .
+     *
+     * @example samples/V25/Services/SmartCampaignSuggestServiceClient/suggest_smart_campaign_budget_options.php
      *
      * @param SuggestSmartCampaignBudgetOptionsRequest $request     A request to house fields associated with the call.
      * @param array                                    $callOptions {

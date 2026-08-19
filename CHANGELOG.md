@@ -1,3 +1,7 @@
+## 34.0.0
+* Added support for Google Ads API v25.1
+* Removed support for Google Ads API v20 and v21
+
 ## 33.6.0
 * Added support for Google Ads API v25.0
 * Regenerated support for Google Ads API v24.2 to add some fields that were

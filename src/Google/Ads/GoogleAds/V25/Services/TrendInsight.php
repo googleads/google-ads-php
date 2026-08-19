@@ -47,6 +47,18 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      */
     private $trend_data_points;
     /**
+     * The brand sentiment for this topic.
+     * Only populated when all of the following are true:
+     *   - The trend request uses search_topics.
+     *   - The Knowledge graph entity topic has the Brand capability.
+     *   - Supplemental data
+     *   [BRAND_SENTIMENT_DATA][google.ads.googleads.v25.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData.BRAND_SENTIMENT_DATA]
+     *   is requested.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.services.BrandSentimentInsight brand_sentiment_insights = 7;</code>
+     */
+    private $brand_sentiment_insights;
+    /**
      * Related videos for this topic. Only populated for trends using
      * search_topics.
      *
@@ -98,6 +110,14 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
      *           the comparison period is 1 month. The data points are ordered from most
      *           recent month to least recent month. Only populated for trends using
      *           search_topics.
+     *     @type \Google\Ads\GoogleAds\V25\Services\BrandSentimentInsight[] $brand_sentiment_insights
+     *           The brand sentiment for this topic.
+     *           Only populated when all of the following are true:
+     *             - The trend request uses search_topics.
+     *             - The Knowledge graph entity topic has the Brand capability.
+     *             - Supplemental data
+     *             [BRAND_SENTIMENT_DATA][google.ads.googleads.v25.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData.BRAND_SENTIMENT_DATA]
+     *             is requested.
      *     @type \Google\Ads\GoogleAds\V25\Common\AudienceInsightsAttributeMetadata[] $related_videos
      *           Related videos for this topic. Only populated for trends using
      *           search_topics.
@@ -257,6 +277,44 @@ class TrendInsight extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V25\Services\TrendInsightDataPoint::class);
         $this->trend_data_points = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The brand sentiment for this topic.
+     * Only populated when all of the following are true:
+     *   - The trend request uses search_topics.
+     *   - The Knowledge graph entity topic has the Brand capability.
+     *   - Supplemental data
+     *   [BRAND_SENTIMENT_DATA][google.ads.googleads.v25.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData.BRAND_SENTIMENT_DATA]
+     *   is requested.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.services.BrandSentimentInsight brand_sentiment_insights = 7;</code>
+     * @return RepeatedField<\Google\Ads\GoogleAds\V25\Services\BrandSentimentInsight>
+     */
+    public function getBrandSentimentInsights()
+    {
+        return $this->brand_sentiment_insights;
+    }
+
+    /**
+     * The brand sentiment for this topic.
+     * Only populated when all of the following are true:
+     *   - The trend request uses search_topics.
+     *   - The Knowledge graph entity topic has the Brand capability.
+     *   - Supplemental data
+     *   [BRAND_SENTIMENT_DATA][google.ads.googleads.v25.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData.BRAND_SENTIMENT_DATA]
+     *   is requested.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.services.BrandSentimentInsight brand_sentiment_insights = 7;</code>
+     * @param \Google\Ads\GoogleAds\V25\Services\BrandSentimentInsight[] $var
+     * @return $this
+     */
+    public function setBrandSentimentInsights($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V25\Services\BrandSentimentInsight::class);
+        $this->brand_sentiment_insights = $arr;
 
         return $this;
     }

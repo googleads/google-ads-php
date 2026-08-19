@@ -27,6 +27,11 @@ class BenchmarksSource extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $industry_vertical_id
      *           The ID of the Industry Vertical.
+     *     @type bool $all_advertisers
+     *           Comparison against all advertisers running Ads. This benchmarking option
+     *           must utilize additional filters. Setting the `category_filter` is
+     *           required. One or more categories will scope the metrics of both the
+     *           customer and all advertisers to those selected categories.
      * }
      */
     public function __construct($data = NULL) {
@@ -61,6 +66,43 @@ class BenchmarksSource extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->writeOneof(1, $var);
+
+        return $this;
+    }
+
+    /**
+     * Comparison against all advertisers running Ads. This benchmarking option
+     * must utilize additional filters. Setting the `category_filter` is
+     * required. One or more categories will scope the metrics of both the
+     * customer and all advertisers to those selected categories.
+     *
+     * Generated from protobuf field <code>bool all_advertisers = 2;</code>
+     * @return bool
+     */
+    public function getAllAdvertisers()
+    {
+        return $this->readOneof(2);
+    }
+
+    public function hasAllAdvertisers()
+    {
+        return $this->hasOneof(2);
+    }
+
+    /**
+     * Comparison against all advertisers running Ads. This benchmarking option
+     * must utilize additional filters. Setting the `category_filter` is
+     * required. One or more categories will scope the metrics of both the
+     * customer and all advertisers to those selected categories.
+     *
+     * Generated from protobuf field <code>bool all_advertisers = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllAdvertisers($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(2, $var);
 
         return $this;
     }

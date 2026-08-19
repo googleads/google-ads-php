@@ -45,6 +45,12 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      */
     private $networks;
     /**
+     * Targetable parental statuses for the ad product.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.common.ParentalStatusInfo parental_statuses = 8;</code>
+     */
+    private $parental_statuses;
+    /**
      * Targetable YouTube Select Lineups for the ad product.
      * This field replaces the deprecated `youtube_select_lineups` field.
      *
@@ -77,6 +83,8 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
      *           GOOGLE_PREFERRED_BUMPER, and GOOGLE_PREFERRED_SHORT products.
      *     @type int[] $networks
      *           Targetable networks for the ad product.
+     *     @type \Google\Ads\GoogleAds\V25\Common\ParentalStatusInfo[] $parental_statuses
+     *           Targetable parental statuses for the ad product.
      *     @type \Google\Ads\GoogleAds\V25\Services\YouTubeSelectLineUpTargeting $youtube_select_lineup_targeting
      *           Targetable YouTube Select Lineups for the ad product.
      *           This field replaces the deprecated `youtube_select_lineups` field.
@@ -199,6 +207,32 @@ class PlannableTargeting extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V25\Enums\ReachPlanNetworkEnum\ReachPlanNetwork::class);
         $this->networks = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Targetable parental statuses for the ad product.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.common.ParentalStatusInfo parental_statuses = 8;</code>
+     * @return RepeatedField<\Google\Ads\GoogleAds\V25\Common\ParentalStatusInfo>
+     */
+    public function getParentalStatuses()
+    {
+        return $this->parental_statuses;
+    }
+
+    /**
+     * Targetable parental statuses for the ad product.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.common.ParentalStatusInfo parental_statuses = 8;</code>
+     * @param \Google\Ads\GoogleAds\V25\Common\ParentalStatusInfo[] $var
+     * @return $this
+     */
+    public function setParentalStatuses($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V25\Common\ParentalStatusInfo::class);
+        $this->parental_statuses = $arr;
 
         return $this;
     }

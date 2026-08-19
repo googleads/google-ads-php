@@ -73,7 +73,11 @@ class BrandSuggestionServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -187,6 +191,8 @@ class BrandSuggestionServiceClient
      * customer.
      *
      * The async variant is {@see BrandSuggestionServiceClient::suggestBrandsAsync()} .
+     *
+     * @example samples/V25/Services/BrandSuggestionServiceClient/suggest_brands.php
      *
      * @param SuggestBrandsRequest $request     A request to house fields associated with the call.
      * @param array                $callOptions {

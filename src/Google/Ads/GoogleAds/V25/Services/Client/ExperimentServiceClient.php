@@ -94,7 +94,11 @@ class ExperimentServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -143,7 +147,7 @@ class ExperimentServiceClient
      */
     public function resumeOperation($operationName, $methodName = null)
     {
-        $options = $this->descriptors[$methodName]['longRunning'] ?? [];
+        $options = $methodName && isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
         $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
         $operation->reload();
         return $operation;
@@ -220,12 +224,30 @@ class ExperimentServiceClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * lift_measurement_config resource.
+     *
+     * @param string $customerId
+     * @param string $liftMeasurementConfigurationId
+     *
+     * @return string The formatted lift_measurement_config resource.
+     */
+    public static function liftMeasurementConfigName(string $customerId, string $liftMeasurementConfigurationId): string
+    {
+        return self::getPathTemplate('liftMeasurementConfig')->render([
+            'customer_id' => $customerId,
+            'lift_measurement_configuration_id' => $liftMeasurementConfigurationId,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - campaignBudget: customers/{customer_id}/campaignBudgets/{campaign_budget_id}
      * - experiment: customers/{customer_id}/experiments/{trial_id}
+     * - liftMeasurementConfig: customers/{customer_id}/liftMeasurementConfigs/{lift_measurement_configuration_id}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is
@@ -347,6 +369,8 @@ class ExperimentServiceClient
      *
      * The async variant is {@see ExperimentServiceClient::endExperimentAsync()} .
      *
+     * @example samples/V25/Services/ExperimentServiceClient/end_experiment.php
+     *
      * @param EndExperimentRequest $request     A request to house fields associated with the call.
      * @param array                $callOptions {
      *     Optional.
@@ -378,6 +402,8 @@ class ExperimentServiceClient
      * [RequestError]()
      *
      * The async variant is {@see ExperimentServiceClient::graduateExperimentAsync()} .
+     *
+     * @example samples/V25/Services/ExperimentServiceClient/graduate_experiment.php
      *
      * @param GraduateExperimentRequest $request     A request to house fields associated with the call.
      * @param array                     $callOptions {
@@ -412,6 +438,8 @@ class ExperimentServiceClient
      * The async variant is
      * {@see ExperimentServiceClient::listExperimentAsyncErrorsAsync()} .
      *
+     * @example samples/V25/Services/ExperimentServiceClient/list_experiment_async_errors.php
+     *
      * @param ListExperimentAsyncErrorsRequest $request     A request to house fields associated with the call.
      * @param array                            $callOptions {
      *     Optional.
@@ -444,6 +472,8 @@ class ExperimentServiceClient
      * [RequestError]()
      *
      * The async variant is {@see ExperimentServiceClient::mutateExperimentsAsync()} .
+     *
+     * @example samples/V25/Services/ExperimentServiceClient/mutate_experiments.php
      *
      * @param MutateExperimentsRequest $request     A request to house fields associated with the call.
      * @param array                    $callOptions {
@@ -483,6 +513,8 @@ class ExperimentServiceClient
      * [RequestError]()
      *
      * The async variant is {@see ExperimentServiceClient::promoteExperimentAsync()} .
+     *
+     * @example samples/V25/Services/ExperimentServiceClient/promote_experiment.php
      *
      * @param PromoteExperimentRequest $request     A request to house fields associated with the call.
      * @param array                    $callOptions {
@@ -530,6 +562,8 @@ class ExperimentServiceClient
      * [RequestError]()
      *
      * The async variant is {@see ExperimentServiceClient::scheduleExperimentAsync()} .
+     *
+     * @example samples/V25/Services/ExperimentServiceClient/schedule_experiment.php
      *
      * @param ScheduleExperimentRequest $request     A request to house fields associated with the call.
      * @param array                     $callOptions {

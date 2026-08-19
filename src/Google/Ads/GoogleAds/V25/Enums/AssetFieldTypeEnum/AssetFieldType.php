@@ -237,6 +237,12 @@ class AssetFieldType
      * Generated from protobuf enum <code>CLASSIC_DISPLAY_IMAGE = 47;</code>
      */
     const CLASSIC_DISPLAY_IMAGE = 47;
+    /**
+     * The asset is linked for use as a text disclaimer.
+     *
+     * Generated from protobuf enum <code>TEXT_DISCLAIMER = 48;</code>
+     */
+    const TEXT_DISCLAIMER = 48;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -276,6 +282,7 @@ class AssetFieldType
         self::LONG_DESCRIPTION => 'LONG_DESCRIPTION',
         self::CALL_TO_ACTION => 'CALL_TO_ACTION',
         self::CLASSIC_DISPLAY_IMAGE => 'CLASSIC_DISPLAY_IMAGE',
+        self::TEXT_DISCLAIMER => 'TEXT_DISCLAIMER',
     ];
 
     public static function name($value)

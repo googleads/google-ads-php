@@ -80,7 +80,11 @@ class CampaignGoalConfigServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -282,6 +286,8 @@ class CampaignGoalConfigServiceClient
      *
      * The async variant is
      * {@see CampaignGoalConfigServiceClient::mutateCampaignGoalConfigsAsync()} .
+     *
+     * @example samples/V25/Services/CampaignGoalConfigServiceClient/mutate_campaign_goal_configs.php
      *
      * @param MutateCampaignGoalConfigsRequest $request     A request to house fields associated with the call.
      * @param array                            $callOptions {

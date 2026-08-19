@@ -83,7 +83,11 @@ class CustomerManagerLinkServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -272,6 +276,8 @@ class CustomerManagerLinkServiceClient
      * The async variant is
      * {@see CustomerManagerLinkServiceClient::moveManagerLinkAsync()} .
      *
+     * @example samples/V25/Services/CustomerManagerLinkServiceClient/move_manager_link.php
+     *
      * @param MoveManagerLinkRequest $request     A request to house fields associated with the call.
      * @param array                  $callOptions {
      *     Optional.
@@ -309,6 +315,8 @@ class CustomerManagerLinkServiceClient
      *
      * The async variant is
      * {@see CustomerManagerLinkServiceClient::mutateCustomerManagerLinkAsync()} .
+     *
+     * @example samples/V25/Services/CustomerManagerLinkServiceClient/mutate_customer_manager_link.php
      *
      * @param MutateCustomerManagerLinkRequest $request     A request to house fields associated with the call.
      * @param array                            $callOptions {

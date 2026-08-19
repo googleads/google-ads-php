@@ -83,7 +83,11 @@ class ConversionUploadServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -248,6 +252,8 @@ class ConversionUploadServiceClient
      * The async variant is
      * {@see ConversionUploadServiceClient::uploadCallConversionsAsync()} .
      *
+     * @example samples/V25/Services/ConversionUploadServiceClient/upload_call_conversions.php
+     *
      * @param UploadCallConversionsRequest $request     A request to house fields associated with the call.
      * @param array                        $callOptions {
      *     Optional.
@@ -282,6 +288,8 @@ class ConversionUploadServiceClient
      *
      * The async variant is
      * {@see ConversionUploadServiceClient::uploadClickConversionsAsync()} .
+     *
+     * @example samples/V25/Services/ConversionUploadServiceClient/upload_click_conversions.php
      *
      * @param UploadClickConversionsRequest $request     A request to house fields associated with the call.
      * @param array                         $callOptions {

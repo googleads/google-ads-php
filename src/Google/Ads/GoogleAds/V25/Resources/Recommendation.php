@@ -268,6 +268,8 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           Output only. The lead form asset recommendation.
      *     @type \Google\Ads\GoogleAds\V25\Resources\Recommendation\ImproveDemandGenAdStrengthRecommendation $improve_demand_gen_ad_strength_recommendation
      *           Output only. The improve Demand Gen ad strength recommendation.
+     *     @type \Google\Ads\GoogleAds\V25\Resources\Recommendation\CampaignSpecificAppGoalRecommendation $campaign_specific_app_goal_recommendation
+     *           Output only. The campaign-specific app goal recommendation.
      * }
      */
     public function __construct($data = NULL) {
@@ -2285,6 +2287,37 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\Recommendation\ImproveDemandGenAdStrengthRecommendation::class);
         $this->writeOneof(69, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The campaign-specific app goal recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.Recommendation.CampaignSpecificAppGoalRecommendation campaign_specific_app_goal_recommendation = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V25\Resources\Recommendation\CampaignSpecificAppGoalRecommendation|null
+     */
+    public function getCampaignSpecificAppGoalRecommendation()
+    {
+        return $this->readOneof(70);
+    }
+
+    public function hasCampaignSpecificAppGoalRecommendation()
+    {
+        return $this->hasOneof(70);
+    }
+
+    /**
+     * Output only. The campaign-specific app goal recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.Recommendation.CampaignSpecificAppGoalRecommendation campaign_specific_app_goal_recommendation = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V25\Resources\Recommendation\CampaignSpecificAppGoalRecommendation $var
+     * @return $this
+     */
+    public function setCampaignSpecificAppGoalRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\Recommendation\CampaignSpecificAppGoalRecommendation::class);
+        $this->writeOneof(70, $var);
 
         return $this;
     }

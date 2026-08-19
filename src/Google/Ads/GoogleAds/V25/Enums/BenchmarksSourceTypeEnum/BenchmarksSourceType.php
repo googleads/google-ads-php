@@ -32,11 +32,18 @@ class BenchmarksSourceType
      * Generated from protobuf enum <code>INDUSTRY_VERTICAL = 2;</code>
      */
     const INDUSTRY_VERTICAL = 2;
+    /**
+     * A Product & Service Category.
+     *
+     * Generated from protobuf enum <code>CATEGORY = 3;</code>
+     */
+    const CATEGORY = 3;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::INDUSTRY_VERTICAL => 'INDUSTRY_VERTICAL',
+        self::CATEGORY => 'CATEGORY',
     ];
 
     public static function name($value)

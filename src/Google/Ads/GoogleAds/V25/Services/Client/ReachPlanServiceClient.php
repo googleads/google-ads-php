@@ -92,7 +92,11 @@ class ReachPlanServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -216,6 +220,8 @@ class ReachPlanServiceClient
      * The async variant is
      * {@see ReachPlanServiceClient::generateConversionRatesAsync()} .
      *
+     * @example samples/V25/Services/ReachPlanServiceClient/generate_conversion_rates.php
+     *
      * @param GenerateConversionRatesRequest $request     A request to house fields associated with the call.
      * @param array                          $callOptions {
      *     Optional.
@@ -252,6 +258,8 @@ class ReachPlanServiceClient
      * The async variant is {@see ReachPlanServiceClient::generateReachForecastAsync()}
      * .
      *
+     * @example samples/V25/Services/ReachPlanServiceClient/generate_reach_forecast.php
+     *
      * @param GenerateReachForecastRequest $request     A request to house fields associated with the call.
      * @param array                        $callOptions {
      *     Optional.
@@ -284,6 +292,8 @@ class ReachPlanServiceClient
      *
      * The async variant is
      * {@see ReachPlanServiceClient::listPlannableLocationsAsync()} .
+     *
+     * @example samples/V25/Services/ReachPlanServiceClient/list_plannable_locations.php
      *
      * @param ListPlannableLocationsRequest $request     A request to house fields associated with the call.
      * @param array                         $callOptions {
@@ -318,6 +328,8 @@ class ReachPlanServiceClient
      *
      * The async variant is {@see ReachPlanServiceClient::listPlannableProductsAsync()}
      * .
+     *
+     * @example samples/V25/Services/ReachPlanServiceClient/list_plannable_products.php
      *
      * @param ListPlannableProductsRequest $request     A request to house fields associated with the call.
      * @param array                        $callOptions {
@@ -358,6 +370,8 @@ class ReachPlanServiceClient
      * The async variant is
      * {@see ReachPlanServiceClient::listPlannableUserInterestsAsync()} .
      *
+     * @example samples/V25/Services/ReachPlanServiceClient/list_plannable_user_interests.php
+     *
      * @param ListPlannableUserInterestsRequest $request     A request to house fields associated with the call.
      * @param array                             $callOptions {
      *     Optional.
@@ -397,6 +411,8 @@ class ReachPlanServiceClient
      *
      * The async variant is
      * {@see ReachPlanServiceClient::listPlannableUserListsAsync()} .
+     *
+     * @example samples/V25/Services/ReachPlanServiceClient/list_plannable_user_lists.php
      *
      * @param ListPlannableUserListsRequest $request     A request to house fields associated with the call.
      * @param array                         $callOptions {

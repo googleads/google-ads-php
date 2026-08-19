@@ -2307,6 +2307,31 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V25\ResourceNames::forLiftMeasurementConfig()
+     */
+    public function testGetNameForLiftMeasurementConfig()
+    {
+        $customerId = '111111';
+        $liftMeasurementConfigurationId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/liftMeasurementConfigs/%s",
+            $customerId,
+            $liftMeasurementConfigurationId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forLiftMeasurementConfig(
+                $customerId,
+                $liftMeasurementConfigurationId
+            )
+        );
+
+        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($liftMeasurementConfigurationId, $names['lift_measurement_configuration_id']);
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V25\ResourceNames::forLocalServicesLead()
      */
     public function testGetNameForLocalServicesLead()

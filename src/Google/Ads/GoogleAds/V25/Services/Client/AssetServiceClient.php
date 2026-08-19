@@ -82,7 +82,11 @@ class AssetServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -283,6 +287,8 @@ class AssetServiceClient
      * [YoutubeVideoRegistrationError]()
      *
      * The async variant is {@see AssetServiceClient::mutateAssetsAsync()} .
+     *
+     * @example samples/V25/Services/AssetServiceClient/mutate_assets.php
      *
      * @param MutateAssetsRequest $request     A request to house fields associated with the call.
      * @param array               $callOptions {

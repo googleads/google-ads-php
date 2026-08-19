@@ -82,7 +82,11 @@ class KeywordPlanIdeaServiceClient
     /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
-    /** The default scopes required by the service. */
+    /**
+     * The default scopes required by the service.
+     *
+     * @internal
+     */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -207,6 +211,8 @@ class KeywordPlanIdeaServiceClient
      * The async variant is
      * {@see KeywordPlanIdeaServiceClient::generateAdGroupThemesAsync()} .
      *
+     * @example samples/V25/Services/KeywordPlanIdeaServiceClient/generate_ad_group_themes.php
+     *
      * @param GenerateAdGroupThemesRequest $request     A request to house fields associated with the call.
      * @param array                        $callOptions {
      *     Optional.
@@ -242,6 +248,8 @@ class KeywordPlanIdeaServiceClient
      * The async variant is
      * {@see KeywordPlanIdeaServiceClient::generateKeywordForecastMetricsAsync()} .
      *
+     * @example samples/V25/Services/KeywordPlanIdeaServiceClient/generate_keyword_forecast_metrics.php
+     *
      * @param GenerateKeywordForecastMetricsRequest $request     A request to house fields associated with the call.
      * @param array                                 $callOptions {
      *     Optional.
@@ -275,6 +283,8 @@ class KeywordPlanIdeaServiceClient
      *
      * The async variant is
      * {@see KeywordPlanIdeaServiceClient::generateKeywordHistoricalMetricsAsync()} .
+     *
+     * @example samples/V25/Services/KeywordPlanIdeaServiceClient/generate_keyword_historical_metrics.php
      *
      * @param GenerateKeywordHistoricalMetricsRequest $request     A request to house fields associated with the call.
      * @param array                                   $callOptions {
@@ -310,6 +320,8 @@ class KeywordPlanIdeaServiceClient
      *
      * The async variant is
      * {@see KeywordPlanIdeaServiceClient::generateKeywordIdeasAsync()} .
+     *
+     * @example samples/V25/Services/KeywordPlanIdeaServiceClient/generate_keyword_ideas.php
      *
      * @param GenerateKeywordIdeasRequest $request     A request to house fields associated with the call.
      * @param array                       $callOptions {

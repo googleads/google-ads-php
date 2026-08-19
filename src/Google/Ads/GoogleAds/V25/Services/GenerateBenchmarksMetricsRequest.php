@@ -46,6 +46,18 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $benchmarks_source = null;
     /**
+     * A list of Product & Service Categories for scoping a YouTube benchmarks
+     * analysis. For example, when category "/Apparel/Clothing" is selected,
+     * customer metrics represent Ad performance for "/Apparel/Clothing" Ads only
+     * and the customer is benchmarking against all advertisers’ Ads in the
+     * "/Apparel/Clothing" category.
+     * This filter can only be used when `all_advertisers` is used as the
+     * [benchmarks_source][google.ads.googleads.v25.services.GenerateBenchmarksMetricsRequest.benchmarks_source].
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.CategoryFilter category_filter = 10;</code>
+     */
+    protected $category_filter = null;
+    /**
      * Required. The products to aggregate metrics over. Product filter settings
      * support a list of product IDs or a list of marketing objectives.
      *
@@ -120,6 +132,14 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
      *           Required. The location to generate benchmarks metrics for.
      *     @type \Google\Ads\GoogleAds\V25\Services\BenchmarksSource $benchmarks_source
      *           Required. The source used to generate benchmarks metrics for.
+     *     @type \Google\Ads\GoogleAds\V25\Services\CategoryFilter $category_filter
+     *           A list of Product & Service Categories for scoping a YouTube benchmarks
+     *           analysis. For example, when category "/Apparel/Clothing" is selected,
+     *           customer metrics represent Ad performance for "/Apparel/Clothing" Ads only
+     *           and the customer is benchmarking against all advertisers’ Ads in the
+     *           "/Apparel/Clothing" category.
+     *           This filter can only be used when `all_advertisers` is used as the
+     *           [benchmarks_source][google.ads.googleads.v25.services.GenerateBenchmarksMetricsRequest.benchmarks_source].
      *     @type \Google\Ads\GoogleAds\V25\Services\ProductFilter $product_filter
      *           Required. The products to aggregate metrics over. Product filter settings
      *           support a list of product IDs or a list of marketing objectives.
@@ -280,6 +300,54 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Services\BenchmarksSource::class);
         $this->benchmarks_source = $var;
+
+        return $this;
+    }
+
+    /**
+     * A list of Product & Service Categories for scoping a YouTube benchmarks
+     * analysis. For example, when category "/Apparel/Clothing" is selected,
+     * customer metrics represent Ad performance for "/Apparel/Clothing" Ads only
+     * and the customer is benchmarking against all advertisers’ Ads in the
+     * "/Apparel/Clothing" category.
+     * This filter can only be used when `all_advertisers` is used as the
+     * [benchmarks_source][google.ads.googleads.v25.services.GenerateBenchmarksMetricsRequest.benchmarks_source].
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.CategoryFilter category_filter = 10;</code>
+     * @return \Google\Ads\GoogleAds\V25\Services\CategoryFilter|null
+     */
+    public function getCategoryFilter()
+    {
+        return $this->category_filter;
+    }
+
+    public function hasCategoryFilter()
+    {
+        return isset($this->category_filter);
+    }
+
+    public function clearCategoryFilter()
+    {
+        unset($this->category_filter);
+    }
+
+    /**
+     * A list of Product & Service Categories for scoping a YouTube benchmarks
+     * analysis. For example, when category "/Apparel/Clothing" is selected,
+     * customer metrics represent Ad performance for "/Apparel/Clothing" Ads only
+     * and the customer is benchmarking against all advertisers’ Ads in the
+     * "/Apparel/Clothing" category.
+     * This filter can only be used when `all_advertisers` is used as the
+     * [benchmarks_source][google.ads.googleads.v25.services.GenerateBenchmarksMetricsRequest.benchmarks_source].
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.CategoryFilter category_filter = 10;</code>
+     * @param \Google\Ads\GoogleAds\V25\Services\CategoryFilter $var
+     * @return $this
+     */
+    public function setCategoryFilter($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Services\CategoryFilter::class);
+        $this->category_filter = $var;
 
         return $this;
     }

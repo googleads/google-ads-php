@@ -8,7 +8,7 @@
         "AccountBudgetProposalService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AccountBudgetProposalServiceGapicClient",
+                    "libraryClient": "AccountBudgetProposalServiceClient",
                     "rpcs": {
                         "MutateAccountBudgetProposal": {
                             "methods": [
@@ -22,7 +22,7 @@
         "AccountLinkService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AccountLinkServiceGapicClient",
+                    "libraryClient": "AccountLinkServiceClient",
                     "rpcs": {
                         "CreateAccountLink": {
                             "methods": [
@@ -41,7 +41,7 @@
         "AdGroupAdLabelService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdGroupAdLabelServiceGapicClient",
+                    "libraryClient": "AdGroupAdLabelServiceClient",
                     "rpcs": {
                         "MutateAdGroupAdLabels": {
                             "methods": [
@@ -55,7 +55,7 @@
         "AdGroupAdService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdGroupAdServiceGapicClient",
+                    "libraryClient": "AdGroupAdServiceClient",
                     "rpcs": {
                         "MutateAdGroupAds": {
                             "methods": [
@@ -74,7 +74,7 @@
         "AdGroupAssetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdGroupAssetServiceGapicClient",
+                    "libraryClient": "AdGroupAssetServiceClient",
                     "rpcs": {
                         "MutateAdGroupAssets": {
                             "methods": [
@@ -88,7 +88,7 @@
         "AdGroupAssetSetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdGroupAssetSetServiceGapicClient",
+                    "libraryClient": "AdGroupAssetSetServiceClient",
                     "rpcs": {
                         "MutateAdGroupAssetSets": {
                             "methods": [
@@ -102,7 +102,7 @@
         "AdGroupBidModifierService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdGroupBidModifierServiceGapicClient",
+                    "libraryClient": "AdGroupBidModifierServiceClient",
                     "rpcs": {
                         "MutateAdGroupBidModifiers": {
                             "methods": [
@@ -116,7 +116,7 @@
         "AdGroupCriterionCustomizerService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdGroupCriterionCustomizerServiceGapicClient",
+                    "libraryClient": "AdGroupCriterionCustomizerServiceClient",
                     "rpcs": {
                         "MutateAdGroupCriterionCustomizers": {
                             "methods": [
@@ -130,7 +130,7 @@
         "AdGroupCriterionLabelService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdGroupCriterionLabelServiceGapicClient",
+                    "libraryClient": "AdGroupCriterionLabelServiceClient",
                     "rpcs": {
                         "MutateAdGroupCriterionLabels": {
                             "methods": [
@@ -144,7 +144,7 @@
         "AdGroupCriterionService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdGroupCriterionServiceGapicClient",
+                    "libraryClient": "AdGroupCriterionServiceClient",
                     "rpcs": {
                         "MutateAdGroupCriteria": {
                             "methods": [
@@ -158,7 +158,7 @@
         "AdGroupCustomizerService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdGroupCustomizerServiceGapicClient",
+                    "libraryClient": "AdGroupCustomizerServiceClient",
                     "rpcs": {
                         "MutateAdGroupCustomizers": {
                             "methods": [
@@ -172,7 +172,7 @@
         "AdGroupLabelService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdGroupLabelServiceGapicClient",
+                    "libraryClient": "AdGroupLabelServiceClient",
                     "rpcs": {
                         "MutateAdGroupLabels": {
                             "methods": [
@@ -186,7 +186,7 @@
         "AdGroupService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdGroupServiceGapicClient",
+                    "libraryClient": "AdGroupServiceClient",
                     "rpcs": {
                         "MutateAdGroups": {
                             "methods": [
@@ -200,7 +200,7 @@
         "AdParameterService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdParameterServiceGapicClient",
+                    "libraryClient": "AdParameterServiceClient",
                     "rpcs": {
                         "MutateAdParameters": {
                             "methods": [
@@ -214,7 +214,7 @@
         "AdService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AdServiceGapicClient",
+                    "libraryClient": "AdServiceClient",
                     "rpcs": {
                         "MutateAds": {
                             "methods": [
@@ -228,7 +228,7 @@
         "AssetGenerationService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AssetGenerationServiceGapicClient",
+                    "libraryClient": "AssetGenerationServiceClient",
                     "rpcs": {
                         "GenerateImages": {
                             "methods": [
@@ -247,7 +247,7 @@
         "AssetGroupAssetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AssetGroupAssetServiceGapicClient",
+                    "libraryClient": "AssetGroupAssetServiceClient",
                     "rpcs": {
                         "MutateAssetGroupAssets": {
                             "methods": [
@@ -261,7 +261,7 @@
         "AssetGroupListingGroupFilterService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AssetGroupListingGroupFilterServiceGapicClient",
+                    "libraryClient": "AssetGroupListingGroupFilterServiceClient",
                     "rpcs": {
                         "MutateAssetGroupListingGroupFilters": {
                             "methods": [
@@ -275,7 +275,7 @@
         "AssetGroupService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AssetGroupServiceGapicClient",
+                    "libraryClient": "AssetGroupServiceClient",
                     "rpcs": {
                         "MutateAssetGroups": {
                             "methods": [
@@ -289,7 +289,7 @@
         "AssetGroupSignalService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AssetGroupSignalServiceGapicClient",
+                    "libraryClient": "AssetGroupSignalServiceClient",
                     "rpcs": {
                         "MutateAssetGroupSignals": {
                             "methods": [
@@ -303,7 +303,7 @@
         "AssetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AssetServiceGapicClient",
+                    "libraryClient": "AssetServiceClient",
                     "rpcs": {
                         "MutateAssets": {
                             "methods": [
@@ -317,7 +317,7 @@
         "AssetSetAssetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AssetSetAssetServiceGapicClient",
+                    "libraryClient": "AssetSetAssetServiceClient",
                     "rpcs": {
                         "MutateAssetSetAssets": {
                             "methods": [
@@ -331,7 +331,7 @@
         "AssetSetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AssetSetServiceGapicClient",
+                    "libraryClient": "AssetSetServiceClient",
                     "rpcs": {
                         "MutateAssetSets": {
                             "methods": [
@@ -345,7 +345,7 @@
         "AudienceInsightsService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AudienceInsightsServiceGapicClient",
+                    "libraryClient": "AudienceInsightsServiceClient",
                     "rpcs": {
                         "GenerateAudienceCompositionInsights": {
                             "methods": [
@@ -394,7 +394,7 @@
         "AudienceService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AudienceServiceGapicClient",
+                    "libraryClient": "AudienceServiceClient",
                     "rpcs": {
                         "MutateAudiences": {
                             "methods": [
@@ -408,7 +408,7 @@
         "AutomaticallyCreatedAssetRemovalService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "AutomaticallyCreatedAssetRemovalServiceGapicClient",
+                    "libraryClient": "AutomaticallyCreatedAssetRemovalServiceClient",
                     "rpcs": {
                         "RemoveCampaignAutomaticallyCreatedAsset": {
                             "methods": [
@@ -422,7 +422,7 @@
         "BiddingDataExclusionService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "BiddingDataExclusionServiceGapicClient",
+                    "libraryClient": "BiddingDataExclusionServiceClient",
                     "rpcs": {
                         "MutateBiddingDataExclusions": {
                             "methods": [
@@ -436,7 +436,7 @@
         "BiddingSeasonalityAdjustmentService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "BiddingSeasonalityAdjustmentServiceGapicClient",
+                    "libraryClient": "BiddingSeasonalityAdjustmentServiceClient",
                     "rpcs": {
                         "MutateBiddingSeasonalityAdjustments": {
                             "methods": [
@@ -450,7 +450,7 @@
         "BiddingStrategyService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "BiddingStrategyServiceGapicClient",
+                    "libraryClient": "BiddingStrategyServiceClient",
                     "rpcs": {
                         "MutateBiddingStrategies": {
                             "methods": [
@@ -464,7 +464,7 @@
         "CampaignAssetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignAssetServiceGapicClient",
+                    "libraryClient": "CampaignAssetServiceClient",
                     "rpcs": {
                         "MutateCampaignAssets": {
                             "methods": [
@@ -478,7 +478,7 @@
         "CampaignAssetSetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignAssetSetServiceGapicClient",
+                    "libraryClient": "CampaignAssetSetServiceClient",
                     "rpcs": {
                         "MutateCampaignAssetSets": {
                             "methods": [
@@ -492,7 +492,7 @@
         "CampaignBidModifierService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignBidModifierServiceGapicClient",
+                    "libraryClient": "CampaignBidModifierServiceClient",
                     "rpcs": {
                         "MutateCampaignBidModifiers": {
                             "methods": [
@@ -506,7 +506,7 @@
         "CampaignBudgetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignBudgetServiceGapicClient",
+                    "libraryClient": "CampaignBudgetServiceClient",
                     "rpcs": {
                         "MutateCampaignBudgets": {
                             "methods": [
@@ -520,7 +520,7 @@
         "CampaignConversionGoalService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignConversionGoalServiceGapicClient",
+                    "libraryClient": "CampaignConversionGoalServiceClient",
                     "rpcs": {
                         "MutateCampaignConversionGoals": {
                             "methods": [
@@ -534,7 +534,7 @@
         "CampaignCriterionService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignCriterionServiceGapicClient",
+                    "libraryClient": "CampaignCriterionServiceClient",
                     "rpcs": {
                         "MutateCampaignCriteria": {
                             "methods": [
@@ -548,7 +548,7 @@
         "CampaignCustomizerService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignCustomizerServiceGapicClient",
+                    "libraryClient": "CampaignCustomizerServiceClient",
                     "rpcs": {
                         "MutateCampaignCustomizers": {
                             "methods": [
@@ -562,7 +562,7 @@
         "CampaignDraftService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignDraftServiceGapicClient",
+                    "libraryClient": "CampaignDraftServiceClient",
                     "rpcs": {
                         "ListCampaignDraftAsyncErrors": {
                             "methods": [
@@ -586,7 +586,7 @@
         "CampaignGroupService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignGroupServiceGapicClient",
+                    "libraryClient": "CampaignGroupServiceClient",
                     "rpcs": {
                         "MutateCampaignGroups": {
                             "methods": [
@@ -600,7 +600,7 @@
         "CampaignLabelService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignLabelServiceGapicClient",
+                    "libraryClient": "CampaignLabelServiceClient",
                     "rpcs": {
                         "MutateCampaignLabels": {
                             "methods": [
@@ -614,7 +614,7 @@
         "CampaignService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignServiceGapicClient",
+                    "libraryClient": "CampaignServiceClient",
                     "rpcs": {
                         "EnablePMaxBrandGuidelines": {
                             "methods": [
@@ -633,7 +633,7 @@
         "CampaignSharedSetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignSharedSetServiceGapicClient",
+                    "libraryClient": "CampaignSharedSetServiceClient",
                     "rpcs": {
                         "MutateCampaignSharedSets": {
                             "methods": [
@@ -647,7 +647,7 @@
         "ConversionActionService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ConversionActionServiceGapicClient",
+                    "libraryClient": "ConversionActionServiceClient",
                     "rpcs": {
                         "MutateConversionActions": {
                             "methods": [
@@ -661,7 +661,7 @@
         "ConversionCustomVariableService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ConversionCustomVariableServiceGapicClient",
+                    "libraryClient": "ConversionCustomVariableServiceClient",
                     "rpcs": {
                         "MutateConversionCustomVariables": {
                             "methods": [
@@ -675,7 +675,7 @@
         "ConversionGoalCampaignConfigService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ConversionGoalCampaignConfigServiceGapicClient",
+                    "libraryClient": "ConversionGoalCampaignConfigServiceClient",
                     "rpcs": {
                         "MutateConversionGoalCampaignConfigs": {
                             "methods": [
@@ -689,7 +689,7 @@
         "ConversionValueRuleService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ConversionValueRuleServiceGapicClient",
+                    "libraryClient": "ConversionValueRuleServiceClient",
                     "rpcs": {
                         "MutateConversionValueRules": {
                             "methods": [
@@ -703,7 +703,7 @@
         "ConversionValueRuleSetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ConversionValueRuleSetServiceGapicClient",
+                    "libraryClient": "ConversionValueRuleSetServiceClient",
                     "rpcs": {
                         "MutateConversionValueRuleSets": {
                             "methods": [
@@ -717,7 +717,7 @@
         "CustomConversionGoalService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomConversionGoalServiceGapicClient",
+                    "libraryClient": "CustomConversionGoalServiceClient",
                     "rpcs": {
                         "MutateCustomConversionGoals": {
                             "methods": [
@@ -731,7 +731,7 @@
         "CustomerAssetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomerAssetServiceGapicClient",
+                    "libraryClient": "CustomerAssetServiceClient",
                     "rpcs": {
                         "MutateCustomerAssets": {
                             "methods": [
@@ -745,7 +745,7 @@
         "CustomerConversionGoalService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomerConversionGoalServiceGapicClient",
+                    "libraryClient": "CustomerConversionGoalServiceClient",
                     "rpcs": {
                         "MutateCustomerConversionGoals": {
                             "methods": [
@@ -759,7 +759,7 @@
         "CustomerCustomizerService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomerCustomizerServiceGapicClient",
+                    "libraryClient": "CustomerCustomizerServiceClient",
                     "rpcs": {
                         "MutateCustomerCustomizers": {
                             "methods": [
@@ -773,7 +773,7 @@
         "CustomerLabelService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomerLabelServiceGapicClient",
+                    "libraryClient": "CustomerLabelServiceClient",
                     "rpcs": {
                         "MutateCustomerLabels": {
                             "methods": [
@@ -787,7 +787,7 @@
         "CustomerNegativeCriterionService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomerNegativeCriterionServiceGapicClient",
+                    "libraryClient": "CustomerNegativeCriterionServiceClient",
                     "rpcs": {
                         "MutateCustomerNegativeCriteria": {
                             "methods": [
@@ -801,7 +801,7 @@
         "CustomerService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomerServiceGapicClient",
+                    "libraryClient": "CustomerServiceClient",
                     "rpcs": {
                         "CreateCustomerClient": {
                             "methods": [
@@ -825,7 +825,7 @@
         "CustomizerAttributeService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomizerAttributeServiceGapicClient",
+                    "libraryClient": "CustomizerAttributeServiceClient",
                     "rpcs": {
                         "MutateCustomizerAttributes": {
                             "methods": [
@@ -839,7 +839,7 @@
         "ExperimentArmService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ExperimentArmServiceGapicClient",
+                    "libraryClient": "ExperimentArmServiceClient",
                     "rpcs": {
                         "MutateExperimentArms": {
                             "methods": [
@@ -853,7 +853,7 @@
         "ExperimentService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ExperimentServiceGapicClient",
+                    "libraryClient": "ExperimentServiceClient",
                     "rpcs": {
                         "EndExperiment": {
                             "methods": [
@@ -892,7 +892,7 @@
         "KeywordPlanAdGroupKeywordService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "KeywordPlanAdGroupKeywordServiceGapicClient",
+                    "libraryClient": "KeywordPlanAdGroupKeywordServiceClient",
                     "rpcs": {
                         "MutateKeywordPlanAdGroupKeywords": {
                             "methods": [
@@ -906,7 +906,7 @@
         "KeywordPlanAdGroupService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "KeywordPlanAdGroupServiceGapicClient",
+                    "libraryClient": "KeywordPlanAdGroupServiceClient",
                     "rpcs": {
                         "MutateKeywordPlanAdGroups": {
                             "methods": [
@@ -920,7 +920,7 @@
         "KeywordPlanCampaignKeywordService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "KeywordPlanCampaignKeywordServiceGapicClient",
+                    "libraryClient": "KeywordPlanCampaignKeywordServiceClient",
                     "rpcs": {
                         "MutateKeywordPlanCampaignKeywords": {
                             "methods": [
@@ -934,7 +934,7 @@
         "KeywordPlanCampaignService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "KeywordPlanCampaignServiceGapicClient",
+                    "libraryClient": "KeywordPlanCampaignServiceClient",
                     "rpcs": {
                         "MutateKeywordPlanCampaigns": {
                             "methods": [
@@ -948,7 +948,7 @@
         "KeywordPlanService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "KeywordPlanServiceGapicClient",
+                    "libraryClient": "KeywordPlanServiceClient",
                     "rpcs": {
                         "MutateKeywordPlans": {
                             "methods": [
@@ -962,7 +962,7 @@
         "LabelService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "LabelServiceGapicClient",
+                    "libraryClient": "LabelServiceClient",
                     "rpcs": {
                         "MutateLabels": {
                             "methods": [
@@ -976,7 +976,7 @@
         "RecommendationSubscriptionService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "RecommendationSubscriptionServiceGapicClient",
+                    "libraryClient": "RecommendationSubscriptionServiceClient",
                     "rpcs": {
                         "MutateRecommendationSubscription": {
                             "methods": [
@@ -990,7 +990,7 @@
         "RemarketingActionService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "RemarketingActionServiceGapicClient",
+                    "libraryClient": "RemarketingActionServiceClient",
                     "rpcs": {
                         "MutateRemarketingActions": {
                             "methods": [
@@ -1004,7 +1004,7 @@
         "SharedCriterionService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "SharedCriterionServiceGapicClient",
+                    "libraryClient": "SharedCriterionServiceClient",
                     "rpcs": {
                         "MutateSharedCriteria": {
                             "methods": [
@@ -1018,7 +1018,7 @@
         "SharedSetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "SharedSetServiceGapicClient",
+                    "libraryClient": "SharedSetServiceClient",
                     "rpcs": {
                         "MutateSharedSets": {
                             "methods": [
@@ -1032,7 +1032,7 @@
         "SmartCampaignSettingService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "SmartCampaignSettingServiceGapicClient",
+                    "libraryClient": "SmartCampaignSettingServiceClient",
                     "rpcs": {
                         "GetSmartCampaignStatus": {
                             "methods": [
@@ -1051,7 +1051,7 @@
         "UserListService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "UserListServiceGapicClient",
+                    "libraryClient": "UserListServiceClient",
                     "rpcs": {
                         "MutateUserLists": {
                             "methods": [
@@ -1065,7 +1065,7 @@
         "GoogleAdsService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "GoogleAdsServiceGapicClient",
+                    "libraryClient": "GoogleAdsServiceClient",
                     "rpcs": {
                         "Mutate": {
                             "methods": [
@@ -1089,7 +1089,7 @@
         "BatchJobService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "BatchJobServiceGapicClient",
+                    "libraryClient": "BatchJobServiceClient",
                     "rpcs": {
                         "AddBatchJobOperations": {
                             "methods": [
@@ -1118,7 +1118,7 @@
         "BenchmarksService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "BenchmarksServiceGapicClient",
+                    "libraryClient": "BenchmarksServiceClient",
                     "rpcs": {
                         "GenerateBenchmarksMetrics": {
                             "methods": [
@@ -1152,7 +1152,7 @@
         "BillingSetupService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "BillingSetupServiceGapicClient",
+                    "libraryClient": "BillingSetupServiceClient",
                     "rpcs": {
                         "MutateBillingSetup": {
                             "methods": [
@@ -1166,7 +1166,7 @@
         "BrandSuggestionService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "BrandSuggestionServiceGapicClient",
+                    "libraryClient": "BrandSuggestionServiceClient",
                     "rpcs": {
                         "SuggestBrands": {
                             "methods": [
@@ -1180,7 +1180,7 @@
         "CampaignGoalConfigService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CampaignGoalConfigServiceGapicClient",
+                    "libraryClient": "CampaignGoalConfigServiceClient",
                     "rpcs": {
                         "MutateCampaignGoalConfigs": {
                             "methods": [
@@ -1194,7 +1194,7 @@
         "ContentCreatorInsightsService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ContentCreatorInsightsServiceGapicClient",
+                    "libraryClient": "ContentCreatorInsightsServiceClient",
                     "rpcs": {
                         "GenerateCreatorInsights": {
                             "methods": [
@@ -1213,7 +1213,7 @@
         "ConversionAdjustmentUploadService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ConversionAdjustmentUploadServiceGapicClient",
+                    "libraryClient": "ConversionAdjustmentUploadServiceClient",
                     "rpcs": {
                         "UploadConversionAdjustments": {
                             "methods": [
@@ -1227,7 +1227,7 @@
         "ConversionUploadService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ConversionUploadServiceGapicClient",
+                    "libraryClient": "ConversionUploadServiceClient",
                     "rpcs": {
                         "UploadCallConversions": {
                             "methods": [
@@ -1246,7 +1246,7 @@
         "CustomAudienceService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomAudienceServiceGapicClient",
+                    "libraryClient": "CustomAudienceServiceClient",
                     "rpcs": {
                         "MutateCustomAudiences": {
                             "methods": [
@@ -1260,7 +1260,7 @@
         "CustomInterestService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomInterestServiceGapicClient",
+                    "libraryClient": "CustomInterestServiceClient",
                     "rpcs": {
                         "MutateCustomInterests": {
                             "methods": [
@@ -1274,7 +1274,7 @@
         "CustomerAssetSetService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomerAssetSetServiceGapicClient",
+                    "libraryClient": "CustomerAssetSetServiceClient",
                     "rpcs": {
                         "MutateCustomerAssetSets": {
                             "methods": [
@@ -1288,7 +1288,7 @@
         "CustomerClientLinkService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomerClientLinkServiceGapicClient",
+                    "libraryClient": "CustomerClientLinkServiceClient",
                     "rpcs": {
                         "MutateCustomerClientLink": {
                             "methods": [
@@ -1302,7 +1302,7 @@
         "CustomerManagerLinkService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomerManagerLinkServiceGapicClient",
+                    "libraryClient": "CustomerManagerLinkServiceClient",
                     "rpcs": {
                         "MoveManagerLink": {
                             "methods": [
@@ -1321,7 +1321,7 @@
         "CustomerSkAdNetworkConversionValueSchemaService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomerSkAdNetworkConversionValueSchemaServiceGapicClient",
+                    "libraryClient": "CustomerSkAdNetworkConversionValueSchemaServiceClient",
                     "rpcs": {
                         "MutateCustomerSkAdNetworkConversionValueSchema": {
                             "methods": [
@@ -1335,7 +1335,7 @@
         "CustomerUserAccessInvitationService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomerUserAccessInvitationServiceGapicClient",
+                    "libraryClient": "CustomerUserAccessInvitationServiceClient",
                     "rpcs": {
                         "MutateCustomerUserAccessInvitation": {
                             "methods": [
@@ -1349,7 +1349,7 @@
         "CustomerUserAccessService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "CustomerUserAccessServiceGapicClient",
+                    "libraryClient": "CustomerUserAccessServiceClient",
                     "rpcs": {
                         "MutateCustomerUserAccess": {
                             "methods": [
@@ -1363,7 +1363,7 @@
         "DataLinkService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "DataLinkServiceGapicClient",
+                    "libraryClient": "DataLinkServiceClient",
                     "rpcs": {
                         "CreateDataLink": {
                             "methods": [
@@ -1387,7 +1387,7 @@
         "GeoTargetConstantService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "GeoTargetConstantServiceGapicClient",
+                    "libraryClient": "GeoTargetConstantServiceClient",
                     "rpcs": {
                         "SuggestGeoTargetConstants": {
                             "methods": [
@@ -1401,7 +1401,7 @@
         "GoalService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "GoalServiceGapicClient",
+                    "libraryClient": "GoalServiceClient",
                     "rpcs": {
                         "MutateGoals": {
                             "methods": [
@@ -1415,7 +1415,7 @@
         "GoogleAdsFieldService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "GoogleAdsFieldServiceGapicClient",
+                    "libraryClient": "GoogleAdsFieldServiceClient",
                     "rpcs": {
                         "GetGoogleAdsField": {
                             "methods": [
@@ -1434,7 +1434,7 @@
         "IdentityVerificationService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "IdentityVerificationServiceGapicClient",
+                    "libraryClient": "IdentityVerificationServiceClient",
                     "rpcs": {
                         "GetIdentityVerification": {
                             "methods": [
@@ -1453,7 +1453,7 @@
         "IncentiveService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "IncentiveServiceGapicClient",
+                    "libraryClient": "IncentiveServiceClient",
                     "rpcs": {
                         "ApplyIncentive": {
                             "methods": [
@@ -1472,7 +1472,7 @@
         "InvoiceService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "InvoiceServiceGapicClient",
+                    "libraryClient": "InvoiceServiceClient",
                     "rpcs": {
                         "ListInvoices": {
                             "methods": [
@@ -1486,7 +1486,7 @@
         "KeywordPlanIdeaService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "KeywordPlanIdeaServiceGapicClient",
+                    "libraryClient": "KeywordPlanIdeaServiceClient",
                     "rpcs": {
                         "GenerateAdGroupThemes": {
                             "methods": [
@@ -1515,7 +1515,7 @@
         "KeywordThemeConstantService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "KeywordThemeConstantServiceGapicClient",
+                    "libraryClient": "KeywordThemeConstantServiceClient",
                     "rpcs": {
                         "SuggestKeywordThemeConstants": {
                             "methods": [
@@ -1529,7 +1529,7 @@
         "LocalServicesLeadService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "LocalServicesLeadServiceGapicClient",
+                    "libraryClient": "LocalServicesLeadServiceClient",
                     "rpcs": {
                         "AppendLeadConversation": {
                             "methods": [
@@ -1548,7 +1548,7 @@
         "MultiPartyAuthReviewService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "MultiPartyAuthReviewServiceGapicClient",
+                    "libraryClient": "MultiPartyAuthReviewServiceClient",
                     "rpcs": {
                         "ResolveMultiPartyAuthReview": {
                             "methods": [
@@ -1562,7 +1562,7 @@
         "OfflineUserDataJobService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "OfflineUserDataJobServiceGapicClient",
+                    "libraryClient": "OfflineUserDataJobServiceClient",
                     "rpcs": {
                         "AddOfflineUserDataJobOperations": {
                             "methods": [
@@ -1586,7 +1586,7 @@
         "PaymentsAccountService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "PaymentsAccountServiceGapicClient",
+                    "libraryClient": "PaymentsAccountServiceClient",
                     "rpcs": {
                         "ListPaymentsAccounts": {
                             "methods": [
@@ -1600,7 +1600,7 @@
         "ProductLinkInvitationService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ProductLinkInvitationServiceGapicClient",
+                    "libraryClient": "ProductLinkInvitationServiceClient",
                     "rpcs": {
                         "CreateProductLinkInvitation": {
                             "methods": [
@@ -1624,7 +1624,7 @@
         "ProductLinkService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ProductLinkServiceGapicClient",
+                    "libraryClient": "ProductLinkServiceClient",
                     "rpcs": {
                         "CreateProductLink": {
                             "methods": [
@@ -1643,7 +1643,7 @@
         "ReachPlanService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ReachPlanServiceGapicClient",
+                    "libraryClient": "ReachPlanServiceClient",
                     "rpcs": {
                         "GenerateConversionRates": {
                             "methods": [
@@ -1682,7 +1682,7 @@
         "RecommendationService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "RecommendationServiceGapicClient",
+                    "libraryClient": "RecommendationServiceClient",
                     "rpcs": {
                         "ApplyRecommendation": {
                             "methods": [
@@ -1706,7 +1706,7 @@
         "ReservationService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ReservationServiceGapicClient",
+                    "libraryClient": "ReservationServiceClient",
                     "rpcs": {
                         "BookCampaigns": {
                             "methods": [
@@ -1725,7 +1725,7 @@
         "ShareablePreviewService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ShareablePreviewServiceGapicClient",
+                    "libraryClient": "ShareablePreviewServiceClient",
                     "rpcs": {
                         "GenerateShareablePreviews": {
                             "methods": [
@@ -1739,7 +1739,7 @@
         "SmartCampaignSuggestService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "SmartCampaignSuggestServiceGapicClient",
+                    "libraryClient": "SmartCampaignSuggestServiceClient",
                     "rpcs": {
                         "SuggestKeywordThemes": {
                             "methods": [
@@ -1763,7 +1763,7 @@
         "ThirdPartyAppAnalyticsLinkService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "ThirdPartyAppAnalyticsLinkServiceGapicClient",
+                    "libraryClient": "ThirdPartyAppAnalyticsLinkServiceClient",
                     "rpcs": {
                         "RegenerateShareableLinkId": {
                             "methods": [
@@ -1777,7 +1777,7 @@
         "TravelAssetSuggestionService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "TravelAssetSuggestionServiceGapicClient",
+                    "libraryClient": "TravelAssetSuggestionServiceClient",
                     "rpcs": {
                         "SuggestTravelAssets": {
                             "methods": [
@@ -1791,7 +1791,7 @@
         "UserDataService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "UserDataServiceGapicClient",
+                    "libraryClient": "UserDataServiceClient",
                     "rpcs": {
                         "UploadUserData": {
                             "methods": [
@@ -1805,7 +1805,7 @@
         "UserListCustomerTypeService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "UserListCustomerTypeServiceGapicClient",
+                    "libraryClient": "UserListCustomerTypeServiceClient",
                     "rpcs": {
                         "MutateUserListCustomerTypes": {
                             "methods": [
@@ -1819,7 +1819,7 @@
         "YouTubeVideoUploadService": {
             "clients": {
                 "grpc": {
-                    "libraryClient": "YouTubeVideoUploadServiceGapicClient",
+                    "libraryClient": "YouTubeVideoUploadServiceClient",
                     "rpcs": {
                         "CreateYouTubeVideoUpload": {
                             "methods": [

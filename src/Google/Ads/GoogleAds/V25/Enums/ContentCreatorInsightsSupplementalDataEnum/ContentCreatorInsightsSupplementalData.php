@@ -26,6 +26,18 @@ class ContentCreatorInsightsSupplementalData
      */
     const UNKNOWN = 1;
     /**
+     * Populate brand sentiment data in
+     * [ContentCreatorInsightsService.GenerateTrendingInsights][google.ads.googleads.v25.services.ContentCreatorInsightsService.GenerateTrendingInsights].
+     * This is only available when requesting trending insights for a brand
+     * topic. A brand topic is a Knowledge Graph entity that is tagged with
+     * [BRAND][google.ads.googleads.v25.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.BRAND].
+     * Use [AudienceInsightsService.ListAudienceInsightsAttributes][] to get the
+     * list of supported Knowledge Graph entities.
+     *
+     * Generated from protobuf enum <code>BRAND_SENTIMENT_DATA = 2;</code>
+     */
+    const BRAND_SENTIMENT_DATA = 2;
+    /**
      * Populate local creator data in
      * [ContentCreatorInsightsService.GenerateTrendingInsights][google.ads.googleads.v25.services.ContentCreatorInsightsService.GenerateTrendingInsights]
      * and
@@ -50,6 +62,7 @@ class ContentCreatorInsightsSupplementalData
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
+        self::BRAND_SENTIMENT_DATA => 'BRAND_SENTIMENT_DATA',
         self::LOCAL_CREATOR_DATA => 'LOCAL_CREATOR_DATA',
     ];
 

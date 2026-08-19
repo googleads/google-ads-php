@@ -74,6 +74,30 @@ class SmartCampaignError
      * Generated from protobuf enum <code>CREATION_FAILED = 9;</code>
      */
     const CREATION_FAILED = 9;
+    /**
+     * The validate_only generate PMax feature is not supported yet.
+     *
+     * Generated from protobuf enum <code>VALIDATE_ONLY_GENERATE_PMAX_NOT_SUPPORTED = 10;</code>
+     */
+    const VALIDATE_ONLY_GENERATE_PMAX_NOT_SUPPORTED = 10;
+    /**
+     * The GBP enabled generate PMax feature is not supported yet.
+     *
+     * Generated from protobuf enum <code>GBP_ENABLED_GENERATE_PMAX_NOT_SUPPORTED = 11;</code>
+     */
+    const GBP_ENABLED_GENERATE_PMAX_NOT_SUPPORTED = 11;
+    /**
+     * The image enabled generate PMax feature is not supported yet.
+     *
+     * Generated from protobuf enum <code>IMAGE_ENABLED_GENERATE_PMAX_NOT_SUPPORTED = 12;</code>
+     */
+    const IMAGE_ENABLED_GENERATE_PMAX_NOT_SUPPORTED = 12;
+    /**
+     * The Smart Campaign to PMax conversion failed validation.
+     *
+     * Generated from protobuf enum <code>GENERATE_PMAX_CONVERTERS_FAIL = 13;</code>
+     */
+    const GENERATE_PMAX_CONVERTERS_FAIL = 13;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -86,6 +110,10 @@ class SmartCampaignError
         self::CANNOT_DETERMINE_SUGGESTION_LOCALE => 'CANNOT_DETERMINE_SUGGESTION_LOCALE',
         self::FINAL_URL_NOT_CRAWLABLE => 'FINAL_URL_NOT_CRAWLABLE',
         self::CREATION_FAILED => 'CREATION_FAILED',
+        self::VALIDATE_ONLY_GENERATE_PMAX_NOT_SUPPORTED => 'VALIDATE_ONLY_GENERATE_PMAX_NOT_SUPPORTED',
+        self::GBP_ENABLED_GENERATE_PMAX_NOT_SUPPORTED => 'GBP_ENABLED_GENERATE_PMAX_NOT_SUPPORTED',
+        self::IMAGE_ENABLED_GENERATE_PMAX_NOT_SUPPORTED => 'IMAGE_ENABLED_GENERATE_PMAX_NOT_SUPPORTED',
+        self::GENERATE_PMAX_CONVERTERS_FAIL => 'GENERATE_PMAX_CONVERTERS_FAIL',
     ];
 
     public static function name($value)
