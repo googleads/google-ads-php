@@ -85,19 +85,20 @@ trait GoogleAdsGapicClientTrait
      */
     private function addFixedHeaderMiddleware(callable &$callable)
     {
-        if (!is_null($this->developerToken)) {
-            $headers = [self::$DEVELOPER_TOKEN_KEY => [$this->developerToken]];
-
-            if (!is_null($this->loginCustomerId)) {
-                $headers[self::$LOGIN_CUSTOMER_ID] = [$this->loginCustomerId];
-            }
-            if (!is_null($this->linkedCustomerId)) {
-                $headers[self::$LINKED_CUSTOMER_ID] = [$this->linkedCustomerId];
-            }
-            if (!is_null($this->adsAssistant)) {
-                $headers[self::$ADS_ASSISTANT_HEADER_NAME] = [$this->adsAssistant];
-            }
-
+        $headers = [];
+        if (!empty($this->developerToken)) {
+            $headers[self::$DEVELOPER_TOKEN_KEY] = [$this->developerToken];
+        }
+        if (!is_null($this->loginCustomerId)) {
+            $headers[self::$LOGIN_CUSTOMER_ID] = [$this->loginCustomerId];
+        }
+        if (!is_null($this->linkedCustomerId)) {
+            $headers[self::$LINKED_CUSTOMER_ID] = [$this->linkedCustomerId];
+        }
+        if (!is_null($this->adsAssistant)) {
+            $headers[self::$ADS_ASSISTANT_HEADER_NAME] = [$this->adsAssistant];
+        }
+        if (!empty($headers)) {
             $callable = new FixedHeaderMiddleware($callable, $headers);
         }
         return $callable;

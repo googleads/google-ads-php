@@ -41,7 +41,6 @@ class GoogleAdsClient
     public function __construct(GoogleAdsClientBuilder $builder)
     {
         $this->developerToken = $builder->getDeveloperToken();
-        $this->useCloudOrgForApiAccess = $builder->useCloudOrgForApiAccess();
         $this->loginCustomerId = $builder->getLoginCustomerId();
         $this->linkedCustomerId = $builder->getLinkedCustomerId();
         $this->adsAssistant = $builder->getAdsAssistant();
