@@ -123,6 +123,9 @@ Follow the below steps if you want to try our code examples.
     the examples require parameters. You can see what are required by running
     code examples with `--help` as a command-line parameter.
 
+    For integrating the library into a Laravel application, see the
+    [Laravel Integration Guide](examples/LARAVEL_GUIDE.md).
+
     **Note:** You will find comments with the formats `[START...]` and `[END...]`
     in the source code of these examples. These are only used for technical purposes,
     you can completely disregard them.
@@ -173,6 +176,10 @@ for more information.
 ## Running in a Docker container
 
 See the [Running in a Docker container guide](https://developers.google.com/google-ads/api/docs/client-libs/php/docker).
+
+## Framework integration
+
+See the [Laravel Integration Guide](examples/LARAVEL_GUIDE.md) for integrating the SDK into modern Laravel applications (Laravel 10, 11+).
 
 ## Logging
 
