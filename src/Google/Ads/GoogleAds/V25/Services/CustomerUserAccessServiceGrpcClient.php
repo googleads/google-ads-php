@@ -21,16 +21,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
 /**
  * This service manages the permissions of a user on a given customer.
  */
-class CustomerUserAccessServiceGrpcClient extends \Grpc\BaseStub
-{
+class CustomerUserAccessServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -48,21 +46,17 @@ class CustomerUserAccessServiceGrpcClient extends \Grpc\BaseStub
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\MutateCustomerUserAccessRequest $argument input argument
-     * @param  array                                                              $metadata metadata
-     * @param  array                                                              $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\MutateCustomerUserAccessRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateCustomerUserAccessResponse>
      */
     public function MutateCustomerUserAccess(\Google\Ads\GoogleAds\V25\Services\MutateCustomerUserAccessRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.CustomerUserAccessService/MutateCustomerUserAccess',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\MutateCustomerUserAccessResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.CustomerUserAccessService/MutateCustomerUserAccess',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\MutateCustomerUserAccessResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

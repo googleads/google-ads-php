@@ -48,25 +48,19 @@ use stdClass;
  */
 class CampaignDraftServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface 
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper 
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return CampaignDraftServiceClient 
-     */
+    /** @return CampaignDraftServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
@@ -75,17 +69,13 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         return new CampaignDraftServiceClient($options);
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function listCampaignDraftAsyncErrorsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $nextPageToken = '';
@@ -116,29 +106,23 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function listCampaignDraftAsyncErrorsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $formattedResourceName = $gapicClient->campaignDraftName('[CUSTOMER_ID]', '[BASE_CAMPAIGN_ID]', '[DRAFT_ID]');
@@ -157,17 +141,13 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function mutateCampaignDraftsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new MutateCampaignDraftsResponse();
@@ -192,29 +172,23 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function mutateCampaignDraftsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -235,26 +209,20 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function promoteCampaignDraftTest()
     {
         $operationsTransport = $this->createTransport();
-        $operationsClient = new OperationsClient(
-            [
+        $operationsClient = new OperationsClient([
             'apiEndpoint' => '',
             'transport' => $operationsTransport,
             'credentials' => $this->createCredentials(),
-            ]
-        );
+        ]);
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
             'operationsClient' => $operationsClient,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
         // Mock response
@@ -288,11 +256,9 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $this->assertProtobufEquals($formattedCampaignDraft, $actualValue);
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/promoteCampaignDraftTest');
-        $response->pollUntilComplete(
-            [
+        $response->pollUntilComplete([
             'initialPollDelayMillis' => 1,
-            ]
-        );
+        ]);
         $this->assertTrue($response->isDone());
         $this->assertEquals($expectedResponse, $response->getResult());
         $apiRequestsEmpty = $transport->popReceivedCalls();
@@ -307,26 +273,20 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $this->assertTrue($operationsTransport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function promoteCampaignDraftExceptionTest()
     {
         $operationsTransport = $this->createTransport();
-        $operationsClient = new OperationsClient(
-            [
+        $operationsClient = new OperationsClient([
             'apiEndpoint' => '',
             'transport' => $operationsTransport,
             'credentials' => $this->createCredentials(),
-            ]
-        );
+        ]);
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
             'operationsClient' => $operationsClient,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
         // Mock response
@@ -337,14 +297,12 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage = json_encode(
-            [
+        $expectedExceptionMessage = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
         // Mock request
         $formattedCampaignDraft = $gapicClient->campaignDraftName('[CUSTOMER_ID]', '[BASE_CAMPAIGN_ID]', '[DRAFT_ID]');
@@ -356,11 +314,9 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/promoteCampaignDraftTest');
         try {
-            $response->pollUntilComplete(
-                [
+            $response->pollUntilComplete([
                 'initialPollDelayMillis' => 1,
-                ]
-            );
+            ]);
             // If the pollUntilComplete() method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -374,17 +330,13 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $this->assertTrue($operationsTransport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function listCampaignDraftAsyncErrorsAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $nextPageToken = '';

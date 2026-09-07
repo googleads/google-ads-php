@@ -23,16 +23,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage campaigns.
  */
-class CampaignServiceGrpcClient extends \Grpc\BaseStub
-{
+class CampaignServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -75,21 +73,17 @@ class CampaignServiceGrpcClient extends \Grpc\BaseStub
      *   [StringFormatError]()
      *   [StringLengthError]()
      *   [UrlFieldError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\MutateCampaignsRequest $argument input argument
-     * @param  array                                                     $metadata metadata
-     * @param  array                                                     $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\MutateCampaignsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateCampaignsResponse>
      */
     public function MutateCampaigns(\Google\Ads\GoogleAds\V25\Services\MutateCampaignsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.CampaignService/MutateCampaigns',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\MutateCampaignsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.CampaignService/MutateCampaigns',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\MutateCampaignsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -108,21 +102,17 @@ class CampaignServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RequestError]()
      *   [ResourceCountLimitExceededError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\EnablePMaxBrandGuidelinesRequest $argument input argument
-     * @param  array                                                               $metadata metadata
-     * @param  array                                                               $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\EnablePMaxBrandGuidelinesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\EnablePMaxBrandGuidelinesResponse>
      */
     public function EnablePMaxBrandGuidelines(\Google\Ads\GoogleAds\V25\Services\EnablePMaxBrandGuidelinesRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.CampaignService/EnablePMaxBrandGuidelines',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\EnablePMaxBrandGuidelinesResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.CampaignService/EnablePMaxBrandGuidelines',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\EnablePMaxBrandGuidelinesResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

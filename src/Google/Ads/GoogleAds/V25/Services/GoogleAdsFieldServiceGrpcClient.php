@@ -23,16 +23,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to fetch Google Ads API fields.
  */
-class GoogleAdsFieldServiceGrpcClient extends \Grpc\BaseStub
-{
+class GoogleAdsFieldServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -46,21 +44,17 @@ class GoogleAdsFieldServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\GetGoogleAdsFieldRequest $argument input argument
-     * @param  array                                                       $metadata metadata
-     * @param  array                                                       $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\GetGoogleAdsFieldRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Resources\GoogleAdsField>
      */
     public function GetGoogleAdsField(\Google\Ads\GoogleAds\V25\Services\GetGoogleAdsFieldRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.GoogleAdsFieldService/GetGoogleAdsField',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Resources\GoogleAdsField', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.GoogleAdsFieldService/GetGoogleAdsField',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Resources\GoogleAdsField', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -74,21 +68,17 @@ class GoogleAdsFieldServiceGrpcClient extends \Grpc\BaseStub
      *   [QueryError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsFieldsRequest $argument input argument
-     * @param  array                                                           $metadata metadata
-     * @param  array                                                           $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsFieldsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsFieldsResponse>
      */
     public function SearchGoogleAdsFields(\Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsFieldsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.GoogleAdsFieldService/SearchGoogleAdsFields',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsFieldsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.GoogleAdsFieldService/SearchGoogleAdsFields',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsFieldsResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

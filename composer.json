@@ -4,7 +4,7 @@
   "description": "Google Ads API client for PHP",
   "require": {
     "php": ">=8.1",
-    "google/gax": "^1.36.1",
+    "google/gax": "^1.49.0",
     "grpc/grpc": ">=1.57.0",
     "google/protobuf": "^3.21.5 || ^4.26.1 || ^5.34",
     "monolog/monolog": "^1.26 || ^2.0 || ^3.0",
@@ -15,7 +15,7 @@
     "squizlabs/php_codesniffer": "^3.5",
     "ext-bcmath": "*",
     "ext-grpc": "*",
-    "ext-protobuf": "^3.21.5 || ^4.26",
+    "ext-protobuf": "^3.21.5 || ^4.26 || ^5.0",
     "ulrichsg/getopt-php": "^3.4",
     "react/http": "^1.2.0",
     "composer/composer": "^2.0"

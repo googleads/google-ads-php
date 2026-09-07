@@ -24,16 +24,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
  * BenchmarksService helps users compare YouTube advertisement data against
  * industry benchmarks. Accessible to allowlisted customers only.
  */
-class BenchmarksServiceGrpcClient extends \Grpc\BaseStub
-{
+class BenchmarksServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -48,21 +46,17 @@ class BenchmarksServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ListBenchmarksAvailableDatesRequest $argument input argument
-     * @param  array                                                                  $metadata metadata
-     * @param  array                                                                  $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ListBenchmarksAvailableDatesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListBenchmarksAvailableDatesResponse>
      */
     public function ListBenchmarksAvailableDates(\Google\Ads\GoogleAds\V25\Services\ListBenchmarksAvailableDatesRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.BenchmarksService/ListBenchmarksAvailableDates',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ListBenchmarksAvailableDatesResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.BenchmarksService/ListBenchmarksAvailableDates',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ListBenchmarksAvailableDatesResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -77,21 +71,17 @@ class BenchmarksServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ListBenchmarksLocationsRequest $argument input argument
-     * @param  array                                                             $metadata metadata
-     * @param  array                                                             $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ListBenchmarksLocationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListBenchmarksLocationsResponse>
      */
     public function ListBenchmarksLocations(\Google\Ads\GoogleAds\V25\Services\ListBenchmarksLocationsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.BenchmarksService/ListBenchmarksLocations',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ListBenchmarksLocationsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.BenchmarksService/ListBenchmarksLocations',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ListBenchmarksLocationsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -105,21 +95,17 @@ class BenchmarksServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ListBenchmarksProductsRequest $argument input argument
-     * @param  array                                                            $metadata metadata
-     * @param  array                                                            $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ListBenchmarksProductsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListBenchmarksProductsResponse>
      */
     public function ListBenchmarksProducts(\Google\Ads\GoogleAds\V25\Services\ListBenchmarksProductsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.BenchmarksService/ListBenchmarksProducts',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ListBenchmarksProductsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.BenchmarksService/ListBenchmarksProducts',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ListBenchmarksProductsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -133,21 +119,17 @@ class BenchmarksServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ListBenchmarksSourcesRequest $argument input argument
-     * @param  array                                                           $metadata metadata
-     * @param  array                                                           $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ListBenchmarksSourcesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListBenchmarksSourcesResponse>
      */
     public function ListBenchmarksSources(\Google\Ads\GoogleAds\V25\Services\ListBenchmarksSourcesRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.BenchmarksService/ListBenchmarksSources',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ListBenchmarksSourcesResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.BenchmarksService/ListBenchmarksSources',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ListBenchmarksSourcesResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -164,21 +146,17 @@ class BenchmarksServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RangeError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateBenchmarksMetricsRequest $argument input argument
-     * @param  array                                                               $metadata metadata
-     * @param  array                                                               $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\GenerateBenchmarksMetricsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateBenchmarksMetricsResponse>
      */
     public function GenerateBenchmarksMetrics(\Google\Ads\GoogleAds\V25\Services\GenerateBenchmarksMetricsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.BenchmarksService/GenerateBenchmarksMetrics',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\GenerateBenchmarksMetricsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.BenchmarksService/GenerateBenchmarksMetrics',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\GenerateBenchmarksMetricsResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

@@ -75,9 +75,7 @@ class ExperimentServiceClient
     }
     use ResourceHelperTrait;
 
-    /**
-     * The name of the service. 
-     */
+    /** The name of the service. */
     private const SERVICE_NAME = 'google.ads.googleads.v25.services.ExperimentService';
 
     /**
@@ -87,19 +85,13 @@ class ExperimentServiceClient
      */
     private const SERVICE_ADDRESS = 'googleads.googleapis.com';
 
-    /**
-     * The address template of the service. 
-     */
+    /** The address template of the service. */
     private const SERVICE_ADDRESS_TEMPLATE = 'googleads.UNIVERSE_DOMAIN';
 
-    /**
-     * The default port of the service. 
-     */
+    /** The default port of the service. */
     private const DEFAULT_SERVICE_PORT = 443;
 
-    /**
-     * The name of the code generator, to be included in the agent header. 
-     */
+    /** The name of the code generator, to be included in the agent header. */
     private const CODEGEN_NAME = 'gapic';
 
     /**
@@ -191,12 +183,10 @@ class ExperimentServiceClient
      */
     public static function campaignName(string $customerId, string $campaignId): string
     {
-        return self::getPathTemplate('campaign')->render(
-            [
+        return self::getPathTemplate('campaign')->render([
             'customer_id' => $customerId,
             'campaign_id' => $campaignId,
-            ]
-        );
+        ]);
     }
 
     /**
@@ -210,12 +200,10 @@ class ExperimentServiceClient
      */
     public static function campaignBudgetName(string $customerId, string $campaignBudgetId): string
     {
-        return self::getPathTemplate('campaignBudget')->render(
-            [
+        return self::getPathTemplate('campaignBudget')->render([
             'customer_id' => $customerId,
             'campaign_budget_id' => $campaignBudgetId,
-            ]
-        );
+        ]);
     }
 
     /**
@@ -229,12 +217,10 @@ class ExperimentServiceClient
      */
     public static function experimentName(string $customerId, string $trialId): string
     {
-        return self::getPathTemplate('experiment')->render(
-            [
+        return self::getPathTemplate('experiment')->render([
             'customer_id' => $customerId,
             'trial_id' => $trialId,
-            ]
-        );
+        ]);
     }
 
     /**
@@ -248,12 +234,10 @@ class ExperimentServiceClient
      */
     public static function liftMeasurementConfigName(string $customerId, string $liftMeasurementConfigurationId): string
     {
-        return self::getPathTemplate('liftMeasurementConfig')->render(
-            [
+        return self::getPathTemplate('liftMeasurementConfig')->render([
             'customer_id' => $customerId,
             'lift_measurement_configuration_id' => $liftMeasurementConfigurationId,
-            ]
-        );
+        ]);
     }
 
     /**
@@ -287,12 +271,12 @@ class ExperimentServiceClient
      * Constructor.
      *
      * @param array|ClientOptions $options {
-     *                                     Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
-     * @type string $apiEndpoint
+     *     @type string $apiEndpoint
      *           The address of the API remote host. May optionally include the port, formatted
      *           as "<uri>:<port>". Default 'googleads.googleapis.com:443'.
-     * @type FetchAuthTokenInterface|CredentialsWrapper $credentials
+     *     @type FetchAuthTokenInterface|CredentialsWrapper $credentials
      *           This option should only be used with a pre-constructed
      *           {@see FetchAuthTokenInterface} or {@see CredentialsWrapper} object. Note that
      *           when one of these objects are provided, any settings in $credentialsConfig will
@@ -309,26 +293,26 @@ class ExperimentServiceClient
      *           ```
      *           {@see
      *           https://cloud.google.com/docs/authentication/external/externally-sourced-credentials}
-     * @type array $credentialsConfig
+     *     @type array $credentialsConfig
      *           Options used to configure credentials, including auth token caching, for the
      *           client. For a full list of supporting configuration options, see
      *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
-     * @type bool $disableRetries
+     *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
-     * @type string|array $clientConfig
+     *     @type string|array $clientConfig
      *           Client method configuration, including retry settings. This option can be either
      *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
      *           default this settings points to the default client config file, which is
      *           provided in the resources folder.
-     * @type string|TransportInterface $transport
+     *     @type string|TransportInterface $transport
      *           The transport used for executing network requests. May be either the string
      *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
      *           *Advanced usage*: Additionally, it is possible to pass in an already
      *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
      *           that when this object is provided, any settings in $transportConfig, and any
      *           $apiEndpoint setting, will be ignored.
-     * @type array $transportConfig
+     *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
@@ -339,13 +323,13 @@ class ExperimentServiceClient
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
      *           supported options.
-     * @type callable $clientCertSource
+     *     @type callable $clientCertSource
      *           A callable which returns the client cert as a string. This can be used to
      *           provide a certificate and private key to the transport layer for mTLS.
-     * @type false|LoggerInterface $logger
+     *     @type false|LoggerInterface $logger
      *           A PSR-3 compliant logger. If set to false, logging is disabled, ignoring the
      *           'GOOGLE_SDK_PHP_LOGGING' environment flag
-     * @type string $universeDomain
+     *     @type string $universeDomain
      *           The service domain for the client. Defaults to 'googleapis.com'.
      * }
      *
@@ -358,9 +342,7 @@ class ExperimentServiceClient
         $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
-    /**
-     * Handles execution of the async variants for each documented method. 
-     */
+    /** Handles execution of the async variants for each documented method. */
     public function __call($method, $args)
     {
         if (substr($method, -5) !== 'Async') {
@@ -391,9 +373,9 @@ class ExperimentServiceClient
      *
      * @param EndExperimentRequest $request     A request to house fields associated with the call.
      * @param array                $callOptions {
-     *                                          Optional.
+     *     Optional.
      *
-     * @type RetrySettings|array $retrySettings
+     *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on
      *           {@see RetrySettings} for example usage.
@@ -425,9 +407,9 @@ class ExperimentServiceClient
      *
      * @param GraduateExperimentRequest $request     A request to house fields associated with the call.
      * @param array                     $callOptions {
-     *                                               Optional.
+     *     Optional.
      *
-     * @type RetrySettings|array $retrySettings
+     *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on
      *           {@see RetrySettings} for example usage.
@@ -460,9 +442,9 @@ class ExperimentServiceClient
      *
      * @param ListExperimentAsyncErrorsRequest $request     A request to house fields associated with the call.
      * @param array                            $callOptions {
-     *                                                      Optional.
+     *     Optional.
      *
-     * @type RetrySettings|array $retrySettings
+     *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on
      *           {@see RetrySettings} for example usage.
@@ -495,9 +477,9 @@ class ExperimentServiceClient
      *
      * @param MutateExperimentsRequest $request     A request to house fields associated with the call.
      * @param array                    $callOptions {
-     *                                              Optional.
+     *     Optional.
      *
-     * @type RetrySettings|array $retrySettings
+     *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on
      *           {@see RetrySettings} for example usage.
@@ -536,9 +518,9 @@ class ExperimentServiceClient
      *
      * @param PromoteExperimentRequest $request     A request to house fields associated with the call.
      * @param array                    $callOptions {
-     *                                              Optional.
+     *     Optional.
      *
-     * @type RetrySettings|array $retrySettings
+     *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on
      *           {@see RetrySettings} for example usage.
@@ -585,9 +567,9 @@ class ExperimentServiceClient
      *
      * @param ScheduleExperimentRequest $request     A request to house fields associated with the call.
      * @param array                     $callOptions {
-     *                                               Optional.
+     *     Optional.
      *
-     * @type RetrySettings|array $retrySettings
+     *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a {@see RetrySettings} object, or an
      *           associative array of retry settings parameters. See the documentation on
      *           {@see RetrySettings} for example usage.

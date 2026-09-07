@@ -25,17 +25,18 @@ namespace Google\Ads\GoogleAds\V25\Services\Client;
 use Google\Ads\GoogleAds\V25\Resources\YouTubeVideoUpload;
 use Google\Ads\GoogleAds\V25\Services\Client\YouTubeVideoUploadServiceClient;
 use Google\Ads\GoogleAds\V25\Services\CreateYouTubeVideoUploadRequest;
-use Google\Ads\GoogleAds\V25\Services\CreateYouTubeVideoUploadResponse;
 use Google\Ads\GoogleAds\V25\Services\RemoveYouTubeVideoUploadRequest;
 use Google\Ads\GoogleAds\V25\Services\RemoveYouTubeVideoUploadResponse;
 use Google\Ads\GoogleAds\V25\Services\UpdateYouTubeVideoUploadRequest;
 use Google\Ads\GoogleAds\V25\Services\UpdateYouTubeVideoUploadResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
+use Google\ApiCore\ResumableUpload\ResumableUpload;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Protobuf\FieldMask;
 use Google\Rpc\Code;
+use ReflectionClass;
 use stdClass;
 
 /**
@@ -45,25 +46,19 @@ use stdClass;
  */
 class YouTubeVideoUploadServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface 
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper 
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return YouTubeVideoUploadServiceClient 
-     */
+    /** @return YouTubeVideoUploadServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
@@ -72,97 +67,33 @@ class YouTubeVideoUploadServiceClientTest extends GeneratedTest
         return new YouTubeVideoUploadServiceClient($options);
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function createYouTubeVideoUploadTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
-        $this->assertTrue($transport->isExhausted());
-        // Mock response
-        $resourceName = 'resourceName979421212';
-        $expectedResponse = new CreateYouTubeVideoUploadResponse();
-        $expectedResponse->setResourceName($resourceName);
-        $transport->addResponse($expectedResponse);
+        ]);
         // Mock request
         $customerId = 'customerId-1772061412';
         $youTubeVideoUpload = new YouTubeVideoUpload();
         $request = (new CreateYouTubeVideoUploadRequest())
             ->setCustomerId($customerId)
             ->setYouTubeVideoUpload($youTubeVideoUpload);
-        $response = $gapicClient->createYouTubeVideoUpload($request);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v25.services.YouTubeVideoUploadService/CreateYouTubeVideoUpload', $actualFuncCall);
-        $actualValue = $actualRequestObject->getCustomerId();
-        $this->assertProtobufEquals($customerId, $actualValue);
-        $actualValue = $actualRequestObject->getYouTubeVideoUpload();
-        $this->assertProtobufEquals($youTubeVideoUpload, $actualValue);
-        $this->assertTrue($transport->isExhausted());
+        $upload = $gapicClient->createYouTubeVideoUpload($request);
+        $this->assertInstanceOf(ResumableUpload::class, $upload);
+        $callProp = (new ReflectionClass($upload))
+            ->getProperty('call');
+        $this->assertSame('google.ads.googleads.v25.services.YouTubeVideoUploadService/CreateYouTubeVideoUpload', $callProp->getValue($upload)->getMethod());
     }
 
-    /**
-     * @test 
-     */
-    public function createYouTubeVideoUploadExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
-            'transport' => $transport,
-            ]
-        );
-        $this->assertTrue($transport->isExhausted());
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
-            'message' => 'internal error',
-            'code' => Code::DATA_LOSS,
-            'status' => 'DATA_LOSS',
-            'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
-        $transport->addResponse(null, $status);
-        // Mock request
-        $customerId = 'customerId-1772061412';
-        $youTubeVideoUpload = new YouTubeVideoUpload();
-        $request = (new CreateYouTubeVideoUploadRequest())
-            ->setCustomerId($customerId)
-            ->setYouTubeVideoUpload($youTubeVideoUpload);
-        try {
-            $gapicClient->createYouTubeVideoUpload($request);
-            // If the $gapicClient method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test 
-     */
+    /** @test */
     public function removeYouTubeVideoUploadTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new RemoveYouTubeVideoUploadResponse();
@@ -183,29 +114,23 @@ class YouTubeVideoUploadServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function removeYouTubeVideoUploadExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -224,17 +149,13 @@ class YouTubeVideoUploadServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function updateYouTubeVideoUploadTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $resourceName = 'resourceName979421212';
@@ -265,29 +186,23 @@ class YouTubeVideoUploadServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function updateYouTubeVideoUploadExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -310,40 +225,30 @@ class YouTubeVideoUploadServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
-    public function createYouTubeVideoUploadAsyncTest()
+    /** @test */
+    public function removeYouTubeVideoUploadAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $resourceName = 'resourceName979421212';
-        $expectedResponse = new CreateYouTubeVideoUploadResponse();
-        $expectedResponse->setResourceName($resourceName);
+        $expectedResponse = new RemoveYouTubeVideoUploadResponse();
         $transport->addResponse($expectedResponse);
         // Mock request
         $customerId = 'customerId-1772061412';
-        $youTubeVideoUpload = new YouTubeVideoUpload();
-        $request = (new CreateYouTubeVideoUploadRequest())
-            ->setCustomerId($customerId)
-            ->setYouTubeVideoUpload($youTubeVideoUpload);
-        $response = $gapicClient->createYouTubeVideoUploadAsync($request)->wait();
+        $request = (new RemoveYouTubeVideoUploadRequest())
+            ->setCustomerId($customerId);
+        $response = $gapicClient->removeYouTubeVideoUploadAsync($request)->wait();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v25.services.YouTubeVideoUploadService/CreateYouTubeVideoUpload', $actualFuncCall);
+        $this->assertSame('/google.ads.googleads.v25.services.YouTubeVideoUploadService/RemoveYouTubeVideoUpload', $actualFuncCall);
         $actualValue = $actualRequestObject->getCustomerId();
         $this->assertProtobufEquals($customerId, $actualValue);
-        $actualValue = $actualRequestObject->getYouTubeVideoUpload();
-        $this->assertProtobufEquals($youTubeVideoUpload, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 }

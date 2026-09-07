@@ -25,16 +25,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
  * people and how they can be reached with Google Ads. Accessible to
  * allowlisted customers only.
  */
-class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub
-{
+class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -50,21 +48,17 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RangeError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateInsightsFinderReportRequest $argument input argument
-     * @param  array                                                                  $metadata metadata
-     * @param  array                                                                  $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\GenerateInsightsFinderReportRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateInsightsFinderReportResponse>
      */
     public function GenerateInsightsFinderReport(\Google\Ads\GoogleAds\V25\Services\GenerateInsightsFinderReportRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.AudienceInsightsService/GenerateInsightsFinderReport',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\GenerateInsightsFinderReportResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.AudienceInsightsService/GenerateInsightsFinderReport',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\GenerateInsightsFinderReportResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -79,21 +73,17 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RangeError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ListAudienceInsightsAttributesRequest $argument input argument
-     * @param  array                                                                    $metadata metadata
-     * @param  array                                                                    $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ListAudienceInsightsAttributesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListAudienceInsightsAttributesResponse>
      */
     public function ListAudienceInsightsAttributes(\Google\Ads\GoogleAds\V25\Services\ListAudienceInsightsAttributesRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.AudienceInsightsService/ListAudienceInsightsAttributes',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ListAudienceInsightsAttributesResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.AudienceInsightsService/ListAudienceInsightsAttributes',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ListAudienceInsightsAttributesResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -108,21 +98,17 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RangeError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ListInsightsEligibleDatesRequest $argument input argument
-     * @param  array                                                               $metadata metadata
-     * @param  array                                                               $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ListInsightsEligibleDatesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListInsightsEligibleDatesResponse>
      */
     public function ListInsightsEligibleDates(\Google\Ads\GoogleAds\V25\Services\ListInsightsEligibleDatesRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.AudienceInsightsService/ListInsightsEligibleDates',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ListInsightsEligibleDatesResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.AudienceInsightsService/ListInsightsEligibleDates',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ListInsightsEligibleDatesResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -140,21 +126,17 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RangeError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateAudienceCompositionInsightsRequest $argument input argument
-     * @param  array                                                                         $metadata metadata
-     * @param  array                                                                         $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\GenerateAudienceCompositionInsightsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateAudienceCompositionInsightsResponse>
      */
     public function GenerateAudienceCompositionInsights(\Google\Ads\GoogleAds\V25\Services\GenerateAudienceCompositionInsightsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.AudienceInsightsService/GenerateAudienceCompositionInsights',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\GenerateAudienceCompositionInsightsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.AudienceInsightsService/GenerateAudienceCompositionInsights',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\GenerateAudienceCompositionInsightsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -170,21 +152,17 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateAudienceDefinitionRequest $argument input argument
-     * @param  array                                                                $metadata metadata
-     * @param  array                                                                $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\GenerateAudienceDefinitionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateAudienceDefinitionResponse>
      */
     public function GenerateAudienceDefinition(\Google\Ads\GoogleAds\V25\Services\GenerateAudienceDefinitionRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.AudienceInsightsService/GenerateAudienceDefinition',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\GenerateAudienceDefinitionResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.AudienceInsightsService/GenerateAudienceDefinition',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\GenerateAudienceDefinitionResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -201,21 +179,17 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RangeError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateSuggestedTargetingInsightsRequest $argument input argument
-     * @param  array                                                                        $metadata metadata
-     * @param  array                                                                        $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\GenerateSuggestedTargetingInsightsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateSuggestedTargetingInsightsResponse>
      */
     public function GenerateSuggestedTargetingInsights(\Google\Ads\GoogleAds\V25\Services\GenerateSuggestedTargetingInsightsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.AudienceInsightsService/GenerateSuggestedTargetingInsights',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\GenerateSuggestedTargetingInsightsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.AudienceInsightsService/GenerateSuggestedTargetingInsights',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\GenerateSuggestedTargetingInsightsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -233,21 +207,17 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RangeError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateAudienceOverlapInsightsRequest $argument input argument
-     * @param  array                                                                     $metadata metadata
-     * @param  array                                                                     $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\GenerateAudienceOverlapInsightsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateAudienceOverlapInsightsResponse>
      */
     public function GenerateAudienceOverlapInsights(\Google\Ads\GoogleAds\V25\Services\GenerateAudienceOverlapInsightsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.AudienceInsightsService/GenerateAudienceOverlapInsights',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\GenerateAudienceOverlapInsightsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.AudienceInsightsService/GenerateAudienceOverlapInsights',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\GenerateAudienceOverlapInsightsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -266,21 +236,17 @@ class AudienceInsightsServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RangeError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateTargetingSuggestionMetricsRequest $argument input argument
-     * @param  array                                                                        $metadata metadata
-     * @param  array                                                                        $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\GenerateTargetingSuggestionMetricsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateTargetingSuggestionMetricsResponse>
      */
     public function GenerateTargetingSuggestionMetrics(\Google\Ads\GoogleAds\V25\Services\GenerateTargetingSuggestionMetricsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.AudienceInsightsService/GenerateTargetingSuggestionMetrics',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\GenerateTargetingSuggestionMetricsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.AudienceInsightsService/GenerateTargetingSuggestionMetrics',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\GenerateTargetingSuggestionMetricsResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

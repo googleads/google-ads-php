@@ -26,16 +26,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
  * A maximum of 1000 negative keywords are allowed per plan. This includes both
  * campaign negative keywords and ad group negative keywords.
  */
-class KeywordPlanCampaignKeywordServiceGrpcClient extends \Grpc\BaseStub
-{
+class KeywordPlanCampaignKeywordServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -55,21 +53,17 @@ class KeywordPlanCampaignKeywordServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RequestError]()
      *   [ResourceCountLimitExceededError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\MutateKeywordPlanCampaignKeywordsRequest $argument input argument
-     * @param  array                                                                       $metadata metadata
-     * @param  array                                                                       $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\MutateKeywordPlanCampaignKeywordsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateKeywordPlanCampaignKeywordsResponse>
      */
     public function MutateKeywordPlanCampaignKeywords(\Google\Ads\GoogleAds\V25\Services\MutateKeywordPlanCampaignKeywordsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.KeywordPlanCampaignKeywordService/MutateKeywordPlanCampaignKeywords',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\MutateKeywordPlanCampaignKeywordsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.KeywordPlanCampaignKeywordService/MutateKeywordPlanCampaignKeywords',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\MutateKeywordPlanCampaignKeywordsResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

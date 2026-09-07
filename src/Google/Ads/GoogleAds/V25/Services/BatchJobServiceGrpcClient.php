@@ -23,16 +23,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage batch jobs.
  */
-class BatchJobServiceGrpcClient extends \Grpc\BaseStub
-{
+class BatchJobServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -47,21 +45,17 @@ class BatchJobServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RequestError]()
      *   [ResourceCountLimitExceededError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\MutateBatchJobRequest $argument input argument
-     * @param  array                                                    $metadata metadata
-     * @param  array                                                    $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\MutateBatchJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateBatchJobResponse>
      */
     public function MutateBatchJob(\Google\Ads\GoogleAds\V25\Services\MutateBatchJobRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.BatchJobService/MutateBatchJob',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\MutateBatchJobResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.BatchJobService/MutateBatchJob',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\MutateBatchJobResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -76,21 +70,17 @@ class BatchJobServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ListBatchJobResultsRequest $argument input argument
-     * @param  array                                                         $metadata metadata
-     * @param  array                                                         $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ListBatchJobResultsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListBatchJobResultsResponse>
      */
     public function ListBatchJobResults(\Google\Ads\GoogleAds\V25\Services\ListBatchJobResultsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.BatchJobService/ListBatchJobResults',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ListBatchJobResultsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.BatchJobService/ListBatchJobResults',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ListBatchJobResultsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -108,21 +98,17 @@ class BatchJobServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\RunBatchJobRequest $argument input argument
-     * @param  array                                                 $metadata metadata
-     * @param  array                                                 $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\RunBatchJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\LongRunning\Operation>
      */
     public function RunBatchJob(\Google\Ads\GoogleAds\V25\Services\RunBatchJobRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.BatchJobService/RunBatchJob',
-            $argument,
-            ['\Google\LongRunning\Operation', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.BatchJobService/RunBatchJob',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -137,21 +123,17 @@ class BatchJobServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RequestError]()
      *   [ResourceCountLimitExceededError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\AddBatchJobOperationsRequest $argument input argument
-     * @param  array                                                           $metadata metadata
-     * @param  array                                                           $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\AddBatchJobOperationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\AddBatchJobOperationsResponse>
      */
     public function AddBatchJobOperations(\Google\Ads\GoogleAds\V25\Services\AddBatchJobOperationsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.BatchJobService/AddBatchJobOperations',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\AddBatchJobOperationsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.BatchJobService/AddBatchJobOperations',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\AddBatchJobOperationsResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

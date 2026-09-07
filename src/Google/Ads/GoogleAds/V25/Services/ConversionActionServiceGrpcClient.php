@@ -23,16 +23,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage conversion actions.
  */
-class ConversionActionServiceGrpcClient extends \Grpc\BaseStub
-{
+class ConversionActionServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -57,21 +55,17 @@ class ConversionActionServiceGrpcClient extends \Grpc\BaseStub
      *   [RequestError]()
      *   [ResourceCountLimitExceededError]()
      *   [StringLengthError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\MutateConversionActionsRequest $argument input argument
-     * @param  array                                                             $metadata metadata
-     * @param  array                                                             $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\MutateConversionActionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateConversionActionsResponse>
      */
     public function MutateConversionActions(\Google\Ads\GoogleAds\V25\Services\MutateConversionActionsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ConversionActionService/MutateConversionActions',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\MutateConversionActionsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ConversionActionService/MutateConversionActions',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\MutateConversionActionsResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

@@ -23,16 +23,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage experiments.
  */
-class ExperimentServiceGrpcClient extends \Grpc\BaseStub
-{
+class ExperimentServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -47,21 +45,17 @@ class ExperimentServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\MutateExperimentsRequest $argument input argument
-     * @param  array                                                       $metadata metadata
-     * @param  array                                                       $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\MutateExperimentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateExperimentsResponse>
      */
     public function MutateExperiments(\Google\Ads\GoogleAds\V25\Services\MutateExperimentsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ExperimentService/MutateExperiments',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\MutateExperimentsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ExperimentService/MutateExperiments',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\MutateExperimentsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -77,21 +71,17 @@ class ExperimentServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\EndExperimentRequest $argument input argument
-     * @param  array                                                   $metadata metadata
-     * @param  array                                                   $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\EndExperimentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function EndExperiment(\Google\Ads\GoogleAds\V25\Services\EndExperimentRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ExperimentService/EndExperiment',
-            $argument,
-            ['\Google\Protobuf\GPBEmpty', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ExperimentService/EndExperiment',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -106,21 +96,17 @@ class ExperimentServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ListExperimentAsyncErrorsRequest $argument input argument
-     * @param  array                                                               $metadata metadata
-     * @param  array                                                               $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ListExperimentAsyncErrorsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListExperimentAsyncErrorsResponse>
      */
     public function ListExperimentAsyncErrors(\Google\Ads\GoogleAds\V25\Services\ListExperimentAsyncErrorsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ExperimentService/ListExperimentAsyncErrors',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ListExperimentAsyncErrorsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ExperimentService/ListExperimentAsyncErrors',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ListExperimentAsyncErrorsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -135,21 +121,17 @@ class ExperimentServiceGrpcClient extends \Grpc\BaseStub
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\GraduateExperimentRequest $argument input argument
-     * @param  array                                                        $metadata metadata
-     * @param  array                                                        $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\GraduateExperimentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function GraduateExperiment(\Google\Ads\GoogleAds\V25\Services\GraduateExperimentRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ExperimentService/GraduateExperiment',
-            $argument,
-            ['\Google\Protobuf\GPBEmpty', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ExperimentService/GraduateExperiment',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -177,21 +159,17 @@ class ExperimentServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RangeError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ScheduleExperimentRequest $argument input argument
-     * @param  array                                                        $metadata metadata
-     * @param  array                                                        $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ScheduleExperimentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\LongRunning\Operation>
      */
     public function ScheduleExperiment(\Google\Ads\GoogleAds\V25\Services\ScheduleExperimentRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ExperimentService/ScheduleExperiment',
-            $argument,
-            ['\Google\LongRunning\Operation', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ExperimentService/ScheduleExperiment',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -211,21 +189,17 @@ class ExperimentServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\PromoteExperimentRequest $argument input argument
-     * @param  array                                                       $metadata metadata
-     * @param  array                                                       $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\PromoteExperimentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\LongRunning\Operation>
      */
     public function PromoteExperiment(\Google\Ads\GoogleAds\V25\Services\PromoteExperimentRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ExperimentService/PromoteExperiment',
-            $argument,
-            ['\Google\LongRunning\Operation', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ExperimentService/PromoteExperiment',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
     }
 
 }

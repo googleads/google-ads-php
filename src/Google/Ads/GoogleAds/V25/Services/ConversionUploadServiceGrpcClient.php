@@ -21,16 +21,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
 /**
  * Service to upload conversions.
  */
-class ConversionUploadServiceGrpcClient extends \Grpc\BaseStub
-{
+class ConversionUploadServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -46,21 +44,17 @@ class ConversionUploadServiceGrpcClient extends \Grpc\BaseStub
      *   [PartialFailureError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\UploadClickConversionsRequest $argument input argument
-     * @param  array                                                            $metadata metadata
-     * @param  array                                                            $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\UploadClickConversionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\UploadClickConversionsResponse>
      */
     public function UploadClickConversions(\Google\Ads\GoogleAds\V25\Services\UploadClickConversionsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ConversionUploadService/UploadClickConversions',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\UploadClickConversionsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ConversionUploadService/UploadClickConversions',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\UploadClickConversionsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -74,21 +68,17 @@ class ConversionUploadServiceGrpcClient extends \Grpc\BaseStub
      *   [PartialFailureError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\UploadCallConversionsRequest $argument input argument
-     * @param  array                                                           $metadata metadata
-     * @param  array                                                           $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\UploadCallConversionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\UploadCallConversionsResponse>
      */
     public function UploadCallConversions(\Google\Ads\GoogleAds\V25\Services\UploadCallConversionsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ConversionUploadService/UploadCallConversions',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\UploadCallConversionsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ConversionUploadService/UploadCallConversions',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\UploadCallConversionsResponse', 'decode'],
+        $metadata, $options);
     }
 
 }
