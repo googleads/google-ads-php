@@ -24,6 +24,7 @@ use Google\Ads\GoogleAds\V25\Services\CreateYouTubeVideoUploadRequest;
 use Google\ApiCore\ResumableUpload\ResumableUpload;
 
 // Define a custom client that handles injection
+// phpcs:disable
 class CustomYouTubeVideoUploadServiceClient extends YouTubeVideoUploadServiceClient
 {
     private $googleAdsClient;
@@ -45,13 +46,13 @@ class CustomYouTubeVideoUploadServiceClient extends YouTubeVideoUploadServiceCli
         }
         if ($this->googleAdsClient->getLinkedCustomerId()) {
             $headers['linked-customer-id'] = strval($this->googleAdsClient->getLinkedCustomerId());
-        }
-      
+        } 
         $callOptions['headers'] = array_merge($headers, $callOptions['headers'] ?? []);
 
         return parent::createYouTubeVideoUpload($request, $callOptions);
     }
 }
+// phpcs:enable
 
 /**
  * A Google Ads API client for handling common configuration and OAuth2 settings.
