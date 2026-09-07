@@ -20,39 +20,6 @@ namespace Google\Ads\GoogleAds\Lib\V25;
 
 use Google\Ads\GoogleAds\Util\V25\GoogleAdsFailures;
 use Google\Ads\GoogleAds\V25\Services\Client\YouTubeVideoUploadServiceClient;
-use Google\Ads\GoogleAds\V25\Services\CreateYouTubeVideoUploadRequest;
-use Google\ApiCore\ResumableUpload\ResumableUpload;
-
-// Define a custom client that handles injection
-// phpcs:disable
-class CustomYouTubeVideoUploadServiceClient extends YouTubeVideoUploadServiceClient
-{
-    private $googleAdsClient;
-
-    public function __construct($googleAdsClient, array $options = [])
-    {
-        parent::__construct($options);
-        $this->googleAdsClient = $googleAdsClient;
-    }
-
-    public function createYouTubeVideoUpload(CreateYouTubeVideoUploadRequest $request, array $callOptions = []): ResumableUpload
-    {
-        $headers = [];
-        if ($this->googleAdsClient->getDeveloperToken()) {
-            $headers['developer-token'] = $this->googleAdsClient->getDeveloperToken();
-        }
-        if ($this->googleAdsClient->getLoginCustomerId()) {
-            $headers['login-customer-id'] = strval($this->googleAdsClient->getLoginCustomerId());
-        }
-        if ($this->googleAdsClient->getLinkedCustomerId()) {
-            $headers['linked-customer-id'] = strval($this->googleAdsClient->getLinkedCustomerId());
-        } 
-        $callOptions['headers'] = array_merge($headers, $callOptions['headers'] ?? []);
-
-        return parent::createYouTubeVideoUpload($request, $callOptions);
-    }
-}
-// phpcs:enable
 
 /**
  * A Google Ads API client for handling common configuration and OAuth2 settings.
