@@ -42,25 +42,19 @@ use stdClass;
  */
 class ProductLinkServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface 
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper 
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return ProductLinkServiceClient 
-     */
+    /** @return ProductLinkServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
@@ -69,17 +63,13 @@ class ProductLinkServiceClientTest extends GeneratedTest
         return new ProductLinkServiceClient($options);
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function createProductLinkTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $resourceName = 'resourceName979421212';
@@ -106,29 +96,23 @@ class ProductLinkServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function createProductLinkExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -149,17 +133,13 @@ class ProductLinkServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function removeProductLinkTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $resourceName2 = 'resourceName2625949903';
@@ -186,29 +166,23 @@ class ProductLinkServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function removeProductLinkExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -229,17 +203,13 @@ class ProductLinkServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function createProductLinkAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $resourceName = 'resourceName979421212';

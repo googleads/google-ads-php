@@ -44,25 +44,19 @@ use stdClass;
  */
 class RecommendationServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface 
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper 
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return RecommendationServiceClient 
-     */
+    /** @return RecommendationServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
@@ -71,17 +65,13 @@ class RecommendationServiceClientTest extends GeneratedTest
         return new RecommendationServiceClient($options);
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function applyRecommendationTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new ApplyRecommendationResponse();
@@ -106,29 +96,23 @@ class RecommendationServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function applyRecommendationExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -149,17 +133,13 @@ class RecommendationServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function dismissRecommendationTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new DismissRecommendationResponse();
@@ -184,29 +164,23 @@ class RecommendationServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function dismissRecommendationExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -227,17 +201,13 @@ class RecommendationServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateRecommendationsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateRecommendationsResponse();
@@ -266,29 +236,23 @@ class RecommendationServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateRecommendationsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -311,17 +275,13 @@ class RecommendationServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function applyRecommendationAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new ApplyRecommendationResponse();

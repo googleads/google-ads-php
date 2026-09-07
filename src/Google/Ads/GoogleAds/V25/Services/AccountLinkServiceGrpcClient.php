@@ -22,16 +22,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
  * This service allows management of links between Google Ads accounts and other
  * accounts.
  */
-class AccountLinkServiceGrpcClient extends \Grpc\BaseStub
-{
+class AccountLinkServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -49,21 +47,17 @@ class AccountLinkServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RequestError]()
      *   [ThirdPartyAppAnalyticsLinkError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\CreateAccountLinkRequest $argument input argument
-     * @param  array                                                       $metadata metadata
-     * @param  array                                                       $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\CreateAccountLinkRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\CreateAccountLinkResponse>
      */
     public function CreateAccountLink(\Google\Ads\GoogleAds\V25\Services\CreateAccountLinkRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.AccountLinkService/CreateAccountLink',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\CreateAccountLinkResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.AccountLinkService/CreateAccountLink',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\CreateAccountLinkResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -82,21 +76,17 @@ class AccountLinkServiceGrpcClient extends \Grpc\BaseStub
      *   [MutateError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\MutateAccountLinkRequest $argument input argument
-     * @param  array                                                       $metadata metadata
-     * @param  array                                                       $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\MutateAccountLinkRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateAccountLinkResponse>
      */
     public function MutateAccountLink(\Google\Ads\GoogleAds\V25\Services\MutateAccountLinkRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.AccountLinkService/MutateAccountLink',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\MutateAccountLinkResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.AccountLinkService/MutateAccountLink',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\MutateAccountLinkResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

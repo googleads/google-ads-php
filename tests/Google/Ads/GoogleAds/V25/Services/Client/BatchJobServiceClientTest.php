@@ -51,25 +51,19 @@ use stdClass;
  */
 class BatchJobServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface 
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper 
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return BatchJobServiceClient 
-     */
+    /** @return BatchJobServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
@@ -78,17 +72,13 @@ class BatchJobServiceClientTest extends GeneratedTest
         return new BatchJobServiceClient($options);
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function addBatchJobOperationsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $totalOperations = 1685086151;
@@ -117,29 +107,23 @@ class BatchJobServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function addBatchJobOperationsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $formattedResourceName = $gapicClient->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
@@ -160,17 +144,13 @@ class BatchJobServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function listBatchJobResultsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $nextPageToken = '';
@@ -201,29 +181,23 @@ class BatchJobServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function listBatchJobResultsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $formattedResourceName = $gapicClient->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
@@ -242,17 +216,13 @@ class BatchJobServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function mutateBatchJobTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new MutateBatchJobResponse();
@@ -277,29 +247,23 @@ class BatchJobServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function mutateBatchJobExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -320,26 +284,20 @@ class BatchJobServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function runBatchJobTest()
     {
         $operationsTransport = $this->createTransport();
-        $operationsClient = new OperationsClient(
-            [
+        $operationsClient = new OperationsClient([
             'apiEndpoint' => '',
             'transport' => $operationsTransport,
             'credentials' => $this->createCredentials(),
-            ]
-        );
+        ]);
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
             'operationsClient' => $operationsClient,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
         // Mock response
@@ -373,11 +331,9 @@ class BatchJobServiceClientTest extends GeneratedTest
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/runBatchJobTest');
-        $response->pollUntilComplete(
-            [
+        $response->pollUntilComplete([
             'initialPollDelayMillis' => 1,
-            ]
-        );
+        ]);
         $this->assertTrue($response->isDone());
         $this->assertEquals($expectedResponse, $response->getResult());
         $apiRequestsEmpty = $transport->popReceivedCalls();
@@ -392,26 +348,20 @@ class BatchJobServiceClientTest extends GeneratedTest
         $this->assertTrue($operationsTransport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function runBatchJobExceptionTest()
     {
         $operationsTransport = $this->createTransport();
-        $operationsClient = new OperationsClient(
-            [
+        $operationsClient = new OperationsClient([
             'apiEndpoint' => '',
             'transport' => $operationsTransport,
             'credentials' => $this->createCredentials(),
-            ]
-        );
+        ]);
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
             'operationsClient' => $operationsClient,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
         // Mock response
@@ -422,14 +372,12 @@ class BatchJobServiceClientTest extends GeneratedTest
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage = json_encode(
-            [
+        $expectedExceptionMessage = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
         // Mock request
         $formattedResourceName = $gapicClient->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
@@ -441,11 +389,9 @@ class BatchJobServiceClientTest extends GeneratedTest
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/runBatchJobTest');
         try {
-            $response->pollUntilComplete(
-                [
+            $response->pollUntilComplete([
                 'initialPollDelayMillis' => 1,
-                ]
-            );
+            ]);
             // If the pollUntilComplete() method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -459,17 +405,13 @@ class BatchJobServiceClientTest extends GeneratedTest
         $this->assertTrue($operationsTransport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function addBatchJobOperationsAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $totalOperations = 1685086151;

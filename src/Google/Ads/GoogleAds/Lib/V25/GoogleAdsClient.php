@@ -19,6 +19,7 @@
 namespace Google\Ads\GoogleAds\Lib\V25;
 
 use Google\Ads\GoogleAds\Util\V25\GoogleAdsFailures;
+use Google\Ads\GoogleAds\V25\Services\Client\YouTubeVideoUploadServiceClient;
 
 /**
  * A Google Ads API client for handling common configuration and OAuth2 settings.
@@ -73,5 +74,10 @@ class GoogleAdsClient
     public function getAdsAssistant()
     {
         return $this->adsAssistant;
+    }
+
+    public function getYouTubeVideoUploadServiceClient(): YouTubeVideoUploadServiceClient
+    {
+        return new CustomYouTubeVideoUploadServiceClient($this, $this->getGoogleAdsClientOptions());
     }
 }

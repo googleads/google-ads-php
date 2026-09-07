@@ -39,25 +39,19 @@ use stdClass;
  */
 class CustomerSkAdNetworkConversionValueSchemaServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface 
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper 
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return CustomerSkAdNetworkConversionValueSchemaServiceClient 
-     */
+    /** @return CustomerSkAdNetworkConversionValueSchemaServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
@@ -66,17 +60,13 @@ class CustomerSkAdNetworkConversionValueSchemaServiceClientTest extends Generate
         return new CustomerSkAdNetworkConversionValueSchemaServiceClient($options);
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function mutateCustomerSkAdNetworkConversionValueSchemaTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new MutateCustomerSkAdNetworkConversionValueSchemaResponse();
@@ -92,29 +82,23 @@ class CustomerSkAdNetworkConversionValueSchemaServiceClientTest extends Generate
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function mutateCustomerSkAdNetworkConversionValueSchemaExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         $request = new MutateCustomerSkAdNetworkConversionValueSchemaRequest();
         try {
@@ -130,17 +114,13 @@ class CustomerSkAdNetworkConversionValueSchemaServiceClientTest extends Generate
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function mutateCustomerSkAdNetworkConversionValueSchemaAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new MutateCustomerSkAdNetworkConversionValueSchemaResponse();

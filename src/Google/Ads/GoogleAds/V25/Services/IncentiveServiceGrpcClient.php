@@ -21,55 +21,45 @@ namespace Google\Ads\GoogleAds\V25\Services;
 /**
  * Service to support incentive related operations.
  */
-class IncentiveServiceGrpcClient extends \Grpc\BaseStub
-{
+class IncentiveServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
     /**
      * Returns incentives for a given user.
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\FetchIncentiveRequest $argument input argument
-     * @param  array                                                    $metadata metadata
-     * @param  array                                                    $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\FetchIncentiveRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\FetchIncentiveResponse>
      */
     public function FetchIncentive(\Google\Ads\GoogleAds\V25\Services\FetchIncentiveRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.IncentiveService/FetchIncentive',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\FetchIncentiveResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.IncentiveService/FetchIncentive',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\FetchIncentiveResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
      * Applies the incentive for the ads customer.
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ApplyIncentiveRequest $argument input argument
-     * @param  array                                                    $metadata metadata
-     * @param  array                                                    $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ApplyIncentiveRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ApplyIncentiveResponse>
      */
     public function ApplyIncentive(\Google\Ads\GoogleAds\V25\Services\ApplyIncentiveRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.IncentiveService/ApplyIncentive',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ApplyIncentiveResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.IncentiveService/ApplyIncentive',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ApplyIncentiveResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

@@ -23,37 +23,31 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage campaign customizer
  */
-class CampaignCustomizerServiceGrpcClient extends \Grpc\BaseStub
-{
+class CampaignCustomizerServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
     /**
      * Creates, updates or removes campaign customizers. Operation statuses are
      * returned.
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\MutateCampaignCustomizersRequest $argument input argument
-     * @param  array                                                               $metadata metadata
-     * @param  array                                                               $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\MutateCampaignCustomizersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateCampaignCustomizersResponse>
      */
     public function MutateCampaignCustomizers(\Google\Ads\GoogleAds\V25\Services\MutateCampaignCustomizersRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.CampaignCustomizerService/MutateCampaignCustomizers',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\MutateCampaignCustomizersResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.CampaignCustomizerService/MutateCampaignCustomizers',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\MutateCampaignCustomizersResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

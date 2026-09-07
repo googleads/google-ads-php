@@ -132,6 +132,7 @@ final class ArgumentNames
     public const USER_AGENT = 'userAgent';
     public const USER_LIST_ID = 'userListId';
     public const USER_LIST_IDS = 'userListIds';
+    public const VIDEO_FILE_PATH = 'videoFilePath';
     public const WBRAID = 'wbraid';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
@@ -251,6 +252,7 @@ final class ArgumentNames
         self::USER_LIST_ID => 'The user list ID',
         self::USER_LIST_IDS => 'The user list IDs',
         self::THINGS_TO_DO_CENTER_ACCOUNT_ID => 'The Things to Do Center account ID',
+        self::VIDEO_FILE_PATH => 'The path to a video file to upload to YouTube',
         self::WBRAID => 'The WBRAID identifer for an iOS web conversion'
     ];
 }

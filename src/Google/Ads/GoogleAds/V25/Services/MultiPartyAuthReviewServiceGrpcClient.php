@@ -21,16 +21,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
 /**
  * Service to manage Multi-Party Authorization requests.
  */
-class MultiPartyAuthReviewServiceGrpcClient extends \Grpc\BaseStub
-{
+class MultiPartyAuthReviewServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -50,21 +48,17 @@ class MultiPartyAuthReviewServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RangeError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ResolveMultiPartyAuthReviewRequest $argument input argument
-     * @param  array                                                                 $metadata metadata
-     * @param  array                                                                 $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ResolveMultiPartyAuthReviewRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ResolveMultiPartyAuthReviewResponse>
      */
     public function ResolveMultiPartyAuthReview(\Google\Ads\GoogleAds\V25\Services\ResolveMultiPartyAuthReviewRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.MultiPartyAuthReviewService/ResolveMultiPartyAuthReview',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ResolveMultiPartyAuthReviewResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.MultiPartyAuthReviewService/ResolveMultiPartyAuthReview',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ResolveMultiPartyAuthReviewResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

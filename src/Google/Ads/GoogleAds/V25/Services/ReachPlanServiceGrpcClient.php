@@ -27,16 +27,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
  * demographics that can be reached by an ad in a given market by a campaign of
  * certain duration with a defined budget.
  */
-class ReachPlanServiceGrpcClient extends \Grpc\BaseStub
-{
+class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -51,21 +49,17 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateConversionRatesRequest $argument input argument
-     * @param  array                                                             $metadata metadata
-     * @param  array                                                             $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\GenerateConversionRatesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateConversionRatesResponse>
      */
     public function GenerateConversionRates(\Google\Ads\GoogleAds\V25\Services\GenerateConversionRatesRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ReachPlanService/GenerateConversionRates',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\GenerateConversionRatesResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ReachPlanService/GenerateConversionRates',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\GenerateConversionRatesResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -78,21 +72,17 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ListPlannableLocationsRequest $argument input argument
-     * @param  array                                                            $metadata metadata
-     * @param  array                                                            $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ListPlannableLocationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListPlannableLocationsResponse>
      */
     public function ListPlannableLocations(\Google\Ads\GoogleAds\V25\Services\ListPlannableLocationsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ReachPlanService/ListPlannableLocations',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ListPlannableLocationsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ReachPlanService/ListPlannableLocations',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ListPlannableLocationsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -106,21 +96,17 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub
      *   [InternalError]()
      *   [QuotaError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ListPlannableProductsRequest $argument input argument
-     * @param  array                                                           $metadata metadata
-     * @param  array                                                           $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ListPlannableProductsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListPlannableProductsResponse>
      */
     public function ListPlannableProducts(\Google\Ads\GoogleAds\V25\Services\ListPlannableProductsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ReachPlanService/ListPlannableProducts',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ListPlannableProductsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ReachPlanService/ListPlannableProducts',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ListPlannableProductsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -136,21 +122,17 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub
      *   [RangeError]()
      *   [ReachPlanError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\GenerateReachForecastRequest $argument input argument
-     * @param  array                                                           $metadata metadata
-     * @param  array                                                           $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\GenerateReachForecastRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GenerateReachForecastResponse>
      */
     public function GenerateReachForecast(\Google\Ads\GoogleAds\V25\Services\GenerateReachForecastRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ReachPlanService/GenerateReachForecast',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\GenerateReachForecastResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ReachPlanService/GenerateReachForecast',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\GenerateReachForecastResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -170,21 +152,17 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub
      *   [RangeError]()
      *   [ReachPlanError]()
      *   [RequestError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ListPlannableUserListsRequest $argument input argument
-     * @param  array                                                            $metadata metadata
-     * @param  array                                                            $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ListPlannableUserListsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListPlannableUserListsResponse>
      */
     public function ListPlannableUserLists(\Google\Ads\GoogleAds\V25\Services\ListPlannableUserListsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ReachPlanService/ListPlannableUserLists',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ListPlannableUserListsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ReachPlanService/ListPlannableUserLists',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ListPlannableUserListsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -203,21 +181,17 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub
      *   [QuotaError]()
      *   [RequestError]()
      *   [StringLengthError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\ListPlannableUserInterestsRequest $argument input argument
-     * @param  array                                                                $metadata metadata
-     * @param  array                                                                $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\ListPlannableUserInterestsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\ListPlannableUserInterestsResponse>
      */
     public function ListPlannableUserInterests(\Google\Ads\GoogleAds\V25\Services\ListPlannableUserInterestsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.ReachPlanService/ListPlannableUserInterests',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\ListPlannableUserInterestsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.ReachPlanService/ListPlannableUserInterests',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\ListPlannableUserInterestsResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

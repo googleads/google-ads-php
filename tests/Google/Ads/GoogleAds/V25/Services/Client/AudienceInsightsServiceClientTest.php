@@ -57,25 +57,19 @@ use stdClass;
  */
 class AudienceInsightsServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface 
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper 
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
         return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return AudienceInsightsServiceClient 
-     */
+    /** @return AudienceInsightsServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
@@ -84,17 +78,13 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         return new AudienceInsightsServiceClient($options);
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateAudienceCompositionInsightsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateAudienceCompositionInsightsResponse();
@@ -125,29 +115,23 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateAudienceCompositionInsightsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -172,17 +156,13 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateAudienceDefinitionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateAudienceDefinitionResponse();
@@ -211,29 +191,23 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateAudienceDefinitionExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -258,17 +232,13 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateAudienceOverlapInsightsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateAudienceOverlapInsightsResponse();
@@ -301,29 +271,23 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateAudienceOverlapInsightsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -348,17 +312,13 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateInsightsFinderReportTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $savedReportUrl = 'savedReportUrl1274866844';
@@ -393,29 +353,23 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateInsightsFinderReportExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -442,17 +396,13 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateSuggestedTargetingInsightsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateSuggestedTargetingInsightsResponse();
@@ -473,29 +423,23 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateSuggestedTargetingInsightsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -514,17 +458,13 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateTargetingSuggestionMetricsTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateTargetingSuggestionMetricsResponse();
@@ -549,29 +489,23 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateTargetingSuggestionMetricsExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -592,17 +526,13 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function listAudienceInsightsAttributesTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new ListAudienceInsightsAttributesResponse();
@@ -631,29 +561,23 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function listAudienceInsightsAttributesExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
@@ -676,17 +600,13 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function listInsightsEligibleDatesTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new ListInsightsEligibleDatesResponse();
@@ -702,29 +622,23 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function listInsightsEligibleDatesExceptionTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode(
-            [
+        $expectedExceptionMessage  = json_encode([
             'message' => 'internal error',
             'code' => Code::DATA_LOSS,
             'status' => 'DATA_LOSS',
             'details' => [],
-            ], JSON_PRETTY_PRINT
-        );
+        ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         $request = new ListInsightsEligibleDatesRequest();
         try {
@@ -740,17 +654,13 @@ class AudienceInsightsServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test 
-     */
+    /** @test */
     public function generateAudienceCompositionInsightsAsyncTest()
     {
         $transport = $this->createTransport();
-        $gapicClient = $this->createClient(
-            [
+        $gapicClient = $this->createClient([
             'transport' => $transport,
-            ]
-        );
+        ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $expectedResponse = new GenerateAudienceCompositionInsightsResponse();

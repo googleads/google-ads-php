@@ -23,16 +23,14 @@ namespace Google\Ads\GoogleAds\V25\Services;
  *
  * Service to manage ads.
  */
-class AdServiceGrpcClient extends \Grpc\BaseStub
-{
+class AdServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
-     * @param string        $hostname hostname
-     * @param array         $opts     channel options
-     * @param \Grpc\Channel $channel  (optional) re-use channel object
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param \Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null)
-    {
+    public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
     }
 
@@ -79,21 +77,17 @@ class AdServiceGrpcClient extends \Grpc\BaseStub
      *   [StringFormatError]()
      *   [StringLengthError]()
      *   [UrlFieldError]()
-     *
-     * @param  \Google\Ads\GoogleAds\V25\Services\MutateAdsRequest $argument input argument
-     * @param  array                                               $metadata metadata
-     * @param  array                                               $options  call options
+     * @param \Google\Ads\GoogleAds\V25\Services\MutateAdsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
      * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\MutateAdsResponse>
      */
     public function MutateAds(\Google\Ads\GoogleAds\V25\Services\MutateAdsRequest $argument,
-        $metadata = [], $options = []
-    ) {
-        return $this->_simpleRequest(
-            '/google.ads.googleads.v25.services.AdService/MutateAds',
-            $argument,
-            ['\Google\Ads\GoogleAds\V25\Services\MutateAdsResponse', 'decode'],
-            $metadata, $options
-        );
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.AdService/MutateAds',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\MutateAdsResponse', 'decode'],
+        $metadata, $options);
     }
 
 }
