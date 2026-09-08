@@ -45,12 +45,10 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
 
     private const DEFAULT_LOGGER_CHANNEL = 'google-ads';
     private const DEFAULT_GRPC_CHANNEL_IS_SECURE = true;
-    private const DEFAULT_USE_CLOUD_ORG_FOR_API_ACCESS = false;
 
     private $loggerFactory;
 
     private $developerToken;
-    private $useCloudOrgForApiAccess;
     private $loginCustomerId;
     private $linkedCustomerId;
     private $endpoint;
@@ -90,19 +88,6 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     {
         $this->developerToken =
             $configuration->getConfiguration('developerToken', 'GOOGLE_ADS');
-        $this->useCloudOrgForApiAccess =
-            is_null($configuration->getConfiguration('useCloudOrgForApiAccess', 'GOOGLE_ADS'))
-            || $configuration->getConfiguration('useCloudOrgForApiAccess', 'GOOGLE_ADS') === ""
-                ? self::DEFAULT_USE_CLOUD_ORG_FOR_API_ACCESS
-                : filter_var(
-                    $configuration->getConfiguration('useCloudOrgForApiAccess', 'GOOGLE_ADS'),
-                    FILTER_VALIDATE_BOOLEAN,
-                    // Defaults when value is not a valid boolean.
-                    [
-                        'options' => ['default' => self::DEFAULT_USE_CLOUD_ORG_FOR_API_ACCESS],
-                        'flags' => FILTER_NULL_ON_FAILURE
-                    ]
-                );
         $this->loginCustomerId = $configuration->getConfiguration('loginCustomerId', 'GOOGLE_ADS');
         $this->linkedCustomerId =
             $configuration->getConfiguration('linkedCustomerId', 'GOOGLE_ADS');
@@ -159,7 +144,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
-     * Includes a developer token. This is required.
+     * Includes a developer token.
      *
      * @param  string $developerToken
      * @return self this builder
@@ -167,18 +152,6 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     public function withDeveloperToken(string $developerToken)
     {
         $this->developerToken = $developerToken;
-        return $this;
-    }
-
-    /**
-     * Sets whether this library should use Google Cloud organization for API access.
-     *
-     * @param  bool $useCloudOrgForApiAccess
-     * @return self this builder
-     */
-    public function usingCloudOrgForApiAccess(bool $useCloudOrgForApiAccess)
-    {
-        $this->useCloudOrgForApiAccess = $useCloudOrgForApiAccess;
         return $this;
     }
 
@@ -405,12 +378,6 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
      */
     public function validate()
     {
-        if (
-            !$this->useCloudOrgForApiAccess
-            && (is_null($this->developerToken) || empty(trim($this->developerToken)))
-        ) {
-            throw new InvalidArgumentException('A developer token must be set.');
-        }
         if (!empty($this->loginCustomerId) && $this->loginCustomerId < 0) {
             throw new InvalidArgumentException('The login customer ID must be a positive number.');
         }
@@ -510,16 +477,6 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     public function getDeveloperToken()
     {
         return $this->developerToken;
-    }
-
-    /**
-     * Returns true when this library is set to use Google Cloud organization for API access.
-     *
-     * @return bool
-     */
-    public function useCloudOrgForApiAccess()
-    {
-        return $this->useCloudOrgForApiAccess;
     }
 
     /**

@@ -193,6 +193,18 @@ class GoogleAdsClientTest extends TestCase
         );
     }
 
+    public function testNullDeveloperTokenNotAppearInClientOptions()
+    {
+        $googleAdsClient =
+            $this->googleAdsClientBuilder->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertArrayNotHasKey(
+            self::$DEVELOPER_TOKEN_KEY,
+            $googleAdsClient->getGoogleAdsClientOptions()
+        );
+    }
+
     public function testCredentialsWhenGrpcChannelIsNotSecureInClientOptions()
     {
         $googleAdsClient =

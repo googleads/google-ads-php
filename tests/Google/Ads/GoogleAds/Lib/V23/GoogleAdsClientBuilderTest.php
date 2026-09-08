@@ -82,7 +82,6 @@ class GoogleAdsClientBuilderTest extends TestCase
         $valueMap = [
             /* Config name, section, value */
             ['developerToken', 'GOOGLE_ADS', self::$DEVELOPER_TOKEN],
-            ['useCloudOrgForApiAccess', 'GOOGLE_ADS', 'true'],
             ['loginCustomerId', 'GOOGLE_ADS', self::$LOGIN_CUSTOMER_ID],
             ['linkedCustomerId', 'GOOGLE_ADS', self::$LINKED_CUSTOMER_ID],
             ['endpoint', 'GOOGLE_ADS', 'https://abc.xyz:443'],
@@ -104,7 +103,6 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
 
         $this->assertSame(self::$DEVELOPER_TOKEN, $googleAdsClient->getDeveloperToken());
-        $this->assertTrue($googleAdsClient->useCloudOrgForApiAccess());
         $this->assertSame(self::$LOGIN_CUSTOMER_ID, $googleAdsClient->getLoginCustomerId());
         $this->assertSame(self::$LINKED_CUSTOMER_ID, $googleAdsClient->getLinkedCustomerId());
         $this->assertSame('https://abc.xyz:443', $googleAdsClient->getEndpoint());
@@ -224,12 +222,13 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame($editedDeveloperToken, $googleAdsClient->getDeveloperToken());
     }
 
-    public function testBuildFailsWithoutDeveloperToken()
+    public function testBuildWithoutDeveloperToken()
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->googleAdsClientBuilder
+        $googleAdsClient = $this->googleAdsClientBuilder
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
+
+        $this->assertNull($googleAdsClient->getDeveloperToken());
     }
 
     public function testBuildFailsWithInvalidEndpointUrl()
@@ -326,7 +325,6 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
 
         $this->assertSame(self::$DEVELOPER_TOKEN, $googleAdsClient->getDeveloperToken());
-        $this->assertNull($googleAdsClient->useCloudOrgForApiAccess());
         $this->assertSame(self::$LOGIN_CUSTOMER_ID, $googleAdsClient->getLoginCustomerId());
         $this->assertSame('abc.xyz.com', $googleAdsClient->getEndpoint());
         $this->assertInstanceOf(
@@ -663,16 +661,6 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->withDependencies($dependenciesMock)
             ->build();
-    }
-
-    public function testBuildUsingCloudOrgForApiAccess()
-    {
-        $googleAdsClient = $this->googleAdsClientBuilder
-            ->usingCloudOrgForApiAccess(true)
-            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
-            ->build();
-
-        $this->assertTrue($googleAdsClient->useCloudOrgForApiAccess());
     }
 
     public function testBuildWithAdsAssistant()
