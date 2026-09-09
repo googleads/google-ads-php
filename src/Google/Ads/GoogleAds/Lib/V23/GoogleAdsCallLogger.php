@@ -63,7 +63,7 @@ final class GoogleAdsCallLogger
         LoggerInterface $logger,
         $filterLevel,
         $endpoint,
-        LogMessageFormatter $logMessageFormatter = null,
+        ?LogMessageFormatter $logMessageFormatter = null,
         $context = []
     ) {
         $this->logger = $logger;
