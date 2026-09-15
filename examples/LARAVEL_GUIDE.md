@@ -15,7 +15,6 @@ composer require googleads/google-ads-php
 Add your Google Ads credentials to your `.env` file:
 
 ```dotenv
-GOOGLE_ADS_DEVELOPER_TOKEN="your-developer-token"
 GOOGLE_ADS_CLIENT_ID="your-oauth2-client-id"
 GOOGLE_ADS_CLIENT_SECRET="your-oauth2-client-secret"
 GOOGLE_ADS_REFRESH_TOKEN="your-oauth2-refresh-token"
