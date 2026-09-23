@@ -35,15 +35,18 @@ class AuthorizationError
      */
     const USER_PERMISSION_DENIED = 2;
     /**
+     * Deprecated: Developer tokens have been sunset. Use Google Cloud project
+     * permissions instead.
      * The developer token is not on the allow-list.
      *
-     * Generated from protobuf enum <code>DEVELOPER_TOKEN_NOT_ON_ALLOWLIST = 13;</code>
+     * Generated from protobuf enum <code>DEVELOPER_TOKEN_NOT_ON_ALLOWLIST = 13 [deprecated = true];</code>
      */
     const DEVELOPER_TOKEN_NOT_ON_ALLOWLIST = 13;
     /**
+     * Deprecated: Developer tokens have been sunset.
      * The developer token is not allowed with the project sent in the request.
      *
-     * Generated from protobuf enum <code>DEVELOPER_TOKEN_PROHIBITED = 4;</code>
+     * Generated from protobuf enum <code>DEVELOPER_TOKEN_PROHIBITED = 4 [deprecated = true];</code>
      */
     const DEVELOPER_TOKEN_PROHIBITED = 4;
     /**
@@ -81,16 +84,18 @@ class AuthorizationError
     const CUSTOMER_NOT_ENABLED = 24;
     /**
      * The developer must sign the terms of service. They can be found here:
-     * ads.google.com/aw/apicenter
+     * console.cloud.google.com/google/ads-apis/overview
      *
      * Generated from protobuf enum <code>MISSING_TOS = 9;</code>
      */
     const MISSING_TOS = 9;
     /**
+     * Deprecated: Developer tokens have been sunset. Superseded by
+     * CLOUD_PROJECT_NOT_APPROVED_FOR_PRODUCTION.
      * The developer token is only approved for use with test accounts. To
      * access non-test accounts, apply for Basic or Standard access.
      *
-     * Generated from protobuf enum <code>DEVELOPER_TOKEN_NOT_APPROVED = 10;</code>
+     * Generated from protobuf enum <code>DEVELOPER_TOKEN_NOT_APPROVED = 10 [deprecated = true];</code>
      */
     const DEVELOPER_TOKEN_NOT_APPROVED = 10;
     /**

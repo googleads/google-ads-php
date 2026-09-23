@@ -509,8 +509,8 @@ class CampaignError
      */
     const CANNOT_TARGET_NETWORK_FOR_COMPARISON_SHOPPING_SERVICE_LINKED_ACCOUNTS = 87;
     /**
-     * Text asset automation settings can not be modified when there is an
-     * active Performance Max optimization automatically created assets
+     * Text asset automation settings cannot be modified when there is an
+     * active Performance Max optimization text customization
      * experiment. End the experiment to modify these settings.
      *
      * Generated from protobuf enum <code>CANNOT_MODIFY_TEXT_ASSET_AUTOMATION_WITH_ENABLED_TRIAL = 88;</code>
@@ -524,7 +524,7 @@ class CampaignError
      */
     const DYNAMIC_TEXT_ASSET_CANNOT_OPT_OUT_WITH_FINAL_URL_EXPANSION_OPT_IN = 89;
     /**
-     * Can not set a campaign level match type.
+     * Cannot set a campaign level match type.
      *
      * Generated from protobuf enum <code>CANNOT_SET_CAMPAIGN_KEYWORD_MATCH_TYPE = 90;</code>
      */

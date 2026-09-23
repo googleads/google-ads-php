@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * A single operation to remove an automatically created asset from a campaign.
+ * A single operation to remove a text customization (formerly automatically
+ * created asset) from a campaign.
  *
  * Generated from protobuf message <code>google.ads.googleads.v25.services.RemoveCampaignAutomaticallyCreatedAssetOperation</code>
  */

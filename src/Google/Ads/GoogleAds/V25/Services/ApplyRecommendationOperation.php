@@ -91,6 +91,12 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      *           recommendation.
      *     @type \Google\Ads\GoogleAds\V25\Services\ApplyRecommendationOperation\LeadFormAssetParameters $lead_form_asset
      *           Parameters to use when applying lead form asset recommendation.
+     *     @type \Google\Ads\GoogleAds\V25\Services\ApplyRecommendationOperation\RaiseTargetCpaPerformanceBidTooLowParameters $raise_target_cpa_performance_bid_too_low
+     *           Parameters to use when applying Raise Target CPA Performance Bid Too Low
+     *           recommendation.
+     *     @type \Google\Ads\GoogleAds\V25\Services\ApplyRecommendationOperation\LowerTargetRoasPerformanceBidTooLowParameters $lower_target_roas_performance_bid_too_low
+     *           Parameters to use when applying Lower Target ROAS Performance Bid Too Low
+     *           recommendation.
      * }
      */
     public function __construct($data = NULL) {
@@ -886,6 +892,72 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Services\ApplyRecommendationOperation\LeadFormAssetParameters::class);
         $this->writeOneof(25, $var);
+
+        return $this;
+    }
+
+    /**
+     * Parameters to use when applying Raise Target CPA Performance Bid Too Low
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.ApplyRecommendationOperation.RaiseTargetCpaPerformanceBidTooLowParameters raise_target_cpa_performance_bid_too_low = 26;</code>
+     * @return \Google\Ads\GoogleAds\V25\Services\ApplyRecommendationOperation\RaiseTargetCpaPerformanceBidTooLowParameters|null
+     */
+    public function getRaiseTargetCpaPerformanceBidTooLow()
+    {
+        return $this->readOneof(26);
+    }
+
+    public function hasRaiseTargetCpaPerformanceBidTooLow()
+    {
+        return $this->hasOneof(26);
+    }
+
+    /**
+     * Parameters to use when applying Raise Target CPA Performance Bid Too Low
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.ApplyRecommendationOperation.RaiseTargetCpaPerformanceBidTooLowParameters raise_target_cpa_performance_bid_too_low = 26;</code>
+     * @param \Google\Ads\GoogleAds\V25\Services\ApplyRecommendationOperation\RaiseTargetCpaPerformanceBidTooLowParameters $var
+     * @return $this
+     */
+    public function setRaiseTargetCpaPerformanceBidTooLow($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Services\ApplyRecommendationOperation\RaiseTargetCpaPerformanceBidTooLowParameters::class);
+        $this->writeOneof(26, $var);
+
+        return $this;
+    }
+
+    /**
+     * Parameters to use when applying Lower Target ROAS Performance Bid Too Low
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.ApplyRecommendationOperation.LowerTargetRoasPerformanceBidTooLowParameters lower_target_roas_performance_bid_too_low = 27;</code>
+     * @return \Google\Ads\GoogleAds\V25\Services\ApplyRecommendationOperation\LowerTargetRoasPerformanceBidTooLowParameters|null
+     */
+    public function getLowerTargetRoasPerformanceBidTooLow()
+    {
+        return $this->readOneof(27);
+    }
+
+    public function hasLowerTargetRoasPerformanceBidTooLow()
+    {
+        return $this->hasOneof(27);
+    }
+
+    /**
+     * Parameters to use when applying Lower Target ROAS Performance Bid Too Low
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.ApplyRecommendationOperation.LowerTargetRoasPerformanceBidTooLowParameters lower_target_roas_performance_bid_too_low = 27;</code>
+     * @param \Google\Ads\GoogleAds\V25\Services\ApplyRecommendationOperation\LowerTargetRoasPerformanceBidTooLowParameters $var
+     * @return $this
+     */
+    public function setLowerTargetRoasPerformanceBidTooLow($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Services\ApplyRecommendationOperation\LowerTargetRoasPerformanceBidTooLowParameters::class);
+        $this->writeOneof(27, $var);
 
         return $this;
     }

@@ -32,7 +32,7 @@ class QuotaRateScope
      */
     const ACCOUNT = 2;
     /**
-     * Per project or DevToken quota
+     * Per project quota (formerly developer token quota).
      *
      * Generated from protobuf enum <code>DEVELOPER = 3;</code>
      */

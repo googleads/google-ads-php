@@ -9,7 +9,9 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * A collection of YouTube Channels.
+ * A collection of YouTube Channels. The YouTube Channels can be listed using
+ * either YouTube Channel IDs, YouTube Channel handles, or a combination of
+ * both.
  *
  * Generated from protobuf message <code>google.ads.googleads.v25.services.GenerateCreatorInsightsRequest.YouTubeChannels</code>
  */
@@ -21,6 +23,13 @@ class YouTubeChannels extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.common.YouTubeChannelInfo youtube_channels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private $youtube_channels;
+    /**
+     * Optional. The YouTube Channel handles to fetch creator insights for.
+     * Valid channel handles start with \@.
+     *
+     * Generated from protobuf field <code>repeated string youtube_channel_handles = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $youtube_channel_handles;
 
     /**
      * Constructor.
@@ -30,6 +39,9 @@ class YouTubeChannels extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Ads\GoogleAds\V25\Common\YouTubeChannelInfo[] $youtube_channels
      *           Optional. The YouTube Channel IDs to fetch creator insights for.
+     *     @type string[] $youtube_channel_handles
+     *           Optional. The YouTube Channel handles to fetch creator insights for.
+     *           Valid channel handles start with \@.
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +71,34 @@ class YouTubeChannels extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V25\Common\YouTubeChannelInfo::class);
         $this->youtube_channels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. The YouTube Channel handles to fetch creator insights for.
+     * Valid channel handles start with \@.
+     *
+     * Generated from protobuf field <code>repeated string youtube_channel_handles = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return RepeatedField<string>
+     */
+    public function getYoutubeChannelHandles()
+    {
+        return $this->youtube_channel_handles;
+    }
+
+    /**
+     * Optional. The YouTube Channel handles to fetch creator insights for.
+     * Valid channel handles start with \@.
+     *
+     * Generated from protobuf field <code>repeated string youtube_channel_handles = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param string[] $var
+     * @return $this
+     */
+    public function setYoutubeChannelHandles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->youtube_channel_handles = $arr;
 
         return $this;
     }

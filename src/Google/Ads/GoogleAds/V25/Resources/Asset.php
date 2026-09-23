@@ -179,7 +179,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V25\Common\SitelinkAsset $sitelink_asset
      *           A sitelink asset.
      *     @type \Google\Ads\GoogleAds\V25\Common\PageFeedAsset $page_feed_asset
-     *           A page feed asset.
+     *           A page URL inclusion.
      *     @type \Google\Ads\GoogleAds\V25\Common\DynamicEducationAsset $dynamic_education_asset
      *           A dynamic education asset.
      *     @type \Google\Ads\GoogleAds\V25\Common\MobileAppAsset $mobile_app_asset
@@ -990,7 +990,7 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A page feed asset.
+     * A page URL inclusion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.PageFeedAsset page_feed_asset = 23;</code>
      * @return \Google\Ads\GoogleAds\V25\Common\PageFeedAsset|null
@@ -1006,7 +1006,7 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A page feed asset.
+     * A page URL inclusion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.PageFeedAsset page_feed_asset = 23;</code>
      * @param \Google\Ads\GoogleAds\V25\Common\PageFeedAsset $var

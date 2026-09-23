@@ -28,7 +28,11 @@ class BreakdownMetrics extends \Google\Protobuf\Internal\Message
      */
     protected $customer_metrics = null;
     /**
-     * Metrics for the selected benchmarks source.
+     * Metrics for the selected benchmarks source. Rate metrics for the benchmarks
+     * source are only returned when the request `date_range` is a subset of
+     * `supported_dates_for_all_metrics` returned by
+     * [BenchmarksService.ListBenchmarksAvailableDates][google.ads.googleads.v25.services.BenchmarksService.ListBenchmarksAvailableDates]
+     * due to limited availability.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.Metrics average_benchmarks_metrics = 3;</code>
      */
@@ -45,7 +49,11 @@ class BreakdownMetrics extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V25\Services\CustomerMetrics $customer_metrics
      *           Metrics representing the customer's Ad performance.
      *     @type \Google\Ads\GoogleAds\V25\Services\Metrics $average_benchmarks_metrics
-     *           Metrics for the selected benchmarks source.
+     *           Metrics for the selected benchmarks source. Rate metrics for the benchmarks
+     *           source are only returned when the request `date_range` is a subset of
+     *           `supported_dates_for_all_metrics` returned by
+     *           [BenchmarksService.ListBenchmarksAvailableDates][google.ads.googleads.v25.services.BenchmarksService.ListBenchmarksAvailableDates]
+     *           due to limited availability.
      * }
      */
     public function __construct($data = NULL) {
@@ -126,7 +134,11 @@ class BreakdownMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Metrics for the selected benchmarks source.
+     * Metrics for the selected benchmarks source. Rate metrics for the benchmarks
+     * source are only returned when the request `date_range` is a subset of
+     * `supported_dates_for_all_metrics` returned by
+     * [BenchmarksService.ListBenchmarksAvailableDates][google.ads.googleads.v25.services.BenchmarksService.ListBenchmarksAvailableDates]
+     * due to limited availability.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.Metrics average_benchmarks_metrics = 3;</code>
      * @return \Google\Ads\GoogleAds\V25\Services\Metrics|null
@@ -147,7 +159,11 @@ class BreakdownMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Metrics for the selected benchmarks source.
+     * Metrics for the selected benchmarks source. Rate metrics for the benchmarks
+     * source are only returned when the request `date_range` is a subset of
+     * `supported_dates_for_all_metrics` returned by
+     * [BenchmarksService.ListBenchmarksAvailableDates][google.ads.googleads.v25.services.BenchmarksService.ListBenchmarksAvailableDates]
+     * due to limited availability.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.Metrics average_benchmarks_metrics = 3;</code>
      * @param \Google\Ads\GoogleAds\V25\Services\Metrics $var

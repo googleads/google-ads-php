@@ -23,6 +23,18 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v25.services.SmartCampaignSettingService' => [
+            'GeneratePMaxDraftCampaign' => [
+                'method' => 'post',
+                'uriTemplate' => '/v25/{resource_name=customers/*/smartCampaignSettings/*}:generatePMaxDraftCampaign',
+                'body' => '*',
+                'placeholders' => [
+                    'resource_name' => [
+                        'getters' => [
+                            'getResourceName',
+                        ],
+                    ],
+                ],
+            ],
             'GetSmartCampaignStatus' => [
                 'method' => 'get',
                 'uriTemplate' => '/v25/{resource_name=customers/*/smartCampaignSettings/*}:getSmartCampaignStatus',

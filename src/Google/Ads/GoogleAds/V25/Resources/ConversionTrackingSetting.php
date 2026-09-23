@@ -53,11 +53,13 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      */
     protected $conversion_tracking_status = 0;
     /**
-     * Output only. Whether the customer is opted-in for enhanced conversions
-     * for leads. If using cross-account conversion tracking, this value is
-     * inherited from the manager. This field is read-only.
+     * Output only. Deprecated: Use enablement_setting instead. Whether the
+     * customer is opted-in for enhanced conversions for leads. If using
+     * cross-account conversion tracking, this value is inherited from the
+     * manager. This field is read-only.
      *
-     * Generated from protobuf field <code>bool enhanced_conversions_for_leads_enabled = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>bool enhanced_conversions_for_leads_enabled = 7 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @deprecated
      */
     protected $enhanced_conversions_for_leads_enabled = false;
     /**
@@ -95,9 +97,10 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      *           the value returned will differ based on the `login-customer-id` of the
      *           request.
      *     @type bool $enhanced_conversions_for_leads_enabled
-     *           Output only. Whether the customer is opted-in for enhanced conversions
-     *           for leads. If using cross-account conversion tracking, this value is
-     *           inherited from the manager. This field is read-only.
+     *           Output only. Deprecated: Use enablement_setting instead. Whether the
+     *           customer is opted-in for enhanced conversions for leads. If using
+     *           cross-account conversion tracking, this value is inherited from the
+     *           manager. This field is read-only.
      *     @type string $google_ads_conversion_customer
      *           The resource name of the customer where conversions are created and
      *           managed. This field is read-only.
@@ -257,29 +260,37 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Whether the customer is opted-in for enhanced conversions
-     * for leads. If using cross-account conversion tracking, this value is
-     * inherited from the manager. This field is read-only.
+     * Output only. Deprecated: Use enablement_setting instead. Whether the
+     * customer is opted-in for enhanced conversions for leads. If using
+     * cross-account conversion tracking, this value is inherited from the
+     * manager. This field is read-only.
      *
-     * Generated from protobuf field <code>bool enhanced_conversions_for_leads_enabled = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>bool enhanced_conversions_for_leads_enabled = 7 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
+     * @deprecated
      */
     public function getEnhancedConversionsForLeadsEnabled()
     {
+        if ($this->enhanced_conversions_for_leads_enabled !== false) {
+            @trigger_error('enhanced_conversions_for_leads_enabled is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->enhanced_conversions_for_leads_enabled;
     }
 
     /**
-     * Output only. Whether the customer is opted-in for enhanced conversions
-     * for leads. If using cross-account conversion tracking, this value is
-     * inherited from the manager. This field is read-only.
+     * Output only. Deprecated: Use enablement_setting instead. Whether the
+     * customer is opted-in for enhanced conversions for leads. If using
+     * cross-account conversion tracking, this value is inherited from the
+     * manager. This field is read-only.
      *
-     * Generated from protobuf field <code>bool enhanced_conversions_for_leads_enabled = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>bool enhanced_conversions_for_leads_enabled = 7 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setEnhancedConversionsForLeadsEnabled($var)
     {
+        @trigger_error('enhanced_conversions_for_leads_enabled is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->enhanced_conversions_for_leads_enabled = $var;
 

@@ -63,6 +63,20 @@ class GoalError
      * Generated from protobuf enum <code>LOYALTY_RETENTION_GOAL_ALREADY_EXISTS = 9;</code>
      */
     const LOYALTY_RETENTION_GOAL_ALREADY_EXISTS = 9;
+    /**
+     * When using the customer lifecycle optimization goal, the value multiplier
+     * must be present if the high lifetime value multiplier is present.
+     *
+     * Generated from protobuf enum <code>HIGH_LIFETIME_VALUE_MULTIPLIER_PRESENT_BUT_VALUE_MULTIPLIER_ABSENT = 10;</code>
+     */
+    const HIGH_LIFETIME_VALUE_MULTIPLIER_PRESENT_BUT_VALUE_MULTIPLIER_ABSENT = 10;
+    /**
+     * When using the customer lifecycle optimization goal, the high lifetime
+     * value multiplier must be strictly greater than the value multiplier.
+     *
+     * Generated from protobuf enum <code>HIGH_LIFETIME_VALUE_MULTIPLIER_LESS_THAN_OR_EQUAL_TO_VALUE_MULTIPLIER = 11;</code>
+     */
+    const HIGH_LIFETIME_VALUE_MULTIPLIER_LESS_THAN_OR_EQUAL_TO_VALUE_MULTIPLIER = 11;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -73,6 +87,8 @@ class GoalError
         self::CUSTOMER_LIFECYCLE_OPTIMIZATION_ACCOUNT_TYPE_NOT_ALLOWED => 'CUSTOMER_LIFECYCLE_OPTIMIZATION_ACCOUNT_TYPE_NOT_ALLOWED',
         self::NEW_CUSTOMER_ACQUISITION_GOAL_ALREADY_EXISTS => 'NEW_CUSTOMER_ACQUISITION_GOAL_ALREADY_EXISTS',
         self::LOYALTY_RETENTION_GOAL_ALREADY_EXISTS => 'LOYALTY_RETENTION_GOAL_ALREADY_EXISTS',
+        self::HIGH_LIFETIME_VALUE_MULTIPLIER_PRESENT_BUT_VALUE_MULTIPLIER_ABSENT => 'HIGH_LIFETIME_VALUE_MULTIPLIER_PRESENT_BUT_VALUE_MULTIPLIER_ABSENT',
+        self::HIGH_LIFETIME_VALUE_MULTIPLIER_LESS_THAN_OR_EQUAL_TO_VALUE_MULTIPLIER => 'HIGH_LIFETIME_VALUE_MULTIPLIER_LESS_THAN_OR_EQUAL_TO_VALUE_MULTIPLIER',
     ];
 
     public static function name($value)

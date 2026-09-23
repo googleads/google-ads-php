@@ -546,7 +546,7 @@ class ResourceLimitType
      */
     const AD_IMAGE_AD_GROUP_ASSETS_PER_AD_GROUP = 176;
     /**
-     * Number of ENABLED page feed asset sets per customer.
+     * Number of ENABLED page URL inclusion sets per customer.
      *
      * Generated from protobuf enum <code>PAGE_FEED_ASSET_SETS_PER_CUSTOMER = 157;</code>
      */
@@ -558,7 +558,8 @@ class ResourceLimitType
      */
     const DYNAMIC_EDUCATION_FEED_ASSET_SETS_PER_CUSTOMER = 158;
     /**
-     * Number of ENABLED assets per page feed asset set.
+     * Number of ENABLED assets per page URL inclusion set (formerly page feed
+     * asset set).
      *
      * Generated from protobuf enum <code>ASSETS_PER_PAGE_FEED_ASSET_SET = 159;</code>
      */

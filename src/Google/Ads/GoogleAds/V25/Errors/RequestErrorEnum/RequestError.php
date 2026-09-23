@@ -132,6 +132,7 @@ class RequestError
      */
     const INVALID_ENUM_VALUE = 18;
     /**
+     * Deprecated: Developer tokens have been sunset.
      * The developer-token parameter is required for all requests.
      *
      * Generated from protobuf enum <code>DEVELOPER_TOKEN_PARAMETER_MISSING = 19;</code>

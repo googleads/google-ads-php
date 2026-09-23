@@ -85,6 +85,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the asset set link error
      *     @type int $asset_set_error
      *           The reasons for the asset set error
+     *     @type int $business_profile_location_sync_error
+     *           The reasons for the business profile sync error
      *     @type int $bidding_error
      *           The reasons for the bidding errors
      *     @type int $campaign_criterion_error
@@ -336,7 +338,7 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *     @type int $shopping_product_error
      *           The reasons for error in querying shopping product.
      *     @type int $automatically_created_asset_removal_error
-     *           The reasons for error in automatically created asset removal action.
+     *           The reasons for error in text customization removal action.
      *     @type int $shareable_preview_error
      *           The reasons for the shareable preview error.
      *     @type int $campaign_goal_config_error
@@ -1321,6 +1323,37 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Errors\AssetSetErrorEnum\AssetSetError::class);
         $this->writeOneof(152, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the business profile sync error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.errors.BusinessProfileLocationSyncErrorEnum.BusinessProfileLocationSyncError business_profile_location_sync_error = 168;</code>
+     * @return int
+     */
+    public function getBusinessProfileLocationSyncError()
+    {
+        return $this->readOneof(168);
+    }
+
+    public function hasBusinessProfileLocationSyncError()
+    {
+        return $this->hasOneof(168);
+    }
+
+    /**
+     * The reasons for the business profile sync error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.errors.BusinessProfileLocationSyncErrorEnum.BusinessProfileLocationSyncError business_profile_location_sync_error = 168;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setBusinessProfileLocationSyncError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Errors\BusinessProfileLocationSyncErrorEnum\BusinessProfileLocationSyncError::class);
+        $this->writeOneof(168, $var);
 
         return $this;
     }
@@ -5201,7 +5234,7 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The reasons for error in automatically created asset removal action.
+     * The reasons for error in text customization removal action.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.errors.AutomaticallyCreatedAssetRemovalErrorEnum.AutomaticallyCreatedAssetRemovalError automatically_created_asset_removal_error = 185;</code>
      * @return int
@@ -5217,7 +5250,7 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The reasons for error in automatically created asset removal action.
+     * The reasons for error in text customization removal action.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.errors.AutomaticallyCreatedAssetRemovalErrorEnum.AutomaticallyCreatedAssetRemovalError automatically_created_asset_removal_error = 185;</code>
      * @param int $var

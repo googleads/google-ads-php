@@ -370,6 +370,20 @@ class ConversionActionType
      * Generated from protobuf enum <code>LOCAL_SERVICES_ADS = 51;</code>
      */
     const LOCAL_SERVICES_ADS = 51;
+    /**
+     * Conversions that come from linked Firebase Android app ad impression
+     * conversions.
+     *
+     * Generated from protobuf enum <code>FIREBASE_ANDROID_APP_AD_IMPRESSION = 52;</code>
+     */
+    const FIREBASE_ANDROID_APP_AD_IMPRESSION = 52;
+    /**
+     * Conversions that come from linked Firebase iOS app ad impression
+     * conversions.
+     *
+     * Generated from protobuf enum <code>FIREBASE_IOS_APP_AD_IMPRESSION = 53;</code>
+     */
+    const FIREBASE_IOS_APP_AD_IMPRESSION = 53;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -424,6 +438,8 @@ class ConversionActionType
         self::FIREBASE_IOS_QUALIFY_LEAD => 'FIREBASE_IOS_QUALIFY_LEAD',
         self::FIREBASE_IOS_CLOSE_CONVERT_LEAD => 'FIREBASE_IOS_CLOSE_CONVERT_LEAD',
         self::LOCAL_SERVICES_ADS => 'LOCAL_SERVICES_ADS',
+        self::FIREBASE_ANDROID_APP_AD_IMPRESSION => 'FIREBASE_ANDROID_APP_AD_IMPRESSION',
+        self::FIREBASE_IOS_APP_AD_IMPRESSION => 'FIREBASE_IOS_APP_AD_IMPRESSION',
     ];
 
     public static function name($value)

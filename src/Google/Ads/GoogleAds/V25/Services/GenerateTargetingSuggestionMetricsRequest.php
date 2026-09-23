@@ -24,6 +24,14 @@ class GenerateTargetingSuggestionMetricsRequest extends \Google\Protobuf\Interna
     protected $customer_id = '';
     /**
      * Required. Audiences to request metrics for.
+     * [InsightsAudience.country_locations][google.ads.googleads.v25.services.InsightsAudience.country_locations],
+     * [InsightsAudience.gender][google.ads.googleads.v25.services.InsightsAudience.gender],
+     * [InsightsAudience.age_ranges][google.ads.googleads.v25.services.InsightsAudience.age_ranges]
+     * and
+     * [InsightsAudience.topic_audience_combinations][google.ads.googleads.v25.services.InsightsAudience.topic_audience_combinations]
+     * are the only supported fields for these audiences. Only
+     * [AudienceInsightsAttribute.user_interest][google.ads.googleads.v25.common.AudienceInsightsAttribute.user_interest]
+     * attributes are supported for topic_audience_combinations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.services.InsightsAudience audiences = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -45,6 +53,14 @@ class GenerateTargetingSuggestionMetricsRequest extends \Google\Protobuf\Interna
     /**
      * @param string                                                $customerId Required. The ID of the customer.
      * @param \Google\Ads\GoogleAds\V25\Services\InsightsAudience[] $audiences  Required. Audiences to request metrics for.
+     *                                                                          [InsightsAudience.country_locations][google.ads.googleads.v25.services.InsightsAudience.country_locations],
+     *                                                                          [InsightsAudience.gender][google.ads.googleads.v25.services.InsightsAudience.gender],
+     *                                                                          [InsightsAudience.age_ranges][google.ads.googleads.v25.services.InsightsAudience.age_ranges]
+     *                                                                          and
+     *                                                                          [InsightsAudience.topic_audience_combinations][google.ads.googleads.v25.services.InsightsAudience.topic_audience_combinations]
+     *                                                                          are the only supported fields for these audiences. Only
+     *                                                                          [AudienceInsightsAttribute.user_interest][google.ads.googleads.v25.common.AudienceInsightsAttribute.user_interest]
+     *                                                                          attributes are supported for topic_audience_combinations.
      *
      * @return \Google\Ads\GoogleAds\V25\Services\GenerateTargetingSuggestionMetricsRequest
      *
@@ -67,6 +83,14 @@ class GenerateTargetingSuggestionMetricsRequest extends \Google\Protobuf\Interna
      *           Required. The ID of the customer.
      *     @type \Google\Ads\GoogleAds\V25\Services\InsightsAudience[] $audiences
      *           Required. Audiences to request metrics for.
+     *           [InsightsAudience.country_locations][google.ads.googleads.v25.services.InsightsAudience.country_locations],
+     *           [InsightsAudience.gender][google.ads.googleads.v25.services.InsightsAudience.gender],
+     *           [InsightsAudience.age_ranges][google.ads.googleads.v25.services.InsightsAudience.age_ranges]
+     *           and
+     *           [InsightsAudience.topic_audience_combinations][google.ads.googleads.v25.services.InsightsAudience.topic_audience_combinations]
+     *           are the only supported fields for these audiences. Only
+     *           [AudienceInsightsAttribute.user_interest][google.ads.googleads.v25.common.AudienceInsightsAttribute.user_interest]
+     *           attributes are supported for topic_audience_combinations.
      *     @type string $customer_insights_group
      *           Optional. The name of the customer being planned for.  This is a
      *           user-defined value.
@@ -107,6 +131,14 @@ class GenerateTargetingSuggestionMetricsRequest extends \Google\Protobuf\Interna
 
     /**
      * Required. Audiences to request metrics for.
+     * [InsightsAudience.country_locations][google.ads.googleads.v25.services.InsightsAudience.country_locations],
+     * [InsightsAudience.gender][google.ads.googleads.v25.services.InsightsAudience.gender],
+     * [InsightsAudience.age_ranges][google.ads.googleads.v25.services.InsightsAudience.age_ranges]
+     * and
+     * [InsightsAudience.topic_audience_combinations][google.ads.googleads.v25.services.InsightsAudience.topic_audience_combinations]
+     * are the only supported fields for these audiences. Only
+     * [AudienceInsightsAttribute.user_interest][google.ads.googleads.v25.common.AudienceInsightsAttribute.user_interest]
+     * attributes are supported for topic_audience_combinations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.services.InsightsAudience audiences = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return RepeatedField<\Google\Ads\GoogleAds\V25\Services\InsightsAudience>
@@ -118,6 +150,14 @@ class GenerateTargetingSuggestionMetricsRequest extends \Google\Protobuf\Interna
 
     /**
      * Required. Audiences to request metrics for.
+     * [InsightsAudience.country_locations][google.ads.googleads.v25.services.InsightsAudience.country_locations],
+     * [InsightsAudience.gender][google.ads.googleads.v25.services.InsightsAudience.gender],
+     * [InsightsAudience.age_ranges][google.ads.googleads.v25.services.InsightsAudience.age_ranges]
+     * and
+     * [InsightsAudience.topic_audience_combinations][google.ads.googleads.v25.services.InsightsAudience.topic_audience_combinations]
+     * are the only supported fields for these audiences. Only
+     * [AudienceInsightsAttribute.user_interest][google.ads.googleads.v25.common.AudienceInsightsAttribute.user_interest]
+     * attributes are supported for topic_audience_combinations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v25.services.InsightsAudience audiences = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V25\Services\InsightsAudience[] $var

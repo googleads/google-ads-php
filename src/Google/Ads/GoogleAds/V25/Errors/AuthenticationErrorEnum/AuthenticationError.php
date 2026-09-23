@@ -160,16 +160,18 @@ class AuthenticationError
      */
     const ORGANIZATION_NOT_APPROVED = 27;
     /**
+     * Deprecated: Developer tokens have been sunset.
      * The Cloud organization associated with the project is not associated with
      * the developer token.
      *
-     * Generated from protobuf enum <code>ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN = 28;</code>
+     * Generated from protobuf enum <code>ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN = 28 [deprecated = true];</code>
      */
     const ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN = 28;
     /**
+     * Deprecated: Developer tokens have been sunset.
      * The developer token is not valid.
      *
-     * Generated from protobuf enum <code>DEVELOPER_TOKEN_INVALID = 29;</code>
+     * Generated from protobuf enum <code>DEVELOPER_TOKEN_INVALID = 29 [deprecated = true];</code>
      */
     const DEVELOPER_TOKEN_INVALID = 29;
 

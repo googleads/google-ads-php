@@ -23,7 +23,8 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
     protected $text = '';
     /**
      * Output only. URL to the SMS or email attachments. These URLs can be used to
-     * download the contents of the attachment by using the developer token.
+     * download the contents of the attachment using authorized Google Cloud
+     * project credentials.
      *
      * Generated from protobuf field <code>repeated string attachment_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -39,7 +40,8 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
      *           Output only. Textual content of the message.
      *     @type string[] $attachment_urls
      *           Output only. URL to the SMS or email attachments. These URLs can be used to
-     *           download the contents of the attachment by using the developer token.
+     *           download the contents of the attachment using authorized Google Cloud
+     *           project credentials.
      * }
      */
     public function __construct($data = NULL) {
@@ -75,7 +77,8 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. URL to the SMS or email attachments. These URLs can be used to
-     * download the contents of the attachment by using the developer token.
+     * download the contents of the attachment using authorized Google Cloud
+     * project credentials.
      *
      * Generated from protobuf field <code>repeated string attachment_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return RepeatedField<string>
@@ -87,7 +90,8 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. URL to the SMS or email attachments. These URLs can be used to
-     * download the contents of the attachment by using the developer token.
+     * download the contents of the attachment using authorized Google Cloud
+     * project credentials.
      *
      * Generated from protobuf field <code>repeated string attachment_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string[] $var

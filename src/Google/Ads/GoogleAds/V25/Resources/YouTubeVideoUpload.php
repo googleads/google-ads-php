@@ -50,14 +50,22 @@ class YouTubeVideoUpload extends \Google\Protobuf\Internal\Message
     protected $state = 0;
     /**
      * Input only. Immutable. The title of the video.
-     * Only mutable on YouTube video upload creation. Immutable after creation.
+     * The video title is required, must not exceed 100 characters, and must not
+     * contain invalid characters. It can be modified when creating the YouTube
+     * video upload, but is immutable after creation.
+     * See the YouTube Help Center for more information:
+     * https://support.google.com/youtube/answer/57407
      *
      * Generated from protobuf field <code>string video_title = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $video_title = '';
     /**
      * Input only. Immutable. The description of the video.
-     * Only mutable on YouTube video upload creation. Immutable after creation.
+     * The video description must not exceed 5000 characters and must not contain
+     * invalid characters. It can be modified when creating the YouTube video
+     * upload, but is immutable after creation.
+     * See the YouTube Help Center for more information:
+     * https://support.google.com/youtube/answer/57407
      *
      * Generated from protobuf field <code>string video_description = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -93,10 +101,18 @@ class YouTubeVideoUpload extends \Google\Protobuf\Internal\Message
      *           Output only. The current state of the YouTube video upload.
      *     @type string $video_title
      *           Input only. Immutable. The title of the video.
-     *           Only mutable on YouTube video upload creation. Immutable after creation.
+     *           The video title is required, must not exceed 100 characters, and must not
+     *           contain invalid characters. It can be modified when creating the YouTube
+     *           video upload, but is immutable after creation.
+     *           See the YouTube Help Center for more information:
+     *           https://support.google.com/youtube/answer/57407
      *     @type string $video_description
      *           Input only. Immutable. The description of the video.
-     *           Only mutable on YouTube video upload creation. Immutable after creation.
+     *           The video description must not exceed 5000 characters and must not contain
+     *           invalid characters. It can be modified when creating the YouTube video
+     *           upload, but is immutable after creation.
+     *           See the YouTube Help Center for more information:
+     *           https://support.google.com/youtube/answer/57407
      *     @type int $video_privacy
      *           The privacy state of the video.
      *           Only mutable for videos uploaded to the advertiser owned (brand) YouTube
@@ -247,7 +263,11 @@ class YouTubeVideoUpload extends \Google\Protobuf\Internal\Message
 
     /**
      * Input only. Immutable. The title of the video.
-     * Only mutable on YouTube video upload creation. Immutable after creation.
+     * The video title is required, must not exceed 100 characters, and must not
+     * contain invalid characters. It can be modified when creating the YouTube
+     * video upload, but is immutable after creation.
+     * See the YouTube Help Center for more information:
+     * https://support.google.com/youtube/answer/57407
      *
      * Generated from protobuf field <code>string video_title = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
@@ -259,7 +279,11 @@ class YouTubeVideoUpload extends \Google\Protobuf\Internal\Message
 
     /**
      * Input only. Immutable. The title of the video.
-     * Only mutable on YouTube video upload creation. Immutable after creation.
+     * The video title is required, must not exceed 100 characters, and must not
+     * contain invalid characters. It can be modified when creating the YouTube
+     * video upload, but is immutable after creation.
+     * See the YouTube Help Center for more information:
+     * https://support.google.com/youtube/answer/57407
      *
      * Generated from protobuf field <code>string video_title = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
@@ -275,7 +299,11 @@ class YouTubeVideoUpload extends \Google\Protobuf\Internal\Message
 
     /**
      * Input only. Immutable. The description of the video.
-     * Only mutable on YouTube video upload creation. Immutable after creation.
+     * The video description must not exceed 5000 characters and must not contain
+     * invalid characters. It can be modified when creating the YouTube video
+     * upload, but is immutable after creation.
+     * See the YouTube Help Center for more information:
+     * https://support.google.com/youtube/answer/57407
      *
      * Generated from protobuf field <code>string video_description = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
@@ -287,7 +315,11 @@ class YouTubeVideoUpload extends \Google\Protobuf\Internal\Message
 
     /**
      * Input only. Immutable. The description of the video.
-     * Only mutable on YouTube video upload creation. Immutable after creation.
+     * The video description must not exceed 5000 characters and must not contain
+     * invalid characters. It can be modified when creating the YouTube video
+     * upload, but is immutable after creation.
+     * See the YouTube Help Center for more information:
+     * https://support.google.com/youtube/answer/57407
      *
      * Generated from protobuf field <code>string video_description = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var

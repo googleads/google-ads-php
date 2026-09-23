@@ -120,7 +120,7 @@ class ExperimentType
      */
     const COMPARE_CAMPAIGNS = 17;
     /**
-     * An experiment that tests automatically created assets and lets Google AI
+     * An experiment that tests text customization and lets Google AI
      * send traffic to relevant landing pages and generate text assets to better
      * match search queries.
      *

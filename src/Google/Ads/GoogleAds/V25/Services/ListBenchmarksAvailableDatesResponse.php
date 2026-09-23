@@ -18,11 +18,26 @@ class ListBenchmarksAvailableDatesResponse extends \Google\Protobuf\Internal\Mes
 {
     /**
      * The dates that support benchmarks metrics. Data is supported for any dates
-     * within this date range inclusive.
+     * within this date range inclusive. This is a general date range where
+     * benchmarks data is available. Some metrics are only returned within more
+     * restricted dates `supported_dates_for_all_metrics`.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.DateRange supported_dates = 1;</code>
      */
     protected $supported_dates = null;
+    /**
+     * The subset of `supported_dates` that support all metrics. Some metrics are
+     * only supported within this specific date range due to limited availability.
+     * This applies to the following metrics:
+     * 1. Average rate metrics of the selected benchmarks source. For example, the
+     * `average_cpm` of category "/Apparel/Clothing."
+     * 2. Customer share metrics. For example, the customer's `share_of_voice`.
+     * These metrics are omitted from the response if the request `date_range`
+     * does not fall within this smaller date range.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.common.DateRange supported_dates_for_all_metrics = 2;</code>
+     */
+    protected $supported_dates_for_all_metrics = null;
 
     /**
      * Constructor.
@@ -32,7 +47,18 @@ class ListBenchmarksAvailableDatesResponse extends \Google\Protobuf\Internal\Mes
      *
      *     @type \Google\Ads\GoogleAds\V25\Common\DateRange $supported_dates
      *           The dates that support benchmarks metrics. Data is supported for any dates
-     *           within this date range inclusive.
+     *           within this date range inclusive. This is a general date range where
+     *           benchmarks data is available. Some metrics are only returned within more
+     *           restricted dates `supported_dates_for_all_metrics`.
+     *     @type \Google\Ads\GoogleAds\V25\Common\DateRange $supported_dates_for_all_metrics
+     *           The subset of `supported_dates` that support all metrics. Some metrics are
+     *           only supported within this specific date range due to limited availability.
+     *           This applies to the following metrics:
+     *           1. Average rate metrics of the selected benchmarks source. For example, the
+     *           `average_cpm` of category "/Apparel/Clothing."
+     *           2. Customer share metrics. For example, the customer's `share_of_voice`.
+     *           These metrics are omitted from the response if the request `date_range`
+     *           does not fall within this smaller date range.
      * }
      */
     public function __construct($data = NULL) {
@@ -42,7 +68,9 @@ class ListBenchmarksAvailableDatesResponse extends \Google\Protobuf\Internal\Mes
 
     /**
      * The dates that support benchmarks metrics. Data is supported for any dates
-     * within this date range inclusive.
+     * within this date range inclusive. This is a general date range where
+     * benchmarks data is available. Some metrics are only returned within more
+     * restricted dates `supported_dates_for_all_metrics`.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.DateRange supported_dates = 1;</code>
      * @return \Google\Ads\GoogleAds\V25\Common\DateRange|null
@@ -64,7 +92,9 @@ class ListBenchmarksAvailableDatesResponse extends \Google\Protobuf\Internal\Mes
 
     /**
      * The dates that support benchmarks metrics. Data is supported for any dates
-     * within this date range inclusive.
+     * within this date range inclusive. This is a general date range where
+     * benchmarks data is available. Some metrics are only returned within more
+     * restricted dates `supported_dates_for_all_metrics`.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.DateRange supported_dates = 1;</code>
      * @param \Google\Ads\GoogleAds\V25\Common\DateRange $var
@@ -74,6 +104,56 @@ class ListBenchmarksAvailableDatesResponse extends \Google\Protobuf\Internal\Mes
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Common\DateRange::class);
         $this->supported_dates = $var;
+
+        return $this;
+    }
+
+    /**
+     * The subset of `supported_dates` that support all metrics. Some metrics are
+     * only supported within this specific date range due to limited availability.
+     * This applies to the following metrics:
+     * 1. Average rate metrics of the selected benchmarks source. For example, the
+     * `average_cpm` of category "/Apparel/Clothing."
+     * 2. Customer share metrics. For example, the customer's `share_of_voice`.
+     * These metrics are omitted from the response if the request `date_range`
+     * does not fall within this smaller date range.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.common.DateRange supported_dates_for_all_metrics = 2;</code>
+     * @return \Google\Ads\GoogleAds\V25\Common\DateRange|null
+     */
+    public function getSupportedDatesForAllMetrics()
+    {
+        return $this->supported_dates_for_all_metrics;
+    }
+
+    public function hasSupportedDatesForAllMetrics()
+    {
+        return isset($this->supported_dates_for_all_metrics);
+    }
+
+    public function clearSupportedDatesForAllMetrics()
+    {
+        unset($this->supported_dates_for_all_metrics);
+    }
+
+    /**
+     * The subset of `supported_dates` that support all metrics. Some metrics are
+     * only supported within this specific date range due to limited availability.
+     * This applies to the following metrics:
+     * 1. Average rate metrics of the selected benchmarks source. For example, the
+     * `average_cpm` of category "/Apparel/Clothing."
+     * 2. Customer share metrics. For example, the customer's `share_of_voice`.
+     * These metrics are omitted from the response if the request `date_range`
+     * does not fall within this smaller date range.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.common.DateRange supported_dates_for_all_metrics = 2;</code>
+     * @param \Google\Ads\GoogleAds\V25\Common\DateRange $var
+     * @return $this
+     */
+    public function setSupportedDatesForAllMetrics($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Common\DateRange::class);
+        $this->supported_dates_for_all_metrics = $var;
 
         return $this;
     }
