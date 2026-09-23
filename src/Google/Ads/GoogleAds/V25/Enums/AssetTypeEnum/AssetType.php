@@ -86,7 +86,7 @@ class AssetType
      */
     const SITELINK = 11;
     /**
-     * Page Feed asset.
+     * Page URL inclusion.
      *
      * Generated from protobuf enum <code>PAGE_FEED = 12;</code>
      */

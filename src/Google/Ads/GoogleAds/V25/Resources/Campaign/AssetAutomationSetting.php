@@ -28,6 +28,7 @@ class AssetAutomationSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional .google.ads.googleads.v25.enums.AssetAutomationStatusEnum.AssetAutomationStatus asset_automation_status = 2;</code>
      */
     protected $asset_automation_status = null;
+    protected $setting;
 
     /**
      * Constructor.
@@ -39,6 +40,8 @@ class AssetAutomationSetting extends \Google\Protobuf\Internal\Message
      *           The asset automation type advertiser would like to opt-in/out.
      *     @type int $asset_automation_status
      *           The opt-in/out status of asset automation type.
+     *     @type \Google\Ads\GoogleAds\V25\Resources\Campaign\AssetAutomationSetting\AutomatedVideoCrawlSetting $automated_video_crawl_setting
+     *           Settings for automated video crawling.
      * }
      */
     public function __construct($data = NULL) {
@@ -116,6 +119,45 @@ class AssetAutomationSetting extends \Google\Protobuf\Internal\Message
         $this->asset_automation_status = $var;
 
         return $this;
+    }
+
+    /**
+     * Settings for automated video crawling.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.Campaign.AssetAutomationSetting.AutomatedVideoCrawlSetting automated_video_crawl_setting = 3;</code>
+     * @return \Google\Ads\GoogleAds\V25\Resources\Campaign\AssetAutomationSetting\AutomatedVideoCrawlSetting|null
+     */
+    public function getAutomatedVideoCrawlSetting()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasAutomatedVideoCrawlSetting()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * Settings for automated video crawling.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.Campaign.AssetAutomationSetting.AutomatedVideoCrawlSetting automated_video_crawl_setting = 3;</code>
+     * @param \Google\Ads\GoogleAds\V25\Resources\Campaign\AssetAutomationSetting\AutomatedVideoCrawlSetting $var
+     * @return $this
+     */
+    public function setAutomatedVideoCrawlSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\Campaign\AssetAutomationSetting\AutomatedVideoCrawlSetting::class);
+        $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSetting()
+    {
+        return $this->whichOneof("setting");
     }
 
 }

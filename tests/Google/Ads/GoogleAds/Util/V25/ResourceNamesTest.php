@@ -87,7 +87,6 @@ use Google\Ads\GoogleAds\V25\Services\Client\ExperimentArmServiceClient;
 use Google\Ads\GoogleAds\V25\Services\Client\ExperimentServiceClient;
 use Google\Ads\GoogleAds\V25\Services\Client\GoalServiceClient;
 use Google\Ads\GoogleAds\V25\Services\Client\GoogleAdsFieldServiceClient;
-use Google\Ads\GoogleAds\V25\Services\Client\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V25\Services\Client\KeywordPlanAdGroupKeywordServiceClient;
 use Google\Ads\GoogleAds\V25\Services\Client\KeywordPlanAdGroupServiceClient;
 use Google\Ads\GoogleAds\V25\Services\Client\KeywordPlanCampaignKeywordServiceClient;
@@ -105,7 +104,6 @@ use Google\Ads\GoogleAds\V25\Services\Client\RemarketingActionServiceClient;
 use Google\Ads\GoogleAds\V25\Services\Client\SharedCriterionServiceClient;
 use Google\Ads\GoogleAds\V25\Services\Client\SharedSetServiceClient;
 use Google\Ads\GoogleAds\V25\Services\Client\SmartCampaignSettingServiceClient;
-use Google\Ads\GoogleAds\V25\Services\Client\SmartCampaignSuggestServiceClient;
 use Google\Ads\GoogleAds\V25\Services\Client\ThirdPartyAppAnalyticsLinkServiceClient;
 use Google\Ads\GoogleAds\V25\Services\Client\UserListCustomerTypeServiceClient;
 use Google\Ads\GoogleAds\V25\Services\Client\UserListServiceClient;
@@ -115,7 +113,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Unit tests for `ResourceNames`.
  *
- * @see   ResourceNames
+ * @see ResourceNames
  * @small
  */
 class ResourceNamesTest extends TestCase
@@ -140,7 +138,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($biddingStrategyId, $names['bidding_strategy_id']);
     }
@@ -1344,7 +1342,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = CampaignCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
@@ -1368,7 +1366,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = AdGroupCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($combinedAudienceId, $names['combined_audience_id']);
     }
@@ -1959,7 +1957,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = AudienceServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($detailedDemographicId, $names['detailed_demographic_id']);
     }
@@ -2035,7 +2033,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = KeywordPlanCampaignServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
@@ -2230,7 +2228,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = SmartCampaignSuggestServiceClient::parseName($expectedResourceName);
+        $names = CampaignCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals($expressCategoryId, $names['express_category_id']);
         $this->assertEquals($expressSubCategoryId, $names['express_sub_category_id']);
     }
@@ -2277,7 +2275,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = KeywordPlanCampaignServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
@@ -2301,7 +2299,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = AudienceServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($lifeEventId, $names['life_event_id']);
     }
@@ -2326,7 +2324,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = ExperimentServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($liftMeasurementConfigurationId, $names['lift_measurement_configuration_id']);
     }
@@ -2373,7 +2371,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = SharedCriterionServiceClient::parseName($expectedResourceName);
+        $names = AdGroupCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals($mobileAppCategoryId, $names['mobile_app_category_id']);
     }
 
@@ -2394,7 +2392,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = CampaignCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
@@ -2465,7 +2463,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = CampaignCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
@@ -2740,7 +2738,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = AdGroupCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals($topicId, $names['topic_id']);
     }
 
@@ -2764,7 +2762,7 @@ class ResourceNamesTest extends TestCase
             )
         );
 
-        $names = GoogleAdsServiceClient::parseName($expectedResourceName);
+        $names = BatchJobServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($userInterestId, $names['user_interest_id']);
     }

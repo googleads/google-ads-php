@@ -39,7 +39,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Log\LoggerInterface;
 
 /**
- * Service Description: Service to remove automatically created assets.
+ * Service Description: Service to remove text customization (formerly automatically created assets).
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods.
@@ -189,7 +189,8 @@ class AutomaticallyCreatedAssetRemovalServiceClient
     }
 
     /**
-     * Removes automatically created assets from a campaign.
+     * Removes text customization (formerly automatically created assets) from a
+     * campaign.
      *
      * List of thrown errors:
      * [AuthenticationError]()

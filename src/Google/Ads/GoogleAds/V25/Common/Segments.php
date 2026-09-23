@@ -91,6 +91,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $ad_sub_network_type = 0;
     /**
+     * Advance booking window for the itinerary in days.
+     *
+     * Generated from protobuf field <code>optional int64 advance_booking_window = 238;</code>
+     */
+    protected $advance_booking_window = null;
+    /**
      * Age range
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.enums.AgeRangeTypeEnum.AgeRangeType age_range = 225;</code>
@@ -440,6 +446,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $landing_page_source = 0;
     /**
+     * Length of booking for the itinerary in days.
+     *
+     * Generated from protobuf field <code>optional int64 length_of_booking = 237;</code>
+     */
+    protected $length_of_booking = null;
+    /**
      * The user loyalty membership tier, based on the user belonging to a loyalty
      * program.
      *
@@ -769,6 +781,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $travel_destination_region = null;
     /**
+     * Indicates whether user-specified dates were selected.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType user_set_dates = 236;</code>
+     */
+    protected $user_set_dates = 0;
+    /**
      * The display names of participants in an event listing, like performers,
      * speakers, or teams.
      *
@@ -837,6 +855,26 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $vertical_ads_partner_account = null;
     /**
+     * Relative price competitiveness bucket hotel listing (only relevant
+     * to hotel campaigns).
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.HotelPriceBucketEnum.HotelPriceBucket vertical_ads_price_tier = 239;</code>
+     */
+    protected $vertical_ads_price_tier = 0;
+    /**
+     * String identifier corresponding to private or conditional rate rules
+     * applied to the bid/impression.
+     *
+     * Generated from protobuf field <code>optional string vertical_ads_rate_rule_id = 240;</code>
+     */
+    protected $vertical_ads_rate_rule_id = null;
+    /**
+     * Categorization of the public, private, or conditional rate type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.HotelRateTypeEnum.HotelRateType vertical_ads_rate_type = 241;</code>
+     */
+    protected $vertical_ads_rate_type = 0;
+    /**
      * Type of vertical ad, such as Vacation Rentals, Car Rentals, or
      * Events, used to categorize and segment data in the context of Vertical
      * Ads.
@@ -893,6 +931,18 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v25.enums.SlotEnum.Slot slot = 23;</code>
      */
     protected $slot = 0;
+    /**
+     * Start date of the booking. Formatted as yyyy-MM-dd.
+     *
+     * Generated from protobuf field <code>optional string start_date = 234;</code>
+     */
+    protected $start_date = null;
+    /**
+     * Start day of week of the booking.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.DayOfWeekEnum.DayOfWeek start_day_of_week = 235;</code>
+     */
+    protected $start_day_of_week = 0;
     /**
      * Primary dimension of applied conversion value rules.
      * NO_RULE_APPLIED shows the total recorded value of conversions that
@@ -1114,6 +1164,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Ad sub network type. Currently only available for ads running as part of
      *           DemandGen campaigns on YouTube and has to always be selected together with
      *           ad_network_type.
+     *     @type int|string $advance_booking_window
+     *           Advance booking window for the itinerary in days.
      *     @type int $age_range
      *           Age range
      *     @type string $asset_group
@@ -1239,6 +1291,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Keyword criterion.
      *     @type int $landing_page_source
      *           The source of a landing page in the landing page report.
+     *     @type int|string $length_of_booking
+     *           Length of booking for the itinerary in days.
      *     @type int $loyalty_membership
      *           The user loyalty membership tier, based on the user belonging to a loyalty
      *           program.
@@ -1352,6 +1406,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           The country the user is searching for at query time.
      *     @type string $travel_destination_region
      *           The region the user is searching for at query time.
+     *     @type int $user_set_dates
+     *           Indicates whether user-specified dates were selected.
      *     @type string $vertical_ads_event_participant_display_names
      *           The display names of participants in an event listing, like performers,
      *           speakers, or teams.
@@ -1380,6 +1436,14 @@ class Segments extends \Google\Protobuf\Internal\Message
      *     @type int|string $vertical_ads_partner_account
      *           A specific partner account within a Partner Center (for example, Hotel
      *           Center) that supplies inventory feed data for Vertical Ads.
+     *     @type int $vertical_ads_price_tier
+     *           Relative price competitiveness bucket hotel listing (only relevant
+     *           to hotel campaigns).
+     *     @type string $vertical_ads_rate_rule_id
+     *           String identifier corresponding to private or conditional rate rules
+     *           applied to the bid/impression.
+     *     @type int $vertical_ads_rate_type
+     *           Categorization of the public, private, or conditional rate type.
      *     @type int $vertical_ads_vertical
      *           Type of vertical ad, such as Vacation Rentals, Car Rentals, or
      *           Events, used to categorize and segment data in the context of Vertical
@@ -1405,6 +1469,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           search_term_match_type includes variants like Near Exact, Near Phrase.
      *     @type int $slot
      *           Position of the ad.
+     *     @type string $start_date
+     *           Start date of the booking. Formatted as yyyy-MM-dd.
+     *     @type int $start_day_of_week
+     *           Start day of week of the booking.
      *     @type int $conversion_value_rule_primary_dimension
      *           Primary dimension of applied conversion value rules.
      *           NO_RULE_APPLIED shows the total recorded value of conversions that
@@ -1891,6 +1959,42 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\AdSubNetworkTypeEnum\AdSubNetworkType::class);
         $this->ad_sub_network_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Advance booking window for the itinerary in days.
+     *
+     * Generated from protobuf field <code>optional int64 advance_booking_window = 238;</code>
+     * @return int|string
+     */
+    public function getAdvanceBookingWindow()
+    {
+        return isset($this->advance_booking_window) ? $this->advance_booking_window : 0;
+    }
+
+    public function hasAdvanceBookingWindow()
+    {
+        return isset($this->advance_booking_window);
+    }
+
+    public function clearAdvanceBookingWindow()
+    {
+        unset($this->advance_booking_window);
+    }
+
+    /**
+     * Advance booking window for the itinerary in days.
+     *
+     * Generated from protobuf field <code>optional int64 advance_booking_window = 238;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setAdvanceBookingWindow($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->advance_booking_window = $var;
 
         return $this;
     }
@@ -3723,6 +3827,42 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\LandingPageSourceEnum\LandingPageSource::class);
         $this->landing_page_source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Length of booking for the itinerary in days.
+     *
+     * Generated from protobuf field <code>optional int64 length_of_booking = 237;</code>
+     * @return int|string
+     */
+    public function getLengthOfBooking()
+    {
+        return isset($this->length_of_booking) ? $this->length_of_booking : 0;
+    }
+
+    public function hasLengthOfBooking()
+    {
+        return isset($this->length_of_booking);
+    }
+
+    public function clearLengthOfBooking()
+    {
+        unset($this->length_of_booking);
+    }
+
+    /**
+     * Length of booking for the itinerary in days.
+     *
+     * Generated from protobuf field <code>optional int64 length_of_booking = 237;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setLengthOfBooking($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->length_of_booking = $var;
 
         return $this;
     }
@@ -5622,6 +5762,32 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Indicates whether user-specified dates were selected.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType user_set_dates = 236;</code>
+     * @return int
+     */
+    public function getUserSetDates()
+    {
+        return $this->user_set_dates;
+    }
+
+    /**
+     * Indicates whether user-specified dates were selected.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType user_set_dates = 236;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserSetDates($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\HotelDateSelectionTypeEnum\HotelDateSelectionType::class);
+        $this->user_set_dates = $var;
+
+        return $this;
+    }
+
+    /**
      * The display names of participants in an event listing, like performers,
      * speakers, or teams.
      *
@@ -5998,6 +6164,98 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Relative price competitiveness bucket hotel listing (only relevant
+     * to hotel campaigns).
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.HotelPriceBucketEnum.HotelPriceBucket vertical_ads_price_tier = 239;</code>
+     * @return int
+     */
+    public function getVerticalAdsPriceTier()
+    {
+        return $this->vertical_ads_price_tier;
+    }
+
+    /**
+     * Relative price competitiveness bucket hotel listing (only relevant
+     * to hotel campaigns).
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.HotelPriceBucketEnum.HotelPriceBucket vertical_ads_price_tier = 239;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVerticalAdsPriceTier($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\HotelPriceBucketEnum\HotelPriceBucket::class);
+        $this->vertical_ads_price_tier = $var;
+
+        return $this;
+    }
+
+    /**
+     * String identifier corresponding to private or conditional rate rules
+     * applied to the bid/impression.
+     *
+     * Generated from protobuf field <code>optional string vertical_ads_rate_rule_id = 240;</code>
+     * @return string
+     */
+    public function getVerticalAdsRateRuleId()
+    {
+        return isset($this->vertical_ads_rate_rule_id) ? $this->vertical_ads_rate_rule_id : '';
+    }
+
+    public function hasVerticalAdsRateRuleId()
+    {
+        return isset($this->vertical_ads_rate_rule_id);
+    }
+
+    public function clearVerticalAdsRateRuleId()
+    {
+        unset($this->vertical_ads_rate_rule_id);
+    }
+
+    /**
+     * String identifier corresponding to private or conditional rate rules
+     * applied to the bid/impression.
+     *
+     * Generated from protobuf field <code>optional string vertical_ads_rate_rule_id = 240;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVerticalAdsRateRuleId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->vertical_ads_rate_rule_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Categorization of the public, private, or conditional rate type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.HotelRateTypeEnum.HotelRateType vertical_ads_rate_type = 241;</code>
+     * @return int
+     */
+    public function getVerticalAdsRateType()
+    {
+        return $this->vertical_ads_rate_type;
+    }
+
+    /**
+     * Categorization of the public, private, or conditional rate type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.HotelRateTypeEnum.HotelRateType vertical_ads_rate_type = 241;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVerticalAdsRateType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\HotelRateTypeEnum\HotelRateType::class);
+        $this->vertical_ads_rate_type = $var;
+
+        return $this;
+    }
+
+    /**
      * Type of vertical ad, such as Vacation Rentals, Car Rentals, or
      * Events, used to categorize and segment data in the context of Vertical
      * Ads.
@@ -6249,6 +6507,68 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\SlotEnum\Slot::class);
         $this->slot = $var;
+
+        return $this;
+    }
+
+    /**
+     * Start date of the booking. Formatted as yyyy-MM-dd.
+     *
+     * Generated from protobuf field <code>optional string start_date = 234;</code>
+     * @return string
+     */
+    public function getStartDate()
+    {
+        return isset($this->start_date) ? $this->start_date : '';
+    }
+
+    public function hasStartDate()
+    {
+        return isset($this->start_date);
+    }
+
+    public function clearStartDate()
+    {
+        unset($this->start_date);
+    }
+
+    /**
+     * Start date of the booking. Formatted as yyyy-MM-dd.
+     *
+     * Generated from protobuf field <code>optional string start_date = 234;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStartDate($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->start_date = $var;
+
+        return $this;
+    }
+
+    /**
+     * Start day of week of the booking.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.DayOfWeekEnum.DayOfWeek start_day_of_week = 235;</code>
+     * @return int
+     */
+    public function getStartDayOfWeek()
+    {
+        return $this->start_day_of_week;
+    }
+
+    /**
+     * Start day of week of the booking.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.enums.DayOfWeekEnum.DayOfWeek start_day_of_week = 235;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStartDayOfWeek($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V25\Enums\DayOfWeekEnum\DayOfWeek::class);
+        $this->start_day_of_week = $var;
 
         return $this;
     }

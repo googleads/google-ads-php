@@ -1,3 +1,6 @@
+## 35.1.0
+* Added support for Google Ads API v25.2
+
 ## 35.0.0
 * Remove developer token validation support
 

@@ -95,7 +95,8 @@ class AdGroupAdServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Remove automatically created assets from an ad.
+     * Remove text customization (formerly automatically created assets) from an
+     * ad.
      *
      * List of thrown errors:
      *   [AdError]()

@@ -23,7 +23,11 @@ class GenerateBenchmarksMetricsResponse extends \Google\Protobuf\Internal\Messag
      */
     protected $customer_metrics = null;
     /**
-     * Metrics for the selected benchmarks source.
+     * Metrics for the selected benchmarks source. Rate metrics for the benchmarks
+     * source are only returned when the request `date_range` is a subset of
+     * `supported_dates_for_all_metrics` returned by
+     * [BenchmarksService.ListBenchmarksAvailableDates][google.ads.googleads.v25.services.BenchmarksService.ListBenchmarksAvailableDates]
+     * due to limited availability.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.Metrics average_benchmarks_metrics = 2;</code>
      */
@@ -44,7 +48,11 @@ class GenerateBenchmarksMetricsResponse extends \Google\Protobuf\Internal\Messag
      *     @type \Google\Ads\GoogleAds\V25\Services\CustomerMetrics $customer_metrics
      *           Metrics representing the customer's Ad performance.
      *     @type \Google\Ads\GoogleAds\V25\Services\Metrics $average_benchmarks_metrics
-     *           Metrics for the selected benchmarks source.
+     *           Metrics for the selected benchmarks source. Rate metrics for the benchmarks
+     *           source are only returned when the request `date_range` is a subset of
+     *           `supported_dates_for_all_metrics` returned by
+     *           [BenchmarksService.ListBenchmarksAvailableDates][google.ads.googleads.v25.services.BenchmarksService.ListBenchmarksAvailableDates]
+     *           due to limited availability.
      *     @type \Google\Ads\GoogleAds\V25\Services\BreakdownMetrics[] $breakdown_metrics
      *           Breakdown metrics grouped by dimensions.
      * }
@@ -91,7 +99,11 @@ class GenerateBenchmarksMetricsResponse extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Metrics for the selected benchmarks source.
+     * Metrics for the selected benchmarks source. Rate metrics for the benchmarks
+     * source are only returned when the request `date_range` is a subset of
+     * `supported_dates_for_all_metrics` returned by
+     * [BenchmarksService.ListBenchmarksAvailableDates][google.ads.googleads.v25.services.BenchmarksService.ListBenchmarksAvailableDates]
+     * due to limited availability.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.Metrics average_benchmarks_metrics = 2;</code>
      * @return \Google\Ads\GoogleAds\V25\Services\Metrics|null
@@ -112,7 +124,11 @@ class GenerateBenchmarksMetricsResponse extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Metrics for the selected benchmarks source.
+     * Metrics for the selected benchmarks source. Rate metrics for the benchmarks
+     * source are only returned when the request `date_range` is a subset of
+     * `supported_dates_for_all_metrics` returned by
+     * [BenchmarksService.ListBenchmarksAvailableDates][google.ads.googleads.v25.services.BenchmarksService.ListBenchmarksAvailableDates]
+     * due to limited availability.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.Metrics average_benchmarks_metrics = 2;</code>
      * @param \Google\Ads\GoogleAds\V25\Services\Metrics $var

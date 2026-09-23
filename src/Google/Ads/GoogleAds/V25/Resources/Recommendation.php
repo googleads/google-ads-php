@@ -270,6 +270,12 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           Output only. The improve Demand Gen ad strength recommendation.
      *     @type \Google\Ads\GoogleAds\V25\Resources\Recommendation\CampaignSpecificAppGoalRecommendation $campaign_specific_app_goal_recommendation
      *           Output only. The campaign-specific app goal recommendation.
+     *     @type \Google\Ads\GoogleAds\V25\Resources\Recommendation\RaiseTargetCpaPerformanceBidTooLowRecommendation $raise_target_cpa_performance_bid_too_low_recommendation
+     *           Output only. The raise Target CPA for Performance Bid Too Low
+     *           recommendation.
+     *     @type \Google\Ads\GoogleAds\V25\Resources\Recommendation\LowerTargetRoasPerformanceBidTooLowRecommendation $lower_target_roas_performance_bid_too_low_recommendation
+     *           Output only. The lower Target ROAS for Performance Bid Too Low
+     *           recommendation.
      * }
      */
     public function __construct($data = NULL) {
@@ -2318,6 +2324,72 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\Recommendation\CampaignSpecificAppGoalRecommendation::class);
         $this->writeOneof(70, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The raise Target CPA for Performance Bid Too Low
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.Recommendation.RaiseTargetCpaPerformanceBidTooLowRecommendation raise_target_cpa_performance_bid_too_low_recommendation = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V25\Resources\Recommendation\RaiseTargetCpaPerformanceBidTooLowRecommendation|null
+     */
+    public function getRaiseTargetCpaPerformanceBidTooLowRecommendation()
+    {
+        return $this->readOneof(72);
+    }
+
+    public function hasRaiseTargetCpaPerformanceBidTooLowRecommendation()
+    {
+        return $this->hasOneof(72);
+    }
+
+    /**
+     * Output only. The raise Target CPA for Performance Bid Too Low
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.Recommendation.RaiseTargetCpaPerformanceBidTooLowRecommendation raise_target_cpa_performance_bid_too_low_recommendation = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V25\Resources\Recommendation\RaiseTargetCpaPerformanceBidTooLowRecommendation $var
+     * @return $this
+     */
+    public function setRaiseTargetCpaPerformanceBidTooLowRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\Recommendation\RaiseTargetCpaPerformanceBidTooLowRecommendation::class);
+        $this->writeOneof(72, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The lower Target ROAS for Performance Bid Too Low
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.Recommendation.LowerTargetRoasPerformanceBidTooLowRecommendation lower_target_roas_performance_bid_too_low_recommendation = 73 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V25\Resources\Recommendation\LowerTargetRoasPerformanceBidTooLowRecommendation|null
+     */
+    public function getLowerTargetRoasPerformanceBidTooLowRecommendation()
+    {
+        return $this->readOneof(73);
+    }
+
+    public function hasLowerTargetRoasPerformanceBidTooLowRecommendation()
+    {
+        return $this->hasOneof(73);
+    }
+
+    /**
+     * Output only. The lower Target ROAS for Performance Bid Too Low
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.resources.Recommendation.LowerTargetRoasPerformanceBidTooLowRecommendation lower_target_roas_performance_bid_too_low_recommendation = 73 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V25\Resources\Recommendation\LowerTargetRoasPerformanceBidTooLowRecommendation $var
+     * @return $this
+     */
+    public function setLowerTargetRoasPerformanceBidTooLowRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\Recommendation\LowerTargetRoasPerformanceBidTooLowRecommendation::class);
+        $this->writeOneof(73, $var);
 
         return $this;
     }

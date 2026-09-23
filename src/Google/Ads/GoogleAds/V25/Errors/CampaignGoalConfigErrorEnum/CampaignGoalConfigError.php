@@ -90,6 +90,28 @@ class CampaignGoalConfigError
      * Generated from protobuf enum <code>LOYALTY_RETENTION_GOAL_INVALID_MODE = 16;</code>
      */
     const LOYALTY_RETENTION_GOAL_INVALID_MODE = 16;
+    /**
+     * When using the customer lifecycle optimization goal, the value multiplier
+     * must be present if the high lifetime value multiplier is present.
+     *
+     * Generated from protobuf enum <code>HIGH_LIFETIME_VALUE_MULTIPLIER_PRESENT_BUT_VALUE_MULTIPLIER_ABSENT = 17;</code>
+     */
+    const HIGH_LIFETIME_VALUE_MULTIPLIER_PRESENT_BUT_VALUE_MULTIPLIER_ABSENT = 17;
+    /**
+     * When using the customer lifecycle optimization goal, the high lifetime
+     * value multiplier must be strictly greater than the value multiplier.
+     *
+     * Generated from protobuf enum <code>HIGH_LIFETIME_VALUE_MULTIPLIER_LESS_THAN_OR_EQUAL_TO_VALUE_MULTIPLIER = 18;</code>
+     */
+    const HIGH_LIFETIME_VALUE_MULTIPLIER_LESS_THAN_OR_EQUAL_TO_VALUE_MULTIPLIER = 18;
+    /**
+     * The high lifetime value multiplier for campaign-level overrides in
+     * customer lifecycle optimization (new customer acquisition) is only
+     * supported for certain campaign types.
+     *
+     * Generated from protobuf enum <code>CAMPAIGN_OVERRIDE_HIGH_LIFETIME_VALUE_MULTIPLIER_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE = 19;</code>
+     */
+    const CAMPAIGN_OVERRIDE_HIGH_LIFETIME_VALUE_MULTIPLIER_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE = 19;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -104,6 +126,9 @@ class CampaignGoalConfigError
         self::CAMPAIGN_OVERRIDE_HIGH_LIFETIME_VALUE_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE => 'CAMPAIGN_OVERRIDE_HIGH_LIFETIME_VALUE_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE',
         self::CANNOT_USE_INCOMPATIBLE_CLO_GOALS => 'CANNOT_USE_INCOMPATIBLE_CLO_GOALS',
         self::LOYALTY_RETENTION_GOAL_INVALID_MODE => 'LOYALTY_RETENTION_GOAL_INVALID_MODE',
+        self::HIGH_LIFETIME_VALUE_MULTIPLIER_PRESENT_BUT_VALUE_MULTIPLIER_ABSENT => 'HIGH_LIFETIME_VALUE_MULTIPLIER_PRESENT_BUT_VALUE_MULTIPLIER_ABSENT',
+        self::HIGH_LIFETIME_VALUE_MULTIPLIER_LESS_THAN_OR_EQUAL_TO_VALUE_MULTIPLIER => 'HIGH_LIFETIME_VALUE_MULTIPLIER_LESS_THAN_OR_EQUAL_TO_VALUE_MULTIPLIER',
+        self::CAMPAIGN_OVERRIDE_HIGH_LIFETIME_VALUE_MULTIPLIER_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE => 'CAMPAIGN_OVERRIDE_HIGH_LIFETIME_VALUE_MULTIPLIER_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE',
     ];
 
     public static function name($value)

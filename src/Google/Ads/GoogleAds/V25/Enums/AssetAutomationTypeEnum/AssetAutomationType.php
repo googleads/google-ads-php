@@ -130,6 +130,12 @@ class AssetAutomationType
      * Generated from protobuf enum <code>GENERATE_ANIMATED_IMAGES_FROM_OTHER_ASSETS = 13;</code>
      */
     const GENERATE_ANIMATED_IMAGES_FROM_OTHER_ASSETS = 13;
+    /**
+     * Automated video crawl.
+     *
+     * Generated from protobuf enum <code>AUTOMATED_VIDEO_CRAWL = 15;</code>
+     */
+    const AUTOMATED_VIDEO_CRAWL = 15;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -146,6 +152,7 @@ class AssetAutomationType
         self::FINAL_URL_EXPANSION_TEXT_ASSET_AUTOMATION => 'FINAL_URL_EXPANSION_TEXT_ASSET_AUTOMATION',
         self::GENERATE_VIDEOS_FROM_OTHER_ASSETS => 'GENERATE_VIDEOS_FROM_OTHER_ASSETS',
         self::GENERATE_ANIMATED_IMAGES_FROM_OTHER_ASSETS => 'GENERATE_ANIMATED_IMAGES_FROM_OTHER_ASSETS',
+        self::AUTOMATED_VIDEO_CRAWL => 'AUTOMATED_VIDEO_CRAWL',
     ];
 
     public static function name($value)

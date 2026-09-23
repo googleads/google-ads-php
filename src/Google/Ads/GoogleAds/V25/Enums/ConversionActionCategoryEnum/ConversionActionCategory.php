@@ -168,6 +168,12 @@ class ConversionActionCategory
      * Generated from protobuf enum <code>YOUTUBE_FOLLOW_ON_VIEWS = 24;</code>
      */
     const YOUTUBE_FOLLOW_ON_VIEWS = 24;
+    /**
+     * An in-app ad revenue conversion.
+     *
+     * Generated from protobuf enum <code>IN_APP_AD_REVENUE = 26;</code>
+     */
+    const IN_APP_AD_REVENUE = 26;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -194,6 +200,7 @@ class ConversionActionCategory
         self::QUALIFIED_LEAD => 'QUALIFIED_LEAD',
         self::CONVERTED_LEAD => 'CONVERTED_LEAD',
         self::YOUTUBE_FOLLOW_ON_VIEWS => 'YOUTUBE_FOLLOW_ON_VIEWS',
+        self::IN_APP_AD_REVENUE => 'IN_APP_AD_REVENUE',
     ];
 
     public static function name($value)

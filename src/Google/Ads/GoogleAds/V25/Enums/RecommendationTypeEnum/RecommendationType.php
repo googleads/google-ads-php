@@ -397,6 +397,20 @@ class RecommendationType
      * Generated from protobuf enum <code>CAMPAIGN_SPECIFIC_APP_GOAL = 59;</code>
      */
     const CAMPAIGN_SPECIFIC_APP_GOAL = 59;
+    /**
+     * Recommendation to raise target CPA when it is too low for Search
+     * campaigns.
+     *
+     * Generated from protobuf enum <code>RAISE_TARGET_CPA_PERFORMANCE_BID_TOO_LOW = 61;</code>
+     */
+    const RAISE_TARGET_CPA_PERFORMANCE_BID_TOO_LOW = 61;
+    /**
+     * Recommendation to lower target ROAS when it is too low for Search
+     * campaigns.
+     *
+     * Generated from protobuf enum <code>LOWER_TARGET_ROAS_PERFORMANCE_BID_TOO_LOW = 62;</code>
+     */
+    const LOWER_TARGET_ROAS_PERFORMANCE_BID_TOO_LOW = 62;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -456,6 +470,8 @@ class RecommendationType
         self::LEAD_FORM_ASSET => 'LEAD_FORM_ASSET',
         self::IMPROVE_DEMAND_GEN_AD_STRENGTH => 'IMPROVE_DEMAND_GEN_AD_STRENGTH',
         self::CAMPAIGN_SPECIFIC_APP_GOAL => 'CAMPAIGN_SPECIFIC_APP_GOAL',
+        self::RAISE_TARGET_CPA_PERFORMANCE_BID_TOO_LOW => 'RAISE_TARGET_CPA_PERFORMANCE_BID_TOO_LOW',
+        self::LOWER_TARGET_ROAS_PERFORMANCE_BID_TOO_LOW => 'LOWER_TARGET_ROAS_PERFORMANCE_BID_TOO_LOW',
     ];
 
     public static function name($value)

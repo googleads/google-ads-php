@@ -113,6 +113,26 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v25.resources.GoogleLocalServicesInfo google_local_services_info = 14;</code>
      */
     protected $google_local_services_info = null;
+    /**
+     * URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>string tracking_url_template = 15;</code>
+     */
+    protected $tracking_url_template = '';
+    /**
+     * A list of mappings to be used for substituting URL custom parameter tags in
+     * the `tracking_url_template`, `final_urls`, and/or `final_mobile_urls`.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.common.CustomParameter url_custom_parameters = 16;</code>
+     */
+    private $url_custom_parameters;
+    /**
+     * URL template for appending params to landing page URLs served with parallel
+     * tracking.
+     *
+     * Generated from protobuf field <code>string final_url_suffix = 17;</code>
+     */
+    protected $final_url_suffix = '';
 
     /**
      * Constructor.
@@ -160,6 +180,14 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
      *           Output only. The asset coverage of this asset group.
      *     @type \Google\Ads\GoogleAds\V25\Resources\GoogleLocalServicesInfo $google_local_services_info
      *           Local services info of the asset group.
+     *     @type string $tracking_url_template
+     *           URL template for constructing a tracking URL.
+     *     @type \Google\Ads\GoogleAds\V25\Common\CustomParameter[] $url_custom_parameters
+     *           A list of mappings to be used for substituting URL custom parameter tags in
+     *           the `tracking_url_template`, `final_urls`, and/or `final_mobile_urls`.
+     *     @type string $final_url_suffix
+     *           URL template for appending params to landing page URLs served with parallel
+     *           tracking.
      * }
      */
     public function __construct($data = NULL) {
@@ -571,6 +599,88 @@ class AssetGroup extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Resources\GoogleLocalServicesInfo::class);
         $this->google_local_services_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>string tracking_url_template = 15;</code>
+     * @return string
+     */
+    public function getTrackingUrlTemplate()
+    {
+        return $this->tracking_url_template;
+    }
+
+    /**
+     * URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>string tracking_url_template = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTrackingUrlTemplate($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tracking_url_template = $var;
+
+        return $this;
+    }
+
+    /**
+     * A list of mappings to be used for substituting URL custom parameter tags in
+     * the `tracking_url_template`, `final_urls`, and/or `final_mobile_urls`.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.common.CustomParameter url_custom_parameters = 16;</code>
+     * @return RepeatedField<\Google\Ads\GoogleAds\V25\Common\CustomParameter>
+     */
+    public function getUrlCustomParameters()
+    {
+        return $this->url_custom_parameters;
+    }
+
+    /**
+     * A list of mappings to be used for substituting URL custom parameter tags in
+     * the `tracking_url_template`, `final_urls`, and/or `final_mobile_urls`.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.common.CustomParameter url_custom_parameters = 16;</code>
+     * @param \Google\Ads\GoogleAds\V25\Common\CustomParameter[] $var
+     * @return $this
+     */
+    public function setUrlCustomParameters($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V25\Common\CustomParameter::class);
+        $this->url_custom_parameters = $arr;
+
+        return $this;
+    }
+
+    /**
+     * URL template for appending params to landing page URLs served with parallel
+     * tracking.
+     *
+     * Generated from protobuf field <code>string final_url_suffix = 17;</code>
+     * @return string
+     */
+    public function getFinalUrlSuffix()
+    {
+        return $this->final_url_suffix;
+    }
+
+    /**
+     * URL template for appending params to landing page URLs served with parallel
+     * tracking.
+     *
+     * Generated from protobuf field <code>string final_url_suffix = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFinalUrlSuffix($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->final_url_suffix = $var;
 
         return $this;
     }

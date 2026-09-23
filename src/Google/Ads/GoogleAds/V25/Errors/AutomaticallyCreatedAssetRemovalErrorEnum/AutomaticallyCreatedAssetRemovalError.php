@@ -7,7 +7,7 @@ namespace Google\Ads\GoogleAds\V25\Errors\AutomaticallyCreatedAssetRemovalErrorE
 use UnexpectedValueException;
 
 /**
- * Enum describing possible automatically created asset removal errors.
+ * Enum describing possible text customization removal errors.
  *
  * Protobuf type <code>google.ads.googleads.v25.errors.AutomaticallyCreatedAssetRemovalErrorEnum.AutomaticallyCreatedAssetRemovalError</code>
  */
@@ -50,7 +50,7 @@ class AutomaticallyCreatedAssetRemovalError
      */
     const ASSET_FIELD_TYPE_DOES_NOT_MATCH = 5;
     /**
-     * Not an automatically created asset.
+     * Not a text customization (formerly automatically created asset).
      *
      * Generated from protobuf enum <code>NOT_AN_AUTOMATICALLY_CREATED_ASSET = 6;</code>
      */

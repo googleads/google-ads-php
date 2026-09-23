@@ -26,6 +26,9 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
      * selected benchmarks source. These metrics are only returned when:
      * 1. `all_advertisers` is used as the `benchmarks_source`. Note that the
      * request `category_filter` must be set when using `all_advertisers`.
+     * 2. The request `date_range` is a subset of
+     * `supported_dates_for_all_metrics` returned by
+     * [BenchmarksService.ListBenchmarksAvailableDates][google.ads.googleads.v25.services.BenchmarksService.ListBenchmarksAvailableDates].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.ShareMetrics share_metrics = 2;</code>
      */
@@ -37,6 +40,16 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.AggregateMetrics aggregate_metrics = 3;</code>
      */
     protected $aggregate_metrics = null;
+    /**
+     * Metrics representing the customer’s competitive standing among advertisers
+     * scoped by the analysis. Percentile metrics are only returned when:
+     * 1. `all_advertisers` is used as the `benchmarks_source`. Note that the
+     * request `category_filter` must be set when using `all_advertisers`.
+     * 2. `PERCENTILE_DATA` is requested as `supplemental_data`.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.PercentileMetrics percentile_metrics = 4;</code>
+     */
+    protected $percentile_metrics = null;
 
     /**
      * Constructor.
@@ -51,9 +64,18 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
      *           selected benchmarks source. These metrics are only returned when:
      *           1. `all_advertisers` is used as the `benchmarks_source`. Note that the
      *           request `category_filter` must be set when using `all_advertisers`.
+     *           2. The request `date_range` is a subset of
+     *           `supported_dates_for_all_metrics` returned by
+     *           [BenchmarksService.ListBenchmarksAvailableDates][google.ads.googleads.v25.services.BenchmarksService.ListBenchmarksAvailableDates].
      *     @type \Google\Ads\GoogleAds\V25\Services\AggregateMetrics $aggregate_metrics
      *           Metrics calculated by aggregating values of a single metric for the
      *           customer.
+     *     @type \Google\Ads\GoogleAds\V25\Services\PercentileMetrics $percentile_metrics
+     *           Metrics representing the customer’s competitive standing among advertisers
+     *           scoped by the analysis. Percentile metrics are only returned when:
+     *           1. `all_advertisers` is used as the `benchmarks_source`. Note that the
+     *           request `category_filter` must be set when using `all_advertisers`.
+     *           2. `PERCENTILE_DATA` is requested as `supplemental_data`.
      * }
      */
     public function __construct($data = NULL) {
@@ -102,6 +124,9 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
      * selected benchmarks source. These metrics are only returned when:
      * 1. `all_advertisers` is used as the `benchmarks_source`. Note that the
      * request `category_filter` must be set when using `all_advertisers`.
+     * 2. The request `date_range` is a subset of
+     * `supported_dates_for_all_metrics` returned by
+     * [BenchmarksService.ListBenchmarksAvailableDates][google.ads.googleads.v25.services.BenchmarksService.ListBenchmarksAvailableDates].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.ShareMetrics share_metrics = 2;</code>
      * @return \Google\Ads\GoogleAds\V25\Services\ShareMetrics|null
@@ -126,6 +151,9 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
      * selected benchmarks source. These metrics are only returned when:
      * 1. `all_advertisers` is used as the `benchmarks_source`. Note that the
      * request `category_filter` must be set when using `all_advertisers`.
+     * 2. The request `date_range` is a subset of
+     * `supported_dates_for_all_metrics` returned by
+     * [BenchmarksService.ListBenchmarksAvailableDates][google.ads.googleads.v25.services.BenchmarksService.ListBenchmarksAvailableDates].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.ShareMetrics share_metrics = 2;</code>
      * @param \Google\Ads\GoogleAds\V25\Services\ShareMetrics $var
@@ -173,6 +201,50 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Services\AggregateMetrics::class);
         $this->aggregate_metrics = $var;
+
+        return $this;
+    }
+
+    /**
+     * Metrics representing the customer’s competitive standing among advertisers
+     * scoped by the analysis. Percentile metrics are only returned when:
+     * 1. `all_advertisers` is used as the `benchmarks_source`. Note that the
+     * request `category_filter` must be set when using `all_advertisers`.
+     * 2. `PERCENTILE_DATA` is requested as `supplemental_data`.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.PercentileMetrics percentile_metrics = 4;</code>
+     * @return \Google\Ads\GoogleAds\V25\Services\PercentileMetrics|null
+     */
+    public function getPercentileMetrics()
+    {
+        return $this->percentile_metrics;
+    }
+
+    public function hasPercentileMetrics()
+    {
+        return isset($this->percentile_metrics);
+    }
+
+    public function clearPercentileMetrics()
+    {
+        unset($this->percentile_metrics);
+    }
+
+    /**
+     * Metrics representing the customer’s competitive standing among advertisers
+     * scoped by the analysis. Percentile metrics are only returned when:
+     * 1. `all_advertisers` is used as the `benchmarks_source`. Note that the
+     * request `category_filter` must be set when using `all_advertisers`.
+     * 2. `PERCENTILE_DATA` is requested as `supplemental_data`.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v25.services.PercentileMetrics percentile_metrics = 4;</code>
+     * @param \Google\Ads\GoogleAds\V25\Services\PercentileMetrics $var
+     * @return $this
+     */
+    public function setPercentileMetrics($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V25\Services\PercentileMetrics::class);
+        $this->percentile_metrics = $var;
 
         return $this;
     }

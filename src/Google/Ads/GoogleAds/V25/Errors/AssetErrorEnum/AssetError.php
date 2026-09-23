@@ -234,7 +234,8 @@ class AssetError
      */
     const CANNOT_MODIFY_ASSET_SOURCE = 35;
     /**
-     * User can not modify the automatically created asset.
+     * User cannot modify text customization (formerly automatically created
+     * asset).
      *
      * Generated from protobuf enum <code>CANNOT_MODIFY_AUTOMATICALLY_CREATED_ASSET = 36;</code>
      */
@@ -246,7 +247,7 @@ class AssetError
      */
     const LEAD_FORM_LOCATION_ANSWER_TYPE_DISALLOWED = 37;
     /**
-     * Page Feed label text contains invalid characters.
+     * Page URL inclusion label text contains invalid characters.
      *
      * Generated from protobuf enum <code>PAGE_FEED_INVALID_LABEL_TEXT = 38;</code>
      */

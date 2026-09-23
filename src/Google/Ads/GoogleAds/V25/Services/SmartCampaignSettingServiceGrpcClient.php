@@ -64,4 +64,22 @@ class SmartCampaignSettingServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Generates a Performance Max (PMax) draft campaign from an existing Smart
+     * campaign, initialized with a status of [CampaignStatus.PAUSED] and a
+     * creation status of [CampaignCreationStatus.INCOMPLETE]. Returns the draft
+     * PMax campaign ID and related entity IDs.
+     * @param \Google\Ads\GoogleAds\V25\Services\GeneratePMaxDraftCampaignRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall<\Google\Ads\GoogleAds\V25\Services\GeneratePMaxDraftCampaignResponse>
+     */
+    public function GeneratePMaxDraftCampaign(\Google\Ads\GoogleAds\V25\Services\GeneratePMaxDraftCampaignRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v25.services.SmartCampaignSettingService/GeneratePMaxDraftCampaign',
+        $argument,
+        ['\Google\Ads\GoogleAds\V25\Services\GeneratePMaxDraftCampaignResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

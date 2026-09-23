@@ -19,7 +19,7 @@
 namespace Google\Ads\GoogleAds\V25\Services;
 
 /**
- * Service to remove automatically created assets.
+ * Service to remove text customization (formerly automatically created assets).
  */
 class AutomaticallyCreatedAssetRemovalServiceGrpcClient extends \Grpc\BaseStub {
 
@@ -33,7 +33,8 @@ class AutomaticallyCreatedAssetRemovalServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Removes automatically created assets from a campaign.
+     * Removes text customization (formerly automatically created assets) from a
+     * campaign.
      *
      * List of thrown errors:
      *   [AuthenticationError]()

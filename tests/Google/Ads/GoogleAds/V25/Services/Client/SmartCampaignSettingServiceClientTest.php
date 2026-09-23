@@ -23,6 +23,8 @@
 namespace Google\Ads\GoogleAds\V25\Services\Client;
 
 use Google\Ads\GoogleAds\V25\Services\Client\SmartCampaignSettingServiceClient;
+use Google\Ads\GoogleAds\V25\Services\GeneratePMaxDraftCampaignRequest;
+use Google\Ads\GoogleAds\V25\Services\GeneratePMaxDraftCampaignResponse;
 use Google\Ads\GoogleAds\V25\Services\GetSmartCampaignStatusRequest;
 use Google\Ads\GoogleAds\V25\Services\GetSmartCampaignStatusResponse;
 use Google\Ads\GoogleAds\V25\Services\MutateSmartCampaignSettingsRequest;
@@ -60,6 +62,76 @@ class SmartCampaignSettingServiceClientTest extends GeneratedTest
             'credentials' => $this->createCredentials(),
         ];
         return new SmartCampaignSettingServiceClient($options);
+    }
+
+    /** @test */
+    public function generatePMaxDraftCampaignTest()
+    {
+        $transport = $this->createTransport();
+        $gapicClient = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $pmaxCampaign = 'pmaxCampaign-1978059269';
+        $campaignBudget = 'campaignBudget1992382804';
+        $assetGroup = 'assetGroup1586122864';
+        $validatedInfo = 'validatedInfo137112639';
+        $expectedResponse = new GeneratePMaxDraftCampaignResponse();
+        $expectedResponse->setPmaxCampaign($pmaxCampaign);
+        $expectedResponse->setCampaignBudget($campaignBudget);
+        $expectedResponse->setAssetGroup($assetGroup);
+        $expectedResponse->setValidatedInfo($validatedInfo);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedResourceName = $gapicClient->smartCampaignSettingName('[CUSTOMER_ID]', '[CAMPAIGN_ID]');
+        $request = (new GeneratePMaxDraftCampaignRequest())
+            ->setResourceName($formattedResourceName);
+        $response = $gapicClient->generatePMaxDraftCampaign($request);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v25.services.SmartCampaignSettingService/GeneratePMaxDraftCampaign', $actualFuncCall);
+        $actualValue = $actualRequestObject->getResourceName();
+        $this->assertProtobufEquals($formattedResourceName, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function generatePMaxDraftCampaignExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $gapicClient = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedResourceName = $gapicClient->smartCampaignSettingName('[CUSTOMER_ID]', '[CAMPAIGN_ID]');
+        $request = (new GeneratePMaxDraftCampaignRequest())
+            ->setResourceName($formattedResourceName);
+        try {
+            $gapicClient->generatePMaxDraftCampaign($request);
+            // If the $gapicClient method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
     }
 
     /** @test */
@@ -193,7 +265,7 @@ class SmartCampaignSettingServiceClientTest extends GeneratedTest
     }
 
     /** @test */
-    public function getSmartCampaignStatusAsyncTest()
+    public function generatePMaxDraftCampaignAsyncTest()
     {
         $transport = $this->createTransport();
         $gapicClient = $this->createClient([
@@ -201,19 +273,27 @@ class SmartCampaignSettingServiceClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $expectedResponse = new GetSmartCampaignStatusResponse();
+        $pmaxCampaign = 'pmaxCampaign-1978059269';
+        $campaignBudget = 'campaignBudget1992382804';
+        $assetGroup = 'assetGroup1586122864';
+        $validatedInfo = 'validatedInfo137112639';
+        $expectedResponse = new GeneratePMaxDraftCampaignResponse();
+        $expectedResponse->setPmaxCampaign($pmaxCampaign);
+        $expectedResponse->setCampaignBudget($campaignBudget);
+        $expectedResponse->setAssetGroup($assetGroup);
+        $expectedResponse->setValidatedInfo($validatedInfo);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedResourceName = $gapicClient->smartCampaignSettingName('[CUSTOMER_ID]', '[CAMPAIGN_ID]');
-        $request = (new GetSmartCampaignStatusRequest())
+        $request = (new GeneratePMaxDraftCampaignRequest())
             ->setResourceName($formattedResourceName);
-        $response = $gapicClient->getSmartCampaignStatusAsync($request)->wait();
+        $response = $gapicClient->generatePMaxDraftCampaignAsync($request)->wait();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v25.services.SmartCampaignSettingService/GetSmartCampaignStatus', $actualFuncCall);
+        $this->assertSame('/google.ads.googleads.v25.services.SmartCampaignSettingService/GeneratePMaxDraftCampaign', $actualFuncCall);
         $actualValue = $actualRequestObject->getResourceName();
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
         $this->assertTrue($transport->isExhausted());

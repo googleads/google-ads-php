@@ -23,6 +23,18 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v25.services.SmartCampaignSettingService' => [
+            'GeneratePMaxDraftCampaign' => [
+                'callType' => \Google\ApiCore\Call::UNARY_CALL,
+                'responseType' => 'Google\Ads\GoogleAds\V25\Services\GeneratePMaxDraftCampaignResponse',
+                'headerParams' => [
+                    [
+                        'keyName' => 'resource_name',
+                        'fieldAccessors' => [
+                            'getResourceName',
+                        ],
+                    ],
+                ],
+            ],
             'GetSmartCampaignStatus' => [
                 'callType' => \Google\ApiCore\Call::UNARY_CALL,
                 'responseType' => 'Google\Ads\GoogleAds\V25\Services\GetSmartCampaignStatusResponse',

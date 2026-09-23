@@ -150,7 +150,8 @@ class AssetLinkError
      */
     const CANNOT_CREATE_AUTOMATICALLY_CREATED_LINKS = 19;
     /**
-     * Advertiser links cannot link to automatically created asset.
+     * Advertiser links cannot link to text customization (formerly
+     * automatically created asset).
      *
      * Generated from protobuf enum <code>CANNOT_LINK_TO_AUTOMATICALLY_CREATED_ASSET = 20;</code>
      */

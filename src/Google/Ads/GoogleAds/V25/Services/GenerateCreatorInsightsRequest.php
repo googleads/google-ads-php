@@ -91,8 +91,8 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
      *           or
      *           [sub_country_locations][google.ads.googleads.v25.services.GenerateCreatorInsightsRequest.sub_country_locations].
      *     @type \Google\Ads\GoogleAds\V25\Services\GenerateCreatorInsightsRequest\YouTubeChannels $search_channels
-     *           YouTube Channel IDs for Creator Insights. Data fetched for channels is
-     *           based on the list of countries specified in
+     *           YouTube Channel IDs and YouTube Channel handles for Creator Insights.
+     *           Data fetched for channels is based on the list of countries specified in
      *           [country_locations][google.ads.googleads.v25.services.GenerateCreatorInsightsRequest.country_locations].
      *     @type \Google\Ads\GoogleAds\V25\Services\SearchTopics $search_topics
      *           Search for relevant creators who make content about the specified topics.
@@ -324,8 +324,8 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Channel IDs for Creator Insights. Data fetched for channels is
-     * based on the list of countries specified in
+     * YouTube Channel IDs and YouTube Channel handles for Creator Insights.
+     * Data fetched for channels is based on the list of countries specified in
      * [country_locations][google.ads.googleads.v25.services.GenerateCreatorInsightsRequest.country_locations].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.GenerateCreatorInsightsRequest.YouTubeChannels search_channels = 4;</code>
@@ -342,8 +342,8 @@ class GenerateCreatorInsightsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Channel IDs for Creator Insights. Data fetched for channels is
-     * based on the list of countries specified in
+     * YouTube Channel IDs and YouTube Channel handles for Creator Insights.
+     * Data fetched for channels is based on the list of countries specified in
      * [country_locations][google.ads.googleads.v25.services.GenerateCreatorInsightsRequest.country_locations].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.services.GenerateCreatorInsightsRequest.YouTubeChannels search_channels = 4;</code>

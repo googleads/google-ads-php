@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * A Page Feed asset.
+ * A Page URL inclusion asset.
  *
  * Generated from protobuf message <code>google.ads.googleads.v25.common.PageFeedAsset</code>
  */

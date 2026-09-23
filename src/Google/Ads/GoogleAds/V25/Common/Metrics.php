@@ -3013,6 +3013,27 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional double original_conversion_value = 531;</code>
      */
     protected $original_conversion_value = null;
+    /**
+     * Potential impressions representing the total view-capped eligible
+     * impressions available across the query context.
+     *
+     * Generated from protobuf field <code>optional int64 vertical_ads_potential_impressions = 532;</code>
+     */
+    protected $vertical_ads_potential_impressions = null;
+    /**
+     * Click-weighted average daily rate in micros, including taxes and fees, over
+     * the total length of stay.
+     *
+     * Generated from protobuf field <code>optional int64 vertical_ads_average_booking_value_micros = 533;</code>
+     */
+    protected $vertical_ads_average_booking_value_micros = null;
+    /**
+     * Percentage delta comparing the advertiser's offered price against the
+     * lowest competing price for the same property.
+     *
+     * Generated from protobuf field <code>optional double vertical_ads_price_difference_percentage = 534;</code>
+     */
+    protected $vertical_ads_price_difference_percentage = null;
 
     /**
      * Constructor.
@@ -4654,6 +4675,15 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The original conversion value from biddable conversions. This is the
      *           unadjusted value of conversions before any value rule adjustments, such as
      *           conversion value rules or lifecycle goals adjustments are applied.
+     *     @type int|string $vertical_ads_potential_impressions
+     *           Potential impressions representing the total view-capped eligible
+     *           impressions available across the query context.
+     *     @type int|string $vertical_ads_average_booking_value_micros
+     *           Click-weighted average daily rate in micros, including taxes and fees, over
+     *           the total length of stay.
+     *     @type float $vertical_ads_price_difference_percentage
+     *           Percentage delta comparing the advertiser's offered price against the
+     *           lowest competing price for the same property.
      * }
      */
     public function __construct($data = NULL) {
@@ -18737,6 +18767,120 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->original_conversion_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Potential impressions representing the total view-capped eligible
+     * impressions available across the query context.
+     *
+     * Generated from protobuf field <code>optional int64 vertical_ads_potential_impressions = 532;</code>
+     * @return int|string
+     */
+    public function getVerticalAdsPotentialImpressions()
+    {
+        return isset($this->vertical_ads_potential_impressions) ? $this->vertical_ads_potential_impressions : 0;
+    }
+
+    public function hasVerticalAdsPotentialImpressions()
+    {
+        return isset($this->vertical_ads_potential_impressions);
+    }
+
+    public function clearVerticalAdsPotentialImpressions()
+    {
+        unset($this->vertical_ads_potential_impressions);
+    }
+
+    /**
+     * Potential impressions representing the total view-capped eligible
+     * impressions available across the query context.
+     *
+     * Generated from protobuf field <code>optional int64 vertical_ads_potential_impressions = 532;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setVerticalAdsPotentialImpressions($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->vertical_ads_potential_impressions = $var;
+
+        return $this;
+    }
+
+    /**
+     * Click-weighted average daily rate in micros, including taxes and fees, over
+     * the total length of stay.
+     *
+     * Generated from protobuf field <code>optional int64 vertical_ads_average_booking_value_micros = 533;</code>
+     * @return int|string
+     */
+    public function getVerticalAdsAverageBookingValueMicros()
+    {
+        return isset($this->vertical_ads_average_booking_value_micros) ? $this->vertical_ads_average_booking_value_micros : 0;
+    }
+
+    public function hasVerticalAdsAverageBookingValueMicros()
+    {
+        return isset($this->vertical_ads_average_booking_value_micros);
+    }
+
+    public function clearVerticalAdsAverageBookingValueMicros()
+    {
+        unset($this->vertical_ads_average_booking_value_micros);
+    }
+
+    /**
+     * Click-weighted average daily rate in micros, including taxes and fees, over
+     * the total length of stay.
+     *
+     * Generated from protobuf field <code>optional int64 vertical_ads_average_booking_value_micros = 533;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setVerticalAdsAverageBookingValueMicros($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->vertical_ads_average_booking_value_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Percentage delta comparing the advertiser's offered price against the
+     * lowest competing price for the same property.
+     *
+     * Generated from protobuf field <code>optional double vertical_ads_price_difference_percentage = 534;</code>
+     * @return float
+     */
+    public function getVerticalAdsPriceDifferencePercentage()
+    {
+        return isset($this->vertical_ads_price_difference_percentage) ? $this->vertical_ads_price_difference_percentage : 0.0;
+    }
+
+    public function hasVerticalAdsPriceDifferencePercentage()
+    {
+        return isset($this->vertical_ads_price_difference_percentage);
+    }
+
+    public function clearVerticalAdsPriceDifferencePercentage()
+    {
+        unset($this->vertical_ads_price_difference_percentage);
+    }
+
+    /**
+     * Percentage delta comparing the advertiser's offered price against the
+     * lowest competing price for the same property.
+     *
+     * Generated from protobuf field <code>optional double vertical_ads_price_difference_percentage = 534;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setVerticalAdsPriceDifferencePercentage($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->vertical_ads_price_difference_percentage = $var;
 
         return $this;
     }

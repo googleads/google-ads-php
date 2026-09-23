@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Container for enum describing possible automatically created asset removal
+ * Container for enum describing possible text customization removal
  * errors.
  *
  * Generated from protobuf message <code>google.ads.googleads.v25.errors.AutomaticallyCreatedAssetRemovalErrorEnum</code>

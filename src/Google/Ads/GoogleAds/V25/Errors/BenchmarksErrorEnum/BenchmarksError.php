@@ -33,11 +33,20 @@ class BenchmarksError
      * Generated from protobuf enum <code>MAX_QUERY_COMPLEXITY_EXCEEDED = 2;</code>
      */
     const MAX_QUERY_COMPLEXITY_EXCEEDED = 2;
+    /**
+     * No metrics were found for the given combination of inputs (vertical or
+     * categories supplied, location, date range, and products). Try selecting
+     * a different combination of inputs.
+     *
+     * Generated from protobuf enum <code>NO_METRICS_FOUND = 3;</code>
+     */
+    const NO_METRICS_FOUND = 3;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::MAX_QUERY_COMPLEXITY_EXCEEDED => 'MAX_QUERY_COMPLEXITY_EXCEEDED',
+        self::NO_METRICS_FOUND => 'NO_METRICS_FOUND',
     ];
 
     public static function name($value)

@@ -85,6 +85,14 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $customer_benchmarks_group = '';
     /**
+     * Optional. Optional features to include in the response. By default, only
+     * core data is returned. Including supplemental data here will populate
+     * additional metrics in the response such as percentile metrics.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.enums.BenchmarksSupplementalDataEnum.BenchmarksSupplementalData supplemental_data = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $supplemental_data;
+    /**
      * Additional information on the application issuing the request.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v25.common.AdditionalApplicationInfo application_info = 8;</code>
@@ -151,6 +159,10 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
      *           default currency for monetary values is USD.
      *     @type string $customer_benchmarks_group
      *           The name of the customer being planned for. This is a user-defined value.
+     *     @type int[] $supplemental_data
+     *           Optional. Optional features to include in the response. By default, only
+     *           core data is returned. Including supplemental data here will populate
+     *           additional metrics in the response such as percentile metrics.
      *     @type \Google\Ads\GoogleAds\V25\Common\AdditionalApplicationInfo $application_info
      *           Additional information on the application issuing the request.
      * }
@@ -478,6 +490,36 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->customer_benchmarks_group = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Optional features to include in the response. By default, only
+     * core data is returned. Including supplemental data here will populate
+     * additional metrics in the response such as percentile metrics.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.enums.BenchmarksSupplementalDataEnum.BenchmarksSupplementalData supplemental_data = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return RepeatedField<int>
+     */
+    public function getSupplementalData()
+    {
+        return $this->supplemental_data;
+    }
+
+    /**
+     * Optional. Optional features to include in the response. By default, only
+     * core data is returned. Including supplemental data here will populate
+     * additional metrics in the response such as percentile metrics.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v25.enums.BenchmarksSupplementalDataEnum.BenchmarksSupplementalData supplemental_data = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param int[] $var
+     * @return $this
+     */
+    public function setSupplementalData($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V25\Enums\BenchmarksSupplementalDataEnum\BenchmarksSupplementalData::class);
+        $this->supplemental_data = $arr;
 
         return $this;
     }
