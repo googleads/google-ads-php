@@ -252,7 +252,7 @@ class AddPrices
         string $currencyCode,
         int $unit,
         string $finalUrl,
-        string $finalMobileUrl = null
+        ?string $finalMobileUrl = null
     ) {
         $priceOffering = new PriceOffering(
             [

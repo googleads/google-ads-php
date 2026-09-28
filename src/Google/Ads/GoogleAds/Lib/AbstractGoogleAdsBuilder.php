@@ -30,8 +30,8 @@ abstract class AbstractGoogleAdsBuilder implements GoogleAdsBuilder
     private $environmentalVariables;
 
     public function __construct(
-        ConfigurationLoader $configurationLoader = null,
-        EnvironmentalVariables $environmentalVariables = null
+        ?ConfigurationLoader $configurationLoader = null,
+        ?EnvironmentalVariables $environmentalVariables = null
     ) {
         $this->configurationLoader = $configurationLoader ?? new ConfigurationLoader();
         $this->environmentalVariables = $environmentalVariables ?? new EnvironmentalVariables();
@@ -47,7 +47,7 @@ abstract class AbstractGoogleAdsBuilder implements GoogleAdsBuilder
      * @return self this builder populated from the configuration
      * @throws InvalidArgumentException if the configuration file could not be found
      */
-    public function fromFile(string $path = null): GoogleAdsBuilder
+    public function fromFile(?string $path = null): GoogleAdsBuilder
     {
         if ($path === null) {
             $path = $this->environmentalVariables->get(
