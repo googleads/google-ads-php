@@ -43,6 +43,7 @@ use Google\Ads\GoogleAds\V25\Enums\AssetGroupStatusEnum\AssetGroupStatus;
 use Google\Ads\GoogleAds\V25\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
 use Google\Ads\GoogleAds\V25\Enums\CampaignStatusEnum\CampaignStatus;
 use Google\Ads\GoogleAds\V25\Enums\EuPoliticalAdvertisingStatusEnum\EuPoliticalAdvertisingStatus;
+use Google\Ads\GoogleAds\V25\Enums\MessagingRestrictionTypeEnum\MessagingRestrictionType;
 use Google\Ads\GoogleAds\V25\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V25\Resources\Asset;
 use Google\Ads\GoogleAds\V25\Resources\AssetGroup;
@@ -50,6 +51,8 @@ use Google\Ads\GoogleAds\V25\Resources\AssetGroupAsset;
 use Google\Ads\GoogleAds\V25\Resources\AssetGroupSignal;
 use Google\Ads\GoogleAds\V25\Resources\Campaign;
 use Google\Ads\GoogleAds\V25\Resources\Campaign\AssetAutomationSetting;
+use Google\Ads\GoogleAds\V25\Resources\Campaign\MessagingRestriction;
+use Google\Ads\GoogleAds\V25\Resources\Campaign\TextGuidelines;
 use Google\Ads\GoogleAds\V25\Resources\CampaignAsset;
 use Google\Ads\GoogleAds\V25\Resources\CampaignBudget;
 use Google\Ads\GoogleAds\V25\Resources\CampaignCriterion;
@@ -307,6 +310,26 @@ class AddPerformanceMaxCampaign
         int $customerId,
         bool $brandGuidelinesEnabled
     ): MutateOperation {
+        // [START add_performance_max_text_guidelines]
+        $textGuidelines = new TextGuidelines(
+            [
+            // Specifies a list of terms that should not be used in any auto-generated
+            // text assets.
+            'term_exclusions' => ['cheap', 'free'],
+            // Specifies freeform messaging restriction prompts that will apply to all
+            // auto-generated text assets.
+            'messaging_restrictions' => [
+                new MessagingRestriction(
+                    [
+                    'restriction_text' => "Don't mention competitor names",
+                    'restriction_type' => MessagingRestrictionType::RESTRICTION_BASED_EXCLUSION
+                    ]
+                )
+            ]
+            ]
+        );
+        // [END add_performance_max_text_guidelines]
+
         // Creates a mutate operation that creates a campaign operation.
         return new MutateOperation(
             [
@@ -372,6 +395,9 @@ class AddPerformanceMaxCampaign
                     // on brand guidelines, see
                     // https://support.google.com/google-ads/answer/14934472.
                     'brand_guidelines_enabled' => $brandGuidelinesEnabled,
+
+                    // Sets the text guidelines.
+                    'text_guidelines' => $textGuidelines,
 
                     // Declare whether or not this campaign serves political ads targeting the EU.
                     'contains_eu_political_advertising' =>
