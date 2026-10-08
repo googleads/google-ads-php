@@ -414,15 +414,15 @@ class AddCustomerMatchUserList
             // The first user data has an email address and a phone number.
             'email' => 'dana@example.com',
             // Phone number to be converted to E.164 format, with a leading '+' as required. This
-            // includes whitespace that will be removed later.
-            'phone' => '+1 800 5550101'
+            // includes whitespace, dashes, and parentheses that will be removed later.
+            'phone' => '+1 (800) 555-0101'
         ];
         $rawRecords[] = $rawRecord1;
 
         // The second user data has an email address, a mailing address, and a phone number.
         $rawRecord2 = [
-            // Email address that includes a period (.) before the Gmail domain.
-            'email' => 'alex.2@example.com',
+            // Email address that includes a period (.) and plus (+) suffix before the Gmail domain.
+            'email' => 'alex.2+myalias@gmail.com',
             // Address that includes all four required elements: first name, last name, country
             // code, and postal code.
             'firstName' => 'Alex',
@@ -430,7 +430,7 @@ class AddCustomerMatchUserList
             'countryCode' => 'US',
             'postalCode' => '94045',
             // Phone number to be converted to E.164 format, with a leading '+' as required.
-            'phone' => '+1 800 5550102',
+            'phone' => '+1 800-555-0102',
         ];
         $rawRecords[] = $rawRecord2;
 
@@ -467,7 +467,7 @@ class AddCustomerMatchUserList
             if (array_key_exists('email', $rawRecord)) {
                 $hashedEmailIdentifier = new UserIdentifier(
                     [
-                    'hashed_email' => self::normalizeAndHash($rawRecord['email'], true)
+                    'hashed_email' => self::normalizeAndHashEmailAddress($rawRecord['email'])
                     ]
                 );
                 // Adds the hashed email identifier to the user identifiers list.
@@ -478,10 +478,10 @@ class AddCustomerMatchUserList
             if (array_key_exists('phone', $rawRecord)) {
                 $hashedPhoneNumberIdentifier = new UserIdentifier(
                     [
-                    'hashed_phone_number' => self::normalizeAndHash($rawRecord['phone'], true)
+                    'hashed_phone_number' => self::normalizeAndHashPhoneNumber($rawRecord['phone'])
                     ]
                 );
-                // Adds the hashed email identifier to the user identifiers list.
+                // Adds the hashed phone number identifier to the user identifiers list.
                 $userIdentifiers[] = $hashedPhoneNumberIdentifier;
             }
 
@@ -684,6 +684,56 @@ class AddCustomerMatchUserList
             $normalized = trim($normalized);
         }
         return hash('sha256', $normalized);
+    }
+
+    /**
+     * Returns the result of normalizing and hashing an email address. For this use case, Google
+     * Ads requires removal of any '.' characters or trailing '+' and characters that follow it
+     * from the username portion of the email address if the domain is "gmail.com" or
+     * "googlemail.com".
+     *
+     * @param  string $emailAddress the email address to normalize and hash
+     * @return string the normalized and hashed email address
+     */
+    private static function normalizeAndHashEmailAddress(string $emailAddress): string
+    {
+        // Removes all whitespace (leading, trailing, and intermediate) from the email address.
+        $normalizedEmail = preg_replace('/\s+/', '', strtolower($emailAddress));
+        $emailParts = explode('@', $normalizedEmail, 2);
+        if (
+            count($emailParts) === 2
+            && preg_match('/^(gmail|googlemail)\.com$/', $emailParts[1])
+        ) {
+            // Removes any '.' characters from the portion of the email address before the domain
+            // if the domain is gmail.com or googlemail.com.
+            $emailParts[0] = str_replace('.', '', $emailParts[0]);
+            // Removes any '+' and all characters that follow it from the portion of the email
+            // address before the domain if the domain is gmail.com or googlemail.com.
+            $emailParts[0] = preg_replace('/\+.*/', '', $emailParts[0]);
+            $normalizedEmail = sprintf('%s@%s', $emailParts[0], $emailParts[1]);
+        }
+        return self::normalizeAndHash($normalizedEmail, true);
+    }
+
+    /**
+     * Returns the result of normalizing and hashing a phone number. For this use case, Google Ads
+     * requires phone numbers to be in E.164 format.
+     *
+     * @param  string $phoneNumber the phone number to normalize and hash
+     * @return string the normalized and hashed phone number
+     * @throws \InvalidArgumentException if the phone number is not in E.164 format
+     */
+    private static function normalizeAndHashPhoneNumber(string $phoneNumber): string
+    {
+        // Removes non-digit characters and prepends a leading '+' sign.
+        $digitsOnly = preg_replace('/[^0-9]/', '', $phoneNumber);
+        $formattedPhone = '+' . $digitsOnly;
+        if (!preg_match('/^\+[1-9]\d{6,14}$/', $formattedPhone)) {
+            throw new \InvalidArgumentException(
+                "Phone number must be in E.164 format: $phoneNumber"
+            );
+        }
+        return self::normalizeAndHash($formattedPhone, true);
     }
 }
 

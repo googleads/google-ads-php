@@ -580,14 +580,21 @@ class UploadStoreSalesTransactions
         ?string $languageCode,
         ?int $quantity
     ): array {
-        // Creates the first transaction for upload based on an email address and state.
+        // Creates the first transaction for upload based on an email address, phone number, and
+        // state.
         $userDataWithEmailAddress = new UserData(
             [
             'user_identifiers' => [
                 new UserIdentifier(
                     [
                     // Email addresses must be normalized and hashed.
-                    'hashed_email' => self::normalizeAndHash('dana@example.com')
+                    'hashed_email' => self::normalizeAndHashEmailAddress('dana.2+myalias@gmail.com')
+                    ]
+                ),
+                new UserIdentifier(
+                    [
+                    // Phone numbers must be normalized and hashed.
+                    'hashed_phone_number' => self::normalizeAndHashPhoneNumber('+1 (800) 555-0101')
                     ]
                 ),
                 new UserIdentifier(
@@ -704,6 +711,56 @@ class UploadStoreSalesTransactions
     private static function normalizeAndHash(string $value): string
     {
         return hash('sha256', strtolower(trim($value)));
+    }
+
+    /**
+     * Returns the result of normalizing and hashing an email address. For this use case, Google
+     * Ads requires removal of any '.' characters or trailing '+' and characters that follow it
+     * from the username portion of the email address if the domain is "gmail.com" or
+     * "googlemail.com".
+     *
+     * @param  string $emailAddress the email address to normalize and hash
+     * @return string the normalized and hashed email address
+     */
+    private static function normalizeAndHashEmailAddress(string $emailAddress): string
+    {
+        // Removes all whitespace (leading, trailing, and intermediate) from the email address.
+        $normalizedEmail = preg_replace('/\s+/', '', strtolower($emailAddress));
+        $emailParts = explode('@', $normalizedEmail, 2);
+        if (
+            count($emailParts) === 2
+            && preg_match('/^(gmail|googlemail)\.com$/', $emailParts[1])
+        ) {
+            // Removes any '.' characters from the portion of the email address before the domain
+            // if the domain is gmail.com or googlemail.com.
+            $emailParts[0] = str_replace('.', '', $emailParts[0]);
+            // Removes any '+' and all characters that follow it from the portion of the email
+            // address before the domain if the domain is gmail.com or googlemail.com.
+            $emailParts[0] = preg_replace('/\+.*/', '', $emailParts[0]);
+            $normalizedEmail = sprintf('%s@%s', $emailParts[0], $emailParts[1]);
+        }
+        return self::normalizeAndHash($normalizedEmail);
+    }
+
+    /**
+     * Returns the result of normalizing and hashing a phone number. For this use case, Google Ads
+     * requires phone numbers to be in E.164 format.
+     *
+     * @param  string $phoneNumber the phone number to normalize and hash
+     * @return string the normalized and hashed phone number
+     * @throws \InvalidArgumentException if the phone number is not in E.164 format
+     */
+    private static function normalizeAndHashPhoneNumber(string $phoneNumber): string
+    {
+        // Removes non-digit characters and prepends a leading '+' sign.
+        $digitsOnly = preg_replace('/[^0-9]/', '', $phoneNumber);
+        $formattedPhone = '+' . $digitsOnly;
+        if (!preg_match('/^\+[1-9]\d{6,14}$/', $formattedPhone)) {
+            throw new \InvalidArgumentException(
+                "Phone number must be in E.164 format: $phoneNumber"
+            );
+        }
+        return self::normalizeAndHash($formattedPhone);
     }
 
     /**

@@ -222,10 +222,10 @@ class UploadEnhancedConversionsForLeads
         // ]);
 
         $rawRecord = [
-            // Email address that includes a period (.) before the Gmail domain.
-            'email' => 'alex.2@example.com',
+            // Email address that includes a period (.) and plus (+) suffix before the Gmail domain.
+            'email' => 'alex.2+myalias@gmail.com',
             // Phone number to be converted to E.164 format, with a leading '+' as required.
-            'phone' => '+1 800 5550102',
+            'phone' => '+1 (800) 555-0102',
             // This example lets you input conversion details as arguments, but in reality you might
             // store this data alongside other user data, so we include it in this sample user
             // record.
@@ -266,14 +266,13 @@ class UploadEnhancedConversionsForLeads
         if (array_key_exists('phone', $rawRecord)) {
             $hashedPhoneNumberIdentifier = new UserIdentifier(
                 [
-                'hashed_phone_number' => self::normalizeAndHash(
+                'hashed_phone_number' => self::normalizeAndHashPhoneNumber(
                     $hashAlgorithm,
-                    $rawRecord['phone'],
-                    true
+                    $rawRecord['phone']
                 )
                 ]
             );
-            // Adds the hashed email identifier to the user identifiers list.
+            // Adds the hashed phone number identifier to the user identifiers list.
             $userIdentifiers[] = $hashedPhoneNumberIdentifier;
         }
 
@@ -399,7 +398,9 @@ class UploadEnhancedConversionsForLeads
 
     /**
      * Returns the result of normalizing and hashing an email address. For this use case, Google
-     * Ads requires removal of any '.' characters preceding "gmail.com" or "googlemail.com".
+     * Ads requires removal of any '.' characters or trailing '+' and characters that follow it
+     * from the username portion of the email address if the domain is "gmail.com" or
+     * "googlemail.com".
      *
      * @param  string $hashAlgorithm the hash algorithm to use
      * @param  string $emailAddress  the email address to normalize and hash
@@ -409,18 +410,46 @@ class UploadEnhancedConversionsForLeads
         string $hashAlgorithm,
         string $emailAddress
     ): string {
-        $normalizedEmail = strtolower($emailAddress);
-        $emailParts = explode("@", $normalizedEmail);
+        // Removes all whitespace (leading, trailing, and intermediate) from the email address.
+        $normalizedEmail = preg_replace('/\s+/', '', strtolower($emailAddress));
+        $emailParts = explode('@', $normalizedEmail, 2);
         if (
-            count($emailParts) > 1
-            && preg_match('/^(gmail|googlemail)\.com\s*/', $emailParts[1])
+            count($emailParts) === 2
+            && preg_match('/^(gmail|googlemail)\.com$/', $emailParts[1])
         ) {
             // Removes any '.' characters from the portion of the email address before the domain
             // if the domain is gmail.com or googlemail.com.
-            $emailParts[0] = str_replace(".", "", $emailParts[0]);
+            $emailParts[0] = str_replace('.', '', $emailParts[0]);
+            // Removes any '+' and all characters that follow it from the portion of the email
+            // address before the domain if the domain is gmail.com or googlemail.com.
+            $emailParts[0] = preg_replace('/\+.*/', '', $emailParts[0]);
             $normalizedEmail = sprintf('%s@%s', $emailParts[0], $emailParts[1]);
         }
         return self::normalizeAndHash($hashAlgorithm, $normalizedEmail);
+    }
+
+    /**
+     * Returns the result of normalizing and hashing a phone number. For this use case, Google Ads
+     * requires phone numbers to be in E.164 format.
+     *
+     * @param  string $hashAlgorithm the hash algorithm to use
+     * @param  string $phoneNumber   the phone number to normalize and hash
+     * @return string the normalized and hashed phone number
+     * @throws \InvalidArgumentException if the phone number is not in E.164 format
+     */
+    private static function normalizeAndHashPhoneNumber(
+        string $hashAlgorithm,
+        string $phoneNumber
+    ): string {
+        // Removes non-digit characters and prepends a leading '+' sign.
+        $digitsOnly = preg_replace('/[^0-9]/', '', $phoneNumber);
+        $formattedPhone = '+' . $digitsOnly;
+        if (!preg_match('/^\+[1-9]\d{6,14}$/', $formattedPhone)) {
+            throw new \InvalidArgumentException(
+                "Phone number must be in E.164 format: $phoneNumber"
+            );
+        }
+        return self::normalizeAndHash($hashAlgorithm, $formattedPhone);
     }
     // [END normalize_and_hash]
 }
