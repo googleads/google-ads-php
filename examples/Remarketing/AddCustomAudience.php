@@ -25,17 +25,17 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsException;
-use Google\Ads\GoogleAds\V25\Enums\CustomAudienceMemberTypeEnum\CustomAudienceMemberType;
-use Google\Ads\GoogleAds\V25\Enums\CustomAudienceStatusEnum\CustomAudienceStatus;
-use Google\Ads\GoogleAds\V25\Enums\CustomAudienceTypeEnum\CustomAudienceType;
-use Google\Ads\GoogleAds\V25\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V25\Resources\CustomAudience;
-use Google\Ads\GoogleAds\V25\Resources\CustomAudienceMember;
-use Google\Ads\GoogleAds\V25\Services\CustomAudienceOperation;
-use Google\Ads\GoogleAds\V25\Services\MutateCustomAudiencesRequest;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsException;
+use Google\Ads\GoogleAds\V26\Enums\CustomAudienceMemberTypeEnum\CustomAudienceMemberType;
+use Google\Ads\GoogleAds\V26\Enums\CustomAudienceStatusEnum\CustomAudienceStatus;
+use Google\Ads\GoogleAds\V26\Enums\CustomAudienceTypeEnum\CustomAudienceType;
+use Google\Ads\GoogleAds\V26\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V26\Resources\CustomAudience;
+use Google\Ads\GoogleAds\V26\Resources\CustomAudienceMember;
+use Google\Ads\GoogleAds\V26\Services\CustomAudienceOperation;
+use Google\Ads\GoogleAds\V26\Services\MutateCustomAudiencesRequest;
 use Google\ApiCore\ApiException;
 
 /**

@@ -25,15 +25,15 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsException;
-use Google\Ads\GoogleAds\V25\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V25\Enums\SeasonalityEventScopeEnum\SeasonalityEventScope;
-use Google\Ads\GoogleAds\V25\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V25\Resources\BiddingSeasonalityAdjustment;
-use Google\Ads\GoogleAds\V25\Services\BiddingSeasonalityAdjustmentOperation;
-use Google\Ads\GoogleAds\V25\Services\MutateBiddingSeasonalityAdjustmentsRequest;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsException;
+use Google\Ads\GoogleAds\V26\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V26\Enums\SeasonalityEventScopeEnum\SeasonalityEventScope;
+use Google\Ads\GoogleAds\V26\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V26\Resources\BiddingSeasonalityAdjustment;
+use Google\Ads\GoogleAds\V26\Services\BiddingSeasonalityAdjustmentOperation;
+use Google\Ads\GoogleAds\V26\Services\MutateBiddingSeasonalityAdjustmentsRequest;
 use Google\ApiCore\ApiException;
 
 /**

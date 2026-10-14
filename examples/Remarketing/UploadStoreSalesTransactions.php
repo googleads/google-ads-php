@@ -25,35 +25,35 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V25\GoogleAdsFailures;
-use Google\Ads\GoogleAds\Util\V25\ResourceNames;
-use Google\Ads\GoogleAds\V25\Common\Consent;
-use Google\Ads\GoogleAds\V25\Common\ItemAttribute;
-use Google\Ads\GoogleAds\V25\Common\OfflineUserAddressInfo;
-use Google\Ads\GoogleAds\V25\Common\StoreSalesMetadata;
-use Google\Ads\GoogleAds\V25\Common\StoreSalesThirdPartyMetadata;
-use Google\Ads\GoogleAds\V25\Common\TransactionAttribute;
-use Google\Ads\GoogleAds\V25\Common\UserData;
-use Google\Ads\GoogleAds\V25\Common\UserIdentifier;
-use Google\Ads\GoogleAds\V25\Enums\ConsentStatusEnum\ConsentStatus;
-use Google\Ads\GoogleAds\V25\Enums\OfflineUserDataJobFailureReasonEnum\OfflineUserDataJobFailureReason;
-use Google\Ads\GoogleAds\V25\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
-use Google\Ads\GoogleAds\V25\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
-use Google\Ads\GoogleAds\V25\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V25\Resources\OfflineUserDataJob;
-use Google\Ads\GoogleAds\V25\Services\AddOfflineUserDataJobOperationsRequest;
-use Google\Ads\GoogleAds\V25\Services\AddOfflineUserDataJobOperationsResponse;
-use Google\Ads\GoogleAds\V25\Services\Client\OfflineUserDataJobServiceClient;
-use Google\Ads\GoogleAds\V25\Services\CreateOfflineUserDataJobRequest;
-use Google\Ads\GoogleAds\V25\Services\CreateOfflineUserDataJobResponse;
-use Google\Ads\GoogleAds\V25\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V25\Services\OfflineUserDataJobOperation;
-use Google\Ads\GoogleAds\V25\Services\RunOfflineUserDataJobRequest;
-use Google\Ads\GoogleAds\V25\Services\SearchGoogleAdsStreamRequest;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V26\GoogleAdsFailures;
+use Google\Ads\GoogleAds\Util\V26\ResourceNames;
+use Google\Ads\GoogleAds\V26\Common\Consent;
+use Google\Ads\GoogleAds\V26\Common\ItemAttribute;
+use Google\Ads\GoogleAds\V26\Common\OfflineUserAddressInfo;
+use Google\Ads\GoogleAds\V26\Common\StoreSalesMetadata;
+use Google\Ads\GoogleAds\V26\Common\StoreSalesThirdPartyMetadata;
+use Google\Ads\GoogleAds\V26\Common\TransactionAttribute;
+use Google\Ads\GoogleAds\V26\Common\UserData;
+use Google\Ads\GoogleAds\V26\Common\UserIdentifier;
+use Google\Ads\GoogleAds\V26\Enums\ConsentStatusEnum\ConsentStatus;
+use Google\Ads\GoogleAds\V26\Enums\OfflineUserDataJobFailureReasonEnum\OfflineUserDataJobFailureReason;
+use Google\Ads\GoogleAds\V26\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
+use Google\Ads\GoogleAds\V26\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
+use Google\Ads\GoogleAds\V26\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V26\Resources\OfflineUserDataJob;
+use Google\Ads\GoogleAds\V26\Services\AddOfflineUserDataJobOperationsRequest;
+use Google\Ads\GoogleAds\V26\Services\AddOfflineUserDataJobOperationsResponse;
+use Google\Ads\GoogleAds\V26\Services\Client\OfflineUserDataJobServiceClient;
+use Google\Ads\GoogleAds\V26\Services\CreateOfflineUserDataJobRequest;
+use Google\Ads\GoogleAds\V26\Services\CreateOfflineUserDataJobResponse;
+use Google\Ads\GoogleAds\V26\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V26\Services\OfflineUserDataJobOperation;
+use Google\Ads\GoogleAds\V26\Services\RunOfflineUserDataJobRequest;
+use Google\Ads\GoogleAds\V26\Services\SearchGoogleAdsStreamRequest;
 use Google\ApiCore\ApiException;
 
 /**
@@ -580,21 +580,14 @@ class UploadStoreSalesTransactions
         ?string $languageCode,
         ?int $quantity
     ): array {
-        // Creates the first transaction for upload based on an email address, phone number, and
-        // state.
+        // Creates the first transaction for upload based on an email address and state.
         $userDataWithEmailAddress = new UserData(
             [
             'user_identifiers' => [
                 new UserIdentifier(
                     [
                     // Email addresses must be normalized and hashed.
-                    'hashed_email' => self::normalizeAndHashEmailAddress('dana.2+myalias@gmail.com')
-                    ]
-                ),
-                new UserIdentifier(
-                    [
-                    // Phone numbers must be normalized and hashed.
-                    'hashed_phone_number' => self::normalizeAndHashPhoneNumber('+1 (800) 555-0101')
+                    'hashed_email' => self::normalizeAndHash('dana@example.com')
                     ]
                 ),
                 new UserIdentifier(
@@ -711,56 +704,6 @@ class UploadStoreSalesTransactions
     private static function normalizeAndHash(string $value): string
     {
         return hash('sha256', strtolower(trim($value)));
-    }
-
-    /**
-     * Returns the result of normalizing and hashing an email address. For this use case, Google
-     * Ads requires removal of any '.' characters or trailing '+' and characters that follow it
-     * from the username portion of the email address if the domain is "gmail.com" or
-     * "googlemail.com".
-     *
-     * @param  string $emailAddress the email address to normalize and hash
-     * @return string the normalized and hashed email address
-     */
-    private static function normalizeAndHashEmailAddress(string $emailAddress): string
-    {
-        // Removes all whitespace (leading, trailing, and intermediate) from the email address.
-        $normalizedEmail = preg_replace('/\s+/', '', strtolower($emailAddress));
-        $emailParts = explode('@', $normalizedEmail, 2);
-        if (
-            count($emailParts) === 2
-            && preg_match('/^(gmail|googlemail)\.com$/', $emailParts[1])
-        ) {
-            // Removes any '.' characters from the portion of the email address before the domain
-            // if the domain is gmail.com or googlemail.com.
-            $emailParts[0] = str_replace('.', '', $emailParts[0]);
-            // Removes any '+' and all characters that follow it from the portion of the email
-            // address before the domain if the domain is gmail.com or googlemail.com.
-            $emailParts[0] = preg_replace('/\+.*/', '', $emailParts[0]);
-            $normalizedEmail = sprintf('%s@%s', $emailParts[0], $emailParts[1]);
-        }
-        return self::normalizeAndHash($normalizedEmail);
-    }
-
-    /**
-     * Returns the result of normalizing and hashing a phone number. For this use case, Google Ads
-     * requires phone numbers to be in E.164 format.
-     *
-     * @param  string $phoneNumber the phone number to normalize and hash
-     * @return string the normalized and hashed phone number
-     * @throws \InvalidArgumentException if the phone number is not in E.164 format
-     */
-    private static function normalizeAndHashPhoneNumber(string $phoneNumber): string
-    {
-        // Removes non-digit characters and prepends a leading '+' sign.
-        $digitsOnly = preg_replace('/[^0-9]/', '', $phoneNumber);
-        $formattedPhone = '+' . $digitsOnly;
-        if (!preg_match('/^\+[1-9]\d{6,14}$/', $formattedPhone)) {
-            throw new \InvalidArgumentException(
-                "Phone number must be in E.164 format: $phoneNumber"
-            );
-        }
-        return self::normalizeAndHash($formattedPhone);
     }
 
     /**

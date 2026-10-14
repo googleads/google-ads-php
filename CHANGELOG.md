@@ -1,3 +1,6 @@
+## 35.2.0
+* Added support for Google Ads API v26
+
 ## 35.1.0
 * Added support for Google Ads API v25.2
 

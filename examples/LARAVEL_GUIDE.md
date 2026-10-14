@@ -96,8 +96,8 @@ Here is a focused controller demonstrating dependency injection of `GoogleAdsCli
 namespace App\Http\Controllers;
 
 use Google\Ads\GoogleAds\Lib\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V17\GoogleAdsServerException;
-use Google\Ads\GoogleAds\V17\Services\SearchGoogleAdsStreamRequest;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsServerException;
+use Google\Ads\GoogleAds\V26\Services\SearchGoogleAdsStreamRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 

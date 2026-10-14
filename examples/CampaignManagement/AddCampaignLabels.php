@@ -24,14 +24,14 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V25\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V25\ResourceNames;
-use Google\Ads\GoogleAds\V25\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V25\Resources\CampaignLabel;
-use Google\Ads\GoogleAds\V25\Services\CampaignLabelOperation;
-use Google\Ads\GoogleAds\V25\Services\MutateCampaignLabelsRequest;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V26\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V26\ResourceNames;
+use Google\Ads\GoogleAds\V26\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V26\Resources\CampaignLabel;
+use Google\Ads\GoogleAds\V26\Services\CampaignLabelOperation;
+use Google\Ads\GoogleAds\V26\Services\MutateCampaignLabelsRequest;
 use Google\ApiCore\ApiException;
 
 /**
