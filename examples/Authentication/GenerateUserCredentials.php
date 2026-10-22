@@ -139,8 +139,7 @@ class GenerateUserCredentials
                 print 'Your refresh token is: ' . $refreshToken . PHP_EOL;
 
                 $propertiesToCopy = '[GOOGLE_ADS]' . PHP_EOL;
-                $propertiesToCopy .= 'developerToken = "INSERT_DEVELOPER_TOKEN_HERE"' . PHP_EOL;
-                $propertiesToCopy .=  <<<EOD
+                $propertiesToCopy .= <<<EOD
 ; Required for manager accounts only: Specify the login customer ID used to authenticate API calls.
 ; This will be the customer ID of the authenticated manager account. You can also specify this later
 ; in code if your application uses multiple manager account + OAuth pairs.
@@ -152,8 +151,7 @@ EOD;
                 $propertiesToCopy .= "refreshToken = \"$refreshToken\"" . PHP_EOL;
 
                 print 'Copy the text below into a file named "google_ads_php.ini" in your home '
-                    . 'directory, and replace "INSERT_DEVELOPER_TOKEN_HERE" with your developer '
-                    . 'token:' . PHP_EOL;
+                    . 'directory:' . PHP_EOL;
                 print PHP_EOL . $propertiesToCopy;
 
                 return new Response(

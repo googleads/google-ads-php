@@ -50,9 +50,6 @@ Google Ads API v14 is [scheduled to be sunset by the end of May 2024](https://de
         1.  Add a line `extension=protobuf.so` to the `php.ini` file.
         1.  Run `php -i | grep protobuf` in a terminal: it is well installed
             and configured if it returns something
-*   You need a [developer
-    token](https://developers.google.com/google-ads/api/docs/first-call/dev-token)
-    to connect to the Google Ads API.
 *   One version of the library typically supports multiple versions of the Google Ads API. You can check the [CHANGELOG.md](https://github.com/googleads/google-ads-php/blob/HEAD/CHANGELOG.md) file to identify what versions of the library added or removed the support for a specific version of the Google Ads API. For example, the version `V7` of the Google Ads API was added in the version `v9.0.0` of the library as described [here](https://github.com/googleads/google-ads-php/blob/HEAD/CHANGELOG.md#900).
 
 ## Getting started
@@ -105,8 +102,7 @@ Follow the below steps if you want to try our code examples.
         example, which will prompt you for your OAuth2 client ID and secret.
 
     *   Copy the output from the last step of the example into the
-        `google_ads_php.ini` file in your home directory. Don't forget to fill
-        in your developer token too.
+        `google_ads_php.ini` file in your home directory.
 
 1.  Run the [GetCampaigns example](examples/BasicOperations/GetCampaigns.php) to
     test if your credentials are valid. You also need to pass your Google Ads
