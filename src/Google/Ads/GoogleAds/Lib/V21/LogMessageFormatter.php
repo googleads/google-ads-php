@@ -33,8 +33,8 @@ final class LogMessageFormatter
     private $infoRedactor;
 
     public function __construct(
-        StatusMetadataExtractor $statusMetadataExtractor = null,
-        InfoRedactor $infoRedactor = null
+        ?StatusMetadataExtractor $statusMetadataExtractor = null,
+        ?InfoRedactor $infoRedactor = null
     ) {
         $this->statusMetadataExtractor = $statusMetadataExtractor ?? new StatusMetadataExtractor();
         $this->infoRedactor = $infoRedactor ?? new InfoRedactor();
