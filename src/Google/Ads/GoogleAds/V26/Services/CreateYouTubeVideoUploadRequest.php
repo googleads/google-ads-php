@@ -29,6 +29,7 @@ class CreateYouTubeVideoUploadRequest extends \Google\Protobuf\Internal\Message
      */
     protected $you_tube_video_upload = null;
 
+
     /**
      * @param string                                                 $customerId         Required. The customer ID requesting the upload. Required.
      * @param \Google\Ads\GoogleAds\V26\Resources\YouTubeVideoUpload $youTubeVideoUpload Required. The initial details of the video to upload. Required.
@@ -43,7 +44,6 @@ class CreateYouTubeVideoUploadRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setYouTubeVideoUpload($youTubeVideoUpload);
     }
-
     /**
      * Constructor.
      *

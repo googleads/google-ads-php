@@ -54,6 +54,7 @@ class MutateRecommendationSubscriptionRequest extends \Google\Protobuf\Internal\
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                                   $customerId Required. The ID of the subscribing customer.
      * @param \Google\Ads\GoogleAds\V26\Services\RecommendationSubscriptionOperation[] $operations Required. The list of create or update operations.
@@ -68,7 +69,6 @@ class MutateRecommendationSubscriptionRequest extends \Google\Protobuf\Internal\
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

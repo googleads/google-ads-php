@@ -52,6 +52,7 @@ class MutateAssetSetsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                 $customerId Required. The ID of the customer whose asset sets are being modified.
      * @param \Google\Ads\GoogleAds\V26\Services\AssetSetOperation[] $operations Required. The list of operations to perform on individual asset sets.
@@ -66,7 +67,6 @@ class MutateAssetSetsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

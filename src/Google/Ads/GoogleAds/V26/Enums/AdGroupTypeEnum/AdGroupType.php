@@ -51,7 +51,8 @@ class AdGroupType
      */
     const HOTEL_ADS = 6;
     /**
-     * The type for ad groups in Smart Shopping campaigns.
+     * The type for ad groups in Smart Shopping campaigns. New Smart Shopping
+     * campaigns cannot be created.
      *
      * Generated from protobuf enum <code>SHOPPING_SMART_ADS = 7;</code>
      */

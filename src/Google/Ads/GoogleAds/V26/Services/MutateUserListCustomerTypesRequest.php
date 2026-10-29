@@ -47,6 +47,7 @@ class MutateUserListCustomerTypesRequest extends \Google\Protobuf\Internal\Messa
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                                             $customerId Required. The ID of the customer whose user list customer types are being
      *                                                                                       modified.
@@ -63,7 +64,6 @@ class MutateUserListCustomerTypesRequest extends \Google\Protobuf\Internal\Messa
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

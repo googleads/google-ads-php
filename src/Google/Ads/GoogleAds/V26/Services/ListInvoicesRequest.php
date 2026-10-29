@@ -51,6 +51,7 @@ class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $include_granular_level_invoice_details = false;
 
+
     /**
      * @param string $customerId   Required. The ID of the customer to fetch invoices for.
      * @param string $billingSetup Required. The billing setup resource name of the requested invoices.
@@ -73,7 +74,6 @@ class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
             ->setIssueYear($issueYear)
             ->setIssueMonth($issueMonth);
     }
-
     /**
      * Constructor.
      *

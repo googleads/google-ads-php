@@ -32,6 +32,7 @@ class SuggestSmartCampaignAdRequest extends \Google\Protobuf\Internal\Message
      */
     protected $suggestion_info = null;
 
+
     /**
      * @param string                                                         $customerId     Required. The ID of the customer.
      * @param \Google\Ads\GoogleAds\V26\Services\SmartCampaignSuggestionInfo $suggestionInfo Required. Inputs used to suggest a Smart campaign ad.
@@ -49,7 +50,6 @@ class SuggestSmartCampaignAdRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setSuggestionInfo($suggestionInfo);
     }
-
     /**
      * Constructor.
      *

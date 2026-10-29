@@ -50,6 +50,7 @@ class AddOfflineUserDataJobOperationsRequest extends \Google\Protobuf\Internal\M
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                                           $resourceName Required. The resource name of the OfflineUserDataJob.
      * @param \Google\Ads\GoogleAds\V26\Services\OfflineUserDataJobOperation[] $operations   Required. The list of operations to be done.
@@ -64,7 +65,6 @@ class AddOfflineUserDataJobOperationsRequest extends \Google\Protobuf\Internal\M
             ->setResourceName($resourceName)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

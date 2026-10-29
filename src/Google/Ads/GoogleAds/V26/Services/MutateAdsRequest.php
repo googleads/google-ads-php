@@ -52,6 +52,7 @@ class MutateAdsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                           $customerId Required. The ID of the customer whose ads are being modified.
      * @param \Google\Ads\GoogleAds\V26\Services\AdOperation[] $operations Required. The list of operations to perform on individual ads.
@@ -66,7 +67,6 @@ class MutateAdsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

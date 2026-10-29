@@ -23,6 +23,7 @@ class ListPaymentsAccountsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $customer_id = '';
 
+
     /**
      * @param string $customerId Required. The ID of the customer to apply the PaymentsAccount list
      *                           operation to.
@@ -36,7 +37,6 @@ class ListPaymentsAccountsRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setCustomerId($customerId);
     }
-
     /**
      * Constructor.
      *

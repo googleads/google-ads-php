@@ -37,6 +37,7 @@ class RemoveCampaignAutomaticallyCreatedAssetRequest extends \Google\Protobuf\In
      */
     protected $partial_failure = false;
 
+
     /**
      * @param string                                                                                $customerId     Required. The ID of the customer whose assets are being removed.
      * @param \Google\Ads\GoogleAds\V26\Services\RemoveCampaignAutomaticallyCreatedAssetOperation[] $operations     Required. The list of operations.
@@ -55,7 +56,6 @@ class RemoveCampaignAutomaticallyCreatedAssetRequest extends \Google\Protobuf\In
             ->setOperations($operations)
             ->setPartialFailure($partialFailure);
     }
-
     /**
      * Constructor.
      *

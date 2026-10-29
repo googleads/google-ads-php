@@ -54,6 +54,7 @@ class MutateSmartCampaignSettingsRequest extends \Google\Protobuf\Internal\Messa
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                             $customerId Required. The ID of the customer whose Smart campaign settings are being
      *                                                                                       modified.
@@ -70,7 +71,6 @@ class MutateSmartCampaignSettingsRequest extends \Google\Protobuf\Internal\Messa
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

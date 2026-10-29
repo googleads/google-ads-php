@@ -30,6 +30,7 @@ class RunOfflineUserDataJobRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string $resourceName Required. The resource name of the OfflineUserDataJob to run.
      *
@@ -42,7 +43,6 @@ class RunOfflineUserDataJobRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setResourceName($resourceName);
     }
-
     /**
      * Constructor.
      *

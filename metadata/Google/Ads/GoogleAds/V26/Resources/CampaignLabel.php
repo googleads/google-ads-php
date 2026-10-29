@@ -13,10 +13,10 @@ class CampaignLabel
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xE3\x05\x0A7google/ads/googleads/v26/resources/campaign_label.proto\x12\"google.ads.googleads.v26.resources\x1A\x19google/api/resource.proto\"\xD9\x02\x0A\x0DCampaignLabel\x12E\x0A\x0Dresource_name\x18\x01 \x01(\x09B.\xE0A\x05\xFAA(\x0A&googleads.googleapis.com/CampaignLabel\x12@\x0A\x08campaign\x18\x04 \x01(\x09B)\xE0A\x05\xFAA#\x0A!googleads.googleapis.com/CampaignH\x00\x88\x01\x01\x12:\x0A\x05label\x18\x05 \x01(\x09B&\xE0A\x05\xFAA \x0A\x1Egoogleads.googleapis.com/LabelH\x01\x88\x01\x01:l\xEAAi\x0A&googleads.googleapis.com/CampaignLabel\x12?customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}B\x0B\x0A\x09_campaignB\x08\x0A\x06_labelB\x84\x02\x0A&com.google.ads.googleads.v26.resourcesB\x12CampaignLabelProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v26/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V26.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V26\\Resources\xEA\x02&Google::Ads::GoogleAds::V26::Resourcesb\x06proto3"
+            "\x0A\xE6\x05\x0A7google/ads/googleads/v26/resources/campaign_label.proto\x12\"google.ads.googleads.v26.resources\x1A\x19google/api/resource.proto\"\xDC\x02\x0A\x0DCampaignLabel\x12F\x0A\x0Dresource_name\x18\x01 \x01(\x09B/\xE2A\x01\x05\xFAA(\x0A&googleads.googleapis.com/CampaignLabel\x12A\x0A\x08campaign\x18\x04 \x01(\x09B*\xE2A\x01\x05\xFAA#\x0A!googleads.googleapis.com/CampaignH\x00\x88\x01\x01\x12;\x0A\x05label\x18\x05 \x01(\x09B'\xE2A\x01\x05\xFAA \x0A\x1Egoogleads.googleapis.com/LabelH\x01\x88\x01\x01:l\xEAAi\x0A&googleads.googleapis.com/CampaignLabel\x12?customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}B\x0B\x0A\x09_campaignB\x08\x0A\x06_labelB\x84\x02\x0A&com.google.ads.googleads.v26.resourcesB\x12CampaignLabelProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v26/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V26.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V26\\Resources\xEA\x02&Google::Ads::GoogleAds::V26::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

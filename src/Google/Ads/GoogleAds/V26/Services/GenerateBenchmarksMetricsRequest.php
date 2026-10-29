@@ -99,6 +99,7 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $application_info = null;
 
+
     /**
      * @param string                                              $customerId       Required. The ID of the customer. Supply a client customer ID to generate
      *                                                                              metrics for the customer. A manager account customer ID will not return
@@ -120,7 +121,6 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
             ->setBenchmarksSource($benchmarksSource)
             ->setProductFilter($productFilter);
     }
-
     /**
      * Constructor.
      *

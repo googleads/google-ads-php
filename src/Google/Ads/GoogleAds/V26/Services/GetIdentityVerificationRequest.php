@@ -24,6 +24,7 @@ class GetIdentityVerificationRequest extends \Google\Protobuf\Internal\Message
      */
     protected $customer_id = '';
 
+
     /**
      * @param string $customerId Required.  The ID of the customer for whom we are requesting verification
      *                           information.
@@ -37,7 +38,6 @@ class GetIdentityVerificationRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setCustomerId($customerId);
     }
-
     /**
      * Constructor.
      *

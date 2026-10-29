@@ -29,6 +29,7 @@ class CreateProductLinkRequest extends \Google\Protobuf\Internal\Message
      */
     protected $product_link = null;
 
+
     /**
      * @param string                                          $customerId  Required. The ID of the customer for which the product link is created.
      * @param \Google\Ads\GoogleAds\V26\Resources\ProductLink $productLink Required. The product link to be created.
@@ -43,7 +44,6 @@ class CreateProductLinkRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setProductLink($productLink);
     }
-
     /**
      * Constructor.
      *

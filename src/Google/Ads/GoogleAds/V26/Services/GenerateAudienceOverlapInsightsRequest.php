@@ -58,6 +58,7 @@ class GenerateAudienceOverlapInsightsRequest extends \Google\Protobuf\Internal\M
      */
     protected $insights_application_info = null;
 
+
     /**
      * @param string                                                     $customerId       Required. The ID of the customer.
      * @param \Google\Ads\GoogleAds\V26\Common\LocationInfo              $countryLocation  Required. The country in which to calculate the sizes and overlaps of
@@ -82,7 +83,6 @@ class GenerateAudienceOverlapInsightsRequest extends \Google\Protobuf\Internal\M
             ->setPrimaryAttribute($primaryAttribute)
             ->setDimensions($dimensions);
     }
-
     /**
      * Constructor.
      *

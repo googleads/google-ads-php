@@ -54,6 +54,7 @@ class MutateAdGroupCriterionCustomizersRequest extends \Google\Protobuf\Internal
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                                   $customerId Required. The ID of the customer whose ad group criterion customizers are
      *                                                                                             being modified.
@@ -70,7 +71,6 @@ class MutateAdGroupCriterionCustomizersRequest extends \Google\Protobuf\Internal
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

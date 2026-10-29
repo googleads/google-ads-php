@@ -29,6 +29,7 @@ class QuoteCampaignsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $operation = null;
 
+
     /**
      * @param string $customerId Required. The ID of the customer making the request.
      *
@@ -41,7 +42,6 @@ class QuoteCampaignsRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setCustomerId($customerId);
     }
-
     /**
      * Constructor.
      *

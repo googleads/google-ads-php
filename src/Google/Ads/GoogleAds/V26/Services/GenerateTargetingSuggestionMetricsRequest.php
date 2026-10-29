@@ -50,6 +50,7 @@ class GenerateTargetingSuggestionMetricsRequest extends \Google\Protobuf\Interna
      */
     protected $insights_application_info = null;
 
+
     /**
      * @param string                                                $customerId Required. The ID of the customer.
      * @param \Google\Ads\GoogleAds\V26\Services\InsightsAudience[] $audiences  Required. Audiences to request metrics for.
@@ -72,7 +73,6 @@ class GenerateTargetingSuggestionMetricsRequest extends \Google\Protobuf\Interna
             ->setCustomerId($customerId)
             ->setAudiences($audiences);
     }
-
     /**
      * Constructor.
      *

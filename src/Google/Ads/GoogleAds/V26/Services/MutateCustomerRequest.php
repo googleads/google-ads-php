@@ -43,6 +43,7 @@ class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                               $customerId Required. The ID of the customer being modified.
      * @param \Google\Ads\GoogleAds\V26\Services\CustomerOperation $operation  Required. The operation to perform on the customer
@@ -57,7 +58,6 @@ class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperation($operation);
     }
-
     /**
      * Constructor.
      *

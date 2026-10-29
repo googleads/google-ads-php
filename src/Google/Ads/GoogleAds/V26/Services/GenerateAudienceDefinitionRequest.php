@@ -47,6 +47,7 @@ class GenerateAudienceDefinitionRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $insights_application_info = null;
 
+
     /**
      * @param string                                                         $customerId          Required. The ID of the customer.
      * @param \Google\Ads\GoogleAds\V26\Services\InsightsAudienceDescription $audienceDescription Required. Provide a text description of an audience to get AI-generated
@@ -66,7 +67,6 @@ class GenerateAudienceDefinitionRequest extends \Google\Protobuf\Internal\Messag
             ->setCustomerId($customerId)
             ->setAudienceDescription($audienceDescription);
     }
-
     /**
      * Constructor.
      *

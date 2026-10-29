@@ -29,6 +29,7 @@ class EnablePMaxBrandGuidelinesRequest extends \Google\Protobuf\Internal\Message
      */
     private $operations;
 
+
     /**
      * @param string                                               $customerId Required. The ID of the customer whose campaigns are being enabled.
      * @param \Google\Ads\GoogleAds\V26\Services\EnableOperation[] $operations Required. The list of individual campaign operations. A maximum of 10
@@ -44,7 +45,6 @@ class EnablePMaxBrandGuidelinesRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

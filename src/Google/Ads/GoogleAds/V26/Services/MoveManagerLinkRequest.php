@@ -46,6 +46,7 @@ class MoveManagerLinkRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string $customerId                  Required. The ID of the client customer that is being moved.
      * @param string $previousCustomerManagerLink Required. The resource name of the previous CustomerManagerLink.
@@ -66,7 +67,6 @@ class MoveManagerLinkRequest extends \Google\Protobuf\Internal\Message
             ->setPreviousCustomerManagerLink($previousCustomerManagerLink)
             ->setNewManager($newManager);
     }
-
     /**
      * Constructor.
      *

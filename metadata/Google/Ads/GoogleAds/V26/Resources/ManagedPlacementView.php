@@ -13,10 +13,10 @@ class ManagedPlacementView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xFD\x04\x0A?google/ads/googleads/v26/resources/managed_placement_view.proto\x12\"google.ads.googleads.v26.resources\x1A\x19google/api/resource.proto\"\xE4\x01\x0A\x14ManagedPlacementView\x12L\x0A\x0Dresource_name\x18\x01 \x01(\x09B5\xE0A\x03\xFAA/\x0A-googleads.googleapis.com/ManagedPlacementView:~\xEAA{\x0A-googleads.googleapis.com/ManagedPlacementView\x12Jcustomers/{customer_id}/managedPlacementViews/{ad_group_id}~{criterion_id}B\x8B\x02\x0A&com.google.ads.googleads.v26.resourcesB\x19ManagedPlacementViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v26/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V26.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V26\\Resources\xEA\x02&Google::Ads::GoogleAds::V26::Resourcesb\x06proto3"
+            "\x0A\xFE\x04\x0A?google/ads/googleads/v26/resources/managed_placement_view.proto\x12\"google.ads.googleads.v26.resources\x1A\x19google/api/resource.proto\"\xE5\x01\x0A\x14ManagedPlacementView\x12M\x0A\x0Dresource_name\x18\x01 \x01(\x09B6\xE2A\x01\x03\xFAA/\x0A-googleads.googleapis.com/ManagedPlacementView:~\xEAA{\x0A-googleads.googleapis.com/ManagedPlacementView\x12Jcustomers/{customer_id}/managedPlacementViews/{ad_group_id}~{criterion_id}B\x8B\x02\x0A&com.google.ads.googleads.v26.resourcesB\x19ManagedPlacementViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v26/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V26.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V26\\Resources\xEA\x02&Google::Ads::GoogleAds::V26::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

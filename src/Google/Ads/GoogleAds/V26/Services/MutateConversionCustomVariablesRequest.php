@@ -54,6 +54,7 @@ class MutateConversionCustomVariablesRequest extends \Google\Protobuf\Internal\M
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                                 $customerId Required. The ID of the customer whose conversion custom variables are
      *                                                                                           being modified.
@@ -70,7 +71,6 @@ class MutateConversionCustomVariablesRequest extends \Google\Protobuf\Internal\M
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

@@ -29,6 +29,7 @@ class MutateBillingSetupRequest extends \Google\Protobuf\Internal\Message
      */
     protected $operation = null;
 
+
     /**
      * @param string                                                   $customerId Required. Id of the customer to apply the billing setup mutate operation
      *                                                                             to.
@@ -44,7 +45,6 @@ class MutateBillingSetupRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperation($operation);
     }
-
     /**
      * Constructor.
      *

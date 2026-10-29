@@ -29,6 +29,7 @@ class MutateCustomerUserAccessRequest extends \Google\Protobuf\Internal\Message
      */
     protected $operation = null;
 
+
     /**
      * @param string                                                         $customerId Required. The ID of the customer being modified.
      * @param \Google\Ads\GoogleAds\V26\Services\CustomerUserAccessOperation $operation  Required. The operation to perform on the customer
@@ -43,7 +44,6 @@ class MutateCustomerUserAccessRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperation($operation);
     }
-
     /**
      * Constructor.
      *

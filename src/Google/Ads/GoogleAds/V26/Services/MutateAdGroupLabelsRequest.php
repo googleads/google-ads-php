@@ -45,6 +45,7 @@ class MutateAdGroupLabelsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                                     $customerId Required. ID of the customer whose ad group labels are being modified.
      * @param \Google\Ads\GoogleAds\V26\Services\AdGroupLabelOperation[] $operations Required. The list of operations to perform on ad group labels.
@@ -59,7 +60,6 @@ class MutateAdGroupLabelsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

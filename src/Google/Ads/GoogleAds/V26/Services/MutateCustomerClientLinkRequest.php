@@ -36,6 +36,7 @@ class MutateCustomerClientLinkRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                                         $customerId Required. The ID of the customer whose customer link are being modified.
      * @param \Google\Ads\GoogleAds\V26\Services\CustomerClientLinkOperation $operation  Required. The operation to perform on the individual CustomerClientLink.
@@ -50,7 +51,6 @@ class MutateCustomerClientLinkRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperation($operation);
     }
-
     /**
      * Constructor.
      *

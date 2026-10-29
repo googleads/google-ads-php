@@ -508,6 +508,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $customer_asset_set = null;
     /**
+     * The customer budget network setting referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.CustomerBudgetNetworkSetting customer_budget_network_setting = 268;</code>
+     */
+    protected $customer_budget_network_setting = null;
+    /**
      * The accessible bidding strategy referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.resources.AccessibleBiddingStrategy accessible_bidding_strategy = 169;</code>
@@ -1332,6 +1338,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The customer asset referenced in the query.
      *     @type \Google\Ads\GoogleAds\V26\Resources\CustomerAssetSet $customer_asset_set
      *           The customer asset set referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V26\Resources\CustomerBudgetNetworkSetting $customer_budget_network_setting
+     *           The customer budget network setting referenced in the query.
      *     @type \Google\Ads\GoogleAds\V26\Resources\AccessibleBiddingStrategy $accessible_bidding_strategy
      *           The accessible bidding strategy referenced in the query.
      *     @type \Google\Ads\GoogleAds\V26\Resources\CustomerCustomizer $customer_customizer
@@ -4505,6 +4513,42 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Resources\CustomerAssetSet::class);
         $this->customer_asset_set = $var;
+
+        return $this;
+    }
+
+    /**
+     * The customer budget network setting referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.CustomerBudgetNetworkSetting customer_budget_network_setting = 268;</code>
+     * @return \Google\Ads\GoogleAds\V26\Resources\CustomerBudgetNetworkSetting|null
+     */
+    public function getCustomerBudgetNetworkSetting()
+    {
+        return $this->customer_budget_network_setting;
+    }
+
+    public function hasCustomerBudgetNetworkSetting()
+    {
+        return isset($this->customer_budget_network_setting);
+    }
+
+    public function clearCustomerBudgetNetworkSetting()
+    {
+        unset($this->customer_budget_network_setting);
+    }
+
+    /**
+     * The customer budget network setting referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.CustomerBudgetNetworkSetting customer_budget_network_setting = 268;</code>
+     * @param \Google\Ads\GoogleAds\V26\Resources\CustomerBudgetNetworkSetting $var
+     * @return $this
+     */
+    public function setCustomerBudgetNetworkSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Resources\CustomerBudgetNetworkSetting::class);
+        $this->customer_budget_network_setting = $var;
 
         return $this;
     }

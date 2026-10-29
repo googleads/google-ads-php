@@ -23,6 +23,7 @@ class GetGoogleAdsFieldRequest extends \Google\Protobuf\Internal\Message
      */
     protected $resource_name = '';
 
+
     /**
      * @param string $resourceName Required. The resource name of the field to get.
      *
@@ -35,7 +36,6 @@ class GetGoogleAdsFieldRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setResourceName($resourceName);
     }
-
     /**
      * Constructor.
      *

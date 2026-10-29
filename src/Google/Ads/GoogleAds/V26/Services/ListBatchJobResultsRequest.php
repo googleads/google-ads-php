@@ -50,6 +50,7 @@ class ListBatchJobResultsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string $resourceName Required. The resource name of the batch job whose results are being
      *                             listed.
@@ -63,7 +64,6 @@ class ListBatchJobResultsRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setResourceName($resourceName);
     }
-
     /**
      * Constructor.
      *

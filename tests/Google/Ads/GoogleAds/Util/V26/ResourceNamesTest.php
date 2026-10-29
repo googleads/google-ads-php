@@ -70,6 +70,7 @@ use Google\Ads\GoogleAds\V26\Services\Client\CustomAudienceServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerAssetServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerAssetSetServiceClient;
+use Google\Ads\GoogleAds\V26\Services\Client\CustomerBudgetNetworkSettingServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerClientLinkServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerCustomizerServiceClient;
@@ -1621,6 +1622,27 @@ class ResourceNamesTest extends TestCase
         $names = CustomerAssetSetServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($assetSetId, $names['asset_set_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V26\ResourceNames::forCustomerBudgetNetworkSetting()
+     */
+    public function testGetNameForCustomerBudgetNetworkSetting()
+    {
+        $customerId = '111111';
+        $expectedResourceName = sprintf(
+            "customers/%s/customerBudgetNetworkSettings",
+            $customerId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forCustomerBudgetNetworkSetting(
+                $customerId
+            )
+        );
+
+        $names = CustomerBudgetNetworkSettingServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
     }
 
     /**

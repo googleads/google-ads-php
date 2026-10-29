@@ -16,7 +16,8 @@ use Google\Protobuf\RepeatedField;
 class SyntheticContentAttestation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Indicates whether the content is considered synthetic by this source.
+     * Indicates the attestation status for whether the content should be labeled
+     * as created or edited with AI by this source.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.enums.SyntheticContentAttestationStatusEnum.SyntheticContentAttestationStatus status = 1;</code>
      */
@@ -35,7 +36,8 @@ class SyntheticContentAttestation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $status
-     *           Indicates whether the content is considered synthetic by this source.
+     *           Indicates the attestation status for whether the content should be labeled
+     *           as created or edited with AI by this source.
      *     @type int $source
      *           The source of the synthetic content attestation.
      * }
@@ -46,7 +48,8 @@ class SyntheticContentAttestation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates whether the content is considered synthetic by this source.
+     * Indicates the attestation status for whether the content should be labeled
+     * as created or edited with AI by this source.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.enums.SyntheticContentAttestationStatusEnum.SyntheticContentAttestationStatus status = 1;</code>
      * @return int
@@ -57,7 +60,8 @@ class SyntheticContentAttestation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates whether the content is considered synthetic by this source.
+     * Indicates the attestation status for whether the content should be labeled
+     * as created or edited with AI by this source.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.enums.SyntheticContentAttestationStatusEnum.SyntheticContentAttestationStatus status = 1;</code>
      * @param int $var

@@ -22,6 +22,11 @@ namespace Google\Ads\GoogleAds\V26\Services;
  * Proto file describing the OfflineUserDataJobService.
  *
  * Service to manage offline user data jobs.
+ * For help diagnosing and resolving conversion or user data upload issues, see
+ * the conversion upload
+ * [troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting)
+ * (or use the `troubleshoot-conversions` workflow in the [Google Ads API
+ * Developer Assistant](/google-ads/api/docs/developer-toolkit/ai-assistant)).
  */
 class OfflineUserDataJobServiceGrpcClient extends \Grpc\BaseStub {
 

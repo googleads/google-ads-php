@@ -201,6 +201,7 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $is_new_customer = null;
 
+
     /**
      * @param string $customerId             Required. The ID of the customer generating recommendations.
      * @param int[]  $recommendationTypes    Required. List of eligible recommendation_types to generate. If the
@@ -234,7 +235,6 @@ class GenerateRecommendationsRequest extends \Google\Protobuf\Internal\Message
             ->setRecommendationTypes($recommendationTypes)
             ->setAdvertisingChannelType($advertisingChannelType);
     }
-
     /**
      * Constructor.
      *

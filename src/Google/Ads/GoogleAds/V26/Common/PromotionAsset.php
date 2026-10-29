@@ -90,6 +90,13 @@ class PromotionAsset extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string terms_and_conditions_uri = 15;</code>
      */
     protected $terms_and_conditions_uri = '';
+    /**
+     * Immutable. Info related to external promotion redemption. This is only set
+     * for promotions with external redemption tracking ability.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.common.ExternalRedeemInfo external_redeem_info = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    protected $external_redeem_info = null;
     protected $discount_type;
     protected $promotion_trigger;
 
@@ -130,6 +137,9 @@ class PromotionAsset extends \Google\Protobuf\Internal\Message
      *           Terms and conditions of the promotion.
      *     @type string $terms_and_conditions_uri
      *           URI to the terms and conditions of the promotion.
+     *     @type \Google\Ads\GoogleAds\V26\Common\ExternalRedeemInfo $external_redeem_info
+     *           Immutable. Info related to external promotion redemption. This is only set
+     *           for promotions with external redemption tracking ability.
      *     @type int|string $percent_off
      *           Percentage off discount in the promotion. 1,000,000 = 100%.
      *           Either this or money_amount_off is required.
@@ -454,6 +464,44 @@ class PromotionAsset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->terms_and_conditions_uri = $var;
+
+        return $this;
+    }
+
+    /**
+     * Immutable. Info related to external promotion redemption. This is only set
+     * for promotions with external redemption tracking ability.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.common.ExternalRedeemInfo external_redeem_info = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\ExternalRedeemInfo|null
+     */
+    public function getExternalRedeemInfo()
+    {
+        return $this->external_redeem_info;
+    }
+
+    public function hasExternalRedeemInfo()
+    {
+        return isset($this->external_redeem_info);
+    }
+
+    public function clearExternalRedeemInfo()
+    {
+        unset($this->external_redeem_info);
+    }
+
+    /**
+     * Immutable. Info related to external promotion redemption. This is only set
+     * for promotions with external redemption tracking ability.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.common.ExternalRedeemInfo external_redeem_info = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\ExternalRedeemInfo $var
+     * @return $this
+     */
+    public function setExternalRedeemInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\ExternalRedeemInfo::class);
+        $this->external_redeem_info = $var;
 
         return $this;
     }

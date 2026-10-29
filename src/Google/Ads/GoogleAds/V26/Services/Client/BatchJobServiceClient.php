@@ -1030,6 +1030,21 @@ class BatchJobServiceClient
 
     /**
      * Formats a string containing the fully-qualified path to represent a
+     * customer_budget_network_setting resource.
+     *
+     * @param string $customerId
+     *
+     * @return string The formatted customer_budget_network_setting resource.
+     */
+    public static function customerBudgetNetworkSettingName(string $customerId): string
+    {
+        return self::getPathTemplate('customerBudgetNetworkSetting')->render([
+            'customer_id' => $customerId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
      * customer_conversion_goal resource.
      *
      * @param string $customerId
@@ -1583,6 +1598,7 @@ class BatchJobServiceClient
      * - customConversionGoal: customers/{customer_id}/customConversionGoals/{goal_id}
      * - customer: customers/{customer_id}
      * - customerAsset: customers/{customer_id}/customerAssets/{asset_id}~{field_type}
+     * - customerBudgetNetworkSetting: customers/{customer_id}/customerBudgetNetworkSettings
      * - customerConversionGoal: customers/{customer_id}/customerConversionGoals/{category}~{source}
      * - customerCustomizer: customers/{customer_id}/customerCustomizers/{customizer_attribute_id}
      * - customerLabel: customers/{customer_id}/customerLabels/{label_id}

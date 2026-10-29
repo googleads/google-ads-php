@@ -181,6 +181,21 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 aligned_bidding_strategy_id = 31;</code>
      */
     protected $aligned_bidding_strategy_id = 0;
+    /**
+     * Waterfall channel priorities and budget caps for this budget, at most one
+     * entry per advertising channel type. When unset, the customer-level
+     * defaults in `CustomerBudgetNetworkSetting` apply.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.common.BudgetNetworkSettings budget_network_settings = 32;</code>
+     */
+    protected $budget_network_settings = null;
+    /**
+     * Output only. Whether this budget is eligible for waterfall channel
+     * prioritization and budget caps, and if not, why.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.common.BudgetNetworkEligibility budget_network_eligibility = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $budget_network_eligibility = null;
 
     /**
      * Constructor.
@@ -282,6 +297,13 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      *           they are attached to the same set of campaigns. After a campaign budget is
      *           aligned with a bidding strategy, campaigns that are added to the campaign
      *           budget must also use the aligned bidding strategy.
+     *     @type \Google\Ads\GoogleAds\V26\Common\BudgetNetworkSettings $budget_network_settings
+     *           Waterfall channel priorities and budget caps for this budget, at most one
+     *           entry per advertising channel type. When unset, the customer-level
+     *           defaults in `CustomerBudgetNetworkSetting` apply.
+     *     @type \Google\Ads\GoogleAds\V26\Common\BudgetNetworkEligibility $budget_network_eligibility
+     *           Output only. Whether this budget is eligible for waterfall channel
+     *           prioritization and budget caps, and if not, why.
      * }
      */
     public function __construct($data = NULL) {
@@ -989,6 +1011,84 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->aligned_bidding_strategy_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Waterfall channel priorities and budget caps for this budget, at most one
+     * entry per advertising channel type. When unset, the customer-level
+     * defaults in `CustomerBudgetNetworkSetting` apply.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.common.BudgetNetworkSettings budget_network_settings = 32;</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\BudgetNetworkSettings|null
+     */
+    public function getBudgetNetworkSettings()
+    {
+        return $this->budget_network_settings;
+    }
+
+    public function hasBudgetNetworkSettings()
+    {
+        return isset($this->budget_network_settings);
+    }
+
+    public function clearBudgetNetworkSettings()
+    {
+        unset($this->budget_network_settings);
+    }
+
+    /**
+     * Waterfall channel priorities and budget caps for this budget, at most one
+     * entry per advertising channel type. When unset, the customer-level
+     * defaults in `CustomerBudgetNetworkSetting` apply.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.common.BudgetNetworkSettings budget_network_settings = 32;</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\BudgetNetworkSettings $var
+     * @return $this
+     */
+    public function setBudgetNetworkSettings($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\BudgetNetworkSettings::class);
+        $this->budget_network_settings = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Whether this budget is eligible for waterfall channel
+     * prioritization and budget caps, and if not, why.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.common.BudgetNetworkEligibility budget_network_eligibility = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\BudgetNetworkEligibility|null
+     */
+    public function getBudgetNetworkEligibility()
+    {
+        return $this->budget_network_eligibility;
+    }
+
+    public function hasBudgetNetworkEligibility()
+    {
+        return isset($this->budget_network_eligibility);
+    }
+
+    public function clearBudgetNetworkEligibility()
+    {
+        unset($this->budget_network_eligibility);
+    }
+
+    /**
+     * Output only. Whether this budget is eligible for waterfall channel
+     * prioritization and budget caps, and if not, why.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.common.BudgetNetworkEligibility budget_network_eligibility = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\BudgetNetworkEligibility $var
+     * @return $this
+     */
+    public function setBudgetNetworkEligibility($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\BudgetNetworkEligibility::class);
+        $this->budget_network_eligibility = $var;
 
         return $this;
     }

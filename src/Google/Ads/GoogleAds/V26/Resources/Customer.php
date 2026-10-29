@@ -184,9 +184,9 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     protected $customer_agreement_setting = null;
     /**
-     * Output only. Settings for Local Services customer.
+     * Settings for Local Services customer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.LocalServicesSettings local_services_settings = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.LocalServicesSettings local_services_settings = 45;</code>
      */
     protected $local_services_settings = null;
     /**
@@ -297,7 +297,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V26\Resources\CustomerAgreementSetting $customer_agreement_setting
      *           Output only. Customer Agreement Setting for a customer.
      *     @type \Google\Ads\GoogleAds\V26\Resources\LocalServicesSettings $local_services_settings
-     *           Output only. Settings for Local Services customer.
+     *           Settings for Local Services customer.
      *     @type int $video_brand_safety_suitability
      *           Brand Safety setting at the account level. Allows for selecting
      *           an inventory type to show your ads on content that is the right fit for
@@ -1166,9 +1166,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Settings for Local Services customer.
+     * Settings for Local Services customer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.LocalServicesSettings local_services_settings = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.LocalServicesSettings local_services_settings = 45;</code>
      * @return \Google\Ads\GoogleAds\V26\Resources\LocalServicesSettings|null
      */
     public function getLocalServicesSettings()
@@ -1187,9 +1187,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Settings for Local Services customer.
+     * Settings for Local Services customer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.LocalServicesSettings local_services_settings = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.LocalServicesSettings local_services_settings = 45;</code>
      * @param \Google\Ads\GoogleAds\V26\Resources\LocalServicesSettings $var
      * @return $this
      */

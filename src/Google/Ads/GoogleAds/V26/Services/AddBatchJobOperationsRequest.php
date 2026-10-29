@@ -46,6 +46,7 @@ class AddBatchJobOperationsRequest extends \Google\Protobuf\Internal\Message
      */
     private $mutate_operations;
 
+
     /**
      * @param string                                               $resourceName     Required. The resource name of the batch job.
      * @param string                                               $sequenceToken    A token used to enforce sequencing.
@@ -98,7 +99,6 @@ class AddBatchJobOperationsRequest extends \Google\Protobuf\Internal\Message
             ->setResourceName($resourceName)
             ->setMutateOperations($mutateOperations);
     }
-
     /**
      * Constructor.
      *

@@ -29,6 +29,7 @@ class MutateBatchJobRequest extends \Google\Protobuf\Internal\Message
      */
     protected $operation = null;
 
+
     /**
      * @param string                                               $customerId Required. The ID of the customer for which to create a batch job.
      * @param \Google\Ads\GoogleAds\V26\Services\BatchJobOperation $operation  Required. The operation to perform on an individual batch job.
@@ -43,7 +44,6 @@ class MutateBatchJobRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperation($operation);
     }
-
     /**
      * Constructor.
      *

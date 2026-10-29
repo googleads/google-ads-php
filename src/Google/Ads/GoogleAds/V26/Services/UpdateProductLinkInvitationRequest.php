@@ -35,6 +35,7 @@ class UpdateProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
      */
     protected $resource_name = '';
 
+
     /**
      * @param string $customerId                  Required. The ID of the customer being modified.
      * @param int    $productLinkInvitationStatus Required. The product link invitation to be created.
@@ -52,7 +53,6 @@ class UpdateProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
             ->setProductLinkInvitationStatus($productLinkInvitationStatus)
             ->setResourceName($resourceName);
     }
-
     /**
      * Constructor.
      *

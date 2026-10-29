@@ -26,13 +26,15 @@ class SyntheticContentAttestationStatus
      */
     const UNKNOWN = 1;
     /**
-     * The content is attested as not synthetic.
+     * The content is attested as not needing to be labeled as created or edited
+     * with AI.
      *
      * Generated from protobuf enum <code>NOT_SYNTHETIC = 2;</code>
      */
     const NOT_SYNTHETIC = 2;
     /**
-     * The content is attested as synthetic.
+     * The content is attested as needing to be labeled as created or edited
+     * with AI.
      *
      * Generated from protobuf enum <code>IS_SYNTHETIC = 3;</code>
      */

@@ -54,6 +54,7 @@ class MutateCampaignBidModifiersRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                            $customerId Required. ID of the customer whose campaign bid modifiers are being
      *                                                                                      modified.
@@ -70,7 +71,6 @@ class MutateCampaignBidModifiersRequest extends \Google\Protobuf\Internal\Messag
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

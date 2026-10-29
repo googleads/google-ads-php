@@ -81,6 +81,7 @@ use Google\Ads\GoogleAds\V26\Services\Client\CustomAudienceServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerAssetServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerAssetSetServiceClient;
+use Google\Ads\GoogleAds\V26\Services\Client\CustomerBudgetNetworkSettingServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerClientLinkServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerCustomizerServiceClient;
@@ -111,6 +112,7 @@ use Google\Ads\GoogleAds\V26\Services\Client\KeywordPlanIdeaServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\KeywordThemeConstantServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\LabelServiceClient;
+use Google\Ads\GoogleAds\V26\Services\Client\LocalServicesEligibilityServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\LocalServicesLeadServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\MultiPartyAuthReviewServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\OfflineUserDataJobServiceClient;
@@ -705,6 +707,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return CustomerBudgetNetworkSettingServiceClient
+     */
+    public function getCustomerBudgetNetworkSettingServiceClient(): CustomerBudgetNetworkSettingServiceClient
+    {
+        return new CustomerBudgetNetworkSettingServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return CustomerClientLinkServiceClient
      */
     public function getCustomerClientLinkServiceClient(): CustomerClientLinkServiceClient
@@ -942,6 +952,14 @@ trait ServiceClientFactoryTrait
     public function getLabelServiceClient(): LabelServiceClient
     {
         return new LabelServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return LocalServicesEligibilityServiceClient
+     */
+    public function getLocalServicesEligibilityServiceClient(): LocalServicesEligibilityServiceClient
+    {
+        return new LocalServicesEligibilityServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

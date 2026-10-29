@@ -47,6 +47,7 @@ class MutateKeywordPlanCampaignsRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                                            $customerId Required. The ID of the customer whose Keyword Plan campaigns are being
      *                                                                                      modified.
@@ -63,7 +64,6 @@ class MutateKeywordPlanCampaignsRequest extends \Google\Protobuf\Internal\Messag
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

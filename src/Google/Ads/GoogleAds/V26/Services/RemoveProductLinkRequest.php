@@ -38,6 +38,7 @@ class RemoveProductLinkRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string $customerId   Required. The ID of the customer being modified.
      * @param string $resourceName Required. Remove operation: A resource name for the product link to remove
@@ -55,7 +56,6 @@ class RemoveProductLinkRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setResourceName($resourceName);
     }
-
     /**
      * Constructor.
      *

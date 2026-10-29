@@ -29,6 +29,7 @@ class RemoveDataLinkRequest extends \Google\Protobuf\Internal\Message
      */
     protected $resource_name = '';
 
+
     /**
      * @param string $customerId   Required. The ID of the customer for which the data link is updated.
      * @param string $resourceName Required. The data link is expected to have a valid resource name.
@@ -43,7 +44,6 @@ class RemoveDataLinkRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setResourceName($resourceName);
     }
-
     /**
      * Constructor.
      *

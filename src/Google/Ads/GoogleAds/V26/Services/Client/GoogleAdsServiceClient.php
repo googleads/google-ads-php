@@ -46,6 +46,21 @@ use Psr\Log\LoggerInterface;
 
 /**
  * Service Description: Service to fetch data and metrics across resources.
+ * Use the interactive [Google Ads Query
+ * Builder](/google-ads/api/fields/latest/overview_query_builder)
+ * to construct and validate Google Ads Query Language (GAQL) queries.
+ *
+ * Search versus SearchStream:
+ *
+ * * `Search`: Paginated using `next_page_token` with up to 10,000 rows per
+ * page. Caches pages across requests. Best for small result sets (< 10,000
+ * rows) or user-driven paginated interfaces.
+ * * `SearchStream`: Delivers a single stream of response batches with up to
+ * 10,000 rows per batch. Lower overhead without request caching. Best for large
+ * result sets (> 10,000 rows) or batch reporting workloads.
+ *
+ * For more details, see [Streaming versus
+ * paging](/google-ads/api/docs/reporting/streaming).
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods.
@@ -957,6 +972,21 @@ class GoogleAdsServiceClient
 
     /**
      * Formats a string containing the fully-qualified path to represent a
+     * customer_budget_network_setting resource.
+     *
+     * @param string $customerId
+     *
+     * @return string The formatted customer_budget_network_setting resource.
+     */
+    public static function customerBudgetNetworkSettingName(string $customerId): string
+    {
+        return self::getPathTemplate('customerBudgetNetworkSetting')->render([
+            'customer_id' => $customerId,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
      * customer_conversion_goal resource.
      *
      * @param string $customerId
@@ -1509,6 +1539,7 @@ class GoogleAdsServiceClient
      * - customConversionGoal: customers/{customer_id}/customConversionGoals/{goal_id}
      * - customer: customers/{customer_id}
      * - customerAsset: customers/{customer_id}/customerAssets/{asset_id}~{field_type}
+     * - customerBudgetNetworkSetting: customers/{customer_id}/customerBudgetNetworkSettings
      * - customerConversionGoal: customers/{customer_id}/customerConversionGoals/{category}~{source}
      * - customerCustomizer: customers/{customer_id}/customerCustomizers/{customizer_attribute_id}
      * - customerLabel: customers/{customer_id}/customerLabels/{label_id}
@@ -1783,6 +1814,11 @@ class GoogleAdsServiceClient
 
     /**
      * Returns all rows that match the search query.
+     * Uses pagination (`next_page_token`) with up to 10,000 rows per page. For
+     * result sets larger than 10,000 rows, prefer
+     * [GoogleAdsService.SearchStream][google.ads.googleads.v26.services.GoogleAdsService.SearchStream].
+     * To build and validate queries, use the [Google Ads Query
+     * Builder](/google-ads/api/fields/latest/overview_query_builder).
      *
      * List of thrown errors:
      * [AuthenticationError]()
@@ -1821,6 +1857,12 @@ class GoogleAdsServiceClient
 
     /**
      * Returns all rows that match the search stream query.
+     * Streams batches of rows over a single connection without pagination
+     * overhead, making it preferred over
+     * [GoogleAdsService.Search][google.ads.googleads.v26.services.GoogleAdsService.Search]
+     * for large result sets (> 10,000 rows). To build and validate queries, use
+     * the [Google Ads Query
+     * Builder](/google-ads/api/fields/latest/overview_query_builder).
      *
      * List of thrown errors:
      * [AuthenticationError]()

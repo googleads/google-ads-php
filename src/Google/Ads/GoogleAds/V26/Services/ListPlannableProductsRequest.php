@@ -30,6 +30,7 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $reach_application_info = null;
 
+
     /**
      * @param string $plannableLocationId Required. The ID of the selected location for planning. To list the
      *                                    available plannable location IDs use
@@ -44,7 +45,6 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setPlannableLocationId($plannableLocationId);
     }
-
     /**
      * Constructor.
      *

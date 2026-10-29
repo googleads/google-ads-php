@@ -37,6 +37,7 @@ class SuggestBrandsRequest extends \Google\Protobuf\Internal\Message
      */
     private $selected_brands;
 
+
     /**
      * @param string $customerId  Required. The ID of the customer onto which to apply the brand suggestion
      *                            operation.
@@ -52,7 +53,6 @@ class SuggestBrandsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setBrandPrefix($brandPrefix);
     }
-
     /**
      * Constructor.
      *

@@ -1861,6 +1861,38 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $unique_users_five_plus = null;
     /**
+     * This metric counts the unique individuals who were shown your video ad six
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_six_plus = 556;</code>
+     */
+    protected $unique_users_six_plus = null;
+    /**
+     * This metric counts the unique individuals who were shown your video ad
+     * seven or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_seven_plus = 557;</code>
+     */
+    protected $unique_users_seven_plus = null;
+    /**
+     * This metric counts the unique individuals who were shown your video ad
+     * eight or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_eight_plus = 558;</code>
+     */
+    protected $unique_users_eight_plus = null;
+    /**
+     * This metric counts the unique individuals who were shown your video ad nine
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_nine_plus = 559;</code>
+     */
+    protected $unique_users_nine_plus = null;
+    /**
      * This metric counts the unique individuals who were shown your video ad ten
      * or more times within the selected date range. This metric cannot be
      * aggregated, and can only be requested for date ranges of 31 days or less.
@@ -3151,6 +3183,86 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional double normalized_incremental_searches_per_impression_p90_upper_bound = 549;</code>
      */
     protected $normalized_incremental_searches_per_impression_p90_upper_bound = null;
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad at
+     * least once within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_info = 550;</code>
+     */
+    protected $unique_users_info = null;
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad two
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_two_plus_info = 551;</code>
+     */
+    protected $unique_users_two_plus_info = null;
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad three
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_three_plus_info = 552;</code>
+     */
+    protected $unique_users_three_plus_info = null;
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad four
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_four_plus_info = 553;</code>
+     */
+    protected $unique_users_four_plus_info = null;
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad five
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_five_plus_info = 554;</code>
+     */
+    protected $unique_users_five_plus_info = null;
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad six
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_six_plus_info = 560;</code>
+     */
+    protected $unique_users_six_plus_info = null;
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad seven
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_seven_plus_info = 561;</code>
+     */
+    protected $unique_users_seven_plus_info = null;
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad eight
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_eight_plus_info = 562;</code>
+     */
+    protected $unique_users_eight_plus_info = null;
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad nine
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_nine_plus_info = 563;</code>
+     */
+    protected $unique_users_nine_plus_info = null;
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad ten
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_ten_plus_info = 555;</code>
+     */
+    protected $unique_users_ten_plus_info = null;
 
     /**
      * Constructor.
@@ -4159,6 +4271,22 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           This metric counts the unique individuals who were shown your video ad five
      *           or more times within the selected date range. This metric cannot be
      *           aggregated, and can only be requested for date ranges of 31 days or less.
+     *     @type int|string $unique_users_six_plus
+     *           This metric counts the unique individuals who were shown your video ad six
+     *           or more times within the selected date range. This metric cannot be
+     *           aggregated, and can only be requested for date ranges of 31 days or less.
+     *     @type int|string $unique_users_seven_plus
+     *           This metric counts the unique individuals who were shown your video ad
+     *           seven or more times within the selected date range. This metric cannot be
+     *           aggregated, and can only be requested for date ranges of 31 days or less.
+     *     @type int|string $unique_users_eight_plus
+     *           This metric counts the unique individuals who were shown your video ad
+     *           eight or more times within the selected date range. This metric cannot be
+     *           aggregated, and can only be requested for date ranges of 31 days or less.
+     *     @type int|string $unique_users_nine_plus
+     *           This metric counts the unique individuals who were shown your video ad nine
+     *           or more times within the selected date range. This metric cannot be
+     *           aggregated, and can only be requested for date ranges of 31 days or less.
      *     @type int|string $unique_users_ten_plus
      *           This metric counts the unique individuals who were shown your video ad ten
      *           or more times within the selected date range. This metric cannot be
@@ -4858,6 +4986,46 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type float $normalized_incremental_searches_per_impression_p90_upper_bound
      *           The upper bound of the 90% confidence interval for normalized incremental
      *           searches per impression.
+     *     @type \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $unique_users_info
+     *           Additional information (e.g. quality of reach data) about the metric
+     *           representing the number of unique individuals who were shown your ad at
+     *           least once within the selected date range.
+     *     @type \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $unique_users_two_plus_info
+     *           Additional information (e.g. quality of reach data) about the metric
+     *           representing the number of unique individuals who were shown your ad two
+     *           or more times within the selected date range.
+     *     @type \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $unique_users_three_plus_info
+     *           Additional information (e.g. quality of reach data) about the metric
+     *           representing the number of unique individuals who were shown your ad three
+     *           or more times within the selected date range.
+     *     @type \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $unique_users_four_plus_info
+     *           Additional information (e.g. quality of reach data) about the metric
+     *           representing the number of unique individuals who were shown your ad four
+     *           or more times within the selected date range.
+     *     @type \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $unique_users_five_plus_info
+     *           Additional information (e.g. quality of reach data) about the metric
+     *           representing the number of unique individuals who were shown your ad five
+     *           or more times within the selected date range.
+     *     @type \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $unique_users_six_plus_info
+     *           Additional information (e.g. quality of reach data) about the metric
+     *           representing the number of unique individuals who were shown your ad six
+     *           or more times within the selected date range.
+     *     @type \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $unique_users_seven_plus_info
+     *           Additional information (e.g. quality of reach data) about the metric
+     *           representing the number of unique individuals who were shown your ad seven
+     *           or more times within the selected date range.
+     *     @type \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $unique_users_eight_plus_info
+     *           Additional information (e.g. quality of reach data) about the metric
+     *           representing the number of unique individuals who were shown your ad eight
+     *           or more times within the selected date range.
+     *     @type \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $unique_users_nine_plus_info
+     *           Additional information (e.g. quality of reach data) about the metric
+     *           representing the number of unique individuals who were shown your ad nine
+     *           or more times within the selected date range.
+     *     @type \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $unique_users_ten_plus_info
+     *           Additional information (e.g. quality of reach data) about the metric
+     *           representing the number of unique individuals who were shown your ad ten
+     *           or more times within the selected date range.
      * }
      */
     public function __construct($data = NULL) {
@@ -13520,6 +13688,166 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * This metric counts the unique individuals who were shown your video ad six
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_six_plus = 556;</code>
+     * @return int|string
+     */
+    public function getUniqueUsersSixPlus()
+    {
+        return isset($this->unique_users_six_plus) ? $this->unique_users_six_plus : 0;
+    }
+
+    public function hasUniqueUsersSixPlus()
+    {
+        return isset($this->unique_users_six_plus);
+    }
+
+    public function clearUniqueUsersSixPlus()
+    {
+        unset($this->unique_users_six_plus);
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad six
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_six_plus = 556;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUniqueUsersSixPlus($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->unique_users_six_plus = $var;
+
+        return $this;
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad
+     * seven or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_seven_plus = 557;</code>
+     * @return int|string
+     */
+    public function getUniqueUsersSevenPlus()
+    {
+        return isset($this->unique_users_seven_plus) ? $this->unique_users_seven_plus : 0;
+    }
+
+    public function hasUniqueUsersSevenPlus()
+    {
+        return isset($this->unique_users_seven_plus);
+    }
+
+    public function clearUniqueUsersSevenPlus()
+    {
+        unset($this->unique_users_seven_plus);
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad
+     * seven or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_seven_plus = 557;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUniqueUsersSevenPlus($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->unique_users_seven_plus = $var;
+
+        return $this;
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad
+     * eight or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_eight_plus = 558;</code>
+     * @return int|string
+     */
+    public function getUniqueUsersEightPlus()
+    {
+        return isset($this->unique_users_eight_plus) ? $this->unique_users_eight_plus : 0;
+    }
+
+    public function hasUniqueUsersEightPlus()
+    {
+        return isset($this->unique_users_eight_plus);
+    }
+
+    public function clearUniqueUsersEightPlus()
+    {
+        unset($this->unique_users_eight_plus);
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad
+     * eight or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_eight_plus = 558;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUniqueUsersEightPlus($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->unique_users_eight_plus = $var;
+
+        return $this;
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad nine
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_nine_plus = 559;</code>
+     * @return int|string
+     */
+    public function getUniqueUsersNinePlus()
+    {
+        return isset($this->unique_users_nine_plus) ? $this->unique_users_nine_plus : 0;
+    }
+
+    public function hasUniqueUsersNinePlus()
+    {
+        return isset($this->unique_users_nine_plus);
+    }
+
+    public function clearUniqueUsersNinePlus()
+    {
+        unset($this->unique_users_nine_plus);
+    }
+
+    /**
+     * This metric counts the unique individuals who were shown your video ad nine
+     * or more times within the selected date range. This metric cannot be
+     * aggregated, and can only be requested for date ranges of 31 days or less.
+     *
+     * Generated from protobuf field <code>optional int64 unique_users_nine_plus = 559;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUniqueUsersNinePlus($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->unique_users_nine_plus = $var;
+
+        return $this;
+    }
+
+    /**
      * This metric counts the unique individuals who were shown your video ad ten
      * or more times within the selected date range. This metric cannot be
      * aggregated, and can only be requested for date ranges of 31 days or less.
@@ -19649,6 +19977,406 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->normalized_incremental_searches_per_impression_p90_upper_bound = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad at
+     * least once within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_info = 550;</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo|null
+     */
+    public function getUniqueUsersInfo()
+    {
+        return $this->unique_users_info;
+    }
+
+    public function hasUniqueUsersInfo()
+    {
+        return isset($this->unique_users_info);
+    }
+
+    public function clearUniqueUsersInfo()
+    {
+        unset($this->unique_users_info);
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad at
+     * least once within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_info = 550;</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $var
+     * @return $this
+     */
+    public function setUniqueUsersInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo::class);
+        $this->unique_users_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad two
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_two_plus_info = 551;</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo|null
+     */
+    public function getUniqueUsersTwoPlusInfo()
+    {
+        return $this->unique_users_two_plus_info;
+    }
+
+    public function hasUniqueUsersTwoPlusInfo()
+    {
+        return isset($this->unique_users_two_plus_info);
+    }
+
+    public function clearUniqueUsersTwoPlusInfo()
+    {
+        unset($this->unique_users_two_plus_info);
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad two
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_two_plus_info = 551;</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $var
+     * @return $this
+     */
+    public function setUniqueUsersTwoPlusInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo::class);
+        $this->unique_users_two_plus_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad three
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_three_plus_info = 552;</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo|null
+     */
+    public function getUniqueUsersThreePlusInfo()
+    {
+        return $this->unique_users_three_plus_info;
+    }
+
+    public function hasUniqueUsersThreePlusInfo()
+    {
+        return isset($this->unique_users_three_plus_info);
+    }
+
+    public function clearUniqueUsersThreePlusInfo()
+    {
+        unset($this->unique_users_three_plus_info);
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad three
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_three_plus_info = 552;</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $var
+     * @return $this
+     */
+    public function setUniqueUsersThreePlusInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo::class);
+        $this->unique_users_three_plus_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad four
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_four_plus_info = 553;</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo|null
+     */
+    public function getUniqueUsersFourPlusInfo()
+    {
+        return $this->unique_users_four_plus_info;
+    }
+
+    public function hasUniqueUsersFourPlusInfo()
+    {
+        return isset($this->unique_users_four_plus_info);
+    }
+
+    public function clearUniqueUsersFourPlusInfo()
+    {
+        unset($this->unique_users_four_plus_info);
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad four
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_four_plus_info = 553;</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $var
+     * @return $this
+     */
+    public function setUniqueUsersFourPlusInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo::class);
+        $this->unique_users_four_plus_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad five
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_five_plus_info = 554;</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo|null
+     */
+    public function getUniqueUsersFivePlusInfo()
+    {
+        return $this->unique_users_five_plus_info;
+    }
+
+    public function hasUniqueUsersFivePlusInfo()
+    {
+        return isset($this->unique_users_five_plus_info);
+    }
+
+    public function clearUniqueUsersFivePlusInfo()
+    {
+        unset($this->unique_users_five_plus_info);
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad five
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_five_plus_info = 554;</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $var
+     * @return $this
+     */
+    public function setUniqueUsersFivePlusInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo::class);
+        $this->unique_users_five_plus_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad six
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_six_plus_info = 560;</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo|null
+     */
+    public function getUniqueUsersSixPlusInfo()
+    {
+        return $this->unique_users_six_plus_info;
+    }
+
+    public function hasUniqueUsersSixPlusInfo()
+    {
+        return isset($this->unique_users_six_plus_info);
+    }
+
+    public function clearUniqueUsersSixPlusInfo()
+    {
+        unset($this->unique_users_six_plus_info);
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad six
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_six_plus_info = 560;</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $var
+     * @return $this
+     */
+    public function setUniqueUsersSixPlusInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo::class);
+        $this->unique_users_six_plus_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad seven
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_seven_plus_info = 561;</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo|null
+     */
+    public function getUniqueUsersSevenPlusInfo()
+    {
+        return $this->unique_users_seven_plus_info;
+    }
+
+    public function hasUniqueUsersSevenPlusInfo()
+    {
+        return isset($this->unique_users_seven_plus_info);
+    }
+
+    public function clearUniqueUsersSevenPlusInfo()
+    {
+        unset($this->unique_users_seven_plus_info);
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad seven
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_seven_plus_info = 561;</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $var
+     * @return $this
+     */
+    public function setUniqueUsersSevenPlusInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo::class);
+        $this->unique_users_seven_plus_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad eight
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_eight_plus_info = 562;</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo|null
+     */
+    public function getUniqueUsersEightPlusInfo()
+    {
+        return $this->unique_users_eight_plus_info;
+    }
+
+    public function hasUniqueUsersEightPlusInfo()
+    {
+        return isset($this->unique_users_eight_plus_info);
+    }
+
+    public function clearUniqueUsersEightPlusInfo()
+    {
+        unset($this->unique_users_eight_plus_info);
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad eight
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_eight_plus_info = 562;</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $var
+     * @return $this
+     */
+    public function setUniqueUsersEightPlusInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo::class);
+        $this->unique_users_eight_plus_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad nine
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_nine_plus_info = 563;</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo|null
+     */
+    public function getUniqueUsersNinePlusInfo()
+    {
+        return $this->unique_users_nine_plus_info;
+    }
+
+    public function hasUniqueUsersNinePlusInfo()
+    {
+        return isset($this->unique_users_nine_plus_info);
+    }
+
+    public function clearUniqueUsersNinePlusInfo()
+    {
+        unset($this->unique_users_nine_plus_info);
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad nine
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_nine_plus_info = 563;</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $var
+     * @return $this
+     */
+    public function setUniqueUsersNinePlusInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo::class);
+        $this->unique_users_nine_plus_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad ten
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_ten_plus_info = 555;</code>
+     * @return \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo|null
+     */
+    public function getUniqueUsersTenPlusInfo()
+    {
+        return $this->unique_users_ten_plus_info;
+    }
+
+    public function hasUniqueUsersTenPlusInfo()
+    {
+        return isset($this->unique_users_ten_plus_info);
+    }
+
+    public function clearUniqueUsersTenPlusInfo()
+    {
+        unset($this->unique_users_ten_plus_info);
+    }
+
+    /**
+     * Additional information (e.g. quality of reach data) about the metric
+     * representing the number of unique individuals who were shown your ad ten
+     * or more times within the selected date range.
+     *
+     * Generated from protobuf field <code>optional .google.ads.googleads.v26.common.ReachMetricInfo unique_users_ten_plus_info = 555;</code>
+     * @param \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo $var
+     * @return $this
+     */
+    public function setUniqueUsersTenPlusInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Common\ReachMetricInfo::class);
+        $this->unique_users_ten_plus_info = $var;
 
         return $this;
     }
