@@ -13,10 +13,10 @@ class MatchedLocationInterestView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xDF\x05\x0AGgoogle/ads/googleads/v26/resources/matched_location_interest_view.proto\x12\"google.ads.googleads.v26.resources\x1A\x19google/api/resource.proto\"\xB7\x02\x0A\x1BMatchedLocationInterestView\x12S\x0A\x0Dresource_name\x18\x01 \x01(\x09B<\xE0A\x03\xFAA6\x0A4googleads.googleapis.com/MatchedLocationInterestView:\xC2\x01\xEAA\xBE\x01\x0A4googleads.googleapis.com/MatchedLocationInterestView\x12Kcustomers/{customer_id}/matchedLocationInterestViews/{country_criterion_id}*\x1CmatchedLocationInterestViews2\x1BmatchedLocationInterestViewB\x92\x02\x0A&com.google.ads.googleads.v26.resourcesB MatchedLocationInterestViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v26/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V26.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V26\\Resources\xEA\x02&Google::Ads::GoogleAds::V26::Resourcesb\x06proto3"
+            "\x0A\xE0\x05\x0AGgoogle/ads/googleads/v26/resources/matched_location_interest_view.proto\x12\"google.ads.googleads.v26.resources\x1A\x19google/api/resource.proto\"\xB8\x02\x0A\x1BMatchedLocationInterestView\x12T\x0A\x0Dresource_name\x18\x01 \x01(\x09B=\xE2A\x01\x03\xFAA6\x0A4googleads.googleapis.com/MatchedLocationInterestView:\xC2\x01\xEAA\xBE\x01\x0A4googleads.googleapis.com/MatchedLocationInterestView\x12Kcustomers/{customer_id}/matchedLocationInterestViews/{country_criterion_id}*\x1CmatchedLocationInterestViews2\x1BmatchedLocationInterestViewB\x92\x02\x0A&com.google.ads.googleads.v26.resourcesB MatchedLocationInterestViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v26/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V26.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V26\\Resources\xEA\x02&Google::Ads::GoogleAds::V26::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

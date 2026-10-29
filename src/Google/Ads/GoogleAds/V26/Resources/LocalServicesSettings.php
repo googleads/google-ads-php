@@ -27,6 +27,12 @@ class LocalServicesSettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v26.resources.GranularInsuranceStatus granular_insurance_statuses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $granular_insurance_statuses;
+    /**
+     * Settings for external redemption provider integration.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.RedemptionProviderInfo redemption_provider_info = 3;</code>
+     */
+    protected $redemption_provider_info = null;
 
     /**
      * Constructor.
@@ -38,6 +44,8 @@ class LocalServicesSettings extends \Google\Protobuf\Internal\Message
      *           Output only. A read-only list of geo vertical level license statuses.
      *     @type \Google\Ads\GoogleAds\V26\Resources\GranularInsuranceStatus[] $granular_insurance_statuses
      *           Output only. A read-only list of geo vertical level insurance statuses.
+     *     @type \Google\Ads\GoogleAds\V26\Resources\RedemptionProviderInfo $redemption_provider_info
+     *           Settings for external redemption provider integration.
      * }
      */
     public function __construct($data = NULL) {
@@ -93,6 +101,42 @@ class LocalServicesSettings extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V26\Resources\GranularInsuranceStatus::class);
         $this->granular_insurance_statuses = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Settings for external redemption provider integration.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.RedemptionProviderInfo redemption_provider_info = 3;</code>
+     * @return \Google\Ads\GoogleAds\V26\Resources\RedemptionProviderInfo|null
+     */
+    public function getRedemptionProviderInfo()
+    {
+        return $this->redemption_provider_info;
+    }
+
+    public function hasRedemptionProviderInfo()
+    {
+        return isset($this->redemption_provider_info);
+    }
+
+    public function clearRedemptionProviderInfo()
+    {
+        unset($this->redemption_provider_info);
+    }
+
+    /**
+     * Settings for external redemption provider integration.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.RedemptionProviderInfo redemption_provider_info = 3;</code>
+     * @param \Google\Ads\GoogleAds\V26\Resources\RedemptionProviderInfo $var
+     * @return $this
+     */
+    public function setRedemptionProviderInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Resources\RedemptionProviderInfo::class);
+        $this->redemption_provider_info = $var;
 
         return $this;
     }

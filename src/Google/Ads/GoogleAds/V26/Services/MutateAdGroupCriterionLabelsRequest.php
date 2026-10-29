@@ -46,6 +46,7 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                                              $customerId Required. ID of the customer whose ad group criterion labels are being
      *                                                                                        modified.
@@ -61,7 +62,6 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

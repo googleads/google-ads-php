@@ -30,6 +30,7 @@ class AppendLeadConversationRequest extends \Google\Protobuf\Internal\Message
      */
     private $conversations;
 
+
     /**
      * @param string                                            $customerId    Required. The Id of the customer which owns the leads onto which the
      *                                                                         conversations will be appended.
@@ -45,7 +46,6 @@ class AppendLeadConversationRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setConversations($conversations);
     }
-
     /**
      * Constructor.
      *

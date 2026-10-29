@@ -45,6 +45,7 @@ class MutateGoalsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                             $customerId Required. The ID of the customer whose goals are being modified.
      * @param \Google\Ads\GoogleAds\V26\Services\GoalOperation[] $operations Required. The list of operations to perform on the goals.
@@ -59,7 +60,6 @@ class MutateGoalsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

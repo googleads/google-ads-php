@@ -417,6 +417,12 @@ class RecommendationType
      * Generated from protobuf enum <code>RAISE_BUDGET_PERFORMANCE_TOO_LOW = 63;</code>
      */
     const RAISE_BUDGET_PERFORMANCE_TOO_LOW = 63;
+    /**
+     * Recommendation to optimize for new customers.
+     *
+     * Generated from protobuf enum <code>OPTIMIZE_FOR_NEW_CUSTOMERS = 64;</code>
+     */
+    const OPTIMIZE_FOR_NEW_CUSTOMERS = 64;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -479,6 +485,7 @@ class RecommendationType
         self::RAISE_TARGET_CPA_PERFORMANCE_BID_TOO_LOW => 'RAISE_TARGET_CPA_PERFORMANCE_BID_TOO_LOW',
         self::LOWER_TARGET_ROAS_PERFORMANCE_BID_TOO_LOW => 'LOWER_TARGET_ROAS_PERFORMANCE_BID_TOO_LOW',
         self::RAISE_BUDGET_PERFORMANCE_TOO_LOW => 'RAISE_BUDGET_PERFORMANCE_TOO_LOW',
+        self::OPTIMIZE_FOR_NEW_CUSTOMERS => 'OPTIMIZE_FOR_NEW_CUSTOMERS',
     ];
 
     public static function name($value)

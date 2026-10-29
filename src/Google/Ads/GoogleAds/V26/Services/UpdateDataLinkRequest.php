@@ -35,6 +35,7 @@ class UpdateDataLinkRequest extends \Google\Protobuf\Internal\Message
      */
     protected $resource_name = '';
 
+
     /**
      * @param string $customerId     Required. The ID of the customer for which the data link is created.
      * @param int    $dataLinkStatus Required. The data link status to be updated to.
@@ -52,7 +53,6 @@ class UpdateDataLinkRequest extends \Google\Protobuf\Internal\Message
             ->setDataLinkStatus($dataLinkStatus)
             ->setResourceName($resourceName);
     }
-
     /**
      * Constructor.
      *

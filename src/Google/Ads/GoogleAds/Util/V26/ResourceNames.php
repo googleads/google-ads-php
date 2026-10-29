@@ -70,6 +70,7 @@ use Google\Ads\GoogleAds\V26\Services\Client\CustomAudienceServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerAssetServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerAssetSetServiceClient;
+use Google\Ads\GoogleAds\V26\Services\Client\CustomerBudgetNetworkSettingServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerClientLinkServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerCustomizerServiceClient;
@@ -1144,6 +1145,20 @@ final class ResourceNames
         return CustomerAssetSetServiceClient::customerAssetSetName(
             $customerId,
             $assetSetId
+        );
+    }
+
+    /**
+     * Generates a resource name of customer budget network setting type.
+     *
+     * @param string $customerId
+     * @return string the customer budget network setting resource name
+     */
+    public static function forCustomerBudgetNetworkSetting(
+        $customerId
+    ): string {
+        return CustomerBudgetNetworkSettingServiceClient::customerBudgetNetworkSettingName(
+            $customerId
         );
     }
 

@@ -31,6 +31,7 @@ class StartIdentityVerificationRequest extends \Google\Protobuf\Internal\Message
      */
     protected $verification_program = 0;
 
+
     /**
      * @param string $customerId          Required. The Id of the customer for whom we are creating this
      *                                    verification.
@@ -48,7 +49,6 @@ class StartIdentityVerificationRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setVerificationProgram($verificationProgram);
     }
-
     /**
      * Constructor.
      *

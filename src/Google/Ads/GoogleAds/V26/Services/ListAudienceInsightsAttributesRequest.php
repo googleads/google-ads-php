@@ -81,6 +81,7 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
      */
     protected $knowledge_graph_entity_search_options = null;
 
+
     /**
      * @param string $customerId Required. The ID of the customer.
      * @param int[]  $dimensions Required. The types of attributes to be returned. Supported
@@ -106,7 +107,6 @@ class ListAudienceInsightsAttributesRequest extends \Google\Protobuf\Internal\Me
             ->setDimensions($dimensions)
             ->setQueryText($queryText);
     }
-
     /**
      * Constructor.
      *

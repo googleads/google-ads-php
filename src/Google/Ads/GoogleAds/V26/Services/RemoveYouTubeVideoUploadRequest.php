@@ -30,6 +30,7 @@ class RemoveYouTubeVideoUploadRequest extends \Google\Protobuf\Internal\Message
      */
     private $resource_names;
 
+
     /**
      * @param string $customerId Required. The customer ID requesting the YouTube video upload deletion.
      *                           Required.
@@ -43,7 +44,6 @@ class RemoveYouTubeVideoUploadRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setCustomerId($customerId);
     }
-
     /**
      * Constructor.
      *

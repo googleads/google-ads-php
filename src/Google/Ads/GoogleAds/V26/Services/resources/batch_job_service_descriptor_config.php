@@ -134,6 +134,7 @@ return [
                 'customConversionGoal' => 'customers/{customer_id}/customConversionGoals/{goal_id}',
                 'customer' => 'customers/{customer_id}',
                 'customerAsset' => 'customers/{customer_id}/customerAssets/{asset_id}~{field_type}',
+                'customerBudgetNetworkSetting' => 'customers/{customer_id}/customerBudgetNetworkSettings',
                 'customerConversionGoal' => 'customers/{customer_id}/customerConversionGoals/{category}~{source}',
                 'customerCustomizer' => 'customers/{customer_id}/customerCustomizers/{customizer_attribute_id}',
                 'customerLabel' => 'customers/{customer_id}/customerLabels/{label_id}',

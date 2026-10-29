@@ -52,6 +52,7 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                       $customerId     Required. The ID of the Manager under whom client customer is being
      *                                                                     created.
@@ -68,7 +69,6 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setCustomerClient($customerClient);
     }
-
     /**
      * Constructor.
      *

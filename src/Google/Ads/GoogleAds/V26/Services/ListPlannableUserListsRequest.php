@@ -36,6 +36,7 @@ class ListPlannableUserListsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $reach_application_info = null;
 
+
     /**
      * @param string $customerId Required. The ID of the customer.
      *
@@ -48,7 +49,6 @@ class ListPlannableUserListsRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setCustomerId($customerId);
     }
-
     /**
      * Constructor.
      *

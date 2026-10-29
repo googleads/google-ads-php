@@ -36,6 +36,7 @@ class GenerateAdGroupThemesRequest extends \Google\Protobuf\Internal\Message
      */
     private $ad_groups;
 
+
     /**
      * @param string   $customerId Required. The ID of the customer.
      * @param string[] $keywords   Required. A list of keywords to group into the provided AdGroups.
@@ -53,7 +54,6 @@ class GenerateAdGroupThemesRequest extends \Google\Protobuf\Internal\Message
             ->setKeywords($keywords)
             ->setAdGroups($adGroups);
     }
-
     /**
      * Constructor.
      *

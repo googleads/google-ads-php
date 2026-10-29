@@ -104,6 +104,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      */
     protected $reach_application_info = null;
 
+
     /**
      * @param string                                              $customerId       Required. The ID of the customer.
      * @param \Google\Ads\GoogleAds\V26\Services\CampaignDuration $campaignDuration Required. Campaign duration.
@@ -121,7 +122,6 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
             ->setCampaignDuration($campaignDuration)
             ->setPlannedProducts($plannedProducts);
     }
-
     /**
      * Constructor.
      *

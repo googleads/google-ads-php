@@ -54,6 +54,7 @@ class ListPlannableUserInterestsRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $reach_application_info = null;
 
+
     /**
      * @param string $customerId Required. The ID of the customer.
      *
@@ -66,7 +67,6 @@ class ListPlannableUserInterestsRequest extends \Google\Protobuf\Internal\Messag
         return (new self())
             ->setCustomerId($customerId);
     }
-
     /**
      * Constructor.
      *

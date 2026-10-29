@@ -11,6 +11,10 @@ use Google\Protobuf\RepeatedField;
 /**
  * Request message for
  * [CampaignBudgetService.MutateCampaignBudgets][google.ads.googleads.v26.services.CampaignBudgetService.MutateCampaignBudgets].
+ * Update operations in `operations` require an `update_mask` specifying the
+ * fields to modify. Note that `explicitly_shared` defaults to `true` if
+ * unspecified. A non-shared budget can be updated to explicitly shared, but an
+ * explicitly shared budget cannot become non-shared.
  *
  * Generated from protobuf message <code>google.ads.googleads.v26.services.MutateCampaignBudgetsRequest</code>
  */
@@ -52,6 +56,7 @@ class MutateCampaignBudgetsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                       $customerId Required. The ID of the customer whose campaign budgets are being modified.
      * @param \Google\Ads\GoogleAds\V26\Services\CampaignBudgetOperation[] $operations Required. The list of operations to perform on individual campaign budgets.
@@ -66,7 +71,6 @@ class MutateCampaignBudgetsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

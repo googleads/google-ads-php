@@ -58,6 +58,7 @@ class UploadConversionAdjustmentsRequest extends \Google\Protobuf\Internal\Messa
      */
     protected $job_id = null;
 
+
     /**
      * @param string                                                    $customerId            Required. The ID of the customer performing the upload.
      * @param \Google\Ads\GoogleAds\V26\Services\ConversionAdjustment[] $conversionAdjustments Required. The conversion adjustments that are being uploaded.
@@ -80,7 +81,6 @@ class UploadConversionAdjustmentsRequest extends \Google\Protobuf\Internal\Messa
             ->setConversionAdjustments($conversionAdjustments)
             ->setPartialFailure($partialFailure);
     }
-
     /**
      * Constructor.
      *

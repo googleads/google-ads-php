@@ -300,6 +300,13 @@ class AssetError
      * Generated from protobuf enum <code>CUSTOMER_NOT_ON_ALLOWLIST_FOR_MESSAGE_ASSETS = 46;</code>
      */
     const CUSTOMER_NOT_ON_ALLOWLIST_FOR_MESSAGE_ASSETS = 46;
+    /**
+     * The partner promotion ID is set as the oneof variant (int_value or
+     * string_value) that this account's promotion integration does not accept.
+     *
+     * Generated from protobuf enum <code>PARTNER_PROMOTION_ID_TYPE_INCOMPATIBLE = 47;</code>
+     */
+    const PARTNER_PROMOTION_ID_TYPE_INCOMPATIBLE = 47;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -348,6 +355,7 @@ class AssetError
         self::PROMOTION_QR_CODE_CANNOT_CONTAIN_LINKS => 'PROMOTION_QR_CODE_CANNOT_CONTAIN_LINKS',
         self::PROMOTION_QR_CODE_INVALID_FORMAT => 'PROMOTION_QR_CODE_INVALID_FORMAT',
         self::CUSTOMER_NOT_ON_ALLOWLIST_FOR_MESSAGE_ASSETS => 'CUSTOMER_NOT_ON_ALLOWLIST_FOR_MESSAGE_ASSETS',
+        self::PARTNER_PROMOTION_ID_TYPE_INCOMPATIBLE => 'PARTNER_PROMOTION_ID_TYPE_INCOMPATIBLE',
     ];
 
     public static function name($value)

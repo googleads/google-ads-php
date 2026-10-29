@@ -13,10 +13,10 @@ class CartDataSalesView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xF6\x04\x0A=google/ads/googleads/v26/resources/cart_data_sales_view.proto\x12\"google.ads.googleads.v26.resources\x1A\x19google/api/resource.proto\"\xE2\x01\x0A\x11CartDataSalesView\x12I\x0A\x0Dresource_name\x18\x01 \x01(\x09B2\xE0A\x03\xFAA,\x0A*googleads.googleapis.com/CartDataSalesView:\x81\x01\xEAA~\x0A*googleads.googleapis.com/CartDataSalesView\x12)customers/{customer_id}/cartDataSalesView*\x12cartDataSalesViews2\x11cartDataSalesViewB\x88\x02\x0A&com.google.ads.googleads.v26.resourcesB\x16CartDataSalesViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v26/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V26.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V26\\Resources\xEA\x02&Google::Ads::GoogleAds::V26::Resourcesb\x06proto3"
+            "\x0A\xF7\x04\x0A=google/ads/googleads/v26/resources/cart_data_sales_view.proto\x12\"google.ads.googleads.v26.resources\x1A\x19google/api/resource.proto\"\xE3\x01\x0A\x11CartDataSalesView\x12J\x0A\x0Dresource_name\x18\x01 \x01(\x09B3\xE2A\x01\x03\xFAA,\x0A*googleads.googleapis.com/CartDataSalesView:\x81\x01\xEAA~\x0A*googleads.googleapis.com/CartDataSalesView\x12)customers/{customer_id}/cartDataSalesView*\x12cartDataSalesViews2\x11cartDataSalesViewB\x88\x02\x0A&com.google.ads.googleads.v26.resourcesB\x16CartDataSalesViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v26/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V26.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V26\\Resources\xEA\x02&Google::Ads::GoogleAds::V26::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

@@ -50,6 +50,7 @@ class GenerateInsightsFinderReportRequest extends \Google\Protobuf\Internal\Mess
      */
     protected $insights_application_info = null;
 
+
     /**
      * @param string                                              $customerId       Required. The ID of the customer.
      * @param \Google\Ads\GoogleAds\V26\Services\InsightsAudience $baselineAudience Required. A baseline audience for this report, typically all people in a
@@ -69,7 +70,6 @@ class GenerateInsightsFinderReportRequest extends \Google\Protobuf\Internal\Mess
             ->setBaselineAudience($baselineAudience)
             ->setSpecificAudience($specificAudience);
     }
-
     /**
      * Constructor.
      *

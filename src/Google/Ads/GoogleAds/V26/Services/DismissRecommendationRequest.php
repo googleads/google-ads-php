@@ -40,6 +40,7 @@ class DismissRecommendationRequest extends \Google\Protobuf\Internal\Message
      */
     protected $partial_failure = false;
 
+
     /**
      * @param string                                                                                           $customerId Required. The ID of the customer with the recommendation.
      * @param \Google\Ads\GoogleAds\V26\Services\DismissRecommendationRequest\DismissRecommendationOperation[] $operations Required. The list of operations to dismiss recommendations.
@@ -56,7 +57,6 @@ class DismissRecommendationRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

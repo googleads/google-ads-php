@@ -54,6 +54,7 @@ class MutateConversionValueRulesRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                            $customerId Required. The ID of the customer whose conversion value rules are being
      *                                                                                      modified.
@@ -70,7 +71,6 @@ class MutateConversionValueRulesRequest extends \Google\Protobuf\Internal\Messag
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

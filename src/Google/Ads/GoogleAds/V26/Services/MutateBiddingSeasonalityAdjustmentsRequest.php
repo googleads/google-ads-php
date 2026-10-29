@@ -54,6 +54,7 @@ class MutateBiddingSeasonalityAdjustmentsRequest extends \Google\Protobuf\Intern
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                                     $customerId Required. ID of the customer whose seasonality adjustments are being
      *                                                                                               modified.
@@ -70,7 +71,6 @@ class MutateBiddingSeasonalityAdjustmentsRequest extends \Google\Protobuf\Intern
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

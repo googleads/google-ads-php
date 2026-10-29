@@ -47,6 +47,7 @@ class MutateAssetGroupAssetsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                                        $customerId Required. The ID of the customer whose asset group assets are being
      *                                                                                  modified.
@@ -63,7 +64,6 @@ class MutateAssetGroupAssetsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

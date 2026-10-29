@@ -10,6 +10,11 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * A click conversion.
+ * For help diagnosing and resolving conversion upload issues, see the
+ * conversion upload
+ * [troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting)
+ * (or use the `troubleshoot-conversions` workflow in the [Google Ads API
+ * Developer Assistant](/google-ads/api/docs/developer-toolkit/ai-assistant)).
  *
  * Generated from protobuf message <code>google.ads.googleads.v26.services.ClickConversion</code>
  */
@@ -93,7 +98,11 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
     /**
      * The user identifiers associated with this conversion. Only hashed_email and
      * hashed_phone_number are supported for conversion uploads. The maximum
-     * number of user identifiers for each conversion is 5.
+     * number of user identifiers for each conversion is 5. Each `UserIdentifier`
+     * in the list must have only one identifier field set (`oneof identifier` is
+     * mutually exclusive), and raw values must be normalized before SHA-256
+     * hashing (for email addresses, trim leading and trailing whitespace and
+     * convert to lowercase; for phone numbers, format in E.164 format).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v26.common.UserIdentifier user_identifiers = 17;</code>
      */
@@ -168,7 +177,11 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V26\Common\UserIdentifier[] $user_identifiers
      *           The user identifiers associated with this conversion. Only hashed_email and
      *           hashed_phone_number are supported for conversion uploads. The maximum
-     *           number of user identifiers for each conversion is 5.
+     *           number of user identifiers for each conversion is 5. Each `UserIdentifier`
+     *           in the list must have only one identifier field set (`oneof identifier` is
+     *           mutually exclusive), and raw values must be normalized before SHA-256
+     *           hashing (for email addresses, trim leading and trailing whitespace and
+     *           convert to lowercase; for phone numbers, format in E.164 format).
      *     @type int $conversion_environment
      *           The environment this conversion was recorded on, for example, App or Web.
      *     @type \Google\Ads\GoogleAds\V26\Common\Consent $consent
@@ -586,7 +599,11 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
     /**
      * The user identifiers associated with this conversion. Only hashed_email and
      * hashed_phone_number are supported for conversion uploads. The maximum
-     * number of user identifiers for each conversion is 5.
+     * number of user identifiers for each conversion is 5. Each `UserIdentifier`
+     * in the list must have only one identifier field set (`oneof identifier` is
+     * mutually exclusive), and raw values must be normalized before SHA-256
+     * hashing (for email addresses, trim leading and trailing whitespace and
+     * convert to lowercase; for phone numbers, format in E.164 format).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v26.common.UserIdentifier user_identifiers = 17;</code>
      * @return RepeatedField<\Google\Ads\GoogleAds\V26\Common\UserIdentifier>
@@ -599,7 +616,11 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
     /**
      * The user identifiers associated with this conversion. Only hashed_email and
      * hashed_phone_number are supported for conversion uploads. The maximum
-     * number of user identifiers for each conversion is 5.
+     * number of user identifiers for each conversion is 5. Each `UserIdentifier`
+     * in the list must have only one identifier field set (`oneof identifier` is
+     * mutually exclusive), and raw values must be normalized before SHA-256
+     * hashing (for email addresses, trim leading and trailing whitespace and
+     * convert to lowercase; for phone numbers, format in E.164 format).
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v26.common.UserIdentifier user_identifiers = 17;</code>
      * @param \Google\Ads\GoogleAds\V26\Common\UserIdentifier[] $var

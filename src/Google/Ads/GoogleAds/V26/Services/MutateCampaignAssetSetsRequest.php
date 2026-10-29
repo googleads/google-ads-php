@@ -54,6 +54,7 @@ class MutateCampaignAssetSetsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                         $customerId Required. The ID of the customer whose campaign asset sets are being
      *                                                                                   modified.
@@ -70,7 +71,6 @@ class MutateCampaignAssetSetsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

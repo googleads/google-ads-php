@@ -39,6 +39,7 @@ class SuggestTravelAssetsRequest extends \Google\Protobuf\Internal\Message
      */
     private $place_ids;
 
+
     /**
      * @param string $customerId     Required. The ID of the customer.
      * @param string $languageOption Required. The language specifications in BCP 47 format (for example, en-US,
@@ -55,7 +56,6 @@ class SuggestTravelAssetsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setLanguageOption($languageOption);
     }
-
     /**
      * Constructor.
      *

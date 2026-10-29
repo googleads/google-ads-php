@@ -44,6 +44,7 @@ class CreateOfflineUserDataJobRequest extends \Google\Protobuf\Internal\Message
      */
     protected $enable_match_rate_range_preview = false;
 
+
     /**
      * @param string                                                 $customerId Required. The ID of the customer for which to create an offline user data
      *                                                                           job.
@@ -59,7 +60,6 @@ class CreateOfflineUserDataJobRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setJob($job);
     }
-
     /**
      * Constructor.
      *

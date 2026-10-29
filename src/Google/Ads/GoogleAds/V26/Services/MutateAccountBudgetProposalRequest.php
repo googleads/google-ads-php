@@ -37,6 +37,7 @@ class MutateAccountBudgetProposalRequest extends \Google\Protobuf\Internal\Messa
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                                            $customerId Required. The ID of the customer.
      * @param \Google\Ads\GoogleAds\V26\Services\AccountBudgetProposalOperation $operation  Required. The operation to perform on an individual account-level budget
@@ -52,7 +53,6 @@ class MutateAccountBudgetProposalRequest extends \Google\Protobuf\Internal\Messa
             ->setCustomerId($customerId)
             ->setOperation($operation);
     }
-
     /**
      * Constructor.
      *

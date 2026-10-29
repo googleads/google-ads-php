@@ -30,6 +30,7 @@ class PromoteCampaignDraftRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string $campaignDraft Required. The resource name of the campaign draft to promote.
      *
@@ -42,7 +43,6 @@ class PromoteCampaignDraftRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setCampaignDraft($campaignDraft);
     }
-
     /**
      * Constructor.
      *

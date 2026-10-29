@@ -50,7 +50,8 @@ class AdvertisingChannelSubType
      */
     const DISPLAY_EXPRESS = 5;
     /**
-     * Smart Shopping campaigns.
+     * Smart Shopping campaigns. New Smart Shopping campaigns cannot be
+     * created.
      *
      * Generated from protobuf enum <code>SHOPPING_SMART_ADS = 6;</code>
      */

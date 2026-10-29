@@ -30,6 +30,7 @@ class PromoteExperimentRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string $resourceName Required. The resource name of the experiment to promote.
      *
@@ -42,7 +43,6 @@ class PromoteExperimentRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setResourceName($resourceName);
     }
-
     /**
      * Constructor.
      *

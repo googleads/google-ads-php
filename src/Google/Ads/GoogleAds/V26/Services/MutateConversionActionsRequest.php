@@ -54,6 +54,7 @@ class MutateConversionActionsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                         $customerId Required. The ID of the customer whose conversion actions are being
      *                                                                                   modified.
@@ -70,7 +71,6 @@ class MutateConversionActionsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

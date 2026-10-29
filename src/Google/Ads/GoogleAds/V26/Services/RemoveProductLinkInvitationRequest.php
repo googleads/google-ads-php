@@ -32,6 +32,7 @@ class RemoveProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
      */
     protected $resource_name = '';
 
+
     /**
      * @param string $customerId   Required. The ID of the product link invitation being removed.
      * @param string $resourceName Required. The resource name of the product link invitation being removed is
@@ -50,7 +51,6 @@ class RemoveProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
             ->setCustomerId($customerId)
             ->setResourceName($resourceName);
     }
-
     /**
      * Constructor.
      *

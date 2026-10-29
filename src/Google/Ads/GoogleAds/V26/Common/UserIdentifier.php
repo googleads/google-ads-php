@@ -10,6 +10,18 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * User identifying information.
+ * Each `UserIdentifier` object represents a single identifier using a
+ * mutually exclusive `oneof`. Only one identifier field (`hashed_email`,
+ * `hashed_phone_number`, `mobile_id`, `third_party_user_id`, or
+ * `address_info`) may be set per `UserIdentifier` instance. Setting multiple
+ * fields on the same `UserIdentifier` clears the previously set field. To
+ * provide multiple identifiers for the same user (for example, both an email
+ * address and a phone number), add separate `UserIdentifier` objects to the
+ * `user_identifiers` list.
+ * Before hashing with SHA-256, normalize the raw values. For `hashed_email`
+ * and address fields, trim leading and trailing whitespace and convert all
+ * characters to lowercase. Phone numbers must be formatted in E.164 format
+ * (for example, `+16502531234`) before hashing.
  *
  * Generated from protobuf message <code>google.ads.googleads.v26.common.UserIdentifier</code>
  */
@@ -35,11 +47,15 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
      *           ConversionUploadService, or ConversionAdjustmentUploadService.
      *     @type string $hashed_email
      *           Hashed email address using SHA-256 hash function after normalization.
+     *           Normalize the email address by trimming leading and trailing whitespace
+     *           and converting all characters to lowercase before hashing with SHA-256.
      *           Accepted for Customer Match, Store Sales, ConversionUploadService, and
      *           ConversionAdjustmentUploadService.
      *     @type string $hashed_phone_number
      *           Hashed phone number using SHA-256 hash function after normalization
-     *           (E164 standard). Accepted for Customer Match, Store Sales,
+     *           (E164 standard). Normalize the phone number by trimming whitespace and
+     *           formatting in E.164 format (for example, `+16502531234`) before hashing
+     *           with SHA-256. Accepted for Customer Match, Store Sales,
      *           ConversionUploadService, and ConversionAdjustmentUploadService.
      *     @type string $mobile_id
      *           Mobile device ID (advertising ID/IDFA). Accepted only for Customer Match.
@@ -87,6 +103,8 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
 
     /**
      * Hashed email address using SHA-256 hash function after normalization.
+     * Normalize the email address by trimming leading and trailing whitespace
+     * and converting all characters to lowercase before hashing with SHA-256.
      * Accepted for Customer Match, Store Sales, ConversionUploadService, and
      * ConversionAdjustmentUploadService.
      *
@@ -105,6 +123,8 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
 
     /**
      * Hashed email address using SHA-256 hash function after normalization.
+     * Normalize the email address by trimming leading and trailing whitespace
+     * and converting all characters to lowercase before hashing with SHA-256.
      * Accepted for Customer Match, Store Sales, ConversionUploadService, and
      * ConversionAdjustmentUploadService.
      *
@@ -122,7 +142,9 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
 
     /**
      * Hashed phone number using SHA-256 hash function after normalization
-     * (E164 standard). Accepted for Customer Match, Store Sales,
+     * (E164 standard). Normalize the phone number by trimming whitespace and
+     * formatting in E.164 format (for example, `+16502531234`) before hashing
+     * with SHA-256. Accepted for Customer Match, Store Sales,
      * ConversionUploadService, and ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>string hashed_phone_number = 8;</code>
@@ -140,7 +162,9 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
 
     /**
      * Hashed phone number using SHA-256 hash function after normalization
-     * (E164 standard). Accepted for Customer Match, Store Sales,
+     * (E164 standard). Normalize the phone number by trimming whitespace and
+     * formatting in E.164 format (for example, `+16502531234`) before hashing
+     * with SHA-256. Accepted for Customer Match, Store Sales,
      * ConversionUploadService, and ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>string hashed_phone_number = 8;</code>

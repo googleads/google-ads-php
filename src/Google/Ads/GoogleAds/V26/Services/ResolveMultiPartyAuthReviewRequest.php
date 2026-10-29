@@ -30,6 +30,7 @@ class ResolveMultiPartyAuthReviewRequest extends \Google\Protobuf\Internal\Messa
      */
     private $operations;
 
+
     /**
      * @param string                                                                    $customerId Required. The ID of the customer.
      * @param \Google\Ads\GoogleAds\V26\Services\ResolveMultiPartyAuthReviewOperation[] $operations Required. The operations to perform. Currently only one operation is
@@ -45,7 +46,6 @@ class ResolveMultiPartyAuthReviewRequest extends \Google\Protobuf\Internal\Messa
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

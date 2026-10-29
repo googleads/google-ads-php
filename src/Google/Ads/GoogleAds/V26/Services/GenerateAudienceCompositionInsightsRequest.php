@@ -75,6 +75,7 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
      */
     protected $insights_application_info = null;
 
+
     /**
      * @param string                                              $customerId Required. The ID of the customer.
      * @param \Google\Ads\GoogleAds\V26\Services\InsightsAudience $audience   Required. The audience of interest for which insights are being requested.
@@ -107,7 +108,6 @@ class GenerateAudienceCompositionInsightsRequest extends \Google\Protobuf\Intern
             ->setAudience($audience)
             ->setDimensions($dimensions);
     }
-
     /**
      * Constructor.
      *

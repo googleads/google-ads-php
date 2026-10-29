@@ -13,10 +13,10 @@ class TargetingExpansionView
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xC8\x05\x0AAgoogle/ads/googleads/v26/resources/targeting_expansion_view.proto\x12\"google.ads.googleads.v26.resources\x1A\x19google/api/resource.proto\"\xAB\x02\x0A\x16TargetingExpansionView\x12N\x0A\x0Dresource_name\x18\x01 \x01(\x09B7\xE0A\x03\xFAA1\x0A/googleads.googleapis.com/TargetingExpansionView:\xC0\x01\xEAA\xBC\x01\x0A/googleads.googleapis.com/TargetingExpansionView\x12Xcustomers/{customer_id}/targetingExpansionViews/{campaign_id}~{targeting_expansion_type}*\x17targetingExpansionViews2\x16targetingExpansionViewB\x8D\x02\x0A&com.google.ads.googleads.v26.resourcesB\x1BTargetingExpansionViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v26/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V26.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V26\\Resources\xEA\x02&Google::Ads::GoogleAds::V26::Resourcesb\x06proto3"
+            "\x0A\xC9\x05\x0AAgoogle/ads/googleads/v26/resources/targeting_expansion_view.proto\x12\"google.ads.googleads.v26.resources\x1A\x19google/api/resource.proto\"\xAC\x02\x0A\x16TargetingExpansionView\x12O\x0A\x0Dresource_name\x18\x01 \x01(\x09B8\xE2A\x01\x03\xFAA1\x0A/googleads.googleapis.com/TargetingExpansionView:\xC0\x01\xEAA\xBC\x01\x0A/googleads.googleapis.com/TargetingExpansionView\x12Xcustomers/{customer_id}/targetingExpansionViews/{campaign_id}~{targeting_expansion_type}*\x17targetingExpansionViews2\x16targetingExpansionViewB\x8D\x02\x0A&com.google.ads.googleads.v26.resourcesB\x1BTargetingExpansionViewProtoP\x01ZKgoogle.golang.org/genproto/googleapis/ads/googleads/v26/resources;resources\xA2\x02\x03GAA\xAA\x02\"Google.Ads.GoogleAds.V26.Resources\xCA\x02\"Google\\Ads\\GoogleAds\\V26\\Resources\xEA\x02&Google::Ads::GoogleAds::V26::Resourcesb\x06proto3"
         , true);
         static::$is_initialized = true;
     }

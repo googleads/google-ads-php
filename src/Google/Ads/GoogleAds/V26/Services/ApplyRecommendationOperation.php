@@ -100,6 +100,9 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V26\Services\ApplyRecommendationOperation\RaiseBudgetPerformanceTooLowParameters $raise_budget_performance_too_low
      *           Parameters to use when applying Raise Budget Performance Too Low
      *           recommendation.
+     *     @type \Google\Ads\GoogleAds\V26\Services\ApplyRecommendationOperation\OptimizeForNewCustomersParameters $optimize_for_new_customers
+     *           Parameters to use when applying Optimize For New Customers
+     *           recommendation.
      * }
      */
     public function __construct($data = NULL) {
@@ -994,6 +997,39 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Services\ApplyRecommendationOperation\RaiseBudgetPerformanceTooLowParameters::class);
         $this->writeOneof(28, $var);
+
+        return $this;
+    }
+
+    /**
+     * Parameters to use when applying Optimize For New Customers
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.services.ApplyRecommendationOperation.OptimizeForNewCustomersParameters optimize_for_new_customers = 29;</code>
+     * @return \Google\Ads\GoogleAds\V26\Services\ApplyRecommendationOperation\OptimizeForNewCustomersParameters|null
+     */
+    public function getOptimizeForNewCustomers()
+    {
+        return $this->readOneof(29);
+    }
+
+    public function hasOptimizeForNewCustomers()
+    {
+        return $this->hasOneof(29);
+    }
+
+    /**
+     * Parameters to use when applying Optimize For New Customers
+     * recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.services.ApplyRecommendationOperation.OptimizeForNewCustomersParameters optimize_for_new_customers = 29;</code>
+     * @param \Google\Ads\GoogleAds\V26\Services\ApplyRecommendationOperation\OptimizeForNewCustomersParameters $var
+     * @return $this
+     */
+    public function setOptimizeForNewCustomers($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Services\ApplyRecommendationOperation\OptimizeForNewCustomersParameters::class);
+        $this->writeOneof(29, $var);
 
         return $this;
     }

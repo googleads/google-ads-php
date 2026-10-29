@@ -38,6 +38,7 @@ class MutateCustomerConversionGoalsRequest extends \Google\Protobuf\Internal\Mes
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                                               $customerId Required. The ID of the customer whose customer conversion goals are being
      *                                                                                         modified.
@@ -54,7 +55,6 @@ class MutateCustomerConversionGoalsRequest extends \Google\Protobuf\Internal\Mes
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

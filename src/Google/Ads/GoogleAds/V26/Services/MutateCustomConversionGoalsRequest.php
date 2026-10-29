@@ -45,6 +45,7 @@ class MutateCustomConversionGoalsRequest extends \Google\Protobuf\Internal\Messa
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                             $customerId Required. The ID of the customer whose custom conversion goals are being
      *                                                                                       modified.
@@ -61,7 +62,6 @@ class MutateCustomConversionGoalsRequest extends \Google\Protobuf\Internal\Messa
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

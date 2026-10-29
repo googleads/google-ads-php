@@ -30,6 +30,7 @@ class RemoveAutomaticallyCreatedAssetsRequest extends \Google\Protobuf\Internal\
      */
     private $assets_with_field_type;
 
+
     /**
      * @param string                                                   $adGroupAd           Required. The resource name of the AdGroupAd from which to remove
      *                                                                                      automatically created assets.
@@ -45,7 +46,6 @@ class RemoveAutomaticallyCreatedAssetsRequest extends \Google\Protobuf\Internal\
             ->setAdGroupAd($adGroupAd)
             ->setAssetsWithFieldType($assetsWithFieldType);
     }
-
     /**
      * Constructor.
      *

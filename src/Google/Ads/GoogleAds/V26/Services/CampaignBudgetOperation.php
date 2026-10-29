@@ -10,6 +10,10 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * A single operation (create, update, remove) on a campaign budget.
+ * Update operations require an `update_mask` specifying which fields to modify.
+ * Note that `explicitly_shared` defaults to `true` if unspecified. A non-shared
+ * budget can be updated to explicitly shared, but an explicitly shared budget
+ * cannot become non-shared.
  *
  * Generated from protobuf message <code>google.ads.googleads.v26.services.CampaignBudgetOperation</code>
  */
@@ -17,6 +21,7 @@ class CampaignBudgetOperation extends \Google\Protobuf\Internal\Message
 {
     /**
      * FieldMask that determines which resource fields are modified in an update.
+     * Required for `update` operations.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
@@ -31,11 +36,18 @@ class CampaignBudgetOperation extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           FieldMask that determines which resource fields are modified in an update.
+     *           Required for `update` operations.
      *     @type \Google\Ads\GoogleAds\V26\Resources\CampaignBudget $create
      *           Create operation: No resource name is expected for the new budget.
+     *           Note that `explicitly_shared` defaults to `true` if unspecified. A
+     *           non-shared budget can be updated to explicitly shared, but an explicitly
+     *           shared budget cannot become non-shared.
      *     @type \Google\Ads\GoogleAds\V26\Resources\CampaignBudget $update
      *           Update operation: The campaign budget is expected to have a valid
-     *           resource name.
+     *           resource name, and `update_mask` must be populated with the fields to
+     *           modify. Note that `explicitly_shared` defaults to `true` if
+     *           unspecified. A non-shared budget can be updated to explicitly shared,
+     *           but an explicitly shared budget cannot become non-shared.
      *     @type string $remove
      *           Remove operation: A resource name for the removed budget is expected, in
      *           this format:
@@ -49,6 +61,7 @@ class CampaignBudgetOperation extends \Google\Protobuf\Internal\Message
 
     /**
      * FieldMask that determines which resource fields are modified in an update.
+     * Required for `update` operations.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -70,6 +83,7 @@ class CampaignBudgetOperation extends \Google\Protobuf\Internal\Message
 
     /**
      * FieldMask that determines which resource fields are modified in an update.
+     * Required for `update` operations.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      * @param \Google\Protobuf\FieldMask $var
@@ -85,6 +99,9 @@ class CampaignBudgetOperation extends \Google\Protobuf\Internal\Message
 
     /**
      * Create operation: No resource name is expected for the new budget.
+     * Note that `explicitly_shared` defaults to `true` if unspecified. A
+     * non-shared budget can be updated to explicitly shared, but an explicitly
+     * shared budget cannot become non-shared.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.resources.CampaignBudget create = 1;</code>
      * @return \Google\Ads\GoogleAds\V26\Resources\CampaignBudget|null
@@ -101,6 +118,9 @@ class CampaignBudgetOperation extends \Google\Protobuf\Internal\Message
 
     /**
      * Create operation: No resource name is expected for the new budget.
+     * Note that `explicitly_shared` defaults to `true` if unspecified. A
+     * non-shared budget can be updated to explicitly shared, but an explicitly
+     * shared budget cannot become non-shared.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.resources.CampaignBudget create = 1;</code>
      * @param \Google\Ads\GoogleAds\V26\Resources\CampaignBudget $var
@@ -116,7 +136,10 @@ class CampaignBudgetOperation extends \Google\Protobuf\Internal\Message
 
     /**
      * Update operation: The campaign budget is expected to have a valid
-     * resource name.
+     * resource name, and `update_mask` must be populated with the fields to
+     * modify. Note that `explicitly_shared` defaults to `true` if
+     * unspecified. A non-shared budget can be updated to explicitly shared,
+     * but an explicitly shared budget cannot become non-shared.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.resources.CampaignBudget update = 2;</code>
      * @return \Google\Ads\GoogleAds\V26\Resources\CampaignBudget|null
@@ -133,7 +156,10 @@ class CampaignBudgetOperation extends \Google\Protobuf\Internal\Message
 
     /**
      * Update operation: The campaign budget is expected to have a valid
-     * resource name.
+     * resource name, and `update_mask` must be populated with the fields to
+     * modify. Note that `explicitly_shared` defaults to `true` if
+     * unspecified. A non-shared budget can be updated to explicitly shared,
+     * but an explicitly shared budget cannot become non-shared.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.resources.CampaignBudget update = 2;</code>
      * @param \Google\Ads\GoogleAds\V26\Resources\CampaignBudget $var

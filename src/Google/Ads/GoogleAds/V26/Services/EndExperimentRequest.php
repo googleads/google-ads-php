@@ -30,6 +30,7 @@ class EndExperimentRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string $experiment Required. The resource name of the campaign experiment to end.
      *
@@ -42,7 +43,6 @@ class EndExperimentRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setExperiment($experiment);
     }
-
     /**
      * Constructor.
      *

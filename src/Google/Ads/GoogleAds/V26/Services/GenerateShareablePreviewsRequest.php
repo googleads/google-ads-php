@@ -29,6 +29,7 @@ class GenerateShareablePreviewsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $operation = null;
 
+
     /**
      * @param string $customerId Required. The customer creating the shareable previews request.
      *
@@ -41,7 +42,6 @@ class GenerateShareablePreviewsRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setCustomerId($customerId);
     }
-
     /**
      * Constructor.
      *

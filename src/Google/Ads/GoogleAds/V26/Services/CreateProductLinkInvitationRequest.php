@@ -29,6 +29,7 @@ class CreateProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
      */
     protected $product_link_invitation = null;
 
+
     /**
      * @param string                                                    $customerId            Required. The ID of the customer being modified.
      * @param \Google\Ads\GoogleAds\V26\Resources\ProductLinkInvitation $productLinkInvitation Required. The product link invitation to be created.
@@ -43,7 +44,6 @@ class CreateProductLinkInvitationRequest extends \Google\Protobuf\Internal\Messa
             ->setCustomerId($customerId)
             ->setProductLinkInvitation($productLinkInvitation);
     }
-
     /**
      * Constructor.
      *

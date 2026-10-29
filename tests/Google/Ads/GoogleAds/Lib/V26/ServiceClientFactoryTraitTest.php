@@ -78,6 +78,7 @@ use Google\Ads\GoogleAds\V26\Services\Client\CustomAudienceServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerAssetServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerAssetSetServiceClient;
+use Google\Ads\GoogleAds\V26\Services\Client\CustomerBudgetNetworkSettingServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerClientLinkServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerConversionGoalServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\CustomerCustomizerServiceClient;
@@ -108,6 +109,7 @@ use Google\Ads\GoogleAds\V26\Services\Client\KeywordPlanIdeaServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\KeywordThemeConstantServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\LabelServiceClient;
+use Google\Ads\GoogleAds\V26\Services\Client\LocalServicesEligibilityServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\LocalServicesLeadServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\MultiPartyAuthReviewServiceClient;
 use Google\Ads\GoogleAds\V26\Services\Client\OfflineUserDataJobServiceClient;
@@ -656,6 +658,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         );
     }
 
+    public function testGetCustomerBudgetNetworkSettingServiceClient()
+    {
+        $this->assertInstanceOf(
+            CustomerBudgetNetworkSettingServiceClient::class,
+            $this->googleAdsClient->getCustomerBudgetNetworkSettingServiceClient()
+        );
+    }
+
     public function testGetCustomerClientLinkServiceClient()
     {
         $this->assertInstanceOf(
@@ -893,6 +903,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         $this->assertInstanceOf(
             LabelServiceClient::class,
             $this->googleAdsClient->getLabelServiceClient()
+        );
+    }
+
+    public function testGetLocalServicesEligibilityServiceClient()
+    {
+        $this->assertInstanceOf(
+            LocalServicesEligibilityServiceClient::class,
+            $this->googleAdsClient->getLocalServicesEligibilityServiceClient()
         );
     }
 

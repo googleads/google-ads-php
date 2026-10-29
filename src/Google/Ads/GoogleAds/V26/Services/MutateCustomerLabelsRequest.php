@@ -51,6 +51,7 @@ class MutateCustomerLabelsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                                      $customerId Required. ID of the customer whose customer-label relationships are being
      *                                                                                modified.
@@ -67,7 +68,6 @@ class MutateCustomerLabelsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

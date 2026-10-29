@@ -29,6 +29,7 @@ class CreateDataLinkRequest extends \Google\Protobuf\Internal\Message
      */
     protected $data_link = null;
 
+
     /**
      * @param string                                       $customerId Required. The ID of the customer for which the data link is created.
      * @param \Google\Ads\GoogleAds\V26\Resources\DataLink $dataLink   Required. The data link to be created.
@@ -43,7 +44,6 @@ class CreateDataLinkRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setDataLink($dataLink);
     }
-
     /**
      * Constructor.
      *

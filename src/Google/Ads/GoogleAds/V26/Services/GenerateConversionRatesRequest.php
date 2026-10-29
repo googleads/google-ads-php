@@ -36,6 +36,7 @@ class GenerateConversionRatesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $reach_application_info = null;
 
+
     /**
      * @param string $customerId Required. The ID of the customer. A conversion rate based on the historical
      *                           data of this customer may be suggested.
@@ -49,7 +50,6 @@ class GenerateConversionRatesRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setCustomerId($customerId);
     }
-
     /**
      * Constructor.
      *

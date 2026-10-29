@@ -359,6 +359,10 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the video reservation error.
      *     @type int $multi_party_auth_review_error
      *           The reasons for the multi party auth review error
+     *     @type int $budget_network_setting_error
+     *           The reasons for the budget network setting error.
+     *     @type int $demand_gen_campaign_error
+     *           The reasons for the Demand Gen campaign error.
      * }
      */
     public function __construct($data = NULL) {
@@ -5570,6 +5574,68 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V26\Errors\MultiPartyAuthReviewErrorEnum\MultiPartyAuthReviewError::class);
         $this->writeOneof(200, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the budget network setting error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.errors.BudgetNetworkSettingErrorEnum.BudgetNetworkSettingError budget_network_setting_error = 201;</code>
+     * @return int
+     */
+    public function getBudgetNetworkSettingError()
+    {
+        return $this->readOneof(201);
+    }
+
+    public function hasBudgetNetworkSettingError()
+    {
+        return $this->hasOneof(201);
+    }
+
+    /**
+     * The reasons for the budget network setting error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.errors.BudgetNetworkSettingErrorEnum.BudgetNetworkSettingError budget_network_setting_error = 201;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setBudgetNetworkSettingError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V26\Errors\BudgetNetworkSettingErrorEnum\BudgetNetworkSettingError::class);
+        $this->writeOneof(201, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the Demand Gen campaign error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.errors.DemandGenCampaignErrorEnum.DemandGenCampaignError demand_gen_campaign_error = 202;</code>
+     * @return int
+     */
+    public function getDemandGenCampaignError()
+    {
+        return $this->readOneof(202);
+    }
+
+    public function hasDemandGenCampaignError()
+    {
+        return $this->hasOneof(202);
+    }
+
+    /**
+     * The reasons for the Demand Gen campaign error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.errors.DemandGenCampaignErrorEnum.DemandGenCampaignError demand_gen_campaign_error = 202;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDemandGenCampaignError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V26\Errors\DemandGenCampaignErrorEnum\DemandGenCampaignError::class);
+        $this->writeOneof(202, $var);
 
         return $this;
     }

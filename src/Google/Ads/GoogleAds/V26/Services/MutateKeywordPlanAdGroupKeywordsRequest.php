@@ -47,6 +47,7 @@ class MutateKeywordPlanAdGroupKeywordsRequest extends \Google\Protobuf\Internal\
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                                                  $customerId Required. The ID of the customer whose Keyword Plan ad group keywords are
      *                                                                                            being modified.
@@ -63,7 +64,6 @@ class MutateKeywordPlanAdGroupKeywordsRequest extends \Google\Protobuf\Internal\
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

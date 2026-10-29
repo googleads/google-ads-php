@@ -52,6 +52,7 @@ class MutateSharedSetsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                  $customerId Required. The ID of the customer whose shared sets are being modified.
      * @param \Google\Ads\GoogleAds\V26\Services\SharedSetOperation[] $operations Required. The list of operations to perform on individual shared sets.
@@ -66,7 +67,6 @@ class MutateSharedSetsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

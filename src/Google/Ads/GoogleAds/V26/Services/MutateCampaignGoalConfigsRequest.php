@@ -46,6 +46,7 @@ class MutateCampaignGoalConfigsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $validate_only = false;
 
+
     /**
      * @param string                                                           $customerId Required. The ID of the customer whose campaign goal configs are being
      *                                                                                     modified.
@@ -61,7 +62,6 @@ class MutateCampaignGoalConfigsRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

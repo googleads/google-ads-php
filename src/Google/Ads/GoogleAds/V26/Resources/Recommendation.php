@@ -278,6 +278,8 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           recommendation.
      *     @type \Google\Ads\GoogleAds\V26\Resources\Recommendation\RaiseBudgetPerformanceTooLowRecommendation $raise_budget_performance_too_low_recommendation
      *           Output only. The raise budget for Performance Too Low recommendation.
+     *     @type \Google\Ads\GoogleAds\V26\Resources\Recommendation\OptimizeForNewCustomersRecommendation $optimize_for_new_customers_recommendation
+     *           Output only. The optimize for new customers recommendation.
      * }
      */
     public function __construct($data = NULL) {
@@ -2423,6 +2425,37 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Resources\Recommendation\RaiseBudgetPerformanceTooLowRecommendation::class);
         $this->writeOneof(74, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The optimize for new customers recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.Recommendation.OptimizeForNewCustomersRecommendation optimize_for_new_customers_recommendation = 75 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V26\Resources\Recommendation\OptimizeForNewCustomersRecommendation|null
+     */
+    public function getOptimizeForNewCustomersRecommendation()
+    {
+        return $this->readOneof(75);
+    }
+
+    public function hasOptimizeForNewCustomersRecommendation()
+    {
+        return $this->hasOneof(75);
+    }
+
+    /**
+     * Output only. The optimize for new customers recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.resources.Recommendation.OptimizeForNewCustomersRecommendation optimize_for_new_customers_recommendation = 75 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V26\Resources\Recommendation\OptimizeForNewCustomersRecommendation $var
+     * @return $this
+     */
+    public function setOptimizeForNewCustomersRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Resources\Recommendation\OptimizeForNewCustomersRecommendation::class);
+        $this->writeOneof(75, $var);
 
         return $this;
     }

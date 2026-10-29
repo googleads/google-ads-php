@@ -42,6 +42,7 @@ class ApplyIncentiveRequest extends \Google\Protobuf\Internal\Message
      */
     protected $country_code = '';
 
+
     /**
      * @param string $countryCode Required. User's country code.
      *                            Required. This field must be equal to the Google Ads account's billing
@@ -85,7 +86,6 @@ class ApplyIncentiveRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setCountryCode($countryCode);
     }
-
     /**
      * Constructor.
      *

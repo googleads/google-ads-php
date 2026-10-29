@@ -31,6 +31,7 @@ class ListBenchmarksSourcesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $application_info = null;
 
+
     /**
      * @param int[] $benchmarksSources Required. The types of benchmarks sources to be returned. Supported sources
      *                                 include INDUSTRY_VERTICAL and CATEGORY. Categories are used as filters for
@@ -46,7 +47,6 @@ class ListBenchmarksSourcesRequest extends \Google\Protobuf\Internal\Message
         return (new self())
             ->setBenchmarksSources($benchmarksSources);
     }
-
     /**
      * Constructor.
      *

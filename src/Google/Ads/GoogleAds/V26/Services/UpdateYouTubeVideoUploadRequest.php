@@ -38,6 +38,7 @@ class UpdateYouTubeVideoUploadRequest extends \Google\Protobuf\Internal\Message
      */
     protected $update_mask = null;
 
+
     /**
      * @param string                                                 $customerId         Required. The customer ID requesting the YouTube video upload update.
      *                                                                                   Required.
@@ -57,7 +58,6 @@ class UpdateYouTubeVideoUploadRequest extends \Google\Protobuf\Internal\Message
             ->setYouTubeVideoUpload($youTubeVideoUpload)
             ->setUpdateMask($updateMask);
     }
-
     /**
      * Constructor.
      *

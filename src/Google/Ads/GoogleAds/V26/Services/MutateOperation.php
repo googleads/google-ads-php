@@ -110,6 +110,8 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      *           A custom conversion goal mutate operation.
      *     @type \Google\Ads\GoogleAds\V26\Services\CustomerAssetOperation $customer_asset_operation
      *           A customer asset mutate operation.
+     *     @type \Google\Ads\GoogleAds\V26\Services\CustomerBudgetNetworkSettingOperation $customer_budget_network_setting_operation
+     *           A customer budget network setting mutate operation.
      *     @type \Google\Ads\GoogleAds\V26\Services\CustomerConversionGoalOperation $customer_conversion_goal_operation
      *           A customer conversion goal mutate operation.
      *     @type \Google\Ads\GoogleAds\V26\Services\CustomerCustomizerOperation $customer_customizer_operation
@@ -1489,6 +1491,37 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Services\CustomerAssetOperation::class);
         $this->writeOneof(57, $var);
+
+        return $this;
+    }
+
+    /**
+     * A customer budget network setting mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.services.CustomerBudgetNetworkSettingOperation customer_budget_network_setting_operation = 92;</code>
+     * @return \Google\Ads\GoogleAds\V26\Services\CustomerBudgetNetworkSettingOperation|null
+     */
+    public function getCustomerBudgetNetworkSettingOperation()
+    {
+        return $this->readOneof(92);
+    }
+
+    public function hasCustomerBudgetNetworkSettingOperation()
+    {
+        return $this->hasOneof(92);
+    }
+
+    /**
+     * A customer budget network setting mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v26.services.CustomerBudgetNetworkSettingOperation customer_budget_network_setting_operation = 92;</code>
+     * @param \Google\Ads\GoogleAds\V26\Services\CustomerBudgetNetworkSettingOperation $var
+     * @return $this
+     */
+    public function setCustomerBudgetNetworkSettingOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V26\Services\CustomerBudgetNetworkSettingOperation::class);
+        $this->writeOneof(92, $var);
 
         return $this;
     }

@@ -48,6 +48,7 @@ class GenerateKeywordForecastMetricsRequest extends \Google\Protobuf\Internal\Me
      */
     protected $campaign = null;
 
+
     /**
      * @param \Google\Ads\GoogleAds\V26\Services\CampaignToForecast $campaign Required. The campaign used in the forecast.
      *
@@ -60,7 +61,6 @@ class GenerateKeywordForecastMetricsRequest extends \Google\Protobuf\Internal\Me
         return (new self())
             ->setCampaign($campaign);
     }
-
     /**
      * Constructor.
      *

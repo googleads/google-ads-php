@@ -27,6 +27,11 @@ namespace Google\Ads\GoogleAds\V26\Services;
  * https://support.google.com/google-ads/answer/7474263. However, the uploads
  * made through this service will not be visible under the 'Segment members'
  * section for the Customer Match List in the Google Ads UI.
+ * For help diagnosing and resolving conversion or user data upload issues, see
+ * the conversion upload
+ * [troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting)
+ * (or use the `troubleshoot-conversions` workflow in the [Google Ads API
+ * Developer Assistant](/google-ads/api/docs/developer-toolkit/ai-assistant)).
  */
 class UserDataServiceGrpcClient extends \Grpc\BaseStub {
 

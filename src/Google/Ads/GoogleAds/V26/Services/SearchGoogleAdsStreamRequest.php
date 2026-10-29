@@ -37,6 +37,7 @@ class SearchGoogleAdsStreamRequest extends \Google\Protobuf\Internal\Message
      */
     protected $summary_row_setting = 0;
 
+
     /**
      * @param string $customerId Required. The ID of the customer being queried.
      * @param string $query      Required. The query string.
@@ -51,7 +52,6 @@ class SearchGoogleAdsStreamRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setQuery($query);
     }
-
     /**
      * Constructor.
      *

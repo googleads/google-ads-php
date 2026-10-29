@@ -54,6 +54,7 @@ class MutateAdGroupBidModifiersRequest extends \Google\Protobuf\Internal\Message
      */
     protected $response_content_type = 0;
 
+
     /**
      * @param string                                                           $customerId Required. ID of the customer whose ad group bid modifiers are being
      *                                                                                     modified.
@@ -70,7 +71,6 @@ class MutateAdGroupBidModifiersRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setOperations($operations);
     }
-
     /**
      * Constructor.
      *

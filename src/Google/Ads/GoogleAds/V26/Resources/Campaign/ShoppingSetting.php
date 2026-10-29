@@ -43,8 +43,6 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * take precedence over those with lower priorities.
      * This field is required for Shopping campaigns, with values between 0 and
      * 2, inclusive.
-     * This field is optional for Smart Shopping campaigns, but must be equal to
-     * 3 if set.
      *
      * Generated from protobuf field <code>optional int32 campaign_priority = 7;</code>
      */
@@ -56,9 +54,9 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      */
     protected $enable_local = null;
     /**
-     * Immutable. Whether to target Vehicle Listing inventory. This field is
-     * supported only in Smart Shopping Campaigns. For setting Vehicle Listing
-     * inventory in Performance Max campaigns, use `listing_type` instead.
+     * Immutable. Whether to target Vehicle Listing inventory. This field is no
+     * longer supported. Use Performance Max or Shopping campaigns with
+     * `listing_type` to target Vehicle Listing inventory.
      *
      * Generated from protobuf field <code>bool use_vehicle_inventory = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -115,14 +113,12 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *           take precedence over those with lower priorities.
      *           This field is required for Shopping campaigns, with values between 0 and
      *           2, inclusive.
-     *           This field is optional for Smart Shopping campaigns, but must be equal to
-     *           3 if set.
      *     @type bool $enable_local
      *           Whether to include local products.
      *     @type bool $use_vehicle_inventory
-     *           Immutable. Whether to target Vehicle Listing inventory. This field is
-     *           supported only in Smart Shopping Campaigns. For setting Vehicle Listing
-     *           inventory in Performance Max campaigns, use `listing_type` instead.
+     *           Immutable. Whether to target Vehicle Listing inventory. This field is no
+     *           longer supported. Use Performance Max or Shopping campaigns with
+     *           `listing_type` to target Vehicle Listing inventory.
      *     @type int[]|string[] $advertising_partner_ids
      *           The list of Google Ads accounts IDs of advertising partners cooperating
      *           within the campaign.
@@ -230,8 +226,6 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * take precedence over those with lower priorities.
      * This field is required for Shopping campaigns, with values between 0 and
      * 2, inclusive.
-     * This field is optional for Smart Shopping campaigns, but must be equal to
-     * 3 if set.
      *
      * Generated from protobuf field <code>optional int32 campaign_priority = 7;</code>
      * @return int
@@ -256,8 +250,6 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * take precedence over those with lower priorities.
      * This field is required for Shopping campaigns, with values between 0 and
      * 2, inclusive.
-     * This field is optional for Smart Shopping campaigns, but must be equal to
-     * 3 if set.
      *
      * Generated from protobuf field <code>optional int32 campaign_priority = 7;</code>
      * @param int $var
@@ -308,9 +300,9 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. Whether to target Vehicle Listing inventory. This field is
-     * supported only in Smart Shopping Campaigns. For setting Vehicle Listing
-     * inventory in Performance Max campaigns, use `listing_type` instead.
+     * Immutable. Whether to target Vehicle Listing inventory. This field is no
+     * longer supported. Use Performance Max or Shopping campaigns with
+     * `listing_type` to target Vehicle Listing inventory.
      *
      * Generated from protobuf field <code>bool use_vehicle_inventory = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return bool
@@ -321,9 +313,9 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. Whether to target Vehicle Listing inventory. This field is
-     * supported only in Smart Shopping Campaigns. For setting Vehicle Listing
-     * inventory in Performance Max campaigns, use `listing_type` instead.
+     * Immutable. Whether to target Vehicle Listing inventory. This field is no
+     * longer supported. Use Performance Max or Shopping campaigns with
+     * `listing_type` to target Vehicle Listing inventory.
      *
      * Generated from protobuf field <code>bool use_vehicle_inventory = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param bool $var

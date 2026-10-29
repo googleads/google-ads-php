@@ -35,6 +35,7 @@ class SuggestKeywordThemesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $suggestion_info = null;
 
+
     /**
      * @param string                                                         $customerId     Required. The ID of the customer.
      * @param \Google\Ads\GoogleAds\V26\Services\SmartCampaignSuggestionInfo $suggestionInfo Required. Information to get keyword theme suggestions.
@@ -58,7 +59,6 @@ class SuggestKeywordThemesRequest extends \Google\Protobuf\Internal\Message
             ->setCustomerId($customerId)
             ->setSuggestionInfo($suggestionInfo);
     }
-
     /**
      * Constructor.
      *
