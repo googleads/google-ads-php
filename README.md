@@ -9,12 +9,7 @@ Version](https://img.shields.io/packagist/v/googleads/google-ads-php.svg)](https
 
 This project hosts the PHP client library for the [Google Ads
 API](https://developers.google.com/google-ads/api/docs/start).
-It adheres to the [PHP sunset schedule]([url](https://www.php.net/supported-versions.php)) and updates the composer.json file _four_ to _five_ months after the minimum required PHP version reaches its end-of-life. Based on the existing supported PHP versions, the update occurs about once a year.
-
-**IMPORTANT** The Google Ads API client library for PHP has been updated to require PHP version 8 as the minimum version, as announced in [#880](https://github.com/googleads/google-ads-php/issues/880).
-This means that the final version of the library that supports PHP 7 is [v19.2.0](https://github.com/googleads/google-ads-php/releases/tag/v19.2.0), which supports Google Ads API v12 to v14.
-
-Google Ads API v14 is [scheduled to be sunset by the end of May 2024](https://developers.google.com/google-ads/api/docs/sunset-dates#timetable). Therefore, PHP 7 users have about *11 months* to migrate to PHP 8 in order to continue using the library without disruption.
+It adheres to the [PHP sunset schedule](https://www.php.net/supported-versions.php) and updates the composer.json file _four_ to _five_ months after the minimum required PHP version reaches its end-of-life. Based on the existing supported PHP versions, the update occurs about once a year.
 
 ## Features
 
@@ -203,9 +198,9 @@ See the [Performance guide](https://developers.google.com/google-ads/api/docs/cl
 
 -   https://developers.google.com/google-ads/api/docs
 
-### Support forum
+### Support
 
--   https://groups.google.com/forum/#!forum/adwords-api
+-   https://developers.google.com/google-ads/api/support
 
 ### Authors
 
