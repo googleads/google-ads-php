@@ -32,7 +32,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * If you previously used the deprecated `sales_country` in the two-letter
      * country code (`XX`) format, the `feed_label` field should be used
      * instead. For more information see the
-     * [feed label](//support.google.com/merchants/answer/12453549)
+     * [feed label](https://support.google.com/merchants/answer/12453549)
      * support article.
      *
      * Generated from protobuf field <code>string feed_label = 10;</code>
@@ -106,7 +106,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *           If you previously used the deprecated `sales_country` in the two-letter
      *           country code (`XX`) format, the `feed_label` field should be used
      *           instead. For more information see the
-     *           [feed label](//support.google.com/merchants/answer/12453549)
+     *           [feed label](https://support.google.com/merchants/answer/12453549)
      *           support article.
      *     @type int $campaign_priority
      *           Priority of the campaign. Campaigns with numerically higher priorities
@@ -188,7 +188,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * If you previously used the deprecated `sales_country` in the two-letter
      * country code (`XX`) format, the `feed_label` field should be used
      * instead. For more information see the
-     * [feed label](//support.google.com/merchants/answer/12453549)
+     * [feed label](https://support.google.com/merchants/answer/12453549)
      * support article.
      *
      * Generated from protobuf field <code>string feed_label = 10;</code>
@@ -206,7 +206,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * If you previously used the deprecated `sales_country` in the two-letter
      * country code (`XX`) format, the `feed_label` field should be used
      * instead. For more information see the
-     * [feed label](//support.google.com/merchants/answer/12453549)
+     * [feed label](https://support.google.com/merchants/answer/12453549)
      * support article.
      *
      * Generated from protobuf field <code>string feed_label = 10;</code>

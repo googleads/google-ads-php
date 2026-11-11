@@ -87,6 +87,13 @@ class MutateError
      * Generated from protobuf enum <code>EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED = 17;</code>
      */
     const EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED = 17;
+    /**
+     * The combination of resources in this mutate is not supported for
+     * multi-party approval.
+     *
+     * Generated from protobuf enum <code>MULTI_PARTY_APPROVAL_UNSUPPORTED_RESOURCE_COMBINATION = 18;</code>
+     */
+    const MULTI_PARTY_APPROVAL_UNSUPPORTED_RESOURCE_COMBINATION = 18;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -101,6 +108,7 @@ class MutateError
         self::OPERATION_DOES_NOT_SUPPORT_PARTIAL_FAILURE => 'OPERATION_DOES_NOT_SUPPORT_PARTIAL_FAILURE',
         self::RESOURCE_READ_ONLY => 'RESOURCE_READ_ONLY',
         self::EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED => 'EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED',
+        self::MULTI_PARTY_APPROVAL_UNSUPPORTED_RESOURCE_COMBINATION => 'MULTI_PARTY_APPROVAL_UNSUPPORTED_RESOURCE_COMBINATION',
     ];
 
     public static function name($value)

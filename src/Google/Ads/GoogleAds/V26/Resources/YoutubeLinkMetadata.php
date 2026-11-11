@@ -18,7 +18,7 @@ class YoutubeLinkMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ID of a YouTube brand channel to help creators understand
      * your brand. The channel must be linked to this account. This is a string
-     * value with “UC” prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
+     * value with "UC" prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
      *
      * Generated from protobuf field <code>optional string brand_channel_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -33,7 +33,7 @@ class YoutubeLinkMetadata extends \Google\Protobuf\Internal\Message
      *     @type string $brand_channel_id
      *           Immutable. The ID of a YouTube brand channel to help creators understand
      *           your brand. The channel must be linked to this account. This is a string
-     *           value with “UC” prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
+     *           value with "UC" prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
      * }
      */
     public function __construct($data = NULL) {
@@ -44,7 +44,7 @@ class YoutubeLinkMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ID of a YouTube brand channel to help creators understand
      * your brand. The channel must be linked to this account. This is a string
-     * value with “UC” prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
+     * value with "UC" prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
      *
      * Generated from protobuf field <code>optional string brand_channel_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
@@ -67,7 +67,7 @@ class YoutubeLinkMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ID of a YouTube brand channel to help creators understand
      * your brand. The channel must be linked to this account. This is a string
-     * value with “UC” prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
+     * value with "UC" prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
      *
      * Generated from protobuf field <code>optional string brand_channel_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var

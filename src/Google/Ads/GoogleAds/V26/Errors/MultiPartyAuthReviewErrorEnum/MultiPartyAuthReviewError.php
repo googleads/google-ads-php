@@ -49,6 +49,13 @@ class MultiPartyAuthReviewError
      * Generated from protobuf enum <code>PERMISSION_DENIED = 5;</code>
      */
     const PERMISSION_DENIED = 5;
+    /**
+     * The Multi-Party Authorization review is stale because the target resource
+     * was modified or deleted after the review was created.
+     *
+     * Generated from protobuf enum <code>STALE_MULTI_PARTY_AUTH_REQUEST = 6;</code>
+     */
+    const STALE_MULTI_PARTY_AUTH_REQUEST = 6;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -57,6 +64,7 @@ class MultiPartyAuthReviewError
         self::ACCESS_INVITATION_INVALID_STATUS => 'ACCESS_INVITATION_INVALID_STATUS',
         self::INVALID_STATUS_TRANSITION => 'INVALID_STATUS_TRANSITION',
         self::PERMISSION_DENIED => 'PERMISSION_DENIED',
+        self::STALE_MULTI_PARTY_AUTH_REQUEST => 'STALE_MULTI_PARTY_AUTH_REQUEST',
     ];
 
     public static function name($value)

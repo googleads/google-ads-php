@@ -17,8 +17,8 @@ class SmartCampaignEndedDetails extends \Google\Protobuf\Internal\Message
 {
     /**
      * The timestamp of when the campaign ended.
-     * The timestamp is in the customer’s timezone and in
-     * “yyyy-MM-dd HH:mm:ss” format.
+     * The timestamp is in the customer's timezone and in
+     * "yyyy-MM-dd HH:mm:ss" format.
      *
      * Generated from protobuf field <code>optional string end_date_time = 1;</code>
      */
@@ -32,8 +32,8 @@ class SmartCampaignEndedDetails extends \Google\Protobuf\Internal\Message
      *
      *     @type string $end_date_time
      *           The timestamp of when the campaign ended.
-     *           The timestamp is in the customer’s timezone and in
-     *           “yyyy-MM-dd HH:mm:ss” format.
+     *           The timestamp is in the customer's timezone and in
+     *           "yyyy-MM-dd HH:mm:ss" format.
      * }
      */
     public function __construct($data = NULL) {
@@ -43,8 +43,8 @@ class SmartCampaignEndedDetails extends \Google\Protobuf\Internal\Message
 
     /**
      * The timestamp of when the campaign ended.
-     * The timestamp is in the customer’s timezone and in
-     * “yyyy-MM-dd HH:mm:ss” format.
+     * The timestamp is in the customer's timezone and in
+     * "yyyy-MM-dd HH:mm:ss" format.
      *
      * Generated from protobuf field <code>optional string end_date_time = 1;</code>
      * @return string
@@ -66,8 +66,8 @@ class SmartCampaignEndedDetails extends \Google\Protobuf\Internal\Message
 
     /**
      * The timestamp of when the campaign ended.
-     * The timestamp is in the customer’s timezone and in
-     * “yyyy-MM-dd HH:mm:ss” format.
+     * The timestamp is in the customer's timezone and in
+     * "yyyy-MM-dd HH:mm:ss" format.
      *
      * Generated from protobuf field <code>optional string end_date_time = 1;</code>
      * @param string $var

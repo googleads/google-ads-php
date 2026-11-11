@@ -8,11 +8,12 @@ use UnexpectedValueException;
 
 /**
  * Enum describing possible conversion upload errors.
- * For step-by-step resolution guidance, see the [Conversion upload
- * troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting)
- * (or use the `troubleshoot-conversions` workflow in the [Google Ads API
- * Developer
- * Assistant](/google-ads/api/docs/developer-toolkit/ai-assistant)).
+ * For step-by-step resolution guidance, see the
+ * [Conversion upload troubleshooting
+ * guide](https://developers.google.com/google-ads/api/docs/conversions/troubleshooting)
+ * (or use the `troubleshoot-conversions` workflow in the
+ * [Google Ads API Developer
+ * Assistant](https://developers.google.com/google-ads/api/docs/developer-toolkit/ai-assistant)).
  *
  * Protobuf type <code>google.ads.googleads.v26.errors.ConversionUploadErrorEnum.ConversionUploadError</code>
  */

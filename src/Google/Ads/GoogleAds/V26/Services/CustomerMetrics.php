@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Metrics representing the customer’s Ad performance.
+ * Metrics representing the customer's Ad performance.
  *
  * Generated from protobuf message <code>google.ads.googleads.v26.services.CustomerMetrics</code>
  */
@@ -41,7 +41,7 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
      */
     protected $aggregate_metrics = null;
     /**
-     * Metrics representing the customer’s competitive standing among advertisers
+     * Metrics representing the customer's competitive standing among advertisers
      * scoped by the analysis. Percentile metrics are only returned when:
      * 1. `all_advertisers` is used as the `benchmarks_source`. Note that the
      * request `category_filter` must be set when using `all_advertisers`.
@@ -71,7 +71,7 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
      *           Metrics calculated by aggregating values of a single metric for the
      *           customer.
      *     @type \Google\Ads\GoogleAds\V26\Services\PercentileMetrics $percentile_metrics
-     *           Metrics representing the customer’s competitive standing among advertisers
+     *           Metrics representing the customer's competitive standing among advertisers
      *           scoped by the analysis. Percentile metrics are only returned when:
      *           1. `all_advertisers` is used as the `benchmarks_source`. Note that the
      *           request `category_filter` must be set when using `all_advertisers`.
@@ -206,7 +206,7 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Metrics representing the customer’s competitive standing among advertisers
+     * Metrics representing the customer's competitive standing among advertisers
      * scoped by the analysis. Percentile metrics are only returned when:
      * 1. `all_advertisers` is used as the `benchmarks_source`. Note that the
      * request `category_filter` must be set when using `all_advertisers`.
@@ -231,7 +231,7 @@ class CustomerMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Metrics representing the customer’s competitive standing among advertisers
+     * Metrics representing the customer's competitive standing among advertisers
      * scoped by the analysis. Percentile metrics are only returned when:
      * 1. `all_advertisers` is used as the `benchmarks_source`. Note that the
      * request `category_filter` must be set when using `all_advertisers`.

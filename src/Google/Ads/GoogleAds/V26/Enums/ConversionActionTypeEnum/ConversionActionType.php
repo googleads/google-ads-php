@@ -216,9 +216,8 @@ class ConversionActionType
     const LEAD_FORM_SUBMIT = 29;
     /**
      * Deprecated: The Salesforce integration ended on May 31, 2025.
-     * See
-     * [Legacy Salesforce integration for conversions upgrade
-     * FAQ](//support.google.com/google-ads/answer/14728349).
+     * See [Legacy Salesforce integration for conversions upgrade
+     * FAQ](https://support.google.com/google-ads/answer/14728349).
      *
      * Generated from protobuf enum <code>SALESFORCE = 30 [deprecated = true];</code>
      */

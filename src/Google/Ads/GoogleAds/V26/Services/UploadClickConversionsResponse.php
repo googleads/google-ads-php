@@ -23,7 +23,7 @@ class UploadClickConversionsResponse extends \Google\Protobuf\Internal\Message
      * error.
      * See
      * [Best practices for partial
-     * failures](/google-ads/api/docs/best-practices/partial-failures).
+     * failures](https://developers.google.com/google-ads/api/docs/best-practices/partial-failures).
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
      */
@@ -56,7 +56,7 @@ class UploadClickConversionsResponse extends \Google\Protobuf\Internal\Message
      *           error.
      *           See
      *           [Best practices for partial
-     *           failures](/google-ads/api/docs/best-practices/partial-failures).
+     *           failures](https://developers.google.com/google-ads/api/docs/best-practices/partial-failures).
      *     @type \Google\Ads\GoogleAds\V26\Services\ClickConversionResult[] $results
      *           Returned for successfully processed conversions. Proto will be empty for
      *           rows that received an error. Results are not returned when `validate_only`
@@ -77,7 +77,7 @@ class UploadClickConversionsResponse extends \Google\Protobuf\Internal\Message
      * error.
      * See
      * [Best practices for partial
-     * failures](/google-ads/api/docs/best-practices/partial-failures).
+     * failures](https://developers.google.com/google-ads/api/docs/best-practices/partial-failures).
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
      * @return \Google\Rpc\Status|null
@@ -104,7 +104,7 @@ class UploadClickConversionsResponse extends \Google\Protobuf\Internal\Message
      * error.
      * See
      * [Best practices for partial
-     * failures](/google-ads/api/docs/best-practices/partial-failures).
+     * failures](https://developers.google.com/google-ads/api/docs/best-practices/partial-failures).
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
      * @param \Google\Rpc\Status $var

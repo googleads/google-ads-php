@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Metrics representing the customer’s competitive standing among advertisers
+ * Metrics representing the customer's competitive standing among advertisers
  * scoped by the analysis.
  * Percentile tier values classify the customer's percentile rank among other
  * advertisers scoped by the analysis. For example, EMERGING_PLAYER indicates

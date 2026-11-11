@@ -46,8 +46,9 @@ use Psr\Log\LoggerInterface;
 
 /**
  * Service Description: Service to fetch data and metrics across resources.
- * Use the interactive [Google Ads Query
- * Builder](/google-ads/api/fields/latest/overview_query_builder)
+ * Use the interactive
+ * [Google Ads Query
+ * Builder](https://developers.google.com/google-ads/api/fields/latest/overview_query_builder)
  * to construct and validate Google Ads Query Language (GAQL) queries.
  *
  * Search versus SearchStream:
@@ -59,8 +60,9 @@ use Psr\Log\LoggerInterface;
  * 10,000 rows per batch. Lower overhead without request caching. Best for large
  * result sets (> 10,000 rows) or batch reporting workloads.
  *
- * For more details, see [Streaming versus
- * paging](/google-ads/api/docs/reporting/streaming).
+ * For more details, see
+ * [Streaming versus
+ * paging](https://developers.google.com/google-ads/api/docs/reporting/streaming).
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods.
@@ -1818,7 +1820,7 @@ class GoogleAdsServiceClient
      * result sets larger than 10,000 rows, prefer
      * [GoogleAdsService.SearchStream][google.ads.googleads.v26.services.GoogleAdsService.SearchStream].
      * To build and validate queries, use the [Google Ads Query
-     * Builder](/google-ads/api/fields/latest/overview_query_builder).
+     * Builder](https://developers.google.com/google-ads/api/fields/latest/overview_query_builder).
      *
      * List of thrown errors:
      * [AuthenticationError]()
@@ -1862,7 +1864,7 @@ class GoogleAdsServiceClient
      * [GoogleAdsService.Search][google.ads.googleads.v26.services.GoogleAdsService.Search]
      * for large result sets (> 10,000 rows). To build and validate queries, use
      * the [Google Ads Query
-     * Builder](/google-ads/api/fields/latest/overview_query_builder).
+     * Builder](https://developers.google.com/google-ads/api/fields/latest/overview_query_builder).
      *
      * List of thrown errors:
      * [AuthenticationError]()
