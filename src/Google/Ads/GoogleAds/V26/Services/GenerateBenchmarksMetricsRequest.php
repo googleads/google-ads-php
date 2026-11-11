@@ -49,7 +49,7 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
      * A list of Product & Service Categories for scoping a YouTube benchmarks
      * analysis. For example, when category "/Apparel/Clothing" is selected,
      * customer metrics represent Ad performance for "/Apparel/Clothing" Ads only
-     * and the customer is benchmarking against all advertisers’ Ads in the
+     * and the customer is benchmarking against all advertisers' Ads in the
      * "/Apparel/Clothing" category.
      * This filter can only be used when `all_advertisers` is used as the
      * [benchmarks_source][google.ads.googleads.v26.services.GenerateBenchmarksMetricsRequest.benchmarks_source].
@@ -144,7 +144,7 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
      *           A list of Product & Service Categories for scoping a YouTube benchmarks
      *           analysis. For example, when category "/Apparel/Clothing" is selected,
      *           customer metrics represent Ad performance for "/Apparel/Clothing" Ads only
-     *           and the customer is benchmarking against all advertisers’ Ads in the
+     *           and the customer is benchmarking against all advertisers' Ads in the
      *           "/Apparel/Clothing" category.
      *           This filter can only be used when `all_advertisers` is used as the
      *           [benchmarks_source][google.ads.googleads.v26.services.GenerateBenchmarksMetricsRequest.benchmarks_source].
@@ -320,7 +320,7 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
      * A list of Product & Service Categories for scoping a YouTube benchmarks
      * analysis. For example, when category "/Apparel/Clothing" is selected,
      * customer metrics represent Ad performance for "/Apparel/Clothing" Ads only
-     * and the customer is benchmarking against all advertisers’ Ads in the
+     * and the customer is benchmarking against all advertisers' Ads in the
      * "/Apparel/Clothing" category.
      * This filter can only be used when `all_advertisers` is used as the
      * [benchmarks_source][google.ads.googleads.v26.services.GenerateBenchmarksMetricsRequest.benchmarks_source].
@@ -347,7 +347,7 @@ class GenerateBenchmarksMetricsRequest extends \Google\Protobuf\Internal\Message
      * A list of Product & Service Categories for scoping a YouTube benchmarks
      * analysis. For example, when category "/Apparel/Clothing" is selected,
      * customer metrics represent Ad performance for "/Apparel/Clothing" Ads only
-     * and the customer is benchmarking against all advertisers’ Ads in the
+     * and the customer is benchmarking against all advertisers' Ads in the
      * "/Apparel/Clothing" category.
      * This filter can only be used when `all_advertisers` is used as the
      * [benchmarks_source][google.ads.googleads.v26.services.GenerateBenchmarksMetricsRequest.benchmarks_source].

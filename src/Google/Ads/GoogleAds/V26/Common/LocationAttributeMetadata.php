@@ -16,7 +16,7 @@ use Google\Protobuf\RepeatedField;
 class LocationAttributeMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The country location that this attribute’s sub country location is located
+     * The country location that this attribute's sub country location is located
      * in.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.common.LocationInfo country_location = 1;</code>
@@ -30,7 +30,7 @@ class LocationAttributeMetadata extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V26\Common\LocationInfo $country_location
-     *           The country location that this attribute’s sub country location is located
+     *           The country location that this attribute's sub country location is located
      *           in.
      * }
      */
@@ -40,7 +40,7 @@ class LocationAttributeMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The country location that this attribute’s sub country location is located
+     * The country location that this attribute's sub country location is located
      * in.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.common.LocationInfo country_location = 1;</code>
@@ -62,7 +62,7 @@ class LocationAttributeMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The country location that this attribute’s sub country location is located
+     * The country location that this attribute's sub country location is located
      * in.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.common.LocationInfo country_location = 1;</code>

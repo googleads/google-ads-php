@@ -49,13 +49,21 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     protected $user_interest_parent = null;
     /**
      * Output only. True if the user interest is launched to all channels and
-     * locales.
+     * locales. When true, `availabilities` is empty. When false, `availabilities`
+     * is populated for user interests that are launched only to specific channels
+     * or locales, and is empty if the user interest is not generally available
+     * for targeting (for example, deprecated or restricted user interests).
      *
      * Generated from protobuf field <code>optional bool launched_to_all = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $launched_to_all = null;
     /**
-     * Output only. Availability information of the user interest.
+     * Output only. Availability information of the user interest. This field is
+     * empty when `launched_to_all` is true, or when `launched_to_all` is false
+     * and the user interest is not generally available for targeting (for
+     * example, deprecated or restricted user interests). When `launched_to_all`
+     * is false and the user interest is launched only to specific channels or
+     * locales, this field lists those availabilities.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v26.common.CriterionCategoryAvailability availabilities = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -81,9 +89,17 @@ class UserInterest extends \Google\Protobuf\Internal\Message
      *           Output only. The parent of the user interest.
      *     @type bool $launched_to_all
      *           Output only. True if the user interest is launched to all channels and
-     *           locales.
+     *           locales. When true, `availabilities` is empty. When false, `availabilities`
+     *           is populated for user interests that are launched only to specific channels
+     *           or locales, and is empty if the user interest is not generally available
+     *           for targeting (for example, deprecated or restricted user interests).
      *     @type \Google\Ads\GoogleAds\V26\Common\CriterionCategoryAvailability[] $availabilities
-     *           Output only. Availability information of the user interest.
+     *           Output only. Availability information of the user interest. This field is
+     *           empty when `launched_to_all` is true, or when `launched_to_all` is false
+     *           and the user interest is not generally available for targeting (for
+     *           example, deprecated or restricted user interests). When `launched_to_all`
+     *           is false and the user interest is launched only to specific channels or
+     *           locales, this field lists those availabilities.
      * }
      */
     public function __construct($data = NULL) {
@@ -257,7 +273,10 @@ class UserInterest extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. True if the user interest is launched to all channels and
-     * locales.
+     * locales. When true, `availabilities` is empty. When false, `availabilities`
+     * is populated for user interests that are launched only to specific channels
+     * or locales, and is empty if the user interest is not generally available
+     * for targeting (for example, deprecated or restricted user interests).
      *
      * Generated from protobuf field <code>optional bool launched_to_all = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
@@ -279,7 +298,10 @@ class UserInterest extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. True if the user interest is launched to all channels and
-     * locales.
+     * locales. When true, `availabilities` is empty. When false, `availabilities`
+     * is populated for user interests that are launched only to specific channels
+     * or locales, and is empty if the user interest is not generally available
+     * for targeting (for example, deprecated or restricted user interests).
      *
      * Generated from protobuf field <code>optional bool launched_to_all = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
@@ -294,7 +316,12 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Availability information of the user interest.
+     * Output only. Availability information of the user interest. This field is
+     * empty when `launched_to_all` is true, or when `launched_to_all` is false
+     * and the user interest is not generally available for targeting (for
+     * example, deprecated or restricted user interests). When `launched_to_all`
+     * is false and the user interest is launched only to specific channels or
+     * locales, this field lists those availabilities.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v26.common.CriterionCategoryAvailability availabilities = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return RepeatedField<\Google\Ads\GoogleAds\V26\Common\CriterionCategoryAvailability>
@@ -305,7 +332,12 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Availability information of the user interest.
+     * Output only. Availability information of the user interest. This field is
+     * empty when `launched_to_all` is true, or when `launched_to_all` is false
+     * and the user interest is not generally available for targeting (for
+     * example, deprecated or restricted user interests). When `launched_to_all`
+     * is false and the user interest is launched only to specific channels or
+     * locales, this field lists those availabilities.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v26.common.CriterionCategoryAvailability availabilities = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V26\Common\CriterionCategoryAvailability[] $var

@@ -23,7 +23,8 @@ use Google\Protobuf\RepeatedField;
  * phone numbers in E.164 format), and populate only one identifier field per
  * `UserIdentifier` object (`oneof identifier` is mutually exclusive).
  * For help diagnosing conversion upload issues, see the conversion upload
- * [troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting).
+ * [troubleshooting
+ * guide](https://developers.google.com/google-ads/api/docs/conversions/troubleshooting).
  *
  * Generated from protobuf message <code>google.ads.googleads.v26.services.UploadClickConversionsRequest</code>
  */
@@ -48,7 +49,7 @@ class UploadClickConversionsRequest extends \Google\Protobuf\Internal\Message
      * `false` is not supported and causes the entire request to fail.
      * See
      * [Best practices for partial
-     * failures](/google-ads/api/docs/best-practices/partial-failures).
+     * failures](https://developers.google.com/google-ads/api/docs/best-practices/partial-failures).
      *
      * Generated from protobuf field <code>bool partial_failure = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -82,7 +83,7 @@ class UploadClickConversionsRequest extends \Google\Protobuf\Internal\Message
      *
      *                                                                             See
      *                                                                             [Best practices for partial
-     *                                                                             failures](/google-ads/api/docs/best-practices/partial-failures).
+     *                                                                             failures](https://developers.google.com/google-ads/api/docs/best-practices/partial-failures).
      *
      * @return \Google\Ads\GoogleAds\V26\Services\UploadClickConversionsRequest
      *
@@ -112,7 +113,7 @@ class UploadClickConversionsRequest extends \Google\Protobuf\Internal\Message
      *           `false` is not supported and causes the entire request to fail.
      *           See
      *           [Best practices for partial
-     *           failures](/google-ads/api/docs/best-practices/partial-failures).
+     *           failures](https://developers.google.com/google-ads/api/docs/best-practices/partial-failures).
      *     @type bool $validate_only
      *           If `true`, the request is validated but not executed. Only errors are
      *           returned, not results.
@@ -188,7 +189,7 @@ class UploadClickConversionsRequest extends \Google\Protobuf\Internal\Message
      * `false` is not supported and causes the entire request to fail.
      * See
      * [Best practices for partial
-     * failures](/google-ads/api/docs/best-practices/partial-failures).
+     * failures](https://developers.google.com/google-ads/api/docs/best-practices/partial-failures).
      *
      * Generated from protobuf field <code>bool partial_failure = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return bool
@@ -205,7 +206,7 @@ class UploadClickConversionsRequest extends \Google\Protobuf\Internal\Message
      * `false` is not supported and causes the entire request to fail.
      * See
      * [Best practices for partial
-     * failures](/google-ads/api/docs/best-practices/partial-failures).
+     * failures](https://developers.google.com/google-ads/api/docs/best-practices/partial-failures).
      *
      * Generated from protobuf field <code>bool partial_failure = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param bool $var

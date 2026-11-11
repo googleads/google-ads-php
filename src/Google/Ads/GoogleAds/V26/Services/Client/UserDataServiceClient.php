@@ -46,10 +46,11 @@ use Psr\Log\LoggerInterface;
  * made through this service will not be visible under the 'Segment members'
  * section for the Customer Match List in the Google Ads UI.
  * For help diagnosing and resolving conversion or user data upload issues, see
- * the conversion upload
- * [troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting)
- * (or use the `troubleshoot-conversions` workflow in the [Google Ads API
- * Developer Assistant](/google-ads/api/docs/developer-toolkit/ai-assistant)).
+ * the [conversion upload troubleshooting
+ * guide](https://developers.google.com/google-ads/api/docs/conversions/troubleshooting)
+ * (or use the `troubleshoot-conversions` workflow in the
+ * [Google Ads API Developer
+ * Assistant](https://developers.google.com/google-ads/api/docs/developer-toolkit/ai-assistant)).
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods.

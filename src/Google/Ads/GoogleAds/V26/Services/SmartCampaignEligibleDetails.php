@@ -18,16 +18,16 @@ class SmartCampaignEligibleDetails extends \Google\Protobuf\Internal\Message
     /**
      * The timestamp of the last impression observed in the last 48 hours for this
      * campaign.
-     * The timestamp is in the customer’s timezone and in
-     * “yyyy-MM-dd HH:mm:ss” format.
+     * The timestamp is in the customer's timezone and in
+     * "yyyy-MM-dd HH:mm:ss" format.
      *
      * Generated from protobuf field <code>optional string last_impression_date_time = 1;</code>
      */
     protected $last_impression_date_time = null;
     /**
      * The timestamp of when the campaign will end, if applicable.
-     * The timestamp is in the customer’s timezone and in
-     * “yyyy-MM-dd HH:mm:ss” format.
+     * The timestamp is in the customer's timezone and in
+     * "yyyy-MM-dd HH:mm:ss" format.
      *
      * Generated from protobuf field <code>optional string end_date_time = 2;</code>
      */
@@ -42,12 +42,12 @@ class SmartCampaignEligibleDetails extends \Google\Protobuf\Internal\Message
      *     @type string $last_impression_date_time
      *           The timestamp of the last impression observed in the last 48 hours for this
      *           campaign.
-     *           The timestamp is in the customer’s timezone and in
-     *           “yyyy-MM-dd HH:mm:ss” format.
+     *           The timestamp is in the customer's timezone and in
+     *           "yyyy-MM-dd HH:mm:ss" format.
      *     @type string $end_date_time
      *           The timestamp of when the campaign will end, if applicable.
-     *           The timestamp is in the customer’s timezone and in
-     *           “yyyy-MM-dd HH:mm:ss” format.
+     *           The timestamp is in the customer's timezone and in
+     *           "yyyy-MM-dd HH:mm:ss" format.
      * }
      */
     public function __construct($data = NULL) {
@@ -58,8 +58,8 @@ class SmartCampaignEligibleDetails extends \Google\Protobuf\Internal\Message
     /**
      * The timestamp of the last impression observed in the last 48 hours for this
      * campaign.
-     * The timestamp is in the customer’s timezone and in
-     * “yyyy-MM-dd HH:mm:ss” format.
+     * The timestamp is in the customer's timezone and in
+     * "yyyy-MM-dd HH:mm:ss" format.
      *
      * Generated from protobuf field <code>optional string last_impression_date_time = 1;</code>
      * @return string
@@ -82,8 +82,8 @@ class SmartCampaignEligibleDetails extends \Google\Protobuf\Internal\Message
     /**
      * The timestamp of the last impression observed in the last 48 hours for this
      * campaign.
-     * The timestamp is in the customer’s timezone and in
-     * “yyyy-MM-dd HH:mm:ss” format.
+     * The timestamp is in the customer's timezone and in
+     * "yyyy-MM-dd HH:mm:ss" format.
      *
      * Generated from protobuf field <code>optional string last_impression_date_time = 1;</code>
      * @param string $var
@@ -99,8 +99,8 @@ class SmartCampaignEligibleDetails extends \Google\Protobuf\Internal\Message
 
     /**
      * The timestamp of when the campaign will end, if applicable.
-     * The timestamp is in the customer’s timezone and in
-     * “yyyy-MM-dd HH:mm:ss” format.
+     * The timestamp is in the customer's timezone and in
+     * "yyyy-MM-dd HH:mm:ss" format.
      *
      * Generated from protobuf field <code>optional string end_date_time = 2;</code>
      * @return string
@@ -122,8 +122,8 @@ class SmartCampaignEligibleDetails extends \Google\Protobuf\Internal\Message
 
     /**
      * The timestamp of when the campaign will end, if applicable.
-     * The timestamp is in the customer’s timezone and in
-     * “yyyy-MM-dd HH:mm:ss” format.
+     * The timestamp is in the customer's timezone and in
+     * "yyyy-MM-dd HH:mm:ss" format.
      *
      * Generated from protobuf field <code>optional string end_date_time = 2;</code>
      * @param string $var

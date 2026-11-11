@@ -136,6 +136,14 @@ class AssetAutomationType
      * Generated from protobuf enum <code>AUTOMATED_VIDEO_CRAWL = 15;</code>
      */
     const AUTOMATED_VIDEO_CRAWL = 15;
+    /**
+     * Overlays text taken from associated text Assets (such as headlines) on
+     * top of video Assets. By default, advertisers are opted in for
+     * DemandGenVideoResponsiveAd.
+     *
+     * Generated from protobuf enum <code>OVERLAY_TEXT_ON_VIDEOS = 16;</code>
+     */
+    const OVERLAY_TEXT_ON_VIDEOS = 16;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -153,6 +161,7 @@ class AssetAutomationType
         self::GENERATE_VIDEOS_FROM_OTHER_ASSETS => 'GENERATE_VIDEOS_FROM_OTHER_ASSETS',
         self::GENERATE_ANIMATED_IMAGES_FROM_OTHER_ASSETS => 'GENERATE_ANIMATED_IMAGES_FROM_OTHER_ASSETS',
         self::AUTOMATED_VIDEO_CRAWL => 'AUTOMATED_VIDEO_CRAWL',
+        self::OVERLAY_TEXT_ON_VIDEOS => 'OVERLAY_TEXT_ON_VIDEOS',
     ];
 
     public static function name($value)

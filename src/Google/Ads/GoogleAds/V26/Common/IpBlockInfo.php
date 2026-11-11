@@ -14,7 +14,7 @@ use Google\Protobuf\RepeatedField;
  * IpBlockInfo criterion for each individual IP address or CIDR block you want
  * to exclude. You can exclude up to 500 IP addresses per campaign. For more
  * details, see
- * [Exclude IP addresses](//support.google.com/google-ads/answer/2456098).
+ * [Exclude IP addresses](https://support.google.com/google-ads/answer/2456098).
  * IPv4 examples:
  *  * Individual address: 192.168.0.1
  *  * Individual address as CIDR block: 192.168.0.1/32

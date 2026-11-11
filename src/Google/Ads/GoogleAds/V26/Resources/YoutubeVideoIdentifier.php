@@ -17,7 +17,7 @@ class YoutubeVideoIdentifier extends \Google\Protobuf\Internal\Message
 {
     /**
      * Immutable. The ID of the hosting channel of the video. This is a string
-     * value with “UC” prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
+     * value with "UC" prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
      *
      * Generated from protobuf field <code>optional string channel_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -40,7 +40,7 @@ class YoutubeVideoIdentifier extends \Google\Protobuf\Internal\Message
      *
      *     @type string $channel_id
      *           Immutable. The ID of the hosting channel of the video. This is a string
-     *           value with “UC” prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
+     *           value with "UC" prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
      *     @type string $video_id
      *           Immutable. The ID of the video associated with the video link. This is the
      *           11 character string value used in the YouTube video URL. For example, video
@@ -55,7 +55,7 @@ class YoutubeVideoIdentifier extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The ID of the hosting channel of the video. This is a string
-     * value with “UC” prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
+     * value with "UC" prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
      *
      * Generated from protobuf field <code>optional string channel_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
@@ -77,7 +77,7 @@ class YoutubeVideoIdentifier extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The ID of the hosting channel of the video. This is a string
-     * value with “UC” prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
+     * value with "UC" prefix. For example, "UCK8sQmJBp8GCxrOtXWBpyEA".
      *
      * Generated from protobuf field <code>optional string channel_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var

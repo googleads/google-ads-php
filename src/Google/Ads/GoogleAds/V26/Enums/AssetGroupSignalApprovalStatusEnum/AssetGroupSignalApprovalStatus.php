@@ -47,7 +47,7 @@ class AssetGroupSignalApprovalStatus
      */
     const DISAPPROVED = 4;
     /**
-     * Search Theme is under review. It won’t be able to trigger ads until
+     * Search Theme is under review. It won't be able to trigger ads until
      * it's been reviewed.
      *
      * Generated from protobuf enum <code>UNDER_REVIEW = 5;</code>

@@ -10,7 +10,7 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * Budget allocation setting for a specific advertising channel type (e.g.,
- * SEARCH, SHOPPING, PERFORMANCE_MAX).
+ * SEARCH, SHOPPING, PERFORMANCE_MAX, or DEMAND_GEN).
  *
  * Generated from protobuf message <code>google.ads.googleads.v26.common.BudgetNetworkSetting</code>
  */
@@ -18,7 +18,7 @@ class BudgetNetworkSetting extends \Google\Protobuf\Internal\Message
 {
     /**
      * The advertising channel type this setting applies to (e.g., SEARCH,
-     * SHOPPING, or PERFORMANCE_MAX).
+     * SHOPPING, PERFORMANCE_MAX, or DEMAND_GEN).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_type = 1;</code>
      */
@@ -46,7 +46,7 @@ class BudgetNetworkSetting extends \Google\Protobuf\Internal\Message
      *
      *     @type int $advertising_channel_type
      *           The advertising channel type this setting applies to (e.g., SEARCH,
-     *           SHOPPING, or PERFORMANCE_MAX).
+     *           SHOPPING, PERFORMANCE_MAX, or DEMAND_GEN).
      *     @type \Google\Ads\GoogleAds\V26\Common\BudgetCapConfig[] $budget_caps
      *           Budget caps restricting spend per secondary network channel. Caps can only
      *           be applied to channels assigned to secondary priority tiers, and each
@@ -62,7 +62,7 @@ class BudgetNetworkSetting extends \Google\Protobuf\Internal\Message
 
     /**
      * The advertising channel type this setting applies to (e.g., SEARCH,
-     * SHOPPING, or PERFORMANCE_MAX).
+     * SHOPPING, PERFORMANCE_MAX, or DEMAND_GEN).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_type = 1;</code>
      * @return int
@@ -74,7 +74,7 @@ class BudgetNetworkSetting extends \Google\Protobuf\Internal\Message
 
     /**
      * The advertising channel type this setting applies to (e.g., SEARCH,
-     * SHOPPING, or PERFORMANCE_MAX).
+     * SHOPPING, PERFORMANCE_MAX, or DEMAND_GEN).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v26.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_type = 1;</code>
      * @param int $var

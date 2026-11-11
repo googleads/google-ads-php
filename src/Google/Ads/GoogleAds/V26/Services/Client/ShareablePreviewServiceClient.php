@@ -45,8 +45,10 @@ use Psr\Log\LoggerInterface;
  * are supported. Other ad types, such as Responsive Search Ads or Responsive
  * Display Ads, are not supported and return an `UNSUPPORTED_AD_TYPE` error.
  *
- * The generated preview URLs cannot be embedded in an iframe because the
- * response headers include `X-Frame-Options: deny`.
+ * By default, the generated preview URLs cannot be embedded in an iframe
+ * because the response headers include `X-Frame-Options: deny`. Embedding in
+ * an iframe is only supported for allowlisted domains when the `origin` query
+ * parameter is appended to the preview URL.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods.

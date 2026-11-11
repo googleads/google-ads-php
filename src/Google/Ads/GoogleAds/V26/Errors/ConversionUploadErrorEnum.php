@@ -10,10 +10,12 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * Container for enum describing possible conversion upload errors.
- * For help diagnosing and resolving these errors, see the [Conversion upload
- * troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting) (or
- * use the `troubleshoot-conversions` workflow in the [Google Ads API Developer
- * Assistant](/google-ads/api/docs/developer-toolkit/ai-assistant)).
+ * For help diagnosing and resolving these errors, see the
+ * [Conversion upload troubleshooting
+ * guide](https://developers.google.com/google-ads/api/docs/conversions/troubleshooting)
+ * (or use the `troubleshoot-conversions` workflow in the
+ * [Google Ads API Developer
+ * Assistant](https://developers.google.com/google-ads/api/docs/developer-toolkit/ai-assistant)).
  *
  * Generated from protobuf message <code>google.ads.googleads.v26.errors.ConversionUploadErrorEnum</code>
  */
