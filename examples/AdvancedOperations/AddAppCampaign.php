@@ -249,7 +249,7 @@ class AddAppCampaign
                 [
                 'app_id' => 'com.google.android.apps.adwords',
                 'app_store' => AppCampaignAppStore::GOOGLE_APP_STORE,
-                // Optional: Optimize this campaign for getting new users for your app.
+                // Optimizes this campaign for getting new users for your app.
                 'bidding_strategy_goal_type' =>
                     AppCampaignBiddingStrategyGoalType::OPTIMIZE_INSTALLS_TARGET_INSTALL_COST
                 ]
@@ -266,7 +266,7 @@ class AddAppCampaign
             // your campaign on people who are most likely to complete the
             // corresponding in-app actions.
             // 'selective_optimization' => new SelectiveOptimization([
-            //     'conversion_actions' => ['INSERT_CONVERSION_TYPE_ID_HERE']
+            //     'conversion_actions' => ['INSERT_CONVERSION_ACTION_RESOURCE_NAME_HERE']
             // ])
             ]
         );
@@ -398,7 +398,7 @@ class AddAppCampaign
         // Note that the ad group type must not be set.
         // Since the advertising_channel_sub_type is APP_CAMPAIGN,
         //   1. you cannot override bid settings at the ad group level.
-        //   2. you cannot add ad group criteria.
+        //   2. you cannot add ad group criteria other than audience signals.
         $adGroup = new AdGroup(
             [
             'name' => 'Earth to Mars cruises ' . Helper::getPrintableDatetime(),
@@ -462,7 +462,7 @@ class AddAppCampaign
                     // Optional: You can set up to 20 image assets for your campaign.
                     // 'images' => [
                     //     new AdImageAsset([
-                    //         'asset' => INSERT_AD_IMAGE_ASSET_RESOURCE_NAME_HERE
+                    //         'asset' => 'INSERT_AD_IMAGE_ASSET_RESOURCE_NAME_HERE'
                     //     ])
                     // ]
                     ]
