@@ -249,7 +249,7 @@ class AddAppCampaign
                 [
                 'app_id' => 'com.google.android.apps.adwords',
                 'app_store' => AppCampaignAppStore::GOOGLE_APP_STORE,
-                // Optimizes this campaign for getting new users for your app.
+                // Optimize this campaign for getting new users for your app.
                 'bidding_strategy_goal_type' =>
                     AppCampaignBiddingStrategyGoalType::OPTIMIZE_INSTALLS_TARGET_INSTALL_COST
                 ]
