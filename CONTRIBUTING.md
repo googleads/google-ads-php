@@ -18,7 +18,7 @@ contributing, please review the guidelines and best practices below.
     *  [Style Guidelines & Naming Conventions](#style-guidelines--naming-conventions)
     *  [Claiming Requests](#claiming-requests)
     *  [Testing](#testing)
- * [Community Guidelines](#community-guidelines)
+*  [Community Guidelines](#community-guidelines)
 
 ## Providing Feedback
 
@@ -33,7 +33,7 @@ will help improve this library.
 
 If you see that someone has already created an issue that describes your proposed feature request,
 please upvote their idea to avoid duplicates and help our team prioritize feature requests.
-Github provides a similar issues search as you create new issues, which can help in this
+GitHub provides a similar issues search as you create new issues, which can help in this
 effort. In addition, if you have commentary or can build upon someone else’s idea, feel free to
 do so by adding a comment.
 
@@ -78,8 +78,8 @@ that you only submit pull requests that we will be able to use (we don’t want 
 time). We automatically generate the majority of our client library code from these
 [protocol buffers](https://github.com/googleapis/googleapis/tree/master/google/ads/googleads)
 that define the API. As a result, the names of certain methods and variables may be
-created automatically. Generated code is generally located in folders with the name of a
-version, such as v1 or v2. We will not be able to accept pull requests for open source
+created automatically. Generated code is generally located in folders named after an API
+version, such as `V26`. We will not be able to accept pull requests for open source
 improvements to the codebase related to generated code. Please share any feedback of this
 nature by [creating an issue](#providing-feedback) as we may be able to make fixes
 to the code generation process internally. We also welcome any pull requests related to
@@ -93,7 +93,7 @@ ensure they align with the existing roadmap and are able to be accepted.
 When making a pull request, first make your own forked copy of this repository, make any changes
 on a separate branch of that forked copy, then submit the pull request from your new fork/branch.
 Consult
-[GitHub Help](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
+[GitHub Docs](https://docs.github.com/en/pull-requests/reference/pull-requests)
 for more information on using pull requests.
 
 All submissions, including submissions by project members, require review. Upon receiving your
