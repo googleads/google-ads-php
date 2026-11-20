@@ -5,7 +5,7 @@
 Version](https://img.shields.io/packagist/v/googleads/google-ads-php.svg)](https://packagist.org/packages/googleads/google-ads-php)
 [![Total Downloads](https://poser.pugx.org/googleads/google-ads-php/downloads.svg)](https://packagist.org/packages/googleads/google-ads-php)
 [![License](https://poser.pugx.org/googleads/google-ads-php/license.svg)](https://packagist.org/packages/googleads/google-ads-php)
-[![codecov](https://codecov.io/gh/googleads/google-ads-php/branch/master/graph/badge.svg)](https://codecov.io/gh/googleads/google-ads-php)
+[![codecov](https://codecov.io/gh/googleads/google-ads-php/branch/main/graph/badge.svg)](https://codecov.io/gh/googleads/google-ads-php)
 
 This project hosts the PHP client library for the [Google Ads
 API](https://developers.google.com/google-ads/api/docs/start).
@@ -82,7 +82,7 @@ Follow the below steps if you want to try our code examples.
 
 1.  Set up your OAuth2 credentials.
 
-    The Google Ads API uses [OAuth2](http://oauth.net/2/) as the authentication
+    The Google Ads API uses [OAuth2](https://oauth.net/2/) as the authentication
     mechanism. Choose the appropriate option below based on your use case, and
     read and follow the instructions that the example prints to the console.
 
@@ -199,9 +199,9 @@ See the [Performance guide](https://developers.google.com/google-ads/api/docs/cl
 
 -   https://github.com/googleads/google-ads-php/issues
 
-### API Documentation:
+### API documentation
 
--   https://developers.google.com/google-ads/api/docs
+-   https://developers.google.com/google-ads/api
 
 ### Support forum
 
@@ -209,5 +209,4 @@ See the [Performance guide](https://developers.google.com/google-ads/api/docs/cl
 
 ### Authors
 
-*   [Thanet Knack Praneenararat](https://github.com/fiboknacky)
-*   [Mattia Tommasone](https://github.com/Raibaz)
+*   [Aalap Shastri](https://github.com/ajs424)
